@@ -44,7 +44,7 @@ jobs:
       - name: Check if news exists
         id: check_news
         run: |
-          if [ -s news.json ] && [ "$(python -c 'import json,sys; d=json.load(open("news.json")); sys.exit(0 if d else 1)')" = "" ]; then
+          if python -c 'import json,sys; d=json.load(open("news.json")); sys.exit(0 if d else 1)' 2>/dev/null; then
             echo "has_news=true" >> "$GITHUB_OUTPUT"
             echo "新着ニュースあり"
           else
