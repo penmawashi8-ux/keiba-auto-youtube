@@ -1,0 +1,7 @@
+feedparser==6.0.11
+google-generativeai==0.8.3
+google-cloud-texttospeech==2.17.2
+google-api-python-client==2.151.0
+google-auth==2.35.0
+google-auth-oauthlib==1.2.1
+requests==2.32.3
