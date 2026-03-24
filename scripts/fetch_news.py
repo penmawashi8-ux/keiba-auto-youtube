@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
-"""競馬ニュースをRSSフィードから取得してnews.jsonに保存する。"""
+"""競馬ニュースをRSSフィードから取得してnews.jsonに保存する。
+- 公開日時（published）を取得して降順ソート
+- 24時間以内 → 48時間以内 → 最新3件 の順に条件を緩和
+- 投稿済み（posted_ids.txt）はスキップ
+"""
 
+import email.utils
 import gzip
-import io
 import json
 import re
 import sys
-import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
-from urllib.request import Request, urlopen
 from urllib.error import URLError
+from urllib.parse import urlparse
+from urllib.request import Request, urlopen
 
 RSS_FEEDS = [
-    # Google News RSS（競馬）- GitHub Actionsからアクセス可能
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
-    # Google News RSS（競馬 レース）
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
 ]
 
@@ -35,7 +37,6 @@ HEADERS = {
     "Cache-Control": "no-cache",
 }
 
-# RSSネームスペース
 NS = {
     "media": "http://search.yahoo.com/mrss/",
     "atom": "http://www.w3.org/2005/Atom",
@@ -44,6 +45,10 @@ NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
 
+
+# ---------------------------------------------------------------------------
+# ユーティリティ
+# ---------------------------------------------------------------------------
 
 def load_posted_ids() -> set:
     path = Path(POSTED_IDS_FILE)
@@ -60,15 +65,37 @@ def http_get(url: str, timeout: int = 20) -> bytes | None:
             encoding = resp.headers.get("Content-Encoding", "")
             if encoding == "gzip":
                 data = gzip.decompress(data)
-            elif encoding == "br":
-                pass  # brotli is uncommon; skip
-            print(f"  [HTTP] {resp.status} {len(data)} bytes (encoding={encoding or 'none'})")
+            print(f"  [HTTP] {resp.status} {len(data)} bytes")
             return data
     except URLError as e:
         print(f"  [警告] HTTP取得失敗 ({url[:60]}): {e}", file=sys.stderr)
     except Exception as e:
         print(f"  [警告] 取得エラー ({url[:60]}): {e}", file=sys.stderr)
     return None
+
+
+def _parse_date(date_str: str) -> datetime | None:
+    """RSS pubDate（RFC 2822）またはAtom published（ISO 8601）を datetimeに変換する。"""
+    if not date_str:
+        return None
+    # RFC 2822
+    try:
+        return email.utils.parsedate_to_datetime(date_str)
+    except Exception:
+        pass
+    # ISO 8601
+    try:
+        return datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+    except Exception:
+        pass
+    return None
+
+
+# ---------------------------------------------------------------------------
+# フィード解析
+# ---------------------------------------------------------------------------
+
+import xml.etree.ElementTree as ET
 
 
 def parse_feed(raw: bytes) -> list[dict]:
@@ -83,15 +110,12 @@ def parse_feed(raw: bytes) -> list[dict]:
     entries = []
 
     if "rss" in tag or root.tag == "rss":
-        # RSS 2.0
         for item in root.findall(".//item"):
             entries.append(_parse_rss_item(item))
     elif "rdf" in root.tag or "rdf" in tag:
-        # RSS 1.0 (RDF)
         for item in root.findall(".//{http://purl.org/rss/1.0/}item"):
             entries.append(_parse_rss_item(item))
     else:
-        # Atom
         for entry in root.findall(".//{http://www.w3.org/2005/Atom}entry"):
             entries.append(_parse_atom_entry(entry))
 
@@ -99,12 +123,10 @@ def parse_feed(raw: bytes) -> list[dict]:
 
 
 def _localname(tag: str) -> str:
-    """XML名前空間を除いたローカル名を返す。例: {http://...}title → title"""
     return tag.split("}")[-1] if "}" in tag else tag
 
 
 def _get_text(elem, *localnames) -> str:
-    """名前空間に関係なくローカル名でテキストを取得する。"""
     for child in elem:
         ln = _localname(child.tag).lower()
         if ln in localnames and child.text:
@@ -118,6 +140,10 @@ def _parse_rss_item(item: ET.Element) -> dict:
     entry_id = _get_text(item, "guid") or link
     summary = _get_text(item, "description", "summary")
 
+    # 公開日時
+    pub_date_raw = _get_text(item, "pubdate")
+    published_dt = _parse_date(pub_date_raw)
+
     # media:content から画像
     image_url = ""
     mc = item.find("media:content", NS)
@@ -127,19 +153,24 @@ def _parse_rss_item(item: ET.Element) -> dict:
         if url and (medium == "image" or re.search(r"\.(jpg|jpeg|png|webp)(\?|$)", url, re.I)):
             image_url = url
 
-    # media:thumbnail
     if not image_url:
         mt = item.find("media:thumbnail", NS)
         if mt is not None:
             image_url = mt.get("url", "")
 
-    # enclosure
     if not image_url:
         enc = item.find("enclosure")
         if enc is not None and enc.get("type", "").startswith("image/"):
             image_url = enc.get("url", "")
 
-    return {"id": entry_id, "title": title, "link": link, "summary": summary, "image_url": image_url}
+    return {
+        "id": entry_id,
+        "title": title,
+        "link": link,
+        "summary": summary,
+        "image_url": image_url,
+        "published_date": published_dt,
+    }
 
 
 def _parse_atom_entry(entry: ET.Element) -> dict:
@@ -151,8 +182,7 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
 
     link = ""
     for a in entry.findall(f"{{{ATOM}}}link"):
-        rel = a.get("rel", "alternate")
-        if rel == "alternate":
+        if a.get("rel", "alternate") == "alternate":
             link = a.get("href", "")
             break
     if not link:
@@ -174,7 +204,15 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
             summary = s.text.strip()
             break
 
-    # media:thumbnail / media:content
+    # 公開日時（published → updated の順に探す）
+    pub_date_raw = ""
+    for tag_name in ["published", "updated"]:
+        e = entry.find(f"{{{ATOM}}}{tag_name}")
+        if e is not None and e.text:
+            pub_date_raw = e.text.strip()
+            break
+    published_dt = _parse_date(pub_date_raw)
+
     image_url = ""
     mt = entry.find("media:thumbnail", NS)
     if mt is not None:
@@ -184,19 +222,29 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
         if mc is not None:
             image_url = mc.get("url", "")
 
-    return {"id": entry_id, "title": title, "link": link, "summary": summary, "image_url": image_url}
+    return {
+        "id": entry_id,
+        "title": title,
+        "link": link,
+        "summary": summary,
+        "image_url": image_url,
+        "published_date": published_dt,
+    }
 
+
+# ---------------------------------------------------------------------------
+# OG画像抽出
+# ---------------------------------------------------------------------------
 
 def extract_og_image(url: str, html: str) -> str:
-    """HTMLから og:image を取得。絶対URLに変換して返す。"""
     m = re.search(
         r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
-        html, re.IGNORECASE
+        html, re.IGNORECASE,
     )
     if not m:
         m = re.search(
             r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
-            html, re.IGNORECASE
+            html, re.IGNORECASE,
         )
     if m:
         img = m.group(1).strip()
@@ -209,75 +257,109 @@ def extract_og_image(url: str, html: str) -> str:
     return ""
 
 
+# ---------------------------------------------------------------------------
+# メイン取得ロジック
+# ---------------------------------------------------------------------------
+
 def fetch_news() -> list[dict]:
     posted_ids = load_posted_ids()
     print(f"投稿済みID数: {len(posted_ids)}")
-    news_items = []
+
+    now = datetime.now(timezone.utc)
+    all_entries: list[dict] = []
     feed_errors = 0
 
+    # 全フィードからエントリーを収集
     for feed_url in RSS_FEEDS:
-        print(f"フィード取得中: {feed_url}")
+        print(f"フィード取得中: {feed_url[:80]}")
         raw = http_get(feed_url)
         if not raw:
             feed_errors += 1
             continue
-
-        print(f"  レスポンスサイズ: {len(raw)} bytes")
         entries = parse_feed(raw)
-        print(f"  有効エントリー数: {len(entries)}")
-
-        for entry in entries:
-            if len(news_items) >= MAX_NEWS:
-                break
-
-            entry_id = entry["id"]
-            if entry_id in posted_ids:
-                print(f"  スキップ（投稿済み）: {entry['title'][:40]}")
-                continue
-
-            title = entry["title"]
-            link = entry["link"]
-            summary = re.sub(r"<[^>]+>", " ", entry.get("summary", "")).strip()
-            image_url = entry.get("image_url", "")
-
-            # GoogleドメインのOG画像は使用しない（Google Newsロゴ等）
-            if image_url and re.search(r"google\.com|googleusercontent\.com|gstatic\.com", image_url, re.I):
-                image_url = ""
-
-            # OG画像またはサマリーが不足なら記事HTMLを取得
-            if not image_url or not summary:
-                raw_html = http_get(link)
-                if raw_html:
-                    html = raw_html.decode("utf-8", errors="replace")
-                    if not image_url:
-                        og_img = extract_og_image(link, html)
-                        # Googleドメインの画像も除外
-                        if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
-                            image_url = og_img
-                    if not summary:
-                        text = re.sub(r"<[^>]+>", " ", html)
-                        summary = re.sub(r"\s+", " ", text).strip()[:300]
-
-            if image_url:
-                print(f"  画像: {image_url[:80]}")
-            else:
-                print(f"  [情報] 画像なし（フォールバック背景）")
-
-            news_items.append({
-                "id": entry_id,
-                "title": title,
-                "url": link,
-                "summary": summary,
-                "image_url": image_url,
-            })
-            print(f"  取得: {title[:60]}")
-
-        if len(news_items) >= MAX_NEWS:
-            break
+        print(f"  有効エントリー: {len(entries)} 件")
+        all_entries.extend(entries)
 
     if feed_errors == len(RSS_FEEDS):
         print("[エラー] 全フィードの取得に失敗しました。", file=sys.stderr)
         sys.exit(1)
+
+    # 公開日時で降順ソート（日時なしは末尾）
+    _epoch = datetime.min.replace(tzinfo=timezone.utc)
+    all_entries.sort(
+        key=lambda e: e.get("published_date") or _epoch,
+        reverse=True,
+    )
+
+    # 重複除去（ID）
+    seen: set[str] = set()
+    unique: list[dict] = []
+    for e in all_entries:
+        if e["id"] not in seen:
+            seen.add(e["id"])
+            unique.append(e)
+
+    # 投稿済みを除外
+    unposted = [e for e in unique if e["id"] not in posted_ids]
+    print(f"未投稿エントリー: {len(unposted)} 件")
+
+    # 時間フィルタ: 24時間 → 48時間 → 最新3件（条件なし）
+    selected: list[dict] = []
+    for label, hours in [("24時間以内", 24), ("48時間以内", 48), ("条件なし（最新3件）", None)]:
+        if hours is not None:
+            cutoff = now - timedelta(hours=hours)
+            candidates = [
+                e for e in unposted
+                if e.get("published_date") and e["published_date"] >= cutoff
+            ]
+        else:
+            candidates = unposted[:MAX_NEWS]
+
+        if candidates:
+            selected = candidates[:MAX_NEWS]
+            print(f"フィルタ「{label}」で {len(selected)} 件を選択")
+            break
+
+    if not selected:
+        print("対象ニュースなし。")
+        return []
+
+    # OG画像・サマリーを補完してnews_itemsを構築
+    news_items: list[dict] = []
+    for entry in selected:
+        title = entry["title"]
+        link = entry["link"]
+        entry_id = entry["id"]
+        summary = re.sub(r"<[^>]+>", " ", entry.get("summary", "")).strip()
+        image_url = entry.get("image_url", "")
+        published_dt: datetime | None = entry.get("published_date")
+
+        if image_url and re.search(r"google\.com|googleusercontent\.com|gstatic\.com", image_url, re.I):
+            image_url = ""
+
+        if not image_url or not summary:
+            raw_html = http_get(link)
+            if raw_html:
+                html = raw_html.decode("utf-8", errors="replace")
+                if not image_url:
+                    og_img = extract_og_image(link, html)
+                    if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
+                        image_url = og_img
+                if not summary:
+                    text = re.sub(r"<[^>]+>", " ", html)
+                    summary = re.sub(r"\s+", " ", text).strip()[:300]
+
+        pub_str = published_dt.isoformat() if published_dt else ""
+        print(f"  取得: {title[:60]} [{pub_str[:19]}]")
+
+        news_items.append({
+            "id": entry_id,
+            "title": title,
+            "url": link,
+            "summary": summary,
+            "image_url": image_url,
+            "published_date": pub_str,
+        })
 
     return news_items
 
@@ -298,7 +380,7 @@ def main() -> None:
     print(f"\n{len(news_items)} 件のニュースを {NEWS_JSON} に保存しました。")
     for item in news_items:
         has_img = "あり" if item["image_url"] else "なし"
-        print(f"  - {item['title'][:50]} [画像: {has_img}]")
+        print(f"  - {item['title'][:50]} [画像: {has_img}] [{item['published_date'][:19]}]")
 
 
 if __name__ == "__main__":
