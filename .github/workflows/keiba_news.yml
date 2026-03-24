@@ -52,6 +52,16 @@ jobs:
             echo "新着ニュースなし。後続ステップをスキップします。"
           fi
 
+      - name: Debug - check packages and API key
+        if: steps.check_news.outputs.has_news == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          pip show google-genai 2>&1 || echo "google-genai NOT installed"
+          python -c "from google import genai; print('google-genai import OK')" 2>&1 || echo "google-genai import FAILED"
+          python -c "import os; key=os.environ.get('GEMINI_API_KEY',''); print(f'API key length: {len(key)}')"
+          cat news.json | python -c "import json,sys; d=json.load(sys.stdin); print(f'news count: {len(d)}')"
+
       - name: Generate narration script
         if: steps.check_news.outputs.has_news == 'true'
         env:
