@@ -4,3 +4,7 @@ google-api-python-client==2.151.0
 google-auth==2.35.0
 google-auth-oauthlib==1.2.1
 requests==2.32.3
+moviepy
+imageio
+imageio-ffmpeg
+Pillow
