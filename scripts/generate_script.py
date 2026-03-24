@@ -4,6 +4,7 @@
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 import requests
@@ -52,25 +53,34 @@ def list_available_models(api_key: str) -> list[str]:
         return []
 
 
+class QuotaExceeded(Exception):
+    pass
+
+
 def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
     url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7},
     }
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=60)
-    print(f"  HTTP {resp.status_code}")
-    if resp.status_code == 429:
-        err = resp.json().get("error", {})
-        print(f"[エラー] 429 クォータ超過: {err.get('message','')[:200]}", file=sys.stderr)
-        sys.exit(1)
-    resp.raise_for_status()
-    data = resp.json()
-    try:
-        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-    except (KeyError, IndexError) as e:
-        print(f"[エラー] レスポンス解析失敗: {e}\n{json.dumps(data)[:300]}", file=sys.stderr)
-        sys.exit(1)
+    for attempt, wait in enumerate([0, 30, 60]):
+        if wait:
+            print(f"  {wait}秒待機後にリトライ... (attempt {attempt + 1})")
+            time.sleep(wait)
+        resp = requests.post(url, json=body, params={"key": api_key}, timeout=60)
+        print(f"  HTTP {resp.status_code}")
+        if resp.status_code == 429:
+            err = resp.json().get("error", {})
+            print(f"  [警告] 429 クォータ超過: {err.get('message','')[:200]}", file=sys.stderr)
+            continue
+        resp.raise_for_status()
+        data = resp.json()
+        try:
+            return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except (KeyError, IndexError) as e:
+            print(f"[エラー] レスポンス解析失敗: {e}\n{json.dumps(data)[:300]}", file=sys.stderr)
+            sys.exit(1)
+    raise QuotaExceeded(model_name)
 
 
 def main() -> None:
@@ -87,14 +97,12 @@ def main() -> None:
         sys.exit(1)
 
     available = list_available_models(api_key)
-    model_name = next(
-        (m for m in PREFERRED_MODELS if m in available),
-        available[0] if available else None,
-    )
-    if not model_name:
+    candidates = [m for m in PREFERRED_MODELS if m in available]
+    if not candidates:
+        candidates = available[:3] if available else []
+    if not candidates:
         print("[エラー] 利用可能なモデルが見つかりません。", file=sys.stderr)
         sys.exit(1)
-    print(f"使用モデル: {model_name}")
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
@@ -106,7 +114,17 @@ def main() -> None:
             f"タイトル: {item['title']}\n"
             f"内容: {item.get('summary', '')[:300]}"
         )
-        script = call_gemini(api_key, model_name, prompt)
+        script = None
+        for model_name in candidates:
+            print(f"使用モデル: {model_name}")
+            try:
+                script = call_gemini(api_key, model_name, prompt)
+                break
+            except QuotaExceeded:
+                print(f"  [{model_name}] クォータ超過。次のモデルへ切り替えます。", file=sys.stderr)
+        if script is None:
+            print("[エラー] 全モデルでクォータ超過。スクリプト生成失敗。", file=sys.stderr)
+            sys.exit(1)
         out_path = Path(f"{OUTPUT_DIR}/script_{i}.txt")
         out_path.write_text(script, encoding="utf-8")
         print(f"  → {out_path} 保存 ({len(script)}文字)")
