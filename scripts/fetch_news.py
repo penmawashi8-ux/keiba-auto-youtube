@@ -77,10 +77,16 @@ def parse_feed(raw: bytes) -> list[dict]:
     return [e for e in entries if e.get("title") and e.get("link")]
 
 
-def _get_text(elem, *tags) -> str:
-    for tag in tags:
-        child = elem.find(tag)
-        if child is not None and child.text:
+def _localname(tag: str) -> str:
+    """XML名前空間を除いたローカル名を返す。例: {http://...}title → title"""
+    return tag.split("}")[-1] if "}" in tag else tag
+
+
+def _get_text(elem, *localnames) -> str:
+    """名前空間に関係なくローカル名でテキストを取得する。"""
+    for child in elem:
+        ln = _localname(child.tag).lower()
+        if ln in localnames and child.text:
             return child.text.strip()
     return ""
 
@@ -89,7 +95,7 @@ def _parse_rss_item(item: ET.Element) -> dict:
     title = _get_text(item, "title")
     link = _get_text(item, "link")
     entry_id = _get_text(item, "guid") or link
-    summary = _get_text(item, "description")
+    summary = _get_text(item, "description", "summary")
 
     # media:content から画像
     image_url = ""
@@ -184,16 +190,20 @@ def extract_og_image(url: str, html: str) -> str:
 
 def fetch_news() -> list[dict]:
     posted_ids = load_posted_ids()
+    print(f"投稿済みID数: {len(posted_ids)}")
     news_items = []
+    feed_errors = 0
 
     for feed_url in RSS_FEEDS:
         print(f"フィード取得中: {feed_url}")
         raw = http_get(feed_url)
         if not raw:
+            feed_errors += 1
             continue
 
+        print(f"  レスポンスサイズ: {len(raw)} bytes")
         entries = parse_feed(raw)
-        print(f"  {len(entries)} エントリー取得")
+        print(f"  有効エントリー数: {len(entries)}")
 
         for entry in entries:
             if len(news_items) >= MAX_NEWS:
@@ -236,6 +246,10 @@ def fetch_news() -> list[dict]:
 
         if len(news_items) >= MAX_NEWS:
             break
+
+    if feed_errors == len(RSS_FEEDS):
+        print("[エラー] 全フィードの取得に失敗しました。", file=sys.stderr)
+        sys.exit(1)
 
     return news_items
 
