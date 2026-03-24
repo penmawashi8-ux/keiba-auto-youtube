@@ -56,7 +56,13 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/generate_script.py
+        run: |
+          python scripts/generate_script.py 2>&1 | tee /tmp/gemini.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::Gemini失敗: $(tail -5 /tmp/gemini.log | tr '\n' ' ')"
+            exit $STATUS
+          fi
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
