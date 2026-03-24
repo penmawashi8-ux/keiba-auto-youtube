@@ -72,7 +72,14 @@ jobs:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-        run: python scripts/upload_drive.py
+        run: |
+          python scripts/upload_drive.py 2>&1 | tee /tmp/drive_upload.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "## Drive Upload Error" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/drive_upload.log >> $GITHUB_STEP_SUMMARY
+            exit $STATUS
+          fi
 
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'
