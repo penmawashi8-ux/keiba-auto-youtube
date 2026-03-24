@@ -26,8 +26,8 @@ except ImportError:
 # ========================================================
 # ここに Google Cloud Console で取得したクライアント情報を入力
 # ========================================================
-CLIENT_ID = ""       # 例: "123456789-abcdef.apps.googleusercontent.com"
-CLIENT_SECRET = ""   # 例: "GOCSPX-xxxxxxxxxxxxxx"
+CLIENT_ID = "704753208448-rfq5pkn7vtvqmthksdp58u15f4dirfbd.apps.googleusercontent.com"
+CLIENT_SECRET = "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"
 # ========================================================
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
