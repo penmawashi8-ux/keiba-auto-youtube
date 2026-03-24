@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """競馬ニュースをRSSフィードから取得してnews.jsonに保存する。"""
 
+import gzip
+import io
 import json
 import re
 import sys
@@ -19,7 +21,17 @@ NEWS_JSON = "news.json"
 POSTED_IDS_FILE = "posted_ids.txt"
 MAX_NEWS = 3
 
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; KeibaBot/1.0)"}
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/122.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Cache-Control": "no-cache",
+}
 
 # RSSネームスペース
 NS = {
@@ -38,11 +50,18 @@ def load_posted_ids() -> set:
     return set(path.read_text(encoding="utf-8").splitlines())
 
 
-def http_get(url: str, timeout: int = 10) -> bytes | None:
+def http_get(url: str, timeout: int = 20) -> bytes | None:
     try:
         req = Request(url, headers=HEADERS)
         with urlopen(req, timeout=timeout) as resp:
-            return resp.read()
+            data = resp.read()
+            encoding = resp.headers.get("Content-Encoding", "")
+            if encoding == "gzip":
+                data = gzip.decompress(data)
+            elif encoding == "br":
+                pass  # brotli is uncommon; skip
+            print(f"  [HTTP] {resp.status} {len(data)} bytes (encoding={encoding or 'none'})")
+            return data
     except URLError as e:
         print(f"  [警告] HTTP取得失敗 ({url[:60]}): {e}", file=sys.stderr)
     except Exception as e:
