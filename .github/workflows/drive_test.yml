@@ -119,8 +119,14 @@ jobs:
               print(f"共有リンク: https://drive.google.com/file/d/{file_id}/view")
 
           except HttpError as e:
-              error_body = e.content.decode("utf-8", errors="replace")
-              print(f"::error::Drive HttpError {e.resp.status}: {error_body[:500]}")
+              try:
+                  error_json = json.loads(e.content)
+                  err_msg = error_json.get("error", {}).get("message", "")
+                  err_status = error_json.get("error", {}).get("status", "")
+              except Exception:
+                  err_msg = e.content.decode("utf-8", errors="replace")[:300]
+                  err_status = ""
+              print(f"::error::Drive HttpError {e.resp.status} {err_status}: {err_msg}")
               sys.exit(1)
           except Exception as e:
               print(f"::error::{type(e).__name__}: {e}")
