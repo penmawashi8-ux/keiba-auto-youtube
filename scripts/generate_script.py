@@ -6,11 +6,12 @@ import os
 import sys
 from pathlib import Path
 
-from google import genai
+import requests
 
 NEWS_JSON = "news.json"
 SCRIPT_TXT = "script.txt"
 GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 SYSTEM_PROMPT = (
     "あなたはプロの競馬実況アナウンサーです。"
@@ -37,22 +38,33 @@ def generate_script(news_items: list[dict]) -> str:
         print("[エラー] 環境変数 GEMINI_API_KEY が設定されていません。", file=sys.stderr)
         sys.exit(1)
 
-    print(f"google-genai SDK を使用、モデル: {GEMINI_MODEL}")
-    client = genai.Client(api_key=api_key)
-
     news_text = build_news_text(news_items)
-    # system_instruction をプロンプトに直接含める（APIバージョン互換性のため）
     full_prompt = f"{SYSTEM_PROMPT}\n\n以下の競馬ニュースを元に脚本を作成してください。\n\n{news_text}"
 
-    print(f"Gemini API ({GEMINI_MODEL}) に脚本生成リクエスト送信中...")
+    url = f"{GEMINI_API_BASE}/{GEMINI_MODEL}:generateContent"
+    params = {"key": api_key}
+    body = {
+        "contents": [{"parts": [{"text": full_prompt}]}],
+        "generationConfig": {"maxOutputTokens": 512, "temperature": 0.7},
+    }
+
+    print(f"Gemini REST API ({GEMINI_MODEL}) に脚本生成リクエスト送信中...")
     try:
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=full_prompt,
-        )
-        script = response.text.strip()
+        resp = requests.post(url, json=body, params=params, timeout=60)
+        print(f"HTTP {resp.status_code}")
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.HTTPError as e:
+        print(f"[エラー] HTTP {e.response.status_code}: {e.response.text[:500]}", file=sys.stderr)
+        sys.exit(1)
     except Exception as e:
-        print(f"[エラー] Gemini API 呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
+        print(f"[エラー] API呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    try:
+        script = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except (KeyError, IndexError) as e:
+        print(f"[エラー] レスポンス解析失敗: {e}\nレスポンス: {json.dumps(data, ensure_ascii=False)[:500]}", file=sys.stderr)
         sys.exit(1)
 
     return script
