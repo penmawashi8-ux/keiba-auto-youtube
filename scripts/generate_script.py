@@ -10,8 +10,17 @@ import requests
 
 NEWS_JSON = "news.json"
 SCRIPT_TXT = "script.txt"
-GEMINI_MODEL = "gemini-1.5-flash-latest"
-GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1/models"
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# 優先モデル順（利用可能な最初のものを使用）
+PREFERRED_MODELS = [
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-latest",
+    "gemini-1.5-flash-001",
+    "gemini-1.5-flash-8b",
+    "gemini-2.0-flash-lite",
+    "gemini-2.0-flash",
+    "gemini-pro",
+]
 
 SYSTEM_PROMPT = (
     "あなたはプロの競馬実況アナウンサーです。"
@@ -32,45 +41,64 @@ def build_news_text(news_items: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def list_available_models(api_key: str) -> list[str]:
+    """利用可能でgenerateContentをサポートするモデル名のリストを返す。"""
+    url = f"{GEMINI_API_BASE}"
+    params = {"key": api_key}
+    try:
+        resp = requests.get(url, params=params, timeout=30)
+        resp.raise_for_status()
+        models = resp.json().get("models", [])
+        available = [
+            m["name"].replace("models/", "")
+            for m in models
+            if "generateContent" in m.get("supportedGenerationMethods", [])
+        ]
+        print(f"利用可能モデル ({len(available)}個): {available[:10]}")
+        return available
+    except Exception as e:
+        print(f"  [警告] ListModels失敗: {e}", file=sys.stderr)
+        return []
+
+
 def generate_script(news_items: list[dict]) -> str:
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("[エラー] 環境変数 GEMINI_API_KEY が設定されていません。", file=sys.stderr)
         sys.exit(1)
 
+    # 利用可能なモデルを取得して優先順に選択
+    available = list_available_models(api_key)
+    model_name = next(
+        (m for m in PREFERRED_MODELS if m in available),
+        available[0] if available else None,
+    )
+    if not model_name:
+        print("[エラー] 利用可能なモデルが見つかりません。", file=sys.stderr)
+        sys.exit(1)
+    print(f"使用モデル: {model_name}")
+
     news_text = build_news_text(news_items)
     full_prompt = f"{SYSTEM_PROMPT}\n\n以下の競馬ニュースを元に脚本を作成してください。\n\n{news_text}"
 
-    url = f"{GEMINI_API_BASE}/{GEMINI_MODEL}:generateContent"
+    url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
     params = {"key": api_key}
     body = {
         "contents": [{"parts": [{"text": full_prompt}]}],
         "generationConfig": {"maxOutputTokens": 512, "temperature": 0.7},
     }
 
-    # モデルが見つからない場合のフォールバック一覧
-    models_to_try = [GEMINI_MODEL, "gemini-1.5-flash-001", "gemini-1.5-flash-8b", "gemini-2.0-flash-lite"]
-    data = None
-    for model_name in models_to_try:
-        model_url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
-        print(f"Gemini REST API ({model_name}) に脚本生成リクエスト送信中...")
-        try:
-            resp = requests.post(model_url, json=body, params=params, timeout=60)
-            print(f"HTTP {resp.status_code}")
-            if resp.status_code in (404, 400):
-                print(f"  → {model_name} 不可 ({resp.status_code})、次を試します")
-                continue
-            resp.raise_for_status()
-            data = resp.json()
-            break
-        except requests.HTTPError as e:
-            print(f"[エラー] HTTP {e.response.status_code}: {e.response.text[:500]}", file=sys.stderr)
-            sys.exit(1)
-        except Exception as e:
-            print(f"[エラー] API呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
-            sys.exit(1)
-    if data is None:
-        print("[エラー] 全モデルで脚本生成に失敗しました。", file=sys.stderr)
+    print(f"Gemini REST API に脚本生成リクエスト送信中...")
+    try:
+        resp = requests.post(url, json=body, params=params, timeout=60)
+        print(f"HTTP {resp.status_code}")
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.HTTPError as e:
+        print(f"[エラー] HTTP {e.response.status_code}: {e.response.text[:500]}", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:
+        print(f"[エラー] API呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
         sys.exit(1)
 
     try:
