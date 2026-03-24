@@ -7,7 +7,6 @@ import sys
 from pathlib import Path
 
 from google import genai
-from google.genai import types
 
 NEWS_JSON = "news.json"
 SCRIPT_TXT = "script.txt"
@@ -42,16 +41,14 @@ def generate_script(news_items: list[dict]) -> str:
     client = genai.Client(api_key=api_key)
 
     news_text = build_news_text(news_items)
-    prompt = f"以下の競馬ニュースを元に脚本を作成してください。\n\n{news_text}"
+    # system_instruction をプロンプトに直接含める（APIバージョン互換性のため）
+    full_prompt = f"{SYSTEM_PROMPT}\n\n以下の競馬ニュースを元に脚本を作成してください。\n\n{news_text}"
 
     print(f"Gemini API ({GEMINI_MODEL}) に脚本生成リクエスト送信中...")
     try:
         response = client.models.generate_content(
             model=GEMINI_MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_PROMPT,
-            ),
+            contents=full_prompt,
         )
         script = response.text.strip()
     except Exception as e:
