@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-記事のOG画像を背景に使い、ffmpegでYouTubeショート動画を生成する。
-OG画像が取得できない場合はグラデーション背景にフォールバックする。
+output/audio_N.mp3 + subtitles_N.ass から動画を生成する。
+- 画像あり: ゆっくりパン(Ken Burns風) + ASS字幕
+- 画像なし: ダークネイビー背景 + ASS字幕
 """
 
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -14,266 +16,201 @@ from pathlib import Path
 from urllib.error import URLError
 
 NEWS_JSON = "news.json"
-AUDIO_FILE = "output/audio.mp3"
 OUTPUT_DIR = "output"
-OUTPUT_VIDEO = f"{OUTPUT_DIR}/video.mp4"
-
-# 動画設定（YouTubeショート縦型）
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
+FPS = 30
 
-# テキスト設定
-FONT_CANDIDATES = [
-    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-    "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-    "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
-]
-FONT_SIZE = 52
-TEXT_COLOR = "white"
-BORDER_COLOR = "black"
-BORDER_WIDTH = 3
-TEXT_Y_RATIO = 0.76  # 画面高さの76%位置（暗いバーの中央）
-OVERLAY_Y_RATIO = 0.60  # 下部オーバーレイの開始位置
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/122.0.0.0 Safari/537.36"
+    ),
+    "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+}
 
-# フォールバック背景色（競馬場グリーン）
-FALLBACK_COLOR = "0x1a3a1a"
-
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; KeibaBot/1.0)"}
-
-
-def find_font() -> str:
-    for path in FONT_CANDIDATES:
-        if Path(path).exists():
-            return path
-    try:
-        result = subprocess.run(
-            ["fc-list", ":lang=ja", "--format=%{file}\n"],
-            capture_output=True, text=True, timeout=5,
-        )
-        for line in result.stdout.splitlines():
-            f = line.strip()
-            if f and Path(f).exists():
-                return f
-    except Exception:
-        pass
-    print("[警告] 日本語フォントが見つかりません。", file=sys.stderr)
-    return ""
+# フォールバック背景色（ダークネイビー）
+FALLBACK_BG_COLOR = "0x0a1628"
 
 
 def download_image(url: str, dest: str) -> bool:
-    """画像URLをダウンロードしてdestに保存。成功したらTrueを返す。"""
     if not url:
+        return False
+    if re.search(r"google\.com|googleusercontent\.com|gstatic\.com", url, re.I):
+        print(f"  [スキップ] Google画像を除外")
         return False
     try:
         req = urllib.request.Request(url, headers=HEADERS)
         with urllib.request.urlopen(req, timeout=15) as resp:
             content_type = resp.headers.get("Content-Type", "")
             if not content_type.startswith("image/"):
-                print(f"  [警告] 画像ではないレスポンス: {content_type}", file=sys.stderr)
                 return False
             data = resp.read()
             if len(data) < 1000:
-                print(f"  [警告] ダウンロードデータが小さすぎます ({len(data)} bytes)", file=sys.stderr)
                 return False
             Path(dest).write_bytes(data)
-            print(f"  画像ダウンロード完了: {len(data) // 1024} KB")
+            print(f"  画像ダウンロード: {len(data) // 1024} KB")
             return True
-    except URLError as e:
-        print(f"  [警告] 画像ダウンロード失敗 ({url[:60]}): {e}", file=sys.stderr)
     except Exception as e:
         print(f"  [警告] 画像ダウンロード失敗: {e}", file=sys.stderr)
     return False
 
 
 def verify_image(path: str) -> bool:
-    """ffprobeで画像ファイルが有効か確認する。"""
     try:
         result = subprocess.run(
-            ["ffprobe", "-v", "quiet", "-print_format", "json",
-             "-show_streams", path],
+            ["ffprobe", "-v", "quiet", "-print_format", "json", "-show_streams", path],
             capture_output=True, text=True, timeout=10,
         )
         info = json.loads(result.stdout)
-        for stream in info.get("streams", []):
-            if stream.get("codec_type") == "video":
-                return True
+        return any(s.get("codec_type") == "video" for s in info.get("streams", []))
     except Exception:
-        pass
-    return False
+        return False
 
 
-def escape_drawtext(text: str) -> str:
-    """ffmpeg drawtext用に特殊文字をエスケープする。"""
-    replacements = [
-        ("\\", "\\\\"),
-        ("'", "\\'"),
-        (":", "\\:"),
-        ("[", "\\["),
-        ("]", "\\]"),
-        (",", "\\,"),
-        (";", "\\;"),
-    ]
-    for old, new in replacements:
-        text = text.replace(old, new)
-    return text
-
-
-def wrap_text(text: str, max_chars: int = 18) -> str:
-    """日本語テキストを指定文字数で折り返す。"""
-    lines = []
-    while len(text) > max_chars:
-        lines.append(text[:max_chars])
-        text = text[max_chars:]
-    if text:
-        lines.append(text)
-    return "\n".join(lines)
-
-
-def build_video_filter(font_path: str, title: str, has_image: bool) -> str:
-    """ffmpeg -vf フィルター文字列を構築する。"""
-    text_y = int(VIDEO_HEIGHT * TEXT_Y_RATIO)
-    overlay_y = int(VIDEO_HEIGHT * OVERLAY_Y_RATIO)
-    overlay_h = VIDEO_HEIGHT - overlay_y
-
-    wrapped_title = wrap_text(title, max_chars=18)
-    escaped_title = escape_drawtext(wrapped_title)
-
-    filters = []
-
-    if has_image:
-        # 画像をショート縦型にリサイズ・クロップ
-        filters.append(
-            f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}:force_original_aspect_ratio=increase,"
-            f"crop={VIDEO_WIDTH}:{VIDEO_HEIGHT}"
-        )
-        # 全体に微妙な暗さを加えて文字を読みやすくする
-        filters.append("eq=brightness=-0.05:saturation=1.1")
-    else:
-        # フォールバック: 単色背景 + ffmpegで生成済みなので変換のみ
-        filters.append(f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}")
-
-    # テキスト背景用の半透明グラデーションボックス
-    filters.append(
-        f"drawbox=x=0:y={overlay_y}:w={VIDEO_WIDTH}:h={overlay_h}"
-        f":color=black@0.65:t=fill"
+def get_audio_duration(audio_path: str) -> float:
+    result = subprocess.run(
+        ["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", audio_path],
+        capture_output=True, text=True, timeout=10,
     )
-
-    # タイトルテキスト
-    if font_path:
-        drawtext = (
-            f"drawtext=fontfile='{font_path}':"
-            f"text='{escaped_title}':"
-            f"fontsize={FONT_SIZE}:"
-            f"fontcolor={TEXT_COLOR}:"
-            f"borderw={BORDER_WIDTH}:"
-            f"bordercolor={BORDER_COLOR}:"
-            f"x=(w-text_w)/2:"
-            f"y={text_y}:"
-            f"line_spacing=10"
-        )
-    else:
-        drawtext = (
-            f"drawtext="
-            f"text='{escaped_title}':"
-            f"fontsize={FONT_SIZE}:"
-            f"fontcolor={TEXT_COLOR}:"
-            f"borderw={BORDER_WIDTH}:"
-            f"bordercolor={BORDER_COLOR}:"
-            f"x=(w-text_w)/2:"
-            f"y={text_y}:"
-            f"line_spacing=10"
-        )
-    filters.append(drawtext)
-
-    return ",".join(filters)
+    return float(result.stdout.strip())
 
 
-def generate_video_from_image(image_path: str, title: str, font_path: str) -> None:
-    """ダウンロード済み画像を背景に動画を生成する。"""
-    vf = build_video_filter(font_path, title, has_image=True)
-    cmd = [
-        "ffmpeg", "-y",
-        "-loop", "1", "-i", image_path,
-        "-i", AUDIO_FILE,
-        "-vf", vf,
-        "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-        "-c:a", "aac", "-b:a", "128k",
-        "-shortest",
-        "-movflags", "+faststart",
-        OUTPUT_VIDEO,
-    ]
-    _run_ffmpeg(cmd)
-
-
-def generate_video_fallback(title: str, font_path: str) -> None:
-    """OG画像なしのフォールバック：グラデーション背景で動画を生成する。"""
-    print("  フォールバック: グラデーション背景を生成します。")
-    vf = build_video_filter(font_path, title, has_image=False)
-    cmd = [
-        "ffmpeg", "-y",
-        "-f", "lavfi",
-        "-i", f"color=c={FALLBACK_COLOR}:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r=30",
-        "-i", AUDIO_FILE,
-        "-vf", vf,
-        "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-        "-c:a", "aac", "-b:a", "128k",
-        "-shortest",
-        "-movflags", "+faststart",
-        OUTPUT_VIDEO,
-    ]
-    _run_ffmpeg(cmd)
-
-
-def _run_ffmpeg(cmd: list[str]) -> None:
-    print(f"ffmpeg 実行中...")
+def run_ffmpeg(cmd: list[str], output_path: str) -> None:
+    print(f"  ffmpeg 実行中...")
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"[エラー] ffmpeg 失敗:\n{result.stderr[-3000:]}", file=sys.stderr)
+        print(f"[エラー] ffmpeg 失敗:\n{result.stderr[-2000:]}", file=sys.stderr)
         sys.exit(1)
-    size_mb = Path(OUTPUT_VIDEO).stat().st_size / (1024 * 1024)
-    print(f"動画を {OUTPUT_VIDEO} に保存しました（{size_mb:.1f} MB）。")
+    size_mb = Path(output_path).stat().st_size / (1024 * 1024)
+    print(f"  → {output_path} ({size_mb:.1f} MB)")
+
+
+def generate_video(
+    audio_path: str,
+    ass_path: str,
+    image_path: str | None,
+    output_path: str,
+    duration: float,
+) -> None:
+    """
+    Ken Burnsパン + ASS字幕で動画を生成する。
+
+    背景画像がある場合:
+      - 110%スケールして、時間に応じてゆっくり横パン（Ken Burns風）
+      - 下部30%に半透明の暗いバーを重ねて字幕を読みやすくする
+    画像がない場合:
+      - ダークネイビーの単色背景
+    """
+    abs_ass = str(Path(ass_path).resolve())
+    # パス中のコロン・バックスラッシュをエスケープ（Windows対策は不要だがffmpeg解析対策）
+    abs_ass_escaped = abs_ass.replace("\\", "/").replace(":", "\\:")
+
+    if image_path:
+        # 110%スケール → 横方向にゆっくりパン（Ken Burns風）
+        pan_range_x = int(VIDEO_WIDTH * 0.1)   # 108px 横移動
+        pan_range_y = int(VIDEO_HEIGHT * 0.1)  # 192px 縦移動
+        scaled_w = VIDEO_WIDTH + pan_range_x
+        scaled_h = VIDEO_HEIGHT + pan_range_y
+
+        vf = (
+            f"scale={scaled_w}:{scaled_h}:force_original_aspect_ratio=increase,"
+            f"crop={VIDEO_WIDTH}:{VIDEO_HEIGHT}"
+            f":x='{pan_range_x}*t/{duration:.3f}'"
+            f":y='{pan_range_y//2}*t/{duration:.3f}',"
+            f"drawbox=x=0:y={int(VIDEO_HEIGHT * 0.70)}:w={VIDEO_WIDTH}"
+            f":h={int(VIDEO_HEIGHT * 0.30)}:color=black@0.60:t=fill,"
+            f"ass={abs_ass_escaped}"
+        )
+        cmd = [
+            "ffmpeg", "-y",
+            "-loop", "1", "-i", image_path,
+            "-i", audio_path,
+            "-vf", vf,
+            "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+            "-c:a", "aac", "-b:a", "128k",
+            "-t", str(duration + 0.5),
+            "-movflags", "+faststart",
+            output_path,
+        ]
+    else:
+        # フォールバック: ダークネイビー背景
+        vf = (
+            f"drawbox=x=0:y={int(VIDEO_HEIGHT * 0.70)}:w={VIDEO_WIDTH}"
+            f":h={int(VIDEO_HEIGHT * 0.30)}:color=black@0.30:t=fill,"
+            f"ass={abs_ass_escaped}"
+        )
+        cmd = [
+            "ffmpeg", "-y",
+            "-f", "lavfi",
+            "-i", f"color=c={FALLBACK_BG_COLOR}:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r={FPS}",
+            "-i", audio_path,
+            "-vf", vf,
+            "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+            "-c:a", "aac", "-b:a", "128k",
+            "-t", str(duration + 0.5),
+            "-movflags", "+faststart",
+            output_path,
+        ]
+
+    run_ffmpeg(cmd, output_path)
 
 
 def main() -> None:
     print("=== 動画生成開始 ===")
-
-    for path in [AUDIO_FILE, NEWS_JSON]:
-        if not Path(path).exists():
-            print(f"[エラー] {path} が見つかりません。", file=sys.stderr)
-            sys.exit(1)
 
     news_items: list[dict] = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
     if not news_items:
         print("ニュースが0件のため動画生成をスキップします。")
         sys.exit(0)
 
-    title = news_items[0]["title"]
-    image_url = news_items[0].get("image_url", "")
-    print(f"タイトル: {title}")
-    print(f"画像URL: {image_url or '（なし）'}")
+    audio_files = sorted(Path(OUTPUT_DIR).glob("audio_*.mp3"))
+    if not audio_files:
+        print(f"[エラー] {OUTPUT_DIR}/audio_*.mp3 が見つかりません。", file=sys.stderr)
+        sys.exit(1)
 
-    Path(OUTPUT_DIR).mkdir(exist_ok=True)
-    font_path = find_font()
-    print(f"フォント: {font_path or '（システムデフォルト）'}")
+    for audio_file in audio_files:
+        idx = int(audio_file.stem.split("_")[1])
+        ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
+        output_path = f"{OUTPUT_DIR}/video_{idx}.mp4"
 
-    # 画像をダウンロードして動画生成
-    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
-        tmp_path = tmp.name
+        if idx >= len(news_items):
+            print(f"  [警告] インデックス {idx} の記事がありません。スキップします。")
+            continue
 
-    try:
-        downloaded = download_image(image_url, tmp_path)
-        if downloaded:
-            if verify_image(tmp_path):
-                print(f"  OG画像を背景として使用します。")
-                generate_video_from_image(tmp_path, title, font_path)
+        if not Path(ass_path).exists():
+            print(f"  [警告] {ass_path} が見つかりません。スキップします。")
+            continue
+
+        item = news_items[idx]
+        title = item["title"]
+        image_url = item.get("image_url", "")
+
+        print(f"\n--- 動画生成 [{idx}]: {title[:50]} ---")
+        print(f"  画像URL: {image_url[:70] or '（なし）'}")
+
+        duration = get_audio_duration(str(audio_file))
+        print(f"  音声長: {duration:.1f}秒")
+
+        with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
+            tmp_path = tmp.name
+
+        try:
+            downloaded = download_image(image_url, tmp_path)
+            if downloaded and verify_image(tmp_path):
+                print(f"  OG画像を背景に使用します。")
+                generate_video(str(audio_file), ass_path, tmp_path, output_path, duration)
             else:
-                print(f"  [警告] ダウンロードした画像が無効です。フォールバックします。", file=sys.stderr)
-                generate_video_fallback(title, font_path)
-        else:
-            generate_video_fallback(title, font_path)
-    finally:
-        if Path(tmp_path).exists():
-            os.unlink(tmp_path)
+                print(f"  フォールバック背景（ダークネイビー）を使用します。")
+                generate_video(str(audio_file), ass_path, None, output_path, duration)
+        finally:
+            if Path(tmp_path).exists():
+                os.unlink(tmp_path)
+
+    video_files = sorted(Path(OUTPUT_DIR).glob("video_*.mp4"))
+    print(f"\n{len(video_files)} 本の動画を生成しました。")
 
 
 if __name__ == "__main__":
