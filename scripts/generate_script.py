@@ -10,8 +10,8 @@ import requests
 
 NEWS_JSON = "news.json"
 SCRIPT_TXT = "script.txt"
-GEMINI_MODEL = "gemini-1.5-flash"
-GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+GEMINI_MODEL = "gemini-1.5-flash-latest"
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1/models"
 
 SYSTEM_PROMPT = (
     "あなたはプロの競馬実況アナウンサーです。"
@@ -48,17 +48,29 @@ def generate_script(news_items: list[dict]) -> str:
         "generationConfig": {"maxOutputTokens": 512, "temperature": 0.7},
     }
 
-    print(f"Gemini REST API ({GEMINI_MODEL}) に脚本生成リクエスト送信中...")
-    try:
-        resp = requests.post(url, json=body, params=params, timeout=60)
-        print(f"HTTP {resp.status_code}")
-        resp.raise_for_status()
-        data = resp.json()
-    except requests.HTTPError as e:
-        print(f"[エラー] HTTP {e.response.status_code}: {e.response.text[:500]}", file=sys.stderr)
-        sys.exit(1)
-    except Exception as e:
-        print(f"[エラー] API呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
+    # モデルが見つからない場合のフォールバック一覧
+    models_to_try = [GEMINI_MODEL, "gemini-1.5-flash-001", "gemini-1.5-flash-8b", "gemini-2.0-flash-lite"]
+    data = None
+    for model_name in models_to_try:
+        model_url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
+        print(f"Gemini REST API ({model_name}) に脚本生成リクエスト送信中...")
+        try:
+            resp = requests.post(model_url, json=body, params=params, timeout=60)
+            print(f"HTTP {resp.status_code}")
+            if resp.status_code in (404, 400):
+                print(f"  → {model_name} 不可 ({resp.status_code})、次を試します")
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except requests.HTTPError as e:
+            print(f"[エラー] HTTP {e.response.status_code}: {e.response.text[:500]}", file=sys.stderr)
+            sys.exit(1)
+        except Exception as e:
+            print(f"[エラー] API呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
+            sys.exit(1)
+    if data is None:
+        print("[エラー] 全モデルで脚本生成に失敗しました。", file=sys.stderr)
         sys.exit(1)
 
     try:
