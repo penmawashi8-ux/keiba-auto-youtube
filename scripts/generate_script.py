@@ -13,13 +13,12 @@ SCRIPT_TXT = "script.txt"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # 優先モデル順（利用可能な最初のものを使用）
 PREFERRED_MODELS = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-latest",
-    "gemini-1.5-flash-001",
-    "gemini-1.5-flash-8b",
+    "gemini-2.5-flash",
     "gemini-2.0-flash-lite",
     "gemini-2.0-flash",
-    "gemini-pro",
+    "gemini-1.5-flash",
+    "gemma-3-4b-it",
+    "gemma-3-1b-it",
 ]
 
 SYSTEM_PROMPT = (
@@ -92,6 +91,11 @@ def generate_script(news_items: list[dict]) -> str:
     try:
         resp = requests.post(url, json=body, params=params, timeout=60)
         print(f"HTTP {resp.status_code}")
+        if resp.status_code == 429:
+            err = resp.json().get("error", {})
+            print(f"[エラー] 429 レート制限/クォータ超過: {err.get('message','')[:300]}", file=sys.stderr)
+            print("[ヒント] Google AI Studio (https://aistudio.google.com) で課金設定を確認してください。", file=sys.stderr)
+            sys.exit(1)
         resp.raise_for_status()
         data = resp.json()
     except requests.HTTPError as e:
