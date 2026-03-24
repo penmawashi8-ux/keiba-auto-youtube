@@ -13,8 +13,10 @@ from urllib.request import Request, urlopen
 from urllib.error import URLError
 
 RSS_FEEDS = [
-    "https://news.netkeiba.com/?pid=news_rss",
-    "https://www.sponichi.co.jp/gamble/rss/atom/index.rdf",
+    # Google News RSS（競馬）- GitHub Actionsからアクセス可能
+    "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
+    # Google News RSS（競馬 レース）
+    "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
 ]
 
 NEWS_JSON = "news.json"
