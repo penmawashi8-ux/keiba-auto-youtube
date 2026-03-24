@@ -240,13 +240,20 @@ def fetch_news() -> list[dict]:
             summary = re.sub(r"<[^>]+>", " ", entry.get("summary", "")).strip()
             image_url = entry.get("image_url", "")
 
+            # GoogleドメインのOG画像は使用しない（Google Newsロゴ等）
+            if image_url and re.search(r"google\.com|googleusercontent\.com|gstatic\.com", image_url, re.I):
+                image_url = ""
+
             # OG画像またはサマリーが不足なら記事HTMLを取得
             if not image_url or not summary:
                 raw_html = http_get(link)
                 if raw_html:
                     html = raw_html.decode("utf-8", errors="replace")
                     if not image_url:
-                        image_url = extract_og_image(link, html)
+                        og_img = extract_og_image(link, html)
+                        # Googleドメインの画像も除外
+                        if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
+                            image_url = og_img
                     if not summary:
                         text = re.sub(r"<[^>]+>", " ", html)
                         summary = re.sub(r"\s+", " ", text).strip()[:300]
