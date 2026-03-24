@@ -12,10 +12,9 @@ NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 PREFERRED_MODELS = [
-    "gemini-2.5-flash",
     "gemini-2.0-flash-lite",
     "gemini-2.0-flash",
-    "gemini-1.5-flash",
+    "gemini-2.5-flash",
     "gemma-3-4b-it",
     "gemma-3-1b-it",
 ]
