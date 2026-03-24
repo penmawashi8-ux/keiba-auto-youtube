@@ -1,0 +1,21 @@
+# 生成ファイル
+output/
+news.json
+script.txt
+
+# 認証情報
+youtube_token.json
+/tmp/gcp_credentials.json
+*.json.bak
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
