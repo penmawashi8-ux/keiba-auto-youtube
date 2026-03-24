@@ -10,7 +10,7 @@ import requests
 
 NEWS_JSON = "news.json"
 SCRIPT_TXT = "script.txt"
-GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_MODEL = "gemini-1.5-flash"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 SYSTEM_PROMPT = (
