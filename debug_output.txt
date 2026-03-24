@@ -3,14 +3,7 @@
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generat
 === 脚本生成開始 ===
-Gemini REST API (gemini-1.5-flash-latest) に脚本生成リクエスト送信中...
-HTTP 404
-  → gemini-1.5-flash-latest 不可 (404)、次を試します
-Gemini REST API (gemini-1.5-flash-001) に脚本生成リクエスト送信中...
-HTTP 404
-  → gemini-1.5-flash-001 不可 (404)、次を試します
-Gemini REST API (gemini-1.5-flash-8b) に脚本生成リクエスト送信中...
-HTTP 404
-  → gemini-1.5-flash-8b 不可 (404)、次を試します
-Gemini REST API (gemini-2.0-flash-lite) に脚本生成リクエスト送信中...
+利用可能モデル (31個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
+使用モデル: gemini-2.0-flash-lite
+Gemini REST API に脚本生成リクエスト送信中...
 HTTP 429
