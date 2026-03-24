@@ -1,0 +1,91 @@
+name: Drive Upload Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-drive-upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create dummy files for Drive test
+        run: |
+          mkdir -p output
+          dd if=/dev/urandom of=output/video_0.mp4 bs=1K count=10
+          ls -lh output/
+          echo '[{"id":"test-001","title":"Driveテスト記事","summary":"Drive接続テスト用のダミーデータです"}]' > news.json
+
+      - name: Diagnose Drive credentials
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: |
+          python - <<'EOF' 2>&1 | tee /tmp/drive_diag.log
+          import os, sys, traceback
+          print("=== Drive 認証診断 ===")
+          cid = os.environ.get("GOOGLE_CLIENT_ID","")
+          cs  = os.environ.get("GOOGLE_CLIENT_SECRET","")
+          rt  = os.environ.get("GOOGLE_REFRESH_TOKEN","")
+          print(f"CLIENT_ID set: {bool(cid)} (len={len(cid)})")
+          print(f"CLIENT_SECRET set: {bool(cs)} (len={len(cs)})")
+          print(f"REFRESH_TOKEN set: {bool(rt)} (len={len(rt)})")
+          try:
+              import google.auth.transport.requests
+              from google.oauth2.credentials import Credentials
+              creds = Credentials(
+                  token=None,
+                  refresh_token=rt,
+                  token_uri="https://oauth2.googleapis.com/token",
+                  client_id=cid,
+                  client_secret=cs,
+                  scopes=["https://www.googleapis.com/auth/drive.file"],
+              )
+              req = google.auth.transport.requests.Request()
+              creds.refresh(req)
+              print("トークンリフレッシュ: 成功")
+              print(f"access_token prefix: {creds.token[:20]}...")
+          except Exception as e:
+              print(f"トークンリフレッシュ: 失敗")
+              traceback.print_exc()
+              sys.exit(1)
+          EOF
+
+      - name: Upload to Google Drive
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: |
+          python scripts/upload_drive.py 2>&1 | tee /tmp/drive_upload.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "## Drive Upload Error" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/drive_upload.log >> $GITHUB_STEP_SUMMARY
+            exit $STATUS
+          fi
+
+      - name: Upload Drive logs as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drive-test-logs
+          path: |
+            /tmp/drive_diag.log
+            /tmp/drive_upload.log
+          if-no-files-found: ignore
