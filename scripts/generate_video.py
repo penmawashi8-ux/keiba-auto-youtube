@@ -36,7 +36,7 @@ VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 FPS = 30
 FONT_SIZE = 60
-MAX_CHARS_PER_LINE = 16
+SUBTITLE_MAX_WIDTH_RATIO = 0.80   # 字幕の最大横幅割合（縁取り込みで余裕を持たせる）
 LINE_SPACING = 10
 SUBTITLE_CENTER_Y = 960   # 字幕中心Y座標
 OUTLINE_WIDTH = 8
@@ -94,14 +94,32 @@ def load_background(assets_images: list[str], index: int) -> Image.Image:
     """assetsの画像をローテーションしてImageOps.fitで1080x1920にリサイズ。"""
     if assets_images:
         path = assets_images[index % len(assets_images)]
+        print(f"  背景画像読み込み: {path}")
         try:
             img = Image.open(path).convert("RGB")
             img = ImageOps.fit(img, (VIDEO_WIDTH, VIDEO_HEIGHT), Image.LANCZOS)
+            print(f"  背景画像読み込み成功: {path} → {img.size}")
             return img
         except Exception as e:
-            print(f"  [警告] 画像読み込み失敗 ({path}): {e}", file=sys.stderr)
+            import traceback
+            print(f"  [警告] 画像読み込み失敗 ({path}): {e}")
+            traceback.print_exc()
     # 単色背景（濃紺）
+    print("  単色背景（濃紺）を使用します。")
     return Image.new("RGB", (VIDEO_WIDTH, VIDEO_HEIGHT), (15, 15, 40))
+
+
+def calc_max_chars_per_line(font: ImageFont.ImageFont) -> int:
+    """フォントサイズから1行の最大文字数を動的に計算する。"""
+    max_width = VIDEO_WIDTH * SUBTITLE_MAX_WIDTH_RATIO
+    try:
+        char_width = font.getlength("あ")
+    except AttributeError:
+        # Pillow 8未満のフォールバック
+        char_width = FONT_SIZE
+    chars = max(1, int(max_width / char_width))
+    print(f"  字幕1行最大文字数: {chars}（1文字幅={char_width:.1f}px, 最大幅={max_width:.0f}px）")
+    return chars
 
 
 def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.ImageFont) -> Image.Image:
@@ -115,8 +133,9 @@ def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.
 
     draw = ImageDraw.Draw(img)
 
-    # テキスト折り返し（1行最大16文字）
-    lines = textwrap.wrap(text, width=MAX_CHARS_PER_LINE)
+    # テキスト折り返し（フォントサイズから動的に最大文字数を計算）
+    max_chars = calc_max_chars_per_line(font)
+    lines = textwrap.wrap(text, width=max_chars)
     if not lines:
         lines = [text]
 
@@ -277,11 +296,17 @@ def main() -> None:
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
     # assets フォルダの画像を収集
-    assets_images = sorted(
-        str(p) for p in Path(ASSETS_DIR).glob("*.jpg")
-        if p.stat().st_size > 1000
-    ) if Path(ASSETS_DIR).exists() else []
-    print(f"  assets画像: {len(assets_images)} 枚")
+    if Path(ASSETS_DIR).exists():
+        all_files = list(Path(ASSETS_DIR).iterdir())
+        print(f"  assetsフォルダの中身: {[f.name for f in all_files]}")
+        assets_images = sorted(
+            str(p) for p in Path(ASSETS_DIR).glob("*.jpg")
+            if p.stat().st_size > 1000
+        )
+    else:
+        print(f"  [警告] assetsフォルダが存在しません: {ASSETS_DIR}")
+        assets_images = []
+    print(f"  assetsフォルダの画像: {[Path(p).name for p in assets_images]}")
 
     # フォント読み込み
     font_path = find_japanese_font()

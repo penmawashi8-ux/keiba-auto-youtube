@@ -68,6 +68,39 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_audio.py
 
+      - name: 競馬画像をダウンロード
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          python - <<'EOF'
+          import requests, os
+          from pathlib import Path
+
+          Path("assets").mkdir(exist_ok=True)
+
+          images = [
+              ("horse1.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Swifts_Creek_horse_race.jpg/1280px-Swifts_Creek_horse_race.jpg"),
+              ("horse2.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Horses_racing_at_Hyderabad.jpg/1280px-Horses_racing_at_Hyderabad.jpg"),
+              ("horse3.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Horse_racing_Aqueduct.jpg/1280px-Horse_racing_Aqueduct.jpg"),
+          ]
+
+          for filename, url in images:
+              path = f"assets/{filename}"
+              if not os.path.exists(path):
+                  try:
+                      r = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+                      if r.status_code == 200:
+                          with open(path, "wb") as f:
+                              f.write(r.content)
+                          print(f"ダウンロード成功: {filename}")
+                      else:
+                          print(f"ステータスエラー: {filename} ({r.status_code})")
+                  except Exception as e:
+                      print(f"ダウンロード失敗: {filename} ({e})")
+
+          downloaded = list(Path("assets").glob("*.jpg"))
+          print(f"assets内の画像数: {len(downloaded)}")
+          EOF
+
       - name: Generate video
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
