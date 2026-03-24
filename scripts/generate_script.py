@@ -6,11 +6,12 @@ import os
 import sys
 from pathlib import Path
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 NEWS_JSON = "news.json"
 SCRIPT_TXT = "script.txt"
-GEMINI_MODEL = "gemini-1.5-flash"
+GEMINI_MODEL = "gemini-2.0-flash"
 
 SYSTEM_PROMPT = (
     "あなたはプロの競馬実況アナウンサーです。"
@@ -37,21 +38,24 @@ def generate_script(news_items: list[dict]) -> str:
         print("[エラー] 環境変数 GEMINI_API_KEY が設定されていません。", file=sys.stderr)
         sys.exit(1)
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(
-        model_name=GEMINI_MODEL,
-        system_instruction=SYSTEM_PROMPT,
-    )
+    print(f"google-genai SDK を使用、モデル: {GEMINI_MODEL}")
+    client = genai.Client(api_key=api_key)
 
     news_text = build_news_text(news_items)
     prompt = f"以下の競馬ニュースを元に脚本を作成してください。\n\n{news_text}"
 
     print(f"Gemini API ({GEMINI_MODEL}) に脚本生成リクエスト送信中...")
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+            ),
+        )
         script = response.text.strip()
     except Exception as e:
-        print(f"[エラー] Gemini API 呼び出し失敗: {e}", file=sys.stderr)
+        print(f"[エラー] Gemini API 呼び出し失敗: {type(e).__name__}: {e}", file=sys.stderr)
         sys.exit(1)
 
     return script
