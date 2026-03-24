@@ -20,6 +20,9 @@ YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
+# YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
+QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded"}
+
 
 def load_credentials() -> Credentials:
     """環境変数からOAuth2認証情報を構築する。"""
@@ -68,8 +71,27 @@ def update_posted_ids(news_items: list[dict]) -> None:
     print(f"投稿済みID {len(new_ids)} 件を {POSTED_IDS_FILE} に追記しました。")
 
 
-def upload_video(youtube, title: str, description: str, video_path: str) -> str:
-    """YouTube に動画をアップロードしてvideoIdを返す。"""
+def is_quota_exceeded(http_error: HttpError) -> bool:
+    """HttpError がクォータ超過かどうかを判定する。"""
+    try:
+        content = json.loads(http_error.content.decode("utf-8"))
+        errors = content.get("error", {}).get("errors", [])
+        for err in errors:
+            if err.get("reason") in QUOTA_EXCEEDED_REASONS:
+                return True
+        # HTTP 403 でメッセージにquotaが含まれる場合も対象
+        message = content.get("error", {}).get("message", "").lower()
+        if "quota" in message or "rate limit" in message:
+            return True
+    except Exception:
+        pass
+    return http_error.resp.status == 403
+
+
+def upload_video(youtube, title: str, description: str, video_path: str) -> str | None:
+    """YouTube に動画をアップロードして videoId を返す。
+    クォータ超過の場合は None を返す（呼び出し元で判定）。
+    """
     body = {
         "snippet": {
             "title": f"【競馬速報】{title} #Shorts",
@@ -113,9 +135,22 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str:
         return video_id
 
     except HttpError as e:
-        error_content = json.loads(e.content.decode("utf-8"))
-        print(f"[エラー] YouTube API エラー: {error_content}", file=sys.stderr)
+        try:
+            error_content = json.loads(e.content.decode("utf-8"))
+        except Exception:
+            error_content = {}
+        print(f"[エラー] YouTube API HTTP {e.resp.status}: {error_content}", file=sys.stderr)
+
+        if is_quota_exceeded(e):
+            print(
+                "[警告] YouTube APIのクォータ（1日10,000ユニット）を超過しました。\n"
+                "       明日UTC 0:00にリセットされるまでアップロードはスキップします。",
+                file=sys.stderr,
+            )
+            return None  # クォータ超過は呼び出し元で処理
+
         sys.exit(1)
+
     except Exception as e:
         print(f"[エラー] アップロード失敗: {e}", file=sys.stderr)
         sys.exit(1)
@@ -139,7 +174,11 @@ def main() -> None:
         print("ニュースが0件のためアップロードをスキップします。")
         sys.exit(0)
 
-    video_files = sorted(Path(OUTPUT_DIR).glob("video_*.mp4"))
+    # video_[数字].mp4 のみ対象（moviepy の一時ファイルを除外）
+    video_files = sorted(
+        f for f in Path(OUTPUT_DIR).glob("video_*.mp4")
+        if f.stem.split("_")[1].isdigit()
+    )
     if not video_files:
         print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
         sys.exit(1)
@@ -148,6 +187,8 @@ def main() -> None:
     youtube = build("youtube", "v3", credentials=creds)
 
     uploaded_count = 0
+    quota_exceeded = False
+
     for video_file in video_files:
         idx = int(video_file.stem.split("_")[1])
 
@@ -166,10 +207,26 @@ def main() -> None:
         description = build_description(script)
 
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
-        upload_video(youtube, title, description, str(video_file))
+        result = upload_video(youtube, title, description, str(video_file))
+
+        if result is None:
+            # クォータ超過: 以降のアップロードも不可なのでループを抜ける
+            quota_exceeded = True
+            break
+
         uploaded_count += 1
 
     update_posted_ids(news_items)
+
+    if quota_exceeded:
+        print(
+            f"\nクォータ超過のためアップロードを中断しました（完了: {uploaded_count} 本）。\n"
+            "明日UTC 0:00にクォータがリセットされます。"
+        )
+        # posted_ids は更新済みなので次回は重複しない
+        # ワークフローとしては成功扱い（クォータは外部要因）
+        sys.exit(0)
+
     print(f"\n=== アップロード処理完了: {uploaded_count} 本 ===")
 
 
