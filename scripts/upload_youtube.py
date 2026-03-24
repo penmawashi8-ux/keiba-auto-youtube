@@ -13,8 +13,7 @@ from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
 NEWS_JSON = "news.json"
-SCRIPT_TXT = "script.txt"
-VIDEO_FILE = "output/video.mp4"
+OUTPUT_DIR = "output"
 POSTED_IDS_FILE = "posted_ids.txt"
 
 YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
@@ -48,7 +47,6 @@ def load_credentials() -> Credentials:
         scopes=YOUTUBE_SCOPES,
     )
 
-    # トークンをリフレッシュ
     try:
         request = google.auth.transport.requests.Request()
         creds.refresh(request)
@@ -70,10 +68,8 @@ def update_posted_ids(news_items: list[dict]) -> None:
     print(f"投稿済みID {len(new_ids)} 件を {POSTED_IDS_FILE} に追記しました。")
 
 
-def upload_video(creds: Credentials, title: str, description: str, video_path: str) -> str:
+def upload_video(youtube, title: str, description: str, video_path: str) -> str:
     """YouTube に動画をアップロードしてvideoIdを返す。"""
-    youtube = build("youtube", "v3", credentials=creds)
-
     body = {
         "snippet": {
             "title": f"【競馬速報】{title} #Shorts",
@@ -93,7 +89,7 @@ def upload_video(creds: Credentials, title: str, description: str, video_path: s
         video_path,
         mimetype="video/mp4",
         resumable=True,
-        chunksize=1024 * 1024,  # 1MB チャンク
+        chunksize=1024 * 1024,
     )
 
     print(f"YouTube にアップロード中: {body['snippet']['title']}")
@@ -134,26 +130,47 @@ def build_description(script: str) -> str:
 def main() -> None:
     print("=== YouTube アップロード開始 ===")
 
-    # 入力ファイル確認
-    for path in [VIDEO_FILE, NEWS_JSON, SCRIPT_TXT]:
-        if not Path(path).exists():
-            print(f"[エラー] {path} が見つかりません。", file=sys.stderr)
-            sys.exit(1)
+    if not Path(NEWS_JSON).exists():
+        print(f"[エラー] {NEWS_JSON} が見つかりません。", file=sys.stderr)
+        sys.exit(1)
 
     news_items: list[dict] = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
     if not news_items:
         print("ニュースが0件のためアップロードをスキップします。")
         sys.exit(0)
 
-    script = Path(SCRIPT_TXT).read_text(encoding="utf-8").strip()
-    title = news_items[0]["title"]
-    description = build_description(script)
+    video_files = sorted(Path(OUTPUT_DIR).glob("video_*.mp4"))
+    if not video_files:
+        print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
+        sys.exit(1)
 
     creds = load_credentials()
-    upload_video(creds, title, description, VIDEO_FILE)
-    update_posted_ids(news_items)
+    youtube = build("youtube", "v3", credentials=creds)
 
-    print("=== アップロード処理完了 ===")
+    uploaded_count = 0
+    for video_file in video_files:
+        idx = int(video_file.stem.split("_")[1])
+
+        if idx >= len(news_items):
+            print(f"  [警告] インデックス {idx} の記事がありません。スキップします。")
+            continue
+
+        script_path = Path(f"{OUTPUT_DIR}/script_{idx}.txt")
+        if not script_path.exists():
+            print(f"  [警告] {script_path} が見つかりません。スキップします。")
+            continue
+
+        item = news_items[idx]
+        title = item["title"]
+        script = script_path.read_text(encoding="utf-8").strip()
+        description = build_description(script)
+
+        print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
+        upload_video(youtube, title, description, str(video_file))
+        uploaded_count += 1
+
+    update_posted_ids(news_items)
+    print(f"\n=== アップロード処理完了: {uploaded_count} 本 ===")
 
 
 if __name__ == "__main__":
