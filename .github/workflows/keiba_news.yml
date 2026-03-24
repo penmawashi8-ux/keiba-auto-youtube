@@ -68,6 +68,48 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_audio.py
 
+      - name: 競馬画像をダウンロード
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          python - <<'EOF'
+          import requests
+          from pathlib import Path
+
+          Path("assets").mkdir(exist_ok=True)
+          headers = {"User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1)"}
+
+          images = [
+              ("bg_real_1.jpg", "https://upload.wikimedia.org/wikipedia/commons/4/44/Racecourse.jpg"),
+              ("bg_real_2.jpg", "https://upload.wikimedia.org/wikipedia/commons/9/9d/Horse_racing_2.jpg"),
+              ("bg_real_3.jpg", "https://upload.wikimedia.org/wikipedia/commons/f/f0/Horse_Racing_in_Mumbai.jpg"),
+              ("bg_real_4.jpg", "https://upload.wikimedia.org/wikipedia/commons/3/38/2006_Newmarket_July_Course.jpg"),
+              ("bg_real_5.jpg", "https://upload.wikimedia.org/wikipedia/commons/6/6f/Horse_Racing_Cheltenham_Festival_2007.jpg"),
+          ]
+
+          success = 0
+          for filename, url in images:
+              path = f"assets/{filename}"
+              if Path(path).exists():
+                  print(f"⏭ スキップ（既存）: {filename}")
+                  success += 1
+                  continue
+              try:
+                  r = requests.get(url, timeout=20, headers=headers, allow_redirects=True)
+                  print(f"  → status={r.status_code} size={len(r.content)}")
+                  if r.status_code == 200 and len(r.content) > 5000:
+                      with open(path, "wb") as f:
+                          f.write(r.content)
+                      print(f"✅ 成功: {filename}")
+                      success += 1
+                  else:
+                      print(f"❌ 失敗: {filename}")
+              except Exception as e:
+                  print(f"❌ エラー: {filename} ({e})")
+
+          print(f"ダウンロード成功: {success}/{len(images)}")
+          print(f"assets内ファイル: {list(Path('assets').iterdir())}")
+          EOF
+
       - name: Generate video
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
