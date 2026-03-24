@@ -30,7 +30,10 @@ CLIENT_ID = "704753208448-rfq5pkn7vtvqmthksdp58u15f4dirfbd.apps.googleuserconten
 CLIENT_SECRET = "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"
 # ========================================================
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/drive.file",
+]
 REDIRECT_URI = "http://localhost:8080"
 
 
@@ -63,9 +66,9 @@ def main() -> None:
     print("\n" + "=" * 60)
     print("認証成功！以下の値を GitHub Secrets に登録してください。")
     print("=" * 60)
-    print(f"\nYOUTUBE_CLIENT_ID:\n  {CLIENT_ID}")
-    print(f"\nYOUTUBE_CLIENT_SECRET:\n  {CLIENT_SECRET}")
-    print(f"\nYOUTUBE_REFRESH_TOKEN:\n  {creds.refresh_token}")
+    print(f"\nGOOGLE_CLIENT_ID:\n  {CLIENT_ID}")
+    print(f"\nGOOGLE_CLIENT_SECRET:\n  {CLIENT_SECRET}")
+    print(f"\nGOOGLE_REFRESH_TOKEN:\n  {creds.refresh_token}")
     print("\n" + "=" * 60)
 
     # オプション: トークン情報をファイルに保存
@@ -74,7 +77,7 @@ def main() -> None:
         "client_secret": CLIENT_SECRET,
         "refresh_token": creds.refresh_token,
     }
-    output_path = Path("youtube_token.json")
+    output_path = Path("google_token.json")
     output_path.write_text(json.dumps(token_info, indent=2), encoding="utf-8")
     print(f"\n（参考用に {output_path} にも保存しました。このファイルは .gitignore に追加してください）")
 

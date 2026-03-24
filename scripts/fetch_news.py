@@ -45,6 +45,31 @@ NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
 
+# ---------------------------------------------------------------------------
+# 競馬関連フィルタ
+# ---------------------------------------------------------------------------
+
+_ALLOW_KEYWORDS = [
+    "競馬", "horse racing", "jra", "地方競馬", "騎手", "調教師",
+    "レース", "厩舎", "g1", "重賞", "競走馬", "牡馬", "牝馬", "騸馬",
+]
+_DENY_KEYWORDS = [
+    "ボートレース", "競艇", "オートレース", "競輪", "パチンコ", "スロット",
+]
+
+
+def is_keiba_related(entry: dict) -> bool:
+    """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
+    text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
+    for kw in _DENY_KEYWORDS:
+        if kw in text:
+            return False
+    for kw in _ALLOW_KEYWORDS:
+        if kw in text:
+            return True
+    # RSSフィード自体が競馬クエリなので、どのキーワードにも引っかからない場合も通過させる
+    return True
+
 
 # ---------------------------------------------------------------------------
 # ユーティリティ
@@ -302,6 +327,10 @@ def fetch_news() -> list[dict]:
     # 投稿済みを除外
     unposted = [e for e in unique if e["id"] not in posted_ids]
     print(f"未投稿エントリー: {len(unposted)} 件")
+
+    # 競馬関連フィルタ（除外キーワードを含む記事を除去）
+    unposted = [e for e in unposted if is_keiba_related(e)]
+    print(f"競馬関連フィルタ後: {len(unposted)} 件")
 
     # 時間フィルタ: 24時間 → 48時間 → 最新3件（条件なし）
     selected: list[dict] = []
