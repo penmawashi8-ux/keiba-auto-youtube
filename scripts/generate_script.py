@@ -23,8 +23,9 @@ PREFERRED_MODELS = [
 
 SYSTEM_PROMPT = (
     "あなたはプロの競馬実況アナウンサーです。"
-    "以下のニュースを元に、YouTubeショート動画（60秒以内）用のナレーション脚本を日本語で作成してください。"
+    "以下のニュースを元に、YouTubeショート動画（45〜60秒）用のナレーション脚本を日本語で作成してください。"
     "視聴者が引き込まれる冒頭、ニュースの要点、締めの一言の構成にしてください。"
+    "必ず最後まで完結した文章で終わらせてください。途中で終わらないようにしてください。"
     "テキストのみ出力し、ト書きや記号は不要です。"
 )
 
@@ -84,7 +85,7 @@ def generate_script(news_items: list[dict]) -> str:
     params = {"key": api_key}
     body = {
         "contents": [{"parts": [{"text": full_prompt}]}],
-        "generationConfig": {"maxOutputTokens": 512, "temperature": 0.7},
+        "generationConfig": {"maxOutputTokens": 2048, "temperature": 0.7},
     }
 
     print(f"Gemini REST API に脚本生成リクエスト送信中...")
