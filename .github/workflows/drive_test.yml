@@ -66,19 +66,73 @@ jobs:
               sys.exit(1)
           EOF
 
-      - name: Upload to Google Drive
+      - name: Upload to Google Drive (inline debug)
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: |
-          python scripts/upload_drive.py 2>&1 | tee /tmp/drive_upload.log
-          STATUS=${PIPESTATUS[0]}
-          if [ $STATUS -ne 0 ]; then
-            echo "## Drive Upload Error" >> $GITHUB_STEP_SUMMARY
-            cat /tmp/drive_upload.log >> $GITHUB_STEP_SUMMARY
-            exit $STATUS
-          fi
+          python - <<'EOF'
+          import json, os, sys, traceback
+          from pathlib import Path
+
+          print("=== Drive アップロード開始 ===")
+          try:
+              import google.auth.transport.requests
+              from google.oauth2.credentials import Credentials
+              from googleapiclient.discovery import build
+              from googleapiclient.http import MediaFileUpload
+              from googleapiclient.errors import HttpError
+
+              cid = os.environ["GOOGLE_CLIENT_ID"]
+              cs  = os.environ["GOOGLE_CLIENT_SECRET"]
+              rt  = os.environ["GOOGLE_REFRESH_TOKEN"]
+
+              creds = Credentials(
+                  token=None, refresh_token=rt,
+                  token_uri="https://oauth2.googleapis.com/token",
+                  client_id=cid, client_secret=cs,
+                  scopes=["https://www.googleapis.com/auth/drive.file"],
+              )
+              creds.refresh(google.auth.transport.requests.Request())
+              print("トークンリフレッシュ: 成功")
+
+              drive = build("drive", "v3", credentials=creds)
+              print("Drive クライアント構築: 成功")
+
+              video_path = "output/video_0.mp4"
+              file_metadata = {"name": "【テスト】Drive接続確認.mp4", "mimeType": "video/mp4"}
+              media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True)
+
+              print(f"アップロード開始: {video_path}")
+              request = drive.files().create(body=file_metadata, media_body=media, fields="id")
+              response = None
+              while response is None:
+                  status, response = request.next_chunk()
+              file_id = response["id"]
+              print(f"アップロード完了: file_id={file_id}")
+
+              drive.permissions().create(
+                  fileId=file_id,
+                  body={"type": "anyone", "role": "reader"},
+              ).execute()
+              print(f"共有リンク: https://drive.google.com/file/d/{file_id}/view")
+
+          except HttpError as e:
+              try:
+                  error_json = json.loads(e.content)
+                  err_msg = error_json.get("error", {}).get("message", "")
+                  err_status = error_json.get("error", {}).get("status", "")
+              except Exception:
+                  err_msg = e.content.decode("utf-8", errors="replace")[:300]
+                  err_status = ""
+              print(f"::error::Drive HttpError {e.resp.status} {err_status}: {err_msg}")
+              sys.exit(1)
+          except Exception as e:
+              print(f"::error::{type(e).__name__}: {e}")
+              traceback.print_exc()
+              sys.exit(1)
+          EOF
 
       - name: Upload Drive logs as artifact
         if: always()
