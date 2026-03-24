@@ -60,8 +60,6 @@ jobs:
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
         run: python scripts/generate_audio.py
 
       - name: Generate video
