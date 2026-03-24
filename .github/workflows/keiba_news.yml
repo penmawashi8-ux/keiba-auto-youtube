@@ -81,6 +81,14 @@ jobs:
             exit $STATUS
           fi
 
+      - name: Upload Drive log as artifact
+        if: always() && steps.check_news.outputs.has_news == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: drive-upload-log
+          path: /tmp/drive_upload.log
+          if-no-files-found: ignore
+
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'
         run: |
