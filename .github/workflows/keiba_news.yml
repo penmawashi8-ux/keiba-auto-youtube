@@ -64,6 +64,15 @@ jobs:
             exit $STATUS
           fi
 
+      - name: AI画像を生成（接続テスト）
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          echo "=== DNS解決テスト ==="
+          nslookup image.pollinations.ai || echo "nslookup失敗"
+          echo "=== curl接続テスト ==="
+          curl -s --max-time 10 -o /dev/null -w "status=%{http_code} time=%{time_total}s\n" \
+            "https://image.pollinations.ai/models" || echo "curl失敗"
+
       - name: AI画像を生成
         if: steps.check_news.outputs.has_news == 'true'
         env:
