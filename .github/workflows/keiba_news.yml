@@ -69,8 +69,11 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python -u scripts/generate_images.py 2>&1 | tee ai_images.log
-          exit ${PIPESTATUS[0]}
+          python -u scripts/generate_images.py > "$GITHUB_WORKSPACE/ai_images.log" 2>&1
+          STATUS=$?
+          echo "=== ai_images.log ==="
+          cat "$GITHUB_WORKSPACE/ai_images.log"
+          exit $STATUS
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
