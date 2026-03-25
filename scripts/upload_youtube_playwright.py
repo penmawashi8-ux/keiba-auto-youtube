@@ -131,8 +131,9 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     )
     page.wait_for_selector(title_sel, timeout=30000)
     title_el = page.locator(title_sel).first
-    title_el.click(click_count=3)
-    title_el.fill(f"【競馬速報】{title[:90]} #Shorts")
+    title_el.click(force=True)
+    page.keyboard.press("Control+a")
+    page.keyboard.type(f"【競馬速報】{title[:90]} #Shorts")
     print("  タイトル入力完了")
 
     # ④ 説明
