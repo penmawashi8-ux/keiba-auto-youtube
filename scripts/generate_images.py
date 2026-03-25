@@ -19,7 +19,7 @@ NEWS_JSON = "news.json"
 ASSETS_DIR = Path("assets")
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
-HF_MODEL_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
+HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
 DEFAULT_PROMPTS = [
     "cinematic photo of horses racing at sunset on a beautiful racecourse, dramatic lighting, high quality",
