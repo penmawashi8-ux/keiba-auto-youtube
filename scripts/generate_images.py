@@ -70,10 +70,14 @@ def get_prompts_from_gemini(news_items: list[dict]) -> list[str]:
 def generate_image(prompt: str, filepath: str) -> bool:
     encoded = quote(prompt)
     seed = random.randint(1, 9999)
-    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&nologo=true&seed={seed}"
+    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&nologo=true&seed={seed}"
+    headers = {
+        "User-Agent": "Mozilla/5.0",
+        "Referer": "https://pollinations.ai/",
+    }
     print(f"  リクエスト: {url[:80]}...")
     try:
-        r = requests.get(url, timeout=60)
+        r = requests.get(url, headers=headers, timeout=60)
         if r.status_code == 200 and len(r.content) > 10000:
             with open(filepath, "wb") as f:
                 f.write(r.content)
@@ -106,25 +110,21 @@ def main() -> None:
     for i, p in enumerate(prompts, 1):
         print(f"    プロンプト{i}: {p[:60]}...")
 
-    # Pollinations.ai で画像生成
-    success = 0
+    # Pollinations.ai で画像生成（1枚でも失敗したらexit(1)）
+    failed = []
     for i, prompt in enumerate(prompts, 1):
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
         print(f"\n  [{i}/4] 画像生成: {prompt[:50]}...")
-        if generate_image(prompt, out_path):
-            success += 1
-        else:
-            # 既存のbg画像で代替
-            fallback = ASSETS_DIR / f"bg_{i}.jpg"
-            if fallback.exists():
-                import shutil
-                shutil.copy(str(fallback), out_path)
-                print(f"  ⚠ 代替: {fallback.name} → ai_{i}.jpg")
-                success += 1
+        if not generate_image(prompt, out_path):
+            failed.append(i)
 
-    print(f"\n=== 完了: {success}/4 枚生成 ===")
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
+    print(f"\n=== 結果: {4 - len(failed)}/4 枚生成 ===")
     print(f"  生成ファイル: {[f.name for f in ai_files]}")
+
+    if failed:
+        print(f"  [エラー] {len(failed)}枚の生成に失敗しました（ai_{failed}）", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
