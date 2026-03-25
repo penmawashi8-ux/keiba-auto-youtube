@@ -145,78 +145,80 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
 
     clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
 
-    # 【レース名】と主語（馬名・人名）を分離
+    # 3段構成: 【レース名】 / 馬名・人名 / 要点アクション
     bracket_match = re.match(r"(【[^】]{1,10}】)(.*)", clean_title)
     if bracket_match:
-        label = bracket_match.group(1)          # 例: 【京浜盃】
-        rest  = bracket_match.group(2)          # 例: ロックターミガンで砂クラシック...
-        # 最初の助詞（で/が/は/に/を/も/と/から）の直前までを主語として抽出
-        p = re.search(r"[でがはにをもとから]", rest)
-        key = rest[:p.start()] if p and p.start() >= 2 else rest[:8]
+        label = bracket_match.group(1)   # 例: 【京浜盃】
+        rest  = bracket_match.group(2)   # 例: ロックターミガンで砂クラシック戦線に名乗り…
     else:
         label = None
-        key   = clean_title[:10]
+        rest  = clean_title
+
+    # 主語（最初の助詞の前）
+    p = re.search(r"[でがはにをもとから]", rest)
+    if p and p.start() >= 2:
+        subject = rest[:p.start()]       # 例: ロックターミガン
+        after   = rest[p.start():]       # 例: で砂クラシック戦線に名乗り…
+    else:
+        subject = rest[:10]
+        after   = rest[10:]
+
+    # アクション: after の最初の区切り（句読点・「・引用符）まで、最大12文字
+    action_raw = re.split(r"[。、！？「」『』]", after.lstrip("でがはにをもとから"))[0]
+    action = action_raw[:12]
+    if action and not action[-1] in "！？":
+        action += "！"
 
     max_w = THUMB_W - 80
 
-    # key を1行に収まる最大フォントサイズで描画（120px〜60px）
-    for key_size in range(120, 59, -8):
+    def fit_font(text: str, max_size: int, min_size: int = 36) -> tuple:
+        for sz in range(max_size, min_size - 1, -8):
+            try:
+                f = ImageFont.truetype(font_path, sz) if font_path else ImageFont.load_default()
+            except Exception:
+                f = ImageFont.load_default()
+            try:
+                bb = draw.textbbox((0, 0), text, font=f)
+                w = bb[2] - bb[0]
+            except Exception:
+                w = len(text) * sz
+            if w <= max_w:
+                return f, sz
         try:
-            key_font = ImageFont.truetype(font_path, key_size) if font_path else ImageFont.load_default()
+            f = ImageFont.truetype(font_path, min_size) if font_path else ImageFont.load_default()
         except Exception:
-            key_font = ImageFont.load_default()
-        try:
-            bb = draw.textbbox((0, 0), key, font=key_font)
-            key_w = bb[2] - bb[0]
-        except Exception:
-            key_w = len(key) * key_size
-        if key_w <= max_w:
-            break
+            f = ImageFont.load_default()
+        return f, min_size
 
-    # label フォント（key の 55%サイズ）
-    label_size = max(36, int(key_size * 0.55))
+    subject_font, subject_size = fit_font(subject, 120)
+    label_size   = max(36, int(subject_size * 0.50))
+    action_size  = max(40, int(subject_size * 0.60))
     try:
-        label_font = ImageFont.truetype(font_path, label_size) if font_path else ImageFont.load_default()
+        label_font  = ImageFont.truetype(font_path, label_size)  if font_path else ImageFont.load_default()
+        action_font = ImageFont.truetype(font_path, action_size) if font_path else ImageFont.load_default()
     except Exception:
-        label_font = ImageFont.load_default()
+        label_font = action_font = ImageFont.load_default()
 
-    # 描画位置：下から中心に2行（label → key）
-    key_line_h = key_size + 16
-    label_line_h = label_size + 10
-    total_h = (label_line_h if label else 0) + key_line_h
-    start_y = THUMB_H - total_h - 72
-
-    # label 行（白・細ストローク）
+    # 描画位置: 下寄せ 3行
+    rows = []
     if label:
-        try:
-            bb = draw.textbbox((0, 0), label, font=label_font)
-            lw = bb[2] - bb[0]
-        except Exception:
-            lw = len(label) * label_size
-        draw.text(
-            (max((THUMB_W - lw) // 2, 40), start_y),
-            label,
-            font=label_font,
-            fill=(255, 255, 255),
-            stroke_width=4,
-            stroke_fill=(0, 0, 0),
-        )
-        start_y += label_line_h
+        rows.append((label,   label_font,   label_size,  (255, 255, 255), 3))
+    rows.append(    (subject, subject_font, subject_size,(255, 235,   0), 8))
+    if action:
+        rows.append((action,  action_font,  action_size, (255, 255, 255), 4))
 
-    # key 行（黄色・太ストローク）
-    try:
-        bb = draw.textbbox((0, 0), key, font=key_font)
-        kw = bb[2] - bb[0]
-    except Exception:
-        kw = len(key) * key_size
-    draw.text(
-        (max((THUMB_W - kw) // 2, 40), start_y),
-        key,
-        font=key_font,
-        fill=(255, 235, 0),
-        stroke_width=8,
-        stroke_fill=(0, 0, 0),
-    )
+    total_h = sum(sz + 14 for _, _, sz, _, _ in rows)
+    y = THUMB_H - total_h - 60
+
+    for text, font, sz, color, stroke in rows:
+        try:
+            bb = draw.textbbox((0, 0), text, font=font)
+            tw = bb[2] - bb[0]
+        except Exception:
+            tw = len(text) * sz
+        x = max((THUMB_W - tw) // 2, 40)
+        draw.text((x, y), text, font=font, fill=color, stroke_width=stroke, stroke_fill=(0, 0, 0))
+        y += sz + 14
 
     buf = io.BytesIO()
     bg.save(buf, "JPEG", quality=92)
