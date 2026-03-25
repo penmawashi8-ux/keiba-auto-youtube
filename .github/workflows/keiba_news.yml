@@ -157,6 +157,10 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: |
+          echo "=== output/ の動画ファイル ==="
+          ls -lh output/video_*.mp4 2>/dev/null || echo "(なし)"
+          echo "=== news.json 件数 ==="
+          python3 -c "import json; d=json.load(open('news.json')); print(len(d),'件')" 2>/dev/null || echo "(読み込み失敗)"
           python scripts/upload_youtube.py 2>&1 | tee /tmp/youtube_upload.log
           STATUS=${PIPESTATUS[0]}
           if [ $STATUS -ne 0 ]; then
