@@ -32,6 +32,32 @@ UPLOAD_DONE_TEXTS = [
 ]
 
 
+SAME_SITE_MAP = {
+    "no_restriction": "None",
+    "unspecified":    "None",
+    "lax":            "Lax",
+    "strict":         "Strict",
+    "none":           "None",
+}
+
+
+def normalize_cookies(cookies: list) -> list:
+    """Cookie-Editor 等のエクスポート形式を Playwright 互換に正規化する。"""
+    result = []
+    for c in cookies:
+        c = dict(c)
+        ss = str(c.get("sameSite", "")).lower()
+        c["sameSite"] = SAME_SITE_MAP.get(ss, "None")
+        # expires が未設定なら -1（セッションCookie扱い）
+        if "expires" not in c:
+            c["expires"] = -1
+        # Playwright が不要なフィールドを除去
+        for key in ("hostOnly", "session", "storeId", "id"):
+            c.pop(key, None)
+        result.append(c)
+    return result
+
+
 def load_cookies() -> list:
     raw = os.environ.get("YOUTUBE_COOKIES", "").strip()
     if not raw:
@@ -39,10 +65,9 @@ def load_cookies() -> list:
         sys.exit(1)
     try:
         cookies = json.loads(raw)
-        # Netscape 形式（文字列）だった場合は変換不要なので JSON 配列のみ対応
         if not isinstance(cookies, list):
             raise ValueError("Cookie は JSON 配列である必要があります")
-        return cookies
+        return normalize_cookies(cookies)
     except Exception as e:
         print(f"[エラー] YOUTUBE_COOKIES の解析失敗: {e}", file=sys.stderr)
         sys.exit(1)
