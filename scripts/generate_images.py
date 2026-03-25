@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-generate_images.py - ニュース内容からGemini APIでプロンプトを生成し、
-Pollinations.ai APIでAI画像を生成してassetsに保存する。
+generate_images.py - Gemini APIでAI画像を生成してassetsに保存する。
+
+Gemini 2.0 Flash の native image generation を使用。
+既存の GEMINI_API_KEY で動作する。
 """
 
+import base64
 import json
 import os
-import random
 import sys
 from pathlib import Path
-from urllib.parse import quote
 
 import requests
 
@@ -17,20 +18,14 @@ NEWS_JSON = "news.json"
 ASSETS_DIR = Path("assets")
 
 DEFAULT_PROMPTS = [
-    "cinematic photo of horses racing at sunset, dramatic lighting, high quality",
+    "cinematic photo of horses racing at sunset on a beautiful racecourse, dramatic lighting, high quality",
     "cinematic photo of jockey riding horse on racecourse, motion blur, high quality",
     "cinematic photo of horse racing crowd cheering at finish line, high quality",
     "cinematic photo of thoroughbred horse in paddock, golden hour, high quality",
 ]
 
 
-def get_prompts_from_gemini(news_items: list[dict]) -> list[str]:
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if not api_key:
-        print("  [警告] GEMINI_API_KEY が未設定。デフォルトプロンプトを使用します。")
-        return DEFAULT_PROMPTS
-
-    # 最初のニュースのタイトルと本文を使用
+def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
     item = news_items[0] if news_items else {}
     title = item.get("title", "")
     body = item.get("body", item.get("summary", ""))[:300]
@@ -54,7 +49,6 @@ def get_prompts_from_gemini(news_items: list[dict]) -> list[str]:
         r = requests.post(url, json=payload, timeout=30)
         r.raise_for_status()
         text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        # マークダウンコードブロックを除去
         text = text.replace("```json", "").replace("```", "").strip()
         prompts = json.loads(text)
         if isinstance(prompts, list) and len(prompts) >= 4:
@@ -67,61 +61,43 @@ def get_prompts_from_gemini(news_items: list[dict]) -> list[str]:
     return DEFAULT_PROMPTS
 
 
-def generate_image(prompt: str, filepath: str) -> bool:
-    encoded = quote(prompt)
-    seed = random.randint(1, 9999)
-    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&seed={seed}"
-    headers = {
-        "User-Agent": "Mozilla/5.0",
-        "Referer": "https://pollinations.ai/",
+def generate_image_via_gemini(api_key: str, prompt: str, filepath: str) -> bool:
+    """Gemini 2.0 Flash の native image generation でAI画像を生成して保存する。"""
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-preview-image-generation:generateContent?key={api_key}"
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"responseModalities": ["IMAGE", "TEXT"]},
     }
-    print(f"  リクエスト URL: {url[:100]}...")
+    print(f"  Gemini画像生成リクエスト送信...")
     try:
-        r = requests.get(url, headers=headers, timeout=60)
-        content_type = r.headers.get("Content-Type", "")
-        print(f"  → status={r.status_code} size={len(r.content)} content-type={content_type[:40]}")
+        r = requests.post(url, json=payload, timeout=120)
+        print(f"  → status={r.status_code}")
         if r.status_code != 200:
-            print(f"  レスポンスボディ(先頭200字): {r.text[:200]}")
-        if r.status_code == 200 and len(r.content) > 10000:
-            with open(filepath, "wb") as f:
-                f.write(r.content)
-            size_kb = len(r.content) // 1024
-            print(f"  ✅ 画像生成成功: {filepath} ({size_kb}KB)")
-            return True
-        print(f"  ❌ 失敗: status={r.status_code} size={len(r.content)}")
+            print(f"  レスポンス: {r.text[:300]}")
+            return False
+        parts = r.json()["candidates"][0]["content"]["parts"]
+        for part in parts:
+            if "inlineData" in part:
+                img_data = base64.b64decode(part["inlineData"]["data"])
+                with open(filepath, "wb") as f:
+                    f.write(img_data)
+                size_kb = len(img_data) // 1024
+                print(f"  ✅ 画像生成成功: {filepath} ({size_kb}KB)")
+                return True
+        print(f"  ❌ レスポンスにinlineDataなし。parts: {[list(p.keys()) for p in parts]}")
     except Exception as e:
         print(f"  ❌ エラー: {type(e).__name__}: {e}")
     return False
 
 
-def _connectivity_check() -> None:
-    """Pollinations.aiへの接続テスト"""
-    import socket
-    print("  --- 接続テスト ---")
-    try:
-        ip = socket.gethostbyname("image.pollinations.ai")
-        print(f"  DNS解決: image.pollinations.ai → {ip}")
-    except Exception as e:
-        print(f"  DNS解決失敗: {e}")
-    try:
-        r = requests.get(
-            "https://image.pollinations.ai/models",
-            headers={"User-Agent": "Mozilla/5.0"},
-            timeout=10,
-        )
-        print(f"  /models: status={r.status_code} size={len(r.content)} body={r.text[:100]}")
-    except Exception as e:
-        print(f"  /models アクセス失敗: {type(e).__name__}: {e}")
-    print("  --- 接続テスト終了 ---")
-
-
 def main() -> None:
-    print("=== AI画像生成開始 ===")
+    print("=== AI画像生成開始（Gemini native image generation）===")
     ASSETS_DIR.mkdir(exist_ok=True)
-    sys.stdout.flush()
 
-    _connectivity_check()
-    sys.stdout.flush()
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key:
+        print("[エラー] GEMINI_API_KEY が未設定です。", file=sys.stderr)
+        sys.exit(1)
 
     # news.json 読み込み
     try:
@@ -130,21 +106,18 @@ def main() -> None:
         print(f"  [警告] news.json 読み込み失敗: {e}")
         news_items = []
 
-    if not news_items:
-        print("  ニュースが0件のためデフォルトプロンプトを使用します。")
-
     # Geminiでプロンプト生成
     print("  Gemini APIでプロンプト生成中...")
-    prompts = get_prompts_from_gemini(news_items)
+    prompts = get_prompts_from_gemini(api_key, news_items)
     for i, p in enumerate(prompts, 1):
-        print(f"    プロンプト{i}: {p[:60]}...")
+        print(f"    プロンプト{i}: {p[:70]}...")
 
-    # Pollinations.ai で画像生成（1枚でも失敗したらexit(1)）
+    # Gemini native image generation で画像生成
     failed = []
     for i, prompt in enumerate(prompts, 1):
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
-        print(f"\n  [{i}/4] 画像生成: {prompt[:50]}...")
-        if not generate_image(prompt, out_path):
+        print(f"\n  [{i}/4] 画像生成: {prompt[:60]}...")
+        if not generate_image_via_gemini(api_key, prompt, out_path):
             failed.append(i)
 
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
@@ -152,7 +125,7 @@ def main() -> None:
     print(f"  生成ファイル: {[f.name for f in ai_files]}")
 
     if failed:
-        print(f"  [エラー] {len(failed)}枚の生成に失敗しました（ai_{failed}）", file=sys.stderr)
+        print(f"  [エラー] {len(failed)}枚の生成に失敗しました（インデックス: {failed}）", file=sys.stderr)
         sys.exit(1)
 
 

@@ -64,25 +64,11 @@ jobs:
             exit $STATUS
           fi
 
-      - name: AI画像を生成（接続テスト）
-        if: steps.check_news.outputs.has_news == 'true'
-        run: |
-          echo "=== DNS解決テスト ==="
-          nslookup image.pollinations.ai || echo "nslookup失敗"
-          echo "=== curl接続テスト ==="
-          curl -s --max-time 10 -o /dev/null -w "status=%{http_code} time=%{time_total}s\n" \
-            "https://image.pollinations.ai/models" || echo "curl失敗"
-
       - name: AI画像を生成
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python -u scripts/generate_images.py > "$GITHUB_WORKSPACE/ai_images.log" 2>&1
-          STATUS=$?
-          echo "=== ai_images.log ==="
-          cat "$GITHUB_WORKSPACE/ai_images.log"
-          exit $STATUS
+        run: python scripts/generate_images.py
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
@@ -152,7 +138,6 @@ jobs:
           path: |
             /tmp/drive_diag.log
             /tmp/drive_upload.log
-            ai_images.log
           if-no-files-found: ignore
 
       - name: Commit and push posted_ids.txt
