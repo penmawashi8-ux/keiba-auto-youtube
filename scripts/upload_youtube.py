@@ -113,13 +113,10 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
     draw = ImageDraw.Draw(bg)
     font_path = find_japanese_font()
 
-    # フォントサイズ: タイトル長に応じて自動調整（最大80px）
-    base_font_size = 80
     try:
-        title_font = ImageFont.truetype(font_path, base_font_size) if font_path else ImageFont.load_default()
         badge_font = ImageFont.truetype(font_path, 36) if font_path else ImageFont.load_default()
     except Exception:
-        title_font = badge_font = ImageFont.load_default()
+        badge_font = ImageFont.load_default()
 
     # --- 「競馬速報」赤バッジ（左上） ---
     badge_text = "競馬速報"
@@ -143,59 +140,78 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
         stroke_fill=(150, 0, 0),
     )
 
-    # --- タイトル（中央どん！）---
+    # --- タイトル（一言どーん！スタイル）---
     import re
-    # 全角スペース等を除去して詰める
+
     clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
-    max_width = THUMB_W - 120  # 左右60pxマージン
 
-    def text_width(s: str) -> int:
-        try:
-            bb = draw.textbbox((0, 0), s, font=title_font)
-            return bb[2] - bb[0]
-        except Exception:
-            return len(s) * base_font_size
-
-    # 全体幅で何行必要か推定し、均等分割を目指す
-    total_w = text_width(clean_title)
-    n_lines = max(1, -(-total_w // max_width))  # ceiling div
-    target_line_w = total_w / n_lines
-
-    lines = []
-    current = ""
-    for ch in clean_title:
-        test = current + ch
-        tw = text_width(test)
-        # max_widthを超えるか、目標幅を超えかつ次が句読点でないなら折り返し
-        BREAK_AFTER = set("、。！？・,.")
-        if current and (tw > max_width or
-                        (tw > target_line_w * 1.1 and ch not in BREAK_AFTER)):
-            lines.append(current)
-            current = ch
+    # タイトルの核心部分を抽出（最初の意味のある区切りまで、最大18文字）
+    # 「」内、括弧 】 以降の馬名・人名部分を優先
+    core = clean_title
+    # 【〇〇】馬名… の形なら 【〇〇】馬名 を取り出す
+    m = re.match(r"(【[^】]{1,10}】)(.{3,12})", clean_title)
+    if m:
+        core = m.group(1) + "\n" + m.group(2)
+    elif len(clean_title) > 18:
+        # 読点・句点・感嘆符付近で区切る
+        for cut in range(12, 20):
+            if cut < len(clean_title) and clean_title[cut] in "、。！？・で が は に を も":
+                core = clean_title[:cut + 1]
+                break
         else:
-            current = test
-    if current:
-        lines.append(current)
-    lines = lines[:3]
+            core = clean_title[:16]
 
-    line_h = base_font_size + 20
+    max_width = THUMB_W - 80  # 左右40pxマージン
+
+    # フォントサイズを120pxから始めて2行以内に収まるまで縮小
+    for font_size in range(120, 59, -8):
+        try:
+            title_font = ImageFont.truetype(font_path, font_size) if font_path else ImageFont.load_default()
+        except Exception:
+            title_font = ImageFont.load_default()
+
+        def text_width_f(s: str, f=title_font) -> int:
+            try:
+                bb = draw.textbbox((0, 0), s, font=f)
+                return bb[2] - bb[0]
+            except Exception:
+                return len(s) * font_size
+
+        # 既に改行が含まれる場合はそのまま分割
+        if "\n" in core:
+            lines = core.split("\n")
+        else:
+            # 1行で収まるか確認
+            if text_width_f(core) <= max_width:
+                lines = [core]
+            else:
+                # 2行に分割
+                mid = len(core) // 2
+                lines = [core[:mid], core[mid:]]
+
+        # 全行がmax_width以内かチェック
+        if all(text_width_f(ln) <= max_width for ln in lines):
+            break
+
+    # テキストを画面下寄り中央に配置
+    line_h = font_size + 24
     total_h = len(lines) * line_h
-    start_y = (THUMB_H - total_h) // 2 + 20
+    start_y = THUMB_H - total_h - 80  # 下から80px
 
     for i, line in enumerate(lines):
         try:
             bb = draw.textbbox((0, 0), line, font=title_font)
             tw = bb[2] - bb[0]
         except Exception:
-            tw = len(line) * base_font_size
+            tw = len(line) * font_size
         x = max((THUMB_W - tw) // 2, 40)
         y = start_y + i * line_h
         draw.text(
             (x, y),
             line,
             font=title_font,
-            fill=(255, 255, 255),
-            stroke_width=6,
+            fill=(255, 235, 0),   # 黄色でインパクト
+            stroke_width=8,
             stroke_fill=(0, 0, 0),
         )
 
