@@ -106,20 +106,18 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
             b = int(50 + 50 * y / THUMB_H)
             draw_bg.line([(0, y), (THUMB_W, y)], fill=(r, g, b))
 
-    # --- グラデーションオーバーレイ（中央〜下を暗く） ---
-    overlay = Image.new("RGBA", (THUMB_W, THUMB_H), (0, 0, 0, 0))
-    draw_ov = ImageDraw.Draw(overlay)
-    for y in range(THUMB_H):
-        alpha = int(80 + 140 * (y / THUMB_H) ** 1.5)
-        draw_ov.line([(0, y), (THUMB_W, y)], fill=(0, 0, 0, alpha))
+    # --- 半透明オーバーレイ（全体を均一に少し暗く） ---
+    overlay = Image.new("RGBA", (THUMB_W, THUMB_H), (0, 0, 0, 110))
     bg = Image.alpha_composite(bg.convert("RGBA"), overlay).convert("RGB")
 
     draw = ImageDraw.Draw(bg)
     font_path = find_japanese_font()
 
+    # フォントサイズ: タイトル長に応じて自動調整（最大80px）
+    base_font_size = 80
     try:
-        title_font = ImageFont.truetype(font_path, 88) if font_path else ImageFont.load_default()
-        badge_font = ImageFont.truetype(font_path, 38) if font_path else ImageFont.load_default()
+        title_font = ImageFont.truetype(font_path, base_font_size) if font_path else ImageFont.load_default()
+        badge_font = ImageFont.truetype(font_path, 36) if font_path else ImageFont.load_default()
     except Exception:
         title_font = badge_font = ImageFont.load_default()
 
@@ -146,28 +144,58 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
     )
 
     # --- タイトル（中央どん！）---
-    max_chars = 15
-    lines = textwrap.wrap(title, width=max_chars) or [title]
+    import re
+    # 全角スペース等を除去して詰める
+    clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
+    max_width = THUMB_W - 120  # 左右60pxマージン
+
+    def text_width(s: str) -> int:
+        try:
+            bb = draw.textbbox((0, 0), s, font=title_font)
+            return bb[2] - bb[0]
+        except Exception:
+            return len(s) * base_font_size
+
+    # 全体幅で何行必要か推定し、均等分割を目指す
+    total_w = text_width(clean_title)
+    n_lines = max(1, -(-total_w // max_width))  # ceiling div
+    target_line_w = total_w / n_lines
+
+    lines = []
+    current = ""
+    for ch in clean_title:
+        test = current + ch
+        tw = text_width(test)
+        # max_widthを超えるか、目標幅を超えかつ次が句読点でないなら折り返し
+        BREAK_AFTER = set("、。！？・,.")
+        if current and (tw > max_width or
+                        (tw > target_line_w * 1.1 and ch not in BREAK_AFTER)):
+            lines.append(current)
+            current = ch
+        else:
+            current = test
+    if current:
+        lines.append(current)
     lines = lines[:3]
 
-    line_h = 104
+    line_h = base_font_size + 20
     total_h = len(lines) * line_h
-    start_y = (THUMB_H - total_h) // 2 + 30  # 少し下寄り
+    start_y = (THUMB_H - total_h) // 2 + 20
 
     for i, line in enumerate(lines):
         try:
             bb = draw.textbbox((0, 0), line, font=title_font)
             tw = bb[2] - bb[0]
         except Exception:
-            tw = len(line) * 50
-        x = max((THUMB_W - tw) // 2, 20)
+            tw = len(line) * base_font_size
+        x = max((THUMB_W - tw) // 2, 40)
         y = start_y + i * line_h
         draw.text(
             (x, y),
             line,
             font=title_font,
             fill=(255, 255, 255),
-            stroke_width=7,
+            stroke_width=6,
             stroke_fill=(0, 0, 0),
         )
 
