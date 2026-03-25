@@ -70,6 +70,7 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           python -u scripts/generate_images.py 2>&1 | tee "$GITHUB_WORKSPACE/ai_images_log.txt"
           exit ${PIPESTATUS[0]}

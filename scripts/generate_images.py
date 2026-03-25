@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
 generate_images.py - 無料で競馬AI画像を生成する。
-優先順:
-  1. Imagen 4 via Gemini Developer API predict endpoint (GEMINI_API_KEY)
-  2. HuggingFace Inference API FLUX.1-schnell (HF_TOKEN)
+試行順:
+  1. Pollinations.ai (認証不要・完全無料)
+  2. HuggingFace FLUX.1-schnell (HF_TOKEN が設定されている場合)
 """
 
-import base64
 import json
 import os
 import sys
 import time
+import urllib.parse
 from pathlib import Path
 
 import requests
@@ -19,15 +19,7 @@ NEWS_JSON = "news.json"
 ASSETS_DIR = Path("assets")
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
-# Imagen 4 モデル（predict エンドポイント用）
-IMAGEN_MODELS = [
-    "imagen-4.0-fast-generate-001",
-    "imagen-3.0-generate-002",
-]
-
-# HuggingFace モデル（HF_TOKEN 用）
-HF_MODEL = "black-forest-labs/FLUX.1-schnell"
-HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL}"
+HF_MODEL_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
 
 DEFAULT_PROMPTS = [
     "cinematic photo of horses racing at sunset on a beautiful racecourse, dramatic lighting, high quality",
@@ -65,38 +57,27 @@ def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
             print(f"  Geminiプロンプト生成成功: {len(prompts)}件", flush=True)
             return prompts[:4]
     except Exception as e:
-        safe = str(e).replace(api_key, "***")
+        safe = str(e).replace(api_key, "***") if api_key else str(e)
         print(f"  [警告] プロンプト生成失敗: {safe}", flush=True)
     return DEFAULT_PROMPTS
 
 
-def generate_via_imagen(api_key: str, prompt: str, filepath: str) -> bool:
-    """Imagen 4/3 predict エンドポイントで画像生成（GEMINI_API_KEY 使用）"""
-    for model in IMAGEN_MODELS:
-        url = f"{GEMINI_API_BASE}/{model}:predict"
-        payload = {
-            "instances": [{"prompt": prompt}],
-            "parameters": {"sampleCount": 1, "aspectRatio": "9:16"},
-        }
-        try:
-            r = requests.post(url, json=payload, params={"key": api_key}, timeout=120)
-            print(f"    [{model}] status={r.status_code}", flush=True)
-            if r.status_code == 200:
-                data = r.json()
-                predictions = data.get("predictions", [])
-                if predictions and "bytesBase64Encoded" in predictions[0]:
-                    img_data = base64.b64decode(predictions[0]["bytesBase64Encoded"])
-                    Path(filepath).write_bytes(img_data)
-                    print(f"    ✅ Imagen成功: {filepath} ({len(img_data)//1024}KB)", flush=True)
-                    return True
-                print(f"    ❌ レスポンス形式不明: {json.dumps(data)[:200]}", flush=True)
-            else:
-                err = r.json().get("error", {}) if r.headers.get("content-type", "").startswith("application/json") else {}
-                print(f"    エラー: {err.get('message', r.text[:200])}", flush=True)
-                if r.status_code == 429 and "limit: 0" in r.text:
-                    print("    → このモデルは無料枠なし。次を試します", flush=True)
-        except Exception as e:
-            print(f"    例外: {type(e).__name__}: {e}", flush=True)
+def generate_via_pollinations(prompt: str, filepath: str, index: int) -> bool:
+    """Pollinations.ai (無料・認証不要) で画像生成"""
+    encoded = urllib.parse.quote(prompt)
+    # seed を変えて各画像をユニークにする
+    url = f"https://image.pollinations.ai/prompt/{encoded}?model=flux&width=1080&height=1920&seed={index * 42}&enhance=true"
+    try:
+        print(f"    URL: {url[:80]}...", flush=True)
+        r = requests.get(url, timeout=120, headers={"User-Agent": "Mozilla/5.0"})
+        print(f"    status={r.status_code} size={len(r.content)}bytes", flush=True)
+        if r.status_code == 200 and len(r.content) > 5000:
+            Path(filepath).write_bytes(r.content)
+            print(f"    ✅ Pollinations成功: {filepath} ({len(r.content)//1024}KB)", flush=True)
+            return True
+        print(f"    ❌ 失敗: status={r.status_code}", flush=True)
+    except Exception as e:
+        print(f"    ❌ 例外: {type(e).__name__}: {e}", flush=True)
     return False
 
 
@@ -106,9 +87,9 @@ def generate_via_huggingface(hf_token: str, prompt: str, filepath: str) -> bool:
     payload = {"inputs": prompt}
     for attempt in range(4):
         try:
-            r = requests.post(HF_API_URL, headers=headers, json=payload, timeout=120)
-            print(f"    [HuggingFace] status={r.status_code}", flush=True)
-            if r.status_code == 200:
+            r = requests.post(HF_MODEL_URL, headers=headers, json=payload, timeout=120)
+            print(f"    [HF] status={r.status_code}", flush=True)
+            if r.status_code == 200 and len(r.content) > 1000:
                 Path(filepath).write_bytes(r.content)
                 print(f"    ✅ HF成功: {filepath} ({len(r.content)//1024}KB)", flush=True)
                 return True
@@ -132,10 +113,6 @@ def main() -> None:
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
     hf_token = os.environ.get("HF_TOKEN", "")
 
-    if not gemini_key and not hf_token:
-        print("[エラー] GEMINI_API_KEY または HF_TOKEN が必要です", file=sys.stderr)
-        sys.exit(1)
-
     # プロンプト生成
     try:
         news_items = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
@@ -154,18 +131,21 @@ def main() -> None:
         print(f"\n  [{i}/4] 画像生成中...", flush=True)
         success = False
 
-        # 1. Imagen 4/3 (Gemini API predict)
-        if gemini_key:
-            print("  → Imagen API を試行", flush=True)
-            success = generate_via_imagen(gemini_key, prompt, out_path)
+        # 1. Pollinations.ai (無料・認証不要)
+        print("  → Pollinations.ai を試行", flush=True)
+        success = generate_via_pollinations(prompt, out_path, i)
 
-        # 2. HuggingFace FLUX.1-schnell
+        # 2. HuggingFace FLUX.1-schnell (HF_TOKEN が必要)
         if not success and hf_token:
             print("  → HuggingFace FLUX.1-schnell を試行", flush=True)
             success = generate_via_huggingface(hf_token, prompt, out_path)
 
         if not success:
             failed.append(i)
+
+        # Pollinations.ai のレート制限対策（次のリクエストまで待機）
+        if i < len(prompts):
+            time.sleep(16)
 
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
     print(f"\n=== 結果: {4 - len(failed)}/4 枚生成 ===", flush=True)
