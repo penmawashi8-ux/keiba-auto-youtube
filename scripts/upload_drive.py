@@ -5,6 +5,7 @@
 - 共有リンクをコンソールに出力する
 """
 
+import io
 import json
 import os
 import sys
@@ -14,7 +15,10 @@ import google.auth.transport.requests
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaFileUpload
+from googleapiclient.http import MediaFileUpload, MediaIoBaseUpload
+
+sys.path.insert(0, str(Path(__file__).parent))
+from upload_youtube import generate_thumbnail
 
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
@@ -161,6 +165,27 @@ def main() -> None:
         share_link = upload_to_drive(drive, title, str(video_file))
         uploaded_links.append(share_link)
         print(f"動画リンク: {share_link}")
+
+        # サムネイル生成・Drive アップロード
+        print("  サムネイル生成中...")
+        try:
+            thumb_bytes = generate_thumbnail(title, idx)
+            thumb_metadata = {
+                "name": f"【競馬速報】{title[:40]}_サムネイル.jpg",
+                "mimeType": "image/jpeg",
+            }
+            thumb_media = MediaIoBaseUpload(io.BytesIO(thumb_bytes), mimetype="image/jpeg")
+            thumb_resp = drive.files().create(
+                body=thumb_metadata, media_body=thumb_media, fields="id"
+            ).execute()
+            drive.permissions().create(
+                fileId=thumb_resp["id"],
+                body={"type": "anyone", "role": "reader"},
+            ).execute()
+            thumb_link = f"https://drive.google.com/file/d/{thumb_resp['id']}/view"
+            print(f"  サムネイルリンク: {thumb_link}")
+        except Exception as e:
+            print(f"  [警告] サムネイルアップロード失敗: {e}", file=sys.stderr)
 
     update_posted_ids(news_items)
 
