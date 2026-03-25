@@ -66,7 +66,7 @@ def generate_via_pollinations(prompt: str, filepath: str, index: int) -> bool:
     """Pollinations.ai (無料・認証不要) で画像生成"""
     encoded = urllib.parse.quote(prompt)
     # seed を変えて各画像をユニークにする
-    url = f"https://image.pollinations.ai/prompt/{encoded}?model=flux&width=1080&height=1920&seed={index * 42}&enhance=true"
+    url = f"https://image.pollinations.ai/prompt/{encoded}?model=flux&width=1080&height=1920&seed={index * 42}"
     try:
         print(f"    URL: {url[:80]}...", flush=True)
         r = requests.get(url, timeout=120, headers={"User-Agent": "Mozilla/5.0"})
