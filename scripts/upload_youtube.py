@@ -21,10 +21,11 @@ OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
 
-YOUTUBE_SCOPES = [
-    "https://www.googleapis.com/auth/youtube.upload",
-    "https://www.googleapis.com/auth/youtube.force-ssl",
-]
+YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+# サムネイルAPIには youtube.force-ssl スコープが必要。
+# 既存トークンが youtube.upload のみの場合、thumbnails.set は 403 になるが
+# 動画アップロード自体には影響しない（upload_thumbnail が警告のみで継続）。
+# 再発行手順は scripts/get_refresh_token.py を参照。
 CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
