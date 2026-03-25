@@ -75,13 +75,33 @@ jobs:
 
       - name: AI画像ログをIssueに投稿（失敗時のみ）
         if: failure() && steps.ai_images.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          LOG=$(head -80 "$GITHUB_WORKSPACE/ai_images_log.txt" 2>/dev/null || echo "(ログなし)")
-          curl -s -X POST \
-            -H "Authorization: Bearer ${{ github.token }}" \
-            -H "Content-Type: application/json" \
-            "https://api.github.com/repos/${{ github.repository }}/issues" \
-            -d "{\"title\": \"[DEBUG] AI画像生成ログ $(date -u +%Y-%m-%dT%H:%M)\", \"body\": \"\`\`\`\n${LOG}\n\`\`\`\"}"
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = os.environ.get("GITHUB_WORKSPACE", "") + "/ai_images_log.txt"
+          try:
+              with open(log_path) as f:
+                  log = "".join(f.readlines()[:80])
+          except Exception:
+              log = "(ログなし)"
+          title = "[DEBUG] AI画像生成ログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Issue作成: {data.get('html_url')}")
+          PYEOF
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
