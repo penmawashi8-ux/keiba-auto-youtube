@@ -150,29 +150,29 @@ jobs:
               sys.exit(1)
           EOF
 
-      - name: Upload to Google Drive
+      - name: Upload to YouTube
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: |
-          python scripts/upload_drive.py 2>&1 | tee /tmp/drive_upload.log
+          python scripts/upload_youtube.py 2>&1 | tee /tmp/youtube_upload.log
           STATUS=${PIPESTATUS[0]}
           if [ $STATUS -ne 0 ]; then
-            echo "## Drive Upload Error" >> $GITHUB_STEP_SUMMARY
-            cat /tmp/drive_upload.log >> $GITHUB_STEP_SUMMARY
+            echo "## YouTube Upload Error" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/youtube_upload.log >> $GITHUB_STEP_SUMMARY
             exit $STATUS
           fi
 
-      - name: Upload Drive logs as artifact
+      - name: Upload YouTube logs as artifact
         if: always() && steps.check_news.outputs.has_news == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: drive-logs
+          name: youtube-logs
           path: |
             /tmp/drive_diag.log
-            /tmp/drive_upload.log
+            /tmp/youtube_upload.log
           if-no-files-found: ignore
 
       - name: Commit and push posted_ids.txt

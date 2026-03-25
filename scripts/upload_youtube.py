@@ -26,15 +26,15 @@ QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitE
 
 def load_credentials() -> Credentials:
     """環境変数からOAuth2認証情報を構築する。"""
-    client_id = os.environ.get("YOUTUBE_CLIENT_ID")
-    client_secret = os.environ.get("YOUTUBE_CLIENT_SECRET")
-    refresh_token = os.environ.get("YOUTUBE_REFRESH_TOKEN")
+    client_id = os.environ.get("GOOGLE_CLIENT_ID")
+    client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
+    refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
 
     missing = [
         name for name, val in [
-            ("YOUTUBE_CLIENT_ID", client_id),
-            ("YOUTUBE_CLIENT_SECRET", client_secret),
-            ("YOUTUBE_REFRESH_TOKEN", refresh_token),
+            ("GOOGLE_CLIENT_ID", client_id),
+            ("GOOGLE_CLIENT_SECRET", client_secret),
+            ("GOOGLE_REFRESH_TOKEN", refresh_token),
         ] if not val
     ]
     if missing:
