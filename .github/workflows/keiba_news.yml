@@ -65,10 +65,23 @@ jobs:
           fi
 
       - name: AI画像を生成
+        id: ai_images
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python -u scripts/generate_images.py
+        run: |
+          python -u scripts/generate_images.py 2>&1 | tee "$GITHUB_WORKSPACE/ai_images_log.txt"
+          exit ${PIPESTATUS[0]}
+
+      - name: AI画像ログをIssueに投稿（失敗時のみ）
+        if: failure() && steps.ai_images.conclusion == 'failure'
+        run: |
+          LOG=$(head -80 "$GITHUB_WORKSPACE/ai_images_log.txt" 2>/dev/null || echo "(ログなし)")
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Content-Type: application/json" \
+            "https://api.github.com/repos/${{ github.repository }}/issues" \
+            -d "{\"title\": \"[DEBUG] AI画像生成ログ $(date -u +%Y-%m-%dT%H:%M)\", \"body\": \"\`\`\`\n${LOG}\n\`\`\`\"}"
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
