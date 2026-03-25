@@ -152,10 +152,6 @@ jobs:
 
       - name: Upload to YouTube
         if: steps.check_news.outputs.has_news == 'true'
-        env:
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: |
           echo "=== output/ の動画ファイル ==="
           ls -lh output/video_*.mp4 2>/dev/null || echo "(なし)"
@@ -163,11 +159,40 @@ jobs:
           python3 -c "import json; d=json.load(open('news.json')); print(len(d),'件')" 2>/dev/null || echo "(読み込み失敗)"
           python scripts/upload_youtube.py 2>&1 | tee /tmp/youtube_upload.log
           STATUS=${PIPESTATUS[0]}
+          # 常にログをIssueに投稿して内容を確認できるようにする
+          python3 - <<'PYEOF'
+          import os, json, urllib.request
+          log_path = "/tmp/youtube_upload.log"
+          try:
+              with open(log_path) as f:
+                  log = f.read()[:3000]
+          except Exception:
+              log = "(ログなし)"
+          import datetime
+          title = "[DEBUG] YouTube Upload Log " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Issue作成: {data.get('html_url')}")
+          PYEOF
           if [ $STATUS -ne 0 ]; then
-            echo "## YouTube Upload Error" >> $GITHUB_STEP_SUMMARY
-            cat /tmp/youtube_upload.log >> $GITHUB_STEP_SUMMARY
             exit $STATUS
           fi
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
 
       - name: Upload YouTube logs as artifact
         if: always() && steps.check_news.outputs.has_news == 'true'
