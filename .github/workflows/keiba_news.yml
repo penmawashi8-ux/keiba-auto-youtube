@@ -118,10 +118,36 @@ jobs:
         run: playwright install chromium --with-deps
 
       - name: Upload to YouTube (Playwright)
+        id: playwright_upload
         if: steps.check_news.outputs.has_news == 'true'
         env:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-        run: python scripts/upload_youtube_playwright.py
+        run: python scripts/upload_youtube_playwright.py 2>&1 | tee /tmp/playwright.log; exit ${PIPESTATUS[0]}
+
+      - name: Post Playwright log to Issue (失敗時)
+        if: failure() && steps.playwright_upload.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          try:
+              log = open("/tmp/playwright.log").read()[-3000:]
+          except Exception:
+              log = "(ログなし)"
+          title = "[DEBUG] Playwright upload log " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{os.environ['GH_REPO']}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as r:
+              print(json.loads(r.read()).get("html_url"))
+          PYEOF
 
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'
