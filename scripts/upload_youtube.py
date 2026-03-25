@@ -145,75 +145,78 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
 
     clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
 
-    # タイトルの核心部分を抽出（最初の意味のある区切りまで、最大18文字）
-    # 「」内、括弧 】 以降の馬名・人名部分を優先
-    core = clean_title
-    # 【〇〇】馬名… の形なら 【〇〇】馬名 を取り出す
-    m = re.match(r"(【[^】]{1,10}】)(.{3,12})", clean_title)
-    if m:
-        core = m.group(1) + "\n" + m.group(2)
-    elif len(clean_title) > 18:
-        # 読点・句点・感嘆符付近で区切る
-        for cut in range(12, 20):
-            if cut < len(clean_title) and clean_title[cut] in "、。！？・で が は に を も":
-                core = clean_title[:cut + 1]
-                break
-        else:
-            core = clean_title[:16]
+    # 【レース名】と主語（馬名・人名）を分離
+    bracket_match = re.match(r"(【[^】]{1,10}】)(.*)", clean_title)
+    if bracket_match:
+        label = bracket_match.group(1)          # 例: 【京浜盃】
+        rest  = bracket_match.group(2)          # 例: ロックターミガンで砂クラシック...
+        # 最初の助詞（で/が/は/に/を/も/と/から）の直前までを主語として抽出
+        p = re.search(r"[でがはにをもとから]", rest)
+        key = rest[:p.start()] if p and p.start() >= 2 else rest[:8]
+    else:
+        label = None
+        key   = clean_title[:10]
 
-    max_width = THUMB_W - 80  # 左右40pxマージン
+    max_w = THUMB_W - 80
 
-    # フォントサイズを120pxから始めて2行以内に収まるまで縮小
-    for font_size in range(120, 59, -8):
+    # key を1行に収まる最大フォントサイズで描画（120px〜60px）
+    for key_size in range(120, 59, -8):
         try:
-            title_font = ImageFont.truetype(font_path, font_size) if font_path else ImageFont.load_default()
+            key_font = ImageFont.truetype(font_path, key_size) if font_path else ImageFont.load_default()
         except Exception:
-            title_font = ImageFont.load_default()
-
-        def text_width_f(s: str, f=title_font) -> int:
-            try:
-                bb = draw.textbbox((0, 0), s, font=f)
-                return bb[2] - bb[0]
-            except Exception:
-                return len(s) * font_size
-
-        # 既に改行が含まれる場合はそのまま分割
-        if "\n" in core:
-            lines = core.split("\n")
-        else:
-            # 1行で収まるか確認
-            if text_width_f(core) <= max_width:
-                lines = [core]
-            else:
-                # 2行に分割
-                mid = len(core) // 2
-                lines = [core[:mid], core[mid:]]
-
-        # 全行がmax_width以内かチェック
-        if all(text_width_f(ln) <= max_width for ln in lines):
+            key_font = ImageFont.load_default()
+        try:
+            bb = draw.textbbox((0, 0), key, font=key_font)
+            key_w = bb[2] - bb[0]
+        except Exception:
+            key_w = len(key) * key_size
+        if key_w <= max_w:
             break
 
-    # テキストを画面下寄り中央に配置
-    line_h = font_size + 24
-    total_h = len(lines) * line_h
-    start_y = THUMB_H - total_h - 80  # 下から80px
+    # label フォント（key の 55%サイズ）
+    label_size = max(36, int(key_size * 0.55))
+    try:
+        label_font = ImageFont.truetype(font_path, label_size) if font_path else ImageFont.load_default()
+    except Exception:
+        label_font = ImageFont.load_default()
 
-    for i, line in enumerate(lines):
+    # 描画位置：下から中心に2行（label → key）
+    key_line_h = key_size + 16
+    label_line_h = label_size + 10
+    total_h = (label_line_h if label else 0) + key_line_h
+    start_y = THUMB_H - total_h - 72
+
+    # label 行（白・細ストローク）
+    if label:
         try:
-            bb = draw.textbbox((0, 0), line, font=title_font)
-            tw = bb[2] - bb[0]
+            bb = draw.textbbox((0, 0), label, font=label_font)
+            lw = bb[2] - bb[0]
         except Exception:
-            tw = len(line) * font_size
-        x = max((THUMB_W - tw) // 2, 40)
-        y = start_y + i * line_h
+            lw = len(label) * label_size
         draw.text(
-            (x, y),
-            line,
-            font=title_font,
-            fill=(255, 235, 0),   # 黄色でインパクト
-            stroke_width=8,
+            (max((THUMB_W - lw) // 2, 40), start_y),
+            label,
+            font=label_font,
+            fill=(255, 255, 255),
+            stroke_width=4,
             stroke_fill=(0, 0, 0),
         )
+        start_y += label_line_h
+
+    # key 行（黄色・太ストローク）
+    try:
+        bb = draw.textbbox((0, 0), key, font=key_font)
+        kw = bb[2] - bb[0]
+    except Exception:
+        kw = len(key) * key_size
+    draw.text(
+        (max((THUMB_W - kw) // 2, 40), start_y),
+        key,
+        font=key_font,
+        fill=(255, 235, 0),
+        stroke_width=8,
+        stroke_fill=(0, 0, 0),
+    )
 
     buf = io.BytesIO()
     bg.save(buf, "JPEG", quality=92)
