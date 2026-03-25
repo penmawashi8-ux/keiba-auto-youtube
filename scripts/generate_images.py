@@ -25,7 +25,7 @@ DEFAULT_PROMPTS = [
 
 def list_models(api_key: str) -> tuple[list[str], list[str]]:
     try:
-        r = requests.get(GEMINI_API_BASE, params={"key": api_key}, timeout=15)
+        r = _safe_request("get", GEMINI_API_BASE, api_key, timeout=15)
         r.raise_for_status()
         models = r.json().get("models", [])
         all_names = [m["name"].replace("models/", "") for m in models]
@@ -35,8 +35,18 @@ def list_models(api_key: str) -> tuple[list[str], list[str]]:
         print(f"  画像生成対応Geminiモデル: {image_models}")
         return all_names, image_models
     except Exception as e:
-        print(f"  [警告] モデル一覧取得失敗: {e}")
+        print(f"  [警告] モデル一覧取得失敗: {type(e).__name__}: {str(e).replace(api_key, '***')}")
         return [], []
+
+
+def _safe_request(method: str, url: str, api_key: str, **kwargs) -> requests.Response:
+    """APIキーをURLパラメータに含めてリクエスト（例外メッセージにキーを含めない）"""
+    try:
+        return getattr(requests, method)(url, params={"key": api_key}, **kwargs)
+    except requests.exceptions.RequestException as e:
+        # URLからキーを除去してエラーメッセージを安全にする
+        safe_msg = str(e).replace(api_key, "***")
+        raise requests.exceptions.RequestException(safe_msg) from None
 
 
 def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
@@ -52,10 +62,10 @@ def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
         "JSON配列で返してください。余分なテキストは不要です。\n\n"
         f"タイトル: {title}\n本文: {body}"
     )
-    url = f"{GEMINI_API_BASE}/gemini-2.0-flash:generateContent"
+    url = f"{GEMINI_API_BASE}/gemini-2.5-flash:generateContent"
     try:
-        r = requests.post(url, json={"contents": [{"parts": [{"text": prompt}]}]},
-                          params={"key": api_key}, timeout=30)
+        r = _safe_request("post", url, api_key,
+                          json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=30)
         r.raise_for_status()
         text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
         text = text.replace("```json", "").replace("```", "").strip()
@@ -64,7 +74,7 @@ def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
             print(f"  Geminiプロンプト生成成功: {len(prompts)}件")
             return prompts[:4]
     except Exception as e:
-        print(f"  [警告] プロンプト生成失敗: {e}")
+        print(f"  [警告] プロンプト生成失敗: {type(e).__name__}: {str(e).replace(api_key, '***')}")
     return DEFAULT_PROMPTS
 
 
@@ -75,7 +85,7 @@ def generate_image_via_gemini(api_key: str, model: str, prompt: str, filepath: s
         "generationConfig": {"responseModalities": ["IMAGE", "TEXT"]},
     }
     try:
-        r = requests.post(url, json=payload, params={"key": api_key}, timeout=120)
+        r = _safe_request("post", url, api_key, json=payload, timeout=120)
         print(f"  → status={r.status_code}")
         if r.status_code != 200:
             print(f"  エラー詳細: {r.text[:400]}")
@@ -90,7 +100,7 @@ def generate_image_via_gemini(api_key: str, model: str, prompt: str, filepath: s
                 return True
         print(f"  ❌ inlineDataなし。part keys: {[list(p.keys()) for p in parts]}")
     except Exception as e:
-        print(f"  ❌ エラー: {type(e).__name__}: {e}")
+        print(f"  ❌ エラー: {type(e).__name__}: {str(e).replace(api_key, '***')}")
     return False
 
 

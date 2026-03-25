@@ -36,9 +36,8 @@ SYSTEM_PROMPT = (
 
 
 def list_available_models(api_key: str) -> list[str]:
-    params = {"key": api_key}
     try:
-        resp = requests.get(GEMINI_API_BASE, params=params, timeout=30)
+        resp = requests.get(GEMINI_API_BASE, params={"key": api_key}, timeout=30)
         resp.raise_for_status()
         models = resp.json().get("models", [])
         available = [
@@ -49,7 +48,8 @@ def list_available_models(api_key: str) -> list[str]:
         print(f"利用可能モデル: {available[:6]}")
         return available
     except Exception as e:
-        print(f"  [警告] ListModels失敗: {e}", file=sys.stderr)
+        safe_msg = str(e).replace(api_key, "***")
+        print(f"  [警告] ListModels失敗: {safe_msg}", file=sys.stderr)
         return []
 
 
@@ -73,7 +73,11 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
             err = resp.json().get("error", {})
             print(f"  [警告] 429 クォータ超過: {err.get('message','')[:200]}", file=sys.stderr)
             continue
-        resp.raise_for_status()
+        try:
+            resp.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            safe_msg = str(e).replace(api_key, "***")
+            raise requests.exceptions.HTTPError(safe_msg) from None
         data = resp.json()
         try:
             return data["candidates"][0]["content"]["parts"][0]["text"].strip()
