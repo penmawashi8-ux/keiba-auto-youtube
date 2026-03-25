@@ -415,22 +415,34 @@ def main() -> None:
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
-    # assetsに画像がなければPillowで自動生成
-    existing_images = (
-        glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
-    )
-    if not existing_images:
-        print("  assetsに画像がないため、背景画像を自動生成します。")
-        generate_bg_images()
-
-    # assets フォルダの画像を収集（jpg + png）
-    assets_images = sorted(
-        p for p in (
-            glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
-        )
+    # 1. AI生成画像（ai_*.jpg）を優先して収集
+    ai_images = sorted(
+        p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg")
         if Path(p).stat().st_size > 1000
     )
-    print(f"  assets画像リスト ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
+    if ai_images:
+        assets_images = ai_images
+        print(f"  AI画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
+    else:
+        # 2. assets内の全jpg/pngを使用
+        all_images = sorted(
+            p for p in (
+                glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
+            )
+            if Path(p).stat().st_size > 1000
+        )
+        if all_images:
+            assets_images = all_images
+            print(f"  assets画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
+        else:
+            # 3. 画像なし → Pillowでグラデーション背景を自動生成
+            print("  assetsに画像がないため、背景画像を自動生成します。")
+            generate_bg_images()
+            assets_images = sorted(
+                p for p in glob.glob(f"{ASSETS_DIR}/*.jpg")
+                if Path(p).stat().st_size > 1000
+            )
+            print(f"  生成画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
 
     # フォント読み込み
     font_path = find_japanese_font()
