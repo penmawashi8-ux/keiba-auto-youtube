@@ -23,7 +23,7 @@ DEFAULT_PROMPTS = [
 ]
 
 
-def list_models(api_key: str) -> list[str]:
+def list_models(api_key: str) -> tuple[list[str], list[str]]:
     try:
         r = requests.get(GEMINI_API_BASE, params={"key": api_key}, timeout=15)
         r.raise_for_status()
@@ -31,12 +31,12 @@ def list_models(api_key: str) -> list[str]:
         all_names = [m["name"].replace("models/", "") for m in models]
         print(f"  利用可能モデル数: {len(all_names)}")
         print(f"  モデル一覧（先頭15件）: {all_names[:15]}")
-        image_models = [n for n in all_names if any(k in n.lower() for k in ["image", "imagen", "vision"])]
-        print(f"  画像関連モデル: {image_models}")
-        return all_names
+        image_models = [n for n in all_names if any(k in n.lower() for k in ["image", "imagen"]) and n.startswith("gemini-")]
+        print(f"  画像生成対応Geminiモデル: {image_models}")
+        return all_names, image_models
     except Exception as e:
         print(f"  [警告] モデル一覧取得失敗: {e}")
-        return []
+        return [], []
 
 
 def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
@@ -105,17 +105,25 @@ def main() -> None:
 
     # 利用可能モデルを確認
     print("  Geminiモデル一覧を取得中...", flush=True)
-    all_models = list_models(api_key)
+    all_models, image_models = list_models(api_key)
 
-    # 画像生成対応モデルを探索
-    image_gen_candidates = [
-        "gemini-2.0-flash-preview-image-generation",
-        "gemini-2.0-flash-exp",
-        "gemini-2.0-flash-exp-image-generation",
+    # 画像生成対応モデルを選定（優先順）
+    preferred_candidates = [
+        "gemini-2.5-flash-image",
+        "gemini-3.1-flash-image-preview",
+        "gemini-3-pro-image-preview",
     ]
-    # モデル一覧に存在するものだけに絞り込み（一覧取得失敗時は全候補を試す）
     if all_models:
-        image_gen_candidates = [m for m in image_gen_candidates if m in all_models] or image_gen_candidates
+        # 優先候補のうち利用可能なものを選ぶ
+        image_gen_candidates = [m for m in preferred_candidates if m in all_models]
+        if not image_gen_candidates and image_models:
+            # フォールバック: API一覧から動的に取得したimage系モデルを使用
+            image_gen_candidates = image_models[:3]
+            print(f"  [フォールバック] 動的取得モデルを使用", flush=True)
+        if not image_gen_candidates:
+            image_gen_candidates = preferred_candidates  # 最終フォールバック
+    else:
+        image_gen_candidates = preferred_candidates
     print(f"  試行する画像生成モデル: {image_gen_candidates}", flush=True)
 
     # ニュース読み込み
