@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
 """
 generate_images.py - 無料で競馬AI画像を生成する。
-試行順:
-  1. Pollinations.ai (認証不要・完全無料)
-  2. HuggingFace FLUX.1-schnell (HF_TOKEN が設定されている場合)
+HuggingFace FLUX.1-schnell (HF_TOKEN が設定されている場合) を使用。
 """
 
 import json
 import os
 import sys
 import time
-import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -78,25 +75,6 @@ def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
     return DEFAULT_PROMPTS
 
 
-def generate_via_pollinations(prompt: str, filepath: str, index: int) -> bool:
-    """Pollinations.ai (無料・認証不要) で画像生成"""
-    encoded = urllib.parse.quote(prompt)
-    # seed を変えて各画像をユニークにする
-    url = f"https://image.pollinations.ai/prompt/{encoded}?model=flux&width=1080&height=1920&seed={index * 42}"
-    try:
-        print(f"    URL: {url[:80]}...", flush=True)
-        r = requests.get(url, timeout=120, headers={"User-Agent": "Mozilla/5.0"})
-        print(f"    status={r.status_code} size={len(r.content)}bytes", flush=True)
-        if r.status_code == 200 and len(r.content) > 5000:
-            Path(filepath).write_bytes(r.content)
-            print(f"    ✅ Pollinations成功: {filepath} ({len(r.content)//1024}KB)", flush=True)
-            return True
-        print(f"    ❌ 失敗: status={r.status_code}", flush=True)
-    except Exception as e:
-        print(f"    ❌ 例外: {type(e).__name__}: {e}", flush=True)
-    return False
-
-
 def generate_via_huggingface(hf_token: str, prompt: str, filepath: str) -> bool:
     """HuggingFace Inference API (FLUX.1-schnell) で画像生成"""
     headers = {"Authorization": f"Bearer {hf_token}"}
@@ -146,12 +124,7 @@ def main() -> None:
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
         print(f"\n  [{i}/4] 画像生成中...", flush=True)
 
-        # 1. Pollinations.ai (無料・認証不要)
-        print(f"  [{i}] → Pollinations.ai を試行", flush=True)
-        if generate_via_pollinations(prompt, out_path, i):
-            return i, True
-
-        # 2. HuggingFace FLUX.1-schnell (HF_TOKEN が必要)
+        # HuggingFace FLUX.1-schnell
         if hf_token:
             print(f"  [{i}] → HuggingFace FLUX.1-schnell を試行", flush=True)
             if generate_via_huggingface(hf_token, prompt, out_path):
