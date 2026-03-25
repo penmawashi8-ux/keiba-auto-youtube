@@ -11,6 +11,7 @@ import os
 import sys
 import time
 import urllib.parse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
@@ -139,28 +140,32 @@ def main() -> None:
     for i, p in enumerate(prompts, 1):
         print(f"    [{i}] {p[:80]}", flush=True)
 
-    # 画像生成
-    failed = []
-    for i, prompt in enumerate(prompts, 1):
+    # 画像生成（並列）
+    def generate_one(args):
+        i, prompt = args
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
         print(f"\n  [{i}/4] 画像生成中...", flush=True)
-        success = False
 
         # 1. Pollinations.ai (無料・認証不要)
-        print("  → Pollinations.ai を試行", flush=True)
-        success = generate_via_pollinations(prompt, out_path, i)
+        print(f"  [{i}] → Pollinations.ai を試行", flush=True)
+        if generate_via_pollinations(prompt, out_path, i):
+            return i, True
 
         # 2. HuggingFace FLUX.1-schnell (HF_TOKEN が必要)
-        if not success and hf_token:
-            print("  → HuggingFace FLUX.1-schnell を試行", flush=True)
-            success = generate_via_huggingface(hf_token, prompt, out_path)
+        if hf_token:
+            print(f"  [{i}] → HuggingFace FLUX.1-schnell を試行", flush=True)
+            if generate_via_huggingface(hf_token, prompt, out_path):
+                return i, True
 
-        if not success:
-            failed.append(i)
+        return i, False
 
-        # Pollinations.ai のレート制限対策（次のリクエストまで待機）
-        if i < len(prompts):
-            time.sleep(16)
+    failed = []
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {executor.submit(generate_one, (i, p)): i for i, p in enumerate(prompts, 1)}
+        for future in as_completed(futures):
+            i, ok = future.result()
+            if not ok:
+                failed.append(i)
 
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
     print(f"\n=== 結果: {4 - len(failed)}/4 枚生成 ===", flush=True)

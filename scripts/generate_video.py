@@ -355,6 +355,7 @@ def build_video(
                 "-t", f"{duration:.6f}",
                 "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
                 "-c:v", "libx264",
+                "-preset", "ultrafast",
                 "-pix_fmt", "yuv420p",
                 "-r", str(FPS),
                 clip_path,
