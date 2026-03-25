@@ -70,14 +70,18 @@ def get_prompts_from_gemini(news_items: list[dict]) -> list[str]:
 def generate_image(prompt: str, filepath: str) -> bool:
     encoded = quote(prompt)
     seed = random.randint(1, 9999)
-    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&nologo=true&seed={seed}"
+    url = f"https://image.pollinations.ai/prompt/{encoded}?width=1080&height=1920&model=flux&seed={seed}"
     headers = {
         "User-Agent": "Mozilla/5.0",
         "Referer": "https://pollinations.ai/",
     }
-    print(f"  リクエスト: {url[:80]}...")
+    print(f"  リクエスト URL: {url[:100]}...")
     try:
         r = requests.get(url, headers=headers, timeout=60)
+        content_type = r.headers.get("Content-Type", "")
+        print(f"  → status={r.status_code} size={len(r.content)} content-type={content_type[:40]}")
+        if r.status_code != 200:
+            print(f"  レスポンスボディ(先頭200字): {r.text[:200]}")
         if r.status_code == 200 and len(r.content) > 10000:
             with open(filepath, "wb") as f:
                 f.write(r.content)
@@ -86,7 +90,7 @@ def generate_image(prompt: str, filepath: str) -> bool:
             return True
         print(f"  ❌ 失敗: status={r.status_code} size={len(r.content)}")
     except Exception as e:
-        print(f"  ❌ エラー: {e}")
+        print(f"  ❌ エラー: {type(e).__name__}: {e}")
     return False
 
 
