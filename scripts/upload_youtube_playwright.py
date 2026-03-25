@@ -98,29 +98,23 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
 
     print("  Studio 読み込み完了")
 
-    # デバッグ: ページ内のボタン/aria-label 一覧を出力
-    buttons = page.locator("button, ytcp-button, [role='button']").all()
-    print(f"  [DEBUG] ボタン数: {len(buttons)}")
-    for b in buttons[:20]:
-        try:
-            label = b.get_attribute("aria-label") or b.inner_text()[:30]
-            eid   = b.get_attribute("id") or ""
-            print(f"    btn: id={eid!r} label={label!r}")
-        except Exception:
-            pass
-
-    # ① アップロードボタンを探してクリック
+    # ① 「作成」ボタンをクリックしてドロップダウンを開く
     click_first(page, [
-        "#upload-btn",
-        "ytcp-button[id='upload-btn']",
-        "[aria-label='Upload videos']",
+        "[aria-label='作成']",
+        "[aria-label='Create']",
+        "button:has-text('作成')",
+        "ytcp-button:has-text('作成')",
+    ])
+    time.sleep(1)
+
+    # ② ドロップダウンから「動画をアップロード」をクリック
+    click_first(page, [
+        "#upload-icon",
         "[aria-label='動画をアップロード']",
-        "[aria-label='アップロード']",
-        "ytcp-button#create-icon",
-        "button[aria-label*='Upload']",
-        "button[aria-label*='upload']",
-        "ytcp-topbar-button[id='upload-btn']",
-        "#create-icon",
+        "[aria-label='Upload videos']",
+        "ytcp-ve#upload-icon",
+        "tp-yt-paper-item:has-text('動画をアップロード')",
+        "tp-yt-paper-item:has-text('Upload videos')",
     ])
     time.sleep(2)
 
