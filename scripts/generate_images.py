@@ -94,9 +94,34 @@ def generate_image(prompt: str, filepath: str) -> bool:
     return False
 
 
+def _connectivity_check() -> None:
+    """Pollinations.aiへの接続テスト"""
+    import socket
+    print("  --- 接続テスト ---")
+    try:
+        ip = socket.gethostbyname("image.pollinations.ai")
+        print(f"  DNS解決: image.pollinations.ai → {ip}")
+    except Exception as e:
+        print(f"  DNS解決失敗: {e}")
+    try:
+        r = requests.get(
+            "https://image.pollinations.ai/models",
+            headers={"User-Agent": "Mozilla/5.0"},
+            timeout=10,
+        )
+        print(f"  /models: status={r.status_code} size={len(r.content)} body={r.text[:100]}")
+    except Exception as e:
+        print(f"  /models アクセス失敗: {type(e).__name__}: {e}")
+    print("  --- 接続テスト終了 ---")
+
+
 def main() -> None:
     print("=== AI画像生成開始 ===")
     ASSETS_DIR.mkdir(exist_ok=True)
+    sys.stdout.flush()
+
+    _connectivity_check()
+    sys.stdout.flush()
 
     # news.json 読み込み
     try:
