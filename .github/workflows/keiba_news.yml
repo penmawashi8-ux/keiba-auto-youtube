@@ -68,7 +68,9 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/generate_images.py
+        run: |
+          python scripts/generate_images.py 2>&1 | tee /tmp/ai_images.log
+          exit ${PIPESTATUS[0]}
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
@@ -138,6 +140,7 @@ jobs:
           path: |
             /tmp/drive_diag.log
             /tmp/drive_upload.log
+            /tmp/ai_images.log
           if-no-files-found: ignore
 
       - name: Commit and push posted_ids.txt
