@@ -150,35 +150,13 @@ jobs:
               sys.exit(1)
           EOF
 
-      - name: Upload to YouTube
+      - name: Upload to Google Drive
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          echo "=== output/ の動画ファイル ==="
-          ls -lh output/video_*.mp4 2>/dev/null || echo "(なし)"
-          echo "=== news.json 件数 ==="
-          python3 -c "import json; d=json.load(open('news.json')); print(len(d),'件')" 2>/dev/null || echo "(読み込み失敗)"
-          python scripts/upload_youtube.py 2>&1 | tee /tmp/youtube_upload.log
-          STATUS=${PIPESTATUS[0]}
-          python scripts/post_debug_issue.py
-          if [ $STATUS -ne 0 ]; then
-            exit $STATUS
-          fi
-
-      - name: Upload YouTube logs as artifact
-        if: always() && steps.check_news.outputs.has_news == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: youtube-logs
-          path: |
-            /tmp/drive_diag.log
-            /tmp/youtube_upload.log
-          if-no-files-found: ignore
+        run: python scripts/upload_drive.py
 
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'
