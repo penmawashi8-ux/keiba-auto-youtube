@@ -416,23 +416,21 @@ def main() -> None:
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
     # assetsに画像がなければPillowで自動生成
-    existing_images = list(Path(ASSETS_DIR).glob("*.jpg")) if Path(ASSETS_DIR).exists() else []
+    existing_images = (
+        glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
+    )
     if not existing_images:
         print("  assetsに画像がないため、背景画像を自動生成します。")
         generate_bg_images()
 
-    # assets フォルダの画像を収集
-    if Path(ASSETS_DIR).exists():
-        all_files = list(Path(ASSETS_DIR).iterdir())
-        print(f"  assetsフォルダの中身: {[f.name for f in all_files]}")
-        assets_images = sorted(
-            str(p) for p in Path(ASSETS_DIR).glob("*.jpg")
-            if p.stat().st_size > 1000
+    # assets フォルダの画像を収集（jpg + png）
+    assets_images = sorted(
+        p for p in (
+            glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
         )
-    else:
-        print(f"  [警告] assetsフォルダが存在しません: {ASSETS_DIR}")
-        assets_images = []
-    print(f"  assetsフォルダの画像: {[Path(p).name for p in assets_images]}")
+        if Path(p).stat().st_size > 1000
+    )
+    print(f"  assets画像リスト ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
 
     # フォント読み込み
     font_path = find_japanese_font()
