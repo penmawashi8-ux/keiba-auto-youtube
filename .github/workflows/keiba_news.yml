@@ -68,7 +68,7 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/generate_images.py
+        run: python -u scripts/generate_images.py
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
