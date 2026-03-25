@@ -1,27 +1,37 @@
 #!/usr/bin/env python3
 """YouTube Data API v3 でOAuth2（refresh_token方式）を使って動画をアップロードする。"""
 
+import glob
+import io
 import json
 import os
 import sys
+import textwrap
 from pathlib import Path
 
 import google.auth.transport.requests
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaFileUpload
+from googleapiclient.http import MediaFileUpload, MediaIoBaseUpload
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
+ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
 
-YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+YOUTUBE_SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+]
 CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
 QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded"}
+
+THUMB_W, THUMB_H = 1280, 720
 
 
 def load_credentials() -> Credentials:
@@ -61,6 +71,138 @@ def load_credentials() -> Credentials:
     return creds
 
 
+def find_japanese_font() -> str | None:
+    for candidate in [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+    ]:
+        if Path(candidate).exists():
+            return candidate
+    hits = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
+    return hits[0] if hits else None
+
+
+def generate_thumbnail(title: str, idx: int) -> bytes:
+    """1280x720のサムネイル画像を生成してJPEGバイト列で返す。"""
+    # --- 背景画像 ---
+    ai_images = sorted(
+        p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg")
+        if Path(p).stat().st_size > 1000
+    )
+    bg_path = ai_images[idx % len(ai_images)] if ai_images else None
+
+    if bg_path:
+        bg = Image.open(bg_path).convert("RGB")
+        bg = ImageOps.fit(bg, (THUMB_W, THUMB_H), Image.LANCZOS)
+    else:
+        bg = Image.new("RGB", (THUMB_W, THUMB_H))
+        draw_bg = ImageDraw.Draw(bg)
+        for y in range(THUMB_H):
+            r = int(15 + 45 * y / THUMB_H)
+            g = int(10 + 20 * y / THUMB_H)
+            b = int(50 + 50 * y / THUMB_H)
+            draw_bg.line([(0, y), (THUMB_W, y)], fill=(r, g, b))
+
+    # --- グラデーションオーバーレイ（中央〜下を暗く） ---
+    overlay = Image.new("RGBA", (THUMB_W, THUMB_H), (0, 0, 0, 0))
+    draw_ov = ImageDraw.Draw(overlay)
+    for y in range(THUMB_H):
+        alpha = int(80 + 140 * (y / THUMB_H) ** 1.5)
+        draw_ov.line([(0, y), (THUMB_W, y)], fill=(0, 0, 0, alpha))
+    bg = Image.alpha_composite(bg.convert("RGBA"), overlay).convert("RGB")
+
+    draw = ImageDraw.Draw(bg)
+    font_path = find_japanese_font()
+
+    try:
+        title_font = ImageFont.truetype(font_path, 88) if font_path else ImageFont.load_default()
+        badge_font = ImageFont.truetype(font_path, 38) if font_path else ImageFont.load_default()
+    except Exception:
+        title_font = badge_font = ImageFont.load_default()
+
+    # --- 「競馬速報」赤バッジ（左上） ---
+    badge_text = "競馬速報"
+    pad = 16
+    try:
+        bb = draw.textbbox((0, 0), badge_text, font=badge_font)
+        bw, bh = bb[2] - bb[0], bb[3] - bb[1]
+    except Exception:
+        bw, bh = 160, 44
+    draw.rounded_rectangle(
+        [36, 36, 36 + bw + pad * 2, 36 + bh + pad],
+        radius=10,
+        fill=(210, 30, 30),
+    )
+    draw.text(
+        (36 + pad, 36 + pad // 2),
+        badge_text,
+        font=badge_font,
+        fill=(255, 255, 255),
+        stroke_width=1,
+        stroke_fill=(150, 0, 0),
+    )
+
+    # --- タイトル（中央どん！）---
+    max_chars = 15
+    lines = textwrap.wrap(title, width=max_chars) or [title]
+    lines = lines[:3]
+
+    line_h = 104
+    total_h = len(lines) * line_h
+    start_y = (THUMB_H - total_h) // 2 + 30  # 少し下寄り
+
+    for i, line in enumerate(lines):
+        try:
+            bb = draw.textbbox((0, 0), line, font=title_font)
+            tw = bb[2] - bb[0]
+        except Exception:
+            tw = len(line) * 50
+        x = max((THUMB_W - tw) // 2, 20)
+        y = start_y + i * line_h
+        draw.text(
+            (x, y),
+            line,
+            font=title_font,
+            fill=(255, 255, 255),
+            stroke_width=7,
+            stroke_fill=(0, 0, 0),
+        )
+
+    buf = io.BytesIO()
+    bg.save(buf, "JPEG", quality=92)
+    return buf.getvalue()
+
+
+def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
+    """動画にサムネイルをアップロードする（失敗は警告のみ）。"""
+    media = MediaIoBaseUpload(
+        io.BytesIO(thumbnail_bytes),
+        mimetype="image/jpeg",
+        resumable=False,
+    )
+    try:
+        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        print(f"  サムネイルアップロード完了: {video_id}")
+    except HttpError as e:
+        try:
+            err_body = json.loads(e.content.decode("utf-8"))
+            reason = err_body.get("error", {}).get("errors", [{}])[0].get("reason", "")
+        except Exception:
+            reason = ""
+        if e.resp.status == 403 and reason in ("forbidden", "channelNotEligible"):
+            print(
+                "[警告] サムネイル設定には YouTube チャンネルの電話番号認証が必要です。\n"
+                "       YouTube Studio > 設定 > チャンネル > 機能の利用資格 で確認してください。",
+                file=sys.stderr,
+            )
+        else:
+            print(f"[警告] サムネイルアップロード失敗 (HTTP {e.resp.status}): {e}", file=sys.stderr)
+    except Exception as e:
+        print(f"[警告] サムネイルアップロード失敗: {e}", file=sys.stderr)
+
+
 def update_posted_ids(news_items: list[dict]) -> None:
     """投稿済みIDをposted_ids.txtに追記する。"""
     path = Path(POSTED_IDS_FILE)
@@ -79,7 +221,6 @@ def is_quota_exceeded(http_error: HttpError) -> bool:
         for err in errors:
             if err.get("reason") in QUOTA_EXCEEDED_REASONS:
                 return True
-        # HTTP 403 でメッセージにquotaが含まれる場合も対象
         message = content.get("error", {}).get("message", "").lower()
         if "quota" in message or "rate limit" in message:
             return True
@@ -207,12 +348,20 @@ def main() -> None:
         description = build_description(script)
 
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
-        result = upload_video(youtube, title, description, str(video_file))
+        video_id = upload_video(youtube, title, description, str(video_file))
 
-        if result is None:
+        if video_id is None:
             # クォータ超過: 以降のアップロードも不可なのでループを抜ける
             quota_exceeded = True
             break
+
+        # サムネイル生成・アップロード
+        print("  サムネイル生成中...")
+        try:
+            thumb_bytes = generate_thumbnail(title, idx)
+            upload_thumbnail(youtube, video_id, thumb_bytes)
+        except Exception as e:
+            print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
 
         uploaded_count += 1
 
