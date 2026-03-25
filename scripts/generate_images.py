@@ -54,8 +54,23 @@ def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
         text = text.replace("```json", "").replace("```", "").strip()
         prompts = json.loads(text)
         if isinstance(prompts, list) and len(prompts) >= 4:
-            print(f"  Geminiプロンプト生成成功: {len(prompts)}件", flush=True)
-            return prompts[:4]
+            # 要素が文字列でない場合（dictなど）は文字列に変換
+            result = []
+            for item in prompts:
+                if isinstance(item, str):
+                    result.append(item)
+                elif isinstance(item, dict):
+                    # "prompt"/"text"/"description"などのキーを探す
+                    val = next((item[k] for k in ("prompt", "text", "description", "content") if k in item), None)
+                    if val is None and item:
+                        val = str(list(item.values())[0])
+                    if val:
+                        result.append(str(val))
+                else:
+                    result.append(str(item))
+            if len(result) >= 4:
+                print(f"  Geminiプロンプト生成成功: {len(result)}件", flush=True)
+                return result[:4]
     except Exception as e:
         safe = str(e).replace(api_key, "***") if api_key else str(e)
         print(f"  [警告] プロンプト生成失敗: {safe}", flush=True)
