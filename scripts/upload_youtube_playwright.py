@@ -102,20 +102,21 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     click_first(page, [
         "[aria-label='作成']",
         "[aria-label='Create']",
-        "button:has-text('作成')",
-        "ytcp-button:has-text('作成')",
     ])
-    time.sleep(1)
+    time.sleep(2)  # ドロップダウンのアニメーション待ち
 
     # ② ドロップダウンから「動画をアップロード」をクリック
-    click_first(page, [
-        "#upload-icon",
-        "[aria-label='動画をアップロード']",
-        "[aria-label='Upload videos']",
-        "ytcp-ve#upload-icon",
-        "tp-yt-paper-item:has-text('動画をアップロード')",
-        "tp-yt-paper-item:has-text('Upload videos')",
-    ])
+    try:
+        page.get_by_text("動画をアップロード", exact=True).first.click(timeout=5000)
+    except Exception:
+        try:
+            page.get_by_text("Upload videos", exact=True).first.click(timeout=5000)
+        except Exception:
+            click_first(page, [
+                "#upload-icon",
+                "[id='upload-icon']",
+                "ytcp-ve[id='upload-icon']",
+            ])
     time.sleep(2)
 
     # ② ファイルを直接 input にセット（file chooser より安定）
