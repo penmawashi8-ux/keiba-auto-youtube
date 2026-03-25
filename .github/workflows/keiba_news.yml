@@ -113,50 +113,15 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
 
-      - name: Diagnose Drive credentials
+      - name: Install Playwright browser
         if: steps.check_news.outputs.has_news == 'true'
-        env:
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-        run: |
-          python - <<'EOF' 2>&1 | tee /tmp/drive_diag.log
-          import os, sys, traceback
-          print("=== Drive 認証診断 ===")
-          cid = os.environ.get("GOOGLE_CLIENT_ID","")
-          cs  = os.environ.get("GOOGLE_CLIENT_SECRET","")
-          rt  = os.environ.get("GOOGLE_REFRESH_TOKEN","")
-          print(f"CLIENT_ID set: {bool(cid)} (len={len(cid)})")
-          print(f"CLIENT_SECRET set: {bool(cs)} (len={len(cs)})")
-          print(f"REFRESH_TOKEN set: {bool(rt)} (len={len(rt)})")
-          try:
-              import google.auth.transport.requests
-              from google.oauth2.credentials import Credentials
-              creds = Credentials(
-                  token=None,
-                  refresh_token=rt,
-                  token_uri="https://oauth2.googleapis.com/token",
-                  client_id=cid,
-                  client_secret=cs,
-                  scopes=["https://www.googleapis.com/auth/drive.file"],
-              )
-              req = google.auth.transport.requests.Request()
-              creds.refresh(req)
-              print("トークンリフレッシュ: 成功")
-              print(f"access_token prefix: {creds.token[:20]}...")
-          except Exception as e:
-              print(f"トークンリフレッシュ: 失敗")
-              traceback.print_exc()
-              sys.exit(1)
-          EOF
+        run: playwright install chromium --with-deps
 
-      - name: Upload to Google Drive
+      - name: Upload to YouTube (Playwright)
         if: steps.check_news.outputs.has_news == 'true'
         env:
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-        run: python scripts/upload_drive.py
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python scripts/upload_youtube_playwright.py
 
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'
