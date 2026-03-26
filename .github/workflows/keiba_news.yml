@@ -73,6 +73,7 @@ jobs:
 
       - name: AI画像を生成
         id: ai_images
+        continue-on-error: true
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -115,6 +116,37 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_audio.py
 
+      - name: BGMをダウンロード（フリー音楽）
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          mkdir -p assets/bgm
+          # SoundHelix CC0フリー音楽をダウンロード（毎回取得）
+          declare -A BGM_URLS=(
+            [bgm_1]="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+            [bgm_2]="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+            [bgm_3]="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+          )
+          DOWNLOADED=0
+          for NAME in "${!BGM_URLS[@]}"; do
+            URL="${BGM_URLS[$NAME]}"
+            if curl -fsSL --max-time 30 "$URL" -o "assets/bgm/${NAME}.mp3"; then
+              echo "${NAME}.mp3 ダウンロード完了"
+              DOWNLOADED=$((DOWNLOADED+1))
+            else
+              echo "警告: $URL のダウンロード失敗。スキップ。"
+            fi
+          done
+          if [ $DOWNLOADED -eq 0 ]; then
+            echo "全BGMダウンロード失敗。フォールバックBGMを生成します。"
+            ffmpeg -y -f lavfi \
+              -i "aevalsrc=0.4*sin(440*2*PI*t)+0.3*sin(880*2*PI*t)+0.2*sin(660*2*PI*t):c=stereo:s=44100:d=60" \
+              -af "afade=t=in:st=0:d=2,afade=t=out:st=58:d=2,volume=0.6" \
+              assets/bgm/bgm_1.mp3
+            echo "フォールバックBGM生成完了"
+          else
+            echo "BGM $DOWNLOADED 件 ダウンロード完了"
+          fi
+
       - name: Generate video
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
@@ -125,22 +157,22 @@ jobs:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID_2 }}
-          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET_2 }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
           GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
-          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID_3 }}
-          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET_3 }}
-          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN_3 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: python scripts/upload_youtube.py
 
       - name: Commit and push posted_ids.txt
-        if: steps.check_news.outputs.has_news == 'true'
+        if: always() && steps.check_news.outputs.has_news == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add posted_ids.txt
+          git add posted_ids.txt last_upload_result.txt
           if git diff --staged --quiet; then
-            echo "posted_ids.txt に変更なし。コミットをスキップします。"
+            echo "変更なし。コミットをスキップします。"
           else
             git commit -m "chore: update posted_ids.txt [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
