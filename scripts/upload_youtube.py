@@ -1,45 +1,56 @@
 #!/usr/bin/env python3
 """YouTube Data API v3 でOAuth2（refresh_token方式）を使って動画をアップロードする。"""
 
+import glob
+import io
 import json
 import os
 import sys
+import textwrap
 from pathlib import Path
 
 import google.auth.transport.requests
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaFileUpload
+from googleapiclient.http import MediaFileUpload, MediaIoBaseUpload
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
+ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
 
 YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+# サムネイルAPIには youtube.force-ssl スコープが必要。
+# 既存トークンが youtube.upload のみの場合、thumbnails.set は 403 になるが
+# 動画アップロード自体には影響しない（upload_thumbnail が警告のみで継続）。
+# 再発行手順は scripts/get_refresh_token.py を参照。
 CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
-QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded"}
+# uploadLimitExceeded = チャンネルの1日アップロード本数上限
+QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded", "uploadLimitExceeded"}
+
+# 複数GCPプロジェクトの認証情報（クォータ超過時に順番に切り替え）
+CREDENTIAL_SETS = [
+    ("GOOGLE_CLIENT_ID",   "GOOGLE_CLIENT_SECRET",   "GOOGLE_REFRESH_TOKEN"),
+    ("GOOGLE_CLIENT_ID_2", "GOOGLE_CLIENT_SECRET_2", "GOOGLE_REFRESH_TOKEN_2"),
+    ("GOOGLE_CLIENT_ID_3", "GOOGLE_CLIENT_SECRET_3", "GOOGLE_REFRESH_TOKEN_3"),
+]
+
+THUMB_W, THUMB_H = 1280, 720
 
 
-def load_credentials() -> Credentials:
-    """環境変数からOAuth2認証情報を構築する。"""
-    client_id = os.environ.get("YOUTUBE_CLIENT_ID")
-    client_secret = os.environ.get("YOUTUBE_CLIENT_SECRET")
-    refresh_token = os.environ.get("YOUTUBE_REFRESH_TOKEN")
+def load_credentials_for(id_key: str, secret_key: str, token_key: str) -> Credentials | None:
+    """指定した環境変数キーからOAuth2認証情報を構築する。未設定なら None を返す。"""
+    client_id = os.environ.get(id_key)
+    client_secret = os.environ.get(secret_key)
+    refresh_token = os.environ.get(token_key)
 
-    missing = [
-        name for name, val in [
-            ("YOUTUBE_CLIENT_ID", client_id),
-            ("YOUTUBE_CLIENT_SECRET", client_secret),
-            ("YOUTUBE_REFRESH_TOKEN", refresh_token),
-        ] if not val
-    ]
-    if missing:
-        print(f"[エラー] 環境変数が未設定です: {', '.join(missing)}", file=sys.stderr)
-        sys.exit(1)
+    if not all([client_id, client_secret, refresh_token]):
+        return None
 
     creds = Credentials(
         token=None,
@@ -49,16 +60,209 @@ def load_credentials() -> Credentials:
         client_secret=client_secret,
         scopes=YOUTUBE_SCOPES,
     )
-
     try:
         request = google.auth.transport.requests.Request()
         creds.refresh(request)
-        print("OAuth2トークンのリフレッシュ成功。")
+        print(f"OAuth2トークンのリフレッシュ成功 ({id_key})。")
+        return creds
     except Exception as e:
-        print(f"[エラー] トークンリフレッシュ失敗: {e}", file=sys.stderr)
-        sys.exit(1)
+        print(f"[警告] トークンリフレッシュ失敗 ({id_key}): {e}", file=sys.stderr)
+        return None
 
-    return creds
+
+def load_all_credentials() -> list[Credentials]:
+    """設定されている全GCPプロジェクトの認証情報をリストで返す。"""
+    result = []
+    for id_key, secret_key, token_key in CREDENTIAL_SETS:
+        creds = load_credentials_for(id_key, secret_key, token_key)
+        if creds:
+            result.append(creds)
+    if not result:
+        print("[エラー] 有効な認証情報が1つもありません。", file=sys.stderr)
+        sys.exit(1)
+    print(f"認証情報: {len(result)} プロジェクト分ロード完了")
+    return result
+
+
+def find_japanese_font() -> str | None:
+    for candidate in [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+    ]:
+        if Path(candidate).exists():
+            return candidate
+    hits = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
+    return hits[0] if hits else None
+
+
+def generate_thumbnail(title: str, idx: int) -> bytes:
+    """1280x720のサムネイル画像を生成してJPEGバイト列で返す。"""
+    # --- 背景画像 ---
+    ai_images = sorted(
+        p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg")
+        if Path(p).stat().st_size > 1000
+    )
+    bg_path = ai_images[idx % len(ai_images)] if ai_images else None
+
+    if bg_path:
+        bg = Image.open(bg_path).convert("RGB")
+        bg = ImageOps.fit(bg, (THUMB_W, THUMB_H), Image.LANCZOS)
+    else:
+        bg = Image.new("RGB", (THUMB_W, THUMB_H))
+        draw_bg = ImageDraw.Draw(bg)
+        for y in range(THUMB_H):
+            r = int(15 + 45 * y / THUMB_H)
+            g = int(10 + 20 * y / THUMB_H)
+            b = int(50 + 50 * y / THUMB_H)
+            draw_bg.line([(0, y), (THUMB_W, y)], fill=(r, g, b))
+
+    # --- 半透明オーバーレイ（全体を均一に少し暗く） ---
+    overlay = Image.new("RGBA", (THUMB_W, THUMB_H), (0, 0, 0, 110))
+    bg = Image.alpha_composite(bg.convert("RGBA"), overlay).convert("RGB")
+
+    draw = ImageDraw.Draw(bg)
+    font_path = find_japanese_font()
+
+    try:
+        badge_font = ImageFont.truetype(font_path, 36) if font_path else ImageFont.load_default()
+    except Exception:
+        badge_font = ImageFont.load_default()
+
+    # --- 「競馬速報」赤バッジ（左上） ---
+    badge_text = "競馬速報"
+    pad = 16
+    try:
+        bb = draw.textbbox((0, 0), badge_text, font=badge_font)
+        bw, bh = bb[2] - bb[0], bb[3] - bb[1]
+    except Exception:
+        bw, bh = 160, 44
+    draw.rounded_rectangle(
+        [36, 36, 36 + bw + pad * 2, 36 + bh + pad],
+        radius=10,
+        fill=(210, 30, 30),
+    )
+    draw.text(
+        (36 + pad, 36 + pad // 2),
+        badge_text,
+        font=badge_font,
+        fill=(255, 255, 255),
+        stroke_width=1,
+        stroke_fill=(150, 0, 0),
+    )
+
+    # --- タイトル（一言どーん！スタイル）---
+    import re
+
+    clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
+
+    # 3段構成: 【レース名】 / 馬名・人名 / 要点アクション
+    bracket_match = re.match(r"(【[^】]{1,10}】)(.*)", clean_title)
+    if bracket_match:
+        label = bracket_match.group(1)   # 例: 【京浜盃】
+        rest  = bracket_match.group(2)   # 例: ロックターミガンで砂クラシック戦線に名乗り…
+    else:
+        label = None
+        rest  = clean_title
+
+    # 主語（最初の助詞の前）
+    p = re.search(r"[でがはにをもとから]", rest)
+    if p and p.start() >= 2:
+        subject = rest[:p.start()]       # 例: ロックターミガン
+        after   = rest[p.start():]       # 例: で砂クラシック戦線に名乗り…
+    else:
+        subject = rest[:10]
+        after   = rest[10:]
+
+    # アクション: after の最初の区切り（句読点・「・引用符）まで、最大12文字
+    action_raw = re.split(r"[。、！？「」『』]", after.lstrip("でがはにをもとから"))[0]
+    action = action_raw[:12]
+    if action and not action[-1] in "！？":
+        action += "！"
+
+    max_w = THUMB_W - 80
+
+    def fit_font(text: str, max_size: int, min_size: int = 36) -> tuple:
+        for sz in range(max_size, min_size - 1, -8):
+            try:
+                f = ImageFont.truetype(font_path, sz) if font_path else ImageFont.load_default()
+            except Exception:
+                f = ImageFont.load_default()
+            try:
+                bb = draw.textbbox((0, 0), text, font=f)
+                w = bb[2] - bb[0]
+            except Exception:
+                w = len(text) * sz
+            if w <= max_w:
+                return f, sz
+        try:
+            f = ImageFont.truetype(font_path, min_size) if font_path else ImageFont.load_default()
+        except Exception:
+            f = ImageFont.load_default()
+        return f, min_size
+
+    subject_font, subject_size = fit_font(subject, 120)
+    label_size   = max(36, int(subject_size * 0.50))
+    action_size  = max(40, int(subject_size * 0.60))
+    try:
+        label_font  = ImageFont.truetype(font_path, label_size)  if font_path else ImageFont.load_default()
+        action_font = ImageFont.truetype(font_path, action_size) if font_path else ImageFont.load_default()
+    except Exception:
+        label_font = action_font = ImageFont.load_default()
+
+    # 描画位置: 下寄せ 3行
+    rows = []
+    if label:
+        rows.append((label,   label_font,   label_size,  (255, 255, 255), 3))
+    rows.append(    (subject, subject_font, subject_size,(255, 235,   0), 8))
+    if action:
+        rows.append((action,  action_font,  action_size, (255, 255, 255), 4))
+
+    total_h = sum(sz + 14 for _, _, sz, _, _ in rows)
+    y = THUMB_H - total_h - 60
+
+    for text, font, sz, color, stroke in rows:
+        try:
+            bb = draw.textbbox((0, 0), text, font=font)
+            tw = bb[2] - bb[0]
+        except Exception:
+            tw = len(text) * sz
+        x = max((THUMB_W - tw) // 2, 40)
+        draw.text((x, y), text, font=font, fill=color, stroke_width=stroke, stroke_fill=(0, 0, 0))
+        y += sz + 14
+
+    buf = io.BytesIO()
+    bg.save(buf, "JPEG", quality=92)
+    return buf.getvalue()
+
+
+def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
+    """動画にサムネイルをアップロードする（失敗は警告のみ）。"""
+    media = MediaIoBaseUpload(
+        io.BytesIO(thumbnail_bytes),
+        mimetype="image/jpeg",
+        resumable=False,
+    )
+    try:
+        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        print(f"  サムネイルアップロード完了: {video_id}")
+    except HttpError as e:
+        try:
+            err_body = json.loads(e.content.decode("utf-8"))
+            reason = err_body.get("error", {}).get("errors", [{}])[0].get("reason", "")
+        except Exception:
+            reason = ""
+        if e.resp.status == 403 and reason in ("forbidden", "channelNotEligible"):
+            print(
+                "[警告] サムネイル設定には YouTube チャンネルの電話番号認証が必要です。\n"
+                "       YouTube Studio > 設定 > チャンネル > 機能の利用資格 で確認してください。",
+                file=sys.stderr,
+            )
+        else:
+            print(f"[警告] サムネイルアップロード失敗 (HTTP {e.resp.status}): {e}", file=sys.stderr)
+    except Exception as e:
+        print(f"[警告] サムネイルアップロード失敗: {e}", file=sys.stderr)
 
 
 def update_posted_ids(news_items: list[dict]) -> None:
@@ -79,7 +283,6 @@ def is_quota_exceeded(http_error: HttpError) -> bool:
         for err in errors:
             if err.get("reason") in QUOTA_EXCEEDED_REASONS:
                 return True
-        # HTTP 403 でメッセージにquotaが含まれる場合も対象
         message = content.get("error", {}).get("message", "").lower()
         if "quota" in message or "rate limit" in message:
             return True
@@ -183,8 +386,9 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
-    creds = load_credentials()
-    youtube = build("youtube", "v3", credentials=creds)
+    all_creds = load_all_credentials()
+    cred_idx = 0
+    youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
 
     uploaded_count = 0
     quota_exceeded = False
@@ -207,12 +411,28 @@ def main() -> None:
         description = build_description(script)
 
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
-        result = upload_video(youtube, title, description, str(video_file))
+        video_id = upload_video(youtube, title, description, str(video_file))
 
-        if result is None:
-            # クォータ超過: 以降のアップロードも不可なのでループを抜ける
-            quota_exceeded = True
-            break
+        if video_id is None:
+            # クォータ超過: 次のGCPプロジェクトに切り替え
+            cred_idx += 1
+            if cred_idx < len(all_creds):
+                print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
+                youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
+                video_id = upload_video(youtube, title, description, str(video_file))
+
+            if video_id is None:
+                print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
+                quota_exceeded = True
+                break
+
+        # サムネイル生成・アップロード
+        print("  サムネイル生成中...")
+        try:
+            thumb_bytes = generate_thumbnail(title, idx)
+            upload_thumbnail(youtube, video_id, thumb_bytes)
+        except Exception as e:
+            print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
 
         uploaded_count += 1
 
