@@ -1,5 +1,8 @@
-date: 2026-03-26T11:07:51.765847Z
+date: 2026-03-26T11:12:56.702881Z
 projects_loaded: 2
 uploaded: 0
 quota_exceeded: True
-QUOTA_EXCEEDED project=2 title=【高松宮記念】異例の“ほぼ10日競馬”も橋口調教師は「力を出せる状態」と自信 パンジャタワーは馬なり
+p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
+p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=EMPTY => FAILED
+p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
+QUOTA_EXCEEDED project=2 title=【伏竜S】無傷2連勝中のダノンバーボン 3連勝でオープンVなるか（netkeiba） - Yahoo
