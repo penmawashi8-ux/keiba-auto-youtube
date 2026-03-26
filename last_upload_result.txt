@@ -1,10 +1,5 @@
-date: 2026-03-26T11:01:35.575514Z
+date: 2026-03-26T11:07:51.765847Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 0
 quota_exceeded: True
-QUOTA_EXCEEDED: 函館デビューのGⅠ馬7頭デザイン 市電、27日からラッピング車両 競馬場130年記念 - 北海道新聞
-OK project=3 video_id=None title=函館デビューのGⅠ馬7頭デザイン 市電、27日からラッピング車両 競馬場130年
-QUOTA_EXCEEDED: 【高松宮記念 調教後馬体重】サトノレーヴは530キロ、パンジャタワーは496キロ（サンケイスポーツ）
-OK project=4 video_id=None title=【高松宮記念 調教後馬体重】サトノレーヴは530キロ、パンジャタワーは496キロ
-QUOTA_EXCEEDED: 中山牝馬S6着のレーゼドラマは4・19福島牝馬Sへの出走を検討【次走報】 - ｄメニューニュース
-OK project=5 video_id=None title=中山牝馬S6着のレーゼドラマは4・19福島牝馬Sへの出走を検討【次走報】 - ｄ
+QUOTA_EXCEEDED project=2 title=【高松宮記念】異例の“ほぼ10日競馬”も橋口調教師は「力を出せる状態」と自信 パンジャタワーは馬なり
