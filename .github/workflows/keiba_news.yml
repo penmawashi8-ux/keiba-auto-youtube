@@ -2,8 +2,14 @@ name: Keiba News YouTube Auto Post
 
 on:
   schedule:
-    # 毎日 09:00 JST (= 00:00 UTC)
-    - cron: "0 0 * * *"
+    # 8:00〜20:00 JST を2時間おきに7回実行（JST = UTC+9）
+    - cron: "0 23 * * *"  #  8:00 JST
+    - cron: "0 1 * * *"   # 10:00 JST
+    - cron: "0 3 * * *"   # 12:00 JST
+    - cron: "0 5 * * *"   # 14:00 JST
+    - cron: "0 7 * * *"   # 16:00 JST
+    - cron: "0 9 * * *"   # 18:00 JST
+    - cron: "0 11 * * *"  # 20:00 JST
   workflow_dispatch:
 
 jobs:
@@ -113,72 +119,19 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
 
-      - name: Diagnose Drive credentials
-        if: steps.check_news.outputs.has_news == 'true'
-        env:
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-        run: |
-          python - <<'EOF' 2>&1 | tee /tmp/drive_diag.log
-          import os, sys, traceback
-          print("=== Drive 認証診断 ===")
-          cid = os.environ.get("GOOGLE_CLIENT_ID","")
-          cs  = os.environ.get("GOOGLE_CLIENT_SECRET","")
-          rt  = os.environ.get("GOOGLE_REFRESH_TOKEN","")
-          print(f"CLIENT_ID set: {bool(cid)} (len={len(cid)})")
-          print(f"CLIENT_SECRET set: {bool(cs)} (len={len(cs)})")
-          print(f"REFRESH_TOKEN set: {bool(rt)} (len={len(rt)})")
-          try:
-              import google.auth.transport.requests
-              from google.oauth2.credentials import Credentials
-              creds = Credentials(
-                  token=None,
-                  refresh_token=rt,
-                  token_uri="https://oauth2.googleapis.com/token",
-                  client_id=cid,
-                  client_secret=cs,
-                  scopes=["https://www.googleapis.com/auth/drive.file"],
-              )
-              req = google.auth.transport.requests.Request()
-              creds.refresh(req)
-              print("トークンリフレッシュ: 成功")
-              print(f"access_token prefix: {creds.token[:20]}...")
-          except Exception as e:
-              print(f"トークンリフレッシュ: 失敗")
-              traceback.print_exc()
-              sys.exit(1)
-          EOF
-
       - name: Upload to YouTube
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          echo "=== output/ の動画ファイル ==="
-          ls -lh output/video_*.mp4 2>/dev/null || echo "(なし)"
-          echo "=== news.json 件数 ==="
-          python3 -c "import json; d=json.load(open('news.json')); print(len(d),'件')" 2>/dev/null || echo "(読み込み失敗)"
-          python scripts/upload_youtube.py 2>&1 | tee /tmp/youtube_upload.log
-          STATUS=${PIPESTATUS[0]}
-          python scripts/post_debug_issue.py
-          if [ $STATUS -ne 0 ]; then
-            exit $STATUS
-          fi
-
-      - name: Upload YouTube logs as artifact
-        if: always() && steps.check_news.outputs.has_news == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: youtube-logs
-          path: |
-            /tmp/drive_diag.log
-            /tmp/youtube_upload.log
-          if-no-files-found: ignore
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID_2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET_2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID_3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET_3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN_3 }}
+        run: python scripts/upload_youtube.py
 
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'

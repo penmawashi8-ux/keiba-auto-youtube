@@ -61,7 +61,7 @@ def main():
             auth_code = params.get("code", [None])[0]
             self.send_response(200)
             self.end_headers()
-            self.wfile.write(b"<h1>OK: ターミナルに戻ってください</h1>")
+            self.wfile.write("<h1>OK: Done. Return to terminal.</h1>".encode("utf-8"))
 
         def log_message(self, *args):
             pass

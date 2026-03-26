@@ -30,27 +30,27 @@ CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
-QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded"}
+# uploadLimitExceeded = チャンネルの1日アップロード本数上限
+QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded", "uploadLimitExceeded"}
+
+# 複数GCPプロジェクトの認証情報（クォータ超過時に順番に切り替え）
+CREDENTIAL_SETS = [
+    ("GOOGLE_CLIENT_ID",   "GOOGLE_CLIENT_SECRET",   "GOOGLE_REFRESH_TOKEN"),
+    ("GOOGLE_CLIENT_ID_2", "GOOGLE_CLIENT_SECRET_2", "GOOGLE_REFRESH_TOKEN_2"),
+    ("GOOGLE_CLIENT_ID_3", "GOOGLE_CLIENT_SECRET_3", "GOOGLE_REFRESH_TOKEN_3"),
+]
 
 THUMB_W, THUMB_H = 1280, 720
 
 
-def load_credentials() -> Credentials:
-    """環境変数からOAuth2認証情報を構築する。"""
-    client_id = os.environ.get("GOOGLE_CLIENT_ID")
-    client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
-    refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
+def load_credentials_for(id_key: str, secret_key: str, token_key: str) -> Credentials | None:
+    """指定した環境変数キーからOAuth2認証情報を構築する。未設定なら None を返す。"""
+    client_id = os.environ.get(id_key)
+    client_secret = os.environ.get(secret_key)
+    refresh_token = os.environ.get(token_key)
 
-    missing = [
-        name for name, val in [
-            ("GOOGLE_CLIENT_ID", client_id),
-            ("GOOGLE_CLIENT_SECRET", client_secret),
-            ("GOOGLE_REFRESH_TOKEN", refresh_token),
-        ] if not val
-    ]
-    if missing:
-        print(f"[エラー] 環境変数が未設定です: {', '.join(missing)}", file=sys.stderr)
-        sys.exit(1)
+    if not all([client_id, client_secret, refresh_token]):
+        return None
 
     creds = Credentials(
         token=None,
@@ -60,16 +60,28 @@ def load_credentials() -> Credentials:
         client_secret=client_secret,
         scopes=YOUTUBE_SCOPES,
     )
-
     try:
         request = google.auth.transport.requests.Request()
         creds.refresh(request)
-        print("OAuth2トークンのリフレッシュ成功。")
+        print(f"OAuth2トークンのリフレッシュ成功 ({id_key})。")
+        return creds
     except Exception as e:
-        print(f"[エラー] トークンリフレッシュ失敗: {e}", file=sys.stderr)
-        sys.exit(1)
+        print(f"[警告] トークンリフレッシュ失敗 ({id_key}): {e}", file=sys.stderr)
+        return None
 
-    return creds
+
+def load_all_credentials() -> list[Credentials]:
+    """設定されている全GCPプロジェクトの認証情報をリストで返す。"""
+    result = []
+    for id_key, secret_key, token_key in CREDENTIAL_SETS:
+        creds = load_credentials_for(id_key, secret_key, token_key)
+        if creds:
+            result.append(creds)
+    if not result:
+        print("[エラー] 有効な認証情報が1つもありません。", file=sys.stderr)
+        sys.exit(1)
+    print(f"認証情報: {len(result)} プロジェクト分ロード完了")
+    return result
 
 
 def find_japanese_font() -> str | None:
@@ -113,13 +125,10 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
     draw = ImageDraw.Draw(bg)
     font_path = find_japanese_font()
 
-    # フォントサイズ: タイトル長に応じて自動調整（最大80px）
-    base_font_size = 80
     try:
-        title_font = ImageFont.truetype(font_path, base_font_size) if font_path else ImageFont.load_default()
         badge_font = ImageFont.truetype(font_path, 36) if font_path else ImageFont.load_default()
     except Exception:
-        title_font = badge_font = ImageFont.load_default()
+        badge_font = ImageFont.load_default()
 
     # --- 「競馬速報」赤バッジ（左上） ---
     badge_text = "競馬速報"
@@ -143,61 +152,85 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
         stroke_fill=(150, 0, 0),
     )
 
-    # --- タイトル（中央どん！）---
+    # --- タイトル（一言どーん！スタイル）---
     import re
-    # 全角スペース等を除去して詰める
+
     clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
-    max_width = THUMB_W - 120  # 左右60pxマージン
 
-    def text_width(s: str) -> int:
+    # 3段構成: 【レース名】 / 馬名・人名 / 要点アクション
+    bracket_match = re.match(r"(【[^】]{1,10}】)(.*)", clean_title)
+    if bracket_match:
+        label = bracket_match.group(1)   # 例: 【京浜盃】
+        rest  = bracket_match.group(2)   # 例: ロックターミガンで砂クラシック戦線に名乗り…
+    else:
+        label = None
+        rest  = clean_title
+
+    # 主語（最初の助詞の前）
+    p = re.search(r"[でがはにをもとから]", rest)
+    if p and p.start() >= 2:
+        subject = rest[:p.start()]       # 例: ロックターミガン
+        after   = rest[p.start():]       # 例: で砂クラシック戦線に名乗り…
+    else:
+        subject = rest[:10]
+        after   = rest[10:]
+
+    # アクション: after の最初の区切り（句読点・「・引用符）まで、最大12文字
+    action_raw = re.split(r"[。、！？「」『』]", after.lstrip("でがはにをもとから"))[0]
+    action = action_raw[:12]
+    if action and not action[-1] in "！？":
+        action += "！"
+
+    max_w = THUMB_W - 80
+
+    def fit_font(text: str, max_size: int, min_size: int = 36) -> tuple:
+        for sz in range(max_size, min_size - 1, -8):
+            try:
+                f = ImageFont.truetype(font_path, sz) if font_path else ImageFont.load_default()
+            except Exception:
+                f = ImageFont.load_default()
+            try:
+                bb = draw.textbbox((0, 0), text, font=f)
+                w = bb[2] - bb[0]
+            except Exception:
+                w = len(text) * sz
+            if w <= max_w:
+                return f, sz
         try:
-            bb = draw.textbbox((0, 0), s, font=title_font)
-            return bb[2] - bb[0]
+            f = ImageFont.truetype(font_path, min_size) if font_path else ImageFont.load_default()
         except Exception:
-            return len(s) * base_font_size
+            f = ImageFont.load_default()
+        return f, min_size
 
-    # 全体幅で何行必要か推定し、均等分割を目指す
-    total_w = text_width(clean_title)
-    n_lines = max(1, -(-total_w // max_width))  # ceiling div
-    target_line_w = total_w / n_lines
+    subject_font, subject_size = fit_font(subject, 120)
+    label_size   = max(36, int(subject_size * 0.50))
+    action_size  = max(40, int(subject_size * 0.60))
+    try:
+        label_font  = ImageFont.truetype(font_path, label_size)  if font_path else ImageFont.load_default()
+        action_font = ImageFont.truetype(font_path, action_size) if font_path else ImageFont.load_default()
+    except Exception:
+        label_font = action_font = ImageFont.load_default()
 
-    lines = []
-    current = ""
-    for ch in clean_title:
-        test = current + ch
-        tw = text_width(test)
-        # max_widthを超えるか、目標幅を超えかつ次が句読点でないなら折り返し
-        BREAK_AFTER = set("、。！？・,.")
-        if current and (tw > max_width or
-                        (tw > target_line_w * 1.1 and ch not in BREAK_AFTER)):
-            lines.append(current)
-            current = ch
-        else:
-            current = test
-    if current:
-        lines.append(current)
-    lines = lines[:3]
+    # 描画位置: 下寄せ 3行
+    rows = []
+    if label:
+        rows.append((label,   label_font,   label_size,  (255, 255, 255), 3))
+    rows.append(    (subject, subject_font, subject_size,(255, 235,   0), 8))
+    if action:
+        rows.append((action,  action_font,  action_size, (255, 255, 255), 4))
 
-    line_h = base_font_size + 20
-    total_h = len(lines) * line_h
-    start_y = (THUMB_H - total_h) // 2 + 20
+    total_h = sum(sz + 14 for _, _, sz, _, _ in rows)
+    y = THUMB_H - total_h - 60
 
-    for i, line in enumerate(lines):
+    for text, font, sz, color, stroke in rows:
         try:
-            bb = draw.textbbox((0, 0), line, font=title_font)
+            bb = draw.textbbox((0, 0), text, font=font)
             tw = bb[2] - bb[0]
         except Exception:
-            tw = len(line) * base_font_size
+            tw = len(text) * sz
         x = max((THUMB_W - tw) // 2, 40)
-        y = start_y + i * line_h
-        draw.text(
-            (x, y),
-            line,
-            font=title_font,
-            fill=(255, 255, 255),
-            stroke_width=6,
-            stroke_fill=(0, 0, 0),
-        )
+        draw.text((x, y), text, font=font, fill=color, stroke_width=stroke, stroke_fill=(0, 0, 0))
+        y += sz + 14
 
     buf = io.BytesIO()
     bg.save(buf, "JPEG", quality=92)
@@ -353,8 +386,9 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
-    creds = load_credentials()
-    youtube = build("youtube", "v3", credentials=creds)
+    all_creds = load_all_credentials()
+    cred_idx = 0
+    youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
 
     uploaded_count = 0
     quota_exceeded = False
@@ -380,9 +414,17 @@ def main() -> None:
         video_id = upload_video(youtube, title, description, str(video_file))
 
         if video_id is None:
-            # クォータ超過: 以降のアップロードも不可なのでループを抜ける
-            quota_exceeded = True
-            break
+            # クォータ超過: 次のGCPプロジェクトに切り替え
+            cred_idx += 1
+            if cred_idx < len(all_creds):
+                print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
+                youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
+                video_id = upload_video(youtube, title, description, str(video_file))
+
+            if video_id is None:
+                print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
+                quota_exceeded = True
+                break
 
         # サムネイル生成・アップロード
         print("  サムネイル生成中...")
