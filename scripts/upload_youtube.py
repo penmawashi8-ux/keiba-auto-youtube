@@ -426,8 +426,11 @@ def main() -> None:
                 else:
                     print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
                     quota_exceeded = True
-                    upload_log.append(f"QUOTA_EXCEEDED: {title[:50]}")
+                    upload_log.append(f"QUOTA_EXCEEDED project={cred_idx} title={title[:50]}")
                     break
+
+        if quota_exceeded:
+            break
 
         # サムネイル生成・アップロード
         print("  サムネイル生成中...")
