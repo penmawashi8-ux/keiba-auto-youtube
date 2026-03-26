@@ -81,6 +81,8 @@ def load_all_credentials() -> list[Credentials]:
         print("[エラー] 有効な認証情報が1つもありません。", file=sys.stderr)
         sys.exit(1)
     print(f"認証情報: {len(result)} プロジェクト分ロード完了")
+    for i, (id_key, _, _) in enumerate(CREDENTIAL_SETS[:len(result)]):
+        print(f"  プロジェクト{i+1}: {id_key} OK")
     return result
 
 
