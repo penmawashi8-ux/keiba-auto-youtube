@@ -33,10 +33,13 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
+BGM_DIR = f"{ASSETS_DIR}/bgm"
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 FPS = 30
 FONT_SIZE = 60
+ENDING_DURATION = 4.0    # エンディングカード表示秒数
+BGM_VOLUME = 0.12        # BGM音量（ナレーションに対する比率）
 SUBTITLE_MAX_WIDTH_RATIO = 0.80   # 字幕の最大横幅割合（縁取り込みで余裕を持たせる）
 LINE_SPACING = 10
 SUBTITLE_CENTER_Y = 960   # 字幕中心Y座標
@@ -295,6 +298,46 @@ def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.
 
 
 # ---------------------------------------------------------------------------
+# エンディングカード生成（Pillow）
+# ---------------------------------------------------------------------------
+
+def make_ending_frame() -> Image.Image:
+    """チャンネル登録を促すエンディングカード画像を生成して返す。"""
+    font_path = find_japanese_font()
+    img = Image.new("RGB", (VIDEO_WIDTH, VIDEO_HEIGHT))
+    draw = ImageDraw.Draw(img)
+    # ダークグラデーション背景
+    for y in range(VIDEO_HEIGHT):
+        r = int(10 + (30 - 10) * y / VIDEO_HEIGHT)
+        g = int(10 + (10 - 10) * y / VIDEO_HEIGHT)
+        b = int(30 + (60 - 30) * y / VIDEO_HEIGHT)
+        draw.line([(0, y), (VIDEO_WIDTH, y)], fill=(r, g, b))
+
+    try:
+        font_large = ImageFont.truetype(font_path, 110) if font_path else ImageFont.load_default()
+        font_xl = ImageFont.truetype(font_path, 120) if font_path else ImageFont.load_default()
+        font_small = ImageFont.truetype(font_path, 52) if font_path else ImageFont.load_default()
+    except Exception:
+        font_large = font_xl = font_small = ImageFont.load_default()
+
+    def draw_centered(text, y, font, color):
+        try:
+            bbox = draw.textbbox((0, 0), text, font=font)
+            tw = bbox[2] - bbox[0]
+        except Exception:
+            tw = len(text) * FONT_SIZE
+        x = max((VIDEO_WIDTH - tw) // 2, 20)
+        draw.text((x, y), text, font=font, fill=color,
+                  stroke_width=6, stroke_fill=(0, 0, 0))
+
+    draw_centered("チャンネル登録", 700, font_large, (255, 220, 0))
+    draw_centered("よろしく！", 840, font_xl, (255, 220, 0))
+    draw_centered("毎日 8:00〜20:00", 1060, font_small, (150, 220, 255))
+    draw_centered("2時間おきに投稿中！", 1130, font_small, (150, 220, 255))
+    return img
+
+
+# ---------------------------------------------------------------------------
 # ffmpeg ヘルパー
 # ---------------------------------------------------------------------------
 
@@ -363,6 +406,25 @@ def build_video(
             clip_paths.append(clip_path)
             print(f"  クリップ生成完了: clip_{i}.mp4 ({duration:.2f}秒)")
 
+        # --- 5b. エンディングカードクリップ生成 ---
+        ending_frame_path = os.path.join(tmp_dir, "frame_ending.png")
+        ending_clip_path = os.path.join(tmp_dir, "clip_ending.mp4")
+        make_ending_frame().save(ending_frame_path, "PNG")
+        run_ffmpeg([
+            "ffmpeg", "-y",
+            "-loop", "1",
+            "-i", ending_frame_path,
+            "-t", f"{ENDING_DURATION:.6f}",
+            "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
+            "-c:v", "libx264",
+            "-preset", "ultrafast",
+            "-pix_fmt", "yuv420p",
+            "-r", str(FPS),
+            ending_clip_path,
+        ])
+        clip_paths.append(ending_clip_path)
+        print(f"  エンディングクリップ生成完了（{ENDING_DURATION}秒）")
+
         # --- 6. concat.txt 書き出し ---
         concat_txt = os.path.join(tmp_dir, "concat.txt")
         with open(concat_txt, "w", encoding="utf-8") as f:
@@ -381,17 +443,39 @@ def build_video(
             silent_mp4,
         ])
 
-        # --- 8. 音声結合 → output/video_N.mp4 ---
+        # --- 8. 音声結合（BGMミックス対応） → output/video_N.mp4 ---
         print("  音声結合中...")
-        run_ffmpeg([
-            "ffmpeg", "-y",
-            "-i", silent_mp4,
-            "-i", audio_path,
-            "-c:v", "copy",
-            "-c:a", "aac",
-            "-shortest",
-            output_path,
-        ])
+        total_duration = audio_duration + ENDING_DURATION
+        bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
+        bgm_path = random.choice(bgm_files) if bgm_files else None
+        if bgm_path:
+            print(f"  BGM使用: {Path(bgm_path).name}")
+            run_ffmpeg([
+                "ffmpeg", "-y",
+                "-i", silent_mp4,
+                "-i", audio_path,
+                "-stream_loop", "-1", "-i", bgm_path,
+                "-filter_complex",
+                f"[1:a]apad=whole_dur={total_duration:.3f}[narr];[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
+                "-map", "0:v",
+                "-map", "[aout]",
+                "-c:v", "copy",
+                "-c:a", "aac",
+                output_path,
+            ])
+        else:
+            print("  BGMなし（assets/bgm/ に .mp3 を置くと自動適用されます）")
+            run_ffmpeg([
+                "ffmpeg", "-y",
+                "-i", silent_mp4,
+                "-i", audio_path,
+                "-af", f"apad=whole_dur={total_duration:.3f}",
+                "-map", "0:v",
+                "-map", "1:a",
+                "-c:v", "copy",
+                "-c:a", "aac",
+                output_path,
+            ])
 
         size_mb = Path(output_path).stat().st_size / (1024 * 1024)
         print(f"  最終動画の生成完了: {output_path} ({size_mb:.1f} MB)")
