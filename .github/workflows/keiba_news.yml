@@ -134,7 +134,7 @@ jobs:
         run: python scripts/upload_youtube.py
 
       - name: Commit and push posted_ids.txt
-        if: steps.check_news.outputs.has_news == 'true'
+        if: always() && steps.check_news.outputs.has_news == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
