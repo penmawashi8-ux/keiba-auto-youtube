@@ -70,25 +70,27 @@ def load_credentials_for(id_key: str, secret_key: str, token_key: str) -> Creden
         return None
 
 
-def load_all_credentials() -> list[Credentials]:
+def load_all_credentials() -> tuple[list[Credentials], list[str]]:
     """設定されている全GCPプロジェクトの認証情報をリストで返す。"""
     result = []
+    load_log = []
     for i, (id_key, secret_key, token_key) in enumerate(CREDENTIAL_SETS):
         has_id = bool(os.environ.get(id_key))
         has_secret = bool(os.environ.get(secret_key))
         has_token = bool(os.environ.get(token_key))
-        print(f"  プロジェクト{i+1}: {id_key}={'OK' if has_id else 'EMPTY'} {secret_key}={'OK' if has_secret else 'EMPTY'} {token_key}={'OK' if has_token else 'EMPTY'}")
+        status = f"p{i+1}: {id_key}={'OK' if has_id else 'EMPTY'} {secret_key}={'OK' if has_secret else 'EMPTY'} {token_key}={'OK' if has_token else 'EMPTY'}"
+        print(status)
         creds = load_credentials_for(id_key, secret_key, token_key)
         if creds:
             result.append(creds)
-            print(f"  プロジェクト{i+1}: ロード成功")
+            load_log.append(f"{status} => LOADED")
         else:
-            print(f"  プロジェクト{i+1}: ロード失敗（スキップ）")
+            load_log.append(f"{status} => FAILED")
     if not result:
         print("[エラー] 有効な認証情報が1つもありません。", file=sys.stderr)
         sys.exit(1)
     print(f"認証情報: {len(result)} プロジェクト分ロード完了")
-    return result
+    return result, load_log
 
 
 def find_japanese_font() -> str | None:
@@ -393,7 +395,7 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
-    all_creds = load_all_credentials()
+    all_creds, load_log = load_all_credentials()
     cred_idx = 0
     youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
 
@@ -457,7 +459,7 @@ def main() -> None:
         f"projects_loaded: {len(all_creds)}",
         f"uploaded: {uploaded_count}",
         f"quota_exceeded: {quota_exceeded}",
-    ] + upload_log
+    ] + load_log + upload_log
     Path("last_upload_result.txt").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
     print("\n".join(summary_lines))
 
