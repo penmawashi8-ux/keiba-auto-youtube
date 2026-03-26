@@ -73,6 +73,7 @@ jobs:
 
       - name: AI画像を生成
         id: ai_images
+        continue-on-error: true
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
