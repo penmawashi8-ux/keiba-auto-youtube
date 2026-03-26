@@ -148,24 +148,33 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     except Exception:
         print("  [警告] 説明入力スキップ", file=sys.stderr)
 
-    # ⑤ 「視聴者」設定: 子供向けでない
-    try:
-        page.locator(
-            "[value='VIDEO_MADE_FOR_KIDS_NOT'], "
-            "tp-yt-paper-radio-button[name='NOT_MADE_FOR_KIDS']"
-        ).first.click(timeout=5000)
-    except Exception:
-        pass  # 表示されない場合もある
+    # ⑤ 「視聴者」設定: 子供向けでない（必須 - これを選ばないと「次へ」が押せない）
+    for sel in [
+        "[name='VIDEO_MADE_FOR_KIDS_NOT']",
+        "tp-yt-paper-radio-button[name='NOT_MADE_FOR_KIDS']",
+        "[value='NOT_MADE_FOR_KIDS']",
+    ]:
+        try:
+            page.locator(sel).first.click(timeout=8000)
+            print("  視聴者設定完了")
+            break
+        except Exception:
+            continue
 
     # ⑥ 「次へ」3回
     for step in range(3):
-        time.sleep(1)
-        click_first(page, [
-            "#next-button",
-            "ytcp-button#next-button",
-            "button:has-text('次へ')",
-            "button:has-text('Next')",
-        ])
+        time.sleep(2)
+        try:
+            page.get_by_role("button", name="次へ").first.click(timeout=8000)
+        except Exception:
+            try:
+                page.get_by_role("button", name="Next").first.click(timeout=8000)
+            except Exception:
+                click_first(page, [
+                    "ytcp-button#next-button",
+                    "#next-button",
+                    "[id='next-button']",
+                ])
         print(f"  次へ ({step+1}/3)")
 
     # ⑦ 公開設定
