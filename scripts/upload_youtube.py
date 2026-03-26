@@ -441,12 +441,11 @@ def main() -> None:
 
     if quota_exceeded:
         print(
-            f"\nクォータ超過のためアップロードを中断しました（完了: {uploaded_count} 本）。\n"
-            "明日UTC 0:00にクォータがリセットされます。"
+            f"\n[エラー] 全プロジェクトのクォータが超過しました（完了: {uploaded_count} 本）。\n"
+            "明日UTC 0:00にクォータがリセットされます。",
+            file=sys.stderr,
         )
-        # posted_ids は更新済みなので次回は重複しない
-        # ワークフローとしては成功扱い（クォータは外部要因）
-        sys.exit(0)
+        sys.exit(1)
 
     print(f"\n=== アップロード処理完了: {uploaded_count} 本 ===")
 
