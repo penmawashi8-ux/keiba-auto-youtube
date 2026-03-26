@@ -394,6 +394,7 @@ def main() -> None:
 
     uploaded_count = 0
     quota_exceeded = False
+    upload_log = []
 
     for video_file in video_files:
         idx = int(video_file.stem.split("_")[1])
@@ -425,6 +426,7 @@ def main() -> None:
                 else:
                     print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
                     quota_exceeded = True
+                    upload_log.append(f"QUOTA_EXCEEDED: {title[:50]}")
                     break
 
         # サムネイル生成・アップロード
@@ -435,9 +437,21 @@ def main() -> None:
         except Exception as e:
             print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
 
+        upload_log.append(f"OK project={cred_idx+1} video_id={video_id} title={title[:40]}")
         uploaded_count += 1
 
     update_posted_ids(news_items)
+
+    # 結果サマリーをファイルに書き出す（ワークフローでコミットして確認用）
+    import datetime
+    summary_lines = [
+        f"date: {datetime.datetime.utcnow().isoformat()}Z",
+        f"projects_loaded: {len(all_creds)}",
+        f"uploaded: {uploaded_count}",
+        f"quota_exceeded: {quota_exceeded}",
+    ] + upload_log
+    Path("last_upload_result.txt").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+    print("\n".join(summary_lines))
 
     if quota_exceeded:
         print(
