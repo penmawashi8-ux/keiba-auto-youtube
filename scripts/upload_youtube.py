@@ -73,16 +73,21 @@ def load_credentials_for(id_key: str, secret_key: str, token_key: str) -> Creden
 def load_all_credentials() -> list[Credentials]:
     """設定されている全GCPプロジェクトの認証情報をリストで返す。"""
     result = []
-    for id_key, secret_key, token_key in CREDENTIAL_SETS:
+    for i, (id_key, secret_key, token_key) in enumerate(CREDENTIAL_SETS):
+        has_id = bool(os.environ.get(id_key))
+        has_secret = bool(os.environ.get(secret_key))
+        has_token = bool(os.environ.get(token_key))
+        print(f"  プロジェクト{i+1}: {id_key}={'OK' if has_id else 'EMPTY'} {secret_key}={'OK' if has_secret else 'EMPTY'} {token_key}={'OK' if has_token else 'EMPTY'}")
         creds = load_credentials_for(id_key, secret_key, token_key)
         if creds:
             result.append(creds)
+            print(f"  プロジェクト{i+1}: ロード成功")
+        else:
+            print(f"  プロジェクト{i+1}: ロード失敗（スキップ）")
     if not result:
         print("[エラー] 有効な認証情報が1つもありません。", file=sys.stderr)
         sys.exit(1)
     print(f"認証情報: {len(result)} プロジェクト分ロード完了")
-    for i, (id_key, _, _) in enumerate(CREDENTIAL_SETS[:len(result)]):
-        print(f"  プロジェクト{i+1}: {id_key} OK")
     return result
 
 
