@@ -467,6 +467,7 @@ def build_video(
 
         # --- 8. 音声結合（BGMミックス対応） → output/video_N.mp4 ---
         print("  音声結合中...")
+        total_duration = audio_duration + ENDING_DURATION
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_path = random.choice(bgm_files) if bgm_files else None
         if bgm_path:
@@ -477,7 +478,7 @@ def build_video(
                 "-i", audio_path,
                 "-stream_loop", "-1", "-i", bgm_path,
                 "-filter_complex",
-                f"[1:a]apad[narr];[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
+                f"[1:a]apad=whole_dur={total_duration:.3f}[narr];[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
                 "-map", "0:v",
                 "-map", "[aout]",
                 "-c:v", "copy",
@@ -490,7 +491,7 @@ def build_video(
                 "ffmpeg", "-y",
                 "-i", silent_mp4,
                 "-i", audio_path,
-                "-af", "apad",
+                "-af", f"apad=whole_dur={total_duration:.3f}",
                 "-c:v", "copy",
                 "-c:a", "aac",
                 output_path,
