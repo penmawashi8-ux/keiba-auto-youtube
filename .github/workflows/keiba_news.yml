@@ -113,41 +113,19 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
 
-      - name: Install Playwright browser
-        if: steps.check_news.outputs.has_news == 'true'
-        run: playwright install chromium --with-deps
-
-      - name: Upload to YouTube (Playwright)
-        id: playwright_upload
+      - name: Upload to YouTube
         if: steps.check_news.outputs.has_news == 'true'
         env:
-          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-        run: python scripts/upload_youtube_playwright.py 2>&1 | tee /tmp/playwright.log; exit ${PIPESTATUS[0]}
-
-      - name: Post Playwright log to Issue (失敗時)
-        if: failure() && steps.playwright_upload.conclusion == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          python3 - <<'PYEOF'
-          import os, json, urllib.request, datetime
-          try:
-              log = open("/tmp/playwright.log").read()[-3000:]
-          except Exception:
-              log = "(ログなし)"
-          title = "[DEBUG] Playwright upload log " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
-          body = "```\n" + log + "\n```"
-          payload = json.dumps({"title": title, "body": body}).encode()
-          req = urllib.request.Request(
-              f"https://api.github.com/repos/{os.environ['GH_REPO']}/issues",
-              data=payload,
-              headers={"Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Content-Type": "application/json"},
-              method="POST",
-          )
-          with urllib.request.urlopen(req) as r:
-              print(json.loads(r.read()).get("html_url"))
-          PYEOF
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID_2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET_2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID_3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET_3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN_3 }}
+        run: python scripts/upload_youtube.py
 
       - name: Commit and push posted_ids.txt
         if: steps.check_news.outputs.has_news == 'true'

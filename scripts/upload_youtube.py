@@ -30,27 +30,27 @@ CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
-QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded"}
+# uploadLimitExceeded = チャンネルの1日アップロード本数上限
+QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded", "uploadLimitExceeded"}
+
+# 複数GCPプロジェクトの認証情報（クォータ超過時に順番に切り替え）
+CREDENTIAL_SETS = [
+    ("GOOGLE_CLIENT_ID",   "GOOGLE_CLIENT_SECRET",   "GOOGLE_REFRESH_TOKEN"),
+    ("GOOGLE_CLIENT_ID_2", "GOOGLE_CLIENT_SECRET_2", "GOOGLE_REFRESH_TOKEN_2"),
+    ("GOOGLE_CLIENT_ID_3", "GOOGLE_CLIENT_SECRET_3", "GOOGLE_REFRESH_TOKEN_3"),
+]
 
 THUMB_W, THUMB_H = 1280, 720
 
 
-def load_credentials() -> Credentials:
-    """環境変数からOAuth2認証情報を構築する。"""
-    client_id = os.environ.get("GOOGLE_CLIENT_ID")
-    client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
-    refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
+def load_credentials_for(id_key: str, secret_key: str, token_key: str) -> Credentials | None:
+    """指定した環境変数キーからOAuth2認証情報を構築する。未設定なら None を返す。"""
+    client_id = os.environ.get(id_key)
+    client_secret = os.environ.get(secret_key)
+    refresh_token = os.environ.get(token_key)
 
-    missing = [
-        name for name, val in [
-            ("GOOGLE_CLIENT_ID", client_id),
-            ("GOOGLE_CLIENT_SECRET", client_secret),
-            ("GOOGLE_REFRESH_TOKEN", refresh_token),
-        ] if not val
-    ]
-    if missing:
-        print(f"[エラー] 環境変数が未設定です: {', '.join(missing)}", file=sys.stderr)
-        sys.exit(1)
+    if not all([client_id, client_secret, refresh_token]):
+        return None
 
     creds = Credentials(
         token=None,
@@ -60,16 +60,28 @@ def load_credentials() -> Credentials:
         client_secret=client_secret,
         scopes=YOUTUBE_SCOPES,
     )
-
     try:
         request = google.auth.transport.requests.Request()
         creds.refresh(request)
-        print("OAuth2トークンのリフレッシュ成功。")
+        print(f"OAuth2トークンのリフレッシュ成功 ({id_key})。")
+        return creds
     except Exception as e:
-        print(f"[エラー] トークンリフレッシュ失敗: {e}", file=sys.stderr)
-        sys.exit(1)
+        print(f"[警告] トークンリフレッシュ失敗 ({id_key}): {e}", file=sys.stderr)
+        return None
 
-    return creds
+
+def load_all_credentials() -> list[Credentials]:
+    """設定されている全GCPプロジェクトの認証情報をリストで返す。"""
+    result = []
+    for id_key, secret_key, token_key in CREDENTIAL_SETS:
+        creds = load_credentials_for(id_key, secret_key, token_key)
+        if creds:
+            result.append(creds)
+    if not result:
+        print("[エラー] 有効な認証情報が1つもありません。", file=sys.stderr)
+        sys.exit(1)
+    print(f"認証情報: {len(result)} プロジェクト分ロード完了")
+    return result
 
 
 def find_japanese_font() -> str | None:
@@ -374,8 +386,9 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
-    creds = load_credentials()
-    youtube = build("youtube", "v3", credentials=creds)
+    all_creds = load_all_credentials()
+    cred_idx = 0
+    youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
 
     uploaded_count = 0
     quota_exceeded = False
@@ -401,9 +414,17 @@ def main() -> None:
         video_id = upload_video(youtube, title, description, str(video_file))
 
         if video_id is None:
-            # クォータ超過: 以降のアップロードも不可なのでループを抜ける
-            quota_exceeded = True
-            break
+            # クォータ超過: 次のGCPプロジェクトに切り替え
+            cred_idx += 1
+            if cred_idx < len(all_creds):
+                print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
+                youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
+                video_id = upload_video(youtube, title, description, str(video_file))
+
+            if video_id is None:
+                print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
+                quota_exceeded = True
+                break
 
         # サムネイル生成・アップロード
         print("  サムネイル生成中...")
