@@ -411,20 +411,19 @@ def main() -> None:
         description = build_description(script)
 
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
-        video_id = upload_video(youtube, title, description, str(video_file))
-
-        if video_id is None:
-            # クォータ超過: 次のGCPプロジェクトに切り替え
-            cred_idx += 1
-            if cred_idx < len(all_creds):
-                print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
-                youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
-                video_id = upload_video(youtube, title, description, str(video_file))
-
+        video_id = None
+        while video_id is None:
+            video_id = upload_video(youtube, title, description, str(video_file))
             if video_id is None:
-                print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
-                quota_exceeded = True
-                break
+                # クォータ超過: 次のGCPプロジェクトに切り替え
+                cred_idx += 1
+                if cred_idx < len(all_creds):
+                    print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
+                    youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
+                else:
+                    print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
+                    quota_exceeded = True
+                    break
 
         # サムネイル生成・アップロード
         print("  サムネイル生成中...")
