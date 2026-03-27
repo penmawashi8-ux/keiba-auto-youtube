@@ -375,8 +375,17 @@ def fetch_news() -> list[dict]:
                     if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
                         image_url = og_img
                 if not summary:
-                    text = re.sub(r"<[^>]+>", " ", html)
-                    summary = re.sub(r"\s+", " ", text).strip()[:300]
+                    # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
+                    body = ""
+                    m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
+                    if m:
+                        body = re.sub(r"<[^>]+>", " ", m.group(1))
+                    if len(body.strip()) < 100:
+                        paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
+                        body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
+                    if len(body.strip()) < 100:
+                        body = re.sub(r"<[^>]+>", " ", html)
+                    summary = re.sub(r"\s+", " ", body).strip()[:600]
 
         pub_str = published_dt.isoformat() if published_dt else ""
         print(f"  取得: {title[:60]} [{pub_str[:19]}]")

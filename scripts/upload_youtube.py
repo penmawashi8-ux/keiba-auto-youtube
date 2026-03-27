@@ -21,11 +21,10 @@ OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
 
-YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
-# サムネイルAPIには youtube.force-ssl スコープが必要。
-# 既存トークンが youtube.upload のみの場合、thumbnails.set は 403 になるが
-# 動画アップロード自体には影響しない（upload_thumbnail が警告のみで継続）。
-# 再発行手順は scripts/get_refresh_token.py を参照。
+YOUTUBE_SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.force-ssl",  # サムネイルアップロードに必要
+]
 CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
@@ -268,8 +267,10 @@ def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
         try:
             err_body = json.loads(e.content.decode("utf-8"))
             reason = err_body.get("error", {}).get("errors", [{}])[0].get("reason", "")
+            err_msg = err_body.get("error", {}).get("message", "")
         except Exception:
             reason = ""
+            err_msg = str(e)
         if e.resp.status == 403 and reason in ("forbidden", "channelNotEligible"):
             print(
                 "[警告] サムネイルAPIには YouTube チャンネルの電話番号認証が必要です。\n"
@@ -277,10 +278,17 @@ def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
                 "       YouTube Studio > コンテンツ > 動画を選択 > 詳細 > サムネイル",
                 file=sys.stderr,
             )
+        elif e.resp.status == 403 and "insufficientPermissions" in reason:
+            print(
+                f"[警告] サムネイルAPI 権限不足 (reason={reason})。\n"
+                "       youtube.force-ssl スコープでトークンを再発行してください:\n"
+                "       python scripts/get_refresh_token.py",
+                file=sys.stderr,
+            )
         else:
-            print(f"[警告] サムネイルアップロード失敗 (HTTP {e.resp.status}): {e}", file=sys.stderr)
+            print(f"[警告] サムネイルアップロード失敗 HTTP {e.resp.status} reason={reason}: {err_msg}", file=sys.stderr)
     except Exception as e:
-        print(f"[警告] サムネイルアップロード失敗: {e}", file=sys.stderr)
+        print(f"[警告] サムネイルアップロード失敗: {type(e).__name__}: {e}", file=sys.stderr)
 
 
 def update_posted_ids(news_items: list[dict]) -> None:
