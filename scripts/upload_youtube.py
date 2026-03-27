@@ -335,9 +335,13 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
     """YouTube に動画をアップロードして videoId を返す。
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
+    # YouTubeタイトルの上限は100文字
+    prefix, suffix = "【競馬速報】", " #Shorts"
+    max_body = 100 - len(prefix) - len(suffix)
+    short_title = title if len(title) <= max_body else title[:max_body - 1] + "…"
     body = {
         "snippet": {
-            "title": f"【競馬速報】{title} #Shorts",
+            "title": f"{prefix}{short_title}{suffix}",
             "description": description,
             "tags": TAGS,
             "categoryId": CATEGORY_ID,
