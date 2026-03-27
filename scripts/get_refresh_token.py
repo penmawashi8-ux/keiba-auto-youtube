@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 """
 YouTube サムネイル対応リフレッシュトークン取得スクリプト。
+ローカルサーバー不要・スマホ対応版。
 
 使い方:
-  1. Google Cloud Console でリダイレクトURIに http://localhost:8080/ を追加
-  2. GOOGLE_CLIENT_ID と GOOGLE_CLIENT_SECRET を環境変数にセット
-  3. このスクリプトを実行してブラウザで認証
-  4. 表示された refresh_token を GitHub Secrets の GOOGLE_REFRESH_TOKEN に上書き
+  1. GOOGLE_CLIENT_ID と GOOGLE_CLIENT_SECRET を環境変数にセット
+  2. このスクリプトを実行
+  3. 表示された URL をブラウザで開いてGoogleアカウントで認証
+  4. 認証後にブラウザのアドレスバーに表示される URL から
+     "code=" の後の文字列をコピーして貼り付け
+  5. 表示された refresh_token を GitHub Secrets の GOOGLE_REFRESH_TOKEN に上書き
+
+実行環境:
+  - PC (ターミナル)
+  - スマホ (Replit / Google Colab / a-Shell など)
 
 必要スコープ:
   - youtube.upload     : 動画アップロード
@@ -18,11 +25,10 @@ import sys
 import urllib.parse
 import urllib.request
 import json
-from http.server import BaseHTTPRequestHandler, HTTPServer
 
 CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
-REDIRECT_URI = "http://localhost:8080/"
+REDIRECT_URI = "http://localhost"
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.force-ssl",
@@ -43,38 +49,39 @@ def main():
         "response_type": "code",
         "scope": " ".join(SCOPES),
         "access_type": "offline",
-        "prompt": "consent",  # 必ず refresh_token を返させる
+        "prompt": "consent",
     }
     url = AUTH_URL + "?" + urllib.parse.urlencode(params)
-    print("以下のURLをブラウザで開いて認証してください:\n")
+
+    print("=" * 60)
+    print("【手順1】以下の URL をブラウザで開いてください")
+    print("=" * 60)
     print(url)
     print()
+    print("=" * 60)
+    print("【手順2】Googleアカウントで認証後、ブラウザが")
+    print("  「このサイトにアクセスできません」エラーを表示します。")
+    print("  その時のアドレスバーのURLをコピーしてください。")
+    print()
+    print("  例: http://localhost/?code=4/0AXXX...&scope=...")
+    print("      ↑ この URL 全体 または code= 以降の文字列をコピー")
+    print("=" * 60)
+    print()
 
-    # ローカルサーバーで認証コードを受け取る
-    auth_code = None
+    raw = input("コピーしたURL（またはコード）を貼り付け → ").strip()
 
-    class Handler(BaseHTTPRequestHandler):
-        def do_GET(self):
-            nonlocal auth_code
-            query = urllib.parse.urlparse(self.path).query
-            params = urllib.parse.parse_qs(query)
-            auth_code = params.get("code", [None])[0]
-            self.send_response(200)
-            self.end_headers()
-            self.wfile.write("<h1>OK: Done. Return to terminal.</h1>".encode("utf-8"))
-
-        def log_message(self, *args):
-            pass
-
-    server = HTTPServer(("localhost", 8080), Handler)
-    print("http://localhost:8080/ で待機中... (ブラウザで認証後に自動で進みます)\n")
-    server.handle_request()
+    # URL全体が貼られた場合は code= 部分だけ抽出
+    if "code=" in raw:
+        auth_code = urllib.parse.parse_qs(urllib.parse.urlparse(raw).query).get("code", [raw])[0]
+    else:
+        auth_code = raw
 
     if not auth_code:
         print("[エラー] 認証コードを取得できませんでした。")
         sys.exit(1)
 
-    # 認証コードをトークンに交換
+    print("\nトークン取得中...")
+
     data = urllib.parse.urlencode({
         "code": auth_code,
         "client_id": CLIENT_ID,
@@ -84,8 +91,13 @@ def main():
     }).encode()
 
     req = urllib.request.Request(TOKEN_URL, data=data, method="POST")
-    with urllib.request.urlopen(req) as resp:
-        token_data = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            token_data = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        print(f"[エラー] トークン取得失敗 HTTP {e.code}: {body}")
+        sys.exit(1)
 
     refresh_token = token_data.get("refresh_token")
     if not refresh_token:
@@ -93,9 +105,11 @@ def main():
         print(json.dumps(token_data, indent=2))
         sys.exit(1)
 
+    print()
     print("=" * 60)
-    print("取得成功！以下の refresh_token を")
-    print("GitHub Secrets > GOOGLE_REFRESH_TOKEN に上書きしてください:\n")
+    print("✅ 取得成功！以下の refresh_token を")
+    print("GitHub Secrets > GOOGLE_REFRESH_TOKEN に上書きしてください:")
+    print()
     print(refresh_token)
     print("=" * 60)
 
