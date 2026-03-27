@@ -366,26 +366,27 @@ def fetch_news() -> list[dict]:
         if image_url and re.search(r"google\.com|googleusercontent\.com|gstatic\.com", image_url, re.I):
             image_url = ""
 
-        if not image_url or not summary:
-            raw_html = http_get(link)
-            if raw_html:
-                html = raw_html.decode("utf-8", errors="replace")
-                if not image_url:
-                    og_img = extract_og_image(link, html)
-                    if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
-                        image_url = og_img
-                if not summary:
-                    # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
-                    body = ""
-                    m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
-                    if m:
-                        body = re.sub(r"<[^>]+>", " ", m.group(1))
-                    if len(body.strip()) < 100:
-                        paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
-                        body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
-                    if len(body.strip()) < 100:
-                        body = re.sub(r"<[^>]+>", " ", html)
-                    summary = re.sub(r"\s+", " ", body).strip()[:1500]
+        # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
+        raw_html = http_get(link)
+        if raw_html:
+            html = raw_html.decode("utf-8", errors="replace")
+            if not image_url:
+                og_img = extract_og_image(link, html)
+                if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
+                    image_url = og_img
+            # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
+            body = ""
+            m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
+            if m:
+                body = re.sub(r"<[^>]+>", " ", m.group(1))
+            if len(body.strip()) < 100:
+                paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
+                body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
+            if len(body.strip()) < 100:
+                body = re.sub(r"<[^>]+>", " ", html)
+            full_body = re.sub(r"\s+", " ", body).strip()[:1500]
+            if len(full_body) > len(summary):
+                summary = full_body
 
         pub_str = published_dt.isoformat() if published_dt else ""
         print(f"  取得: {title[:60]} [{pub_str[:19]}]")

@@ -31,8 +31,9 @@ SYSTEM_PROMPT = (
     "- いきなりニュースの核心から始めること\n\n"
     "【内容について】\n"
     "- その記事で「何が一番ニュース価値があるか」を判断して、そこを中心に伝えること\n"
-    "- 記事に書かれている情報を過不足なく伝えれば十分。無理に膨らませない\n"
-    "- 短い記事なら脚本も短くてよい\n\n"
+    "- 記事に書かれている情報を丁寧に伝えること。最低でも100文字以上・200文字以内を目安にすること\n"
+    "- 情報が少ない記事でも、記事に書かれた内容を丁寧に言い換えて100文字程度にまとめること\n"
+    "- 無理に膨らませたり、ニュースにない情報を補わないこと\n\n"
     "テキストのみ出力し、ト書きや記号は不要です。"
 )
 
@@ -74,7 +75,7 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
     url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.2},
+        "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.4},
     }
     for attempt, wait in enumerate([0, 5, 15]):
         if wait:
