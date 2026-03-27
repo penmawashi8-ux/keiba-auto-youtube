@@ -1,8 +1,10 @@
-date: 2026-03-26T11:12:56.702881Z
-projects_loaded: 2
-uploaded: 0
-quota_exceeded: True
+date: 2026-03-27T00:20:26.980340Z
+projects_loaded: 3
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
-p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=EMPTY => FAILED
+p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-QUOTA_EXCEEDED project=2 title=【伏竜S】無傷2連勝中のダノンバーボン 3連勝でオープンVなるか（netkeiba） - Yahoo
+OK project=1 video_id=dxoOp5b0nk4 title=「厳しい指導を毎回毎回やっております」調教師免許の更新試験を理事長が参議院委員会
+OK project=1 video_id=0HjEw36dQnE title=JRA初の女性理事・越穂波氏”究極の黒子”として「諦めないでちょっとずつ」／イン
+OK project=1 video_id=i7X29HU-57o title=ヴィアメント(大井)、シンメデージー(高知)参戦！過半数が各地リーディングジョッ
