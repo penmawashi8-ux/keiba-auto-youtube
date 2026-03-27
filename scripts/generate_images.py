@@ -29,8 +29,8 @@ DEFAULT_PROMPTS = [
 ]
 
 
-def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
-    """Geminiテキストモデルで画像プロンプトを生成（失敗時はデフォルト使用）"""
+def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list[str]:
+    """Geminiテキストモデルで画像プロンプトを生成（全キー失敗時はデフォルト使用）"""
     item = news_items[0] if news_items else {}
     title = item.get("title", "")
     body = item.get("body", item.get("summary", ""))[:300]
@@ -42,38 +42,44 @@ def get_prompts_from_gemini(api_key: str, news_items: list[dict]) -> list[str]:
         f"タイトル: {title}\n本文: {body}"
     )
     url = f"{GEMINI_API_BASE}/gemini-2.5-flash:generateContent"
-    try:
-        r = requests.post(
-            url,
-            json={"contents": [{"parts": [{"text": prompt_text}]}]},
-            params={"key": api_key},
-            timeout=30,
-        )
-        r.raise_for_status()
-        text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        text = text.replace("```json", "").replace("```", "").strip()
-        prompts = json.loads(text)
-        if isinstance(prompts, list) and len(prompts) >= 4:
-            # 要素が文字列でない場合（dictなど）は文字列に変換
-            result = []
-            for item in prompts:
-                if isinstance(item, str):
-                    result.append(item)
-                elif isinstance(item, dict):
-                    # "prompt"/"text"/"description"などのキーを探す
-                    val = next((item[k] for k in ("prompt", "text", "description", "content") if k in item), None)
-                    if val is None and item:
-                        val = str(list(item.values())[0])
-                    if val:
-                        result.append(str(val))
-                else:
-                    result.append(str(item))
-            if len(result) >= 4:
-                print(f"  Geminiプロンプト生成成功: {len(result)}件", flush=True)
-                return result[:4]
-    except Exception as e:
-        safe = str(e).replace(api_key, "***") if api_key else str(e)
-        print(f"  [警告] プロンプト生成失敗: {safe}", flush=True)
+    for api_key in api_keys:
+        key_label = f"***{api_key[-4:]}"
+        try:
+            r = requests.post(
+                url,
+                json={"contents": [{"parts": [{"text": prompt_text}]}]},
+                params={"key": api_key},
+                timeout=30,
+            )
+            if r.status_code == 429:
+                print(f"  [警告] key={key_label} 429 クォータ超過。次のキーへ切り替えます。", flush=True)
+                continue
+            r.raise_for_status()
+            text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+            text = text.replace("```json", "").replace("```", "").strip()
+            prompts = json.loads(text)
+            if isinstance(prompts, list) and len(prompts) >= 4:
+                # 要素が文字列でない場合（dictなど）は文字列に変換
+                result = []
+                for item in prompts:
+                    if isinstance(item, str):
+                        result.append(item)
+                    elif isinstance(item, dict):
+                        # "prompt"/"text"/"description"などのキーを探す
+                        val = next((item[k] for k in ("prompt", "text", "description", "content") if k in item), None)
+                        if val is None and item:
+                            val = str(list(item.values())[0])
+                        if val:
+                            result.append(str(val))
+                    else:
+                        result.append(str(item))
+                if len(result) >= 4:
+                    print(f"  Geminiプロンプト生成成功 (key={key_label}): {len(result)}件", flush=True)
+                    return result[:4]
+        except Exception as e:
+            safe = str(e).replace(api_key, "***") if api_key else str(e)
+            print(f"  [警告] key={key_label} プロンプト生成失敗: {safe}", flush=True)
+    print("  [警告] 全キーでプロンプト生成失敗。デフォルトプロンプトを使用します。", flush=True)
     return DEFAULT_PROMPTS
 
 
@@ -113,8 +119,15 @@ def main() -> None:
     print("=== AI画像生成開始 ===", flush=True)
     ASSETS_DIR.mkdir(exist_ok=True)
 
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    gemini_keys = [
+        k for k in [
+            os.environ.get("GEMINI_API_KEY", ""),
+            os.environ.get("GEMINI_API_KEY_2", ""),
+            os.environ.get("GEMINI_API_KEY_3", ""),
+        ] if k
+    ]
     hf_token = os.environ.get("HF_TOKEN", "")
+    print(f"Gemini APIキー: {len(gemini_keys)} 件ロード", flush=True)
 
     # プロンプト生成
     try:
@@ -123,7 +136,7 @@ def main() -> None:
         news_items = []
 
     print("  プロンプト生成中...", flush=True)
-    prompts = get_prompts_from_gemini(gemini_key, news_items) if gemini_key else DEFAULT_PROMPTS
+    prompts = get_prompts_from_gemini(gemini_keys, news_items) if gemini_keys else DEFAULT_PROMPTS
     for i, p in enumerate(prompts, 1):
         print(f"    [{i}] {p[:80]}", flush=True)
 
