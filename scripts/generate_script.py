@@ -36,6 +36,17 @@ SYSTEM_PROMPT = (
 )
 
 
+def load_api_keys() -> list[str]:
+    """環境変数から Gemini API キーを最大3件ロードする。"""
+    keys = []
+    for env_var in ["GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3"]:
+        k = os.environ.get(env_var, "").strip()
+        if k:
+            keys.append(k)
+    print(f"Gemini APIキー: {len(keys)} 件ロード")
+    return keys
+
+
 def list_available_models(api_key: str) -> list[str]:
     try:
         resp = requests.get(GEMINI_API_BASE, params={"key": api_key}, timeout=30)
@@ -96,18 +107,23 @@ def main() -> None:
         print("ニュースが0件のためスキップします。")
         sys.exit(0)
 
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        print("[エラー] GEMINI_API_KEY が設定されていません。", file=sys.stderr)
+    api_keys = load_api_keys()
+    if not api_keys:
+        print("[エラー] GEMINI_API_KEY が1件も設定されていません。", file=sys.stderr)
         sys.exit(1)
 
-    available = list_available_models(api_key)
+    # 最初のキーでモデル一覧を取得（全キー共通のモデルを使用）
+    available = list_available_models(api_keys[0])
     candidates = [m for m in PREFERRED_MODELS if m in available]
     if not candidates:
         candidates = available[:3] if available else []
     if not candidates:
         print("[エラー] 利用可能なモデルが見つかりません。", file=sys.stderr)
         sys.exit(1)
+
+    # (APIキー, モデル名) の全組み合わせリスト（キー優先でローテーション）
+    key_model_pairs = [(key, model) for key in api_keys for model in candidates]
+    print(f"試行組み合わせ数: {len(key_model_pairs)} (キー×モデル)")
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
@@ -120,18 +136,19 @@ def main() -> None:
             f"タイトル: {item['title']}\n"
             f"内容: {item.get('summary', '')[:300]}"
         )
-        for model_name in candidates:
-            print(f"[{i}] 使用モデル: {model_name}")
+        for key, model_name in key_model_pairs:
+            key_label = f"***{key[-4:]}"
+            print(f"[{i}] 使用: key={key_label} model={model_name}")
             try:
-                script = call_gemini(api_key, model_name, prompt)
+                script = call_gemini(key, model_name, prompt)
                 out_path = Path(f"{OUTPUT_DIR}/script_{i}.txt")
                 out_path.write_text(script, encoding="utf-8")
                 print(f"[{i}]  → {out_path} 保存 ({len(script)}文字)")
                 print(f"[{i}]  プレビュー: {script[:80]}...")
                 return i, True
             except QuotaExceeded:
-                print(f"[{i}]  [{model_name}] クォータ超過。次のモデルへ切り替えます。", file=sys.stderr)
-        print(f"[{i}] [エラー] 全モデルでクォータ超過。", file=sys.stderr)
+                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。次へ切り替えます。", file=sys.stderr)
+        print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 
     with ThreadPoolExecutor(max_workers=len(news_items)) as executor:
