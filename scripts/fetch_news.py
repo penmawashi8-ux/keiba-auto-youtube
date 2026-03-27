@@ -385,7 +385,7 @@ def fetch_news() -> list[dict]:
                         body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
                     if len(body.strip()) < 100:
                         body = re.sub(r"<[^>]+>", " ", html)
-                    summary = re.sub(r"\s+", " ", body).strip()[:600]
+                    summary = re.sub(r"\s+", " ", body).strip()[:1500]
 
         pub_str = published_dt.isoformat() if published_dt else ""
         print(f"  取得: {title[:60]} [{pub_str[:19]}]")

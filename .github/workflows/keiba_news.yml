@@ -120,34 +120,13 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_audio.py
 
-      - name: Generate BGM (フリーBGM3種生成)
+      - name: BGMをダウンロード（Pixabay動画から音声抽出）
         if: steps.check_news.outputs.has_news == 'true'
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           mkdir -p assets/bgm
-          # BGM1: 明るいアップテンポ（Cメジャー コード プラック 2Hz）
-          if [ ! -f assets/bgm/bgm_1.mp3 ]; then
-            ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.4*sin(523*2*PI*t)*abs(sin(4*PI*t))+0.3*sin(659*2*PI*t)*abs(sin(4*PI*t))+0.2*sin(784*2*PI*t)*abs(sin(4*PI*t)):c=stereo:s=44100:d=90" \
-              -af "afade=t=in:st=0:d=3,afade=t=out:st=87:d=3,volume=0.9" \
-              assets/bgm/bgm_1.mp3
-            echo "BGM1 生成完了（明るいアップテンポ）"
-          fi
-          # BGM2: 落ち着いたアンビエント（Gメジャー コード スロー）
-          if [ ! -f assets/bgm/bgm_2.mp3 ]; then
-            ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.35*sin(392*2*PI*t)*abs(sin(0.5*PI*t))+0.25*sin(494*2*PI*t)*abs(sin(0.5*PI*t))+0.2*sin(588*2*PI*t)*abs(sin(0.5*PI*t)):c=stereo:s=44100:d=90" \
-              -af "afade=t=in:st=0:d=4,afade=t=out:st=86:d=4,volume=0.8" \
-              assets/bgm/bgm_2.mp3
-            echo "BGM2 生成完了（落ち着いたアンビエント）"
-          fi
-          # BGM3: 疾走感のある競馬らしいBGM（Aマイナー 速いパルス）
-          if [ ! -f assets/bgm/bgm_3.mp3 ]; then
-            ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.35*sin(440*2*PI*t)*abs(sin(8*PI*t))+0.3*sin(330*2*PI*t)*abs(sin(8*PI*t))+0.2*sin(220*2*PI*t)*abs(sin(8*PI*t)):c=stereo:s=44100:d=90" \
-              -af "afade=t=in:st=0:d=2,afade=t=out:st=88:d=2,volume=0.9" \
-              assets/bgm/bgm_3.mp3
-            echo "BGM3 生成完了（疾走感のある競馬BGM）"
-          fi
+          python scripts/download_bgm.py
 
       - name: Generate video
         if: steps.check_news.outputs.has_news == 'true'
