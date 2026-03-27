@@ -22,7 +22,7 @@ NEWS_JSON = "news.json"
 ASSETS_DIR = Path("assets")
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
-POLLINATIONS_URL = "https://image.pollinations.ai/prompt/{prompt}?width=768&height=1280&nologo=true&seed={seed}&model=flux"
+POLLINATIONS_URL = "https://image.pollinations.ai/prompt/{prompt}?width=768&height=1280&seed={seed}&model=flux"
 HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
 DEFAULT_PROMPTS = [
