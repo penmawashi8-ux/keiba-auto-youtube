@@ -1,10 +1,9 @@
-date: 2026-03-27T03:28:31.991954Z
+date: 2026-03-27T07:06:18.562526Z
 projects_loaded: 3
-uploaded: 3
-quota_exceeded: False
+uploaded: 1
+quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=CnrfXeYi2-Y title=競馬 - 2026年ブラッドストーンステークス 出馬表 - スポーツナビ
-OK project=1 video_id=wVZZIPPWojs title=【日経賞枠順】有馬記念2着のコスモキュランダは4枠7番 前走同舞台で3馬身半差V
-OK project=1 video_id=ciUFDQGnycI title=アブダビゴールドC覇者シュトラウスはモレイラとコンビ継続で香港チャンピオンズマイ
+OK project=1 video_id=ytNhNuZQssQ title=【マーチS・生情報】高木登厩舎は転厩初戦ペイシャエスと一昨年Vヴァルツァーシャル
+QUOTA_EXCEEDED project=3 title=函館競馬場１３０周年記念のラッピング電車、運行開始！ - 函館市公式観光サイト
