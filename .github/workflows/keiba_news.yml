@@ -127,7 +127,7 @@ jobs:
           # BGM1: 明るいアップテンポ（Cメジャー コード プラック 2Hz）
           if [ ! -f assets/bgm/bgm_1.mp3 ]; then
             ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.35*sin(523.3*2*PI*t)*exp(-4*fmod(t,0.5))+0.25*sin(659.3*2*PI*t)*exp(-4*fmod(t,0.5))+0.2*sin(783.99*2*PI*t)*exp(-4*fmod(t,0.5))+0.15*sin(1046.5*2*PI*t)*exp(-4*fmod(t,0.5)):c=stereo:s=44100:d=90" \
+              -i "aevalsrc=0.4*sin(523*2*PI*t)*abs(sin(4*PI*t))+0.3*sin(659*2*PI*t)*abs(sin(4*PI*t))+0.2*sin(784*2*PI*t)*abs(sin(4*PI*t)):c=stereo:s=44100:d=90" \
               -af "afade=t=in:st=0:d=3,afade=t=out:st=87:d=3,volume=0.9" \
               assets/bgm/bgm_1.mp3
             echo "BGM1 生成完了（明るいアップテンポ）"
@@ -135,15 +135,15 @@ jobs:
           # BGM2: 落ち着いたアンビエント（Gメジャー コード スロー）
           if [ ! -f assets/bgm/bgm_2.mp3 ]; then
             ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.3*sin(392*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t))+0.25*sin(493.88*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t+1.0))+0.2*sin(587.33*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t+2.0))+0.15*sin(196*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t)):c=stereo:s=44100:d=90" \
+              -i "aevalsrc=0.35*sin(392*2*PI*t)*abs(sin(0.5*PI*t))+0.25*sin(494*2*PI*t)*abs(sin(0.5*PI*t))+0.2*sin(588*2*PI*t)*abs(sin(0.5*PI*t)):c=stereo:s=44100:d=90" \
               -af "afade=t=in:st=0:d=4,afade=t=out:st=86:d=4,volume=0.8" \
               assets/bgm/bgm_2.mp3
             echo "BGM2 生成完了（落ち着いたアンビエント）"
           fi
-          # BGM3: 疾走感のある競馬らしいBGM（Aマイナー 速いプラック）
+          # BGM3: 疾走感のある競馬らしいBGM（Aマイナー 速いパルス）
           if [ ! -f assets/bgm/bgm_3.mp3 ]; then
             ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.3*sin(220*2*PI*t)*exp(-6*fmod(t,0.25))+0.25*sin(330*2*PI*t)*exp(-6*fmod(t,0.25))+0.2*sin(440*2*PI*t)*exp(-6*fmod(t,0.25))+0.25*sin(110*2*PI*t)*exp(-6*fmod(t,0.25)):c=stereo:s=44100:d=90" \
+              -i "aevalsrc=0.35*sin(440*2*PI*t)*abs(sin(8*PI*t))+0.3*sin(330*2*PI*t)*abs(sin(8*PI*t))+0.2*sin(220*2*PI*t)*abs(sin(8*PI*t)):c=stereo:s=44100:d=90" \
               -af "afade=t=in:st=0:d=2,afade=t=out:st=88:d=2,volume=0.9" \
               assets/bgm/bgm_3.mp3
             echo "BGM3 生成完了（疾走感のある競馬BGM）"
