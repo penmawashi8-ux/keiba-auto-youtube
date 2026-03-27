@@ -435,6 +435,10 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
+    # 1回の実行で最大1本に制限（チャンネルの1日アップロード上限を超えないため）
+    video_files = video_files[:1]
+    print(f"今回アップロード対象: {video_files[0].name}（1本に制限）")
+
     all_creds, load_log = load_all_credentials()
     cred_idx = 0
     youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
