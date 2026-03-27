@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 フリーBGMダウンロードスクリプト
-Pixabay 動画API（既存キー）で音楽動画を検索 → ffmpegで音声抽出してBGMを生成する。
+Pixabay Music API で音楽を検索してダウンロードする。
 """
 import json
 import os
@@ -18,32 +18,38 @@ PIXABAY_API_KEY = os.environ.get("PIXABAY_API_KEY", "")
 
 # BGM種別ごとの検索クエリ
 BGM_QUERIES = [
-    ("bgm_1", "upbeat happy background music"),
-    ("bgm_2", "calm relaxing piano music"),
-    ("bgm_3", "exciting sport action music"),
+    ("bgm_1", "upbeat happy"),
+    ("bgm_2", "calm relaxing"),
+    ("bgm_3", "exciting energetic"),
 ]
 
 
-def search_pixabay_videos(query: str, api_key: str) -> list[dict]:
-    """Pixabay動画APIで検索し、ヒットリストを返す。"""
+def search_pixabay_music(query: str, api_key: str) -> list[dict]:
+    """Pixabay Music API で検索してヒットリストを返す。"""
     url = (
-        "https://pixabay.com/api/videos/"
+        "https://pixabay.com/api/music/"
         f"?key={api_key}"
         f"&q={urllib.parse.quote(query)}"
         "&per_page=5"
-        "&video_type=film"
     )
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, timeout=20) as resp:
-            return json.loads(resp.read()).get("hits", [])
+            data = json.loads(resp.read())
+        hits = data.get("hits", [])
+        print(f"  Pixabay Music 検索結果: {len(hits)} 件")
+        return hits
+    except urllib.error.HTTPError as e:
+        print(f"  [警告] Pixabay Music API HTTP {e.code}: {e.reason}")
+        return []
     except Exception as e:
-        print(f"  [警告] Pixabay動画検索失敗: {e}")
+        print(f"  [警告] Pixabay Music API エラー: {e}")
         return []
 
 
-def download_file(url: str, dest: str, timeout: int = 120) -> bool:
-    """URLからファイルをダウンロード。成功でTrue。"""
+def download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
+    """URLからMP3をダウンロードして音量を正規化する。"""
+    tmp = dest + ".tmp"
     try:
         req = urllib.request.Request(
             url,
@@ -54,43 +60,29 @@ def download_file(url: str, dest: str, timeout: int = 120) -> bool:
         if len(data) < 10_000:
             print(f"  [警告] ファイルが小さすぎます ({len(data)} bytes)")
             return False
-        Path(dest).write_bytes(data)
-        print(f"  ダウンロード完了: {Path(dest).name} ({len(data)//1024} KB)")
-        return True
+        Path(tmp).write_bytes(data)
+        print(f"  ダウンロード完了: {len(data)//1024} KB")
     except Exception as e:
         print(f"  [警告] ダウンロード失敗: {e}")
         return False
 
-
-def extract_audio(video_path: str, mp3_path: str, duration: int = 90) -> bool:
-    """動画ファイルから音声を抽出してMP3に変換する（最大duration秒）。"""
+    # ffmpeg で音量正規化 + ステレオ確認
     try:
         subprocess.run([
-            "ffmpeg", "-y", "-i", video_path,
-            "-t", str(duration),
-            "-vn",
-            "-af", (f"afade=t=in:st=0:d=3,"
-                    f"afade=t=out:st={duration-3}:d=3,"
-                    f"loudnorm=I=-16:TP=-1.5:LRA=11,"
-                    f"volume=0.85"),
+            "ffmpeg", "-y", "-i", tmp,
+            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11,volume=0.85",
             "-c:a", "libmp3lame", "-b:a", "128k", "-ac", "2",
-            mp3_path,
+            dest,
         ], check=True, capture_output=True)
+        Path(tmp).unlink(missing_ok=True)
+        print(f"  正規化完了: {dest}")
         return True
     except subprocess.CalledProcessError as e:
-        print(f"  [警告] 音声抽出失敗: {e.stderr.decode()[:300]}")
-        return False
-
-
-def get_video_url(hit: dict) -> str:
-    """Pixabayのヒットから最も軽いビデオURLを取得する。"""
-    videos = hit.get("videos", {})
-    for quality in ("tiny", "small", "medium", "large"):
-        v = videos.get(quality, {})
-        url = v.get("url", "")
-        if url:
-            return url
-    return ""
+        print(f"  [警告] 正規化失敗 ({e.returncode}): {e.stderr.decode()[:200]}")
+        # 正規化失敗でもrawを使う
+        Path(tmp).rename(dest)
+        print(f"  正規化なしで保存: {dest}")
+        return True
 
 
 def main():
@@ -104,30 +96,34 @@ def main():
     for name, query in BGM_QUERIES:
         dest_mp3 = f"{BGM_DIR}/{name}.mp3"
         if Path(dest_mp3).exists():
-            print(f"{name}.mp3 は既存のためスキップ")
+            size_kb = Path(dest_mp3).stat().st_size // 1024
+            print(f"{name}.mp3 は既存のためスキップ ({size_kb} KB)")
             success += 1
             continue
 
         print(f"\n--- {name}: 「{query}」で検索 ---")
-        hits = search_pixabay_videos(query, PIXABAY_API_KEY)
+        hits = search_pixabay_music(query, PIXABAY_API_KEY)
 
         downloaded = False
         for hit in hits:
-            video_url = get_video_url(hit)
-            if not video_url:
+            # Pixabay Music API のレスポンス形式に対応
+            audio_url = (
+                hit.get("audio")
+                or hit.get("audioUrl")
+                or hit.get("url")
+                or hit.get("previewURL")
+                or ""
+            )
+            title = hit.get("title", hit.get("tags", "unknown"))[:50]
+            print(f"  候補: {title} → {audio_url[:60] if audio_url else '(URLなし)'}")
+
+            if not audio_url:
                 continue
-            title = hit.get("tags", "unknown")[:40]
-            print(f"  候補: {title}")
-            tmp_video = f"{BGM_DIR}/{name}_tmp.mp4"
-            if download_file(video_url, tmp_video):
-                if extract_audio(tmp_video, dest_mp3):
-                    Path(tmp_video).unlink(missing_ok=True)
-                    print(f"  {name}.mp3 → 保存完了")
-                    downloaded = True
-                    success += 1
-                    break
-                else:
-                    Path(tmp_video).unlink(missing_ok=True)
+
+            if download_and_normalize(audio_url, dest_mp3):
+                downloaded = True
+                success += 1
+                break
 
         if not downloaded:
             print(f"  [エラー] {name} のBGM取得に失敗しました。")
