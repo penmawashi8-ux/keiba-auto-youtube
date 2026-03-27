@@ -29,8 +29,10 @@ CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
-# uploadLimitExceeded = チャンネルの1日アップロード本数上限
-QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded", "uploadLimitExceeded"}
+# GCPプロジェクト切り替えで解決できるAPIクォータ超過
+QUOTA_EXCEEDED_REASONS = {"quotaExceeded", "userRateLimitExceeded", "dailyLimitExceeded"}
+# チャンネル自体の制限（プロジェクト切り替えでは解決不可）
+CHANNEL_LIMIT_REASONS = {"uploadLimitExceeded"}
 
 # 複数GCPプロジェクトの認証情報（クォータ超過時に順番に切り替え）
 CREDENTIAL_SETS = [
@@ -301,20 +303,32 @@ def update_posted_ids(news_items: list[dict]) -> None:
     print(f"投稿済みID {len(new_ids)} 件を {POSTED_IDS_FILE} に追記しました。")
 
 
-def is_quota_exceeded(http_error: HttpError) -> bool:
-    """HttpError がクォータ超過かどうかを判定する。"""
+def _get_error_reasons(http_error: HttpError) -> set[str]:
     try:
         content = json.loads(http_error.content.decode("utf-8"))
-        errors = content.get("error", {}).get("errors", [])
-        for err in errors:
-            if err.get("reason") in QUOTA_EXCEEDED_REASONS:
-                return True
+        return {e.get("reason", "") for e in content.get("error", {}).get("errors", [])}
+    except Exception:
+        return set()
+
+
+def is_quota_exceeded(http_error: HttpError) -> bool:
+    """GCPプロジェクト切り替えで解決できるAPIクォータ超過かどうかを判定する。"""
+    reasons = _get_error_reasons(http_error)
+    if reasons & QUOTA_EXCEEDED_REASONS:
+        return True
+    try:
+        content = json.loads(http_error.content.decode("utf-8"))
         message = content.get("error", {}).get("message", "").lower()
         if "quota" in message or "rate limit" in message:
             return True
     except Exception:
         pass
-    return False  # 全ての403をクォータ超過扱いしない
+    return False
+
+
+def is_channel_upload_limit(http_error: HttpError) -> bool:
+    """チャンネルの1日アップロード上限か判定する（プロジェクト切り替えでは解決不可）。"""
+    return bool(_get_error_reasons(http_error) & CHANNEL_LIMIT_REASONS)
 
 
 def upload_video(youtube, title: str, description: str, video_path: str) -> str | None:
@@ -370,13 +384,22 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
             error_content = {}
         print(f"[エラー] YouTube API HTTP {e.resp.status}: {error_content}", file=sys.stderr)
 
+        if is_channel_upload_limit(e):
+            print(
+                "[警告] チャンネルの1日アップロード上限に達しました。\n"
+                "       GCPプロジェクト切り替えでは解決できません（チャンネル自体の制限）。\n"
+                "       明日UTC 0:00（JST 9:00）にリセットされます。",
+                file=sys.stderr,
+            )
+            return "CHANNEL_LIMIT"
+
         if is_quota_exceeded(e):
             print(
                 "[警告] YouTube APIのクォータ（1日10,000ユニット）を超過しました。\n"
-                "       明日UTC 0:00にリセットされるまでアップロードはスキップします。",
+                "       次のGCPプロジェクトに切り替えます。",
                 file=sys.stderr,
             )
-            return None  # クォータ超過は呼び出し元で処理
+            return None  # クォータ超過は呼び出し元でプロジェクト切り替え
 
         sys.exit(1)
 
@@ -440,18 +463,25 @@ def main() -> None:
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
         video_id = None
         while video_id is None:
-            video_id = upload_video(youtube, title, description, str(video_file))
-            if video_id is None:
-                # クォータ超過: 次のGCPプロジェクトに切り替え
+            result = upload_video(youtube, title, description, str(video_file))
+            if result == "CHANNEL_LIMIT":
+                # チャンネル制限: プロジェクト切り替えでは解決しない → 即停止
+                quota_exceeded = True
+                upload_log.append(f"CHANNEL_LIMIT title={title[:50]}")
+                break
+            elif result is None:
+                # APIクォータ超過: 次のGCPプロジェクトに切り替え
                 cred_idx += 1
                 if cred_idx < len(all_creds):
                     print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
                     youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
                 else:
-                    print("[警告] 全プロジェクトのクォータが超過しました。残りはスキップします。")
+                    print("[警告] 全プロジェクトのAPIクォータが超過しました。残りはスキップします。")
                     quota_exceeded = True
                     upload_log.append(f"QUOTA_EXCEEDED project={cred_idx} title={title[:50]}")
                     break
+            else:
+                video_id = result
 
         if quota_exceeded:
             break
