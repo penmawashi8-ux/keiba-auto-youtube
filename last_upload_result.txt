@@ -1,10 +1,10 @@
-date: 2026-03-27T12:27:40.656145Z
+date: 2026-03-27T12:39:45.951703Z
 projects_loaded: 3
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=UQ_eTEEuUk0 title=出馬表 | 2026ドバイワールドカップ | JRA-VAN World - 海
-OK project=1 video_id=Kuzrtm55zxA title=細江純子の高松宮記念予想 「一発ありそう」と語った一頭とは？（netkeiba）
-OK project=1 video_id=RmKXqAJWLf8 title=【高松宮記念】後藤がガチ予想 先行抜け出しで決める...！ - スポニチ競馬We
+OK project=1 video_id=yudGYuWZIl8 title=【高松宮記念 2026】昨秋スプリンターズSをＷズバリ！久光前田の有力馬診断＆ナ
+OK project=1 video_id=cIHoWJ2_xbY title=【マーチS】重賞最強データ！データ2冠の実績馬、初重賞戴冠へ視界良好（競馬ラボ）
+OK project=1 video_id=1Bx-P4JTc6c title=【高松宮記念2026予想】細江純子の注目馬 連覇のかかるサトノレーヴ・3年連続2
