@@ -314,7 +314,7 @@ def is_quota_exceeded(http_error: HttpError) -> bool:
             return True
     except Exception:
         pass
-    return http_error.resp.status == 403
+    return False  # 全ての403をクォータ超過扱いしない
 
 
 def upload_video(youtube, title: str, description: str, video_path: str) -> str | None:

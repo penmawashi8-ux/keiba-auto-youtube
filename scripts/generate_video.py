@@ -39,6 +39,7 @@ VIDEO_HEIGHT = 1920
 FPS = 30
 FONT_SIZE = 60
 ENDING_DURATION = 4.0   # エンディングカード表示秒数
+THUMBNAIL_DURATION = 1.5  # 先頭サムネイルフレーム表示秒数
 BGM_VOLUME = 0.12       # BGM音量（ナレーションに対する比率）
 SUBTITLE_MAX_WIDTH_RATIO = 0.80   # 字幕の最大横幅割合（縁取り込みで余裕を持たせる）
 LINE_SPACING = 10
@@ -301,6 +302,60 @@ def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.
 # エンディングカード生成
 # ---------------------------------------------------------------------------
 
+def make_thumbnail_frame(title: str, assets_images: list[str], index: int, font_path: str | None) -> Image.Image:
+    """動画先頭に挿入するサムネイルフレーム（Shorts用縦型1080x1920）を生成する。
+    YouTubeがこのフレームを選択肢として認識し、サムネイルとして使えるようになる。"""
+    bg = load_background(assets_images, index)
+
+    overlay = Image.new("RGBA", (VIDEO_WIDTH, VIDEO_HEIGHT), (0, 0, 0, 150))
+    img = Image.alpha_composite(bg.convert("RGBA"), overlay).convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    def load_font(size: int) -> ImageFont.ImageFont:
+        try:
+            return ImageFont.truetype(font_path, size) if font_path else ImageFont.load_default()
+        except Exception:
+            return ImageFont.load_default()
+
+    # 「競馬速報」赤バッジ（左上）
+    badge_font = load_font(56)
+    badge_text = "競馬速報"
+    pad = 22
+    try:
+        bb = draw.textbbox((0, 0), badge_text, font=badge_font)
+        bw, bh = bb[2] - bb[0], bb[3] - bb[1]
+    except Exception:
+        bw, bh = 220, 64
+    draw.rounded_rectangle(
+        [44, 70, 44 + bw + pad * 2, 70 + bh + pad],
+        radius=14, fill=(210, 30, 30),
+    )
+    draw.text((44 + pad, 70 + pad // 2), badge_text, font=badge_font,
+              fill=(255, 255, 255), stroke_width=2, stroke_fill=(150, 0, 0))
+
+    # タイトルテキスト（中央・黄色）
+    import re
+    clean_title = re.sub(r"[\u3000\s]+", " ", title).strip()
+    title_font = load_font(100)
+    lines = textwrap.wrap(clean_title, width=10)[:4]
+    line_h = 120
+    total_h = len(lines) * line_h
+    start_y = (VIDEO_HEIGHT - total_h) // 2 - 80
+
+    for i, line in enumerate(lines):
+        try:
+            bb = draw.textbbox((0, 0), line, font=title_font)
+            tw = bb[2] - bb[0]
+        except Exception:
+            tw = len(line) * 60
+        x = max((VIDEO_WIDTH - tw) // 2, 20)
+        y = start_y + i * line_h
+        draw.text((x, y), line, font=title_font,
+                  fill=(255, 235, 0), stroke_width=7, stroke_fill=(0, 0, 0))
+
+    return img
+
+
 def make_ending_frame(font_path: str | None) -> Image.Image:
     """チャンネル登録促進のエンディングカード画像を生成する。"""
     img = Image.new("RGB", (VIDEO_WIDTH, VIDEO_HEIGHT))
@@ -376,6 +431,7 @@ def build_video(
     output_path: str,
     assets_images: list[str],
     font: ImageFont.ImageFont,
+    title: str = "",
 ) -> None:
     script = script_path.read_text(encoding="utf-8").strip()
     raw = [s.strip() for s in script.split("。") if s.strip()]
@@ -401,8 +457,27 @@ def build_video(
 
     tmp_dir = tempfile.mkdtemp(prefix="keiba_video_")
     try:
-        # --- 4. 字幕フレーム画像生成 ---
+        # --- サムネイルフレームを先頭クリップとして生成 ---
         clip_paths: list[str] = []
+        if title:
+            font_path_for_thumb = find_japanese_font()
+            thumb_frame = make_thumbnail_frame(title, assets_images, 0, font_path_for_thumb)
+            thumb_frame_path = os.path.join(tmp_dir, "frame_thumb.png")
+            thumb_frame.save(thumb_frame_path, "PNG")
+            thumb_clip_path = os.path.join(tmp_dir, "clip_thumb.mp4")
+            run_ffmpeg([
+                "ffmpeg", "-y",
+                "-loop", "1", "-i", thumb_frame_path,
+                "-t", str(THUMBNAIL_DURATION),
+                "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
+                "-c:v", "libx264", "-preset", "ultrafast",
+                "-pix_fmt", "yuv420p", "-r", str(FPS),
+                thumb_clip_path,
+            ])
+            clip_paths.append(thumb_clip_path)
+            print(f"  サムネイルフレーム生成完了: {THUMBNAIL_DURATION}秒")
+
+        # --- 4. 字幕フレーム画像生成 ---
         for i, (sentence, duration) in enumerate(zip(sentences, durations)):
             frame_path = os.path.join(tmp_dir, f"frame_{i}.png")
             frame_img = make_frame(sentence, assets_images, i, font)
@@ -467,19 +542,26 @@ def build_video(
 
         # --- 8. 音声結合（BGMミックス対応） → output/video_N.mp4 ---
         print("  音声結合中...")
-        # 実際の映像尺（MIN_CUT_DURATION補正後の合計）に合わせる
-        total_duration = sum(durations) + ENDING_DURATION
+        # 実際の映像尺（サムネイルフレーム＋MIN_CUT_DURATION補正後の合計）に合わせる
+        thumb_offset = THUMBNAIL_DURATION if title else 0.0
+        total_duration = thumb_offset + sum(durations) + ENDING_DURATION
+        # ナレーション遅延（ms）: サムネイルフレーム分だけずらす
+        narr_delay_ms = int(thumb_offset * 1000)
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_path = random.choice(bgm_files) if bgm_files else None
         if bgm_path:
             print(f"  BGM使用: {Path(bgm_path).name}")
+            if narr_delay_ms > 0:
+                narr_filter = f"[1:a]adelay={narr_delay_ms}|{narr_delay_ms},apad=whole_dur={total_duration:.3f}[narr]"
+            else:
+                narr_filter = f"[1:a]apad=whole_dur={total_duration:.3f}[narr]"
             run_ffmpeg([
                 "ffmpeg", "-y",
                 "-i", silent_mp4,
                 "-i", audio_path,
                 "-stream_loop", "-1", "-i", bgm_path,
                 "-filter_complex",
-                f"[1:a]apad=whole_dur={total_duration:.3f}[narr];[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
+                f"{narr_filter};[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
                 "-map", "0:v",
                 "-map", "[aout]",
                 "-c:v", "copy",
@@ -488,11 +570,15 @@ def build_video(
             ])
         else:
             print("  BGMなし（assets/bgm/ に .mp3 を置くと自動適用されます）")
+            if narr_delay_ms > 0:
+                af_filter = f"adelay={narr_delay_ms}|{narr_delay_ms},apad=whole_dur={total_duration:.3f}"
+            else:
+                af_filter = f"apad=whole_dur={total_duration:.3f}"
             run_ffmpeg([
                 "ffmpeg", "-y",
                 "-i", silent_mp4,
                 "-i", audio_path,
-                "-af", f"apad=whole_dur={total_duration:.3f}",
+                "-af", af_filter,
                 "-c:v", "copy",
                 "-c:a", "aac",
                 output_path,
@@ -578,9 +664,10 @@ def main() -> None:
             continue
 
         item = news_items[idx] if idx < len(news_items) else {}
-        print(f"\n--- 動画生成 [{idx}]: {item.get('title', '')[:50]} ---")
+        title = item.get("title", "")
+        print(f"\n--- 動画生成 [{idx}]: {title[:50]} ---")
 
-        build_video(script_file, audio_path, output_path, assets_images, font)
+        build_video(script_file, audio_path, output_path, assets_images, font, title=title)
 
     video_files = list(Path(OUTPUT_DIR).glob("video_*.mp4"))
     print(f"\n{len(video_files)} 本の動画を生成しました。")
