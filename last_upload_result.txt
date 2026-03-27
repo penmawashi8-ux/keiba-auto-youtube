@@ -1,9 +1,10 @@
-date: 2026-03-27T07:06:18.562526Z
+date: 2026-03-27T12:13:58.338524Z
 projects_loaded: 3
-uploaded: 1
-quota_exceeded: True
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=ytNhNuZQssQ title=【マーチS・生情報】高木登厩舎は転厩初戦ペイシャエスと一昨年Vヴァルツァーシャル
-QUOTA_EXCEEDED project=3 title=函館競馬場１３０周年記念のラッピング電車、運行開始！ - 函館市公式観光サイト
+OK project=1 video_id=7vJPbwXXzOY title=1着賞金11億円！日本馬フォーエバーヤング出走、3月28日の競馬「ドバイワールド
+OK project=1 video_id=6_NBDcv-xl4 title=【高松宮記念】重賞最強データ！再び波乱演出へ、大金星の再現なるか（競馬ラボ） -
+OK project=1 video_id=wXG5sLXBx3Y title=競馬 - 2026年ターフオーソリティーオブインディア賞 AI予想 - スポーツ
