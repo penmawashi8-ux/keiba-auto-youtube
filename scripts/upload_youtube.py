@@ -246,6 +246,14 @@ def generate_thumbnail(title: str, idx: int) -> bytes:
     return buf.getvalue()
 
 
+def save_thumbnail(thumbnail_bytes: bytes, idx: int) -> str:
+    """サムネイル画像をファイルに保存して、パスを返す。"""
+    thumb_path = f"{OUTPUT_DIR}/thumbnail_{idx}.jpg"
+    Path(thumb_path).write_bytes(thumbnail_bytes)
+    print(f"  サムネイル保存: {thumb_path}")
+    return thumb_path
+
+
 def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
     """動画にサムネイルをアップロードする（失敗は警告のみ）。"""
     media = MediaIoBaseUpload(
@@ -264,8 +272,9 @@ def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
             reason = ""
         if e.resp.status == 403 and reason in ("forbidden", "channelNotEligible"):
             print(
-                "[警告] サムネイル設定には YouTube チャンネルの電話番号認証が必要です。\n"
-                "       YouTube Studio > 設定 > チャンネル > 機能の利用資格 で確認してください。",
+                "[警告] サムネイルAPIには YouTube チャンネルの電話番号認証が必要です。\n"
+                "       output/thumbnail_N.jpg を YouTube Studio から手動でアップロードしてください。\n"
+                "       YouTube Studio > コンテンツ > 動画を選択 > 詳細 > サムネイル",
                 file=sys.stderr,
             )
         else:
@@ -439,10 +448,11 @@ def main() -> None:
         if quota_exceeded:
             break
 
-        # サムネイル生成・アップロード
+        # サムネイル生成・保存・アップロード
         print("  サムネイル生成中...")
         try:
             thumb_bytes = generate_thumbnail(title, idx)
+            save_thumbnail(thumb_bytes, idx)
             upload_thumbnail(youtube, video_id, thumb_bytes)
         except Exception as e:
             print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)

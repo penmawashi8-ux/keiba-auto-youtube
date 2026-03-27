@@ -19,6 +19,8 @@ GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
+JPEG_MAGIC = b"\xff\xd8\xff"
+
 DEFAULT_PROMPTS = [
     "cinematic photo of horses racing at sunset on a beautiful racecourse, dramatic lighting, high quality",
     "cinematic photo of jockey riding horse on racecourse, motion blur, high quality",
@@ -84,6 +86,13 @@ def generate_via_huggingface(hf_token: str, prompt: str, filepath: str) -> bool:
             r = requests.post(HF_MODEL_URL, headers=headers, json=payload, timeout=120)
             print(f"    [HF] status={r.status_code}", flush=True)
             if r.status_code == 200 and len(r.content) > 1000:
+                if not r.content.startswith(JPEG_MAGIC):
+                    print(
+                        f"    [エラー] HFからJPEGでないデータを受信 "
+                        f"(先頭bytes: {r.content[:16].hex()}, body: {r.content[:200]})",
+                        flush=True,
+                    )
+                    break
                 Path(filepath).write_bytes(r.content)
                 print(f"    ✅ HF成功: {filepath} ({len(r.content)//1024}KB)", flush=True)
                 return True
