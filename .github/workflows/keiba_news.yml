@@ -132,13 +132,13 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
 
-      # - name: Upload to Drive (テスト)
-      #   if: steps.check_news.outputs.has_news == 'true'
-      #   env:
-      #     GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      #     GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-      #     GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-      #   run: python scripts/upload_drive.py
+      - name: Upload to Drive（手動アップ用）
+        if: steps.check_news.outputs.has_news == 'true'
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: python scripts/upload_drive.py
 
       - name: Upload to YouTube
         if: steps.check_news.outputs.has_news == 'true'
