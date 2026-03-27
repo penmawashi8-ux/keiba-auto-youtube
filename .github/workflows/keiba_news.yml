@@ -120,43 +120,60 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_audio.py
 
-      - name: Generate BGM (テスト用シンプルBGM生成)
+      - name: Generate BGM (フリーBGM3種生成)
         if: steps.check_news.outputs.has_news == 'true'
         run: |
           mkdir -p assets/bgm
+          # BGM1: 明るいアップテンポ（Cメジャー コード プラック 2Hz）
           if [ ! -f assets/bgm/bgm_1.mp3 ]; then
             ffmpeg -y -f lavfi \
-              -i "aevalsrc=0.4*sin(440*2*PI*t)+0.3*sin(880*2*PI*t)+0.2*sin(660*2*PI*t):c=stereo:s=44100:d=60" \
-              -af "afade=t=in:st=0:d=2,afade=t=out:st=58:d=2,volume=0.6" \
+              -i "aevalsrc='0.35*sin(523.3*2*PI*t)*exp(-4*fmod(t,0.5))+0.25*sin(659.3*2*PI*t)*exp(-4*fmod(t,0.5))+0.2*sin(783.99*2*PI*t)*exp(-4*fmod(t,0.5))+0.15*sin(1046.5*2*PI*t)*exp(-4*fmod(t,0.5)):c=stereo:s=44100:d=90'" \
+              -af "afade=t=in:st=0:d=3,afade=t=out:st=87:d=3,volume=0.9" \
               assets/bgm/bgm_1.mp3
-            echo "テスト用BGM生成完了"
+            echo "BGM1 生成完了（明るいアップテンポ）"
+          fi
+          # BGM2: 落ち着いたアンビエント（Gメジャー コード スロー）
+          if [ ! -f assets/bgm/bgm_2.mp3 ]; then
+            ffmpeg -y -f lavfi \
+              -i "aevalsrc='0.3*sin(392*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t))+0.25*sin(493.88*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t+1.0))+0.2*sin(587.33*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t+2.0))+0.15*sin(196*2*PI*t)*(0.6+0.4*sin(0.4*2*PI*t)):c=stereo:s=44100:d=90'" \
+              -af "afade=t=in:st=0:d=4,afade=t=out:st=86:d=4,volume=0.8" \
+              assets/bgm/bgm_2.mp3
+            echo "BGM2 生成完了（落ち着いたアンビエント）"
+          fi
+          # BGM3: 疾走感のある競馬らしいBGM（Aマイナー 速いプラック）
+          if [ ! -f assets/bgm/bgm_3.mp3 ]; then
+            ffmpeg -y -f lavfi \
+              -i "aevalsrc='0.3*sin(220*2*PI*t)*exp(-6*fmod(t,0.25))+0.25*sin(330*2*PI*t)*exp(-6*fmod(t,0.25))+0.2*sin(440*2*PI*t)*exp(-6*fmod(t,0.25))+0.25*sin(110*2*PI*t)*exp(-6*fmod(t,0.25)):c=stereo:s=44100:d=90'" \
+              -af "afade=t=in:st=0:d=2,afade=t=out:st=88:d=2,volume=0.9" \
+              assets/bgm/bgm_3.mp3
+            echo "BGM3 生成完了（疾走感のある競馬BGM）"
           fi
 
       - name: Generate video
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_video.py
 
-      # - name: Upload to Drive (テスト)
-      #   if: steps.check_news.outputs.has_news == 'true'
-      #   env:
-      #     GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      #     GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-      #     GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-      #   run: python scripts/upload_drive.py
-
-      - name: Upload to YouTube
+      - name: Upload to Drive (テスト)
         if: steps.check_news.outputs.has_news == 'true'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
-          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
-          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
-          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
-          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
-          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
-        run: python scripts/upload_youtube.py
+        run: python scripts/upload_drive.py
+
+      # - name: Upload to YouTube
+      #   if: steps.check_news.outputs.has_news == 'true'
+      #   env:
+      #     GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      #     GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      #     GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      #     GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      #     GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      #     GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+      #     GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+      #     GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+      #     GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+      #   run: python scripts/upload_youtube.py
 
       - name: Commit and push posted_ids.txt
         if: always() && steps.check_news.outputs.has_news == 'true'

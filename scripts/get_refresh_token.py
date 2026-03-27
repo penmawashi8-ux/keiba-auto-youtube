@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-YouTube サムネイル対応リフレッシュトークン取得スクリプト。
+YouTube + Google Drive 対応リフレッシュトークン取得スクリプト。
 ローカルサーバー不要・スマホ対応版。
 
 使い方:
@@ -18,6 +18,7 @@ YouTube サムネイル対応リフレッシュトークン取得スクリプト
 必要スコープ:
   - youtube.upload     : 動画アップロード
   - youtube.force-ssl  : サムネイルアップロード
+  - drive.file         : Google Drive アップロード（テスト用）
 """
 
 import os
@@ -32,6 +33,7 @@ REDIRECT_URI = "http://localhost"
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.force-ssl",
+    "https://www.googleapis.com/auth/drive.file",
 ]
 
 AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
