@@ -33,7 +33,8 @@ SYSTEM_PROMPT = (
     "- その記事で「何が一番ニュース価値があるか」を判断して、そこを中心に伝えること\n"
     "- 記事に書かれている情報を丁寧に伝えること。最低でも100文字以上・200文字以内を目安にすること\n"
     "- 情報が少ない記事でも、記事に書かれた内容を丁寧に言い換えて100文字程度にまとめること\n"
-    "- 無理に膨らませたり、ニュースにない情報を補わないこと\n\n"
+    "- 無理に膨らませたり、ニュースにない情報を補わないこと\n"
+    "- 必ず句点「。」で終わること（文の途中で終わらないこと）\n\n"
     "テキストのみ出力し、ト書きや記号は不要です。"
 )
 
@@ -143,6 +144,11 @@ def main() -> None:
             print(f"[{i}] 使用: key={key_label} model={model_name}")
             try:
                 script = call_gemini(key, model_name, prompt)
+                # 文の途中で終わっている場合は最後の句点で切る
+                if script and not script.endswith("。"):
+                    last_period = script.rfind("。")
+                    if last_period != -1:
+                        script = script[:last_period + 1]
                 out_path = Path(f"{OUTPUT_DIR}/script_{i}.txt")
                 out_path.write_text(script, encoding="utf-8")
                 print(f"[{i}]  → {out_path} 保存 ({len(script)}文字)")
