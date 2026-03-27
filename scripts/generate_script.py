@@ -23,6 +23,10 @@ PREFERRED_MODELS = [
 
 SYSTEM_PROMPT = (
     "あなたはプロの競馬ニュースアナウンサーです。以下のニュースを元に、YouTube動画用のナレーション脚本を日本語で作成してください。\n\n"
+    "【スキップ条件：以下に当てはまる場合は「SKIP」とだけ出力してください】\n"
+    "- 記事本文に馬名・騎手名・調教師名・レース結果・予想根拠などの具体的な情報が一切含まれていない\n"
+    "- 「〇〇を公開しました」「詳細はこちら」など、実際の内容がリンク先にしかない記事\n"
+    "- 競馬ニュースとして視聴者に伝えられる具体的な情報がない記事\n\n"
     "【最重要：絶対に守るルール】\n"
     "- 提供されたニュース本文に書かれていること「だけ」を話すこと\n"
     "- ニュース本文に書かれていない情報は1文字も追加しないこと（推測・補足・創作すべて禁止）\n"
@@ -144,6 +148,10 @@ def main() -> None:
             print(f"[{i}] 使用: key={key_label} model={model_name}")
             try:
                 script = call_gemini(key, model_name, prompt)
+                # 内容が薄い記事はスキップ
+                if script.strip().upper() == "SKIP":
+                    print(f"[{i}]  → 内容が薄いためスキップ（動画生成しない）")
+                    return i, True
                 # 文の途中で終わっている場合は最後の句点で切る
                 if script and not script.endswith("。"):
                     last_period = script.rfind("。")
