@@ -467,7 +467,8 @@ def build_video(
 
         # --- 8. 音声結合（BGMミックス対応） → output/video_N.mp4 ---
         print("  音声結合中...")
-        total_duration = audio_duration + ENDING_DURATION
+        # 実際の映像尺（MIN_CUT_DURATION補正後の合計）に合わせる
+        total_duration = sum(durations) + ENDING_DURATION
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_path = random.choice(bgm_files) if bgm_files else None
         if bgm_path:
