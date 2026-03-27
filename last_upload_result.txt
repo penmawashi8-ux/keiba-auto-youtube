@@ -1,10 +1,10 @@
-date: 2026-03-27T12:13:58.338524Z
+date: 2026-03-27T12:27:40.656145Z
 projects_loaded: 3
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=7vJPbwXXzOY title=1着賞金11億円！日本馬フォーエバーヤング出走、3月28日の競馬「ドバイワールド
-OK project=1 video_id=6_NBDcv-xl4 title=【高松宮記念】重賞最強データ！再び波乱演出へ、大金星の再現なるか（競馬ラボ） -
-OK project=1 video_id=wXG5sLXBx3Y title=競馬 - 2026年ターフオーソリティーオブインディア賞 AI予想 - スポーツ
+OK project=1 video_id=UQ_eTEEuUk0 title=出馬表 | 2026ドバイワールドカップ | JRA-VAN World - 海
+OK project=1 video_id=Kuzrtm55zxA title=細江純子の高松宮記念予想 「一発ありそう」と語った一頭とは？（netkeiba）
+OK project=1 video_id=RmKXqAJWLf8 title=【高松宮記念】後藤がガチ予想 先行抜け出しで決める...！ - スポニチ競馬We
