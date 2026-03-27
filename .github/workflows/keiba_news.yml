@@ -120,7 +120,7 @@ jobs:
         if: steps.check_news.outputs.has_news == 'true'
         run: python scripts/generate_audio.py
 
-      - name: BGMをダウンロード（Pixabay動画から音声抽出）
+      - name: BGMをダウンロード（archive.org フリー音楽）
         if: steps.check_news.outputs.has_news == 'true'
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
