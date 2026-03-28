@@ -1,9 +1,9 @@
-date: 2026-03-27T23:59:25.951450Z
+date: 2026-03-28T03:26:19.304400Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=ocY1boomV4I title=28日の有力馬 日経賞など競馬予想 - 日本経済新聞
-OK project=1 video_id=5sVScdUweEM title=【大井競馬】仲原大生騎手が騎手継続免許試験不合格　４月から免許失効 - ｄメニュ
+OK project=1 video_id=ADfOSWBSEWE title=【高松宮記念】勢いのあるララマセラシオンが強敵に挑む 陣営「いつも期待以上に走っ
+OK project=1 video_id=ymbXerA0JyY title=【日経賞】AI予想 同舞台で完勝ミクニインスパイアの“勢い”注目 - スポニチ 
