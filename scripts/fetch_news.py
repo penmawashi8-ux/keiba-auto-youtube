@@ -388,6 +388,7 @@ def fetch_news() -> list[dict]:
             image_url = ""
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
+        rss_summary_len = len(summary)
         raw_html = http_get(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
@@ -397,17 +398,26 @@ def fetch_news() -> list[dict]:
                     image_url = og_img
             # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
             body = ""
+            method = "none"
             m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
             if m:
                 body = re.sub(r"<[^>]+>", " ", m.group(1))
+                method = "article"
             if len(body.strip()) < 100:
                 paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
                 body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
+                method = "p-tags"
             if len(body.strip()) < 100:
                 body = re.sub(r"<[^>]+>", " ", html)
+                method = "full-html"
             full_body = re.sub(r"\s+", " ", body).strip()[:3000]
             if len(full_body) > len(summary):
                 summary = full_body
+            print(f"  本文取得: {method} / {len(full_body)}文字 (RSS概要: {rss_summary_len}文字)")
+            if len(full_body) < 200:
+                print(f"  [警告] 本文が短い（{len(full_body)}文字）- JS描画・会員限定・リダイレクト失敗の可能性")
+        else:
+            print(f"  [警告] 記事HTML取得失敗 - RSS概要のみ使用 ({rss_summary_len}文字)")
 
         pub_str = published_dt.isoformat() if published_dt else ""
         print(f"  取得: {title[:60]} [{pub_str[:19]}]")
