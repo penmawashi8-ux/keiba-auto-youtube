@@ -1,9 +1,9 @@
-date: 2026-03-28T05:15:56.761782Z
+date: 2026-03-28T05:40:13.920421Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=3QMxU8p5gZk title=ABEMAで競馬ドバイWCデーを無料中継 特別ゲストにフォーエバーヤングの藤田晋
-OK project=1 video_id=8e-A9U5jAlc title=【動画】注目の3歳馬はロブチェン「上がってきそう」 サンスポ競馬記者と産経政治記
+OK project=1 video_id=TnrWxyyI6LU title=土曜中山競馬場の注目激走馬…中山１１Ｒ日経賞・Ｇ２ - au Webポータル
+OK project=1 video_id=8SoN-21qVp4 title=土曜中山競馬場の注目激走馬…中山１１Ｒ日経賞・Ｇ２ - 馬トク
