@@ -1,8 +1,8 @@
-date: 2026-03-28T10:07:42.321517Z
+date: 2026-03-28T11:57:04.602489Z
 projects_loaded: 3
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=_nK_vz9vC78 title=【高松宮記念】G3で2戦連続2着レイピアも坂路流す 柴田助手「どこからでも競馬が
+OK project=1 video_id=jfhoart914o title=【日経賞】マイユニバース（横山典弘）｜勝利ジョッキーインタビュー｜ウイニング競馬
