@@ -156,7 +156,7 @@ def main() -> None:
             f"{SYSTEM_PROMPT}\n\n"
             f"【ニュース】\n"
             f"タイトル: {item['title']}\n"
-            f"内容: {item.get('summary', '')[:1500]}"
+            f"内容: {item.get('summary', '')[:3000]}"
         )
         for key, model_name in key_model_pairs:
             key_label = f"***{key[-4:]}"

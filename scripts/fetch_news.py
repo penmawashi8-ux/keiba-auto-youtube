@@ -405,7 +405,7 @@ def fetch_news() -> list[dict]:
                 body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
             if len(body.strip()) < 100:
                 body = re.sub(r"<[^>]+>", " ", html)
-            full_body = re.sub(r"\s+", " ", body).strip()[:1500]
+            full_body = re.sub(r"\s+", " ", body).strip()[:3000]
             if len(full_body) > len(summary):
                 summary = full_body
 
