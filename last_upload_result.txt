@@ -1,8 +1,9 @@
-date: 2026-03-28T07:38:39.640792Z
+date: 2026-03-28T09:05:09.695071Z
 projects_loaded: 3
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=2QtvqyuY94g title=【日経賞】１番人気の有馬記念２着馬コスモキュランダは７着 完全復活はお預け （馬
+OK project=1 video_id=W66f9yVftvM title=競馬エイト阿部TMが《馬連》で7万円超の払い戻しゲット！ - サンスポ
+OK project=1 video_id=afIEH7t8XgY title=ドバイワールドCデー当日メイダン競馬場のダートは良馬場、芝はやや重 ドバイレーシ
