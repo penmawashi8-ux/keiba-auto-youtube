@@ -1,9 +1,9 @@
-date: 2026-03-28T03:26:19.304400Z
+date: 2026-03-28T05:15:56.761782Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=ADfOSWBSEWE title=【高松宮記念】勢いのあるララマセラシオンが強敵に挑む 陣営「いつも期待以上に走っ
-OK project=1 video_id=ymbXerA0JyY title=【日経賞】AI予想 同舞台で完勝ミクニインスパイアの“勢い”注目 - スポニチ 
+OK project=1 video_id=3QMxU8p5gZk title=ABEMAで競馬ドバイWCデーを無料中継 特別ゲストにフォーエバーヤングの藤田晋
+OK project=1 video_id=8e-A9U5jAlc title=【動画】注目の3歳馬はロブチェン「上がってきそう」 サンスポ競馬記者と産経政治記
