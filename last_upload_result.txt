@@ -1,8 +1,10 @@
-date: 2026-03-28T12:45:52.374971Z
+date: 2026-03-28T13:18:57.014071Z
 projects_loaded: 3
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=yRSBmJKHCmc title=【佐賀競馬（ナイター）第23回はがくれ大賞典】3月29日 6R ヴィアメント末脚
+OK project=1 video_id=ohUk4PDTsq4 title=【消せる馬・高松宮記念】前走10着以下は勝率0％・ジューンブレア、ダノンマッキン
+OK project=1 video_id=bX-qDooMcYE title=【佐賀競馬（ナイター）第23回はがくれ大賞典】3月29日 6R ヴィアメント末脚
+OK project=1 video_id=NwwzeTbySrs title=【日経賞】「リズム通りに走れた」マイネルユニバースが重賞初制覇 横山典騎手300
