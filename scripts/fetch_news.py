@@ -71,6 +71,21 @@ def is_keiba_related(entry: dict) -> bool:
     return True
 
 
+def is_reporter_prediction(entry: dict) -> bool:
+    """記者・トラックマン(TM)の予想・的中報告記事かどうかを判定する（除外対象）。"""
+    text = entry.get("title", "") + " " + entry.get("summary", "")
+    # 記者/TM + 予想/的中/馬券系 のパターン
+    if re.search(
+        r"(?:記者|TM|トラックマン)(?:の|が|は)(?:予想|的中|馬連|馬単|三連|万馬券|馬券)",
+        text,
+        re.IGNORECASE,
+    ):
+        return True
+    if re.search(r"記者予想|記者の予想|記者陣の予想", text):
+        return True
+    return False
+
+
 # ---------------------------------------------------------------------------
 # ユーティリティ
 # ---------------------------------------------------------------------------
@@ -331,6 +346,12 @@ def fetch_news() -> list[dict]:
     # 競馬関連フィルタ（除外キーワードを含む記事を除去）
     unposted = [e for e in unposted if is_keiba_related(e)]
     print(f"競馬関連フィルタ後: {len(unposted)} 件")
+
+    # 記者・TM の予想/的中報告記事を除外
+    before = len(unposted)
+    unposted = [e for e in unposted if not is_reporter_prediction(e)]
+    if len(unposted) < before:
+        print(f"記者予想フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
 
     # 時間フィルタ: 24時間 → 48時間 → 最新3件（条件なし）
     selected: list[dict] = []
