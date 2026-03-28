@@ -1,9 +1,9 @@
-date: 2026-03-28T13:54:09.070698Z
+date: 2026-03-28T14:15:10.408031Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=0JWDiTy7XvE title=【UAEダービー】サウジから転戦のワンダーディーンが優勝 日本馬5連覇を成し遂げ
-OK project=1 video_id=_YrHFw6c0Lc title=ワンダーディーンがUAEダービー制覇！　日本勢はこのレース5連覇の快挙 - ｄメ
+OK project=1 video_id=ReR-nElmFeI title=ワンダーディーンがUAEダービー制覇！ 日本勢がレース5連覇の快挙 ケンタッキー
+OK project=1 video_id=DPuo-exLU3Y title=ワンダーディーンがUAEダービー制覇！ 日本勢はこのレース5連覇の快挙 - スポ
