@@ -331,12 +331,15 @@ def fetch_news() -> list[dict]:
         reverse=True,
     )
 
-    # 重複除去（ID）
-    seen: set[str] = set()
+    # 重複除去（ID → タイトル前50文字）
+    seen_ids: set[str] = set()
+    seen_titles: set[str] = set()
     unique: list[dict] = []
     for e in all_entries:
-        if e["id"] not in seen:
-            seen.add(e["id"])
+        title_key = e.get("title", "")[:50]
+        if e["id"] not in seen_ids and title_key not in seen_titles:
+            seen_ids.add(e["id"])
+            seen_titles.add(title_key)
             unique.append(e)
 
     # 投稿済みを除外
@@ -399,15 +402,30 @@ def fetch_news() -> list[dict]:
             # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
             body = ""
             method = "none"
+            # <article> タグ
             m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
             if m:
                 body = re.sub(r"<[^>]+>", " ", m.group(1))
                 method = "article"
-            if len(body.strip()) < 100:
+            # よくある本文ラッパークラス
+            if len(body.strip()) < 50:
+                for cls in ("article-body", "entry-content", "post-body", "main-content",
+                            "article-text", "news-body", "body-text", "article__body"):
+                    pat = rf'<[^>]+class="[^"]*{re.escape(cls)}[^"]*"[^>]*>(.*?)</(?:div|section|article)>'
+                    cm = re.search(pat, html, re.DOTALL | re.IGNORECASE)
+                    if cm:
+                        body = re.sub(r"<[^>]+>", " ", cm.group(1))
+                        method = f"class:{cls}"
+                        break
+            # <p> タグ結合
+            if len(body.strip()) < 50:
                 paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
-                body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
+                # 短すぎる断片（ナビ等）を除外してから結合
+                paras_text = [re.sub(r"<[^>]+>", "", p).strip() for p in paras]
+                body = " ".join(p for p in paras_text if len(p) > 20)
                 method = "p-tags"
-            if len(body.strip()) < 100:
+            # フォールバック: HTML全体
+            if len(body.strip()) < 50:
                 body = re.sub(r"<[^>]+>", " ", html)
                 method = "full-html"
             full_body = re.sub(r"\s+", " ", body).strip()[:3000]
