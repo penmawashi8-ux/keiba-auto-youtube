@@ -103,6 +103,8 @@ def decode_google_news_url(url: str) -> str:
         rem = len(encoded) % 4
         encoded_padded = encoded + ("=" * (4 - rem)) if rem else encoded
         decoded = base64.urlsafe_b64decode(encoded_padded)
+        # 診断: デコードされたバイト列のhexを出力
+        print(f"  [base64] token={len(encoded)}chars decoded={len(decoded)}bytes hex={decoded[:32].hex()}")
         # URLパターンをASCII可視文字で探す
         url_match = re.search(rb"https?://[\x21-\x7e]+", decoded)
         if url_match:
@@ -110,6 +112,7 @@ def decode_google_news_url(url: str) -> str:
             if not re.search(r"google\.com|googleapis\.com", actual):
                 print(f"  [URL解決] base64decode成功: {actual[:80]}")
                 return actual
+        print(f"  [base64] https://パターン未検出")
     except Exception as e:
         print(f"  [URL解決] base64デコード失敗: {e}")
     return url
@@ -228,7 +231,7 @@ def http_get_redirect_url(url: str, timeout: int = 15) -> str:
             location = resp.getheader("Location", "")
             conn.close()
 
-            print(f"  [リダイレクト hop{hop+1}] HTTP {status} → {location[:120] if location else '(なし)'}")
+            print(f"  [リダイレクト hop{hop+1}] HTTP {status} → {location[:200] if location else '(なし)'}")
 
             if status in (301, 302, 303, 307, 308) and location:
                 # 相対URLを絶対URLに変換
@@ -239,8 +242,15 @@ def http_get_redirect_url(url: str, timeout: int = 15) -> str:
 
                 # 非Googleドメインに到達したら成功
                 if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com", location):
-                    print(f"  [リダイレクト解決] 記事URL発見: {location[:120]}")
+                    print(f"  [リダイレクト解決] 記事URL発見: {location[:200]}")
                     return location
+
+                # Google NewsへのリダイレクトでもCBMiトークンが長くなった場合はbase64デコード試行
+                if "news.google.com" in location and "/articles/" in location:
+                    decoded_url = decode_google_news_url(location)
+                    if decoded_url != location:
+                        print(f"  [リダイレクト+base64解決] {decoded_url[:200]}")
+                        return decoded_url
 
                 # Google News URL内のリダイレクト → 続けて追尾
                 current_url = location
