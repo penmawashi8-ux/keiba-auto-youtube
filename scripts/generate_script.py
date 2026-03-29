@@ -210,6 +210,14 @@ def main() -> None:
                 if len(script) < 150:
                     print(f"[{i}]  → スクリプトが短すぎる({len(script)}文字)。次のキー/モデルで再試行")
                     continue
+                # 文字化け（□ U+FFFD など）が含まれている場合は次のキー/モデルで再試行
+                if "\ufffd" in script or "□" in script or "㐧" in script:
+                    print(f"[{i}]  → 文字化けを検出。次のキー/モデルで再試行: {script[:60]}")
+                    continue
+                # CMSボイラープレートが混入している場合はスキップ
+                if _re.search(r"CMS\s*WEB\s*SPIRAL|NET\s*DREAMERS|このサイトは.*?制作されています", script, _re.IGNORECASE):
+                    print(f"[{i}]  → CMSボイラープレートを検出。次のキー/モデルで再試行")
+                    continue
                 # 馬を抽象的に表現している場合はスキップ
                 # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
                 abstract_horse_pattern = _re.compile(

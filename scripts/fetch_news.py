@@ -664,6 +664,22 @@ def fetch_news() -> list[dict]:
             # JSテンプレート変数（{{ foo }} / {% bar %}）を除去
             body = re.sub(r"\{\{[^}]*\}\}", "", body)
             body = re.sub(r"\{%[^%]*%\}", "", body)
+            # CMSフッター・ボイラープレートを文単位で除去
+            _boilerplate_pat = re.compile(
+                r"[^。\n]*(?:"
+                r"CMS\s*WEB\s*SPIRAL"
+                r"|NET\s*DREAMERS"
+                r"|このサイトは.*?(?:制作|運営|提供)"
+                r"|(?:制作|運営|提供)されています"
+                r"|All\s*Rights?\s*Reserved"
+                r"|Copyright\s*[©Ⓒ]"
+                r"|プライバシーポリシー"
+                r"|利用規約"
+                r"|お問い合わせ"
+                r")[^。\n]*[。\n]?",
+                re.IGNORECASE,
+            )
+            body = _boilerplate_pat.sub("", body)
             full_body = re.sub(r"\s+", " ", body).strip()[:3000]
             if len(full_body) > len(summary):
                 summary = full_body
