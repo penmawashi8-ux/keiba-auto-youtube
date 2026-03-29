@@ -1,10 +1,9 @@
-date: 2026-03-29T06:04:58.631009Z
+date: 2026-03-29T06:49:35.143350Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=D9UhgboE2a4 title=【中京・大寒桜賞】テルヒコウが逃げ切り　7頭立てでも1〜3番人気が馬券に絡めず3
-OK project=1 video_id=XQ0fSXQCfjk title=＜中京競馬 8R・大寒桜賞＞ゴール前で抜け出し勝利した西村騎乗のテルヒコウ（右）
-OK project=1 video_id=xyGuJ3kjI8c title=中京8R大寒桜賞 テルヒコウがV 西村淳「自信を持って乗りました」 - スポニチ
+OK project=1 video_id=5FLAkpNxAqo title=【マーチS】サンデーファンデー1位入線 - ｄメニューニュース
+OK project=1 video_id=asMR4jMWELk title=【中山・ミモザ賞】ベンヴェヌータが逃げ切り無傷V2 石橋脩「精神と体のバランスを
