@@ -1,10 +1,9 @@
-date: 2026-03-29T06:50:46.546110Z
+date: 2026-03-29T06:58:01.006045Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=kJcHklQJ2VQ title=【高松宮記念】サトノレーヴが連覇!圧巻のスピードに中京騒然　ルメールが導く
-OK project=1 video_id=DXWGc05TPfM title=【高松宮記念速報】サトノレーヴが連覇達成！
-OK project=1 video_id=X4b4HbD2dDE title=【3歳1勝クラス阪神6Rレース後コメント】カネコメブライト吉村誠之助騎手ら
+OK project=1 video_id=Ud5vJd80w_4 title=【高松宮記念】サトノレーヴが連覇達成！ ナムラクレアは引退レースでの悲願達成なら
+OK project=1 video_id=riU233D7xZA title=【高松宮記念】サトノレーヴが連覇達成！ ナムラクレアは引退レースでの悲願達成なら
