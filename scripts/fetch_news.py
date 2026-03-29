@@ -269,6 +269,17 @@ def _parse_rss_item(item: ET.Element) -> dict:
     entry_id = _get_text(item, "guid") or link
     summary = _get_text(item, "description", "summary")
 
+    # Google News RSS の <description> は HTML形式で実際の記事URLを含む:
+    # <a href="https://actual-article.com/...">タイトル</a><font>ソース名</font>
+    # この href を source_url として保存する
+    source_url = ""
+    if summary:
+        href_m = re.search(r'href=["\']?(https?://[^"\'<>\s]+)', summary)
+        if href_m:
+            candidate = href_m.group(1)
+            if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com", candidate):
+                source_url = candidate
+
     # 公開日時
     pub_date_raw = _get_text(item, "pubdate")
     published_dt = _parse_date(pub_date_raw)
@@ -296,6 +307,7 @@ def _parse_rss_item(item: ET.Element) -> dict:
         "id": entry_id,
         "title": title,
         "link": link,
+        "source_url": source_url,  # RSSのdescriptionから抽出した実際の記事URL
         "summary": summary,
         "image_url": image_url,
         "published_date": published_dt,
@@ -488,14 +500,22 @@ def fetch_news() -> list[dict]:
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
         rss_summary_len = len(summary)
+        source_url = entry.get("source_url", "")  # RSSのdescriptionから抽出した実際のURL
         print(f"  記事URL(RSS): {link[:80]}")
+        if source_url:
+            print(f"  記事URL(RSS description): {source_url[:80]}")
 
-        # Google News リダイレクトURLを実際の記事URLに変換（base64試行）
-        if "news.google.com" in link:
+        # URL解決の優先順位:
+        # 1. RSSのdescriptionから抽出した実際の記事URL（最も確実）
+        # 2. CBMiトークンのbase64デコード
+        # 3. Google NewsページのHTMLから抽出
+        if source_url:
+            fetch_url = source_url
+        elif "news.google.com" in link:
             fetch_url = decode_google_news_url(link)
         else:
             fetch_url = link
-        # base64デコードが失敗した場合はGoogle NewsのURLのまま
+        # base64デコードも失敗した場合はGoogle NewsのURLのまま
         is_unresolved_google = (fetch_url == link and "news.google.com" in fetch_url)
         print(f"  記事URL(fetch): {fetch_url[:80]}")
 
