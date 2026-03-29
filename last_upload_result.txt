@@ -1,10 +1,9 @@
-date: 2026-03-29T14:41:08.064589Z
+date: 2026-03-29T14:56:17.703982Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=XjCdjO0nIqQ title=【競走伝】武豊も期待した“最強の善戦マン”…超良血“二刀流馬”の芝重賞初制覇　0
-OK project=1 video_id=XZlTdsQSj1M title=「強い危機感を覚えます」「今後の競馬界に関わる重要な議論ですから」石垣のりこ議員
-OK project=1 video_id=tDgwjWAW5ss title=「強い危機感を覚えます」「今後の競馬界に関わる重要な議論ですから」石垣のりこ議員
+OK project=1 video_id=8ne4U5HwysA title=【地方競馬】「兄と一緒に走りたい」　塚本直之さんは落馬事故で死去の兄・雄大さん追
+OK project=1 video_id=BcYZKFMvig0 title=【地方競馬】「兄と一緒に走りたい」 塚本直之さんは落馬事故で死去の兄・雄大さん追
