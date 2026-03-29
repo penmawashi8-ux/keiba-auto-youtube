@@ -18,6 +18,14 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 RSS_FEEDS = [
+    # 直接記事URLを提供する日本競馬専門サイト（優先）
+    "https://news.netkeiba.com/?pid=rss",
+    "https://www.jra.go.jp/rss/news.xml",
+    "https://www.sponichi.co.jp/gamble/rss/horse.rdf",
+    "https://www.nikkansports.com/rss/keiba/keiba-news.rdf",
+    "https://hochi.news/rss/keiba.rdf",
+    "https://uma-story.com/feed/",
+    # Google News（フォールバック）
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
 ]
@@ -341,8 +349,8 @@ def _parse_rss_item(item: ET.Element) -> dict:
             if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com", candidate):
                 source_url = candidate
 
-    # 公開日時
-    pub_date_raw = _get_text(item, "pubdate")
+    # 公開日時（RSS 2.0: pubDate / RSS 1.0 RDF: dc:date）
+    pub_date_raw = _get_text(item, "pubdate", "date")
     published_dt = _parse_date(pub_date_raw)
 
     # media:content から画像
