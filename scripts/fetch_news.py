@@ -205,36 +205,52 @@ def http_get(url: str, timeout: int = 20) -> bytes | None:
 
 
 def http_get_redirect_url(url: str, timeout: int = 15) -> str:
-    """URLをフェッチしてリダイレクト先URLを返す（urlopenはリダイレクトを自動追尾するため、
-    手動でHTTP接続してLocationヘッダーを確認する）。"""
-    try:
-        parsed = urlparse(url)
-        host = parsed.netloc
-        path = parsed.path
-        if parsed.query:
-            path += "?" + parsed.query
+    """Google News URLのリダイレクトチェーンを手動追尾して実際の記事URLを返す。
+    最大5ホップ追尾し、非Googleドメインに到達したらそのURLを返す。"""
+    current_url = url
+    for hop in range(5):
+        try:
+            parsed = urlparse(current_url)
+            host = parsed.netloc
+            path = parsed.path
+            if parsed.query:
+                path += "?" + parsed.query
 
-        conn = http.client.HTTPSConnection(host, timeout=timeout)
-        conn.request("GET", path, headers={
-            "User-Agent": HEADERS["User-Agent"],
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
-        })
-        resp = conn.getresponse()
-        print(f"  [リダイレクト確認] HTTP {resp.status}")
-        if resp.status in (301, 302, 303, 307, 308):
+            conn = http.client.HTTPSConnection(host, timeout=timeout)
+            conn.request("GET", path, headers={
+                "User-Agent": HEADERS["User-Agent"],
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+                "Cache-Control": "no-cache",
+            })
+            resp = conn.getresponse()
+            status = resp.status
             location = resp.getheader("Location", "")
-            if location:
+            conn.close()
+
+            print(f"  [リダイレクト hop{hop+1}] HTTP {status} → {location[:120] if location else '(なし)'}")
+
+            if status in (301, 302, 303, 307, 308) and location:
                 # 相対URLを絶対URLに変換
                 if location.startswith("/"):
                     location = f"https://{host}{location}"
-                print(f"  [リダイレクト先] {location[:80]}")
-                # 非Googleドメインへのリダイレクトなら記事URL
+                elif not location.startswith("http"):
+                    break
+
+                # 非Googleドメインに到達したら成功
                 if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com", location):
+                    print(f"  [リダイレクト解決] 記事URL発見: {location[:120]}")
                     return location
-        conn.close()
-    except Exception as e:
-        print(f"  [リダイレクト確認失敗] {e}")
+
+                # Google News URL内のリダイレクト → 続けて追尾
+                current_url = location
+            else:
+                # リダイレクトなし or Googleのまま終了
+                break
+        except Exception as e:
+            print(f"  [リダイレクト確認失敗 hop{hop+1}] {e}")
+            break
+
     return ""
 
 
