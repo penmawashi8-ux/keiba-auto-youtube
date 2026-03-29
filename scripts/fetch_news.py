@@ -118,6 +118,16 @@ def extract_real_url_from_google_news_html(html: str) -> str:
     """Google NewsのHTMLから実際の記事URLを抽出する。
     Google NewsのページはJSアプリのため、埋め込みJSONやdata属性から元URLを探す。
     """
+    # 診断: HTMLの特徴を確認
+    has_data_n_au = "data-n-au" in html
+    has_cbm_array = bool(re.search(r'\["CBM', html))
+    has_noscript = "<noscript" in html.lower()
+    # 非Googleの外部URLが含まれるか
+    ext_urls = re.findall(r'https?://(?!(?:[^/"]*\.)?google)[^"\'<>\s]{20,}', html)
+    print(f"  [診断] data-n-au={has_data_n_au} CBM配列={has_cbm_array} noscript={has_noscript} 外部URL={len(ext_urls)}件")
+    if ext_urls:
+        print(f"  [診断] 外部URL例: {ext_urls[0][:100]}")
+
     # data-n-au 属性（Google Newsが使うURL属性）
     m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
     if m:
@@ -155,6 +165,13 @@ def extract_real_url_from_google_news_html(html: str) -> str:
                 print(f"  [URL解決] href: {href[:80]}")
                 return href
 
+    # 全パターン失敗 - 外部URLを全てダンプ（上位3件）
+    all_ext = re.findall(
+        r'https?://(?!(?:[^/"]*\.)?(?:google|gstatic|googleapis|googleusercontent|schema))[^"\'<>\s]{15,}',
+        html,
+    )
+    unique_ext = list(dict.fromkeys(all_ext))[:5]
+    print(f"  [診断] 外部URL全リスト(上位5): {unique_ext}")
     return ""
 
 
