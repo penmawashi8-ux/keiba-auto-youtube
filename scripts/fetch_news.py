@@ -63,8 +63,9 @@ _DENY_KEYWORDS = [
 ]
 
 # タイトルだけで除外できるLIVE配信・スケジュール系パターン
+# 例: "岩手競馬LIVE - スポーツナビ", "地方競馬ライブ - YouTube"
 _LIVE_STREAM_PATTERN = re.compile(
-    r"(?:競馬|地方競馬|南関|岩手|ばんえい|笠松|名古屋|金沢|高知|佐賀|川崎|船橋|浦和|大井)\s*(?:LIVE|ライブ|生中継|速報LIVE)\s*[-\-–—]?\s*(?:スポーツナビ|SPNAVI|YouTube|ニコニコ|Abema)",
+    r"競馬\s*(?:LIVE|ライブ|生中継|速報LIVE)",
     re.IGNORECASE,
 )
 
@@ -513,9 +514,15 @@ def fetch_news() -> list[dict]:
     if len(unposted) < before:
         print(f"オッズ/出馬表フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
 
-    # LIVE配信・中継告知のみページを除外
+    # LIVE配信・中継告知のみページを除外（タイトル or URL）
+    _livestream_url_pat = re.compile(r"/livestream/", re.IGNORECASE)
     before = len(unposted)
-    unposted = [e for e in unposted if not _LIVE_STREAM_PATTERN.search(e.get("title", ""))]
+    unposted = [
+        e for e in unposted
+        if not (_LIVE_STREAM_PATTERN.search(e.get("title", ""))
+                or _livestream_url_pat.search(e.get("link", ""))
+                or _livestream_url_pat.search(e.get("source_url", "")))
+    ]
     if len(unposted) < before:
         print(f"LIVE配信フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
 
