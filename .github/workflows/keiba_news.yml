@@ -1,6 +1,9 @@
 name: Keiba News YouTube Auto Post
 
 on:
+  push:
+    branches:
+      - claude/filter-empty-scripts-I0TWp
   schedule:
     # 8:00〜20:00 JST を2時間おきに7回実行（JST = UTC+9）
     - cron: "0 23 * * *"  #  8:00 JST
