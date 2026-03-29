@@ -62,6 +62,12 @@ _DENY_KEYWORDS = [
     "ボートレース", "競艇", "オートレース", "競輪", "パチンコ", "スロット",
 ]
 
+# タイトルだけで除外できるLIVE配信・スケジュール系パターン
+_LIVE_STREAM_PATTERN = re.compile(
+    r"(?:競馬|地方競馬|南関|岩手|ばんえい|笠松|名古屋|金沢|高知|佐賀|川崎|船橋|浦和|大井)\s*(?:LIVE|ライブ|生中継|速報LIVE)\s*[-\-–—]?\s*(?:スポーツナビ|SPNAVI|YouTube|ニコニコ|Abema)",
+    re.IGNORECASE,
+)
+
 
 def is_keiba_related(entry: dict) -> bool:
     """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
@@ -507,6 +513,12 @@ def fetch_news() -> list[dict]:
     if len(unposted) < before:
         print(f"オッズ/出馬表フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
 
+    # LIVE配信・中継告知のみページを除外
+    before = len(unposted)
+    unposted = [e for e in unposted if not _LIVE_STREAM_PATTERN.search(e.get("title", ""))]
+    if len(unposted) < before:
+        print(f"LIVE配信フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
+
     # 時間フィルタ: 24時間 → 48時間 → 最新3件（条件なし）
     selected: list[dict] = []
     for label, hours in [("24時間以内", 24), ("48時間以内", 48), ("条件なし（最新3件）", None)]:
@@ -642,6 +654,9 @@ def fetch_news() -> list[dict]:
                 body_m = re.search(r"<body[^>]*>(.*?)</body>", clean, re.DOTALL | re.IGNORECASE)
                 body = re.sub(r"<[^>]+>", " ", body_m.group(1) if body_m else clean)
                 method = "cleaned-html"
+            # JSテンプレート変数（{{ foo }} / {% bar %}）を除去
+            body = re.sub(r"\{\{[^}]*\}\}", "", body)
+            body = re.sub(r"\{%[^%]*%\}", "", body)
             full_body = re.sub(r"\s+", " ", body).strip()[:3000]
             if len(full_body) > len(summary):
                 summary = full_body
