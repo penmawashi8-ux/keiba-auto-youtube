@@ -1,10 +1,8 @@
-date: 2026-03-29T10:07:52.482070Z
+date: 2026-03-29T11:58:12.265744Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=vCCvSjKxjeA title=【水沢競馬】カナオールウェイズが白嶺賞で重賞初制覇 鞍上は北海道の小野楓馬騎手 
-OK project=1 video_id=T2bYmZVTxBI title=【水沢・白嶺賞結果】カナオールウェイズが人気2頭の競り合いを制し重賞初V（net
-OK project=1 video_id=u5SPfIchoGI title=【高松宮記念】サトノレーヴ・里見治オーナー「堀先生が毎回しっかりと仕上げてくれて
+OK project=1 video_id=DbwGaYkSjCc title=【高松宮記念】ルメール「凄い加速だった」サトノレーヴが連覇達成（競馬のおはなし）
