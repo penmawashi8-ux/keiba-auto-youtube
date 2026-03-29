@@ -7,6 +7,7 @@
 
 import email.utils
 import gzip
+import http.client
 import json
 import re
 import sys
@@ -201,6 +202,40 @@ def http_get(url: str, timeout: int = 20) -> bytes | None:
     except Exception as e:
         print(f"  [警告] 取得エラー ({url[:60]}): {e}", file=sys.stderr)
     return None
+
+
+def http_get_redirect_url(url: str, timeout: int = 15) -> str:
+    """URLをフェッチしてリダイレクト先URLを返す（urlopenはリダイレクトを自動追尾するため、
+    手動でHTTP接続してLocationヘッダーを確認する）。"""
+    try:
+        parsed = urlparse(url)
+        host = parsed.netloc
+        path = parsed.path
+        if parsed.query:
+            path += "?" + parsed.query
+
+        conn = http.client.HTTPSConnection(host, timeout=timeout)
+        conn.request("GET", path, headers={
+            "User-Agent": HEADERS["User-Agent"],
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+        })
+        resp = conn.getresponse()
+        print(f"  [リダイレクト確認] HTTP {resp.status}")
+        if resp.status in (301, 302, 303, 307, 308):
+            location = resp.getheader("Location", "")
+            if location:
+                # 相対URLを絶対URLに変換
+                if location.startswith("/"):
+                    location = f"https://{host}{location}"
+                print(f"  [リダイレクト先] {location[:80]}")
+                # 非Googleドメインへのリダイレクトなら記事URL
+                if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com", location):
+                    return location
+        conn.close()
+    except Exception as e:
+        print(f"  [リダイレクト確認失敗] {e}")
+    return ""
 
 
 def _parse_date(date_str: str) -> datetime | None:
@@ -508,14 +543,21 @@ def fetch_news() -> list[dict]:
         # URL解決の優先順位:
         # 1. RSSのdescriptionから抽出した実際の記事URL（最も確実）
         # 2. CBMiトークンのbase64デコード
-        # 3. Google NewsページのHTMLから抽出
+        # 3. HTTPリダイレクト先URL（手動追尾でLocationヘッダーを確認）
+        # 4. Google NewsページのHTMLから抽出（フォールバック）
         if source_url:
             fetch_url = source_url
+            print(f"  [URL解決] RSS description: {fetch_url[:80]}")
         elif "news.google.com" in link:
             fetch_url = decode_google_news_url(link)
+            if fetch_url == link:
+                # base64デコード失敗→リダイレクト先を手動確認
+                redirect_url = http_get_redirect_url(link)
+                if redirect_url:
+                    fetch_url = redirect_url
         else:
             fetch_url = link
-        # base64デコードも失敗した場合はGoogle NewsのURLのまま
+        # 上記すべて失敗した場合はGoogle NewsのURLのまま
         is_unresolved_google = (fetch_url == link and "news.google.com" in fetch_url)
         print(f"  記事URL(fetch): {fetch_url[:80]}")
 
