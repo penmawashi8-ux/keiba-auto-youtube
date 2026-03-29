@@ -608,6 +608,16 @@ def fetch_news() -> list[dict]:
                         body = re.sub(r"<[^>]+>", " ", cm.group(1))
                         method = f"class:{cls}"
                         break
+            # netkeiba/JRA専用クラス（騎手コメント・レース結果ページ向け）
+            if len(body.strip()) < 50:
+                for cls in ("news_text", "newsText", "article_body", "detail_text",
+                            "race_comment", "comment_list", "result_detail"):
+                    pat = rf'<[^>]+(?:class|id)="[^"]*{re.escape(cls)}[^"]*"[^>]*>(.*?)</(?:div|section|table|article)>'
+                    cm = re.search(pat, html, re.DOTALL | re.IGNORECASE)
+                    if cm:
+                        body = re.sub(r"<[^>]+>", " ", cm.group(1))
+                        method = f"class:{cls}"
+                        break
             # <p> タグ結合
             if len(body.strip()) < 50:
                 paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
@@ -615,6 +625,14 @@ def fetch_news() -> list[dict]:
                 paras_text = [re.sub(r"<[^>]+>", "", p).strip() for p in paras]
                 body = " ".join(p for p in paras_text if len(p) > 20)
                 method = "p-tags"
+            # <td>/<li> テキスト結合（騎手コメント表形式対応）
+            if len(body.strip()) < 100:
+                cells = re.findall(r"<(?:td|li)[^>]*>(.*?)</(?:td|li)>", html, re.DOTALL | re.IGNORECASE)
+                cells_text = [re.sub(r"<[^>]+>", "", c).strip() for c in cells]
+                td_body = " ".join(c for c in cells_text if len(c) > 10)
+                if len(td_body) > len(body.strip()):
+                    body = td_body
+                    method = "td-li-tags"
             # フォールバック: script/style/nav/header/footer除去後にbodyだけ抽出
             if len(body.strip()) < 50:
                 clean = re.sub(
