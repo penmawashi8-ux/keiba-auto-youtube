@@ -110,7 +110,11 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
         print(f"  HTTP {resp.status_code}")
         if resp.status_code == 429:
             err = resp.json().get("error", {})
-            print(f"  [警告] 429 クォータ超過: {err.get('message','')[:200]}", file=sys.stderr)
+            msg = err.get("message", "")
+            print(f"  [警告] 429 クォータ超過: {msg[:200]}", file=sys.stderr)
+            # 日次上限(free_tier_requests/input_token_count)は待機しても無意味 → 即切り替え
+            if "free_tier" in msg or attempt >= 1:
+                raise QuotaExceeded(model_name)
             continue
         try:
             resp.raise_for_status()
@@ -234,14 +238,18 @@ def main() -> None:
                 out_path.write_text(script, encoding="utf-8")
                 print(f"[{i}]  → {out_path} 保存 ({len(script)}文字)")
                 print(f"[{i}]  プレビュー: {script[:80]}...")
+                # 次の記事への連続リクエストを避けるため少し待機
+                if i < len(news_items) - 1:
+                    time.sleep(2)
                 return i, True
             except QuotaExceeded:
                 print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。次へ切り替えます。", file=sys.stderr)
         print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 
-    with ThreadPoolExecutor(max_workers=len(news_items)) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         futures = {executor.submit(generate_one, (i, item)): i for i, item in enumerate(news_items)}
+        # 注: max_workers=1 で順次実行されるため、submitの順番通りに処理される
         failed = []
         for future in as_completed(futures):
             i, ok = future.result()
