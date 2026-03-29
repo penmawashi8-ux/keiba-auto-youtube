@@ -91,25 +91,71 @@ def is_reporter_prediction(entry: dict) -> bool:
 # ---------------------------------------------------------------------------
 
 def decode_google_news_url(url: str) -> str:
-    """Google News リダイレクトURL（CBMi...形式）から実際の記事URLを抽出する。"""
+    """Google News CBMi...トークンからbase64urlデコードで実際の記事URLを抽出する。"""
     import base64
     m = re.search(r"/articles/([^?#]+)", url)
     if not m:
         return url
     encoded = m.group(1)
     try:
-        # base64urlデコード（パディング補完）
-        padding = "=" * (4 - len(encoded) % 4)
-        decoded = base64.urlsafe_b64decode(encoded + padding)
-        # デコードされたバイト列の中にURLパターンを探す
-        url_match = re.search(rb"https?://[^\x00-\x1f\x7f-\xff\s]+", decoded)
+        # base64urlデコード（パディング補完を正確に行う）
+        rem = len(encoded) % 4
+        encoded_padded = encoded + ("=" * (4 - rem)) if rem else encoded
+        decoded = base64.urlsafe_b64decode(encoded_padded)
+        # URLパターンをASCII可視文字で探す
+        url_match = re.search(rb"https?://[\x21-\x7e]+", decoded)
         if url_match:
-            actual = url_match.group(0).decode("utf-8", errors="ignore").rstrip(".,;)")
-            print(f"  Google News URL解決: {actual[:80]}")
-            return actual
-    except Exception:
-        pass
+            actual = url_match.group(0).decode("ascii", errors="ignore").rstrip(".,;)")
+            if not re.search(r"google\.com|googleapis\.com", actual):
+                print(f"  [URL解決] base64decode成功: {actual[:80]}")
+                return actual
+    except Exception as e:
+        print(f"  [URL解決] base64デコード失敗: {e}")
     return url
+
+
+def extract_real_url_from_google_news_html(html: str) -> str:
+    """Google NewsのHTMLから実際の記事URLを抽出する。
+    Google NewsのページはJSアプリのため、埋め込みJSONやdata属性から元URLを探す。
+    """
+    # data-n-au 属性（Google Newsが使うURL属性）
+    m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
+    if m:
+        url = m.group(1).strip()
+        if url.startswith("http") and not re.search(r"google\.com|googleapis\.com", url):
+            print(f"  [URL解決] data-n-au: {url[:80]}")
+            return url
+
+    # CBMiトークンの直後に出現する外部URL（Google NewsのJSデータ構造）
+    # 例: ["CBMif0FU...","https://actual.url.com/...","タイトル",...]
+    m = re.search(
+        r'\["CBM[^"]+",\s*"(https?://(?!(?:[^/"]*\.)?google(?:apis)?\.com)[^"]{15,})"',
+        html,
+    )
+    if m:
+        url = m.group(1).strip()
+        print(f"  [URL解決] JS配列URL: {url[:80]}")
+        return url
+
+    # ScriptタグのJSONの中にある外部URL ("url":"https://...")
+    for m in re.finditer(
+        r'"(?:url|sourceUrl|articleUrl|link)"\s*:\s*"(https?://(?!(?:[^/"]*\.)?google(?:apis)?\.com)[^"]{15,})"',
+        html,
+    ):
+        url = m.group(1).strip()
+        if not re.search(r"(?:static|cdn|image|img|logo|font|\.css|\.js|api\.)", url, re.I):
+            print(f"  [URL解決] JSON url: {url[:80]}")
+            return url
+
+    # アンカーhrefの中の最初の非Google外部URL
+    for m in re.finditer(r'href=["\']?(https?://[^"\'<>\s]{15,})', html, re.I):
+        href = m.group(1).strip()
+        if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com|gstatic\.com", href, re.I):
+            if not re.search(r"(?:static|cdn|font|\.css|\.js|widget|oauth|accounts)", href, re.I):
+                print(f"  [URL解決] href: {href[:80]}")
+                return href
+
+    return ""
 
 
 # ---------------------------------------------------------------------------
@@ -426,14 +472,35 @@ def fetch_news() -> list[dict]:
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
         rss_summary_len = len(summary)
         print(f"  記事URL(RSS): {link[:80]}")
-        # Google News リダイレクトURLを実際の記事URLに変換
-        fetch_url = decode_google_news_url(link) if "news.google.com" in link else link
+
+        # Google News リダイレクトURLを実際の記事URLに変換（base64試行）
+        if "news.google.com" in link:
+            fetch_url = decode_google_news_url(link)
+        else:
+            fetch_url = link
+        # base64デコードが失敗した場合はGoogle NewsのURLのまま
+        is_unresolved_google = (fetch_url == link and "news.google.com" in fetch_url)
         print(f"  記事URL(fetch): {fetch_url[:80]}")
+
         raw_html = http_get(fetch_url)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
+
+            # Google NewsページだったらHTMLから実際の記事URLを抽出して再fetch
+            if is_unresolved_google:
+                actual_url = extract_real_url_from_google_news_html(html)
+                if actual_url:
+                    print(f"  [再fetch] 実際の記事URLを取得: {actual_url[:80]}")
+                    raw2 = http_get(actual_url)
+                    if raw2:
+                        html = raw2.decode("utf-8", errors="replace")
+                        fetch_url = actual_url
+                        is_unresolved_google = False
+                else:
+                    print(f"  [警告] Google NewsページHTMLから記事URLを抽出できませんでした")
+
             if not image_url:
-                og_img = extract_og_image(link, html)
+                og_img = extract_og_image(fetch_url, html)
                 if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
                     image_url = og_img
             # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
