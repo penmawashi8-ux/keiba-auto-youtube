@@ -19,10 +19,8 @@ from urllib.request import Request, urlopen
 
 RSS_FEEDS = [
     # 直接記事URLを提供する日本競馬専門サイト（優先）
-    "https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba",  # netkeiba公式RSS
-    "https://jra.jp/rss/jra-info.rdf",                           # JRA公式（2026-03-31終了予定）
-    "https://www.keiba.jp/rss/",                                  # 競馬JAPAN
-    "https://keiba.radionikkei.jp/keiba_article/news/rss.xml",   # ラジオNIKKEI競馬ニュース
+    "https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba",  # netkeiba公式RSS ✅
+    "https://jra.jp/rss/jra-info.rdf",                           # JRA公式 ✅
     # Google News（googlenewsdecoderで記事URL解決）
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
@@ -135,63 +133,31 @@ def decode_google_news_url(url: str) -> str:
 
 
 def extract_real_url_from_google_news_html(html: str) -> str:
-    """Google NewsのHTMLから実際の記事URLを抽出する。
-    Google NewsのページはJSアプリのため、埋め込みJSONやdata属性から元URLを探す。
-    """
-    # 診断: HTMLの特徴を確認
-    has_data_n_au = "data-n-au" in html
-    has_cbm_array = bool(re.search(r'\["CBM', html))
-    has_noscript = "<noscript" in html.lower()
-    # 非Googleの外部URLが含まれるか
-    ext_urls = re.findall(r'https?://(?!(?:[^/"]*\.)?google)[^"\'<>\s]{20,}', html)
-    print(f"  [診断] data-n-au={has_data_n_au} CBM配列={has_cbm_array} noscript={has_noscript} 外部URL={len(ext_urls)}件")
-    if ext_urls:
-        print(f"  [診断] 外部URL例: {ext_urls[0][:100]}")
-
-    # data-n-au 属性（Google Newsが使うURL属性）
+    """Google NewsのHTMLから実際の記事URLを抽出する。"""
+    # data-n-au 属性
     m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
     if m:
         url = m.group(1).strip()
         if url.startswith("http") and not re.search(r"google\.com|googleapis\.com", url):
-            print(f"  [URL解決] data-n-au: {url[:80]}")
             return url
 
-    # CBMiトークンの直後に出現する外部URL（Google NewsのJSデータ構造）
-    # 例: ["CBMif0FU...","https://actual.url.com/...","タイトル",...]
+    # CBMiトークン直後の外部URL
     m = re.search(
         r'\["CBM[^"]+",\s*"(https?://(?!(?:[^/"]*\.)?google(?:apis)?\.com)[^"]{15,})"',
         html,
     )
     if m:
-        url = m.group(1).strip()
-        print(f"  [URL解決] JS配列URL: {url[:80]}")
-        return url
+        return m.group(1).strip()
 
-    # ScriptタグのJSONの中にある外部URL ("url":"https://...")
+    # JSON内の url フィールド
     for m in re.finditer(
         r'"(?:url|sourceUrl|articleUrl|link)"\s*:\s*"(https?://(?!(?:[^/"]*\.)?google(?:apis)?\.com)[^"]{15,})"',
         html,
     ):
         url = m.group(1).strip()
         if not re.search(r"(?:static|cdn|image|img|logo|font|\.css|\.js|api\.)", url, re.I):
-            print(f"  [URL解決] JSON url: {url[:80]}")
             return url
 
-    # アンカーhrefの中の最初の非Google外部URL
-    for m in re.finditer(r'href=["\']?(https?://[^"\'<>\s]{15,})', html, re.I):
-        href = m.group(1).strip()
-        if not re.search(r"(?:[^/]*\.)?google(?:apis|usercontent)?\.com|gstatic\.com", href, re.I):
-            if not re.search(r"(?:static|cdn|font|\.css|\.js|widget|oauth|accounts)", href, re.I):
-                print(f"  [URL解決] href: {href[:80]}")
-                return href
-
-    # 全パターン失敗 - 外部URLを全てダンプ（上位3件）
-    all_ext = re.findall(
-        r'https?://(?!(?:[^/"]*\.)?(?:google|gstatic|googleapis|googleusercontent|schema))[^"\'<>\s]{15,}',
-        html,
-    )
-    unique_ext = list(dict.fromkeys(all_ext))[:5]
-    print(f"  [診断] 外部URL全リスト(上位5): {unique_ext}")
     return ""
 
 
