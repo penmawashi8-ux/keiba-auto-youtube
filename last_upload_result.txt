@@ -1,8 +1,10 @@
-date: 2026-03-29T03:24:15.410132Z
+date: 2026-03-29T03:33:16.637891Z
 projects_loaded: 3
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=jcIibQ1vHGE title=老朽化進む笠松競馬場 再整備へ 競走馬を間近に見られるパドック移設、オグリキャッ
+OK project=1 video_id=jgUqMMuxMrk title=競馬 - 2026年鈴鹿特別 AI予想 - スポーツナビ
+OK project=1 video_id=JHOQBxcoD7Q title=最古の銅銭「富本銭」国宝に 春日大社「競馬図」など重文へ 文化審（朝日新聞） -
+OK project=1 video_id=CJeiOdhvldo title=またまた石田拓郎が単勝万馬券を演出、前走16着ガルディーノまさかの一変劇／中山2
