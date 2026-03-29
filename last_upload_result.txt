@@ -1,8 +1,8 @@
-date: 2026-03-29T11:43:44.737739Z
+date: 2026-03-29T13:54:37.421184Z
 projects_loaded: 3
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=9919ikn3oNY title=【高松宮記念】ルメール「凄い加速だった」サトノレーヴが連覇達成（競馬のおはなし）
+OK project=1 video_id=psQtEP4_E9k title=【桜花賞登録馬】スターアニス、ドリームコアら１９頭がエントリー
