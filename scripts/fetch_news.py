@@ -19,13 +19,11 @@ from urllib.request import Request, urlopen
 
 RSS_FEEDS = [
     # 直接記事URLを提供する日本競馬専門サイト（優先）
-    "https://news.netkeiba.com/?pid=rss",
-    "https://www.jra.go.jp/rss/news.xml",
-    "https://www.sponichi.co.jp/gamble/rss/horse.rdf",
-    "https://www.nikkansports.com/rss/keiba/keiba-news.rdf",
-    "https://hochi.news/rss/keiba.rdf",
-    "https://uma-story.com/feed/",
-    # Google News（フォールバック）
+    "https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba",  # netkeiba公式RSS
+    "https://jra.jp/rss/jra-info.rdf",                           # JRA公式（2026-03-31終了予定）
+    "https://www.keiba.jp/rss/",                                  # 競馬JAPAN
+    "https://keiba.radionikkei.jp/keiba_article/news/rss.xml",   # ラジオNIKKEI競馬ニュース
+    # Google News（googlenewsdecoderで記事URL解決）
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
 ]
@@ -100,29 +98,39 @@ def is_reporter_prediction(entry: dict) -> bool:
 # ---------------------------------------------------------------------------
 
 def decode_google_news_url(url: str) -> str:
-    """Google News CBMi...トークンからbase64urlデコードで実際の記事URLを抽出する。"""
+    """googlenewsdecoderライブラリでGoogle News URLを実際の記事URLに変換する。
+    失敗した場合はbase64urlデコードをフォールバックとして試みる。
+    """
+    try:
+        from googlenewsdecoder import gnewsdecoder
+        result = gnewsdecoder(url, interval=1)
+        if result.get("status"):
+            decoded = result["decoded_url"]
+            print(f"  [gnewsdecoder] 成功: {decoded[:80]}")
+            return decoded
+        else:
+            print(f"  [gnewsdecoder] 失敗: {result.get('message', '不明なエラー')}")
+    except Exception as e:
+        print(f"  [gnewsdecoder] 例外: {e}")
+
+    # フォールバック: base64urlデコード
     import base64
     m = re.search(r"/articles/([^?#]+)", url)
     if not m:
         return url
     encoded = m.group(1)
     try:
-        # base64urlデコード（パディング補完を正確に行う）
         rem = len(encoded) % 4
         encoded_padded = encoded + ("=" * (4 - rem)) if rem else encoded
-        decoded = base64.urlsafe_b64decode(encoded_padded)
-        # 診断: デコードされたバイト列のhexを出力
-        print(f"  [base64] token={len(encoded)}chars decoded={len(decoded)}bytes hex={decoded[:32].hex()}")
-        # URLパターンをASCII可視文字で探す
-        url_match = re.search(rb"https?://[\x21-\x7e]+", decoded)
+        decoded_bytes = base64.urlsafe_b64decode(encoded_padded)
+        url_match = re.search(rb"https?://[\x21-\x7e]+", decoded_bytes)
         if url_match:
             actual = url_match.group(0).decode("ascii", errors="ignore").rstrip(".,;)")
             if not re.search(r"google\.com|googleapis\.com", actual):
-                print(f"  [URL解決] base64decode成功: {actual[:80]}")
+                print(f"  [base64] フォールバック成功: {actual[:80]}")
                 return actual
-        print(f"  [base64] https://パターン未検出")
-    except Exception as e:
-        print(f"  [URL解決] base64デコード失敗: {e}")
+    except Exception:
+        pass
     return url
 
 

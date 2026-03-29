@@ -8,3 +8,4 @@ Pillow
 mutagen
 numpy
 playwright
+googlenewsdecoder
