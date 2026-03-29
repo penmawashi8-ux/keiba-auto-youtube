@@ -392,6 +392,7 @@ def fetch_news() -> list[dict]:
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
         rss_summary_len = len(summary)
+        print(f"  記事URL: {link}")
         raw_html = http_get(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
@@ -424,10 +425,15 @@ def fetch_news() -> list[dict]:
                 paras_text = [re.sub(r"<[^>]+>", "", p).strip() for p in paras]
                 body = " ".join(p for p in paras_text if len(p) > 20)
                 method = "p-tags"
-            # フォールバック: HTML全体
+            # フォールバック: script/style/nav/header/footer除去後にbodyだけ抽出
             if len(body.strip()) < 50:
-                body = re.sub(r"<[^>]+>", " ", html)
-                method = "full-html"
+                clean = re.sub(
+                    r"<(script|style|nav|header|footer|aside)[^>]*>.*?</\1>",
+                    " ", html, flags=re.DOTALL | re.IGNORECASE,
+                )
+                body_m = re.search(r"<body[^>]*>(.*?)</body>", clean, re.DOTALL | re.IGNORECASE)
+                body = re.sub(r"<[^>]+>", " ", body_m.group(1) if body_m else clean)
+                method = "cleaned-html"
             full_body = re.sub(r"\s+", " ", body).strip()[:3000]
             if len(full_body) > len(summary):
                 summary = full_body
