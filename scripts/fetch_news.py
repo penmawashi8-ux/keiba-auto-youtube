@@ -87,6 +87,32 @@ def is_reporter_prediction(entry: dict) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Google News URLデコード
+# ---------------------------------------------------------------------------
+
+def decode_google_news_url(url: str) -> str:
+    """Google News リダイレクトURL（CBMi...形式）から実際の記事URLを抽出する。"""
+    import base64
+    m = re.search(r"/articles/([^?#]+)", url)
+    if not m:
+        return url
+    encoded = m.group(1)
+    try:
+        # base64urlデコード（パディング補完）
+        padding = "=" * (4 - len(encoded) % 4)
+        decoded = base64.urlsafe_b64decode(encoded + padding)
+        # デコードされたバイト列の中にURLパターンを探す
+        url_match = re.search(rb"https?://[^\x00-\x1f\x7f-\xff\s]+", decoded)
+        if url_match:
+            actual = url_match.group(0).decode("utf-8", errors="ignore").rstrip(".,;)")
+            print(f"  Google News URL解決: {actual[:80]}")
+            return actual
+    except Exception:
+        pass
+    return url
+
+
+# ---------------------------------------------------------------------------
 # ユーティリティ
 # ---------------------------------------------------------------------------
 
@@ -356,6 +382,13 @@ def fetch_news() -> list[dict]:
     if len(unposted) < before:
         print(f"記者予想フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
 
+    # オッズ・出馬表のみのページを除外（記事内容がない）
+    before = len(unposted)
+    odds_pattern = re.compile(r"オッズ|出馬表|払戻金|レース結果一覧|競馬場.*開催日程", re.IGNORECASE)
+    unposted = [e for e in unposted if not odds_pattern.search(e.get("title", ""))]
+    if len(unposted) < before:
+        print(f"オッズ/出馬表フィルタで {before - len(unposted)} 件を除外 → {len(unposted)} 件")
+
     # 時間フィルタ: 24時間 → 48時間 → 最新3件（条件なし）
     selected: list[dict] = []
     for label, hours in [("24時間以内", 24), ("48時間以内", 48), ("条件なし（最新3件）", None)]:
@@ -392,8 +425,11 @@ def fetch_news() -> list[dict]:
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
         rss_summary_len = len(summary)
-        print(f"  記事URL: {link}")
-        raw_html = http_get(link)
+        print(f"  記事URL(RSS): {link[:80]}")
+        # Google News リダイレクトURLを実際の記事URLに変換
+        fetch_url = decode_google_news_url(link) if "news.google.com" in link else link
+        print(f"  記事URL(fetch): {fetch_url[:80]}")
+        raw_html = http_get(fetch_url)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
             if not image_url:
