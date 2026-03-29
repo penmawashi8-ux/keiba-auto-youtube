@@ -46,7 +46,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Fetch latest horse racing news
-        run: python scripts/fetch_news.py
+        run: python scripts/fetch_news.py 2>&1 | tee /tmp/fetch.log; exit ${PIPESTATUS[0]}
 
       - name: Check if news exists
         id: check_news
@@ -66,10 +66,10 @@ jobs:
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         run: |
-          python scripts/generate_script.py 2>&1 | tee /tmp/gemini.log
+          python scripts/generate_script.py 2>&1 | tee /tmp/script.log
           STATUS=${PIPESTATUS[0]}
           if [ $STATUS -ne 0 ]; then
-            echo "::error::Gemini失敗: $(tail -5 /tmp/gemini.log | tr '\n' ' ')"
+            echo "::error::Gemini失敗: $(tail -5 /tmp/script.log | tr '\n' ' ')"
             exit $STATUS
           fi
 
@@ -145,6 +145,62 @@ jobs:
           GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: python scripts/upload_youtube.py
+
+      - name: フェッチ・脚本ログをIssueに投稿
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime, subprocess
+
+          def read_log(path, max_lines=60):
+              try:
+                  with open(path) as f:
+                      lines = f.readlines()
+                  return "".join(lines[:max_lines])
+              except Exception:
+                  return "(ログなし)"
+
+          fetch_log  = read_log("/tmp/fetch.log")
+          script_log = read_log("/tmp/script.log")
+
+          run_id  = os.environ.get("RUN_ID", "")
+          repo    = os.environ["GH_REPO"]
+          token   = os.environ["GH_TOKEN"]
+          now_str = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+
+          body = f"""## Fetch ログ
+          ```
+          {fetch_log}
+          ```
+
+          ## Script ログ
+          ```
+          {script_log}
+          ```
+
+          [Actions Run](https://github.com/{repo}/actions/runs/{run_id})
+          """
+
+          title = f"[LOG] {now_str}"
+          payload = json.dumps({"title": title, "body": body, "labels": ["debug-log"]}).encode()
+
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req) as resp:
+                  data = json.loads(resp.read())
+                  print(f"Issue作成: {data.get('html_url')}")
+          except Exception as e:
+              print(f"Issue作成失敗（続行）: {e}")
+          PYEOF
 
       - name: Commit and push posted_ids.txt
         if: always() && steps.check_news.outputs.has_news == 'true'
