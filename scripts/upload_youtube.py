@@ -436,18 +436,27 @@ def main() -> None:
         sys.exit(1)
 
     news_items: list[dict] = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
-    if not news_items:
-        print("ニュースが0件のためアップロードをスキップします。")
-        sys.exit(0)
 
-    # video_[数字].mp4 のみ対象（moviepy の一時ファイルを除外）
-    video_files = sorted(
-        f for f in Path(OUTPUT_DIR).glob("video_*.mp4")
-        if f.stem.split("_")[1].isdigit()
-    )
-    if not video_files:
-        print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
-        sys.exit(1)
+    # キャラクター動画のみの実行（ニュースなし）でも処理を続ける
+    char_video_only = not news_items
+    if char_video_only:
+        char_video_path = Path(f"{OUTPUT_DIR}/character_video.mp4")
+        if not char_video_path.exists():
+            print("ニュースが0件かつキャラクター動画もないためスキップします。")
+            sys.exit(0)
+        print("ニュースが0件ですが、キャラクター動画が存在するためアップロードを続行します。")
+
+    if not char_video_only:
+        # video_[数字].mp4 のみ対象（moviepy の一時ファイルを除外）
+        video_files = sorted(
+            f for f in Path(OUTPUT_DIR).glob("video_*.mp4")
+            if f.stem.split("_")[1].isdigit()
+        )
+        if not video_files:
+            print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
+            sys.exit(1)
+    else:
+        video_files = []
 
     all_creds, load_log = load_all_credentials()
     cred_idx = 0

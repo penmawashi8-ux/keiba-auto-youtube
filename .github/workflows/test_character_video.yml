@@ -1,0 +1,63 @@
+name: テスト：ウマコ動画生成＆投稿
+
+# このファイル自体を変更したときだけ実行（誤爆防止）
+on:
+  push:
+    branches: [claude/fix-duplicates-gemini-quota-gBNdC]
+    paths: ['.github/workflows/test_character_video.yml']
+  workflow_dispatch:
+
+jobs:
+  test-character-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: システム依存ライブラリ
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk libfontconfig1
+          echo "ffmpeg: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Python依存ライブラリ
+        run: pip install -r requirements.txt
+
+      - name: BGMダウンロード（失敗しても続行）
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py || echo "BGMなし（スキップして続行）"
+
+      - name: ウマコ動画を生成（強制）
+        env:
+          FORCE_CHARACTER_VIDEO: "true"
+        run: python scripts/generate_character_video.py
+
+      - name: YouTubeへ投稿
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: |
+          echo "[]" > news.json
+          mkdir -p output
+          python scripts/upload_youtube.py
