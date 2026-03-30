@@ -122,6 +122,7 @@ jobs:
           PYEOF
 
       - name: キャラクター動画生成（ウマコ）
+        id: umako
         env:
           FORCE_CHARACTER_VIDEO: ${{ inputs.force_character_video || 'false' }}
           CHARACTER_VIDEO_INTERVAL: "10"
@@ -129,7 +130,38 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
-        run: python scripts/generate_character_video.py
+        run: python -u scripts/generate_character_video.py 2>&1 | tee "$GITHUB_WORKSPACE/umako_log.txt"; exit ${PIPESTATUS[0]}
+
+      - name: ウマコログをIssueに投稿（デバッグ用）
+        if: always() && steps.umako.conclusion != 'skipped'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = os.environ.get("GITHUB_WORKSPACE", "") + "/umako_log.txt"
+          try:
+              with open(log_path) as f:
+                  log = "".join(f.readlines()[:80])
+          except Exception:
+              log = "(ログなし)"
+          umako_exists = os.path.exists(os.environ.get("GITHUB_WORKSPACE", "") + "/assets/umako.jpg")
+          title = "[DEBUG] ウマコログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = f"umako.jpg: {'✅ 生成済み' if umako_exists else '❌ なし'}\n\n```\n{log}\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Issue作成: {data.get('html_url')}")
+          PYEOF
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
