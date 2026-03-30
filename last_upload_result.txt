@@ -1,9 +1,8 @@
-date: 2026-03-30T00:07:27.929115Z
+date: 2026-03-30T07:13:44.303152Z
 projects_loaded: 3
-uploaded: 2
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=DIHS5UJk_yY title=競馬レース一覧｜2026年04月04日【SPAIA競馬】 - SPAIA競馬
-OK project=1 video_id=p4IYuHlMvq4 title=【ドバイワールドC】フォーエバーヤングは史上初の「中東ダブル」ならず2着 矢作師
+OK project=1 video_id=Lw7nmF9n8Ks title=笠松競馬でダート1580m戦がスタート 厩舎移転工事終了後も使用継続（netke
