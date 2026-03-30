@@ -1,10 +1,10 @@
-date: 2026-03-30T09:03:26.529100Z
+date: 2026-03-30T10:51:39.303638Z
 projects_loaded: 3
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=xccuPyQIXeQ title=【大阪杯・厩舎直送】クロワデュノール休み明け＆当日輸送も不安なし「動ける状態で帰
-OK project=1 video_id=NUDiWydCWN8 title=【地方競馬】穂刈隆志調教師が４月１日に厩舎開業（馬トク報知） - Yahoo!ニ
-OK project=1 video_id=njRLJm6YZVM title=【地方競馬】穂刈隆志調教師が４月１日に厩舎開業 - Excite エキサイト
+OK project=1 video_id=gUXxNptPSsM title=【大阪杯・厩舎直送】〝100点以上〟の調整！メイショウタバルは心身充実「いろんな
+OK project=1 video_id=aOgwKyX35XY title=【大阪杯・厩舎直送】〝100点以上〟の調整！メイショウタバルは心身充実「いろんな
+OK project=1 video_id=ePKpmhyYrzg title=【大阪杯・厩舎直送】〝100点以上〟の調整！メイショウタバルは心身充実「いろんな
