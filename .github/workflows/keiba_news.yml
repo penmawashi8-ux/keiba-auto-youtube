@@ -125,6 +125,7 @@ jobs:
         env:
           FORCE_CHARACTER_VIDEO: ${{ inputs.force_character_video || 'false' }}
           CHARACTER_VIDEO_INTERVAL: "10"
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python scripts/generate_character_video.py
 
       - name: Generate audio

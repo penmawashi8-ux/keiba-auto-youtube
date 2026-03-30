@@ -14,6 +14,7 @@
 
 import asyncio
 import glob
+import io
 import os
 import random
 import shutil
@@ -21,13 +22,26 @@ import subprocess
 import sys
 import tempfile
 import textwrap
+import time
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+import requests
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
 BGM_DIR = f"{ASSETS_DIR}/bgm"
+
+HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
+# ウマコキャラクター生成プロンプト
+CHARACTER_IMAGE_PROMPT = (
+    "cute kawaii chibi anime style horse girl mascot character, "
+    "brown horse ears and flowing mane, red and yellow striped jockey helmet, "
+    "big sparkly expressive eyes, warm smile, cream and brown color scheme, "
+    "bright yellow orange gradient background, full body cartoon illustration, "
+    "vertical portrait composition, centered, high quality digital art, "
+    "no text, no watermark"
+)
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 FPS = 30
@@ -77,6 +91,40 @@ def should_generate() -> bool:
     return False
 
 
+def generate_character_image_hf(hf_token: str) -> Image.Image | None:
+    """HuggingFace FLUX.1-schnell でウマコのキャラクター画像を AI 生成する。
+    失敗時は None を返す（呼び出し元で Pillow フォールバック）。"""
+    headers = {"Authorization": f"Bearer {hf_token}"}
+    payload = {
+        "inputs": CHARACTER_IMAGE_PROMPT,
+        "parameters": {"width": 576, "height": 1024},
+    }
+    print("  [AI] HuggingFace FLUX でウマコキャラクター画像を生成中...")
+    for attempt in range(3):
+        try:
+            r = requests.post(HF_MODEL_URL, headers=headers, json=payload, timeout=120)
+            print(f"  [HF] status={r.status_code} ({len(r.content)} bytes)")
+            if r.status_code == 200 and len(r.content) > 5000:
+                img = Image.open(io.BytesIO(r.content)).convert("RGB")
+                # 1080x1920 にリサイズ（上部を優先するよう center-top でクロップ）
+                img = ImageOps.fit(img, (VIDEO_WIDTH, VIDEO_HEIGHT), Image.LANCZOS,
+                                   centering=(0.5, 0.3))
+                print(f"  [AI] ウマコ画像生成成功: {img.size}")
+                return img
+            elif r.status_code == 503:
+                wait = 30 * (attempt + 1)
+                print(f"  [HF] モデル読み込み中... {wait}秒待機")
+                time.sleep(wait)
+            else:
+                print(f"  [HF] エラー: {r.status_code} {r.text[:200]}")
+                break
+        except Exception as e:
+            print(f"  [HF] 例外: {type(e).__name__}: {e}")
+            break
+    print("  [AI] HF 生成失敗 → Pillow フォールバックを使用します。")
+    return None
+
+
 def find_japanese_font() -> str | None:
     candidates = [
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -89,9 +137,47 @@ def find_japanese_font() -> str | None:
     return hits[0] if hits else None
 
 
-def draw_character_bg() -> Image.Image:
-    """ウマコのキャラクターフレームをPillowで描画する（明るい黄色〜オレンジ、通常動画と正反対のテイスト）。"""
+def draw_character_bg(ai_image: Image.Image | None = None) -> Image.Image:
+    """ウマコのキャラクターフレームを生成する。
+    ai_image が渡された場合はそれを背景に使い、バナーだけ Pillow で追加する。
+    ai_image が None の場合は Pillow で全て描画する（フォールバック）。
+    """
     W, H = VIDEO_WIDTH, VIDEO_HEIGHT
+    font_path = find_japanese_font()
+
+    def load_font(size: int) -> ImageFont.ImageFont:
+        try:
+            return ImageFont.truetype(font_path, size) if font_path else ImageFont.load_default()
+        except Exception:
+            return ImageFont.load_default()
+
+    if ai_image is not None:
+        # ===== AI生成画像を背景に使うパス =====
+        img = ai_image.copy()
+        draw = ImageDraw.Draw(img)
+
+        # バナー部分だけ半透明暗幕（視認性確保）
+        overlay = Image.new("RGBA", (W, 200), (0, 0, 0, 160))
+        img = img.convert("RGBA")
+        img.paste(overlay, (0, 40), overlay)
+        img = img.convert("RGB")
+        draw = ImageDraw.Draw(img)
+
+        # ========== タイトルバナー（上部） ==========
+        banner_font = load_font(62)
+        banner_text = "ウマコの競馬豆知識"
+        draw.rounded_rectangle([40, 58, W - 40, 185], radius=22, fill=(180, 50, 20))
+        try:
+            bb = draw.textbbox((0, 0), banner_text, font=banner_font)
+            tw = bb[2] - bb[0]
+        except Exception:
+            tw = len(banner_text) * 37
+        draw.text(((W - tw) // 2, 90), banner_text,
+                  font=banner_font, fill=(255, 255, 255),
+                  stroke_width=3, stroke_fill=(100, 20, 0))
+        return img
+
+    # ===== Pillow フォールバック（AI生成なし） =====
     img = Image.new("RGB", (W, H))
     draw = ImageDraw.Draw(img)
 
@@ -108,16 +194,7 @@ def draw_character_bg() -> Image.Image:
         dx = rng.randint(0, W)
         dy = rng.randint(0, H)
         dr = rng.randint(8, 28)
-        alpha_color = (255, 255, 120)
-        draw.ellipse([dx, dy, dx + dr, dy + dr], fill=alpha_color)
-
-    font_path = find_japanese_font()
-
-    def load_font(size: int) -> ImageFont.ImageFont:
-        try:
-            return ImageFont.truetype(font_path, size) if font_path else ImageFont.load_default()
-        except Exception:
-            return ImageFont.load_default()
+        draw.ellipse([dx, dy, dx + dr, dy + dr], fill=(255, 255, 120))
 
     # ========== タイトルバナー（上部） ==========
     banner_font = load_font(58)
@@ -259,7 +336,8 @@ def run_ffmpeg(cmd: list[str]) -> None:
         raise RuntimeError(f"ffmpeg失敗: {cmd[:5]}")
 
 
-def build_character_video(script: str, audio_path: str, output_path: str) -> None:
+def build_character_video(script: str, audio_path: str, output_path: str,
+                          ai_image: Image.Image | None = None) -> None:
     """キャラクター動画をffmpegで合成する。"""
     font_path = find_japanese_font()
 
@@ -275,7 +353,7 @@ def build_character_video(script: str, audio_path: str, output_path: str) -> Non
     total_chars = sum(len(s) for s in sentences)
     durations = [max(1.5, audio_duration * len(s) / total_chars) for s in sentences]
 
-    base_img = draw_character_bg()
+    base_img = draw_character_bg(ai_image)
     subtitle_font = load_font(50)
 
     INTRO_DURATION = 0.8  # キャラクター登場フレーム（無音部分）
@@ -439,8 +517,14 @@ def main() -> None:
     output_path = f"{OUTPUT_DIR}/character_video.mp4"
     script_path = f"{OUTPUT_DIR}/character_script.txt"
 
+    # HuggingFace FLUX でキャラクター画像を AI 生成（トークン未設定時は Pillow フォールバック）
+    hf_token = os.environ.get("HF_TOKEN", "").strip()
+    ai_image = generate_character_image_hf(hf_token) if hf_token else None
+    if not hf_token:
+        print("  HF_TOKEN 未設定 → Pillow フォールバックを使用します。")
+
     asyncio.run(generate_character_audio(script, audio_path))
-    build_character_video(script, audio_path, output_path)
+    build_character_video(script, audio_path, output_path, ai_image=ai_image)
     Path(script_path).write_text(script, encoding="utf-8")
     print(f"\nキャラクター動画を生成しました: {output_path}")
 

@@ -44,6 +44,7 @@ jobs:
       - name: ウマコ動画を生成（強制）
         env:
           FORCE_CHARACTER_VIDEO: "true"
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python scripts/generate_character_video.py
 
       - name: YouTubeへ投稿
