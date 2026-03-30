@@ -48,8 +48,9 @@ LINE_SPACING = 10
 SUBTITLE_CENTER_Y = 960
 OUTLINE_WIDTH = 8
 
-UMAKO_VOICE = "ja-JP-AoiNeural"
-UMAKO_RATE = "+20%"
+UMAKO_VOICE = "ja-JP-NanamiNeural"
+UMAKO_RATE = "+25%"
+UMAKO_PITCH = "+15Hz"
 
 UMAKO_BASE = (
     "cute kawaii chibi anime horse girl mascot character, "
@@ -271,7 +272,7 @@ def generate_trivia_script(topic: str) -> str:
 
 async def _tts_async(text: str, output_path: str) -> None:
     import edge_tts
-    tts = edge_tts.Communicate(text, voice=UMAKO_VOICE, rate=UMAKO_RATE)
+    tts = edge_tts.Communicate(text, voice=UMAKO_VOICE, rate=UMAKO_RATE, pitch=UMAKO_PITCH)
     await tts.save(output_path)
 
 
