@@ -295,6 +295,25 @@ def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.
                     draw.text((x + dx, y + dy), line, font=font, fill=(0, 0, 0))
             draw.text((x, y), line, font=font, fill=(255, 255, 255))
 
+    # ウマコオーバーレイ（右下）
+    umako_path = Path(ASSETS_DIR) / "umako.jpg"
+    if umako_path.exists():
+        try:
+            umako = Image.open(umako_path).convert("RGB")
+            umako_w = 300
+            umako_h = int(umako.height * umako_w / umako.width)
+            umako = umako.resize((umako_w, umako_h), Image.LANCZOS)
+            ux = VIDEO_WIDTH - umako_w - 20
+            uy = VIDEO_HEIGHT - umako_h - 80
+            # 半透明パネルを下敷きにする
+            img_rgba = img.convert("RGBA")
+            panel = Image.new("RGBA", (umako_w + 20, umako_h + 20), (0, 0, 0, 100))
+            img_rgba.paste(panel, (ux - 10, uy - 10), panel)
+            img = img_rgba.convert("RGB")
+            img.paste(umako, (ux, uy))
+        except Exception as e:
+            print(f"  [警告] ウマコオーバーレイ失敗: {e}", file=sys.stderr)
+
     return img
 
 
