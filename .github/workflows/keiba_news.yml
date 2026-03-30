@@ -78,6 +78,18 @@ jobs:
             exit $STATUS
           fi
 
+      - name: Check if scripts were generated
+        id: check_scripts
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          if ls output/script_*.txt 2>/dev/null | grep -q .; then
+            echo "has_scripts=true" >> "$GITHUB_OUTPUT"
+            echo "スクリプトファイルあり"
+          else
+            echo "has_scripts=false" >> "$GITHUB_OUTPUT"
+            echo "スクリプトファイルなし（全記事スキップ済み）"
+          fi
+
       - name: AI画像を生成
         id: ai_images
         if: steps.check_news.outputs.has_news == 'true'
@@ -132,11 +144,11 @@ jobs:
         run: python scripts/generate_character_video.py
 
       - name: Generate audio
-        if: steps.check_news.outputs.has_news == 'true'
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_audio.py
 
       - name: BGMをダウンロード（archive.org フリー音楽）
-        if: steps.check_news.outputs.has_news == 'true'
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
@@ -144,7 +156,7 @@ jobs:
           python scripts/download_bgm.py
 
       - name: Generate video
-        if: steps.check_news.outputs.has_news == 'true'
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_video.py
 
       - name: Upload to YouTube

@@ -437,26 +437,20 @@ def main() -> None:
 
     news_items: list[dict] = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
 
-    # キャラクター動画のみの実行（ニュースなし）でも処理を続ける
-    char_video_only = not news_items
+    # video_[数字].mp4 のみ対象（moviepy の一時ファイルを除外）
+    video_files = sorted(
+        f for f in Path(OUTPUT_DIR).glob("video_*.mp4")
+        if f.stem.split("_")[1].isdigit()
+    )
+
+    # ニュース動画がない場合（全記事スキップ or ニュースなし）はキャラクター動画のみ確認
+    char_video_only = not video_files
     if char_video_only:
         char_video_path = Path(f"{OUTPUT_DIR}/character_video.mp4")
         if not char_video_path.exists():
-            print("ニュースが0件かつキャラクター動画もないためスキップします。")
+            print("アップロードする動画がありません（ニュース動画なし・キャラクター動画なし）。スキップします。")
             sys.exit(0)
-        print("ニュースが0件ですが、キャラクター動画が存在するためアップロードを続行します。")
-
-    if not char_video_only:
-        # video_[数字].mp4 のみ対象（moviepy の一時ファイルを除外）
-        video_files = sorted(
-            f for f in Path(OUTPUT_DIR).glob("video_*.mp4")
-            if f.stem.split("_")[1].isdigit()
-        )
-        if not video_files:
-            print(f"[エラー] {OUTPUT_DIR}/video_*.mp4 が見つかりません。", file=sys.stderr)
-            sys.exit(1)
-    else:
-        video_files = []
+        print("ニュース動画はありませんが、キャラクター動画が存在するためアップロードを続行します。")
 
     all_creds, load_log = load_all_credentials()
     cred_idx = 0
