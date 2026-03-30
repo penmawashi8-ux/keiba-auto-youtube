@@ -202,18 +202,13 @@ def main() -> None:
                 if announcement_only_pattern.search(script) and not has_substantive_content.search(script):
                     print(f"[{i}]  → 告知のみスクリプト（具体的内容なし）のためスキップ: {script[:80]}")
                     return i, True
-                # 馬を抽象的に表現している場合はスキップ
-                # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
+                # 明らかに馬名なしの抽象表現のみスキップ（誤検知しにくいパターンのみ残す）
+                # 「ある馬」「注目激走馬」「スプリンターたち」など、固有名詞が絶対に入らない表現
                 abstract_horse_pattern = _re.compile(
-                    r"(?:ある馬|その馬|この馬|同馬|該当馬|"
-                    r"\d+着(?:と)?なった馬|\d+着の馬|"
-                    r"優勝した馬|勝利した馬|連覇した馬|"
-                    r"注目激走馬|注目の激走馬|注目馬(?!の[ァ-ン])|"
-                    r"スプリンターたち|出走馬たち|各馬(?:が|は|も|に)|強豪馬たち|"
-                    r"馬たちが|馬たちは|一堂に会)"
+                    r"(?:ある馬|注目激走馬|注目の激走馬|スプリンターたち|一堂に会)"
                 )
                 if abstract_horse_pattern.search(script):
-                    print(f"[{i}]  → 馬名を使わず抽象表現のためスキップ: {script[:60]}")
+                    print(f"[{i}]  → 抽象表現のためスキップ: {script[:60]}")
                     return i, True
                 # 文の途中で終わっている場合は最後の句点で切る
                 if script and not script.endswith("。"):
@@ -230,7 +225,7 @@ def main() -> None:
         print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 
-    with ThreadPoolExecutor(max_workers=len(news_items)) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:  # 順次実行でクォータバースト防止
         futures = {executor.submit(generate_one, (i, item)): i for i, item in enumerate(news_items)}
         failed = []
         for future in as_completed(futures):

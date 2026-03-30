@@ -27,6 +27,7 @@ YOUTUBE_SCOPES = [
 ]
 CATEGORY_ID = "17"  # スポーツ
 TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
+CHARACTER_TAGS = ["競馬", "競馬豆知識", "keiba", "Shorts", "ウマコ", "競馬雑学", "競馬初心者"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
 # GCPプロジェクト切り替えで解決できるAPIクォータ超過
@@ -331,19 +332,28 @@ def is_channel_upload_limit(http_error: HttpError) -> bool:
     return bool(_get_error_reasons(http_error) & CHANNEL_LIMIT_REASONS)
 
 
-def upload_video(youtube, title: str, description: str, video_path: str) -> str | None:
+def upload_video(
+    youtube,
+    title: str,
+    description: str,
+    video_path: str,
+    tags: list[str] | None = None,
+    title_prefix: str = "【競馬速報】",
+) -> str | None:
     """YouTube に動画をアップロードして videoId を返す。
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
     # YouTubeタイトルの上限は100文字
-    prefix, suffix = "【競馬速報】", " #Shorts"
+    if tags is None:
+        tags = TAGS
+    prefix, suffix = title_prefix, " #Shorts"
     max_body = 100 - len(prefix) - len(suffix)
     short_title = title if len(title) <= max_body else title[:max_body - 1] + "…"
     body = {
         "snippet": {
             "title": f"{prefix}{short_title}{suffix}",
             "description": description,
-            "tags": TAGS,
+            "tags": tags,
             "categoryId": CATEGORY_ID,
             "defaultLanguage": "ja",
             "defaultAudioLanguage": "ja",
@@ -503,6 +513,38 @@ def main() -> None:
         uploaded_count += 1
 
     update_posted_ids(news_items)
+
+    # ---- キャラクター動画のアップロード（存在する場合） ----
+    char_video = Path(f"{OUTPUT_DIR}/character_video.mp4")
+    if char_video.exists():
+        char_script_path = Path(f"{OUTPUT_DIR}/character_script.txt")
+        char_script_text = char_script_path.read_text(encoding="utf-8").strip() if char_script_path.exists() else ""
+        char_title = "ウマコの競馬豆知識コーナー！"
+        char_description = char_script_text + "\n\n#競馬 #競馬豆知識 #keiba #Shorts #ウマコ #競馬雑学"
+        print(f"\n--- キャラクター動画アップロード: {char_video} ---")
+        char_video_id = None
+        char_cred_idx = 0
+        char_youtube = build("youtube", "v3", credentials=all_creds[char_cred_idx])
+        while char_video_id is None:
+            result = upload_video(
+                char_youtube, char_title, char_description, str(char_video),
+                tags=CHARACTER_TAGS, title_prefix="【ウマコの競馬豆知識】",
+            )
+            if result == "CHANNEL_LIMIT":
+                upload_log.append(f"CHANNEL_LIMIT (character video)")
+                break
+            elif result is None:
+                char_cred_idx += 1
+                if char_cred_idx < len(all_creds):
+                    char_youtube = build("youtube", "v3", credentials=all_creds[char_cred_idx])
+                else:
+                    print("[警告] キャラクター動画: 全プロジェクトのクォータ超過。スキップします。")
+                    break
+            else:
+                char_video_id = result
+                upload_log.append(f"OK (character) video_id={char_video_id}")
+                uploaded_count += 1
+                print(f"キャラクター動画アップロード完了: {char_video_id}")
 
     # 結果サマリーをファイルに書き出す（ワークフローでコミットして確認用）
     import datetime

@@ -392,7 +392,7 @@ def fetch_news() -> list[dict]:
                 body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
             if len(body.strip()) < 100:
                 body = re.sub(r"<[^>]+>", " ", html)
-            full_body = re.sub(r"\s+", " ", body).strip()[:1500]
+            full_body = re.sub(r"\s+", " ", body).strip()[:2000]
             if len(full_body) > len(summary):
                 summary = full_body
 
@@ -407,6 +407,18 @@ def fetch_news() -> list[dict]:
             "image_url": image_url,
             "published_date": pub_str,
         })
+
+    # 本文が薄すぎる記事を除外（Gemmaへの無駄な入力を削減）
+    # 十分な内容の記事が残る場合のみフィルタを適用
+    MIN_CONTENT_LENGTH = 150
+    rich_items = [item for item in news_items if len(item.get("summary", "")) >= MIN_CONTENT_LENGTH]
+    if rich_items:
+        if len(rich_items) < len(news_items):
+            removed = len(news_items) - len(rich_items)
+            print(f"本文不足({MIN_CONTENT_LENGTH}文字未満)の記事を除外: {removed} 件 → 残り {len(rich_items)} 件")
+        news_items = rich_items
+    else:
+        print(f"[警告] 全記事の本文が{MIN_CONTENT_LENGTH}文字未満のため除外せず継続")
 
     return news_items
 

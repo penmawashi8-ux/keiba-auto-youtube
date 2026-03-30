@@ -11,6 +11,11 @@ on:
     - cron: "0 9 * * *"   # 18:00 JST
     - cron: "0 11 * * *"  # 20:00 JST
   workflow_dispatch:
+    inputs:
+      force_character_video:
+        description: 'キャラクター動画（ウマコ）を強制生成する'
+        type: boolean
+        default: false
 
 jobs:
   post-keiba-news:
@@ -115,6 +120,12 @@ jobs:
               data = json.loads(resp.read())
               print(f"Issue作成: {data.get('html_url')}")
           PYEOF
+
+      - name: キャラクター動画生成（ウマコ）
+        env:
+          FORCE_CHARACTER_VIDEO: ${{ inputs.force_character_video || 'false' }}
+          CHARACTER_VIDEO_INTERVAL: "10"
+        run: python scripts/generate_character_video.py
 
       - name: Generate audio
         if: steps.check_news.outputs.has_news == 'true'
