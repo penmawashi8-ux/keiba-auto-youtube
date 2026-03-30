@@ -1,10 +1,10 @@
-date: 2026-03-30T23:37:42.652993Z
+date: 2026-03-30T23:43:48.085623Z
 projects_loaded: 3
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=Eg6mVjhM5Og title=【大阪杯】エコロディノス 楽しみ初G1 山口助手「精神的に成長」 - スポニチ 
-OK project=1 video_id=eGFFGGlU3XU title=【チャーチルダウンズC】アンドゥーリル 距離短縮で反撃 福永助手「調整はいい感じ
-OK project=1 video_id=4cQE_h9uNWs title=【大阪杯・先取り予想】気性難もプラスに！ショウヘイが初タイトル奪取へ虎視眈々「ワ
+OK project=1 video_id=QoE8O2i6ouc title=【大阪杯・先取り予想】気性難もプラスに！ショウヘイが初タイトル奪取へ虎視眈々「ワ
+OK project=1 video_id=AgHPWMd1Xwo title=【船橋11R・京成盃グランドマイラーズ】サントノーレ巻き返す - スポニチ Sp
+OK project=1 video_id=Bl4pHqfT8g4 title=高柳大師が10回以上挑み続けた中での海外初V 血統の魅力を詰め込んだワンダーディ
