@@ -41,7 +41,7 @@ jobs:
           mkdir -p assets/bgm
           python scripts/download_bgm.py || echo "BGMなし（スキップして続行）"
 
-      - name: ウマコ動画を生成（強制）
+      - name: ウマコ動画を生成（強制）# HF parameters修正 → 再実行
         env:
           FORCE_CHARACTER_VIDEO: "true"
           HF_TOKEN: ${{ secrets.HF_TOKEN }}

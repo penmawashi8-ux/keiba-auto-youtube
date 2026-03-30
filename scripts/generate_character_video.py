@@ -95,10 +95,7 @@ def generate_character_image_hf(hf_token: str) -> Image.Image | None:
     """HuggingFace FLUX.1-schnell でウマコのキャラクター画像を AI 生成する。
     失敗時は None を返す（呼び出し元で Pillow フォールバック）。"""
     headers = {"Authorization": f"Bearer {hf_token}"}
-    payload = {
-        "inputs": CHARACTER_IMAGE_PROMPT,
-        "parameters": {"width": 576, "height": 1024},
-    }
+    payload = {"inputs": CHARACTER_IMAGE_PROMPT}  # generate_images.py と同じ形式（parametersなし）
     print("  [AI] HuggingFace FLUX でウマコキャラクター画像を生成中...")
     for attempt in range(3):
         try:
