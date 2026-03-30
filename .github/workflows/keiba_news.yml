@@ -123,6 +123,7 @@ jobs:
 
       - name: キャラクター動画生成（ウマコ）
         id: umako
+        if: always() && steps.check_news.outputs.has_news == 'true'
         env:
           FORCE_CHARACTER_VIDEO: ${{ inputs.force_character_video || 'false' }}
           CHARACTER_VIDEO_INTERVAL: "10"
@@ -133,7 +134,7 @@ jobs:
         run: python -u scripts/generate_character_video.py 2>&1 | tee "$GITHUB_WORKSPACE/umako_log.txt"; exit ${PIPESTATUS[0]}
 
       - name: ウマコログをIssueに投稿（デバッグ用）
-        if: always() && steps.umako.conclusion != 'skipped'
+        if: always() && steps.check_news.outputs.has_news == 'true' && steps.umako.conclusion != 'skipped'
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
