@@ -502,6 +502,20 @@ def main() -> None:
         upload_log.append(f"OK project={cred_idx+1} video_id={video_id} title={title[:40]}")
         uploaded_count += 1
 
+    # キャラクター動画（ウマコ）のアップロード
+    char_video_path = Path(f"{OUTPUT_DIR}/character_video.mp4")
+    char_topic_path = Path(f"{OUTPUT_DIR}/character_topic.txt")
+    if char_video_path.exists() and not quota_exceeded:
+        topic = char_topic_path.read_text(encoding="utf-8").strip() if char_topic_path.exists() else "競馬豆知識"
+        char_title = f"ウマコの競馬豆知識「{topic}」"
+        char_desc = f"ウマコが「{topic}」についてわかりやすく解説！\n\n#競馬 #競馬豆知識 #ウマコ #Shorts #keiba"
+        print(f"\n--- キャラクター動画アップロード: {char_title} ---")
+        char_result = upload_video(youtube, char_title, char_desc, str(char_video_path))
+        if char_result and char_result not in ("CHANNEL_LIMIT",):
+            upload_log.append(f"OK character video_id={char_result} topic={topic}")
+            uploaded_count += 1
+        char_video_path.unlink(missing_ok=True)  # 次回と混同しないよう削除
+
     update_posted_ids(news_items)
 
     # 結果サマリーをファイルに書き出す（ワークフローでコミットして確認用）

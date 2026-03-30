@@ -48,8 +48,8 @@ LINE_SPACING = 10
 SUBTITLE_CENTER_Y = 960
 OUTLINE_WIDTH = 8
 
-UMAKO_VOICE = "ja-JP-NanamiNeural"
-UMAKO_RATE = "+15%"
+UMAKO_VOICE = "ja-JP-AoiNeural"
+UMAKO_RATE = "+20%"
 
 UMAKO_BASE = (
     "cute kawaii chibi anime horse girl mascot character, "
@@ -463,6 +463,7 @@ def main() -> None:
     print(f"[ウマコ] スクリプト ({len(script)}文字): {script[:80]}...")
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
     Path(CHAR_SCRIPT_PATH).write_text(script, encoding="utf-8")
+    Path(f"{OUTPUT_DIR}/character_topic.txt").write_text(topic, encoding="utf-8")
 
     if not generate_tts(script, CHAR_AUDIO_PATH):
         print("[ウマコ] TTS失敗。豆知識動画生成をスキップします。", file=sys.stderr)
