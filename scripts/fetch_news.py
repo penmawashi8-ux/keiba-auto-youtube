@@ -10,6 +10,7 @@ import gzip
 import json
 import re
 import sys
+import unicodedata
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.error import URLError
@@ -331,6 +332,25 @@ def fetch_news() -> list[dict]:
         if normalized_url:
             seen_urls.add(normalized_url)
         unique.append(e)
+
+    # タイトル正規化による重複除去
+    # 同一記事が異なるGoogle NewsリダイレクトURLで来る場合に対処
+    def _norm_title(t: str) -> str:
+        t = unicodedata.normalize("NFKC", t)
+        t = re.sub(r"[【】「」『』\[\]（）()\s・…]", "", t).lower()
+        return t
+
+    seen_titles: set[str] = set()
+    title_unique: list[dict] = []
+    for e in unique:
+        nt = _norm_title(e.get("title", ""))
+        if nt and nt in seen_titles:
+            print(f"  [タイトル重複除去] {e.get('title', '')[:50]}")
+            continue
+        if nt:
+            seen_titles.add(nt)
+        title_unique.append(e)
+    unique = title_unique
 
     # 投稿済みを除外
     unposted = [e for e in unique if e["id"] not in posted_ids]
