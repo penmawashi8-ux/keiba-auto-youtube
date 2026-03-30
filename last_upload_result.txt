@@ -1,10 +1,11 @@
-date: 2026-03-30T23:52:19.319511Z
+date: 2026-03-30T23:57:10.033474Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 4
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=P9OtlNSjDsA title=【大阪杯】ショウヘイ キャリア重ねて超絶筋肉量 立ち姿どっしり“翔平級”安定感 
-OK project=1 video_id=uGrtFrMbfsA title=【大阪杯】メイショウタバル 休養経て力みが消えた 首とトモの筋肉が強いマイラー体
-OK project=1 video_id=9AJ-xmyVOkI title=【大阪杯】ダノンデサイル せり上がる首の付け根 尻から臀部にかけての筋肉も凄い 
+OK project=1 video_id=W37VPOKfq2k title=【大阪杯】レーベンスティール 肩から首へ豊富な筋肉 目にも輝き - スポニチ S
+OK project=1 video_id=gKSrrxfiv34 title=【大阪杯】クロワデュノール 肩の発達で前肢に体重 毛ヅヤは良好 - スポニチ S
+OK project=1 video_id=eCim3DSZwqw title=【アザレア賞】ブラックオリンピア 高い性能武器 父に似る馬体と母系から受け継ぐス
+OK character video_id=U8_qzRD5rLM topic=競馬場の芝とダートの違い
