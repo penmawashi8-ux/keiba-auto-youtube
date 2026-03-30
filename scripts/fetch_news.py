@@ -316,13 +316,21 @@ def fetch_news() -> list[dict]:
         reverse=True,
     )
 
-    # 重複除去（ID）
-    seen: set[str] = set()
+    # 重複除去（IDとURL正規化の両方でチェック）
+    # 同一記事がGoogle Newsの複数フィードに異なるIDで載ることがあるため
+    seen_ids: set[str] = set()
+    seen_urls: set[str] = set()
     unique: list[dict] = []
     for e in all_entries:
-        if e["id"] not in seen:
-            seen.add(e["id"])
-            unique.append(e)
+        # URLからクエリパラメータ・フラグメントを除去して正規化
+        parsed = urlparse(e.get("link", ""))
+        normalized_url = f"{parsed.scheme}://{parsed.netloc}{parsed.path}".rstrip("/").lower()
+        if e["id"] in seen_ids or normalized_url in seen_urls:
+            continue
+        seen_ids.add(e["id"])
+        if normalized_url:
+            seen_urls.add(normalized_url)
+        unique.append(e)
 
     # 投稿済みを除外
     unposted = [e for e in unique if e["id"] not in posted_ids]

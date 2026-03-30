@@ -186,6 +186,22 @@ def main() -> None:
                 if not script or len(script) < 30:
                     print(f"[{i}]  → フィルター後に内容がなくなったためスキップ")
                     return i, True
+                # 「〇〇が公開されました」「〇〇に掲載されました」系の告知のみスクリプトをスキップ
+                # （Gemmaがお約束のSKIP条件を守らずこの手の脚本を生成することがあるため）
+                announcement_only_pattern = _re.compile(
+                    r"(?:公開されました|掲載されました|公開しました|掲載しました|"
+                    r"更新されました|リリースされました|配信されました|"
+                    r"発表されました|公表されました)"
+                )
+                has_substantive_content = _re.compile(
+                    r"[ァ-ヶー]{3,}(?:が|は|も|で|に|を|と|から|まで)"  # カタカナ固有名詞（馬名・騎手名など）
+                    r"|(?:1着|2着|3着|優勝|2連覇|3連覇)"  # 着順・結果
+                    r"|(?:秒|馬身|差)"  # タイム・着差
+                    r"|(?:\d+番人気)"  # 人気
+                )
+                if announcement_only_pattern.search(script) and not has_substantive_content.search(script):
+                    print(f"[{i}]  → 告知のみスクリプト（具体的内容なし）のためスキップ: {script[:80]}")
+                    return i, True
                 # 馬を抽象的に表現している場合はスキップ
                 # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
                 abstract_horse_pattern = _re.compile(
