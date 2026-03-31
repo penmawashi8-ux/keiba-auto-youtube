@@ -4,6 +4,7 @@
 import asyncio
 import re
 import sys
+import time
 from pathlib import Path
 
 import edge_tts
@@ -139,7 +140,17 @@ def main() -> None:
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
 
         print(f"\n--- 音声生成 [{idx}] ({len(script)}文字) ---")
-        asyncio.run(generate_audio_and_subtitles(script, audio_path, ass_path, font_name))
+        for attempt in range(1, 4):
+            try:
+                asyncio.run(generate_audio_and_subtitles(script, audio_path, ass_path, font_name))
+                break
+            except Exception as e:
+                print(f"  [警告] 音声生成失敗 (attempt {attempt}/3): {e}", file=sys.stderr)
+                if attempt < 3:
+                    time.sleep(10 * attempt)
+                else:
+                    print(f"[エラー] 音声生成を3回試みましたが失敗しました。", file=sys.stderr)
+                    sys.exit(1)
 
     print(f"\n{len(script_files)} 件の音声を生成しました。")
 
