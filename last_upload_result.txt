@@ -1,9 +1,9 @@
-date: 2026-03-30T22:55:36.195392Z
+date: 2026-03-31T00:07:33.445043Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=1Mteuf-JNSg title=【大阪杯】ショウヘイ キャリア重ねて超絶筋肉量 立ち姿どっしり“翔平級”安定感 
-OK project=1 video_id=OXiqdI07zDM title=【大阪杯】エコロディノス 楽しみ初G1 山口助手「精神的に成長」 - スポニチ 
+OK project=1 video_id=UUaRSrg2zAY title=【チャーチルダウンズC】アンドゥーリル 距離短縮で反撃 福永助手「調整はいい感じ
+OK project=1 video_id=MSBaZy5cUyo title=【大阪杯・先取り予想】気性難もプラスに！ショウヘイが初タイトル奪取へ虎視眈々「ワ
