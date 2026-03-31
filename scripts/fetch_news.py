@@ -19,6 +19,10 @@ from urllib.request import Request, urlopen
 RSS_FEEDS = [
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
+    # 重賞・G1など情報量が多い記事が出やすいクエリ
+    "https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8B%9D%E5%88%A9&hl=ja&gl=JP&ceid=JP:ja",
+    "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C&hl=ja&gl=JP&ceid=JP:ja",
+    "https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&hl=ja&gl=JP&ceid=JP:ja",
 ]
 
 NEWS_JSON = "news.json"
@@ -342,11 +346,14 @@ def fetch_news() -> list[dict]:
                 if e.get("published_date") and e["published_date"] >= cutoff
             ]
         else:
-            candidates = unposted[:MAX_NEWS]
+            candidates = unposted[:MAX_NEWS * 5]
 
         if candidates:
+            # サマリーが長い（情報量が多い）記事を優先して選択
+            candidates.sort(key=lambda e: len(e.get("summary", "")), reverse=True)
             selected = candidates[:MAX_NEWS]
-            print(f"フィルタ「{label}」で {len(selected)} 件を選択")
+            summary_lens = [len(e.get("summary", "")) for e in selected]
+            print(f"フィルタ「{label}」で {len(selected)} 件を選択（サマリー長: {summary_lens}）")
             break
 
     if not selected:
