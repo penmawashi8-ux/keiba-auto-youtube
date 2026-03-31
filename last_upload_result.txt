@@ -1,9 +1,9 @@
-date: 2026-03-31T00:07:33.445043Z
+date: 2026-03-31T06:09:08.850182Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=UUaRSrg2zAY title=【チャーチルダウンズC】アンドゥーリル 距離短縮で反撃 福永助手「調整はいい感じ
-OK project=1 video_id=MSBaZy5cUyo title=【大阪杯・先取り予想】気性難もプラスに！ショウヘイが初タイトル奪取へ虎視眈々「ワ
+OK project=1 video_id=0l96HNeFFhc title=ナムラクレア予定通り競走生活引退、北海道で繁殖生活へ 長谷川師「ここまで頑張れた
+OK project=1 video_id=UFYHtk7HobU title=【船橋競馬】御神本訓史騎手が乗り替わり～感冒のため（馬トク報知） - Yahoo
