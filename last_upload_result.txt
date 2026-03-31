@@ -1,9 +1,10 @@
-date: 2026-03-31T06:09:08.850182Z
+date: 2026-03-31T07:00:43.220995Z
 projects_loaded: 3
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=0l96HNeFFhc title=ナムラクレア予定通り競走生活引退、北海道で繁殖生活へ 長谷川師「ここまで頑張れた
-OK project=1 video_id=UFYHtk7HobU title=【船橋競馬】御神本訓史騎手が乗り替わり～感冒のため（馬トク報知） - Yahoo
+OK project=1 video_id=VbUMT8WydM8 title=間寛平、「阪神競馬場 春のG1 PR大使」ともに就任した小寺真理の美脚アピールに
+OK project=1 video_id=uE3wCXz4Y_A title=【チャーチルダウンズC・耳より】武豊と初コンビのリゾートアイランドは上昇ムード「
+OK project=1 video_id=VlPVCuhHXTU title=【4歳以上次走報】マイユニバースは天皇賞・春を見送り、宝塚記念を目標（サンケイス
