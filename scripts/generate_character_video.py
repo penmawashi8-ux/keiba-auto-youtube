@@ -391,10 +391,15 @@ def generate_trivia_script(topic: str) -> str:
     if script:
         script = re.sub(r"[#\*\-→•]", "", script)
         script = re.sub(r"\s{2,}", " ", script).strip()
+        # プロンプト漏れ検出（指示文がそのまま返ってきた場合）
+        _PROMPT_LEAK = ["から始めて", "で締めてください", "文字程度", "箇条書き", "ナレーション原稿", "【"]
+        if any(p in script for p in _PROMPT_LEAK):
+            print(f"[豆知識] プロンプトが返されました({len(script)}文字)。フォールバックを使用します。")
         # スクリプトが短すぎる or 締めの言葉がない場合はフォールバック使用
-        if len(script) >= 150 and "ウマコでした" in script:
+        elif len(script) >= 150 and "ウマコでした" in script:
             return script
-        print(f"[豆知識] Geminiスクリプトが不完全({len(script)}文字)。フォールバックを使用します。")
+        else:
+            print(f"[豆知識] Geminiスクリプトが不完全({len(script)}文字)。フォールバックを使用します。")
 
     fallback = TRIVIA_FALLBACK.get(topic)
     if fallback:

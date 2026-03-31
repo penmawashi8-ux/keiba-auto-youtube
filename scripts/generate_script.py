@@ -188,6 +188,11 @@ def main() -> None:
                 if not script or len(script) < 80:
                     print(f"[{i}]  → スクリプトが短すぎる({len(script)}文字)。次のキー/モデルで再試行")
                     continue
+                # プロンプト漏れ検出（指示文がそのまま返ってきた場合）
+                _PROMPT_LEAK = ["【", "】", "場合は「SKIP", "絶対に守るルール", "テキストのみ出力", "禁止です。"]
+                if any(p in script for p in _PROMPT_LEAK):
+                    print(f"[{i}]  → 指示文が含まれているため再試行: {script[:60]}")
+                    continue
                 # 記事タイトルがそのまま出力されているだけの場合は次のモデルで再試行
                 title_clean = item["title"].replace("　", "").replace(" ", "")[:30]
                 script_clean = script.replace("　", "").replace(" ", "")
