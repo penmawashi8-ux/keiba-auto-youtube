@@ -1,11 +1,11 @@
-date: 2026-03-30T23:57:10.033474Z
+date: 2026-03-31T01:11:59.412635Z
 projects_loaded: 3
 uploaded: 4
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=W37VPOKfq2k title=【大阪杯】レーベンスティール 肩から首へ豊富な筋肉 目にも輝き - スポニチ S
-OK project=1 video_id=gKSrrxfiv34 title=【大阪杯】クロワデュノール 肩の発達で前肢に体重 毛ヅヤは良好 - スポニチ S
-OK project=1 video_id=eCim3DSZwqw title=【アザレア賞】ブラックオリンピア 高い性能武器 父に似る馬体と母系から受け継ぐス
-OK character video_id=U8_qzRD5rLM topic=競馬場の芝とダートの違い
+OK project=1 video_id=keYjaLdFTg4 title=【競馬用語】馬なり1ハロン劇場（うまなりいちはろんシアター）｜競馬サプリ - 競
+OK project=1 video_id=g9jxVFYPLIc title=【園田競馬・今日の世麗】３１日は８鞍に騎乗 おすすめは１Ｒのトキノケリー - a
+OK project=1 video_id=PYBxZO2NFB0 title=【園田競馬・今日の世麗】３１日は８鞍に騎乗　おすすめは１Ｒのトキノケリー - ｄ
+OK character video_id=C4S9bZ-k8P8 topic=馬の感情とコミュニケーション
