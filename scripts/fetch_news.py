@@ -103,6 +103,37 @@ def http_get(url: str, timeout: int = 20) -> bytes | None:
     return None
 
 
+def http_get_article(url: str, timeout: int = 20) -> bytes | None:
+    """記事本文取得用。Refererを付与し、失敗時はUser-Agentを変えてリトライ。"""
+    attempts = [
+        {**HEADERS, "Referer": "https://news.google.com/"},
+        {
+            "User-Agent": (
+                "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+                "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+            ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+            "Referer": "https://news.google.com/",
+        },
+    ]
+    for i, headers in enumerate(attempts, 1):
+        try:
+            req = Request(url, headers=headers)
+            with urlopen(req, timeout=timeout) as resp:
+                data = resp.read()
+                encoding = resp.headers.get("Content-Encoding", "")
+                if encoding == "gzip":
+                    data = gzip.decompress(data)
+                print(f"  [HTTP] {resp.status} {len(data)} bytes (attempt {i})")
+                return data
+        except URLError as e:
+            print(f"  [警告] HTTP取得失敗 attempt={i} ({url[:60]}): {e}", file=sys.stderr)
+        except Exception as e:
+            print(f"  [警告] 取得エラー attempt={i} ({url[:60]}): {e}", file=sys.stderr)
+    return None
+
+
 def _parse_date(date_str: str) -> datetime | None:
     """RSS pubDate（RFC 2822）またはAtom published（ISO 8601）を datetimeに変換する。"""
     if not date_str:
@@ -371,7 +402,7 @@ def fetch_news() -> list[dict]:
             image_url = ""
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
-        raw_html = http_get(link)
+        raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
             if not image_url:
