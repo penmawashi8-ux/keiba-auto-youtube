@@ -163,8 +163,19 @@ def main() -> None:
                 if script.strip().upper() == "SKIP":
                     print(f"[{i}]  → 内容が薄いためスキップ（動画生成しない）")
                     return i, True
-                # 外部サイト誘導文を文単位で除去
+                # プロンプトリーク検出：システムプロンプトの文言が混入している場合はリトライ
                 import re as _re
+                PROMPT_LEAK_PATTERNS = [
+                    "提供されたニュース本文に書かれていること",
+                    "ニュース本文に書かれていない情報は",
+                    "推測・補足・創作すべて禁止",
+                    "【最重要：絶対に守るルール】",
+                    "【スキップ条件",
+                    "の指示:",
+                ]
+                if any(p in script for p in PROMPT_LEAK_PATTERNS):
+                    print(f"[{i}]  [警告] プロンプトリーク検出。次のキー/モデルへ切り替えます。", file=sys.stderr)
+                    continue
                 redirect_pattern = _re.compile(
                     r"[^。]*(?:"
                     r"(?:詳細|詳しく|詳しい情報|最新情報)[^。]*(?:サイト|ウェブ|ページ|公式|こちら|ご確認|ご覧)"
