@@ -122,8 +122,8 @@ def main() -> None:
 
     script_files = sorted(Path(OUTPUT_DIR).glob("script_*.txt"))
     if not script_files:
-        print(f"[エラー] {OUTPUT_DIR}/script_*.txt が見つかりません。", file=sys.stderr)
-        sys.exit(1)
+        print(f"[警告] {OUTPUT_DIR}/script_*.txt が見つかりません。音声生成をスキップします。")
+        sys.exit(0)
 
     font_name = detect_font_name()
     print(f"字幕フォント: {font_name}")

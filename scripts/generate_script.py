@@ -154,11 +154,13 @@ def main() -> None:
             f"タイトル: {item['title']}\n"
             f"内容: {item.get('summary', '')[:1500]}"
         )
+        quota_all_failed = True  # 全てクォータ超過かどうか
         for key, model_name in key_model_pairs:
             key_label = f"***{key[-4:]}"
             print(f"[{i}] 使用: key={key_label} model={model_name}")
             try:
                 script = call_gemini(key, model_name, prompt)
+                quota_all_failed = False  # レスポンスあり
                 # 内容が薄い記事はスキップ
                 if script.strip().upper() == "SKIP":
                     print(f"[{i}]  → 内容が薄いためスキップ（動画生成しない）")
@@ -182,18 +184,17 @@ def main() -> None:
                     script = script.strip()
                     last_period = script.rfind("。")
                     script = script[:last_period + 1] if last_period != -1 else ""
-                # フィルター後に内容がなくなった場合はスキップ
+                # スクリプトが短すぎる場合は次のモデルで再試行
                 if not script or len(script) < 80:
                     print(f"[{i}]  → スクリプトが短すぎる({len(script)}文字)。次のキー/モデルで再試行")
                     continue
-                # 記事タイトルがそのまま出力されているだけの場合はスキップ
+                # 記事タイトルがそのまま出力されているだけの場合は次のモデルで再試行
                 title_clean = item["title"].replace("　", "").replace(" ", "")[:30]
                 script_clean = script.replace("　", "").replace(" ", "")
                 if title_clean and title_clean in script_clean and len(script) < 120:
-                    print(f"[{i}]  → タイトルのみの出力のためスキップ: {script[:60]}")
+                    print(f"[{i}]  → タイトルのみの出力のため再試行: {script[:60]}")
                     continue
                 # 馬を抽象的に表現している場合はスキップ
-                # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
                 abstract_horse_pattern = _re.compile(
                     r"(?:ある馬|その馬|この馬|同馬|該当馬|"
                     r"\d+着(?:と)?なった馬|\d+着の馬|"
@@ -217,8 +218,12 @@ def main() -> None:
                 return i, True
             except QuotaExceeded:
                 print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。次へ切り替えます。", file=sys.stderr)
-        print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
-        return i, False
+        if quota_all_failed:
+            print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
+            return i, False
+        # 品質チェックで全モデル失敗 → スキップ扱い（エラーにしない）
+        print(f"[{i}] [警告] 有効なスクリプトを生成できませんでした。スキップします。", file=sys.stderr)
+        return i, True
 
     with ThreadPoolExecutor(max_workers=len(news_items)) as executor:
         futures = {executor.submit(generate_one, (i, item)): i for i, item in enumerate(news_items)}
