@@ -1,9 +1,9 @@
-date: 2026-03-31T09:30:23.886656Z
+date: 2026-03-31T10:00:01.492813Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=OMD6GW40q_M title=【川崎競馬】岩本洋、八木仁、新井健児の3調教師が31日付で引退 - ｄメニューニ
-OK project=1 video_id=-APzK5fvQuM title=ポインセチアS、京浜盃とダートで連勝中のロックターミガンは羽田盃へ - スポニチ
+OK project=1 video_id=hIuKCOSqp2Y title=【川崎競馬】調教師3人が31日付で引退 - サンスポ
+OK project=1 video_id=TFSXMwEcdlc title=＜最新＞競馬関連法が成立 構造転換予算の拠出可能に - 日本農業新聞
