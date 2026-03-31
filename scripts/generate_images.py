@@ -146,29 +146,34 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
     return False
 
 
-def generate_via_huggingface(hf_token: str, prompt: str, filepath: str) -> bool:
-    """HuggingFace Inference API (FLUX.1-schnell) で画像生成"""
-    headers = {"Authorization": f"Bearer {hf_token}"}
+def generate_via_huggingface(hf_tokens: list[str], prompt: str, filepath: str) -> bool:
+    """HuggingFace Inference API (FLUX.1-schnell) で画像生成（複数トークンをローテーション）"""
     payload = {"inputs": prompt}
-    for attempt in range(3):
-        try:
-            r = requests.post(HF_MODEL_URL, headers=headers, json=payload, timeout=120)
-            print(f"    [HF] status={r.status_code}", flush=True)
-            if r.status_code == 200 and len(r.content) > 1000:
-                if save_image_bytes(r.content, filepath):
-                    size_kb = len(r.content) // 1024
-                    print(f"    ✅ HF成功: {filepath} ({size_kb}KB)", flush=True)
-                    return True
-            elif r.status_code == 503:
-                wait = 30 * (attempt + 1)
-                print(f"    モデル読み込み中... {wait}秒待機", flush=True)
-                time.sleep(wait)
-            else:
-                print(f"    エラー: {r.status_code} {r.text[:200]}", flush=True)
+    for token_idx, hf_token in enumerate(hf_tokens):
+        token_label = f"token[{token_idx + 1}/{len(hf_tokens)}]"
+        headers = {"Authorization": f"Bearer {hf_token}"}
+        for attempt in range(3):
+            try:
+                r = requests.post(HF_MODEL_URL, headers=headers, json=payload, timeout=120)
+                print(f"    [HF] {token_label} status={r.status_code}", flush=True)
+                if r.status_code == 200 and len(r.content) > 1000:
+                    if save_image_bytes(r.content, filepath):
+                        size_kb = len(r.content) // 1024
+                        print(f"    ✅ HF成功: {filepath} ({size_kb}KB)", flush=True)
+                        return True
+                elif r.status_code == 402:
+                    print(f"    [HF] {token_label} クレジット枯渇(402)。次のトークンへ切り替えます。", flush=True)
+                    break
+                elif r.status_code == 503:
+                    wait = 30 * (attempt + 1)
+                    print(f"    モデル読み込み中... {wait}秒待機", flush=True)
+                    time.sleep(wait)
+                else:
+                    print(f"    エラー: {r.status_code} {r.text[:200]}", flush=True)
+                    break
+            except Exception as e:
+                print(f"    例外: {type(e).__name__}: {e}", flush=True)
                 break
-        except Exception as e:
-            print(f"    例外: {type(e).__name__}: {e}", flush=True)
-            break
     return False
 
 
@@ -184,13 +189,19 @@ def main() -> None:
         ] if k
     ]
     pixabay_key = os.environ.get("PIXABAY_API_KEY", "")
-    hf_token = os.environ.get("HF_TOKEN", "")
+    hf_tokens = [
+        k for k in [
+            os.environ.get("HF_TOKEN", ""),
+            os.environ.get("HF_TOKEN_2", ""),
+            os.environ.get("HF_TOKEN_3", ""),
+        ] if k
+    ]
 
     print(f"Gemini APIキー: {len(gemini_keys)} 件ロード", flush=True)
     print(f"Pixabay: {'あり' if pixabay_key else 'なし（PIXABAY_API_KEY未設定）'}", flush=True)
-    print(f"HuggingFace: {'あり' if hf_token else 'なし'}", flush=True)
+    print(f"HuggingFace: {len(hf_tokens)} トークンロード", flush=True)
 
-    if not pixabay_key and not hf_token:
+    if not pixabay_key and not hf_tokens:
         print("[警告] Pixabay・HuggingFace どちらも未設定。グラデーション背景にフォールバックします。", flush=True)
         sys.exit(0)
 
@@ -220,9 +231,9 @@ def main() -> None:
             print(f"  [{i}] → Pixabay失敗。", flush=True)
 
         # 2nd: HuggingFace
-        if hf_token:
+        if hf_tokens:
             print(f"  [{i}] → HuggingFace にフォールバック", flush=True)
-            if generate_via_huggingface(hf_token, prompt, out_path):
+            if generate_via_huggingface(hf_tokens, prompt, out_path):
                 return i, True
 
         print(f"  [{i}] → 全手段で画像取得失敗", flush=True)
