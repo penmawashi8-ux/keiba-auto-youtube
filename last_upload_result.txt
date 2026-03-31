@@ -1,9 +1,9 @@
-date: 2026-03-31T11:40:06.478297Z
+date: 2026-03-31T23:00:04.214451Z
 projects_loaded: 3
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=48BvxKcOWfI title=JRA阪神競馬場イベント応援芸人に、大人気・マユリカ……ピンク＆緑の漫才衣装で「
-OK project=1 video_id=IiKlNZ-v61A title=【岩手競馬】６９８億２１２８万５６００円！２５年度全日程が終了…発売額は過去最高
+OK project=1 video_id=FAquwZJMXTU title=【追憶の大阪杯】17年キタサンブラック “第1回”を成功に導いたのは武豊 横綱相
+OK project=1 video_id=pTLWuD7zCL0 title=兵庫アーバン競馬がスタート 開幕を飾るのは第３回兵庫女王盃（馬トク報知） - Y
