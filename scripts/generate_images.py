@@ -69,7 +69,8 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
                 timeout=30,
             )
             if r.status_code == 429:
-                print(f"  [警告] key={key_label} 429 クォータ超過。次のキーへ切り替えます。", flush=True)
+                print(f"  [警告] key={key_label} 429 クォータ超過。5秒待機後に次のキーへ切り替えます。", flush=True)
+                time.sleep(5)
                 continue
             r.raise_for_status()
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -130,10 +131,11 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
         if not hits:
             print(f"    [Pixabay] 該当画像なし: {query}", flush=True)
             return False
-        # ランダムに1枚選んでダウンロード
+        # ランダムに1枚選んでダウンロード（webformatURL優先：largeImageURLは制限あり）
         hit = random.choice(hits)
-        img_url = hit.get("largeImageURL") or hit.get("webformatURL")
+        img_url = hit.get("webformatURL") or hit.get("largeImageURL")
         if not img_url:
+            print(f"    [Pixabay] 画像URL取得失敗（hits有り）", flush=True)
             return False
         img_r = requests.get(img_url, timeout=30)
         if img_r.status_code == 200 and len(img_r.content) > 1000:
@@ -141,6 +143,8 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
                 size_kb = len(img_r.content) // 1024
                 print(f"    ✅ Pixabay成功: {filepath} ({size_kb}KB) [{hit.get('pageURL','')[:60]}]", flush=True)
                 return True
+        else:
+            print(f"    [Pixabay] 画像DL失敗: status={img_r.status_code} size={len(img_r.content)}bytes url={img_url[:80]}", flush=True)
     except Exception as e:
         print(f"    例外: {type(e).__name__}: {e}", flush=True)
     return False
@@ -163,6 +167,9 @@ def generate_via_huggingface(hf_tokens: list[str], prompt: str, filepath: str) -
                         return True
                 elif r.status_code == 402:
                     print(f"    [HF] {token_label} クレジット枯渇(402)。次のトークンへ切り替えます。", flush=True)
+                    break
+                elif r.status_code == 403:
+                    print(f"    [HF] {token_label} 権限不足(403)。次のトークンへ切り替えます。", flush=True)
                     break
                 elif r.status_code == 503:
                     wait = 30 * (attempt + 1)
@@ -252,8 +259,7 @@ def main() -> None:
     print(f"  生成ファイル: {[f.name for f in ai_files]}", flush=True)
 
     if failed:
-        print(f"[エラー] {len(failed)}枚の取得失敗（インデックス: {failed}）", file=sys.stderr)
-        sys.exit(1)
+        print(f"[警告] {len(failed)}枚の取得失敗（インデックス: {failed}）。generate_video.py がグラデーション背景で代替します。", flush=True)
 
 
 if __name__ == "__main__":

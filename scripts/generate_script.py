@@ -222,7 +222,8 @@ def main() -> None:
                 print(f"[{i}]  プレビュー: {script[:80]}...")
                 return i, True
             except QuotaExceeded:
-                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。次へ切り替えます。", file=sys.stderr)
+                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。5秒待機後に次へ切り替えます。", file=sys.stderr)
+                time.sleep(5)
         print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 
