@@ -1,9 +1,10 @@
-date: 2026-03-31T10:00:01.492813Z
+date: 2026-03-31T10:20:12.567083Z
 projects_loaded: 3
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=hIuKCOSqp2Y title=【川崎競馬】調教師3人が31日付で引退 - サンスポ
-OK project=1 video_id=TFSXMwEcdlc title=＜最新＞競馬関連法が成立 構造転換予算の拠出可能に - 日本農業新聞
+OK project=1 video_id=g9Lv62c3JUQ title=動画掲載: 【重大発表】競馬道オンラインと竹内で最高の出馬表と調教検索を作りまし
+OK project=1 video_id=e3hJ5GBN1cs title=ダートの質と抜群のスタート…ドバイWCで「10ポンドの差」を逆転されたフォーエバ
+OK project=1 video_id=FmqNAr4VfcU title=VIDEO: 【大阪杯2026】マイル寄りの日本主流血統馬が活躍！警戒すべきホー
