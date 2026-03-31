@@ -391,7 +391,10 @@ def generate_trivia_script(topic: str) -> str:
     if script:
         script = re.sub(r"[#\*\-→•]", "", script)
         script = re.sub(r"\s{2,}", " ", script).strip()
-        return script
+        # スクリプトが短すぎる or 締めの言葉がない場合はフォールバック使用
+        if len(script) >= 150 and "ウマコでした" in script:
+            return script
+        print(f"[豆知識] Geminiスクリプトが不完全({len(script)}文字)。フォールバックを使用します。")
 
     fallback = TRIVIA_FALLBACK.get(topic)
     if fallback:

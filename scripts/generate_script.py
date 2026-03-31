@@ -183,9 +183,15 @@ def main() -> None:
                     last_period = script.rfind("。")
                     script = script[:last_period + 1] if last_period != -1 else ""
                 # フィルター後に内容がなくなった場合はスキップ
-                if not script or len(script) < 30:
-                    print(f"[{i}]  → フィルター後に内容がなくなったためスキップ")
-                    return i, True
+                if not script or len(script) < 80:
+                    print(f"[{i}]  → スクリプトが短すぎる({len(script)}文字)。次のキー/モデルで再試行")
+                    continue
+                # 記事タイトルがそのまま出力されているだけの場合はスキップ
+                title_clean = item["title"].replace("　", "").replace(" ", "")[:30]
+                script_clean = script.replace("　", "").replace(" ", "")
+                if title_clean and title_clean in script_clean and len(script) < 120:
+                    print(f"[{i}]  → タイトルのみの出力のためスキップ: {script[:60]}")
+                    continue
                 # 馬を抽象的に表現している場合はスキップ
                 # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
                 abstract_horse_pattern = _re.compile(
