@@ -419,17 +419,49 @@ def fetch_news() -> list[dict]:
                 og_img = extract_og_image(link, html)
                 if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
                     image_url = og_img
-            # <article> タグ → <p> タグ → 全体テキスト の順に本文を抽出
+            # 本文抽出: <article> → <main> → class/idに"article/content/body/entry"を含む<div> → <p>タグ → og:description → 全体
             body = ""
+            # 1. <article> タグ
             m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
             if m:
                 body = re.sub(r"<[^>]+>", " ", m.group(1))
+            # 2. <main> タグ
+            if len(body.strip()) < 100:
+                m = re.search(r"<main[^>]*>(.*?)</main>", html, re.DOTALL | re.IGNORECASE)
+                if m:
+                    body = re.sub(r"<[^>]+>", " ", m.group(1))
+            # 3. class/id に article/content/body/entry/text を含む <div>
+            if len(body.strip()) < 100:
+                m = re.search(
+                    r'<div[^>]+(?:class|id)=["\'][^"\']*(?:article|content|body|entry|text)[^"\']*["\'][^>]*>(.*?)</div>',
+                    html, re.DOTALL | re.IGNORECASE,
+                )
+                if m:
+                    body = re.sub(r"<[^>]+>", " ", m.group(1))
+            # 4. <p> タグを全部結合
             if len(body.strip()) < 100:
                 paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
                 body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
+            # 5. og:description を補完テキストとして追加
+            og_desc = ""
+            m_desc = re.search(
+                r'<meta[^>]+(?:name=["\']description["\']|property=["\']og:description["\'])[^>]+content=["\']([^"\']{20,})["\']',
+                html, re.IGNORECASE,
+            )
+            if not m_desc:
+                m_desc = re.search(
+                    r'<meta[^>]+content=["\']([^"\']{20,})["\'][^>]+(?:name=["\']description["\']|property=["\']og:description["\'])',
+                    html, re.IGNORECASE,
+                )
+            if m_desc:
+                og_desc = m_desc.group(1).strip()
+            # 6. <p> でも不十分なら全体テキスト
             if len(body.strip()) < 100:
                 body = re.sub(r"<[^>]+>", " ", html)
-            full_body = re.sub(r"\s+", " ", body).strip()[:1500]
+            full_body = re.sub(r"\s+", " ", body).strip()[:2000]
+            # og:description が本文より情報を持っている場合は先頭に追加
+            if og_desc and og_desc not in full_body:
+                full_body = (og_desc + " " + full_body).strip()[:2000]
             if len(full_body) > len(summary):
                 summary = full_body
 
