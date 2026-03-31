@@ -1,11 +1,10 @@
-date: 2026-03-31T01:11:59.412635Z
+date: 2026-03-31T05:27:57.913876Z
 projects_loaded: 3
-uploaded: 4
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=keYjaLdFTg4 title=【競馬用語】馬なり1ハロン劇場（うまなりいちはろんシアター）｜競馬サプリ - 競
-OK project=1 video_id=g9jxVFYPLIc title=【園田競馬・今日の世麗】３１日は８鞍に騎乗 おすすめは１Ｒのトキノケリー - a
-OK project=1 video_id=PYBxZO2NFB0 title=【園田競馬・今日の世麗】３１日は８鞍に騎乗　おすすめは１Ｒのトキノケリー - ｄ
-OK character video_id=C4S9bZ-k8P8 topic=馬の感情とコミュニケーション
+OK project=1 video_id=_Ewn81yPFWc title=間寛平、小寺真理の“脚質”は「細い割にいいふくらはぎ。逃げ馬」大阪杯＆桜花賞 阪
+OK project=1 video_id=fLW5GXd6-e0 title=間寛平、小寺真理の“脚質”は「細い割にいいふくらはぎ。逃げ馬」大阪杯＆桜花賞 阪
+OK character video_id=gf7IV4VG6Ac topic=騎手の体重制限と減量騎手
