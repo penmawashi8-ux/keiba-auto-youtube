@@ -61,9 +61,19 @@ _DENY_KEYWORDS = [
     "ボートレース", "競艇", "オートレース", "競輪", "パチンコ", "スロット",
 ]
 
+# タイトルがこのプレフィックスで始まる記事はニュース記事ではなく動画説明等のため除外
+_DENY_TITLE_PREFIXES = [
+    "video:", "watch:", "【動画】", "（動画）", "(動画)",
+]
+
 
 def is_keiba_related(entry: dict) -> bool:
     """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
+    title = entry.get("title", "")
+    # 動画説明タイトルを除外
+    if any(title.lower().startswith(p.lower()) for p in _DENY_TITLE_PREFIXES):
+        print(f"  [除外] 動画タイトルのためスキップ: {title[:60]}")
+        return False
     text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
         if kw in text:

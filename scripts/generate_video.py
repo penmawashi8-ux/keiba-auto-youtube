@@ -435,7 +435,28 @@ def build_video(
 ) -> None:
     script = script_path.read_text(encoding="utf-8").strip()
     raw = [s.strip() for s in script.split("。") if s.strip()]
-    sentences = [s + "。" for s in raw]
+    sentences_raw = [s + "。" for s in raw]
+
+    # 1フレームが長すぎる場合は読点（、）で分割してフレームを増やす
+    MAX_CHARS_PER_FRAME = 40
+    sentences: list[str] = []
+    for sent in sentences_raw:
+        if len(sent) <= MAX_CHARS_PER_FRAME:
+            sentences.append(sent)
+        else:
+            parts = [p.strip() for p in sent.split("、") if p.strip()]
+            buf = ""
+            for i, part in enumerate(parts):
+                sep = "、" if i < len(parts) - 1 else ""
+                candidate = buf + part + sep
+                if len(candidate) > MAX_CHARS_PER_FRAME and buf:
+                    sentences.append(buf.rstrip("、") + ("。" if not buf.rstrip("、").endswith("。") else ""))
+                    buf = part + sep
+                else:
+                    buf = candidate
+            if buf:
+                tail = buf.rstrip("、")
+                sentences.append(tail if tail.endswith("。") else tail + "。")
 
     if not sentences:
         print("  [警告] セリフが空です。スキップします。")
