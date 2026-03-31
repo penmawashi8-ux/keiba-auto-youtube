@@ -1,10 +1,9 @@
-date: 2026-03-31T10:20:12.567083Z
+date: 2026-03-31T11:40:06.478297Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=g9Lv62c3JUQ title=動画掲載: 【重大発表】競馬道オンラインと竹内で最高の出馬表と調教検索を作りまし
-OK project=1 video_id=e3hJ5GBN1cs title=ダートの質と抜群のスタート…ドバイWCで「10ポンドの差」を逆転されたフォーエバ
-OK project=1 video_id=FmqNAr4VfcU title=VIDEO: 【大阪杯2026】マイル寄りの日本主流血統馬が活躍！警戒すべきホー
+OK project=1 video_id=48BvxKcOWfI title=JRA阪神競馬場イベント応援芸人に、大人気・マユリカ……ピンク＆緑の漫才衣装で「
+OK project=1 video_id=IiKlNZ-v61A title=【岩手競馬】６９８億２１２８万５６００円！２５年度全日程が終了…発売額は過去最高
