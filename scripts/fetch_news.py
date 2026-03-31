@@ -349,11 +349,8 @@ def fetch_news() -> list[dict]:
             candidates = unposted[:MAX_NEWS * 5]
 
         if candidates:
-            # サマリーが長い（情報量が多い）記事を優先して選択
-            candidates.sort(key=lambda e: len(e.get("summary", "")), reverse=True)
             selected = candidates[:MAX_NEWS]
-            summary_lens = [len(e.get("summary", "")) for e in selected]
-            print(f"フィルタ「{label}」で {len(selected)} 件を選択（サマリー長: {summary_lens}）")
+            print(f"フィルタ「{label}」で {len(selected)} 件を選択")
             break
 
     if not selected:
