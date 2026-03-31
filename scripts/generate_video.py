@@ -635,12 +635,14 @@ def main() -> None:
         assets_images = ai_images
         print(f"  AI画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
     else:
-        # 2. assets内の全jpg/pngを使用
+        # 2. assets内の全jpg/pngを使用（キャラクター画像は除外）
+        _EXCLUDE_ASSETS = {"umako.jpg"}
         all_images = sorted(
             p for p in (
                 glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
             )
             if Path(p).stat().st_size > 1000
+            and Path(p).name not in _EXCLUDE_ASSETS
         )
         if all_images:
             assets_images = all_images
