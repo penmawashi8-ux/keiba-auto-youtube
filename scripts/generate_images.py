@@ -252,8 +252,7 @@ def main() -> None:
     print(f"  生成ファイル: {[f.name for f in ai_files]}", flush=True)
 
     if failed:
-        print(f"[エラー] {len(failed)}枚の取得失敗（インデックス: {failed}）", file=sys.stderr)
-        sys.exit(1)
+        print(f"[警告] {len(failed)}枚の取得失敗（インデックス: {failed}）。generate_video.py がグラデーション背景で代替します。", flush=True)
 
 
 if __name__ == "__main__":
