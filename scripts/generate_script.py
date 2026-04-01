@@ -14,9 +14,9 @@ NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 PREFERRED_MODELS = [
-    "gemini-2.0-flash-lite",
     "gemini-2.0-flash",
     "gemini-2.5-flash",
+    "gemini-2.0-flash-lite",
     "gemma-3-4b-it",
     "gemma-3-1b-it",
 ]
@@ -80,7 +80,7 @@ def list_available_models(api_key: str) -> list[str]:
             for m in models
             if "generateContent" in m.get("supportedGenerationMethods", [])
         ]
-        print(f"利用可能モデル: {available[:6]}")
+        print(f"利用可能モデル ({len(available)}個): {available[:10]}")
         return available
     except Exception as e:
         safe_msg = str(e).replace(api_key, "***")
@@ -143,6 +143,7 @@ def main() -> None:
     if not candidates:
         print("[エラー] 利用可能なモデルが見つかりません。", file=sys.stderr)
         sys.exit(1)
+    print(f"使用候補モデル: {candidates}")
 
     # (APIキー, モデル名) の全組み合わせリスト（キー優先でローテーション）
     key_model_pairs = [(key, model) for key in api_keys for model in candidates]
