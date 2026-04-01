@@ -52,6 +52,8 @@ PANEL_BG_COLOR = (10, 10, 20, 200)  # 半透明ダークパネル
 SHADOW_OFFSET = (3, 4)         # ドロップシャドウのオフセット
 OUTLINE_WIDTH = 3
 MIN_CUT_DURATION = 1.5
+FADE_IN_DURATION = 0.25   # シーン開始フェードイン秒数
+XFADE_DURATION = 0.30     # シーン間クロスフェード秒数
 
 
 # ---------------------------------------------------------------------------
@@ -492,22 +494,32 @@ def build_video(
     try:
         # --- サムネイルフレームを先頭クリップとして生成 ---
         clip_paths: list[str] = []
+        clip_durations: list[float] = []
+
+        def make_clip(frame_png: str, clip_mp4: str, duration: float, fade_in: bool = True) -> None:
+            """静止画フレームをfade-in付きのクリップに変換する。"""
+            vf = f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}"
+            if fade_in and duration > FADE_IN_DURATION * 2:
+                vf += f",fade=t=in:st=0:d={FADE_IN_DURATION}"
+            run_ffmpeg([
+                "ffmpeg", "-y",
+                "-loop", "1", "-i", frame_png,
+                "-t", f"{duration:.6f}",
+                "-vf", vf,
+                "-c:v", "libx264", "-preset", "ultrafast",
+                "-pix_fmt", "yuv420p", "-r", str(FPS),
+                clip_mp4,
+            ])
+
         if title:
             font_path_for_thumb = find_japanese_font()
             thumb_frame = make_thumbnail_frame(title, assets_images, 0, font_path_for_thumb)
             thumb_frame_path = os.path.join(tmp_dir, "frame_thumb.png")
             thumb_frame.save(thumb_frame_path, "PNG")
             thumb_clip_path = os.path.join(tmp_dir, "clip_thumb.mp4")
-            run_ffmpeg([
-                "ffmpeg", "-y",
-                "-loop", "1", "-i", thumb_frame_path,
-                "-t", str(THUMBNAIL_DURATION),
-                "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
-                "-c:v", "libx264", "-preset", "ultrafast",
-                "-pix_fmt", "yuv420p", "-r", str(FPS),
-                thumb_clip_path,
-            ])
+            make_clip(thumb_frame_path, thumb_clip_path, THUMBNAIL_DURATION, fade_in=False)
             clip_paths.append(thumb_clip_path)
+            clip_durations.append(THUMBNAIL_DURATION)
             print(f"  サムネイルフレーム生成完了: {THUMBNAIL_DURATION}秒")
 
         # --- 4. 字幕フレーム画像生成 ---
@@ -517,21 +529,11 @@ def build_video(
             frame_img.save(frame_path, "PNG")
             print(f"  フレーム画像生成完了: frame_{i}.png")
 
-            # --- 5. frame_N.png → clip_N.mp4 ---
+            # --- 5. frame_N.png → clip_N.mp4（フェードイン付き）---
             clip_path = os.path.join(tmp_dir, f"clip_{i}.mp4")
-            run_ffmpeg([
-                "ffmpeg", "-y",
-                "-loop", "1",
-                "-i", frame_path,
-                "-t", f"{duration:.6f}",
-                "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
-                "-c:v", "libx264",
-                "-preset", "ultrafast",
-                "-pix_fmt", "yuv420p",
-                "-r", str(FPS),
-                clip_path,
-            ])
+            make_clip(frame_path, clip_path, duration, fade_in=True)
             clip_paths.append(clip_path)
+            clip_durations.append(duration)
             print(f"  クリップ生成完了: clip_{i}.mp4 ({duration:.2f}秒)")
 
         # --- エンディングカードクリップ追加 ---
@@ -540,38 +542,39 @@ def build_video(
         ending_frame_path = os.path.join(tmp_dir, "frame_ending.png")
         ending_frame.save(ending_frame_path, "PNG")
         ending_clip_path = os.path.join(tmp_dir, "clip_ending.mp4")
-        run_ffmpeg([
-            "ffmpeg", "-y",
-            "-loop", "1",
-            "-i", ending_frame_path,
-            "-t", str(ENDING_DURATION),
-            "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
-            "-c:v", "libx264",
-            "-preset", "ultrafast",
-            "-pix_fmt", "yuv420p",
-            "-r", str(FPS),
-            ending_clip_path,
-        ])
+        make_clip(ending_frame_path, ending_clip_path, ENDING_DURATION, fade_in=True)
         clip_paths.append(ending_clip_path)
+        clip_durations.append(ENDING_DURATION)
         print(f"  エンディングカード追加: {ENDING_DURATION}秒")
 
-        # --- 6. concat.txt 書き出し ---
-        concat_txt = os.path.join(tmp_dir, "concat.txt")
-        with open(concat_txt, "w", encoding="utf-8") as f:
-            for cp in clip_paths:
-                f.write(f"file '{os.path.abspath(cp)}'\n")
-
-        # --- 7. クリップ結合 → silent.mp4 ---
+        # --- 6. xfade filter_complex でクリップをクロスフェード結合 → silent.mp4 ---
         silent_mp4 = os.path.join(tmp_dir, "silent.mp4")
-        print("  クリップ結合中...")
-        run_ffmpeg([
-            "ffmpeg", "-y",
-            "-f", "concat",
-            "-safe", "0",
-            "-i", concat_txt,
-            "-c", "copy",
-            silent_mp4,
-        ])
+        print("  クリップ結合中（xfadeクロスフェード）...")
+        if len(clip_paths) == 1:
+            shutil.copy(clip_paths[0], silent_mp4)
+        else:
+            # xfade チェーンを構築: [0:v][1:v]xfade=...[vx1]; [vx1][2:v]xfade=...[vx2]; ...
+            xd = XFADE_DURATION
+            filter_parts: list[str] = []
+            offset = 0.0
+            prev = "[0:v]"
+            for idx in range(1, len(clip_paths)):
+                offset += clip_durations[idx - 1] - xd
+                out = f"[vx{idx}]" if idx < len(clip_paths) - 1 else "[vout]"
+                filter_parts.append(
+                    f"{prev}[{idx}:v]xfade=transition=fade:duration={xd:.3f}:offset={offset:.3f}{out}"
+                )
+                prev = out
+            filter_complex = ";".join(filter_parts)
+            run_ffmpeg([
+                "ffmpeg", "-y",
+                *[arg for p in clip_paths for arg in ["-i", p]],
+                "-filter_complex", filter_complex,
+                "-map", "[vout]",
+                "-c:v", "libx264", "-preset", "ultrafast",
+                "-pix_fmt", "yuv420p", "-r", str(FPS),
+                silent_mp4,
+            ])
 
         # --- 8. 音声結合（BGMミックス対応） → output/video_N.mp4 ---
         print("  音声結合中...")
