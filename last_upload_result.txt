@@ -1,8 +1,9 @@
-date: 2026-04-01T00:08:28.937936Z
+date: 2026-04-01T00:23:40.590132Z
 projects_loaded: 3
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=zMgQzaJcptg title=【京成盃グランドマイラーズ】６番人気ジョージテソーロがＶ 落合玄太騎手「まだ若い
+OK project=1 video_id=erT_4y5WIO8 title=兵庫アーバン競馬がスタート 開幕を飾るのは第３回兵庫女王盃 - ライブドアニュー
+OK project=1 video_id=DSEGPzsyZKI title=園田競馬９Ｒ検討 - 馬トク
