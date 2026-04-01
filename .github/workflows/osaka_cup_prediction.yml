@@ -1,0 +1,126 @@
+name: 大阪杯2026 予想動画 生成・投稿
+
+on:
+  workflow_dispatch:
+
+jobs:
+  post-osaka-cup-prediction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # 予想スクリプトで news.json と output/script_0.txt を生成
+      # (fetch_news.py・generate_script.py は使わず専用スクリプトで固定内容を出力)
+      - name: 大阪杯2026 予想コンテンツを生成
+        run: python scripts/create_osaka_cup_prediction.py
+
+      - name: AI画像を生成
+        id: ai_images
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
+          HF_TOKEN_3: ${{ secrets.HF_TOKEN_3 }}
+        run: |
+          python -u scripts/generate_images.py 2>&1 | tee "$GITHUB_WORKSPACE/ai_images_log.txt"
+          exit ${PIPESTATUS[0]}
+
+      - name: AI画像ログをIssueに投稿（失敗時のみ）
+        if: failure() && steps.ai_images.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = os.environ.get("GITHUB_WORKSPACE", "") + "/ai_images_log.txt"
+          try:
+              with open(log_path) as f:
+                  log = "".join(f.readlines()[:80])
+          except Exception:
+              log = "(ログなし)"
+          title = "[DEBUG] 大阪杯2026 AI画像生成ログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Issue作成: {data.get('html_url')}")
+          PYEOF
+
+      - name: Generate audio
+        run: python scripts/generate_audio.py
+
+      - name: BGMをダウンロード（archive.org フリー音楽）
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py
+
+      - name: Generate video
+        run: python scripts/generate_video.py
+
+      - name: Upload to YouTube
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: python scripts/upload_youtube.py
+
+      - name: Commit and push posted_ids.txt
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_ids.txt last_upload_result.txt output/thumbnail_*.jpg 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: 大阪杯2026予想動画 投稿完了 [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
