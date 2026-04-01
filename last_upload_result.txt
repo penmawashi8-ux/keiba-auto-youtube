@@ -1,8 +1,8 @@
-date: 2026-04-01T10:39:17.298258Z
+date: 2026-04-01T12:48:54.740390Z
 projects_loaded: 3
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=reWHzwjbuIc title=【ダービー卿CT調教採点】活気十分のシリウスコルトが好調キープ 今週も注目はベテ
+OK project=1 video_id=28MyZ28tcbQ title=地方競馬新人騎手紹介・沖響主「折り合いに自信」（馬トク報知） - Yahoo!ニ
