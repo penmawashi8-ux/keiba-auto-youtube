@@ -43,7 +43,7 @@ THUMBNAIL_DURATION = 1.5  # 先頭サムネイルフレーム表示秒数
 BGM_VOLUME = 0.12       # BGM音量（ナレーションに対する比率）
 SUBTITLE_MAX_WIDTH_RATIO = 0.85   # 字幕の最大横幅割合
 LINE_SPACING = 14
-SUBTITLE_BOTTOM_MARGIN = 160  # 字幕エリア下端から画面下端までの余白
+SUBTITLE_CENTER_Y = 920       # 字幕パネルの中心Y座標（画面中央寄り）
 SUBTITLE_PANEL_PADDING_V = 36  # パネル上下パディング
 SUBTITLE_PANEL_PADDING_H = 48  # パネル左右パディング
 ACCENT_LINE_H = 6              # ゴールドアクセントラインの太さ
@@ -273,7 +273,7 @@ def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.
     # 字幕エリアを画面下部に配置
     panel_inner_h = total_text_h + SUBTITLE_PANEL_PADDING_V * 2
     panel_total_h = panel_inner_h + ACCENT_LINE_H
-    panel_top = VIDEO_HEIGHT - SUBTITLE_BOTTOM_MARGIN - panel_total_h
+    panel_top = SUBTITLE_CENTER_Y - panel_total_h // 2
 
     # --- ダークパネル + グラデーション下辺ぼかし ---
     panel = Image.new("RGBA", (VIDEO_WIDTH, panel_total_h), (0, 0, 0, 0))
