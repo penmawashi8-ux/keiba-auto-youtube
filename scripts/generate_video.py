@@ -37,14 +37,20 @@ BGM_DIR = f"{ASSETS_DIR}/bgm"
 VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 FPS = 30
-FONT_SIZE = 60
+FONT_SIZE = 64
 ENDING_DURATION = 4.0   # エンディングカード表示秒数
 THUMBNAIL_DURATION = 1.5  # 先頭サムネイルフレーム表示秒数
 BGM_VOLUME = 0.12       # BGM音量（ナレーションに対する比率）
-SUBTITLE_MAX_WIDTH_RATIO = 0.80   # 字幕の最大横幅割合（縁取り込みで余裕を持たせる）
-LINE_SPACING = 10
-SUBTITLE_CENTER_Y = 960   # 字幕中心Y座標
-OUTLINE_WIDTH = 8
+SUBTITLE_MAX_WIDTH_RATIO = 0.85   # 字幕の最大横幅割合
+LINE_SPACING = 14
+SUBTITLE_BOTTOM_MARGIN = 160  # 字幕エリア下端から画面下端までの余白
+SUBTITLE_PANEL_PADDING_V = 36  # パネル上下パディング
+SUBTITLE_PANEL_PADDING_H = 48  # パネル左右パディング
+ACCENT_LINE_H = 6              # ゴールドアクセントラインの太さ
+ACCENT_COLOR = (255, 195, 40)  # ゴールド
+PANEL_BG_COLOR = (10, 10, 20, 200)  # 半透明ダークパネル
+SHADOW_OFFSET = (3, 4)         # ドロップシャドウのオフセット
+OUTLINE_WIDTH = 3
 MIN_CUT_DURATION = 1.5
 
 
@@ -247,55 +253,81 @@ def calc_max_chars_per_line(font: ImageFont.ImageFont) -> int:
 
 
 def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.ImageFont) -> Image.Image:
-    """字幕付きフレーム画像を生成して返す。"""
+    """字幕付きフレーム画像を生成して返す。下部テロップパネルスタイル。"""
     bg = load_background(assets_images, index)
 
-    # 半透明黒オーバーレイ
-    overlay = Image.new("RGBA", (VIDEO_WIDTH, VIDEO_HEIGHT), (0, 0, 0, 120))
+    # 軽めのグローバルオーバーレイ（背景を活かす）
+    overlay = Image.new("RGBA", (VIDEO_WIDTH, VIDEO_HEIGHT), (0, 0, 0, 55))
     img = bg.convert("RGBA")
-    img = Image.alpha_composite(img, overlay).convert("RGB")
+    img = Image.alpha_composite(img, overlay)
 
-    draw = ImageDraw.Draw(img)
-
-    # テキスト折り返し（フォントサイズから動的に最大文字数を計算）
+    # テキスト折り返し
     max_chars = calc_max_chars_per_line(font)
     lines = textwrap.wrap(text, width=max_chars)
     if not lines:
         lines = [text]
 
     line_height = FONT_SIZE + LINE_SPACING
-    total_height = len(lines) * line_height
+    total_text_h = len(lines) * line_height
 
-    # y=960px 中心、複数行は上方向に展開
-    start_y = SUBTITLE_CENTER_Y - total_height // 2
+    # 字幕エリアを画面下部に配置
+    panel_inner_h = total_text_h + SUBTITLE_PANEL_PADDING_V * 2
+    panel_total_h = panel_inner_h + ACCENT_LINE_H
+    panel_top = VIDEO_HEIGHT - SUBTITLE_BOTTOM_MARGIN - panel_total_h
 
+    # --- ダークパネル + グラデーション下辺ぼかし ---
+    panel = Image.new("RGBA", (VIDEO_WIDTH, panel_total_h), (0, 0, 0, 0))
+    panel_draw = ImageDraw.Draw(panel)
+
+    # ゴールドアクセントライン（パネル上端）
+    panel_draw.rectangle(
+        [0, 0, VIDEO_WIDTH, ACCENT_LINE_H],
+        fill=(*ACCENT_COLOR, 255),
+    )
+    # 半透明ダークパネル本体
+    panel_draw.rectangle(
+        [0, ACCENT_LINE_H, VIDEO_WIDTH, panel_total_h],
+        fill=PANEL_BG_COLOR,
+    )
+    img = Image.alpha_composite(img, Image.new("RGBA", img.size, (0, 0, 0, 0)))
+    img.paste(panel, (0, panel_top), panel)
+
+    draw = ImageDraw.Draw(img)
+
+    # テキスト描画（ドロップシャドウ + 薄い縁取り）
+    text_start_y = panel_top + ACCENT_LINE_H + SUBTITLE_PANEL_PADDING_V
     for i, line in enumerate(lines):
-        y = start_y + i * line_height
+        y = text_start_y + i * line_height
         try:
             bbox = draw.textbbox((0, 0), line, font=font)
             text_w = bbox[2] - bbox[0]
         except Exception:
             text_w = len(line) * (FONT_SIZE // 2)
-        x = max((VIDEO_WIDTH - text_w) // 2, 20)
+        x = max((VIDEO_WIDTH - text_w) // 2, SUBTITLE_PANEL_PADDING_H)
 
-        # 縁取り（黒、linewidth=8）
+        # ドロップシャドウ
+        sx, sy = SHADOW_OFFSET
+        draw.text(
+            (x + sx, y + sy), line, font=font,
+            fill=(0, 0, 0, 160),
+        )
+        # メインテキスト（白 + 細い縁取り）
         try:
             draw.text(
                 (x, y), line, font=font,
                 fill=(255, 255, 255),
                 stroke_width=OUTLINE_WIDTH,
-                stroke_fill=(0, 0, 0),
+                stroke_fill=(0, 0, 30),
             )
         except TypeError:
-            # Pillow 7系以前のフォールバック
             for dx in (-OUTLINE_WIDTH, 0, OUTLINE_WIDTH):
                 for dy in (-OUTLINE_WIDTH, 0, OUTLINE_WIDTH):
                     if dx == 0 and dy == 0:
                         continue
-                    draw.text((x + dx, y + dy), line, font=font, fill=(0, 0, 0))
+                    draw.text((x + dx, y + dy), line, font=font, fill=(0, 0, 30))
             draw.text((x, y), line, font=font, fill=(255, 255, 255))
 
-    return img
+    return img.convert("RGB")
 
 
 # ---------------------------------------------------------------------------
