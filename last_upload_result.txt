@@ -1,10 +1,8 @@
-date: 2026-03-31T23:24:37.883039Z
+date: 2026-04-01T00:08:28.937936Z
 projects_loaded: 3
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=FlwJuszZCFI title=【園田競馬 今日発走 兵庫女王盃】プロミストジーン 武豊を背に好位から力強く抜け
-OK project=1 video_id=NvE43eEDnck title=【園田競馬 今日発走 兵庫女王盃】プロミストジーン 武豊を背に好位から力強く抜け
-OK project=1 video_id=lweldLtdR6w title=兵庫アーバン競馬がスタート　開幕を飾るのは第３回兵庫女王盃 - ｄメニューニュー
+OK project=1 video_id=zMgQzaJcptg title=【京成盃グランドマイラーズ】６番人気ジョージテソーロがＶ 落合玄太騎手「まだ若い
