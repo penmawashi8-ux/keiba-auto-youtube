@@ -1,8 +1,8 @@
-date: 2026-04-01T06:21:26.815271Z
+date: 2026-04-01T08:50:20.276497Z
 projects_loaded: 3
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=44hFNjNjlzM title=かまいたちが「兵庫アーバン競馬」スペシャルアンバサダー就任 山内は園田競馬場で大
+OK project=1 video_id=m5P5fQw8NMA title=大井競馬が26年度事業計画を発表　重賞7競走、3冠ボーナスを増額 - ｄメニュー
