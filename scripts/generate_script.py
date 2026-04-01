@@ -203,6 +203,20 @@ def main() -> None:
                 if not script or len(script) < 80:
                     print(f"[{i}]  → フィルター後に内容が不十分（{len(script)}文字）のためスキップ")
                     return i, True
+                # コード・JavaScript が混入している場合はスキップ
+                code_leak_pattern = _re.compile(
+                    r"window\.[A-Za-z_]\w*\s*[=({]"
+                    r"|function\s*\("
+                    r"|var\s+\w+\s*="
+                    r"|const\s+\w+\s*="
+                    r"|let\s+\w+\s*="
+                    r"|\{\s*['\"]?\w+['\"]?\s*:"
+                    r"|=>|&&|\|\|"
+                    r"|document\.|window\.|console\."
+                )
+                if code_leak_pattern.search(script):
+                    print(f"[{i}]  → コード混入を検出。次のキー/モデルへ切り替えます: {script[:60]}", file=sys.stderr)
+                    continue
                 # 未来レース記事なのにレース結果・展開の創作が含まれている場合はスキップ
                 future_race_keywords = _re.compile(
                     r"今日発走|本日発走|発走予定|出走予定|今日の(?:レース|競馬)|今週(?:の)?(?:レース|競馬|注目)|"

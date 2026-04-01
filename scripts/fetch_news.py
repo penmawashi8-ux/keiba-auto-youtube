@@ -415,6 +415,9 @@ def fetch_news() -> list[dict]:
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
+            # <script> / <style> タグとその中身を除去（JSコードの混入を防ぐ）
+            html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE)
+            html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.IGNORECASE)
             if not image_url:
                 og_img = extract_og_image(link, html)
                 if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
