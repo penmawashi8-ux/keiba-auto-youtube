@@ -98,7 +98,7 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.4},
     }
-    for attempt, wait in enumerate([0, 5, 15]):
+    for attempt, wait in enumerate([0, 30, 60]):
         if wait:
             print(f"  {wait}秒待機後にリトライ... (attempt {attempt + 1})")
             time.sleep(wait)
@@ -259,8 +259,8 @@ def main() -> None:
                 print(f"[{i}]  プレビュー: {script[:80]}...")
                 return i, True
             except QuotaExceeded:
-                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。5秒待機後に次へ切り替えます。", file=sys.stderr)
-                time.sleep(5)
+                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。20秒待機後に次へ切り替えます。", file=sys.stderr)
+                time.sleep(20)
         print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 

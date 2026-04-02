@@ -69,8 +69,8 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
                 timeout=30,
             )
             if r.status_code == 429:
-                print(f"  [警告] key={key_label} 429 クォータ超過。5秒待機後に次のキーへ切り替えます。", flush=True)
-                time.sleep(5)
+                print(f"  [警告] key={key_label} 429 クォータ超過。20秒待機後に次のキーへ切り替えます。", flush=True)
+                time.sleep(20)
                 continue
             r.raise_for_status()
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
