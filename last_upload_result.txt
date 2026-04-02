@@ -1,8 +1,9 @@
-date: 2026-04-02T00:03:44.440717Z
+date: 2026-04-02T02:12:40.546450Z
 projects_loaded: 3
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=-eXw3Aqh-00 title=ガイアフォース、パンジャタワーは安田記念を目指す【次走報】（東スポ競馬） - n
+OK project=1 video_id=uC0IN2njKyQ title=「ケンタッキーへようこそ！」UAEダービー制覇ワンダーディーンの現地到着を主催者
+OK project=1 video_id=jd5v6gmwFTc title=【4月18日（土）今治戦】JRA新潟競馬場サンクスデー開催！ - albirex
