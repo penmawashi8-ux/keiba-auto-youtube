@@ -1,9 +1,10 @@
-date: 2026-04-02T02:12:40.546450Z
+date: 2026-04-02T04:31:05.326590Z
 projects_loaded: 3
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => LOADED
-OK project=1 video_id=uC0IN2njKyQ title=「ケンタッキーへようこそ！」UAEダービー制覇ワンダーディーンの現地到着を主催者
-OK project=1 video_id=jd5v6gmwFTc title=【4月18日（土）今治戦】JRA新潟競馬場サンクスデー開催！ - albirex
+OK project=1 video_id=JaI0HIgM-hY title=UAEダービー覇者ワンダーディーンが米国入り「ケンタッキーへようこそ！」KYダー
+OK project=1 video_id=cvoPFsD_4-E title=『兵庫県競馬』が『HUK（兵庫アーバン競馬）』の新名称に！『そのだけいば』『ひめ
+OK project=1 video_id=Z6QNwPoxmA4 title=『兵庫県競馬』が『HUK（兵庫アーバン競馬）』の新名称に！『そのだけいば』『ひめ
