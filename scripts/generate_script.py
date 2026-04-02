@@ -98,7 +98,7 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.4},
     }
-    for attempt, wait in enumerate([0, 5, 15]):
+    for attempt, wait in enumerate([0, 30, 60]):
         if wait:
             print(f"  {wait}秒待機後にリトライ... (attempt {attempt + 1})")
             time.sleep(wait)
@@ -107,6 +107,9 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
         if resp.status_code == 429:
             err = resp.json().get("error", {})
             print(f"  [警告] 429 クォータ超過: {err.get('message','')[:200]}", file=sys.stderr)
+            continue
+        if resp.status_code == 503:
+            print(f"  [警告] 503 サービス一時停止。リトライします。", file=sys.stderr)
             continue
         try:
             resp.raise_for_status()
@@ -259,8 +262,8 @@ def main() -> None:
                 print(f"[{i}]  プレビュー: {script[:80]}...")
                 return i, True
             except QuotaExceeded:
-                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。5秒待機後に次へ切り替えます。", file=sys.stderr)
-                time.sleep(5)
+                print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。20秒待機後に次へ切り替えます。", file=sys.stderr)
+                time.sleep(20)
         print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 
