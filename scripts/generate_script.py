@@ -108,6 +108,9 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
             err = resp.json().get("error", {})
             print(f"  [警告] 429 クォータ超過: {err.get('message','')[:200]}", file=sys.stderr)
             continue
+        if resp.status_code == 503:
+            print(f"  [警告] 503 サービス一時停止。リトライします。", file=sys.stderr)
+            continue
         try:
             resp.raise_for_status()
         except requests.exceptions.HTTPError as e:
