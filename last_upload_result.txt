@@ -1,8 +1,8 @@
-date: 2026-04-03T02:06:22.930051Z
+date: 2026-04-03T02:11:52.813240Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => FAILED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xD5JWq7aJl0 title=【大阪杯2026予想】ダービー馬対決！クロワデュノールvsダノンデサイル 展開・
+OK project=1 video_id=g-4r-v_B8kQ title=【大阪杯2026枠順確定予想】クロワデュノール大外15番！ダービー馬2頭の枠順を
