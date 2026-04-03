@@ -1,8 +1,9 @@
-date: 2026-04-03T02:11:52.813240Z
+date: 2026-04-03T11:01:23.648771Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
-p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
-p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => FAILED
+p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
+p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=g-4r-v_B8kQ title=【大阪杯2026枠順確定予想】クロワデュノール大外15番！ダービー馬2頭の枠順を
+OK project=1 video_id=PStWmQz-S_g title=佐賀競馬場に新騎手会館 騎乗前の宿泊施設 サウナやトレーニング室充実 | まちの
+OK project=1 video_id=Ng5p9LC8QX4 title=［競馬］ＧⅠ大阪杯 ダノンデサイル、クロワデュノールのダービー馬2強か マテンロ
