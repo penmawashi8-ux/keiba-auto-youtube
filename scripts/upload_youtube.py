@@ -336,7 +336,11 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
     # YouTubeタイトルの上限は100文字
-    prefix, suffix = "【競馬速報】", " #Shorts"
+    import datetime as _dt
+    _jst = _dt.timezone(_dt.timedelta(hours=9))
+    _today = _dt.datetime.now(_jst)
+    date_str = f"{_today.year}/{_today.month}/{_today.day}"
+    prefix, suffix = f"【競馬速報】{date_str} ", " #Shorts"
     max_body = 100 - len(prefix) - len(suffix)
     short_title = title if len(title) <= max_body else title[:max_body - 1] + "…"
     body = {
