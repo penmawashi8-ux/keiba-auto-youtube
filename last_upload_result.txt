@@ -1,8 +1,8 @@
-date: 2026-04-03T11:39:19.013683Z
+date: 2026-04-03T23:47:05.067573Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=P38vE9jSw8s title=神部美咲、紙いっぱいの手描き競馬イラスト公開「多才ですごい」「絵心ある」と反響 
+OK project=1 video_id=W9swAa6EFXA title=【大阪杯】（3）セイウンハーデス 外希望だったが…橋口師「外に持ち出す競馬ができ
