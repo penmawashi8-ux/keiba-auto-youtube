@@ -1,4 +1,4 @@
-name: 大阪杯2026 予想動画 生成・投稿
+name: 大阪杯2026 枠順確定予想動画 生成・投稿
 
 on:
   workflow_dispatch:
@@ -70,7 +70,7 @@ jobs:
                   log = "".join(f.readlines()[:80])
           except Exception:
               log = "(ログなし)"
-          title = "[DEBUG] 大阪杯2026 AI画像生成ログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          title = "[DEBUG] 大阪杯2026枠順確定予想 AI画像生成ログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
           body = "```\n" + log + "\n```"
           payload = json.dumps({"title": title, "body": body}).encode()
           repo = os.environ["GH_REPO"]
@@ -121,6 +121,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "変更なし。コミットをスキップします。"
           else
-            git commit -m "chore: 大阪杯2026予想動画 投稿完了 [skip ci]"
+            git commit -m "chore: 大阪杯2026枠順確定予想動画 投稿完了 [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
           fi
