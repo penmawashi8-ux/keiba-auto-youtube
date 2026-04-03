@@ -119,12 +119,24 @@ jobs:
               print(f"Issue作成: {data.get('html_url')}")
           PYEOF
 
-      - name: Generate audio
+      - name: Check if scripts exist
+        id: check_scripts
         if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          if ls output/script_*.txt 2>/dev/null | grep -q .; then
+            echo "has_scripts=true" >> "$GITHUB_OUTPUT"
+            echo "脚本ファイルあり"
+          else
+            echo "has_scripts=false" >> "$GITHUB_OUTPUT"
+            echo "脚本ファイルなし（全記事スキップ）。後続ステップをスキップします。"
+          fi
+
+      - name: Generate audio
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_audio.py
 
       - name: BGMをダウンロード（archive.org フリー音楽）
-        if: steps.check_news.outputs.has_news == 'true'
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
@@ -132,11 +144,11 @@ jobs:
           python scripts/download_bgm.py
 
       - name: Generate video
-        if: steps.check_news.outputs.has_news == 'true'
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_video.py
 
       - name: Upload to YouTube
-        if: steps.check_news.outputs.has_news == 'true'
+        if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}

@@ -279,7 +279,12 @@ def main() -> None:
         print(f"[エラー] 記事 {failed} のスクリプト生成失敗。", file=sys.stderr)
         sys.exit(1)
 
-    print(f"\n{len(news_items)} 件の脚本を生成しました。")
+    written = list(Path(OUTPUT_DIR).glob("script_*.txt"))
+    if not written:
+        print("\n全ての記事がスキップされました。動画生成をスキップします。")
+        sys.exit(0)
+
+    print(f"\n{len(written)} 件の脚本を生成しました。")
 
 
 if __name__ == "__main__":
