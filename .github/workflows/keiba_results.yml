@@ -1,0 +1,142 @@
+name: Keiba 重賞結果速報 YouTube Auto Post
+
+on:
+  schedule:
+    # 土曜・日曜のレース終了後に実行（JST = UTC+9）
+    # JRA の最終レースは概ね 16:00〜16:30 JST に終了
+    - cron: "30 8 * * 6,0"   # 17:30 JST 土日（6=土, 0=日）
+    - cron: "30 9 * * 6,0"   # 18:30 JST 土日（念のため2回目）
+  workflow_dispatch:
+
+jobs:
+  post-race-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch race results news
+        run: python scripts/fetch_race_results.py
+
+      - name: Check if news exists
+        id: check_news
+        run: |
+          if python -c 'import json,sys; d=json.load(open("news.json")); sys.exit(0 if d else 1)' 2>/dev/null; then
+            echo "has_news=true" >> "$GITHUB_OUTPUT"
+            echo "結果記事あり"
+          else
+            echo "has_news=false" >> "$GITHUB_OUTPUT"
+            echo "結果記事なし。後続ステップをスキップします。"
+          fi
+
+      - name: Generate narration script（結果速報モード）
+        if: steps.check_news.outputs.has_news == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          SCRIPT_MODE: results
+        run: |
+          python scripts/generate_script.py 2>&1 | tee /tmp/gemini.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::Gemini失敗: $(tail -5 /tmp/gemini.log | tr '\n' ' ')"
+            exit $STATUS
+          fi
+
+      - name: AI画像を生成
+        id: ai_images
+        if: steps.check_news.outputs.has_news == 'true'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
+          HF_TOKEN_3: ${{ secrets.HF_TOKEN_3 }}
+        run: |
+          python -u scripts/generate_images.py 2>&1 | tee "$GITHUB_WORKSPACE/ai_images_log.txt"
+          exit ${PIPESTATUS[0]}
+
+      - name: Check if scripts exist
+        id: check_scripts
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          if ls output/script_*.txt 2>/dev/null | grep -q .; then
+            echo "has_scripts=true" >> "$GITHUB_OUTPUT"
+            echo "脚本ファイルあり"
+          else
+            echo "has_scripts=false" >> "$GITHUB_OUTPUT"
+            echo "脚本ファイルなし（全記事スキップ）。後続ステップをスキップします。"
+          fi
+
+      - name: Generate audio
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        run: python scripts/generate_audio.py
+
+      - name: BGMをダウンロード
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py
+
+      - name: Generate video
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        run: python scripts/generate_video.py
+
+      - name: Upload to YouTube
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: python scripts/upload_youtube.py
+
+      - name: Commit and push posted_ids.txt
+        if: always() && steps.check_news.outputs.has_news == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_ids.txt last_upload_result.txt output/thumbnail_*.jpg 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: update posted_ids.txt [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
