@@ -10,6 +10,7 @@ import gzip
 import json
 import re
 import sys
+import zlib
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.error import URLError
@@ -96,6 +97,45 @@ def load_posted_ids() -> set:
     return set(path.read_text(encoding="utf-8").splitlines())
 
 
+def _extract_next_data_body(html: str) -> str:
+    """Next.js の __NEXT_DATA__ JSON から記事本文を抽出する。
+    Yahoo News Japan など Next.js ベースのサイト向け。"""
+    m = re.search(
+        r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>\s*(\{.*?\})\s*</script>',
+        html, re.DOTALL | re.IGNORECASE,
+    )
+    if not m:
+        return ""
+    try:
+        data = json.loads(m.group(1))
+    except (json.JSONDecodeError, ValueError):
+        return ""
+
+    def _collect_text(obj, depth=0) -> list[str]:
+        """JSON オブジェクトを再帰的に辿り、"body" / "text" / "content" キーのテキストを収集。"""
+        if depth > 10:
+            return []
+        texts: list[str] = []
+        if isinstance(obj, dict):
+            for key in ("body", "text", "content", "description"):
+                val = obj.get(key)
+                if isinstance(val, str) and len(val) > 30:
+                    texts.append(val)
+            for val in obj.values():
+                texts.extend(_collect_text(val, depth + 1))
+        elif isinstance(obj, list):
+            for item in obj:
+                texts.extend(_collect_text(item, depth + 1))
+        return texts
+
+    texts = _collect_text(data)
+    # 最長のテキストを本文として採用（ナビゲーション等の短いテキストを除く）
+    if not texts:
+        return ""
+    best = max(texts, key=len)
+    return re.sub(r"<[^>]+>", " ", best)  # HTML タグが混じっている場合も除去
+
+
 def http_get(url: str, timeout: int = 20) -> bytes | None:
     try:
         req = Request(url, headers=HEADERS)
@@ -113,10 +153,28 @@ def http_get(url: str, timeout: int = 20) -> bytes | None:
     return None
 
 
+def _decompress(data: bytes, encoding: str) -> bytes:
+    """Content-Encoding に応じてデータを展開する。Brotli は非対応のため gzip/deflate のみ。"""
+    if encoding == "gzip":
+        return gzip.decompress(data)
+    if encoding == "deflate":
+        try:
+            return zlib.decompress(data)
+        except zlib.error:
+            return zlib.decompress(data, -zlib.MAX_WBITS)
+    # br (Brotli) は標準ライブラリ非対応のため生データをそのまま返す
+    return data
+
+
 def http_get_article(url: str, timeout: int = 20) -> bytes | None:
-    """記事本文取得用。Refererを付与し、失敗時はUser-Agentを変えてリトライ。"""
+    """記事本文取得用。Refererを付与し、失敗時はUser-Agentを変えてリトライ。
+    Accept-Encoding は gzip/deflate のみ指定（Brotli は展開不可のため除外）。"""
+    _article_headers_base = {
+        **HEADERS,
+        "Accept-Encoding": "gzip, deflate",  # br を除外して文字化けを防ぐ
+    }
     attempts = [
-        {**HEADERS, "Referer": "https://news.google.com/"},
+        {**_article_headers_base, "Referer": "https://news.google.com/"},
         {
             "User-Agent": (
                 "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
@@ -124,6 +182,7 @@ def http_get_article(url: str, timeout: int = 20) -> bytes | None:
             ),
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+            "Accept-Encoding": "gzip, deflate",
             "Referer": "https://news.google.com/",
         },
     ]
@@ -133,8 +192,7 @@ def http_get_article(url: str, timeout: int = 20) -> bytes | None:
             with urlopen(req, timeout=timeout) as resp:
                 data = resp.read()
                 encoding = resp.headers.get("Content-Encoding", "")
-                if encoding == "gzip":
-                    data = gzip.decompress(data)
+                data = _decompress(data, encoding)
                 print(f"  [HTTP] {resp.status} {len(data)} bytes (attempt {i})")
                 return data
         except URLError as e:
@@ -415,6 +473,8 @@ def fetch_news() -> list[dict]:
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
+            # __NEXT_DATA__ (Next.js SSR) を script タグ除去前に抽出
+            body = _extract_next_data_body(html)
             # <script> / <style> タグとその中身を除去（JSコードの混入を防ぐ）
             html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE)
             html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.IGNORECASE)
@@ -422,12 +482,12 @@ def fetch_news() -> list[dict]:
                 og_img = extract_og_image(link, html)
                 if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
                     image_url = og_img
-            # 本文抽出: <article> → <main> → class/idに"article/content/body/entry"を含む<div> → <p>タグ → og:description → 全体
-            body = ""
+            # 本文抽出: __NEXT_DATA__ → <article> → <main> → class/idに"article/content/body/entry"を含む<div> → <p>タグ → og:description → 全体
             # 1. <article> タグ
-            m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
-            if m:
-                body = re.sub(r"<[^>]+>", " ", m.group(1))
+            if len(body.strip()) < 100:
+                m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
+                if m:
+                    body = re.sub(r"<[^>]+>", " ", m.group(1))
             # 2. <main> タグ
             if len(body.strip()) < 100:
                 m = re.search(r"<main[^>]*>(.*?)</main>", html, re.DOTALL | re.IGNORECASE)
