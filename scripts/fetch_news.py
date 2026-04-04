@@ -166,6 +166,32 @@ def _decompress(data: bytes, encoding: str) -> bytes:
     return data
 
 
+def resolve_google_news_redirect(rss_url: str, timeout: int = 15) -> str:
+    """Google News RSS リンク（/rss/articles/...）から実際の記事 URL を取得する。
+    /rss を外した URL は HTTP リダイレクトで記事 URL に飛ぶ。urlopen がそれを追う。"""
+    web_url = re.sub(r'(news\.google\.com)/rss/(articles/[^?]+)', r'\1/\2', rss_url)
+    web_url = web_url.split("?")[0]
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        ),
+        "Accept": "text/html,application/xhtml+xml",
+        "Accept-Language": "ja,en-US;q=0.9",
+        "Accept-Encoding": "gzip, deflate",
+    }
+    try:
+        req = Request(web_url, headers=headers)
+        with urlopen(req, timeout=timeout) as resp:
+            final_url = resp.url
+            if final_url and "google.com" not in final_url:
+                print(f"  [GNews] リダイレクト解決: {final_url[:80]}")
+                return final_url
+    except Exception as e:
+        print(f"  [GNews] リダイレクト解決失敗: {e}", file=sys.stderr)
+    return ""
+
+
 def http_get_article(url: str, timeout: int = 20) -> bytes | None:
     """記事本文取得用。Refererを付与し、失敗時はUser-Agentを変えてリトライ。
     Accept-Encoding は gzip/deflate のみ指定（Brotli は展開不可のため除外）。"""
@@ -470,6 +496,11 @@ def fetch_news() -> list[dict]:
             image_url = ""
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
+        # Google News RSS リンク（/rss/articles/...）は HTTP リダイレクトで実記事 URL に飛ぶ
+        if "news.google.com" in link:
+            resolved = resolve_google_news_redirect(link)
+            if resolved:
+                link = resolved
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
