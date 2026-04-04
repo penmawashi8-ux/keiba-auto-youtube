@@ -98,23 +98,23 @@ def load_posted_ids() -> set:
 
 
 def _resolve_google_news_url(html: str) -> str:
-    """Google News リダイレクトページから実際の記事 URL を抽出する。
+    """Google News ページから実際の記事 URL を抽出する。
     Google News の RSS リンクは JS リダイレクト経由のため urlopen が辿れない。"""
-    # 1. <meta http-equiv="refresh" content="0;url=...">
+    # 1. data-n-au 属性（Google News の記事カードに含まれる）
+    m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
+    if m:
+        url = m.group(1).strip()
+        if url.startswith("http") and "google.com" not in url:
+            return url
+    # 2. <meta http-equiv="refresh" content="0;url=...">
     m = re.search(
         r'<meta[^>]+http-equiv=["\']refresh["\'][^>]+content=["\'][^;]*;\s*url=([^"\'>\s]+)',
         html, re.IGNORECASE,
     )
     if m:
         return m.group(1).strip()
-    # 2. window.location.href = "..."
+    # 3. window.location.href = "..."（script タグ除去前の生 HTML に対して使う）
     m = re.search(r'window\.location(?:\.href)?\s*=\s*["\']([^"\']+)["\']', html)
-    if m:
-        url = m.group(1).strip()
-        if url.startswith("http") and "google.com" not in url:
-            return url
-    # 3. <a href="..."> が記事本文リンクとして含まれる場合
-    m = re.search(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(?:こちら|続きを読む|Read more)', html, re.IGNORECASE)
     if m:
         url = m.group(1).strip()
         if url.startswith("http") and "google.com" not in url:
@@ -130,15 +130,14 @@ def _resolve_google_news_url(html: str) -> str:
     return ""
 
 
-def _is_google_news_page(html: str) -> bool:
-    """取得した HTML が Google News リダイレクトページかどうかを判定する。"""
-    indicators = [
-        "世界中のニュース提供元から集約",
-        "news.google.com",
-        "Google ニュース",
-    ]
-    snippet = html[:3000]
-    return sum(1 for ind in indicators if ind in snippet) >= 2
+def _is_google_news_page(url: str, html: str) -> bool:
+    """URL または HTML の内容から Google News ページかどうかを判定する。"""
+    # URL で判定（最も確実）
+    if "news.google.com" in url:
+        return True
+    # コンテンツで判定（全体を対象に）
+    indicators = ["世界中のニュース提供元から集約", "Google ニュース"]
+    return all(ind in html for ind in indicators)
 
 
 def _extract_next_data_body(html: str) -> str:
@@ -519,7 +518,7 @@ def fetch_news() -> list[dict]:
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
             # Google News リダイレクトページを検出→実際の記事 URL に再フェッチ
-            if _is_google_news_page(html):
+            if _is_google_news_page(link, html):
                 real_url = _resolve_google_news_url(html)
                 if real_url:
                     print(f"  [GNews] リダイレクト先を検出: {real_url[:80]}")
