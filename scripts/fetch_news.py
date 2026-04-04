@@ -470,11 +470,13 @@ def fetch_news() -> list[dict]:
             image_url = ""
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
+        rss_summary = summary  # RSS から取得した元サマリーを保持
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
             # __NEXT_DATA__ (Next.js SSR) を script タグ除去前に抽出
             body = _extract_next_data_body(html)
+            _method = "__NEXT_DATA__" if len(body.strip()) >= 100 else ""
             # <script> / <style> タグとその中身を除去（JSコードの混入を防ぐ）
             html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE)
             html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.IGNORECASE)
@@ -488,11 +490,15 @@ def fetch_news() -> list[dict]:
                 m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
                 if m:
                     body = re.sub(r"<[^>]+>", " ", m.group(1))
+                    if len(body.strip()) >= 100:
+                        _method = "<article>"
             # 2. <main> タグ
             if len(body.strip()) < 100:
                 m = re.search(r"<main[^>]*>(.*?)</main>", html, re.DOTALL | re.IGNORECASE)
                 if m:
                     body = re.sub(r"<[^>]+>", " ", m.group(1))
+                    if len(body.strip()) >= 100:
+                        _method = "<main>"
             # 3. class/id に article/content/body/entry/text を含む <div>
             if len(body.strip()) < 100:
                 m = re.search(
@@ -501,10 +507,14 @@ def fetch_news() -> list[dict]:
                 )
                 if m:
                     body = re.sub(r"<[^>]+>", " ", m.group(1))
+                    if len(body.strip()) >= 100:
+                        _method = "<div.article>"
             # 4. <p> タグを全部結合
             if len(body.strip()) < 100:
                 paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
                 body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
+                if len(body.strip()) >= 100:
+                    _method = "<p>タグ"
             # 5. og:description を補完テキストとして追加
             og_desc = ""
             m_desc = re.search(
@@ -521,13 +531,17 @@ def fetch_news() -> list[dict]:
             # 6. <p> でも不十分なら全体テキスト
             if len(body.strip()) < 100:
                 body = re.sub(r"<[^>]+>", " ", html)
+                _method = "全体HTML"
             full_body = re.sub(r"\s+", " ", body).strip()[:2000]
-            # og:description が本文より情報を持っている場合は先頭に追加
             if og_desc and og_desc not in full_body:
                 full_body = (og_desc + " " + full_body).strip()[:2000]
             if len(full_body) > len(summary):
                 summary = full_body
-            print(f"  [本文] {len(summary)}文字: {summary[:80]!r}")
+            # ===== DEBUG LOG（原因調査用・後で削除） =====
+            print(f"  [DEBUG] RSS元サマリー({len(rss_summary)}文字): {rss_summary[:100]!r}")
+            print(f"  [DEBUG] 抽出方法: {_method or '不明'} / og:desc({len(og_desc)}文字)")
+            print(f"  [DEBUG] 最終本文({len(summary)}文字):\n{summary}")
+            print(f"  [DEBUG] ---END---")
 
         pub_str = published_dt.isoformat() if published_dt else ""
         print(f"  取得: {title[:60]} [{pub_str[:19]}]")
