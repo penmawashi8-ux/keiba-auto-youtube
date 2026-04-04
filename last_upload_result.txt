@@ -1,8 +1,8 @@
-date: 2026-04-04T04:11:30.462545Z
+date: 2026-04-04T04:56:47.278609Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Pp7Ng0bj5q4 title=26日に京都競馬場で和田竜二元騎手の引退式を実施（サンケイスポーツ） - Yah
+OK project=1 video_id=OrsQudtbJJg title=中山芝1600mのコース解析【2026年4月4日中山11R】 - 競馬ラボ
