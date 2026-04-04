@@ -347,6 +347,11 @@ def _parse_rss_item(item: ET.Element) -> dict:
             if href.startswith("http") and "google.com" not in href:
                 source_url = href
                 break
+    # ===== DEBUG RSS =====
+    print(f"  [RSS] raw_link={link[:80]!r}")
+    print(f"  [RSS] desc={summary[:200]!r}")
+    print(f"  [RSS] source_url={source_url[:80]!r}")
+    # =====================
     if source_url:
         link = source_url  # 実際の記事 URL を優先
 
