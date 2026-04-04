@@ -338,6 +338,18 @@ def _parse_rss_item(item: ET.Element) -> dict:
     entry_id = _get_text(item, "guid") or link
     summary = _get_text(item, "description", "summary")
 
+    # Google News RSS の <description> には実際の記事 URL が <a href="..."> として含まれる。
+    # これが最も確実に実記事 URL を取得できる方法。
+    source_url = ""
+    if summary:
+        for href_m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\']', summary, re.IGNORECASE):
+            href = href_m.group(1)
+            if href.startswith("http") and "google.com" not in href:
+                source_url = href
+                break
+    if source_url:
+        link = source_url  # 実際の記事 URL を優先
+
     # 公開日時
     pub_date_raw = _get_text(item, "pubdate")
     published_dt = _parse_date(pub_date_raw)
@@ -401,6 +413,14 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
         if s is not None and s.text:
             summary = s.text.strip()
             break
+
+    # description の <a href> から実記事 URL を取得
+    if summary:
+        for href_m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\']', summary, re.IGNORECASE):
+            href = href_m.group(1)
+            if href.startswith("http") and "google.com" not in href:
+                link = href
+                break
 
     # 公開日時（published → updated の順に探す）
     pub_date_raw = ""
