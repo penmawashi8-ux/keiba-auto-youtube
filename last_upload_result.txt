@@ -1,8 +1,8 @@
-date: 2026-04-04T03:53:54.453867Z
+date: 2026-04-04T04:11:30.462545Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XwmdzrzohDw title=「次につながる競馬だった」「未勝利の初出走掲示板は頑張ってる」キタサンブラック産
+OK project=1 video_id=Pp7Ng0bj5q4 title=26日に京都競馬場で和田竜二元騎手の引退式を実施（サンケイスポーツ） - Yah
