@@ -5,6 +5,7 @@
 - 投稿済み（posted_ids.txt）はスキップ
 """
 
+import base64
 import email.utils
 import gzip
 import json
@@ -95,6 +96,32 @@ def load_posted_ids() -> set:
     if not path.exists():
         return set()
     return set(path.read_text(encoding="utf-8").splitlines())
+
+
+def _decode_google_news_url(google_url: str) -> str:
+    """Google News RSS リンクに含まれる Base64 エンコードされた実記事 URL を取得する。
+    HTTP リクエスト不要。例: https://news.google.com/rss/articles/CBMiSmh0dHBz..."""
+    m = re.search(r'/articles/([A-Za-z0-9_=-]+)', google_url)
+    if not m:
+        return ""
+    encoded = m.group(1)
+    # URL-safe base64 のパディング調整
+    padded = encoded + "=" * (-len(encoded) % 4)
+    try:
+        data = base64.urlsafe_b64decode(padded)
+    except Exception:
+        return ""
+    # protobuf バイナリ内の https:// で始まる文字列を正規表現で抽出
+    try:
+        text = data.decode("latin-1")
+    except Exception:
+        return ""
+    url_m = re.search(r'https?://[a-zA-Z0-9._~:/?#\[\]@!$&\'()*+,;=%\-]+', text)
+    if url_m:
+        url = url_m.group(0).rstrip(".,;)")
+        if "google.com" not in url:
+            return url
+    return ""
 
 
 def _resolve_google_news_url(html: str) -> str:
@@ -514,20 +541,28 @@ def fetch_news() -> list[dict]:
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
         rss_summary = summary  # RSS から取得した元サマリーを保持
+        # Google News RSS リンクの場合、Base64 デコードで実記事 URL を先に解決
+        if "news.google.com" in link:
+            decoded = _decode_google_news_url(link)
+            if decoded:
+                print(f"  [GNews] URLデコード成功: {decoded[:80]}")
+                link = decoded
+            else:
+                print(f"  [GNews] URLデコード失敗。フェッチ後にHTMLから抽出を試みます。", file=sys.stderr)
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
-            # Google News リダイレクトページを検出→実際の記事 URL に再フェッチ
+            # デコード失敗などで Google News ページが返ってきた場合は HTML から URL を抽出して再フェッチ
             if _is_google_news_page(link, html):
                 real_url = _resolve_google_news_url(html)
                 if real_url:
-                    print(f"  [GNews] リダイレクト先を検出: {real_url[:80]}")
+                    print(f"  [GNews] HTMLから実URLを検出: {real_url[:80]}")
                     raw2 = http_get_article(real_url)
                     if raw2:
                         html = raw2.decode("utf-8", errors="replace")
-                        link = real_url  # OG画像取得などでも実URLを使う
+                        link = real_url
                 else:
-                    print(f"  [GNews] リダイレクト先の URL 抽出失敗。元 HTML で続行。", file=sys.stderr)
+                    print(f"  [GNews] 実URL抽出失敗。元HTMLで続行。", file=sys.stderr)
             # __NEXT_DATA__ (Next.js SSR) を script タグ除去前に抽出
             body = _extract_next_data_body(html)
             _method = "__NEXT_DATA__" if len(body.strip()) >= 100 else ""
