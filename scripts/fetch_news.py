@@ -97,7 +97,51 @@ def load_posted_ids() -> set:
     return set(path.read_text(encoding="utf-8").splitlines())
 
 
-def _extract_next_data_body(html: str) -> str:
+def _resolve_google_news_url(html: str) -> str:
+    """Google News リダイレクトページから実際の記事 URL を抽出する。
+    Google News の RSS リンクは JS リダイレクト経由のため urlopen が辿れない。"""
+    # 1. <meta http-equiv="refresh" content="0;url=...">
+    m = re.search(
+        r'<meta[^>]+http-equiv=["\']refresh["\'][^>]+content=["\'][^;]*;\s*url=([^"\'>\s]+)',
+        html, re.IGNORECASE,
+    )
+    if m:
+        return m.group(1).strip()
+    # 2. window.location.href = "..."
+    m = re.search(r'window\.location(?:\.href)?\s*=\s*["\']([^"\']+)["\']', html)
+    if m:
+        url = m.group(1).strip()
+        if url.startswith("http") and "google.com" not in url:
+            return url
+    # 3. <a href="..."> が記事本文リンクとして含まれる場合
+    m = re.search(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(?:こちら|続きを読む|Read more)', html, re.IGNORECASE)
+    if m:
+        url = m.group(1).strip()
+        if url.startswith("http") and "google.com" not in url:
+            return url
+    # 4. og:url が google.com 以外のドメイン
+    m = re.search(r'<meta[^>]+property=["\']og:url["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
+    if not m:
+        m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:url["\']', html, re.IGNORECASE)
+    if m:
+        url = m.group(1).strip()
+        if url.startswith("http") and "google.com" not in url:
+            return url
+    return ""
+
+
+def _is_google_news_page(html: str) -> bool:
+    """取得した HTML が Google News リダイレクトページかどうかを判定する。"""
+    indicators = [
+        "世界中のニュース提供元から集約",
+        "news.google.com",
+        "Google ニュース",
+    ]
+    snippet = html[:3000]
+    return sum(1 for ind in indicators if ind in snippet) >= 2
+
+
+
     """Next.js の __NEXT_DATA__ JSON から記事本文を抽出する。
     Yahoo News Japan など Next.js ベースのサイト向け。"""
     m = re.search(
@@ -474,6 +518,17 @@ def fetch_news() -> list[dict]:
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
+            # Google News リダイレクトページを検出→実際の記事 URL に再フェッチ
+            if _is_google_news_page(html):
+                real_url = _resolve_google_news_url(html)
+                if real_url:
+                    print(f"  [GNews] リダイレクト先を検出: {real_url[:80]}")
+                    raw2 = http_get_article(real_url)
+                    if raw2:
+                        html = raw2.decode("utf-8", errors="replace")
+                        link = real_url  # OG画像取得などでも実URLを使う
+                else:
+                    print(f"  [GNews] リダイレクト先の URL 抽出失敗。元 HTML で続行。", file=sys.stderr)
             # __NEXT_DATA__ (Next.js SSR) を script タグ除去前に抽出
             body = _extract_next_data_body(html)
             _method = "__NEXT_DATA__" if len(body.strip()) >= 100 else ""
