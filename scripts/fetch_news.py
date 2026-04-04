@@ -360,10 +360,13 @@ def _parse_rss_item(item: ET.Element) -> dict:
             if href.startswith("http") and "google.com" not in href:
                 source_url = href
                 break
-    # ===== DEBUG RSS =====
-    print(f"  [RSS] raw_link={link[:80]!r}")
-    print(f"  [RSS] desc={summary[:200]!r}")
-    print(f"  [RSS] source_url={source_url[:80]!r}")
+    # ===== DEBUG RSS ===== （最初の10件だけ表示）
+    if not hasattr(_parse_rss_item, "_debug_count"):
+        _parse_rss_item._debug_count = 0
+    if _parse_rss_item._debug_count < 10:
+        _parse_rss_item._debug_count += 1
+        print(f"  [RSS#{_parse_rss_item._debug_count}] raw_link={link!r}")
+        print(f"  [RSS#{_parse_rss_item._debug_count}] desc={summary!r}")
     # =====================
     if source_url:
         link = source_url  # 実際の記事 URL を優先
