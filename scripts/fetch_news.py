@@ -527,6 +527,7 @@ def fetch_news() -> list[dict]:
                 full_body = (og_desc + " " + full_body).strip()[:2000]
             if len(full_body) > len(summary):
                 summary = full_body
+            print(f"  [本文] {len(summary)}文字: {summary[:80]!r}")
 
         pub_str = published_dt.isoformat() if published_dt else ""
         print(f"  取得: {title[:60]} [{pub_str[:19]}]")

@@ -158,12 +158,14 @@ def main() -> None:
 
     def generate_one(args):
         i, item = args
+        summary_text = item.get('summary', '')
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
+        print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
         prompt = (
             f"{SYSTEM_PROMPT}\n\n"
             f"【ニュース】\n"
             f"タイトル: {item['title']}\n"
-            f"内容: {item.get('summary', '')[:1500]}"
+            f"内容: {summary_text[:1500]}"
         )
         for key, model_name in key_model_pairs:
             key_label = f"***{key[-4:]}"
