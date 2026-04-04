@@ -101,15 +101,18 @@ def load_posted_ids() -> set:
 def _decode_google_news_url(google_url: str) -> str:
     """Google News RSS リンクに含まれる Base64 エンコードされた実記事 URL を取得する。
     HTTP リクエスト不要。例: https://news.google.com/rss/articles/CBMiSmh0dHBz..."""
-    m = re.search(r'/articles/([A-Za-z0-9_=-]+)', google_url)
+    # /articles/ または /read/ 形式に対応
+    m = re.search(r'/(?:articles|read)/([A-Za-z0-9_-]+)', google_url)
     if not m:
+        print(f"  [GNews] URLデコード: パターン不一致 {google_url[:80]!r}", file=sys.stderr)
         return ""
     encoded = m.group(1)
     # URL-safe base64 のパディング調整
     padded = encoded + "=" * (-len(encoded) % 4)
     try:
         data = base64.urlsafe_b64decode(padded)
-    except Exception:
+    except Exception as e:
+        print(f"  [GNews] base64デコード失敗: {e}", file=sys.stderr)
         return ""
     # protobuf バイナリ内の https:// で始まる文字列を正規表現で抽出
     try:
@@ -121,38 +124,48 @@ def _decode_google_news_url(google_url: str) -> str:
         url = url_m.group(0).rstrip(".,;)")
         if "google.com" not in url:
             return url
+    print(f"  [GNews] base64デコード成功だがURL抽出失敗。decoded={text[:60]!r}", file=sys.stderr)
     return ""
 
 
 def _resolve_google_news_url(html: str) -> str:
     """Google News ページから実際の記事 URL を抽出する。
     Google News の RSS リンクは JS リダイレクト経由のため urlopen が辿れない。"""
+    _EXCLUDE = re.compile(r'google\.com|gstatic\.com|googleapis\.com|youtube\.com', re.I)
+
     # 1. data-n-au 属性（Google News の記事カードに含まれる）
     m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
     if m:
         url = m.group(1).strip()
-        if url.startswith("http") and "google.com" not in url:
+        if url.startswith("http") and not _EXCLUDE.search(url):
             return url
-    # 2. <meta http-equiv="refresh" content="0;url=...">
+    # 2. JSON の "url" / "articleUrl" フィールド（script タグ内の埋め込み JSON）
+    for url_m in re.finditer(
+        r'"(?:url|articleUrl|targetUrl|originalUrl)"\s*:\s*"(https?://[^"]{10,})"', html
+    ):
+        url = url_m.group(1)
+        if not _EXCLUDE.search(url):
+            return url
+    # 3. <meta http-equiv="refresh" content="0;url=...">
     m = re.search(
         r'<meta[^>]+http-equiv=["\']refresh["\'][^>]+content=["\'][^;]*;\s*url=([^"\'>\s]+)',
         html, re.IGNORECASE,
     )
     if m:
         return m.group(1).strip()
-    # 3. window.location.href = "..."（script タグ除去前の生 HTML に対して使う）
+    # 4. window.location.href = "..."（script タグ除去前の生 HTML に対して使う）
     m = re.search(r'window\.location(?:\.href)?\s*=\s*["\']([^"\']+)["\']', html)
     if m:
         url = m.group(1).strip()
-        if url.startswith("http") and "google.com" not in url:
+        if url.startswith("http") and not _EXCLUDE.search(url):
             return url
-    # 4. og:url が google.com 以外のドメイン
+    # 5. og:url が非 google ドメイン
     m = re.search(r'<meta[^>]+property=["\']og:url["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
     if not m:
         m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:url["\']', html, re.IGNORECASE)
     if m:
         url = m.group(1).strip()
-        if url.startswith("http") and "google.com" not in url:
+        if url.startswith("http") and not _EXCLUDE.search(url):
             return url
     return ""
 
