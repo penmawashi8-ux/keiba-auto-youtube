@@ -1,8 +1,9 @@
-date: 2026-04-04T04:56:47.278609Z
+date: 2026-04-04T05:57:43.234304Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OrsQudtbJJg title=中山芝1600mのコース解析【2026年4月4日中山11R】 - 競馬ラボ
+OK project=1 video_id=dL_4-IUw3C0 title=【ダービー卿ＣＴ】超難解レース！？重賞１番人気が過去最高オッズの可能性も ６・５
+OK project=1 video_id=Tg4vVAwE50o title=【ダービー卿ＣＴ】超難解レース！？重賞１番人気が過去最高オッズの可能性も　６・５
