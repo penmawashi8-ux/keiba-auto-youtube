@@ -141,7 +141,7 @@ def _is_google_news_page(html: str) -> bool:
     return sum(1 for ind in indicators if ind in snippet) >= 2
 
 
-
+def _extract_next_data_body(html: str) -> str:
     """Next.js の __NEXT_DATA__ JSON から記事本文を抽出する。
     Yahoo News Japan など Next.js ベースのサイト向け。"""
     m = re.search(
