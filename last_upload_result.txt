@@ -1,8 +1,8 @@
-date: 2026-04-04T10:55:02.733953Z
+date: 2026-04-04T11:30:23.893364Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4dB66dIZV1U title=【川崎記念】アウトレンジなどJRA馬は6頭 - 競馬のおはなし
+OK project=1 video_id=ttjFXZICoP8 title=和田竜二元騎手、4月26日京都で引退式…テイエムオペラオーと駆けた名手に別れ（競
