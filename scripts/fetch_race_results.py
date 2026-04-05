@@ -7,6 +7,8 @@ keiba_results.yml ワークフローから呼び出す専用スクリプト。
 import json
 import re
 import sys
+import urllib.parse
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -27,13 +29,22 @@ from fetch_news import (  # noqa: E402
 # 設定
 # ---------------------------------------------------------------------------
 
-RSS_FEEDS = [
-    # 重賞結果に特化したクエリ
+# フォールバック用汎用フィード（レース名が取得できなかった場合に使用）
+_FALLBACK_RSS_FEEDS = [
     "https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%B5%90%E6%9E%9C+%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+G1+%E7%B5%90%E6%9E%9C&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E9%87%8D%E8%B3%9E+%E5%84%AA%E5%8B%9D&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+1%E7%9D%80+%E9%87%8D%E8%B3%9E&hl=ja&gl=JP&ceid=JP:ja",
 ]
+
+# JST タイムゾーン
+_JST = timezone(timedelta(hours=9))
+
+# 重賞レース名のパターン: 日本語・英字に続いて典型的な語尾
+_GRADE_RACE_PATTERN = re.compile(
+    r'[A-Za-z\u30A0-\u30FF\u4E00-\u9FFF\u3040-\u309F\uFF00-\uFFEF]{2,}'
+    r'(?:ステークス|カップ|賞|記念|ハンデキャップ|ハンデ|オークス|ダービー|リレー|マイル)',
+)
 
 NEWS_JSON = "news.json"
 POSTED_IDS_FILE = "posted_ids.txt"
@@ -52,6 +63,63 @@ _RESULT_TITLE_KEYWORDS = [
     "結果", "優勝", "1着", "制した", "制覇", "勝利", "V ", "初V", "連覇",
     "レコード", "完勝", "快勝", "逃げ切り", "差し切り",
 ]
+
+
+def discover_todays_races() -> list[str]:
+    """今日の重賞レース名を Google News から取得する。
+    「今日の重賞」に関連する記事タイトルを複数検索し、
+    レース名らしい語句を頻度順に返す。
+    """
+    today = datetime.now(_JST)
+    date_str = f"{today.month}月{today.day}日"
+
+    discovery_queries = [
+        f"{date_str} 重賞 競馬",
+        "今日 重賞 競馬",
+        "本日 重賞 競馬",
+    ]
+
+    race_name_counts: Counter[str] = Counter()
+    for query in discovery_queries:
+        encoded = urllib.parse.quote(query)
+        url = f"https://news.google.com/rss/search?q={encoded}&hl=ja&gl=JP&ceid=JP:ja"
+        print(f"レース名探索クエリ: {query}")
+        raw = http_get(url)
+        if raw is None:
+            continue
+        entries = parse_feed(raw)
+        for entry in entries[:30]:
+            title = entry.get("title", "")
+            for match in _GRADE_RACE_PATTERN.findall(title):
+                if len(match) >= 3:
+                    race_name_counts[match] += 1
+
+    # 出現頻度の高い順に最大5レース名を返す
+    top_races = [name for name, _ in race_name_counts.most_common(5)]
+    print(f"検出された重賞レース名: {top_races}")
+    return top_races
+
+
+def build_race_feeds() -> list[str]:
+    """今日の重賞レース名を使って「[レース名] 結果」専用フィードを構築する。
+    レース名が取得できなければフォールバック用の汎用フィードを返す。
+    """
+    race_names = discover_todays_races()
+    feeds: list[str] = []
+
+    if race_names:
+        for name in race_names:
+            query = f"{name} 結果"
+            encoded = urllib.parse.quote(query)
+            feeds.append(
+                f"https://news.google.com/rss/search?q={encoded}&hl=ja&gl=JP&ceid=JP:ja"
+            )
+            print(f"動的フィード追加: {query}")
+    else:
+        print("レース名が取得できませんでした。フォールバック用フィードを使用します。")
+        feeds.extend(_FALLBACK_RSS_FEEDS)
+
+    return feeds
 
 
 def is_result_article(entry: dict) -> bool:
@@ -77,9 +145,11 @@ def fetch_race_results() -> list[dict]:
     now = datetime.now(timezone.utc)
     posted_ids = load_posted_ids()
 
+    rss_feeds = build_race_feeds()
+
     all_entries: list[dict] = []
     feed_errors = 0
-    for feed_url in RSS_FEEDS:
+    for feed_url in rss_feeds:
         print(f"フィード取得: {feed_url[:80]}")
         raw = http_get(feed_url)
         if raw is None:
@@ -89,7 +159,7 @@ def fetch_race_results() -> list[dict]:
         print(f"  有効エントリー: {len(entries)} 件")
         all_entries.extend(entries)
 
-    if feed_errors == len(RSS_FEEDS):
+    if feed_errors == len(rss_feeds):
         print("[エラー] 全フィードの取得に失敗しました。", file=sys.stderr)
         sys.exit(1)
 
