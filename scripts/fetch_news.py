@@ -19,9 +19,11 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 RSS_FEEDS = [
-    # --- 競馬専門サイト（直接RSS・記事URLが確実に取れる）---
-    "https://news.netkeiba.com/?pid=rss_list",
-    "https://uma-jin.net/news/feed",
+    # --- 競馬専門・スポーツ紙（直接RSS・記事URLが確実に取れる）---
+    "https://uma-jin.net/news/feed",                      # うまじん（0件なら[DEBUG]で内容確認）
+    "https://news.yahoo.co.jp/rss/topics/horse.xml",      # Yahoo!ニュース競馬
+    "https://race.sanspo.com/keiba/rss/",                 # サンスポ競馬
+    "https://www.nikkansports.com/keiba/rss/keiba-g-rss.xml",  # 日刊スポーツ競馬
     # --- Google News（フォールバック用・URLが取れない場合あり）---
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
@@ -556,7 +558,13 @@ def fetch_news() -> list[dict]:
         if not raw:
             feed_errors += 1
             continue
+        if len(raw) == 0:
+            print(f"  [警告] レスポンス0bytes。スキップ。", file=sys.stderr)
+            feed_errors += 1
+            continue
         entries = parse_feed(raw)
+        if not entries:
+            print(f"  [DEBUG] 0件フィードRAW先頭300bytes: {raw[:300]!r}", file=sys.stderr)
         print(f"  有効エントリー: {len(entries)} 件")
         all_entries.extend(entries)
 
