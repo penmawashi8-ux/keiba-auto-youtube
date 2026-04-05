@@ -1,8 +1,8 @@
-date: 2026-04-05T06:19:06.024849Z
+date: 2026-04-05T23:07:28.995268Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UuuDJLrM4dM title=【阪神アーバン競馬プレーバック】また圧勝！素質馬ディナンが金沢の名手に導かれ2連
+OK project=1 video_id=tpBELZrLxqM title=【大阪杯】ショウヘイは10着で快打ならず　友道康夫調教師「具合が良かったからなの
