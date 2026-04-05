@@ -131,14 +131,17 @@ def _decode_google_news_url(google_url: str) -> str:
 def _resolve_google_news_url(html: str) -> str:
     """Google News ページから実際の記事 URL を抽出する。
     Google News の RSS リンクは JS リダイレクト経由のため urlopen が辿れない。"""
-    _EXCLUDE = re.compile(r'google\.com|gstatic\.com|googleapis\.com|youtube\.com', re.I)
+    _EXCLUDE = re.compile(
+        r'google\.com|googleusercontent\.com|gstatic\.com|googleapis\.com|youtube\.com|goo\.gl',
+        re.I,
+    )
     # 既知ニュースサイトのパターン（優先マッチ用）
     _NEWS_PATTERN = re.compile(
         r'https?://(?:news\.yahoo\.co\.jp|www\.nikkansports\.com|www\.sponichi\.co\.jp'
         r'|www\.daily\.co\.jp|www\.hochi\.com|www\.tokyosports\.co\.jp'
         r'|p\.nikkei\.com|www\.nikkei\.com|mainichi\.jp|www\.yomiuri\.co\.jp'
         r'|www\.asahi\.com|www\.sankei\.com|www3\.nhk\.or\.jp'
-        r'|uma-jin\.net|netkeiba\.com|[^/]*keiba[^/]*)/[^\s"\'<>]{10,}',
+        r'|uma-jin\.net|netkeiba\.com|[^/\s]*keiba[^/\s]*)/[^\s"\'\\<>]{10,}',
         re.I,
     )
 
@@ -164,7 +167,7 @@ def _resolve_google_news_url(html: str) -> str:
     )
     if m:
         return m.group(1).strip()
-    # 4. window.location.href = "..."（script タグ除去前の生 HTML に対して使う）
+    # 4. window.location.href = "..."
     m = re.search(r'window\.location(?:\.href)?\s*=\s*["\']([^"\']+)["\']', html)
     if m:
         url = m.group(1).strip()
@@ -178,18 +181,21 @@ def _resolve_google_news_url(html: str) -> str:
         url = m.group(1).strip()
         if url.startswith("http") and not _EXCLUDE.search(url):
             return url
-    # 6. href / src 属性から既知ニュースサイトURLを抽出（最終手段）
+    # 6. 既知ニュースサイトURLをHTML全体（スクリプト含む）から抽出
     for url_m in _NEWS_PATTERN.finditer(html):
-        url = url_m.group(0).rstrip(".,;)\"'")
+        url = url_m.group(0).rstrip(".,;)\"'\\")
         if not _EXCLUDE.search(url):
             print(f"  [GNews resolve] news pattern fallback: {url[:80]}")
             return url
-    # 7. 非Googleの全https URLから最初のものを返す（最終最終手段）
-    for url_m in re.finditer(r'https://([^/"\'<>\s]{4,})/[^\s"\'<>]{10,}', html):
-        url = "https://" + url_m.group(1) + "/" + url_m.group(0).split("/", 3)[-1]
-        if not _EXCLUDE.search(url):
-            print(f"  [GNews resolve] generic fallback: {url[:80]}")
-            return url
+    # デバッグ：どんなURLが見えているか最初の10件を表示
+    found_urls = []
+    for url_m in re.finditer(r'https://[^/"\'<>\s\\]{4,}/[^\s"\'<>\\]{5,}', html):
+        u = url_m.group(0).rstrip(".,;)\"'\\")
+        if not _EXCLUDE.search(u) and u not in found_urls:
+            found_urls.append(u)
+        if len(found_urls) >= 10:
+            break
+    print(f"  [GNews resolve] 非Google URL候補: {found_urls}", file=sys.stderr)
     print(f"  [GNews resolve] 全パターン失敗", file=sys.stderr)
     return ""
 
