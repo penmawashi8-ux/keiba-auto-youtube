@@ -19,6 +19,10 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 RSS_FEEDS = [
+    # --- 競馬専門サイト（直接RSS・記事URLが確実に取れる）---
+    "https://news.netkeiba.com/?pid=rss_list",
+    "https://uma-jin.net/news/feed",
+    # --- Google News（フォールバック用・URLが取れない場合あり）---
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
     # 重賞・G1など情報量が多い記事が出やすいクエリ
@@ -619,7 +623,19 @@ def fetch_news() -> list[dict]:
                 print(f"  [GNews] URLデコード成功: {decoded[:80]}")
                 link = decoded
             else:
-                print(f"  [GNews] URLデコード失敗。フェッチ後にHTMLから抽出を試みます。", file=sys.stderr)
+                print(f"  [GNews] URLデコード失敗。記事本文取得をスキップ（RSSサマリーのみ使用）", file=sys.stderr)
+                # Google News URL のままでは本文が取れないのでスキップ
+                pub_str = published_dt.isoformat() if published_dt else ""
+                print(f"  取得: {title[:60]} [{pub_str[:19]}]")
+                news_items.append({
+                    "id": entry_id,
+                    "title": title,
+                    "url": link,
+                    "summary": summary,
+                    "image_url": image_url,
+                    "published_date": pub_str,
+                })
+                continue
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
@@ -635,7 +651,18 @@ def fetch_news() -> list[dict]:
                         html = raw2.decode("utf-8", errors="replace")
                         link = real_url
                 else:
-                    print(f"  [GNews] 実URL抽出失敗。元HTMLで続行。", file=sys.stderr)
+                    print(f"  [GNews] 実URL抽出失敗。記事本文取得をスキップ（RSSサマリーのみ使用）", file=sys.stderr)
+                    pub_str = published_dt.isoformat() if published_dt else ""
+                    print(f"  取得: {title[:60]} [{pub_str[:19]}]")
+                    news_items.append({
+                        "id": entry_id,
+                        "title": title,
+                        "url": link,
+                        "summary": summary,
+                        "image_url": image_url,
+                        "published_date": pub_str,
+                    })
+                    continue
             # __NEXT_DATA__ (Next.js SSR) を script タグ除去前に抽出
             body = _extract_next_data_body(html)
             _method = "__NEXT_DATA__" if len(body.strip()) >= 100 else ""
