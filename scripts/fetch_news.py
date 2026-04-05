@@ -593,6 +593,8 @@ def fetch_news() -> list[dict]:
         raw_html = http_get_article(link)
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
+            print(f"  [DEBUG] フェッチURL: {link[:100]}")
+            print(f"  [DEBUG] HTML長: {len(html)}文字 / 先頭200: {html[:200]!r}")
             # デコード失敗などで Google News ページが返ってきた場合は HTML から URL を抽出して再フェッチ
             if _is_google_news_page(link, html):
                 real_url = _resolve_google_news_url(html)
