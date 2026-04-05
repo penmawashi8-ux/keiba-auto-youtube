@@ -1,9 +1,9 @@
-date: 2026-04-04T23:47:11.913784Z
+date: 2026-04-05T05:15:45.474377Z
 projects_loaded: 1
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Thn-lK697Nw title="川を活かしたコース"はなぜ造られた？「浦和競馬場」を貫く川の歴史を暗渠道から紐
-OK project=1 video_id=FLO9ZAfygJI title=【競馬・大阪杯】東大卒・篠原梨菜アナウンサーがデータで予想！本命メはイショウタバ
+OK project=1 video_id=cjbFlcBr-9w title=【阪神アーバン競馬プレーバック】武豊が、ルメールが来た！兵庫女王盃を制した名手の
+OK project=1 video_id=u-OJNJhUIQY title=【阪神アーバン競馬プレーバック】武豊が、ルメールが来た！兵庫女王盃を制した名手の
