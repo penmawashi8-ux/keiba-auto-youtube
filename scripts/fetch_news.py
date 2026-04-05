@@ -132,12 +132,22 @@ def _resolve_google_news_url(html: str) -> str:
     """Google News ページから実際の記事 URL を抽出する。
     Google News の RSS リンクは JS リダイレクト経由のため urlopen が辿れない。"""
     _EXCLUDE = re.compile(r'google\.com|gstatic\.com|googleapis\.com|youtube\.com', re.I)
+    # 既知ニュースサイトのパターン（優先マッチ用）
+    _NEWS_PATTERN = re.compile(
+        r'https?://(?:news\.yahoo\.co\.jp|www\.nikkansports\.com|www\.sponichi\.co\.jp'
+        r'|www\.daily\.co\.jp|www\.hochi\.com|www\.tokyosports\.co\.jp'
+        r'|p\.nikkei\.com|www\.nikkei\.com|mainichi\.jp|www\.yomiuri\.co\.jp'
+        r'|www\.asahi\.com|www\.sankei\.com|www3\.nhk\.or\.jp'
+        r'|uma-jin\.net|netkeiba\.com|[^/]*keiba[^/]*)/[^\s"\'<>]{10,}',
+        re.I,
+    )
 
     # 1. data-n-au 属性（Google News の記事カードに含まれる）
     m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
     if m:
         url = m.group(1).strip()
         if url.startswith("http") and not _EXCLUDE.search(url):
+            print(f"  [GNews resolve] data-n-au: {url[:80]}")
             return url
     # 2. JSON の "url" / "articleUrl" フィールド（script タグ内の埋め込み JSON）
     for url_m in re.finditer(
@@ -145,6 +155,7 @@ def _resolve_google_news_url(html: str) -> str:
     ):
         url = url_m.group(1)
         if not _EXCLUDE.search(url):
+            print(f"  [GNews resolve] JSON url field: {url[:80]}")
             return url
     # 3. <meta http-equiv="refresh" content="0;url=...">
     m = re.search(
@@ -167,6 +178,19 @@ def _resolve_google_news_url(html: str) -> str:
         url = m.group(1).strip()
         if url.startswith("http") and not _EXCLUDE.search(url):
             return url
+    # 6. href / src 属性から既知ニュースサイトURLを抽出（最終手段）
+    for url_m in _NEWS_PATTERN.finditer(html):
+        url = url_m.group(0).rstrip(".,;)\"'")
+        if not _EXCLUDE.search(url):
+            print(f"  [GNews resolve] news pattern fallback: {url[:80]}")
+            return url
+    # 7. 非Googleの全https URLから最初のものを返す（最終最終手段）
+    for url_m in re.finditer(r'https://([^/"\'<>\s]{4,})/[^\s"\'<>]{10,}', html):
+        url = "https://" + url_m.group(1) + "/" + url_m.group(0).split("/", 3)[-1]
+        if not _EXCLUDE.search(url):
+            print(f"  [GNews resolve] generic fallback: {url[:80]}")
+            return url
+    print(f"  [GNews resolve] 全パターン失敗", file=sys.stderr)
     return ""
 
 
@@ -609,6 +633,23 @@ def fetch_news() -> list[dict]:
             # __NEXT_DATA__ (Next.js SSR) を script タグ除去前に抽出
             body = _extract_next_data_body(html)
             _method = "__NEXT_DATA__" if len(body.strip()) >= 100 else ""
+            # JSON-LD (application/ld+json) から articleBody を抽出
+            if len(body.strip()) < 100:
+                for jld_m in re.finditer(
+                    r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                    html, re.DOTALL | re.IGNORECASE,
+                ):
+                    try:
+                        jld = json.loads(jld_m.group(1))
+                        if isinstance(jld, list):
+                            jld = next((x for x in jld if isinstance(x, dict)), {})
+                        ab = jld.get("articleBody") or jld.get("description") or ""
+                        if isinstance(ab, str) and len(ab) >= 100:
+                            body = ab
+                            _method = "JSON-LD"
+                            break
+                    except (json.JSONDecodeError, ValueError):
+                        continue
             # <script> / <style> タグとその中身を除去（JSコードの混入を防ぐ）
             html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE)
             html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.IGNORECASE)
@@ -616,7 +657,7 @@ def fetch_news() -> list[dict]:
                 og_img = extract_og_image(link, html)
                 if og_img and not re.search(r"google\.com|googleusercontent\.com|gstatic\.com", og_img, re.I):
                     image_url = og_img
-            # 本文抽出: __NEXT_DATA__ → <article> → <main> → class/idに"article/content/body/entry"を含む<div> → <p>タグ → og:description → 全体
+            # 本文抽出: JSON-LD/__NEXT_DATA__ → <article> → <main> → class/idに"article/content/body/entry"を含む<div> → <p>タグ → og:description → 全体
             # 1. <article> タグ
             if len(body.strip()) < 100:
                 m = re.search(r"<article[^>]*>(.*?)</article>", html, re.DOTALL | re.IGNORECASE)
@@ -631,16 +672,19 @@ def fetch_news() -> list[dict]:
                     body = re.sub(r"<[^>]+>", " ", m.group(1))
                     if len(body.strip()) >= 100:
                         _method = "<main>"
-            # 3. class/id に article/content/body/entry/text を含む <div>
+            # 3. class/id に article/content/body/entry/text/paragraph を含む <div>（複数マッチして最長を採用）
             if len(body.strip()) < 100:
-                m = re.search(
-                    r'<div[^>]+(?:class|id)=["\'][^"\']*(?:article|content|body|entry|text)[^"\']*["\'][^>]*>(.*?)</div>',
+                best_div = ""
+                for div_m in re.finditer(
+                    r'<div[^>]+(?:class|id)=["\'][^"\']*(?:article|content|body|entry|text|paragraph|story)[^"\']*["\'][^>]*>(.*?)</div>',
                     html, re.DOTALL | re.IGNORECASE,
-                )
-                if m:
-                    body = re.sub(r"<[^>]+>", " ", m.group(1))
-                    if len(body.strip()) >= 100:
-                        _method = "<div.article>"
+                ):
+                    candidate = re.sub(r"<[^>]+>", " ", div_m.group(1)).strip()
+                    if len(candidate) > len(best_div):
+                        best_div = candidate
+                if len(best_div) >= 100:
+                    body = best_div
+                    _method = "<div.article>"
             # 4. <p> タグを全部結合
             if len(body.strip()) < 100:
                 paras = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL | re.IGNORECASE)
