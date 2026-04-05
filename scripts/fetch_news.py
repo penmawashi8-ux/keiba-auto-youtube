@@ -662,15 +662,16 @@ def fetch_news() -> list[dict]:
             if len(body.strip()) < 100:
                 body = re.sub(r"<[^>]+>", " ", html)
                 _method = "全体HTML"
-            full_body = re.sub(r"\s+", " ", body).strip()[:2000]
-            if og_desc and og_desc not in full_body:
-                full_body = (og_desc + " " + full_body).strip()[:2000]
+            full_body_raw = re.sub(r"\s+", " ", body).strip()
+            if og_desc and og_desc not in full_body_raw:
+                full_body_raw = (og_desc + " " + full_body_raw).strip()
+            full_body = full_body_raw[:2000]
             if len(full_body) > len(summary):
                 summary = full_body
             # ===== DEBUG LOG（原因調査用・後で削除） =====
             print(f"  [DEBUG] RSS元サマリー({len(rss_summary)}文字): {rss_summary[:100]!r}")
             print(f"  [DEBUG] 抽出方法: {_method or '不明'} / og:desc({len(og_desc)}文字)")
-            print(f"  [DEBUG] 最終本文({len(summary)}文字):\n{summary}")
+            print(f"  [DEBUG] 最終本文全文({len(full_body_raw)}文字):\n{full_body_raw}")
             print(f"  [DEBUG] ---END---")
 
         pub_str = published_dt.isoformat() if published_dt else ""
