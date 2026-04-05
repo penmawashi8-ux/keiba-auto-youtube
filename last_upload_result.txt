@@ -1,8 +1,9 @@
-date: 2026-04-05T23:07:28.995268Z
+date: 2026-04-05T23:43:46.025464Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tpBELZrLxqM title=【大阪杯】ショウヘイは10着で快打ならず　友道康夫調教師「具合が良かったからなの
+OK project=1 video_id=LlP6L_JXPbk title=【桜花賞展望】2歳女王スターアニスが主軸 他馬も差がなく見どころ十分の一戦 - 
+OK project=1 video_id=-VSCBiQJXA0 title=【桜花賞】フェスティバルヒル屈指の決め脚 前走で見せた「高い能力」骨折休養明けで
