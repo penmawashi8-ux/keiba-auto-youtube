@@ -139,67 +139,67 @@ def _resolve_google_news_url(html: str) -> str:
         r'google\.com|googleusercontent\.com|gstatic\.com|googleapis\.com|youtube\.com|goo\.gl',
         re.I,
     )
-    # 既知ニュースサイトのパターン（優先マッチ用）
-    _NEWS_PATTERN = re.compile(
-        r'https?://(?:news\.yahoo\.co\.jp|www\.nikkansports\.com|www\.sponichi\.co\.jp'
-        r'|www\.daily\.co\.jp|www\.hochi\.com|www\.tokyosports\.co\.jp'
-        r'|p\.nikkei\.com|www\.nikkei\.com|mainichi\.jp|www\.yomiuri\.co\.jp'
-        r'|www\.asahi\.com|www\.sankei\.com|www3\.nhk\.or\.jp'
-        r'|uma-jin\.net|netkeiba\.com|[^/\s]*keiba[^/\s]*)/[^\s"\'\\<>]{10,}',
-        re.I,
-    )
 
-    # 1. data-n-au 属性（Google News の記事カードに含まれる）
+    def _clean(url: str) -> str:
+        return url.replace(r'\/', '/').replace(r'\\.', '.').rstrip(".,;)\"'\\")
+
+    # 1. data-n-au 属性
     m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
     if m:
-        url = m.group(1).strip()
+        url = _clean(m.group(1))
         if url.startswith("http") and not _EXCLUDE.search(url):
             print(f"  [GNews resolve] data-n-au: {url[:80]}")
             return url
-    # 2. JSON の "url" / "articleUrl" フィールド（script タグ内の埋め込み JSON）
+    # 2. JSON の "url" / "articleUrl" フィールド（通常形式 + エスケープ形式）
     for url_m in re.finditer(
-        r'"(?:url|articleUrl|targetUrl|originalUrl)"\s*:\s*"(https?://[^"]{10,})"', html
+        r'"(?:url|articleUrl|targetUrl|originalUrl|sourceUrl)"\s*:\s*"((?:https?:|https?:\\\/)(?:\\/|/)[^"]{10,})"',
+        html,
     ):
-        url = url_m.group(1)
+        url = _clean(url_m.group(1))
         if not _EXCLUDE.search(url):
             print(f"  [GNews resolve] JSON url field: {url[:80]}")
             return url
-    # 3. <meta http-equiv="refresh" content="0;url=...">
+    # 3. meta refresh
     m = re.search(
         r'<meta[^>]+http-equiv=["\']refresh["\'][^>]+content=["\'][^;]*;\s*url=([^"\'>\s]+)',
         html, re.IGNORECASE,
     )
     if m:
         return m.group(1).strip()
-    # 4. window.location.href = "..."
+    # 4. window.location
     m = re.search(r'window\.location(?:\.href)?\s*=\s*["\']([^"\']+)["\']', html)
     if m:
-        url = m.group(1).strip()
+        url = _clean(m.group(1))
         if url.startswith("http") and not _EXCLUDE.search(url):
             return url
-    # 5. og:url が非 google ドメイン
-    m = re.search(r'<meta[^>]+property=["\']og:url["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
-    if not m:
-        m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:url["\']', html, re.IGNORECASE)
-    if m:
-        url = m.group(1).strip()
-        if url.startswith("http") and not _EXCLUDE.search(url):
-            return url
-    # 6. 既知ニュースサイトURLをHTML全体（スクリプト含む）から抽出
-    for url_m in _NEWS_PATTERN.finditer(html):
-        url = url_m.group(0).rstrip(".,;)\"'\\")
-        if not _EXCLUDE.search(url):
-            print(f"  [GNews resolve] news pattern fallback: {url[:80]}")
-            return url
-    # デバッグ：どんなURLが見えているか最初の10件を表示
-    found_urls = []
-    for url_m in re.finditer(r'https://[^/"\'<>\s\\]{4,}/[^\s"\'<>\\]{5,}', html):
-        u = url_m.group(0).rstrip(".,;)\"'\\")
-        if not _EXCLUDE.search(u) and u not in found_urls:
-            found_urls.append(u)
-        if len(found_urls) >= 10:
-            break
-    print(f"  [GNews resolve] 非Google URL候補: {found_urls}", file=sys.stderr)
+    # 5. og:url
+    for pat in [
+        r'<meta[^>]+property=["\']og:url["\'][^>]+content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:url["\']',
+    ]:
+        m = re.search(pat, html, re.IGNORECASE)
+        if m:
+            url = _clean(m.group(1))
+            if url.startswith("http") and not _EXCLUDE.search(url):
+                return url
+    # 6. 既知ニュースドメインのURL（通常形式 + \/エスケープ形式 の両方）
+    _NEWS_DOMAINS = (
+        r'news\.yahoo\.co\.jp|www\.nikkansports\.com|www\.sponichi\.co\.jp'
+        r'|www\.daily\.co\.jp|www\.hochi\.com|www\.tokyosports\.co\.jp'
+        r'|www\.nikkei\.com|mainichi\.jp|www\.yomiuri\.co\.jp'
+        r'|www\.asahi\.com|www\.sankei\.com|www3\.nhk\.or\.jp'
+        r'|uma-jin\.net|news\.netkeiba\.com|race\.sanspo\.com'
+    )
+    _news_domains_escaped = _NEWS_DOMAINS.replace(".", "\\.")
+    for pat in [
+        rf'https?://(?:{_NEWS_DOMAINS})/[^\s"\'<>\\]{{10,}}',             # 通常
+        rf'https?:\\/\\/(?:{_news_domains_escaped})\\/[^\s"\'<>]{{10,}}', # \/エスケープ
+    ]:
+        for url_m in re.finditer(pat, html, re.IGNORECASE):
+            url = _clean(url_m.group(0))
+            if not _EXCLUDE.search(url):
+                print(f"  [GNews resolve] news domain fallback: {url[:80]}")
+                return url
     print(f"  [GNews resolve] 全パターン失敗", file=sys.stderr)
     return ""
 
@@ -364,7 +364,14 @@ def parse_feed(raw: bytes) -> list[dict]:
         for entry in root.findall(".//{http://www.w3.org/2005/Atom}entry"):
             entries.append(_parse_atom_entry(entry))
 
-    return [e for e in entries if e.get("title") and e.get("link")]
+    valid = [e for e in entries if e.get("title") and e.get("link")]
+    if not valid and entries:
+        print(f"  [警告] エントリー{len(entries)}件あるがtitle/linkが空。root.tag={root.tag!r}", file=sys.stderr)
+        if entries:
+            print(f"  [警告] 先頭エントリー: {entries[0]}", file=sys.stderr)
+    elif not valid and not entries:
+        print(f"  [警告] エントリー0件。root.tag={root.tag!r} children={[c.tag for c in list(root)[:5]]}", file=sys.stderr)
+    return valid
 
 
 def _localname(tag: str) -> str:
