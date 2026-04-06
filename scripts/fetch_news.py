@@ -7,16 +7,14 @@
 
 import base64
 import email.utils
-import gzip
 import json
 import re
 import sys
-import zlib
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.error import URLError
 from urllib.parse import urlparse
-from urllib.request import Request, urlopen
+
+import requests as _requests
 
 RSS_FEEDS = [
     # --- 競馬専門・スポーツ紙（直接RSS・記事URLが確実に取れる）---
@@ -255,45 +253,34 @@ def _extract_next_data_body(html: str) -> str:
     return re.sub(r"<[^>]+>", " ", best)  # HTML タグが混じっている場合も除去
 
 
+def _make_session() -> "_requests.Session":
+    """共通ヘッダーを設定した requests.Session を返す。"""
+    s = _requests.Session()
+    s.headers.update(HEADERS)
+    return s
+
+
 def http_get(url: str, timeout: int = 20) -> bytes | None:
     try:
-        req = Request(url, headers=HEADERS)
-        with urlopen(req, timeout=timeout) as resp:
-            data = resp.read()
-            encoding = resp.headers.get("Content-Encoding", "")
-            if encoding == "gzip":
-                data = gzip.decompress(data)
-            print(f"  [HTTP] {resp.status} {len(data)} bytes")
-            return data
-    except URLError as e:
-        print(f"  [警告] HTTP取得失敗 ({url[:60]}): {e}", file=sys.stderr)
+        resp = _make_session().get(url, timeout=timeout, allow_redirects=True)
+        print(f"  [HTTP] {resp.status_code} {len(resp.content)} bytes")
+        resp.raise_for_status()
+        return resp.content
     except Exception as e:
-        print(f"  [警告] 取得エラー ({url[:60]}): {e}", file=sys.stderr)
+        print(f"  [警告] HTTP取得失敗 ({url[:60]}): {e}", file=sys.stderr)
     return None
 
 
-def _decompress(data: bytes, encoding: str) -> bytes:
-    """Content-Encoding に応じてデータを展開する。Brotli は非対応のため gzip/deflate のみ。"""
-    if encoding == "gzip":
-        return gzip.decompress(data)
-    if encoding == "deflate":
-        try:
-            return zlib.decompress(data)
-        except zlib.error:
-            return zlib.decompress(data, -zlib.MAX_WBITS)
-    # br (Brotli) は標準ライブラリ非対応のため生データをそのまま返す
-    return data
-
-
 def http_get_article(url: str, timeout: int = 20) -> tuple[bytes | None, str]:
-    """記事本文取得用。(data, final_url) を返す。
-    final_url はリダイレクト後の最終URL。取得失敗時は (None, url)。"""
-    _article_headers_base = {
-        **HEADERS,
-        "Accept-Encoding": "gzip, deflate",  # br を除外して文字化けを防ぐ
-    }
-    attempts = [
-        {**_article_headers_base, "Referer": "https://news.google.com/"},
+    """記事本文取得用。(data, final_url) を返す。requests を使いセッション維持でリダイレクト追跡。"""
+    attempt_headers = [
+        # 1st: Desktop Chrome + Google News Referer
+        {
+            **HEADERS,
+            "Accept-Encoding": "gzip, deflate",
+            "Referer": "https://news.google.com/",
+        },
+        # 2nd: Mobile Safari
         {
             "User-Agent": (
                 "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
@@ -305,22 +292,22 @@ def http_get_article(url: str, timeout: int = 20) -> tuple[bytes | None, str]:
             "Referer": "https://news.google.com/",
         },
     ]
-    for i, headers in enumerate(attempts, 1):
+    for i, headers in enumerate(attempt_headers, 1):
         try:
-            req = Request(url, headers=headers)
-            with urlopen(req, timeout=timeout) as resp:
-                final_url = resp.geturl()
-                data = resp.read()
-                encoding = resp.headers.get("Content-Encoding", "")
-                data = _decompress(data, encoding)
-                print(f"  [HTTP] {resp.status} {len(data)} bytes (attempt {i})")
-                if final_url != url:
-                    print(f"  [HTTP] リダイレクト先: {final_url[:100]}")
-                return data, final_url
-        except URLError as e:
-            print(f"  [警告] HTTP取得失敗 attempt={i} ({url[:60]}): {e}", file=sys.stderr)
+            session = _requests.Session()
+            session.headers.update(headers)
+            resp = session.get(url, timeout=timeout, allow_redirects=True)
+            final_url = resp.url
+            data = resp.content
+            print(f"  [HTTP] {resp.status_code} {len(data)} bytes (attempt {i})")
+            if final_url != url:
+                print(f"  [HTTP] リダイレクト先: {final_url[:100]}")
+            if resp.status_code >= 400:
+                print(f"  [警告] HTTP {resp.status_code} (attempt {i})", file=sys.stderr)
+                continue
+            return data, final_url
         except Exception as e:
-            print(f"  [警告] 取得エラー attempt={i} ({url[:60]}): {e}", file=sys.stderr)
+            print(f"  [警告] HTTP取得失敗 attempt={i} ({url[:60]}): {e}", file=sys.stderr)
     return None, url
 
 
@@ -652,8 +639,31 @@ def fetch_news() -> list[dict]:
                     print(f"  [GNews] リダイレクト成功: {fetched_alt[:100]}")
                     link = fetched_alt
                     prefetched_html = raw_alt
+                elif raw_alt:
+                    # HTTP リダイレクトは失敗 → Google News HTML が返った可能性あり
+                    # HTML から実記事 URL を抽出して再試行する
+                    html_try = raw_alt.decode("utf-8", errors="replace")
+                    print(f"  [GNews] リダイレクトなし。HTMLから実URL抽出を試みる (html={len(html_try)}文字)")
+                    real_url = _resolve_google_news_url(html_try)
+                    if real_url:
+                        print(f"  [GNews] HTML解析で実URL検出: {real_url[:100]}")
+                        link = real_url
+                        # prefetched_html は None のままにして後段で再フェッチさせる
+                    else:
+                        print(f"  [GNews] HTML解析も失敗。RSSサマリーのみ使用", file=sys.stderr)
+                        pub_str = published_dt.isoformat() if published_dt else ""
+                        print(f"  取得: {title[:60]} [{pub_str[:19]}]")
+                        news_items.append({
+                            "id": entry_id,
+                            "title": title,
+                            "url": link,
+                            "summary": summary,
+                            "image_url": image_url,
+                            "published_date": pub_str,
+                        })
+                        continue
                 else:
-                    print(f"  [GNews] リダイレクト失敗。RSSサマリーのみ使用", file=sys.stderr)
+                    print(f"  [GNews] リダイレクト失敗（通信エラー）。RSSサマリーのみ使用", file=sys.stderr)
                     pub_str = published_dt.isoformat() if published_dt else ""
                     print(f"  取得: {title[:60]} [{pub_str[:19]}]")
                     news_items.append({

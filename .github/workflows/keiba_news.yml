@@ -46,7 +46,42 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Fetch latest horse racing news
-        run: python scripts/fetch_news.py
+        run: python scripts/fetch_news.py 2>&1 | tee /tmp/fetch_news.log; exit ${PIPESTATUS[0]}
+
+      - name: Post fetch_news debug log to Issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = "/tmp/fetch_news.log"
+          try:
+              with open(log_path) as f:
+                  lines = f.readlines()
+          except Exception:
+              lines = ["(ログなし)"]
+          # DEBUG行・要注目行だけ抽出（全行は長すぎる）
+          keep = [l for l in lines if any(k in l for k in ["[GNews]","[RSS#","[DEBUG]","[警告]","取得:","フィルタ","件を選択","エントリー","競馬関連","投稿済み"])]
+          log = "".join(keep[:120])
+          if not log.strip():
+              log = "".join(lines[:60])
+          title = "[DEBUG] fetch_news ログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Debug Issue作成: {data.get('html_url')}")
+          PYEOF
 
       - name: Check if news exists
         id: check_news
