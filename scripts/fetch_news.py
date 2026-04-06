@@ -7,6 +7,7 @@
 
 import base64
 import email.utils
+import html as _html_lib
 import json
 import re
 import sys
@@ -113,87 +114,179 @@ _GNEWS_COOKIES = {
 
 def _gnews_resolve(rss_url: str, timeout: int = 12) -> str:
     """Google News RSS URL（/rss/articles/TOKEN）を実記事 URL に解決する。
-    __i/rss/rd/articles/ 形式のみ試みる（/articles/ はGitHub ActionsのIPがCAPTCHA対象）。
-    レスポンスボディに URL が含まれる場合も検出する。"""
+
+    Step 1: __i/rss/rd/SHORT_TOKEN を fetch（desktop + mobile）
+      → 非 Google URL にリダイレクト成功 → 返す
+      → 失敗でも canonical からフルトークンを抽出して保存
+      → body から URL 抽出を試みる（_resolve_google_news_url）
+
+    Step 2: フルトークン（canonical から取得、SHORT_TOKEN と異なる場合）で
+            __i/rss/rd/FULL_TOKEN を再試行（desktop + mobile）
+
+    Step 3: rss/articles/TOKEN を直接 fetch（desktop + mobile）
+
+    全部失敗 → "" を返す
+    """
     m = re.search(r'/rss/articles/([A-Za-z0-9_-]+)', rss_url)
     if not m:
         return ""
-    token = m.group(1)
-
-    # /articles/ は GitHub Actions IP から CAPTCHA になるため試さない
-    rd_url = f"https://news.google.com/__i/rss/rd/articles/{token}"
+    short_token = m.group(1)
 
     _EXCLUDE = re.compile(r"google\.com|googleusercontent\.com|gstatic\.com", re.I)
 
-    for ua_label, ua in [
+    _UA_LIST = [
         ("desktop", HEADERS["User-Agent"]),
         ("mobile", (
             "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
             "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
         )),
-    ]:
-        try:
-            session = _requests.Session()
-            session.headers.update({
-                "User-Agent": ua,
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
-                "Accept-Encoding": "gzip, deflate",
-                "Referer": "https://news.google.com/",
-            })
-            session.cookies.update(_GNEWS_COOKIES)
+    ]
 
-            resp = session.get(rd_url, allow_redirects=True, timeout=timeout, stream=True)
-            final = resp.url
+    def _make_gnews_session(ua: str) -> "_requests.Session":
+        session = _requests.Session()
+        session.headers.update({
+            "User-Agent": ua,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+            "Accept-Encoding": "gzip, deflate",
+            "Referer": "https://news.google.com/",
+        })
+        session.cookies.update(_GNEWS_COOKIES)
+        return session
 
-            # HTTP リダイレクトで非 Google URL へ到達した場合
-            if not _EXCLUDE.search(final):
-                resp.close()
-                print(f"  [GNews] __i/rss/rd redirect成功 ({ua_label}): {final[:100]}")
-                return final
-
-            # canonical は <head> 先頭付近にあるため 2KB で十分
-            content = b""
-            for chunk in resp.iter_content(chunk_size=2048):
-                content += chunk
-                if len(content) >= 2048:
-                    break
-            resp.close()
-
-            body = content.decode("utf-8", errors="replace")
-            # canonical URL をログに残す（次の確認のため）
-            canon_m = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']', body, re.I)
-            canon_url = canon_m.group(1) if canon_m else "(not found)"
-            print(f"  [GNews] __i/rss/rd canonical ({ua_label}): {canon_url!r}")
-
-            # JSON {"redirect": "..."} 形式
+    def _try_rd_url(token: str, label: str) -> tuple[str, str, str]:
+        """__i/rss/rd/TOKEN を fetch し (result_url, canon_url, body) を返す。
+        result_url が空でない場合は成功。"""
+        rd_url = f"https://news.google.com/__i/rss/rd/articles/{token}"
+        for ua_label, ua in _UA_LIST:
             try:
-                import json as _json
-                data = _json.loads(body)
-                for key in ("redirect", "url", "articleUrl", "targetUrl"):
-                    val = data.get(key, "")
-                    if isinstance(val, str) and val.startswith("http") and not _EXCLUDE.search(val):
-                        print(f"  [GNews] JSON {key}: {val[:100]}")
-                        return val
-            except Exception:
-                pass
+                session = _make_gnews_session(ua)
+                resp = session.get(rd_url, allow_redirects=True, timeout=timeout, stream=True)
+                final = resp.url
 
-            # プレーンテキスト URL
-            if body.strip().startswith("http") and not _EXCLUDE.search(body.strip()):
-                url_plain = body.strip().split()[0]
-                print(f"  [GNews] plaintext URL: {url_plain[:100]}")
-                return url_plain
+                if not _EXCLUDE.search(final):
+                    resp.close()
+                    print(f"  [GNews] __i/rss/rd redirect成功 ({label}/{ua_label}): {final[:100]}")
+                    return final, "", ""
 
-            # HTML/JS から URL 抽出
-            real_url = _resolve_google_news_url(body)
-            if real_url:
-                print(f"  [GNews] body HTML抽出成功 ({ua_label}): {real_url[:100]}")
-                return real_url
+                # body を最大 16KB 読む（フルトークンが後半にある場合に対応）
+                content = b""
+                for chunk in resp.iter_content(chunk_size=4096):
+                    content += chunk
+                    if len(content) >= 16384:
+                        break
+                resp.close()
 
-            print(f"  [GNews] __i/rss/rd 失敗 ({ua_label}): status={resp.status_code} final={final[:60]!r}", file=sys.stderr)
+                body = content.decode("utf-8", errors="replace")
 
-        except Exception as e:
-            print(f"  [GNews] 例外 ({ua_label}): {e}", file=sys.stderr)
+                # canonical URL を2パターンで抽出
+                canon_url = ""
+                for cpat in [
+                    r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']',
+                    r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical["\']',
+                ]:
+                    cm = re.search(cpat, body, re.I)
+                    if cm:
+                        canon_url = cm.group(1)
+                        break
+                print(f"  [GNews] __i/rss/rd canonical ({label}/{ua_label}): {canon_url!r}")
+
+                # JSON {"redirect": "..."} 形式
+                try:
+                    import json as _json
+                    data = _json.loads(body)
+                    for key in ("redirect", "url", "articleUrl", "targetUrl"):
+                        val = data.get(key, "")
+                        if isinstance(val, str) and val.startswith("http") and not _EXCLUDE.search(val):
+                            print(f"  [GNews] JSON {key}: {val[:100]}")
+                            return val, canon_url, body
+                except Exception:
+                    pass
+
+                # プレーンテキスト URL
+                if body.strip().startswith("http") and not _EXCLUDE.search(body.strip()):
+                    url_plain = body.strip().split()[0]
+                    print(f"  [GNews] plaintext URL: {url_plain[:100]}")
+                    return url_plain, canon_url, body
+
+                # HTML/JS から URL 抽出
+                real_url = _resolve_google_news_url(body)
+                if real_url:
+                    print(f"  [GNews] body HTML抽出成功 ({label}/{ua_label}): {real_url[:100]}")
+                    return real_url, canon_url, body
+
+                print(
+                    f"  [GNews] __i/rss/rd 失敗 ({label}/{ua_label}): "
+                    f"status={resp.status_code} final={final[:60]!r}",
+                    file=sys.stderr,
+                )
+                return "", canon_url, body
+
+            except Exception as e:
+                print(f"  [GNews] 例外 ({label}/{ua_label}): {e}", file=sys.stderr)
+
+        return "", "", ""
+
+    def _try_articles_direct(token: str) -> str:
+        """rss/articles/TOKEN を直接 fetch して実記事 URL を返す。"""
+        articles_url = f"https://news.google.com/rss/articles/{token}"
+        for ua_label, ua in _UA_LIST:
+            try:
+                session = _make_gnews_session(ua)
+                resp = session.get(articles_url, allow_redirects=True, timeout=timeout, stream=True)
+                final = resp.url
+
+                if not _EXCLUDE.search(final):
+                    resp.close()
+                    print(f"  [GNews] rss/articles direct redirect成功 ({ua_label}): {final[:100]}")
+                    return final
+
+                content = b""
+                for chunk in resp.iter_content(chunk_size=4096):
+                    content += chunk
+                    if len(content) >= 16384:
+                        break
+                resp.close()
+
+                body = content.decode("utf-8", errors="replace")
+                real_url = _resolve_google_news_url(body)
+                if real_url:
+                    print(f"  [GNews] rss/articles direct HTML抽出成功 ({ua_label}): {real_url[:100]}")
+                    return real_url
+
+                print(
+                    f"  [GNews] rss/articles direct 失敗 ({ua_label}): "
+                    f"status={resp.status_code} final={final[:60]!r}",
+                    file=sys.stderr,
+                )
+            except Exception as e:
+                print(f"  [GNews] rss/articles direct 例外 ({ua_label}): {e}", file=sys.stderr)
+        return ""
+
+    # --- Step 1: SHORT_TOKEN で __i/rss/rd を試す ---
+    result, canon_url, body = _try_rd_url(short_token, "step1")
+    if result:
+        return result
+
+    # canonical から FULL TOKEN を抽出（30文字以上のトークンをフルトークンとみなす）
+    full_token = ""
+    if canon_url:
+        ft_m = re.search(r'/articles/([A-Za-z0-9_-]{30,})', canon_url)
+        if ft_m and ft_m.group(1) != short_token:
+            full_token = ft_m.group(1)
+            print(f"  [GNews] canonicalからフルトークン抽出: {full_token[:40]}...")
+
+    # --- Step 2: FULL TOKEN（SHORT と異なる場合）で __i/rss/rd を再試行 ---
+    if full_token:
+        result, _, _ = _try_rd_url(full_token, "step2")
+        if result:
+            return result
+
+    # --- Step 3: rss/articles/TOKEN を直接 fetch（short_token と full_token 両方試す）---
+    for tok in ([short_token] if not full_token else [full_token, short_token]):
+        result = _try_articles_direct(tok)
+        if result:
+            return result
 
     return ""
 
@@ -224,6 +317,22 @@ def _decode_google_news_url(google_url: str) -> str:
         url = url_m.group(0).rstrip(".,;)")
         if "google.com" not in url:
             return url
+    # 既存の URL 検索が失敗した場合: protobuf field 4 の内部トークン（AU_yqL で始まる）を探す
+    inner_m = re.search(r'(AU_yqL[A-Za-z0-9_-]{40,})', text)
+    if inner_m:
+        inner_b64 = inner_m.group(1)
+        padded_inner = inner_b64 + "=" * (-len(inner_b64) % 4)
+        try:
+            inner_data = base64.urlsafe_b64decode(padded_inner)
+            inner_text = inner_data.decode("latin-1", errors="replace")
+            url_m2 = re.search(r'https?://[a-zA-Z0-9._~:/?#\[\]@!$&\'()*+,;=%\-]+', inner_text)
+            if url_m2:
+                url2 = url_m2.group(0).rstrip(".,;)")
+                if "google.com" not in url2:
+                    print(f"  [GNews] 内部トークンデコード成功: {url2[:80]}")
+                    return url2
+        except Exception:
+            pass
     print(f"  [GNews] base64デコード成功だがURL抽出失敗。decoded={text[:60]!r}", file=sys.stderr)
     return ""
 
@@ -493,9 +602,11 @@ def _parse_rss_item(item: ET.Element) -> dict:
 
     # Google News RSS の <description> には実際の記事 URL が <a href="..."> として含まれる。
     # これが最も確実に実記事 URL を取得できる方法。
+    # HTML エンティティ（&amp; など）をアンエスケープしてから URL 抽出する。
     source_url = ""
-    if summary:
-        for href_m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\']', summary, re.IGNORECASE):
+    summary_for_url = _html_lib.unescape(summary) if summary else ""
+    if summary_for_url:
+        for href_m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\']', summary_for_url, re.IGNORECASE):
             href = href_m.group(1)
             if href.startswith("http") and "google.com" not in href:
                 source_url = href
