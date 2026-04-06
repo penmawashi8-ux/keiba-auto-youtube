@@ -628,7 +628,7 @@ def fetch_gnews_articles() -> list[dict]:
     環境変数 GNEWS_API_KEY が必要。無料枠: 100 req/日。"""
     api_key = os.environ.get("GNEWS_API_KEY", "")
     if not api_key:
-        print("  [GNews API] GNEWS_API_KEY 未設定。スキップ。", file=sys.stderr)
+        print("  [GNews] GNEWS_API_KEY 未設定。スキップ。", file=sys.stderr)
         return []
 
     all_articles: list[dict] = []
@@ -643,11 +643,11 @@ def fetch_gnews_articles() -> list[dict]:
         )
         try:
             resp = _requests.get(url, timeout=15)
-            print(f"  [GNews API] query={q!r} status={resp.status_code}")
+            print(f"  [GNews] query={q!r} status={resp.status_code}")
             resp.raise_for_status()
             data = resp.json()
         except Exception as e:
-            print(f"  [GNews API] 取得失敗 ({q!r}): {e}", file=sys.stderr)
+            print(f"  [GNews] 取得失敗 ({q!r}): {e}", file=sys.stderr)
             continue
 
         for art in data.get("articles", []):
@@ -671,7 +671,7 @@ def fetch_gnews_articles() -> list[dict]:
                 "published_date": pub_dt,
             })
 
-    print(f"  [GNews API] 計 {len(all_articles)} 件取得")
+    print(f"  [GNews] 計 {len(all_articles)} 件取得")
     return all_articles
 
 
@@ -811,7 +811,7 @@ def fetch_news() -> list[dict]:
     jra_entries = scrape_jra_news()
     all_entries.extend(jra_entries)
 
-    if feed_errors == len(RSS_FEEDS) and not jra_entries:
+    if feed_errors == len(RSS_FEEDS) and not jra_entries and not gnews_api_entries:
         print("[エラー] 全フィードの取得に失敗しました。", file=sys.stderr)
         sys.exit(1)
 
