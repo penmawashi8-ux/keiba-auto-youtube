@@ -285,9 +285,9 @@ def _decompress(data: bytes, encoding: str) -> bytes:
     return data
 
 
-def http_get_article(url: str, timeout: int = 20) -> bytes | None:
-    """記事本文取得用。Refererを付与し、失敗時はUser-Agentを変えてリトライ。
-    Accept-Encoding は gzip/deflate のみ指定（Brotli は展開不可のため除外）。"""
+def http_get_article(url: str, timeout: int = 20) -> tuple[bytes | None, str]:
+    """記事本文取得用。(data, final_url) を返す。
+    final_url はリダイレクト後の最終URL。取得失敗時は (None, url)。"""
     _article_headers_base = {
         **HEADERS,
         "Accept-Encoding": "gzip, deflate",  # br を除外して文字化けを防ぐ
@@ -309,16 +309,19 @@ def http_get_article(url: str, timeout: int = 20) -> bytes | None:
         try:
             req = Request(url, headers=headers)
             with urlopen(req, timeout=timeout) as resp:
+                final_url = resp.geturl()
                 data = resp.read()
                 encoding = resp.headers.get("Content-Encoding", "")
                 data = _decompress(data, encoding)
                 print(f"  [HTTP] {resp.status} {len(data)} bytes (attempt {i})")
-                return data
+                if final_url != url:
+                    print(f"  [HTTP] リダイレクト先: {final_url[:100]}")
+                return data, final_url
         except URLError as e:
             print(f"  [警告] HTTP取得失敗 attempt={i} ({url[:60]}): {e}", file=sys.stderr)
         except Exception as e:
             print(f"  [警告] 取得エラー attempt={i} ({url[:60]}): {e}", file=sys.stderr)
-    return None
+    return None, url
 
 
 def _parse_date(date_str: str) -> datetime | None:
@@ -631,42 +634,62 @@ def fetch_news() -> list[dict]:
 
         # 常に記事本文を取得してsummaryを充実させる（RSSのサマリーは短いため）
         rss_summary = summary  # RSS から取得した元サマリーを保持
-        # Google News RSS リンクの場合、Base64 デコードで実記事 URL を先に解決
+
+        # --- 実記事URLの解決 ---
+        prefetched_html: bytes | None = None
         if "news.google.com" in link:
             decoded = _decode_google_news_url(link)
             if decoded:
                 print(f"  [GNews] URLデコード成功: {decoded[:80]}")
                 link = decoded
             else:
-                print(f"  [GNews] URLデコード失敗。記事本文取得をスキップ（RSSサマリーのみ使用）", file=sys.stderr)
-                # Google News URL のままでは本文が取れないのでスキップ
-                pub_str = published_dt.isoformat() if published_dt else ""
-                print(f"  取得: {title[:60]} [{pub_str[:19]}]")
-                news_items.append({
-                    "id": entry_id,
-                    "title": title,
-                    "url": link,
-                    "summary": summary,
-                    "image_url": image_url,
-                    "published_date": pub_str,
-                })
-                continue
-        raw_html = http_get_article(link)
+                # /rss/articles/TOKEN → /articles/TOKEN でリダイレクト追跡を試みる
+                alt_link = link.replace("/rss/articles/", "/articles/")
+                alt_link = alt_link.split("?")[0]  # クエリパラメータ除去
+                print(f"  [GNews] /articles/ リダイレクト試行: {alt_link[:100]}")
+                raw_alt, fetched_alt = http_get_article(alt_link)
+                if raw_alt and "google.com" not in fetched_alt:
+                    print(f"  [GNews] リダイレクト成功: {fetched_alt[:100]}")
+                    link = fetched_alt
+                    prefetched_html = raw_alt
+                else:
+                    print(f"  [GNews] リダイレクト失敗。RSSサマリーのみ使用", file=sys.stderr)
+                    pub_str = published_dt.isoformat() if published_dt else ""
+                    print(f"  取得: {title[:60]} [{pub_str[:19]}]")
+                    news_items.append({
+                        "id": entry_id,
+                        "title": title,
+                        "url": link,
+                        "summary": summary,
+                        "image_url": image_url,
+                        "published_date": pub_str,
+                    })
+                    continue
+
+        # --- 記事HTMLの取得（prefetchedがあればそれを使う）---
+        if prefetched_html is not None:
+            raw_html, fetched_url = prefetched_html, link
+        else:
+            raw_html, fetched_url = http_get_article(link)
+            if raw_html and fetched_url != link and "google.com" not in fetched_url:
+                link = fetched_url
+                print(f"  [GNews] リダイレクトで実URL取得: {link[:100]}")
+
         if raw_html:
             html = raw_html.decode("utf-8", errors="replace")
-            print(f"  [DEBUG] フェッチURL: {link[:100]}")
-            print(f"  [DEBUG] HTML長: {len(html)}文字 / 先頭200: {html[:200]!r}")
-            # デコード失敗などで Google News ページが返ってきた場合は HTML から URL を抽出して再フェッチ
-            if _is_google_news_page(link, html):
+            print(f"  [DEBUG] フェッチURL: {fetched_url[:100]}")
+            print(f"  [DEBUG] HTML長: {len(html)}文字")
+            # Google News ページが返ってきた場合は HTML から URL を抽出して再フェッチ
+            if _is_google_news_page(fetched_url, html):
                 real_url = _resolve_google_news_url(html)
                 if real_url:
                     print(f"  [GNews] HTMLから実URLを検出: {real_url[:80]}")
-                    raw2 = http_get_article(real_url)
+                    raw2, fetched_url2 = http_get_article(real_url)
                     if raw2:
                         html = raw2.decode("utf-8", errors="replace")
-                        link = real_url
+                        link = fetched_url2 if "google.com" not in fetched_url2 else real_url
                 else:
-                    print(f"  [GNews] 実URL抽出失敗。記事本文取得をスキップ（RSSサマリーのみ使用）", file=sys.stderr)
+                    print(f"  [GNews] 実URL抽出失敗。RSSサマリーのみ使用", file=sys.stderr)
                     pub_str = published_dt.isoformat() if published_dt else ""
                     print(f"  取得: {title[:60]} [{pub_str[:19]}]")
                     news_items.append({
