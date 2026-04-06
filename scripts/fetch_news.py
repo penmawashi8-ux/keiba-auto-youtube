@@ -12,6 +12,7 @@ import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+import os
 from urllib.parse import urlparse
 
 import requests as _requests
@@ -612,6 +613,68 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
 # RSS 自動検出 & 代替スクレイパー
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# GNews API（実記事URL + 本文を取得）
+# ---------------------------------------------------------------------------
+
+_GNEWS_QUERIES = [
+    "競馬 レース 騎手",
+    "JRA 重賞 競走馬",
+]
+
+def fetch_gnews_articles() -> list[dict]:
+    """GNews API で競馬ニュースを取得する。
+    実記事 URL と content（本文冒頭）が得られる。
+    環境変数 GNEWS_API_KEY が必要。無料枠: 100 req/日。"""
+    api_key = os.environ.get("GNEWS_API_KEY", "")
+    if not api_key:
+        print("  [GNews API] GNEWS_API_KEY 未設定。スキップ。", file=sys.stderr)
+        return []
+
+    all_articles: list[dict] = []
+    seen_urls: set[str] = set()
+
+    for q in _GNEWS_QUERIES:
+        url = (
+            "https://gnews.io/api/v4/search"
+            f"?q={_requests.utils.quote(q)}"
+            "&lang=ja&country=jp&max=10"
+            f"&apikey={api_key}"
+        )
+        try:
+            resp = _requests.get(url, timeout=15)
+            print(f"  [GNews API] query={q!r} status={resp.status_code}")
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as e:
+            print(f"  [GNews API] 取得失敗 ({q!r}): {e}", file=sys.stderr)
+            continue
+
+        for art in data.get("articles", []):
+            article_url = art.get("url", "")
+            if not article_url or article_url in seen_urls:
+                continue
+            seen_urls.add(article_url)
+
+            # content > description の順で本文を選択
+            content = (art.get("content") or art.get("description") or "").strip()
+            # gnews の content は末尾に "[N chars]" が付くので除去
+            content = re.sub(r"\s*\[\d+ chars\]\s*$", "", content).strip()
+
+            pub_dt = _parse_date(art.get("publishedAt", ""))
+            all_articles.append({
+                "id": article_url,
+                "title": art.get("title", ""),
+                "link": article_url,
+                "summary": content,
+                "image_url": art.get("image", "") or "",
+                "published_date": pub_dt,
+            })
+
+    print(f"  [GNews API] 計 {len(all_articles)} 件取得")
+    return all_articles
+
+
 def _autodiscover_rss(html: str, base_url: str) -> str:
     """HTML 内の <link type="application/rss+xml"> からフィード URL を自動検出する。"""
     from urllib.parse import urljoin
@@ -708,7 +771,13 @@ def fetch_news() -> list[dict]:
     all_entries: list[dict] = []
     feed_errors = 0
 
+    # --- GNews API（最優先: 実記事URL + 本文が取得できる）---
+    print("=== GNews API ===")
+    gnews_api_entries = fetch_gnews_articles()
+    all_entries.extend(gnews_api_entries)
+
     # 全フィードからエントリーを収集
+    print("=== RSS フィード ===")
     for feed_url in RSS_FEEDS:
         print(f"フィード取得中: {feed_url[:80]}")
         raw = http_get(feed_url)

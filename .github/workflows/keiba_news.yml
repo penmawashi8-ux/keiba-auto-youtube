@@ -46,6 +46,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Fetch latest horse racing news
+        env:
+          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
         run: python scripts/fetch_news.py 2>&1 | tee /tmp/fetch_news.log; exit ${PIPESTATUS[0]}
 
       - name: Post fetch_news debug log to Issue
