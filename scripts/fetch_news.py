@@ -951,29 +951,46 @@ def fetch_news() -> list[dict]:
     print(f"競馬関連フィルタ後: {len(unposted)} 件")
 
     # 時間フィルタ: 24時間 → 48時間 → 最新3件（条件なし）
+    # 直接 URL 記事（Google News 経由でない）を優先し、候補プールを多めに確保する
+    def _is_direct(e: dict) -> bool:
+        return "news.google.com" not in e.get("link", "")
+
     selected: list[dict] = []
     for label, hours in [("24時間以内", 24), ("48時間以内", 48), ("条件なし（最新3件）", None)]:
         if hours is not None:
             cutoff = now - timedelta(hours=hours)
-            candidates = [
+            in_window = [
                 e for e in unposted
                 if e.get("published_date") and e["published_date"] >= cutoff
             ]
         else:
-            candidates = unposted[:MAX_NEWS * 5]
+            in_window = unposted[:MAX_NEWS * 20]
 
-        if candidates:
-            selected = candidates[:MAX_NEWS]
-            print(f"フィルタ「{label}」で {len(selected)} 件を選択")
-            break
+        if not in_window:
+            continue
+
+        # 直接 URL を先頭に、Google News を後ろに並べた候補プール
+        direct = [e for e in in_window if _is_direct(e)]
+        gnews  = [e for e in in_window if not _is_direct(e)]
+        pool   = (direct + gnews)[:MAX_NEWS * 10]
+        print(f"フィルタ「{label}」: 直接URL {len(direct)}件 / GoogleNews {len(gnews)}件 → 候補プール {len(pool)}件")
+        selected = pool
+        break
 
     if not selected:
         print("対象ニュースなし。")
         return []
 
     # OG画像・サマリーを補完してnews_itemsを構築
+    # Google News URL 解決失敗はスキップして次の候補へ。
+    # 全候補スキップ後も足りない場合は RSS サマリーのみのフォールバックで補完する。
     news_items: list[dict] = []
+    fallback_items: list[dict] = []   # URL 解決失敗した Google News 記事（RSS サマリーのみ）
+
     for entry in selected:
+        if len(news_items) >= MAX_NEWS:
+            break
+
         title = entry["title"]
         link = entry["link"]
         entry_id = entry["id"]
@@ -1002,10 +1019,9 @@ def fetch_news() -> list[dict]:
                 if resolved:
                     link = resolved
                 else:
-                    print(f"  [GNews] 全手段失敗。RSSサマリーのみ使用", file=sys.stderr)
+                    # 解決失敗 → フォールバックに退避してスキップ
                     pub_str = published_dt.isoformat() if published_dt else ""
-                    print(f"  取得: {title[:60]} [{pub_str[:19]}]")
-                    news_items.append({
+                    fallback_items.append({
                         "id": entry_id,
                         "title": title,
                         "url": link,
@@ -1013,6 +1029,7 @@ def fetch_news() -> list[dict]:
                         "image_url": image_url,
                         "published_date": pub_str,
                     })
+                    print(f"  [スキップ] URL解決失敗 → 次の候補へ ({len(fallback_items)}件スキップ済)", file=sys.stderr)
                     continue
 
         # --- 記事HTMLの取得（prefetchedがあればそれを使う）---
@@ -1151,6 +1168,14 @@ def fetch_news() -> list[dict]:
             "image_url": image_url,
             "published_date": pub_str,
         })
+
+    # 足りない分をフォールバック（RSS サマリーのみの Google News 記事）で補完
+    if len(news_items) < MAX_NEWS and fallback_items:
+        need = MAX_NEWS - len(news_items)
+        print(f"フォールバック補完: {need}件をRSSサマリーのみで追加 (スキップ済 {len(fallback_items)}件中)")
+        for fb in fallback_items[:need]:
+            print(f"  取得(RSS): {fb['title'][:60]} [{fb['published_date'][:19]}]")
+        news_items.extend(fallback_items[:need])
 
     return news_items
 
