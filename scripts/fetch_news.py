@@ -17,15 +17,14 @@ from urllib.parse import urlparse
 import requests as _requests
 
 RSS_FEEDS = [
-    # --- 競馬専門・スポーツ紙（直接RSS・記事URLが確実に取れる）---
-    "https://uma-jin.net/news/feed",                      # うまじん（0件なら[DEBUG]で内容確認）
-    "https://news.yahoo.co.jp/rss/topics/horse.xml",      # Yahoo!ニュース競馬
-    "https://race.sanspo.com/keiba/rss/",                 # サンスポ競馬
+    # --- 競馬専門・スポーツ紙（直接RSS）---
+    "https://uma-jin.net/feed",                            # うまじん (WordPress標準)
+    "https://uma-jin.net/news/feed",                       # うまじん (旧URL)
+    "https://www.sponichi.co.jp/gambling/rss/",            # スポニチ競馬
     "https://www.nikkansports.com/keiba/rss/keiba-g-rss.xml",  # 日刊スポーツ競馬
-    # --- Google News（フォールバック用・URLが取れない場合あり）---
+    # --- Google News（記事URLはCAPTCHAで取得不可だがタイトルのフォールバックとして）---
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
-    # 重賞・G1など情報量が多い記事が出やすいクエリ
     "https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8B%9D%E5%88%A9&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&hl=ja&gl=JP&ceid=JP:ja",
@@ -109,76 +108,86 @@ _GNEWS_COOKIES = {
 }
 
 
-def _gnews_resolve(rss_url: str, timeout: int = 15) -> str:
+def _gnews_resolve(rss_url: str, timeout: int = 12) -> str:
     """Google News RSS URL（/rss/articles/TOKEN）を実記事 URL に解決する。
-    HEAD リクエスト → GET リダイレクト → HTML抽出 の順に試みる。
-    __i/rss/rd/articles/ 形式も試す。"""
+    __i/rss/rd/articles/ 形式のみ試みる（/articles/ はGitHub ActionsのIPがCAPTCHA対象）。
+    レスポンスボディに URL が含まれる場合も検出する。"""
     m = re.search(r'/rss/articles/([A-Za-z0-9_-]+)', rss_url)
     if not m:
         return ""
     token = m.group(1)
 
-    candidate_urls = [
-        f"https://news.google.com/__i/rss/rd/articles/{token}",
-        f"https://news.google.com/articles/{token}",
-    ]
-    mobile_ua = (
-        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-        "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
-    )
-    ua_list = [("desktop", HEADERS["User-Agent"]), ("mobile", mobile_ua)]
+    # /articles/ は GitHub Actions IP から CAPTCHA になるため試さない
+    rd_url = f"https://news.google.com/__i/rss/rd/articles/{token}"
 
     _EXCLUDE = re.compile(r"google\.com|googleusercontent\.com|gstatic\.com", re.I)
 
-    for url in candidate_urls:
-        for ua_label, ua in ua_list:
-            try:
-                session = _requests.Session()
-                session.headers.update({
-                    "User-Agent": ua,
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
-                    "Accept-Encoding": "gzip, deflate",
-                    "Referer": "https://news.google.com/",
-                })
-                session.cookies.update(_GNEWS_COOKIES)
+    for ua_label, ua in [
+        ("desktop", HEADERS["User-Agent"]),
+        ("mobile", (
+            "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+            "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+        )),
+    ]:
+        try:
+            session = _requests.Session()
+            session.headers.update({
+                "User-Agent": ua,
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+                "Accept-Encoding": "gzip, deflate",
+                "Referer": "https://news.google.com/",
+            })
+            session.cookies.update(_GNEWS_COOKIES)
 
-                # 1. HEAD で高速チェック
-                try:
-                    head_resp = session.head(url, allow_redirects=True, timeout=timeout)
-                    final = head_resp.url
-                    if not _EXCLUDE.search(final):
-                        print(f"  [GNews] HEAD redirect成功 ({ua_label}): {final[:100]}")
-                        return final
-                except Exception:
-                    pass
+            resp = session.get(rd_url, allow_redirects=True, timeout=timeout, stream=True)
+            final = resp.url
 
-                # 2. GET でリダイレクト追跡
-                resp = session.get(url, allow_redirects=True, timeout=timeout, stream=True)
-                final = resp.url
-                if not _EXCLUDE.search(final):
-                    resp.close()
-                    print(f"  [GNews] GET redirect成功 ({ua_label}): {final[:100]}")
-                    return final
-
-                # 3. HTML から URL 抽出（最大 150KB のみ読む）
-                content = b""
-                for chunk in resp.iter_content(chunk_size=8192):
-                    content += chunk
-                    if len(content) >= 150 * 1024:
-                        break
+            # HTTP リダイレクトで非 Google URL へ到達した場合
+            if not _EXCLUDE.search(final):
                 resp.close()
+                print(f"  [GNews] __i/rss/rd redirect成功 ({ua_label}): {final[:100]}")
+                return final
 
-                html_snippet = content.decode("utf-8", errors="replace")
-                real_url = _resolve_google_news_url(html_snippet)
-                if real_url:
-                    print(f"  [GNews] HTML抽出成功 ({ua_label}, {url.split('/')[-2]}): {real_url[:100]}")
-                    return real_url
+            # レスポンスボディ先頭 50KB を読んで URL を探す
+            content = b""
+            for chunk in resp.iter_content(chunk_size=8192):
+                content += chunk
+                if len(content) >= 50 * 1024:
+                    break
+            resp.close()
 
-                print(f"  [GNews] 試行失敗 ({ua_label}, {url.split('/')[-2]}): final={final[:60]!r}", file=sys.stderr)
+            body = content.decode("utf-8", errors="replace")
+            print(f"  [GNews] __i/rss/rd body preview ({ua_label}): {body[:200]!r}")
 
-            except Exception as e:
-                print(f"  [GNews] 例外 ({ua_label}, {url[-30:]}): {e}", file=sys.stderr)
+            # JSON {"redirect": "..."} 形式
+            try:
+                import json as _json
+                data = _json.loads(body)
+                for key in ("redirect", "url", "articleUrl", "targetUrl"):
+                    val = data.get(key, "")
+                    if isinstance(val, str) and val.startswith("http") and not _EXCLUDE.search(val):
+                        print(f"  [GNews] JSON {key}: {val[:100]}")
+                        return val
+            except Exception:
+                pass
+
+            # プレーンテキスト URL
+            if body.strip().startswith("http") and not _EXCLUDE.search(body.strip()):
+                url_plain = body.strip().split()[0]
+                print(f"  [GNews] plaintext URL: {url_plain[:100]}")
+                return url_plain
+
+            # HTML/JS から URL 抽出
+            real_url = _resolve_google_news_url(body)
+            if real_url:
+                print(f"  [GNews] body HTML抽出成功 ({ua_label}): {real_url[:100]}")
+                return real_url
+
+            print(f"  [GNews] __i/rss/rd 失敗 ({ua_label}): status={resp.status_code} final={final[:60]!r}", file=sys.stderr)
+
+        except Exception as e:
+            print(f"  [GNews] 例外 ({ua_label}): {e}", file=sys.stderr)
 
     return ""
 
@@ -586,6 +595,52 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# netkeiba.com 直接スクレイパー
+# ---------------------------------------------------------------------------
+
+def scrape_netkeiba_news() -> list[dict]:
+    """netkeiba.com のニュース一覧を直接スクレイピングしてエントリーを返す。
+    RSS が利用できない場合のフォールバック。"""
+    list_url = "https://news.netkeiba.com/?pid=news_list"
+    raw = http_get(list_url)
+    if not raw:
+        print(f"  [Netkeiba] 取得失敗", file=sys.stderr)
+        return []
+
+    html = raw.decode("utf-8", errors="replace")
+    entries = []
+
+    # <li class="NewsListItem"> などの記事リンクを抽出
+    # 複数のパターンで試みる
+    seen_urls: set[str] = set()
+    for pat in [
+        r'<a[^>]+href="(https://news\.netkeiba\.com/\?pid=news_detail[^"]+)"[^>]*>\s*([^<]{10,})',
+        r'href="(https://news\.netkeiba\.com/\?pid=news_detail[^"]+)"',
+        r'href="(/\?pid=news_detail[^"]+)"',
+    ]:
+        for m in re.finditer(pat, html, re.I | re.S):
+            href = m.group(1)
+            if not href.startswith("http"):
+                href = "https://news.netkeiba.com" + href
+            if href in seen_urls:
+                continue
+            seen_urls.add(href)
+            title = m.group(2).strip() if m.lastindex >= 2 else ""
+            title = re.sub(r"\s+", " ", title)
+            entries.append({
+                "id": href,
+                "title": title or href,
+                "link": href,
+                "summary": "",
+                "image_url": "",
+                "published_date": None,
+            })
+
+    print(f"  [Netkeiba] {len(entries)} 件スクレイプ")
+    return entries[:30]
+
+
+# ---------------------------------------------------------------------------
 # OG画像抽出
 # ---------------------------------------------------------------------------
 
@@ -639,7 +694,12 @@ def fetch_news() -> list[dict]:
         print(f"  有効エントリー: {len(entries)} 件")
         all_entries.extend(entries)
 
-    if feed_errors == len(RSS_FEEDS):
+    # netkeiba.com 直接スクレイピング（RSS が全滅した場合のフォールバック）
+    print("netkeiba.com を直接スクレイピング中...")
+    netkeiba_entries = scrape_netkeiba_news()
+    all_entries.extend(netkeiba_entries)
+
+    if feed_errors == len(RSS_FEEDS) and not netkeiba_entries:
         print("[エラー] 全フィードの取得に失敗しました。", file=sys.stderr)
         sys.exit(1)
 
