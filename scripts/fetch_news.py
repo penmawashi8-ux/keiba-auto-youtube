@@ -102,6 +102,87 @@ def load_posted_ids() -> set:
     return set(path.read_text(encoding="utf-8").splitlines())
 
 
+# Google が要求する同意クッキー（リダイレクトを機能させるため）
+_GNEWS_COOKIES = {
+    "CONSENT": "YES+cb.20230629-02-p0.ja+FX+301",
+    "SOCS": "CAISHAgCEhIaAB",
+}
+
+
+def _gnews_resolve(rss_url: str, timeout: int = 15) -> str:
+    """Google News RSS URL（/rss/articles/TOKEN）を実記事 URL に解決する。
+    HEAD リクエスト → GET リダイレクト → HTML抽出 の順に試みる。
+    __i/rss/rd/articles/ 形式も試す。"""
+    m = re.search(r'/rss/articles/([A-Za-z0-9_-]+)', rss_url)
+    if not m:
+        return ""
+    token = m.group(1)
+
+    candidate_urls = [
+        f"https://news.google.com/__i/rss/rd/articles/{token}",
+        f"https://news.google.com/articles/{token}",
+    ]
+    mobile_ua = (
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+        "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
+    )
+    ua_list = [("desktop", HEADERS["User-Agent"]), ("mobile", mobile_ua)]
+
+    _EXCLUDE = re.compile(r"google\.com|googleusercontent\.com|gstatic\.com", re.I)
+
+    for url in candidate_urls:
+        for ua_label, ua in ua_list:
+            try:
+                session = _requests.Session()
+                session.headers.update({
+                    "User-Agent": ua,
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+                    "Accept-Encoding": "gzip, deflate",
+                    "Referer": "https://news.google.com/",
+                })
+                session.cookies.update(_GNEWS_COOKIES)
+
+                # 1. HEAD で高速チェック
+                try:
+                    head_resp = session.head(url, allow_redirects=True, timeout=timeout)
+                    final = head_resp.url
+                    if not _EXCLUDE.search(final):
+                        print(f"  [GNews] HEAD redirect成功 ({ua_label}): {final[:100]}")
+                        return final
+                except Exception:
+                    pass
+
+                # 2. GET でリダイレクト追跡
+                resp = session.get(url, allow_redirects=True, timeout=timeout, stream=True)
+                final = resp.url
+                if not _EXCLUDE.search(final):
+                    resp.close()
+                    print(f"  [GNews] GET redirect成功 ({ua_label}): {final[:100]}")
+                    return final
+
+                # 3. HTML から URL 抽出（最大 150KB のみ読む）
+                content = b""
+                for chunk in resp.iter_content(chunk_size=8192):
+                    content += chunk
+                    if len(content) >= 150 * 1024:
+                        break
+                resp.close()
+
+                html_snippet = content.decode("utf-8", errors="replace")
+                real_url = _resolve_google_news_url(html_snippet)
+                if real_url:
+                    print(f"  [GNews] HTML抽出成功 ({ua_label}, {url.split('/')[-2]}): {real_url[:100]}")
+                    return real_url
+
+                print(f"  [GNews] 試行失敗 ({ua_label}, {url.split('/')[-2]}): final={final[:60]!r}", file=sys.stderr)
+
+            except Exception as e:
+                print(f"  [GNews] 例外 ({ua_label}, {url[-30:]}): {e}", file=sys.stderr)
+
+    return ""
+
+
 def _decode_google_news_url(google_url: str) -> str:
     """Google News RSS リンクに含まれる Base64 エンコードされた実記事 URL を取得する。
     HTTP リクエスト不要。例: https://news.google.com/rss/articles/CBMiSmh0dHBz..."""
@@ -625,45 +706,19 @@ def fetch_news() -> list[dict]:
         # --- 実記事URLの解決 ---
         prefetched_html: bytes | None = None
         if "news.google.com" in link:
+            # 1. base64 デコード（旧フォーマット用）
             decoded = _decode_google_news_url(link)
             if decoded:
                 print(f"  [GNews] URLデコード成功: {decoded[:80]}")
                 link = decoded
             else:
-                # /rss/articles/TOKEN → /articles/TOKEN でリダイレクト追跡を試みる
-                alt_link = link.replace("/rss/articles/", "/articles/")
-                alt_link = alt_link.split("?")[0]  # クエリパラメータ除去
-                print(f"  [GNews] /articles/ リダイレクト試行: {alt_link[:100]}")
-                raw_alt, fetched_alt = http_get_article(alt_link)
-                if raw_alt and "google.com" not in fetched_alt:
-                    print(f"  [GNews] リダイレクト成功: {fetched_alt[:100]}")
-                    link = fetched_alt
-                    prefetched_html = raw_alt
-                elif raw_alt:
-                    # HTTP リダイレクトは失敗 → Google News HTML が返った可能性あり
-                    # HTML から実記事 URL を抽出して再試行する
-                    html_try = raw_alt.decode("utf-8", errors="replace")
-                    print(f"  [GNews] リダイレクトなし。HTMLから実URL抽出を試みる (html={len(html_try)}文字)")
-                    real_url = _resolve_google_news_url(html_try)
-                    if real_url:
-                        print(f"  [GNews] HTML解析で実URL検出: {real_url[:100]}")
-                        link = real_url
-                        # prefetched_html は None のままにして後段で再フェッチさせる
-                    else:
-                        print(f"  [GNews] HTML解析も失敗。RSSサマリーのみ使用", file=sys.stderr)
-                        pub_str = published_dt.isoformat() if published_dt else ""
-                        print(f"  取得: {title[:60]} [{pub_str[:19]}]")
-                        news_items.append({
-                            "id": entry_id,
-                            "title": title,
-                            "url": link,
-                            "summary": summary,
-                            "image_url": image_url,
-                            "published_date": pub_str,
-                        })
-                        continue
+                # 2. _gnews_resolve: HEAD/GET/HTML抽出 を複数URL形式で試みる
+                print(f"  [GNews] URL解決試行中...")
+                resolved = _gnews_resolve(link)
+                if resolved:
+                    link = resolved
                 else:
-                    print(f"  [GNews] リダイレクト失敗（通信エラー）。RSSサマリーのみ使用", file=sys.stderr)
+                    print(f"  [GNews] 全手段失敗。RSSサマリーのみ使用", file=sys.stderr)
                     pub_str = published_dt.isoformat() if published_dt else ""
                     print(f"  取得: {title[:60]} [{pub_str[:19]}]")
                     news_items.append({
