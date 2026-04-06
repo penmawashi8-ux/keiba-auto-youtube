@@ -609,49 +609,66 @@ def _parse_atom_entry(entry: ET.Element) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# netkeiba.com 直接スクレイパー
+# RSS 自動検出 & 代替スクレイパー
 # ---------------------------------------------------------------------------
 
-def scrape_netkeiba_news() -> list[dict]:
-    """netkeiba.com のニュース一覧を直接スクレイピングしてエントリーを返す。
-    RSS が利用できない場合のフォールバック。"""
-    list_url = "https://news.netkeiba.com/?pid=news_list"
-    raw = http_get(list_url)
-    if not raw:
-        print(f"  [Netkeiba] 取得失敗", file=sys.stderr)
-        return []
-
-    html = raw.decode("utf-8", errors="replace")
-    entries = []
-
-    # <li class="NewsListItem"> などの記事リンクを抽出
-    # 複数のパターンで試みる
-    seen_urls: set[str] = set()
+def _autodiscover_rss(html: str, base_url: str) -> str:
+    """HTML 内の <link type="application/rss+xml"> からフィード URL を自動検出する。"""
+    from urllib.parse import urljoin
     for pat in [
-        r'<a[^>]+href="(https://news\.netkeiba\.com/\?pid=news_detail[^"]+)"[^>]*>\s*([^<]{10,})',
-        r'href="(https://news\.netkeiba\.com/\?pid=news_detail[^"]+)"',
-        r'href="(/\?pid=news_detail[^"]+)"',
+        r'<link[^>]+type=["\']application/rss\+xml["\'][^>]+href=["\']([^"\']+)["\']',
+        r'<link[^>]+href=["\']([^"\']+)["\'][^>]+type=["\']application/rss\+xml["\']',
+        r'<link[^>]+type=["\']application/atom\+xml["\'][^>]+href=["\']([^"\']+)["\']',
+        r'<link[^>]+href=["\']([^"\']+)["\'][^>]+type=["\']application/atom\+xml["\']',
     ]:
-        for m in re.finditer(pat, html, re.I | re.S):
-            href = m.group(1)
-            if not href.startswith("http"):
-                href = "https://news.netkeiba.com" + href
-            if href in seen_urls:
-                continue
-            seen_urls.add(href)
-            title = m.group(2).strip() if m.lastindex >= 2 else ""
-            title = re.sub(r"\s+", " ", title)
-            entries.append({
-                "id": href,
-                "title": title or href,
-                "link": href,
-                "summary": "",
-                "image_url": "",
-                "published_date": None,
-            })
+        m = re.search(pat, html, re.I)
+        if m:
+            return urljoin(base_url, m.group(1))
+    return ""
 
-    print(f"  [Netkeiba] {len(entries)} 件スクレイプ")
-    return entries[:30]
+
+def scrape_jra_news() -> list[dict]:
+    """JRA公式サイトのニュース一覧を直接スクレイピングする。
+    JRA (jra.go.jp) は政府関連サイトのため GitHub Actions からもアクセス可能。"""
+    base = "https://www.jra.go.jp"
+    urls_to_try = [
+        f"{base}/news/",
+        f"{base}/news/index.html",
+    ]
+    for list_url in urls_to_try:
+        raw = http_get(list_url)
+        if not raw:
+            continue
+        html = raw.decode("utf-8", errors="replace")
+        entries = []
+        seen: set[str] = set()
+        # JRA ニュースリンクパターン（/news/YYYYMM/NNNNN.html 形式）
+        for m in re.finditer(
+            r'href=["\'](/news/[^"\']+\.html)["\'][^>]*>([^<]{5,})',
+            html, re.I,
+        ):
+            path, title = m.group(1), re.sub(r"\s+", " ", m.group(2)).strip()
+            url = base + path
+            if url in seen or not title:
+                continue
+            seen.add(url)
+            entries.append({
+                "id": url, "title": title, "link": url,
+                "summary": "", "image_url": "", "published_date": None,
+            })
+        if entries:
+            print(f"  [JRA] {len(entries)} 件スクレイプ")
+            return entries[:20]
+        # RSS 自動検出を試みる
+        rss_url = _autodiscover_rss(html, list_url)
+        if rss_url:
+            print(f"  [JRA] RSS自動検出: {rss_url}")
+            raw2 = http_get(rss_url)
+            if raw2:
+                return parse_feed(raw2)
+    print(f"  [JRA] 取得失敗", file=sys.stderr)
+    return []
+
 
 
 # ---------------------------------------------------------------------------
@@ -704,16 +721,28 @@ def fetch_news() -> list[dict]:
             continue
         entries = parse_feed(raw)
         if not entries:
-            print(f"  [DEBUG] 0件フィードRAW先頭300bytes: {raw[:300]!r}", file=sys.stderr)
+            # XML 解析失敗 → HTML が返った可能性。RSS 自動検出を試みる
+            html_str = raw.decode("utf-8", errors="replace")
+            if "<html" in html_str[:500].lower():
+                discovered = _autodiscover_rss(html_str, feed_url)
+                if discovered and discovered != feed_url:
+                    print(f"  [RSS自動検出] {discovered[:80]}")
+                    raw2 = http_get(discovered)
+                    if raw2:
+                        entries = parse_feed(raw2)
+                        if entries:
+                            print(f"  [RSS自動検出] {len(entries)} 件取得成功")
+            if not entries:
+                print(f"  [DEBUG] 0件フィードRAW先頭300bytes: {raw[:300]!r}", file=sys.stderr)
         print(f"  有効エントリー: {len(entries)} 件")
         all_entries.extend(entries)
 
-    # netkeiba.com 直接スクレイピング（RSS が全滅した場合のフォールバック）
-    print("netkeiba.com を直接スクレイピング中...")
-    netkeiba_entries = scrape_netkeiba_news()
-    all_entries.extend(netkeiba_entries)
+    # JRA 公式ニューススクレイピング（Google News とは独立したソース）
+    print("JRA公式ニュースをスクレイピング中...")
+    jra_entries = scrape_jra_news()
+    all_entries.extend(jra_entries)
 
-    if feed_errors == len(RSS_FEEDS) and not netkeiba_entries:
+    if feed_errors == len(RSS_FEEDS) and not jra_entries:
         print("[エラー] 全フィードの取得に失敗しました。", file=sys.stderr)
         sys.exit(1)
 
