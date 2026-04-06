@@ -1,8 +1,10 @@
-date: 2026-04-06T08:23:14.081457Z
+date: 2026-04-06T08:29:05.497655Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WnBefFaN0N4 title=単勝１・０倍の圧倒的人気に応えカーインライジングが１９連勝 香港競馬の連勝記録を
+OK project=1 video_id=iBxD9gXPX5A title=【香港 スプリントカップ】カーインライジング19連勝 自身が持つ香港調教馬の連勝
+OK project=1 video_id=pRUQWqNg7ls title=【阪神牝馬S・厩舎直送】久々の重賞挑戦となるクランフォード「もりもり食べるから体
+OK project=1 video_id=u_nmXwkw9GI title=【阪神牝馬S・厩舎直送】久々の重賞挑戦となるクランフォード「もりもり食べるから体
