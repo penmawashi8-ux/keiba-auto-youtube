@@ -149,16 +149,19 @@ def _gnews_resolve(rss_url: str, timeout: int = 12) -> str:
                 print(f"  [GNews] __i/rss/rd redirect成功 ({ua_label}): {final[:100]}")
                 return final
 
-            # レスポンスボディ先頭 50KB を読んで URL を探す
+            # canonical は <head> 先頭付近にあるため 2KB で十分
             content = b""
-            for chunk in resp.iter_content(chunk_size=8192):
+            for chunk in resp.iter_content(chunk_size=2048):
                 content += chunk
-                if len(content) >= 50 * 1024:
+                if len(content) >= 2048:
                     break
             resp.close()
 
             body = content.decode("utf-8", errors="replace")
-            print(f"  [GNews] __i/rss/rd body preview ({ua_label}): {body[:200]!r}")
+            # canonical URL をログに残す（次の確認のため）
+            canon_m = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']', body, re.I)
+            canon_url = canon_m.group(1) if canon_m else "(not found)"
+            print(f"  [GNews] __i/rss/rd canonical ({ua_label}): {canon_url!r}")
 
             # JSON {"redirect": "..."} 形式
             try:
@@ -233,7 +236,18 @@ def _resolve_google_news_url(html: str) -> str:
     def _clean(url: str) -> str:
         return url.replace(r'\/', '/').replace(r'\\.', '.').rstrip(".,;)\"'\\")
 
-    # 1. data-n-au 属性
+    # 1. <link rel="canonical"> — Google News が実記事 URL を canonical に設定する場合がある
+    for pat in [
+        r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']',
+        r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical["\']',
+    ]:
+        m = re.search(pat, html, re.IGNORECASE)
+        if m:
+            url = _clean(m.group(1))
+            if url.startswith("http") and not _EXCLUDE.search(url):
+                print(f"  [GNews resolve] canonical: {url[:80]}")
+                return url
+    # 2. data-n-au 属性
     m = re.search(r'data-n-au=["\']([^"\']+)["\']', html)
     if m:
         url = _clean(m.group(1))
