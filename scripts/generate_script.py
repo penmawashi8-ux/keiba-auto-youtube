@@ -131,12 +131,14 @@ class QuotaExceeded(Exception):
     pass
 
 
-def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
+def call_gemini(api_key: str, model_name: str, prompt: str, system_prompt: str = "") -> str:
     url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
-    body = {
+    body: dict = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.4},
     }
+    if system_prompt:
+        body["systemInstruction"] = {"parts": [{"text": system_prompt}]}
     for attempt, wait in enumerate([0, 30, 60]):
         if wait:
             print(f"  {wait}秒待機後にリトライ... (attempt {attempt + 1})")
@@ -157,7 +159,15 @@ def call_gemini(api_key: str, model_name: str, prompt: str) -> str:
             raise requests.exceptions.HTTPError(safe_msg) from None
         data = resp.json()
         try:
-            return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            candidate = data["candidates"][0]
+            finish_reason = candidate.get("finishReason", "UNKNOWN")
+            # 全partsを結合して返す
+            text = "".join(p.get("text", "") for p in candidate["content"]["parts"]).strip()
+            if finish_reason not in ("STOP", "MAX_TOKENS"):
+                print(f"  [警告] finishReason={finish_reason} ({len(text)}文字)", file=sys.stderr)
+            elif finish_reason == "MAX_TOKENS":
+                print(f"  [警告] finishReason=MAX_TOKENS: トークン上限で打ち切り ({len(text)}文字)", file=sys.stderr)
+            return text
         except (KeyError, IndexError) as e:
             print(f"[エラー] レスポンス解析失敗: {e}\n{json.dumps(data)[:300]}", file=sys.stderr)
             sys.exit(1)
@@ -198,28 +208,25 @@ def main() -> None:
         summary_text = item.get('summary', '')
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
         print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
-        prompt = (
-            f"{get_system_prompt()}\n\n"
+        sys_prompt = get_system_prompt()
+        user_content = (
             f"【ニュース】\n"
             f"タイトル: {item['title']}\n"
             f"内容: {summary_text[:1500]}"
         )
-        lenient_prompt = (
-            f"{get_system_prompt()}\n\n"
-            f"【追加指示】元のニュース本文には情報が含まれています。"
-            f"SKIPは内容が本当にゼロの場合のみ使用してください。"
-            f"情報が少なくても、記事に書かれていることを最大限活用して必ず脚本を生成してください。\n\n"
-            f"【ニュース】\n"
-            f"タイトル: {item['title']}\n"
-            f"内容: {summary_text[:1500]}"
+        lenient_sys_prompt = (
+            sys_prompt
+            + "\n\n【追加指示】元のニュース本文には情報が含まれています。"
+            "SKIPは内容が本当にゼロの場合のみ使用してください。"
+            "情報が少なくても、記事に書かれていることを最大限活用して必ず脚本を生成してください。"
         )
         skip_count = 0
         for key, model_name in key_model_pairs:
             key_label = f"***{key[-4:]}"
             print(f"[{i}] 使用: key={key_label} model={model_name}")
-            current_prompt = lenient_prompt if skip_count > 0 else prompt
+            current_sys = lenient_sys_prompt if skip_count > 0 else sys_prompt
             try:
-                script = call_gemini(key, model_name, current_prompt)
+                script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
                 print(f"[{i}]  [Gemini生出力 {len(script)}文字]: {script!r}")
                 # 内容が薄い記事はスキップ（初回は強調プロンプトで再試行）
                 if script.strip().upper() == "SKIP":
