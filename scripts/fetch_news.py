@@ -1162,6 +1162,27 @@ def fetch_news() -> list[dict]:
                 body = re.sub(r"<[^>]+>", " ", html)
                 _method = "全体HTML"
             full_body_raw = re.sub(r"\s+", " ", body).strip()
+            # netkeibaサイトのフッター・UIノイズを除去（記事本文とは無関係なサイト情報）
+            _footer_markers = [
+                "No.1競馬情報サイト「netkeiba」",
+                "No.1競馬サイト「netkeiba",
+                "フィルタON",
+                "利用者数1700万人突破",
+                "netkeiba公式SNS",
+                "netkeiba 姉妹サイト",
+                "netkeiba姉妹サイト",
+                "URLリンクをコピーしました",
+                "AIに非推奨判定",
+                "ニュースコメントを表示するには",
+                "コメント非表示",
+            ]
+            _footer_idx = len(full_body_raw)
+            for _fm in _footer_markers:
+                _fi = full_body_raw.find(_fm)
+                if 0 < _fi < _footer_idx:
+                    _footer_idx = _fi
+            if _footer_idx < len(full_body_raw):
+                full_body_raw = full_body_raw[:_footer_idx].strip()
             if og_desc and og_desc not in full_body_raw:
                 full_body_raw = (og_desc + " " + full_body_raw).strip()
             # RSSサマリーは記事の核心部分を含むことが多いため、HTML本文の先頭に付与
