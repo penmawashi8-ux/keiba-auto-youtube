@@ -18,12 +18,12 @@ from urllib.parse import urlparse
 import requests as _requests
 
 RSS_FEEDS = [
-    # --- 競馬専門・スポーツ紙（直接RSS）---
-    "https://uma-jin.net/feed",                            # うまじん (WordPress標準)
-    "https://uma-jin.net/news/feed",                       # うまじん (旧URL)
-    "https://www.sponichi.co.jp/gambling/rss/",            # スポニチ競馬
-    "https://www.nikkansports.com/keiba/rss/keiba-g-rss.xml",  # 日刊スポーツ競馬
-    # --- Google News（記事URLはCAPTCHAで取得不可だがタイトルのフォールバックとして）---
+    # --- 競馬専門（直接RSS: 実記事URLと本文取得が可能）---
+    "https://news.netkeiba.com/?pid=rss",                  # netkeiba ニュース
+    "https://uma-jin.net/?feed=rss2",                      # うまじん (WordPress標準クエリ)
+    "https://uma-jin.net/feed/",                           # うまじん (WordPress標準パス)
+    "https://race.sanspo.com/rss.xml",                     # サンスポ競馬
+    # --- Google News（記事URLはGitHub ActionsからIP制限で取得不可だがタイトルのフォールバックとして）---
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8B%9D%E5%88%A9&hl=ja&gl=JP&ceid=JP:ja",
