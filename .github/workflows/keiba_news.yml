@@ -211,3 +211,19 @@ jobs:
             git pull --rebase origin ${{ github.ref_name }}
             git push origin HEAD:${{ github.ref_name }}
           fi
+
+      - name: Save fetch_news log to repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p debug
+          cp /tmp/fetch_news.log debug/last_fetch_news.log 2>/dev/null || echo "(ログなし)" > debug/last_fetch_news.log
+          git add debug/last_fetch_news.log
+          if git diff --staged --quiet; then
+            echo "ログ変更なし。"
+          else
+            git commit -m "chore: save fetch_news log [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
