@@ -1,10 +1,8 @@
-date: 2026-04-07T03:56:20.636327Z
+date: 2026-04-07T06:22:09.366288Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t5xWlKRUkQk title=【競走伝】実はエアグルーヴ世代の最優秀4歳牝馬　芦毛の外国産馬がつかんだ初タイト
-OK project=1 video_id=owk701HxaKg title=桜花賞着差ランキングTOP5 グレード制導入以降の1位は8馬身差
-OK project=1 video_id=e9oaVYxtPi0 title=TCK大井競馬の26年度イメージキャラクターが横浜流星さんに決定 新CMイメージ
+OK project=1 video_id=XxiQjDlU-Ow title=「ザ・ロイヤルファミリー」俳優2人がCMで共演　津田健次郎と吉沢悠がコミカルな掛
