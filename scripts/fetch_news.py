@@ -20,9 +20,8 @@ import requests as _requests
 
 RSS_FEEDS = [
     # --- 競馬専門（直接RSS: 実記事URLと本文取得が可能）---
-    "https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba",  # netkeiba (rssサブドメイン)
+    "https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba",  # netkeiba (HTMLソースで確認済み)
     "https://www.keiba.jp/rss/",                           # 競馬JAPAN
-    "https://www.radionikkei.jp/keiba/rss2/index.xml",     # ラジオNIKKEI競馬
     # --- Google News（記事URLはGitHub ActionsからIP制限で取得不可だがタイトルのフォールバックとして）---
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja",
     "https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja",
