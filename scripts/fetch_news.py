@@ -1040,7 +1040,15 @@ def fetch_news() -> list[dict]:
                 print(f"  [GNews] リダイレクトで実URL取得: {link[:100]}")
 
         if raw_html:
-            html = raw_html.decode("utf-8", errors="replace")
+            # エンコーディングを meta charset から検出（EUC-JP等に対応）
+            _enc = "utf-8"
+            _m = re.search(rb'<meta[^>]+charset=["\']?\s*([a-zA-Z0-9_-]+)', raw_html[:2000], re.IGNORECASE)
+            if _m:
+                _enc = _m.group(1).decode("ascii", errors="replace").strip()
+            try:
+                html = raw_html.decode(_enc, errors="replace")
+            except (LookupError, UnicodeDecodeError):
+                html = raw_html.decode("utf-8", errors="replace")
             print(f"  [DEBUG] フェッチURL: {fetched_url[:100]}")
             print(f"  [DEBUG] HTML長: {len(html)}文字")
             # Google News ページが返ってきた場合は HTML から URL を抽出して再フェッチ
