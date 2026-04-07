@@ -1,9 +1,10 @@
-date: 2026-04-07T23:35:05.277474Z
+date: 2026-04-07T23:58:04.379662Z
 projects_loaded: 1
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=aF5edwe4FKA title=【桜花賞】田口貫太騎手がGI初制覇なるか チューリップ賞2着のナムラコスモスで参
-OK project=1 video_id=yv_z5ZROGQA title=石神深一騎手&五十嵐雄祐騎手の息子がJRA競馬学校入学　7人の“騎手の卵”が3年
+OK project=1 video_id=r7t9gcuSJ_w title=“新人”国枝厩務員「小学１年生みたいな気持ち」　元調教師新たなスタート「戸惑いっ
+OK project=1 video_id=p8Z-McrJJ1g title=石神＆五十嵐親子で共闘だ　石神龍貴さん「父の姿を見て『かっこいい』と思った」　Ｊ
+OK project=1 video_id=6sG2zx71kfg title=勝嵜文哉さん　憧れは横山武「海外でも乗れる騎手に」父は鹿戸厩舎調教助手　競馬学校
