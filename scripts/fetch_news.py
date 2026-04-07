@@ -1164,6 +1164,9 @@ def fetch_news() -> list[dict]:
             full_body_raw = re.sub(r"\s+", " ", body).strip()
             if og_desc and og_desc not in full_body_raw:
                 full_body_raw = (og_desc + " " + full_body_raw).strip()
+            # RSSサマリーは記事の核心部分を含むことが多いため、HTML本文の先頭に付与
+            if rss_summary and rss_summary not in full_body_raw:
+                full_body_raw = (rss_summary + " " + full_body_raw).strip()
             full_body = full_body_raw[:2000]
             if len(full_body) > len(summary):
                 summary = full_body
