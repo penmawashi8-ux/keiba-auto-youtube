@@ -953,6 +953,15 @@ def fetch_news() -> list[dict]:
     def _is_direct(e: dict) -> bool:
         return "news.google.com" not in e.get("link", "")
 
+    def _is_news(e: dict) -> bool:
+        """コラム・歴史記事より速報ニュースを優先するためのスコアリング。
+        netkeiba の column_view / コラム系URLより news_view を上位にする。"""
+        link = e.get("link", "")
+        # column_view はコラム（歴史シリーズ等を含む）→ 優先度低
+        if "column_view" in link or "column" in link.lower():
+            return False
+        return True
+
     selected: list[dict] = []
     for label, hours in [("24時間以内", 24), ("48時間以内", 48), ("条件なし（最新3件）", None)]:
         if hours is not None:
@@ -967,11 +976,12 @@ def fetch_news() -> list[dict]:
         if not in_window:
             continue
 
-        # 直接 URL を先頭に、Google News を後ろに並べた候補プール
-        direct = [e for e in in_window if _is_direct(e)]
-        gnews  = [e for e in in_window if not _is_direct(e)]
-        pool   = (direct + gnews)[:MAX_NEWS * 10]
-        print(f"フィルタ「{label}」: 直接URL {len(direct)}件 / GoogleNews {len(gnews)}件 → 候補プール {len(pool)}件")
+        # 直接URLかつニュース記事 → 直接URLのコラム → Google News の順で優先
+        direct_news   = [e for e in in_window if _is_direct(e) and _is_news(e)]
+        direct_column = [e for e in in_window if _is_direct(e) and not _is_news(e)]
+        gnews         = [e for e in in_window if not _is_direct(e)]
+        pool = (direct_news + direct_column + gnews)[:MAX_NEWS * 10]
+        print(f"フィルタ「{label}」: 直接ニュース {len(direct_news)}件 / 直接コラム {len(direct_column)}件 / GoogleNews {len(gnews)}件 → 候補プール {len(pool)}件")
         selected = pool
         break
 
