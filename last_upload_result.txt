@@ -1,8 +1,9 @@
-date: 2026-04-07T23:03:32.730481Z
+date: 2026-04-07T23:35:05.277474Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fR_b1dquYgw title=【追憶の桜花賞】13年アユサン　C・デムーロ、騎手人生初のG1制覇　最後に立ちは
+OK project=1 video_id=aF5edwe4FKA title=【桜花賞】田口貫太騎手がGI初制覇なるか チューリップ賞2着のナムラコスモスで参
+OK project=1 video_id=yv_z5ZROGQA title=石神深一騎手&五十嵐雄祐騎手の息子がJRA競馬学校入学　7人の“騎手の卵”が3年
