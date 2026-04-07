@@ -32,19 +32,19 @@
 フィード取得中: https://www.keiba.jp/rss/
   [HTTP] 404 41437 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 147102 bytes
+  [HTTP] 200 147140 bytes
   有効エントリー: 111 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 115598 bytes
+  [HTTP] 200 115894 bytes
   有効エントリー: 104 件
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
-  [HTTP] 200 129697 bytes
+  [HTTP] 200 129053 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 124926 bytes
+  [HTTP] 200 125934 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
-  [HTTP] 200 128210 bytes
+  [HTTP] 200 128051 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
   [HTTP] 200 124511 bytes
@@ -52,10 +52,10 @@
 JRA公式ニュースをスクレイピング中...
   [HTTP] 200 72413 bytes
   [JRA] 1 件スクレイプ
-未投稿エントリー: 563 件
-  [除外] 動画タイトルのためスキップ: 【動画】ボートレース津 G1ダイヤモンドカップ - スポーツナビ「株式会社日本レジャーチャンネル」 - スポーツナビ
-競馬関連フィルタ後: 552 件
-フィルタ「24時間以内」: 直接ニュース 27件 / 直接コラム 0件 / GoogleNews 140件 → 候補プール 30件
+未投稿エントリー: 564 件
+  [除外] 動画タイトルのためスキップ: 【動画】ボートレース津 G1ダイヤモンドカップ - スポーツナビ「株式会社日本レジャーチャンネル」 - sports.y
+競馬関連フィルタ後: 553 件
+フィルタ「24時間以内」: 直接ニュース 27件 / 直接コラム 0件 / GoogleNews 139件 → 候補プール 30件
   [HTTP] 200 68760 bytes (attempt 1)
   [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=327128
   [DEBUG] HTML長: 65276文字
