@@ -1,0 +1,55 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+=== 脚本生成開始 ===
+Gemini APIキー: 3 件ロード
+利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
+使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
+試行組み合わせ数: 15 (キー×モデル)
+
+--- 記事[0]: 【桜花賞】富田暁騎手がGI初制覇なるか 伏兵プレセピオで一発狙う ---
+[0] Gemini入力本文 481文字: '10年目の富田暁騎手が、桜花賞(3歳牝・GI・芝1600m)のプレセピオ(牝3、栗東・笹田和秀厩舎)でGI初制覇を狙う。\n\n\u3000富田騎手は96年12月11日生まれ、茨城県出身の29歳。17年3月に栗東・木原一良厩舎からデビューした。JRA通算'
+[0] 使用: key=***BYfA model=gemini-2.0-flash
+
+--- 記事[1]: 国枝栄元調教師が厩務員として初仕事　アーモンドアイ、アパパネ育てた名伯楽「今日は早起きしちゃった」 ---
+[1] Gemini入力本文 635文字: '先月3日付で定年引退した国枝栄元調教師(70)が7日、美浦・小島厩舎の厩務員として初日を終えた。\n\n\t\t\t\t\u3000アーモンドアイ、アパパネを育てた名伯楽は、寝わらあげ、ウォーキングマシンの入れ替え、手入れなどを行いながら、従業員に作業のやり方を'
+[1] 使用: key=***BYfA model=gemini-2.0-flash
+
+--- 記事[2]: 【追憶の桜花賞】13年アユサン　C・デムーロ、騎手人生初のG1制覇　最後に立ちはだかったのは… ---
+[2] Gemini入力本文 571文字: '3月28日に行われたUAEダービー。ワンダーディーンをVに導いたのはクリスチャン・デムーロだった。\n\n\u3000日本馬が海外遠征した際、クリスチャンがその鞍上にいる時の安心感は絶大なものがある。\n\n\u3000イタリアで騎手デビューし、その数年後には南関東で'
+[2] 使用: key=***BYfA model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***BYfA model=gemini-2.5-flash
+[0] 使用: key=***BYfA model=gemini-2.5-flash
+[2] 使用: key=***BYfA model=gemini-2.5-flash
+  HTTP 200
+[1]  → フィルター後に内容が不十分（57文字）のためスキップ
+  HTTP 200
+[0]  → フィルター後に内容が不十分（53文字）のためスキップ
+  HTTP 200
+[2]  → フィルター後に内容が不十分（73文字）のためスキップ
+
+全ての記事がスキップされました。動画生成をスキップします。
