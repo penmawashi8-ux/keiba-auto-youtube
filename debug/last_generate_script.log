@@ -5,17 +5,26 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] finishReason=MAX_TOKENS: トークン上限で打ち切り (65文字)
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
@@ -24,16 +33,16 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【桜花賞】富田暁騎手がGI初制覇なるか 伏兵プレセピオで一発狙う ---
-[0] Gemini入力本文 481文字: '10年目の富田暁騎手が、桜花賞(3歳牝・GI・芝1600m)のプレセピオ(牝3、栗東・笹田和秀厩舎)でGI初制覇を狙う。\n\n\u3000富田騎手は96年12月11日生まれ、茨城県出身の29歳。17年3月に栗東・木原一良厩舎からデビューした。JRA通算'
+--- 記事[0]: 【桜花賞】田口貫太騎手がGI初制覇なるか チューリップ賞2着のナムラコスモスで参戦 ---
+[0] Gemini入力本文 481文字: '4年目の田口貫太騎手が、桜花賞(3歳牝・GI・芝1600m)のナムラコスモス(牝3、栗東・大橋勇樹厩舎)でJRA重賞初制覇を狙う。\n\n\u3000田口騎手は03年12月10日生まれ、岐阜県出身の22歳。父・輝彦さんは地方・笠松の元騎手で調教師、母・広'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 国枝栄元調教師が厩務員として初仕事　アーモンドアイ、アパパネ育てた名伯楽「今日は早起きしちゃった」 ---
-[1] Gemini入力本文 635文字: '先月3日付で定年引退した国枝栄元調教師(70)が7日、美浦・小島厩舎の厩務員として初日を終えた。\n\n\t\t\t\t\u3000アーモンドアイ、アパパネを育てた名伯楽は、寝わらあげ、ウォーキングマシンの入れ替え、手入れなどを行いながら、従業員に作業のやり方を'
+--- 記事[1]: 石神深一騎手&五十嵐雄祐騎手の息子がJRA競馬学校入学　7人の“騎手の卵”が3年後のデビュー目指し第一歩 ---
+[1] Gemini入力本文 570文字: 'JRA競馬学校騎手課程第45期生の入学式が7日、千葉県白井市の同校で行われた。現役ジョッキーの石神深一騎手(43)＝美浦・フリー＝の次男・龍貴さんや、五十嵐雄祐騎手(42)＝美浦・田村厩舎＝の長男・翼さんが入学。女性では大垣奈々さん、山田向'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【追憶の桜花賞】13年アユサン　C・デムーロ、騎手人生初のG1制覇　最後に立ちはだかったのは… ---
-[2] Gemini入力本文 571文字: '3月28日に行われたUAEダービー。ワンダーディーンをVに導いたのはクリスチャン・デムーロだった。\n\n\u3000日本馬が海外遠征した際、クリスチャンがその鞍上にいる時の安心感は絶大なものがある。\n\n\u3000イタリアで騎手デビューし、その数年後には南関東で'
+--- 記事[2]: 【ニュージーランドT展望】連勝で勢いに乗るディールメーカーに期待 ---
+[2] Gemini入力本文 481文字: '春の中山競馬場で行われる3歳マイル重賞のニュージーランドT。NHKマイルCへの重要なステップレースとして、毎年多士済々なメンバーが集う。今年も重賞で揉まれてきた実績馬と、条件戦を勝ち上がってきた勢いある馬たちが激突し、難解な一戦となりそうだ'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -50,30 +59,55 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[0] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
-[0] 使用: key=***BYfA model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 57文字]: '10年目の富田暁騎手が、桜花賞のプレセピオでGI初制覇を狙います。富田騎手は96年12月11日生まれの茨城県出身、'
-[0]  → フィルター後に内容が不十分（57文字）のためスキップ
-  HTTP 200
-[1]  [Gemini生出力 56文字]: '先月3日付で定年引退した国枝栄元調教師が7日、美浦・小島厩舎の厩務員として初日を終えました。70歳の国枝元調教師'
-[1]  → フィルター後に内容が不十分（56文字）のためスキップ
+[1]  [Gemini生出力 65文字]: 'JRA競馬学校騎手課程第45期生の入学式が7日、千葉県白井市の同校で行われました。現役ジョッキーの石神深一騎手、43歳の次男である'
+[1]  → フィルター後に内容が不十分（65文字）のためスキップ
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***BYfA model=gemini-2.0-flash-lite
 [2] 使用: key=***BYfA model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***BYfA model=gemma-3-4b-it
 [2] 使用: key=***BYfA model=gemma-3-4b-it
-  HTTP 200
-[2]  [Gemini生出力 257文字]: '3月28日に行われたUAEダービー。ワンダーディーンをVに導いたのはクリスチャン・デムーロだった。日本馬が海外遠征した際、クリスチャンがその鞍上にいる時の安心感は絶大なものがある。イタリアで騎手デビューし、その数年後には南関東で短期免許を取得、来日した。いや、その前からすでに何度か来日して、兄・ミルコのG1制覇の際の口取りに並んでいた。早くから日本競馬と関わりを持ってきたC・デムーロだからこそ、13年桜花賞を制したクリスチャン・デムーロ（左）とアユサン。2着のレッドオーヴァル騎乗、兄・ミルコと健闘を称え合う。'
-[2]  → output/script_2.txt 保存 (257文字)
-[2]  プレビュー: 3月28日に行われたUAEダービー。ワンダーディーンをVに導いたのはクリスチャン・デムーロだった。日本馬が海外遠征した際、クリスチャンがその鞍上にいる時の安心感...
-
-1 件の脚本を生成しました。
+  HTTP 400
+  HTTP 400
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 370, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 353, in main
+    i, ok = future.result()
+            ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 229, in generate_one
+    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 159, in call_gemini
+    raise requests.exceptions.HTTPError(safe_msg) from None
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-3-4b-it:generateContent?key=***
