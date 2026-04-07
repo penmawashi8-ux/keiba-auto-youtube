@@ -204,14 +204,29 @@ def main() -> None:
             f"タイトル: {item['title']}\n"
             f"内容: {summary_text[:1500]}"
         )
+        lenient_prompt = (
+            f"{get_system_prompt()}\n\n"
+            f"【追加指示】元のニュース本文には情報が含まれています。"
+            f"SKIPは内容が本当にゼロの場合のみ使用してください。"
+            f"情報が少なくても、記事に書かれていることを最大限活用して必ず脚本を生成してください。\n\n"
+            f"【ニュース】\n"
+            f"タイトル: {item['title']}\n"
+            f"内容: {summary_text[:1500]}"
+        )
+        skip_count = 0
         for key, model_name in key_model_pairs:
             key_label = f"***{key[-4:]}"
             print(f"[{i}] 使用: key={key_label} model={model_name}")
+            current_prompt = lenient_prompt if skip_count > 0 else prompt
             try:
-                script = call_gemini(key, model_name, prompt)
-                # 内容が薄い記事はスキップ
+                script = call_gemini(key, model_name, current_prompt)
+                # 内容が薄い記事はスキップ（初回は強調プロンプトで再試行）
                 if script.strip().upper() == "SKIP":
-                    print(f"[{i}]  → 内容が薄いためスキップ（動画生成しない）")
+                    if skip_count == 0:
+                        skip_count += 1
+                        print(f"[{i}]  → SKIPが返されました。強調プロンプトで再試行します（入力: {len(summary_text)}文字）")
+                        continue
+                    print(f"[{i}]  → 再試行後もSKIPのためスキップ（動画生成しない）")
                     return i, True
                 # プロンプトリーク検出：システムプロンプトの文言が混入している場合はリトライ
                 import re as _re
