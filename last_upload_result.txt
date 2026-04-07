@@ -1,8 +1,8 @@
-date: 2026-04-07T06:22:09.366288Z
+date: 2026-04-07T23:03:32.730481Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XxiQjDlU-Ow title=「ザ・ロイヤルファミリー」俳優2人がCMで共演　津田健次郎と吉沢悠がコミカルな掛
+OK project=1 video_id=fR_b1dquYgw title=【追憶の桜花賞】13年アユサン　C・デムーロ、騎手人生初のG1制覇　最後に立ちは
