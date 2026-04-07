@@ -133,11 +133,17 @@ class QuotaExceeded(Exception):
 
 def call_gemini(api_key: str, model_name: str, prompt: str, system_prompt: str = "") -> str:
     url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
+    # gemma モデルは systemInstruction 非対応のため、システムプロンプトをユーザー入力に結合する
+    is_gemma = model_name.startswith("gemma")
+    if is_gemma and system_prompt:
+        full_prompt = system_prompt + "\n\n" + prompt
+    else:
+        full_prompt = prompt
     body: dict = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"maxOutputTokens": 1200, "temperature": 0.4},
+        "contents": [{"parts": [{"text": full_prompt}]}],
+        "generationConfig": {"maxOutputTokens": 8192, "temperature": 0.4},
     }
-    if system_prompt:
+    if system_prompt and not is_gemma:
         body["systemInstruction"] = {"parts": [{"text": system_prompt}]}
     for attempt, wait in enumerate([0, 30, 60]):
         if wait:
