@@ -32,10 +32,10 @@
 フィード取得中: https://www.keiba.jp/rss/
   [HTTP] 404 41437 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 141667 bytes
+  [HTTP] 200 142478 bytes
   有効エントリー: 109 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 114159 bytes
+  [HTTP] 200 114270 bytes
   有効エントリー: 102 件
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
   [HTTP] 200 126971 bytes
@@ -44,17 +44,17 @@
   [HTTP] 200 124727 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
-  [HTTP] 200 120734 bytes
+  [HTTP] 200 120066 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
-  [HTTP] 200 124281 bytes
+  [HTTP] 200 123985 bytes
   有効エントリー: 100 件
 JRA公式ニュースをスクレイピング中...
   [HTTP] 200 72413 bytes
   [JRA] 1 件スクレイプ
-未投稿エントリー: 569 件
-競馬関連フィルタ後: 566 件
-フィルタ「24時間以内」: 直接ニュース 25件 / 直接コラム 5件 / GoogleNews 122件 → 候補プール 30件
+未投稿エントリー: 567 件
+競馬関連フィルタ後: 564 件
+フィルタ「24時間以内」: 直接ニュース 25件 / 直接コラム 5件 / GoogleNews 121件 → 候補プール 30件
   [HTTP] 200 69742 bytes (attempt 1)
   [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=327286
   [DEBUG] HTML長: 66331文字
