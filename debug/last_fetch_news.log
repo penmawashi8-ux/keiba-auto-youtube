@@ -1,91 +1,64 @@
-  [警告] XML解析失敗: mismatched tag: line 49, column 2
-  [DEBUG] 0件フィードRAW先頭300bytes: b'\r\n\r\n\r\n\r\n\r\n<html>\r\n<head>\r\n\n\n\n\n<meta charset="utf-8">\n\n<link rel="stylesheet" href="/static/pc/css/common.css?ver=20260401120101">\n\n<!-- \xe3\x83\x95\xe3\x82\xa1\xe3\x83\x93\xe3\x82\xb3\xe3\x83\xb3\xef\xbc\x88\xe5\x9f\xba\xe6\x9c\xac\xef\xbc\x9a.ico / \xe5\x85\xa8\xe3\x83\x96\xe3\x83\xa9\xe3\x82\xa6\xe3\x82\xb6\xe5\xaf\xbe\xe5\xbf\x9c\xef\xbc\x89 -->\n<link rel="icon" href="/static/pc/images/favicon.ico" sizes="any">\n<!-- SVG\xe5\xbd\xa2\xe5\xbc\x8f\xe3\x81\xae\xe3\x83\x95\xe3\x82\xa1\xe3\x83\x93\xe3\x82\xb3\xe3\x83\xb3\xef\xbc'
-  [警告] XML解析失敗: mismatched tag: line 49, column 2
-  [DEBUG] 0件フィードRAW先頭300bytes: b'\r\n\r\n\r\n\r\n\r\n<html>\r\n<head>\r\n\n\n\n\n<meta charset="utf-8">\n\n<link rel="stylesheet" href="/static/pc/css/common.css?ver=20260401120101">\n\n<!-- \xe3\x83\x95\xe3\x82\xa1\xe3\x83\x93\xe3\x82\xb3\xe3\x83\xb3\xef\xbc\x88\xe5\x9f\xba\xe6\x9c\xac\xef\xbc\x9a.ico / \xe5\x85\xa8\xe3\x83\x96\xe3\x83\xa9\xe3\x82\xa6\xe3\x82\xb6\xe5\xaf\xbe\xe5\xbf\x9c\xef\xbc\x89 -->\n<link rel="icon" href="/static/pc/images/favicon.ico" sizes="any">\n<!-- SVG\xe5\xbd\xa2\xe5\xbc\x8f\xe3\x81\xae\xe3\x83\x95\xe3\x82\xa1\xe3\x83\x93\xe3\x82\xb3\xe3\x83\xb3\xef\xbc'
-  [警告] HTTP取得失敗 (https://race.sanspo.com/rss.xml): 404 Client Error: Not Found for url: https://race.sanspo.com/rss.xml
+  [警告] HTTP取得失敗 (https://keiba.radionikkei.jp/rss/keiba_news.xml): 403 Client Error: Forbidden for url: https://www.radionikkei.jp/rss/keiba_news.xml
+  [警告] HTTP取得失敗 (https://news.netkeiba.com/rss.xml): 404 Client Error: Not Found for url: https://news.netkeiba.com/rss.xml
+  [警告] HTTP取得失敗 (https://www.daily.co.jp/horse/rss/): 404 Client Error: Not Found for url: https://www.daily.co.jp/horse/rss/
+  [警告] HTTP取得失敗 (https://www.hochi.com/rss/sports/horse.xml): HTTPSConnectionPool(host='www.hochi.com', port=443): Max retries exceeded with url: /rss/sports/horse.xml (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.hochi.com'. (_ssl.c:1016)")))
 === 競馬ニュース取得開始 ===
-投稿済みID数: 332
+投稿済みID数: 335
 === GNews API ===
   [GNews] query='競馬 レース 騎手' status=200
   [GNews] query='JRA 重賞 競走馬' status=200
   [GNews] 計 1 件取得
 === RSS フィード ===
-フィード取得中: https://news.netkeiba.com/?pid=rss
-  [HTTP] 200 0 bytes
-フィード取得中: https://uma-jin.net/?feed=rss2
-  [HTTP] 200 6402 bytes
-  有効エントリー: 0 件
-フィード取得中: https://uma-jin.net/feed/
-  [HTTP] 200 6402 bytes
-  有効エントリー: 0 件
-フィード取得中: https://race.sanspo.com/rss.xml
-  [HTTP] 404 7671 bytes
+フィード取得中: https://keiba.radionikkei.jp/rss/keiba_news.xml
+  [HTTP] 403 13623 bytes
+フィード取得中: https://news.netkeiba.com/rss.xml
+  [HTTP] 404 196 bytes
+フィード取得中: https://www.daily.co.jp/horse/rss/
+  [HTTP] 404 10289 bytes
+フィード取得中: https://www.hochi.com/rss/sports/horse.xml
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 136982 bytes
-  [RSS#1] raw_link='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBVaG10elJSVlBLTVpUQ3VfRUZYb0RMRXd1WHVLeWJaamtmcEFkbU5jOEtBTWtQbnp3N29PZHloS1M2NWRsVXVjOTRHTWpiNU00SUphUmdOeWNYbVFPRWc?oc=5'
-  [RSS#1] desc='<a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBVaG10elJSVlBLTVpUQ3VfRUZYb0RMRXd1WHVLeWJaamtmcEFkbU5jOEtBTWtQbnp3N29PZHloS1M2NWRsVXVjOTRHTWpiNU00SUphUmdOeWNYbVFPRWc?oc=5" target="_blank">JRAが月曜日に衝撃発表 日・祝限定からついに…競馬ファン騒然 (2026年4月6日掲載)</a>&nbsp;&nbsp;<font color="#6f6f6f">ライブドアニュース</font>'
-  [RSS#2] raw_link='https://news.google.com/rss/articles/CBMiX0FVX3lxTFBXS1ZlQVIyYzlvUVpSaDcyQWRub0dUSWxScWpXMGpWTVJqTTZYUjhjbUw1eS1oLU9wam8wTlBuRFdxMEZKNTRMeFlTZUVKcWVuM1ZKaGJMSjVlOXVpNXd3?oc=5'
-  [RSS#2] desc='<a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBXS1ZlQVIyYzlvUVpSaDcyQWRub0dUSWxScWpXMGpWTVJqTTZYUjhjbUw1eS1oLU9wam8wTlBuRFdxMEZKNTRMeFlTZUVKcWVuM1ZKaGJMSjVlOXVpNXd3?oc=5" target="_blank">WIN5土曜も通年で発売 4月25日から JRA発表</a>&nbsp;&nbsp;<font color="#6f6f6f">netkeiba</font>'
-  [RSS#3] raw_link='https://news.google.com/rss/articles/CBMif0FVX3lxTE0xSHY3clFKSHBOLVlualhaU1BLSzZfMkNKZnJXTWhjQnhDbFM3Ny12dkZhX0ozOXkySUx2Y0FOMk1vUTA1SFZqTzd2OTI3VVRwVFRmZWVsX3BZMmxlbF9VbG1XWVNnUU1qRXp1UmFIOENFb3hLUWhPVnJ6TGdwOFU?oc=5'
-  [RSS#3] desc='<a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE0xSHY3clFKSHBOLVlualhaU1BLSzZfMkNKZnJXTWhjQnhDbFM3Ny12dkZhX0ozOXkySUx2Y0FOMk1vUTA1SFZqTzd2OTI3VVRwVFRmZWVsX3BZMmxlbF9VbG1XWVNnUU1qRXp1UmFIOENFb3hLUWhPVnJ6TGdwOFU?oc=5" target="_blank">WIN5の土曜発売を通年化へ…JRA発表 4月25日から（東スポ競馬）</a>&nbsp;&nbsp;<font color="#6f6f6f">Yahoo!ニュース</font>'
-  [RSS#4] raw_link='https://news.google.com/rss/articles/CBMijgFBVV95cUxPQVZRVm1WY1B1b0NZa2ZGaENzYWh5OUtyWF9WMlhOakY0cV85b01vbzlQT1BJUGh2d1RabHlVcnJtUi1YUzBRRW1xaXRtcTQ5ckJWdGYzVWhWa1Z1YnBwZUF2VjVnTVE0TU9Fa1JFdG5ZRUdobXJIUFN3MVBzYk1HaVFabjdUTTlCbkQ0STFR?oc=5'
-  [RSS#4] desc='<a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPQVZRVm1WY1B1b0NZa2ZGaENzYWh5OUtyWF9WMlhOakY0cV85b01vbzlQT1BJUGh2d1RabHlVcnJtUi1YUzBRRW1xaXRtcTQ5ckJWdGYzVWhWa1Z1YnBwZUF2VjVnTVE0TU9Fa1JFdG5ZRUdobXJIUFN3MVBzYk1HaVFabjdUTTlCbkQ0STFR?oc=5" target="_blank">【園田競馬・今日の世麗】７日は４鞍に騎乗 ララヴァニーユで勝利を意識 (馬トク報知)</a>&nbsp;&nbsp;<font color="#6f6f6f">Yahoo!ニュース</font>'
-  [RSS#5] raw_link='https://news.google.com/rss/articles/CBMijAFBVV95cUxNRm9BV054OVZsVjNzbzMzY1dXNW90SmtPWTNxTjRiTUFpY0FDM25JWEFfMXJDTGs2MkdIOUowYlFRMGpJNWtOQnlpRy1MZ2owOGY3Y1Y2YzFPZS13MEg0VVlySzJfZEQyWV84bnozQ0JZRW9tQm5JNzhDemdOd211N3RhajhYbHNzM283ag?oc=5'
-  [RSS#5] desc='<a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNRm9BV054OVZsVjNzbzMzY1dXNW90SmtPWTNxTjRiTUFpY0FDM25JWEFfMXJDTGs2MkdIOUowYlFRMGpJNWtOQnlpRy1MZ2owOGY3Y1Y2YzFPZS13MEg0VVlySzJfZEQyWV84bnozQ0JZRW9tQm5JNzhDemdOd211N3RhajhYbHNzM283ag?oc=5" target="_blank">【園田競馬 今日発走 そのたんお誕生日記念】タガノエスコート 力強く抜け出す</a>&nbsp;&nbsp;<font color="#6f6f6f">sponichi.co.jp</font>'
-  [RSS#6] raw_link='https://news.google.com/rss/articles/CBMibkFVX3lxTE1RTmNaZ1J5cVIwNHFNMEhoTC1IZWlBTmxQd2lvQWpYbjBWS0ZJa2d3cjd6RUhuZkpmc0pyakJuR2ZEX0d6SGxFN2ZwMVdLMXoyY3VQOHN5ckVGb090NXFNRWF1OUVka0VDTDdXaWx3?oc=5'
-  [RSS#6] desc='<a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1RTmNaZ1J5cVIwNHFNMEhoTC1IZWlBTmxQd2lvQWpYbjBWS0ZJa2d3cjd6RUhuZkpmc0pyakJuR2ZEX0d6SGxFN2ZwMVdLMXoyY3VQOHN5ckVGb090NXFNRWF1OUVka0VDTDdXaWx3?oc=5" target="_blank">【園田競馬・４月７日】６Ｒ検討</a>&nbsp;&nbsp;<font color="#6f6f6f">umatoku.hochi.co.jp</font>'
-  [RSS#7] raw_link='https://news.google.com/rss/articles/CBMia0FVX3lxTFBTSTN2MFM0QzI1c3BSbFI0Ym0wSlhSOXZqX3NSN0owYTdXVjRicFNMRm9NMV8xYktVT1U3R2x6NWJxWm1DUDF5d3VXODFYSWVCTThEMHU5S3MwYllMelFPZ3phczl4UU9BN3VJ?oc=5'
-  [RSS#7] desc='<a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBTSTN2MFM0QzI1c3BSbFI0Ym0wSlhSOXZqX3NSN0owYTdXVjRicFNMRm9NMV8xYktVT1U3R2x6NWJxWm1DUDF5d3VXODFYSWVCTThEMHU5S3MwYllMelFPZ3phczl4UU9BN3VJ?oc=5" target="_blank">東京シティ競馬、2026年度イメージキャラクターは横浜流星さんに決定！ コミュニケーションテーマは「日本を輝かせるトゥインクルレースSTAR☆T!」</a>&nbsp;&nbsp;<font color="#6f6f6f">時事ドットコム</font>'
-  [RSS#8] raw_link='https://news.google.com/rss/articles/CBMiiwFBVV95cUxNdnVaZzVsUFpxU1ZHaUhidGxRc0hwUk9HWU9oUUpuYVUydklSMXdZdTlNNzNDcTM4RTZJRTBaWmc3ZXhIVU1wWkFwQjF0Mm52ZlZiSGZVU3pZM1JtY3BiR0NvbEp1TmZ0dXV4bW9uWWF6SHl0cEN2Wm5GRGpuaDlXeW1VcFdaX2Z6WlBV?oc=5'
-  [RSS#8] desc='<a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNdnVaZzVsUFpxU1ZHaUhidGxRc0hwUk9HWU9oUUpuYVUydklSMXdZdTlNNzNDcTM4RTZJRTBaWmc3ZXhIVU1wWkFwQjF0Mm52ZlZiSGZVU3pZM1JtY3BiR0NvbEp1TmZ0dXV4bW9uWWF6SHl0cEN2Wm5GRGpuaDlXeW1VcFdaX2Z6WlBV?oc=5" target="_blank">東京シティ競馬26年度イメージキャラクターが横浜流星に決定、新イメージソングは中島美嘉 - 地方 | 競馬写真ニュース</a>&nbsp;&nbsp;<font color="#6f6f6f">nikkansports.com</font>'
-  [RSS#9] raw_link='https://news.google.com/rss/articles/CBMiUkFVX3lxTE5yblkyS2c0bExScGlCUC1ESzViSXVETXlfbjNfX0J0dFNTZ1p6bEhjMVhrSlY5LXdaamdZeUU1ZU9YMS05NU5CMjEtNVRLTDl0N1E?oc=5'
-  [RSS#9] desc='<a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5yblkyS2c0bExScGlCUC1ESzViSXVETXlfbjNfX0J0dFNTZ1p6bEhjMVhrSlY5LXdaamdZeUU1ZU9YMS05NU5CMjEtNVRLTDl0N1E?oc=5" target="_blank">横浜流星、東京シティ競馬 2026年度イメージキャラクターに決定 新コンセプトムービー公開</a>&nbsp;&nbsp;<font color="#6f6f6f">cinema-life.net</font>'
-  [RSS#10] raw_link='https://news.google.com/rss/articles/CBMiU0FVX3lxTE4tMXAzdlZoRmEtQ3NKSEVfeWRGZlEzWjl6LVh5MFVWVHFrRmktb1FXWXBnaGhlZk0tYklLeUpEMmZHZ3JwN3c2bkFPbWVZcHJndmpF?oc=5'
-  [RSS#10] desc='<a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE4tMXAzdlZoRmEtQ3NKSEVfeWRGZlEzWjl6LVh5MFVWVHFrRmktb1FXWXBnaGhlZk0tYklLeUpEMmZHZ3JwN3c2bkFPbWVZcHJndmpF?oc=5" target="_blank">【香港競馬】19連勝＆レコード更新の衝撃…カーインライジングが異次元V、完全制覇へ視界良好</a>&nbsp;&nbsp;<font color="#6f6f6f">オリコンニュース</font>'
-  有効エントリー: 110 件
+  [HTTP] 200 139399 bytes
+  [RSS#1] raw_link='https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yNWNoazgtS1NPNGR2M2ozdmY1ZTFQT1VVd3RjelA4VW9PY0h4cnloSGZSc21Lam1WQS1QMUhTVXpKMXU4bmw2Q0Ric3FlWGQ1Vm5RRQ?oc=5'
+  [RSS#1] desc='<a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yNWNoazgtS1NPNGR2M2ozdmY1ZTFQT1VVd3RjelA4VW9PY0h4cnloSGZSc21Lam1WQS1QMUhTVXpKMXU4bmw2Q0Ric3FlWGQ1Vm5RRQ?oc=5" target="_blank">【大阪杯結果＆コメント】クロワデュノールが歓喜のV 北村友一「主役級でずっと引っ張っていけるように」</a>&nbsp;&nbsp;<font color="#6f6f6f">東スポ競馬</font>'
+  [RSS#2] raw_link='https://news.google.com/rss/articles/CBMigAFBVV95cUxNeWpzX2VBeW9DVDJFdmlrNWQwZ0JZRXFPV0ExVVd3VTFKQlBMSlJ1Z2tobFVXdWlzWFdoMGRmTVYtVlB6UFp6RGFpWkFtMXpZNENSYUV6c1hid0R4cHRYMUlOQmd2RS05NFo1X3ViQVZRYmNZRHdISFNKNGgyZ21XMdIBhgFBVV95cUxNOXBLcVVaM2MtTXpWUXBrZWdIR2N6V0VseURQX0N3TTZWRE5jeUdoQWd5bUhFSzJDLTMyV19jVFNQMXNFaWpNOUtKSHkzRFg5LUczX3dIcndvaTZhanVJdTRGdXpSWi1tVGlOV1IyeVR2bERaNmk4U01UaFhGYjBRQzhYeGh1dw?oc=5'
+  [RSS#2] desc='<a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNeWpzX2VBeW9DVDJFdmlrNWQwZ0JZRXFPV0ExVVd3VTFKQlBMSlJ1Z2tobFVXdWlzWFdoMGRmTVYtVlB6UFp6RGFpWkFtMXpZNENSYUV6c1hid0R4cHRYMUlOQmd2RS05NFo1X3ViQVZRYmNZRHdISFNKNGgyZ21XMdIBhgFBVV95cUxNOXBLcVVaM2MtTXpWUXBrZWdIR2N6V0VseURQX0N3TTZWRE5jeUdoQWd5bUhFSzJDLTMyV19jVFNQMXNFaWpNOUtKSHkzRFg5LUczX3dIcndvaTZhanVJdTRGdXpSWi1tVGlOV1IyeVR2bERaNmk4U01UaFhGYjBRQzhYeGh1dw?oc=5" target="_blank">国枝〝厩務員〟が新たなホースマン人生をスタート！「疲れた〜」「小学1年生みたいな気持ち」充実の1日に</a>&nbsp;&nbsp;<font color="#6f6f6f">ｄメニューニュース</font>'
+  [RSS#3] raw_link='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBVaG10elJSVlBLTVpUQ3VfRUZYb0RMRXd1WHVLeWJaamtmcEFkbU5jOEtBTWtQbnp3N29PZHloS1M2NWRsVXVjOTRHTWpiNU00SUphUmdOeWNYbVFPRWc?oc=5'
+  [RSS#3] desc='<a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBVaG10elJSVlBLTVpUQ3VfRUZYb0RMRXd1WHVLeWJaamtmcEFkbU5jOEtBTWtQbnp3N29PZHloS1M2NWRsVXVjOTRHTWpiNU00SUphUmdOeWNYbVFPRWc?oc=5" target="_blank">JRAが月曜日に衝撃発表 日・祝限定からついに…競馬ファン騒然 (2026年4月6日掲載)</a>&nbsp;&nbsp;<font color="#6f6f6f">ライブドアニュース</font>'
+  [RSS#4] raw_link='https://news.google.com/rss/articles/CBMif0FVX3lxTE0xSHY3clFKSHBOLVlualhaU1BLSzZfMkNKZnJXTWhjQnhDbFM3Ny12dkZhX0ozOXkySUx2Y0FOMk1vUTA1SFZqTzd2OTI3VVRwVFRmZWVsX3BZMmxlbF9VbG1XWVNnUU1qRXp1UmFIOENFb3hLUWhPVnJ6TGdwOFU?oc=5'
+  [RSS#4] desc='<a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE0xSHY3clFKSHBOLVlualhaU1BLSzZfMkNKZnJXTWhjQnhDbFM3Ny12dkZhX0ozOXkySUx2Y0FOMk1vUTA1SFZqTzd2OTI3VVRwVFRmZWVsX3BZMmxlbF9VbG1XWVNnUU1qRXp1UmFIOENFb3hLUWhPVnJ6TGdwOFU?oc=5" target="_blank">WIN5の土曜発売を通年化へ…JRA発表 4月25日から（東スポ競馬）</a>&nbsp;&nbsp;<font color="#6f6f6f">Yahoo!ニュース</font>'
+  [RSS#5] raw_link='https://news.google.com/rss/articles/CBMiX0FVX3lxTFBXS1ZlQVIyYzlvUVpSaDcyQWRub0dUSWxScWpXMGpWTVJqTTZYUjhjbUw1eS1oLU9wam8wTlBuRFdxMEZKNTRMeFlTZUVKcWVuM1ZKaGJMSjVlOXVpNXd3?oc=5'
+  [RSS#5] desc='<a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBXS1ZlQVIyYzlvUVpSaDcyQWRub0dUSWxScWpXMGpWTVJqTTZYUjhjbUw1eS1oLU9wam8wTlBuRFdxMEZKNTRMeFlTZUVKcWVuM1ZKaGJMSjVlOXVpNXd3?oc=5" target="_blank">WIN5土曜も通年で発売 4月25日から JRA発表</a>&nbsp;&nbsp;<font color="#6f6f6f">netkeiba</font>'
+  [RSS#6] raw_link='https://news.google.com/rss/articles/CBMif0FVX3lxTE5adXM2Nl81d2JOMExaYkdKYWhkUlNGSWc0ZEQ5VG1BTFh3cjIxU25xSWhDQ3ZpbEZicHBQR1pLejRRQ3pjUzk5ZGZWWWE1YVBib0dXdHBOTnd2dTlkb0FkcXYtdF9iYU9VakIxeTU0UFNhUDROOFQ0TjZ1bEg3NjA?oc=5'
+  [RSS#6] desc='<a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5adXM2Nl81d2JOMExaYkdKYWhkUlNGSWc0ZEQ5VG1BTFh3cjIxU25xSWhDQ3ZpbEZicHBQR1pLejRRQ3pjUzk5ZGZWWWE1YVBib0dXdHBOTnd2dTlkb0FkcXYtdF9iYU9VakIxeTU0UFNhUDROOFQ0TjZ1bEg3NjA?oc=5" target="_blank">単勝１・０倍の圧倒的人気に応えカーインライジングが１９連勝 香港競馬の連勝記録を更新 ２番人気は７０倍（馬トク報知）</a>&nbsp;&nbsp;<font color="#6f6f6f">Yahoo!ニュース</font>'
+  [RSS#7] raw_link='https://news.google.com/rss/articles/CBMifkFVX3lxTE5rWllhZm96V3pyRmR1Q2JCaHYtZXJaTHdoak9yejMteEZVTk01OW4tQzg0c3NPX3ZJb1ZFZWFNeVRlZTdSelVKWDFncm9jTWVtOWtIXzlGT2QxT0hmYk9CYU1HNU01Z0ZuZzBLZk5ndjJUTjJJcXpJV0wxWi0tUQ?oc=5'
+  [RSS#7] desc='<a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5rWllhZm96V3pyRmR1Q2JCaHYtZXJaTHdoak9yejMteEZVTk01OW4tQzg0c3NPX3ZJb1ZFZWFNeVRlZTdSelVKWDFncm9jTWVtOWtIXzlGT2QxT0hmYk9CYU1HNU01Z0ZuZzBLZk5ndjJUTjJJcXpJV0wxWi0tUQ?oc=5" target="_blank">【香港競馬】19連勝＆レコード更新の衝撃…カーインライジングが異次元V、完全制覇へ視界良好</a>&nbsp;&nbsp;<font color="#6f6f6f">au Webポータル</font>'
+  [RSS#8] raw_link='https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZN0xTUXNFUFFCMWNfX1htQWlFbkZvYWxiR3NOQVM5MGxCTy1sUm8zVENGUGlrTV9MZHlBMHFQYUg5cmR0VXdBR0FUTWRtek5oU2ZlSk1mUHFHMlg0RXV0VWlZTzNDMjlsR1hpUlR30gFzQVVfeXFMTTR6MlFLRnpQQl9mcjVqbVBpcjhwSTJRd3JoSVVEREE0dHhXMTYxdWxSd2doLVJvbFJDNlNuTGtaajBMMVlyZG5OTjBoQU1FSkdpWlNYRWtOdXduTVJXbmp0SDUtM2dKbzdwWVY0QldVZ2JnTQ?oc=5'
+  [RSS#8] desc='<a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZN0xTUXNFUFFCMWNfX1htQWlFbkZvYWxiR3NOQVM5MGxCTy1sUm8zVENGUGlrTV9MZHlBMHFQYUg5cmR0VXdBR0FUTWRtek5oU2ZlSk1mUHFHMlg0RXV0VWlZTzNDMjlsR1hpUlR30gFzQVVfeXFMTTR6MlFLRnpQQl9mcjVqbVBpcjhwSTJRd3JoSVVEREE0dHhXMTYxdWxSd2doLVJvbFJDNlNuTGtaajBMMVlyZG5OTjBoQU1FSkdpWlNYRWtOdXduTVJXbmp0SDUtM2dKbzdwWVY0QldVZ2JnTQ?oc=5" target="_blank">海外競馬で衝撃「凄いよりも怖い」\u3000世界最強スプリンター、100m“流して”19連勝＆レコード</a>&nbsp;&nbsp;<font color="#6f6f6f">ｄメニューニュース</font>'
+  [RSS#9] raw_link='https://news.google.com/rss/articles/CBMiakFVX3lxTE51S0EyZlFfeE5wTHQ5UHZuVVZwdERiRU9jNVZPLXhYXy1PMFJLU0xEcUhubFcwZGVxR3daVlljdGljOVlOWGZyVHcwd1NtSTNYRk13OVZRV0ZLa1ZISTVxaXV4UWRPQ2sxWEE?oc=5'
+  [RSS#9] desc='<a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE51S0EyZlFfeE5wTHQ5UHZuVVZwdERiRU9jNVZPLXhYXy1PMFJLU0xEcUhubFcwZGVxR3daVlljdGljOVlOWGZyVHcwd1NtSTNYRk13OVZRV0ZLa1ZISTVxaXV4UWRPQ2sxWEE?oc=5" target="_blank">【東京シティ競馬】2026年度のイメージキャラクターは横浜流星 コミュニケーションテーマは…</a>&nbsp;&nbsp;<font color="#6f6f6f">スポニチ競馬Web</font>'
+  [RSS#10] raw_link='https://news.google.com/rss/articles/CBMia0FVX3lxTFBTSTN2MFM0QzI1c3BSbFI0Ym0wSlhSOXZqX3NSN0owYTdXVjRicFNMRm9NMV8xYktVT1U3R2x6NWJxWm1DUDF5d3VXODFYSWVCTThEMHU5S3MwYllMelFPZ3phczl4UU9BN3VJ?oc=5'
+  [RSS#10] desc='<a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBTSTN2MFM0QzI1c3BSbFI0Ym0wSlhSOXZqX3NSN0owYTdXVjRicFNMRm9NMV8xYktVT1U3R2x6NWJxWm1DUDF5d3VXODFYSWVCTThEMHU5S3MwYllMelFPZ3phczl4UU9BN3VJ?oc=5" target="_blank">東京シティ競馬、2026年度イメージキャラクターは横浜流星さんに決定！ コミュニケーションテーマは「日本を輝かせるトゥインクルレースSTAR☆T!」</a>&nbsp;&nbsp;<font color="#6f6f6f">時事ドットコム</font>'
+  有効エントリー: 111 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 111308 bytes
+  [HTTP] 200 114343 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
-  [HTTP] 200 128220 bytes
-  有効エントリー: 100 件
-フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 122599 bytes
-  有効エントリー: 100 件
-フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
-  [HTTP] 200 112900 bytes
-  有効エントリー: 100 件
-フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
-  [HTTP] 200 124413 bytes
-  有効エントリー: 100 件
-JRA公式ニュースをスクレイピング中...
-  [HTTP] 200 71957 bytes
-  [JRA] 1 件スクレイプ
-未投稿エントリー: 550 件
-  [除外] 動画タイトルのためスキップ: 【動画】【2026 大阪杯 GⅠ】 春の中距離王はどの馬だ！？ 4/5（日） 阪神競馬場 - スポーツナビ「JRA 日本  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLPpRDn4pGCWsJmeH3QQHxpuBX_q0ccNrMT3MMAr6J3CoVDlXk5P'
+  [HTTP] 200 128220 bytes  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"SAU_yqLO_ij7jUAQcVEIhJS_VlsCI-CXhWxTU0LUPLpegaY5gy3U9HjWd'
   [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTFBw'
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiU0FVX3lxTE9f'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFBwUkRuNHB'
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiU0FVX3lxTE9faWo3alV'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFBwUkRuNHB'
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiU0FVX3lxTE9faWo3alV'
   [スキップ] URL解決失敗 → 次の候補へ (1件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"pAU_yqLMYjQ24bFfikQGsA7x3tLHVv_K4euIpllVywR0ynQMtJABQe3dg'
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x80\x01AU_yqLMyjs_eAyoCT2Evik5d0gBYEqOWA1UWwU1JBPLJRugkhlUWuis'
   [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE1Z'
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMigAFBVV95cUxN'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE1ZalEyNGJ'
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMigAFBVV95cUxNeWpzX2V'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE1ZalEyNGJ'
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMigAFBVV95cUxNeWpzX2V'
   [スキップ] URL解決失敗 → 次の候補へ (2件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLNcRstmRTSjuP0oqtM-5Kn2D9E_Y_12BNqcO7lhyBw2Z9pfYOGY'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE5j'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE5jUnN0bVJ'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE5jUnN0bVJ'
-  [スキップ] URL解決失敗 → 次の候補へ (3件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"ZAU_yqLOA_U_tD4nP0FiXAeuwU9pQ9RWFDLRrrU3tJCiVu6LkALQUMklV'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiWkFVX3lxTE9B'
@@ -93,7 +66,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiWkFVX3lxTE9BX1VfdEQ'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiWkFVX3lxTE9BX1VfdEQ'
-  [スキップ] URL解決失敗 → 次の候補へ (4件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (3件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"kAU_yqLPSI3v0S4C25spRlR4bm0JXR9vj_sR7J0a7WV4bpSLFoM1_1bKU'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMia0FVX3lxTFBT'
@@ -101,7 +74,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMia0FVX3lxTFBTSTN2MFM'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMia0FVX3lxTFBTSTN2MFM'
-  [スキップ] URL解決失敗 → 次の候補へ (5件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (4件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x8e\x01AU_yqLOAVQVmVcPuoCYkfFhCsahy9KrX_V2XNjF4q_9oMoo9POPIPhv'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMijgFBVV95cUxP'
@@ -109,7 +82,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMijgFBVV95cUxPQVZRVm1'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMijgFBVV95cUxPQVZRVm1'
-  [スキップ] URL解決失敗 → 次の候補へ (6件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (5件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLNDVWhhwDtU_ZuSRJU1_uCix2ZMg27St-IwsOdCgJVcT6GumjFF'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE5E'
@@ -117,7 +90,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE5EVldoaHd'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE5EVldoaHd'
-  [スキップ] URL解決失敗 → 次の候補へ (7件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (6件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"nAU_yqLPkURZZJs3AGAN-xqcxRP_YmMvnaHO1zX3fJsD8kr2WfFSL4rML'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMibkFVX3lxTFBr'
@@ -125,7 +98,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMibkFVX3lxTFBrVVJaWkp'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMibkFVX3lxTFBrVVJaWkp'
-  [スキップ] URL解決失敗 → 次の候補へ (8件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (7件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"~AU_yqLMEwQBqvq3ZyUpqQ-GVoTp6BdrVmqgBrzbmk9rYiOiEFPaMo-yz'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMifkFVX3lxTE1F'
@@ -133,7 +106,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMifkFVX3lxTE1Fd1FCcXZ'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMifkFVX3lxTE1Fd1FCcXZ'
-  [スキップ] URL解決失敗 → 次の候補へ (9件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (8件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"pAU_yqLNtqnmVoY3LiMRuJ8jN0fQhBhHiFgdXwjcTj5hv9MzowqW_Psu6'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE50'
@@ -141,7 +114,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE50cW5tVm9'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE50cW5tVm9'
-  [スキップ] URL解決失敗 → 次の候補へ (10件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (9件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLO4aVXbjzCs0rU2U6xl_PO7mX6WpXs--YNl3dw7_i3OAS-GIvMz'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE80'
@@ -149,6 +122,14 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE80YVZYYmp'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE80YVZYYmp'
+  [スキップ] URL解決失敗 → 次の候補へ (10件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"_AU_yqLOjEHlj6CteSbao-7stQv7dV1dvvXJ0kQ9fhnmkZM87MqauZ-RF'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiX0FVX3lxTE9q'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiX0FVX3lxTE9qRUhsajZ'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiX0FVX3lxTE9qRUhsajZ'
   [スキップ] URL解決失敗 → 次の候補へ (11件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"pAU_yqLMsbaP7n0Ojb6J7Hf5o9CexuNWAr0NU3tMmhHRc-bsbIiri47xY'
   [GNews resolve] 全パターン失敗
@@ -166,6 +147,14 @@ JRA公式ニュースをスクレイピング中...
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiaEFVX3lxTE9uOF9kanN'
   [スキップ] URL解決失敗 → 次の候補へ (13件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLPqaHXCxyXGxkCIQcNqPb3HuhwMU-H1UFR2BYjl1FELrRdzsJW6'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTFBx'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFBxYUhYQ3h'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFBxYUhYQ3h'
+  [スキップ] URL解決失敗 → 次の候補へ (14件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"_AU_yqLPmp_cxphtJUxWOGLBjsUAzvvx_GWmUxSqs-xoHVxiUV9-FZ-Jk'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiX0FVX3lxTFBt'
@@ -173,7 +162,15 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiX0FVX3lxTFBtcF9jeHB'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiX0FVX3lxTFBtcF9jeHB'
-  [スキップ] URL解決失敗 → 次の候補へ (14件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (15件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"pAU_yqLO2otr2JeElJSEfpWxIaB7hR0vTEe3OvVR425PlE_0OdPOlC1Zp'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE8y'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE8yb3RyMkp'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE8yb3RyMkp'
+  [スキップ] URL解決失敗 → 次の候補へ (16件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLO1EtDU8TvNywv3Smp_300iQGJanfkZ5XnDTReewfufFo4SeTp7'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE8x'
@@ -181,15 +178,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE8xRXREVTh'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE8xRXREVTh'
-  [スキップ] URL解決失敗 → 次の候補へ (15件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLNbTF1hdeu9OCROkAVzvpeP7QOkeaVxVLCixn_yK5PMEgnHM2as'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE5i'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE5iVEYxaGR'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE5iVEYxaGR'
-  [スキップ] URL解決失敗 → 次の候補へ (16件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (17件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\xa0\x01AU_yqLPUnwuPfb3qeK57_AsIiDLyzkfYjoFWtaNM19Zatb82ewJwcTY'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMioAFBVV95cUxQ'
@@ -197,7 +186,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMioAFBVV95cUxQVW53dVB'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMioAFBVV95cUxQVW53dVB'
-  [スキップ] URL解決失敗 → 次の候補へ (17件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (18件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLOFM1Y3lTOx84yZcmCqtxu6OJPV1HsSmYMo7kGFjs8Wb7iZIo1N'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE9G'
@@ -205,7 +194,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE9GTTFZM2x'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE9GTTFZM2x'
-  [スキップ] URL解決失敗 → 次の候補へ (18件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (19件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLPKlDUnJU6oizMUoRGmEB-Z2iwY9ZlqkrnZMQOt_Ke3lKJYpBE9'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTFBL'
@@ -213,7 +202,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFBLbERVbkp'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFBLbERVbkp'
-  [スキップ] URL解決失敗 → 次の候補へ (19件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (20件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x80\x01AU_yqLOtE67-gv4M4IEvXly6gSmJIgpbAtz-DTCAD5rwfxmVB-WzIiH'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMigAFBVV95cUxP'
@@ -221,49 +210,30 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMigAFBVV95cUxPdEU2Ny1'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMigAFBVV95cUxPdEU2Ny1'
-  [スキップ] URL解決失敗 → 次の候補へ (20件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x87\x01AU_yqLOCrj5gHTLV-iEBTwF1muprGc4a4g-mGMMerI11lSPEEJ-I5Ly'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMihwFBVV95cUxP'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ3JqNWd'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ3JqNWd'
   [スキップ] URL解決失敗 → 次の候補へ (21件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"~AU_yqLNkZYafozWzrFduCbBhv-erZLwhjOrz3-xFUNM59n-C84ssO_vI'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMifkFVX3lxTE5r'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMifkFVX3lxTE5rWllhZm9'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMifkFVX3lxTE5rWllhZm9'
-  [スキップ] URL解決失敗 → 次の候補へ (22件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"GAU_yqLPPa9NgvoPSOScRqGcuKEApkgrZscl1KRqWHo7dutvpzAF2PkgE'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiR0FVX3lxTFBQ'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiR0FVX3lxTFBQYTlOZ3Z'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiR0FVX3lxTFBQYTlOZ3Z'
-  [スキップ] URL解決失敗 → 次の候補へ (23件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLOuusmrfkni4NbfUryDCLzadVN9v6wz8O4xkcUK0BO4z0k8STn2'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE91'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE91dXNtcmZ'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE91dXNtcmZ'
-  [スキップ] URL解決失敗 → 次の候補へ (24件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"GAU_yqLO-HdlRlrqrvRGY_9I2RRzAqmvFcCbUxBULbOkpohdJjE76LBr7'
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"pAU_yqLOJBatZBTasO9WTLJDy0HyXe9ifH9VhfuBq0X5_Qp3SLfq8t5xW'
 
-競馬関連フィルタ後: 546 件
-フィルタ「24時間以内」: 直接URL 0件 / GoogleNews 97件 → 候補プール 30件
+  有効エントリー: 100 件
+フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
+  [HTTP] 200 113680 bytes
+  有効エントリー: 100 件
+フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
+  [HTTP] 200 113911 bytes
+  有効エントリー: 100 件
+フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
+  [HTTP] 200 124413 bytes
+  有効エントリー: 100 件
+JRA公式ニュースをスクレイピング中...
+  [HTTP] 200 71957 bytes
+  [JRA] 1 件スクレイプ
+未投稿エントリー: 547 件
+  [除外] 動画タイトルのためスキップ: 【動画】【2026 大阪杯 GⅠ】 春の中距離王はどの馬だ！？ 4/5（日） 阪神競馬場 - スポーツナビ「JRA 日本
+競馬関連フィルタ後: 543 件
+フィルタ「24時間以内」: 直接URL 0件 / GoogleNews 95件 → 候補プール 30件
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTFBwUkRuNHBHQ1dzSm1lSDNRUUh4cHVCWF9xMGNjTnJNVDNNTUFyNkozQ29WRGxYazVQY1pwLTlqcERvUUdBU3NaUGV2WldzakozLWZUalJobUFZTDI4emczazVvcEJQQUJOa1cyWUZGdElqMzRyaEJ1LU9EdDROYmc'
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiU0FVX3lxTE9faWo3alVBUWNWRUloSlNfVmxzQ0ktQ1hoV3hUVTBMVVBMcGVnYVk1Z3kzVTlIaldkWnhveVdSdUN4SEp2V2ltWnVuUS1Xd240Qjdn'
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE1ZalEyNGJGZmlrUUdzQTd4M3RMSFZ2X0s0ZXVJcGxsVnl3UjB5blFNdEpBQlFlM2RnOWktQ056Uk12VXNPMFFUTjdIa25DWHdzYUF5V2ROeEtBYU5YeDJVYndwLWZKbDM1QVBtc1FHWHjSAXZBVV95cUxPdE9aMldpQ2tSbDNjWDNpdTdGbUUwNkpKbDQ5YW5pOHV5YTZUdk12Z3VFeTdfRzY2clJ4Z09URkVERWZEZ2J5bWtZUUVIWVREWmZEdGFIYVU4MG5PbU1TVGVxWUQzQkdMVkY3dDBnQ0tmcGFaSTNB'
-  [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE5jUnN0bVJUU2p1UDBvcXRNLTVLbjJEOUVfWV8xMkJOcWNPN2xoeUJ3Mlo5cGZZT0dZOHR0dWpKRVpiMV9OY0Y2NXdlYVNkZzFMd0lWRWVUVHJTMlJoVE1vbG8xeHlSLU05NHAzWEN5NGtEU3BaTFBNYU11UF9hU2c'
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMigAFBVV95cUxNeWpzX2VBeW9DVDJFdmlrNWQwZ0JZRXFPV0ExVVd3VTFKQlBMSlJ1Z2tobFVXdWlzWFdoMGRmTVYtVlB6UFp6RGFpWkFtMXpZNENSYUV6c1hid0R4cHRYMUlOQmd2RS05NFo1X3ViQVZRYmNZRHdISFNKNGgyZ21XMdIBhgFBVV95cUxNOXBLcVVaM2MtTXpWUXBrZWdIR2N6V0VseURQX0N3TTZWRE5jeUdoQWd5bUhFSzJDLTMyV19jVFNQMXNFaWpNOUtKSHkzRFg5LUczX3dIcndvaTZhanVJdTRGdXpSWi1tVGlOV1IyeVR2bERaNmk4U01UaFhGYjBRQzhYeGh1dw'
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiWkFVX3lxTE9BX1VfdEQ0blAwRmlYQWV1d1U5cFE5UldGRExScnJVM3RKQ2lWdTZMa0FMUVVNa2xWQU5BQ2lRNzdBSUdmbFloMDRpb1AzYWdsWTZtOHNlbGxoUQ'
   [GNews] URL解決試行中...
@@ -281,15 +251,19 @@ JRA公式ニュースをスクレイピング中...
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE80YVZYYmp6Q3MwclUyVTZ4bF9QTzdtWDZXcFhzLS1ZTmwzZHc3X2kzT0FTLUdJdk16am5Jd1A0WXJqY2hjajBTSFBSakY1dUl0SElva2pOM3N5cl9JM1U1SWpNQWt1LTRmVHFLUUVYWDNuUE5ZWHR6Z0lfcGxnU3M'
   [GNews] URL解決試行中...
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiX0FVX3lxTE9qRUhsajZDdGVTYmFvLTdzdFF2N2RWMWR2dlhKMGtROWZobm1rWk04N01xYXVaLVJGdDl1WV91X2VrM0FQUTlZMGljX19nWkYxR0F3MWg4OEQ5VkM0TWtr'
+  [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE1zYmFQN24wT2piNko3SGY1bzlDZXh1TldBcjBOVTN0TW1oSFJjLWJzYklpcmk0N3hZSUFxS2otYk5Nb0FrZ3hHbHN0UWxsTXNXNGxVeFNJYXg5N0RtMjFxOG80ZVdTTlFHaFQ2a3VqNjPSAXZBVV95cUxOUDBTZnJwWEdzYThXcXRFTVZPQUdyaWFydUpTSnYxYy03dXpkNnlZS1lGd3hMTmRqMVlweXpibVlvY2pJS1p6Y2JiTUdFZVNwUkpfRWN3ajR6ZjdRc0ZXTU5uem1SendYNUNKR1Y2TlpDSkdQSmNn'
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiaEFVX3lxTE9uOF9kanNSaVNCM1RCRkJMT1kwWEJFVXVHRXRtZHdESjNFWXV0S0ZJQTdCcnMtc0ROakdXcG1pVy1FNWtPOE9jTUFRSUJyRjFodW1rQ2NVUlgyQWs4WHRWWVBsMnk1bjRf'
   [GNews] URL解決試行中...
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTFBxYUhYQ3h5WEd4a0NJUWNOcVBiM0h1aHdNVS1IMVVGUjJCWWpsMUZFTHJSZHpzSlc2d0xYN2hVVEhFME4zWXprYnNlU1U2eEhmb3BLc1lOYWJEWl9RXzItRFJHeUlMUnNUZWtJLXVmakxEVERpMHBlZVBQeWtHSGM'
+  [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiX0FVX3lxTFBtcF9jeHBodEpVeFdPR0xCanNVQXp2dnhfR1dtVXhTcXMteG9IVnhpVVY5LUZaLUprLWlEYXlqbHk0SHk1NVJBMjlNRmhkUXY4RGhTM3pTdUtMcVNtSnhv'
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE8xRXREVThUdk55d3YzU21wXzMwMGlRR0phbmZrWjVYbkRUUmVld2Z1ZkZvNFNlVHA3LVNXNzFLMGMxaFVBM3VsQjJxVVhYUnpHSU92ZnNIRi1oZDBDOEIzT2xjT25FSjdaU2czUENsZDAwaXB0VG1rdVRGa1ZkQzQ'
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE8yb3RyMkplRWxKU0VmcFd4SWFCN2hSMHZURWUzT3ZWUjQyNVBsRV8wT2RQT2xDMVpwMll1MjMtUTdEcmtvbGV6Vkg3dEIxM3ktNWpwa0JacmdocjlCcW1ZZm9WcHlZVlg3VW5LZS1TOGbSAXZBVV95cUxOblY5blR0cjRwUHB6aTBSSXRsa3FnMnVnUmFkcThBSWU2QzZBRHV0b215TnVrNk90M1drcUV6TGNhdFZYTFZRQ2MzdEx3dUJHMXRPNzBlNWpHZzBrQ3JWUVdoRlhuVTVkaEhmTXVVMkVRa3NQWVZB'
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE5iVEYxaGRldTlPQ1JPa0FWenZwZVA3UU9rZWFWeFZMQ2l4bl95SzVQTUVnbkhNMmFzUlAxQzhvNGE4RWdoVHMyMEVwSzl3bzl0SXpMRjJGTmFWZVYyVnpjLTBZY2tGSWsyVWZDdGtXZDlDcEtSYVVpWVNFcUs3eGc'
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE8xRXREVThUdk55d3YzU21wXzMwMGlRR0phbmZrWjVYbkRUUmVld2Z1ZkZvNFNlVHA3LVNXNzFLMGMxaFVBM3VsQjJxVVhYUnpHSU92ZnNIRi1oZDBDOEIzT2xjT25FSjdaU2czUENsZDAwaXB0VG1rdVRGa1ZkQzQ'
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMioAFBVV95cUxQVW53dVBmYjNxZUs1N19Bc0lpREx5emtmWWpvRld0YU5NMTlaYXRiODJld0p3Y1RZSHlIVEFTaW5pWG1xTzRQVENwYTB0NldqbXYwdG04czhxV2pCSXlXeGxtT05BckFUbGZ2bkR6aF9Lekl2Z1paa090RVRlLThRd2hOMHgtUng1VzdxVlBKMVNGYjl5RkhsS1BrNTZzWFJZ'
   [GNews] URL解決試行中...
@@ -299,21 +273,45 @@ JRA公式ニュースをスクレイピング中...
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMigAFBVV95cUxPdEU2Ny1ndjRNNElFdlhseTZnU21KSWdwYkF0ei1EVENBRDVyd2Z4bVZCLVd6SWlIWFR4T2VNTi1xRVNlZEM0Z2dIdnB2YlJuUHRyclQ3cDdwSHUyWTdHYVhPNG9rVDhCclBycFpxZEctZUZBUy1MV3RtSjJzR0s5SNIBhgFBVV95cUxOY1VURGtEbEhhVHlEZUU2dlhpYmlYOEp0WFNuZURVaHViZ0xleDBjWXRRbHRDakJfQ19Gc0JlQ2NnV0l5c0lOaVZ6eThJWGpZdmtTOTFCMXFPdmVBT0QteTI4QVAxcFBxV3I2Tzh1b3BOWXliNWc3M1ptZnNnQnVxZVFVY1F3Zw'
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMihwFBVV95cUxPQ3JqNWdIVExWLWlFQlR3RjFtdXByR2M0YTRnLW1HTU1lckkxMWxTUEVFSi1JNUx5X1NnekFQaTgwNkRFM09JLVZlVXF0UTZMMXZuWXNLTldoUDlDWnN5b2p2N201eVlJZkJxclBXNnQwRFpFYzJZLUJqUGd1aEN2T1h2YllPSEXSAYwBQVVfeXFMUGZ1Q09IOEZxRU9NTGMyemtFU2YyUzdwczB3NDdGcHVHREhsYkg1V2Zza3ZlUHRGWWRtY0ZIYXRpcHlVUlJLMkVCQ2R4VHF0UENDY0FZN0dkOHZrQ2syODVhVmZEZ25YbDZPcENSN1hxcG5FWUNPaE53MXF4QldLbEpSS2RxQ3AyZzdSZDc'
-  [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMifkFVX3lxTE5rWllhZm96V3pyRmR1Q2JCaHYtZXJaTHdoak9yejMteEZVTk01OW4tQzg0c3NPX3ZJb1ZFZWFNeVRlZTdSelVKWDFncm9jTWVtOWtIXzlGT2QxT0hmYk9CYU1HNU01Z0ZuZzBLZk5ndjJUTjJJcXpJV0wxWi0tUQ'
-  [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiR0FVX3lxTFBQYTlOZ3ZvUFNPU2NScUdjdUtFQXBrZ3Jac2NsMUtScVdIbzdkdXR2cHpBRjJQa2dFZDZUYUN5dlE5aG51QW9R'
-  [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE91dXNtcmZrbmk0TmJmVXJ5RENMemFkVk45djZ3ejhPNHhrY1VLMEJPNHowazhTVG4yQmpTWWVfbE9hYXBvdVJUY0o1bVVhbUF2NUFCRTd4dm9mWnQ0SklnZ2hpZm40eHRTYUpMMEFLM1pTVE1hS2ZmMFFjNUFUamc'
-  [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiR0FVX3lxTE8tSGRsUmxycXJ2UkdZXzlJMlJSekFxbXZGY0NiVXhCVUxiT2twb2hkSmpFNzZMQnI3ak9jWFpuVlBHdHdxSDVJ'  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiR0FVX3lxTE8t'
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE9KQmF0WkJUYXNPOVdUTEpEeTBIeVhlOWlmSDlWaGZ1QnEwWDVfUXAzU0xmcTh0NXhXMkJoWThoX0lMRXJTUDNEdDBMbUxMRUt2WEJlZWx2NVp6REQ2QW55NUJjWjJQb0g2U19hNzBZQWfSAXZBVV95cUxPS0RPODgxd01MM1h4dnhGb3hxak9jNFhEbE1mQkVGekprNXBfUXRIQy1jcHJpdG5PYVNRcVBLYi1OZUk0YzBtNkJqamlVQUVHTG15NzVkeTBCV3lCazVITEpnV2VyZkxJZ1QxUDl2UXNRaWpBUGlR'  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMicEFVX3lxTE9K'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiR0FVX3lxTE8tSGRsUmx'
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE9KQmF0WkJ'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiR0FVX3lxTE8tSGRsUmx'
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMicEFVX3lxTE9KQmF0WkJ'
+  [スキップ] URL解決失敗 → 次の候補へ (22件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x87\x01AU_yqLOCrj5gHTLV-iEBTwF1muprGc4a4g-mGMMerI11lSPEEJ-I5Ly'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMihwFBVV95cUxP'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ3JqNWd'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ3JqNWd'
+  [スキップ] URL解決失敗 → 次の候補へ (23件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"~AU_yqLNkZYafozWzrFduCbBhv-erZLwhjOrz3-xFUNM59n-C84ssO_vI'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMifkFVX3lxTE5r'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMifkFVX3lxTE5rWllhZm9'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMifkFVX3lxTE5rWllhZm9'
+  [スキップ] URL解決失敗 → 次の候補へ (24件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"GAU_yqLPPa9NgvoPSOScRqGcuKEApkgrZscl1KRqWHo7dutvpzAF2PkgE'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiR0FVX3lxTFBQ'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiR0FVX3lxTFBQYTlOZ3Z'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiR0FVX3lxTFBQYTlOZ3Z'
   [スキップ] URL解決失敗 → 次の候補へ (25件スキップ済)
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLOuusmrfkni4NbfUryDCLzadVN9v6wz8O4xkcUK0BO4z0k8STn2'
+  [GNews resolve] 全パターン失敗
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE91'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE91dXNtcmZ'
+  [GNews resolve] 全パターン失敗
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE91dXNtcmZ'
+  [スキップ] URL解決失敗 → 次の候補へ (26件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"SAU_yqLN-1p3vVhFa-CsJHE_ydFfQ3Z9z-Xy0UVTqkFi-oQWYpghhefM-'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiU0FVX3lxTE4t'
@@ -321,7 +319,7 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiU0FVX3lxTE4tMXAzdlZ'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiU0FVX3lxTE4tMXAzdlZ'
-  [スキップ] URL解決失敗 → 次の候補へ (26件スキップ済)
+  [スキップ] URL解決失敗 → 次の候補へ (27件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x8a\x01AU_yqLN9RE0dJIdNBvHqKvzgFJZ1tS-hV00g-h3fUP29ITgM2B_1cEB'
   [GNews resolve] 全パターン失敗
   [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMiigFBVV95cUxO'
@@ -329,14 +327,6 @@ JRA公式ニュースをスクレイピング中...
   [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMiigFBVV95cUxOOVJFMGR'
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMiigFBVV95cUxOOVJFMGR'
-  [スキップ] URL解決失敗 → 次の候補へ (27件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLNwrmB9kANMVgR3w8OKnGlFiSoV0uplfs8RJZUPdgU71QOYl7af'
-  [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE53'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE53cm1COWt'
-  [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTE53cm1COWt'
   [スキップ] URL解決失敗 → 次の候補へ (28件スキップ済)
   [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"\x7fAU_yqLP3O5ruCmKmUsJywOFaTnCa7ga0Lsn7TIMjrFzav2a5NpUWTfGV'
   [GNews resolve] 全パターン失敗
@@ -346,31 +336,37 @@ JRA公式ニュースをスクレイピング中...
   [GNews resolve] 全パターン失敗
   [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMif0FVX3lxTFAzTzVydUN'
   [スキップ] URL解決失敗 → 次の候補へ (29件スキップ済)
-  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"nAU_yqLMQNcZgRyqR04qM0HhL-HeiANlPwioAjXn0VKFIkgwr7zEHnfJf'
+  [GNews] base64デコード成功だがURL抽出失敗。decoded='\x08\x13"nAU_yqLP_96V_7RZRi7REfYSJxuRDagy6xebZwiMo8WcG-JGZ4WLGQx3c'
   [GNews resolve] 全パターン失敗
-  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMibkFVX3lxTE1R'
+  [GNews] __i/rss/rd 失敗 (step1/desktop): status=200 final='https://news.google.com/__i/rss/rd/articles/CBMibkFVX3lxTFBf'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMibkFVX3lxTE1RTmNaZ1J'
+  [GNews] rss/articles direct 失敗 (desktop): status=200 final='https://news.google.com/rss/articles/CBMibkFVX3lxTFBfOTZWXzd'
   [GNews resolve] 全パターン失敗
-  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMibkFVX3lxTE1RTmNaZ1J'
+  [GNews] rss/articles direct 失敗 (mobile): status=200 final='https://news.google.com/rss/articles/CBMibkFVX3lxTFBfOTZWXzd'
   [スキップ] URL解決失敗 → 次の候補へ (30件スキップ済)
 
+  [GNews] URL解決試行中...
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMihwFBVV95cUxPQ3JqNWdIVExWLWlFQlR3RjFtdXByR2M0YTRnLW1HTU1lckkxMWxTUEVFSi1JNUx5X1NnekFQaTgwNkRFM09JLVZlVXF0UTZMMXZuWXNLTldoUDlDWnN5b2p2N201eVlJZkJxclBXNnQwRFpFYzJZLUJqUGd1aEN2T1h2YllPSEXSAYwBQVVfeXFMUGZ1Q09IOEZxRU9NTGMyemtFU2YyUzdwczB3NDdGcHVHREhsYkg1V2Zza3ZlUHRGWWRtY0ZIYXRpcHlVUlJLMkVCQ2R4VHF0UENDY0FZN0dkOHZrQ2syODVhVmZEZ25YbDZPcENSN1hxcG5FWUNPaE53MXF4QldLbEpSS2RxQ3AyZzdSZDc'
+  [GNews] URL解決試行中...
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMifkFVX3lxTE5rWllhZm96V3pyRmR1Q2JCaHYtZXJaTHdoak9yejMteEZVTk01OW4tQzg0c3NPX3ZJb1ZFZWFNeVRlZTdSelVKWDFncm9jTWVtOWtIXzlGT2QxT0hmYk9CYU1HNU01Z0ZuZzBLZk5ndjJUTjJJcXpJV0wxWi0tUQ'
+  [GNews] URL解決試行中...
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiR0FVX3lxTFBQYTlOZ3ZvUFNPU2NScUdjdUtFQXBrZ3Jac2NsMUtScVdIbzdkdXR2cHpBRjJQa2dFZDZUYUN5dlE5aG51QW9R'
+  [GNews] URL解決試行中...
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE91dXNtcmZrbmk0TmJmVXJ5RENMemFkVk45djZ3ejhPNHhrY1VLMEJPNHowazhTVG4yQmpTWWVfbE9hYXBvdVJUY0o1bVVhbUF2NUFCRTd4dm9mWnQ0SklnZ2hpZm40eHRTYUpMMEFLM1pTVE1hS2ZmMFFjNUFUamc'
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiU0FVX3lxTE4tMXAzdlZoRmEtQ3NKSEVfeWRGZlEzWjl6LVh5MFVWVHFrRmktb1FXWXBnaGhlZk0tYklLeUpEMmZHZ3JwN3c2bkFPbWVZcHJndmpF'
   [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMiigFBVV95cUxOOVJFMGRKSWROQnZIcUt2emdGSloxdFMtaFYwMGctaDNmVVAyOUlUZ00yQl8xY0VCZXR2UnZIaVVzUzNuTzctV2RGNllvMTdPOVd1U3hpaUFsMVRhTm4zMVRoMG80NGZHVUZhaEpMNngyTHRjVEVHcXE1SUNaNDZtTTZJeWpTMWlzVnfSAXxBVV95cUxNVDZ3YVNKaWhwWkFpMmRaaTduUGFiTHFUdXd6SWg3ekNNdHdOTmNVbGlSTkY4dXF6aUNvSUJIeURHNHhfTDlyM3R6LXJoOVRLNVBVMmhrMFZUaEJKbWVTVVF5WXA4a0xyUjdzUjRsS1hEVU5KaG5zeGJVMGtK'
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTE53cm1COWtBTk1WZ1IzdzhPS25HbEZpU29WMHVwbGZzOFJKWlVQZGdVNzFRT1lsN2FmcHFLSlNoZHF0NXRxTGZLOGEtdmIwZk5nR2R0MTVTVDU5SjFHODRTdktwME5VVEFHbkJtWFJ4eDRHVTNtQXZhdDdVME5KT0k'
-  [GNews] URL解決試行中...
   [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMif0FVX3lxTFAzTzVydUNtS21Vc0p5d09GYVRuQ2E3Z2EwTHNuN1RJTWpyRnphdjJhNU5wVVdUZkdWVlF3YklHNFlvdGFjcmVYNl8wX3NRbWxwN0lfbEFMNXdFUnhJYnpXUHl4QkVTTlFsb0lKSmtOaHNmUjhjVlVPME9PQ0FWNVk'
   [GNews] URL解決試行中...
-  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMibkFVX3lxTE1RTmNaZ1J5cVIwNHFNMEhoTC1IZWlBTmxQd2lvQWpYbjBWS0ZJa2d3cjd6RUhuZkpmc0pyakJuR2ZEX0d6SGxFN2ZwMVdLMXoyY3VQOHN5ckVGb090NXFNRWF1OUVka0VDTDdXaWx3'
+  [GNews] __i/rss/rd canonical (step1/desktop): 'https://news.google.com/__i/rss/rd/articles/CBMibkFVX3lxTFBfOTZWXzdSWlJpN1JFZllTSnh1UkRhZ3k2eGViWndpTW84V2NHLUpHWjRXTEdReDNjQzZUVkJ1MXBxYmZFaC1tanY5RHNDZ0tVRkRWdk9DZW5tMFdEeHJ0Um11WFNBT2x3VkNHdm5R'
 フォールバック補完: 3件をRSSサマリーのみで追加 (スキップ済 30件中)
-  取得(RSS): TCK大井競馬の26年度イメージキャラクターが横浜流星さんに決定 新CMイメージソングの歌唱は中島美嘉さん（netkei [2026-04-07T01:25:02]
-  取得(RSS): TCK大井競馬の26年度イメージキャラクターが横浜流星さんに決定 新CMイメージソングの歌唱は中島美嘉さん | 競馬ニュ [2026-04-07T01:25:00]
-  取得(RSS): 【沢田康文の欧州競馬リポート】大阪杯でクロワデュノール復活のGⅠ勝利 凱旋門賞オッズ34倍から21倍に（サンケイスポーツ [2026-04-07T01:01:00]
+  取得(RSS): 【 SPAIA競馬 】ラップ重視 AI、SPAIA AI の推奨買い目 がチャーチルダウンズC で100万円超を記録 - [2026-04-07T02:00:00]
+  取得(RSS): 国枝〝厩務員〟が新たなホースマン人生をスタート！「疲れた〜」「小学1年生みたいな気持ち」充実の1日に - ｄメニューニュ [2026-04-07T01:44:00]
+  取得(RSS): 【競馬用語】減量騎手（げんりょうきしゅ）｜競馬サプリ - 競馬予想のウマニティ [2026-04-07T01:00:00]
 
 3 件のニュースを news.json に保存しました。
-  - TCK大井競馬の26年度イメージキャラクターが横浜流星さんに決定 新CMイメージソングの歌唱は中島美 [画像: なし] [2026-04-07T01:25:02]
-  - TCK大井競馬の26年度イメージキャラクターが横浜流星さんに決定 新CMイメージソングの歌唱は中島美 [画像: なし] [2026-04-07T01:25:00]
-  - 【沢田康文の欧州競馬リポート】大阪杯でクロワデュノール復活のGⅠ勝利 凱旋門賞オッズ34倍から21倍 [画像: なし] [2026-04-07T01:01:00]
+  - 【 SPAIA競馬 】ラップ重視 AI、SPAIA AI の推奨買い目 がチャーチルダウンズC で1 [画像: なし] [2026-04-07T02:00:00]
+  - 国枝〝厩務員〟が新たなホースマン人生をスタート！「疲れた〜」「小学1年生みたいな気持ち」充実の1日に [画像: なし] [2026-04-07T01:44:00]
+  - 【競馬用語】減量騎手（げんりょうきしゅ）｜競馬サプリ - 競馬予想のウマニティ [画像: なし] [2026-04-07T01:00:00]
