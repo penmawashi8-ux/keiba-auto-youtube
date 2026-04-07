@@ -220,6 +220,7 @@ def main() -> None:
             current_prompt = lenient_prompt if skip_count > 0 else prompt
             try:
                 script = call_gemini(key, model_name, current_prompt)
+                print(f"[{i}]  [Gemini生出力 {len(script)}文字]: {script!r}")
                 # 内容が薄い記事はスキップ（初回は強調プロンプトで再試行）
                 if script.strip().upper() == "SKIP":
                     if skip_count == 0:
@@ -258,7 +259,10 @@ def main() -> None:
                     r"|[^。]*(?:公式SNS|SNSも展開)[^。]*(?:しています|しました|います)"
                     r")[^。]*。"
                 )
+                _before_redirect = len(script)
                 script = redirect_pattern.sub("", script).strip()
+                if len(script) != _before_redirect:
+                    print(f"[{i}]  [redirectフィルター] {_before_redirect}文字 → {len(script)}文字")
                 # 三点リーダー（…）が含まれている場合は除去して句点前まで切る
                 if "…" in script or "..." in script:
                     script = script.replace("...", "").replace("…", "")
