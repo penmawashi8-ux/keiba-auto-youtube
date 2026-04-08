@@ -1162,7 +1162,7 @@ def fetch_news() -> list[dict]:
                 body = re.sub(r"<[^>]+>", " ", html)
                 _method = "全体HTML"
             full_body_raw = re.sub(r"\s+", " ", body).strip()
-            # netkeibaサイトのフッター・UIノイズを除去（記事本文とは無関係なサイト情報）
+            # フッター・UIノイズ・関連記事セクションを除去（記事本文とは無関係な内容）
             _footer_markers = [
                 "No.1競馬情報サイト「netkeiba」",
                 "No.1競馬サイト「netkeiba",
@@ -1175,6 +1175,18 @@ def fetch_news() -> list[dict]:
                 "AIに非推奨判定",
                 "ニュースコメントを表示するには",
                 "コメント非表示",
+                # 関連記事・おすすめ記事セクション（別記事の内容が混入する原因）
+                "関連記事",
+                "おすすめ記事",
+                "あわせて読みたい",
+                "合わせて読みたい",
+                "関連ニュース",
+                "関連情報",
+                "他のニュース",
+                "PickUpニュース",
+                "ピックアップ",
+                "注目記事",
+                "人気記事",
             ]
             _footer_idx = len(full_body_raw)
             for _fm in _footer_markers:
