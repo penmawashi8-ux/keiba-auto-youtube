@@ -184,35 +184,11 @@ jobs:
         if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_video.py
 
-      # YOUTUBE_COOKIES の有無を確認（secrets は if 条件で直接比較不可のため別ステップで判定）
-      - name: YOUTUBE_COOKIES の有無を確認
-        id: check_cookies
+      # YouTube Data API でアップロード
+      # サムネイル自動設定を有効にする場合は YOUTUBE_COOKIES シークレットを正しく設定した上で
+      # upload_youtube_playwright.py に切り替える
+      - name: Upload to YouTube
         if: steps.check_scripts.outputs.has_scripts == 'true'
-        env:
-          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-        run: |
-          if [ -n "$YOUTUBE_COOKIES" ]; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
-            echo "YOUTUBE_COOKIES が設定されています → Playwright アップロードを使用"
-          else
-            echo "available=false" >> "$GITHUB_OUTPUT"
-            echo "YOUTUBE_COOKIES 未設定 → API アップロードにフォールバック（サムネイルは手動設定が必要）"
-          fi
-
-      # YOUTUBE_COOKIES が設定されている場合は Playwright 版を使用
-      # → サムネイルをウィザード Step 1 で自動設定できる
-      - name: Upload to YouTube (Playwright + サムネイル自動設定)
-        if: steps.check_cookies.outputs.available == 'true'
-        env:
-          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-        run: |
-          pip install playwright -q
-          playwright install chromium --with-deps
-          python scripts/upload_youtube_playwright.py
-
-      # YOUTUBE_COOKIES が未設定の場合は API 版にフォールバック（サムネイルは手動設定が必要）
-      - name: Upload to YouTube (API fallback)
-        if: steps.check_cookies.outputs.available == 'false'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
