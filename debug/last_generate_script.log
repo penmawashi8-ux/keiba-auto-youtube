@@ -5,33 +5,25 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
@@ -40,16 +32,16 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: “新人”国枝厩務員「小学１年生みたいな気持ち」　元調教師新たなスタート「戸惑いっぱなし」 ---
-[0] Gemini入力本文 576文字: '「疲れた〜」。午前の仕事をひと通り終えた７０歳の“新人”厩務員が第一声を上げた。３月３日に定年で引退した国枝栄元調教師が、通称『ヘルパー』と呼ばれる調教補充員として、７日朝から新たなスタートを切った。\n\n\u3000従事する小島厩舎の一員として寝ワラ'
+--- 記事[0]: 【川崎記念】東京大賞典3着から逆転狙うアウトレンジは「距離もこなせるしチャンス」と陣営…出走馬の陣営コメント ---
+[0] Gemini入力本文 545文字: '第75回川崎記念・Jpn1は8日、川崎競馬場で全国の強豪11頭(JRA6、南関東4、他地区1)が2100メートルを争う。浦和記念、平安Sと重賞を2勝し、昨年末の東京大賞典で3着と、着実に力をつけているアウトレンジが逆転を狙う。\n\n\t\t\t\t◆'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 石神＆五十嵐親子で共闘だ　石神龍貴さん「父の姿を見て『かっこいい』と思った」　ＪＲＡ競馬学校騎手課程第４５期生入学式 ---
-[1] Gemini入力本文 385文字: 'ＪＲＡ競馬学校の騎手課程第４５期生入学式が７日、千葉県白井市にある同校で行われた。応募総数１９５人から、狭き門を突破した女性２人を含む７人が入学。五十嵐翼さん（１５）、石神龍貴さん（１７）、大垣奈々さん（１５）、勝嵜文哉さん（１６）、新原泰'
+--- 記事[1]: 【桜花賞】高杉吏麒騎手がGI初制覇なるか エルフィンS覇者のスウィートハピネスで参戦 ---
+[1] Gemini入力本文 477文字: '3年目の高杉吏麒騎手が、桜花賞(3歳牝・GI・芝1600m)のスウィートハピネス(牝3、栗東・北出成人厩舎)でGI初制覇を狙う。\n\n\u3000高杉騎手は05年9月28日生まれ、滋賀県出身の20歳。24年3月に栗東・藤岡健一厩舎からデビューした。JR'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 勝嵜文哉さん　憧れは横山武「海外でも乗れる騎手に」父は鹿戸厩舎調教助手　競馬学校入学式 ---
-[2] Gemini入力本文 613文字: 'ＪＲＡ競馬学校の騎手課程第４５期生入学式が７日、千葉県白井市にある同校で行われた。応募総数１９５人から、狭き門を突破した女性２人を含む７人が入学。五十嵐翼さん（１５）、石神龍貴さん（１７）、大垣奈々さん（１５）、勝嵜文哉さん（１６）、新原泰'
+--- 記事[2]: 【川崎記念】地力アップが顕著!東京大賞典Vディクテオンが堂々の優勝候補筆頭　アウトレンジ&カゼノランナーが続く ---
+[2] Gemini入力本文 517文字: '◆第75回川崎記念・Jpn1(4月8日20時10分発走、川崎競馬場・ダート2100メートル)\n\n\t\t\t\t\u3000第75回川崎記念・Jpn1は8日、川崎競馬場で全国の強豪11頭(JRA6、南関東4、他地区1)が2100メートルを争う。伝統の一戦の主'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -66,29 +58,25 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
+[0] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[1]  [Gemini生出力 258文字]: '3年目の高杉吏麒騎手が、桜花賞のGI初制覇を狙います。騎乗するのは、エルフィンS覇者であるスウィートハピネスです。スウィートハピネスは牝3で、栗東の北出成人厩舎に所属しています。高杉騎手は05年9月28日生まれ、滋賀県出身の20歳です。24年3月に栗東の藤岡健一厩舎からデビューし、JRA通算1510戦138勝を挙げています。同年にルーキー最多の48勝をマークし、JRA賞の最多勝利新人騎手を受賞しました。25年には74勝を挙げ、全国リーディング11位に躍進しています。そして今年もここまで16勝をマークしています。'
+[1]  → output/script_1.txt 保存 (258文字)
+[1]  プレビュー: 3年目の高杉吏麒騎手が、桜花賞のGI初制覇を狙います。騎乗するのは、エルフィンS覇者であるスウィートハピネスです。スウィートハピネスは牝3で、栗東の北出成人厩舎...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
-[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
 [0] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -97,25 +85,17 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
   HTTP 429
 [2] 使用: key=***BYfA model=gemma-3-4b-it
-[1] 使用: key=***BYfA model=gemma-3-4b-it
 [0] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 197文字]: 'ＪＲＡ競馬学校の騎手課程第４５期生入学式が７日、千葉県白井市にある同校で行われた。応募総数１９５人から、狭き門を突破した女性２人を含む７人が入学した。五十嵐翼さん（１５）、石神龍貴さん（１７）、大垣奈々さん（１５）、勝嵜文哉さん（１６）、新原泰伸さん（１５）、山田向日葵（ひまり）さん（１８）、吉澤孜苑（しおん）さん（１７、欠席）が夢への第一歩を踏み出した。早ければ２９年３月にデビュー予定だ。'
-[1]  → output/script_1.txt 保存 (197文字)
-[1]  プレビュー: ＪＲＡ競馬学校の騎手課程第４５期生入学式が７日、千葉県白井市にある同校で行われた。応募総数１９５人から、狭き門を突破した女性２人を含む７人が入学した。五十嵐翼さ...
+[2]  [Gemini生出力 182文字]: '第75回川崎記念・Jpn1は8日、川崎競馬場で全国の強豪11頭(JRA6、南関東4、他地区1)が2100メートルを争う。伝統の一戦の主役を務めるのは昨年2着のディクテオン。昨年の東京大賞典優勝馬が、地方競馬最高額タイとなる1着賞金1億円獲得を狙う。ディクテオンは昨年春から大井所属となって素質が開花し、韓国のコリアCで地方馬初の海外ダートレース出走を果たしている。'
+[2]  → output/script_2.txt 保存 (182文字)
+[2]  プレビュー: 第75回川崎記念・Jpn1は8日、川崎競馬場で全国の強豪11頭(JRA6、南関東4、他地区1)が2100メートルを争う。伝統の一戦の主役を務めるのは昨年2着のデ...
   HTTP 200
-[0]  [Gemini生出力 245文字]: '７０歳の“新人”厩務員が第一声を上げた。３月３日に定年で引退した国枝栄元調教師が、通称『ヘルパー』と呼ばれる調教補充員として、７日朝から新たなスタートを切った。小島厩舎の一員として寝ワラ上げや手入れ、水桶を洗うなど厩舎作業をこなしている。国枝元調教師は「やっぱり朝は早く起きちゃった。朝３時頃に一度目が覚めてね。小学１年生みたいな気持ち」と語った。JRA通算１１２３勝の国枝元調教師は、父が佐賀競馬元騎手である。JRA競馬学校入学の新原泰伸さんは「勝ちたいレースは凱旋門賞」と発言している。'
-[0]  → output/script_0.txt 保存 (245文字)
-[0]  プレビュー: ７０歳の“新人”厩務員が第一声を上げた。３月３日に定年で引退した国枝栄元調教師が、通称『ヘルパー』と呼ばれる調教補充員として、７日朝から新たなスタートを切った。...
-  HTTP 200
-[2]  [Gemini生出力 316文字]: 'JRA競馬学校の騎手課程第45期生入学式が7日、千葉県白井市にある同校で行われました。応募総数195人から、狭き門を突破した女性2人を含む7名が入学し、五十嵐翼さん、石神龍貴さん、大垣奈々さん、勝嵜文哉さん、新原泰伸さん、山田向日葵さん、吉澤孜苑さん（欠席）が夢への第一歩を踏み出しました。早ければ29年3月にデビュー予定です。勝嵜文哉さんは、憧れは横山武騎手で「海外でも乗れる騎手に」なると述べています。また、父は鹿戸厩舎の調教助手を務めています。高松宮記念では、ウインカーネリアンが4枠8番に入りました。鹿戸調教師は「ちょうどいい枠」とコメントしています。史上初となる9歳馬のJRA・平地G1制覇を目指すウインカーネリアンです。'
-[2]  → output/script_2.txt 保存 (316文字)
-[2]  プレビュー: JRA競馬学校の騎手課程第45期生入学式が7日、千葉県白井市にある同校で行われました。応募総数195人から、狭き門を突破した女性2人を含む7名が入学し、五十嵐翼...
+[0]  [Gemini生出力 246文字]: '第75回川崎記念・Jpn1は8日、川崎競馬場で全国の強豪11頭(JRA6、南関東4、他地区1)が2100メートルを争う。浦和記念、平安Sと重賞を2勝し、昨年末の東京大賞典で3着と、着実に力をつけているアウトレンジが逆転を狙う。グリューヴルムは7歳で、前走の金盃を勝ってくれてよかった。7歳だけど大事に使われてきたので馬が若いね。着実に良くなっていると内田勝調教師がコメントしている。アウトレンジはドバイワールドカップの招待を辞退し、東京大賞典3着アウトレンジがG1ドバイワールドCに登録した。'
+[0]  → output/script_0.txt 保存 (246文字)
+[0]  プレビュー: 第75回川崎記念・Jpn1は8日、川崎競馬場で全国の強豪11頭(JRA6、南関東4、他地区1)が2100メートルを争う。浦和記念、平安Sと重賞を2勝し、昨年末の...
 
 3 件の脚本を生成しました。
