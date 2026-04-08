@@ -1,10 +1,10 @@
-date: 2026-04-07T23:58:04.379662Z
+date: 2026-04-08T03:39:27.614976Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=r7t9gcuSJ_w title=“新人”国枝厩務員「小学１年生みたいな気持ち」　元調教師新たなスタート「戸惑いっ
-OK project=1 video_id=p8Z-McrJJ1g title=石神＆五十嵐親子で共闘だ　石神龍貴さん「父の姿を見て『かっこいい』と思った」　Ｊ
-OK project=1 video_id=6sG2zx71kfg title=勝嵜文哉さん　憧れは横山武「海外でも乗れる騎手に」父は鹿戸厩舎調教助手　競馬学校
+OK project=1 video_id=rh3yvU7mtOg title=【川崎記念】東京大賞典3着から逆転狙うアウトレンジは「距離もこなせるしチャンス」
+OK project=1 video_id=x_kA5s5vxIY title=【桜花賞】高杉吏麒騎手がGI初制覇なるか エルフィンS覇者のスウィートハピネスで
+OK project=1 video_id=W_EgSTVhifw title=【川崎記念】地力アップが顕著!東京大賞典Vディクテオンが堂々の優勝候補筆頭　アウ
