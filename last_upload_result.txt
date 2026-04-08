@@ -1,10 +1,10 @@
-date: 2026-04-08T07:58:47.539576Z
+date: 2026-04-08T08:14:36.556051Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LAOcLBSh3kg title=【注目馬動向】スズハロームは引き続き藤懸貴志騎手と安田記念へ　ドロップオブライト
-OK project=1 video_id=A3hglc7mRII title=【園田10R・神鍋山特別】藤懸貴志騎手が園田初勝利　JRA所属のダンジョンヒーロ
-OK project=1 video_id=2vIZbbGWhrY title=アドマイヤクワッズ、皐月賞賞1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=eYThG3CjpZA title=【阪神牝馬S】GI馬3頭が激突 ヴィクトリアMの主役となるのはどの馬か
+OK project=1 video_id=tGh4iiQHvpg title=一撃100万超えのプラス収支も！ 地方競馬を盛り上げる「予想家向けキャンペーン」
+OK project=1 video_id=zP3YHI8GzXQ title=元調教師・国枝栄厩務員の初陣は鞍上・武豊!「連続騎乗になってもパドックには行かな
