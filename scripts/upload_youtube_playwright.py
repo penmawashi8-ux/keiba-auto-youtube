@@ -84,7 +84,7 @@ def click_first(page, selectors: list[str], timeout=10000):
     raise Exception(f"クリックできませんでした: {selectors}")
 
 
-def upload_one(page, video_path: str, title: str, description: str) -> bool:
+def upload_one(page, video_path: str, title: str, description: str, thumbnail_path: str = None) -> bool:
     print(f"\n--- アップロード: {title[:60]} ---")
 
     # YouTube Studio トップへ移動
@@ -119,11 +119,11 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
             ])
     time.sleep(2)
 
-    # ② ファイルを直接 input にセット（file chooser より安定）
+    # ③ ファイルを直接 input にセット（file chooser より安定）
     page.locator("input[type='file']").first.set_input_files(video_path)
     print(f"  ファイルセット: {video_path}")
 
-    # ③ タイトル入力欄が現れるまで待つ
+    # ④ タイトル入力欄が現れるまで待つ
     title_sel = (
         "#title-textarea #child-input, "
         "#title-textarea [contenteditable='true'], "
@@ -136,7 +136,7 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     page.keyboard.type(f"【競馬速報】{title[:90]} #Shorts")
     print("  タイトル入力完了")
 
-    # ④ 説明
+    # ⑤ 説明
     desc_sel = (
         "#description-textarea #child-input, "
         "#description-textarea [contenteditable='true'], "
@@ -148,7 +148,23 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     except Exception:
         print("  [警告] 説明入力スキップ", file=sys.stderr)
 
-    # ⑤ 「視聴者」設定: 子供向けでない（必須 - これを選ばないと「次へ」が押せない）
+    # ⑥ サムネイルをアップロード（Step 1 で設定 ← ここが重要）
+    if thumbnail_path:
+        try:
+            click_first(page, [
+                "button:has-text('サムネイルをアップロード')",
+                "button:has-text('Upload thumbnail')",
+                "#still-picker-button",
+                "ytcp-thumbnails-compact-editor-desktop button",
+            ], timeout=8000)
+            time.sleep(1)
+            page.locator("input[type='file'][accept*='image']").first.set_input_files(thumbnail_path)
+            time.sleep(2)
+            print("  サムネイル設定完了")
+        except Exception as e:
+            print(f"  [警告] サムネイル設定スキップ: {e}", file=sys.stderr)
+
+    # ⑦ 「視聴者」設定: 子供向けでない（必須 - これを選ばないと「次へ」が押せない）
     for sel in [
         "[name='VIDEO_MADE_FOR_KIDS_NOT']",
         "tp-yt-paper-radio-button[name='NOT_MADE_FOR_KIDS']",
@@ -161,7 +177,7 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
         except Exception:
             continue
 
-    # ⑥ 「次へ」3回
+    # ⑧ 「次へ」3回
     for step in range(3):
         time.sleep(2)
         try:
@@ -177,7 +193,7 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
                 ])
         print(f"  次へ ({step+1}/3)")
 
-    # ⑦ 公開設定
+    # ⑨ 公開設定
     time.sleep(1)
     click_first(page, [
         "[name='PUBLIC']",
@@ -188,7 +204,7 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     ])
     print("  公開設定完了")
 
-    # ⑧ 公開ボタン
+    # ⑩ 公開ボタン
     time.sleep(1)
     click_first(page, [
         "#done-button",
@@ -199,7 +215,7 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     ])
     print("  公開ボタンクリック")
 
-    # ⑨ 完了待ち（最大3分）
+    # ⑪ 完了待ち（最大3分）
     try:
         for text in UPLOAD_DONE_TEXTS:
             try:
@@ -215,27 +231,6 @@ def upload_one(page, video_path: str, title: str, description: str) -> bool:
     except Exception as e:
         print(f"  [エラー] 完了待ちで例外: {e}", file=sys.stderr)
         return False
-
-
-def upload_thumbnail_playwright(page, thumbnail_bytes: bytes) -> None:
-    """アップロード直後の Studio 動画ページでサムネイルを設定する（ベストエフォート）"""
-    try:
-        # サムネイル画像を一時ファイルに書き出し
-        tmp = Path("/tmp/thumb_upload.jpg")
-        tmp.write_bytes(thumbnail_bytes)
-
-        # サムネイル変更ボタン
-        page.locator(
-            "button:has-text('サムネイルをアップロード'), "
-            "button:has-text('Upload thumbnail'), "
-            "#still-picker-button"
-        ).first.click(timeout=10000)
-        time.sleep(1)
-        page.locator("input[type='file'][accept*='image']").first.set_input_files(str(tmp))
-        time.sleep(3)
-        print("  サムネイル設定完了")
-    except Exception as e:
-        print(f"  [警告] サムネイル設定失敗: {e}", file=sys.stderr)
 
 
 def update_posted_ids(news_items: list) -> None:
@@ -296,14 +291,22 @@ def main() -> None:
             script_path = Path(f"{OUTPUT_DIR}/script_{idx}.txt")
             description = script_path.read_text(encoding="utf-8").strip() if script_path.exists() else title
 
-            ok = upload_one(page, str(video_file), title, description)
+            # サムネイルを生成して一時ファイルに保存
+            thumb_path = None
+            try:
+                thumb_bytes = generate_thumbnail(title, idx)
+                thumb_file = Path(f"/tmp/thumb_{idx}.jpg")
+                thumb_file.write_bytes(thumb_bytes)
+                # output/ にも保存（git コミット用）
+                out_thumb = Path(f"{OUTPUT_DIR}/thumbnail_{idx}.jpg")
+                out_thumb.write_bytes(thumb_bytes)
+                thumb_path = str(thumb_file)
+                print(f"  サムネイル生成完了: {out_thumb}")
+            except Exception as e:
+                print(f"  [警告] サムネイル生成失敗: {e}", file=sys.stderr)
+
+            ok = upload_one(page, str(video_file), title, description, thumbnail_path=thumb_path)
             if ok:
-                # サムネイル設定（ベストエフォート）
-                try:
-                    thumb_bytes = generate_thumbnail(title, idx)
-                    upload_thumbnail_playwright(page, thumb_bytes)
-                except Exception as e:
-                    print(f"  [警告] サムネイル処理失敗: {e}", file=sys.stderr)
                 uploaded_count += 1
             else:
                 print(f"  [エラー] アップロード失敗: {title[:50]}", file=sys.stderr)
