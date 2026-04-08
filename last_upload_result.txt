@@ -1,10 +1,10 @@
-date: 2026-04-08T03:39:27.614976Z
+date: 2026-04-08T03:58:27.712713Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rh3yvU7mtOg title=【川崎記念】東京大賞典3着から逆転狙うアウトレンジは「距離もこなせるしチャンス」
-OK project=1 video_id=x_kA5s5vxIY title=【桜花賞】高杉吏麒騎手がGI初制覇なるか エルフィンS覇者のスウィートハピネスで
-OK project=1 video_id=W_EgSTVhifw title=【川崎記念】地力アップが顕著!東京大賞典Vディクテオンが堂々の優勝候補筆頭　アウ
+OK project=1 video_id=AKh2r74tDE0 title=大阪杯を制したダービー馬クロワデュノールは天皇賞・春へ　北村友とコンビ継続
+OK project=1 video_id=FSmhoj371VE title=【桜花賞】スターアニスが坂路で圧巻の動き　高野調教師「エネルギーがパンパンの状態
+OK project=1 video_id=145G9v2MW2U title=【注目馬動向】5・9億円馬エムズビギンは川田将雅騎手とのコンビ継続で京都新聞杯へ
