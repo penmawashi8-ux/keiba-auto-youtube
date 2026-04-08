@@ -1,10 +1,10 @@
-date: 2026-04-08T10:15:04.381379Z
+date: 2026-04-08T12:03:31.616564Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fhLTFnSSZXg title=【よもやま話】上里騎手が今年の2勝目に「ホッとしました」 今後も積極的な競馬で躍
-OK project=1 video_id=iwcCN-QXMfY title=【週末情報】フットワークは俊敏スターアニス 鉄砲決めて桜の女王へGO/馬三郎のつ
-OK project=1 video_id=cvAjCBDCec0 title=【有力馬動向】ミトノオルフェは京王杯SCで重賞初挑戦/馬三郎のつぶやき
+OK project=1 video_id=DEL67oGGsrk title=【川崎記念】1番人気のアウトレンジは末脚届かず3着　前残りの展開に泣くも坂井瑠星
+OK project=1 video_id=b_o1zitrYMw title=【川崎記念】東京大賞典王者のディクテオンは末脚不発で5着　ビッグレース連勝はなら
+OK project=1 video_id=d0LTaAXxWqw title=【川崎記念】カゼノランナー逃げ切りビッグタイトルゲット　西村淳也騎手「まだまだま
