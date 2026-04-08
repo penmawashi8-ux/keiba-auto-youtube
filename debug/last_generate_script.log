@@ -5,37 +5,43 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 引退が決まったシュヴァリエローズは京都競馬場で乗馬に　重賞2勝のディープインパクト産駒　JRA発表 ---
-[0] Gemini入力本文 555文字: 'JRAは8日、シュヴァリエローズ(牡8＝清水久、父ディープインパクト)がこの日、JRA競走馬登録を抹消されたと発表した。今後は京都競馬場で乗馬になる予定。\n\n\u30003日に更新されたキャロットクラブ公式サイトによると3月22日の阪神大賞典4着後、'
+--- 記事[0]: 石神深一騎手を調教助手として迎え入れる柄崎調教師「貴重な戦力でありがたい」幼少期からの深い縁 ---
+[0] Gemini入力本文 490文字: '4月8日、石神深一騎手＝美浦・フリー＝が30日付で騎手を引退することを発表した。引退後は柄崎将寿厩舎(美浦)で調教助手に転身する。\n\n\t\t\t\t\u3000柄崎調教師はこの日、報道陣の取材に応じ、「たまたま空きが出たので、来てもらうことになりました。幼'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【注目馬動向】香港のQE2世Cに挑むミュージアムマイルは引き続きCデムーロ騎手　有馬記念など連対率100% ---
-[1] Gemini入力本文 548文字: 'クイーンエリザベス2世C・G1(4月26日、香港・シャティン競馬場・芝2000メートル)への出走を予定しているミュージアムマイル(牡4歳、栗東・高柳大輔厩舎、父リオンディーズ)は、引き続きクリスチャン・デムーロ騎手とのコンビで挑むことが4月'
+--- 記事[1]: 電撃引退を発表の石神深一騎手が心境明かす「燃えたぎるものが薄まってきた」オジュウチョウサンと名コンビ ---
+[1] Gemini入力本文 573文字: 'JRAは4月8日、石神深一騎手＝美浦・フリー＝から騎手免許取り消しの申請があり、30日付で引退すると発表した。\n\n\t\t\t\t\u3000石神深騎手はこの日、報道陣の取材に応じ「昨年末くらいからレースに乗っていて、レース後に映像を見て、うまく乗れていない'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 石神深一騎手が引退「燃えたぎるものが薄まってきたのを感じた」柄崎将寿厩舎で調教助手に ---
-[2] Gemini入力本文 526文字: 'JRAは8日、石神深一(43＝美浦・フリー)から騎手免許の取り消し申請があり、30日付で騎手免許を取り消すと発表した。\n\n\u3000石神深は「昨年末くらいからレースに乗ってて、レース後に映像を見て、うまく乗れていないなと感じていた。実際、昨夏以降は'
+--- 記事[2]: 引退が決まったシュヴァリエローズは京都競馬場で乗馬に　重賞2勝のディープインパクト産駒　JRA発表 ---
+[2] Gemini入力本文 555文字: 'JRAは8日、シュヴァリエローズ(牡8＝清水久、父ディープインパクト)がこの日、JRA競走馬登録を抹消されたと発表した。今後は京都競馬場で乗馬になる予定。\n\n\u30003日に更新されたキャロットクラブ公式サイトによると3月22日の阪神大賞典4着後、'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -52,36 +58,44 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***BYfA model=gemini-2.5-flash
-[2] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
+[2] 使用: key=***BYfA model=gemini-2.5-flash
+[0] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 242文字]: 'JRAは8日、シュヴァリエローズ（牡8、清水久、父ディープインパクト）が同日、JRA競走馬登録を抹消されたと発表しました。今後は京都競馬場で乗馬になる予定です。3日に更新されたキャロットクラブ公式サイトによると、3月22日の阪神大賞典で4着となった後、天皇賞・春（5月3日、京都芝3200メートル）を予定していましたが、右前脚の種子骨靱帯炎が判明し引退が決まりました。シュヴァリエローズは通算38戦5勝を挙げ、重賞では24年京都大賞典とスポニチ賞ステイヤーズSの2勝を記録しています。'
-[0]  → output/script_0.txt 保存 (242文字)
-[0]  プレビュー: JRAは8日、シュヴァリエローズ（牡8、清水久、父ディープインパクト）が同日、JRA競走馬登録を抹消されたと発表しました。今後は京都競馬場で乗馬になる予定です。...
+[0]  [Gemini生出力 232文字]: '4月8日、石神深一騎手＝美浦・フリー＝が30日付で騎手を引退することを発表しました。引退後は柄崎将寿厩舎(美浦)で調教助手に転身します。柄崎調教師はこの日、報道陣の取材に応じ、石神騎手を調教助手として迎え入れることについて「たまたま空きが出たので、来てもらうことになりました」と説明しました。石神騎手とは幼稚園からの幼なじみで競馬学校の同期という深い縁があることを明かし、「貴重な戦力でありがたいです。一緒に厩舎を盛り上げてもらえれば」と活躍に期待を込めています。'
+[0]  → output/script_0.txt 保存 (232文字)
+[0]  プレビュー: 4月8日、石神深一騎手＝美浦・フリー＝が30日付で騎手を引退することを発表しました。引退後は柄崎将寿厩舎(美浦)で調教助手に転身します。柄崎調教師はこの日、報道...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  HTTP 200
-[1]  [Gemini生出力 269文字]: '香港のクイーンエリザベス2世C・G1に挑むミュージアムマイルは、引き続きクリスチャン・デムーロ騎手とのコンビで出走することが4月8日に分かりました。サンデーサラブレッドクラブが発表したものです。牡4歳のミュージアムマイルは、栗東の高柳大輔厩舎所属で、父はリオンディーズです。このコンビは昨年の有馬記念を3歳で制しており、24年黄菊賞の1着、朝日杯FSの2着、25年天皇賞・秋の2着と、これまでの4戦すべてで連対率100%を記録しています。クイーンエリザベス2世Cは4月26日に香港のシャティン競馬場、芝2000メートルで行われる予定です。'
-[1]  → output/script_1.txt 保存 (269文字)
-[1]  プレビュー: 香港のクイーンエリザベス2世C・G1に挑むミュージアムマイルは、引き続きクリスチャン・デムーロ騎手とのコンビで出走することが4月8日に分かりました。サンデーサラ...
+  HTTP 429
+[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
 [2] 使用: key=***BYfA model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
 [2] 使用: key=***BYfA model=gemma-3-4b-it
+[1] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 282文字]: 'JRAは8日、石神深一(43＝美浦・フリー)から騎手免許の取り消し申請があり、30日付で騎手免許を取り消すと発表した。石神深は「昨年末くらいからレースに乗ってて、レース後に映像を見て、うまく乗れていないなと感じていた。実際、昨夏以降は全然勝てなかったし、昨年は目標の10勝に届かなかったからね。年明けから気を取り直して頑張ろうと思ったけど、思ったような成績が出なくて、これじゃあな、と。燃えたぎるもの?.. 今後は柄崎厩舎で調教助手に転身する。18日中山で引退式が予定されている。障害王者オジュウチョウサンの主戦騎手を務めた石神深一は、30日付で電撃引退となった。'
-[2]  → output/script_2.txt 保存 (282文字)
-[2]  プレビュー: JRAは8日、石神深一(43＝美浦・フリー)から騎手免許の取り消し申請があり、30日付で騎手免許を取り消すと発表した。石神深は「昨年末くらいからレースに乗ってて...
+[2]  [Gemini生出力 264文字]: 'JRAは8日、シュヴァリエローズ(牡8＝清水久、父ディープインパクト)がこの日、JRA競走馬登録を抹消されたと発表した。今後は京都競馬場で乗馬になる予定。3日に更新されたキャロットクラブ公式サイトによると3月22日の阪神大賞典4着後、天皇賞・春(5月3日、京都芝3200メートル)を予定していたが右前脚の種子骨靱帯(じんたい)炎が判明したため引退が決まった。通算38戦5勝、うち重賞は24年京都大賞典、スポニチ賞ステイヤーズSを制したシュヴァリエローズが引退。右前内側種子骨じん帯炎を発症し、阪神大賞典4着がラストランとなった。'
+[2]  → output/script_2.txt 保存 (264文字)
+[2]  プレビュー: JRAは8日、シュヴァリエローズ(牡8＝清水久、父ディープインパクト)がこの日、JRA競走馬登録を抹消されたと発表した。今後は京都競馬場で乗馬になる予定。3日に...
+  HTTP 200
+[1]  [Gemini生出力 240文字]: 'JRAは4月8日、石神深一騎手＝美浦・フリー＝から騎手免許取り消しの申請があり、30日付で引退すると発表した。石神深騎手はこの日、報道陣の取材に応じ「昨年末くらいからレースに乗っていて、レース後に映像を見て、うまく乗れていないなと感じていた。実際、昨夏以降は全然勝てなかったし、昨年は目標の10勝に届かなかったからね。年明けから気を取り直して頑張ろうと思ったけど、思ったような成績が出なくて、これ... 今後は柄崎将寿厩舎で調教助手に転身し、18日に中山で引退式を行う予定である。'
+[1]  → output/script_1.txt 保存 (237文字)
+[1]  プレビュー: JRAは4月8日、石神深一騎手＝美浦・フリー＝から騎手免許取り消しの申請があり、30日付で引退すると発表した。石神深騎手はこの日、報道陣の取材に応じ「昨年末くら...
 
 3 件の脚本を生成しました。
