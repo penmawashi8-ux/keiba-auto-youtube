@@ -5,43 +5,29 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【川崎記念】1番人気のアウトレンジは末脚届かず3着　前残りの展開に泣くも坂井瑠星騎手は「力を出してくれた」 ---
-[0] Gemini入力本文 609文字: '◆第75回川崎記念・Jpn1(4月8日、川崎競馬場・ダート2100メートル、稍重)\n\n\t\t\t\t\u30001着賞金1億円をかけて争う、川崎競馬の古馬最高峰レースに砂上の猛者11頭(JRA6、南関東4、他地区1)が集結。坂井瑠星騎手騎乗で1番人気のアウ'
+--- 記事[0]: 【皐月賞・1週前】ホープフルS覇者のロブチェンは3頭併せで最先着　松山弘平騎手「時計的にも十分」 ---
+[0] Gemini入力本文 473文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)1週前追い切り＝4月8日、栗東トレセン\n\n\t\t\t\t\u3000明らかに調子が上向いている。第86回皐月賞(19日、中山)で巻き返しを狙うホープフルS勝ち馬のロブチェン(牡3歳、栗東・'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【川崎記念】東京大賞典王者のディクテオンは末脚不発で5着　ビッグレース連勝はならず ---
-[1] Gemini入力本文 609文字: '◆第75回川崎記念・Jpn1(4月8日、川崎競馬場・ダート2100メートル、稍重)\n\n\t\t\t\t\u30001着賞金1億円をかけて争う、川崎競馬の古馬最高峰レースに砂上の猛者11頭(JRA6、南関東4、他地区1)が集結。矢野貴之騎手騎乗で2番人気のディ'
+--- 記事[1]: 【川崎記念】「まだまだまだ、まだ強くなる」3連勝で初のビッグタイトル!新王者カゼノランナー ---
+[1] Gemini入力本文 680文字: '◆第75回川崎記念・Jpn1(4月8日、川崎競馬場・ダート2100メートル、稍重)\n\n\t\t\t\t\u30001着賞金1億円をかけて争う古馬最高峰レース、第75回川崎記念・Jpn1に砂上の猛者11頭(JRA6、南関東4、他地区1)が集結。西村淳騎乗で3番'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【川崎記念】カゼノランナー逃げ切りビッグタイトルゲット　西村淳也騎手「まだまだまだ、まだまだ強くなってくれる」 ---
-[2] Gemini入力本文 592文字: '◆第75回川崎記念・Jpn1(4月8日、川崎競馬場・ダート2100メートル、稍重)\n\n\t\t\t\t\u30001着賞金1億円をかけて争う、川崎競馬の古馬最高峰レースに砂上の猛者11頭(JRA6、南関東4、他地区1)が集結。西村淳也騎手騎乗で3番人気のカゼ'
+--- 記事[2]: 【桜花賞】1週前から激変!ドリームコアが見違えるような軽快さで母子G1勝利狙う ---
+[2] Gemini入力本文 502文字: '◆桜花賞追い切り(8日、栗東トレセン)\n\n\t\t\t\t\u3000第86回桜花賞・G1(12日、阪神)の追い切りが8日、東西のトレセンで行われた。\n\n\t\t\t\t\u30001週間でグッと上向いた。ドリームコアは滞在中の栗東・CWコースでモスクロッサー(5歳障害未勝利'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,44 +44,24 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***BYfA model=gemini-2.5-flash
 [0] 使用: key=***BYfA model=gemini-2.5-flash
+[1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 282文字]: '第75回川崎記念・Jpn1が4月8日、川崎競馬場ダート2100メートル、稍重で行われました。1着賞金1億円をかけて争う川崎競馬の古馬最高峰レースには、砂上の猛者11頭が集結し、JRAから6頭、南関東から4頭、他地区から1頭が出走しました。坂井瑠星騎手騎乗で1番人気に推されたアウトレンジは、牡6歳、栗東・大久保龍志厩舎所属、父レガーロで、末脚届かず3着に終わりました。昨年はG1級初挑戦の帝王賞で首差2着、年末の東京大賞典でも0秒3差3着と接戦を繰り広げていましたが、今回は前残りの展開に泣く形となりました。坂井瑠星騎手は「力を出してくれた」とコメントしています。'
-[0]  → output/script_0.txt 保存 (282文字)
-[0]  プレビュー: 第75回川崎記念・Jpn1が4月8日、川崎競馬場ダート2100メートル、稍重で行われました。1着賞金1億円をかけて争う川崎競馬の古馬最高峰レースには、砂上の猛者...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***BYfA model=gemma-3-4b-it
-[2] 使用: key=***BYfA model=gemma-3-4b-it
+[0]  [Gemini生出力 197文字]: '第86回皐月賞の1週前追い切りが4月8日に栗東トレセンで行われました。4月19日に中山競馬場・芝2000メートルで予定されている皐月賞で巻き返しを狙うホープフルS勝ち馬のロブチェンは、明らかに調子が上向いている様子です。松山弘平騎手を背に、最内から中インドミタビリティ、外ウィンストンを追走する3頭併せを実施しました。ロブチェンは最先着し、松山弘平騎手は「時計的にも十分」とコメントしています。'
+[0]  → output/script_0.txt 保存 (197文字)
+[0]  プレビュー: 第86回皐月賞の1週前追い切りが4月8日に栗東トレセンで行われました。4月19日に中山競馬場・芝2000メートルで予定されている皐月賞で巻き返しを狙うホープフル...
   HTTP 200
-[1]  [Gemini生出力 287文字]: '第75回川崎記念は4月8日、川崎競馬場においてダート2100メートル、稍重で行われました。1着賞金は1億円をかけて争われ、JRA6頭、南関東4頭、他地区1頭の砂上の猛者11頭が出走しました。2番人気のディクテオンは、矢野貴之騎手によって騎乗され、中団から末脚不発で5着に終わりました。昨年末には7番人気の低評価を覆し、東京大賞典を勝利。初のNAR年度代表馬にも選出されています。荒山勝調教師は、ディクテオンの状態が良すぎるとして、手応えを十分と感じていると述べています。ディクテオンは7枠8番ゲートからレースを開始し、カゼノランナーは3枠3番ゲートからレースを開始しました。'
-[1]  → output/script_1.txt 保存 (287文字)
-[1]  プレビュー: 第75回川崎記念は4月8日、川崎競馬場においてダート2100メートル、稍重で行われました。1着賞金は1億円をかけて争われ、JRA6頭、南関東4頭、他地区1頭の砂...
+[1]  [Gemini生出力 354文字]: '第75回川崎記念・Jpn1が4月8日、川崎競馬場ダート2100メートル稍重で開催されました。1着賞金1億円をかけて争う古馬最高峰レースには、砂上の猛者11頭（JRA6、南関東4、他地区1）が集結しました。西村淳騎乗の3番人気カゼノランナーが内めの3番枠から発馬を決め、積極的にハナを主張。鮮やかに逃げ切り、2馬身差の快勝で初のビッグタイトルを獲得し、3連勝を飾りました。西村淳騎手は「カゼノランナーとともに勝つことができてうれしい」「まだまだまだ、まだまだ強くなってくれる」とコメントしています。一方、1番人気のアウトレンジは3着に終わり、坂井騎手は「力は出してくれたかなと」と述べました。東京大賞典王者のディクテオンは末脚不発で5着。矢野貴之騎手は「広いコースで、乾いた馬場のほうが...」と語っています。'
+[1]  → output/script_1.txt 保存 (351文字)
+[1]  プレビュー: 第75回川崎記念・Jpn1が4月8日、川崎競馬場ダート2100メートル稍重で開催されました。1着賞金1億円をかけて争う古馬最高峰レースには、砂上の猛者11頭（J...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[2]  [Gemini生出力 211文字]: '第75回川崎記念は、4月8日に川崎競馬場においてダート2100メートル、稍重で行われました。1着賞金は1億円をかけて争われ、JRAから6頭、南関東から4頭、他地区から1頭の合計11頭の古馬が参加しました。西村淳也騎手はカゼノランナーを騎乗し、3番人気の位置から逃げ切り、3連勝でビッグタイトルを獲得しました。勝ち時計は2分14秒6です。前走の佐賀記念では6馬身差で圧勝しており、Jpn1レースでの更なる強化が期待されます。'
-[2]  → output/script_2.txt 保存 (211文字)
-[2]  プレビュー: 第75回川崎記念は、4月8日に川崎競馬場においてダート2100メートル、稍重で行われました。1着賞金は1億円をかけて争われ、JRAから6頭、南関東から4頭、他地...
+[2]  [Gemini生出力 238文字]: '第86回桜花賞・G1の追い切りが8日、東西のトレセンで行われました。12日に阪神で開催されるこのレースに向け、ドリームコアは1週間でグッと上向いた様子を見せています。滞在中の栗東・CWコースで、ドリームコアはモスクロッサー5歳障害未勝利を1馬身半追走しました。直線では内から並び、馬体をダイナミックに収縮させてゴール。6ハロン83秒7―11秒2をマークし、2馬身先着しました。反応が鈍かった先週とは見違えるような軽快さで、萩原調教師は「出走の態勢...」とコメントしています。'
+[2]  → output/script_2.txt 保存 (235文字)
+[2]  プレビュー: 第86回桜花賞・G1の追い切りが8日、東西のトレセンで行われました。12日に阪神で開催されるこのレースに向け、ドリームコアは1週間でグッと上向いた様子を見せてい...
 
 3 件の脚本を生成しました。
