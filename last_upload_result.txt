@@ -1,10 +1,10 @@
-date: 2026-04-08T03:58:27.712713Z
+date: 2026-04-08T05:14:06.285984Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AKh2r74tDE0 title=大阪杯を制したダービー馬クロワデュノールは天皇賞・春へ　北村友とコンビ継続
-OK project=1 video_id=FSmhoj371VE title=【桜花賞】スターアニスが坂路で圧巻の動き　高野調教師「エネルギーがパンパンの状態
-OK project=1 video_id=145G9v2MW2U title=【注目馬動向】5・9億円馬エムズビギンは川田将雅騎手とのコンビ継続で京都新聞杯へ
+OK project=1 video_id=QMQ7CrGCllE title=兵庫の新庄海誠騎手が地方通算100勝を達成　「もっと、もっと勝って昨年を上回る成
+OK project=1 video_id=pzITcq7xvL4 title=【桜花賞】フェスティバルヒルは久々でも動ける仕上がり　四位調教師「気合が乗って、
+OK project=1 video_id=ifw5XkCZ7cw title=【注目馬動向】大阪杯Vクロワデュノールは天皇賞・春へ　鞍上は引き続き北村友一騎手
