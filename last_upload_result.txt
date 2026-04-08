@@ -1,10 +1,10 @@
-date: 2026-04-08T12:03:31.616564Z
+date: 2026-04-08T23:41:00.232587Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DEL67oGGsrk title=【川崎記念】1番人気のアウトレンジは末脚届かず3着　前残りの展開に泣くも坂井瑠星
-OK project=1 video_id=b_o1zitrYMw title=【川崎記念】東京大賞典王者のディクテオンは末脚不発で5着　ビッグレース連勝はなら
-OK project=1 video_id=d0LTaAXxWqw title=【川崎記念】カゼノランナー逃げ切りビッグタイトルゲット　西村淳也騎手「まだまだま
+OK project=1 video_id=Nv2Hh1xn8rE title=【皐月賞・1週前】ホープフルS覇者のロブチェンは3頭併せで最先着　松山弘平騎手「
+OK project=1 video_id=1hRMc9vWsD4 title=【川崎記念】「まだまだまだ、まだ強くなる」3連勝で初のビッグタイトル!新王者カゼ
+OK project=1 video_id=ppa0847OJRY title=【桜花賞】1週前から激変!ドリームコアが見違えるような軽快さで母子G1勝利狙う
