@@ -178,14 +178,14 @@ def make_clip(
                 f"box=1:boxcolor=0x000000@0.75:boxborderw=24"
             )
         else:
-            # 字幕パネル（下部）: ダークボックス → ゴールドアクセント → テキスト
+            # 字幕テキスト（下部・drawtext box方式）
+            # drawbox は環境依存で失敗するため使わない
             chain += (
-                f",drawbox=x=0:y={PANEL_Y}:w=iw:h={PANEL_H}:color=0x080808@0.82:t=fill"
-                f",drawbox=x=0:y={PANEL_Y}:w=iw:h=6:color=0xFFD700:t=fill"
                 f",drawtext=textfile='{tf}':fontfile='{fp}':"
                 f"fontsize={FONT_SIZE}:fontcolor=0xFFD700:"
-                f"x=(w-text_w)/2:y={PANEL_Y + 14}:"
-                f"line_spacing=14"
+                f"x=(w-text_w)/2:y={PANEL_Y + 20}:"
+                f"line_spacing=14:"
+                f"box=1:boxcolor=0x080808@0.82:boxborderw=30"
             )
 
     chain += "[vout]"
