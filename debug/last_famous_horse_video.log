@@ -1,0 +1,11 @@
+=== 名馬シリーズ 動画生成開始 ===
+  馬名: シルポート (key=silport)
+  音声尺 (mutagen): 74.42秒
+  音声: 74.42秒 / 総尺: 78.92秒
+  ASSファイルにシリーズブランドとエンディングを追記しました。
+  エンディング: 0:01:14.72 → 0:01:18.42
+  BGM (名馬専用): assets/bgm/horse_drama_bgm.mp3
+  ffmpeg 実行中...
+  動画生成完了: output/famous_horse_video.mp4 (2.2 MB)
+  サムネイル生成完了: output/famous_horse_thumbnail.jpg (10 KB)
+=== 動画生成完了 ===
