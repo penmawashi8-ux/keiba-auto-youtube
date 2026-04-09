@@ -369,7 +369,12 @@ def make_thumbnail_frame(title: str, assets_images: list[str], index: int, font_
     import re
     clean_title = re.sub(r"[\u3000\s]+", " ", title).strip()
     title_font = load_font(100)
-    lines = textwrap.wrap(clean_title, width=10)[:4]
+    all_lines = textwrap.wrap(clean_title, width=10)
+    if len(all_lines) > 4:
+        # 4行を超える場合は3行 + 末尾「…」付きの4行目に収める
+        lines = all_lines[:3] + [all_lines[3][:9] + "…"]
+    else:
+        lines = all_lines[:4]
     line_h = 120
     total_h = len(lines) * line_h
     start_y = (VIDEO_HEIGHT - total_h) // 2 - 80
