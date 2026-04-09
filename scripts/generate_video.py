@@ -475,7 +475,12 @@ def build_video(
         return
 
     audio_duration = get_audio_duration(audio_path)
-    total_chars = sum(len(s) for s in sentences)
+
+    # タイトル読み上げ分を含む総文字数でタイミングを按分
+    # （generate_audio.py がタイトル+"。"+スクリプト で音声を生成しているため）
+    title_chars = len(title + "。") if title else 0
+    script_chars = sum(len(s) for s in sentences)
+    total_chars = title_chars + script_chars
 
     # 各セリフの表示時間を計算
     durations: list[float] = []
@@ -494,6 +499,9 @@ def build_video(
         clip_paths: list[str] = []
 
         if title:
+            # サムネイル表示時間 = タイトル読み上げ分の尺（文字数比で按分）
+            thumb_duration = (audio_duration * title_chars / total_chars) if total_chars > 0 else THUMBNAIL_DURATION
+            thumb_duration = max(THUMBNAIL_DURATION, thumb_duration)
             font_path_for_thumb = find_japanese_font()
             thumb_frame = make_thumbnail_frame(title, assets_images, 0, font_path_for_thumb)
             thumb_frame_path = os.path.join(tmp_dir, "frame_thumb.png")
@@ -502,14 +510,14 @@ def build_video(
             run_ffmpeg([
                 "ffmpeg", "-y",
                 "-loop", "1", "-i", thumb_frame_path,
-                "-t", str(THUMBNAIL_DURATION),
+                "-t", f"{thumb_duration:.6f}",
                 "-vf", f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}",
                 "-c:v", "libx264", "-preset", "ultrafast",
                 "-pix_fmt", "yuv420p", "-r", str(FPS),
                 thumb_clip_path,
             ])
             clip_paths.append(thumb_clip_path)
-            print(f"  サムネイルフレーム生成完了: {THUMBNAIL_DURATION}秒")
+            print(f"  サムネイルフレーム生成完了: {thumb_duration:.2f}秒（タイトル読み上げ尺）")
 
         # --- 4. 字幕フレーム画像生成 ---
         for i, (sentence, duration) in enumerate(zip(sentences, durations)):
@@ -576,19 +584,15 @@ def build_video(
 
         # --- 8. 音声結合（BGMミックス対応） → output/video_N.mp4 ---
         print("  音声結合中...")
-        # 実際の映像尺（サムネイルフレーム＋MIN_CUT_DURATION補正後の合計）に合わせる
-        thumb_offset = THUMBNAIL_DURATION if title else 0.0
-        total_duration = thumb_offset + sum(durations) + ENDING_DURATION
-        # ナレーション遅延（ms）: サムネイルフレーム分だけずらす
-        narr_delay_ms = int(thumb_offset * 1000)
+        # タイトル読み上げがサムネイル表示中に流れるため、ナレーション遅延は0
+        # （サムネイルのタイトル読み上げ → 字幕フレームのスクリプト読み上げ の順に連続再生）
+        actual_thumb_duration = thumb_duration if title else 0.0
+        total_duration = actual_thumb_duration + sum(durations) + ENDING_DURATION
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_path = random.choice(bgm_files) if bgm_files else None
         if bgm_path:
             print(f"  BGM使用: {Path(bgm_path).name}")
-            if narr_delay_ms > 0:
-                narr_filter = f"[1:a]adelay={narr_delay_ms}|{narr_delay_ms},apad=whole_dur={total_duration:.3f}[narr]"
-            else:
-                narr_filter = f"[1:a]apad=whole_dur={total_duration:.3f}[narr]"
+            narr_filter = f"[1:a]apad=whole_dur={total_duration:.3f}[narr]"
             run_ffmpeg([
                 "ffmpeg", "-y",
                 "-i", silent_mp4,
@@ -604,15 +608,11 @@ def build_video(
             ])
         else:
             print("  BGMなし（assets/bgm/ に .mp3 を置くと自動適用されます）")
-            if narr_delay_ms > 0:
-                af_filter = f"adelay={narr_delay_ms}|{narr_delay_ms},apad=whole_dur={total_duration:.3f}"
-            else:
-                af_filter = f"apad=whole_dur={total_duration:.3f}"
             run_ffmpeg([
                 "ffmpeg", "-y",
                 "-i", silent_mp4,
                 "-i", audio_path,
-                "-af", af_filter,
+                "-af", f"apad=whole_dur={total_duration:.3f}",
                 "-c:v", "copy",
                 "-c:a", "aac",
                 output_path,

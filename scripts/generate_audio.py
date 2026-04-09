@@ -2,6 +2,7 @@
 """output/script_N.txt を読み込み、音声(audio_N.mp3)とASS字幕(subtitles_N.ass)を生成する。"""
 
 import asyncio
+import json
 import re
 import sys
 import time
@@ -10,6 +11,7 @@ from pathlib import Path
 import edge_tts
 
 OUTPUT_DIR = "output"
+NEWS_JSON = "news.json"
 VOICE = "ja-JP-KeitaNeural"
 RATE = "+0%"
 VOLUME = "+0%"
@@ -126,6 +128,10 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/script_*.txt が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
+    # news.json からタイトルを取得（サムネイルタイトルの読み上げ用）
+    news_path = Path(NEWS_JSON)
+    news_items: list[dict] = json.loads(news_path.read_text(encoding="utf-8")) if news_path.exists() else []
+
     font_name = detect_font_name()
     print(f"字幕フォント: {font_name}")
 
@@ -136,13 +142,22 @@ def main() -> None:
             print(f"  [警告] {script_file} が空です。スキップします。")
             continue
 
+        # タイトルをナレーションの先頭に追加
+        idx_int = int(idx)
+        title = news_items[idx_int].get("title", "") if idx_int < len(news_items) else ""
+        if title:
+            narration_text = title + "。" + script
+            print(f"  タイトル読み上げ追加: 「{title[:40]}」")
+        else:
+            narration_text = script
+
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
 
-        print(f"\n--- 音声生成 [{idx}] ({len(script)}文字) ---")
+        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) ---")
         for attempt in range(1, 4):
             try:
-                asyncio.run(generate_audio_and_subtitles(script, audio_path, ass_path, font_name))
+                asyncio.run(generate_audio_and_subtitles(narration_text, audio_path, ass_path, font_name))
                 break
             except Exception as e:
                 print(f"  [警告] 音声生成失敗 (attempt {attempt}/3): {e}", file=sys.stderr)
