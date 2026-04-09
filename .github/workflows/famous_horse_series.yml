@@ -47,19 +47,24 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: 背景画像を取得 (Pixabay)
+      # 脚本を output/script_0.txt に、タイトルを news.json に書き出す
+      - name: Prepare horse script
+        run: |
+          mkdir -p output
+          python scripts/famous_horse_prepare.py "${{ inputs.horse_key }}"
+
+      # 背景画像を Pixabay から取得（失敗しても続行）
+      - name: 背景画像取得 (Pixabay)
         continue-on-error: true
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           python3 - <<'PYEOF'
           import json, os, urllib.request, urllib.parse, pathlib, time
-
           api_key = os.environ.get("PIXABAY_API_KEY", "")
           if not api_key:
               print("PIXABAY_API_KEY 未設定。スキップします。")
               exit(0)
-
           pathlib.Path("assets").mkdir(exist_ok=True)
           queries = ["horse racing", "thoroughbred racehorse", "racetrack grandstand"]
           downloaded = 0
@@ -92,37 +97,38 @@ jobs:
           print(f"背景画像 {downloaded} 枚取得完了")
           PYEOF
 
-      - name: Generate narration audio
+      # 既存のナレーション生成スクリプトをそのまま流用
+      # TTS_VOICE=ja-JP-NanamiNeural で名馬シリーズ専用ボイスに切り替え
+      - name: Generate audio (既存スクリプト流用・別ボイス)
+        env:
+          TTS_VOICE: "ja-JP-NanamiNeural"
+          TTS_RATE:  "-3%"
         run: |
-          mkdir -p output
-          python scripts/famous_horse_audio.py "${{ inputs.horse_key }}" \
-            2>&1 | tee /tmp/famous_horse_audio.log
+          python scripts/generate_audio.py 2>&1 | tee /tmp/famous_horse_audio.log
           STATUS=${PIPESTATUS[0]}
           if [ $STATUS -ne 0 ]; then
-            echo "::error::音声生成失敗: $(tail -5 /tmp/famous_horse_audio.log | tr '\n' ' ')"
+            echo "::error::音声生成失敗"
             exit $STATUS
           fi
 
-      - name: Download dramatic BGM
+      - name: Download BGM
         run: |
           mkdir -p assets/bgm
-          python scripts/download_famous_horse_bgm.py \
-            2>&1 | tee /tmp/famous_horse_bgm.log
+          python scripts/download_bgm.py
 
-      - name: Generate video
+      # 既存の動画生成スクリプトをそのまま流用（Pillow・動作実績あり）
+      - name: Generate video (既存スクリプト流用)
         run: |
-          python scripts/famous_horse_video.py \
-            "${{ inputs.horse_key }}" \
-            "${{ inputs.horse_name }}" \
-            2>&1 | tee /tmp/famous_horse_video.log
+          python scripts/generate_video.py 2>&1 | tee /tmp/famous_horse_video.log
           STATUS=${PIPESTATUS[0]}
           if [ $STATUS -ne 0 ]; then
-            echo "::error::動画生成失敗: $(tail -10 /tmp/famous_horse_video.log | tr '\n' ' ')"
+            echo "::error::動画生成失敗"
             exit $STATUS
           fi
-          ls -lh output/famous_horse_*.mp4 output/famous_horse_*.jpg 2>/dev/null || true
+          ls -lh output/video_*.mp4 2>/dev/null || true
 
-      - name: Upload to YouTube
+      # 名馬シリーズ専用のタイトル・タグでアップロード
+      - name: Upload to YouTube (名馬列伝タイトルで)
         env:
           GOOGLE_CLIENT_ID:     ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
@@ -133,33 +139,29 @@ jobs:
           GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
           GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+          FAMOUS_HORSE_KEY:   ${{ inputs.horse_key }}
+          FAMOUS_HORSE_UPLOAD: "1"
         run: |
           python scripts/famous_horse_upload.py "${{ inputs.horse_key }}" \
             2>&1 | tee /tmp/famous_horse_upload.log
           STATUS=${PIPESTATUS[0]}
           if [ $STATUS -ne 0 ]; then
-            echo "::error::アップロード失敗: $(tail -5 /tmp/famous_horse_upload.log | tr '\n' ' ')"
+            echo "::error::アップロード失敗"
             exit $STATUS
           fi
-          cat output/famous_horse_upload_result.txt 2>/dev/null || true
 
-      - name: Save logs and result
+      - name: Save logs
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           mkdir -p debug
-          cp /tmp/famous_horse_audio.log debug/last_famous_horse_audio.log 2>/dev/null \
-            || echo "(ログなし)" > debug/last_famous_horse_audio.log
-          cp /tmp/famous_horse_video.log debug/last_famous_horse_video.log 2>/dev/null \
-            || echo "(ログなし)" > debug/last_famous_horse_video.log
-          cp /tmp/famous_horse_upload.log debug/last_famous_horse_upload.log 2>/dev/null \
-            || echo "(ログなし)" > debug/last_famous_horse_upload.log
-          cp output/famous_horse_upload_result.txt debug/last_famous_horse_result.txt 2>/dev/null || true
-          git add debug/last_famous_horse_*.log debug/last_famous_horse_result.txt 2>/dev/null || true
-          if git diff --staged --quiet; then
-            echo "ログ変更なし。"
-          else
+          for f in audio video upload; do
+            cp /tmp/famous_horse_${f}.log debug/last_famous_horse_${f}.log 2>/dev/null \
+              || echo "(ログなし)" > debug/last_famous_horse_${f}.log
+          done
+          git add debug/last_famous_horse_*.log
+          if ! git diff --staged --quiet; then
             git commit -m "chore: save famous_horse logs [${{ inputs.horse_key }}] [skip ci]"
             git pull --rebase origin ${{ github.ref_name }}
             git push origin HEAD:${{ github.ref_name }}

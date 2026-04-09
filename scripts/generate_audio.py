@@ -10,10 +10,13 @@ from pathlib import Path
 
 import edge_tts
 
+import os
+
 OUTPUT_DIR = "output"
 NEWS_JSON = "news.json"
-VOICE = "ja-JP-KeitaNeural"
-RATE = "+0%"
+# 環境変数 TTS_VOICE で上書き可能（名馬シリーズ等で別ボイスを使う場合）
+VOICE = os.environ.get("TTS_VOICE", "ja-JP-KeitaNeural")
+RATE  = os.environ.get("TTS_RATE",  "+0%")
 VOLUME = "+0%"
 
 # ASS字幕ファイルのヘッダーテンプレート（PlayResX/Y=実際の動画サイズ）

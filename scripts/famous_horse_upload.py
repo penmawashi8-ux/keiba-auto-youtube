@@ -202,8 +202,9 @@ def main() -> None:
         sys.exit(1)
 
     horse_key  = sys.argv[1]
-    video_path = f"{OUTPUT_DIR}/famous_horse_video.mp4"
-    thumb_path = f"{OUTPUT_DIR}/famous_horse_thumbnail.jpg"
+    # 既存 generate_video.py が出力するファイル名に合わせる
+    video_path = f"{OUTPUT_DIR}/video_0.mp4"
+    thumb_path = f"{OUTPUT_DIR}/thumbnail_0.jpg"
 
     if not Path(video_path).exists():
         print(f"[エラー] 動画ファイルが見つかりません: {video_path}", file=sys.stderr)
