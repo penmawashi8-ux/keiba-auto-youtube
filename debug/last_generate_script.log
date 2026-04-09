@@ -5,43 +5,44 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【皐月賞・1週前】スプリングS3着アクロフェイズは前走同様に好調　奥村豊調教師「前走と同じ体調で臨めれば十分です」 ---
-[0] Gemini入力本文 469文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)1週前追い切り＝4月9日、栗東トレセン\n\n\t\t\t\t\u3000アクロフェイズ(牡3歳、栗東・奥村豊厩舎、父ロードカナロア)は、小坂忠士騎手(レースは西村淳也騎手)が乗り、CWコースで'
+--- 記事[0]: ブラジル出身のエリオネ・シャベス騎手が初の地方短期免許取得　13日から南関東で騎乗 ---
+[0] Gemini入力本文 373文字: 'TCK特別区競馬組合は9日、エリオネ・シャベス騎手(42＝スウェーデン国籍)が4月13日から7月3日にかけて、期間限定騎乗を行うと発表した。所属は大井・藤田輝信厩舎。騎手服は「黄、緑菱山形、緑袖黄星散」。\n\n\u3000同騎手はブラジル出身。03年騎'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 「予想以上に時計が出ている」高柳大調教師もうなずくミュージアムマイル　香港遠征に向けた2週前追いで上昇ぶりアピール ---
-[1] Gemini入力本文 588文字: '昨年の有馬記念の覇者ミュージアムマイル(牡4歳、栗東・高柳大輔厩舎、父リオンディーズ)が、出走を予定している香港のクイーンエリザベス2世C・G1(4月26日、シャティン競馬場・芝2000メートル)に向けて2週前追い切りを行った。\n\n\t\t\t\t'
+--- 記事[1]: 【桜花賞】G1馬スターアニス&重賞Vドリームコアは試練?の7枠　武豊騎手のアランカールは過去7勝の4枠7番に ---
+[1] Gemini入力本文 432文字: '◆第86回桜花賞・G1(4月12日、阪神競馬場・芝1600メートル)枠順確定＝4月9日\n\n\t\t\t\t\u3000出走馬18頭の枠順が確定した。\n\n\t\t\t\t\u3000今春G1・2勝のクリストフ・ルメール騎手＝栗東＝が手綱を執るドリームコア(牝3歳、美浦・萩原清厩'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【皐月賞・1週前】若葉S勝ちマテンロウゲイルがCWコースで絶好の動き　野中調教師「見た目よりも時計が出ていた」 ---
-[2] Gemini入力本文 495文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)1週前追い切り＝4月9日、栗東トレセン\n\n\t\t\t\t\u3000マテンロウゲイル(牡3歳、栗東・野中賢二厩舎、父エピファネイア)は、西谷誠騎手(レースは横山和生騎手)が乗り、CWコース'
+--- 記事[2]: 石神深一騎手の引退決断理由は「依頼された馬を最低でも一つ勝たせる」ことが難しくなったから　長男の深道騎手は「そろそろ辞め ---
+[2] Gemini入力本文 546文字: '8日に現役を引退することが発表された障害の名手である石神深一騎手＝美浦・フリー＝が一夜明けた9日、美浦トレセンで取材に応じ改めて心境を語った。決断する決め手となったのは、自身の決めごとである「依頼された馬を最低でも一つ勝たせる」ことが難しく'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,44 +59,46 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[2] 使用: key=***BYfA model=gemini-2.5-flash
 [0] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
-[2] 使用: key=***BYfA model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 215文字]: '昨年の有馬記念の覇者ミュージアムマイルが、出走を予定している香港のクイーンエリザベス2世C・G1に向けて2週前追い切りを行いました。このレースは4月26日にシャティン競馬場・芝2000メートルで行われる予定です。亀田温心騎手が騎乗し、栗東・CWコースを単走で追われ、楽な手応えながらスムーズに脚を伸ばし、6ハロン82秒2―11秒9をマークしました。高柳大調教師は「予想以上に時計が出ている」とうなずき、上昇ぶりをアピールしました。'
-[1]  → output/script_1.txt 保存 (215文字)
-[1]  プレビュー: 昨年の有馬記念の覇者ミュージアムマイルが、出走を予定している香港のクイーンエリザベス2世C・G1に向けて2週前追い切りを行いました。このレースは4月26日にシャ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+[1]  [Gemini生出力 196文字]: '第86回桜花賞・G1の枠順が4月9日に確定しました。出走馬18頭の枠順が確定し、今春G1・2勝のクリストフ・ルメール騎手が手綱を執るドリームコアは7枠14番に入っています。ドリームコアは母ノームコアとの母子G1制覇を狙います。14番枠は過去3勝で勝率は4.3％、連対率は8.6％です。G1馬スターアニスも同じく7枠となりました。武豊騎手騎乗のアランカールは、過去7勝の4枠7番に入っています。'
+[1]  → output/script_1.txt 保存 (196文字)
+[1]  プレビュー: 第86回桜花賞・G1の枠順が4月9日に確定しました。出走馬18頭の枠順が確定し、今春G1・2勝のクリストフ・ルメール騎手が手綱を執るドリームコアは7枠14番に入...
   HTTP 429
   HTTP 429
-[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
 [0] 使用: key=***BYfA model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   HTTP 429
-[2] 使用: key=***BYfA model=gemma-3-4b-it
 [0] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 244文字]: '第86回皐月賞・G1は4月19日、中山競馬場で芝2000メートルで行われ、1週前の追い切りが4月9日に栗東トレセンで行われた。マテンロウゲイル(牡3歳、栗東・野中賢二厩舎、父エピファネイア)は、西谷誠騎手が乗り、CWコースで6ハロン80秒1―11秒2をマーク。直線は強めに追われて、いい反応を見せていた。野中調教師は「見た目よりも時計が出ていたね。前走の1週前よりもいいとジョッキーも言っていたよ」と満足そうだった。若葉Sで京成杯2着となっていたマテンロウゲイルは、皐月賞への出走を狙う。'
-[2]  → output/script_2.txt 保存 (244文字)
-[2]  プレビュー: 第86回皐月賞・G1は4月19日、中山競馬場で芝2000メートルで行われ、1週前の追い切りが4月9日に栗東トレセンで行われた。マテンロウゲイル(牡3歳、栗東・野...
+[0]  [Gemini生出力 205文字]: 'TCK特別区競馬組合は9日、エリオネ・シャベス騎手(42＝スウェーデン国籍)が4月13日から7月3日にかけて、期間限定騎乗を行うと発表した。所属は大井・藤田輝信厩舎。騎手服は「黄、緑菱山形、緑袖黄星散」。同騎手はブラジル出身。03年騎手免許取得。09年からスウェーデンを拠点とし、スカンジナビア各地の競馬場で騎乗。UAE、オーストラリア、ドイツなど世界各国で騎手免許を取得してきた。通算1429勝(8日時点)。'
+[0]  → output/script_0.txt 保存 (205文字)
+[0]  プレビュー: TCK特別区競馬組合は9日、エリオネ・シャベス騎手(42＝スウェーデン国籍)が4月13日から7月3日にかけて、期間限定騎乗を行うと発表した。所属は大井・藤田輝信...
+[2] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 206文字]: '第86回皐月賞・G1（4月19日、中山競馬場・芝2000メートル）1週前の追い切りが4月9日に栗東トレセンで行われました。アクロフェイズ（牡3歳、栗東・奥村豊厩舎、父ロードカナロア）は、小坂忠士騎手が乗り、CWコースで外ランスオブヒーロー、中ランスオブラヴ（ともに3歳未勝利）を追走し、6ハロン84秒4―11秒4で動きました。奥村豊調教師は「トライアルを使っているので、そこまで強い負荷をかける必要はないで...'
-[0]  → output/script_0.txt 保存 (163文字)
-[0]  プレビュー: 第86回皐月賞・G1（4月19日、中山競馬場・芝2000メートル）1週前の追い切りが4月9日に栗東トレセンで行われました。アクロフェイズ（牡3歳、栗東・奥村豊厩...
+[2]  [Gemini生出力 349文字]: '8日に現役を引退することが発表された障害の名手である石神深一騎手＝美浦・フリー＝が一夜明けた9日、美浦トレセンで取材に応じ改めて心境を語った。決断する決め手となったのは、自身の決めごとである「依頼された馬を最低でも一つ勝たせる」ことが難しくなったからだという。「それができなくなってきたからには、考えなきゃいけないな、という風には思っていました」と理由を説明した。今後は柄崎将寿厩舎＝美浦＝で調教を行う。石神深一は、オジュウチョウサンなど、J・G1を騎手最多11勝を挙げた実績を持つ。マイネルグロンでG1初制覇を達成した青木調教師は「男にしてくれた恩がある」とコメント。柄崎調教師は「貴重な戦力でありがたい」と述べている。幼少期からの深い縁があり、石神深一騎手を調教助手として迎え入れる予定である。'
+[2]  → output/script_2.txt 保存 (349文字)
+[2]  プレビュー: 8日に現役を引退することが発表された障害の名手である石神深一騎手＝美浦・フリー＝が一夜明けた9日、美浦トレセンで取材に応じ改めて心境を語った。決断する決め手とな...
 
 3 件の脚本を生成しました。
