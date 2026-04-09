@@ -1,10 +1,10 @@
-date: 2026-04-09T06:26:34.344321Z
+date: 2026-04-09T08:20:58.408893Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Uk6IMxg0GhA title=ブラジル出身のエリオネ・シャベス騎手が初の地方短期免許取得　13日から南関東で騎
-OK project=1 video_id=MVdDPd54dYU title=【桜花賞】G1馬スターアニス&重賞Vドリームコアは試練?の7枠　武豊騎手のアラン
-OK project=1 video_id=HuVETNWjI88 title=石神深一騎手の引退決断理由は「依頼された馬を最低でも一つ勝たせる」ことが難しくな
+OK project=1 video_id=4X32Q8vytpA title=【桜花賞・調教後馬体重】ドリームコアは504kg、アランカールは430kg
+OK project=1 video_id=8d41BB6MET8 title=半兄はアオラキ 白毛のスノーエルヴァが初勝利なるか
+OK project=1 video_id=sCRqeAxPSc0 title=【地方競馬】園田で新人騎手紹介式　高橋洸佑、南部楓馬が１４日にデビュー
