@@ -18,9 +18,9 @@ from pathlib import Path
 
 import edge_tts
 
-# ニュース速報(ja-JP-KeitaNeural)とは異なるナレーターボイス
-VOICE  = "ja-JP-NaokiNeural"
-RATE   = "-5%"
+# ニュース速報(ja-JP-KeitaNeural・男性)とは異なる女性ナレーターボイス
+VOICE  = "ja-JP-NanamiNeural"
+RATE   = "-3%"
 VOLUME = "+0%"
 
 OUTPUT_DIR = "output"
