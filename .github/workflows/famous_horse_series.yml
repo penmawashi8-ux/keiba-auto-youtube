@@ -47,6 +47,51 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
+      - name: 背景画像を取得 (Pixabay)
+        continue-on-error: true
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, urllib.request, urllib.parse, pathlib, time
+
+          api_key = os.environ.get("PIXABAY_API_KEY", "")
+          if not api_key:
+              print("PIXABAY_API_KEY 未設定。スキップします。")
+              exit(0)
+
+          pathlib.Path("assets").mkdir(exist_ok=True)
+          queries = ["horse racing", "thoroughbred racehorse", "racetrack grandstand"]
+          downloaded = 0
+          for i, q in enumerate(queries):
+              params = urllib.parse.urlencode({
+                  "key": api_key, "q": q,
+                  "image_type": "photo", "orientation": "vertical",
+                  "min_width": 800, "per_page": 3,
+              })
+              try:
+                  req = urllib.request.Request(
+                      f"https://pixabay.com/api/?{params}",
+                      headers={"User-Agent": "Mozilla/5.0"},
+                  )
+                  with urllib.request.urlopen(req, timeout=20) as resp:
+                      hits = json.loads(resp.read()).get("hits", [])
+                  for j, hit in enumerate(hits[:2]):
+                      img_url = hit.get("largeImageURL") or hit.get("webformatURL")
+                      if not img_url:
+                          continue
+                      dest = f"assets/ai_{i*2+j}.jpg"
+                      img_req = urllib.request.Request(img_url, headers={"User-Agent": "Mozilla/5.0"})
+                      with urllib.request.urlopen(img_req, timeout=30) as r:
+                          pathlib.Path(dest).write_bytes(r.read())
+                      print(f"  ダウンロード完了: {dest}")
+                      downloaded += 1
+              except Exception as e:
+                  print(f"  [警告] クエリ'{q}'失敗: {e}")
+              time.sleep(1)
+          print(f"背景画像 {downloaded} 枚取得完了")
+          PYEOF
+
       - name: Generate narration audio
         run: |
           mkdir -p output
