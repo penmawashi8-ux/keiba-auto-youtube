@@ -1,10 +1,10 @@
-date: 2026-04-09T08:20:58.408893Z
+date: 2026-04-09T10:20:23.829676Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4X32Q8vytpA title=【桜花賞・調教後馬体重】ドリームコアは504kg、アランカールは430kg
-OK project=1 video_id=8d41BB6MET8 title=半兄はアオラキ 白毛のスノーエルヴァが初勝利なるか
-OK project=1 video_id=sCRqeAxPSc0 title=【地方競馬】園田で新人騎手紹介式　高橋洸佑、南部楓馬が１４日にデビュー
+OK project=1 video_id=dA1yAK1OUAA title=馬主は高須クリニックの高須克彌氏 タカスタカスタカスが今度こそ2勝目なるか
+OK project=1 video_id=K960t4xGbMQ title=【皐月賞・1週前】上原佑厩舎勢が豪華リハ!グリーンエナジーがフォルテアンジェロと
+OK project=1 video_id=9sDCxU4ulDo title=【桜花賞】調教後馬体重は2桁増減が2頭　デビューから無傷3連勝のリリージョワは2
