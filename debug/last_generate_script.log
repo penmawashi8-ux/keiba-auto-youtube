@@ -5,35 +5,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 香港で期間限定騎乗ジョアン・モレイラ騎手が初日いきなり固め打ち4勝「戻ってこられてうれしい」 ---
-[0] Gemini入力本文 626文字: '4月7日から香港競馬シーズン最終日の7月15日まで期間限定の騎手免許を取得したジョアン・モレイラ(42＝ブラジル)が騎乗初日の8日、ナイター開催のハッピーバレーでいきなり4勝の固め打ちを決めた。\n\n\u3000キャスパー・ファウンズ師(58)の厩舎所'
+--- 記事[0]: 【皐月賞・1週前】「思った通りいい馬」ゾロアストロは初コンビの岩田望来騎手を背に最先着　「あとは舞台が合うかどうか」 ---
+[0] Gemini入力本文 489文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)1週前追い切り＝4月9日、美浦トレセン\n\n\t\t\t\t\u3000前走のきさらぎ賞を制したゾロアストロ(牡3歳、美浦・宮田敬介厩舎、父モーリス)は、初コンビの岩田望来騎手が栗東から駆けつ'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【園田競馬・今日の世麗】9日も7鞍に騎乗　6Rロングセラーアスクや12Rディナーラッシュと有力馬がそろう ---
-[1] Gemini入力本文 628文字: '8日は7鞍に騎乗した佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝。3Rのデイムサンライズで軽快に逃げ切り今年の19勝目となった。断然の1番人気に支持されていただけに「よかった」と笑顔がはじけた。この勢いで9日も勝利を積み重ねることができるか'
+--- 記事[1]: 【皐月賞・1週前】ライヒスアドラーはテンションを考慮し単走で調整　佐々木大輔騎手「欲を言えば硬さがとれてほしい」 ---
+[1] Gemini入力本文 507文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)1週前追い切り＝4月9日、美浦トレセン\n\n\t\t\t\t\u3000前走の報知杯弥生賞ディープインパクト記念で2着だったライヒスアドラー(牡3歳、美浦・上原佑紀厩舎、父シスキン)は、佐々木'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【園田競馬・人気ジョッキーは語る】12Rチュッチュポッポに好感触の下原理騎手「追い切りの時からいい感じ」 ---
-[2] Gemini入力本文 561文字: '◆園田競馬5日目(4月9日)\n\n\t\t\t\t\u3000《下原\u3000理》\n\n\t\t\t\t\u300038勝。チュッチュポッポ(12R)に好感触。「追い切りの時からいい感じ」(◎)。オキョンピー(5R)も「斤量の58キロだけ」(◎)。クラウンカイロス(7R)は「元気いっぱい'
+--- 記事[2]: 14日の園田競馬から全ハロンタイム計測の運用を開始　兵庫アーバン競馬発表 ---
+[2] Gemini入力本文 557文字: '兵庫アーバン競馬(園田・姫路競馬)を主催する兵庫県競馬組合は9日、14日の園田競馬よりスタートから1ハロン(200メートル)ごとの区間タイム「ハロンタイム」及び上り4ハロンタイムを、地方競馬情報サイトの競走成績に表示すると発表した。これまで'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -50,32 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[2] 使用: key=***BYfA model=gemini-2.5-flash
-[0] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***BYfA model=gemini-2.5-flash
+[2] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 208文字]: '8日は7鞍に騎乗した佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝は、3Rのデイムサンライズで軽快に逃げ切り、今年の19勝目を挙げました。断然の1番人気に支持されたこの勝利に、佐々木騎手は「よかった」と笑顔を見せました。この勢いのまま、9日も勝利を積み重ねられるか注目されます。9日も7鞍に騎乗する予定で、特に6Rのロングセラーアスクや12Rのディナーラッシュといった有力馬に騎乗することから、その動向が注目されます。'
-[1]  → output/script_1.txt 保存 (208文字)
-[1]  プレビュー: 8日は7鞍に騎乗した佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝は、3Rのデイムサンライズで軽快に逃げ切り、今年の19勝目を挙げました。断然の1番人気に支持され...
+[2]  [Gemini生出力 221文字]: '兵庫アーバン競馬を主催する兵庫県競馬組合は9日、14日の園田競馬より、スタートから1ハロン（200メートル）ごとの区間タイム「ハロンタイム」と上り4ハロンタイムを、地方競馬情報サイトの競走成績に表示すると発表しました。これまでは各コーナーの通過順位のみを掲載していましたが、今後はより詳細なタイム情報が提供されます。なお、200メートルで割り切れない距離のレースについては、スタート地点から最初のハロンタイムの計測開始地点が定められています。'
+[2]  → output/script_2.txt 保存 (221文字)
+[2]  プレビュー: 兵庫アーバン競馬を主催する兵庫県競馬組合は9日、14日の園田競馬より、スタートから1ハロン（200メートル）ごとの区間タイム「ハロンタイム」と上り4ハロンタイム...
   HTTP 200
-[2]  [Gemini生出力 262文字]: '園田競馬5日目、4月9日の情報です。下原理騎手は現在38勝を挙げています。12レースのチュッチュポッポには「追い切りの時からいい感じ」と好感触を示しました。5レースのオキョンピーについては「斤量の58キロだけ」とコメント。7レースのクラウンカイロスは「元気いっぱいで」、6レースのナムラダニーは「前走のようなレースを今回もしてみたい」と語っています。一方、田野豊三騎手は2勝を加算し、下原理騎手と同じく38勝としています。11レースのベラジオヒダカボシでメイン制覇を目指しており、「状態いいから楽しみ」と期待を寄せています。'
-[2]  → output/script_2.txt 保存 (262文字)
-[2]  プレビュー: 園田競馬5日目、4月9日の情報です。下原理騎手は現在38勝を挙げています。12レースのチュッチュポッポには「追い切りの時からいい感じ」と好感触を示しました。5レ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***BYfA model=gemma-3-4b-it
+[1]  [Gemini生出力 223文字]: '第86回皐月賞の1週前追い切りが4月9日に美浦トレセンで行われました。前走の報知杯弥生賞ディープインパクト記念で2着だったライヒスアドラーは、テンションを考慮し単走で調整されました。佐々木大輔騎手が騎乗しWコースを追い切られ、序盤はゆったり入り、最後も軽く促す程度で6ハロン84秒4―11秒4をマークしています。佐々木大輔騎手は「欲を言えば硬さがとれてほしい」とコメントしています。ライヒスアドラーは牡3歳で、美浦の上原佑紀厩舎に所属しています。'
+[1]  → output/script_1.txt 保存 (223文字)
+[1]  プレビュー: 第86回皐月賞の1週前追い切りが4月9日に美浦トレセンで行われました。前走の報知杯弥生賞ディープインパクト記念で2着だったライヒスアドラーは、テンションを考慮し...
   HTTP 200
-[0]  [Gemini生出力 379文字]: '4月7日から香港競馬シーズン最終日の7月15日まで期間限定の騎乗免許を取得したジョアン・モレイラ(42＝ブラジル)が、4月8日に開催されたナイター開催のハッピーバレーで、いきなりの初日4勝の固め打ちを達成した。9鞍フル騎乗となり、全てファウンズ師の管理馬を勝利に導いた。1R(芝1200メートル)では、3番人気ディシジョンリンクとのコンビで差し切り、勝利を収めた。また、ハッピーバレー8Rでは、パーフェクトジェネラルで制覇し、一日4勝とした。ジョアン・モレイラ騎手とファウンズ師は、The Hong Kong Jockey Clubによって写真が提供されている。さらに、シュトラウスがUAEのアブダビゴールドカップに出走することが発表され、ジョアン・モレイラ騎手が鞍上を務める。ジョアン・モレイラ騎手は、13日から28日までJRA短期騎手免許を取得している。'
-[0]  → output/script_0.txt 保存 (379文字)
-[0]  プレビュー: 4月7日から香港競馬シーズン最終日の7月15日まで期間限定の騎乗免許を取得したジョアン・モレイラ(42＝ブラジル)が、4月8日に開催されたナイター開催のハッピー...
+[0]  [Gemini生出力 303文字]: '第86回皐月賞・G1の1週前追い切りが4月9日、美浦トレセンで行われました。前走のきさらぎ賞を制したゾロアストロは、美浦の宮田敬介厩舎に所属する父モーリス産駒の3歳牡馬です。この日は初コンビとなる岩田望来騎手が栗東から駆けつけ、Wコースで3頭併せを実施しました。隊列の真ん中で脚をためると、やや早めに行きたがるそぶりを見せましたが、直線では力強く脚を伸ばし、内グリオンヴール(3歳1勝クラス)、外ロジシルバー(6歳オープン)に最先着しました。岩田望来騎手は「思った通りいい馬」と評価しつつ、「あとは舞台が合うかどうか」とコメントしています。皐月賞は4月19日に中山競馬場・芝2000メートルで発走予定です。'
+[0]  → output/script_0.txt 保存 (303文字)
+[0]  プレビュー: 第86回皐月賞・G1の1週前追い切りが4月9日、美浦トレセンで行われました。前走のきさらぎ賞を制したゾロアストロは、美浦の宮田敬介厩舎に所属する父モーリス産駒の...
 
 3 件の脚本を生成しました。
