@@ -23,7 +23,10 @@ import subprocess
 import sys
 import tempfile
 import textwrap
+import unicodedata
 from pathlib import Path
+
+import requests
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
@@ -331,6 +334,87 @@ def make_frame(text: str, assets_images: list[str], index: int, font: ImageFont.
 
 
 # ---------------------------------------------------------------------------
+# タイトル折り返し・要約ヘルパー
+# ---------------------------------------------------------------------------
+
+_TITLE_CHARS_PER_LINE = 9   # 全角換算で1行あたりの最大文字数
+_TITLE_MAX_LINES = 4
+_GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+
+
+def _cjk_char_width(c: str) -> int:
+    """全角文字は2、半角文字は1を返す。"""
+    return 2 if unicodedata.east_asian_width(c) in ("W", "F") else 1
+
+
+def _wrap_cjk(text: str, max_chars: int) -> list[str]:
+    """全角/半角を考慮してテキストを折り返す。max_charsは全角換算の最大文字数。"""
+    max_width = max_chars * 2  # 全角換算幅をdisplay幅に変換
+    lines: list[str] = []
+    current = ""
+    current_w = 0
+    for ch in text:
+        cw = _cjk_char_width(ch)
+        if current_w + cw > max_width and current:
+            lines.append(current)
+            current = ch
+            current_w = cw
+        else:
+            current += ch
+            current_w += cw
+    if current:
+        lines.append(current)
+    return lines
+
+
+def _summarize_title_with_gemini(title: str) -> str:
+    """Gemini APIでタイトルを要約して最大36文字（全角換算）以内に収める。"""
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not api_key:
+        print("  [警告] GEMINI_API_KEY 未設定のためタイトル要約をスキップ", file=sys.stderr)
+        return title
+
+    max_display = _TITLE_CHARS_PER_LINE * _TITLE_MAX_LINES  # = 36 全角換算
+    prompt = (
+        f"以下の競馬ニュースのタイトルを、全角換算{max_display}文字以内（約{_TITLE_MAX_LINES}行）に要約してください。\n"
+        "重要な固有名詞（馬名・レース名・人名）は残してください。\n"
+        "要約後のタイトルのみ出力し、説明や引用符は不要です。\n\n"
+        f"タイトル：{title}"
+    )
+    url = f"{_GEMINI_API_BASE}/gemini-2.0-flash:generateContent"
+    body = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"maxOutputTokens": 120, "temperature": 0.2},
+    }
+    try:
+        resp = requests.post(url, json=body, params={"key": api_key}, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+        text = text.strip('"\'「」')
+        if text:
+            print(f"  [タイトル要約] {title[:30]}… → {text}")
+            return text
+    except Exception as e:
+        safe = str(e).replace(api_key, "***")
+        print(f"  [警告] タイトル要約失敗: {safe}", file=sys.stderr)
+    return title
+
+
+def _prepare_title_lines(title: str) -> list[str]:
+    """タイトルをCJK対応で折り返し、4行超の場合はGeminiで要約する。"""
+    lines = _wrap_cjk(title, _TITLE_CHARS_PER_LINE)
+    if len(lines) > _TITLE_MAX_LINES:
+        print(f"  タイトルが{len(lines)}行 > {_TITLE_MAX_LINES}行のため要約します...")
+        summarized = _summarize_title_with_gemini(title)
+        lines = _wrap_cjk(summarized, _TITLE_CHARS_PER_LINE)
+        if len(lines) > _TITLE_MAX_LINES:
+            # 要約後もまだ長い場合はフォールバックで末尾に「…」
+            lines = lines[:_TITLE_MAX_LINES - 1] + [lines[_TITLE_MAX_LINES - 1][:_TITLE_CHARS_PER_LINE - 1] + "…"]
+    return lines[:_TITLE_MAX_LINES]
+
+
+# ---------------------------------------------------------------------------
 # エンディングカード生成
 # ---------------------------------------------------------------------------
 
@@ -369,12 +453,7 @@ def make_thumbnail_frame(title: str, assets_images: list[str], index: int, font_
     import re
     clean_title = re.sub(r"[\u3000\s]+", " ", title).strip()
     title_font = load_font(100)
-    all_lines = textwrap.wrap(clean_title, width=10)
-    if len(all_lines) > 4:
-        # 4行を超える場合は3行 + 末尾「…」付きの4行目に収める
-        lines = all_lines[:3] + [all_lines[3][:9] + "…"]
-    else:
-        lines = all_lines[:4]
+    lines = _prepare_title_lines(clean_title)
     line_h = 120
     total_h = len(lines) * line_h
     start_y = (VIDEO_HEIGHT - total_h) // 2 - 80
