@@ -1,10 +1,10 @@
-date: 2026-04-09T05:16:29.777970Z
+date: 2026-04-09T06:26:34.344321Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=pGzYRCDZcUk title=【皐月賞・1週前】スプリングS3着アクロフェイズは前走同様に好調　奥村豊調教師「
-OK project=1 video_id=vNt1kEabzWg title=「予想以上に時計が出ている」高柳大調教師もうなずくミュージアムマイル　香港遠征に
-OK project=1 video_id=LJc4gVqG8p4 title=【皐月賞・1週前】若葉S勝ちマテンロウゲイルがCWコースで絶好の動き　野中調教師
+OK project=1 video_id=Uk6IMxg0GhA title=ブラジル出身のエリオネ・シャベス騎手が初の地方短期免許取得　13日から南関東で騎
+OK project=1 video_id=MVdDPd54dYU title=【桜花賞】G1馬スターアニス&重賞Vドリームコアは試練?の7枠　武豊騎手のアラン
+OK project=1 video_id=HuVETNWjI88 title=石神深一騎手の引退決断理由は「依頼された馬を最低でも一つ勝たせる」ことが難しくな
