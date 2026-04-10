@@ -1,0 +1,167 @@
+name: Famous Horse Series - 名馬列伝
+
+on:
+  workflow_dispatch:
+    inputs:
+      horse_key:
+        description: "馬名キー（data/famous_horses/ 内のファイル名）"
+        required: true
+        default: "silport"
+        type: string
+      horse_name:
+        description: "馬名（表示用・日本語）"
+        required: true
+        default: "シルポート"
+        type: string
+
+jobs:
+  post-famous-horse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # 脚本を output/script_0.txt に、タイトルを news.json に書き出す
+      - name: Prepare horse script
+        run: |
+          mkdir -p output
+          python scripts/famous_horse_prepare.py "${{ inputs.horse_key }}"
+
+      # 背景画像を Pixabay から取得（失敗しても続行）
+      - name: 背景画像取得 (Pixabay)
+        continue-on-error: true
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, urllib.request, urllib.parse, pathlib, time
+          api_key = os.environ.get("PIXABAY_API_KEY", "")
+          if not api_key:
+              print("PIXABAY_API_KEY 未設定。スキップします。")
+              exit(0)
+          pathlib.Path("assets").mkdir(exist_ok=True)
+          queries = ["horse racing", "thoroughbred racehorse", "racetrack grandstand"]
+          downloaded = 0
+          for i, q in enumerate(queries):
+              params = urllib.parse.urlencode({
+                  "key": api_key, "q": q,
+                  "image_type": "photo", "orientation": "vertical",
+                  "min_width": 800, "per_page": 3,
+              })
+              try:
+                  req = urllib.request.Request(
+                      f"https://pixabay.com/api/?{params}",
+                      headers={"User-Agent": "Mozilla/5.0"},
+                  )
+                  with urllib.request.urlopen(req, timeout=20) as resp:
+                      hits = json.loads(resp.read()).get("hits", [])
+                  for j, hit in enumerate(hits[:2]):
+                      img_url = hit.get("largeImageURL") or hit.get("webformatURL")
+                      if not img_url:
+                          continue
+                      dest = f"assets/ai_{i*2+j}.jpg"
+                      img_req = urllib.request.Request(img_url, headers={"User-Agent": "Mozilla/5.0"})
+                      with urllib.request.urlopen(img_req, timeout=30) as r:
+                          pathlib.Path(dest).write_bytes(r.read())
+                      print(f"  ダウンロード完了: {dest}")
+                      downloaded += 1
+              except Exception as e:
+                  print(f"  [警告] クエリ'{q}'失敗: {e}")
+              time.sleep(1)
+          print(f"背景画像 {downloaded} 枚取得完了")
+          PYEOF
+
+      # TTS_VOICE=ja-JP-NanamiNeural で名馬シリーズ専用ボイスに切り替え
+      - name: Generate audio (既存スクリプト流用・別ボイス)
+        env:
+          TTS_VOICE: "ja-JP-NanamiNeural"
+          TTS_RATE:  "-3%"
+        run: |
+          python scripts/generate_audio.py 2>&1 | tee /tmp/famous_horse_audio.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::音声生成失敗"
+            exit $STATUS
+          fi
+
+      - name: Download BGM (CC0 public domain only)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_famous_horse_bgm.py
+
+      - name: Generate video
+        run: |
+          python scripts/generate_video.py 2>&1 | tee /tmp/famous_horse_video.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::動画生成失敗"
+            exit $STATUS
+          fi
+          ls -lh output/video_*.mp4 2>/dev/null || true
+
+      # 名馬シリーズ専用のタイトル・タグでアップロード
+      - name: Upload to YouTube (名馬列伝タイトルで)
+        env:
+          GOOGLE_CLIENT_ID:     ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+          FAMOUS_HORSE_KEY:   ${{ inputs.horse_key }}
+          FAMOUS_HORSE_UPLOAD: "1"
+        run: |
+          python scripts/famous_horse_upload.py "${{ inputs.horse_key }}" \
+            2>&1 | tee /tmp/famous_horse_upload.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::アップロード失敗"
+            exit $STATUS
+          fi
+
+      - name: Save logs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p debug
+          for f in audio video upload; do
+            cp /tmp/famous_horse_${f}.log debug/last_famous_horse_${f}.log 2>/dev/null \
+              || echo "(ログなし)" > debug/last_famous_horse_${f}.log
+          done
+          git add debug/last_famous_horse_*.log
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: save famous_horse logs [${{ inputs.horse_key }}] [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
