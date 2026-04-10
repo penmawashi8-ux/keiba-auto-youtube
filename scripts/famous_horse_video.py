@@ -163,7 +163,7 @@ def generate_video(
     extend_ass(ass_path, audio_duration, horse_name)
 
     font_path = find_font()
-    # BGMは著作権リスクのため使用しない（コンテンツIDによるブロックを防ぐ）
+    bgm_path  = find_bgm()
 
     # --- ffmpegコマンド構築 ---
     cmd = ["ffmpeg", "-y"]
@@ -176,6 +176,10 @@ def generate_video(
 
     # Input 1: ナレーション音声
     cmd += ["-i", audio_path]
+
+    # Input 2: BGM（存在する場合のみ）
+    if bgm_path:
+        cmd += ["-stream_loop", "-1", "-i", bgm_path]
 
     # --- フィルターグラフ ---
     # 1. フィルムグレイン + ビネット（シネマチック感）
@@ -213,9 +217,20 @@ def generate_video(
 
     video_chain += "[vout]"
 
-    # BGMなし: ナレーション音声をそのまま使用
-    filter_complex = video_chain
-    audio_map = "1:a"
+    # BGM有り: ナレーション + BGMをミックス
+    if bgm_path:
+        audio_filter = (
+            f"[1:a]volume=1.0[narr];"
+            f"[2:a]volume={BGM_VOLUME}[bgm];"
+            f"[narr][bgm]amix=inputs=2:duration=first:dropout_transition=2[aout]"
+        )
+        filter_complex = video_chain + ";" + audio_filter
+        audio_map = "[aout]"
+        print(f"  BGMミックス: {bgm_path} (volume={BGM_VOLUME})")
+    else:
+        filter_complex = video_chain
+        audio_map = "1:a"
+        print("  BGMなし: ナレーション音声のみ")
 
     cmd += [
         "-filter_complex", filter_complex,

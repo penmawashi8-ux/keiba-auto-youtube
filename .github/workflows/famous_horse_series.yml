@@ -47,6 +47,12 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
+      - name: Download BGM (CC0 public domain only)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_famous_horse_bgm.py
+
       - name: Generate narration audio
         run: |
           mkdir -p output
