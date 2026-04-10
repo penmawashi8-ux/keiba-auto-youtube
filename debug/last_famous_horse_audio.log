@@ -1,8 +1,9 @@
-=== 名馬シリーズ 音声生成開始 ===
-  馬名キー : silport
-  ボイス   : ja-JP-NanamiNeural (rate=-3%)
-  字幕フォント: Noto Sans CJK JP
-  スクリプト: 349 文字
-  音声: output/famous_horse_audio.mp3 (436 KB)
-  字幕: output/famous_horse_subtitles.ass (0 セグメント)
-=== 音声生成完了 ===
+=== 音声生成開始 ===
+字幕フォント: Noto Sans CJK JP
+  タイトル読み上げ追加: 「シルポート」
+
+--- 音声生成 [0] (355文字) ---
+  音声: output/audio_0.mp3 (446 KB)
+  字幕: output/subtitles_0.ass (0 セグメント)
+
+1 件の音声を生成しました。

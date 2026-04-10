@@ -1,12 +1,141 @@
-=== 名馬シリーズ 動画生成開始 ===
-  馬名: シルポート
-  音声: 74.42秒 / 総尺: 78.42秒
-  字幕セグメント: 0 件
-  フォント: /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc
-  背景画像: 6 枚
-  BGM: assets/bgm/horse_drama_bgm.mp3
-  エンディング: 4.0秒
-  無音動画 concat 完了
-  動画生成完了: output/famous_horse_video.mp4 (0.3 MB)
-  サムネイル: output/famous_horse_thumbnail.jpg (58 KB)
-=== 動画生成完了 ===
+=== 動画生成開始 ===
+  AI画像を使用 (6枚): ['ai_0.jpg', 'ai_1.jpg', 'ai_2.jpg', 'ai_3.jpg', 'ai_4.jpg', 'ai_5.jpg']
+  日本語フォント: /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc
+
+--- 動画生成 [0]: シルポート ---
+  音声の総再生時間（mutagen）: 76.20秒
+  セリフ数: 17
+    [0] 「GⅠで前半1000m…56秒5で逃げた馬」 → 5.35秒
+    [1] 「その名はシルポート。」 → 2.23秒
+    [2] 「マイラーズカップ2連覇、重賞3勝の本物の」 → 5.35秒
+    [3] 「2011年天皇賞（秋）、スタートと同時に」 → 7.80秒
+    [4] 「前半1000mのタイム、56秒5。」 → 3.79秒
+    [5] 「サイレンススズカすら上回る超ハイペース。」 → 4.46秒
+    [6] 「東京競馬場がどよめいた。」 → 2.67秒
+    [7] 「当然残り300mで失速して16着。」 → 3.79秒
+    [8] 「でもトーセンジョーダンのレコードはこの逃」 → 6.68秒
+    [9] 「そして8歳、ラストランの宝塚記念。」 → 3.79秒
+    [10] 「相手はゴールドシップ、ジェンティルドンナ」 → 6.91秒
+    [11] 「シルポートは後続を20馬身近く引き離す大」 → 6.02秒
+    [12] 「結果は最下位。」 → 1.56秒
+    [13] 「でも最後まで自分の競馬を貫いた。」 → 3.56秒
+    [14] 「その後、放牧中に骨膜炎を発症してひっそり」 → 5.12秒
+    [15] 「派手に逃げて、静かに去った馬。」 → 3.34秒
+    [16] 「それがシルポートです。」 → 2.45秒
+  背景画像読み込み: assets/ai_0.jpg
+  背景画像読み込み成功: assets/ai_0.jpg → (1080, 1920)
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_thumb.png -t 1.500000 ...
+  サムネイルフレーム生成完了: 1.50秒（タイトル読み上げ尺）
+  背景画像読み込み: assets/ai_0.jpg
+  背景画像読み込み成功: assets/ai_0.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_0.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_0.png -t 5.347368 ...
+  クリップ生成完了: clip_0.mp4 (5.35秒)
+  背景画像読み込み: assets/ai_1.jpg
+  背景画像読み込み成功: assets/ai_1.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_1.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_1.png -t 2.228070 ...
+  クリップ生成完了: clip_1.mp4 (2.23秒)
+  背景画像読み込み: assets/ai_2.jpg
+  背景画像読み込み成功: assets/ai_2.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_2.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_2.png -t 5.347368 ...
+  クリップ生成完了: clip_2.mp4 (5.35秒)
+  背景画像読み込み: assets/ai_3.jpg
+  背景画像読み込み成功: assets/ai_3.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_3.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_3.png -t 7.798246 ...
+  クリップ生成完了: clip_3.mp4 (7.80秒)
+  背景画像読み込み: assets/ai_4.jpg
+  背景画像読み込み成功: assets/ai_4.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_4.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_4.png -t 3.787719 ...
+  クリップ生成完了: clip_4.mp4 (3.79秒)
+  背景画像読み込み: assets/ai_5.jpg
+  背景画像読み込み成功: assets/ai_5.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_5.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_5.png -t 4.456140 ...
+  クリップ生成完了: clip_5.mp4 (4.46秒)
+  背景画像読み込み: assets/ai_0.jpg
+  背景画像読み込み成功: assets/ai_0.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_6.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_6.png -t 2.673684 ...
+  クリップ生成完了: clip_6.mp4 (2.67秒)
+  背景画像読み込み: assets/ai_1.jpg
+  背景画像読み込み成功: assets/ai_1.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_7.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_7.png -t 3.787719 ...
+  クリップ生成完了: clip_7.mp4 (3.79秒)
+  背景画像読み込み: assets/ai_2.jpg
+  背景画像読み込み成功: assets/ai_2.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_8.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_8.png -t 6.684211 ...
+  クリップ生成完了: clip_8.mp4 (6.68秒)
+  背景画像読み込み: assets/ai_3.jpg
+  背景画像読み込み成功: assets/ai_3.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_9.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_9.png -t 3.787719 ...
+  クリップ生成完了: clip_9.mp4 (3.79秒)
+  背景画像読み込み: assets/ai_4.jpg
+  背景画像読み込み成功: assets/ai_4.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_10.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_10.png -t 6.907018 ...
+  クリップ生成完了: clip_10.mp4 (6.91秒)
+  背景画像読み込み: assets/ai_5.jpg
+  背景画像読み込み成功: assets/ai_5.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_11.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_11.png -t 6.015789 ...
+  クリップ生成完了: clip_11.mp4 (6.02秒)
+  背景画像読み込み: assets/ai_0.jpg
+  背景画像読み込み成功: assets/ai_0.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_12.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_12.png -t 1.559649 ...
+  クリップ生成完了: clip_12.mp4 (1.56秒)
+  背景画像読み込み: assets/ai_1.jpg
+  背景画像読み込み成功: assets/ai_1.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_13.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_13.png -t 3.564912 ...
+  クリップ生成完了: clip_13.mp4 (3.56秒)
+  背景画像読み込み: assets/ai_2.jpg
+  背景画像読み込み成功: assets/ai_2.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_14.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_14.png -t 5.124561 ...
+  クリップ生成完了: clip_14.mp4 (5.12秒)
+  背景画像読み込み: assets/ai_3.jpg
+  背景画像読み込み成功: assets/ai_3.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_15.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_15.png -t 3.342105 ...
+  クリップ生成完了: clip_15.mp4 (3.34秒)
+  背景画像読み込み: assets/ai_4.jpg
+  背景画像読み込み成功: assets/ai_4.jpg → (1080, 1920)
+  字幕1行最大文字数: 14（1文字幅=64.0px, 最大幅=918px）
+  フレーム画像生成完了: frame_16.png
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_16.png -t 2.450877 ...
+  クリップ生成完了: clip_16.mp4 (2.45秒)
+  $ ffmpeg -y -loop 1 -i /tmp/keiba_video_8w8z7uqy/frame_ending.png -t 4.0 ...
+  エンディングカード追加: 4.0秒
+  クリップ結合中...
+  $ ffmpeg -y -f concat -safe 0 -i /tmp/keiba_video_8w8z7uqy/concat.txt ...
+  音声結合中...
+  BGM使用: bgm_3.mp3
+  $ ffmpeg -y -i /tmp/keiba_video_8w8z7uqy/silent.mp4 -i output/audio_0.mp3 -stream_loop -1 ...
+  最終動画の生成完了: output/video_0.mp4 (11.7 MB)
+  tmpフォルダを削除しました。
+
+1 本の動画を生成しました。
