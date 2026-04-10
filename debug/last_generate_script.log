@@ -5,28 +5,31 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【桜花賞予想】驚きの「急上昇馬5頭」登場で風雲急？ GI桜花賞「調子偏差値」速報 ---
-[0] Gemini入力本文 422文字: '今週からは、福島競馬場も加わり「中山・阪神・福島」の3場開催となります。\n\n\u3000重賞は、土曜日にニュージーランドT(GII・中山・芝1600m)と、阪神牝馬S(GII・阪神・芝1600m)というGII芝マイル戦がふたつ。そして日曜日には、3歳'
+--- 記事[0]: 阪神牝馬Sはやや波乱傾向の一戦 押さえておきたい血統とは ---
+[0] Gemini入力本文 499文字: '土曜阪神メインは阪神牝馬ステークス(4歳上牝・GII・芝1600m)。ここでは近10回の傾向を人気別、脚質別、枠順別、血統別、ジョッキー別の成績から探りたい。\n\n\u3000人気別の成績を見ると、やや波乱傾向だ。1番人気は【3-2-1-4】で及第点だ'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【netkeibaTV】細江純子×じゃいが桜花賞を展望 混戦ムードの中で中心視した馬とは ---
-[1] Gemini入力本文 433文字: 'ホースコラボレーターの細江純子、生粋のギャンブラーとして知られるじゃいの2人が、4月12日(日)に阪神競馬場で行われる桜花賞(3歳牝・GI・芝1600m)を展望します。\n\n\u3000じゃいは冒頭で「絶対的な存在はいない」ときっぱり。混戦ムードも漂う'
+--- 記事[1]: 【阪神牝馬S予想】ヴィクトリアMの最重要ステップ 総合力が試される阪神マイルが舞台 ---
+[1] Gemini入力本文 451文字: '優勝馬にはヴィクトリアマイルへの優先出走権が付与される重要な前哨戦で、現行2016年に距離が1600mに延長されて以降、このレースをステップに本番へと向かった馬は[4-3-5-56]と数ある前哨戦の中で最多勝利、最多連対数を誇っている。舞台'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【有力馬動向】スムーズな加速！ ダノンセンチュリー/馬三郎のつぶやき ---
-[2] Gemini入力本文 445文字: '◆ダノンセンチュリー(10日・森元)\n\n\u30003連勝でオープン入りを決めたダノンセンチュリー(牡4歳、美浦・萩原)が、美浦Wで前走後初時計をマーク。タイムは4F55秒7-12秒1(馬なり)。しまい重点に乗られ、ラストはスムーズに加速した。雰囲気'
+--- 記事[2]: 【ニュージーランドT予想】トリッキーな中山芝1600m コース実績を重視 ---
+[2] Gemini入力本文 468文字: '上位3着までにNHKマイルCへの優先出走権が付与される重要なステップレース。過去10年間でこのレースをステップに本番へと挑んだ馬は[2-2-2-36]。NHKマイルCを占う意味でも見逃せないレースだが、舞台となる中山競馬場芝1600mは、1'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -43,22 +46,30 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
+[1] 使用: key=***BYfA model=gemini-2.5-flash
 [0] 使用: key=***BYfA model=gemini-2.5-flash
-  HTTP 503
+  HTTP 200
+[2]  [Gemini生出力 4文字]: 'SKIP'
+[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 468文字）
+[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 204文字]: '今週からは福島競馬場も加わり、中山・阪神・福島の3場開催となります。重賞は、土曜日にニュージーランドT、GII中山芝1600mと、阪神牝馬S、GII阪神芝1600mというGII芝マイル戦が2つ開催されます。そして日曜日には、3歳牝馬三冠レースの初戦となる桜花賞、GI阪神芝1600mがスタートします。注目となる桜花賞は、トライアル戦で上位だった馬たちに加え、GI阪神JF上位勢も参戦してくる豪華メンバーです。'
-[0]  → output/script_0.txt 保存 (204文字)
-[0]  プレビュー: 今週からは福島競馬場も加わり、中山・阪神・福島の3場開催となります。重賞は、土曜日にニュージーランドT、GII中山芝1600mと、阪神牝馬S、GII阪神芝160...
+[1]  [Gemini生出力 287文字]: '阪神牝馬ステークスは、優勝馬にヴィクトリアマイルへの優先出走権が付与される重要な前哨戦です。現行2016年に距離が1600mに延長されて以降、このレースをステップに本番へと向かった馬は[4-3-5-56]と、数ある前哨戦の中で最多勝利、最多連対数を誇っています。舞台となる阪神競馬場外回りコースを使用する芝1600m戦は、2角を回り切った向正面半ばからスタートするワンターンコースです。スタートしてしばらくはほぼ平坦ですが、残り600m付近から200m付近まで上り坂が続く特徴があります。スローで1800m質のレースになりがちで、中距離型種牡馬の産駒が勝つ傾向も見られます。'
+[1]  → output/script_1.txt 保存 (287文字)
+[1]  プレビュー: 阪神牝馬ステークスは、優勝馬にヴィクトリアマイルへの優先出走権が付与される重要な前哨戦です。現行2016年に距離が1600mに延長されて以降、このレースをステッ...
   HTTP 200
-[1]  [Gemini生出力 238文字]: 'netkeibaTVでは、ホースコラボレーターの細江純子と生粋のギャンブラーじゃいの2人が、4月12日(日)に阪神競馬場で行われる桜花賞(3歳牝・GI・芝1600m)を展望しました。じゃいは冒頭で「絶対的な存在はいない」ときっぱり述べ、混戦ムードが漂う中での見解を示しています。2歳女王スターアニスの評価はもちろん、フェスティバルヒルやドリームコア、リリージョワといった有力馬についてもジャッジを下しました。そんな中で、細江純子とじゃいが中心視した馬についても語られています。'
-[1]  → output/script_1.txt 保存 (238文字)
-[1]  プレビュー: netkeibaTVでは、ホースコラボレーターの細江純子と生粋のギャンブラーじゃいの2人が、4月12日(日)に阪神競馬場で行われる桜花賞(3歳牝・GI・芝160...
+[0]  [Gemini生出力 309文字]: '土曜阪神メインの阪神牝馬ステークスは、4歳上牝馬によるGII、芝1600mの一戦です。近10回の傾向を見ると、やや波乱傾向にあります。人気別の成績では、1番人気が3勝2着2回3着1回と及第点ですが、2番人気は2勝2着1回3着1回、3番人気は2着2回3着1回と、ともにアテにしづらい成績です。対照的に8番人気から9番人気が2勝3着4回と大活躍しており、2桁人気も2着3回3着1回と4頭が馬券に絡んでいます。昨年の阪神牝馬ステークスはサフィラが制しました。今年の展望では、充実の4歳馬ルージュソリテールが重賞制覇を狙います。このレースはスローで1800m質のレースになりがちで、中距離型種牡馬の産駒が勝つ傾向が見られます。'
+[0]  → output/script_0.txt 保存 (309文字)
+[0]  プレビュー: 土曜阪神メインの阪神牝馬ステークスは、4歳上牝馬によるGII、芝1600mの一戦です。近10回の傾向を見ると、やや波乱傾向にあります。人気別の成績では、1番人気...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 166文字]: '3連勝でオープン入りを決めたダノンセンチュリー、牡4歳、美浦・萩原厩舎の動向です。ダノンセンチュリーは、美浦Wで前走後初時計をマークしました。この時のタイムは4F55秒7-12秒1(馬なり)でした。調教では、しまい重点に乗られ、ラストはスムーズに加速したと伝えられています。現在の雰囲気は良く、調整は順調であると言っていいでしょう。'
-[2]  → output/script_2.txt 保存 (166文字)
-[2]  プレビュー: 3連勝でオープン入りを決めたダノンセンチュリー、牡4歳、美浦・萩原厩舎の動向です。ダノンセンチュリーは、美浦Wで前走後初時計をマークしました。この時のタイムは4...
+[2]  [Gemini生出力 323文字]: '上位3着までにNHKマイルCへの優先出走権が付与される重要なステップレース。過去10年間でこのレースをステップに本番へと挑んだ馬は[2-2-2-36]。NHKマイルCを占う意味でも見逃せないレースだが、舞台となる中山競馬場芝1600mは、1角付近に設けられたポケットからスタートして、1周1858.5m(Bコース使用時)を1周弱。スタートしてからゴール前に設けられている高低差2.4mの急坂の手前まで下るトリッキーなコース。コース実績も重きとなる。ロデオドライブが撮影されました。ニュージーランドＴの人気をチェック！ ニュージーランドＴの調子偏差値をチェック！ ニュージーランドＴを完全攻略！ 素直に中山マイルに向いた馬をヘイローのクロスが穴に。'
+[2]  → output/script_2.txt 保存 (323文字)
+[2]  プレビュー: 上位3着までにNHKマイルCへの優先出走権が付与される重要なステップレース。過去10年間でこのレースをステップに本番へと挑んだ馬は[2-2-2-36]。NHKマ...
 
 3 件の脚本を生成しました。
