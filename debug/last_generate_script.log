@@ -5,55 +5,34 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: ホッカイドウ競馬アンバサダーの杉谷拳士さんが来社　推しの2歳馬は「ベストカーラ」 ---
-[0] Gemini入力本文 427文字: '4月15日に開幕するホッカイドウ競馬「グランシャリオナイター」2026シーズンの見どころを伝えるため、ホッカイドウ競馬公式アンバサダーの杉谷拳士さんと、「mom☆’s」サポーターのmikuさん、木村真穂さんが4月10日、東京都墨田区の報知新'
+--- 記事[0]: ホッカイドウ競馬アンバサダー杉谷拳士氏がスポニチで開幕をPR　「いよいよ来たな」推し馬も紹介 ---
+[0] Gemini入力本文 412文字: '15日に門別競馬場で開幕するホッカイドウ競馬のPRのため、元日本ハム選手で2026公式アンバサダーの杉谷拳士氏が10日、東京・越中島のスポニチを訪れた。\n\n\u3000アンバサダー4年目となる杉谷氏は「野球の開幕と同じで“いよいよ来たな”という感じ。'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【桜花賞】ディアダイヤモンドが決戦の地へ出発　手塚久調教師「状態はいいと思うので楽しめると思います」 ---
-[1] Gemini入力本文 502文字: '◆第86回桜花賞・G1(4月12日、阪神競馬場・芝1600メートル)＝4月10日、美浦トレセン\n\n\t\t\t\t\u3000アネモネSを快勝して本番へ臨むディアダイヤモンド(牝3歳、美浦・手塚貴久厩舎、父サートゥルナーリア)は、きょう10日に決戦の地へ向け'
+--- 記事[1]: 【福島民報杯】GIIで2着2回のサヴォーナ 1年5カ月ぶりの復帰戦だ ---
+[1] Gemini入力本文 513文字: 'GIIで2着2回の実績があるサヴォーナ(牡6、栗東・中竹和也厩舎)が、日曜福島11Rの福島民報杯(4歳上・リステッド・芝2000m)で1年5カ月ぶりの復帰戦を迎える。\n\n\u3000サヴォーナは父キズナ、母テイケイラピッド、母の父スニッツェルの血統。'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【山藤賞】全兄はクロワデュノール チャリングクロスが待望の2勝目なるか ---
-[2] Gemini入力本文 478文字: 'GI・3勝のクロワデュノールの全弟となるチャリングクロス(牡3、美浦・奥村武厩舎)が、土曜中山9Rの山藤賞(3歳・1勝クラス・芝2000m)で待望の2勝目を狙う。\n\n\u3000チャリングクロスは父キタサンブラック、母ライジングクロス、母の父Cape'
+--- 記事[2]: 怪物牝馬オータムグロー無傷12連勝なるか　豪州G1は好メンバーぞろいでネットは「このまま無敗で...」などエール ---
+[2] Gemini入力本文 380文字: '◆クイーンエリザベスステークス・G1(4月11日、豪州ランドウィック競馬場・芝2000メートル)\n\n\t\t\t\t\u3000豪州競馬の祭典「ザ・チャンピオンシップス」2日目の中距離王決定戦が、あす11日に8頭立てで行われる。\n\n\t\t\t\t\u3000無傷11連勝中の'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -66,56 +45,26 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
+[0] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
   HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 503
-[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***BYfA model=gemma-3-4b-it
-[2] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 192文字]: '第86回桜花賞・G1（4月12日、阪神競馬場・芝1600メートル）が4月10日に美浦トレセンで開催されました。アネモネSを快勝して本番へ臨むディアダイヤモンド（牝3歳、美浦・手塚貴久厩舎、父サートゥルナーリア）は、10日に決戦の地へ向けて出発しました。手塚久調教師は「パンパンの方がいいけど良馬場でやれそうなのはいいですね。先週の大阪杯の時よりは良くなりそうですしね」と歓迎しました。'
-[1]  → output/script_1.txt 保存 (192文字)
-[1]  プレビュー: 第86回桜花賞・G1（4月12日、阪神競馬場・芝1600メートル）が4月10日に美浦トレセンで開催されました。アネモネSを快勝して本番へ臨むディアダイヤモンド（...
+[2]  [Gemini生出力 250文字]: '明日11日、豪州ランドウィック競馬場の芝2000メートルで行われるクイーンエリザベスステークス・G1は、8頭立てで実施されます。豪州競馬の祭典「ザ・チャンピオンシップス」2日目の中距離王決定戦です。無傷11連勝中のオータムグロー、クリス・ウォーラー厩舎所属の牝馬が、ベリーエレガントSとジョージライダーSのG1を連勝してこのレースに臨みます。これまでの11戦は全て芝1600メートル以下で、ジェームズ・マクドナルド騎手が騎乗予定です。ネットでは「このまま無敗で...」といったエールが送られています。'
+[2]  → output/script_2.txt 保存 (247文字)
+[2]  プレビュー: 明日11日、豪州ランドウィック競馬場の芝2000メートルで行われるクイーンエリザベスステークス・G1は、8頭立てで実施されます。豪州競馬の祭典「ザ・チャンピオン...
   HTTP 200
-[2]  [Gemini生出力 251文字]: 'GI・3勝のクロワデュノールの全弟となるチャリングクロス(牡3、美浦・奥村武厩舎)が、土曜中山9Rの山藤賞(3歳・1勝クラス・芝2000m)で待望の2勝目を狙う。チャリングクロスは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血統であり、全兄のクロワデュノールは24年のホープフルS、25年の日本ダービー、そして先週の大阪杯の覇者であった。半姉のアースライズは15年のフラワーCで2着であった。山藤賞2026に出走予定のチャリングクロスの全成績と掲示板をチェックすることができる。'
-[2]  → output/script_2.txt 保存 (251文字)
-[2]  プレビュー: GI・3勝のクロワデュノールの全弟となるチャリングクロス(牡3、美浦・奥村武厩舎)が、土曜中山9Rの山藤賞(3歳・1勝クラス・芝2000m)で待望の2勝目を狙う...
-[0] 使用: key=***BYfA model=gemma-3-4b-it
+[0]  [Gemini生出力 217文字]: '元日本ハム選手で2026公式アンバサダーの杉谷拳士氏が、15日に門別競馬場で開幕するホッカイドウ競馬のPRのため、10日に東京・越中島のスポニチを訪れました。アンバサダー4年目となる杉谷氏は、「野球の開幕と同じで“いよいよ来たな”という感じ。ファイターズも好調だし、それとともにホッカイドウ競馬も上昇していくという思いでやっている」と熱弁を振るいました。同競馬出身馬の愛称「mom☆’s(モンスターズ)」の魅力を伝えたということです。'
+[0]  → output/script_0.txt 保存 (217文字)
+[0]  プレビュー: 元日本ハム選手で2026公式アンバサダーの杉谷拳士氏が、15日に門別競馬場で開幕するホッカイドウ競馬のPRのため、10日に東京・越中島のスポニチを訪れました。ア...
   HTTP 200
-[0]  [Gemini生出力 219文字]: '4月10日、東京都墨田区の報知新聞社を、ホッカイドウ競馬公式アンバサダーの杉谷拳士さんと、「mom☆’s」サポーターのmikuさん、木村真穂さんが訪れた。今年度のホッカイドウ競馬は11月12日まで85日間の日程で行われる。今年はホッカイドウ競馬出身馬の愛称「mom☆’s〜モンスターズ〜」の魅力発信と応援を強化。4月15日に開幕するホッカイドウ競馬「グランシャリオナイター」2026シーズンの見どころを伝えるため、杉谷拳士さんが来社した。'
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: 4月10日、東京都墨田区の報知新聞社を、ホッカイドウ競馬公式アンバサダーの杉谷拳士さんと、「mom☆’s」サポーターのmikuさん、木村真穂さんが訪れた。今年度...
+[1]  [Gemini生出力 242文字]: 'GIIで2着2回の実績を持つサヴォーナが、日曜福島11Rの福島民報杯で1年5カ月ぶりの復帰戦を迎えます。サヴォーナは牡6、栗東の中竹和也厩舎に所属しており、このレースは4歳上、リステッド、芝2000mで行われます。これまでに17戦3勝を挙げており、重賞には10回参戦しています。血統は父キズナ、母テイケイラピッド、母の父スニッツェルです。いとこのレオパルディナは2014年にフェニックス賞を勝ち、小倉2歳Sで2着の実績があり、近親のユアヒストリーはダートでオープンまで出世しています。'
+[1]  → output/script_1.txt 保存 (242文字)
+[1]  プレビュー: GIIで2着2回の実績を持つサヴォーナが、日曜福島11Rの福島民報杯で1年5カ月ぶりの復帰戦を迎えます。サヴォーナは牡6、栗東の中竹和也厩舎に所属しており、この...
 
 3 件の脚本を生成しました。
