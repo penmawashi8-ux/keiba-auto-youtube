@@ -58,13 +58,6 @@ jobs:
             exit $STATUS
           fi
 
-      - name: Download BGM (CC0 public domain only)
-        continue-on-error: true
-        run: |
-          mkdir -p assets/bgm
-          python scripts/download_famous_horse_bgm.py \
-            2>&1 | tee /tmp/famous_horse_bgm.log
-
       - name: Generate video
         run: |
           python scripts/famous_horse_video.py \
