@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 フリーBGMダウンロードスクリプト
-archive.org の CC ライセンス音楽を検索・ダウンロードする（APIキー不要）。
+
+Content ID クレームを避けるため、CC0（パブリックドメイン）に限定して
+archive.org から音楽を取得する。
 """
 import json
-import os
 import subprocess
 import sys
 import time
@@ -15,18 +16,22 @@ from pathlib import Path
 
 BGM_DIR = "assets/bgm"
 
-# archive.org 検索クエリ（3種のBGM用）
+# CC0 ライセンスに限定した検索クエリ
+# licenseurl で CC0 を明示的に指定してContent IDリスクを最小化する
 BGM_SEARCHES = [
-    ("bgm_1", "upbeat background music royalty free"),
-    ("bgm_2", "calm piano background music"),
-    ("bgm_3", "energetic sport background music"),
+    ("bgm_1", "background music instrumental"),
+    ("bgm_2", "calm piano background"),
+    ("bgm_3", "ambient music instrumental"),
 ]
 
+# archive.org の CC0 ライセンスURL
+CC0_FILTER = 'licenseurl:"https://creativecommons.org/publicdomain/zero/1.0/"'
 
-def search_archive(query: str, rows: int = 10) -> list[str]:
-    """archive.org でMP3音楽アイテムを検索してidentifierリストを返す。"""
+
+def search_archive(query: str, rows: int = 20) -> list[str]:
+    """archive.org でCC0限定のMP3音楽を検索してidentifierリストを返す。"""
     params = urllib.parse.urlencode({
-        "q": f"({query}) AND mediatype:audio AND format:MP3",
+        "q": f"({query}) AND mediatype:audio AND format:MP3 AND {CC0_FILTER}",
         "fl": "identifier",
         "output": "json",
         "rows": rows,
@@ -38,7 +43,7 @@ def search_archive(query: str, rows: int = 10) -> list[str]:
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read())
         ids = [doc["identifier"] for doc in data.get("response", {}).get("docs", [])]
-        print(f"  検索結果: {len(ids)} 件")
+        print(f"  CC0検索結果: {len(ids)} 件")
         return ids
     except Exception as e:
         print(f"  [警告] archive.org 検索失敗: {e}")
@@ -57,8 +62,8 @@ def get_mp3_files(identifier: str) -> list[str]:
             f"https://archive.org/download/{identifier}/{urllib.parse.quote(f['name'])}"
             for f in files
             if f.get("name", "").lower().endswith(".mp3")
-            and int(f.get("size", 0)) > 100_000   # 100KB以上
-            and int(f.get("size", 0)) < 30_000_000  # 30MB以下
+            and int(f.get("size", 0)) > 100_000
+            and int(f.get("size", 0)) < 30_000_000
         ]
         return mp3s
     except Exception as e:
@@ -94,9 +99,7 @@ def download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
         Path(tmp).unlink(missing_ok=True)
         print(f"  正規化完了: {dest}")
         return True
-    except subprocess.CalledProcessError as e:
-        print(f"  [警告] ffmpeg失敗: {e.stderr.decode()[:200]}")
-        # 正規化失敗でも raw をそのまま使う
+    except subprocess.CalledProcessError:
         if Path(tmp).exists():
             Path(tmp).rename(dest)
             return True
@@ -115,7 +118,7 @@ def main():
             success += 1
             continue
 
-        print(f"\n--- {name}: 「{query}」---")
+        print(f"\n--- {name}: 「{query}」（CC0限定）---")
         identifiers = search_archive(query)
 
         downloaded = False
@@ -132,14 +135,12 @@ def main():
             time.sleep(1)
 
         if not downloaded:
-            print(f"  [エラー] {name} のBGM取得失敗。")
+            print(f"  [警告] {name} のBGM取得失敗。BGMなしで続行します。")
 
         time.sleep(2)
 
     print(f"\n=== BGM取得完了: {success}/{len(BGM_SEARCHES)} 件 ===")
-    if success == 0:
-        print("[エラー] BGMを1件も取得できませんでした。", file=sys.stderr)
-        sys.exit(1)
+    # BGMが0件でも動画生成は続行できるため exit 1 しない
 
 
 if __name__ == "__main__":

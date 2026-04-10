@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """名馬シリーズ専用 BGMダウンロードスクリプト
 
-ニュース速報のアップビート/スポーツ系とは異なり、
-ドラマチック・ノスタルジック系のBGMを archive.org から取得する。
+Content ID クレームを避けるため、CC0（パブリックドメイン）に限定して
+archive.org からドラマチック・ノスタルジック系の音楽を取得する。
 assets/bgm/horse_drama_bgm.mp3 に保存する。
 """
-
 import json
 import subprocess
 import sys
@@ -18,18 +17,20 @@ from pathlib import Path
 BGM_DIR  = "assets/bgm"
 BGM_NAME = "horse_drama_bgm"
 
-# ドラマチック・ノスタルジック系の検索クエリ（優先順）
+# CC0 ライセンスに限定した検索クエリ（ドラマチック・ノスタルジック系）
 BGM_SEARCHES = [
-    "dramatic orchestral instrumental royalty free",
-    "nostalgic piano melody instrumental",
-    "cinematic background music calm",
-    "classical piano solo instrumental",
+    "dramatic orchestral instrumental",
+    "cinematic classical piano",
+    "nostalgic background music",
+    "classical music instrumental",
 ]
 
+CC0_FILTER = 'licenseurl:"https://creativecommons.org/publicdomain/zero/1.0/"'
 
-def search_archive(query: str, rows: int = 10) -> list[str]:
+
+def search_archive(query: str, rows: int = 20) -> list[str]:
     params = urllib.parse.urlencode({
-        "q": f"({query}) AND mediatype:audio AND format:MP3",
+        "q": f"({query}) AND mediatype:audio AND format:MP3 AND {CC0_FILTER}",
         "fl": "identifier",
         "output": "json",
         "rows": rows,
@@ -41,7 +42,7 @@ def search_archive(query: str, rows: int = 10) -> list[str]:
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read())
         ids = [doc["identifier"] for doc in data.get("response", {}).get("docs", [])]
-        print(f"  検索結果: {len(ids)} 件")
+        print(f"  CC0検索結果: {len(ids)} 件")
         return ids
     except Exception as e:
         print(f"  [警告] archive.org 検索失敗: {e}")
@@ -83,7 +84,6 @@ def download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
         Path(tmp).unlink(missing_ok=True)
         return False
 
-    # 正規化（loudnorm + 90秒にトリム）
     try:
         subprocess.run([
             "ffmpeg", "-y", "-i", tmp,
@@ -95,8 +95,7 @@ def download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
         Path(tmp).unlink(missing_ok=True)
         print(f"  正規化完了: {dest}")
         return True
-    except subprocess.CalledProcessError as e:
-        print(f"  [警告] ffmpeg正規化失敗: {e.stderr.decode()[:200]}")
+    except subprocess.CalledProcessError:
         if Path(tmp).exists():
             Path(tmp).rename(dest)
             return True
@@ -112,7 +111,7 @@ def main() -> None:
         print(f"{BGM_NAME}.mp3 は既存のためスキップ ({size_kb} KB)")
         return
 
-    print("=== 名馬シリーズ用BGMダウンロード開始 ===")
+    print("=== 名馬シリーズ用BGMダウンロード開始（CC0限定）===")
 
     for query in BGM_SEARCHES:
         print(f"\n--- 検索: 「{query}」 ---")
@@ -129,16 +128,8 @@ def main() -> None:
             time.sleep(1)
         time.sleep(2)
 
-    # 全クエリ失敗: フォールバック（通常BGM bgm_2.mp3 を使用）
-    fallback = f"{BGM_DIR}/bgm_2.mp3"
-    if Path(fallback).exists():
-        print(f"\n[警告] 専用BGM取得失敗。フォールバック bgm_2.mp3 を使用します。")
-        import shutil
-        shutil.copy(fallback, dest_mp3)
-        print(f"  コピー完了: {fallback} → {dest_mp3}")
-    else:
-        print("[エラー] BGMを取得できませんでした。", file=sys.stderr)
-        sys.exit(1)
+    print("[警告] BGMを取得できませんでした。BGMなしで動画を生成します。")
+    # BGMがなくても動画生成は続行できるため exit 1 しない
 
 
 if __name__ == "__main__":
