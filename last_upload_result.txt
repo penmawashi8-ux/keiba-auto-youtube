@@ -1,10 +1,9 @@
-date: 2026-04-10T04:03:13.589367Z
+date: 2026-04-10T05:32:26.287692Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=EYeGmHLL7kQ title=JRAが公式映像の無断使用について著作権管理の強化を発表　過去に公開された動画も
-OK project=1 video_id=PgipKnSc1fU title=大阪杯Vクロワデュノールが第4位タイに浮上　メイショウタバルもランクイン【ロンジ
-OK project=1 video_id=-hZNgvYyN3A title=きょうは「駅弁の日」 今週末の桜花賞観戦に“馬弁”はいかが？
+OK project=1 video_id=Bx95zN8WhCI title=【ニュージーランドT】中山マイルで連勝中ディールメーカーには恵みの雨!?　大和田
+OK project=1 video_id=g2XCtcpyrm8 title=【桜花賞】ロンギングセリーヌは初の輸送も「気性がドッシリしているので」　竹内調教
