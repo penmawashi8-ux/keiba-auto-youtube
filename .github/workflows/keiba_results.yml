@@ -73,7 +73,6 @@ jobs:
       - name: AI画像を生成
         id: ai_images
         if: steps.check_news.outputs.has_news == 'true'
-        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
@@ -102,10 +101,9 @@ jobs:
         if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_audio.py
 
-      - name: BGMをダウンロード
+      - name: BGMをダウンロード (CC0 public domain only)
         if: steps.check_scripts.outputs.has_scripts == 'true'
-        env:
-          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        continue-on-error: true
         run: |
           mkdir -p assets/bgm
           python scripts/download_bgm.py

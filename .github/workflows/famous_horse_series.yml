@@ -97,7 +97,6 @@ jobs:
           print(f"背景画像 {downloaded} 枚取得完了")
           PYEOF
 
-      # 既存のナレーション生成スクリプトをそのまま流用
       # TTS_VOICE=ja-JP-NanamiNeural で名馬シリーズ専用ボイスに切り替え
       - name: Generate audio (既存スクリプト流用・別ボイス)
         env:
@@ -111,13 +110,13 @@ jobs:
             exit $STATUS
           fi
 
-      - name: Download BGM
+      - name: Download BGM (CC0 public domain only)
+        continue-on-error: true
         run: |
           mkdir -p assets/bgm
-          python scripts/download_bgm.py
+          python scripts/download_famous_horse_bgm.py
 
-      # 既存の動画生成スクリプトをそのまま流用（Pillow・動作実績あり）
-      - name: Generate video (既存スクリプト流用)
+      - name: Generate video
         run: |
           python scripts/generate_video.py 2>&1 | tee /tmp/famous_horse_video.log
           STATUS=${PIPESTATUS[0]}

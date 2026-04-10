@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """YouTube Data API v3 でOAuth2（refresh_token方式）を使って動画をアップロードする。"""
 
-import glob
 import io
 import json
 import os
+import subprocess
 import sys
-import textwrap
 from pathlib import Path
 
 import google.auth.transport.requests
@@ -14,7 +13,6 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload, MediaIoBaseUpload
-from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
@@ -40,9 +38,6 @@ CREDENTIAL_SETS = [
     ("GOOGLE_CLIENT_ID_2", "GOOGLE_CLIENT_SECRET_2", "GOOGLE_REFRESH_TOKEN_2"),
     ("GOOGLE_CLIENT_ID_3", "GOOGLE_CLIENT_SECRET_3", "GOOGLE_REFRESH_TOKEN_3"),
 ]
-
-THUMB_W, THUMB_H = 1280, 720
-
 
 def load_credentials_for(id_key: str, secret_key: str, token_key: str) -> Credentials | None:
     """指定した環境変数キーからOAuth2認証情報を構築する。未設定なら None を返す。"""
@@ -94,171 +89,30 @@ def load_all_credentials() -> tuple[list[Credentials], list[str]]:
     return result, load_log
 
 
-def find_japanese_font() -> str | None:
-    for candidate in [
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
-        "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc",
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-    ]:
-        if Path(candidate).exists():
-            return candidate
-    hits = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
-    return hits[0] if hits else None
-
-
-def generate_thumbnail(title: str, idx: int) -> bytes:
-    """1280x720のサムネイル画像を生成してJPEGバイト列で返す。"""
-    # --- 背景画像 ---
-    ai_images = sorted(
-        p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg")
-        if Path(p).stat().st_size > 1000
-    )
-    bg_path = ai_images[idx % len(ai_images)] if ai_images else None
-
-    if bg_path:
-        bg = Image.open(bg_path).convert("RGB")
-        bg = ImageOps.fit(bg, (THUMB_W, THUMB_H), Image.LANCZOS)
-    else:
-        bg = Image.new("RGB", (THUMB_W, THUMB_H))
-        draw_bg = ImageDraw.Draw(bg)
-        for y in range(THUMB_H):
-            r = int(15 + 45 * y / THUMB_H)
-            g = int(10 + 20 * y / THUMB_H)
-            b = int(50 + 50 * y / THUMB_H)
-            draw_bg.line([(0, y), (THUMB_W, y)], fill=(r, g, b))
-
-    # --- 半透明オーバーレイ（全体を均一に少し暗く） ---
-    overlay = Image.new("RGBA", (THUMB_W, THUMB_H), (0, 0, 0, 110))
-    bg = Image.alpha_composite(bg.convert("RGBA"), overlay).convert("RGB")
-
-    draw = ImageDraw.Draw(bg)
-    font_path = find_japanese_font()
-
-    try:
-        badge_font = ImageFont.truetype(font_path, 36) if font_path else ImageFont.load_default()
-    except Exception:
-        badge_font = ImageFont.load_default()
-
-    # --- 「競馬速報」赤バッジ（左上） ---
-    badge_text = "競馬速報"
-    pad = 16
-    try:
-        bb = draw.textbbox((0, 0), badge_text, font=badge_font)
-        bw, bh = bb[2] - bb[0], bb[3] - bb[1]
-    except Exception:
-        bw, bh = 160, 44
-    draw.rounded_rectangle(
-        [36, 36, 36 + bw + pad * 2, 36 + bh + pad],
-        radius=10,
-        fill=(210, 30, 30),
-    )
-    draw.text(
-        (36 + pad, 36 + pad // 2),
-        badge_text,
-        font=badge_font,
-        fill=(255, 255, 255),
-        stroke_width=1,
-        stroke_fill=(150, 0, 0),
-    )
-
-    # --- タイトル（一言どーん！スタイル）---
-    import re
-
-    clean_title = re.sub(r"[\u3000\s]+", "", title).strip()
-
-    # 3段構成: 【レース名】 / 馬名・人名 / 要点アクション
-    bracket_match = re.match(r"(【[^】]{1,10}】)(.*)", clean_title)
-    if bracket_match:
-        label = bracket_match.group(1)   # 例: 【京浜盃】
-        rest  = bracket_match.group(2)   # 例: ロックターミガンで砂クラシック戦線に名乗り…
-    else:
-        label = None
-        rest  = clean_title
-
-    # 主語（最初の助詞の前）
-    p = re.search(r"[でがはにをもとから]", rest)
-    if p and p.start() >= 2:
-        subject = rest[:p.start()]       # 例: ロックターミガン
-        after   = rest[p.start():]       # 例: で砂クラシック戦線に名乗り…
-    else:
-        subject = rest[:10]
-        after   = rest[10:]
-
-    # アクション: after の最初の区切り（句読点・「・引用符）まで、最大12文字
-    action_raw = re.split(r"[。、！？「」『』]", after.lstrip("でがはにをもとから"))[0]
-    action = action_raw[:12]
-    if action and not action[-1] in "！？":
-        action += "！"
-
-    max_w = THUMB_W - 80
-
-    def fit_font(text: str, max_size: int, min_size: int = 36) -> tuple:
-        for sz in range(max_size, min_size - 1, -8):
-            try:
-                f = ImageFont.truetype(font_path, sz) if font_path else ImageFont.load_default()
-            except Exception:
-                f = ImageFont.load_default()
-            try:
-                bb = draw.textbbox((0, 0), text, font=f)
-                w = bb[2] - bb[0]
-            except Exception:
-                w = len(text) * sz
-            if w <= max_w:
-                return f, sz
-        try:
-            f = ImageFont.truetype(font_path, min_size) if font_path else ImageFont.load_default()
-        except Exception:
-            f = ImageFont.load_default()
-        return f, min_size
-
-    subject_font, subject_size = fit_font(subject, 120)
-    label_size   = max(36, int(subject_size * 0.50))
-    action_size  = max(40, int(subject_size * 0.60))
-    try:
-        label_font  = ImageFont.truetype(font_path, label_size)  if font_path else ImageFont.load_default()
-        action_font = ImageFont.truetype(font_path, action_size) if font_path else ImageFont.load_default()
-    except Exception:
-        label_font = action_font = ImageFont.load_default()
-
-    # 描画位置: 下寄せ 3行
-    rows = []
-    if label:
-        rows.append((label,   label_font,   label_size,  (255, 255, 255), 3))
-    rows.append(    (subject, subject_font, subject_size,(255, 235,   0), 8))
-    if action:
-        rows.append((action,  action_font,  action_size, (255, 255, 255), 4))
-
-    total_h = sum(sz + 14 for _, _, sz, _, _ in rows)
-    y = THUMB_H - total_h - 60
-
-    for text, font, sz, color, stroke in rows:
-        try:
-            bb = draw.textbbox((0, 0), text, font=font)
-            tw = bb[2] - bb[0]
-        except Exception:
-            tw = len(text) * sz
-        x = max((THUMB_W - tw) // 2, 40)
-        draw.text((x, y), text, font=font, fill=color, stroke_width=stroke, stroke_fill=(0, 0, 0))
-        y += sz + 14
-
-    buf = io.BytesIO()
-    bg.save(buf, "JPEG", quality=92)
-    return buf.getvalue()
-
-
-def save_thumbnail(thumbnail_bytes: bytes, idx: int) -> str:
-    """サムネイル画像をファイルに保存して、パスを返す。"""
+def generate_thumbnail(video_path: str, idx: int) -> str:
+    """動画の先頭フレームをffmpegで抽出してサムネイル(1280x720)を保存する。"""
     thumb_path = f"{OUTPUT_DIR}/thumbnail_{idx}.jpg"
-    Path(thumb_path).write_bytes(thumbnail_bytes)
-    print(f"  サムネイル保存: {thumb_path}")
+    result = subprocess.run([
+        "ffmpeg", "-y", "-ss", "0.5", "-i", video_path,
+        "-vframes", "1", "-s", "1280x720", thumb_path,
+    ], capture_output=True, text=True)
+    if result.returncode == 0:
+        size_kb = Path(thumb_path).stat().st_size // 1024
+        print(f"  サムネイル保存: {thumb_path} ({size_kb} KB)")
+    else:
+        print(f"  [警告] サムネイル抽出失敗: {result.stderr[-200:]}", file=sys.stderr)
     return thumb_path
 
 
-def upload_thumbnail(youtube, video_id: str, thumbnail_bytes: bytes) -> None:
+def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
     """動画にサムネイルをアップロードする（失敗は警告のみ）。"""
+    if not Path(thumb_path).exists():
+        print(f"  [警告] サムネイルファイルなし: {thumb_path}", file=sys.stderr)
+        return
+    with open(thumb_path, "rb") as f:
+        data = f.read()
     media = MediaIoBaseUpload(
-        io.BytesIO(thumbnail_bytes),
+        io.BytesIO(data),
         mimetype="image/jpeg",
         resumable=False,
     )
@@ -494,12 +348,11 @@ def main() -> None:
         if quota_exceeded:
             break
 
-        # サムネイル生成・保存・アップロード
+        # サムネイル生成・アップロード（ffmpegで動画先頭フレームを抽出）
         print("  サムネイル生成中...")
         try:
-            thumb_bytes = generate_thumbnail(title, idx)
-            save_thumbnail(thumb_bytes, idx)
-            upload_thumbnail(youtube, video_id, thumb_bytes)
+            thumb_path = generate_thumbnail(str(video_file), idx)
+            upload_thumbnail(youtube, video_id, thumb_path)
         except Exception as e:
             print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
 
