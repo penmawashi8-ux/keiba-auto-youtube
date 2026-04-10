@@ -256,23 +256,100 @@ def generate_video(
 # サムネイル生成（ffmpegでフレーム抽出）
 # ---------------------------------------------------------------------------
 
-def generate_thumbnail(video_path: str, thumb_path: str) -> bool:
-    """動画の1秒地点からフレームを抽出して1280x720のサムネイルを生成する。"""
-    cmd = [
-        "ffmpeg", "-y",
-        "-ss", "1",
-        "-i", video_path,
-        "-vframes", "1",
-        "-s", "1280x720",
-        "-f", "image2",
-        thumb_path,
-    ]
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode == 0 and Path(thumb_path).exists():
+def generate_thumbnail(
+    video_path: str,
+    thumb_path: str,
+    horse_name: str = "",
+    catchphrase: str = "",
+    font_path: str | None = None,
+) -> bool:
+    """動画の1秒地点からフレームを抽出し、馬名・キャッチフレーズを重ねてサムネイルを生成する。
+    Pillow は絶対に使用しない。ffmpeg drawtext のみで合成する。
+    """
+    tmp_raw = thumb_path + ".raw.jpg"
+
+    # Step 1: フレーム抽出（1280x720）
+    extract = subprocess.run([
+        "ffmpeg", "-y", "-ss", "1", "-i", video_path,
+        "-vframes", "1", "-s", "1280x720", "-f", "image2", tmp_raw,
+    ], capture_output=True, text=True)
+    if extract.returncode != 0 or not Path(tmp_raw).exists():
+        print(f"  [警告] フレーム抽出失敗", file=sys.stderr)
+        return False
+
+    if not horse_name or not font_path:
+        Path(tmp_raw).rename(thumb_path)
         size_kb = Path(thumb_path).stat().st_size // 1024
         print(f"  サムネイル生成完了: {thumb_path} ({size_kb} KB)")
         return True
-    print(f"  [警告] サムネイル生成失敗: {result.stderr[-500:]}", file=sys.stderr)
+
+    # Step 2: drawtext でタイトルオーバーレイ
+    tmp_dir = "/tmp/famous_horse_thumb"
+    Path(tmp_dir).mkdir(parents=True, exist_ok=True)
+
+    label_file = f"{tmp_dir}/label.txt"
+    name_file  = f"{tmp_dir}/name.txt"
+    catch_file = f"{tmp_dir}/catch.txt"
+
+    Path(label_file).write_text("名馬列伝", encoding="utf-8")
+    Path(name_file).write_text(horse_name, encoding="utf-8")
+    if catchphrase:
+        Path(catch_file).write_text(f"〜{catchphrase}〜", encoding="utf-8")
+
+    fp = font_path.replace("'", "\\'")
+    lf = label_file.replace("'", "\\'")
+    nf = name_file.replace("'", "\\'")
+    cf = catch_file.replace("'", "\\'")
+
+    # 全体を少し暗く
+    chain = "[0:v]eq=brightness=-0.12"
+
+    # 「名馬列伝」シリーズラベル（上部・ゴールド）
+    chain += (
+        f",drawtext=textfile='{lf}':fontfile='{fp}':"
+        f"fontsize=46:fontcolor=0xC8A200:"
+        f"x=(w-text_w)/2:y=36:"
+        f"box=1:boxcolor=0x000000@0.65:boxborderw=18:"
+        f"borderw=2:bordercolor=0x000000"
+    )
+
+    # 馬名（中央より上・大きく黄色）
+    chain += (
+        f",drawtext=textfile='{nf}':fontfile='{fp}':"
+        f"fontsize=130:fontcolor=0xFFEB00:"
+        f"x=(w-text_w)/2:y=230:"
+        f"box=1:boxcolor=0x000000@0.72:boxborderw=32:"
+        f"borderw=5:bordercolor=0x000000"
+    )
+
+    # キャッチフレーズ（馬名の下・白）
+    if catchphrase:
+        chain += (
+            f",drawtext=textfile='{cf}':fontfile='{fp}':"
+            f"fontsize=48:fontcolor=0xFFFFFF:"
+            f"x=(w-text_w)/2:y=440:"
+            f"box=1:boxcolor=0x000000@0.60:boxborderw=18:"
+            f"borderw=2:bordercolor=0x000000"
+        )
+
+    chain += "[vout]"
+
+    overlay = subprocess.run([
+        "ffmpeg", "-y", "-i", tmp_raw,
+        "-filter_complex", chain,
+        "-map", "[vout]",
+        "-frames:v", "1", "-q:v", "2",
+        thumb_path,
+    ], capture_output=True, text=True)
+
+    Path(tmp_raw).unlink(missing_ok=True)
+
+    if overlay.returncode == 0 and Path(thumb_path).exists():
+        size_kb = Path(thumb_path).stat().st_size // 1024
+        print(f"  サムネイル生成完了: {thumb_path} ({size_kb} KB)")
+        return True
+
+    print(f"  [警告] サムネイルテキスト合成失敗: {overlay.stderr[-300:]}", file=sys.stderr)
     return False
 
 
@@ -291,6 +368,12 @@ def main() -> None:
     horse_key  = sys.argv[1]
     horse_name = sys.argv[2] if len(sys.argv) > 2 else horse_key
 
+    # メタデータからキャッチフレーズを取得
+    import json
+    meta_path = Path(f"data/famous_horses/{horse_key}.json")
+    meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    catchphrase = meta.get("catchphrase", "")
+
     audio_path = f"{OUTPUT_DIR}/famous_horse_audio.mp3"
     ass_path   = f"{OUTPUT_DIR}/famous_horse_subtitles.ass"
     video_path = f"{OUTPUT_DIR}/famous_horse_video.mp4"
@@ -303,9 +386,11 @@ def main() -> None:
 
     print("=== 名馬シリーズ 動画生成開始 ===")
     print(f"  馬名: {horse_name} (key={horse_key})")
+    print(f"  キャッチフレーズ: {catchphrase}")
 
     generate_video(audio_path, ass_path, video_path, horse_name)
-    generate_thumbnail(video_path, thumb_path)
+    font_path = find_font()
+    generate_thumbnail(video_path, thumb_path, horse_name, catchphrase, font_path)
 
     print("=== 動画生成完了 ===")
 
