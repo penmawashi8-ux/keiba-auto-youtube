@@ -43,7 +43,6 @@ jobs:
 
       - name: AI画像を生成
         id: ai_images
-        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}

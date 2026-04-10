@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """名馬シリーズ用 動画生成スクリプト（ffmpegのみ・Pillow不使用）
 
+# ============================================================
+# IMPORTANT: Pillow (PIL) は絶対に使用禁止。
+# 画像の生成・変換はすべて ffmpeg で行うこと。
+# from PIL import ... / import PIL と書いたら即削除。
+# ============================================================
+
 流れ:
   1. output/famous_horse_audio.mp3 の尺を取得
   2. output/famous_horse_subtitles.ass にシリーズブランドとエンディングカードを追記

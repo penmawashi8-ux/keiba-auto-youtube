@@ -1,27 +1,33 @@
 #!/usr/bin/env python3
 """
-generate_images.py - 競馬関連画像を取得する。
+generate_images.py - 競馬関連背景画像を取得する。
+
+# ============================================================
+# IMPORTANT: Pillow (PIL) は絶対に使用禁止。
+# 画像の保存・変換はすべて ffmpeg で行うこと。
+# from PIL import ... / import PIL と書いたら即削除。
+# ============================================================
 
 優先順位:
   1. Pixabay API（無料・実写競馬写真）
   2. HuggingFace Inference API（HF_TOKEN が設定されている場合）
-  3. どちらも失敗 → グラデーション背景（generate_video.py が自動生成）
+  3. どちらも失敗 → エラー終了（フォールバックなし）
 
-Pixabay APIキーは PIXABAY_API_KEY 環境変数にセット。
-  取得先: https://pixabay.com/api/docs/ （無料アカウント登録後に即発行可能）
+AI画像が1枚も取得できなかった場合は sys.exit(1) で失敗にする。
+generate_video.py も同様に、画像がなければ失敗する。
 """
 
 import io
 import json
 import os
 import random
+import subprocess
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
-from PIL import Image
 
 NEWS_JSON = "news.json"
 ASSETS_DIR = Path("assets")
@@ -30,7 +36,6 @@ GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 PIXABAY_API_URL = "https://pixabay.com/api/"
 HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
-# 競馬関連の検索クエリ（ローテーション）
 PIXABAY_QUERIES = [
     "horse racing",
     "thoroughbred horse",
@@ -69,7 +74,7 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
                 timeout=30,
             )
             if r.status_code == 429:
-                print(f"  [警告] key={key_label} 429 クォータ超過。20秒待機後に次のキーへ切り替えます。", flush=True)
+                print(f"  [警告] key={key_label} 429 クォータ超過。20秒待機後に次のキーへ。", flush=True)
                 time.sleep(20)
                 continue
             r.raise_for_status()
@@ -100,14 +105,31 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
 
 
 def save_image_bytes(content: bytes, filepath: str) -> bool:
-    """バイト列を画像として検証しJPEGで保存する。"""
-    try:
-        img = Image.open(io.BytesIO(content)).convert("RGB")
-        img.save(filepath, "JPEG", quality=92)
-        return True
-    except Exception as e:
-        print(f"    [エラー] 画像として開けません: {e}", flush=True)
+    """
+    画像バイト列をffmpegでJPEGに変換して保存する。
+    Pillow は絶対に使用しない。ffmpeg のみで変換・バリデーションを行う。
+    """
+    if len(content) < 1000:
+        print(f"    [エラー] 画像データが小さすぎます ({len(content)} bytes)", flush=True)
         return False
+
+    tmp_path = filepath + ".download"
+    try:
+        Path(tmp_path).write_bytes(content)
+        result = subprocess.run(
+            ["ffmpeg", "-y", "-i", tmp_path, "-frames:v", "1", "-q:v", "2", filepath],
+            capture_output=True,
+            timeout=30,
+        )
+        if result.returncode == 0 and Path(filepath).exists() and Path(filepath).stat().st_size > 1000:
+            return True
+        print(f"    [エラー] ffmpegで画像変換失敗", flush=True)
+        return False
+    except Exception as e:
+        print(f"    [エラー] 画像保存失敗: {e}", flush=True)
+        return False
+    finally:
+        Path(tmp_path).unlink(missing_ok=True)
 
 
 def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
@@ -131,27 +153,26 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
         if not hits:
             print(f"    [Pixabay] 該当画像なし: {query}", flush=True)
             return False
-        # ランダムに1枚選んでダウンロード（webformatURL優先：largeImageURLは制限あり）
         hit = random.choice(hits)
         img_url = hit.get("webformatURL") or hit.get("largeImageURL")
         if not img_url:
-            print(f"    [Pixabay] 画像URL取得失敗（hits有り）", flush=True)
+            print(f"    [Pixabay] 画像URL取得失敗", flush=True)
             return False
         img_r = requests.get(img_url, timeout=30)
         if img_r.status_code == 200 and len(img_r.content) > 1000:
             if save_image_bytes(img_r.content, filepath):
                 size_kb = len(img_r.content) // 1024
-                print(f"    ✅ Pixabay成功: {filepath} ({size_kb}KB) [{hit.get('pageURL','')[:60]}]", flush=True)
+                print(f"    Pixabay成功: {filepath} ({size_kb}KB)", flush=True)
                 return True
         else:
-            print(f"    [Pixabay] 画像DL失敗: status={img_r.status_code} size={len(img_r.content)}bytes url={img_url[:80]}", flush=True)
+            print(f"    [Pixabay] 画像DL失敗: status={img_r.status_code}", flush=True)
     except Exception as e:
         print(f"    例外: {type(e).__name__}: {e}", flush=True)
     return False
 
 
 def generate_via_huggingface(hf_tokens: list[str], prompt: str, filepath: str) -> bool:
-    """HuggingFace Inference API (FLUX.1-schnell) で画像生成（複数トークンをローテーション）"""
+    """HuggingFace Inference API (FLUX.1-schnell) で画像生成"""
     payload = {"inputs": prompt}
     for token_idx, hf_token in enumerate(hf_tokens):
         token_label = f"token[{token_idx + 1}/{len(hf_tokens)}]"
@@ -163,13 +184,13 @@ def generate_via_huggingface(hf_tokens: list[str], prompt: str, filepath: str) -
                 if r.status_code == 200 and len(r.content) > 1000:
                     if save_image_bytes(r.content, filepath):
                         size_kb = len(r.content) // 1024
-                        print(f"    ✅ HF成功: {filepath} ({size_kb}KB)", flush=True)
+                        print(f"    HF成功: {filepath} ({size_kb}KB)", flush=True)
                         return True
                 elif r.status_code == 402:
-                    print(f"    [HF] {token_label} クレジット枯渇(402)。次のトークンへ切り替えます。", flush=True)
+                    print(f"    [HF] {token_label} クレジット枯渇(402)。次のトークンへ。", flush=True)
                     break
                 elif r.status_code == 403:
-                    print(f"    [HF] {token_label} 権限不足(403)。次のトークンへ切り替えます。", flush=True)
+                    print(f"    [HF] {token_label} 権限不足(403)。次のトークンへ。", flush=True)
                     break
                 elif r.status_code == 503:
                     wait = 30 * (attempt + 1)
@@ -209,10 +230,9 @@ def main() -> None:
     print(f"HuggingFace: {len(hf_tokens)} トークンロード", flush=True)
 
     if not pixabay_key and not hf_tokens:
-        print("[警告] Pixabay・HuggingFace どちらも未設定。グラデーション背景にフォールバックします。", flush=True)
-        sys.exit(0)
+        print("[エラー] PIXABAY_API_KEY も HF_TOKEN も未設定。AI画像を取得できません。", flush=True)
+        sys.exit(1)
 
-    # プロンプト生成（Pixabayクエリにも活用）
     try:
         news_items = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
     except Exception:
@@ -223,21 +243,18 @@ def main() -> None:
     for i, p in enumerate(prompts, 1):
         print(f"    [{i}] {p[:80]}", flush=True)
 
-    # 画像生成（並列）: Pixabay → HF の順にフォールバック
     def generate_one(args):
         i, prompt = args
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
         query = PIXABAY_QUERIES[(i - 1) % len(PIXABAY_QUERIES)]
         print(f"\n  [{i}/4] 画像取得中...", flush=True)
 
-        # 1st: Pixabay（無料・実写写真）
         if pixabay_key:
             print(f"  [{i}] → Pixabay を試行 (query='{query}')", flush=True)
             if generate_via_pixabay(pixabay_key, query, out_path):
                 return i, True
             print(f"  [{i}] → Pixabay失敗。", flush=True)
 
-        # 2nd: HuggingFace
         if hf_tokens:
             print(f"  [{i}] → HuggingFace にフォールバック", flush=True)
             if generate_via_huggingface(hf_tokens, prompt, out_path):
@@ -258,8 +275,12 @@ def main() -> None:
     print(f"\n=== 結果: {4 - len(failed)}/4 枚生成 ===", flush=True)
     print(f"  生成ファイル: {[f.name for f in ai_files]}", flush=True)
 
+    if not ai_files:
+        print("[エラー] AI画像が1枚も取得できませんでした。動画生成を中止します。", flush=True)
+        sys.exit(1)
+
     if failed:
-        print(f"[警告] {len(failed)}枚の取得失敗（インデックス: {failed}）。generate_video.py がグラデーション背景で代替します。", flush=True)
+        print(f"[警告] {len(failed)}枚の取得失敗。取得できた{len(ai_files)}枚で動画を生成します。", flush=True)
 
 
 if __name__ == "__main__":

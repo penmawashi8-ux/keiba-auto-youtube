@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """generate_video.py - ffmpegのみで字幕動画を生成する（Pillow不使用）
 
+# ============================================================
+# IMPORTANT: Pillow (PIL) は絶対に使用禁止。
+# 画像の生成・変換はすべて ffmpeg (lavfi, drawtext, etc.) で行うこと。
+# from PIL import ... / import PIL と書いたら即削除。
+# 背景画像は generate_images.py が取得した ai_*.jpg を使う。
+# 画像が0枚なら動画生成を失敗させること（フォールバック生成禁止）。
+# ============================================================
+
 流れ:
   1. news.json からタイトル・概要を取得
   2. script_N.txt を句点で分割してセリフリスト生成
@@ -77,33 +85,6 @@ def get_audio_duration(audio_path: str) -> float:
         return duration
     print("  [警告] 音声長取得失敗。10秒にフォールバック。", file=sys.stderr)
     return 10.0
-
-
-# ---------------------------------------------------------------------------
-# 背景画像フォールバック生成（ffmpeg lavfi）
-# ---------------------------------------------------------------------------
-
-def generate_bg_images() -> None:
-    """assetsに競馬らしい単色背景画像5種をffmpegのlavfiで生成して保存する。"""
-    Path(ASSETS_DIR).mkdir(exist_ok=True)
-    colors = [
-        ("0F0F28", "bg_1.jpg", "深夜（濃紺）"),
-        ("280F0F", "bg_2.jpg", "夕暮れ（深紅）"),
-        ("0A1E0A", "bg_3.jpg", "芝コース（深緑）"),
-        ("1A1A0A", "bg_4.jpg", "ダート（深黄土）"),
-        ("0B0B28", "bg_5.jpg", "夜空（青紫）"),
-    ]
-    for hex_color, filename, label in colors:
-        out_path = f"{ASSETS_DIR}/{filename}"
-        subprocess.run([
-            "ffmpeg", "-y",
-            "-f", "lavfi",
-            "-i", f"color=c=#{hex_color}:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r=1:d=1",
-            "-vframes", "1",
-            out_path,
-        ], check=True, capture_output=True)
-        print(f"  {filename} 生成完了（{label}）")
-    print(f"  背景画像5枚を {ASSETS_DIR}/ に生成しました。")
 
 
 # ---------------------------------------------------------------------------
@@ -382,32 +363,17 @@ def main() -> None:
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
-    # 背景画像収集: AI生成画像 → assets内全画像 → ffmpegで自動生成
-    ai_images = sorted(
+    # 背景画像収集: generate_images.py が取得した ai_*.jpg を使う
+    # 画像が0枚なら失敗する（フォールバック生成は行わない）
+    assets_images = sorted(
         p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg")
         if Path(p).stat().st_size > 1000
     )
-    if ai_images:
-        assets_images = ai_images
-        print(f"  AI画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
-    else:
-        all_images = sorted(
-            p for p in (
-                glob.glob(f"{ASSETS_DIR}/*.jpg") + glob.glob(f"{ASSETS_DIR}/*.png")
-            )
-            if Path(p).stat().st_size > 1000
-        )
-        if all_images:
-            assets_images = all_images
-            print(f"  assets画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
-        else:
-            print("  assetsに画像がないため、背景画像を自動生成します。")
-            generate_bg_images()
-            assets_images = sorted(
-                p for p in glob.glob(f"{ASSETS_DIR}/*.jpg")
-                if Path(p).stat().st_size > 1000
-            )
-            print(f"  生成画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
+    if not assets_images:
+        print("[エラー] assets/ai_*.jpg が見つかりません。", file=sys.stderr)
+        print("  generate_images.py を先に実行してください。", file=sys.stderr)
+        sys.exit(1)
+    print(f"  AI画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
 
     font_path = find_japanese_font()
     print(f"  日本語フォント: {font_path or '見つからず（テキストなし）'}")
