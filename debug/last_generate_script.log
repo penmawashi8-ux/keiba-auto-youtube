@@ -5,45 +5,28 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 22年菊花賞&有馬記念で2着のボルドグフーシュが引退　右前肢屈腱炎発症のため ---
-[0] Gemini入力本文 534文字: '22年の菊花賞、有馬記念で2着だったボルドグフーシュ(牡7歳、栗東・宮本博厩舎、父スクリーンヒーロー)が現役を引退することが決まった。右前肢の屈腱炎が判明したため。4月10日、社台サラブレッドクラブがホームページで発表した。\n\n\t\t\t\t\u3000同'
+--- 記事[0]: 【桜花賞予想】驚きの「急上昇馬5頭」登場で風雲急？ GI桜花賞「調子偏差値」速報 ---
+[0] Gemini入力本文 422文字: '今週からは、福島競馬場も加わり「中山・阪神・福島」の3場開催となります。\n\n\u3000重賞は、土曜日にニュージーランドT(GII・中山・芝1600m)と、阪神牝馬S(GII・阪神・芝1600m)というGII芝マイル戦がふたつ。そして日曜日には、3歳'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【ニュージーランドT予想】前走で見せた走りが割引材料!? 中山替わりで軽視したい人気の1頭 ---
-[1] Gemini入力本文 469文字: '今週の土曜日は、中山競馬場でニュージーランドトロフィー(GII・芝1600m)が行われます。\n\n\u3000過去10年のニュージーランドTは、前走で中央4場(東京、中山、阪神、京都)に出走していた馬が8勝2着8回3着7回と良績を残しています。\n\n\u3000中'
+--- 記事[1]: 【netkeibaTV】細江純子×じゃいが桜花賞を展望 混戦ムードの中で中心視した馬とは ---
+[1] Gemini入力本文 433文字: 'ホースコラボレーターの細江純子、生粋のギャンブラーとして知られるじゃいの2人が、4月12日(日)に阪神競馬場で行われる桜花賞(3歳牝・GI・芝1600m)を展望します。\n\n\u3000じゃいは冒頭で「絶対的な存在はいない」ときっぱり。混戦ムードも漂う'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【週末情報】スターアニス馬体すっきり/馬三郎のつぶやき ---
-[2] Gemini入力本文 435文字: '◆ゼロヴィジビリティ(10日・堀尾)\n\n\u3000土曜阪神2R・3歳未勝利(ダート1400m)に出走するゼロヴィジビリティ(牡3歳、栗東・寺島)は骨折明けの一戦。それでも師は「調教は抜群に動くし、初戦の相手も今思えばかなりそろったなかで3着ですから'
+--- 記事[2]: 【有力馬動向】スムーズな加速！ ダノンセンチュリー/馬三郎のつぶやき ---
+[2] Gemini入力本文 445文字: '◆ダノンセンチュリー(10日・森元)\n\n\u30003連勝でオープン入りを決めたダノンセンチュリー(牡4歳、美浦・萩原)が、美浦Wで前走後初時計をマーク。タイムは4F55秒7-12秒1(馬なり)。しまい重点に乗られ、ラストはスムーズに加速した。雰囲気'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -60,48 +43,22 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
 [0] 使用: key=***BYfA model=gemini-2.5-flash
-[1] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  HTTP 503
   HTTP 200
-[0]  [Gemini生出力 215文字]: '2022年の菊花賞と有馬記念で2着だったボルドグフーシュが、現役を引退することが決まりました。牡7歳、栗東・宮本博厩舎所属で、父はスクリーンヒーローです。引退の理由は、右前肢の屈腱炎発症のため。この発表は、4月10日に社台サラブレッドクラブがホームページで行いました。ボルドグフーシュは前走の大阪杯で9着となった後、右前肢の屈腱部分に腫れが生じ、9日のエコー検査で屈腱炎と診断されました。関係者間で協議の結果、引退が決定しました。'
-[0]  → output/script_0.txt 保存 (215文字)
-[0]  プレビュー: 2022年の菊花賞と有馬記念で2着だったボルドグフーシュが、現役を引退することが決まりました。牡7歳、栗東・宮本博厩舎所属で、父はスクリーンヒーローです。引退の...
-[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***BYfA model=gemma-3-4b-it
+[0]  [Gemini生出力 204文字]: '今週からは福島競馬場も加わり、中山・阪神・福島の3場開催となります。重賞は、土曜日にニュージーランドT、GII中山芝1600mと、阪神牝馬S、GII阪神芝1600mというGII芝マイル戦が2つ開催されます。そして日曜日には、3歳牝馬三冠レースの初戦となる桜花賞、GI阪神芝1600mがスタートします。注目となる桜花賞は、トライアル戦で上位だった馬たちに加え、GI阪神JF上位勢も参戦してくる豪華メンバーです。'
+[0]  → output/script_0.txt 保存 (204文字)
+[0]  プレビュー: 今週からは福島競馬場も加わり、中山・阪神・福島の3場開催となります。重賞は、土曜日にニュージーランドT、GII中山芝1600mと、阪神牝馬S、GII阪神芝160...
   HTTP 200
-[2]  [Gemini生出力 197文字]: '土曜阪神2R・3歳未勝利(ダート1400m)に出走するゼロヴィジビリティ(牡3歳、栗東・寺島)は骨折明けの一戦。それでも師は「調教は抜群に動くし、初戦の相手も今思えばかなりそろったなかで3着ですから」と強気。1着コラルリーフ、2着タマモイカロス、5着スターアニスという豪華な新馬戦で1番人気に支持された実力を復帰戦から見せつけそう。日曜阪神1Rに出走するスターアニス(牡3歳、栗東・紺谷)です。'
-[2]  → output/script_2.txt 保存 (197文字)
-[2]  プレビュー: 土曜阪神2R・3歳未勝利(ダート1400m)に出走するゼロヴィジビリティ(牡3歳、栗東・寺島)は骨折明けの一戦。それでも師は「調教は抜群に動くし、初戦の相手も今...
-[1] 使用: key=***BYfA model=gemma-3-4b-it
+[1]  [Gemini生出力 238文字]: 'netkeibaTVでは、ホースコラボレーターの細江純子と生粋のギャンブラーじゃいの2人が、4月12日(日)に阪神競馬場で行われる桜花賞(3歳牝・GI・芝1600m)を展望しました。じゃいは冒頭で「絶対的な存在はいない」ときっぱり述べ、混戦ムードが漂う中での見解を示しています。2歳女王スターアニスの評価はもちろん、フェスティバルヒルやドリームコア、リリージョワといった有力馬についてもジャッジを下しました。そんな中で、細江純子とじゃいが中心視した馬についても語られています。'
+[1]  → output/script_1.txt 保存 (238文字)
+[1]  プレビュー: netkeibaTVでは、ホースコラボレーターの細江純子と生粋のギャンブラーじゃいの2人が、4月12日(日)に阪神競馬場で行われる桜花賞(3歳牝・GI・芝160...
   HTTP 200
-[1]  [Gemini生出力 212文字]: '今週の土曜日は、中山競馬場でニュージーランドトロフィー(GII・芝1600m)が行われます。過去10年のニュージーランドTでは、前走で中央4場(東京、中山、阪神、京都)に出走していた馬が8勝2着8回3着7回と良績を残しています。中央4場はローカル開催と比べるとメンバーレベルが高くなる傾向にあります。ニュージーランドTはGIIで相手関係が強力ですので、前走でレベルの高いレースを経験している馬の方が有利になると考えられます。'
-[1]  → output/script_1.txt 保存 (212文字)
-[1]  プレビュー: 今週の土曜日は、中山競馬場でニュージーランドトロフィー(GII・芝1600m)が行われます。過去10年のニュージーランドTでは、前走で中央4場(東京、中山、阪神...
+[2]  [Gemini生出力 166文字]: '3連勝でオープン入りを決めたダノンセンチュリー、牡4歳、美浦・萩原厩舎の動向です。ダノンセンチュリーは、美浦Wで前走後初時計をマークしました。この時のタイムは4F55秒7-12秒1(馬なり)でした。調教では、しまい重点に乗られ、ラストはスムーズに加速したと伝えられています。現在の雰囲気は良く、調整は順調であると言っていいでしょう。'
+[2]  → output/script_2.txt 保存 (166文字)
+[2]  プレビュー: 3連勝でオープン入りを決めたダノンセンチュリー、牡4歳、美浦・萩原厩舎の動向です。ダノンセンチュリーは、美浦Wで前走後初時計をマークしました。この時のタイムは4...
 
 3 件の脚本を生成しました。
