@@ -1,10 +1,10 @@
-date: 2026-04-10T06:38:12.458863Z
+date: 2026-04-10T08:25:09.544412Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KIFk4i_A_80 title=ホッカイドウ競馬アンバサダーの杉谷拳士さんが来社　推しの2歳馬は「ベストカーラ」
-OK project=1 video_id=BPoWaUvvL_0 title=【桜花賞】ディアダイヤモンドが決戦の地へ出発　手塚久調教師「状態はいいと思うので
-OK project=1 video_id=4Qpv1ovQdg0 title=【山藤賞】全兄はクロワデュノール チャリングクロスが待望の2勝目なるか
+OK project=1 video_id=xTAH_FmbiY0 title=ホッカイドウ競馬アンバサダー杉谷拳士氏がスポニチで開幕をPR　「いよいよ来たな」
+OK project=1 video_id=i96cF9vGk_c title=【福島民報杯】GIIで2着2回のサヴォーナ 1年5カ月ぶりの復帰戦だ
+OK project=1 video_id=AbUzjTNgmJg title=怪物牝馬オータムグロー無傷12連勝なるか　豪州G1は好メンバーぞろいでネットは「
