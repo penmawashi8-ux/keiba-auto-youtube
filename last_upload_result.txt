@@ -1,10 +1,10 @@
-date: 2026-04-10T08:25:09.544412Z
+date: 2026-04-10T10:19:08.355301Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xTAH_FmbiY0 title=ホッカイドウ競馬アンバサダー杉谷拳士氏がスポニチで開幕をPR　「いよいよ来たな」
-OK project=1 video_id=i96cF9vGk_c title=【福島民報杯】GIIで2着2回のサヴォーナ 1年5カ月ぶりの復帰戦だ
-OK project=1 video_id=AbUzjTNgmJg title=怪物牝馬オータムグロー無傷12連勝なるか　豪州G1は好メンバーぞろいでネットは「
+OK project=1 video_id=qVczRBGyFkI title=22年菊花賞&有馬記念で2着のボルドグフーシュが引退　右前肢屈腱炎発症のため
+OK project=1 video_id=IzZkiCmC2Co title=【ニュージーランドT予想】前走で見せた走りが割引材料!? 中山替わりで軽視したい
+OK project=1 video_id=9HLfS3vFhxI title=【週末情報】スターアニス馬体すっきり/馬三郎のつぶやき
