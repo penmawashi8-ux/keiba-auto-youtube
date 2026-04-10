@@ -193,7 +193,7 @@ def make_clip(
             chain += (
                 f",drawtext=textfile='{tf}':fontfile='{fp}':"
                 f"fontsize={FONT_SIZE}:fontcolor=0xFFFFFF:"
-                f"x=(w-text_w)/2:y=1160:"
+                f"x=(w-text_w)/2:y=h-text_h-700:"
                 f"line_spacing=14:"
                 f"box=1:boxcolor=0x000014@0.88:boxborderw=36:"
                 f"borderw=3:bordercolor=0x000014"
