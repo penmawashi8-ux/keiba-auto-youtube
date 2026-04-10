@@ -1,10 +1,10 @@
-date: 2026-04-10T11:53:53.865939Z
+date: 2026-04-10T23:54:23.037203Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dBnJpDpz0u0 title=【桜花賞予想】驚きの「急上昇馬5頭」登場で風雲急？ GI桜花賞「調子偏差値」速報
-OK project=1 video_id=SWDQ-nBHWus title=【netkeibaTV】細江純子×じゃいが桜花賞を展望 混戦ムードの中で中心視し
-OK project=1 video_id=lKu1YlJx-h0 title=【有力馬動向】スムーズな加速！ ダノンセンチュリー/馬三郎のつぶやき
+OK project=1 video_id=L2g0ZrgEuqE title=阪神牝馬Sはやや波乱傾向の一戦 押さえておきたい血統とは
+OK project=1 video_id=9Zb8rpZGwNc title=【阪神牝馬S予想】ヴィクトリアMの最重要ステップ 総合力が試される阪神マイルが舞
+OK project=1 video_id=zZ1syWBKUi8 title=【ニュージーランドT予想】トリッキーな中山芝1600m コース実績を重視
