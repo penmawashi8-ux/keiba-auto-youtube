@@ -151,8 +151,8 @@ def make_clip(
             f"[0:v]"
             f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}:force_original_aspect_ratio=increase,"
             f"crop={VIDEO_WIDTH}:{VIDEO_HEIGHT},"
-            f"eq=brightness=-0.1,"
-            f"vignette=PI/3.5"
+            f"eq=brightness=-0.04,"
+            f"vignette=PI/5"
         )
     else:
         cmd += ["-f", "lavfi", "-i",

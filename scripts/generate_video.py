@@ -129,8 +129,8 @@ def make_clip(
             f"[0:v]"
             f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}:force_original_aspect_ratio=increase,"
             f"crop={VIDEO_WIDTH}:{VIDEO_HEIGHT},"
-            f"eq=brightness=-0.12,"
-            f"vignette=PI/3.5"
+            f"eq=brightness=-0.04,"
+            f"vignette=PI/5"
         )
     else:
         cmd += ["-f", "lavfi", "-i",
@@ -151,7 +151,7 @@ def make_clip(
             bf = badge_file.replace("'", "\\'")
 
             # 全体を少し暗く
-            chain += ",eq=brightness=-0.15"
+            chain += ",eq=brightness=-0.08"
             # 赤バッジ（左上）
             chain += (
                 f",drawtext=textfile='{bf}':fontfile='{fp}':"
