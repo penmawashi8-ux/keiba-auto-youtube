@@ -5,31 +5,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 「女王陥落」「ショック」デビュー11連勝で止まった怪物牝馬にネット騒然　豪州・クイーンエリザベスSのオータムグロー ---
-[0] Gemini入力本文 613文字: '怪物牝馬の初黒星に、SNSでは様々な反応が起こっている。\n\n\t\t\t\t\u3000豪州競馬の中距離王決定戦「クイーンエリザベスステークス・G1」が4月11日、豪州ランドウィック競馬場の芝2000メートルで行われ、オータムグロー(牝4歳、豪州・クリス・ウ'
+--- 記事[0]: 【桜花賞予想】狙うならば今年もこの5大要素で？ 過去データで探るGI桜花賞 ---
+[0] Gemini入力本文 443文字: '今週からは福島競馬場が加わり「中山＆阪神＆福島」の3場開催。\n\n\u3000重賞は土曜日にGIIニュージーランドT(中山・芝1600m)と、GII阪神牝馬S(阪神・芝1600m)。そして日曜日にGI桜花賞(阪神・芝1600m)が行われる。重賞がすべて'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【AI予想・桜花賞】前走は着差以上に力の違いを感じる走り！ 3連勝でのGI制覇へ人工知能も太鼓判 ---
-[1] Gemini入力本文 433文字: '今週の日曜日は、阪神競馬場で桜花賞(GI)が行われます。\n\n\u3000過去10年の桜花賞は5番人気以内の馬が[8-8-5-29]となっています。ここ10年の桜花賞では22年以外はすべて5番人気以内の馬が2頭以上は3着以内に入っています。牝馬クラシッ'
+--- 記事[1]: 「展開予想で印が上がってきた」粗品、桜花賞は意外な本命馬推奨に「まじで勘弁」「負ける気満々…」 ---
+[1] Gemini入力本文 515文字: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が11日、自身のYouTubeチャンネルを更新。桜花賞・G1(12日、阪神・芝1600メートル)の予想を公開した。\n\n\t\t\t\t\u3000粗品は「正直'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【吾妻小富士Sレース後コメント】ラタフォレスト斎藤新騎手ら ---
-[2] Gemini入力本文 1078文字: '福島11Rの吾妻小富士ステークス(4歳以上オープン・ダート1700m)は5番人気ラタフォレスト(斎藤新騎手)が勝利した。勝ちタイムは1分43秒4(良)。1馬身1/4差の2着に7番人気タガノミスト、さらに3馬身差の3着に3番人気スナークラファ'
+--- 記事[2]: 桜花賞は差し有利か 前走阪神JF組が好成績 ---
+[2] Gemini入力本文 471文字: '日曜阪神メインは桜花賞(3歳牝・GI・芝1600m)。ここでは近10回の傾向を人気別、脚質別、枠順別、馬体重別、ローテーション別の成績から探りたい。\n\n\u3000まずは人気別だが、意外にも1番人気は【1-4-1-4】と勝ち切れていない。対照的に2番'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -46,30 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***BYfA model=gemini-2.5-flash
 [0] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
+[1] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 290文字]: '吾妻小富士ステークスは、福島11Rの4歳以上オープン・ダート1700mで行われ、5番人気のラタフォレストが勝利しました。勝ちタイムは1分43秒4の良馬場でした。2着には7番人気のタガノミストが1馬身1/4差で入り、さらに3馬身差の3着には3番人気のスナークラファエロが入着しました。\n\n勝利したラタフォレストは、斎藤新騎手が騎乗し、美浦の加藤征弘厩舎所属の5歳牡馬です。父はパイロ、母はゴールドフォレストで、通算成績は14戦5勝となりました。斎藤新騎手は、ゲートも決まり良い枠からじっくり運べたとコメントし、手応え通りに最後もしっかり伸び、優秀な時計で走ってくれたと語っています。'
-[2]  → output/script_2.txt 保存 (290文字)
-[2]  プレビュー: 吾妻小富士ステークスは、福島11Rの4歳以上オープン・ダート1700mで行われ、5番人気のラタフォレストが勝利しました。勝ちタイムは1分43秒4の良馬場でした。...
+[0]  [Gemini生出力 234文字]: '今週からは福島競馬場が加わり、中山、阪神、福島の3場開催となります。重賞は土曜日にGIIニュージーランドトロフィーが中山の芝1600メートルで、GII阪神牝馬ステークスが阪神の芝1600メートルで行われます。そして日曜日にGI桜花賞が阪神の芝1600メートルで行われる予定です。重賞がすべて芝のマイル戦という珍しい設定の週末となります。この中でスポットを当てるのは、3歳牝馬三冠の初戦であるGI桜花賞です。過去10年データを使って、馬券の傾向やヒントを探っていきます。'
+[0]  → output/script_0.txt 保存 (234文字)
+[0]  プレビュー: 今週からは福島競馬場が加わり、中山、阪神、福島の3場開催となります。重賞は土曜日にGIIニュージーランドトロフィーが中山の芝1600メートルで、GII阪神牝馬ス...
   HTTP 200
-[1]  [Gemini生出力 4文字]: 'SKIP'
-[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 433文字）
-[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[1]  [Gemini生出力 234文字]: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が11日、自身のYouTubeチャンネルを更新し、桜花賞・G1（12日、阪神・芝1600メートル）の予想を公開しました。粗品は、当初「正直ギリギリまでスターアニスが本命やった」と明かしましたが、「展開予想をしていくうちに、リリージョワの印が上がって行きました」と述べ、リリージョワを本命に挙げました。リリージョワはデビューから無傷の3連勝を飾っている13番枠の馬です。'
+[1]  → output/script_1.txt 保存 (234文字)
+[1]  プレビュー: 「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が11日、自身のYouTubeチャンネルを更新し、桜花賞・G...
   HTTP 200
-[0]  [Gemini生出力 198文字]: '豪州競馬の中距離王決定戦「クイーンエリザベスステークス・G1」が4月11日、豪州ランドウィック競馬場の芝2000メートルで行われました。クリス・ウォーラー厩舎のオータムグローは3着となり、デビューからの連勝が11でストップしました。現地オッズでは単勝1.3倍の圧倒的な1番人気に推され、ジェームズ・マクドナルド騎手とのコンビで挑みましたが、怪物牝馬の初黒星にSNSでは様々な反応が起こっています。'
-[0]  → output/script_0.txt 保存 (198文字)
-[0]  プレビュー: 豪州競馬の中距離王決定戦「クイーンエリザベスステークス・G1」が4月11日、豪州ランドウィック競馬場の芝2000メートルで行われました。クリス・ウォーラー厩舎の...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***BYfA model=gemma-3-4b-it
-  HTTP 200
-[1]  [Gemini生出力 119文字]: '過去10年の桜花賞は5番人気以内の馬が[8-8-5-29]となっています。ここ10年の桜花賞では22年以外はすべて5番人気以内の馬が2頭以上は3着以内に入っています。牝馬クラシック一冠目は上位人気馬が能力通りの結果を残していると言えます。'
-[1]  → output/script_1.txt 保存 (119文字)
-[1]  プレビュー: 過去10年の桜花賞は5番人気以内の馬が[8-8-5-29]となっています。ここ10年の桜花賞では22年以外はすべて5番人気以内の馬が2頭以上は3着以内に入ってい...
+[2]  [Gemini生出力 213文字]: '日曜阪神メインの桜花賞（3歳牝・GI・芝1600m）について、近10回の傾向が人気別、脚質別から探られています。人気別では、1番人気が【1-4-1-4】と勝ち切れていません。対照的に2番人気は【5-2-0-3】、3番人気は【2-2-2-4】と優秀な成績を残しており、軸にはこれらが推奨されています。また、2桁人気は1頭も馬券に絡んでいないため、消しで良いとされています。脚質別では、差しが有利であるという傾向が示されています。'
+[2]  → output/script_2.txt 保存 (213文字)
+[2]  プレビュー: 日曜阪神メインの桜花賞（3歳牝・GI・芝1600m）について、近10回の傾向が人気別、脚質別から探られています。人気別では、1番人気が【1-4-1-4】と勝ち切...
 
 3 件の脚本を生成しました。
