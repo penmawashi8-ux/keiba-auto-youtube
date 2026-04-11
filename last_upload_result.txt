@@ -1,10 +1,10 @@
-date: 2026-04-11T05:02:37.871813Z
+date: 2026-04-11T06:04:18.993156Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IhM1pANAJu0 title=6度の手術乗り越え....昨年10月に落馬負傷の川須栄彦騎手が“相棒”シャマルで
-OK project=1 video_id=P3fLlZGZS1I title=【桜花賞】ミュージアムマイルの半妹フェスティバルヒルは骨折明けでも要注意　陣営「
-OK project=1 video_id=Zy_OqguECUg title=高須克弥院長の愛馬タカスタカスタカスが圧勝で２勝目　「鉄板レースなう」と自信満々
+OK project=1 video_id=fuH70u1Evjc title=【山藤賞結果】チャリングクロスが3番手から抜け出しV
+OK project=1 video_id=sKVdRqFHN3o title=「これからの投資は…」高須克弥院長所有のタカスタカスタカスが6馬身差圧勝にネット
+OK project=1 video_id=lfeIuxR_5WM title=【明石特別】良血馬対決は痛み分け　ルメール騎手のアーモンドアイ息子も武豊騎手のキ
