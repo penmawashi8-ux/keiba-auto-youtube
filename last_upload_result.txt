@@ -1,10 +1,10 @@
-date: 2026-04-11T03:44:07.832665Z
+date: 2026-04-11T05:02:37.871813Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SmSn3-z-9Sc title=【桜花賞】スターアニスは角馬場で活気十分に最終調整　高野調教師「自分の力を出せる
-OK project=1 video_id=FSONZMKxVzc title=【注目馬動向】中山牝馬Sからの巻き返し狙うアンゴラブラックは新潟大賞典へ　サンデ
-OK project=1 video_id=_7AOy6Ie9LA title=【注目馬動向】金鯱賞5着のドゥラドーレスは新潟大賞典へ　社台グループオーナーズが
+OK project=1 video_id=IhM1pANAJu0 title=6度の手術乗り越え....昨年10月に落馬負傷の川須栄彦騎手が“相棒”シャマルで
+OK project=1 video_id=P3fLlZGZS1I title=【桜花賞】ミュージアムマイルの半妹フェスティバルヒルは骨折明けでも要注意　陣営「
+OK project=1 video_id=Zy_OqguECUg title=高須克弥院長の愛馬タカスタカスタカスが圧勝で２勝目　「鉄板レースなう」と自信満々
