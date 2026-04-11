@@ -1,10 +1,10 @@
-date: 2026-04-11T07:53:01.329908Z
+date: 2026-04-11T09:48:29.530002Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3UIJxJhAZgg title=【阪神牝馬S】川田将雅騎手騎乗の4番人気カムニャックは2着　「前回よりはるかに我
-OK project=1 video_id=mxVPTbbSHmk title=【桜花賞予想】近2走の敗戦は妥当な結果!? 過去の傾向から苦戦が予想される人気馬
-OK project=1 video_id=la0BmFMcEdo title=【大阪―ハンブルクC】ルメール騎手「長い距離でいい馬」と評価　1番人気ウィクトル
+OK project=1 video_id=L8vDPYaELMI title=【桜花賞】昨年の2歳女王スターアニスが単勝3・1倍で1番人気　新興勢力のドリーム
+OK project=1 video_id=iiw93IyhYQ0 title=坂井瑠星騎手がケンタッキーダービーデーに日本馬とのコンビでG1・3競走に参戦!　
+OK project=1 video_id=vQoCgk0n14Y title=【桜花賞前日オッズ】2歳女王スターアニスが3.1倍で1番人気
