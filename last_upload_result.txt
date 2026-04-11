@@ -1,8 +1,10 @@
-date: 2026-04-11T11:56:02.066891Z
+date: 2026-04-11T23:51:58.168009Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5ABr-K7F68I title=【桜花賞2026前日予想】本命スターアニス！ドリームコアは消し？アランカール好枠
+OK project=1 video_id=hEF8X21W0rk title=【桜花賞予想】狙うならば今年もこの5大要素で？ 過去データで探るGI桜花賞
+OK project=1 video_id=oWUuBCIaS7w title=「展開予想で印が上がってきた」粗品、桜花賞は意外な本命馬推奨に「まじで勘弁」「負
+OK project=1 video_id=IJ6Ew0tPvJ4 title=桜花賞は差し有利か 前走阪神JF組が好成績
