@@ -1,10 +1,10 @@
-date: 2026-04-11T06:04:18.993156Z
+date: 2026-04-11T07:53:01.329908Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fuH70u1Evjc title=【山藤賞結果】チャリングクロスが3番手から抜け出しV
-OK project=1 video_id=sKVdRqFHN3o title=「これからの投資は…」高須克弥院長所有のタカスタカスタカスが6馬身差圧勝にネット
-OK project=1 video_id=lfeIuxR_5WM title=【明石特別】良血馬対決は痛み分け　ルメール騎手のアーモンドアイ息子も武豊騎手のキ
+OK project=1 video_id=3UIJxJhAZgg title=【阪神牝馬S】川田将雅騎手騎乗の4番人気カムニャックは2着　「前回よりはるかに我
+OK project=1 video_id=mxVPTbbSHmk title=【桜花賞予想】近2走の敗戦は妥当な結果!? 過去の傾向から苦戦が予想される人気馬
+OK project=1 video_id=la0BmFMcEdo title=【大阪―ハンブルクC】ルメール騎手「長い距離でいい馬」と評価　1番人気ウィクトル
