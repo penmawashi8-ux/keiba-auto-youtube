@@ -1,10 +1,8 @@
-date: 2026-04-11T11:36:09.707785Z
+date: 2026-04-11T11:56:02.066891Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=G-C1Ef6fES0 title=「女王陥落」「ショック」デビュー11連勝で止まった怪物牝馬にネット騒然　豪州・ク
-OK project=1 video_id=Vtqz3s4Vf6w title=【AI予想・桜花賞】前走は着差以上に力の違いを感じる走り！ 3連勝でのGI制覇へ
-OK project=1 video_id=2fgit9mhWgc title=【吾妻小富士Sレース後コメント】ラタフォレスト斎藤新騎手ら
+OK project=1 video_id=5ABr-K7F68I title=【桜花賞2026前日予想】本命スターアニス！ドリームコアは消し？アランカール好枠
