@@ -325,6 +325,7 @@ def main() -> None:
                     continue
                 # 馬を抽象的に表現している場合はスキップ
                 # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
+                # ただし、カタカナ5文字以上の固有名詞（≒競走馬名）がある場合は馬名あり扱いでスキップしない
                 abstract_horse_pattern = _re.compile(
                     r"(?:ある馬|その馬|この馬|同馬|該当馬|"
                     r"\d+着(?:と)?なった馬|\d+着の馬|"
@@ -333,7 +334,8 @@ def main() -> None:
                     r"スプリンターたち|出走馬たち|各馬(?:が|は|も|に)|強豪馬たち|"
                     r"馬たちが|馬たちは|一堂に会)"
                 )
-                if abstract_horse_pattern.search(script):
+                horse_name_pattern = _re.compile(r'[ァ-ヴー]{5,}')
+                if abstract_horse_pattern.search(script) and not horse_name_pattern.search(script):
                     print(f"[{i}]  → 馬名を使わず抽象表現のためスキップ: {script[:60]}")
                     return i, True
                 # 文の途中で終わっている場合は最後の句点で切る
