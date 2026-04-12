@@ -1,10 +1,10 @@
-date: 2026-04-12T08:06:12.848227Z
+date: 2026-04-12T09:54:32.735432Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=P0nX_eRs3dE title=【桜花賞】2番人気ギャラボーグは9着　ルメール「左回りの方がいい」「直線でパワー
-OK project=1 video_id=I_R8lJ6H_1E title=【あけぼのSレース後コメント】ストレイトトーカー横山武史騎手ら
-OK project=1 video_id=ru1HK0gDQTM title=【桜花賞】5番人気ギャラボーグが2着　西村淳「勝ち馬が強かった」
+OK project=1 video_id=urGC5PvYZDI title=【高知・二十四万石賞結果】三冠馬プリフロオールインが1年ぶりのレースで逃げ切り連
+OK project=1 video_id=qS2mRZVwyEo title=【佐賀がばいスプリント結果】ツークフォーゲルが移籍後2連勝で重賞初V
+OK project=1 video_id=LCw-c0a73E8 title=4月12日の出来事一覧/福島・中山・阪神
