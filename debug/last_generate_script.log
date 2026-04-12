@@ -7,25 +7,29 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【桜花賞予想】狙うならば今年もこの5大要素で？ 過去データで探るGI桜花賞 ---
-[0] Gemini入力本文 443文字: '今週からは福島競馬場が加わり「中山＆阪神＆福島」の3場開催。\n\n\u3000重賞は土曜日にGIIニュージーランドT(中山・芝1600m)と、GII阪神牝馬S(阪神・芝1600m)。そして日曜日にGI桜花賞(阪神・芝1600m)が行われる。重賞がすべて'
+--- 記事[0]: 【桜花賞】皆藤愛子２週連続的中は「かっこよ！！」のドリームに託す ---
+[0] Gemini入力本文 541文字: '「桜花賞・Ｇ１」（１２日、阪神）\n\n\u3000写真でピンときた方もいらっしゃるでしょうか？こちらは「万馬軒」、川崎競馬場内にある立ち食いラーメンのお店です。\n\n\u3000ということで久々のラーメンコラム！\n\n\u3000名物の「八王子ラーメン」は、醤油味ながら程よく'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 「展開予想で印が上がってきた」粗品、桜花賞は意外な本命馬推奨に「まじで勘弁」「負ける気満々…」 ---
-[1] Gemini入力本文 515文字: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が11日、自身のYouTubeチャンネルを更新。桜花賞・G1(12日、阪神・芝1600メートル)の予想を公開した。\n\n\t\t\t\t\u3000粗品は「正直'
+--- 記事[1]: 【注目馬動向】ミュージアムマイルが香港遠征を回避　主催者から歩様検査を「パスしないだろう」と指摘 ---
+[1] Gemini入力本文 596文字: '昨年の最優秀3歳牡馬、ミュージアムマイル(牡4歳、栗東・高柳大輔厩舎、父リオンディーズ)が次戦に予定していた香港のクイーンエリザベス2世C・G1(4月26日、シャティン競馬場・芝2000メートル)を回避することが分かった。馬主であるサンデー'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 桜花賞は差し有利か 前走阪神JF組が好成績 ---
-[2] Gemini入力本文 471文字: '日曜阪神メインは桜花賞(3歳牝・GI・芝1600m)。ここでは近10回の傾向を人気別、脚質別、枠順別、馬体重別、ローテーション別の成績から探りたい。\n\n\u3000まずは人気別だが、意外にも1番人気は【1-4-1-4】と勝ち切れていない。対照的に2番'
+--- 記事[2]: 「母にべったりの甘えん坊」名牝グランアレグリアに第4子の牡馬が誕生　「楽しみな配合」「可愛すぎます」など歓喜の反応 ---
+[2] Gemini入力本文 564文字: 'ノーザンホースパークの公式Xは12日までに、G1・6勝を挙げたグランアレグリアが第4子(父ロードカナロア)の牡馬を2月14日に産んだことを報告した。\n\n\t\t\t\t\u3000公式インスタグラムでは【ノーザンファームからのお便り】と題して、「古馬芝マイル'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -43,19 +47,29 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [0] 使用: key=***BYfA model=gemini-2.5-flash
-[2] 使用: key=***BYfA model=gemini-2.5-flash
 [1] 使用: key=***BYfA model=gemini-2.5-flash
+[2] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 234文字]: '今週からは福島競馬場が加わり、中山、阪神、福島の3場開催となります。重賞は土曜日にGIIニュージーランドトロフィーが中山の芝1600メートルで、GII阪神牝馬ステークスが阪神の芝1600メートルで行われます。そして日曜日にGI桜花賞が阪神の芝1600メートルで行われる予定です。重賞がすべて芝のマイル戦という珍しい設定の週末となります。この中でスポットを当てるのは、3歳牝馬三冠の初戦であるGI桜花賞です。過去10年データを使って、馬券の傾向やヒントを探っていきます。'
-[0]  → output/script_0.txt 保存 (234文字)
-[0]  プレビュー: 今週からは福島競馬場が加わり、中山、阪神、福島の3場開催となります。重賞は土曜日にGIIニュージーランドトロフィーが中山の芝1600メートルで、GII阪神牝馬ス...
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 541文字）
+[0] 使用: key=***BYfA model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 234文字]: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が11日、自身のYouTubeチャンネルを更新し、桜花賞・G1（12日、阪神・芝1600メートル）の予想を公開しました。粗品は、当初「正直ギリギリまでスターアニスが本命やった」と明かしましたが、「展開予想をしていくうちに、リリージョワの印が上がって行きました」と述べ、リリージョワを本命に挙げました。リリージョワはデビューから無傷の3連勝を飾っている13番枠の馬です。'
-[1]  → output/script_1.txt 保存 (234文字)
-[1]  プレビュー: 「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が11日、自身のYouTubeチャンネルを更新し、桜花賞・G...
+[2]  [Gemini生出力 221文字]: 'ノーザンホースパークの公式Xは12日までに、G1・6勝を挙げた名牝グランアレグリアが第4子となる牡馬を2月14日に出産したことを報告しました。父親はロードカナロアです。公式インスタグラムでは「ノーザンファームからのお便り」と題し、「古馬芝マイルGIの完全制覇を達成したグランアレグリアが元気な男の子を出産しました！」と伝えました。撮影日は出産後に初めて親子で広い放牧地へ出たタイミングで、仔馬よりもお母さんが大喜びした様子も報告されています。'
+[2]  → output/script_2.txt 保存 (221文字)
+[2]  プレビュー: ノーザンホースパークの公式Xは12日までに、G1・6勝を挙げた名牝グランアレグリアが第4子となる牡馬を2月14日に出産したことを報告しました。父親はロードカナロ...
   HTTP 200
-[2]  [Gemini生出力 213文字]: '日曜阪神メインの桜花賞（3歳牝・GI・芝1600m）について、近10回の傾向が人気別、脚質別から探られています。人気別では、1番人気が【1-4-1-4】と勝ち切れていません。対照的に2番人気は【5-2-0-3】、3番人気は【2-2-2-4】と優秀な成績を残しており、軸にはこれらが推奨されています。また、2桁人気は1頭も馬券に絡んでいないため、消しで良いとされています。脚質別では、差しが有利であるという傾向が示されています。'
-[2]  → output/script_2.txt 保存 (213文字)
-[2]  プレビュー: 日曜阪神メインの桜花賞（3歳牝・GI・芝1600m）について、近10回の傾向が人気別、脚質別から探られています。人気別では、1番人気が【1-4-1-4】と勝ち切...
+[1]  [Gemini生出力 224文字]: '昨年の最優秀3歳牡馬、ミュージアムマイルが高柳大輔厩舎から次戦に予定していた香港のクイーンエリザベス2世C・G1を回避することが分かった。馬主であるサンデーサラブレッドクラブが4月12日に発表しました。クイーンエリザベス2世C・G1は、4月26日にシャティン競馬場の芝2000メートルで行われる予定でした。回避の理由は、渡航前に義務付けられている動画による歩様確認で、現状のままだと現地での検査をパスしないだろうとの指摘を主催者から受けたためです。'
+[1]  → output/script_1.txt 保存 (224文字)
+[1]  プレビュー: 昨年の最優秀3歳牡馬、ミュージアムマイルが高柳大輔厩舎から次戦に予定していた香港のクイーンエリザベス2世C・G1を回避することが分かった。馬主であるサンデーサラ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***BYfA model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 126文字]: '桜花賞・G1（12日、阪神）がBコース替わりでやや先行有利。フルゲートで大外強襲は厳しく、末脚持続型のドリームコアが有力か。田中歩アナはスターアニス本命で、舞台実績に加え心身ともに充実。近年トレンドの直行も松山騎手が手応え。過去データで探るGI桜花賞。'
+[0]  → output/script_0.txt 保存 (126文字)
+[0]  プレビュー: 桜花賞・G1（12日、阪神）がBコース替わりでやや先行有利。フルゲートで大外強襲は厳しく、末脚持続型のドリームコアが有力か。田中歩アナはスターアニス本命で、舞台...
 
 3 件の脚本を生成しました。
