@@ -1,10 +1,10 @@
-date: 2026-04-12T04:16:16.811408Z
+date: 2026-04-12T05:28:59.394497Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=n5polPALsdI title=【桜花賞】皆藤愛子２週連続的中は「かっこよ！！」のドリームに託す
-OK project=1 video_id=ut_b9sl6ga4 title=【注目馬動向】ミュージアムマイルが香港遠征を回避　主催者から歩様検査を「パスしな
-OK project=1 video_id=Jr88pzF2F9g title=「母にべったりの甘えん坊」名牝グランアレグリアに第4子の牡馬が誕生　「楽しみな配
+OK project=1 video_id=v_xwCC6K-fA title=【阪神アーバン競馬プレーバック】先週2度目のJRA重賞勝ちのあの騎手が11度目の
+OK project=1 video_id=xbimWgLj2nI title=【中山6R・3歳1勝クラス】伏兵ストロングエースが差し切りV　秋山稔樹騎手「この
+OK project=1 video_id=BCNADTJZCzo title=【東京スプリント】JBCスプリントの1、2着馬が再戦　大井のファーンヒルは5枠8
