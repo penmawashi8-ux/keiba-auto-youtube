@@ -1,10 +1,10 @@
-date: 2026-04-12T09:54:32.735432Z
+date: 2026-04-12T11:39:03.015272Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=urGC5PvYZDI title=【高知・二十四万石賞結果】三冠馬プリフロオールインが1年ぶりのレースで逃げ切り連
-OK project=1 video_id=qS2mRZVwyEo title=【佐賀がばいスプリント結果】ツークフォーゲルが移籍後2連勝で重賞初V
-OK project=1 video_id=LCw-c0a73E8 title=4月12日の出来事一覧/福島・中山・阪神
+OK project=1 video_id=KPfLcbfrLtQ title=【アンタレスS展望】ムルソー2度目の重賞挑戦で初制覇のチャンス
+OK project=1 video_id=j2kaeWEizA8 title=【皐月賞展望】朝日杯FS王者カヴァレリッツォが1冠奪取へ
+OK project=1 video_id=7iZC-e-zL94 title=【福島牝馬S展望】重賞実績最上位パラディレーヌが初タイトルへ
