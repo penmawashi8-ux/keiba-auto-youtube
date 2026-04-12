@@ -1,10 +1,10 @@
-date: 2026-04-12T11:39:03.015272Z
+date: 2026-04-12T23:51:45.372211Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KPfLcbfrLtQ title=【アンタレスS展望】ムルソー2度目の重賞挑戦で初制覇のチャンス
-OK project=1 video_id=j2kaeWEizA8 title=【皐月賞展望】朝日杯FS王者カヴァレリッツォが1冠奪取へ
-OK project=1 video_id=7iZC-e-zL94 title=【福島牝馬S展望】重賞実績最上位パラディレーヌが初タイトルへ
+OK project=1 video_id=Ny1nhzE-v7c title=【アンタレスS展望】大器グランドプラージュが重賞初制覇へ　先行力のあるムルソーも
+OK project=1 video_id=qkXh3EuOEdA title=4月13日は「喫茶店の日」 “カフェ”と名の付く活躍馬を紹介
+OK project=1 video_id=Zf6OhoOvcWc title=【桜花賞・レースメモ】ノーザンファーム4年連続制覇で通算12勝目
