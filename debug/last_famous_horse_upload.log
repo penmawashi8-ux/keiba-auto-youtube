@@ -2,18 +2,17 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID_3): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   [警告] サムネイルファイルなし: output/thumbnail_0.jpg
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: シルポート (key=silport)
-  タイトル: 【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
+  馬名: ラインクラフト (key=linecrafter)
+  タイトル: 【名馬列伝】ラインクラフト〜彼女が切り拓いた道は、今も続いてる〜 #Shorts
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 1 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
-  進捗: 15%
-  進捗: 30%
-  進捗: 45%
-  進捗: 60%
-  進捗: 76%
-  進捗: 91%
-  完了! Video ID: LxbnyY8-taw
-  URL: https://www.youtube.com/watch?v=LxbnyY8-taw
+  アップロード中: 【名馬列伝】ラインクラフト〜彼女が切り拓いた道は、今も続いてる〜 #Shorts
+  進捗: 17%
+  進捗: 34%
+  進捗: 51%
+  進捗: 68%
+  進捗: 85%
+  完了! Video ID: yNV1KtHjdng
+  URL: https://www.youtube.com/watch?v=yNV1KtHjdng
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
