@@ -1,10 +1,10 @@
-date: 2026-04-13T09:08:32.924530Z
+date: 2026-04-13T10:58:25.944371Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dE2-nTFRQvQ title=【アンタレスS】前走で連勝が止まったピカピカサンダー　重賞初挑戦で巻き返しに燃え
-OK project=1 video_id=tfWeeiwiCuM title=【大井・ブリリアントC枠順】横山武史騎手が騎乗するサントノーレは5枠9番 春の中
-OK project=1 video_id=WhdtFC6s1qE title=桜花賞Vスターアニス一夜明け　小川陽一助手「化け物でしたね」「言うことがない内容
+OK project=1 video_id=uKDYAO6BbeY title=【皐月賞】「胸を張って大きいところに」屈指の出世レース制し津村明秀騎手は自信　相
+OK project=1 video_id=_nm36G_SPqI title=【AI予想・皐月賞】人工知能は人気薄の大駆けにも警戒!? 配当妙味がありそうな本
+OK project=1 video_id=bHpEx69Mc7g title=【皐月賞】東京スポーツ杯2歳S勝利から中145日のパントルナイーフ　勝てばコント
