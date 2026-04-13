@@ -5,35 +5,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 26日香港チャンピオンズデーの3競走でJRA馬券発売　サトノレーヴ、ジャンタルマンタル、マスカレードボールなどが挑む ---
-[0] Gemini入力本文 532文字: 'JRAは13日、香港チャンピオンズデー(4月26日、シャティン競馬場)の3競走で馬券発売することを発表した。\n\n\t\t\t\t\u3000発売方法はネット馬券(即PAT、A―PAT)で同26日7時から発走予定時刻2分前まで。UMACA(競馬場・ウインズなど'
+--- 記事[0]: 【福島牝馬S展望】エリザベス女王杯2着のパラディレーヌが主役　カネラフィーナは牝馬限定重賞で反撃 ---
+[0] Gemini入力本文 525文字: '第23回福島牝馬ステークス・G3(1着馬にヴィクトリアマイルの優先出走権)は4月19日、福島競馬場の芝1800メートルで行われる。\n\n\t\t\t\t\u3000パラディレーヌ(牝4歳、栗東・千田輝彦厩舎、父キズナ)は昨年のオークスが0秒3差の4着。秋華賞は'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【アンタレスS・松ケ下の特注馬】マーチSを大外から斤量59キロで快勝したサンデーファンデー　充実ぶりから連勝もある ---
-[1] Gemini入力本文 480文字: '◆第31回アンタレスS・G3(4月18日、阪神競馬場・ダート1800メートル)\n\n\t\t\t\t\u3000前走のマーチSをトップハンデタイの斤量59キロで快勝したサンデーファンデー(牡6歳、栗東・東田明士厩舎、父スズカコーズウェイ)。2走前のプロキオンS'
+--- 記事[1]: 矢野吉彦アナが取材した“知られざる”競馬史 十年を超える研究への原動力とは ---
+[1] Gemini入力本文 566文字: 'ベテラン競馬実況アナウンサーが知られざる競馬史を取材した一冊。テレビ東京系『ウイニング競馬』でレース実況を務めるフリーアナウンサーの矢野吉彦さんが、著書『競馬史発掘\u3000正史に書かれなかったあんな話こんな話』(星海社・税込み1650円)を発刊し'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【競走伝】6歳牝馬が3年半ぶりのタイトル　大ベテランとつかんだ極めて異例な勝利　19年・福島牝馬S ---
-[2] Gemini入力本文 382文字: '馬トク報知で過去の名勝負を当時の記事から振り返る【競走伝】。今回はデンコウアンジュが勝った2019年の福島牝馬Sを取り上げる。2歳時以来、牝馬では異例の3年半ぶりのタイトルだった。\n\n\t\t\t\t\u3000\n\n\t\t\t\t\u3000とても6歳牝馬とは思えない。デン'
+--- 記事[2]: 「アニたん」桜の女王スターアニスへ松山弘平騎手が感謝の呼びかけ　ネット「愛称決定やな」ジョッキーカメラが話題に ---
+[2] Gemini入力本文 521文字: '12日に阪神競馬場で行われた桜花賞・G1を圧勝したスターアニス(牝3歳、栗東・高野友和厩舎、父ドレフォン)と、松山弘平騎手＝栗東・フリー＝のレース後のやりとりが話題となっている。\n\n\t\t\t\t\u3000JRAが同日夜にYouTube「JRA公式チャン'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -50,32 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
 [0] 使用: key=***BYfA model=gemini-2.5-flash
-[1] 使用: key=***BYfA model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 253文字]: 'JRAは13日、香港チャンピオンズデーの3競走で馬券を発売することを発表しました。香港チャンピオンズデーは4月26日にシャティン競馬場で開催されます。馬券の発売方法はネット馬券の即PAT、A―PATで、同26日の7時から発走予定時刻の2分前までです。UMACAでは、同26日の各事業所の発売開始時刻から発走予定時刻の2分前まで発売されます。式別は単勝、複勝、馬連、ワイド、馬単、3連複、3連単です。この競走には、サトノレーヴ、ジャンタルマンタル、マスカレードボールなどのJRA所属馬が出走を予定しています。'
-[0]  → output/script_0.txt 保存 (253文字)
-[0]  プレビュー: JRAは13日、香港チャンピオンズデーの3競走で馬券を発売することを発表しました。香港チャンピオンズデーは4月26日にシャティン競馬場で開催されます。馬券の発売...
+[2]  [Gemini生出力 187文字]: '12日に阪神競馬場で行われた桜花賞・G1を圧勝したスターアニスと松山弘平騎手のレース後のやりとりが話題となっています。JRAが同日夜にYouTube「JRA公式チャンネル」でジョッキーカメラ映像を公開しました。この映像では、2馬身半差をつけ牝馬1冠を勝ち取ったスターアニスへ、松山弘平騎手が「アニたん」「ありがとう、強すぎるー」「ありがとう、アニたん」と呼びかけていました。'
+[2]  → output/script_2.txt 保存 (187文字)
+[2]  プレビュー: 12日に阪神競馬場で行われた桜花賞・G1を圧勝したスターアニスと松山弘平騎手のレース後のやりとりが話題となっています。JRAが同日夜にYouTube「JRA公式...
   HTTP 200
-[2]  [Gemini生出力 215文字]: '2019年の福島牝馬Sでは、デンコウアンジュが勝利を収めました。6歳牝馬であるデンコウアンジュにとって、この勝利は2歳時以来、実に3年半ぶりのタイトル獲得となり、牝馬としては極めて異例の勝利です。レースは前半1000メートルが62秒2の超スローペースで進み、デンコウアンジュは道中後方3番手を追走しました。デビュー35年目の柴田善騎手は焦ることなく、しまいにいい脚を使うと判断し、大外から荒々しく突き抜けてタイトルをつかみました。'
-[2]  → output/script_2.txt 保存 (215文字)
-[2]  プレビュー: 2019年の福島牝馬Sでは、デンコウアンジュが勝利を収めました。6歳牝馬であるデンコウアンジュにとって、この勝利は2歳時以来、実に3年半ぶりのタイトル獲得となり...
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***BYfA model=gemma-3-4b-it
+[1]  [Gemini生出力 187文字]: 'ベテラン競馬実況アナウンサーの矢野吉彦さんが、著書『競馬史発掘 正史に書かれなかったあんな話こんな話』を星海社から発刊しました。テレビ東京系『ウイニング競馬』でレース実況を務めるフリーアナウンサーの矢野吉彦さんは、十年を超える研究をまとめた一冊について「自分も読者も分かりやすく、取っつきやすいネタを集めました」と述べています。この著書は税込み1650円で販売されています。'
+[1]  → output/script_1.txt 保存 (187文字)
+[1]  プレビュー: ベテラン競馬実況アナウンサーの矢野吉彦さんが、著書『競馬史発掘 正史に書かれなかったあんな話こんな話』を星海社から発刊しました。テレビ東京系『ウイニング競馬』で...
   HTTP 200
-[1]  [Gemini生出力 214文字]: '第31回アンタレスS、G3が4月18日に阪神競馬場・ダート1800メートルで行われました。サンデーファンデー(牡6歳、栗東・東田明士厩舎、父スズカコーズウェイ)がトップハンデタイの斤量59キロで快勝しました。前走のマーチSもトップハンデタイの斤量59キロで快勝しており、2走前のプロキオンSも首差2着と充実期を続けています。本馬が挙げた7勝はすべて最終コーナーを2番手以内で回って来ており、好発から前めで押し切る競馬が特徴です。'
-[1]  → output/script_1.txt 保存 (214文字)
-[1]  プレビュー: 第31回アンタレスS、G3が4月18日に阪神競馬場・ダート1800メートルで行われました。サンデーファンデー(牡6歳、栗東・東田明士厩舎、父スズカコーズウェイ)...
+[0]  [Gemini生出力 201文字]: '第23回福島牝馬ステークス・G3は、4月19日に福島競馬場の芝1800メートルで行われます。1着馬にはヴィクトリアマイルの優先出走権が与えられます。主役は、エリザベス女王杯2着のパラディレーヌです。パラディレーヌは昨年のオークス4着、秋華賞3着と、G1で差のない競馬を続けてきました。G3でも勝ち味に遅いところはありますが、ここは結果が欲しい一戦です。カネラフィーナも牝馬限定重賞での反撃を目指します。'
+[0]  → output/script_0.txt 保存 (201文字)
+[0]  プレビュー: 第23回福島牝馬ステークス・G3は、4月19日に福島競馬場の芝1800メートルで行われます。1着馬にはヴィクトリアマイルの優先出走権が与えられます。主役は、エリ...
 
 3 件の脚本を生成しました。
