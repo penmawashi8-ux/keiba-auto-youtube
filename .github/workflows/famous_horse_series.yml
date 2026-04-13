@@ -128,6 +128,11 @@ jobs:
       # 名馬シリーズ専用のタイトル・タグでアップロード
       - name: Upload to YouTube (名馬列伝タイトルで)
         env:
+          # 名馬列伝専用チャンネル（設定済みの場合に優先使用）
+          FAMOUS_HORSE_CLIENT_ID:     ${{ secrets.FAMOUS_HORSE_CLIENT_ID }}
+          FAMOUS_HORSE_CLIENT_SECRET: ${{ secrets.FAMOUS_HORSE_CLIENT_SECRET }}
+          FAMOUS_HORSE_REFRESH_TOKEN: ${{ secrets.FAMOUS_HORSE_REFRESH_TOKEN }}
+          # フォールバック: ニュース系チャンネル
           GOOGLE_CLIENT_ID:     ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
