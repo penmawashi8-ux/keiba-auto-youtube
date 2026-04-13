@@ -1,10 +1,10 @@
-date: 2026-04-12T23:51:45.372211Z
+date: 2026-04-13T04:28:25.509321Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ny1nhzE-v7c title=【アンタレスS展望】大器グランドプラージュが重賞初制覇へ　先行力のあるムルソーも
-OK project=1 video_id=qkXh3EuOEdA title=4月13日は「喫茶店の日」 “カフェ”と名の付く活躍馬を紹介
-OK project=1 video_id=Zf6OhoOvcWc title=【桜花賞・レースメモ】ノーザンファーム4年連続制覇で通算12勝目
+OK project=1 video_id=j7dpgomlCMY title=26日香港チャンピオンズデーの3競走でJRA馬券発売　サトノレーヴ、ジャンタルマ
+OK project=1 video_id=kkM3hyUTiE8 title=【アンタレスS・松ケ下の特注馬】マーチSを大外から斤量59キロで快勝したサンデー
+OK project=1 video_id=eUACX0NDju4 title=【競走伝】6歳牝馬が3年半ぶりのタイトル　大ベテランとつかんだ極めて異例な勝利　
