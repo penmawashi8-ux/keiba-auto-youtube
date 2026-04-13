@@ -6,6 +6,7 @@ import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
@@ -90,13 +91,28 @@ RESULTS_SYSTEM_PROMPT = (
 )
 
 
+def get_today_jst() -> str:
+    """今日の日付をJST（日本時間）でYYYY年M月D日形式で返す。"""
+    jst = timezone(timedelta(hours=9))
+    return datetime.now(jst).strftime("%Y年%-m月%-d日")
+
+
 def get_system_prompt() -> str:
-    """環境変数 SCRIPT_MODE に応じてシステムプロンプトを返す。"""
+    """環境変数 SCRIPT_MODE に応じてシステムプロンプトを返す。今日の日付を動的に注入する。"""
     mode = os.environ.get("SCRIPT_MODE", "news").strip().lower()
+    today = get_today_jst()
+    date_instruction = (
+        f"\n\n【時制について：最重要】\n"
+        f"- 今日の日付は {today} です。\n"
+        f"- 記事中のレース・イベントの開催日が今日より「後」の場合は、必ず未来形（「行われます」「予定です」「出走します」など）で話すこと。\n"
+        f"- 記事中のレース・イベントの開催日が今日または今日より「前」の場合は、過去形（「行われました」「勝利しました」など）で話すこと。\n"
+        f"- 開催日が不明な場合でも、「予定」「登録」「出走予定」などの語が含まれる場合は未来形で話すこと。\n"
+        f"- 未来のレースについて「〜が勝利した」「〜が制した」「〜が逃げ切った」など、結果を断言する表現は絶対に使わないこと。"
+    )
     if mode == "results":
         print("スクリプトモード: results（重賞結果速報）")
-        return RESULTS_SYSTEM_PROMPT
-    return SYSTEM_PROMPT
+        return RESULTS_SYSTEM_PROMPT + date_instruction
+    return SYSTEM_PROMPT + date_instruction
 
 
 def load_api_keys() -> list[str]:
@@ -216,9 +232,13 @@ def main() -> None:
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
         print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
         sys_prompt = get_system_prompt()
+        race_date_line = ""
+        if item.get('race_date'):
+            race_date_line = f"レース開催日: {item['race_date']}\n"
         user_content = (
             f"【ニュース】\n"
             f"タイトル: {item['title']}\n"
+            f"{race_date_line}"
             f"内容: {summary_text[:1500]}"
         )
         lenient_sys_prompt = (
