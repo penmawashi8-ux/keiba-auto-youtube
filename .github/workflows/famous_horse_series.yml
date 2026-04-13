@@ -57,13 +57,6 @@ jobs:
           mkdir -p output
           python scripts/famous_horse_prepare.py "${{ inputs.horse_key }}"
 
-      # 馬本人の画像を Wikimedia Commons から取得（失敗してもPixabayへフォールバック）
-      - name: 背景画像取得 (Wikimedia Commons)
-        continue-on-error: true
-        run: |
-          python scripts/download_famous_horse_image.py "${{ inputs.horse_key }}" \
-            2>&1 | tee /tmp/famous_horse_wikimedia.log
-
       # 追加背景画像を Pixabay から取得（失敗しても続行）
       - name: 背景画像取得 (Pixabay)
         continue-on-error: true
@@ -106,6 +99,15 @@ jobs:
                   print(f"  [警告] クエリ'{q}'失敗: {e}")
               time.sleep(1)
           print(f"背景画像 {downloaded} 枚取得完了")
+          PYEOF
+
+      # 馬本人の画像を Wikimedia Commons から取得して ai_0.jpg に上書き
+      # Pixabayの後に実行することでサムネイル用画像（ai_0）を確実に上書きする
+      - name: 背景画像取得 (Wikimedia Commons)
+        continue-on-error: true
+        run: |
+          python scripts/download_famous_horse_image.py "${{ inputs.horse_key }}" \
+            2>&1 | tee /tmp/famous_horse_wikimedia.log
           PYEOF
 
       # TTS_VOICE=ja-JP-NanamiNeural で名馬シリーズ専用ボイスに切り替え
@@ -187,7 +189,8 @@ jobs:
           done
           # サムネイル確認用（GitHubで直接プレビュー可能）
           cp output/thumbnail_0.jpg debug/last_famous_horse_thumbnail.jpg 2>/dev/null || true
-          git add debug/last_famous_horse_*.log debug/last_famous_horse_thumbnail.jpg 2>/dev/null || true
+          git add debug/last_famous_horse_*.log || true
+          git add debug/last_famous_horse_thumbnail.jpg 2>/dev/null || true
           if ! git diff --staged --quiet; then
             git commit -m "chore: save famous_horse logs [${{ inputs.horse_key }}] [skip ci]"
             git pull --rebase origin ${{ github.ref_name }}
