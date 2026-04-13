@@ -103,17 +103,28 @@ def get_image_info(file_title: str) -> dict | None:
     }
 
 
-def download_image(url: str, dest: str) -> bool:
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            Path(dest).write_bytes(resp.read())
-        size_kb = Path(dest).stat().st_size // 1024
-        print(f"    保存完了: {dest} ({size_kb} KB)")
-        return True
-    except Exception as e:
-        print(f"    ダウンロード失敗: {e}")
-        return False
+def download_image(url: str, dest: str, retries: int = 3) -> bool:
+    for attempt in range(retries):
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                Path(dest).write_bytes(resp.read())
+            size_kb = Path(dest).stat().st_size // 1024
+            print(f"    保存完了: {dest} ({size_kb} KB)")
+            return True
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                wait = 5 * (attempt + 1)
+                print(f"    レート制限 (429)。{wait}秒待機して再試行... ({attempt+1}/{retries})")
+                time.sleep(wait)
+            else:
+                print(f"    ダウンロード失敗 HTTP {e.code}: {url}")
+                return False
+        except Exception as e:
+            print(f"    ダウンロード失敗: {e}")
+            return False
+    print(f"    リトライ上限に達しました: {url}")
+    return False
 
 
 NUM_SLOTS = 6  # 動画で使う背景画像の枚数
@@ -166,21 +177,41 @@ def main() -> None:
         print("[警告] フリーライセンスの適切な画像が見つかりませんでした。", file=sys.stderr)
         sys.exit(1)
 
-    print(f"\n  取得画像: {len(collected)} 枚 → {NUM_SLOTS} スロットに配置")
+    print(f"\n  取得画像: {len(collected)} 枚 → ダウンロード開始")
 
-    # NUM_SLOTSに満たない場合は同じ写真を繰り返し使用
+    # まず収集した画像を順番にダウンロード（一時ファイルに保存）
+    tmp_files: list[tuple[str, dict]] = []
+    for idx, info in enumerate(collected):
+        tmp_path = f"{ASSETS_DIR}/ai_tmp_{idx}.jpg"
+        if download_image(info["url"], tmp_path):
+            tmp_files.append((tmp_path, info))
+        time.sleep(2)  # レート制限対策
+
+    if not tmp_files:
+        print("[警告] 1枚もダウンロードできませんでした。", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"\n  ダウンロード成功: {len(tmp_files)} 枚 → {NUM_SLOTS} スロットに配置")
+
+    # 成功した写真をNUM_SLOTSに循環配置（余った外部画像が混入しない）
+    import shutil
     attrs = []
     for i in range(NUM_SLOTS):
-        info = collected[i % len(collected)]
+        tmp_path, info = tmp_files[i % len(tmp_files)]
         dest = f"{ASSETS_DIR}/ai_{i}.jpg"
-        if download_image(info["url"], dest):
-            attrs.append({
-                "slot": i,
-                "file_title": info["file_title"],
-                "author": info["author"],
-                "license": info["license"],
-                "url": info["commons_url"],
-            })
+        shutil.copy2(tmp_path, dest)
+        print(f"    ai_{i}.jpg ← {Path(tmp_path).name}")
+        attrs.append({
+            "slot": i,
+            "file_title": info["file_title"],
+            "author": info["author"],
+            "license": info["license"],
+            "url": info["commons_url"],
+        })
+
+    # 一時ファイルを削除
+    for tmp_path, _ in tmp_files:
+        Path(tmp_path).unlink(missing_ok=True)
 
     # 引用元情報を保存（全画像分）
     attr_data = {
