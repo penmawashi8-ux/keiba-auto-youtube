@@ -121,6 +121,8 @@ jobs:
           python scripts/download_famous_horse_bgm.py
 
       - name: Generate video
+        env:
+          FAMOUS_HORSE_UPLOAD: "1"
         run: |
           python scripts/generate_video.py 2>&1 | tee /tmp/famous_horse_video.log
           STATUS=${PIPESTATUS[0]}
