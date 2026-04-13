@@ -1,21 +1,21 @@
-  [警告] トークンリフレッシュ失敗 (FAMOUS_HORSE_CLIENT_ID): ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID_3): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   [警告] サムネイルファイルなし: output/thumbnail_0.jpg
 === 名馬シリーズ YouTube アップロード開始 ===
   馬名: シルポート (key=silport)
   タイトル: 【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
+  OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
-  認証情報: 1 プロジェクト分ロード完了
+  認証情報: 2 プロジェクト分ロード完了
   アップロード中: 【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
   進捗: 13%
   進捗: 27%
   進捗: 41%
   進捗: 55%
-  進捗: 68%
-  進捗: 82%
-  進捗: 96%
-  完了! Video ID: NKnNpgwK4sE
-  URL: https://www.youtube.com/watch?v=NKnNpgwK4sE
+  進捗: 69%
+  進捗: 83%
+  進捗: 97%
+  完了! Video ID: A3uGPeiltOM
+  URL: https://www.youtube.com/watch?v=A3uGPeiltOM
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
