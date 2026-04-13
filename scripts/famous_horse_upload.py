@@ -125,14 +125,16 @@ def build_description(horse_name: str, catchphrase: str, era: str) -> str:
     if attr_path.exists():
         try:
             attr = json.loads(attr_path.read_text(encoding="utf-8"))
-            lines += [
-                "",
-                "【画像クレジット】",
-                f"出典: {attr.get('source', 'Wikimedia Commons')}",
-                f"著作者: {attr.get('author', '')}",
-                f"ライセンス: {attr.get('license', '')}",
-                f"URL: {attr.get('url', '')}",
-            ]
+            lines += ["", "【画像クレジット】", f"出典: {attr.get('source', 'Wikimedia Commons')}"]
+            # 複数画像の場合は重複なしで著作者を列挙
+            seen = set()
+            for img in attr.get("images", []):
+                key = (img.get("author", ""), img.get("license", ""))
+                if key in seen:
+                    continue
+                seen.add(key)
+                lines.append(f"著作者: {img['author']} / {img['license']}")
+                lines.append(f"URL: {img['url']}")
         except Exception:
             pass
     return "\n".join(lines)

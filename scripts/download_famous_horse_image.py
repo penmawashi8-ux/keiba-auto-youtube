@@ -116,6 +116,9 @@ def download_image(url: str, dest: str) -> bool:
         return False
 
 
+NUM_SLOTS = 6  # 動画で使う背景画像の枚数
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print("使用法: python scripts/download_famous_horse_image.py <horse_key>", file=sys.stderr)
@@ -133,48 +136,61 @@ def main() -> None:
     print(f"=== Wikimedia Commons 画像検索: {horse_name} ===")
     Path(ASSETS_DIR).mkdir(exist_ok=True)
 
-    # 馬名単独 → 馬名+競走馬 の順で検索
+    # 馬名単独 → 馬名+競走馬 の順で検索、最大NUM_SLOTS枚収集
     queries = [horse_name, f"{horse_name} 競走馬", f"{horse_name} racehorse"]
-    found = False
+    collected: list[dict] = []
 
     for query in queries:
+        if len(collected) >= NUM_SLOTS:
+            break
         print(f"  検索クエリ: 「{query}」")
-        titles = search_commons(query)
+        titles = search_commons(query, limit=20)
         print(f"  ヒット数: {len(titles)} 件")
 
         for title in titles:
+            if len(collected) >= NUM_SLOTS:
+                break
+            # 重複スキップ
+            if any(c["file_title"] == title for c in collected):
+                continue
             print(f"  チェック: {title}")
             info = get_image_info(title)
             if not info:
                 time.sleep(0.3)
                 continue
-
-            dest = f"{ASSETS_DIR}/ai_0.jpg"
-            if download_image(info["url"], dest):
-                attr = {
-                    "source": "Wikimedia Commons",
-                    "file_title": info["file_title"],
-                    "author": info["author"],
-                    "license": info["license"],
-                    "url": info["commons_url"],
-                }
-                Path(f"{ASSETS_DIR}/attribution.json").write_text(
-                    json.dumps(attr, ensure_ascii=False, indent=2), encoding="utf-8"
-                )
-                print(f"  著作者: {info['author']}")
-                print(f"  ライセンス: {info['license']}")
-                print(f"  Commons URL: {info['commons_url']}")
-                print("=== 画像取得完了 ===")
-                found = True
-                break
+            collected.append(info)
+            print(f"    OK: {info['author']} / {info['license']}")
             time.sleep(0.5)
 
-        if found:
-            break
-
-    if not found:
+    if not collected:
         print("[警告] フリーライセンスの適切な画像が見つかりませんでした。", file=sys.stderr)
         sys.exit(1)
+
+    print(f"\n  取得画像: {len(collected)} 枚 → {NUM_SLOTS} スロットに配置")
+
+    # NUM_SLOTSに満たない場合は同じ写真を繰り返し使用
+    attrs = []
+    for i in range(NUM_SLOTS):
+        info = collected[i % len(collected)]
+        dest = f"{ASSETS_DIR}/ai_{i}.jpg"
+        if download_image(info["url"], dest):
+            attrs.append({
+                "slot": i,
+                "file_title": info["file_title"],
+                "author": info["author"],
+                "license": info["license"],
+                "url": info["commons_url"],
+            })
+
+    # 引用元情報を保存（全画像分）
+    attr_data = {
+        "source": "Wikimedia Commons",
+        "images": attrs,
+    }
+    Path(f"{ASSETS_DIR}/attribution.json").write_text(
+        json.dumps(attr_data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"=== 画像取得完了: {len(attrs)}/{NUM_SLOTS} 枚 ===")
 
 
 if __name__ == "__main__":
