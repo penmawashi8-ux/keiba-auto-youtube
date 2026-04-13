@@ -153,11 +153,74 @@ def make_clip(
 
             is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
 
-            # 全体を少し暗く
-            chain += ",eq=brightness=-0.15"
+            if is_famous and thumb_main:
+                # ── 映画ポスター風サムネイル ──
 
-            if is_famous:
-                # ── 名馬列伝サムネイル（左寄せ・アウトラインのみ） ──
+                # シネマティックな色調補正（暗め・コントラスト強・ウォームトーン）
+                chain += (
+                    ",eq=brightness=-0.18:saturation=1.30:contrast=1.12"
+                    ",colorchannelmixer=rr=1.05:gg=0.95:bb=0.88"
+                )
+
+                main_file = f"{tmp_dir}/thumb_main_{idx:04d}.txt"
+                Path(main_file).write_text(thumb_main, encoding="utf-8")
+                mf = main_file.replace("'", "\\'")
+
+                # 「狂気の」（左上・白・影付き）
+                if thumb_top:
+                    top_file = f"{tmp_dir}/thumb_top_{idx:04d}.txt"
+                    Path(top_file).write_text(thumb_top, encoding="utf-8")
+                    tpf = top_file.replace("'", "\\'")
+                    chain += (
+                        f",drawtext=textfile='{tpf}':fontfile='{fp}':"
+                        f"fontsize=78:fontcolor=0xFFFFFF:"
+                        f"x=60:y=160:"
+                        f"borderw=4:bordercolor=0x000000:"
+                        f"shadowcolor=0x000000@0.9:shadowx=3:shadowy=3"
+                    )
+
+                # 「大逃げ」グロー外層（赤・広め・低透明）
+                chain += (
+                    f",drawtext=textfile='{mf}':fontfile='{fp}':"
+                    f"fontsize=180:fontcolor=0xFF2200@0.22:"
+                    f"x=60:y=760:"
+                    f"borderw=32:bordercolor=0xFF2200@0.18"
+                )
+                # 「大逃げ」グロー中層
+                chain += (
+                    f",drawtext=textfile='{mf}':fontfile='{fp}':"
+                    f"fontsize=180:fontcolor=0xFF3300@0.38:"
+                    f"x=60:y=760:"
+                    f"borderw=16:bordercolor=0xFF3300@0.40"
+                )
+                # 「大逃げ」グロー内層（鮮明赤）
+                chain += (
+                    f",drawtext=textfile='{mf}':fontfile='{fp}':"
+                    f"fontsize=180:fontcolor=0xFF4400@0.52:"
+                    f"x=60:y=760:"
+                    f"borderw=7:bordercolor=0xFF4400@0.62"
+                )
+                # 「大逃げ」本体（白・黒縁・ドロップシャドウ）
+                chain += (
+                    f",drawtext=textfile='{mf}':fontfile='{fp}':"
+                    f"fontsize=180:fontcolor=0xFFFFFF:"
+                    f"x=60:y=760:"
+                    f"borderw=5:bordercolor=0x000000:"
+                    f"shadowcolor=0x000000@0.9:shadowx=6:shadowy=6"
+                )
+
+                # 「馬名」（中サイズ・影付き）
+                chain += (
+                    f",drawtext=textfile='{tf}':fontfile='{fp}':"
+                    f"fontsize=84:fontcolor=0xFFFFFF:"
+                    f"x=60:y=1070:"
+                    f"borderw=4:bordercolor=0x000000:"
+                    f"shadowcolor=0x000000@0.9:shadowx=3:shadowy=3"
+                )
+
+            elif is_famous:
+                # fallback: thumb_main 未設定時のシンプルデザイン
+                chain += ",eq=brightness=-0.15"
                 if thumb_top:
                     top_file = f"{tmp_dir}/thumb_top_{idx:04d}.txt"
                     Path(top_file).write_text(thumb_top, encoding="utf-8")
@@ -165,26 +228,12 @@ def make_clip(
                     chain += (
                         f",drawtext=textfile='{tpf}':fontfile='{fp}':"
                         f"fontsize=80:fontcolor=0xFFFFFF:"
-                        f"x=60:y=1020:"
-                        f"borderw=7:bordercolor=0x000000"
+                        f"x=60:y=900:borderw=7:bordercolor=0x000000"
                     )
-                if thumb_main:
-                    main_file = f"{tmp_dir}/thumb_main_{idx:04d}.txt"
-                    Path(main_file).write_text(thumb_main, encoding="utf-8")
-                    mf = main_file.replace("'", "\\'")
-                    chain += (
-                        f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                        f"fontsize=172:fontcolor=0xFFFFFF:"
-                        f"x=60:y=1110:"
-                        f"line_spacing=8:"
-                        f"borderw=10:bordercolor=0x000000"
-                    )
-                # 馬名（中・左）
                 chain += (
                     f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                    f"fontsize=80:fontcolor=0xFFFFFF:"
-                    f"x=60:y=1400:"
-                    f"borderw=7:bordercolor=0x000000"
+                    f"fontsize=130:fontcolor=0xFFFFFF:"
+                    f"x=60:y=1050:borderw=8:bordercolor=0x000000"
                 )
             else:
                 # ── ニュース系サムネイル（既存デザイン） ──
