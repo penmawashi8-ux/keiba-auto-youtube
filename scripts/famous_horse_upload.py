@@ -120,6 +120,21 @@ def build_description(horse_name: str, catchphrase: str, era: str) -> str:
         "",
         "#名馬列伝 #競馬 #競走馬 #名馬 #Shorts",
     ]
+    # Wikimedia Commons 引用元（存在する場合のみ追記）
+    attr_path = Path("assets/attribution.json")
+    if attr_path.exists():
+        try:
+            attr = json.loads(attr_path.read_text(encoding="utf-8"))
+            lines += [
+                "",
+                "【画像クレジット】",
+                f"出典: {attr.get('source', 'Wikimedia Commons')}",
+                f"著作者: {attr.get('author', '')}",
+                f"ライセンス: {attr.get('license', '')}",
+                f"URL: {attr.get('url', '')}",
+            ]
+        except Exception:
+            pass
     return "\n".join(lines)
 
 

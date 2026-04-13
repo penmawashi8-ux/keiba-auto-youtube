@@ -57,7 +57,13 @@ jobs:
           mkdir -p output
           python scripts/famous_horse_prepare.py "${{ inputs.horse_key }}"
 
-      # 背景画像を Pixabay から取得（失敗しても続行）
+      # 馬本人の画像を Wikimedia Commons から取得（失敗してもPixabayへフォールバック）
+      - name: 背景画像取得 (Wikimedia Commons)
+        continue-on-error: true
+        run: |
+          python scripts/download_famous_horse_image.py "${{ inputs.horse_key }}"
+
+      # 追加背景画像を Pixabay から取得（失敗しても続行）
       - name: 背景画像取得 (Pixabay)
         continue-on-error: true
         env:
