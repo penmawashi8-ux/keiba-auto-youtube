@@ -1,10 +1,10 @@
-date: 2026-04-13T04:28:25.509321Z
+date: 2026-04-13T05:45:19.330470Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=j7dpgomlCMY title=26日香港チャンピオンズデーの3競走でJRA馬券発売　サトノレーヴ、ジャンタルマ
-OK project=1 video_id=kkM3hyUTiE8 title=【アンタレスS・松ケ下の特注馬】マーチSを大外から斤量59キロで快勝したサンデー
-OK project=1 video_id=eUACX0NDju4 title=【競走伝】6歳牝馬が3年半ぶりのタイトル　大ベテランとつかんだ極めて異例な勝利　
+OK project=1 video_id=i0plvn42tuA title=【福島牝馬S展望】エリザベス女王杯2着のパラディレーヌが主役　カネラフィーナは牝
+OK project=1 video_id=WcKAanX-5Xs title=矢野吉彦アナが取材した“知られざる”競馬史 十年を超える研究への原動力とは
+OK project=1 video_id=QTvIVf9EmPw title=「アニたん」桜の女王スターアニスへ松山弘平騎手が感謝の呼びかけ　ネット「愛称決定
