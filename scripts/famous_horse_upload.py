@@ -10,6 +10,7 @@
 
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -204,13 +205,24 @@ def main() -> None:
         sys.exit(1)
 
     horse_key  = sys.argv[1]
-    # 既存 generate_video.py が出力するファイル名に合わせる
     video_path = f"{OUTPUT_DIR}/video_0.mp4"
     thumb_path = f"{OUTPUT_DIR}/thumbnail_0.jpg"
 
     if not Path(video_path).exists():
         print(f"[エラー] 動画ファイルが見つかりません: {video_path}", file=sys.stderr)
         sys.exit(1)
+
+    # 動画の先頭フレーム（名馬列伝デザインのサムネイルフレーム）を抽出
+    print("  サムネイル抽出中...")
+    result = subprocess.run([
+        "ffmpeg", "-y", "-ss", "0.5", "-i", video_path,
+        "-vframes", "1", "-s", "1280x720", thumb_path,
+    ], capture_output=True, text=True)
+    if result.returncode == 0:
+        size_kb = Path(thumb_path).stat().st_size // 1024
+        print(f"  サムネイル抽出完了: {thumb_path} ({size_kb} KB)")
+    else:
+        print(f"  [警告] サムネイル抽出失敗: {result.stderr[-200:]}", file=sys.stderr)
 
     meta        = load_horse_meta(horse_key)
     horse_name  = meta.get("name", horse_key)
