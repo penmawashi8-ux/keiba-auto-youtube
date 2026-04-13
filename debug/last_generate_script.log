@@ -5,29 +5,51 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***BYfA / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***BYfA / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***BYfA / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (34個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【先週のJRA抹消馬】重賞2勝を挙げたシュヴァリエローズ、一昨年のチューリップ賞を制したスウィープフィートなど ---
-[0] Gemini入力本文 519文字: '4月6日から4月12日の期間では、重賞2勝を挙げたシュヴァリエローズ(牡8、栗東・清水久詞厩舎)、一昨年のチューリップ賞を制したスウィープフィート(牝5、栗東・庄野靖志厩舎)、22年のラジオNIKKEI賞覇者フェーングロッテン(セ7、栗東・'
+--- 記事[0]: 【アンタレスS】前走で連勝が止まったピカピカサンダー　重賞初挑戦で巻き返しに燃える　鹿戸調教師「改めて期待」 ---
+[0] Gemini入力本文 433文字: '◆第31回アンタレスS・G3(4月18日、阪神競馬場・ダート1800メートル)\n\n\t\t\t\t\u3000オープン初挑戦のアルデバランSで未勝利からの連勝が4で止まったピカピカサンダー(牡4歳、美浦・鹿戸雄一厩舎、父アジアエクスプレス)。その前走は激しい'
 [0] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[1]: 【二十四万石賞・高知】単勝1・2倍のユメノホノオは3着に敗れる　3冠馬対決でプリフロオールインに逃げ切り許す ---
-[1] Gemini入力本文 568文字: '◆第42回二十四万石賞・重賞(4月12日、高知競馬場・ダート1900メートル、重)\n\n\t\t\t\t\u300012頭が出走し、単勝1・2倍で断然1番人気のユメノホノオ(牡6歳、高知・田中守厩舎、父バトルプラン)は、3着に終わった。吉原寛人騎手とのコンビで'
+--- 記事[1]: 【大井・ブリリアントC枠順】横山武史騎手が騎乗するサントノーレは5枠9番 春の中距離SIII重賞 ---
+[1] Gemini入力本文 518文字: '4月16日(木)に大井競馬場で行われるブリリアントカップ(4歳上・SIII・ダ1800m)の枠順が確定した。\n\n\u3000巻き返しを期すサントノーレは5枠9番、前走で地方での初勝利を挙げたヴィクティファルスは8枠16番に入った。\n\n\u3000そのほかにも、'
 [1] 使用: key=***BYfA model=gemini-2.0-flash
 
---- 記事[2]: 【二十四万石賞・高知】3冠馬対決でプリフロオールイン復活V　宮川実騎手「本当に頭が下がります」1年ぶりで連覇 ---
-[2] Gemini入力本文 415文字: '◆第42回二十四万石賞・重賞(4月12日、高知競馬場・ダート1900メートル、重)\n\n\t\t\t\t\u300012頭が出走し、2番人気のプリフロオールイン(牡5歳、高知・打越勇児厩舎、父アニマルキングダム)が4馬身差をつけて逃げ切り、連覇を決めた。1年ぶ'
+--- 記事[2]: 桜花賞Vスターアニス一夜明け　小川陽一助手「化け物でしたね」「言うことがない内容」 ---
+[2] Gemini入力本文 514文字: '12日の桜花賞を制し、昨年の阪神JFに続く2度目のG1制覇を飾ったスターアニス(牝3＝高野、父ドレフォン)はレースから一夜明けた13日、栗東トレセンの自厩舎で静養した。\n\n\u3000小川陽一助手は「(栗東に)戻ってきたのは午後7時30分でした。何の'
 [2] 使用: key=***BYfA model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -44,24 +66,56 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***BYfA model=gemini-2.5-flash
-[1] 使用: key=***BYfA model=gemini-2.5-flash
 [2] 使用: key=***BYfA model=gemini-2.5-flash
+[1] 使用: key=***BYfA model=gemini-2.5-flash
+[0] 使用: key=***BYfA model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 205文字]: '4月12日に高知競馬場で行われた第42回二十四万石賞・重賞は、ダート1900メートル、重馬場での開催となりました。12頭が出走し、単勝1.2倍で断然の1番人気に推されていたユメノホノオは、3着に終わりました。ユメノホノオは、吉原寛人騎手とのコンビで逃げていたプリフロオールインをマークする形でレースを進めましたが、最後の直線でプリフロオールインに突き放され、さらにポイントフォワードにもかわされてしまいました。'
-[1]  → output/script_1.txt 保存 (205文字)
-[1]  プレビュー: 4月12日に高知競馬場で行われた第42回二十四万石賞・重賞は、ダート1900メートル、重馬場での開催となりました。12頭が出走し、単勝1.2倍で断然の1番人気に...
-  HTTP 200
-[2]  [Gemini生出力 235文字]: '第42回二十四万石賞が4月12日、高知競馬場ダート1900メートル、重馬場で行われました。12頭が出走したこのレースでは、2番人気のプリフロオールインが4馬身差をつけて逃げ切り、連覇を決めました。1年ぶりの実戦となったプリフロオールインは、ユメノホノオとの高知3冠馬対決として注目を集めました。追いかけてきたユメノホノオ、ポイントフォワードを直線で突き放し、完全復活を遂げています。勝ちタイムは2分3秒3でした。宮川実騎手は「本当に頭が下がります」とコメントしています。'
-[2]  → output/script_2.txt 保存 (235文字)
-[2]  プレビュー: 第42回二十四万石賞が4月12日、高知競馬場ダート1900メートル、重馬場で行われました。12頭が出走したこのレースでは、2番人気のプリフロオールインが4馬身差...
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  HTTP 503
+  HTTP 503
+[2] 使用: key=***BYfA model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***BYfA model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***BYfA model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***BYfA model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 170文字]: '4月6日から4月12日の期間では、JRAの競走馬登録を抹消された馬が発表されました。重賞2勝を挙げたシュヴァリエローズ、一昨年のチューリップ賞を制したスウィープフィート、そして22年のラジオNIKKEI賞覇者であるフェーングロッテンなどが、この期間に登録を抹消されています。これらの馬は、収得賞金400万円以上の抹消馬一覧に含まれています。'
-[0]  → output/script_0.txt 保存 (170文字)
-[0]  プレビュー: 4月6日から4月12日の期間では、JRAの競走馬登録を抹消された馬が発表されました。重賞2勝を挙げたシュヴァリエローズ、一昨年のチューリップ賞を制したスウィープ...
+[2]  [Gemini生出力 140文字]: '12日に行われた桜花賞を制したスターアニス(牝3＝高野、父ドレフォン)は、レースから一夜明けた13日、栗東トレセンの自厩舎で静養した。小川陽一助手は「(栗東に)戻ってきたのは午後7時30分でした。何のトラブルもなく、普段と変わらない雰囲気ですよ」と述べた。発走は8分遅れとなった。'
+[2]  → output/script_2.txt 保存 (140文字)
+[2]  プレビュー: 12日に行われた桜花賞を制したスターアニス(牝3＝高野、父ドレフォン)は、レースから一夜明けた13日、栗東トレセンの自厩舎で静養した。小川陽一助手は「(栗東に)...
+[0] 使用: key=***BYfA model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 188文字]: '第31回アンタレスS・G3は4月18日、阪神競馬場・ダート1800メートルで行われました。オープン初挑戦のピカピカサンダー(牡4歳、美浦・鹿戸雄一厩舎、父アジアエクスプレス)は、アルデバランSで未勝利からの連勝が4で止まりました。前走は激しい先行争いに巻き込まれ、4頭すべてが下位に沈む結果となりました。鹿戸調教師は「オーバーペースだったし参考外」と意に介さないとのことです。'
+[0]  → output/script_0.txt 保存 (188文字)
+[0]  プレビュー: 第31回アンタレスS・G3は4月18日、阪神競馬場・ダート1800メートルで行われました。オープン初挑戦のピカピカサンダー(牡4歳、美浦・鹿戸雄一厩舎、父アジア...
+[1] 使用: key=***BYfA model=gemma-3-4b-it
+  HTTP 200
+[1]  [Gemini生出力 179文字]: '4月16日(木)に大井競馬場で行われるブリリアントカップ(4歳上・SIII・ダ1800m)の枠順が確定した。巻き返しを期すサントノーレは5枠9番、前走で地方での初勝利を挙げたヴィクティファルスは8枠16番に入った。フジノウェーブ記念を制したナンセイホワイト、トライアルを勝利したカズプレストなどが出走を予定している。発走予定日時は16日(木)の20時10分。'
+[1]  → output/script_1.txt 保存 (179文字)
+[1]  プレビュー: 4月16日(木)に大井競馬場で行われるブリリアントカップ(4歳上・SIII・ダ1800m)の枠順が確定した。巻き返しを期すサントノーレは5枠9番、前走で地方での...
 
 3 件の脚本を生成しました。
