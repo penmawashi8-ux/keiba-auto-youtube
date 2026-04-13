@@ -1,1 +1,22 @@
-(ログなし)
+  [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
+  [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID_3): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
+  サムネイル抽出中...
+  サムネイル抽出完了: output/thumbnail_0.jpg (49 KB)
+=== 名馬シリーズ YouTube アップロード開始 ===
+  馬名: シルポート (key=silport)
+  タイトル: 【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
+  OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
+  OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
+  認証情報: 2 プロジェクト分ロード完了
+  アップロード中: 【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
+  進捗: 16%
+  進捗: 33%
+  進捗: 50%
+  進捗: 67%
+  進捗: 84%
+  完了! Video ID: GGOYxyor3WM
+  URL: https://www.youtube.com/watch?v=GGOYxyor3WM
+  サムネイルアップロード中: output/thumbnail_0.jpg (49 KB)
+  サムネイルアップロード完了。
+  結果を保存: output/famous_horse_upload_result.txt
+=== アップロード完了 ===
