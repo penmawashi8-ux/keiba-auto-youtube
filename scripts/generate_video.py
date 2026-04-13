@@ -21,6 +21,7 @@
 
 import glob
 import json
+import os
 import random
 import re
 import shutil
@@ -115,6 +116,7 @@ def make_clip(
     tmp_dir: str,
     is_thumbnail: bool = False,
     thumb_title: str = "",
+    thumb_subtitle: str = "",
     is_ending: bool = False,
 ) -> str:
     """1セグメント分のMP4クリップを生成して返す。"""
@@ -143,31 +145,73 @@ def make_clip(
         if is_thumbnail:
             # サムネイルフレーム: タイトルを大きく中央に表示
             title_file = f"{tmp_dir}/thumb_title_{idx:04d}.txt"
-            badge_file = f"{tmp_dir}/thumb_badge_{idx:04d}.txt"
             wrapped = wrap_text(thumb_title, max_chars=10)
             Path(title_file).write_text(wrapped, encoding="utf-8")
-            Path(badge_file).write_text("競馬速報", encoding="utf-8")
             tf = title_file.replace("'", "\\'")
-            bf = badge_file.replace("'", "\\'")
+
+            is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
 
             # 全体を少し暗く
-            chain += ",eq=brightness=-0.08"
-            # 赤バッジ（左上）
-            chain += (
-                f",drawtext=textfile='{bf}':fontfile='{fp}':"
-                f"fontsize=54:fontcolor=0xFFFFFF:"
-                f"x=44:y=70:"
-                f"box=1:boxcolor=0xD21E1E@0.95:boxborderw=22"
-            )
-            # タイトルテキスト（中央・黄色）
-            chain += (
-                f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                f"fontsize=96:fontcolor=0xFFEB00:"
-                f"x=(w-text_w)/2:y=720:"
-                f"line_spacing=16:"
-                f"box=1:boxcolor=0x000000@0.65:boxborderw=24:"
-                f"borderw=4:bordercolor=0x000000"
-            )
+            chain += ",eq=brightness=-0.15"
+
+            if is_famous:
+                # ── 名馬列伝サムネイル ──
+                badge_file = f"{tmp_dir}/thumb_badge_{idx:04d}.txt"
+                Path(badge_file).write_text("名 馬 列 伝", encoding="utf-8")
+                bf = badge_file.replace("'", "\\'")
+
+                # ゴールドバッジ（上部中央）
+                chain += (
+                    f",drawtext=textfile='{bf}':fontfile='{fp}':"
+                    f"fontsize=58:fontcolor=0xFFD700:"
+                    f"x=(w-text_w)/2:y=120:"
+                    f"box=1:boxcolor=0x0A0A0A@0.90:boxborderw=28"
+                )
+                # 馬名（大・中央・白・ゴールドボーダー）
+                chain += (
+                    f",drawtext=textfile='{tf}':fontfile='{fp}':"
+                    f"fontsize=130:fontcolor=0xFFFFFF:"
+                    f"x=(w-text_w)/2:y=700:"
+                    f"line_spacing=20:"
+                    f"box=1:boxcolor=0x000000@0.72:boxborderw=34:"
+                    f"borderw=5:bordercolor=0xFFD700"
+                )
+                # キャッチフレーズ（中央・ゴールド）
+                if thumb_subtitle:
+                    sub_file = f"{tmp_dir}/thumb_sub_{idx:04d}.txt"
+                    Path(sub_file).write_text(
+                        wrap_text(thumb_subtitle, max_chars=14), encoding="utf-8"
+                    )
+                    sf = sub_file.replace("'", "\\'")
+                    chain += (
+                        f",drawtext=textfile='{sf}':fontfile='{fp}':"
+                        f"fontsize=52:fontcolor=0xFFD700:"
+                        f"x=(w-text_w)/2:y=1060:"
+                        f"line_spacing=14:"
+                        f"box=1:boxcolor=0x000000@0.65:boxborderw=22"
+                    )
+            else:
+                # ── ニュース系サムネイル（既存デザイン） ──
+                badge_file = f"{tmp_dir}/thumb_badge_{idx:04d}.txt"
+                Path(badge_file).write_text("競馬速報", encoding="utf-8")
+                bf = badge_file.replace("'", "\\'")
+
+                # 赤バッジ（左上）
+                chain += (
+                    f",drawtext=textfile='{bf}':fontfile='{fp}':"
+                    f"fontsize=54:fontcolor=0xFFFFFF:"
+                    f"x=44:y=70:"
+                    f"box=1:boxcolor=0xD21E1E@0.95:boxborderw=22"
+                )
+                # タイトルテキスト（中央・黄色）
+                chain += (
+                    f",drawtext=textfile='{tf}':fontfile='{fp}':"
+                    f"fontsize=96:fontcolor=0xFFEB00:"
+                    f"x=(w-text_w)/2:y=720:"
+                    f"line_spacing=16:"
+                    f"box=1:boxcolor=0x000000@0.65:boxborderw=24:"
+                    f"borderw=4:bordercolor=0x000000"
+                )
 
         elif is_ending:
             ending_file = f"{tmp_dir}/ending_text.txt"
@@ -236,6 +280,7 @@ def build_video(
     assets_images: list[str],
     font_path: str | None,
     title: str = "",
+    subtitle: str = "",
 ) -> None:
     script = script_path.read_text(encoding="utf-8").strip()
     raw = [s.strip() for s in script.split("。") if s.strip()]
@@ -274,7 +319,7 @@ def build_video(
             clip_paths.append(
                 make_clip(
                     0, thumb_bg, "", thumb_duration, font_path, tmp_dir,
-                    is_thumbnail=True, thumb_title=title,
+                    is_thumbnail=True, thumb_title=title, thumb_subtitle=subtitle,
                 )
             )
             print(f"  サムネイルフレーム: {thumb_duration:.2f}秒")
@@ -396,7 +441,8 @@ def main() -> None:
         title = item.get("title", "")
         print(f"\n--- 動画生成 [{idx}]: {title[:50]} ---")
 
-        build_video(script_file, audio_path, output_path, assets_images, font_path, title=title)
+        subtitle = item.get("summary", "")
+        build_video(script_file, audio_path, output_path, assets_images, font_path, title=title, subtitle=subtitle)
 
     video_files = list(Path(OUTPUT_DIR).glob("video_*.mp4"))
     print(f"\n{len(video_files)} 本の動画を生成しました。")
