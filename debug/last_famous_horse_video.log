@@ -1,5 +1,5 @@
 === 動画生成開始 ===
-  AI画像を使用 (2枚): ['ai_0.jpg', 'ai_1.jpg']
+  AI画像を使用 (6枚): ['ai_0.jpg', 'ai_1.jpg', 'ai_2.jpg', 'ai_3.jpg', 'ai_4.jpg', 'ai_5.jpg']
   日本語フォント: /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc
 
 --- 動画生成 [0]: シルポート ---
@@ -44,7 +44,7 @@
   クリップ結合中...
   音声結合中...
   BGMなし（assets/bgm/ に .mp3 を置くと自動適用されます）
-  最終動画生成完了: output/video_0.mp4 (5.7 MB)
+  最終動画生成完了: output/video_0.mp4 (7.1 MB)
   tmpフォルダを削除しました。
 
 1 本の動画を生成しました。
