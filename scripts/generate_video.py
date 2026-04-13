@@ -414,14 +414,18 @@ def build_video(
         thumb_dur = max(THUMBNAIL_DURATION, thumb_dur) if title else 0.0
         total_duration = thumb_dur + sum(durations) + ENDING_DURATION
 
+        # 名馬列伝シリーズはドラマチックBGMを少し大きめにミックス
+        is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
+        bgm_vol = 0.22 if is_famous else BGM_VOLUME
+
         cmd = ["ffmpeg", "-y", "-i", silent_mp4, "-i", audio_path]
         if bgm_path:
-            print(f"  BGM使用: {Path(bgm_path).name}")
+            print(f"  BGM使用: {Path(bgm_path).name} (volume weight={bgm_vol})")
             cmd += ["-stream_loop", "-1", "-i", bgm_path]
             narr_filter = f"[1:a]apad=whole_dur={total_duration:.3f}[narr]"
             cmd += [
                 "-filter_complex",
-                f"{narr_filter};[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
+                f"{narr_filter};[narr][2:a]amix=inputs=2:duration=first:weights=1 {bgm_vol}[aout]",
                 "-map", "0:v", "-map", "[aout]",
             ]
         else:
