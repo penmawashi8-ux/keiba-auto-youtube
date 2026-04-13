@@ -4,15 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       horse_key:
-        description: "馬名キー（data/famous_horses/ 内のファイル名）"
+        description: "馬名を選択"
         required: true
         default: "silport"
-        type: string
-      horse_name:
-        description: "馬名（表示用・日本語）"
-        required: true
-        default: "シルポート"
-        type: string
+        type: choice
+        options:
+          - silport
+          - linecrafter
+          - teiem_purikyua
 
 jobs:
   post-famous-horse:
