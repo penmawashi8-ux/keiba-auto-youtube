@@ -43,7 +43,7 @@
   エンディング: 4.0秒
   クリップ結合中...
   音声結合中...
-  BGMなし（assets/bgm/ に .mp3 を置くと自動適用されます）
+  BGM使用: horse_drama_bgm.mp3 (volume weight=0.22)
   最終動画生成完了: output/video_0.mp4 (5.9 MB)
   tmpフォルダを削除しました。
 
