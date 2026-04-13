@@ -4,14 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       horse_key:
-        description: "馬名を選択"
+        description: "馬名キー（data/famous_horses/ 内のファイル名）"
         required: true
-        default: "silport"
-        type: choice
-        options:
-          - silport
-          - linecrafter
-          - teiem_purikyua
+        type: string
       dry_run:
         description: "テストモード（YouTubeにアップせずArtifactのみ）"
         required: false
@@ -50,6 +45,18 @@ jobs:
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+
+      - name: Validate horse key
+        run: |
+          KEY="${{ inputs.horse_key }}"
+          if [ ! -f "data/famous_horses/${KEY}.json" ]; then
+            echo "::error::馬名キー '${KEY}' が見つかりません"
+            echo "利用可能なキー一覧:"
+            ls data/famous_horses/*.json | xargs -I{} basename {} .json | sort
+            exit 1
+          fi
+          echo "✓ 馬名キー '${KEY}' を確認しました"
+          cat "data/famous_horses/${KEY}.json"
 
       # 脚本を output/script_0.txt に、タイトルを news.json に書き出す
       - name: Prepare horse script
