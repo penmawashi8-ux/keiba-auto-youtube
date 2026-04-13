@@ -61,7 +61,8 @@ jobs:
       - name: 背景画像取得 (Wikimedia Commons)
         continue-on-error: true
         run: |
-          python scripts/download_famous_horse_image.py "${{ inputs.horse_key }}"
+          python scripts/download_famous_horse_image.py "${{ inputs.horse_key }}" \
+            2>&1 | tee /tmp/famous_horse_wikimedia.log
 
       # 追加背景画像を Pixabay から取得（失敗しても続行）
       - name: 背景画像取得 (Pixabay)
@@ -180,13 +181,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           mkdir -p debug
-          for f in audio video upload; do
+          for f in audio video upload wikimedia; do
             cp /tmp/famous_horse_${f}.log debug/last_famous_horse_${f}.log 2>/dev/null \
               || echo "(ログなし)" > debug/last_famous_horse_${f}.log
           done
           # サムネイル確認用（GitHubで直接プレビュー可能）
           cp output/thumbnail_0.jpg debug/last_famous_horse_thumbnail.jpg 2>/dev/null || true
-          git add debug/last_famous_horse_*.log debug/last_famous_horse_thumbnail.jpg
+          git add debug/last_famous_horse_*.log debug/last_famous_horse_thumbnail.jpg 2>/dev/null || true
           if ! git diff --staged --quiet; then
             git commit -m "chore: save famous_horse logs [${{ inputs.horse_key }}] [skip ci]"
             git pull --rebase origin ${{ github.ref_name }}
