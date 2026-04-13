@@ -44,6 +44,8 @@ def main() -> None:
         "summary": catchphrase,
         "url": "",
         "image_url": None,
+        "thumbnail_top":  meta.get("thumbnail_top", ""),
+        "thumbnail_main": meta.get("thumbnail_main", ""),
     }
     Path("news.json").write_text(
         json.dumps([news_item], ensure_ascii=False, indent=2),

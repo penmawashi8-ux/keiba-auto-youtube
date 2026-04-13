@@ -117,6 +117,8 @@ def make_clip(
     is_thumbnail: bool = False,
     thumb_title: str = "",
     thumb_subtitle: str = "",
+    thumb_top: str = "",
+    thumb_main: str = "",
     is_ending: bool = False,
 ) -> str:
     """1セグメント分のMP4クリップを生成して返す。"""
@@ -155,41 +157,35 @@ def make_clip(
             chain += ",eq=brightness=-0.15"
 
             if is_famous:
-                # ── 名馬列伝サムネイル ──
-                badge_file = f"{tmp_dir}/thumb_badge_{idx:04d}.txt"
-                Path(badge_file).write_text("名 馬 列 伝", encoding="utf-8")
-                bf = badge_file.replace("'", "\\'")
-
-                # ゴールドバッジ（上部中央）
-                chain += (
-                    f",drawtext=textfile='{bf}':fontfile='{fp}':"
-                    f"fontsize=58:fontcolor=0xFFD700:"
-                    f"x=(w-text_w)/2:y=120:"
-                    f"box=1:boxcolor=0x0A0A0A@0.90:boxborderw=28"
-                )
-                # 馬名（大・中央・白・ゴールドボーダー）
+                # ── 名馬列伝サムネイル（左寄せ・アウトラインのみ） ──
+                if thumb_top:
+                    top_file = f"{tmp_dir}/thumb_top_{idx:04d}.txt"
+                    Path(top_file).write_text(thumb_top, encoding="utf-8")
+                    tpf = top_file.replace("'", "\\'")
+                    chain += (
+                        f",drawtext=textfile='{tpf}':fontfile='{fp}':"
+                        f"fontsize=80:fontcolor=0xFFFFFF:"
+                        f"x=60:y=1020:"
+                        f"borderw=7:bordercolor=0x000000"
+                    )
+                if thumb_main:
+                    main_file = f"{tmp_dir}/thumb_main_{idx:04d}.txt"
+                    Path(main_file).write_text(thumb_main, encoding="utf-8")
+                    mf = main_file.replace("'", "\\'")
+                    chain += (
+                        f",drawtext=textfile='{mf}':fontfile='{fp}':"
+                        f"fontsize=172:fontcolor=0xFFFFFF:"
+                        f"x=60:y=1110:"
+                        f"line_spacing=8:"
+                        f"borderw=10:bordercolor=0x000000"
+                    )
+                # 馬名（中・左）
                 chain += (
                     f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                    f"fontsize=130:fontcolor=0xFFFFFF:"
-                    f"x=(w-text_w)/2:y=700:"
-                    f"line_spacing=20:"
-                    f"box=1:boxcolor=0x000000@0.72:boxborderw=34:"
-                    f"borderw=5:bordercolor=0xFFD700"
+                    f"fontsize=80:fontcolor=0xFFFFFF:"
+                    f"x=60:y=1400:"
+                    f"borderw=7:bordercolor=0x000000"
                 )
-                # キャッチフレーズ（中央・ゴールド）
-                if thumb_subtitle:
-                    sub_file = f"{tmp_dir}/thumb_sub_{idx:04d}.txt"
-                    Path(sub_file).write_text(
-                        wrap_text(thumb_subtitle, max_chars=14), encoding="utf-8"
-                    )
-                    sf = sub_file.replace("'", "\\'")
-                    chain += (
-                        f",drawtext=textfile='{sf}':fontfile='{fp}':"
-                        f"fontsize=52:fontcolor=0xFFD700:"
-                        f"x=(w-text_w)/2:y=1060:"
-                        f"line_spacing=14:"
-                        f"box=1:boxcolor=0x000000@0.65:boxborderw=22"
-                    )
             else:
                 # ── ニュース系サムネイル（既存デザイン） ──
                 badge_file = f"{tmp_dir}/thumb_badge_{idx:04d}.txt"
@@ -281,6 +277,8 @@ def build_video(
     font_path: str | None,
     title: str = "",
     subtitle: str = "",
+    thumb_top: str = "",
+    thumb_main: str = "",
 ) -> None:
     script = script_path.read_text(encoding="utf-8").strip()
     raw = [s.strip() for s in script.split("。") if s.strip()]
@@ -320,6 +318,7 @@ def build_video(
                 make_clip(
                     0, thumb_bg, "", thumb_duration, font_path, tmp_dir,
                     is_thumbnail=True, thumb_title=title, thumb_subtitle=subtitle,
+                    thumb_top=thumb_top, thumb_main=thumb_main,
                 )
             )
             print(f"  サムネイルフレーム: {thumb_duration:.2f}秒")
@@ -441,8 +440,13 @@ def main() -> None:
         title = item.get("title", "")
         print(f"\n--- 動画生成 [{idx}]: {title[:50]} ---")
 
-        subtitle = item.get("summary", "")
-        build_video(script_file, audio_path, output_path, assets_images, font_path, title=title, subtitle=subtitle)
+        subtitle   = item.get("summary", "")
+        thumb_top  = item.get("thumbnail_top", "")
+        thumb_main = item.get("thumbnail_main", "")
+        build_video(
+            script_file, audio_path, output_path, assets_images, font_path,
+            title=title, subtitle=subtitle, thumb_top=thumb_top, thumb_main=thumb_main,
+        )
 
     video_files = list(Path(OUTPUT_DIR).glob("video_*.mp4"))
     print(f"\n{len(video_files)} 本の動画を生成しました。")
