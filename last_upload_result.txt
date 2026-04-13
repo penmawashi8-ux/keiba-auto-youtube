@@ -1,10 +1,10 @@
-date: 2026-04-13T10:58:25.944371Z
+date: 2026-04-13T12:11:40.764745Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=uKDYAO6BbeY title=【皐月賞】「胸を張って大きいところに」屈指の出世レース制し津村明秀騎手は自信　相
-OK project=1 video_id=_nm36G_SPqI title=【AI予想・皐月賞】人工知能は人気薄の大駆けにも警戒!? 配当妙味がありそうな本
-OK project=1 video_id=bHpEx69Mc7g title=【皐月賞】東京スポーツ杯2歳S勝利から中145日のパントルナイーフ　勝てばコント
+OK project=1 video_id=0bdioG-XsOw title=【皐月賞】毎日杯Vのアルトラムスは中2週も落ち着き十分　14年覇者で父のイスラボ
+OK project=1 video_id=OfEgdWisXIo title=【中山GJ】大差勝ち→10馬身差V→JG1挑戦　4・1億円馬ホウオウプロサンゲは
+OK project=1 video_id=I9_nT1CYn5g title=【名古屋競馬】木之前葵騎手が負傷で乗り替わり　名古屋9Rの馬場入場時にアクシデン
