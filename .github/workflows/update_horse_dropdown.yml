@@ -1,0 +1,34 @@
+name: 馬名ドロップダウン自動更新
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/famous_horses/*.json"
+
+jobs:
+  update-dropdown:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Update horse dropdown in workflow
+        run: python scripts/update_horse_workflow.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/famous_horse_series.yml
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: 馬名ドロップダウンを自動更新 [skip ci]"
+            git push origin main
+          else
+            echo "変更なし。スキップします。"
+          fi
