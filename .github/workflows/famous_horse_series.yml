@@ -12,6 +12,11 @@ on:
           - silport
           - linecrafter
           - teiem_purikyua
+      dry_run:
+        description: "テストモード（YouTubeにアップせずArtifactのみ）"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   post-famous-horse:
@@ -126,7 +131,15 @@ jobs:
           ls -lh output/video_*.mp4 2>/dev/null || true
 
       # 名馬シリーズ専用のタイトル・タグでアップロード
+      - name: Upload video as artifact (確認用)
+        uses: actions/upload-artifact@v4
+        with:
+          name: famous-horse-video-${{ inputs.horse_key }}
+          path: output/video_0.mp4
+          retention-days: 7
+
       - name: Upload to YouTube (名馬列伝タイトルで)
+        if: ${{ !inputs.dry_run }}
         env:
           # 名馬列伝専用チャンネル（設定済みの場合に優先使用）
           FAMOUS_HORSE_CLIENT_ID:     ${{ secrets.FAMOUS_HORSE_CLIENT_ID }}
