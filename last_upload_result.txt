@@ -1,10 +1,10 @@
-date: 2026-04-13T05:45:19.330470Z
+date: 2026-04-13T07:18:10.270595Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=i0plvn42tuA title=【福島牝馬S展望】エリザベス女王杯2着のパラディレーヌが主役　カネラフィーナは牝
-OK project=1 video_id=WcKAanX-5Xs title=矢野吉彦アナが取材した“知られざる”競馬史 十年を超える研究への原動力とは
-OK project=1 video_id=QTvIVf9EmPw title=「アニたん」桜の女王スターアニスへ松山弘平騎手が感謝の呼びかけ　ネット「愛称決定
+OK project=1 video_id=JXXNSng1l3g title=【先週のJRA抹消馬】重賞2勝を挙げたシュヴァリエローズ、一昨年のチューリップ賞
+OK project=1 video_id=mixmT5-qxT0 title=【二十四万石賞・高知】単勝1・2倍のユメノホノオは3着に敗れる　3冠馬対決でプリ
+OK project=1 video_id=2_PvmI8uR6E title=【二十四万石賞・高知】3冠馬対決でプリフロオールイン復活V　宮川実騎手「本当に頭
