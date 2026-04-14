@@ -1,10 +1,10 @@
-date: 2026-04-13T12:11:40.764745Z
+date: 2026-04-14T00:02:41.490917Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0bdioG-XsOw title=【皐月賞】毎日杯Vのアルトラムスは中2週も落ち着き十分　14年覇者で父のイスラボ
-OK project=1 video_id=OfEgdWisXIo title=【中山GJ】大差勝ち→10馬身差V→JG1挑戦　4・1億円馬ホウオウプロサンゲは
-OK project=1 video_id=I9_nT1CYn5g title=【名古屋競馬】木之前葵騎手が負傷で乗り替わり　名古屋9Rの馬場入場時にアクシデン
+OK project=1 video_id=gWP027yJUbU title=【皐月賞】アドマイヤ軍団が27年ぶりのクラシック制覇なるか デイリー杯2歳S覇者
+OK project=1 video_id=lmjy64tlzKI title=【皐月賞】パントルナイーフ中145日最長ブランク制覇へ仕上がり順調
+OK project=1 video_id=wKFYbywPAPA title=【皐月賞】高杉吏麒騎手がGI初制覇へ すみれS覇者のラージアンサンブルで挑む
