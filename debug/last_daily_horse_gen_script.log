@@ -5,79 +5,25 @@
   - テイエムプリキュア (teiem_purikyua)
 
 [名馬選定中...]
-  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
-[名馬選定]
-馬名: トウカイテイオー
-キー: tokai_teio
-時代: 1990年代
-キャッチフレーズ: 奇跡の復活劇を遂げた不屈の帝王
-
-[選定完了] 馬名: トウカイテイオー  キー: tokai_teio
-
-[脚本生成中: トウカイテイオー...]
-  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
-[生成脚本]
-無敗の二冠馬が
-1年ぶりのレースでGⅠを勝った
-その馬の名前、トウカイテイオー
-父シンボリルドルフと同じ道を
-無敗で三冠を目指した
-皐月賞、日本ダービーを連勝
-しかし菊花賞前に骨折が判明
-三冠を逃した
-復帰後、天皇賞（春）
-
-[ファクトチェック中...]
-  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
-[ファクトチェック結果]
-❌ 復帰後、天皇賞（春）: 菊花賞回避後、復帰戦は大阪杯（GII）で勝利。続く天皇賞（春）では2着に敗れています。
-修正必要箇所: 1件
-
-[修正中...]
-  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
-  [gemini-2.5-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
+  [gemini-2.0-flash] 429 レート制限。30秒待機...
+  [gemini-2.0-flash] 429 レート制限。60秒待機...
+  [gemini-2.0-flash] 429 リトライ上限。次のモデルへ
+  [gemini-2.5-flash] HTTP エラー: 403 Client Error: Forbidden for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルへ
+  [gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [gemini-2.0-flash-lite] 429 リトライ上限。次のモデルへ
+  [gemini-1.5-flash] HTTP エラー: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルへ
+  [gemma-3-27b-it] HTTP エラー: 403 Client Error: Forbidden for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-3-27b-it:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルへ
+  [gemma-3-4b-it] HTTP エラー: 403 Client Error: Forbidden for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-3-4b-it:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルへ
 Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 102, in call_gemini
-    resp.raise_for_status()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 102, in call_gemini
-    resp.raise_for_status()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 102, in call_gemini
-    resp.raise_for_status()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 411, in <module>
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 446, in <module>
     main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 377, in main
-    final_script = correct_script(api_key, script, fact_check_result)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 255, in correct_script
-    return call_gemini(api_key, prompt, temperature=0.3)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 112, in call_gemini
-    return call_gemini(api_key, prompt, temperature, model_index + 1)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 112, in call_gemini
-    return call_gemini(api_key, prompt, temperature, model_index + 1)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 113, in call_gemini
-    raise RuntimeError(f"Gemini API 全モデル失敗: {e}") from e
-RuntimeError: Gemini API 全モデル失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 381, in main
+    selection = select_horse(api_key, covered)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 192, in select_horse
+    response = call_gemini(api_key, prompt, temperature=0.8)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 144, in call_gemini
+    raise RuntimeError("Gemini API 全モデル失敗（全モデルで429またはエラー）")
+RuntimeError: Gemini API 全モデル失敗（全モデルで429またはエラー）
