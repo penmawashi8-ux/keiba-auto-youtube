@@ -1,0 +1,244 @@
+name: Daily Famous Horse - 名馬列伝 毎日自動投稿
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # 17:00 JST (UTC+9 → UTC 08:00)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "テストモード（YouTubeにアップせずArtifactのみ）"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  daily-famous-horse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # -----------------------------------------------------------------------
+      # ① AI脚本生成・ファクトチェック・修正
+      #    - 既紹介済み馬リストを確認して新しい名馬を選定
+      #    - 名馬列伝スタイルの脚本をGeminiで生成
+      #    - ファクトチェックして誤りを修正
+      #    - data/famous_horses/{key}.json/.txt に保存
+      #    - output/script_0.txt と news.json を生成（既存パイプライン用）
+      # -----------------------------------------------------------------------
+      - name: AI脚本生成・ファクトチェック・修正
+        id: gen_script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          mkdir -p output
+          python scripts/generate_famous_horse_script.py \
+            2>&1 | tee /tmp/gen_script.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::AI脚本生成に失敗しました"
+            cat /tmp/gen_script.log
+            exit $STATUS
+          fi
+          echo "horse_key=${{ steps.gen_script.outputs.horse_key }}"
+          echo "horse_name=${{ steps.gen_script.outputs.horse_name }}"
+
+      # -----------------------------------------------------------------------
+      # ② 生成した名馬データを即コミット（次回実行で同じ馬を選ばないように）
+      # -----------------------------------------------------------------------
+      - name: Commit new horse data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          HORSE_KEY="${{ steps.gen_script.outputs.horse_key }}"
+          HORSE_NAME="${{ steps.gen_script.outputs.horse_name }}"
+          git add "data/famous_horses/${HORSE_KEY}.json" \
+                  "data/famous_horses/${HORSE_KEY}.txt" 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "feat: 名馬列伝 ${HORSE_NAME} を追加 [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      # -----------------------------------------------------------------------
+      # ③ 背景画像取得 (Pixabay) ─ 失敗しても続行
+      # -----------------------------------------------------------------------
+      - name: 背景画像取得 (Pixabay)
+        continue-on-error: true
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, urllib.request, urllib.parse, pathlib, time
+          api_key = os.environ.get("PIXABAY_API_KEY", "")
+          if not api_key:
+              print("PIXABAY_API_KEY 未設定。スキップします。")
+              exit(0)
+          pathlib.Path("assets").mkdir(exist_ok=True)
+          queries = ["horse racing", "thoroughbred racehorse", "racetrack grandstand"]
+          downloaded = 0
+          for i, q in enumerate(queries):
+              params = urllib.parse.urlencode({
+                  "key": api_key, "q": q,
+                  "image_type": "photo", "orientation": "vertical",
+                  "min_width": 800, "per_page": 3,
+              })
+              try:
+                  req = urllib.request.Request(
+                      f"https://pixabay.com/api/?{params}",
+                      headers={"User-Agent": "Mozilla/5.0"},
+                  )
+                  with urllib.request.urlopen(req, timeout=20) as resp:
+                      hits = json.loads(resp.read()).get("hits", [])
+                  for j, hit in enumerate(hits[:2]):
+                      img_url = hit.get("largeImageURL") or hit.get("webformatURL")
+                      if not img_url:
+                          continue
+                      dest = f"assets/ai_{i*2+j}.jpg"
+                      img_req = urllib.request.Request(img_url, headers={"User-Agent": "Mozilla/5.0"})
+                      with urllib.request.urlopen(img_req, timeout=30) as r:
+                          pathlib.Path(dest).write_bytes(r.read())
+                      print(f"  ダウンロード完了: {dest}")
+                      downloaded += 1
+              except Exception as e:
+                  print(f"  [警告] クエリ'{q}'失敗: {e}")
+              time.sleep(1)
+          print(f"背景画像 {downloaded} 枚取得完了")
+          PYEOF
+
+      # -----------------------------------------------------------------------
+      # ④ 馬本人の画像取得 (Wikimedia Commons) ─ ai_0.jpg に上書き（サムネイル用）
+      # -----------------------------------------------------------------------
+      - name: 馬画像取得 (Wikimedia Commons)
+        continue-on-error: true
+        run: |
+          python scripts/download_famous_horse_image.py \
+            "${{ steps.gen_script.outputs.horse_key }}" \
+            2>&1 | tee /tmp/famous_horse_wikimedia.log
+
+      # -----------------------------------------------------------------------
+      # ⑤ 音声生成（名馬シリーズ専用: NanamiNeural / -3% レート）
+      # -----------------------------------------------------------------------
+      - name: Generate audio (NanamiNeural)
+        env:
+          TTS_VOICE: "ja-JP-NanamiNeural"
+          TTS_RATE:  "-3%"
+        run: |
+          python scripts/generate_audio.py 2>&1 | tee /tmp/famous_horse_audio.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::音声生成失敗"
+            exit $STATUS
+          fi
+
+      # -----------------------------------------------------------------------
+      # ⑥ BGMダウンロード (CC0 public domain only)
+      # -----------------------------------------------------------------------
+      - name: Download BGM (CC0)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_famous_horse_bgm.py
+
+      # -----------------------------------------------------------------------
+      # ⑦ 動画生成
+      # -----------------------------------------------------------------------
+      - name: Generate video
+        env:
+          FAMOUS_HORSE_UPLOAD: "1"
+        run: |
+          python scripts/generate_video.py 2>&1 | tee /tmp/famous_horse_video.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::動画生成失敗"
+            exit $STATUS
+          fi
+          ls -lh output/video_*.mp4 2>/dev/null || true
+
+      # -----------------------------------------------------------------------
+      # ⑧ Artifact 保存（確認用・dry_run 時もここまで実行）
+      # -----------------------------------------------------------------------
+      - name: Upload video as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-famous-horse-${{ steps.gen_script.outputs.horse_key }}
+          path: output/video_0.mp4
+          retention-days: 7
+
+      # -----------------------------------------------------------------------
+      # ⑨ YouTube アップロード（dry_run=true の場合はスキップ）
+      # -----------------------------------------------------------------------
+      - name: Upload to YouTube
+        if: ${{ inputs.dry_run != true }}
+        env:
+          # 名馬列伝専用チャンネル（設定済みの場合に優先使用）
+          FAMOUS_HORSE_CLIENT_ID:     ${{ secrets.FAMOUS_HORSE_CLIENT_ID }}
+          FAMOUS_HORSE_CLIENT_SECRET: ${{ secrets.FAMOUS_HORSE_CLIENT_SECRET }}
+          FAMOUS_HORSE_REFRESH_TOKEN: ${{ secrets.FAMOUS_HORSE_REFRESH_TOKEN }}
+          # フォールバック: ニュース系チャンネル
+          GOOGLE_CLIENT_ID:           ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET:       ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN:       ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2:         ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2:     ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2:     ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3:         ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3:     ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3:     ${{ secrets.GOOGLE_REFRESH_TOKEN_3 }}
+          FAMOUS_HORSE_UPLOAD: "1"
+        run: |
+          python scripts/famous_horse_upload.py \
+            "${{ steps.gen_script.outputs.horse_key }}" \
+            2>&1 | tee /tmp/famous_horse_upload.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::YouTubeアップロード失敗"
+            exit $STATUS
+          fi
+
+      # -----------------------------------------------------------------------
+      # ⑩ ログ保存（常に実行）
+      # -----------------------------------------------------------------------
+      - name: Save logs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p debug
+          cp /tmp/gen_script.log        debug/last_daily_horse_gen_script.log    2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_gen_script.log
+          cp /tmp/famous_horse_wikimedia.log debug/last_daily_horse_wikimedia.log 2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_wikimedia.log
+          cp /tmp/famous_horse_audio.log debug/last_daily_horse_audio.log        2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_audio.log
+          cp /tmp/famous_horse_video.log debug/last_daily_horse_video.log        2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_video.log
+          cp /tmp/famous_horse_upload.log debug/last_daily_horse_upload.log      2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_upload.log
+          cp output/thumbnail_0.jpg debug/last_daily_horse_thumbnail.jpg 2>/dev/null || true
+          git add debug/last_daily_horse_*.log debug/last_daily_horse_thumbnail.jpg 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: save daily_horse logs [${{ steps.gen_script.outputs.horse_key }}] [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
