@@ -1,10 +1,9 @@
-date: 2026-04-14T00:02:41.490917Z
+date: 2026-04-14T04:08:28.678996Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gWP027yJUbU title=【皐月賞】アドマイヤ軍団が27年ぶりのクラシック制覇なるか デイリー杯2歳S覇者
-OK project=1 video_id=lmjy64tlzKI title=【皐月賞】パントルナイーフ中145日最長ブランク制覇へ仕上がり順調
-OK project=1 video_id=wKFYbywPAPA title=【皐月賞】高杉吏麒騎手がGI初制覇へ すみれS覇者のラージアンサンブルで挑む
+OK project=1 video_id=781zxurPPcM title=【競走伝】覚醒の1年はここから始まった　ダート界の“帝王”がつかんだ初タイトル　
+OK project=1 video_id=_cXnETY-2tE title=【競走伝】豪州の12歳馬がJRA史上最年長G1勝利　風車ムチで驚異の3連覇!　0
