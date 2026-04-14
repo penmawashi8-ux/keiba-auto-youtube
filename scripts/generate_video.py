@@ -334,8 +334,10 @@ def build_video(
     thumb_main: str = "",
 ) -> None:
     script = script_path.read_text(encoding="utf-8").strip()
-    raw = [s.strip() for s in script.split("。") if s.strip()]
-    sentences = [s + "。" for s in raw]
+    # 「。」でも改行でも分割する
+    # 名馬列伝スクリプトは改行区切り、ニューススクリプトは「。」区切りのため両対応
+    raw = [s.strip() for s in re.split(r"[。\n]+", script) if s.strip()]
+    sentences = raw
 
     if not sentences:
         print("  [警告] セリフが空です。スキップします。")
