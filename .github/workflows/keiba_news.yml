@@ -182,9 +182,7 @@ jobs:
         if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_video.py
 
-      # YouTube Data API でアップロード
-      # サムネイル自動設定を有効にする場合は YOUTUBE_COOKIES シークレットを正しく設定した上で
-      # upload_youtube_playwright.py に切り替える
+      # YouTube Data API でアップロード（後続ステップで Playwright によるサムネイル設定）
       - name: Upload to YouTube
         if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
@@ -198,6 +196,21 @@ jobs:
           GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: python scripts/upload_youtube.py
+
+      # API でのサムネイルアップロードが channelNotEligible で失敗した場合の代替手段。
+      # YOUTUBE_COOKIES シークレットを設定すると有効になる。未設定の場合はスキップ。
+      - name: Set thumbnails via YouTube Studio (Playwright)
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        continue-on-error: true
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          if [ -z "$YOUTUBE_COOKIES" ]; then
+            echo "YOUTUBE_COOKIES 未設定のためサムネイル自動設定をスキップします"
+            exit 0
+          fi
+          playwright install chromium --with-deps
+          python scripts/set_thumbnail_playwright.py
 
       - name: Commit and push posted_ids.txt
         if: always() && steps.check_news.outputs.has_news == 'true'

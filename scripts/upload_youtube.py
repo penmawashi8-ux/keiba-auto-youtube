@@ -304,6 +304,7 @@ def main() -> None:
     uploaded_count = 0
     quota_exceeded = False
     upload_log = []
+    upload_results_data = []  # Playwright サムネイル設定用
 
     for video_file in video_files:
         idx = int(video_file.stem.split("_")[1])
@@ -350,16 +351,32 @@ def main() -> None:
 
         # サムネイル生成・アップロード（ffmpegで動画先頭フレームを抽出）
         print("  サムネイル生成中...")
+        thumb_path = ""
         try:
             thumb_path = generate_thumbnail(str(video_file), idx)
             upload_thumbnail(youtube, video_id, thumb_path)
         except Exception as e:
             print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
 
+        # Playwright サムネイル設定用にアップロード結果を記録
+        upload_results_data.append({
+            "video_id": video_id,
+            "thumbnail": thumb_path,
+            "title": title,
+        })
+
         upload_log.append(f"OK project={cred_idx+1} video_id={video_id} title={title[:40]}")
         uploaded_count += 1
 
     update_posted_ids(news_items)
+
+    # Playwright サムネイル設定用: アップロード結果を JSON で保存
+    results_json_path = Path(OUTPUT_DIR) / "upload_results.json"
+    results_json_path.write_text(
+        json.dumps(upload_results_data, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(f"アップロード結果を {results_json_path} に保存しました。")
 
     # 結果サマリーをファイルに書き出す（ワークフローでコミットして確認用）
     import datetime
