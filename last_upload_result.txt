@@ -1,10 +1,10 @@
-date: 2026-04-14T06:36:48.204229Z
+date: 2026-04-14T08:31:27.340650Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3cZPVX4kggw title=武豊騎手デビュー40周年記念展示会　銀座三越で開催　優勝カップ、勝負服、AIなど
-OK project=1 video_id=EpS4c82Sxu8 title=【阪神アーバン競馬】新人・高橋洸佑が4Rで初騎乗初勝利
-OK project=1 video_id=26u78dA-OuQ title=兵庫アーバン競馬のルーキー、南部楓馬騎手もデビュー3戦目で初勝利「ホッとしました
+OK project=1 video_id=jZcXPg5t9dU title=今村聖奈騎手が女性騎手初のクラシック騎乗へ　忘れな草賞で豪快差しのジュウリョクピ
+OK project=1 video_id=rhWxcycjxXg title=【皐月賞】武豊騎手と挑むロードフィレールは軽々と登坂　陣営「ゲートが良くて先行力
+OK project=1 video_id=3RsJonH9rh4 title=【皐月賞】最優秀2歳牡馬カヴァレリッツォは軽快で力強い脚取り　陣営「精神的にも少
