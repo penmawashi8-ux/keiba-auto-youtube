@@ -1,9 +1,10 @@
-date: 2026-04-14T04:08:28.678996Z
+date: 2026-04-14T06:36:48.204229Z
 projects_loaded: 1
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=781zxurPPcM title=【競走伝】覚醒の1年はここから始まった　ダート界の“帝王”がつかんだ初タイトル　
-OK project=1 video_id=_cXnETY-2tE title=【競走伝】豪州の12歳馬がJRA史上最年長G1勝利　風車ムチで驚異の3連覇!　0
+OK project=1 video_id=3cZPVX4kggw title=武豊騎手デビュー40周年記念展示会　銀座三越で開催　優勝カップ、勝負服、AIなど
+OK project=1 video_id=EpS4c82Sxu8 title=【阪神アーバン競馬】新人・高橋洸佑が4Rで初騎乗初勝利
+OK project=1 video_id=26u78dA-OuQ title=兵庫アーバン競馬のルーキー、南部楓馬騎手もデビュー3戦目で初勝利「ホッとしました
