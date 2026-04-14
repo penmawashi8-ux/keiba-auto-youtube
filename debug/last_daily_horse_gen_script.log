@@ -1,0 +1,59 @@
+[既存の名馬] 3 頭:
+  - ラインクラフト (linecrafter)
+  - シルポート (silport)
+  - テイエムプリキュア (teiem_purikyua)
+
+[名馬選定中...]
+  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
+[名馬選定]
+馬名: サイレンススズカ
+キー: silence_suzuka
+時代: 1990年代
+キャッチフレーズ: 異次元の逃亡者、幻の強さ
+
+[選定完了] 馬名: サイレンススズカ  キー: silence_suzuka
+
+[脚本生成中: サイレンススズカ...]
+  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
+[生成脚本]
+GⅠを連勝した馬が、突然、姿を消した
+その馬の名前、サイレンススズカ
+誰も追いつけない、異次元の逃げ馬
+1998年金鯱賞
+2着に11馬身差をつける圧勝
+レコードタイムを樹立した
+続く宝塚記念もGⅠ初制覇
+3馬身
+
+[ファクトチェック中...]
+  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
+[ファクトチェック結果]
+❌ GⅠを連勝した馬が、突然、姿を消した: サイレンススズカのGⅠ勝利は宝塚記念のみであり、GⅠを連勝したわけではありません。1998年は中山記念(GII)、金鯱賞(GII)、宝塚記念(GI)、毎日王冠(GII)と重賞を4連勝していました。
+修正必要箇所: 1件
+
+[修正中...]
+  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
+[修正後脚本]
+重賞を連勝した馬が、突然、姿を消した
+その馬の名前、サイレンススズカ
+誰も追いつけない、異次元の逃げ馬
+1998年金鯱賞
+2着に11馬身差をつける圧勝
+レコードタイムを樹立した
+続く宝塚記念もGⅠ初制覇
+3馬身
+
+[メタデータ生成中...]
+  [gemini-2.0-flash] 失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBqoInnAU2iN10gJNh68tDqFfSzVbMBYfA → 次のモデルを試します
+[メタデータ]
+タグ: サイレンススズカ, 宝塚記念, 金鯱賞, 異次元の逃げ, レコードタイム, 11馬身差, 悲劇の逃亡者, 伝説
+サムネイル上段: 伝説の
+サムネイル中段: 異次元の逃げ
+
+
+[名馬データ保存]
+  data/famous_horses/silence_suzuka.txt
+  data/famous_horses/silence_suzuka.json
+[パイプライン用ファイル書き出し完了]
+  news.json : タイトル「サイレンススズカ」
+  output/script_0.txt : 105 文字
