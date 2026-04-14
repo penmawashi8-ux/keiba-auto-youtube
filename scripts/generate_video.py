@@ -92,14 +92,18 @@ def get_audio_duration(audio_path: str) -> float:
 # テキスト折り返し
 # ---------------------------------------------------------------------------
 
-def wrap_text(text: str, max_chars: int = LINE_MAX_CHARS) -> str:
+def wrap_text(text: str, max_chars: int = LINE_MAX_CHARS, max_lines: int = 0) -> str:
     lines = []
     for para in text.split("\n"):
         while len(para) > max_chars:
             lines.append(para[:max_chars])
             para = para[max_chars:]
-        if para:
+            if max_lines and len(lines) >= max_lines:
+                break
+        if para and (not max_lines or len(lines) < max_lines):
             lines.append(para)
+        if max_lines and len(lines) >= max_lines:
+            break
     return "\n".join(lines)
 
 
@@ -277,7 +281,7 @@ def make_clip(
         else:
             # 通常字幕クリップ（下部パネル）
             text_file = f"{tmp_dir}/text_{idx:04d}.txt"
-            Path(text_file).write_text(wrap_text(text), encoding="utf-8")
+            Path(text_file).write_text(wrap_text(text, max_lines=7), encoding="utf-8")
             tf = text_file.replace("'", "\\'")
             chain += (
                 f",drawtext=textfile='{tf}':fontfile='{fp}':"

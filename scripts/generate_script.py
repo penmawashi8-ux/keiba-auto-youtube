@@ -3,6 +3,7 @@
 
 import json
 import os
+import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -39,7 +40,10 @@ SYSTEM_PROMPT = (
     "- 出走予定・登録の記事は「予定」として伝えること（結果・着順・勝敗を絶対に作らないこと）\n"
     "- 【特に重要】タイトルや本文に「今日発走」「発走予定」「出走予定」「今週」「今後」などが含まれる未来のレース記事では、「〜が好位から抜け出した」「〜が逃げ切った」「〜が制した」「〜が差し切った」「〜が勝利した」など、レース中の動きや結果を表す文を絶対に作らないこと。予定・展望・注目点のみを述べること\n"
     "- 「こんにちは」「みなさん」などの呼びかけ・挨拶は禁止\n"
-    "- いきなりニュースの核心から始めること\n\n"
+    "- いきなりニュースの核心から始めること\n"
+    "- タイトルを冒頭に【タイトル】形式や「タイトル。」形式で繰り返さないこと\n"
+    "- ウェブサイトのナビゲーション・サイドバー・掲示板リンク（「全成績と掲示板」「スポーツ報知」「スポニチ」「日刊スポーツ」などのサイト名・ページ名）は一切含めないこと\n"
+    "- 同じ文章を2回以上繰り返さないこと\n\n"
     "【固有名詞について：最も重要】\n"
     "- 記事に馬名が書いてある場合は、必ずその馬名を使うこと\n"
     "- 「ある馬」「その馬」「2着となった馬」「スプリンターたちが一堂に会し」のような馬名なしの抽象表現は絶対禁止\n"
@@ -74,7 +78,10 @@ RESULTS_SYSTEM_PROMPT = (
     "- 提供されたニュース本文に書かれていること「だけ」を話すこと\n"
     "- ニュース本文に書かれていない情報は1文字も追加しないこと（推測・補足・創作すべて禁止）\n"
     "- 「こんにちは」「みなさん」などの呼びかけ・挨拶は禁止\n"
-    "- いきなりレース結果の核心から始めること\n\n"
+    "- いきなりレース結果の核心から始めること\n"
+    "- タイトルを冒頭に【タイトル】形式で繰り返さないこと\n"
+    "- ウェブナビゲーション・掲示板リンク・サイト名は含めないこと\n"
+    "- 同じ文章を繰り返さないこと\n\n"
     "【結果速報として必ず含める内容（記事に書いてある場合）】\n"
     "- レース名・開催場・距離・馬場状態\n"
     "- 1着馬名・騎手名・調教師名（あれば馬番・人気）。馬名・騎手名直後の括弧書き（性別・年齢・厩舎・読み仮名など）は不要。例：「メイショウボヌール(牝5＝森沢、父ミッキーアイル)」→「メイショウボヌール」、「高橋洸佑(こう、18＝保利平)」→「高橋洸佑」\n"
@@ -216,6 +223,18 @@ def main() -> None:
     def generate_one(args):
         i, item = args
         summary_text = item.get('summary', '')
+        # ウェブナビゲーション的な文言を除去してからGeminiに渡す
+        # 例: 「ジュウリョクピエロの全成績と掲示板」「今村聖奈の全成績」など
+        summary_text = re.sub(r'[^\n。]*(?:全成績と掲示板|全成績\s|全成績$|\s掲示板)[^\n。]*', '', summary_text)
+        # 重複行を除去
+        _seen_sum: list[str] = []
+        _clean_sum: list[str] = []
+        for _sl in summary_text.split('\n'):
+            _norm_sl = re.sub(r'\s+', '', _sl).strip()
+            if _norm_sl and _norm_sl not in _seen_sum:
+                _seen_sum.append(_norm_sl)
+                _clean_sum.append(_sl)
+        summary_text = '\n'.join(_clean_sum).strip()
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
         print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
         sys_prompt = get_system_prompt()
@@ -349,6 +368,30 @@ def main() -> None:
                 # 騎手・人名後の括弧書き（読み仮名・年齢・所属）を除去
                 # 例: 「高橋洸佑(こう、18＝保利平)」→「高橋洸佑」
                 script = _re.sub(r'[（(][ぁ-ん]{1,6}[、，,]\d+[＝=][^）)]*?[）)]', '', script)
+                # 冒頭の【タイトル】形式を除去（タイトル2重表示防止）
+                script = _re.sub(r'^【[^】]{5,}】\s*', '', script).strip()
+                # ウェブナビゲーション的な文言を含む文を除去
+                # 例: 「スポーツ報知 全成績と掲示板」など
+                _nav_pat = _re.compile(
+                    r'[^。]*(?:全成績と掲示板|スポーツ報知|スポニチ|日刊スポーツ|競馬ブック)[^。]*。?'
+                )
+                _before_nav = len(script)
+                script = _nav_pat.sub('', script).strip()
+                if len(script) != _before_nav:
+                    print(f"[{i}]  [ナビ文言除去] {_before_nav}文字 → {len(script)}文字")
+                # 重複文を除去（同じ文が2回以上）
+                _raw_sents_d = [s.strip() for s in script.split('。') if s.strip()]
+                _seen_sents_d: list[str] = []
+                _deduped_d: list[str] = []
+                for _sd in _raw_sents_d:
+                    _norm_sd = _re.sub(r'\s+', '', _sd)
+                    if _norm_sd not in _seen_sents_d:
+                        _seen_sents_d.append(_norm_sd)
+                        _deduped_d.append(_sd + '。')
+                _deduped_script = ''.join(_deduped_d).strip()
+                if len(_deduped_script) != len(script):
+                    print(f"[{i}]  [重複除去] {len(script)}文字 → {len(_deduped_script)}文字")
+                script = _deduped_script
                 # 空白の重複を整理
                 script = _re.sub(r'　+', '　', script).strip()
                 # 文の途中で終わっている場合は最後の句点で切る
