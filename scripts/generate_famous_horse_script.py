@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """名馬列伝 AI脚本生成スクリプト
 
-フロー:
-  1. data/famous_horses/*.json を読んで既紹介済み馬を確認
-  2. Gemini で次の名馬を選定
-  3. Gemini で名馬列伝スタイルの脚本を生成
-  4. Gemini でファクトチェック（史実・数字・固有名詞の検証）
-  5. ❌指摘がある箇所のみを修正
-  6. Gemini でYouTube用メタデータ（タグ・サムネイルテキスト）を生成
-  7. data/famous_horses/{key}.json と .txt に保存
-  8. output/script_0.txt と news.json に書き出し（既存パイプライン用）
-  9. $GITHUB_OUTPUT に horse_key / horse_name を書き出し
+API呼び出しを最小限に抑えて Gemini のレート制限を回避する設計。
+  呼び出し1回目: 名馬選定 + 脚本生成 + ファクトチェック + 修正（全て1プロンプトで）
+  呼び出し2回目: YouTubeメタデータ生成（タグ・サムネイルテキスト）
+
+出力:
+  data/famous_horses/{key}.json, .txt
+  output/script_0.txt, news.json  （既存パイプライン用）
+  $GITHUB_OUTPUT: horse_key, horse_name
 """
 
 import json
@@ -23,21 +21,19 @@ from pathlib import Path
 import requests
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# 実際に利用可能なモデルのみ（403/404 が出たモデルは除外）
 PREFERRED_MODELS = [
     "gemini-2.0-flash",
-    "gemini-2.5-flash",
     "gemini-2.0-flash-lite",
-    "gemini-1.5-flash",
-    "gemma-3-27b-it",
-    "gemma-3-4b-it",
 ]
-# 429 レート制限時のリトライ間隔（秒）: 1回目 30s、2回目 60s
-RATE_LIMIT_WAITS = [30, 60]
+# 429 時の段階的バックオフ（秒）: 初回 → 60s → 120s → 240s
+RATE_LIMIT_WAITS = [60, 120, 240]
+# これらの HTTP ステータスはリトライせず即座に次モデルへ
+NON_RETRY_STATUS = {403, 404}
 
 DATA_DIR = Path("data/famous_horses")
 OUTPUT_DIR = Path("output")
 
-# 既存スタイルのサンプル（プロンプトに埋め込む）
 STYLE_EXAMPLES = """\
 【例1: ラインクラフト】
 桜花賞を勝った馬が、オークスに出なかった。
@@ -91,61 +87,224 @@ GⅠ馬が、24連敗して、また伝説を作った。
 # Gemini API 呼び出し
 # ---------------------------------------------------------------------------
 
-def call_gemini(api_key: str, prompt: str, temperature: float = 0.7, model_index: int = 0) -> str:
-    """Gemini API を呼び出してテキスト生成する。
-    - 429 レート制限: 同モデルで最大2回リトライ（30s / 60s 待機）してから次モデルへ
-    - その他エラー: 即座に次モデルへフォールバック
+def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
+    """Gemini API を呼び出す。
+    - 403 / 404: このモデルは使えないので即次へ（リトライなし）
+    - 429: 60s → 120s → 240s のバックオフでリトライし、上限後に次モデルへ
+    - その他エラー: 即次モデルへ
     """
     payload = {
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": temperature,
             "maxOutputTokens": 2048,
         },
     }
 
-    for m_idx in range(model_index, len(PREFERRED_MODELS)):
-        model = PREFERRED_MODELS[m_idx]
+    for model in PREFERRED_MODELS:
         url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
-        payload["contents"] = [{"role": "user", "parts": [{"text": prompt}]}]
+        waits = [0] + RATE_LIMIT_WAITS  # [0, 60, 120, 240]
 
-        for attempt, wait in enumerate([0] + RATE_LIMIT_WAITS):
+        for attempt, wait in enumerate(waits):
             if wait:
                 print(f"  [{model}] 429 レート制限。{wait}秒待機...", file=sys.stderr)
                 time.sleep(wait)
+
             try:
                 resp = requests.post(url, json=payload, timeout=60)
+
+                if resp.status_code in NON_RETRY_STATUS:
+                    print(f"  [{model}] HTTP {resp.status_code} → 次のモデルへ", file=sys.stderr)
+                    break  # このモデルはスキップ
+
                 if resp.status_code == 429:
-                    # リトライ回数が残っていれば同モデルで再試行
-                    if attempt < len(RATE_LIMIT_WAITS):
-                        continue
-                    # 使い果たしたら次モデルへ
-                    print(f"  [{model}] 429 リトライ上限。次のモデルへ", file=sys.stderr)
+                    if attempt < len(waits) - 1:
+                        continue  # 次の待機時間でリトライ
+                    print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
                     break
+
                 resp.raise_for_status()
                 data = resp.json()
                 candidates = data.get("candidates", [])
                 if not candidates:
-                    raise ValueError(f"candidates が空: {data}")
+                    raise ValueError("candidates が空")
                 return candidates[0]["content"]["parts"][0]["text"].strip()
+
             except requests.exceptions.HTTPError as e:
-                if e.response is not None and e.response.status_code == 429:
-                    if attempt < len(RATE_LIMIT_WAITS):
-                        continue
-                    print(f"  [{model}] 429 リトライ上限。次のモデルへ", file=sys.stderr)
+                status = e.response.status_code if e.response is not None else 0
+                if status in NON_RETRY_STATUS:
+                    print(f"  [{model}] HTTP {status} → 次のモデルへ", file=sys.stderr)
                     break
-                print(f"  [{model}] HTTP エラー: {e} → 次のモデルへ", file=sys.stderr)
+                if status == 429:
+                    if attempt < len(waits) - 1:
+                        continue
+                    print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
+                    break
+                print(f"  [{model}] HTTP エラー {status} → 次のモデルへ", file=sys.stderr)
                 break
+
             except Exception as e:
-                print(f"  [{model}] 失敗: {e} → 次のモデルへ", file=sys.stderr)
+                print(f"  [{model}] エラー: {e} → 次のモデルへ", file=sys.stderr)
                 break
 
         time.sleep(3)  # モデル切り替え時の短いインターバル
 
-    raise RuntimeError("Gemini API 全モデル失敗（全モデルで429またはエラー）")
+    raise RuntimeError("Gemini API: 全モデルで失敗（レート制限またはアクセス不可）")
 
 
 # ---------------------------------------------------------------------------
-# 各ステップの実装
+# ステップ1: 名馬選定 + 脚本生成 + ファクトチェック + 修正（1回の呼び出し）
+# ---------------------------------------------------------------------------
+
+def select_and_generate(api_key: str, covered: list[dict]) -> dict:
+    """名馬の選定・脚本生成・ファクトチェック・修正を1回の API 呼び出しで実行する。
+
+    Returns:
+        dict: name / key / era / catchphrase / script
+    """
+    covered_lines = "\n".join(f"  - {h['name']} ({h['key']})" for h in covered)
+    if not covered_lines:
+        covered_lines = "  （まだなし）"
+
+    prompt = f"""\
+あなたは日本競馬の専門家かつ名馬列伝シリーズのナレーター作家です。
+以下の3ステップを順番に実行し、指定の形式で出力してください。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: 名馬を選定する
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+【紹介済みの馬（この中から選ばないこと）】
+{covered_lines}
+
+【選定条件】
+- 日本中央競馬（JRA）の歴史に残る名馬
+- 強烈なストーリー（劇的な勝利、悲劇、記録、逆転、独特の戦法など）
+- 具体的な数字・史実・固有名詞が豊富
+- YouTube Shorts として面白く伝えられる
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: 脚本を書く
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+以下のスタイルサンプルに完全に倣って脚本を書く。
+
+{STYLE_EXAMPLES}
+
+【脚本の必須ルール】
+- 全体200〜500文字
+- 短い文（1文40字以内）を積み重ねる
+- 冒頭に衝撃的な事実または問いかけで始める
+- 具体的な数字・日付・レース名・タイム・着差を含める
+- 感情語より事実で語る（「感動した」「すごい」は使わない）
+- 最後は詩的・哲学的な1〜2行で締める
+- 挨拶・呼びかけ（「みなさん」「こんにちは」）禁止
+- 改行で文を区切る（句点「。」は不要）
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: ファクトチェックして誤りを修正する
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+書いた脚本の以下を検証し、明らかな誤りがあれば修正する。
+- レース名・開催年・着順・着差・タイムの正確性
+- 騎手名・調教師名・血統（父・母）の正確性
+- GⅠ勝利数・重賞勝利数等の記録
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+【出力形式】この形式を厳守すること（余分な説明・コメント不要）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HORSE_NAME: [日本語での正式名称]
+HORSE_KEY: [英小文字・数字・アンダースコアのみのローマ字（例: oguri_cap）]
+ERA: [例: 1990年代]
+CATCHPHRASE: [その馬を象徴する20文字以内の一言]
+---SCRIPT---
+[修正済みの最終脚本テキストのみ]
+---END---
+"""
+    response = call_gemini(api_key, prompt, temperature=0.7)
+    print(f"[API応答]\n{response[:600]}...\n", file=sys.stderr)
+    return _parse_select_response(response)
+
+
+def _parse_select_response(response: str) -> dict:
+    """select_and_generate のレスポンスをパースする。"""
+    meta: dict[str, str] = {}
+    for line in response.strip().splitlines():
+        for sep in (":", "："):
+            if sep in line:
+                k, _, v = line.partition(sep)
+                meta[k.strip()] = v.strip()
+                break
+
+    # ---SCRIPT--- ～ ---END--- 間の脚本を抽出
+    m = re.search(r"---SCRIPT---\s*(.*?)\s*---END---", response, re.DOTALL)
+    script = m.group(1).strip() if m else ""
+
+    horse_name = meta.get("HORSE_NAME", "").strip()
+    horse_key = re.sub(r"[^a-z0-9_]", "_", meta.get("HORSE_KEY", "").lower()).strip("_")
+    era = meta.get("ERA", "").strip()
+    catchphrase = meta.get("CATCHPHRASE", "").strip()
+
+    if not horse_name:
+        raise ValueError(f"馬名を取得できませんでした。レスポンス:\n{response}")
+    if not horse_key:
+        horse_key = re.sub(r"[^a-z0-9_]", "_", horse_name.lower()).strip("_") or "unknown"
+    if not script:
+        raise ValueError(f"脚本を取得できませんでした。レスポンス:\n{response}")
+
+    return {"name": horse_name, "key": horse_key, "era": era,
+            "catchphrase": catchphrase, "script": script}
+
+
+# ---------------------------------------------------------------------------
+# ステップ2: メタデータ生成（タグ・サムネイルテキスト）
+# ---------------------------------------------------------------------------
+
+def generate_metadata(api_key: str, horse_name: str, script: str,
+                      era: str, catchphrase: str) -> dict:
+    """YouTube 用タグ・サムネイルテキストを生成する。"""
+    prompt = f"""\
+以下の名馬列伝脚本から、YouTube動画用のメタデータを生成してください。
+
+馬名: {horse_name}
+時代: {era}
+
+【脚本】
+{script}
+
+以下の形式のみで出力してください（余分なコメント不要）：
+TAGS: [馬名, GⅠレース名1, レース名2, キーワード... をカンマ区切りで計6〜8個]
+THUMBNAIL_TOP: [3〜8文字の短いテキスト（例: 史上初の / 伝説の / 幻の / 奇跡の）]
+THUMBNAIL_MAIN: [5〜12文字のメインテキスト（例: 変則二冠 / 超ハイペース / 24連敗）]
+"""
+    response = call_gemini(api_key, prompt, temperature=0.5)
+    print(f"[メタデータ応答]\n{response}\n", file=sys.stderr)
+
+    meta: dict[str, str] = {}
+    for line in response.strip().splitlines():
+        for sep in (":", "："):
+            if sep in line:
+                k, _, v = line.partition(sep)
+                meta[k.strip()] = v.strip()
+                break
+
+    tags_raw = meta.get("TAGS", "")
+    tags = [t.strip() for t in tags_raw.split(",") if t.strip()]
+    if horse_name not in tags:
+        tags.insert(0, horse_name)
+
+    def strip_brackets(s: str) -> str:
+        return s.strip("「」")
+
+    return {
+        "name": horse_name,
+        "catchphrase": catchphrase,
+        "era": era,
+        "tags_extra": tags,
+        "thumbnail_top": strip_brackets(meta.get("THUMBNAIL_TOP", "")),
+        "thumbnail_main": strip_brackets(meta.get("THUMBNAIL_MAIN", "")),
+    }
+
+
+# ---------------------------------------------------------------------------
+# 共通: パイプライン用ファイル書き出し
 # ---------------------------------------------------------------------------
 
 def get_existing_horses() -> list[dict]:
@@ -158,178 +317,6 @@ def get_existing_horses() -> list[dict]:
         except Exception:
             horses.append({"key": json_file.stem, "name": json_file.stem})
     return horses
-
-
-def select_horse(api_key: str, covered: list[dict]) -> dict:
-    """Gemini で次に紹介する名馬を選定する。
-
-    Returns:
-        dict: name / key / era / catchphrase
-    """
-    covered_lines = "\n".join(f"  - {h['name']} ({h['key']})" for h in covered)
-    if not covered_lines:
-        covered_lines = "  （まだなし）"
-
-    prompt = f"""\
-あなたは日本競馬の専門家です。名馬列伝シリーズで次に紹介すべき名馬を1頭選んでください。
-
-【既に紹介済みの馬】
-{covered_lines}
-
-【選定条件】
-- 上のリストにない馬であること
-- 日本中央競馬（JRA）の歴史に残る名馬
-- 強烈なストーリーがある（劇的な勝利、記録達成、悲劇、逆転劇、独特の戦法など）
-- 具体的な数字・史実・固有名詞が豊富にある
-- YouTube Shorts動画として視聴者の心に刺さる内容
-
-以下の形式のみで出力してください（余分な説明は一切不要）：
-馬名: [日本語での正式名称]
-キー: [英小文字・数字・アンダースコアのみのローマ字表記（例: oguri_cap, narita_brian）]
-時代: [例: 1990年代]
-キャッチフレーズ: [その馬を象徴する20文字以内の一言]
-"""
-    response = call_gemini(api_key, prompt, temperature=0.8)
-    print(f"[名馬選定]\n{response}\n", file=sys.stderr)
-
-    result: dict[str, str] = {}
-    for line in response.strip().splitlines():
-        for sep in (":", "："):
-            if sep in line:
-                k, _, v = line.partition(sep)
-                result[k.strip()] = v.strip()
-                break
-
-    horse_name = result.get("馬名", "").strip()
-    horse_key = re.sub(r"[^a-z0-9_]", "_", result.get("キー", "").lower()).strip("_")
-    era = result.get("時代", "").strip()
-    catchphrase = result.get("キャッチフレーズ", "").strip()
-
-    if not horse_name:
-        raise ValueError(f"馬名を取得できませんでした。レスポンス:\n{response}")
-    if not horse_key:
-        horse_key = re.sub(r"[^a-z0-9_]", "_", horse_name.lower()).strip("_") or "unknown"
-
-    return {"name": horse_name, "key": horse_key, "era": era, "catchphrase": catchphrase}
-
-
-def generate_script(api_key: str, horse_name: str) -> str:
-    """Gemini で名馬列伝スタイルの脚本を生成する。"""
-    prompt = f"""\
-あなたは名馬列伝シリーズのナレーター作家です。
-{horse_name}についての脚本を、以下のスタイルサンプルに完全に倣って書いてください。
-
-{STYLE_EXAMPLES}
-【{horse_name}の脚本を書く際の必須ルール】
-- 全体の文字数は200〜500文字
-- 短い文を積み重ねる（1文が40字を超えないように）
-- 冒頭に衝撃的な事実や問いかけで始める
-- 具体的な数字・日付・レース名・タイム・着差を必ず含める
-- 感情語より事実で語る（「感動した」「すごい」「素晴らしい」は使わない）
-- 最後は詩的・哲学的な1〜2行で締める
-- 挨拶・呼びかけ（「みなさん」「こんにちは」等）は禁止
-- 「。」ではなく改行で文を区切る（末尾に「。」は不要）
-- 競馬用語は正確に（GⅠ/G1、馬身、クビ差、重賞名など）
-
-脚本のテキストのみを出力してください。説明・前置き・コメント不要。
-"""
-    return call_gemini(api_key, prompt, temperature=0.7)
-
-
-def fact_check(api_key: str, horse_name: str, script: str) -> str:
-    """生成した脚本のファクトチェックを Gemini に依頼する。"""
-    prompt = f"""\
-以下は{horse_name}についての名馬列伝脚本です。ファクトチェックをしてください。
-
-【脚本】
-{script}
-
-【確認してほしい項目】
-1. レース名・レース種別・開催年の正確性
-2. 着順・着差・タイム・上がり3Fなどの数値
-3. 馬の誕生年・引退年・死亡年（存在する場合）
-4. 騎手名・調教師名・血統（父・母）の正確性
-5. 対戦相手の馬名と成績
-6. GⅠ勝利数・重賞勝利数等の記録
-7. その他明らかな事実誤認
-
-【出力ルール】
-- 問題がなければ: 「✓ 問題なし」
-- 問題がある場合: 「❌ [誤った記述]: [正しい内容]」を誤りごとに1行
-- 不確かな場合: 「△ 要確認: [該当箇所と理由]」
-- 最後に1行: 「修正必要箇所: N件」（Nは❌の数）
-"""
-    return call_gemini(api_key, prompt, temperature=0.2)
-
-
-def correct_script(api_key: str, original: str, fact_check_result: str) -> str:
-    """ファクトチェック結果に基づいて脚本を修正する。❌指摘がなければそのまま返す。"""
-    if "❌" not in fact_check_result:
-        print("[修正] ❌指摘なし。元の脚本をそのまま使用。", file=sys.stderr)
-        return original
-
-    prompt = f"""\
-以下の脚本にファクトチェックの指摘があります。❌で示された明確な誤りのみを修正してください。
-
-【元の脚本】
-{original}
-
-【ファクトチェック結果】
-{fact_check_result}
-
-【修正ルール】
-- ❌の指摘は必ず修正する
-- △（要確認）は慎重に判断し、確信が持てない場合はそのまま残す
-- スタイル・文体・改行の形式は変えない
-- 修正した脚本のテキストのみ出力（説明・コメント不要）
-"""
-    return call_gemini(api_key, prompt, temperature=0.3)
-
-
-def generate_metadata(api_key: str, horse_name: str, script: str, era: str, catchphrase: str) -> dict:
-    """YouTube用タグ・サムネイルテキストを Gemini で生成する。"""
-    prompt = f"""\
-以下の名馬列伝脚本から、YouTube動画用のメタデータを生成してください。
-
-馬名: {horse_name}
-時代: {era}
-
-【脚本】
-{script}
-
-以下の形式のみで出力してください：
-タグ: [馬名, GⅠレース名1, レース名2, キーワード... をカンマ区切りで計6〜8個]
-サムネイル上段: [3〜8文字の短いテキスト（例: 史上初の / 伝説の / 幻の / 奇跡の）]
-サムネイル中段: [5〜12文字のメインテキスト（例: 変則二冠 / 超ハイペース / 24連敗）]
-"""
-    response = call_gemini(api_key, prompt, temperature=0.5)
-    print(f"[メタデータ]\n{response}\n", file=sys.stderr)
-
-    result: dict[str, str] = {}
-    for line in response.strip().splitlines():
-        for sep in (":", "："):
-            if sep in line:
-                k, _, v = line.partition(sep)
-                result[k.strip()] = v.strip()
-                break
-
-    tags_raw = result.get("タグ", "")
-    tags = [t.strip() for t in tags_raw.split(",") if t.strip()]
-    if horse_name not in tags:
-        tags.insert(0, horse_name)
-
-    # 「」があれば除去
-    def strip_brackets(s: str) -> str:
-        return s.strip("「」")
-
-    return {
-        "name": horse_name,
-        "catchphrase": catchphrase,
-        "era": era,
-        "tags_extra": tags,
-        "thumbnail_top": strip_brackets(result.get("サムネイル上段", "")),
-        "thumbnail_main": strip_brackets(result.get("サムネイル中段", "")),
-    }
 
 
 def write_pipeline_files(horse_key: str, horse_name: str, catchphrase: str,
@@ -352,9 +339,9 @@ def write_pipeline_files(horse_key: str, horse_name: str, catchphrase: str,
     )
     (OUTPUT_DIR / "script_0.txt").write_text(script, encoding="utf-8")
 
-    print(f"[パイプライン用ファイル書き出し完了]", file=sys.stderr)
-    print(f"  news.json : タイトル「{horse_name}」", file=sys.stderr)
-    print(f"  output/script_0.txt : {len(script)} 文字", file=sys.stderr)
+    print(f"[パイプライン用ファイル書き出し]", file=sys.stderr)
+    print(f"  news.json: タイトル「{horse_name}」", file=sys.stderr)
+    print(f"  output/script_0.txt: {len(script)} 文字", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -370,21 +357,24 @@ def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(exist_ok=True)
 
-    # 1. 既存の名馬リスト確認
+    # 既存の名馬リスト確認
     covered = get_existing_horses()
     print(f"[既存の名馬] {len(covered)} 頭:", file=sys.stderr)
     for h in covered:
         print(f"  - {h['name']} ({h['key']})", file=sys.stderr)
 
-    # 2. 名馬選定
-    print("\n[名馬選定中...]", file=sys.stderr)
-    selection = select_horse(api_key, covered)
-    horse_name = selection["name"]
-    horse_key = selection["key"]
-    era = selection["era"]
-    catchphrase = selection["catchphrase"]
+    # ── API呼び出し1回目 ──────────────────────────────────────────────────
+    # 名馬選定 + 脚本生成 + ファクトチェック + 修正（1プロンプトで全て実行）
+    print("\n[名馬選定・脚本生成・ファクトチェック中...]", file=sys.stderr)
+    result = select_and_generate(api_key, covered)
 
-    # キー重複回避（同名馬が再選定された場合など）
+    horse_name = result["name"]
+    horse_key = result["key"]
+    era = result["era"]
+    catchphrase = result["catchphrase"]
+    script = result["script"]
+
+    # キー重複回避
     base_key = horse_key
     suffix = 2
     while (DATA_DIR / f"{horse_key}.json").exists():
@@ -392,33 +382,16 @@ def main() -> None:
         suffix += 1
 
     print(f"[選定完了] 馬名: {horse_name}  キー: {horse_key}", file=sys.stderr)
+    print(f"[最終脚本]\n{script}\n", file=sys.stderr)
 
-    # 3. 脚本生成（レート制限対策: ステップ間に待機）
-    time.sleep(15)
-    print(f"\n[脚本生成中: {horse_name}...]", file=sys.stderr)
-    script = generate_script(api_key, horse_name)
-    print(f"[生成脚本]\n{script}\n", file=sys.stderr)
-
-    # 4. ファクトチェック
-    time.sleep(15)
-    print("[ファクトチェック中...]", file=sys.stderr)
-    fact_check_result = fact_check(api_key, horse_name, script)
-    print(f"[ファクトチェック結果]\n{fact_check_result}\n", file=sys.stderr)
-
-    # 5. 脚本修正
-    time.sleep(15)
-    print("[修正中...]", file=sys.stderr)
-    final_script = correct_script(api_key, script, fact_check_result)
-    if final_script != script:
-        print(f"[修正後脚本]\n{final_script}\n", file=sys.stderr)
-
-    # 6. メタデータ生成
-    time.sleep(15)
+    # ── API呼び出し2回目（20秒インターバル後） ──────────────────────────
+    print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
+    time.sleep(20)
     print("[メタデータ生成中...]", file=sys.stderr)
-    metadata = generate_metadata(api_key, horse_name, final_script, era, catchphrase)
+    metadata = generate_metadata(api_key, horse_name, script, era, catchphrase)
 
-    # 7. data/famous_horses/ に保存
-    (DATA_DIR / f"{horse_key}.txt").write_text(final_script, encoding="utf-8")
+    # data/famous_horses/ に保存
+    (DATA_DIR / f"{horse_key}.txt").write_text(script, encoding="utf-8")
     (DATA_DIR / f"{horse_key}.json").write_text(
         json.dumps(metadata, ensure_ascii=False, indent=2),
         encoding="utf-8",
@@ -427,17 +400,16 @@ def main() -> None:
     print(f"  {DATA_DIR}/{horse_key}.txt", file=sys.stderr)
     print(f"  {DATA_DIR}/{horse_key}.json", file=sys.stderr)
 
-    # 8. パイプライン用ファイル生成（famous_horse_prepare.py の役割を代替）
-    write_pipeline_files(horse_key, horse_name, catchphrase, final_script, metadata)
+    # パイプライン用ファイル生成
+    write_pipeline_files(horse_key, horse_name, catchphrase, script, metadata)
 
-    # 9. $GITHUB_OUTPUT に書き出し（GitHub Actions 用）
+    # $GITHUB_OUTPUT に書き出し
     github_output = os.environ.get("GITHUB_OUTPUT", "")
     if github_output:
         with open(github_output, "a", encoding="utf-8") as f:
             f.write(f"horse_key={horse_key}\n")
             f.write(f"horse_name={horse_name}\n")
     else:
-        # ローカル実行時は stdout に出力
         print(f"horse_key={horse_key}")
         print(f"horse_name={horse_name}")
 
