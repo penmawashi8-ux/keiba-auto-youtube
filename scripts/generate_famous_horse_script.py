@@ -27,7 +27,12 @@ PREFERRED_MODELS = [
     "gemini-2.0-flash",
     "gemini-2.5-flash",
     "gemini-2.0-flash-lite",
+    "gemini-1.5-flash",
+    "gemma-3-27b-it",
+    "gemma-3-4b-it",
 ]
+# 429 レート制限時のリトライ間隔（秒）: 1回目 30s、2回目 60s
+RATE_LIMIT_WAITS = [30, 60]
 
 DATA_DIR = Path("data/famous_horses")
 OUTPUT_DIR = Path("output")
@@ -87,30 +92,56 @@ GⅠ馬が、24連敗して、また伝説を作った。
 # ---------------------------------------------------------------------------
 
 def call_gemini(api_key: str, prompt: str, temperature: float = 0.7, model_index: int = 0) -> str:
-    """Gemini API を呼び出してテキスト生成する。失敗時は次のモデルにフォールバック。"""
-    model = PREFERRED_MODELS[model_index % len(PREFERRED_MODELS)]
-    url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+    """Gemini API を呼び出してテキスト生成する。
+    - 429 レート制限: 同モデルで最大2回リトライ（30s / 60s 待機）してから次モデルへ
+    - その他エラー: 即座に次モデルへフォールバック
+    """
     payload = {
-        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": temperature,
             "maxOutputTokens": 2048,
         },
     }
-    try:
-        resp = requests.post(url, json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        candidates = data.get("candidates", [])
-        if not candidates:
-            raise ValueError(f"candidates が空: {data}")
-        return candidates[0]["content"]["parts"][0]["text"].strip()
-    except Exception as e:
-        if model_index + 1 < len(PREFERRED_MODELS):
-            print(f"  [{model}] 失敗: {e} → 次のモデルを試します", file=sys.stderr)
-            time.sleep(3)
-            return call_gemini(api_key, prompt, temperature, model_index + 1)
-        raise RuntimeError(f"Gemini API 全モデル失敗: {e}") from e
+
+    for m_idx in range(model_index, len(PREFERRED_MODELS)):
+        model = PREFERRED_MODELS[m_idx]
+        url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+        payload["contents"] = [{"role": "user", "parts": [{"text": prompt}]}]
+
+        for attempt, wait in enumerate([0] + RATE_LIMIT_WAITS):
+            if wait:
+                print(f"  [{model}] 429 レート制限。{wait}秒待機...", file=sys.stderr)
+                time.sleep(wait)
+            try:
+                resp = requests.post(url, json=payload, timeout=60)
+                if resp.status_code == 429:
+                    # リトライ回数が残っていれば同モデルで再試行
+                    if attempt < len(RATE_LIMIT_WAITS):
+                        continue
+                    # 使い果たしたら次モデルへ
+                    print(f"  [{model}] 429 リトライ上限。次のモデルへ", file=sys.stderr)
+                    break
+                resp.raise_for_status()
+                data = resp.json()
+                candidates = data.get("candidates", [])
+                if not candidates:
+                    raise ValueError(f"candidates が空: {data}")
+                return candidates[0]["content"]["parts"][0]["text"].strip()
+            except requests.exceptions.HTTPError as e:
+                if e.response is not None and e.response.status_code == 429:
+                    if attempt < len(RATE_LIMIT_WAITS):
+                        continue
+                    print(f"  [{model}] 429 リトライ上限。次のモデルへ", file=sys.stderr)
+                    break
+                print(f"  [{model}] HTTP エラー: {e} → 次のモデルへ", file=sys.stderr)
+                break
+            except Exception as e:
+                print(f"  [{model}] 失敗: {e} → 次のモデルへ", file=sys.stderr)
+                break
+
+        time.sleep(3)  # モデル切り替え時の短いインターバル
+
+    raise RuntimeError("Gemini API 全モデル失敗（全モデルで429またはエラー）")
 
 
 # ---------------------------------------------------------------------------
@@ -362,23 +393,27 @@ def main() -> None:
 
     print(f"[選定完了] 馬名: {horse_name}  キー: {horse_key}", file=sys.stderr)
 
-    # 3. 脚本生成
+    # 3. 脚本生成（レート制限対策: ステップ間に待機）
+    time.sleep(15)
     print(f"\n[脚本生成中: {horse_name}...]", file=sys.stderr)
     script = generate_script(api_key, horse_name)
     print(f"[生成脚本]\n{script}\n", file=sys.stderr)
 
     # 4. ファクトチェック
+    time.sleep(15)
     print("[ファクトチェック中...]", file=sys.stderr)
     fact_check_result = fact_check(api_key, horse_name, script)
     print(f"[ファクトチェック結果]\n{fact_check_result}\n", file=sys.stderr)
 
     # 5. 脚本修正
+    time.sleep(15)
     print("[修正中...]", file=sys.stderr)
     final_script = correct_script(api_key, script, fact_check_result)
     if final_script != script:
         print(f"[修正後脚本]\n{final_script}\n", file=sys.stderr)
 
     # 6. メタデータ生成
+    time.sleep(15)
     print("[メタデータ生成中...]", file=sys.stderr)
     metadata = generate_metadata(api_key, horse_name, final_script, era, catchphrase)
 
