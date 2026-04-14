@@ -1,1 +1,20 @@
-(ログなし)
+  [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
+  [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID_3): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
+  サムネイル抽出中...
+  サムネイル抽出完了: output/thumbnail_0.jpg (45 KB)
+=== 名馬シリーズ YouTube アップロード開始 ===
+  馬名: ラインクラフト (key=linecrafter)
+  タイトル: 【名馬列伝】ラインクラフト〜彼女が切り拓いた道は、今も続いてる〜 #Shorts
+  OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
+  OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
+  認証情報: 2 プロジェクト分ロード完了
+  アップロード中: 【名馬列伝】ラインクラフト〜彼女が切り拓いた道は、今も続いてる〜 #Shorts
+  進捗: 27%
+  進捗: 55%
+  進捗: 83%
+  完了! Video ID: 7iwVS4BX-IE
+  URL: https://www.youtube.com/watch?v=7iwVS4BX-IE
+  サムネイルアップロード中: output/thumbnail_0.jpg (45 KB)
+  サムネイルアップロード完了。
+  結果を保存: output/famous_horse_upload_result.txt
+=== アップロード完了 ===

@@ -1,36 +1,21 @@
-=== Wikimedia Commons 画像検索: シルポート ===
-  検索クエリ: 「シルポート」
-  ヒット数: 20 件
-  チェック: File:05 Silport (June 23, 2013. 54th Takarazuka Kinen) (9117531458).jpg
-    OK: Ogiyoshisan from Japan / CC BY 2.0
-  チェック: File:Silport in Takarazuka Kinen 2013 IMG 4687-2 20130623.JPG
-    OK: Ogiyoshisan / CC BY-SA 3.0
-  チェック: File:Silport20120422(1).jpg
-    OK: Cake6 (talk) / CC BY-SA 3.0
-  チェック: File:Silport20120422(2).jpg
-    OK: Cake6 (talk) / CC BY-SA 3.0
-  チェック: File:Silport20110417.jpg
-    OK: Cake6 (talk) / CC BY-SA 3.0
-  チェック: File:Silport 0011.jpg
-    OK: Rey2 / CC BY-SA 4.0
+=== Wikimedia Commons 画像検索: ラインクラフト ===
+  検索クエリ: 「ラインクラフト」
+  ヒット数: 1 件
+  チェック: File:RheinKraft-2005-4-10.jpg
+    OK: TRJN / CC BY-SA 4.0
+  検索クエリ: 「ラインクラフト 競走馬」
+  ヒット数: 1 件
+  検索クエリ: 「ラインクラフト racehorse」
+  ヒット数: 1 件
 
-  取得画像: 6 枚 → ダウンロード開始
-    保存完了: assets/ai_tmp_0.jpg (1008 KB)
-    保存完了: assets/ai_tmp_1.jpg (357 KB)
-    レート制限 (429)。5秒待機して再試行... (1/3)
-    保存完了: assets/ai_tmp_2.jpg (214 KB)
-    レート制限 (429)。5秒待機して再試行... (1/3)
-    保存完了: assets/ai_tmp_3.jpg (550 KB)
-    レート制限 (429)。5秒待機して再試行... (1/3)
-    保存完了: assets/ai_tmp_4.jpg (740 KB)
-    レート制限 (429)。5秒待機して再試行... (1/3)
-    保存完了: assets/ai_tmp_5.jpg (672 KB)
+  取得画像: 1 枚 → ダウンロード開始
+    保存完了: assets/ai_tmp_0.jpg (816 KB)
 
-  ダウンロード成功: 6 枚 → 6 スロットに配置
+  ダウンロード成功: 1 枚 → 6 スロットに配置
     ai_0.jpg ← ai_tmp_0.jpg
-    ai_1.jpg ← ai_tmp_1.jpg
-    ai_2.jpg ← ai_tmp_2.jpg
-    ai_3.jpg ← ai_tmp_3.jpg
-    ai_4.jpg ← ai_tmp_4.jpg
-    ai_5.jpg ← ai_tmp_5.jpg
+    ai_1.jpg ← ai_tmp_0.jpg
+    ai_2.jpg ← ai_tmp_0.jpg
+    ai_3.jpg ← ai_tmp_0.jpg
+    ai_4.jpg ← ai_tmp_0.jpg
+    ai_5.jpg ← ai_tmp_0.jpg
 === 画像取得完了: 6/6 枚 ===
