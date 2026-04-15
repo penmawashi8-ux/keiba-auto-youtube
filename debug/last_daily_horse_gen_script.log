@@ -6,100 +6,33 @@
   - テイエムプリキュア (teiem_purikyua)
 
 [名馬選定・脚本生成・ファクトチェック中...]
-  [key=***... gemini-2.5-flash] HTTP エラー 503 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: イスキリ
-HORSE_KEY: isukiri
-ERA: 2000年代
-CATCHPHRASE: 逆転の奇跡
-
+HORSE_NAME: トウカイテイオー
+HORSE_KEY: tokai_teio
+ERA: 1990年代
+CATCHPHRASE: 奇跡を信じた、皇帝の息子
 ---SCRIPT---
-スタートラインで、馬が18頭。
-その中にいたのは、イスキリ。
-2005年、中山競馬場。
-毎日新聞杯を16番人気で制めた。
-父はディープインパクト、母はサクラアンド。
-しかし、そこから続く3年間は、24戦無敗。
-2008年、クラシック三冠への期待が高まる。
-皐月賞は5着、東京優駿は12着。
- 予想は外れた。
-それでも、毎日新聞杯の勝利は消えない。
-2009年、クラシック三冠を狙うも、 3着。
- 2010年、 毎日杯を制覇。
- 2011年、 宝塚記念で3着。
- 2012年、 毎日杯を制し、 3度目の勝利。
- 4歳で引退。
- 3着の成績は、決して目立ったものではない。
- しかし、 毎日新聞杯の勝利は、 競馬ファンに夢を与えた。
- 逆境を乗り越え、 諦めずに走り続けた。
- 困難に立ち向かう勇気を与えた。
- 競馬の奇跡、イスキリ。...
+1年ぶりにGⅠを勝った馬がいる
+その馬の名前、トウカイテイオー
+無敗で皐月賞、日本ダー...
 
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 447, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 398, in main
-    result = select_and_generate(api_keys, covered)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 252, in select_and_generate
-    return _parse_select_response(response)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 279, in _parse_select_response
-    raise ValueError(f"脚本を取得できませんでした。レスポンス:\n{response}")
-ValueError: 脚本を取得できませんでした。レスポンス:
-HORSE_NAME: イスキリ
-HORSE_KEY: isukiri
-ERA: 2000年代
-CATCHPHRASE: 逆転の奇跡
+[選定完了] 馬名: トウカイテイオー  キー: tokai_teio
+[最終脚本]
+1年ぶりにGⅠを勝った馬がいる
+その馬の名前、トウカイテイオー
+無敗で皐月賞、日本ダー
 
----SCRIPT---
-スタートラインで、馬が18頭。
-その中にいたのは、イスキリ。
-2005年、中山競馬場。
-毎日新聞杯を16番人気で制めた。
-父はディープインパクト、母はサクラアンド。
-しかし、そこから続く3年間は、24戦無敗。
-2008年、クラシック三冠への期待が高まる。
-皐月賞は5着、東京優駿は12着。
- 予想は外れた。
-それでも、毎日新聞杯の勝利は消えない。
-2009年、クラシック三冠を狙うも、 3着。
- 2010年、 毎日杯を制覇。
- 2011年、 宝塚記念で3着。
- 2012年、 毎日杯を制し、 3度目の勝利。
- 4歳で引退。
- 3着の成績は、決して目立ったものではない。
- しかし、 毎日新聞杯の勝利は、 競馬ファンに夢を与えた。
- 逆境を乗り越え、 諦めずに走り続けた。
- 困難に立ち向かう勇気を与えた。
- 競馬の奇跡、イスキリ。
+[20秒待機中（レート制限対策）...]
+[メタデータ生成中...]
+[メタデータ応答]
+TAGS: [トウカイテイオー, GⅠ, 皐月賞, 日本ダービー, 無敗, 奇跡の復活, 有馬記念, 90年代]
+THUMBNAIL_TOP: 奇跡の
+THUMBNAIL_MAIN: 無敗二冠からの復活
+
+
+[名馬データ保存]
+  data/famous_horses/tokai_teio.txt
+  data/famous_horses/tokai_teio.json
+[パイプライン用ファイル書き出し]
+  news.json: タイトル「トウカイテイオー」
+  output/script_0.txt: 43 文字
