@@ -1,10 +1,10 @@
-date: 2026-04-15T08:31:16.734608Z
+date: 2026-04-15T10:25:56.630131Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NKly5B-4FPU title=今年デビューの新種牡馬は34頭　最多登録はエフフォーリアの125頭　チュウワウィ
-OK project=1 video_id=5L3tuozRcL0 title=【注目馬動向】桜花賞3着のジッピーチューンは放牧後の回復次第でオークスへの出走を
-OK project=1 video_id=Z5TasmeDl2o title=【皐月賞】岩田望来騎手がクラシック初制覇なるか きさらぎ賞覇者のゾロアストロと初
+OK project=1 video_id=XAO3rEyeD6w title=近年トレンドだった「無敗の皐月賞馬」 今年の候補は0頭に
+OK project=1 video_id=QWRtk_x1p28 title=【G1トク捜リレー】栗東・松ケ下記者の注目はG1制覇時と同じCWコース追いに戻し
+OK project=1 video_id=ZCi-5elzrY0 title=22年のシンザン記念を勝ったマテンロウオリオンが競走馬登録を抹消　阪神競馬場で乗
