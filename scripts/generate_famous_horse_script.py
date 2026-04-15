@@ -25,6 +25,8 @@ GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 PREFERRED_MODELS = [
     "gemini-2.0-flash",
     "gemini-2.0-flash-lite",
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-8b",
 ]
 # 429 時のリトライ待機（秒）: 1回だけ 30 秒待ってリトライ。それでも駄目なら即失敗。
 # ニュースワークフローと同時実行していない 17 時 JST のスケジュール実行なら通る。
