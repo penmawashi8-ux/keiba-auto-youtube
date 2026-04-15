@@ -138,6 +138,13 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
                     print(f"  [key={key_label} {model}] HTTP {resp.status_code} → 次へ", file=sys.stderr)
                     break  # この組み合わせはスキップ
 
+                if resp.status_code == 503:
+                    print(f"  [key={key_label} {model}] 503 サービス停止。リトライ...", file=sys.stderr)
+                    if attempt < len(waits) - 1:
+                        continue
+                    print(f"  [key={key_label} {model}] 503 リトライ上限 → 次へ", file=sys.stderr)
+                    break
+
                 if resp.status_code == 429:
                     safe_body = resp.text.replace(api_key, "***") if api_key in resp.text else resp.text
                     print(f"  [key={key_label} {model}] 429 詳細: {safe_body[:300]}", file=sys.stderr)
@@ -263,8 +270,13 @@ def _parse_select_response(response: str) -> dict:
                 break
 
     # ---SCRIPT--- ～ ---END--- 間の脚本を抽出
+    # gemma など ---END--- を省略するモデルのため、なければ ---SCRIPT--- 以降を全て使う
     m = re.search(r"---SCRIPT---\s*(.*?)\s*---END---", response, re.DOTALL)
-    script = m.group(1).strip() if m else ""
+    if m:
+        script = m.group(1).strip()
+    else:
+        m2 = re.search(r"---SCRIPT---\s*(.*)", response, re.DOTALL)
+        script = m2.group(1).strip() if m2 else ""
 
     horse_name = meta.get("HORSE_NAME", "").strip()
     horse_key = re.sub(r"[^a-z0-9_]", "_", meta.get("HORSE_KEY", "").lower()).strip("_")
