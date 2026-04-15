@@ -1,10 +1,10 @@
-date: 2026-04-14T12:02:55.698829Z
+date: 2026-04-15T01:36:18.437794Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MGaE38PUeAU title=【アンタレスS】前走でオープン初勝利のジューンアヲニヨシが上昇気配　陣営「前回と
-OK project=1 video_id=ktSdnoeikc0 title=【皐月賞】ダイワメジャーで04年にG1初制覇の上原博調教師　3頭出し息子にエール
-OK project=1 video_id=-KJRhVtkAsk title=【皐月賞・超ブル診断データ編】共同通信杯Vのリアライズシリウスが軸も　相手は前走
+OK project=1 video_id=BXFvu5HiWDQ title=【園田競馬・今日の世麗】15日は4鞍に騎乗　7Rの初騎乗ベビーヴァギーに期待寄せ
+OK project=1 video_id=hmtPiHquwYQ title=【園田競馬・人気ジョッキーは語る】クラウドノイズ(11R)でメイン制覇に挑む小谷
+OK project=1 video_id=3r0-sVJowwI title=【皐月賞】松山弘平騎手が2週連続クラシックV狙う　共同会見　「ロブチェンとまたい
