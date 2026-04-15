@@ -1,10 +1,10 @@
-date: 2026-04-15T01:36:18.437794Z
+date: 2026-04-15T04:08:14.324571Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BXFvu5HiWDQ title=【園田競馬・今日の世麗】15日は4鞍に騎乗　7Rの初騎乗ベビーヴァギーに期待寄せ
-OK project=1 video_id=hmtPiHquwYQ title=【園田競馬・人気ジョッキーは語る】クラウドノイズ(11R)でメイン制覇に挑む小谷
-OK project=1 video_id=3r0-sVJowwI title=【皐月賞】松山弘平騎手が2週連続クラシックV狙う　共同会見　「ロブチェンとまたい
+OK project=1 video_id=hFXFyd3Swhg title=リアライズルミナス、フローラS1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=UbIIp-zASfA title=皐月賞登録馬の香港表記・馬名意味を紹介 「馬上特技」や「天狼煌煌」など全21頭
+OK project=1 video_id=XNfMCxcbg9Q title=カヴァレリッツォ＆アルトラムス 史上12組目の皐月賞父仔制覇なるか
