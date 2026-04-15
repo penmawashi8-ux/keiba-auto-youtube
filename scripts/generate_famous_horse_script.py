@@ -22,15 +22,16 @@ import requests
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # 実際に利用可能なモデルのみ（403/404 が出たモデルは除外）
+# 1.5 系はAPIキーによっては 403/404 を返すため除外済み
 PREFERRED_MODELS = [
+    "gemini-2.5-flash",
     "gemini-2.0-flash",
     "gemini-2.0-flash-lite",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
+    "gemma-3-4b-it",
+    "gemma-3-1b-it",
 ]
-# 429 時のリトライ待機（秒）: 1回だけ 30 秒待ってリトライ。それでも駄目なら即失敗。
-# ニュースワークフローと同時実行していない 17 時 JST のスケジュール実行なら通る。
-RATE_LIMIT_WAITS = [30]
+# 429 時のリトライ待機（秒）: 30s・60s の 2 回リトライ。それでも駄目なら次モデルへ。
+RATE_LIMIT_WAITS = [30, 60]
 # これらの HTTP ステータスはリトライせず即座に次モデルへ
 NON_RETRY_STATUS = {403, 404}
 
@@ -90,11 +91,23 @@ GⅠ馬が、24連敗して、また伝説を作った。
 # Gemini API 呼び出し
 # ---------------------------------------------------------------------------
 
-def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
-    """Gemini API を呼び出す。
+def load_api_keys() -> list[str]:
+    """環境変数から Gemini API キーを最大3件ロードする。"""
+    keys = []
+    for env_var in ["GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3"]:
+        k = os.environ.get(env_var, "").strip()
+        if k:
+            keys.append(k)
+    print(f"[診断] Gemini APIキー: {len(keys)} 件ロード", file=sys.stderr)
+    return keys
+
+
+def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> str:
+    """Gemini API を呼び出す（マルチキー対応）。
+    - キー × モデルの全組み合わせを試みる
     - 403 / 404: このモデルは使えないので即次へ（リトライなし）
-    - 429: 60s → 120s → 240s のバックオフでリトライし、上限後に次モデルへ
-    - その他エラー: 即次モデルへ
+    - 429: RATE_LIMIT_WAITS に従ってリトライし、上限後に次の組み合わせへ
+    - その他エラー: 即次へ
     """
     payload = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -104,28 +117,33 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
         },
     }
 
-    for model in PREFERRED_MODELS:
+    # (APIキー, モデル名) の全組み合わせ（キー優先でローテーション）
+    pairs = [(key, model) for key in api_keys for model in PREFERRED_MODELS]
+
+    for api_key, model in pairs:
+        key_label = f"{api_key[:8]}..."
+        # gemma はシステムインストラクション非対応のためスキップしない（userコンテンツのみ送る）
         url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
-        waits = [0] + RATE_LIMIT_WAITS  # [0, 30]
+        waits = [0] + RATE_LIMIT_WAITS  # [0, 30, 60]
 
         for attempt, wait in enumerate(waits):
             if wait:
-                print(f"  [{model}] 429 レート制限。{wait}秒待機...", file=sys.stderr)
+                print(f"  [key={key_label} {model}] 429 レート制限。{wait}秒待機...", file=sys.stderr)
                 time.sleep(wait)
 
             try:
                 resp = requests.post(url, json=payload, timeout=60)
 
                 if resp.status_code in NON_RETRY_STATUS:
-                    print(f"  [{model}] HTTP {resp.status_code} → 次のモデルへ", file=sys.stderr)
-                    break  # このモデルはスキップ
+                    print(f"  [key={key_label} {model}] HTTP {resp.status_code} → 次へ", file=sys.stderr)
+                    break  # この組み合わせはスキップ
 
                 if resp.status_code == 429:
                     safe_body = resp.text.replace(api_key, "***") if api_key in resp.text else resp.text
-                    print(f"  [{model}] 429 詳細: {safe_body[:300]}", file=sys.stderr)
+                    print(f"  [key={key_label} {model}] 429 詳細: {safe_body[:300]}", file=sys.stderr)
                     if attempt < len(waits) - 1:
                         continue  # 次の待機時間でリトライ
-                    print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
+                    print(f"  [key={key_label} {model}] 429 リトライ上限 → 次へ", file=sys.stderr)
                     break
 
                 resp.raise_for_status()
@@ -138,28 +156,28 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
             except requests.exceptions.HTTPError as e:
                 status = e.response.status_code if e.response is not None else 0
                 if status in NON_RETRY_STATUS:
-                    print(f"  [{model}] HTTP {status} → 次のモデルへ", file=sys.stderr)
+                    print(f"  [key={key_label} {model}] HTTP {status} → 次へ", file=sys.stderr)
                     break
                 if status == 429:
                     if attempt < len(waits) - 1:
                         continue
-                    print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
+                    print(f"  [key={key_label} {model}] 429 リトライ上限 → 次へ", file=sys.stderr)
                     break
-                print(f"  [{model}] HTTP エラー {status} → 次のモデルへ", file=sys.stderr)
+                print(f"  [key={key_label} {model}] HTTP エラー {status} → 次へ", file=sys.stderr)
                 break
 
             except Exception as e:
                 safe_msg = str(e).replace(api_key, "***")
-                print(f"  [{model}] エラー: {safe_msg} → 次のモデルへ", file=sys.stderr)
+                print(f"  [key={key_label} {model}] エラー: {safe_msg} → 次へ", file=sys.stderr)
                 break
 
-        time.sleep(3)  # モデル切り替え時の短いインターバル
+        time.sleep(3)  # 組み合わせ切り替え時の短いインターバル
 
     raise RuntimeError(
-        "Gemini API: 全モデルで 429 レート制限。\n"
-        "ニュースワークフローと同時実行するとAPIクォータが枯渇します。\n"
-        "17:00 JST のスケジュール実行（ニュースワークフローが動いていない時間帯）なら通るはずです。\n"
-        "手動テストする場合は news ワークフローが動いていない時間帯を選んでください。"
+        "Gemini API: 全キー×全モデルで失敗しました。\n"
+        "・APIキーの残クォータを Google AI Studio で確認してください。\n"
+        "・GEMINI_API_KEY_2 / GEMINI_API_KEY_3 を設定すると複数キーでフォールバックできます。\n"
+        "・ニュースワークフローと同時実行するとクォータが枯渇する場合があります。"
     )
 
 
@@ -167,7 +185,7 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
 # ステップ1: 名馬選定 + 脚本生成 + ファクトチェック + 修正（1回の呼び出し）
 # ---------------------------------------------------------------------------
 
-def select_and_generate(api_key: str, covered: list[dict]) -> dict:
+def select_and_generate(api_keys: list[str], covered: list[dict]) -> dict:
     """名馬の選定・脚本生成・ファクトチェック・修正を1回の API 呼び出しで実行する。
 
     Returns:
@@ -229,7 +247,7 @@ CATCHPHRASE: [その馬を象徴する20文字以内の一言]
 [修正済みの最終脚本テキストのみ]
 ---END---
 """
-    response = call_gemini(api_key, prompt, temperature=0.7)
+    response = call_gemini(api_keys, prompt, temperature=0.7)
     print(f"[API応答]\n{response[:600]}...\n", file=sys.stderr)
     return _parse_select_response(response)
 
@@ -268,7 +286,7 @@ def _parse_select_response(response: str) -> dict:
 # ステップ2: メタデータ生成（タグ・サムネイルテキスト）
 # ---------------------------------------------------------------------------
 
-def generate_metadata(api_key: str, horse_name: str, script: str,
+def generate_metadata(api_keys: list[str], horse_name: str, script: str,
                       era: str, catchphrase: str) -> dict:
     """YouTube 用タグ・サムネイルテキストを生成する。"""
     prompt = f"""\
@@ -285,7 +303,7 @@ TAGS: [馬名, GⅠレース名1, レース名2, キーワード... をカンマ
 THUMBNAIL_TOP: [3〜8文字の短いテキスト（例: 史上初の / 伝説の / 幻の / 奇跡の）]
 THUMBNAIL_MAIN: [5〜12文字のメインテキスト（例: 変則二冠 / 超ハイペース / 24連敗）]
 """
-    response = call_gemini(api_key, prompt, temperature=0.5)
+    response = call_gemini(api_keys, prompt, temperature=0.5)
     print(f"[メタデータ応答]\n{response}\n", file=sys.stderr)
 
     meta: dict[str, str] = {}
@@ -360,17 +378,13 @@ def write_pipeline_files(horse_key: str, horse_name: str, catchphrase: str,
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if not api_key:
+    api_keys = load_api_keys()
+    if not api_keys:
         print("[エラー] GEMINI_API_KEY が設定されていません", file=sys.stderr)
         sys.exit(1)
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(exist_ok=True)
-
-    # 使用キーの先頭8文字だけ表示（診断用）
-    key_preview = api_key[:8] + "..." if len(api_key) > 8 else "(短すぎる)"
-    print(f"[診断] 使用キー先頭8文字: {key_preview}  長さ: {len(api_key)}", file=sys.stderr)
 
     # 既存の名馬リスト確認
     covered = get_existing_horses()
@@ -381,7 +395,7 @@ def main() -> None:
     # ── API呼び出し1回目 ──────────────────────────────────────────────────
     # 名馬選定 + 脚本生成 + ファクトチェック + 修正（1プロンプトで全て実行）
     print("\n[名馬選定・脚本生成・ファクトチェック中...]", file=sys.stderr)
-    result = select_and_generate(api_key, covered)
+    result = select_and_generate(api_keys, covered)
 
     horse_name = result["name"]
     horse_key = result["key"]
@@ -403,7 +417,7 @@ def main() -> None:
     print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
     time.sleep(20)
     print("[メタデータ生成中...]", file=sys.stderr)
-    metadata = generate_metadata(api_key, horse_name, script, era, catchphrase)
+    metadata = generate_metadata(api_keys, horse_name, script, era, catchphrase)
 
     # data/famous_horses/ に保存
     (DATA_DIR / f"{horse_key}.txt").write_text(script, encoding="utf-8")
