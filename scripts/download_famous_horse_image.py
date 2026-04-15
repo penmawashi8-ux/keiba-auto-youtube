@@ -88,10 +88,15 @@ def get_image_info(file_title: str) -> dict | None:
     author = strip_html(author_raw)
 
     # 小さすぎる画像を除外（幅400px未満）
-    width = info.get("width", 0)
+    width  = info.get("width", 0)
+    height = info.get("height", 0)
     if width and width < 400:
         print(f"    解像度不足 ({width}px) → スキップ")
         return None
+
+    # アスペクト比スコア: 縦長・正方形ほど顔写真に近い (height/width が大きいほど高スコア)
+    # 横長レース写真(例: 1.5:1)より正方形(1:1)や縦長を優先
+    aspect_score = (height / width) if (width and height) else 0.5
 
     return {
         "url": url,
@@ -100,6 +105,8 @@ def get_image_info(file_title: str) -> dict | None:
         "file_title": file_title,
         "commons_url": f"https://commons.wikimedia.org/wiki/{urllib.parse.quote(file_title.replace(' ', '_'))}",
         "width": width,
+        "height": height,
+        "aspect_score": aspect_score,
     }
 
 
@@ -147,19 +154,27 @@ def main() -> None:
     print(f"=== Wikimedia Commons 画像検索: {horse_name} ===")
     Path(ASSETS_DIR).mkdir(exist_ok=True)
 
-    # 馬名単独 → 馬名+競走馬 の順で検索、最大NUM_SLOTS枚収集
-    queries = [horse_name, f"{horse_name} 競走馬", f"{horse_name} racehorse"]
+    # 検索クエリ: 顔・頭部写真が取れやすいクエリを先に試す
+    queries = [
+        horse_name,
+        f"{horse_name} 競走馬",
+        f"{horse_name} racehorse",
+        f"{horse_name} horse portrait",
+        f"{horse_name} head",
+    ]
+    # 候補を多めに収集してアスペクト比でソートするため上限を緩める
+    COLLECT_LIMIT = NUM_SLOTS * 3
     collected: list[dict] = []
 
     for query in queries:
-        if len(collected) >= NUM_SLOTS:
+        if len(collected) >= COLLECT_LIMIT:
             break
         print(f"  検索クエリ: 「{query}」")
         titles = search_commons(query, limit=20)
         print(f"  ヒット数: {len(titles)} 件")
 
         for title in titles:
-            if len(collected) >= NUM_SLOTS:
+            if len(collected) >= COLLECT_LIMIT:
                 break
             # 重複スキップ
             if any(c["file_title"] == title for c in collected):
@@ -170,8 +185,11 @@ def main() -> None:
                 time.sleep(0.3)
                 continue
             collected.append(info)
-            print(f"    OK: {info['author']} / {info['license']}")
+            print(f"    OK: {info['author']} / {info['license']} aspect={info['aspect_score']:.2f}")
             time.sleep(0.5)
+
+    # アスペクト比スコア降順でソート（縦長・正方形 = 顔/ポートレート写真を優先）
+    collected.sort(key=lambda x: x["aspect_score"], reverse=True)
 
     if not collected:
         print("[警告] フリーライセンスの適切な画像が見つかりませんでした。", file=sys.stderr)

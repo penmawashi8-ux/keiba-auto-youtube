@@ -29,7 +29,7 @@ FPS            = 30
 FONT_SIZE      = 64
 BGM_VOLUME     = 0.15
 ENDING_DUR     = 4.0
-LINE_MAX_CHARS = 17
+LINE_MAX_CHARS = 13   # fontsize=64 × 13chars = 832px + border60 = 892px < 1080px
 LABEL_TEXT     = "名馬列伝"
 PANEL_Y        = 1180   # 字幕パネルの上端Y座標
 PANEL_H        = 360    # 字幕パネルの高さ
@@ -166,12 +166,12 @@ def make_clip(
         tf = text_file.replace("'", "\\'")
         fp = font_path.replace("'", "\\'")
 
-        # シリーズラベル（上部）
+        # シリーズラベル（上部 y=150: スマホのUI被りを避ける）
         chain += (
             f",drawtext=textfile='{lf}':fontfile='{fp}':"
             f"fontsize=42:fontcolor=0xC8A200@0.95:"
-            f"x=(w-text_w)/2:y=82:"
-            f"box=1:boxcolor=0x000000@0.60:boxborderw=16"
+            f"x=(w-text_w)/2:y=150:"
+            f"box=1:boxcolor=0x000000@0.75:boxborderw=18"
         )
 
         if is_ending:
@@ -302,10 +302,10 @@ def generate_thumbnail(
     """
     tmp_raw = thumb_path + ".raw.jpg"
 
-    # Step 1: フレーム抽出（1280x720）
+    # Step 1: フレーム抽出（1080x1920 縦向き・動画と同じアスペクト比）
     extract = subprocess.run([
         "ffmpeg", "-y", "-ss", "1", "-i", video_path,
-        "-vframes", "1", "-s", "1280x720", "-f", "image2", tmp_raw,
+        "-vframes", "1", "-s", "1080x1920", "-f", "image2", tmp_raw,
     ], capture_output=True, text=True)
     if extract.returncode != 0 or not Path(tmp_raw).exists():
         print("  [警告] フレーム抽出失敗", file=sys.stderr)
@@ -317,7 +317,7 @@ def generate_thumbnail(
         print(f"  サムネイル生成完了: {thumb_path} ({size_kb} KB)")
         return True
 
-    # Step 2: drawtext でタイトルオーバーレイ
+    # Step 2: drawtext でタイトルオーバーレイ（1080x1920 縦向き用レイアウト）
     tmp_dir = "/tmp/famous_horse_thumb"
     Path(tmp_dir).mkdir(parents=True, exist_ok=True)
 
@@ -338,31 +338,31 @@ def generate_thumbnail(
     # 全体を少し暗く
     chain = "[0:v]eq=brightness=-0.12"
 
-    # 「名馬列伝」シリーズラベル（上部・ゴールド）
+    # 「名馬列伝」シリーズラベル（y=160: スマホUI被りを避ける）
     chain += (
         f",drawtext=textfile='{lf}':fontfile='{fp}':"
-        f"fontsize=46:fontcolor=0xC8A200:"
-        f"x=(w-text_w)/2:y=36:"
-        f"box=1:boxcolor=0x000000@0.65:boxborderw=18:"
+        f"fontsize=52:fontcolor=0xC8A200:"
+        f"x=(w-text_w)/2:y=160:"
+        f"box=1:boxcolor=0x000000@0.75:boxborderw=22:"
         f"borderw=2:bordercolor=0x000000"
     )
 
-    # 馬名（中央より上・大きく黄色）
+    # 馬名（縦中央付近・大きく黄色・fontsize=100でoverflow防止）
     chain += (
         f",drawtext=textfile='{nf}':fontfile='{fp}':"
-        f"fontsize=130:fontcolor=0xFFEB00:"
-        f"x=(w-text_w)/2:y=230:"
-        f"box=1:boxcolor=0x000000@0.72:boxborderw=32:"
-        f"borderw=5:bordercolor=0x000000"
+        f"fontsize=100:fontcolor=0xFFEB00:"
+        f"x=(w-text_w)/2:y=680:"
+        f"box=1:boxcolor=0x000000@0.72:boxborderw=28:"
+        f"borderw=4:bordercolor=0x000000"
     )
 
     # キャッチフレーズ（馬名の下・白）
     if catchphrase:
         chain += (
             f",drawtext=textfile='{cf}':fontfile='{fp}':"
-            f"fontsize=48:fontcolor=0xFFFFFF:"
-            f"x=(w-text_w)/2:y=440:"
-            f"box=1:boxcolor=0x000000@0.60:boxborderw=18:"
+            f"fontsize=50:fontcolor=0xFFFFFF:"
+            f"x=(w-text_w)/2:y=840:"
+            f"box=1:boxcolor=0x000000@0.65:boxborderw=20:"
             f"borderw=2:bordercolor=0x000000"
         )
 
