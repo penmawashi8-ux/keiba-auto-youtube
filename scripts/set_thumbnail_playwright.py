@@ -87,6 +87,143 @@ def wait_for_studio(page, timeout: int = 30000) -> bool:
     return False
 
 
+# shadow DOM を再帰的に探索してクリックする JS スニペット
+_JS_CLICK_THUMBNAIL = """
+() => {
+    function findInShadow(root, selector) {
+        try {
+            const el = root.querySelector(selector);
+            if (el) return el;
+        } catch (e) {}
+        const all = root.querySelectorAll('*');
+        for (const host of all) {
+            if (host.shadowRoot) {
+                const found = findInShadow(host.shadowRoot, selector);
+                if (found) return found;
+            }
+        }
+        return null;
+    }
+
+    function findButtonByText(root, texts) {
+        const candidates = root.querySelectorAll(
+            'button, label, div[role="button"], span[role="button"]'
+        );
+        for (const el of candidates) {
+            const label = (el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '');
+            if (texts.some(t => label.includes(t))) return el;
+        }
+        const all = root.querySelectorAll('*');
+        for (const host of all) {
+            if (host.shadowRoot) {
+                const found = findButtonByText(host.shadowRoot, texts);
+                if (found) return found;
+            }
+        }
+        return null;
+    }
+
+    // セレクタで探す
+    const selectors = [
+        '#still-picker-button',
+        'ytcp-still-picker button',
+        'ytcp-thumbnails-compact-editor-desktop button',
+        'ytcp-thumbnails-compact-editor button',
+        'ytcp-still-picker',
+        'ytcp-thumbnails-compact-editor-desktop',
+    ];
+    for (const sel of selectors) {
+        const el = findInShadow(document, sel);
+        if (el) {
+            el.scrollIntoView({block: 'center'});
+            el.click();
+            return 'clicked:' + sel;
+        }
+    }
+
+    // テキストで探す
+    const texts = ['サムネイル', 'thumbnail', 'Thumbnail', 'アップロード', 'Upload'];
+    const btn = findButtonByText(document, texts);
+    if (btn) {
+        btn.scrollIntoView({block: 'center'});
+        btn.click();
+        return 'clicked:text';
+    }
+
+    return 'not_found';
+}
+"""
+
+# shadow DOM を含め hidden な file input を強制表示する JS スニペット
+_JS_SHOW_FILE_INPUTS = """
+() => {
+    function showInputs(root) {
+        const inputs = root.querySelectorAll("input[type='file']");
+        inputs.forEach(el => {
+            el.style.cssText = [
+                'display:block!important',
+                'visibility:visible!important',
+                'opacity:1!important',
+                'position:fixed!important',
+                'top:0', 'left:0',
+                'width:100px', 'height:100px',
+                'z-index:99999',
+            ].join(';');
+        });
+        root.querySelectorAll('*').forEach(host => {
+            if (host.shadowRoot) showInputs(host.shadowRoot);
+        });
+    }
+    showInputs(document);
+}
+"""
+
+
+def _try_click_thumbnail_button(page) -> None:
+    """サムネイルアップロードボタンをあらゆる手段でクリックする。"""
+    # サムネイルセクションへスクロール
+    page.evaluate("""
+        () => {
+            const el = document.querySelector(
+                'ytcp-thumbnails-compact-editor-desktop, ytcp-still-picker, ytcp-thumbnails-compact-editor'
+            );
+            if (el) el.scrollIntoView({block: 'center'});
+        }
+    """)
+    time.sleep(0.5)
+
+    # Playwright セレクタで試す
+    selectors = [
+        "#still-picker-button",
+        "ytcp-still-picker button",
+        "ytcp-thumbnails-compact-editor-desktop button",
+        "ytcp-thumbnails-compact-editor button",
+        "button[aria-label*='サムネイル']",
+        "button[aria-label*='thumbnail']",
+        "button[aria-label*='Thumbnail']",
+        "button:has-text('サムネイルをアップロード')",
+        "button:has-text('Upload thumbnail')",
+        "button:has-text('カスタムサムネイルをアップロード')",
+        "button:has-text('Upload custom thumbnail')",
+        "button:has-text('アップロード')",
+        "ytcp-thumbnails-compact-editor-desktop",
+        "ytcp-still-picker",
+    ]
+    for sel in selectors:
+        try:
+            page.locator(sel).first.click(timeout=3000)
+            print(f"  [情報] Playwright クリック成功: {sel}", file=sys.stderr)
+            return
+        except Exception:
+            continue
+
+    # JS で shadow DOM を含めて探してクリック
+    result = page.evaluate(_JS_CLICK_THUMBNAIL)
+    if result == "not_found":
+        raise Exception("サムネイルボタンが見つかりませんでした (Playwright + JS 両方失敗)")
+    print(f"  [情報] JS クリック成功: {result}", file=sys.stderr)
+
+
 def set_thumbnail(page, video_id: str, thumbnail_path: str) -> bool:
     """YouTube Studio の動画編集ページでサムネイルを設定する。"""
     url = f"https://studio.youtube.com/video/{video_id}/edit"
@@ -107,46 +244,35 @@ def set_thumbnail(page, video_id: str, thumbnail_path: str) -> bool:
         _save_debug_screenshot(page, video_id, "load_timeout")
         return False
 
-    time.sleep(2)
+    time.sleep(3)
 
-    # サムネイルアップロードボタンをクリック
-    # ボタンが見つからない場合は直接 input[type='file'] にファイルをセットする
-    button_found = False
+    # --- アプローチ1: expect_file_chooser でファイル選択ダイアログをインターセプト ---
+    thumbnail_set = False
     try:
-        click_first(page, [
-            "#still-picker-button",
-            "ytcp-still-picker button",
-            "ytcp-thumbnails-compact-editor-desktop button",
-            "ytcp-thumbnails-compact-editor button",
-            "button[aria-label*='サムネイル']",
-            "button[aria-label*='thumbnail']",
-            "button[aria-label*='Thumbnail']",
-            "button:has-text('サムネイルをアップロード')",
-            "button:has-text('Upload thumbnail')",
-            "button:has-text('カスタムサムネイルをアップロード')",
-            "button:has-text('Upload custom thumbnail')",
-            "button:has-text('アップロード')",
-        ], timeout=8000)
-        button_found = True
-        time.sleep(1)
+        with page.expect_file_chooser(timeout=20000) as fc_info:
+            _try_click_thumbnail_button(page)
+        fc_info.value.set_files(thumbnail_path)
+        print(f"  サムネイルファイルセット (file_chooser): {thumbnail_path}")
+        thumbnail_set = True
     except Exception as e:
-        print(f"  [情報] ボタンクリックをスキップ、直接ファイルセットを試みます: {e}", file=sys.stderr)
+        print(f"  [警告] file_chooser 方式失敗: {e}", file=sys.stderr)
+        _save_debug_screenshot(page, video_id, "file_chooser_error")
 
-    # ファイルをセット（input[type='file'] に直接渡す）
-    try:
-        file_input = page.locator("input[type='file'][accept*='image']").first
-        file_input.set_input_files(thumbnail_path, timeout=8000)
-        print(f"  サムネイルファイルセット: {thumbnail_path}")
-    except Exception:
-        # acceptなしの file input も試す
+    # --- アプローチ2: hidden な input[type='file'] を強制表示してセット ---
+    if not thumbnail_set:
         try:
+            page.evaluate(_JS_SHOW_FILE_INPUTS)
+            time.sleep(0.5)
             file_input = page.locator("input[type='file']").first
-            file_input.set_input_files(thumbnail_path, timeout=8000)
-            print(f"  サムネイルファイルセット (fallback): {thumbnail_path}")
+            file_input.set_input_files(thumbnail_path, timeout=10000)
+            print(f"  サムネイルファイルセット (hidden input): {thumbnail_path}")
+            thumbnail_set = True
         except Exception as e2:
-            print(f"  [警告] ファイルセット失敗: {e2}", file=sys.stderr)
+            print(f"  [警告] hidden input 方式失敗: {e2}", file=sys.stderr)
             _save_debug_screenshot(page, video_id, "file_input_error")
-            return False
+
+    if not thumbnail_set:
+        return False
 
     time.sleep(3)
 
