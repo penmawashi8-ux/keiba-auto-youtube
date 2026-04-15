@@ -55,6 +55,8 @@ jobs:
         id: gen_script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_FAMOUS_HORSE }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         run: |
           mkdir -p output
           python scripts/generate_famous_horse_script.py \
