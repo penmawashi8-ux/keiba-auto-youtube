@@ -54,7 +54,7 @@ jobs:
       - name: AI脚本生成・ファクトチェック・修正
         id: gen_script
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_FAMOUS_HORSE }}
         run: |
           mkdir -p output
           python scripts/generate_famous_horse_script.py \
