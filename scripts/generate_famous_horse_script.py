@@ -104,7 +104,7 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
 
     for model in PREFERRED_MODELS:
         url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
-        waits = [0] + RATE_LIMIT_WAITS  # [0, 60, 120, 240]
+        waits = [0] + RATE_LIMIT_WAITS  # [0, 30]
 
         for attempt, wait in enumerate(waits):
             if wait:
@@ -145,7 +145,8 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
                 break
 
             except Exception as e:
-                print(f"  [{model}] エラー: {e} → 次のモデルへ", file=sys.stderr)
+                safe_msg = str(e).replace(api_key, "***")
+                print(f"  [{model}] エラー: {safe_msg} → 次のモデルへ", file=sys.stderr)
                 break
 
         time.sleep(3)  # モデル切り替え時の短いインターバル

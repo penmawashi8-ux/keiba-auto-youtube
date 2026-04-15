@@ -234,6 +234,10 @@ jobs:
           mkdir -p debug
           cp /tmp/fetch_news.log debug/last_fetch_news.log 2>/dev/null || echo "(ログなし)" > debug/last_fetch_news.log
           cp /tmp/gemini.log debug/last_generate_script.log 2>/dev/null || echo "(ログなし)" > debug/last_generate_script.log
+          # APIキーパターンをログからマスク（key=AIzaSy... 形式）
+          for f in debug/last_fetch_news.log debug/last_generate_script.log; do
+            sed -i 's/key=AIzaSy[A-Za-z0-9_-]*/key=***/g' "$f" 2>/dev/null || true
+          done
           git add debug/last_fetch_news.log debug/last_generate_script.log
           if git diff --staged --quiet; then
             echo "ログ変更なし。"
