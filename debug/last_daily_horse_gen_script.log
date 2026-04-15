@@ -1,4 +1,4 @@
-[診断] 使用キー先頭8文字: AIzaSyDe...  長さ: 39
+[診断] Gemini APIキー: 3 件ロード
 [既存の名馬] 4 頭:
   - ラインクラフト (linecrafter)
   - サイレンススズカ (silence_suzuka)
@@ -6,40 +6,100 @@
   - テイエムプリキュア (teiem_purikyua)
 
 [名馬選定・脚本生成・ファクトチェック中...]
-  [gemini-2.0-flash] 429 詳細: {
+  [key=***... gemini-2.5-flash] HTTP エラー 503 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [gemini-2.0-flash] 429 レート制限。30秒待機...
-  [gemini-2.0-flash] 429 詳細: {
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [gemini-2.0-flash] 429 リトライ上限 → 次のモデルへ
-  [gemini-2.0-flash-lite] 429 詳細: {
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [gemini-2.0-flash-lite] 429 詳細: {
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [gemini-2.0-flash-lite] 429 リトライ上限 → 次のモデルへ
-  [gemini-1.5-flash] HTTP 404 → 次のモデルへ
-  [gemini-1.5-flash-8b] HTTP 404 → 次のモデルへ
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+[API応答]
+HORSE_NAME: イスキリ
+HORSE_KEY: isukiri
+ERA: 2000年代
+CATCHPHRASE: 逆転の奇跡
+
+---SCRIPT---
+スタートラインで、馬が18頭。
+その中にいたのは、イスキリ。
+2005年、中山競馬場。
+毎日新聞杯を16番人気で制めた。
+父はディープインパクト、母はサクラアンド。
+しかし、そこから続く3年間は、24戦無敗。
+2008年、クラシック三冠への期待が高まる。
+皐月賞は5着、東京優駿は12着。
+ 予想は外れた。
+それでも、毎日新聞杯の勝利は消えない。
+2009年、クラシック三冠を狙うも、 3着。
+ 2010年、 毎日杯を制覇。
+ 2011年、 宝塚記念で3着。
+ 2012年、 毎日杯を制し、 3度目の勝利。
+ 4歳で引退。
+ 3着の成績は、決して目立ったものではない。
+ しかし、 毎日新聞杯の勝利は、 競馬ファンに夢を与えた。
+ 逆境を乗り越え、 諦めずに走り続けた。
+ 困難に立ち向かう勇気を与えた。
+ 競馬の奇跡、イスキリ。...
+
 Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 433, in <module>
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 447, in <module>
     main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 384, in main
-    result = select_and_generate(api_key, covered)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 232, in select_and_generate
-    response = call_gemini(api_key, prompt, temperature=0.7)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 158, in call_gemini
-    raise RuntimeError(
-RuntimeError: Gemini API: 全モデルで 429 レート制限。
-ニュースワークフローと同時実行するとAPIクォータが枯渇します。
-17:00 JST のスケジュール実行（ニュースワークフローが動いていない時間帯）なら通るはずです。
-手動テストする場合は news ワークフローが動いていない時間帯を選んでください。
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 398, in main
+    result = select_and_generate(api_keys, covered)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 252, in select_and_generate
+    return _parse_select_response(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 279, in _parse_select_response
+    raise ValueError(f"脚本を取得できませんでした。レスポンス:\n{response}")
+ValueError: 脚本を取得できませんでした。レスポンス:
+HORSE_NAME: イスキリ
+HORSE_KEY: isukiri
+ERA: 2000年代
+CATCHPHRASE: 逆転の奇跡
+
+---SCRIPT---
+スタートラインで、馬が18頭。
+その中にいたのは、イスキリ。
+2005年、中山競馬場。
+毎日新聞杯を16番人気で制めた。
+父はディープインパクト、母はサクラアンド。
+しかし、そこから続く3年間は、24戦無敗。
+2008年、クラシック三冠への期待が高まる。
+皐月賞は5着、東京優駿は12着。
+ 予想は外れた。
+それでも、毎日新聞杯の勝利は消えない。
+2009年、クラシック三冠を狙うも、 3着。
+ 2010年、 毎日杯を制覇。
+ 2011年、 宝塚記念で3着。
+ 2012年、 毎日杯を制し、 3度目の勝利。
+ 4歳で引退。
+ 3着の成績は、決して目立ったものではない。
+ しかし、 毎日新聞杯の勝利は、 競馬ファンに夢を与えた。
+ 逆境を乗り越え、 諦めずに走り続けた。
+ 困難に立ち向かう勇気を与えた。
+ 競馬の奇跡、イスキリ。
