@@ -5,31 +5,55 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【園田競馬・今日の世麗】15日は4鞍に騎乗　7Rの初騎乗ベビーヴァギーに期待寄せる ---
-[0] Gemini入力本文 341文字: '4月14日は6鞍に騎乗した佐々木世麗騎手＝園田・尾林幸二厩舎＝。最終レースのクレスコユウシャで勝ち、“復帰後”初勝利。「テンションが高くて心配したけど、最後はよく伸びましたね」と笑顔がはじけた。体調がすっかり回復したこともあり、「今後は健康'
+--- 記事[0]: リアライズルミナス、フローラS1週前追い切り速報/栗東トレセンニュース ---
+[0] Gemini入力本文 341文字: '2月28日の3歳未勝利戦を勝った後はフローラS(4月26日・東京芝2000m)に向けて調整を進めているリアライズルミナス(栗東・橋口慎介厩舎)。今朝15日はレースに向けた1週前追い切りを行っている。\n\u3000レースでも騎乗が予定されている松山弘平'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【園田競馬・人気ジョッキーは語る】クラウドノイズ(11R)でメイン制覇に挑む小谷哲平騎手「今回はハナにこだわりたい」 ---
-[1] Gemini入力本文 359文字: '◆園田競馬2日目(4月15日)\n\t\t\t\t\u3000《下原\u3000理》\n\t\t\t\t\u30002勝を挙げて40勝。ディナン(8R)で勝利を意識。「斤量の58キロがどうかだけ」(◎)。メイショウアラジン(3R)は「能力ありそう」(◎)。ジーニアスレノン(12R)も「確実'
+--- 記事[1]: 皐月賞登録馬の香港表記・馬名意味を紹介 「馬上特技」や「天狼煌煌」など全21頭 ---
+[1] Gemini入力本文 522文字: '4月19日(日)に中山競馬場で行われる皐月賞(3歳牡牝・GI・芝2000m)。同レースは香港でも馬券発売が行われる予定で、出走各馬には香港競馬で用いる漢字表記が当てられている。そこで本稿では、各馬の馬名意味と併せて、登録全頭の香港馬名表記を'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【皐月賞】松山弘平騎手が2週連続クラシックV狙う　共同会見　「ロブチェンとまたいいレースができるように」 ---
-[2] Gemini入力本文 349文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝15日、栗東トレセン\n\t\t\t\t\u3000昨年のホープフルS覇者ロブチェン(牡3歳、栗東・杉山晴紀厩舎、父ワールドプレミア)と挑む松山弘平騎手＝栗東・フリー＝が共同会見に出席した。'
+--- 記事[2]: カヴァレリッツォ＆アルトラムス 史上12組目の皐月賞父仔制覇なるか ---
+[2] Gemini入力本文 344文字: 'サートゥルナーリア産駒のカヴァレリッツォ(牡3、栗東・吉岡辰弥厩舎)とイスラボニータ産駒のアルトラムス(牡3、栗東・野中賢二厩舎)が、皐月賞(3歳牡牝・GI・芝2000m)で史上12組目の父仔制覇を目指す。\n\u3000カヴァレリッツォは19年覇者の'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
-  HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -43,19 +67,55 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  HTTP 503
+  HTTP 503
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 182文字]: '第86回皐月賞・G1は4月19日、中山競馬場・芝2000メートルで行われます。15日に栗東トレセンで共同会見が開かれ、昨年のホープフルS覇者ロブチェンと挑む松山弘平騎手が出席しました。松山弘平騎手は先週の桜花賞をスターアニスで制しており、この皐月賞で2週連続クラシック勝利がかかります。松山弘平騎手は「ロブチェンとまたいいレースができるように」とコメントしました。'
-[2]  → output/script_2.txt 保存 (182文字)
-[2]  プレビュー: 第86回皐月賞・G1は4月19日、中山競馬場・芝2000メートルで行われます。15日に栗東トレセンで共同会見が開かれ、昨年のホープフルS覇者ロブチェンと挑む松山...
+[2]  [Gemini生出力 169文字]: 'サートゥルナーリア産駒のカヴァレリッツォ(牡3、栗東・吉岡辰弥厩舎)とイスラボニータ産駒のアルトラムス(牡3、栗東・野中賢二厩舎)が、皐月賞(3歳牡牝・GI・芝2000m)で史上12組目の父仔制覇を目指す。カヴァレリッツォはデビュー戦を快勝し、デイリー杯2歳Sではアドマイヤクワッズに2着。そして前走の朝日杯FSではGI初制覇を果たした。'
   HTTP 200
-[0]  [Gemini生出力 184文字]: '佐々木世麗騎手は4月14日に6鞍に騎乗し、最終レースのクレスコユウシャで勝ち、“復帰後”初勝利を挙げました。佐々木騎手は「テンションが高くて心配したけど、最後はよく伸びましたね」と笑顔を見せました。体調がすっかり回復したこともあり、「今後は健康に気をつけたい」と気を引き締めています。15日は4鞍に騎乗する予定で、初騎乗となる7Rのベビーヴァギーに期待を寄せています。'
-[0]  → output/script_0.txt 保存 (184文字)
-[0]  プレビュー: 佐々木世麗騎手は4月14日に6鞍に騎乗し、最終レースのクレスコユウシャで勝ち、“復帰後”初勝利を挙げました。佐々木騎手は「テンションが高くて心配したけど、最後は...
+[0]  [Gemini生出力 151文字]: '2月28日の3歳未勝利戦を勝ったリアライズルミナスは、フローラS（4月26日・東京芝2000m）に向けて調整を進めている。今朝15日は、栗東トレーニングステーションで1週前追い切りを実施した。松山弘平騎手を背に、CWコースでセボンサデッセとともに向正面に入り、折り合いがついた走りで相手を追走していた。'
+[2]  → output/script_2.txt 保存 (141文字)
+[2]  プレビュー: サートゥルナーリア産駒のカヴァレリッツォとイスラボニータ産駒のアルトラムスが、皐月賞(3歳牡牝・GI・芝2000m)で史上12組目の父仔制覇を目指す。カヴァレリ...
+[0]  → output/script_0.txt 保存 (151文字)
+[0]  プレビュー: 2月28日の3歳未勝利戦を勝ったリアライズルミナスは、フローラS（4月26日・東京芝2000m）に向けて調整を進めている。今朝15日は、栗東トレーニングステーシ...
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 243文字]: '園田競馬2日目の4月15日、下原理騎手は2勝を挙げ、通算40勝に到達しました。下原理騎手は、8Rのディナンについて「斤量の58キロがどうかだけ」と述べ、勝利を意識しています。また、3Rのメイショウアラジンは「能力ありそう」と評価し、12Rのジーニアスレノンは「確実に脚を使ってくれそう」と期待を寄せています。9Rのカットバックについては「このメンバー相手にどこまで戦えるか。まさに正念場」とコメントしました。さらに、10Rのウィルダスクには「叩き2走目で前進してほしい」と語っています。'
-[1]  → output/script_1.txt 保存 (243文字)
-[1]  プレビュー: 園田競馬2日目の4月15日、下原理騎手は2勝を挙げ、通算40勝に到達しました。下原理騎手は、8Rのディナンについて「斤量の58キロがどうかだけ」と述べ、勝利を意...
+[1]  [Gemini生出力 201文字]: '4月19日に中山競馬場で皐月賞(3歳牡牝・GI・芝2000m)が開催されます。出走各馬には香港競馬で用いる漢字表記が当てられています。登録馬は全21頭です。アクロフェイズ(牡3、栗東・奥村豊厩舎)の馬名意味は「頂点位相」で、香港馬名表記は「高峰位」です。アスクイキゴミ(牡3、栗東・藤原英昭厩舎)の馬名意味は「冠名+さあや?..」で、香港馬名表記は「…」となります。カヴァレリッツォは「馬上特技」です。'
+[1]  → output/script_1.txt 保存 (173文字)
+[1]  プレビュー: 4月19日に中山競馬場で皐月賞(3歳牡牝・GI・芝2000m)が開催されます。出走各馬には香港競馬で用いる漢字表記が当てられています。登録馬は全21頭です。アク...
 
 3 件の脚本を生成しました。
