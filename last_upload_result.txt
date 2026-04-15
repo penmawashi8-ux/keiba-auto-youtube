@@ -1,10 +1,10 @@
-date: 2026-04-15T05:30:37.554391Z
+date: 2026-04-15T06:39:22.310238Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-mQ_QSHP1s4 title=アドマイヤズーム、マイラーズC1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=2PAcX0sNahU title=【アンタレスS】ムルソーが重賞初勝利に向けて鋭い伸び　池江調教師「いい感じで来て
-OK project=1 video_id=H3sVDtQtnVw title=【福島牝馬S】パラディレーヌ重賞初制覇へ福島克服がカギ　千田調教師「(能力で)ク
+OK project=1 video_id=rmGcxfB1-h0 title=「後悔は一切ない」障害通算200勝の西谷誠騎手が改めて現役引退の意向明かす　四位
+OK project=1 video_id=g9TMyFNa_1U title=【注目馬動向】天皇賞・春に参戦するスティンガーグラスはダミアン・レーン騎手と新コ
+OK project=1 video_id=0t2iQtGSgF8 title=【注目馬動向】アルクオーツスプリント2着のルガル　英G1の直線競馬クイーンエリザ
