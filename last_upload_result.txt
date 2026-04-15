@@ -1,10 +1,10 @@
-date: 2026-04-15T12:01:54.652535Z
+date: 2026-04-15T22:48:08.378990Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3EwB8-RjV-s title=三浦皇成騎手がノーバン始球式！　昨年は戸崎圭太のワンバン投球イジるも「戸崎さんの
-OK project=1 video_id=34LNtqa6Buw title=【大井競馬　Jpn3東京スプリント】ドラゴンウェルズが逃げ切り　3連勝で重賞初制
-OK project=1 video_id=WD9gGihHOso title=【東京スプリント】唯一の牝馬ママコチャは5着　川田将雅騎手は16年ぶりの勝利なら
+OK project=1 video_id=5GadvDCHA3s title=【アンタレスS】持ったまま加速ムルソー池江師「いい感じ」
+OK project=1 video_id=piaXY2EIZFw title=【皐月賞】2歳マイル王カヴァレリッツォG1連勝へ「仕上がった」
+OK project=1 video_id=yTh5Zhc_kY8 title=「面白い引退の仕方だね」障害の名手西谷誠騎手、今後の騎乗予定なし
