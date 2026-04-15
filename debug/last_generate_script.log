@@ -5,27 +5,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
-利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
+利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 三浦皇成騎手がノーバン始球式！　昨年は戸崎圭太のワンバン投球イジるも「戸崎さんの偉大さがわかりました（笑）」　背番号はウ ---
-[0] Gemini入力本文 332文字: '「ロッテ-日本ハム」（１５日、ＺＯＺＯマリンスタジアム）\n\u3000千葉ロッテマリーンズ冠協賛試合「ＪＲＡ中山競馬場ｐｒｅｓｅｎｔｓ皐月賞ナイター」として開催され、三浦皇成騎手（３６）＝美浦・鹿戸＝がファーストピッチセレモニーを行った。\n\u3000背番号は'
+--- 記事[0]: 【アンタレスS】持ったまま加速ムルソー池江師「いい感じ」 ---
+[0] Gemini入力本文 353文字: '◆アンタレスS追い切り(15日・栗東トレセン)\n\t\t\t\t\u3000第31回アンタレスS・G3(18日、阪神)で初タイトルを狙うムルソーは栗東・CWコースで4ハロン54秒4―11秒4。しまい重点ではあったが、直線ではゴールに向かって持ったままで加速し'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【大井競馬　Jpn3東京スプリント】ドラゴンウェルズが逃げ切り　3連勝で重賞初制覇 ---
-[1] Gemini入力本文 249文字: '「第37回東京スプリント」(Jpn3)が大井競馬場で行われ、戸崎圭太騎乗の2番人気ドラゴンウェルズ(牡4＝藤原)が最内枠から逃げ切り、3連勝で重賞初制覇を飾った。地元の伏兵ティントレットが2着。JRAのヤマニンアルリフラが3着に入った。 「'
+--- 記事[1]: 【皐月賞】2歳マイル王カヴァレリッツォG1連勝へ「仕上がった」 ---
+[1] Gemini入力本文 349文字: '◆皐月賞追い切り(15日・栗東トレセン)\n\t\t\t\t\u3000第86回皐月賞・G1(19日、中山)の追い切りが15日、東西トレセンで行われた。先週土曜が実質的な最終追いだったカヴァレリッツォが仕上がりチェックで動き2位評価となった。16日に枠順が決定'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【東京スプリント】唯一の牝馬ママコチャは5着　川田将雅騎手は16年ぶりの勝利ならず ---
-[2] Gemini入力本文 355文字: '◆第37回東京スプリント・Jpn3(4月15日、大井競馬場・ダート1200メートル、良)\n\t\t\t\t\u3000大井競馬の白砂にスピード自慢の14頭(JRA5、南関東9頭＝マックスは競走除外)が集結。メンバー唯一の牝馬で3番人気のママコチャ(牝7歳、栗'
+--- 記事[2]: 「面白い引退の仕方だね」障害の名手西谷誠騎手、今後の騎乗予定なし ---
+[2] Gemini入力本文 338文字: '14日に東京サラブレッドクラブのホームページで現役を引退する意向を表明していた西谷誠騎手(49)＝栗東・中内田厩舎＝が15日、栗東トレセンで取材に応じ、改めて今月末で騎手生活にピリオドを打つことを発表した。\n\t\t\t\t\u3000数年前から引退を考えて'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -42,20 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 184文字]: '第37回東京スプリント・Jpn3が4月15日に大井競馬場ダート1200メートル、良馬場で行われました。スピード自慢の14頭が集結したこのレースで、メンバー唯一の牝馬として3番人気に推されたママコチャは、最後の直線で外から脚を伸ばしましたが、結果は5着でした。これにより、川田将雅騎手は2010年のスーニ以来となる16年ぶりの同レース勝利を果たすことはできませんでした。'
-[2]  → output/script_2.txt 保存 (184文字)
-[2]  プレビュー: 第37回東京スプリント・Jpn3が4月15日に大井競馬場ダート1200メートル、良馬場で行われました。スピード自慢の14頭が集結したこのレースで、メンバー唯一の...
+[2]  [Gemini生出力 234文字]: '14日に東京サラブレッドクラブのホームページで現役を引退する意向を表明していた西谷誠騎手が、15日に栗東トレセンで取材に応じ、今月末で騎手生活にピリオドを打つことを改めて発表しました。栗東・中内田厩舎所属の西谷騎手は、数年前から引退を考えていたと説明しています。決断の理由として、「乗り鞍が減ってきて、いざ競馬に乗るとなると、減量も大変。モチベーションの維持が難しくなってきた」と述べました。また、「(最後に)乗らないっていう、面白い引退だね」ともコメントしています。'
+[2]  → output/script_2.txt 保存 (234文字)
+[2]  プレビュー: 14日に東京サラブレッドクラブのホームページで現役を引退する意向を表明していた西谷誠騎手が、15日に栗東トレセンで取材に応じ、今月末で騎手生活にピリオドを打つこ...
   HTTP 200
-[1]  [Gemini生出力 156文字]: '大井競馬場で行われた「第37回東京スプリント」Jpn3は、戸崎圭太騎乗の2番人気ドラゴンウェルズが最内枠から見事に逃げ切り、勝利を飾りました。この勝利により、ドラゴンウェルズは3連勝を達成し、自身初の重賞制覇を果たしています。2着には地元の伏兵ティントレットが入り、JRAのヤマニンアルリフラが3着となりました。'
-[1]  → output/script_1.txt 保存 (156文字)
-[1]  プレビュー: 大井競馬場で行われた「第37回東京スプリント」Jpn3は、戸崎圭太騎乗の2番人気ドラゴンウェルズが最内枠から見事に逃げ切り、勝利を飾りました。この勝利により、ド...
+[0]  [Gemini生出力 230文字]: '第31回アンタレスS・G3で初タイトルを狙うムルソーは、15日に栗東トレセンのCWコースで追い切りを行いました。4ハロン54秒4―11秒4をマークし、しまい重点ではあったものの、直線ではゴールに向かって持ったままで加速。向こう正面までスピードを落とさずに駆け抜けました。この追い切りを見守った池江調教師は「今日はサクっとですよ。いい感じで来ています」とうなずいています。ムルソーは9日の1週前追い切りでも、7ハロン96秒2―11秒0と負荷をかけられていました。'
+[0]  → output/script_0.txt 保存 (230文字)
+[0]  プレビュー: 第31回アンタレスS・G3で初タイトルを狙うムルソーは、15日に栗東トレセンのCWコースで追い切りを行いました。4ハロン54秒4―11秒4をマークし、しまい重点...
   HTTP 200
-[0]  [Gemini生出力 247文字]: '三浦皇成騎手が15日、ZOZOマリンスタジアムで開催された千葉ロッテマリーンズ冠協賛試合「JRA中山競馬場presents皐月賞ナイター」でファーストピッチセレモニーを行いました。背番号は、自身初のJRA・G1制覇となったスプリンターズSでのウインカーネリアンの馬番「16」でした。KOSSEIと名前の入ったユニホーム姿で登場した三浦皇成騎手は、ノーバン始球式を成功させています。昨年は戸崎圭太騎手のワンバン投球をイジっていたものの、「戸崎さんの偉大さがわかりました（笑）」とコメントしました。'
-[0]  → output/script_0.txt 保存 (247文字)
-[0]  プレビュー: 三浦皇成騎手が15日、ZOZOマリンスタジアムで開催された千葉ロッテマリーンズ冠協賛試合「JRA中山競馬場presents皐月賞ナイター」でファーストピッチセレ...
+[1]  [Gemini生出力 205文字]: '第86回皐月賞・G1の追い切りが15日、東西トレセンで行われました。先週土曜が実質的な最終追いだったカヴァレリッツォは、仕上がりチェックで動き2位評価となりました。時計が万全を物語っており、栗東・坂路を単走で冷静な脚取り。最後まで集中力を保ち、マイペースを刻んで58秒3―14秒2を記録しました。もう整えるだけで十分という状態です。19日に中山競馬場で行われる第86回皐月賞・G1の枠順は、16日に決定します。'
+[1]  → output/script_1.txt 保存 (205文字)
+[1]  プレビュー: 第86回皐月賞・G1の追い切りが15日、東西トレセンで行われました。先週土曜が実質的な最終追いだったカヴァレリッツォは、仕上がりチェックで動き2位評価となりまし...
 
 3 件の脚本を生成しました。
