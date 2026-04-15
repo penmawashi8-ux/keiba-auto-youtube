@@ -47,6 +47,73 @@ BGM_VOLUME = 0.12        # BGM音量（ナレーションに対する比率）
 MIN_CUT_DURATION = 1.5
 LINE_MAX_CHARS = 15       # 字幕1行最大文字数
 
+# ---------------------------------------------------------------------------
+# スタイル定義（バリエーション用パレット）
+# ---------------------------------------------------------------------------
+
+_SUBTITLE_COLORS = [
+    "0xFFFFFF", "0xFFEB00", "0x00FFFF", "0xFFAA00",
+    "0xAAFFFF", "0xFFFF88", "0xAAFF88", "0xFFD700",
+    "0x88FFFF", "0xFFCCAA",
+]
+_BOX_COLORS = [
+    "0x000014", "0x000000", "0x0A0A1A", "0x140000",
+    "0x001400", "0x100010", "0x0A0A0A", "0x000A14",
+]
+_BADGE_COLORS = [
+    "0xD21E1E", "0x1E3AD2", "0x1E9A1E", "0x8B1ED2",
+    "0xD27D1E", "0x1E8BD2", "0xBD0000", "0x006400",
+    "0x8B0057", "0x003366",
+]
+_BADGE_TEXTS = [
+    "競馬速報", "競馬NEWS", "最新情報", "速報",
+    "注目", "競馬情報", "今日の競馬", "重賞情報",
+]
+_TITLE_COLORS = [
+    "0xFFEB00", "0xFFFFFF", "0xFF8C00", "0x00FFFF",
+    "0xFFD700", "0xFFA500", "0xADFF2F", "0xFF6347",
+]
+_ENDING_TEXTS = [
+    "チャンネル登録\nよろしく！\n\n毎日更新中！",
+    "高評価・登録\nお願いします！\n\n毎日配信！",
+    "チャンネル登録で\n最新情報をGET！\n\n毎日ニュースお届け！",
+    "登録して\n競馬情報をGET！\n\n毎日更新中！",
+    "チャンネル登録\nお忘れなく！\n\n毎日競馬速報！",
+    "競馬好きは\nチャンネル登録！\n\n毎日配信中！",
+    "通知ONで\n速報をGET！\n\n毎日更新！",
+    "登録&高評価\nよろしく！\n\n最新ニュース毎日！",
+    "チャンネル登録で\n競馬ニュース毎日！\n\n見逃さないで！",
+    "競馬ファン必見！\nチャンネル登録！\n\n毎日情報更新！",
+    "最新情報を\n見逃さないで！\n\n毎日配信！",
+    "競馬情報は\nこのチャンネルで！\n\n365日更新！",
+    "ベル通知で\n速報を受け取ろう！\n\n毎日競馬情報！",
+    "チャンネル登録\nしてね！\n\n毎日最新情報！",
+    "役に立ったら\n高評価お願いします！\n\n毎日更新中！",
+]
+
+
+def make_video_style() -> dict:
+    """動画ごとのランダムスタイルを生成する。"""
+    sub_box = random.choice(_BOX_COLORS)
+    return {
+        "subtitle_color":       random.choice(_SUBTITLE_COLORS),
+        "subtitle_box_color":   sub_box,
+        "subtitle_box_opacity": round(random.uniform(0.80, 0.95), 2),
+        "subtitle_font_size":   random.randint(58, 72),
+        "subtitle_border_w":    random.randint(2, 5),
+        "subtitle_line_spacing": random.randint(10, 18),
+        "badge_color":          random.choice(_BADGE_COLORS),
+        "badge_text":           random.choice(_BADGE_TEXTS),
+        "title_color":          random.choice(_TITLE_COLORS),
+        "title_font_size":      random.randint(84, 104),
+        "title_box_opacity":    round(random.uniform(0.55, 0.75), 2),
+        "ending_text":          random.choice(_ENDING_TEXTS),
+        "ending_color":         random.choice(_TITLE_COLORS),
+        "ending_font_size":     random.randint(88, 112),
+        "ending_box_opacity":   round(random.uniform(0.65, 0.85), 2),
+        "ending_line_spacing":  random.randint(18, 30),
+    }
+
 
 # ---------------------------------------------------------------------------
 # フォント検索
@@ -63,6 +130,22 @@ def find_japanese_font() -> str | None:
             return path
     hits = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
     return hits[0] if hits else None
+
+
+def find_japanese_fonts() -> list[str]:
+    """利用可能な日本語フォントをすべて返す（ランダム選択用）。"""
+    candidates = [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf",
+        "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
+        "/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf",
+    ]
+    found = [p for p in candidates if Path(p).exists()]
+    if not found:
+        found = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
+    return found or []
 
 
 # ---------------------------------------------------------------------------
@@ -124,6 +207,7 @@ def make_clip(
     thumb_top: str = "",
     thumb_main: str = "",
     is_ending: bool = False,
+    style: dict | None = None,
 ) -> str:
     """1セグメント分のMP4クリップを生成して返す。"""
     clip_path = f"{tmp_dir}/clip_{idx:04d}.mp4"
@@ -240,56 +324,74 @@ def make_clip(
                     f"x=60:y=1050:borderw=8:bordercolor=0x000000"
                 )
             else:
-                # ── ニュース系サムネイル（既存デザイン） ──
+                # ── ニュース系サムネイル（スタイルランダム） ──
+                s = style or {}
                 badge_file = f"{tmp_dir}/thumb_badge_{idx:04d}.txt"
-                Path(badge_file).write_text("競馬速報", encoding="utf-8")
+                Path(badge_file).write_text(s.get("badge_text", "競馬速報"), encoding="utf-8")
                 bf = badge_file.replace("'", "\\'")
 
-                # 赤バッジ（左上）
+                badge_col  = s.get("badge_color", "0xD21E1E")
+                title_col  = s.get("title_color", "0xFFEB00")
+                title_fs   = s.get("title_font_size", 96)
+                title_op   = s.get("title_box_opacity", 0.65)
+
+                # バッジ（左上）
                 chain += (
                     f",drawtext=textfile='{bf}':fontfile='{fp}':"
                     f"fontsize=54:fontcolor=0xFFFFFF:"
                     f"x=44:y=70:"
-                    f"box=1:boxcolor=0xD21E1E@0.95:boxborderw=22"
+                    f"box=1:boxcolor={badge_col}@0.95:boxborderw=22"
                 )
-                # タイトルテキスト（中央・黄色）
+                # タイトルテキスト（中央）
                 chain += (
                     f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                    f"fontsize=96:fontcolor=0xFFEB00:"
+                    f"fontsize={title_fs}:fontcolor={title_col}:"
                     f"x=(w-text_w)/2:y=720:"
                     f"line_spacing=16:"
-                    f"box=1:boxcolor=0x000000@0.65:boxborderw=24:"
+                    f"box=1:boxcolor=0x000000@{title_op}:boxborderw=24:"
                     f"borderw=4:bordercolor=0x000000"
                 )
 
         elif is_ending:
+            s = style or {}
             ending_file = f"{tmp_dir}/ending_text.txt"
             Path(ending_file).write_text(
-                "チャンネル登録\nよろしく！\n\n毎日更新中！",
+                s.get("ending_text", "チャンネル登録\nよろしく！\n\n毎日更新中！"),
                 encoding="utf-8",
             )
             ef = ending_file.replace("'", "\\'")
+            e_col = s.get("ending_color", "0xFFD700")
+            e_fs  = s.get("ending_font_size", 100)
+            e_op  = s.get("ending_box_opacity", 0.75)
+            e_ls  = s.get("ending_line_spacing", 24)
             chain += (
                 f",drawtext=textfile='{ef}':fontfile='{fp}':"
-                f"fontsize=100:fontcolor=0xFFD700:"
+                f"fontsize={e_fs}:fontcolor={e_col}:"
                 f"x=(w-text_w)/2:y=760:"
-                f"line_spacing=24:"
-                f"box=1:boxcolor=0x000000@0.75:boxborderw=32:"
+                f"line_spacing={e_ls}:"
+                f"box=1:boxcolor=0x000000@{e_op}:boxborderw=32:"
                 f"borderw=4:bordercolor=0x000000"
             )
 
         else:
             # 通常字幕クリップ（下部パネル）
+            s = style or {}
             text_file = f"{tmp_dir}/text_{idx:04d}.txt"
             Path(text_file).write_text(wrap_text(text, max_lines=7), encoding="utf-8")
             tf = text_file.replace("'", "\\'")
+            sub_col = s.get("subtitle_color", "0xFFFFFF")
+            sub_box = s.get("subtitle_box_color", "0x000014")
+            sub_op  = s.get("subtitle_box_opacity", 0.88)
+            sub_fs  = s.get("subtitle_font_size", FONT_SIZE)
+            sub_bw  = s.get("subtitle_border_w", 3)
+            sub_ls  = s.get("subtitle_line_spacing", 14)
             chain += (
                 f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                f"fontsize={FONT_SIZE}:fontcolor=0xFFFFFF:"
+                f"fontsize={sub_fs}:fontcolor={sub_col}:"
                 f"x=(w-text_w)/2:y=h-text_h-700:"
-                f"line_spacing=14:"
-                f"box=1:boxcolor=0x000014@0.88:boxborderw=36:"
-                f"borderw=3:bordercolor=0x000014"
+                f"line_spacing={sub_ls}:"
+                f"box=1:boxcolor={sub_box}@{sub_op}:boxborderw=36:"
+                f"borderw={sub_bw}:bordercolor={sub_box}"
             )
 
     chain += "[vout]"
@@ -343,6 +445,18 @@ def build_video(
         print("  [警告] セリフが空です。スキップします。")
         return
 
+    # 動画ごとにランダムスタイルを生成（名馬列伝はスタイル変更なし）
+    is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
+    style = None if is_famous else make_video_style()
+    # フォントをランダム選択（複数利用可能な場合）
+    if not is_famous:
+        font_candidates = find_japanese_fonts()
+        if len(font_candidates) > 1:
+            font_path = random.choice(font_candidates)
+    if style:
+        print(f"  スタイル: badge={style['badge_text']} col={style['subtitle_color']} "
+              f"fs={style['subtitle_font_size']} font={Path(font_path).name if font_path else 'なし'}")
+
     audio_duration = get_audio_duration(audio_path)
 
     # タイトル読み上げ分を含む総文字数で按分
@@ -373,7 +487,7 @@ def build_video(
                 make_clip(
                     0, thumb_bg, "", thumb_duration, font_path, tmp_dir,
                     is_thumbnail=True, thumb_title=title, thumb_subtitle=subtitle,
-                    thumb_top=thumb_top, thumb_main=thumb_main,
+                    thumb_top=thumb_top, thumb_main=thumb_main, style=style,
                 )
             )
             print(f"  サムネイルフレーム: {thumb_duration:.2f}秒")
@@ -382,7 +496,7 @@ def build_video(
         for i, (sentence, duration) in enumerate(zip(sentences, durations)):
             bg_img = assets_images[(i + 1) % len(assets_images)] if assets_images else None
             clip_paths.append(
-                make_clip(i + 1, bg_img, sentence, duration, font_path, tmp_dir)
+                make_clip(i + 1, bg_img, sentence, duration, font_path, tmp_dir, style=style)
             )
             print(f"  [{i+1}/{len(sentences)}] {duration:.2f}s 「{sentence[:20]}」")
 
@@ -391,7 +505,7 @@ def build_video(
         clip_paths.append(
             make_clip(
                 len(sentences) + 1, ending_bg, "", ENDING_DURATION, font_path, tmp_dir,
-                is_ending=True,
+                is_ending=True, style=style,
             )
         )
         print(f"  エンディング: {ENDING_DURATION}秒")
