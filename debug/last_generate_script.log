@@ -5,47 +5,31 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 「後悔は一切ない」障害通算200勝の西谷誠騎手が改めて現役引退の意向明かす　四位厩舎の調教助手に転身 ---
-[0] Gemini入力本文 343文字: '障害通算200勝の西谷誠騎手＝栗東・中内田充正厩舎＝が4月15日、栗東トレセンで改めて現役を引退することを発表した。中山グランドジャンプ・JG1(4月18日、中山競馬場・障害芝4260メートル)で騎乗予定だったレッドファーロ(牡7歳、栗東・'
+--- 記事[0]: 今年デビューの新種牡馬は34頭　最多登録はエフフォーリアの125頭　チュウワウィザードは120頭 ---
+[0] Gemini入力本文 347文字: 'ジャパン・スタッドブック・インターナショナルは4月15日、2026年に産駒がデビューする新種牡馬は34頭で、血統登録馬の頭数は1078頭であることを発表した。血統登録頭数が最も多いのはエフフォーリアの125頭で、次いでチュウワウィザードの1'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【注目馬動向】天皇賞・春に参戦するスティンガーグラスはダミアン・レーン騎手と新コンビ ---
-[1] Gemini入力本文 341文字: '天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)に参戦するスティンガーグラス(牡5歳、栗東・友道康夫厩舎、父キズナ)は、ダミアン・レーン騎手との初コンビで同レースへ挑むことが、15日、分かった。管理する友道調教師が発表した。\n\t'
+--- 記事[1]: 【注目馬動向】桜花賞3着のジッピーチューンは放牧後の回復次第でオークスへの出走を視野 ---
+[1] Gemini入力本文 311文字: '桜花賞で12番人気ながら3着と好走したジッピーチューン(牝3歳、美浦・林徹厩舎、父ロードカナロア)は、今後の回復具合を見て、優先出走権を獲得したオークス(5月24日、東京競馬場・芝2400メートル)への出走を視野に入れることが分かった。社台'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【注目馬動向】アルクオーツスプリント2着のルガル　英G1の直線競馬クイーンエリザベス2世ジュビリーSへ ---
-[2] Gemini入力本文 343文字: 'ドバイ・アルクオーツスプリント2着のルガル(牡6歳、栗東・杉山晴紀厩舎、父ドゥラメンテ)は、英国のクイーンエリザベス2世ジュビリーS・G1(6月20日、アスコット競馬場・芝1200メートル)へ向かうことが分かった。4月15日、杉山晴調教師が'
+--- 記事[2]: 【皐月賞】岩田望来騎手がクラシック初制覇なるか きさらぎ賞覇者のゾロアストロと初タッグだ ---
+[2] Gemini入力本文 354文字: '全国リーディング2位の岩田望来騎手が、皐月賞(3歳牡牝・GI・芝2000m)のゾロアストロ(牡3、美浦・宮田敬介厩舎)でクラシック初制覇を目指す。\n\u3000岩田望来騎手は00年5月31日生まれ、兵庫県出身の25歳。父は岩田康誠騎手。19年に栗東・'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,44 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 192文字]: 'ドバイ・アルクオーツスプリントで2着となったルガルは、英国のクイーンエリザベス2世ジュビリーS・G1へ向かうことが分かりました。このレースは6月20日にアスコット競馬場の芝1200メートルで行われます。4月15日、杉山晴調教師が明らかにしました。杉山晴調教師は「いろいろ選択肢はありますけど、ここへ。輸送とかをクリアできればですね。そのための前走でもありました」とコメントしています。'
-[2]  → output/script_2.txt 保存 (192文字)
-[2]  プレビュー: ドバイ・アルクオーツスプリントで2着となったルガルは、英国のクイーンエリザベス2世ジュビリーS・G1へ向かうことが分かりました。このレースは6月20日にアスコッ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[0]  [Gemini生出力 208文字]: 'ジャパン・スタッドブック・インターナショナルは4月15日、2026年に産駒がデビューする新種牡馬が34頭であり、血統登録馬の頭数は1078頭であることを発表しました。血統登録頭数が最も多いのはエフフォーリアの125頭で、次いでチュウワウィザードが120頭となっています。また、今週開幕するホッカイドウ競馬では、JRA認定競走のスーパーフレッシュチャレンジ競走に新種牡馬のストラクター産駒とサリオス産駒が出走予定です。'
+[0]  → output/script_0.txt 保存 (208文字)
+[0]  プレビュー: ジャパン・スタッドブック・インターナショナルは4月15日、2026年に産駒がデビューする新種牡馬が34頭であり、血統登録馬の頭数は1078頭であることを発表しま...
   HTTP 200
-[0]  [Gemini生出力 199文字]: '西谷誠騎手が現役引退の意向を改めて発表しました。障害通算200勝を達成した西谷誠騎手は、4月15日に栗東トレセンで、中山グランドジャンプ・JG1（4月18日中山競馬場・障害芝4260メートル）での騎乗予定だったレッドファーロが歩様に違和感が生じたため回避されることになったことを発表しました。東京サラブレッドクラブのホームページでも、今月末での騎手人生の終わりを示唆するコメントが寄せられています。'
-[0]  → output/script_0.txt 保存 (199文字)
-[0]  プレビュー: 西谷誠騎手が現役引退の意向を改めて発表しました。障害通算200勝を達成した西谷誠騎手は、4月15日に栗東トレセンで、中山グランドジャンプ・JG1（4月18日中山...
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[1]  [Gemini生出力 186文字]: '桜花賞で12番人気ながら3着と好走したジッピーチューンは、今後の回復具合を見て、オークスへの出走を視野に入れることが分かりました。オークスは5月24日に東京競馬場・芝2400メートルで行われ、ジッピーチューンは優先出走権を獲得しています。この情報は社台グループオーナーズが15日、ホームページで発表しました。同馬は15日に宮城・山元トレーニングセンターへ放牧に出ています。'
+[1]  → output/script_1.txt 保存 (186文字)
+[1]  プレビュー: 桜花賞で12番人気ながら3着と好走したジッピーチューンは、今後の回復具合を見て、オークスへの出走を視野に入れることが分かりました。オークスは5月24日に東京競馬...
   HTTP 200
-[1]  [Gemini生出力 157文字]: '天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）に参戦するスティンガーグラス（牡5歳、栗東・友道康夫厩舎、父キズナ）は、ダミアン・レーン騎手との初コンビで同レースへ挑むことが、15日、分かった。管理する友道調教師が発表した。同馬は昨年末に友道厩舎に転厩し、転厩初戦となったダイヤモンドSを快勝していた。'
-[1]  → output/script_1.txt 保存 (157文字)
-[1]  プレビュー: 天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）に参戦するスティンガーグラス（牡5歳、栗東・友道康夫厩舎、父キズナ）は、ダミアン・レーン騎手との初コ...
+[2]  [Gemini生出力 237文字]: '全国リーディング2位の岩田望来騎手が、皐月賞のゾロアストロでクラシック初制覇を目指します。ゾロアストロは宮田敬介厩舎の所属です。岩田望来騎手は00年5月31日生まれ、兵庫県出身の25歳で、父は岩田康誠騎手です。19年に栗東・藤原英昭厩舎からデビューし、JRA通算5568戦647勝を挙げています。22年には京都牝馬Sをロータスランドで制し重賞初制覇を果たしました。また、23年のWASJでは初出場で初優勝を決めています。24年には阪神JFをアルマヴェローチェで勝利しました。'
+[2]  → output/script_2.txt 保存 (237文字)
+[2]  プレビュー: 全国リーディング2位の岩田望来騎手が、皐月賞のゾロアストロでクラシック初制覇を目指します。ゾロアストロは宮田敬介厩舎の所属です。岩田望来騎手は00年5月31日生...
 
 3 件の脚本を生成しました。
