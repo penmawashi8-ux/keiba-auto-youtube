@@ -9,16 +9,18 @@
   [gemini-2.0-flash] 429 リトライ上限 → 次のモデルへ
   [gemini-2.0-flash-lite] 429 レート制限。30秒待機...
   [gemini-2.0-flash-lite] 429 リトライ上限 → 次のモデルへ
+  [gemini-1.5-flash] HTTP 404 → 次のモデルへ
+  [gemini-1.5-flash-8b] HTTP 404 → 次のモデルへ
 Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 424, in <module>
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 427, in <module>
     main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 375, in main
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 378, in main
     result = select_and_generate(api_key, covered)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 227, in select_and_generate
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 230, in select_and_generate
     response = call_gemini(api_key, prompt, temperature=0.7)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 153, in call_gemini
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 156, in call_gemini
     raise RuntimeError(
 RuntimeError: Gemini API: 全モデルで 429 レート制限。
 ニュースワークフローと同時実行するとAPIクォータが枯渇します。
