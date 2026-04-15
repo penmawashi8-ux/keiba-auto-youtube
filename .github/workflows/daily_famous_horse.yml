@@ -235,6 +235,10 @@ jobs:
           cp /tmp/famous_horse_audio.log debug/last_daily_horse_audio.log        2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_audio.log
           cp /tmp/famous_horse_video.log debug/last_daily_horse_video.log        2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_video.log
           cp /tmp/famous_horse_upload.log debug/last_daily_horse_upload.log      2>/dev/null || echo "(ログなし)" > debug/last_daily_horse_upload.log
+          # APIキーパターンをログからマスク（key=AIzaSy... 形式）
+          for f in debug/last_daily_horse_*.log; do
+            sed -i 's/key=AIzaSy[A-Za-z0-9_-]*/key=***/g' "$f" 2>/dev/null || true
+          done
           cp output/thumbnail_0.jpg debug/last_daily_horse_thumbnail.jpg 2>/dev/null || true
           git add debug/last_daily_horse_*.log debug/last_daily_horse_thumbnail.jpg 2>/dev/null || true
           if ! git diff --staged --quiet; then

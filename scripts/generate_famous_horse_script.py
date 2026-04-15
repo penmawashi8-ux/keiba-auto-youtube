@@ -97,20 +97,62 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7, model_index
             "maxOutputTokens": 2048,
         },
     }
-    try:
-        resp = requests.post(url, json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        candidates = data.get("candidates", [])
-        if not candidates:
-            raise ValueError(f"candidates が空: {data}")
-        return candidates[0]["content"]["parts"][0]["text"].strip()
-    except Exception as e:
-        if model_index + 1 < len(PREFERRED_MODELS):
-            print(f"  [{model}] 失敗: {e} → 次のモデルを試します", file=sys.stderr)
-            time.sleep(3)
-            return call_gemini(api_key, prompt, temperature, model_index + 1)
-        raise RuntimeError(f"Gemini API 全モデル失敗: {e}") from e
+
+    for model in PREFERRED_MODELS:
+        url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+        waits = [0] + RATE_LIMIT_WAITS  # [0, 30]
+
+        for attempt, wait in enumerate(waits):
+            if wait:
+                print(f"  [{model}] 429 レート制限。{wait}秒待機...", file=sys.stderr)
+                time.sleep(wait)
+
+            try:
+                resp = requests.post(url, json=payload, timeout=60)
+
+                if resp.status_code in NON_RETRY_STATUS:
+                    print(f"  [{model}] HTTP {resp.status_code} → 次のモデルへ", file=sys.stderr)
+                    break  # このモデルはスキップ
+
+                if resp.status_code == 429:
+                    if attempt < len(waits) - 1:
+                        continue  # 次の待機時間でリトライ
+                    print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
+                    break
+
+                resp.raise_for_status()
+                data = resp.json()
+                candidates = data.get("candidates", [])
+                if not candidates:
+                    raise ValueError("candidates が空")
+                return candidates[0]["content"]["parts"][0]["text"].strip()
+
+            except requests.exceptions.HTTPError as e:
+                status = e.response.status_code if e.response is not None else 0
+                if status in NON_RETRY_STATUS:
+                    print(f"  [{model}] HTTP {status} → 次のモデルへ", file=sys.stderr)
+                    break
+                if status == 429:
+                    if attempt < len(waits) - 1:
+                        continue
+                    print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
+                    break
+                print(f"  [{model}] HTTP エラー {status} → 次のモデルへ", file=sys.stderr)
+                break
+
+            except Exception as e:
+                safe_msg = str(e).replace(api_key, "***")
+                print(f"  [{model}] エラー: {safe_msg} → 次のモデルへ", file=sys.stderr)
+                break
+
+        time.sleep(3)  # モデル切り替え時の短いインターバル
+
+    raise RuntimeError(
+        "Gemini API: 全モデルで 429 レート制限。\n"
+        "ニュースワークフローと同時実行するとAPIクォータが枯渇します。\n"
+        "17:00 JST のスケジュール実行（ニュースワークフローが動いていない時間帯）なら通るはずです。\n"
+        "手動テストする場合は news ワークフローが動いていない時間帯を選んでください。"
+    )
 
 
 # ---------------------------------------------------------------------------

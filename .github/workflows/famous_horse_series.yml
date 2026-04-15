@@ -199,6 +199,10 @@ jobs:
             cp /tmp/famous_horse_${f}.log debug/last_famous_horse_${f}.log 2>/dev/null \
               || echo "(ログなし)" > debug/last_famous_horse_${f}.log
           done
+          # APIキーパターンをログからマスク（key=AIzaSy... 形式）
+          for f in debug/last_famous_horse_*.log; do
+            sed -i 's/key=AIzaSy[A-Za-z0-9_-]*/key=***/g' "$f" 2>/dev/null || true
+          done
           # サムネイル確認用（GitHubで直接プレビュー可能）
           cp output/thumbnail_0.jpg debug/last_famous_horse_thumbnail.jpg 2>/dev/null || true
           git add debug/last_famous_horse_*.log || true
