@@ -69,48 +69,84 @@ def click_first(page, selectors: list[str], timeout: int = 10000) -> bool:
     raise Exception(f"クリックできませんでした: {selectors}")
 
 
+def wait_for_studio(page, timeout: int = 30000) -> bool:
+    """YouTube Studio のSPA読み込み完了を待つ。"""
+    selectors = [
+        "ytcp-video-edit-url",
+        "ytcp-thumbnails-compact-editor-desktop",
+        "ytcp-still-picker",
+        "#still-picker-button",
+        "ytcp-video-metadata-editor",
+    ]
+    for sel in selectors:
+        try:
+            page.wait_for_selector(sel, timeout=timeout)
+            return True
+        except Exception:
+            continue
+    return False
+
+
 def set_thumbnail(page, video_id: str, thumbnail_path: str) -> bool:
     """YouTube Studio の動画編集ページでサムネイルを設定する。"""
     url = f"https://studio.youtube.com/video/{video_id}/edit"
     print(f"  YouTube Studio を開く: {url}")
 
     try:
-        page.goto(url, wait_until="domcontentloaded", timeout=30000)
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
     except Exception as e:
         print(f"  [警告] ページ読み込みタイムアウト: {e}", file=sys.stderr)
-        return False
-
-    time.sleep(4)
 
     if "accounts.google.com" in page.url or "signin" in page.url:
         print("[エラー] 未ログイン状態です。YOUTUBE_COOKIES を確認してください。", file=sys.stderr)
         return False
 
+    # SPA の非同期レンダリング完了を待つ
+    if not wait_for_studio(page, timeout=30000):
+        print("  [警告] Studio UIの読み込みタイムアウト。スクリーンショットを保存します。", file=sys.stderr)
+        _save_debug_screenshot(page, video_id, "load_timeout")
+        return False
+
+    time.sleep(2)
+
     # サムネイルアップロードボタンをクリック
+    # ボタンが見つからない場合は直接 input[type='file'] にファイルをセットする
+    button_found = False
     try:
         click_first(page, [
+            "#still-picker-button",
+            "ytcp-still-picker button",
+            "ytcp-thumbnails-compact-editor-desktop button",
+            "ytcp-thumbnails-compact-editor button",
+            "button[aria-label*='サムネイル']",
+            "button[aria-label*='thumbnail']",
+            "button[aria-label*='Thumbnail']",
             "button:has-text('サムネイルをアップロード')",
             "button:has-text('Upload thumbnail')",
             "button:has-text('カスタムサムネイルをアップロード')",
             "button:has-text('Upload custom thumbnail')",
-            "#still-picker-button",
-            "ytcp-thumbnails-compact-editor-desktop button",
-        ], timeout=12000)
+            "button:has-text('アップロード')",
+        ], timeout=8000)
+        button_found = True
+        time.sleep(1)
     except Exception as e:
-        print(f"  [警告] サムネイルボタンが見つかりません: {e}", file=sys.stderr)
-        return False
-
-    time.sleep(1)
+        print(f"  [情報] ボタンクリックをスキップ、直接ファイルセットを試みます: {e}", file=sys.stderr)
 
     # ファイルをセット（input[type='file'] に直接渡す）
     try:
-        page.locator("input[type='file'][accept*='image']").first.set_input_files(
-            thumbnail_path, timeout=5000
-        )
+        file_input = page.locator("input[type='file'][accept*='image']").first
+        file_input.set_input_files(thumbnail_path, timeout=8000)
         print(f"  サムネイルファイルセット: {thumbnail_path}")
-    except Exception as e:
-        print(f"  [警告] ファイルセット失敗: {e}", file=sys.stderr)
-        return False
+    except Exception:
+        # acceptなしの file input も試す
+        try:
+            file_input = page.locator("input[type='file']").first
+            file_input.set_input_files(thumbnail_path, timeout=8000)
+            print(f"  サムネイルファイルセット (fallback): {thumbnail_path}")
+        except Exception as e2:
+            print(f"  [警告] ファイルセット失敗: {e2}", file=sys.stderr)
+            _save_debug_screenshot(page, video_id, "file_input_error")
+            return False
 
     time.sleep(3)
 
@@ -125,10 +161,22 @@ def set_thumbnail(page, video_id: str, thumbnail_path: str) -> bool:
         print("  保存ボタンクリック完了")
     except Exception as e:
         print(f"  [警告] 保存ボタンが見つかりません: {e}", file=sys.stderr)
+        _save_debug_screenshot(page, video_id, "save_button_error")
         return False
 
     time.sleep(3)
     return True
+
+
+def _save_debug_screenshot(page, video_id: str, label: str) -> None:
+    """デバッグ用スクリーンショットを output/ に保存する。"""
+    try:
+        Path("output").mkdir(exist_ok=True)
+        path = f"output/debug_{video_id}_{label}.png"
+        page.screenshot(path=path)
+        print(f"  [デバッグ] スクリーンショット保存: {path}", file=sys.stderr)
+    except Exception:
+        pass
 
 
 def main() -> None:
@@ -166,11 +214,11 @@ def main() -> None:
             args=["--no-sandbox", "--disable-dev-shm-usage"],
         )
         context = browser.new_context(
-            viewport={"width": 1280, "height": 800},
+            viewport={"width": 1280, "height": 900},
             user_agent=(
                 "Mozilla/5.0 (X11; Linux x86_64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0.0.0 Safari/537.36"
+                "Chrome/145.0.0.0 Safari/537.36"
             ),
         )
         context.add_cookies(cookies)
