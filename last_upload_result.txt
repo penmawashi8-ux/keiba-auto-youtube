@@ -1,10 +1,10 @@
-date: 2026-04-15T04:08:14.324571Z
+date: 2026-04-15T05:30:37.554391Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hFXFyd3Swhg title=リアライズルミナス、フローラS1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=UbIIp-zASfA title=皐月賞登録馬の香港表記・馬名意味を紹介 「馬上特技」や「天狼煌煌」など全21頭
-OK project=1 video_id=XNfMCxcbg9Q title=カヴァレリッツォ＆アルトラムス 史上12組目の皐月賞父仔制覇なるか
+OK project=1 video_id=-mQ_QSHP1s4 title=アドマイヤズーム、マイラーズC1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=2PAcX0sNahU title=【アンタレスS】ムルソーが重賞初勝利に向けて鋭い伸び　池江調教師「いい感じで来て
+OK project=1 video_id=H3sVDtQtnVw title=【福島牝馬S】パラディレーヌ重賞初制覇へ福島克服がカギ　千田調教師「(能力で)ク
