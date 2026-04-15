@@ -121,6 +121,8 @@ def call_gemini(api_key: str, prompt: str, temperature: float = 0.7) -> str:
                     break  # このモデルはスキップ
 
                 if resp.status_code == 429:
+                    safe_body = resp.text.replace(api_key, "***") if api_key in resp.text else resp.text
+                    print(f"  [{model}] 429 詳細: {safe_body[:300]}", file=sys.stderr)
                     if attempt < len(waits) - 1:
                         continue  # 次の待機時間でリトライ
                     print(f"  [{model}] 429 リトライ上限 → 次のモデルへ", file=sys.stderr)
@@ -365,6 +367,10 @@ def main() -> None:
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(exist_ok=True)
+
+    # 使用キーの先頭8文字だけ表示（診断用）
+    key_preview = api_key[:8] + "..." if len(api_key) > 8 else "(短すぎる)"
+    print(f"[診断] 使用キー先頭8文字: {key_preview}  長さ: {len(api_key)}", file=sys.stderr)
 
     # 既存の名馬リスト確認
     covered = get_existing_horses()
