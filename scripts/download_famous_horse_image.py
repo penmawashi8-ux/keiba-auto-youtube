@@ -22,6 +22,13 @@ UA = "keiba-auto-youtube/1.0 (educational non-commercial; github.com/penmawashi8
 
 FREE_LICENSE_KEYWORDS = ["CC", "Public Domain", "PD", "cc-"]
 
+# これらのキーワードがファイルタイトルに含まれる場合はスキップ（アニメ・コスプレ除外）
+EXCLUDE_TITLE_KEYWORDS = [
+    "cosplay", "コスプレ", "ウマ娘", "Uma_Musume", "Uma Musume",
+    "anime", "アニメ", "figurine", "figure", "toy", "game",
+    "merchandise", "card", "illustration", "fan_art", "fanart",
+]
+
 
 def api_get(params: dict) -> dict:
     url = COMMONS_API + "?" + urllib.parse.urlencode({**params, "format": "json", "formatversion": "2"})
@@ -154,13 +161,13 @@ def main() -> None:
     print(f"=== Wikimedia Commons 画像検索: {horse_name} ===")
     Path(ASSETS_DIR).mkdir(exist_ok=True)
 
-    # 検索クエリ: 顔・頭部写真が取れやすいクエリを先に試す
+    # 競走馬写真を優先。馬名単独は最後（ウマ娘等アニメ画像が混じりやすいため）
     queries = [
-        horse_name,
-        f"{horse_name} 競走馬",
         f"{horse_name} racehorse",
+        f"{horse_name} 競走馬",
         f"{horse_name} horse portrait",
-        f"{horse_name} head",
+        f"{horse_name} horse race",
+        horse_name,
     ]
     # 候補を多めに収集してアスペクト比でソートするため上限を緩める
     COLLECT_LIMIT = NUM_SLOTS * 3
@@ -178,6 +185,11 @@ def main() -> None:
                 break
             # 重複スキップ
             if any(c["file_title"] == title for c in collected):
+                continue
+            # アニメ・コスプレ画像を除外
+            title_lower = title.lower()
+            if any(kw.lower() in title_lower for kw in EXCLUDE_TITLE_KEYWORDS):
+                print(f"  スキップ（アニメ/コスプレ）: {title}")
                 continue
             print(f"  チェック: {title}")
             info = get_image_info(title)
