@@ -95,7 +95,28 @@ _ENDING_TEXTS = [
 def make_video_style() -> dict:
     """動画ごとのランダムスタイルを生成する。"""
     sub_box = random.choice(_BOX_COLORS)
+    # 字幕スタイルタイプ: box(ボックスあり) / no_box(影のみ) / diagonal(斜め)
+    sub_type = random.choices(
+        ["box", "no_box", "diagonal"],
+        weights=[5, 3, 2],
+        k=1,
+    )[0]
+    # 字幕の縦位置（画面下からの距離）
+    sub_y = random.choice([200, 350, 500, 650, 800])
+    # 字幕の横揃え
+    sub_x_align = random.choices(
+        ["center", "left", "right"],
+        weights=[6, 2, 2],
+        k=1,
+    )[0]
+    # 斜め角度（ラジアン、±5〜12度）
+    angle_deg = random.choice([-12, -10, -8, -6, 6, 8, 10, 12])
+    diagonal_angle = angle_deg * 3.14159 / 180
     return {
+        "subtitle_type":        sub_type,
+        "subtitle_y":           sub_y,
+        "subtitle_x_align":     sub_x_align,
+        "diagonal_angle_rad":   diagonal_angle,
         "subtitle_color":       random.choice(_SUBTITLE_COLORS),
         "subtitle_box_color":   sub_box,
         "subtitle_box_opacity": round(random.uniform(0.80, 0.95), 2),
@@ -135,12 +156,24 @@ def find_japanese_font() -> str | None:
 def find_japanese_fonts() -> list[str]:
     """利用可能な日本語フォントをすべて返す（ランダム選択用）。"""
     candidates = [
+        # Noto Sans CJK Regular
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
         "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
         "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+        # Noto Sans CJK Bold（明らかに太く見た目が異なる）
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc",
+        # IPA Gothic
         "/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf",
         "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
         "/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf",
+        # WQY ZenHei（デザインが明らかに異なる太ゴシック）
+        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+        "/usr/share/fonts/wqy/wqy-zenhei.ttc",
+        # Unifont（ピクセルフォント風、見た目が全く異なる）
+        "/usr/share/fonts/truetype/unifont/unifont.ttf",
+        "/usr/share/fonts/unifont/unifont.ttf",
     ]
     found = [p for p in candidates if Path(p).exists()]
     if not found:
@@ -229,6 +262,7 @@ def make_clip(
                 f"color=c=#0F0F28:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r={FPS}"]
         chain = "[0:v]vignette=PI/3.5"
 
+    _diag_params: dict | None = None
     if font_path:
         fp = font_path.replace("'", "\\'")
 
@@ -374,8 +408,9 @@ def make_clip(
             )
 
         else:
-            # 通常字幕クリップ（下部パネル）
+            # 通常字幕クリップ
             s = style or {}
+            sub_type = s.get("subtitle_type", "box")
             text_file = f"{tmp_dir}/text_{idx:04d}.txt"
             Path(text_file).write_text(wrap_text(text, max_lines=7), encoding="utf-8")
             tf = text_file.replace("'", "\\'")
@@ -385,16 +420,56 @@ def make_clip(
             sub_fs  = s.get("subtitle_font_size", FONT_SIZE)
             sub_bw  = s.get("subtitle_border_w", 3)
             sub_ls  = s.get("subtitle_line_spacing", 14)
-            chain += (
-                f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                f"fontsize={sub_fs}:fontcolor={sub_col}:"
-                f"x=(w-text_w)/2:y=h-text_h-700:"
-                f"line_spacing={sub_ls}:"
-                f"box=1:boxcolor={sub_box}@{sub_op}:boxborderw=36:"
-                f"borderw={sub_bw}:bordercolor={sub_box}"
+            sub_y   = s.get("subtitle_y", 700)
+            x_align = s.get("subtitle_x_align", "center")
+            x_expr  = (
+                "(w-text_w)/2" if x_align == "center"
+                else ("60" if x_align == "left" else "w-text_w-60")
             )
+            if sub_type == "no_box":
+                # ボックスなし：太縁取り＋シャドウで視認性確保
+                chain += (
+                    f",drawtext=textfile='{tf}':fontfile='{fp}':"
+                    f"fontsize={sub_fs}:fontcolor={sub_col}:"
+                    f"x={x_expr}:y=h-text_h-{sub_y}:"
+                    f"line_spacing={sub_ls}:"
+                    f"borderw=7:bordercolor=0x000000:"
+                    f"shadowcolor=0x000000@0.8:shadowx=4:shadowy=4"
+                )
+            elif sub_type == "diagonal":
+                # 斜めテキスト: multi-stream filter_complex で後処理
+                _diag_params = {
+                    "tf": tf, "fp": fp,
+                    "sub_col": sub_col, "sub_fs": sub_fs, "sub_ls": sub_ls,
+                    "angle_rad": s.get("diagonal_angle_rad", 0.2),
+                }
+            else:
+                # ボックスあり（通常）
+                chain += (
+                    f",drawtext=textfile='{tf}':fontfile='{fp}':"
+                    f"fontsize={sub_fs}:fontcolor={sub_col}:"
+                    f"x={x_expr}:y=h-text_h-{sub_y}:"
+                    f"line_spacing={sub_ls}:"
+                    f"box=1:boxcolor={sub_box}@{sub_op}:boxborderw=36:"
+                    f"borderw={sub_bw}:bordercolor={sub_box}"
+                )
 
-    chain += "[vout]"
+    if _diag_params:
+        d = _diag_params
+        chain += (
+            f"[bg];"
+            f"nullsrc=size={VIDEO_WIDTH}x{VIDEO_HEIGHT}:rate={FPS},format=rgba[canvas];"
+            f"[canvas]drawtext=textfile='{d['tf']}':fontfile='{d['fp']}':"
+            f"fontsize={d['sub_fs']}:fontcolor={d['sub_col']}:"
+            f"x=(w-text_w)/2:y=(h-text_h)/2:"
+            f"line_spacing={d['sub_ls']}:"
+            f"borderw=7:bordercolor=0x000000:"
+            f"shadowcolor=0x000000@0.8:shadowx=4:shadowy=4[text_base];"
+            f"[text_base]rotate=angle={d['angle_rad']:.4f}:c=0x00000000:ow=iw:oh=ih[text_rot];"
+            f"[bg][text_rot]overlay=0:0:format=auto[vout]"
+        )
+    else:
+        chain += "[vout]"
 
     cmd += [
         "-filter_complex", chain,
