@@ -1,10 +1,10 @@
-date: 2026-04-16T10:28:02.089793Z
+date: 2026-04-16T12:08:41.615945Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=d7WAM7_Lhd8 title=【野島崎特別】叔父は日本ダービー馬のディープブリランテ ラブリージャブリーがD.
-OK project=1 video_id=aJit1JHhwDk title=【皐月賞】3本の矢追い切りでグリーンエナジーがG1仕様の渾身仕上げ　上原佑調教師
-OK project=1 video_id=I1ReIV-T32M title=【皐月賞】友道厩舎のアドマイヤクワッズは8枠17番　陣営「うちはアンライバルドが
+OK project=1 video_id=zk2dvjTspNY title=【西日本クラシック・阪神アーバン競馬】ミルトイブニングが大差逃げ切り勝ち　広瀬航
+OK project=1 video_id=5MgJCg0u__I title=【POG】ノーザンファーム期待の2歳馬22頭の馬体写真つき取材コメント
+OK project=1 video_id=rWeff9QA4H0 title=半兄はGII・3勝のプラダリア アトレッタがデビュー勝ちなるか
