@@ -1,10 +1,10 @@
-date: 2026-04-15T22:48:08.378990Z
+date: 2026-04-16T00:00:30.471284Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5GadvDCHA3s title=【アンタレスS】持ったまま加速ムルソー池江師「いい感じ」
-OK project=1 video_id=piaXY2EIZFw title=【皐月賞】2歳マイル王カヴァレリッツォG1連勝へ「仕上がった」
-OK project=1 video_id=yTh5Zhc_kY8 title=「面白い引退の仕方だね」障害の名手西谷誠騎手、今後の騎乗予定なし
+OK project=1 video_id=_DqNFFH_HOs title=産駒がUAEダービー制覇 ディーマジェスティが制した16年皐月賞から10年
+OK project=1 video_id=uOZqkeTMZSY title=【皐月賞】13年ぶりに朝日杯FS覇者の戴冠なるか カヴァレリッツォがぶっつけ参戦
+OK project=1 video_id=4i5gekcC2zo title=【皐月賞】3週続けて手綱執った坂井瑠星騎手「道中と勝負どころの反応は良かった」ア
