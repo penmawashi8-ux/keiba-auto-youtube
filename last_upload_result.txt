@@ -1,10 +1,10 @@
-date: 2026-04-16T04:21:33.380420Z
+date: 2026-04-16T05:39:25.081766Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nEOQNWmb794 title=【注目馬動向】ラヴァンダは予定通りヴィクトリアマイルへ　ヤブサメは武豊騎手で京王
-OK project=1 video_id=Gj56FVeXizQ title=武豊騎手「ボクにとってはダービーへの参戦も...」　通算37度目&16年連続の“
-OK project=1 video_id=X44k53xvqXs title=『そのたん＆ひめたんグリーティング in アーバンサイクルパークス広島』を開催
+OK project=1 video_id=y_ixyGpAEbU title=【川崎競馬】佐々木竹見元騎手　「春の園遊会」に招待される　地方通算7151勝のレ
+OK project=1 video_id=3cjNU0xzAwE title=【皐月賞枠順確定】ロブチェンは2枠4番、カヴァレリッツォは1枠1番
+OK project=1 video_id=b4nZEmyZpNA title=アドマイヤテラ＆スティンガーグラス、天皇賞(春)2週前追い切り速報/栗東トレセン
