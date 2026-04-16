@@ -73,6 +73,12 @@ _DENY_TITLE_PREFIXES = [
     "video:", "watch:", "【動画】", "（動画）", "(動画)",
 ]
 
+# 動画で再現不可能な写真・画像依存記事を除外するキーワード（タイトルに含まれる場合）
+_PHOTO_DENY_TITLE_KEYWORDS = [
+    "写真つき", "写真付き", "馬体写真", "写真ギャラリー", "フォトギャラリー",
+    "写真集", "画像ギャラリー", "フォト特集",
+]
+
 
 def is_keiba_related(entry: dict) -> bool:
     """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
@@ -80,6 +86,10 @@ def is_keiba_related(entry: dict) -> bool:
     # 動画説明タイトルを除外
     if any(title.lower().startswith(p.lower()) for p in _DENY_TITLE_PREFIXES):
         print(f"  [除外] 動画タイトルのためスキップ: {title[:60]}")
+        return False
+    # 写真・画像依存記事を除外（動画で再現不可）
+    if any(kw in title for kw in _PHOTO_DENY_TITLE_KEYWORDS):
+        print(f"  [除外] 写真依存記事のためスキップ: {title[:60]}")
         return False
     text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
