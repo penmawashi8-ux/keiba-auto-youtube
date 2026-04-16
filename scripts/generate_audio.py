@@ -3,7 +3,9 @@
 
 import asyncio
 import json
+import random
 import re
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -14,10 +16,59 @@ import os
 
 OUTPUT_DIR = "output"
 NEWS_JSON = "news.json"
-# 環境変数 TTS_VOICE で上書き可能（名馬シリーズ等で別ボイスを使う場合）
-VOICE = os.environ.get("TTS_VOICE", "ja-JP-KeitaNeural")
-RATE  = os.environ.get("TTS_RATE",  "+0%")
 VOLUME = "+0%"
+
+# ランダム選択用ボイスプール（名馬シリーズは TTS_VOICE 環境変数で上書き）
+_VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
+
+
+def pick_tts_params() -> tuple[str, str, float, float]:
+    """ランダムなTTSパラメータを返す (voice, rate_str, pitch_factor, volume_db)。
+    TTS_VOICE / TTS_RATE 環境変数が設定されている場合はそちらを優先する。"""
+    forced_voice = os.environ.get("TTS_VOICE", "")
+    voice = forced_voice if forced_voice else random.choice(_VOICE_POOL)
+
+    forced_rate = os.environ.get("TTS_RATE", "")
+    if forced_rate:
+        rate_str = forced_rate
+    else:
+        rate_pct = random.randint(-15, 15)
+        rate_str = f"{rate_pct:+d}%"
+
+    # ピッチ: ±2.0 半音 → 係数変換
+    pitch_semitones = random.uniform(-2.0, 2.0)
+    pitch_factor = 2 ** (pitch_semitones / 12)
+
+    # 音量: ±1.5 dB
+    volume_db = random.uniform(-1.5, 1.5)
+
+    return voice, rate_str, pitch_factor, volume_db
+
+
+def apply_audio_variation(audio_path: str, pitch_factor: float, volume_db: float) -> None:
+    """ffmpegでピッチ・音量をわずかに変化させて毎回異なる音声を生成する。"""
+    if abs(pitch_factor - 1.0) < 0.001 and abs(volume_db) < 0.05:
+        return  # 変化量が極小の場合はスキップ
+    tmp_path = audio_path + ".tmp.mp3"
+    sr = 24000
+    new_sr = int(sr * pitch_factor)
+    tempo = 1.0 / pitch_factor   # ピッチ変化で生じる速度変化を補正
+    volume_factor = 10 ** (volume_db / 20)
+    cmd = [
+        "ffmpeg", "-y", "-i", audio_path,
+        "-af",
+        f"asetrate={new_sr},aresample={sr},atempo={tempo:.6f},volume={volume_factor:.5f}",
+        "-c:a", "libmp3lame", "-b:a", "128k",
+        tmp_path,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode == 0:
+        Path(tmp_path).replace(Path(audio_path))
+        print(f"  音声バリエーション適用: pitch×{pitch_factor:.4f} vol{volume_db:+.2f}dB")
+    else:
+        print(f"  [警告] 音声バリエーション適用失敗: {result.stderr[-200:]}", file=sys.stderr)
+        if Path(tmp_path).exists():
+            Path(tmp_path).unlink()
 
 # ASS字幕ファイルのヘッダーテンプレート（PlayResX/Y=実際の動画サイズ）
 ASS_HEADER = """\
@@ -99,9 +150,10 @@ def detect_font_name() -> str:
 
 
 async def generate_audio_and_subtitles(
-    script: str, audio_path: str, ass_path: str, font_name: str
+    script: str, audio_path: str, ass_path: str, font_name: str,
+    voice: str = "ja-JP-KeitaNeural", rate: str = "+0%",
 ) -> None:
-    communicate = edge_tts.Communicate(script, VOICE, rate=RATE, volume=VOLUME)
+    communicate = edge_tts.Communicate(script, voice, rate=rate, volume=VOLUME)
     words: list[dict] = []
 
     with open(audio_path, "wb") as f:
@@ -157,10 +209,14 @@ def main() -> None:
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
 
-        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) ---")
+        voice, rate, pitch_factor, volume_db = pick_tts_params()
+        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) voice={voice} rate={rate} ---")
         for attempt in range(1, 4):
             try:
-                asyncio.run(generate_audio_and_subtitles(narration_text, audio_path, ass_path, font_name))
+                asyncio.run(generate_audio_and_subtitles(
+                    narration_text, audio_path, ass_path, font_name,
+                    voice=voice, rate=rate,
+                ))
                 break
             except Exception as e:
                 print(f"  [警告] 音声生成失敗 (attempt {attempt}/3): {e}", file=sys.stderr)
@@ -169,6 +225,7 @@ def main() -> None:
                 else:
                     print(f"[エラー] 音声生成を3回試みましたが失敗しました。", file=sys.stderr)
                     sys.exit(1)
+        apply_audio_variation(audio_path, pitch_factor, volume_db)
 
     print(f"\n{len(script_files)} 件の音声を生成しました。")
 
