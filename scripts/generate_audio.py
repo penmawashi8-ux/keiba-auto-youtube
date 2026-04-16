@@ -45,6 +45,34 @@ def pick_tts_params() -> tuple[str, str, float, float]:
     return voice, rate_str, pitch_factor, volume_db
 
 
+_readings_cache: dict | None = None
+
+
+def apply_readings(text: str) -> str:
+    """data/readings.json の辞書を使ってTTSの誤読を補正する。
+    騎手名などカナ読みに置換してから TTS に渡すことで正確な発音を得る。
+    長いキーを優先して処理することで部分一致による誤置換を防ぐ。"""
+    global _readings_cache
+    if _readings_cache is None:
+        readings_path = Path("data/readings.json")
+        if readings_path.exists():
+            try:
+                _readings_cache = json.loads(readings_path.read_text(encoding="utf-8"))
+            except Exception as e:
+                print(f"  [警告] readings.json 読み込み失敗: {e}", file=sys.stderr)
+                _readings_cache = {}
+        else:
+            _readings_cache = {}
+    if not _readings_cache:
+        return text
+    # 長いキーから順に置換（部分一致で短い語が先に置換されるのを防ぐ）
+    for kanji in sorted(_readings_cache, key=len, reverse=True):
+        reading = _readings_cache[kanji]
+        if isinstance(reading, str) and kanji in text:
+            text = text.replace(kanji, reading)
+    return text
+
+
 def apply_audio_variation(audio_path: str, pitch_factor: float, volume_db: float) -> None:
     """ffmpegでピッチ・音量をわずかに変化させて毎回異なる音声を生成する。"""
     if abs(pitch_factor - 1.0) < 0.001 and abs(volume_db) < 0.05:
@@ -209,6 +237,7 @@ def main() -> None:
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
 
+        narration_text = apply_readings(narration_text)
         voice, rate, pitch_factor, volume_db = pick_tts_params()
         print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) voice={voice} rate={rate} ---")
         for attempt in range(1, 4):
