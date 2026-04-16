@@ -1,5 +1,6 @@
 [診断] Gemini APIキー: 3 件ロード
-[既存の名馬] 7 頭:
+[既存の名馬] 8 頭:
+  - イスキリ (isukiri)
   - ラインクラフト (linecrafter)
   - オグリキャップ (oguri_cap)
   - オルフェーヴル (orfevre)
@@ -9,154 +10,68 @@
   - トウカイテイオー (tokai_teio)
 
 [名馬選定・脚本生成・ファクトチェック中...]
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: イスキリ
-HORSE_KEY: isukiri
-ERA: 2000年代
-CATCHPHRASE: 逃げ馬の幻影
-
+HORSE_NAME: ライスシャワー
+HORSE_KEY: rice_shower
+ERA: 1990年代
+CATCHPHRASE: 淀の刺客、そして悲劇のヒーロー
 ---SCRIPT---
-スタートラインで、馬が止まらない。
-その馬の名前、イスキリ。
-2005年、中山芝1800mのフェアリートロフィー。
-スタートから激しく逃げ切り、1馬身以上差をつけて勝利。
-デビューから3戦全て制覇。
-しかし、その逃げ癖は問題視された。
-2006年、京都大障害で、前走の再現を狙うも、
-スタート直後に後続をかわし、
-最終ラップのペースが追いつかず12着となる。
-2007年、サマークラシックでは、
-逃げ切りを試みるも、
-3コーナーから失速し、18着。
-それでもイスキリは逃げ続けた。
-2008年、高知競馬場で、
-中山での敗戦を挽回し、
-1着となる。
-その逃げ方は、まるで鬼のようなもの。
-2009年、東京優駿（日本ダービー）で、
-スタートから12馬身以上リード。
-最終3コーナーで失速し、
-16着という結果に終わった。
-それでもイスキリは、
-最後まで自分の競馬を続けた。
-その逃げ方は、
-まるで時代の先駆けだった。
-競馬の限界に挑んだ、
-逃げ馬の幻影。...
+愛されたのは、死んでからだった
+その馬の名前、ライスシャワー
+彼は最初「悪役」だった
+1992年菊花賞
+無敗の二冠馬ミホノブルボンを破り三冠を阻止
+翌1993年天皇賞（春）
+今度はメジロマックイーンの天皇賞（春）3連覇を阻止
+京都競馬場はブーイングに包まれた
+「淀の刺客」と呼ばれた
+しかしその強さは本物だった
+1995年天皇賞（春）
+圧倒的な強さで連覇を達成
+「淀の申し子」へと変わった
+だが次走、宝塚記念
+レース中に左前脚を粉砕骨折
+予後不良と診断され安楽死
+多くのファンが涙した
+ヒールからヒーローへ
+愛と悲劇を刻んだ、一輪のシャワー
+---END---...
 
-[選定完了] 馬名: イスキリ  キー: isukiri
+[選定完了] 馬名: ライスシャワー  キー: rice_shower
 [最終脚本]
-スタートラインで、馬が止まらない。
-その馬の名前、イスキリ。
-2005年、中山芝1800mのフェアリートロフィー。
-スタートから激しく逃げ切り、1馬身以上差をつけて勝利。
-デビューから3戦全て制覇。
-しかし、その逃げ癖は問題視された。
-2006年、京都大障害で、前走の再現を狙うも、
-スタート直後に後続をかわし、
-最終ラップのペースが追いつかず12着となる。
-2007年、サマークラシックでは、
-逃げ切りを試みるも、
-3コーナーから失速し、18着。
-それでもイスキリは逃げ続けた。
-2008年、高知競馬場で、
-中山での敗戦を挽回し、
-1着となる。
-その逃げ方は、まるで鬼のようなもの。
-2009年、東京優駿（日本ダービー）で、
-スタートから12馬身以上リード。
-最終3コーナーで失速し、
-16着という結果に終わった。
-それでもイスキリは、
-最後まで自分の競馬を続けた。
-その逃げ方は、
-まるで時代の先駆けだった。
-競馬の限界に挑んだ、
-逃げ馬の幻影。
+愛されたのは、死んでからだった
+その馬の名前、ライスシャワー
+彼は最初「悪役」だった
+1992年菊花賞
+無敗の二冠馬ミホノブルボンを破り三冠を阻止
+翌1993年天皇賞（春）
+今度はメジロマックイーンの天皇賞（春）3連覇を阻止
+京都競馬場はブーイングに包まれた
+「淀の刺客」と呼ばれた
+しかしその強さは本物だった
+1995年天皇賞（春）
+圧倒的な強さで連覇を達成
+「淀の申し子」へと変わった
+だが次走、宝塚記念
+レース中に左前脚を粉砕骨折
+予後不良と診断され安楽死
+多くのファンが涙した
+ヒールからヒーローへ
+愛と悲劇を刻んだ、一輪のシャワー
 
 [20秒待機中（レート制限対策）...]
 [メタデータ生成中...]
   [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
   [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [メタデータ応答]
-TAGS: イスキリ, 中山芝1800m, 東京優駿, 高知競馬場, 逃げ馬, 競馬, 2000年代, 幻影
-THUMBNAIL_TOP: 鬼の馬
-THUMBNAIL_MAIN: 伝説のイスキリ
+TAGS: [ライスシャワー, 菊花賞, 天皇賞（春）, ミホノブルボン, メジロマックイーン, 淀の刺客, 悲劇, 安楽死]
+THUMBNAIL_TOP: [悲劇の]
+THUMBNAIL_MAIN: [ヒールからヒーロー]
 
 
 [名馬データ保存]
-  data/famous_horses/isukiri.txt
-  data/famous_horses/isukiri.json
+  data/famous_horses/rice_shower.txt
+  data/famous_horses/rice_shower.json
 [パイプライン用ファイル書き出し]
-  news.json: タイトル「イスキリ」
-  output/script_0.txt: 425 文字
+  news.json: タイトル「ライスシャワー」
+  output/script_0.txt: 270 文字
