@@ -22,11 +22,26 @@ UA = "keiba-auto-youtube/1.0 (educational non-commercial; github.com/penmawashi8
 
 FREE_LICENSE_KEYWORDS = ["CC", "Public Domain", "PD", "cc-"]
 
-# これらのキーワードがファイルタイトルに含まれる場合はスキップ（アニメ・コスプレ除外）
+# これらのキーワードがファイルタイトルに含まれる場合はスキップ
 EXCLUDE_TITLE_KEYWORDS = [
-    "cosplay", "コスプレ", "ウマ娘", "Uma_Musume", "Uma Musume",
+    # アニメ・コスプレ・ゲーム
+    "cosplay", "コスプレ", "ウマ娘", "Uma_Musume", "Uma Musume", "UmaMusume", "umamusume",
     "anime", "アニメ", "figurine", "figure", "toy", "game",
     "merchandise", "card", "illustration", "fan_art", "fanart",
+    # スポーツ選手・チーム（競走馬と無関係な人物写真を除外）
+    "basketball", "football", "soccer", "baseball", "tennis", "rugby",
+    "volleyball", "cricket", "hockey", "swimming", "athletics",
+    "NBA", "NFL", "MLB", "NHL", "FIFA",
+    "athlete", "wrestler",
+    # その他の人物・非競馬コンテンツ
+    "portrait_of", "actor", "actress", "singer", "politician",
+]
+
+# 競走馬関連キーワード（フォールバッククエリ使用時の関連性チェック用）
+HORSE_CONTEXT_KEYWORDS = [
+    "horse", "馬", "racehorse", "thoroughbred", "equine",
+    "race", "jockey", "競走", "競馬", "騎手", "牡馬", "牝馬",
+    "サラブレッド", "gallop", "turf", "derby", "stakes",
 ]
 
 
@@ -105,6 +120,9 @@ def get_image_info(file_title: str) -> dict | None:
     # 横長レース写真(例: 1.5:1)より正方形(1:1)や縦長を優先
     aspect_score = (height / width) if (width and height) else 0.5
 
+    # 説明文（関連性チェック用）
+    description = strip_html(meta.get("ImageDescription", {}).get("value", ""))
+
     return {
         "url": url,
         "author": author,
@@ -114,6 +132,7 @@ def get_image_info(file_title: str) -> dict | None:
         "width": width,
         "height": height,
         "aspect_score": aspect_score,
+        "description": description,
     }
 
 
@@ -162,21 +181,27 @@ def main() -> None:
     Path(ASSETS_DIR).mkdir(exist_ok=True)
 
     # 競走馬写真を優先。馬名単独は最後（ウマ娘等アニメ画像が混じりやすいため）
-    queries = [
-        f"{horse_name} racehorse",
-        f"{horse_name} 競走馬",
-        f"{horse_name} horse portrait",
-        f"{horse_name} horse race",
-        horse_name,
+    # requires_horse_context=True のクエリでは、タイトル/説明に競馬関連語が必要
+    queries: list[tuple[str, bool]] = [
+        (f"{horse_name} racehorse",     False),
+        (f"{horse_name} 競走馬",         False),
+        (f"{horse_name} horse portrait", False),
+        (f"{horse_name} horse race",     False),
+        (horse_name,                     True),   # フォールバック: 関連性チェック必須
     ]
     # 候補を多めに収集してアスペクト比でソートするため上限を緩める
     COLLECT_LIMIT = NUM_SLOTS * 3
     collected: list[dict] = []
 
-    for query in queries:
+    def _has_horse_context(title: str, description: str) -> bool:
+        """タイトルまたは説明文に競走馬関連語が含まれるか確認。"""
+        text = (title + " " + description).lower()
+        return any(kw.lower() in text for kw in HORSE_CONTEXT_KEYWORDS)
+
+    for query, requires_horse_context in queries:
         if len(collected) >= COLLECT_LIMIT:
             break
-        print(f"  検索クエリ: 「{query}」")
+        print(f"  検索クエリ: 「{query}」{'（関連性チェックあり）' if requires_horse_context else ''}")
         titles = search_commons(query, limit=20)
         print(f"  ヒット数: {len(titles)} 件")
 
@@ -186,14 +211,19 @@ def main() -> None:
             # 重複スキップ
             if any(c["file_title"] == title for c in collected):
                 continue
-            # アニメ・コスプレ画像を除外
+            # アニメ・コスプレ・スポーツ選手等を除外
             title_lower = title.lower()
             if any(kw.lower() in title_lower for kw in EXCLUDE_TITLE_KEYWORDS):
-                print(f"  スキップ（アニメ/コスプレ）: {title}")
+                print(f"  スキップ（除外キーワード）: {title}")
                 continue
             print(f"  チェック: {title}")
             info = get_image_info(title)
             if not info:
+                time.sleep(0.3)
+                continue
+            # フォールバッククエリは競馬関連語が含まれる画像のみ採用
+            if requires_horse_context and not _has_horse_context(title, info.get("description", "")):
+                print(f"  スキップ（競馬関連語なし）: {title}")
                 time.sleep(0.3)
                 continue
             collected.append(info)

@@ -288,44 +288,57 @@ def make_clip(
                 Path(main_file).write_text(thumb_main, encoding="utf-8")
                 mf = main_file.replace("'", "\\'")
 
+                # フォントサイズを文字数に応じて自動調整（CJK文字幅≒fontsize）
+                # 利用可能幅: 1080 - 60(左余白) - 30(右安全余白) = 990px
+                _MAIN_MAX_W = 990
+                _MAIN_BASE_FS = 180
+                main_fs = min(_MAIN_BASE_FS, int(_MAIN_MAX_W / max(len(thumb_main), 1)))
+                main_fs = max(main_fs, 60)  # 最小60px
+
+                # thumb_top のフォントサイズも同様に自動調整（基準78px）
+                _TOP_MAX_W = 990
+                _TOP_BASE_FS = 78
+
                 # 「狂気の」（左上・白・影付き）
                 if thumb_top:
                     top_file = f"{tmp_dir}/thumb_top_{idx:04d}.txt"
                     Path(top_file).write_text(thumb_top, encoding="utf-8")
                     tpf = top_file.replace("'", "\\'")
+                    top_fs = min(_TOP_BASE_FS, int(_TOP_MAX_W / max(len(thumb_top), 1)))
+                    top_fs = max(top_fs, 40)
                     chain += (
                         f",drawtext=textfile='{tpf}':fontfile='{fp}':"
-                        f"fontsize=78:fontcolor=0xFFFFFF:"
+                        f"fontsize={top_fs}:fontcolor=0xFFFFFF:"
                         f"x=60:y=160:"
                         f"borderw=4:bordercolor=0x000000:"
                         f"shadowcolor=0x000000@0.9:shadowx=3:shadowy=3"
                     )
 
-                # 「大逃げ」グロー外層（赤・広め・低透明）
+                # メインテキスト グロー外層（赤・広め・低透明）
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFF2200@0.22:"
+                    f"fontsize={main_fs}:fontcolor=0xFF2200@0.22:"
                     f"x=60:y=760:"
                     f"borderw=32:bordercolor=0xFF2200@0.18"
                 )
-                # 「大逃げ」グロー中層
+                # メインテキスト グロー中層
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFF3300@0.38:"
+                    f"fontsize={main_fs}:fontcolor=0xFF3300@0.38:"
                     f"x=60:y=760:"
                     f"borderw=16:bordercolor=0xFF3300@0.40"
                 )
-                # 「大逃げ」グロー内層（鮮明赤）
+                # メインテキスト グロー内層（鮮明赤）
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFF4400@0.52:"
+                    f"fontsize={main_fs}:fontcolor=0xFF4400@0.52:"
                     f"x=60:y=760:"
                     f"borderw=7:bordercolor=0xFF4400@0.62"
                 )
-                # 「大逃げ」本体（白・黒縁・ドロップシャドウ）
+                # メインテキスト 本体（白・黒縁・ドロップシャドウ）
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFFFFFF:"
+                    f"fontsize={main_fs}:fontcolor=0xFFFFFF:"
                     f"x=60:y=760:"
                     f"borderw=5:bordercolor=0x000000:"
                     f"shadowcolor=0x000000@0.9:shadowx=6:shadowy=6"
