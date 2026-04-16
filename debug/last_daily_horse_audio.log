@@ -1,9 +1,10 @@
 === 音声生成開始 ===
 字幕フォント: Noto Sans CJK JP
-  タイトル読み上げ追加: 「オルフェーヴル」
+  タイトル読み上げ追加: 「イスキリ」
 
---- 音声生成 [0] (351文字) ---
-  音声: output/audio_0.mp3 (462 KB)
+--- 音声生成 [0] (430文字) voice=ja-JP-NanamiNeural rate=-3% ---
+  音声: output/audio_0.mp3 (555 KB)
   字幕: output/subtitles_0.ass (0 セグメント)
+  音声バリエーション適用: pitch×1.1133 vol-0.49dB
 
 1 件の音声を生成しました。

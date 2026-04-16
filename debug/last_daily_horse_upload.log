@@ -1,21 +1,24 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (45 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (61 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: オルフェーヴル (key=orfevre)
-  タイトル: 【名馬列伝】オルフェーヴル〜暴君、世界の壁と戦った三冠馬〜 #Shorts
+  馬名: イスキリ (key=isukiri)
+  タイトル: 【名馬列伝】イスキリ〜逃げ馬の幻影〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】オルフェーヴル〜暴君、世界の壁と戦った三冠馬〜 #Shorts
-  進捗: 17%
-  進捗: 35%
-  進捗: 53%
-  進捗: 71%
+  アップロード中: 【名馬列伝】イスキリ〜逃げ馬の幻影〜 #Shorts
+  進捗: 11%
+  進捗: 22%
+  進捗: 33%
+  進捗: 44%
+  進捗: 55%
+  進捗: 67%
+  進捗: 78%
   進捗: 89%
-  完了! Video ID: 2EPgZ1yNwOU
-  URL: https://www.youtube.com/watch?v=2EPgZ1yNwOU
-  サムネイルアップロード中: output/thumbnail_0.jpg (45 KB)
+  完了! Video ID: wl-WMCR8iIs
+  URL: https://www.youtube.com/watch?v=wl-WMCR8iIs
+  サムネイルアップロード中: output/thumbnail_0.jpg (61 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
