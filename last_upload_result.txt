@@ -1,10 +1,10 @@
-date: 2026-04-16T06:41:06.112398Z
+date: 2026-04-16T08:33:14.171774Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_R_xVK41M0o title=【皐月賞】すみれS覇者ラージアンサンブルは5枠10番　武井調教師「本当はもう少し
-OK project=1 video_id=NMGGC_XREKk title=【皐月賞】松山弘平騎手とロブチェンはホープフルSと同じ2枠4番　陣営「言うことな
-OK project=1 video_id=lzdk04FVyFE title=【皐月賞】唯一の重賞2勝馬リアライズシリウスは7枠15番　陣営「内過ぎるよりは他
+OK project=1 video_id=mBELofdCpmw title=【皐月賞・調教後馬体重】カヴァレリッツォは492kg、ロブチェンは524kg
+OK project=1 video_id=cT6bSUZCWEc title=【チャンピオンズマイル】シュトラウスが国内最終追い切りで絶好の動き　武井亮調教師
+OK project=1 video_id=NZXocFGXxeg title=【皐月賞】ホープフルS2着フォルテアンジェロなど3頭出し　上原佑調教師「3頭とも
