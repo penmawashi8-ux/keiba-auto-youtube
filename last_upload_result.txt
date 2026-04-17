@@ -1,10 +1,10 @@
-date: 2026-04-17T04:23:51.075102Z
+date: 2026-04-17T05:32:19.511196Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yQe6MWC9hXM title=【皐月賞・金曜調整】カヴァレリッツォは活気十分に坂路駆け上がる　陣営「思ったより
-OK project=1 video_id=qojKp4-ia9Q title=【皐月賞・金曜調整】馬体張りよし!ベンバトル産駒ラージアンサンブルに大駆けの気配
-OK project=1 video_id=PYYds6g15_I title=【皐月賞・金曜調整】「津村に運があれば勝つと思う(笑)」状態の良さうかがえるリア
+OK project=1 video_id=IgqKx8QHcRk title=香港への出国延期の関西馬3頭は急きょ、昼過ぎに微調整　ジャンタルマンタルの高野調
+OK project=1 video_id=vn9maPr2bCw title=【注目馬動向・古馬】川崎記念3着のアウトレンジは松山弘平騎手と名古屋グランプリへ
+OK project=1 video_id=KA7u3TIcUCU title=【注目馬動向・3歳】スマートプリエール、アメティスタはオークス　メイショウハチコ
