@@ -1,10 +1,10 @@
-date: 2026-04-17T05:32:19.511196Z
+date: 2026-04-17T07:02:43.404602Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IgqKx8QHcRk title=香港への出国延期の関西馬3頭は急きょ、昼過ぎに微調整　ジャンタルマンタルの高野調
-OK project=1 video_id=vn9maPr2bCw title=【注目馬動向・古馬】川崎記念3着のアウトレンジは松山弘平騎手と名古屋グランプリへ
-OK project=1 video_id=KA7u3TIcUCU title=【注目馬動向・3歳】スマートプリエール、アメティスタはオークス　メイショウハチコ
+OK project=1 video_id=O19IZ5tMZQo title=【注目馬動向】香港遠征回避のミュージアムマイルは宝塚記念へ　秋春グランプリ連覇狙
+OK project=1 video_id=M-dZLIkHAi8 title=【ばんえい競馬】計器故障で馬体重計測ができず　出走各馬“計測不能”でレースへ
+OK project=1 video_id=rHohEras7Ag title=【注目馬動向】金鯱賞勝ち馬シェイクユアハートは宝塚記念でG1初挑戦　当初は札幌記
