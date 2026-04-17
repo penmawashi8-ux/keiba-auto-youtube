@@ -1,10 +1,10 @@
-date: 2026-04-17T07:02:43.404602Z
+date: 2026-04-17T08:35:11.364237Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=O19IZ5tMZQo title=【注目馬動向】香港遠征回避のミュージアムマイルは宝塚記念へ　秋春グランプリ連覇狙
-OK project=1 video_id=M-dZLIkHAi8 title=【ばんえい競馬】計器故障で馬体重計測ができず　出走各馬“計測不能”でレースへ
-OK project=1 video_id=rHohEras7Ag title=【注目馬動向】金鯱賞勝ち馬シェイクユアハートは宝塚記念でG1初挑戦　当初は札幌記
+OK project=1 video_id=W-Oc_7ydV28 title=有馬記念を制した皐月賞馬ミュージアムマイルは宝塚記念へ　ドバイ、香港遠征を見送っ
+OK project=1 video_id=_ClCbgirfn8 title=POGファンが知りたい情報に特化した一冊 『POG直球勝負 2026-2027』
+OK project=1 video_id=o2uQHjAgka0 title=【皐月賞・金曜調整】武豊騎手と新コンビで挑むロードフィレールは好気配　陣営「気合
