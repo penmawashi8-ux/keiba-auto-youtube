@@ -5,36 +5,43 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【皐月賞・金曜調整】カヴァレリッツォは活気十分に坂路駆け上がる　陣営「思ったより時計が出たので、調子がいいのかな」 ---
-[0] Gemini入力本文 352文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝17日、栗東トレセン\n\t\t\t\t\u3000昨年の2歳マイル王カヴァレリッツォ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)はフラットワークを行ってから芝コースを1周。その後坂'
+--- 記事[0]: 【注目馬動向】香港遠征回避のミュージアムマイルは宝塚記念へ　秋春グランプリ連覇狙う ---
+[0] Gemini入力本文 348文字: '昨年の皐月賞、有馬記念を制したミュージアムマイル(牡4歳、栗東・高柳大輔厩舎、父リオンディーズ)は、宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)を目標に調整されることが分かった。サンデーサラブレッドクラブが4月17日、ホーム'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【皐月賞・金曜調整】馬体張りよし!ベンバトル産駒ラージアンサンブルに大駆けの気配　武井調教師「期待以上に充実している」 ---
-[1] Gemini入力本文 348文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝4月17日、美浦トレセン\n\t\t\t\t\u3000前走のすみれSを制したラージアンサンブル(牡3歳、美浦・武井亮厩舎、父ベンバトル)は坂路を63秒0―15秒5で流したのち、ゲートで駐立'
+--- 記事[1]: 【ばんえい競馬】計器故障で馬体重計測ができず　出走各馬“計測不能”でレースへ ---
+[1] Gemini入力本文 282文字: 'ばんえい競馬は17日、帯広競馬場の馬衡機(ばこうき＝馬体重を計測する計量台)が故障したため、出走各馬の馬体重が計測できない状態であると発表した。\n\u3000現状では出走馬全てが「計不(計測不能)」の発表でレースに臨んでいる。修理の経過、計測再開のめ'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【皐月賞・金曜調整】「津村に運があれば勝つと思う(笑)」状態の良さうかがえるリアライズシリウス　手塚久調教師は手応え ---
-[2] Gemini入力本文 352文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝4月17日、美浦トレセン\n\t\t\t\t\u3000出走馬唯一の重賞2勝馬リアライズシリウス(牡3歳、美浦・手塚貴久厩舎、父ポエティックフレア)は坂路を64秒7―15秒2で調整。脚取りは'
+--- 記事[2]: 【注目馬動向】金鯱賞勝ち馬シェイクユアハートは宝塚記念でG1初挑戦　当初は札幌記念へ参戦予定も ---
+[2] Gemini入力本文 353文字: '金鯱賞で重賞2勝目を挙げたシェイクユアハート(牡6歳、栗東・宮徹厩舎、父ハーツクライ)は宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)に向かうことになった。鞍上は引き続き、古川吉洋騎手＝栗東・フリー＝。\n\t\t\t\t\u3000当初は札幌記'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -51,34 +58,44 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 206文字]: '第86回皐月賞・G1の金曜調整が4月17日に美浦トレセンで行われました。前走のすみれSを制したラージアンサンブルは、坂路を63秒0―15秒5で流したのち、ゲートで駐立確認を行いました。馬体の張りは良く、大駆けの気配が漂っています。武井調教師は「追い切りで自己ベストを出したし、そこまで動けなかった馬が動けるようになってきた。常に成長しているのが実感できますね」とコメントし、期待以上に充実していると語っています。'
-[1]  → output/script_1.txt 保存 (206文字)
-[1]  プレビュー: 第86回皐月賞・G1の金曜調整が4月17日に美浦トレセンで行われました。前走のすみれSを制したラージアンサンブルは、坂路を63秒0―15秒5で流したのち、ゲート...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[2]  [Gemini生出力 206文字]: '第86回皐月賞・G1は、4月19日に中山競馬場・芝2000メートルで発走予定です。4月17日の美浦トレセンでの調整では、出走馬唯一の重賞2勝馬であるリアライズシリウスが坂路を64秒7―15秒2で調整しました。脚取りは軽快で、状態の良さがヒシヒシと伝わってきます。手塚貴久調教師は「いい感じで、申し分ないね。体も前回と同じくらいで出せるよ」と自信をのぞかせました。今回は初の2000メートルへの距離延長となります。'
-[2]  → output/script_2.txt 保存 (206文字)
-[2]  プレビュー: 第86回皐月賞・G1は、4月19日に中山競馬場・芝2000メートルで発走予定です。4月17日の美浦トレセンでの調整では、出走馬唯一の重賞2勝馬であるリアライズシ...
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[0]  [Gemini生出力 202文字]: '昨年の皐月賞と有馬記念を制したミュージアムマイルは、宝塚記念・G1を目標に調整されることが分かりました。サンデーサラブレッドクラブが4月17日にホームページで発表したものです。当初、今年の始動戦としてドバイ・ターフを予定していましたが、中東情勢を考慮して回避しました。その後、香港のクイーンエリザベス2世C・G1も回避し、宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)への出走を目指します。'
+[0]  → output/script_0.txt 保存 (202文字)
+[0]  プレビュー: 昨年の皐月賞と有馬記念を制したミュージアムマイルは、宝塚記念・G1を目標に調整されることが分かりました。サンデーサラブレッドクラブが4月17日にホームページで発...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 503
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 131文字]: '昨年の2歳マイル王カヴァレリッツォが、栗東トレセンで活気十分に坂路を駆け上がった。牡3歳で、父はサートゥルナーリア、調教師は吉岡辰弥師。最終調整は61秒4―14秒1で終え、田嶋助手は思ったより時計が出ていたとコメントした。朝日杯FS以来4か月ぶりのレースとなる。'
-[0]  → output/script_0.txt 保存 (131文字)
-[0]  プレビュー: 昨年の2歳マイル王カヴァレリッツォが、栗東トレセンで活気十分に坂路を駆け上がった。牡3歳で、父はサートゥルナーリア、調教師は吉岡辰弥師。最終調整は61秒4―14...
+[1]  [Gemini生出力 98文字]: '帯広競馬の馬衡機が故障したため、出走各馬の馬体重が計測できない状態となっています。現状では出走馬全てが「計不」の発表でレースに臨んでいます。修理の経過、計測再開のめどなどは明らかになっていません。'
+[1]  → output/script_1.txt 保存 (98文字)
+[1]  プレビュー: 帯広競馬の馬衡機が故障したため、出走各馬の馬体重が計測できない状態となっています。現状では出走馬全てが「計不」の発表でレースに臨んでいます。修理の経過、計測再開...
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[2]  [Gemini生出力 208文字]: '金鯱賞で重賞2勝目を挙げたシェイクユアハート(牡6歳、栗東・宮徹厩舎、父ハーツクライ)は宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)に向かうことになった。鞍上は引き続き、古川吉洋騎手。当初は札幌記念・G2(8月16日、札幌競馬場・芝2000メートル)から天皇賞・秋・G1(11月1日、東京競馬場・芝2000メートル)へ向かうプランだったが、宮調教師は「先週も(放牧先に)見にいったが、具合がよさ...'
+[2]  → output/script_2.txt 保存 (79文字)
+[2]  プレビュー: 金鯱賞で重賞2勝目を挙げたシェイクユアハートは宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)に向かうことになった。鞍上は引き続き、古川吉洋騎手。...
 
 3 件の脚本を生成しました。

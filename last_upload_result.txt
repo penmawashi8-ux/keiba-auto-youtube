@@ -1,10 +1,10 @@
-date: 2026-04-17T04:23:51.075102Z
+date: 2026-04-17T07:02:43.404602Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yQe6MWC9hXM title=【皐月賞・金曜調整】カヴァレリッツォは活気十分に坂路駆け上がる　陣営「思ったより
-OK project=1 video_id=qojKp4-ia9Q title=【皐月賞・金曜調整】馬体張りよし!ベンバトル産駒ラージアンサンブルに大駆けの気配
-OK project=1 video_id=PYYds6g15_I title=【皐月賞・金曜調整】「津村に運があれば勝つと思う(笑)」状態の良さうかがえるリア
+OK project=1 video_id=O19IZ5tMZQo title=【注目馬動向】香港遠征回避のミュージアムマイルは宝塚記念へ　秋春グランプリ連覇狙
+OK project=1 video_id=M-dZLIkHAi8 title=【ばんえい競馬】計器故障で馬体重計測ができず　出走各馬“計測不能”でレースへ
+OK project=1 video_id=rHohEras7Ag title=【注目馬動向】金鯱賞勝ち馬シェイクユアハートは宝塚記念でG1初挑戦　当初は札幌記
