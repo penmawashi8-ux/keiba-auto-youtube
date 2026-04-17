@@ -30,6 +30,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import requests
+
 # ---------------------------------------------------------------------------
 # 定数
 # ---------------------------------------------------------------------------
@@ -428,27 +430,108 @@ def find_japanese_fonts() -> list[str]:
     return found or []
 
 
+_PIXABAY_QUERIES = [
+    "horse racing", "thoroughbred horse racing", "jockey horse race",
+    "horse racing track", "horse galloping racecourse", "horse racing Japan",
+    "racetrack horses action", "horse racing finish line",
+]
+_HF_PROMPTS = [
+    "cinematic photo of horses racing on a beautiful racecourse, dramatic lighting, high quality",
+    "cinematic photo of jockey riding thoroughbred horse on racecourse, motion blur, high quality",
+    "cinematic photo of horse galloping at sunset on racetrack, golden hour, high quality",
+    "cinematic photo of horse racing crowd cheering at finish line, dramatic atmosphere, high quality",
+]
+
+
+def _save_image_bytes(content: bytes, filepath: str) -> bool:
+    """バイト列をffmpegでJPEGに変換して保存する（Pillow不使用）。"""
+    if len(content) < 1000:
+        return False
+    tmp = filepath + ".tmp"
+    try:
+        Path(tmp).write_bytes(content)
+        res = subprocess.run(
+            ["ffmpeg", "-y", "-i", tmp, "-frames:v", "1", "-q:v", "2", filepath],
+            capture_output=True, timeout=30,
+        )
+        return res.returncode == 0 and Path(filepath).exists() and Path(filepath).stat().st_size > 1000
+    except Exception:
+        return False
+    finally:
+        Path(tmp).unlink(missing_ok=True)
+
+
 def generate_fallback_backgrounds(count: int = 3) -> list[str]:
-    """_BG_PATTERNS からランダムにパターンを選んで背景画像を生成し assets/ai_*.jpg に保存する。"""
+    """競馬写真を Pixabay → HuggingFace → geqパターン の順で取得して assets/ai_*.jpg に保存する。"""
     Path(ASSETS_DIR).mkdir(exist_ok=True)
-    chosen = random.sample(_BG_PATTERNS, min(count, len(_BG_PATTERNS)))
+    pixabay_key = os.environ.get("PIXABAY_API_KEY", "")
+    hf_tokens = [t for t in [
+        os.environ.get("HF_TOKEN", ""),
+        os.environ.get("HF_TOKEN_2", ""),
+        os.environ.get("HF_TOKEN_3", ""),
+    ] if t]
     paths: list[str] = []
-    for i, vf_expr in enumerate(chosen):
+
+    for i in range(count):
         out = f"{ASSETS_DIR}/ai_{i}.jpg"
-        result = subprocess.run(
-            [
-                "ffmpeg", "-y",
-                "-f", "lavfi", "-i", f"color=black:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r=1",
-                "-vf", vf_expr,
-                "-frames:v", "1", "-q:v", "3", out,
-            ],
+
+        # 1. Pixabay（実写競馬写真）
+        if pixabay_key:
+            query = _PIXABAY_QUERIES[i % len(_PIXABAY_QUERIES)]
+            try:
+                r = requests.get(
+                    "https://pixabay.com/api/",
+                    params={"key": pixabay_key, "q": query, "image_type": "photo",
+                            "category": "animals", "min_width": 640,
+                            "per_page": 20, "safesearch": "true"},
+                    timeout=30,
+                )
+                hits = r.json().get("hits", [])
+                if hits:
+                    img_url = random.choice(hits).get("webformatURL", "")
+                    if img_url:
+                        img_r = requests.get(img_url, timeout=30)
+                        if img_r.status_code == 200 and _save_image_bytes(img_r.content, out):
+                            print(f"  Pixabay背景: {out} (query='{query}')")
+                            paths.append(out)
+                            continue
+            except Exception as e:
+                print(f"  [警告] Pixabay失敗: {e}", file=sys.stderr)
+
+        # 2. HuggingFace（FLUX.1-schnell でAI競馬写真生成）
+        if hf_tokens:
+            prompt = _HF_PROMPTS[i % len(_HF_PROMPTS)]
+            for token in hf_tokens:
+                try:
+                    r = requests.post(
+                        "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
+                        headers={"Authorization": f"Bearer {token}"},
+                        json={"inputs": prompt},
+                        timeout=120,
+                    )
+                    if r.status_code == 200 and _save_image_bytes(r.content, out):
+                        print(f"  HF背景生成: {out}")
+                        paths.append(out)
+                        break
+                    if r.status_code in (402, 403):
+                        break
+                except Exception as e:
+                    print(f"  [警告] HF失敗: {e}", file=sys.stderr)
+            if Path(out).exists() and Path(out).stat().st_size > 1000:
+                continue
+
+        # 3. 最終手段: geqパターン（ネット不要）
+        vf_expr = random.choice(_BG_PATTERNS)
+        res = subprocess.run(
+            ["ffmpeg", "-y", "-f", "lavfi", "-i",
+             f"color=black:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r=1",
+             "-vf", vf_expr, "-frames:v", "1", "-q:v", "3", out],
             capture_output=True,
         )
-        if result.returncode == 0:
+        if res.returncode == 0:
+            print(f"  geqパターン背景（最終手段）: {out}")
             paths.append(out)
-            print(f"  背景パターン生成: {out}")
-        else:
-            print(f"  [警告] 背景生成失敗(pat{i}): {result.stderr[-150:]}", file=sys.stderr)
+
     return paths
 
 
