@@ -45,7 +45,7 @@ ENDING_DURATION = 4.0    # エンディングカード表示秒数
 THUMBNAIL_DURATION = 1.5  # 先頭サムネイルフレーム最低表示秒数
 BGM_VOLUME = 0.12        # BGM音量（ナレーションに対する比率）
 MIN_CUT_DURATION = 1.5
-LINE_MAX_CHARS = 15       # 字幕1行最大文字数
+LINE_MAX_CHARS = 13       # 字幕1行最大文字数
 
 # ---------------------------------------------------------------------------
 # スタイル定義（バリエーション用パレット）
@@ -120,7 +120,7 @@ def make_video_style() -> dict:
         "subtitle_color":       random.choice(_SUBTITLE_COLORS),
         "subtitle_box_color":   sub_box,
         "subtitle_box_opacity": round(random.uniform(0.80, 0.95), 2),
-        "subtitle_font_size":   random.randint(58, 72),
+        "subtitle_font_size":   random.randint(54, 66),
         "subtitle_border_w":    random.randint(2, 5),
         "subtitle_line_spacing": random.randint(10, 18),
         "badge_color":          random.choice(_BADGE_COLORS),
