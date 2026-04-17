@@ -217,6 +217,124 @@ _SUBTITLE_FONT_SIZES = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# 背景パターン生成（100種）
+# ---------------------------------------------------------------------------
+
+def _build_bg_patterns() -> list[str]:
+    """ffmpeg geq フィルターによる背景パターン100種を文字列で生成する。"""
+    pats: list[str] = []
+
+    def grad(b: int, m: int, t: str, pw: float) -> str:
+        if m == b:
+            return str(b)
+        return f"clip({b}+{m - b}*pow({t},{pw}),{min(b, m)},{max(b, m)})"
+
+    def wave_t(fy: int, fx: int) -> str:
+        if fy > 0 and fx > 0:
+            return f"(sin(Y/H*{fy}*6.28318)+sin(X/W*{fx}*6.28318))/2"
+        if fy > 0:
+            return f"sin(Y/H*{fy}*6.28318)"
+        return f"sin(X/W*{fx}*6.28318)"
+
+    def mkpat(r: str, g: str, b: str) -> str:
+        return f"geq=r='{r}':g='{g}':b='{b}'"
+
+    # ---- グループA: 縦グラデ（下が明るい）20種 ----
+    A = [
+        (8, 153,   5,   5), (8,   5,   8, 148), (8,   5, 128,   8),
+        (8,  85,   5, 128), (8, 118,  82,   5), (8,   5, 108, 100),
+        (8, 138,  58,   5), (8, 128,   8,  68), (8,   5,  98, 118),
+        (8,  28,   5, 140), (8,  98,  48,   8), (8, 118,   5,  78),
+        (8,  18, 118,   5), (8, 128,  88,   5), (8,  52,  78, 112),
+        (8, 178,   8,   8), (8,   8,  18, 158), (8,   5, 138,  48),
+        (8, 100,   8, 148), (8, 148,  78,  28),
+    ]
+    for base, rm, gm, bm in A:
+        pats.append(mkpat(grad(base, rm, "Y/H", 1.6), grad(base, gm, "Y/H", 1.8), grad(base, bm, "Y/H", 1.7)))
+
+    # ---- グループB: 縦グラデ（上が明るい）15種 ----
+    B = [
+        (8, 155,   8,   8), (8,   8,   8, 155), (8,   8, 135,   8),
+        (8,  88,   8, 135), (8, 125,  88,   8), (8,   8, 115, 108),
+        (8, 145,  62,   8), (8, 135,   8,  72), (8,   8, 108, 128),
+        (8,  28,   8, 148), (8, 108,  52,   8), (8, 128,   8,  82),
+        (8,  25, 125,   8), (8, 138,  92,   8), (8,  48,  82, 118),
+    ]
+    for base, rm, gm, bm in B:
+        pats.append(mkpat(grad(base, rm, "1-Y/H", 1.6), grad(base, gm, "1-Y/H", 1.8), grad(base, bm, "1-Y/H", 1.7)))
+
+    # ---- グループC: 斜めグラデ（TL-BR / TR-BL 交互）15種 ----
+    C = [
+        (8, 148,   6,   6), (8,   6,   6, 148), (8,   6, 128,   6),
+        (8,  88,   6, 128), (8, 118,  82,   6), (8,   6, 108, 102),
+        (8, 138,  58,   6), (8, 128,   6,  68), (8,   6,  98, 118),
+        (8,  28,   6, 142), (8,  98,  48,   6), (8, 118,   6,  78),
+        (8,  22, 118,   6), (8, 128,  88,   6), (8,  52,  78, 112),
+    ]
+    for i, (base, rm, gm, bm) in enumerate(C):
+        td = "(X/W+Y/H)/2" if i % 2 == 0 else "((W-X)/W+Y/H)/2"
+        pats.append(mkpat(grad(base, rm, td, 1.5), grad(base, gm, td, 1.7), grad(base, bm, td, 1.6)))
+
+    # ---- グループD: 放射状グラデ 15種 ----
+    D = [
+        (8, 148,   6,   6, 0.5, 0.5, False), (8,   6,   6, 148, 0.5, 0.5, False),
+        (8,   6, 128,   6, 0.5, 0.5, False), (8,  88,   6, 128, 0.5, 0.5, False),
+        (8, 118,  82,   6, 0.5, 0.5, False),
+        (6, 155,   8,   8, 0.5, 0.3,  True), (6,   8,   8, 155, 0.5, 0.3,  True),
+        (6,   8, 135,   8, 0.5, 0.3,  True), (6,  90,   8, 135, 0.5, 0.3,  True),
+        (6, 128,  88,   8, 0.5, 0.3,  True),
+        (6, 148,   6,   6, 0.0, 0.0,  True), (6,   6,   6, 148, 1.0, 0.0,  True),
+        (6,   6, 128,   6, 0.5, 1.0,  True), (6,  88,   6, 128, 0.0, 1.0,  True),
+        (6, 118,  82,   6, 0.5, 0.0,  True),
+    ]
+    for base, rm, gm, bm, cx, cy, dark_center in D:
+        dist = f"hypot(X-{cx}*W,Y-{cy}*H)/hypot(W,H)"
+        tr = f"(1-min({dist}*2,1))" if dark_center else f"min({dist}*1.5,1)"
+        pats.append(mkpat(grad(base, rm, tr, 1.5), grad(base, gm, tr, 1.8), grad(base, bm, tr, 1.6)))
+
+    # ---- グループE: 波・縞パターン 20種 ----
+    E = [
+        (10,  5, 25,  30,  5, 65, 6, 0), (25,  5, 10, 65,  5, 30,  0, 6),
+        ( 5, 25, 10,   5, 65, 30, 4, 0), (15, 10, 30, 40, 15, 65,  8, 0),
+        (20, 15,  5,  55, 40,  5, 0, 8), ( 5, 20, 25,  5, 55, 65,  5, 5),
+        (20,  5, 15,  55,  5, 40, 6, 6), ( 5,  5, 20,  5,  5, 60, 10, 0),
+        (20,  5,  5,  60,  5,  5, 0, 10), ( 5, 20,  5,  5, 60,  5, 12, 0),
+        (10,  5, 20,  35,  5, 55, 6, 6), (20, 10,  5, 55, 35,  5,  6, 6),
+        ( 5, 15, 20,   5, 45, 55, 8, 8), (15,  5, 20, 45,  5, 55,  4, 4),
+        (20, 15,  5,  55, 45,  5, 5, 5), ( 8,  6, 22, 28,  8, 58,  3, 0),
+        (22,  8,  6,  58, 28,  8, 0, 3), ( 6, 22,  8,  8, 58, 28,  3, 3),
+        ( 8,  8, 22,  25, 25, 62, 7, 0), (22,  8,  8, 62, 25, 25,  0, 7),
+    ]
+    for br, bg, bb, ar, ag, ab, fy, fx in E:
+        wt = wave_t(fy, fx)
+        def wv(base: int, amp: int, _wt: str = wt) -> str:
+            return f"clip({base}+{amp}*(({_wt})+1)/2,{base},{base + amp})"
+        pats.append(mkpat(wv(br, ar), wv(bg, ag), wv(bb, ab)))
+
+    # ---- グループF: 縦グラデ＋波オーバーレイ 15種 ----
+    F = [
+        (8, 148,   6,   6, 25,  5,  5, 4), (8,   6,   6, 148,  5,  5, 25, 5),
+        (8,   6, 128,   6,  5, 22,  5, 6), (8,  88,   6, 128, 15,  5, 22, 4),
+        (8, 118,  82,   6, 20, 14,  5, 5), (8,   6, 108, 102,  5, 18, 18, 6),
+        (8, 138,  58,   6, 22, 10,  5, 3), (8, 128,   6,  68, 22,  5, 12, 5),
+        (8,   6,  98, 118,  5, 16, 20, 4), (8,  28,   6, 142,  6,  5, 24, 6),
+        (8,  98,  48,   6, 16,  8,  5, 5), (8, 118,   6,  78, 20,  5, 14, 4),
+        (8,  22, 118,   6,  5, 20,  5, 7), (8, 128,  88,   6, 22, 15,  5, 5),
+        (8,  52,  78, 112,  9, 13, 18, 4),
+    ]
+    for base, rm, gm, bm, wr, wg, wb, freq in F:
+        wt = f"sin(Y/H*{freq}*6.28318)"
+        def cb(b: int, m: int, wa: int, _wt: str = wt) -> str:
+            return f"clip({b}+{m - b}*pow(Y/H,1.6)+{wa}*(({_wt})+1)/2,{b},{m + wa})"
+        pats.append(mkpat(cb(base, rm, wr), cb(base, gm, wg), cb(base, bm, wb)))
+
+    return pats
+
+
+_BG_PATTERNS: list[str] = _build_bg_patterns()
+
+
 def make_video_style() -> dict:
     """動画ごとのランダムスタイルを生成する。"""
     sub_box = random.choice(_BOX_COLORS)
@@ -308,6 +426,30 @@ def find_japanese_fonts() -> list[str]:
     if not found:
         found = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
     return found or []
+
+
+def generate_fallback_backgrounds(count: int = 3) -> list[str]:
+    """_BG_PATTERNS からランダムにパターンを選んで背景画像を生成し assets/ai_*.jpg に保存する。"""
+    Path(ASSETS_DIR).mkdir(exist_ok=True)
+    chosen = random.sample(_BG_PATTERNS, min(count, len(_BG_PATTERNS)))
+    paths: list[str] = []
+    for i, vf_expr in enumerate(chosen):
+        out = f"{ASSETS_DIR}/ai_{i}.jpg"
+        result = subprocess.run(
+            [
+                "ffmpeg", "-y",
+                "-f", "lavfi", "-i", f"color=black:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:r=1",
+                "-vf", vf_expr,
+                "-frames:v", "1", "-q:v", "3", out,
+            ],
+            capture_output=True,
+        )
+        if result.returncode == 0:
+            paths.append(out)
+            print(f"  背景パターン生成: {out}")
+        else:
+            print(f"  [警告] 背景生成失敗(pat{i}): {result.stderr[-150:]}", file=sys.stderr)
+    return paths
 
 
 # ---------------------------------------------------------------------------
@@ -797,9 +939,11 @@ def main() -> None:
         if Path(p).stat().st_size > 1000
     )
     if not assets_images:
-        print("[エラー] assets/ai_*.jpg が見つかりません。", file=sys.stderr)
-        print("  generate_images.py を先に実行してください。", file=sys.stderr)
-        sys.exit(1)
+        print("  [情報] assets/ai_*.jpg なし。バリエーション背景を自動生成します。")
+        assets_images = generate_fallback_backgrounds(count=3)
+        if not assets_images:
+            print("[エラー] 背景画像の生成に失敗しました。", file=sys.stderr)
+            sys.exit(1)
     print(f"  AI画像を使用 ({len(assets_images)}枚): {[Path(p).name for p in assets_images]}")
 
     font_path = find_japanese_font()
