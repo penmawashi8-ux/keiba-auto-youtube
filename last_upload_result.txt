@@ -1,10 +1,10 @@
-date: 2026-04-17T00:03:28.703356Z
+date: 2026-04-17T04:23:51.075102Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FTdtEKFWU8A title=【香港・チェアマンズSP】サトノレーヴが国内最終追い83秒0―11秒1　堀宣行調
-OK project=1 video_id=kv1LCaZ5drw title=【皐月賞】「無事是名馬」野中賢二調教師が8年ぶりの舞台で8番枠からマテンロウゲイ
-OK project=1 video_id=VB-8XjYJANI title=【皐月賞】吉兆枠だ!ホープフルS完勝と同じ2枠4番　桜花賞制した松山弘平騎手とロ
+OK project=1 video_id=yQe6MWC9hXM title=【皐月賞・金曜調整】カヴァレリッツォは活気十分に坂路駆け上がる　陣営「思ったより
+OK project=1 video_id=qojKp4-ia9Q title=【皐月賞・金曜調整】馬体張りよし!ベンバトル産駒ラージアンサンブルに大駆けの気配
+OK project=1 video_id=PYYds6g15_I title=【皐月賞・金曜調整】「津村に運があれば勝つと思う(笑)」状態の良さうかがえるリア
