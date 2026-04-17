@@ -622,8 +622,12 @@ def make_clip(
 
         if is_thumbnail:
             # サムネイルフレーム: タイトルを大きく中央に表示
+            _st = style or {}
+            _tfs = _st.get("title_font_size", 96)
+            # 全角CJK文字幅(=fontsize px)×文字数 + boxborderw(24)×2 ≤ VIDEO_WIDTH を保証
+            _title_max_chars = max(5, int((VIDEO_WIDTH - 48) // _tfs))
             title_file = f"{tmp_dir}/thumb_title_{idx:04d}.txt"
-            wrapped = wrap_text(thumb_title, max_chars=10)
+            wrapped = wrap_text(thumb_title, max_chars=_title_max_chars)
             Path(title_file).write_text(wrapped, encoding="utf-8")
             tf = title_file.replace("'", "\\'")
 
