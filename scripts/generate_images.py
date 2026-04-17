@@ -37,17 +37,138 @@ PIXABAY_API_URL = "https://pixabay.com/api/"
 HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
 PIXABAY_QUERIES = [
-    "horse racing",
-    "thoroughbred horse",
-    "jockey horse race",
-    "horse racing track",
+    # レース・アクション
+    "horse racing", "horse race action", "thoroughbred racing",
+    "jockey horse race", "horse racing finish line", "horse racing track",
+    "horse galloping race", "horse racing winner", "horse racing crowd",
+    "horse sprint race", "horse racing start gate", "horse racing hurdle",
+    "horse racing pack", "horse racing photo finish", "horse race neck neck",
+    # ポートレート・クローズアップ
+    "thoroughbred horse", "racehorse portrait", "horse face close up",
+    "horse eye closeup", "horse mane flowing", "horse profile outdoor",
+    "horse running field", "horse silhouette sunset", "racehorse muscular",
+    "horse dramatic sky", "horse power gallop",
+    # パドック・厩舎・調教
+    "horse paddock", "horse stable", "horse grooming jockey",
+    "horse morning training", "horse workout track", "horse trainer",
+    "horse tack saddle", "horse parade ring", "horse walking handler",
+    # 競馬場・施設
+    "horse racetrack grandstand", "racetrack aerial view",
+    "horse racing venue", "turf course horse", "horse racing stadium",
+    "horse racing fans", "horse racing trophy", "jockey celebration",
+    # 光・雰囲気
+    "horse racing sunset", "horse racing sunrise", "horse racing fog",
+    "horse racing rain", "horse racing night lights", "horse silhouette dusk",
+    "horse racing golden hour", "horse race dramatic clouds",
+    # 一般的な馬の美しさ
+    "horse nature landscape", "wild horse running", "horse field green",
+    "horse farm countryside", "horse outdoor freedom", "horse misty morning",
+    "horse jumping fence", "equestrian sport",
 ]
 
 DEFAULT_PROMPTS = [
-    "cinematic photo of horses racing at sunset on a beautiful racecourse, dramatic lighting, high quality",
-    "cinematic photo of jockey riding horse on racecourse, motion blur, high quality",
-    "cinematic photo of horse racing crowd cheering at finish line, high quality",
-    "cinematic photo of thoroughbred horse in paddock, golden hour, high quality",
+    # レースアクション
+    "cinematic photo of horses racing at full gallop on sunlit racecourse, dust and motion, dramatic lighting, high quality",
+    "cinematic photo of jockey riding thoroughbred horse in race, motion blur, intense competition, high quality",
+    "cinematic photo of horse race finish line photo finish, crowd cheering, dramatic moment, high quality",
+    "cinematic photo of horses breaking from starting gate, explosive power, dramatic action, high quality",
+    "cinematic photo of horse racing pack thundering down the stretch, vibrant colors, high quality",
+    "cinematic photo of winning horse crossing finish line, jockey celebrating, triumphant, high quality",
+    "cinematic photo of racehorses and jockeys in tight pack on turn, dirt flying, high quality",
+    "cinematic photo of racehorse head-on racing toward camera, power and speed blur, high quality",
+    "cinematic photo of horse racing at dusk, long shadows, golden light on track, high quality",
+    "cinematic photo of horse race aerial view, colorful jockey silks, dynamic composition, high quality",
+    "cinematic photo of lone racehorse leading by lengths, jockey pumping fist, high quality",
+    "cinematic photo of horse racing in rain, water spray, dramatic wet atmosphere, high quality",
+    "cinematic photo of horses neck and neck in final furlong, intense duel, high quality",
+    "cinematic photo of horse racing jockey in colorful silks on tight turn, high quality",
+    "cinematic photo of racehorses thundering past finish post, winner emerges, exhilaration, high quality",
+    "cinematic photo of racehorses from trackside ground level, speed blur, close perspective, high quality",
+    "cinematic photo of horse racing from behind the pack, rhythm of hooves, high quality",
+    "cinematic photo of race start moment, horses lunging forward, explosive energy, high quality",
+    "cinematic photo of horse racing wide angle full field, grandstand backdrop, high quality",
+    "cinematic photo of racehorses with motion-frozen hooves midair, peak action, high quality",
+    # ポートレート
+    "cinematic photo of majestic thoroughbred horse portrait, soulful eyes, dramatic lighting, high quality",
+    "cinematic photo of racehorse in paddock, muscular build, gleaming coat, professional photography, high quality",
+    "cinematic photo of horse face close-up, powerful noble expression, shallow depth of field, high quality",
+    "cinematic photo of thoroughbred horse profile, racetrack background, golden hour light, high quality",
+    "cinematic photo of horse mane flowing in wind, running free, dramatic cloud sky, high quality",
+    "cinematic photo of racehorse eye close-up, reflection of racetrack, intense focus, high quality",
+    "cinematic photo of horse silhouette against dramatic sunset sky, powerful noble stance, high quality",
+    "cinematic photo of racehorse sweating after race, steaming coat, champion spirit, high quality",
+    "cinematic photo of racehorse in winner's enclosure with flowers, champion moment, high quality",
+    "cinematic photo of horse breathing hard post-race, dramatic close-up, warrior, high quality",
+    "cinematic photo of thoroughbred horse running in open field, freedom and power, high quality",
+    "cinematic photo of horse nose crossing finish line, ultimate drama, champion, high quality",
+    "cinematic photo of jockey standing in stirrups over finish line, triumph fist pump, high quality",
+    "cinematic photo of two thoroughbred horses together in paddock, majestic comparison, high quality",
+    "cinematic photo of young racehorse on green paddock, morning dew light, peaceful, high quality",
+    # 調教・パドック
+    "cinematic photo of horse morning training on racetrack, sunrise, misty atmosphere, high quality",
+    "cinematic photo of jockey training thoroughbred at dawn, golden rim light, racetrack, high quality",
+    "cinematic photo of racehorse galloping in training session, trainer timing with stopwatch, high quality",
+    "cinematic photo of horse workout track early morning, fog rolling in, atmospheric, high quality",
+    "cinematic photo of horse and jockey canter to post, anticipation, pre-race calm, high quality",
+    "cinematic photo of racehorse doing speed work on training track, power and focus, high quality",
+    "cinematic photo of horse in stable box, warm amber lighting, peaceful animal at rest, high quality",
+    "cinematic photo of racehorse being brushed in stable, grooming ritual, bond with handler, high quality",
+    "cinematic photo of horses walking in paddock ring, crowd watching, pre-race ritual, high quality",
+    "cinematic photo of jockey weighing in after race, tradition of racing, backstage moment, high quality",
+    "cinematic photo of trainer giving jockey final instructions, intense focus, pre-race drama, high quality",
+    "cinematic photo of horse being led to starting gate, final moments of calm, high quality",
+    "cinematic photo of racehorse swimming pool training, aquatic exercise, athletic recovery, high quality",
+    "cinematic photo of horses on horse walker, post-race cooldown, training facility, high quality",
+    "cinematic photo of horse tack saddle and bridle preparation, race day ritual, high quality",
+    # 競馬場・施設
+    "cinematic photo of racetrack grandstand full of excited crowd on big race day, high quality",
+    "cinematic photo of horses parading past grandstand, race day pageantry and tradition, high quality",
+    "cinematic photo of horse racing winners circle ceremony, trophy presentation, crowd, high quality",
+    "cinematic photo of racetrack from above, perfect green turf oval, white rails, high quality",
+    "cinematic photo of starting gate mechanism, dramatic metal structure, race day tension, high quality",
+    "cinematic photo of racecourse turf green and lush, morning dew, pristine condition, high quality",
+    "cinematic photo of racing crowd fans cheering finish, emotion and excitement, high quality",
+    "cinematic photo of racetrack empty at dawn, peaceful before the storm, misty morning, high quality",
+    "cinematic photo of horse racing grandstand lit at dusk, golden hour transition, high quality",
+    "cinematic photo of race day atmosphere, binoculars and racing form, tradition, high quality",
+    # 光・雰囲気
+    "cinematic photo of horse racing silhouette against dramatic storm clouds, epic power, high quality",
+    "cinematic photo of racehorses in morning fog workout, ethereal misty atmosphere, high quality",
+    "cinematic photo of horses racing with sun directly behind, backlit rim lighting halo, high quality",
+    "cinematic photo of horse racing with rainbow in background, lucky symbol, vibrant, high quality",
+    "cinematic photo of racetrack at magic hour, purple and orange sky, last race of day, high quality",
+    "cinematic photo of horse racing motion blur artistic, impression of pure speed, high quality",
+    "cinematic photo of horse racing dust cloud kicked up, earth power drama, high quality",
+    "cinematic photo of racehorse reflected in puddle on track, artistic mirror image, high quality",
+    "cinematic photo of racehorses in golden hour backlight, silhouettes and rim glow, high quality",
+    "cinematic photo of horse racing abstract freeze frame, crystalline moment of power, high quality",
+    "cinematic photo of racehorses in misty autumn forest track, seasonal beauty, high quality",
+    "cinematic photo of horse racing under dramatic cumulus clouds, natural drama, high quality",
+    "cinematic photo of horse galloping on beach at sunrise, freedom and power, high quality",
+    "cinematic photo of racehorse nose to nose rival duel, ultimate close finish, high quality",
+    "cinematic photo of horse racing black and white high contrast, classic sport drama, high quality",
+    # ナイトレース
+    "cinematic photo of night horse racing under floodlights, dramatic artificial light, high quality",
+    "cinematic photo of horse racing twilight track, purple sky, floodlights activating, high quality",
+    "cinematic photo of racehorse under spotlight in winners circle at night, champion, high quality",
+    "cinematic photo of racetrack lit up at night, crowd in stadium lights, electric, high quality",
+    "cinematic photo of horse racing under lights, speed and drama, night race energy, high quality",
+    "cinematic photo of racecourse grandstand illuminated at dusk, golden-purple sky, high quality",
+    "cinematic photo of nighttime track with horse silhouettes against bright floodlights, high quality",
+    "cinematic photo of racing horse with light trails long exposure, artistic night shot, high quality",
+    "cinematic photo of horse racing fire torches track boundary, festival atmosphere, high quality",
+    "cinematic photo of jockeys under floodlights post-race, colorful silks glistening, high quality",
+    # 日本・アジア競馬
+    "cinematic photo of horse racing Japanese racetrack, cherry blossoms spring atmosphere, high quality",
+    "cinematic photo of Japan Derby race crowd Tokyo racecourse, massive audience excitement, high quality",
+    "cinematic photo of Japanese jockey in silks, Tokyo racecourse background, high quality",
+    "cinematic photo of horse racing Japan scenic mountains background, beautiful racecourse, high quality",
+    "cinematic photo of Japanese racehorse training Hokkaido farm, cold morning mist, high quality",
+    "cinematic photo of Japanese racetrack autumn red leaves, scenic horse race, high quality",
+    "cinematic photo of JRA Tokyo racecourse landscape, horse parade grandeur, high quality",
+    "cinematic photo of Japan horse racing winter scene snow distant, Arima atmosphere, high quality",
+    "cinematic photo of horse racing Japan green turf summer, vibrant energy, high quality",
+    "cinematic photo of Japan racetrack wide shot with city skyline background, modern racing, high quality",
 ]
 
 
@@ -101,7 +222,7 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
             safe = str(e).replace(api_key, "***") if api_key else str(e)
             print(f"  [警告] key={key_label} プロンプト生成失敗: {safe}", flush=True)
     print("  [警告] 全キーでプロンプト生成失敗。デフォルトプロンプトを使用します。", flush=True)
-    return DEFAULT_PROMPTS
+    return random.sample(DEFAULT_PROMPTS, 4)
 
 
 def save_image_bytes(content: bytes, filepath: str) -> bool:
@@ -239,14 +360,14 @@ def main() -> None:
         news_items = []
 
     print("  プロンプト生成中...", flush=True)
-    prompts = get_prompts_from_gemini(gemini_keys, news_items) if gemini_keys else DEFAULT_PROMPTS
+    prompts = get_prompts_from_gemini(gemini_keys, news_items) if gemini_keys else random.sample(DEFAULT_PROMPTS, 4)
     for i, p in enumerate(prompts, 1):
         print(f"    [{i}] {p[:80]}", flush=True)
 
     def generate_one(args):
         i, prompt = args
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
-        query = PIXABAY_QUERIES[(i - 1) % len(PIXABAY_QUERIES)]
+        query = random.choice(PIXABAY_QUERIES)
         print(f"\n  [{i}/4] 画像取得中...", flush=True)
 
         if pixabay_key:
