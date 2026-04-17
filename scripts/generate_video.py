@@ -91,6 +91,131 @@ _ENDING_TEXTS = [
     "役に立ったら\n高評価お願いします！\n\n毎日更新中！",
 ]
 
+# ---------------------------------------------------------------------------
+# 字幕アニメーション パターン (87種)
+# (x_expr, y_expr, alpha_expr)
+# BX = base_x, BY = base_y (レンダリング時に置換)
+# t = 時間(秒), w/h = 動画幅高さ, text_w/text_h = テキストサイズ
+# ---------------------------------------------------------------------------
+_ANIM_PATTERNS = [
+    # 0: 静止
+    ("BX", "BY", "1"),
+    # 1-4: 右からスライド（超速→遅）
+    ("BX+w*(1-min(t,0.08)/0.08)", "BY", "1"),
+    ("BX+w*(1-min(t,0.20)/0.20)", "BY", "1"),
+    ("BX+w*(1-min(t,0.40)/0.40)", "BY", "1"),
+    ("BX+w*(1-min(t,0.65)/0.65)", "BY", "1"),
+    # 5-8: 左からスライド（超速→遅）
+    ("BX-w*(1-min(t,0.08)/0.08)", "BY", "1"),
+    ("BX-w*(1-min(t,0.20)/0.20)", "BY", "1"),
+    ("BX-w*(1-min(t,0.40)/0.40)", "BY", "1"),
+    ("BX-w*(1-min(t,0.65)/0.65)", "BY", "1"),
+    # 9-12: 下からスライド（超速→遅）
+    ("BX", "BY+h*(1-min(t,0.08)/0.08)", "1"),
+    ("BX", "BY+h*(1-min(t,0.20)/0.20)", "1"),
+    ("BX", "BY+h*(1-min(t,0.40)/0.40)", "1"),
+    ("BX", "BY+h*(1-min(t,0.65)/0.65)", "1"),
+    # 13-16: 上からスライド（超速→遅）
+    ("BX", "BY-h*(1-min(t,0.08)/0.08)", "1"),
+    ("BX", "BY-h*(1-min(t,0.20)/0.20)", "1"),
+    ("BX", "BY-h*(1-min(t,0.40)/0.40)", "1"),
+    ("BX", "BY-h*(1-min(t,0.65)/0.65)", "1"),
+    # 17-21: フェードインのみ
+    ("BX", "BY", "min(t/0.10,1)"),
+    ("BX", "BY", "min(t/0.25,1)"),
+    ("BX", "BY", "min(t/0.45,1)"),
+    ("BX", "BY", "min(t/0.70,1)"),
+    ("BX", "BY", "min(t/1.20,1)"),
+    # 22-26: 右スライド＋フェード（ビューン）
+    ("BX+w*(1-min(t,0.10)/0.10)", "BY", "min(t/0.10,1)"),
+    ("BX+w*(1-min(t,0.25)/0.25)", "BY", "min(t/0.25,1)"),
+    ("BX+w*(1-min(t,0.40)/0.40)", "BY", "min(t/0.40,1)"),
+    ("BX+w*(1-min(t,0.55)/0.55)", "BY", "min(t/0.55,1)"),
+    ("BX+w*(1-min(t,0.70)/0.70)", "BY", "min(t/0.70,1)"),
+    # 27-31: 左スライド＋フェード
+    ("BX-w*(1-min(t,0.10)/0.10)", "BY", "min(t/0.10,1)"),
+    ("BX-w*(1-min(t,0.25)/0.25)", "BY", "min(t/0.25,1)"),
+    ("BX-w*(1-min(t,0.40)/0.40)", "BY", "min(t/0.40,1)"),
+    ("BX-w*(1-min(t,0.55)/0.55)", "BY", "min(t/0.55,1)"),
+    ("BX-w*(1-min(t,0.70)/0.70)", "BY", "min(t/0.70,1)"),
+    # 32-35: 下スライド＋フェード
+    ("BX", "BY+h*(1-min(t,0.20)/0.20)", "min(t/0.20,1)"),
+    ("BX", "BY+h*(1-min(t,0.35)/0.35)", "min(t/0.35,1)"),
+    ("BX", "BY+h*(1-min(t,0.50)/0.50)", "min(t/0.50,1)"),
+    ("BX", "BY+h*(1-min(t,0.70)/0.70)", "min(t/0.70,1)"),
+    # 36-39: 上スライド＋フェード
+    ("BX", "BY-h*(1-min(t,0.20)/0.20)", "min(t/0.20,1)"),
+    ("BX", "BY-h*(1-min(t,0.35)/0.35)", "min(t/0.35,1)"),
+    ("BX", "BY-h*(1-min(t,0.50)/0.50)", "min(t/0.50,1)"),
+    ("BX", "BY-h*(1-min(t,0.70)/0.70)", "min(t/0.70,1)"),
+    # 40-43: 横シェイク（バウンス減衰）
+    ("BX+30*sin(t*40)*exp(-t*8)", "BY", "1"),
+    ("BX+20*sin(t*50)*exp(-t*10)", "BY", "1"),
+    ("BX+45*sin(t*35)*exp(-t*7)", "BY", "1"),
+    ("BX+55*sin(t*28)*exp(-t*6)", "BY", "1"),
+    # 44-46: 縦バウンス（弾む）
+    ("BX", "BY+28*abs(sin(t*26))*exp(-t*5)", "1"),
+    ("BX", "BY+40*abs(sin(t*20))*exp(-t*4)", "1"),
+    ("BX", "BY+18*abs(sin(t*32))*exp(-t*7)", "1"),
+    # 47-50: 右からバネ（弾性スライド）
+    ("BX+w*exp(-t*7)*sin(t*22+1.5708)", "BY", "1"),
+    ("BX+w*exp(-t*5)*sin(t*18+1.5708)", "BY", "1"),
+    ("BX+w*0.7*exp(-t*9)*sin(t*26+1.5708)", "BY", "min(t/0.12,1)"),
+    ("BX+w*0.5*exp(-t*11)*sin(t*30+1.5708)", "BY", "min(t/0.08,1)"),
+    # 51-53: 左からバネ
+    ("BX-w*exp(-t*7)*sin(t*22+1.5708)", "BY", "1"),
+    ("BX-w*exp(-t*5)*sin(t*18+1.5708)", "BY", "1"),
+    ("BX-w*0.7*exp(-t*9)*sin(t*26+1.5708)", "BY", "min(t/0.12,1)"),
+    # 54-56: 下からバネ
+    ("BX", "BY+h*exp(-t*7)*sin(t*22+1.5708)", "1"),
+    ("BX", "BY+h*exp(-t*5)*sin(t*18+1.5708)", "1"),
+    ("BX", "BY+h*0.6*exp(-t*9)*sin(t*26+1.5708)", "min(t/0.12,1)"),
+    # 57-60: 斜めスライド（4方向）
+    ("BX+w*(1-min(t,0.35)/0.35)", "BY+200*(1-min(t,0.35)/0.35)", "min(t/0.35,1)"),
+    ("BX+w*(1-min(t,0.35)/0.35)", "BY-200*(1-min(t,0.35)/0.35)", "min(t/0.35,1)"),
+    ("BX-w*(1-min(t,0.35)/0.35)", "BY+200*(1-min(t,0.35)/0.35)", "min(t/0.35,1)"),
+    ("BX-w*(1-min(t,0.35)/0.35)", "BY-200*(1-min(t,0.35)/0.35)", "min(t/0.35,1)"),
+    # 61-64: チラチラ（フリッカー）
+    ("BX", "BY", "if(lt(t,0.15),mod(floor(t*20),2),1)"),
+    ("BX", "BY", "if(lt(t,0.20),mod(floor(t*15),2),1)"),
+    ("BX", "BY", "if(lt(t,0.25),mod(floor(t*25),2),1)"),
+    ("BX", "BY", "if(lt(t,0.10),mod(floor(t*30),2),1)"),
+    # 65-67: ゆらぎ（ゾワー）
+    ("BX+6*sin(t*2.1)", "BY+3*cos(t*1.8)", "min(t/0.45,1)"),
+    ("BX+9*sin(t*1.6)", "BY+5*sin(t*2.3)", "min(t/0.55,1)"),
+    ("BX+4*cos(t*2.8)", "BY+7*sin(t*1.9)", "1"),
+    # 68-71: 部分スライド（画面半分）
+    ("BX+w*0.4*(1-min(t,0.28)/0.28)", "BY", "min(t/0.22,1)"),
+    ("BX-w*0.4*(1-min(t,0.28)/0.28)", "BY", "min(t/0.22,1)"),
+    ("BX+w*0.6*(1-min(t,0.22)/0.22)", "BY", "min(t/0.18,1)"),
+    ("BX-w*0.6*(1-min(t,0.22)/0.22)", "BY", "min(t/0.18,1)"),
+    # 72-75: シェイク＋フェード合わせ技
+    ("BX+28*sin(t*45)*exp(-t*10)", "BY", "min(t/0.28,1)"),
+    ("BX+38*cos(t*38)*exp(-t*8)", "BY+16*sin(t*40)*exp(-t*9)", "min(t/0.22,1)"),
+    ("BX", "BY+32*sin(t*50)*exp(-t*12)", "min(t/0.18,1)"),
+    ("BX+22*sin(t*55)*exp(-t*10)", "BY+22*cos(t*45)*exp(-t*10)", "min(t/0.28,1)"),
+    # 76-79: 超高速スライド（ビューン！ドン！）
+    ("BX+w*(1-min(t,0.06)/0.06)", "BY", "1"),
+    ("BX-w*(1-min(t,0.06)/0.06)", "BY", "1"),
+    ("BX", "BY+h*(1-min(t,0.06)/0.06)", "1"),
+    ("BX+w*(1-min(t,0.09)/0.09)", "BY", "min(t/0.09,1)"),
+    # 80-83: ゆっくり出現（ゾゾゾ…）
+    ("BX+w*(1-min(t,1.20)/1.20)", "BY", "min(t/0.80,1)"),
+    ("BX-w*(1-min(t,1.00)/1.00)", "BY", "min(t/0.70,1)"),
+    ("BX", "BY+h*(1-min(t,0.90)/0.90)", "min(t/0.60,1)"),
+    ("BX", "BY-h*(1-min(t,0.80)/0.80)", "min(t/0.50,1)"),
+    # 84-86: バネ＋フェード（右・左・下）
+    ("BX+w*exp(-t*7)*sin(t*22+1.5708)", "BY", "min(t/0.18,1)"),
+    ("BX-w*exp(-t*7)*sin(t*22+1.5708)", "BY", "min(t/0.18,1)"),
+    ("BX", "BY+h*exp(-t*7)*sin(t*22+1.5708)", "min(t/0.18,1)"),
+]
+
+# 字幕フォントサイズ一覧（小〜超大、20種）
+_SUBTITLE_FONT_SIZES = [
+    35, 38, 42, 44, 48, 54, 58, 62, 66, 70,
+    74, 78, 82, 86, 90, 96, 100, 108, 115, 120,
+]
+
 
 def make_video_style() -> dict:
     """動画ごとのランダムスタイルを生成する。"""
@@ -112,27 +237,31 @@ def make_video_style() -> dict:
     # 斜め角度（ラジアン、±5〜12度）
     angle_deg = random.choice([-12, -10, -8, -6, 6, 8, 10, 12])
     diagonal_angle = angle_deg * 3.14159 / 180
+    sub_fs  = random.choice(_SUBTITLE_FONT_SIZES)
+    sub_lmc = max(5, int(840 // sub_fs))   # フォントサイズに連動した行最大文字数
     return {
-        "subtitle_type":        sub_type,
-        "subtitle_y":           sub_y,
-        "subtitle_x_align":     sub_x_align,
-        "diagonal_angle_rad":   diagonal_angle,
-        "subtitle_color":       random.choice(_SUBTITLE_COLORS),
-        "subtitle_box_color":   sub_box,
-        "subtitle_box_opacity": round(random.uniform(0.80, 0.95), 2),
-        "subtitle_font_size":   random.randint(54, 66),
-        "subtitle_border_w":    random.randint(2, 5),
-        "subtitle_line_spacing": random.randint(10, 18),
-        "badge_color":          random.choice(_BADGE_COLORS),
-        "badge_text":           random.choice(_BADGE_TEXTS),
-        "title_color":          random.choice(_TITLE_COLORS),
-        "title_font_size":      random.randint(84, 104),
-        "title_box_opacity":    round(random.uniform(0.55, 0.75), 2),
-        "ending_text":          random.choice(_ENDING_TEXTS),
-        "ending_color":         random.choice(_TITLE_COLORS),
-        "ending_font_size":     random.randint(88, 112),
-        "ending_box_opacity":   round(random.uniform(0.65, 0.85), 2),
-        "ending_line_spacing":  random.randint(18, 30),
+        "subtitle_type":           sub_type,
+        "subtitle_y":              sub_y,
+        "subtitle_x_align":        sub_x_align,
+        "diagonal_angle_rad":      diagonal_angle,
+        "subtitle_color":          random.choice(_SUBTITLE_COLORS),
+        "subtitle_box_color":      sub_box,
+        "subtitle_box_opacity":    round(random.uniform(0.78, 0.96), 2),
+        "subtitle_font_size":      sub_fs,
+        "subtitle_line_max_chars": sub_lmc,
+        "subtitle_border_w":       random.randint(2, 10),
+        "subtitle_line_spacing":   random.randint(8, 22),
+        "anim_idx":                random.randint(0, len(_ANIM_PATTERNS) - 1),
+        "badge_color":             random.choice(_BADGE_COLORS),
+        "badge_text":              random.choice(_BADGE_TEXTS),
+        "title_color":             random.choice(_TITLE_COLORS),
+        "title_font_size":         random.randint(84, 104),
+        "title_box_opacity":       round(random.uniform(0.55, 0.75), 2),
+        "ending_text":             random.choice(_ENDING_TEXTS),
+        "ending_color":            random.choice(_TITLE_COLORS),
+        "ending_font_size":        random.randint(88, 112),
+        "ending_box_opacity":      round(random.uniform(0.65, 0.85), 2),
+        "ending_line_spacing":     random.randint(18, 30),
     }
 
 
@@ -411,13 +540,14 @@ def make_clip(
             # 通常字幕クリップ
             s = style or {}
             sub_type = s.get("subtitle_type", "box")
+            sub_fs   = s.get("subtitle_font_size", FONT_SIZE)
+            lmc      = s.get("subtitle_line_max_chars", LINE_MAX_CHARS)
             text_file = f"{tmp_dir}/text_{idx:04d}.txt"
-            Path(text_file).write_text(wrap_text(text, max_lines=7), encoding="utf-8")
+            Path(text_file).write_text(wrap_text(text, max_chars=lmc, max_lines=7), encoding="utf-8")
             tf = text_file.replace("'", "\\'")
             sub_col = s.get("subtitle_color", "0xFFFFFF")
             sub_box = s.get("subtitle_box_color", "0x000014")
             sub_op  = s.get("subtitle_box_opacity", 0.88)
-            sub_fs  = s.get("subtitle_font_size", FONT_SIZE)
             sub_bw  = s.get("subtitle_border_w", 3)
             sub_ls  = s.get("subtitle_line_spacing", 14)
             sub_y   = s.get("subtitle_y", 700)
@@ -426,29 +556,34 @@ def make_clip(
                 "(w-text_w)/2" if x_align == "center"
                 else ("60" if x_align == "left" else "w-text_w-60")
             )
+            # アニメーション適用
+            anim = _ANIM_PATTERNS[s.get("anim_idx", 0) % len(_ANIM_PATTERNS)]
+            ax = anim[0].replace("BX", f"({x_expr})")
+            ay = anim[1].replace("BY", f"(h-text_h-{sub_y})")
+            aa = anim[2]
             if sub_type == "no_box":
-                # ボックスなし：太縁取り＋シャドウで視認性確保
+                # ボックスなし：縁取り＋シャドウ
                 chain += (
                     f",drawtext=textfile='{tf}':fontfile='{fp}':"
                     f"fontsize={sub_fs}:fontcolor={sub_col}:"
-                    f"x={x_expr}:y=h-text_h-{sub_y}:"
+                    f"x={ax}:y={ay}:alpha={aa}:"
                     f"line_spacing={sub_ls}:"
-                    f"borderw=7:bordercolor=0x000000:"
+                    f"borderw={sub_bw}:bordercolor=0x000000:"
                     f"shadowcolor=0x000000@0.8:shadowx=4:shadowy=4"
                 )
             elif sub_type == "diagonal":
-                # 斜めテキスト: multi-stream filter_complex で後処理
+                # 斜めテキスト（アニメなし・filter_complex で後処理）
                 _diag_params = {
                     "tf": tf, "fp": fp,
                     "sub_col": sub_col, "sub_fs": sub_fs, "sub_ls": sub_ls,
                     "angle_rad": s.get("diagonal_angle_rad", 0.2),
                 }
             else:
-                # ボックスあり（通常）
+                # ボックスあり
                 chain += (
                     f",drawtext=textfile='{tf}':fontfile='{fp}':"
                     f"fontsize={sub_fs}:fontcolor={sub_col}:"
-                    f"x={x_expr}:y=h-text_h-{sub_y}:"
+                    f"x={ax}:y={ay}:alpha={aa}:"
                     f"line_spacing={sub_ls}:"
                     f"box=1:boxcolor={sub_box}@{sub_op}:boxborderw=36:"
                     f"borderw={sub_bw}:bordercolor={sub_box}"
