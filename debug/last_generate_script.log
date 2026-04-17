@@ -10,31 +10,22 @@
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【皐月賞・金曜調整】カヴァレリッツォは活気十分に坂路駆け上がる　陣営「思ったより時計が出たので、調子がいいのかな」 ---
-[0] Gemini入力本文 352文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝17日、栗東トレセン\n\t\t\t\t\u3000昨年の2歳マイル王カヴァレリッツォ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)はフラットワークを行ってから芝コースを1周。その後坂'
+--- 記事[0]: 香港への出国延期の関西馬3頭は急きょ、昼過ぎに微調整　ジャンタルマンタルの高野調教師「何の問題もありません」 ---
+[0] Gemini入力本文 345文字: 'JRAは4月17日、同日付で出国を予定していた栗東所属の香港遠征馬3頭(ジューンテイク、ジョバンニ、ジャンタルマンタル)の出発便が欠航したため、引き続き輸出検疫厩舎で検疫を実施していることを発表した。3頭はこの日、他の馬たちが使っていない1'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【皐月賞・金曜調整】馬体張りよし!ベンバトル産駒ラージアンサンブルに大駆けの気配　武井調教師「期待以上に充実している」 ---
-[1] Gemini入力本文 348文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝4月17日、美浦トレセン\n\t\t\t\t\u3000前走のすみれSを制したラージアンサンブル(牡3歳、美浦・武井亮厩舎、父ベンバトル)は坂路を63秒0―15秒5で流したのち、ゲートで駐立'
+--- 記事[1]: 【注目馬動向・古馬】川崎記念3着のアウトレンジは松山弘平騎手と名古屋グランプリへ ---
+[1] Gemini入力本文 352文字: '今年初戦の川崎記念で3着だったアウトレンジ(牡6歳、栗東・大久保龍志厩舎、父レガーロ)は名古屋グランプリ・Jpn2(5月4日、名古屋競馬場・ダート2100メートル)へ向かうことになった。松山弘平騎手＝栗東・フリー＝が2戦ぶりに手綱を執る。\n'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【皐月賞・金曜調整】「津村に運があれば勝つと思う(笑)」状態の良さうかがえるリアライズシリウス　手塚久調教師は手応え ---
-[2] Gemini入力本文 352文字: '◆第86回皐月賞・G1(4月19日、中山競馬場・芝2000メートル)＝4月17日、美浦トレセン\n\t\t\t\t\u3000出走馬唯一の重賞2勝馬リアライズシリウス(牡3歳、美浦・手塚貴久厩舎、父ポエティックフレア)は坂路を64秒7―15秒2で調整。脚取りは'
+--- 記事[2]: 【注目馬動向・3歳】スマートプリエール、アメティスタはオークス　メイショウハチコウはプリンシパルSへ ---
+[2] Gemini入力本文 349文字: 'フラワーCで重賞初制覇を飾ったスマートプリエール(牝3歳、栗東・大久保龍志厩舎、父エピファネイア)は予定通り、オークス・G1(5月24日、東京競馬場・芝2400メートル)へ向かう。同レースで4着だったアメティスタ(牝3歳、栗東・牧浦充徳厩舎'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -54,31 +45,17 @@ Gemini APIキー: 3 件ロード
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 206文字]: '第86回皐月賞・G1の金曜調整が4月17日に美浦トレセンで行われました。前走のすみれSを制したラージアンサンブルは、坂路を63秒0―15秒5で流したのち、ゲートで駐立確認を行いました。馬体の張りは良く、大駆けの気配が漂っています。武井調教師は「追い切りで自己ベストを出したし、そこまで動けなかった馬が動けるようになってきた。常に成長しているのが実感できますね」とコメントし、期待以上に充実していると語っています。'
-[1]  → output/script_1.txt 保存 (206文字)
-[1]  プレビュー: 第86回皐月賞・G1の金曜調整が4月17日に美浦トレセンで行われました。前走のすみれSを制したラージアンサンブルは、坂路を63秒0―15秒5で流したのち、ゲート...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+[0]  [Gemini生出力 244文字]: 'JRAは4月17日、同日付で出国を予定していた栗東所属の香港遠征馬3頭、ジューンテイク、ジョバンニ、ジャンタルマンタルの出発便が欠航したため、引き続き輸出検疫厩舎で検疫を実施していることを発表しました。3頭は、他の馬たちが使っていない12時から13時に、滋賀・栗東トレーニングセンターのコースを急きょ使用し、微調整を行っています。チャンピオンズマイルに4月26日、シャティン競馬場・芝1600メートルで出走するジャンタルマンタルの高野調教師は、「何の問題もありません」とコメントしました。'
+[0]  → output/script_0.txt 保存 (244文字)
+[0]  プレビュー: JRAは4月17日、同日付で出国を予定していた栗東所属の香港遠征馬3頭、ジューンテイク、ジョバンニ、ジャンタルマンタルの出発便が欠航したため、引き続き輸出検疫厩...
   HTTP 200
-[2]  [Gemini生出力 206文字]: '第86回皐月賞・G1は、4月19日に中山競馬場・芝2000メートルで発走予定です。4月17日の美浦トレセンでの調整では、出走馬唯一の重賞2勝馬であるリアライズシリウスが坂路を64秒7―15秒2で調整しました。脚取りは軽快で、状態の良さがヒシヒシと伝わってきます。手塚貴久調教師は「いい感じで、申し分ないね。体も前回と同じくらいで出せるよ」と自信をのぞかせました。今回は初の2000メートルへの距離延長となります。'
-[2]  → output/script_2.txt 保存 (206文字)
-[2]  プレビュー: 第86回皐月賞・G1は、4月19日に中山競馬場・芝2000メートルで発走予定です。4月17日の美浦トレセンでの調整では、出走馬唯一の重賞2勝馬であるリアライズシ...
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[1]  [Gemini生出力 181文字]: '今年初戦の川崎記念で3着だったアウトレンジは、名古屋グランプリ・Jpn2へ向かうことになりました。このレースは5月4日に名古屋競馬場・ダート2100メートルで行われます。アウトレンジには松山弘平騎手が2戦ぶりに手綱を執る予定です。一方、東京スプリントで9着だったハッピーマンは、5月17日に京都競馬場・ダート1400メートルで行われる栗東Sを視野に入れています。'
+[1]  → output/script_1.txt 保存 (181文字)
+[1]  プレビュー: 今年初戦の川崎記念で3着だったアウトレンジは、名古屋グランプリ・Jpn2へ向かうことになりました。このレースは5月4日に名古屋競馬場・ダート2100メートルで行...
   HTTP 200
-[0]  [Gemini生出力 131文字]: '昨年の2歳マイル王カヴァレリッツォが、栗東トレセンで活気十分に坂路を駆け上がった。牡3歳で、父はサートゥルナーリア、調教師は吉岡辰弥師。最終調整は61秒4―14秒1で終え、田嶋助手は思ったより時計が出ていたとコメントした。朝日杯FS以来4か月ぶりのレースとなる。'
-[0]  → output/script_0.txt 保存 (131文字)
-[0]  プレビュー: 昨年の2歳マイル王カヴァレリッツォが、栗東トレセンで活気十分に坂路を駆け上がった。牡3歳で、父はサートゥルナーリア、調教師は吉岡辰弥師。最終調整は61秒4―14...
+[2]  [Gemini生出力 166文字]: 'フラワーCで重賞初制覇を飾ったスマートプリエールは、予定通りオークス・G1へ向かいます。このレースは5月24日に東京競馬場の芝2400メートルで行われます。同レースで4着だったアメティスタも、オークスへ出走予定です。また、3月28日の3歳1勝クラスで2勝目を挙げたメイショウハチコウは、プリンシパルS（5月3日、東京）へ向かいます。'
+[2]  → output/script_2.txt 保存 (166文字)
+[2]  プレビュー: フラワーCで重賞初制覇を飾ったスマートプリエールは、予定通りオークス・G1へ向かいます。このレースは5月24日に東京競馬場の芝2400メートルで行われます。同レ...
 
 3 件の脚本を生成しました。
