@@ -1,10 +1,10 @@
-date: 2026-04-17T10:26:01.319851Z
+date: 2026-04-17T12:00:57.062506Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wJK2dPMbg0I title=【netkeibaTV】細江純子×じゃいが皐月賞を展望 “ディープ級”と高く評価
-OK project=1 video_id=WSOXuSYxooc title=17日のばんえい競馬で機器故障で馬体重が計測不能　メインレースには現役最強馬が出
-OK project=1 video_id=wSBz_GLUAm4 title=無事に香港へ!　出発便欠航のトラブルに見舞われた栗東所属の香港遠征馬3頭は18日
+OK project=1 video_id=zzZbsLJfHos title=半兄はアオラキ 白毛のスノーエルヴァが連闘で初勝利なるか
+OK project=1 video_id=xre8vbx_-Jo title=【皐月賞予想】急上昇1頭登場で大混戦を断つか!? GI皐月賞・調子偏差値速報
+OK project=1 video_id=odh0gSvKv4g title=【金沢競馬】加藤和宏調教師が通算1100勝　9448戦目で達成
