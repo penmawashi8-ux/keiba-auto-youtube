@@ -1,10 +1,10 @@
-date: 2026-04-17T08:35:11.364237Z
+date: 2026-04-17T10:26:01.319851Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=W-Oc_7ydV28 title=有馬記念を制した皐月賞馬ミュージアムマイルは宝塚記念へ　ドバイ、香港遠征を見送っ
-OK project=1 video_id=_ClCbgirfn8 title=POGファンが知りたい情報に特化した一冊 『POG直球勝負 2026-2027』
-OK project=1 video_id=o2uQHjAgka0 title=【皐月賞・金曜調整】武豊騎手と新コンビで挑むロードフィレールは好気配　陣営「気合
+OK project=1 video_id=wJK2dPMbg0I title=【netkeibaTV】細江純子×じゃいが皐月賞を展望 “ディープ級”と高く評価
+OK project=1 video_id=WSOXuSYxooc title=17日のばんえい競馬で機器故障で馬体重が計測不能　メインレースには現役最強馬が出
+OK project=1 video_id=wSBz_GLUAm4 title=無事に香港へ!　出発便欠航のトラブルに見舞われた栗東所属の香港遠征馬3頭は18日
