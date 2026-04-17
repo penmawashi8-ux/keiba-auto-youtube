@@ -1,10 +1,10 @@
-date: 2026-04-16T12:08:41.615945Z
+date: 2026-04-17T00:03:28.703356Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zk2dvjTspNY title=【西日本クラシック・阪神アーバン競馬】ミルトイブニングが大差逃げ切り勝ち　広瀬航
-OK project=1 video_id=5MgJCg0u__I title=【POG】ノーザンファーム期待の2歳馬22頭の馬体写真つき取材コメント
-OK project=1 video_id=rWeff9QA4H0 title=半兄はGII・3勝のプラダリア アトレッタがデビュー勝ちなるか
+OK project=1 video_id=FTdtEKFWU8A title=【香港・チェアマンズSP】サトノレーヴが国内最終追い83秒0―11秒1　堀宣行調
+OK project=1 video_id=kv1LCaZ5drw title=【皐月賞】「無事是名馬」野中賢二調教師が8年ぶりの舞台で8番枠からマテンロウゲイ
+OK project=1 video_id=VB-8XjYJANI title=【皐月賞】吉兆枠だ!ホープフルS完勝と同じ2枠4番　桜花賞制した松山弘平騎手とロ
