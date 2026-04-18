@@ -5,35 +5,32 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 4月18日の福島11R・ラジオ福島賞は、ダート1700メートル、15頭立てで行われました。このレースは2番人気のメイショ
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【3歳1勝クラス阪神5Rレース後コメント】イベントホライゾン松山弘平騎手ら ---
-[0] Gemini入力本文 345文字: '阪神5Rの3歳1勝クラス(芝2000m)は1番人気イベントホライゾン(松山弘平騎手)が勝利した。勝ちタイムは2分00秒0(良)。3/4馬身差の2着に4番人気サトノアイボリー、さらにクビ差の3着に2番人気エチゴドラゴンが入った。\n\u3000イベントホ'
+--- 記事[0]: 【アンタレスS】3連単29万円超!14番人気ハグが鼻差の3着争い制す　高杉吏麒騎手が波乱演出「これからもう少しやれる」 ---
+[0] Gemini入力本文 352文字: '◆第31回アンタレスS・G3(4月18日、阪神競馬場・ダート1800メートル、良)\n\t\t\t\t\u300016頭立てで争われ、高杉吏麒騎手が騎乗した14番人気のハグ(牡4歳、栗東・藤岡健一厩舎、父ジャスティファイ)が先行策からしぶとく粘り、6番人気のタ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【阪神アーバン競馬プレーバック】ゼンダンスカイ6戦ぶり勝利　下原理が31年前の初勝利を振り返る ---
-[1] Gemini入力本文 347文字: '14日の園田競馬メイン11R「春爛漫特別」(A2B1、ダート1870メートル、9頭立て)は下原理(48)騎乗の4番人気ゼンダンスカイ(牡5＝藤川、父レッドファルクス)が6戦ぶりの勝利。5戦連続掲示板と惜しい競走が続いていただけに、価値ある1'
+--- 記事[1]: 【福島11R・ラジオ福島賞】上がり3ハロン最速の末脚でメイショウカシワデがV　松本大輝騎手「いい勝ち方」 ---
+[1] Gemini入力本文 348文字: '4月18日の福島11R・ラジオ福島賞(ダート1700メートル、15頭立て)は、2番人気のメイショウカシワデ(牡5歳、栗東・角田晃一厩舎、父シニスターミニスター)が、上がり3ハロン最速37・2秒の末脚を繰り出して、差し切り勝ちを決めた。勝ちタ'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【ひめさゆり賞結果】5番人気キンググローリーが3馬身差で完勝 ---
-[2] Gemini入力本文 350文字: '18日、福島競馬場で行われたひめさゆり賞(3歳・1勝クラス・芝2000m)は、3-4コーナーで先頭に立って後続を突き放した舟山瑠泉騎手騎乗の5番人気キンググローリー(牡3、美浦・古賀慎明厩舎)が、7番人気マカナアネラ(牡3、栗東・角田晃一厩'
+--- 記事[2]: 【福島牝馬S予想】意外とタフな福島芝1800m 前走馬体重が小さい馬の取扱いには要注意 ---
+[2] Gemini入力本文 469文字: '今週の日曜日は、福島競馬場で福島牝馬ステークス(GIII・芝1800m)が行われます。\n\u300015年以降に福島芝1800mで開催された福島牝馬S(計10レース)では、前走の馬体重446キロ以下の馬が[1-1-1-22]と苦戦しています。これは福'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -50,32 +47,29 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 240文字]: '4月18日の福島11R・ラジオ福島賞は、ダート1700メートル、15頭立てで行われました。このレースは2番人気のメイショウカシワデが、上がり3ハロン最速となる37秒2の末脚を繰り出し、差し切り勝ちを決めています。勝ちタイムは1分45秒1、馬場は良でした。道中は先団を見る形で5、6番手を進み、勝負どころで手応え良く進出を開始しました。最後の直線では鞍上の懸命のステッキに応え、力強く末脚を伸ばし、先に抜け出した馬を差し切っています。松本大輝騎手は「いい勝ち方」とコメントしました。'
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 194文字]: '阪神5Rの3歳1勝クラス、芝2000mは、1番人気イベントホライゾンが松山弘平騎手で勝利しました。勝ちタイムは2分00秒0の良馬場でした。3/4馬身差の2着には4番人気サトノアイボリーが入り、さらにクビ差の3着には2番人気エチゴドラゴンが入着しています。イベントホライゾンは栗東の池江泰寿厩舎に所属する3歳牡馬です。父はハービンジャー、母はライツェントで、通算成績は4戦2勝となりました。'
-[0]  → output/script_0.txt 保存 (194文字)
-[0]  プレビュー: 阪神5Rの3歳1勝クラス、芝2000mは、1番人気イベントホライゾンが松山弘平騎手で勝利しました。勝ちタイムは2分00秒0の良馬場でした。3/4馬身差の2着には...
+[2]  [Gemini生出力 233文字]: '今週の日曜日には、福島競馬場で福島牝馬ステークス、GIIIの芝1800mが行われます。2015年以降に福島芝1800mで開催された福島牝馬ステークス、計10レースでは、前走の馬体重が446キロ以下の馬が1勝、2着1回、3着1回、着外22回と苦戦する傾向が見られます。これは、福島芝1800mがパワーや馬力を必要とするコースであることに要因があると考えられています。福島は平坦というイメージをお持ちの方もいるかもしれませんが、高低差1.9mと完全な平坦ではありません。'
+[2]  → output/script_2.txt 保存 (233文字)
+[2]  プレビュー: 今週の日曜日には、福島競馬場で福島牝馬ステークス、GIIIの芝1800mが行われます。2015年以降に福島芝1800mで開催された福島牝馬ステークス、計10レー...
   HTTP 200
-[1]  [Gemini生出力 234文字]: '14日の園田競馬メイン11R「春爛漫特別」は、下原理騎手騎乗の4番人気ゼンダンスカイが6戦ぶりの勝利を飾りました。A2B1クラス、ダート1870メートルで行われた9頭立てのこのレースで、ゼンダンスカイは5戦連続掲示板と惜しい競走が続いていただけに、価値ある1勝となりました。課題のゲートをしっかり出て、道中は3番手、4番手をじっくりと追走しました。最終直線では4頭が横並びとなる激戦の中、下原理騎手は「勝因は併せ馬。馬がよく反応して残してくれた」とコメントしています。'
-[1]  → output/script_1.txt 保存 (234文字)
-[1]  プレビュー: 14日の園田競馬メイン11R「春爛漫特別」は、下原理騎手騎乗の4番人気ゼンダンスカイが6戦ぶりの勝利を飾りました。A2B1クラス、ダート1870メートルで行われ...
+[0]  [Gemini生出力 221文字]: '第31回アンタレスステークス・G3が4月18日に阪神競馬場ダート1800メートルで16頭立てで行われました。このレースでは、14番人気のハグが高杉吏麒騎手の騎乗で先行策からしぶとく粘り、6番人気のタガノバビロンとの3着争いを鼻差で制しました。これにより3連単は29万円超の波乱となりました。デビュー3年目の高杉吏麒騎手は「これからもう少しやれる」とコメントしています。高杉吏麒騎手は19日の皐月賞ではラージアンサンブルに騎乗を予定しています。'
+[0]  → output/script_0.txt 保存 (221文字)
+[0]  プレビュー: 第31回アンタレスステークス・G3が4月18日に阪神競馬場ダート1800メートルで16頭立てで行われました。このレースでは、14番人気のハグが高杉吏麒騎手の騎乗...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemma-3-4b-it
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 173文字]: '18日、福島競馬場で行われたひめさゆり賞(3歳・1勝クラス・芝2000m)は、舟山瑠泉騎手騎乗の5番人気キンググローリー(牡3、美浦・古賀慎明厩舎)が優勝した。7番人気マカナアネラ(牡3、栗東・角田晃一厩舎)に3馬身差をつけ、勝ちタイムは1分57秒8(良)だった。2番人気サイモンシャリオ(牡3、栗東・梅田智之厩舎)が1/2馬身差の3着に入った。'
-[2]  → output/script_2.txt 保存 (131文字)
-[2]  プレビュー: 18日、福島競馬場で行われたひめさゆり賞(3歳・1勝クラス・芝2000m)は、舟山瑠泉騎手騎乗の5番人気キンググローリーが優勝した。7番人気マカナアネラに3馬身...
+[1]  [Gemini生出力 127文字]: '4月18日の福島11R・ラジオ福島賞(ダート1700メートル、15頭立て)は、2番人気のメイショウカシワデ(牡5歳、栗東・角田晃一厩舎、父シニスターミニスター)が、上がり3ハロン最速37・2秒の末脚で差し切り勝ちを収めた。勝ちタイムは1分45秒1(良)。'
+[1]  → output/script_1.txt 保存 (100文字)
+[1]  プレビュー: 4月18日の福島11R・ラジオ福島賞(ダート1700メートル、15頭立て)は、2番人気のメイショウカシワデが、上がり3ハロン最速37・2秒の末脚で差し切り勝ちを...
 
 3 件の脚本を生成しました。
