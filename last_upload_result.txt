@@ -1,10 +1,10 @@
-date: 2026-04-18T11:43:43.045225Z
+date: 2026-04-18T23:55:06.141014Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=B43cke3_SuY title=キタノコマンドール産駒のファイナルコマンド 父に初勝利を届けるか
-OK project=1 video_id=fYgYaElIM5s title=セレクト2億円のダノンプレサージュ 初ダートで初勝利狙う
-OK project=1 video_id=qb1NwQlixJw title=【AI予想・皐月賞】好走率の高いデータにも合致した実力馬！ 13年ぶりの2歳マイ
+OK project=1 video_id=qCWzMrN3i-A title=「ウマ娘」藤田晋オーナーのイナズマダイモン 初勝利からの連勝なるか
+OK project=1 video_id=9etj68WnPB0 title=【皐月賞予想】やはりラッキーナンバーは存在する？ 過去データから探るGI皐月賞
+OK project=1 video_id=YPM_WP326Iw title=粗品の皐月賞予想は「やめてくれ」の反応が多かった人気馬を推奨　本命発表に「自惚れ
