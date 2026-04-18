@@ -130,6 +130,43 @@ _THUMB_BOX_STYLES = [
 ]
 
 # ---------------------------------------------------------------------------
+# サムネイルキーワードハイライト
+# ---------------------------------------------------------------------------
+_KW_PATTERNS = [
+    re.compile(r'[ァ-ヶーｦ-ﾟ]{3,}'),  # カタカナ3文字以上（馬名・騎手名等）
+    re.compile(r'\d+(?:勝|着|億|万|番人気|連勝|頭|回)'),  # 数字＋競馬用語
+    re.compile(
+        r'初勝利|初制覇|優勝|制覇|連勝|引退|復活|重賞'
+        r'|G[123]|G[ⅠⅡⅢ]|逃げ切り|差し切り|追い込み'
+        r'|奇跡|悲劇|伝説|衝撃|圧勝|惜敗|復帰|電撃'
+    ),
+]
+
+
+def _char_px(ch: str, fs: int) -> int:
+    return fs if ord(ch) > 0x7F else int(fs * 0.55)
+
+
+def _text_px(text: str, fs: int) -> int:
+    return sum(_char_px(c, fs) for c in text)
+
+
+def _find_keywords(text: str) -> list:
+    spans = []
+    for pat in _KW_PATTERNS:
+        for m in pat.finditer(text):
+            spans.append([m.start(), m.end()])
+    spans.sort()
+    merged: list = []
+    for s, e in spans:
+        if merged and s <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], e)
+        else:
+            merged.append([s, e])
+    return [(s, e) for s, e in merged]
+
+
+# ---------------------------------------------------------------------------
 # 字幕アニメーション パターン (87種)
 # (x_expr, y_expr, alpha_expr)
 # BX = base_x, BY = base_y (レンダリング時に置換)
@@ -770,24 +807,45 @@ def make_clip(
                     f"x=44:y=70:"
                     f"box=1:boxcolor={badge_col}@0.95:boxborderw=22"
                 )
-                # タイトルテキスト（行ごとに色分け＋ボックススタイルランダム）
+                # タイトルテキスト（キーワードハイライト＋ボックススタイルランダム）
                 _color_pair = random.choice(_THUMB_COLOR_PAIRS)
+                _color_base = _color_pair[0]   # 通常テキスト色
+                _color_hi   = _color_pair[1]   # キーワード強調色
                 _box_style_tpl = random.choice(_THUMB_BOX_STYLES)
                 _box_style = _box_style_tpl.replace("OP", str(title_op))
                 _t_lines = [l for l in wrapped.split("\n") if l]
                 _line_h = _tfs + 16
                 for _li, _line in enumerate(_t_lines):
-                    _col = _color_pair[_li % len(_color_pair)]
                     _lf = f"{tmp_dir}/thumb_line_{idx:04d}_{_li}.txt"
                     Path(_lf).write_text(_line, encoding="utf-8")
                     _lfe = _lf.replace("'", "\\'")
                     _y = 720 + _li * _line_h
+
+                    # Pass1: 行全体を基本色＋ボックスで描画
                     chain += (
                         f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                        f"fontsize={_tfs}:fontcolor={_col}:"
+                        f"fontsize={_tfs}:fontcolor={_color_base}:"
                         f"x=(w-text_w)/2:y={_y}:"
                         f"{_box_style}"
                     )
+
+                    # Pass2: キーワードのみ上から強調色で重ねて描画
+                    _kw_spans = _find_keywords(_line)
+                    if _kw_spans:
+                        _line_w = _text_px(_line, _tfs)
+                        _x_start = max(0, (VIDEO_WIDTH - _line_w) // 2)
+                        for _ks, _ke in _kw_spans:
+                            _kw_text = _line[_ks:_ke]
+                            _kw_x = _x_start + _text_px(_line[:_ks], _tfs)
+                            _kwf = f"{tmp_dir}/thumb_kw_{idx:04d}_{_li}_{_ks}.txt"
+                            Path(_kwf).write_text(_kw_text, encoding="utf-8")
+                            _kwfe = _kwf.replace("'", "\\'")
+                            chain += (
+                                f",drawtext=textfile='{_kwfe}':fontfile='{fp}':"
+                                f"fontsize={_tfs}:fontcolor={_color_hi}:"
+                                f"x={_kw_x}:y={_y}:"
+                                f"borderw=3:bordercolor=0x000000"
+                            )
 
         elif is_ending:
             s = style or {}
