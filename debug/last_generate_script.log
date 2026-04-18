@@ -5,32 +5,39 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 「本当に寂しい」「ドカ鬱」ディープインパクト産駒の重賞ホース引退に惜しむ声相次ぐ　ヨーホーレイクは″教官”に転身 ---
-[0] Gemini入力本文 341文字: 'ディープインパクト産駒の引退を惜しむ声が競馬ファンから相次いでいる。JRAは18日、重賞3勝を挙げたヨーホーレイク(牡8歳、栗東・友道康夫厩舎、父ディープインパクト)の競走馬登録抹消を発表。開催日にもかかわらず、X(旧ツイッター)のトレンド'
+--- 記事[0]: 【3歳1勝クラス阪神5Rレース後コメント】イベントホライゾン松山弘平騎手ら ---
+[0] Gemini入力本文 345文字: '阪神5Rの3歳1勝クラス(芝2000m)は1番人気イベントホライゾン(松山弘平騎手)が勝利した。勝ちタイムは2分00秒0(良)。3/4馬身差の2着に4番人気サトノアイボリー、さらにクビ差の3着に2番人気エチゴドラゴンが入った。\n\u3000イベントホ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【中山6R】コントレイル産駒のルージュボヤージュが鼻差の接戦制す　戸崎圭太騎手「よく差し返してくれた」 ---
-[1] Gemini入力本文 346文字: '4月18日の中山6R・3歳1勝クラス(牝馬限定、芝1800メートル＝6頭立て)は、2番人気のルージュボヤージュ(牝3歳、美浦・木村哲也厩舎、父コントレイル)が、一騎打ちを制して転厩初戦を白星で飾った。勝ち時計は1分49秒4(良)。\n\t\t\t\t'
+--- 記事[1]: 【阪神アーバン競馬プレーバック】ゼンダンスカイ6戦ぶり勝利　下原理が31年前の初勝利を振り返る ---
+[1] Gemini入力本文 347文字: '14日の園田競馬メイン11R「春爛漫特別」(A2B1、ダート1870メートル、9頭立て)は下原理(48)騎乗の4番人気ゼンダンスカイ(牡5＝藤川、父レッドファルクス)が6戦ぶりの勝利。5戦連続掲示板と惜しい競走が続いていただけに、価値ある1'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 軽種馬育成調教センターで「育成調教技術者養成研修」の修了式 ホースマンへの第一歩を23名が踏み出す ---
-[2] Gemini入力本文 576文字: '17日、北海道浦河町の軽種馬育成調教センターが行う「育成調教技術者養成研修」の第43期修了式が行われ、1年間の研修カリキュラムを終えた19歳から26歳までの23名が晴れてホースマンとしての第一歩を踏み出した。この研修は、育成調教技術者を目指'
+--- 記事[2]: 【ひめさゆり賞結果】5番人気キンググローリーが3馬身差で完勝 ---
+[2] Gemini入力本文 350文字: '18日、福島競馬場で行われたひめさゆり賞(3歳・1勝クラス・芝2000m)は、3-4コーナーで先頭に立って後続を突き放した舟山瑠泉騎手騎乗の5番人気キンググローリー(牡3、美浦・古賀慎明厩舎)が、7番人気マカナアネラ(牡3、栗東・角田晃一厩'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
-  HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -43,22 +50,32 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 212文字]: '17日、北海道浦河町の軽種馬育成調教センターが行う「育成調教技術者養成研修」の第43期修了式が行われました。1年間の研修カリキュラムを終えた19歳から26歳までの23名が、晴れてホースマンとしての第一歩を踏み出しました。この研修は、育成調教技術者を目指す人々に馬に関する体系的な技術と知識を習得させ、就労支援を行うことを目的としています。これにより、軽種馬生産牧場や育成牧場の経営基盤の安定と強化を図ることを目指しています。'
-[2]  → output/script_2.txt 保存 (212文字)
-[2]  プレビュー: 17日、北海道浦河町の軽種馬育成調教センターが行う「育成調教技術者養成研修」の第43期修了式が行われました。1年間の研修カリキュラムを終えた19歳から26歳まで...
+[0]  [Gemini生出力 194文字]: '阪神5Rの3歳1勝クラス、芝2000mは、1番人気イベントホライゾンが松山弘平騎手で勝利しました。勝ちタイムは2分00秒0の良馬場でした。3/4馬身差の2着には4番人気サトノアイボリーが入り、さらにクビ差の3着には2番人気エチゴドラゴンが入着しています。イベントホライゾンは栗東の池江泰寿厩舎に所属する3歳牡馬です。父はハービンジャー、母はライツェントで、通算成績は4戦2勝となりました。'
+[0]  → output/script_0.txt 保存 (194文字)
+[0]  プレビュー: 阪神5Rの3歳1勝クラス、芝2000mは、1番人気イベントホライゾンが松山弘平騎手で勝利しました。勝ちタイムは2分00秒0の良馬場でした。3/4馬身差の2着には...
   HTTP 200
-[0]  [Gemini生出力 229文字]: 'ディープインパクト産駒の引退を惜しむ声が競馬ファンから相次いでいます。JRAは18日、重賞3勝を挙げたヨーホーレイクの競走馬登録抹消を発表しました。牡8歳で栗東・友道康夫厩舎所属、父ディープインパクトの同馬の引退は、開催日にもかかわらずX、旧ツイッターのトレンド上位に入るほどの大きな反響を呼んでいます。ヨーホーレイクは全兄に報知杯弥生賞勝ちのカミノタサハラ、レパードS勝ちのボレアスを持つ血統馬です。2歳7月の新馬戦勝利からクラシック路線に乗っていました。'
-[0]  → output/script_0.txt 保存 (229文字)
-[0]  プレビュー: ディープインパクト産駒の引退を惜しむ声が競馬ファンから相次いでいます。JRAは18日、重賞3勝を挙げたヨーホーレイクの競走馬登録抹消を発表しました。牡8歳で栗東...
+[1]  [Gemini生出力 234文字]: '14日の園田競馬メイン11R「春爛漫特別」は、下原理騎手騎乗の4番人気ゼンダンスカイが6戦ぶりの勝利を飾りました。A2B1クラス、ダート1870メートルで行われた9頭立てのこのレースで、ゼンダンスカイは5戦連続掲示板と惜しい競走が続いていただけに、価値ある1勝となりました。課題のゲートをしっかり出て、道中は3番手、4番手をじっくりと追走しました。最終直線では4頭が横並びとなる激戦の中、下原理騎手は「勝因は併せ馬。馬がよく反応して残してくれた」とコメントしています。'
+[1]  → output/script_1.txt 保存 (234文字)
+[1]  プレビュー: 14日の園田競馬メイン11R「春爛漫特別」は、下原理騎手騎乗の4番人気ゼンダンスカイが6戦ぶりの勝利を飾りました。A2B1クラス、ダート1870メートルで行われ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 227文字]: '4月18日の中山6R、3歳1勝クラスは、2番人気のルージュボヤージュが鼻差の接戦を制し、転厩初戦を白星で飾りました。牝馬限定の芝1800メートル、6頭立てで行われたこのレースで、コントレイル産駒のルージュボヤージュは、勝ち時計1分49秒4の良馬場でした。スッとハナへ行くと、直線では2着ターンザテーブルスとのマッチレースとなり、最後は全く並んだ形でゴールしましたが、わずかに軍配が上がっています。戸崎圭太騎手は「よく差し返してくれた」とコメントしました。'
-[1]  → output/script_1.txt 保存 (227文字)
-[1]  プレビュー: 4月18日の中山6R、3歳1勝クラスは、2番人気のルージュボヤージュが鼻差の接戦を制し、転厩初戦を白星で飾りました。牝馬限定の芝1800メートル、6頭立てで行わ...
+[2]  [Gemini生出力 173文字]: '18日、福島競馬場で行われたひめさゆり賞(3歳・1勝クラス・芝2000m)は、舟山瑠泉騎手騎乗の5番人気キンググローリー(牡3、美浦・古賀慎明厩舎)が優勝した。7番人気マカナアネラ(牡3、栗東・角田晃一厩舎)に3馬身差をつけ、勝ちタイムは1分57秒8(良)だった。2番人気サイモンシャリオ(牡3、栗東・梅田智之厩舎)が1/2馬身差の3着に入った。'
+[2]  → output/script_2.txt 保存 (131文字)
+[2]  プレビュー: 18日、福島競馬場で行われたひめさゆり賞(3歳・1勝クラス・芝2000m)は、舟山瑠泉騎手騎乗の5番人気キンググローリーが優勝した。7番人気マカナアネラに3馬身...
 
 3 件の脚本を生成しました。
