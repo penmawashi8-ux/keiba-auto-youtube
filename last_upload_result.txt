@@ -1,10 +1,10 @@
-date: 2026-04-17T12:00:57.062506Z
+date: 2026-04-18T00:00:10.395308Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zzZbsLJfHos title=半兄はアオラキ 白毛のスノーエルヴァが連闘で初勝利なるか
-OK project=1 video_id=xre8vbx_-Jo title=【皐月賞予想】急上昇1頭登場で大混戦を断つか!? GI皐月賞・調子偏差値速報
-OK project=1 video_id=odh0gSvKv4g title=【金沢競馬】加藤和宏調教師が通算1100勝　9448戦目で達成
+OK project=1 video_id=NmK0-79F8WY title=【吹田特別】全兄はNHKマイルC覇者のダノンスコーピオン ダノンキラウェアが初ダ
+OK project=1 video_id=766V1iBZ1R8 title=アンタレスSは人気馬が堅実 ローテーションに注目
+OK project=1 video_id=XBZDdeJYOtQ title=【吹田特別】半姉はソダシ＆ママコチャ 白毛のカルパが3勝目なるか
