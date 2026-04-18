@@ -107,6 +107,28 @@ _THUMB_COLOR_PAIRS = [
     ("0xFFFFFF", "0xFF8C00"),   # 白 + オレンジ
 ]
 
+# サムネイルタイトル用ボックススタイル（OP = title_box_opacity のプレースホルダ）
+_THUMB_BOX_STYLES = [
+    # 暗めブラック（従来）
+    "box=1:boxcolor=0x000000@OP:boxborderw=24:borderw=4:bordercolor=0x000000",
+    # ダークネイビー
+    "box=1:boxcolor=0x0A0A2E@OP:boxborderw=24:borderw=4:bordercolor=0x000033",
+    # ダークパープル
+    "box=1:boxcolor=0x1A0028@OP:boxborderw=24:borderw=4:bordercolor=0x3D0070",
+    # ダークレッド
+    "box=1:boxcolor=0x2A0000@OP:boxborderw=24:borderw=4:bordercolor=0x550000",
+    # ダークグリーン
+    "box=1:boxcolor=0x001A00@OP:boxborderw=24:borderw=4:bordercolor=0x004400",
+    # ボックスなし（シャドウのみ）
+    "box=0:borderw=6:bordercolor=0x000000:shadowcolor=0x000000@0.9:shadowx=4:shadowy=4",
+    # ボックスなし（太ボーダー+シャドウ）
+    "box=0:borderw=9:bordercolor=0x000000:shadowcolor=0x000000@0.8:shadowx=3:shadowy=3",
+    # 半透明ダークブルーグレー
+    "box=1:boxcolor=0x0D1B2A@OP:boxborderw=24:borderw=4:bordercolor=0x1C3A5E",
+    # 半透明ダークブラウン
+    "box=1:boxcolor=0x1A0F00@OP:boxborderw=24:borderw=4:bordercolor=0x3D2200",
+]
+
 # ---------------------------------------------------------------------------
 # 字幕アニメーション パターン (87種)
 # (x_expr, y_expr, alpha_expr)
@@ -748,8 +770,10 @@ def make_clip(
                     f"x=44:y=70:"
                     f"box=1:boxcolor={badge_col}@0.95:boxborderw=22"
                 )
-                # タイトルテキスト（行ごとに色分け）
+                # タイトルテキスト（行ごとに色分け＋ボックススタイルランダム）
                 _color_pair = random.choice(_THUMB_COLOR_PAIRS)
+                _box_style_tpl = random.choice(_THUMB_BOX_STYLES)
+                _box_style = _box_style_tpl.replace("OP", str(title_op))
                 _t_lines = [l for l in wrapped.split("\n") if l]
                 _line_h = _tfs + 16
                 for _li, _line in enumerate(_t_lines):
@@ -762,8 +786,7 @@ def make_clip(
                         f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
                         f"fontsize={_tfs}:fontcolor={_col}:"
                         f"x=(w-text_w)/2:y={_y}:"
-                        f"box=1:boxcolor=0x000000@{title_op}:boxborderw=24:"
-                        f"borderw=4:bordercolor=0x000000"
+                        f"{_box_style}"
                     )
 
         elif is_ending:
