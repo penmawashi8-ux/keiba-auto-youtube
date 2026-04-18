@@ -178,6 +178,13 @@ jobs:
           mkdir -p assets/bgm
           python scripts/download_bgm.py
 
+      - name: フォントをダウンロード (太ゴシック・デザイン系)
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        continue-on-error: true
+        run: |
+          mkdir -p assets/fonts
+          python scripts/download_fonts.py
+
       - name: Generate video
         if: steps.check_scripts.outputs.has_scripts == 'true'
         run: python scripts/generate_video.py

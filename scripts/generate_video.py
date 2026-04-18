@@ -93,6 +93,20 @@ _ENDING_TEXTS = [
     "役に立ったら\n高評価お願いします！\n\n毎日更新中！",
 ]
 
+# サムネイルタイトル用カラーペア（行ごとに交互適用）
+_THUMB_COLOR_PAIRS = [
+    ("0xFFFFFF", "0xFFEB00"),   # 白 + 黄
+    ("0xFFEB00", "0x00FFFF"),   # 黄 + シアン
+    ("0xFFD700", "0xFFFFFF"),   # 金 + 白
+    ("0xFF8C00", "0xFFFF88"),   # オレンジ + 薄黄
+    ("0x00FFFF", "0xFFD700"),   # シアン + 金
+    ("0xADFF2F", "0xFFFFFF"),   # 黄緑 + 白
+    ("0xFF6347", "0xFFFFFF"),   # 赤橙 + 白
+    ("0xFFFF88", "0x88FFFF"),   # 薄黄 + 薄シアン
+    ("0xFFEB00", "0xFFFFFF"),   # 黄 + 白
+    ("0xFFFFFF", "0xFF8C00"),   # 白 + オレンジ
+]
+
 # ---------------------------------------------------------------------------
 # 字幕アニメーション パターン (87種)
 # (x_expr, y_expr, alpha_expr)
@@ -427,7 +441,9 @@ def find_japanese_fonts() -> list[str]:
     found = [p for p in candidates if Path(p).exists()]
     if not found:
         found = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
-    return found or []
+    # assets/fonts/ にダウンロードされたフォントも追加
+    found += glob.glob("assets/fonts/*.ttf") + glob.glob("assets/fonts/*.otf")
+    return list(dict.fromkeys(found)) or []  # 重複排除・順序保持
 
 
 _PIXABAY_QUERIES = [
@@ -722,10 +738,8 @@ def make_clip(
                 Path(badge_file).write_text(s.get("badge_text", "競馬速報"), encoding="utf-8")
                 bf = badge_file.replace("'", "\\'")
 
-                badge_col  = s.get("badge_color", "0xD21E1E")
-                title_col  = s.get("title_color", "0xFFEB00")
-                title_fs   = s.get("title_font_size", 96)
-                title_op   = s.get("title_box_opacity", 0.65)
+                badge_col = s.get("badge_color", "0xD21E1E")
+                title_op  = s.get("title_box_opacity", 0.65)
 
                 # バッジ（左上）
                 chain += (
@@ -734,15 +748,23 @@ def make_clip(
                     f"x=44:y=70:"
                     f"box=1:boxcolor={badge_col}@0.95:boxborderw=22"
                 )
-                # タイトルテキスト（中央）
-                chain += (
-                    f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                    f"fontsize={title_fs}:fontcolor={title_col}:"
-                    f"x=(w-text_w)/2:y=720:"
-                    f"line_spacing=16:"
-                    f"box=1:boxcolor=0x000000@{title_op}:boxborderw=24:"
-                    f"borderw=4:bordercolor=0x000000"
-                )
+                # タイトルテキスト（行ごとに色分け）
+                _color_pair = random.choice(_THUMB_COLOR_PAIRS)
+                _t_lines = [l for l in wrapped.split("\n") if l]
+                _line_h = _tfs + 16
+                for _li, _line in enumerate(_t_lines):
+                    _col = _color_pair[_li % len(_color_pair)]
+                    _lf = f"{tmp_dir}/thumb_line_{idx:04d}_{_li}.txt"
+                    Path(_lf).write_text(_line, encoding="utf-8")
+                    _lfe = _lf.replace("'", "\\'")
+                    _y = 720 + _li * _line_h
+                    chain += (
+                        f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
+                        f"fontsize={_tfs}:fontcolor={_col}:"
+                        f"x=(w-text_w)/2:y={_y}:"
+                        f"box=1:boxcolor=0x000000@{title_op}:boxborderw=24:"
+                        f"borderw=4:bordercolor=0x000000"
+                    )
 
         elif is_ending:
             s = style or {}

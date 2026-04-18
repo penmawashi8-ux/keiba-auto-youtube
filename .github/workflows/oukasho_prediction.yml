@@ -48,6 +48,12 @@ jobs:
           mkdir -p assets/bgm
           python scripts/download_bgm.py
 
+      - name: フォントをダウンロード (太ゴシック・デザイン系)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/fonts
+          python scripts/download_fonts.py
+
       - name: Generate video
         run: python scripts/generate_video.py
 
