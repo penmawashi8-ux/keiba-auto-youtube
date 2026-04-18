@@ -1,10 +1,10 @@
-date: 2026-04-18T08:05:18.960916Z
+date: 2026-04-18T09:59:50.908020Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4Nob1dmlyEY title=【アンタレスS】3連単29万円超!14番人気ハグが鼻差の3着争い制す　高杉吏麒騎
-OK project=1 video_id=qR6ECho_Lc4 title=【福島11R・ラジオ福島賞】上がり3ハロン最速の末脚でメイショウカシワデがV　松
-OK project=1 video_id=h-hywNBIQY8 title=【福島牝馬S予想】意外とタフな福島芝1800m 前走馬体重が小さい馬の取扱いには
+OK project=1 video_id=hzy1CEf4p_4 title=石神深一騎手が引退式　「最悪ですね（笑）」オジュウチョウサンとの出会いを振り返る
+OK project=1 video_id=HhENNompRrM title=4月18日の出来事一覧/福島・中山・阪神
+OK project=1 video_id=RWA-YbsYRdQ title=【福島牝馬S】1番人気はパラディレーヌで2・1倍　ジョイフルニュースが5・3倍で
