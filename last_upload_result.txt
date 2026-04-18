@@ -1,10 +1,10 @@
-date: 2026-04-18T05:13:14.145352Z
+date: 2026-04-18T06:18:53.276677Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kY_dGLNxdTg title=「本当に寂しい」「ドカ鬱」ディープインパクト産駒の重賞ホース引退に惜しむ声相次ぐ
-OK project=1 video_id=z2zl_2AFjMw title=【中山6R】コントレイル産駒のルージュボヤージュが鼻差の接戦制す　戸崎圭太騎手「
-OK project=1 video_id=9ND9HG3Mug8 title=軽種馬育成調教センターで「育成調教技術者養成研修」の修了式 ホースマンへの第一歩
+OK project=1 video_id=M24FlUiEU5s title=【3歳1勝クラス阪神5Rレース後コメント】イベントホライゾン松山弘平騎手ら
+OK project=1 video_id=9BcGHYQagJI title=【阪神アーバン競馬プレーバック】ゼンダンスカイ6戦ぶり勝利　下原理が31年前の初
+OK project=1 video_id=gh8RKh1zhu0 title=【ひめさゆり賞結果】5番人気キンググローリーが3馬身差で完勝
