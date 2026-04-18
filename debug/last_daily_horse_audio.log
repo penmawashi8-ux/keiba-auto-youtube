@@ -1,10 +1,10 @@
 === 音声生成開始 ===
 字幕フォント: Noto Sans CJK JP
-  タイトル読み上げ追加: 「ゴールドシップ」
+  タイトル読み上げ追加: 「ナリタブライアン」
 
---- 音声生成 [0] (272文字) voice=ja-JP-NanamiNeural rate=-3% ---
-  音声: output/audio_0.mp3 (368 KB)
+--- 音声生成 [0] (293文字) voice=ja-JP-NanamiNeural rate=-3% ---
+  音声: output/audio_0.mp3 (397 KB)
   字幕: output/subtitles_0.ass (0 セグメント)
-  音声バリエーション適用: pitch×0.9114 vol-1.38dB
+  音声バリエーション適用: pitch×1.0310 vol-0.83dB
 
 1 件の音声を生成しました。

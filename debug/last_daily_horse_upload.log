@@ -1,21 +1,22 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (54 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (62 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: ゴールドシップ (key=gold_ship)
-  タイトル: 【名馬列伝】ゴールドシップ〜芦毛の暴君、予測不能〜 #Shorts
+  馬名: ナリタブライアン (key=narita_brian)
+  タイトル: 【名馬列伝】ナリタブライアン〜シャドーロールの怪物〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】ゴールドシップ〜芦毛の暴君、予測不能〜 #Shorts
-  進捗: 18%
-  進捗: 37%
-  進捗: 56%
-  進捗: 74%
+  アップロード中: 【名馬列伝】ナリタブライアン〜シャドーロールの怪物〜 #Shorts
+  進捗: 15%
+  進捗: 31%
+  進捗: 46%
+  進捗: 62%
+  進捗: 78%
   進捗: 93%
-  完了! Video ID: aaAYw7f5vjg
-  URL: https://www.youtube.com/watch?v=aaAYw7f5vjg
-  サムネイルアップロード中: output/thumbnail_0.jpg (54 KB)
+  完了! Video ID: c-V-byw0bjo
+  URL: https://www.youtube.com/watch?v=c-V-byw0bjo
+  サムネイルアップロード中: output/thumbnail_0.jpg (62 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
