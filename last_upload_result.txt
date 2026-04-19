@@ -1,10 +1,10 @@
-date: 2026-04-18T23:55:06.141014Z
+date: 2026-04-19T11:41:54.383804Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qCWzMrN3i-A title=「ウマ娘」藤田晋オーナーのイナズマダイモン 初勝利からの連勝なるか
-OK project=1 video_id=9etj68WnPB0 title=【皐月賞予想】やはりラッキーナンバーは存在する？ 過去データから探るGI皐月賞
-OK project=1 video_id=YPM_WP326Iw title=粗品の皐月賞予想は「やめてくれ」の反応が多かった人気馬を推奨　本命発表に「自惚れ
+OK project=1 video_id=2Un9HHhkIvE title=【高知競馬】塚本直之騎手が初勝利「兄弟と両親に喜びを伝えたいです。特に高知で走っ
+OK project=1 video_id=LOgwKntuTNo title=4月19日の出来事一覧/福島・中山・阪神
+OK project=1 video_id=1swNYKiy0m0 title=小笠倫弘調教師がJRA通算300勝達成 「感謝の気持ちでいっぱい」
