@@ -5,31 +5,31 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 「ウマ娘」藤田晋オーナーのイナズマダイモン 初勝利からの連勝なるか ---
-[0] Gemini入力本文 355文字: '「ウマ娘」の藤田晋オーナーが所有するイナズマダイモン(牡3、美浦・宮田敬介厩舎)が、日曜中山6Rの3歳1勝クラス(ダ1800m)で連勝を狙う。\n\u3000イナズマダイモンは父クリソベリル、母パリスビキニ、母の父Bernardiniの血統。半姉のパリ'
+--- 記事[0]: 【皐月賞】脚力にホレた！　皆藤愛子はグリーンからの４頭流しで勝負！！ ---
+[0] Gemini入力本文 534文字: '「皐月賞・Ｇ１」（１９日、中山）\n\u3000東京スプリントが行われた１５日の水曜、ずっと応援しているママコチャに会えましたー！悪天候だと極端に出不精になる私も、推しのこととなるとそんなの関係ない♪\n\u3000大雨の大井競馬場に到着し、まずは私的オアシス「勝'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【皐月賞予想】やはりラッキーナンバーは存在する？ 過去データから探るGI皐月賞 ---
-[1] Gemini入力本文 426文字: '今週は引き続き「中山＆阪神＆福島」の3場開催。\n\u3000日曜日には中山競馬場でGI皐月賞(中山・芝2000m)が行われる。クラシック三冠の幕開けとなる皐月賞は今年も豪華メンバーが集合。上位人気はGI馬2頭になりそうだが、ほかにも目移りするような魅'
+--- 記事[1]: 小林美駒が福島で大暴れ！１、２Ｒで連勝し、４Ｒも制して午前中だけで３勝をマーク ---
+[1] Gemini入力本文 331文字: '美駒が日曜の午前中に固め打ちだ。小林美駒騎手（２１）＝美浦・鈴木伸＝が１９日、福島競馬場で騎乗し、１Ｒを１番人気のヨドノティアラで制すと、２Ｒも２番人気のベルソテイラで逃げ切って連勝。４Ｒでは３番人気アラクランに騎乗して追い比べを制した。３'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 粗品の皐月賞予想は「やめてくれ」の反応が多かった人気馬を推奨　本命発表に「自惚れすぎ」「今回はマジで…」の声 ---
-[2] Gemini入力本文 499文字: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が18日、自身のYouTubeチャンネルを更新。皐月賞・G1(19日、中山・芝2000メートル)の予想を公開した。\n\t\t\t\t\u3000混戦必至と言わ'
+--- 記事[2]: 【中山5R】武豊騎手がマーゴットブローを完璧エスコート　伊坂調教師「お手本のような競馬。さすが豊さん」 ---
+[2] Gemini入力本文 346文字: '4月19日の中山5R・3歳1勝クラス(芝1600メートル＝10頭立て)は、武豊騎手と初コンビのマーゴットブロー(牡3歳、美浦・伊坂重信厩舎、父トワリングキャンディ)が、好位から抜け出して完勝した。勝ち時計は1分33秒0(良)。\n\t\t\t\t\u3000レ'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -46,31 +46,29 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 213文字]: '「ウマ娘」の藤田晋オーナーが所有するイナズマダイモンが、日曜中山6Rの3歳1勝クラス、ダート1800mで連勝を狙います。イナズマダイモンの父はクリソベリル、母はパリスビキニ、母の父はBernardiniの血統です。半姉のパリスライツは20年のCCAオークスの勝ち馬です。また、同じく半姉のアメリカンビキニは24年のヤマボウシ賞を制し、BCジュヴェナイルフィリーズで9着でした。馬名の意味由来は「稲妻」と「人名」から来ています。'
-[0]  → output/script_0.txt 保存 (213文字)
-[0]  プレビュー: 「ウマ娘」の藤田晋オーナーが所有するイナズマダイモンが、日曜中山6Rの3歳1勝クラス、ダート1800mで連勝を狙います。イナズマダイモンの父はクリソベリル、母は...
-  HTTP 200
-[1]  [Gemini生出力 4文字]: 'SKIP'
-[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 426文字）
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 534文字）
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 282文字]: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品さんが18日、自身のYouTubeチャンネルを更新し、皐月賞・G1の予想を公開しました。混戦必至と言われる今年の皐月賞に、粗品さんは「正直どの馬にもチャンスがあると思うので、今回は展開予想をベースに最も馬券圏内が堅そうなロブチェンを本命に挙げます」と発表しました。このロブチェンは、前日発売で単勝オッズ1番人気に支持されていました。粗品さんの本命発表には、「自惚れすぎ」「今回はマジで…」といった声が聞かれ、「やめてくれ」との反応も多かった人気馬を推奨した形です。'
-[2]  → output/script_2.txt 保存 (281文字)
-[2]  プレビュー: 「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品さんが18日、自身のYouTubeチャンネルを更新し、皐月賞...
+[2]  [Gemini生出力 223文字]: '4月19日の中山5R・3歳1勝クラス、芝1600メートル、10頭立ては、武豊騎手と初コンビのマーゴットブローが好位から抜け出し完勝しました。勝ち時計は1分33秒0（良）でした。レジェンド武豊騎手は、スタートを決めるとスッと好位へつけ、直線で脚を伸ばすだけの勝ちパターンに持ち込み、2馬身突き放して勝利へ導きました。伊坂調教師は「お手本のような競馬。さすが豊さん」とコメントしています。鞍上の武豊騎手は「まだ未完成ですけど、この内容」と語りました。'
+[2]  → output/script_2.txt 保存 (223文字)
+[2]  プレビュー: 4月19日の中山5R・3歳1勝クラス、芝1600メートル、10頭立ては、武豊騎手と初コンビのマーゴットブローが好位から抜け出し完勝しました。勝ち時計は1分33秒...
+  HTTP 200
+[1]  [Gemini生出力 225文字]: '小林美駒騎手が19日、福島競馬場で日曜の午前中に固め打ちを見せました。1Rでは1番人気のヨドノティアラを制し、続く2Rも2番人気のベルソテイラで逃げ切って連勝を飾りました。3Rには騎乗がありませんでしたが、4Rでは3番人気のアラクランに騎乗し、追い比べを制して騎乗機会3連勝を達成しました。この日の3勝で、今年のJRA11勝目を挙げ、JRA通算77勝となりました。4Rのアラクランで快勝後、小林美駒騎手は「トモが緩く、3、4角」とコメントしています。'
+[1]  → output/script_1.txt 保存 (225文字)
+[1]  プレビュー: 小林美駒騎手が19日、福島競馬場で日曜の午前中に固め打ちを見せました。1Rでは1番人気のヨドノティアラを制し、続く2Rも2番人気のベルソテイラで逃げ切って連勝を...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 207文字]: '今週は引き続き「中山＆阪神＆福島」の3場開催。日曜日には中山競馬場でGI皐月賞(中山・芝2000m)が行われる。クラシック三冠の幕開けとなる皐月賞は今年も豪華メンバーが集合。上位人気はGI馬2頭に… No.1競馬情報サイト「netkeiba」の競馬ニュース。マテンロウゲイルがnetkeibaで皐月賞の人気をチェック、皐月賞の調子偏差値をチェック、皐月賞を完全攻略！ 皐月賞で上位を占めるたった2つの血統パターン。'
-[1]  [redirectフィルター] 207文字 → 165文字
-[1]  → output/script_1.txt 保存 (165文字)
-[1]  プレビュー: 今週は引き続き「中山＆阪神＆福島」の3場開催。日曜日には中山競馬場でGI皐月賞(中山・芝2000m)が行われる。クラシック三冠の幕開けとなる皐月賞は今年も豪華メ...
+[0]  [Gemini生出力 14文字]: '皐月賞・G1（19日、中山）'
+[0]  → フィルター後に内容が不十分（14文字）のためスキップ
 
-3 件の脚本を生成しました。
+2 件の脚本を生成しました。
