@@ -1,10 +1,9 @@
-date: 2026-04-18T23:55:06.141014Z
+date: 2026-04-19T04:20:50.382291Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qCWzMrN3i-A title=「ウマ娘」藤田晋オーナーのイナズマダイモン 初勝利からの連勝なるか
-OK project=1 video_id=9etj68WnPB0 title=【皐月賞予想】やはりラッキーナンバーは存在する？ 過去データから探るGI皐月賞
-OK project=1 video_id=YPM_WP326Iw title=粗品の皐月賞予想は「やめてくれ」の反応が多かった人気馬を推奨　本命発表に「自惚れ
+OK project=1 video_id=Pk6NfhhZTP0 title=小林美駒が福島で大暴れ！１、２Ｒで連勝し、４Ｒも制して午前中だけで３勝をマーク
+OK project=1 video_id=mqD3An8J6iY title=【中山5R】武豊騎手がマーゴットブローを完璧エスコート　伊坂調教師「お手本のよう
