@@ -133,8 +133,8 @@ _THUMB_BOX_STYLES = [
 # サムネイルキーワードハイライト
 # ---------------------------------------------------------------------------
 _KW_PATTERNS = [
-    re.compile(r'[ァ-ヶーｦ-ﾟ]{5,}'),  # カタカナ5文字以上（馬名・レース名等。オーナー等の一般語を除外）
-    re.compile(r'\d+(?:勝|着|億|万|番人気|連勝|頭|回)'),  # 数字＋競馬用語
+    re.compile(r'[ァ-ヶーｦ-ﾟ]{5,}'),  # カタカナ5文字以上（馬名・レース名等）
+    re.compile(r'\d{2,}(?:勝|億|万)|\d+連勝|\d+番人気'),  # 競馬の注目数字（着順・頭数は除外）
     re.compile(
         r'初勝利|初制覇|優勝|制覇|連勝|引退|復活|重賞'
         r'|G[123]|G[ⅠⅡⅢ]|逃げ切り|差し切り|追い込み'
@@ -144,7 +144,12 @@ _KW_PATTERNS = [
 
 
 def _char_px(ch: str, fs: int) -> int:
-    return fs if ord(ch) > 0x7F else int(fs * 0.55)
+    cp = ord(ch)
+    if cp == 0x20:              # 半角スペース
+        return int(fs * 0.4)
+    if cp < 0x80:               # ASCII英数字・記号 → 日本語表示フォントでは全角扱い
+        return fs
+    return fs                   # CJK・カタカナ等（常に全角）
 
 
 def _text_px(text: str, fs: int) -> int:
@@ -815,6 +820,15 @@ def make_clip(
                 _box_style = _box_style_tpl.replace("OP", str(title_op))
                 _t_lines = [l for l in wrapped.split("\n") if l]
                 _line_h = _tfs + 16
+
+                # キーワードをラップ前のオリジナルタイトルで検出し、各行にマッピング
+                _orig_kw = _find_keywords(thumb_title)
+                _line_offsets: list[int] = []
+                _off = 0
+                for _ln in _t_lines:
+                    _line_offsets.append(_off)
+                    _off += len(_ln)
+
                 for _li, _line in enumerate(_t_lines):
                     _lf = f"{tmp_dir}/thumb_line_{idx:04d}_{_li}.txt"
                     Path(_lf).write_text(_line, encoding="utf-8")
@@ -829,8 +843,15 @@ def make_clip(
                         f"{_box_style}"
                     )
 
-                    # Pass2: キーワードのみ上から強調色で重ねて描画
-                    _kw_spans = _find_keywords(_line)
+                    # Pass2: オリジナルタイトルのキーワードをこの行にマッピングして強調描画
+                    _lo = _line_offsets[_li]
+                    _le = _lo + len(_line)
+                    _kw_spans = []
+                    for _os, _oe in _orig_kw:
+                        _is = max(_os, _lo) - _lo
+                        _ie = min(_oe, _le) - _lo
+                        if _is < _ie:
+                            _kw_spans.append((_is, _ie))
                     if _kw_spans:
                         _line_w = _text_px(_line, _tfs)
                         _x_start = max(0, (VIDEO_WIDTH - _line_w) // 2)
