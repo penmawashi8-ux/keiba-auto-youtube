@@ -1,10 +1,10 @@
-date: 2026-04-19T09:58:09.803924Z
+date: 2026-04-19T11:41:54.383804Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hmhsZv_GTyA title=【皐月賞】三浦翔平が皐月賞の表彰式でプレゼンター「地響きのような歓声に胸が熱くな
-OK project=1 video_id=iBPBK165e7M title=【水沢・留守杯日高賞結果】セイクリスティーナがゴール前で差し切り重賞6勝目
-OK project=1 video_id=Hm5Y90G1Tp4 title=【金沢・ノトキリシマ賞結果】ケーズコマクサが5馬身差圧勝で重賞初V
+OK project=1 video_id=2Un9HHhkIvE title=【高知競馬】塚本直之騎手が初勝利「兄弟と両親に喜びを伝えたいです。特に高知で走っ
+OK project=1 video_id=LOgwKntuTNo title=4月19日の出来事一覧/福島・中山・阪神
+OK project=1 video_id=1swNYKiy0m0 title=小笠倫弘調教師がJRA通算300勝達成 「感謝の気持ちでいっぱい」
