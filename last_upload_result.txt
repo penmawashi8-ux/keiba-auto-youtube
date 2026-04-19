@@ -1,10 +1,10 @@
-date: 2026-04-19T08:11:20.698577Z
+date: 2026-04-19T09:58:09.803924Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0wE8sZ_phhw title=小笠調教師がJRA通算300勝「1勝1勝が宝物」中山7Rのサヨノジャンボリーで達
-OK project=1 video_id=rt-bmyfZenQ title=【皐月賞】ロブチェン1番人気V　3連単4万110円　万哲&鳥谷越○◎△
-OK project=1 video_id=ne9XslXfD_k title=【皐月賞】武豊「リズムの悪いレースに」　ロードフィレール17着
+OK project=1 video_id=hmhsZv_GTyA title=【皐月賞】三浦翔平が皐月賞の表彰式でプレゼンター「地響きのような歓声に胸が熱くな
+OK project=1 video_id=iBPBK165e7M title=【水沢・留守杯日高賞結果】セイクリスティーナがゴール前で差し切り重賞6勝目
+OK project=1 video_id=Hm5Y90G1Tp4 title=【金沢・ノトキリシマ賞結果】ケーズコマクサが5馬身差圧勝で重賞初V
