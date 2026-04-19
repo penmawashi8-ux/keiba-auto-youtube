@@ -1,9 +1,10 @@
-date: 2026-04-19T04:20:50.382291Z
+date: 2026-04-19T05:34:12.678277Z
 projects_loaded: 1
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Pk6NfhhZTP0 title=小林美駒が福島で大暴れ！１、２Ｒで連勝し、４Ｒも制して午前中だけで３勝をマーク
-OK project=1 video_id=mqD3An8J6iY title=【中山5R】武豊騎手がマーゴットブローを完璧エスコート　伊坂調教師「お手本のよう
+OK project=1 video_id=JZgoG8oK3Os title=【阪神アーバン競馬プレーバック】名手・下原理が自己最多タイの1日6勝!当の本人は
+OK project=1 video_id=B-wXqMRwtm0 title=「代理戦争はホリエモン...」「G1並の混雑」注目の対決直後からXではイッテラッ
+OK project=1 video_id=c-NzWJFx2iA title=【高知・スピカ特別】GO!GO!スカンジナビア　高知移籍後に無双6連勝　井上瑛太
