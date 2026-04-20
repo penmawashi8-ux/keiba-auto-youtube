@@ -828,7 +828,7 @@ def make_clip(
                     f"x=44:y=70:"
                     f"box=1:boxcolor={badge_col}@0.95:boxborderw=22"
                 )
-                # タイトルテキスト（キーワードを含む行は強調色、それ以外は基本色）
+                # タイトルテキスト（【】内の行は強調色、それ以外は基本色）
                 _color_pair = random.choice(_THUMB_COLOR_PAIRS)
                 _color_base = _color_pair[0]
                 _color_hi   = _color_pair[1]
@@ -837,8 +837,19 @@ def make_clip(
                 _t_lines = [l for l in wrapped.split("\n") if l]
                 _line_h = _tfs + 16
 
-                # キーワードをラップ前タイトルで検出
-                _orig_kw = _find_keywords(thumb_title)
+                # 【...】の位置を特定（ラップ前タイトル基準）
+                _bracket_ranges: list[tuple[int, int]] = []
+                _bi = 0
+                while _bi < len(thumb_title):
+                    if thumb_title[_bi] == '【':
+                        _bj = thumb_title.find('】', _bi)
+                        if _bj != -1:
+                            _bracket_ranges.append((_bi, _bj + 1))
+                            _bi = _bj + 1
+                            continue
+                    _bi += 1
+
+                # 行オフセット計算
                 _line_offsets: list[int] = []
                 _off = 0
                 for _ln in _t_lines:
@@ -851,11 +862,14 @@ def make_clip(
                     _lfe = _lf.replace("'", "\\'")
                     _y = 720 + _li * _line_h
 
-                    # この行がキーワードを含む場合は強調色、なければ基本色
+                    # この行が【...】の範囲を含む場合は強調色
                     _lo = _line_offsets[_li]
                     _le = _lo + len(_line)
-                    _has_kw = any(max(_os, _lo) < min(_oe, _le) for _os, _oe in _orig_kw)
-                    _col = _color_hi if _has_kw else _color_base
+                    _in_bracket = any(
+                        max(_bs, _lo) < min(_be, _le)
+                        for _bs, _be in _bracket_ranges
+                    )
+                    _col = _color_hi if _in_bracket else _color_base
 
                     chain += (
                         f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
