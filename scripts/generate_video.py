@@ -168,7 +168,23 @@ def _find_keywords(text: str) -> list:
             merged[-1][1] = max(merged[-1][1], e)
         else:
             merged.append([s, e])
-    return [(s, e) for s, e in merged]
+    result = [(s, e) for s, e in merged]
+
+    # 【...】内のキーワードは除外（コラム名・セクションタイトル等）
+    brackets: list[tuple[int, int]] = []
+    i = 0
+    while i < len(text):
+        if text[i] == '【':
+            j = text.find('】', i)
+            if j != -1:
+                brackets.append((i, j + 1))
+                i = j + 1
+                continue
+        i += 1
+    if brackets:
+        result = [(s, e) for s, e in result
+                  if not any(bs <= s and e <= be for bs, be in brackets)]
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -812,16 +828,16 @@ def make_clip(
                     f"x=44:y=70:"
                     f"box=1:boxcolor={badge_col}@0.95:boxborderw=22"
                 )
-                # タイトルテキスト（キーワードハイライト＋ボックススタイルランダム）
+                # タイトルテキスト（キーワードを含む行は強調色、それ以外は基本色）
                 _color_pair = random.choice(_THUMB_COLOR_PAIRS)
-                _color_base = _color_pair[0]   # 通常テキスト色
-                _color_hi   = _color_pair[1]   # キーワード強調色
+                _color_base = _color_pair[0]
+                _color_hi   = _color_pair[1]
                 _box_style_tpl = random.choice(_THUMB_BOX_STYLES)
                 _box_style = _box_style_tpl.replace("OP", str(title_op))
                 _t_lines = [l for l in wrapped.split("\n") if l]
                 _line_h = _tfs + 16
 
-                # キーワードをラップ前のオリジナルタイトルで検出し、各行にマッピング
+                # キーワードをラップ前タイトルで検出
                 _orig_kw = _find_keywords(thumb_title)
                 _line_offsets: list[int] = []
                 _off = 0
@@ -835,38 +851,18 @@ def make_clip(
                     _lfe = _lf.replace("'", "\\'")
                     _y = 720 + _li * _line_h
 
-                    # Pass1: 行全体を基本色＋ボックスで描画
+                    # この行がキーワードを含む場合は強調色、なければ基本色
+                    _lo = _line_offsets[_li]
+                    _le = _lo + len(_line)
+                    _has_kw = any(max(_os, _lo) < min(_oe, _le) for _os, _oe in _orig_kw)
+                    _col = _color_hi if _has_kw else _color_base
+
                     chain += (
                         f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                        f"fontsize={_tfs}:fontcolor={_color_base}:"
+                        f"fontsize={_tfs}:fontcolor={_col}:"
                         f"x=(w-text_w)/2:y={_y}:"
                         f"{_box_style}"
                     )
-
-                    # Pass2: オリジナルタイトルのキーワードをこの行にマッピングして強調描画
-                    _lo = _line_offsets[_li]
-                    _le = _lo + len(_line)
-                    _kw_spans = []
-                    for _os, _oe in _orig_kw:
-                        _is = max(_os, _lo) - _lo
-                        _ie = min(_oe, _le) - _lo
-                        if _is < _ie:
-                            _kw_spans.append((_is, _ie))
-                    if _kw_spans:
-                        _line_w = _text_px(_line, _tfs)
-                        _x_start = max(0, (VIDEO_WIDTH - _line_w) // 2)
-                        for _ks, _ke in _kw_spans:
-                            _kw_text = _line[_ks:_ke]
-                            _kw_x = _x_start + _text_px(_line[:_ks], _tfs)
-                            _kwf = f"{tmp_dir}/thumb_kw_{idx:04d}_{_li}_{_ks}.txt"
-                            Path(_kwf).write_text(_kw_text, encoding="utf-8")
-                            _kwfe = _kwf.replace("'", "\\'")
-                            chain += (
-                                f",drawtext=textfile='{_kwfe}':fontfile='{fp}':"
-                                f"fontsize={_tfs}:fontcolor={_color_hi}:"
-                                f"x={_kw_x}:y={_y}:"
-                                f"borderw=3:bordercolor=0x000000"
-                            )
 
         elif is_ending:
             s = style or {}
