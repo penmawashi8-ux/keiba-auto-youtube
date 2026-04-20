@@ -1,19 +1,22 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (54 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (58 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: テイエムオペラオー (key=tm_opera_o)
-  タイトル: 【名馬列伝】テイエムオペラオー〜2000年古馬王道路線完全制覇〜 #Shorts
+  馬名: テイエムオペラオー (key=tm_opera_o_2)
+  タイトル: 【名馬列伝】テイエムオペラオー〜伝説の黒馬〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】テイエムオペラオー〜2000年古馬王道路線完全制覇〜 #Shorts
-  進捗: 27%
-  進捗: 54%
-  進捗: 81%
-  完了! Video ID: kOvp-uOBHzI
-  URL: https://www.youtube.com/watch?v=kOvp-uOBHzI
-  サムネイルアップロード中: output/thumbnail_0.jpg (54 KB)
+  アップロード中: 【名馬列伝】テイエムオペラオー〜伝説の黒馬〜 #Shorts
+  進捗: 16%
+  進捗: 33%
+  進捗: 49%
+  進捗: 66%
+  進捗: 82%
+  進捗: 99%
+  完了! Video ID: 5JngvYI8Qgw
+  URL: https://www.youtube.com/watch?v=5JngvYI8Qgw
+  サムネイルアップロード中: output/thumbnail_0.jpg (58 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===

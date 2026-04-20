@@ -2,9 +2,9 @@
 字幕フォント: Noto Sans CJK JP
   タイトル読み上げ追加: 「テイエムオペラオー」
 
---- 音声生成 [0] (254文字) voice=ja-JP-NanamiNeural rate=-3% ---
-  音声: output/audio_0.mp3 (350 KB)
+--- 音声生成 [0] (442文字) voice=ja-JP-NanamiNeural rate=-3% ---
+  音声: output/audio_0.mp3 (575 KB)
   字幕: output/subtitles_0.ass (0 セグメント)
-  音声バリエーション適用: pitch×0.9177 vol+0.00dB
+  音声バリエーション適用: pitch×1.0092 vol-0.98dB
 
 1 件の音声を生成しました。
