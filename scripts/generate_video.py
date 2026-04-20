@@ -1065,6 +1065,20 @@ def build_video(
     # 動画ごとにランダムスタイルを生成（名馬列伝はスタイル変更なし）
     is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
     style = None if is_famous else make_video_style()
+    # 最長セリフに合わせてフォントサイズを自動調整（全クリップで統一）
+    if style and sentences:
+        _pfs = style["subtitle_font_size"]
+        _fitted = _pfs
+        for _sent in sentences:
+            _fs = _pfs
+            while _fs > 40:
+                _lmc = max(5, int(840 // _fs))
+                if len(wrap_text(_sent, max_chars=_lmc).splitlines()) <= 4:
+                    break
+                _fs = max(40, int(_fs * 0.85))
+            _fitted = min(_fitted, _fs)
+        style["subtitle_font_size"] = _fitted
+        style["subtitle_line_max_chars"] = max(5, int(840 // _fitted))
     # フォントをランダム選択（複数利用可能な場合）
     if not is_famous:
         font_candidates = find_japanese_fonts()
