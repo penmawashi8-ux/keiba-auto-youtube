@@ -1,10 +1,10 @@
-date: 2026-04-20T05:50:25.037069Z
+date: 2026-04-20T07:22:18.197901Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ddm9SPbgEU0 title=【地方競馬ジョッキーズCS】出場14騎手発表　矢野貴之、小牧太は推薦で　6.2船
-OK project=1 video_id=FM1Y6Q2mq2Q title=【マイラーズC想定騎手】シックスペンスは戸崎圭太騎手、ウォーターリヒトは高杉吏麒
-OK project=1 video_id=iF680K5Uk80 title=ケンタッキーダービーのJRA海外馬券発売が決定　日本からダノンバーボン、ワンダー
+OK project=1 video_id=mlhrVNLdfoQ title=負傷のため休養していた兵庫の小牧太騎手が21日に復帰へ　右足は「大丈夫」と全快宣
+OK project=1 video_id=0Wh0tICyVHg title=【地方競馬】浦和　シャベスが来日初勝利　初騎乗から２３戦目「なるべく多く勝つこと
+OK project=1 video_id=ee00HN4JsG8 title=【浦和競馬】エリオネ・シャベス騎手が日本初勝利　達成までに23戦「勝ててうれしい
