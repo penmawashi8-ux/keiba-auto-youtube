@@ -93,18 +93,19 @@ _ENDING_TEXTS = [
     "役に立ったら\n高評価お願いします！\n\n毎日更新中！",
 ]
 
-# サムネイルタイトル用カラーペア（行ごとに交互適用）
+# サムネイルタイトル用カラーペア（基本色=白固定、強調色=【】行に使うランダムカラー）
+# (base=通常行の色, highlight=【...】行の色)
 _THUMB_COLOR_PAIRS = [
-    ("0xFFFFFF", "0xFFEB00"),   # 白 + 黄
-    ("0xFFEB00", "0x00FFFF"),   # 黄 + シアン
-    ("0xFFD700", "0xFFFFFF"),   # 金 + 白
-    ("0xFF8C00", "0xFFFF88"),   # オレンジ + 薄黄
-    ("0x00FFFF", "0xFFD700"),   # シアン + 金
-    ("0xADFF2F", "0xFFFFFF"),   # 黄緑 + 白
-    ("0xFF6347", "0xFFFFFF"),   # 赤橙 + 白
-    ("0xFFFF88", "0x88FFFF"),   # 薄黄 + 薄シアン
-    ("0xFFEB00", "0xFFFFFF"),   # 黄 + 白
-    ("0xFFFFFF", "0xFF8C00"),   # 白 + オレンジ
+    ("0xFFFFFF", "0xFFEB00"),   # 白 → 黄
+    ("0xFFFFFF", "0x00FFFF"),   # 白 → シアン
+    ("0xFFFFFF", "0xFF8C00"),   # 白 → オレンジ
+    ("0xFFFFFF", "0xFFD700"),   # 白 → 金
+    ("0xFFFFFF", "0xADFF2F"),   # 白 → 黄緑
+    ("0xFFFFFF", "0xFF6347"),   # 白 → 赤橙
+    ("0xFFFFFF", "0xFF4500"),   # 白 → レッドオレンジ
+    ("0xFFFFFF", "0xFFFF00"),   # 白 → 純黄
+    ("0xFFFFFF", "0x7FFFD4"),   # 白 → アクアマリン
+    ("0xFFFFFF", "0xFFA500"),   # 白 → オレンジ明
 ]
 
 # サムネイルタイトル用ボックススタイル（OP = title_box_opacity のプレースホルダ）
