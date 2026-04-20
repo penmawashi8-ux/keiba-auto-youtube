@@ -1,10 +1,10 @@
-date: 2026-04-20T07:22:18.197901Z
+date: 2026-04-20T09:16:58.765804Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mlhrVNLdfoQ title=負傷のため休養していた兵庫の小牧太騎手が21日に復帰へ　右足は「大丈夫」と全快宣
-OK project=1 video_id=0Wh0tICyVHg title=【地方競馬】浦和　シャベスが来日初勝利　初騎乗から２３戦目「なるべく多く勝つこと
-OK project=1 video_id=ee00HN4JsG8 title=【浦和競馬】エリオネ・シャベス騎手が日本初勝利　達成までに23戦「勝ててうれしい
+OK project=1 video_id=i26IgaZHiv0 title=【マイラーズC】重賞3勝のシックスペンス 約11カ月ぶりの芝で復活Vなるか
+OK project=1 video_id=68YhB4gGuwo title=サトノレーヴは里見夢境&ジャンタルマンタルは遠觀天象　蒙面舞會は?　チャンピオン
+OK project=1 video_id=YhXMfzqYraY title=【水沢競馬】20日の10〜12Rを取りやめ　地震による津波警報発令のため
