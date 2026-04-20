@@ -4,6 +4,7 @@
 import io
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -185,7 +186,24 @@ def is_channel_upload_limit(http_error: HttpError) -> bool:
     return bool(_get_error_reasons(http_error) & CHANNEL_LIMIT_REASONS)
 
 
-def upload_video(youtube, title: str, description: str, video_path: str) -> str | None:
+def build_tags(extra_keywords: list[str] | None = None) -> list[str]:
+    """固定タグ + 動的キーワードをYouTubeタグ上限(500文字合計)内で返す。"""
+    tags = list(TAGS)
+    if extra_keywords:
+        tags.extend(extra_keywords)
+    # YouTube はタグの合計文字数が500文字以内
+    result: list[str] = []
+    total = 0
+    for tag in tags:
+        if total + len(tag) + 1 <= 500:
+            result.append(tag)
+            total += len(tag) + 1
+        else:
+            break
+    return result
+
+
+def upload_video(youtube, title: str, description: str, video_path: str, extra_keywords: list[str] | None = None) -> str | None:
     """YouTube に動画をアップロードして videoId を返す。
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
@@ -201,7 +219,7 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
         "snippet": {
             "title": f"{prefix}{short_title}{suffix}",
             "description": description,
-            "tags": TAGS,
+            "tags": build_tags(extra_keywords),
             "categoryId": CATEGORY_ID,
             "defaultLanguage": "ja",
             "defaultAudioLanguage": "ja",
@@ -270,8 +288,40 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
         sys.exit(1)
 
 
-def build_description(script: str) -> str:
-    hashtags = "\n\n#競馬 #競馬ニュース #keiba #Shorts #競馬速報"
+def extract_seo_keywords(title: str, script: str) -> list[str]:
+    """ニュースタイトル・スクリプトから馬名・レース名・騎手名候補を抽出する。"""
+    text = title + "\n" + script
+    found: set[str] = set()
+
+    # カタカナ4文字以上（馬名・レース名候補）
+    for m in re.finditer(r'[ァ-ヶーｦ-ﾟ]{4,}', text):
+        found.add(m.group())
+
+    # 漢字混じりのレース名（〇〇賞・杯・カップ・ステークス・記念など）
+    for m in re.finditer(r'[\u4e00-\u9fff\u30a1-\u30f6ー]{2,}(?:賞|杯|カップ|ステークス|ハンデ|記念)', text):
+        found.add(m.group())
+
+    # G1/G2/G3 グレード
+    for m in re.finditer(r'G[123]', text):
+        found.add(m.group())
+
+    # 漢字2〜4文字の騎手名（「騎手」「騎乗」前後に出現するもの）
+    for m in re.finditer(r'([\u4e00-\u9fff]{2,4})(?=騎手|騎乗)', text):
+        found.add(m.group(1))
+    for m in re.finditer(r'(?<=騎手・)([\u4e00-\u9fff]{2,4})', text):
+        found.add(m.group(1))
+
+    # 30文字以下のもののみ、最大20個
+    return sorted(k for k in found if 2 <= len(k) <= 30)[:20]
+
+
+def build_description(script: str, seo_keywords: list[str] | None = None) -> str:
+    base_tags = "#競馬 #競馬ニュース #keiba #Shorts #競馬速報"
+    if seo_keywords:
+        kw_hashtags = " ".join(f"#{k}" for k in seo_keywords[:15])
+        hashtags = f"\n\n{base_tags} {kw_hashtags}"
+    else:
+        hashtags = f"\n\n{base_tags}"
     max_len = 5000 - len(hashtags)
     return script[:max_len] + hashtags
 
@@ -321,12 +371,14 @@ def main() -> None:
         item = news_items[idx]
         title = item["title"]
         script = script_path.read_text(encoding="utf-8").strip()
-        description = build_description(script)
+        seo_keywords = extract_seo_keywords(title, script)
+        description = build_description(script, seo_keywords)
+        print(f"  SEOキーワード({len(seo_keywords)}): {', '.join(seo_keywords[:10])}")
 
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
         video_id = None
         while video_id is None:
-            result = upload_video(youtube, title, description, str(video_file))
+            result = upload_video(youtube, title, description, str(video_file), extra_keywords=seo_keywords)
             if result == "CHANNEL_LIMIT":
                 # チャンネル制限: プロジェクト切り替えでは解決しない → 即停止
                 quota_exceeded = True
