@@ -865,32 +865,54 @@ def make_clip(
                     _lo = _line_offsets[_li]
                     _le = _lo + len(_line)
 
-                    # Pass1: 行全体を基本色で描画（ボックス付き）
-                    chain += (
-                        f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                        f"fontsize={_tfs}:fontcolor={_color_base}:"
-                        f"x=(w-text_w)/2:y={_y}:"
-                        f"{_box_style}"
-                    )
+                    # この行に交差する【...】範囲（行内オフセット）
+                    _seg_brackets = sorted([
+                        (max(_bs, _lo) - _lo, min(_be, _le) - _lo)
+                        for _bs, _be in _bracket_ranges
+                        if max(_bs, _lo) < min(_be, _le)
+                    ])
 
-                    # Pass2: 【...】と交差する部分のみ強調色で上書き
-                    for _bs, _be in _bracket_ranges:
-                        _is = max(_bs, _lo) - _lo
-                        _ie = min(_be, _le) - _lo
-                        if _is < _ie:
-                            _bk_text = _line[_is:_ie]
-                            _line_w = _text_px(_line, _tfs)
-                            _x_start = (VIDEO_WIDTH - _line_w) // 2
-                            _bk_x = _x_start + _text_px(_line[:_is], _tfs)
-                            _bkf = f"{tmp_dir}/thumb_bk_{idx:04d}_{_li}_{_is}.txt"
-                            Path(_bkf).write_text(_bk_text, encoding="utf-8")
-                            _bkfe = _bkf.replace("'", "\\'")
+                    if not _seg_brackets:
+                        # ブラケットなし: 行全体を基本色で描画（ボックス付き）
+                        chain += (
+                            f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
+                            f"fontsize={_tfs}:fontcolor={_color_base}:"
+                            f"x=(w-text_w)/2:y={_y}:"
+                            f"{_box_style}"
+                        )
+                    else:
+                        # ブラケットあり: セグメント分割して色分け（重なりなし）
+                        # box=1 スタイルの場合: ほぼ透明テキストでボックス背景のみ先に描画
+                        if "box=1" in _box_style:
                             chain += (
-                                f",drawtext=textfile='{_bkfe}':fontfile='{fp}':"
-                                f"fontsize={_tfs}:fontcolor={_color_hi}:"
-                                f"x={_bk_x}:y={_y}:"
-                                f"borderw=3:bordercolor=0x000000"
+                                f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
+                                f"fontsize={_tfs}:fontcolor=black@0.01:"
+                                f"x=(w-text_w)/2:y={_y}:"
+                                f"{_box_style}"
                             )
+                        # セグメントに分割して各色で描画（重なりなし）
+                        _segs: list[tuple[str, str]] = []
+                        _prev = 0
+                        for _bis, _bie in _seg_brackets:
+                            if _prev < _bis:
+                                _segs.append((_line[_prev:_bis], _color_base))
+                            _segs.append((_line[_bis:_bie], _color_hi))
+                            _prev = _bie
+                        if _prev < len(_line):
+                            _segs.append((_line[_prev:], _color_base))
+                        _line_w = _text_px(_line, _tfs)
+                        _x_cur = (VIDEO_WIDTH - _line_w) // 2
+                        for _si, (_seg_text, _seg_col) in enumerate(_segs):
+                            _sf = f"{tmp_dir}/thumb_seg_{idx:04d}_{_li}_{_si}.txt"
+                            Path(_sf).write_text(_seg_text, encoding="utf-8")
+                            _sfe = _sf.replace("'", "\\'")
+                            chain += (
+                                f",drawtext=textfile='{_sfe}':fontfile='{fp}':"
+                                f"fontsize={_tfs}:fontcolor={_seg_col}:"
+                                f"x={_x_cur}:y={_y}:"
+                                f"borderw=4:bordercolor=0x000000"
+                            )
+                            _x_cur += _text_px(_seg_text, _tfs)
 
         elif is_ending:
             s = style or {}
