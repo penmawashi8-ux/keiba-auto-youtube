@@ -415,12 +415,16 @@ def main() -> None:
     catchphrase = result["catchphrase"]
     script = result["script"]
 
-    # キー重複回避
-    base_key = horse_key
-    suffix = 2
-    while (DATA_DIR / f"{horse_key}.json").exists():
-        horse_key = f"{base_key}_{suffix}"
-        suffix += 1
+    # 名前の重複チェック（AIが紹介済みリストを無視した場合の安全弁）
+    existing_names = {h["name"] for h in covered}
+    if horse_name in existing_names:
+        print(f"[エラー] 「{horse_name}」は既に紹介済みです。AIが指示を無視しました。中止します。", file=sys.stderr)
+        sys.exit(1)
+
+    # キー重複チェック（同一馬の可能性が高い）
+    if (DATA_DIR / f"{horse_key}.json").exists():
+        print(f"[エラー] キー「{horse_key}」({horse_name})は既に存在します。重複投稿を防ぐため中止します。", file=sys.stderr)
+        sys.exit(1)
 
     print(f"[選定完了] 馬名: {horse_name}  キー: {horse_key}", file=sys.stderr)
     print(f"[最終脚本]\n{script}\n", file=sys.stderr)
