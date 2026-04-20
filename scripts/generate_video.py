@@ -743,6 +743,11 @@ def make_clip(
                 Path(main_file).write_text(thumb_main, encoding="utf-8")
                 mf = main_file.replace("'", "\\'")
 
+                # 文字数に応じてフォントサイズを自動調整（最大180px、最小80px）
+                # 1080px幅 - 左マージン60 - 右マージン40 = 980px を文字数で割る
+                max_w = 980
+                thumb_main_fs = max(80, min(180, max_w // max(len(thumb_main), 1)))
+
                 # 「狂気の」（左上・白・影付き）
                 if thumb_top:
                     top_file = f"{tmp_dir}/thumb_top_{idx:04d}.txt"
@@ -759,28 +764,28 @@ def make_clip(
                 # 「大逃げ」グロー外層（赤・広め・低透明）
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFF2200@0.22:"
+                    f"fontsize={thumb_main_fs}:fontcolor=0xFF2200@0.22:"
                     f"x=60:y=760:"
                     f"borderw=32:bordercolor=0xFF2200@0.18"
                 )
                 # 「大逃げ」グロー中層
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFF3300@0.38:"
+                    f"fontsize={thumb_main_fs}:fontcolor=0xFF3300@0.38:"
                     f"x=60:y=760:"
                     f"borderw=16:bordercolor=0xFF3300@0.40"
                 )
                 # 「大逃げ」グロー内層（鮮明赤）
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFF4400@0.52:"
+                    f"fontsize={thumb_main_fs}:fontcolor=0xFF4400@0.52:"
                     f"x=60:y=760:"
                     f"borderw=7:bordercolor=0xFF4400@0.62"
                 )
                 # 「大逃げ」本体（白・黒縁・ドロップシャドウ）
                 chain += (
                     f",drawtext=textfile='{mf}':fontfile='{fp}':"
-                    f"fontsize=180:fontcolor=0xFFFFFF:"
+                    f"fontsize={thumb_main_fs}:fontcolor=0xFFFFFF:"
                     f"x=60:y=760:"
                     f"borderw=5:bordercolor=0x000000:"
                     f"shadowcolor=0x000000@0.9:shadowx=6:shadowy=6"
