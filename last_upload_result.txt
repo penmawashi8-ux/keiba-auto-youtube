@@ -1,10 +1,10 @@
-date: 2026-04-20T11:01:03.103784Z
+date: 2026-04-20T12:15:03.363784Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Z-NCwPgEibg title=【青葉賞】「東京2400は豊さんの庭」　ゴーイントゥスカイが名手とともに厩舎4頭
-OK project=1 video_id=7h9krpV5GBk title=【注目馬動向】ダイヤモンドS2着のファイアンクランツは目黒記念へ
-OK project=1 video_id=jW3hlandwxE title=【天皇賞・春】大阪杯Vクロワデュノールがレーティングトップ122　昨年の覇者ヘデ
+OK project=1 video_id=qmIghCvtFwg title=【名古屋競馬】山田祥雄騎手が地方通算1000勝達成　20日9Rのジョーテルプジで
+OK project=1 video_id=loh-nZQtIRQ title=【チャンピオンズマイル】24年の香港マイルは13着...日本最強マイラーとなった
+OK project=1 video_id=EH517e1w-w0 title=【QE2世C】歴代獲得賞金世界トップのロマンチックウォリアー フォーエバーヤング
