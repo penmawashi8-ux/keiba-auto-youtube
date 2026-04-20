@@ -1,10 +1,10 @@
-date: 2026-04-19T23:57:29.181279Z
+date: 2026-04-20T04:27:43.667719Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=pIf2sGrGKEM title=【読売マイラーズC展望】G2を3勝のシックスペンスに注目　G1馬アドマイヤズーム
-OK project=1 video_id=LBPNZvr3sXg title=【小島太元調教師の競馬ジャーナル】ロブチェン1番人気で皐月賞を逃げ切ったのは力が
-OK project=1 video_id=x1SBbnHrC1A title=【皐月賞・レースメモ】松山弘平騎手が17年アルアイン以来の2勝目　G1勝利は通算
+OK project=1 video_id=kngAs5207Vg title=皐月賞Vのロブチェンは一夜明け馬房でゴロゴロ　日本ダービーへ陣営「体調だけ整えて
+OK project=1 video_id=OuELQPW7DGs title=【フローラS想定騎手】ファムクラジューズは横山武史騎手、ラフターラインズはD.レ
+OK project=1 video_id=sey7NI5z0XQ title=【先週のJRA抹消馬】22年の菊花賞・有馬記念で2着のボルドグフーシュ、芝中距離
