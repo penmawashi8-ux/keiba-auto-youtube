@@ -204,13 +204,22 @@ jobs:
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: python scripts/upload_youtube.py
 
-      # API でのサムネイルアップロードが channelNotEligible で失敗した場合の代替手段。
-      # 認証方法（優先順位順）:
-      #   1. OAuth2リフレッシュトークン（GOOGLE_CLIENT_ID 等・アップロードと同じシークレットを再利用）
-      #   2. YOUTUBE_COOKIES シークレット（ブラウザからエクスポートした手動クッキー）
-      # どちらも未設定の場合はスキップ。
-      - name: Set thumbnails via YouTube Studio (Playwright)
+      # サムネイル設定: Studio 内部 API（Playwright 不要・クッキー不要）を優先し、
+      # 失敗した場合は Playwright フォールバックを試みる。
+      - name: Set thumbnails via YouTube Studio API
+        id: thumbnail_api
         if: steps.check_scripts.outputs.has_scripts == 'true'
+        continue-on-error: true
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: python scripts/set_thumbnail_studio_api.py
+
+      # Studio 内部 API が失敗した場合の Playwright フォールバック。
+      # YOUTUBE_COOKIES または OAuth2 認証情報のいずれかが必要。
+      - name: Set thumbnails via YouTube Studio (Playwright fallback)
+        if: steps.check_scripts.outputs.has_scripts == 'true' && steps.thumbnail_api.outcome == 'failure'
         continue-on-error: true
         env:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
