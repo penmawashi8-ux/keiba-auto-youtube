@@ -5,9 +5,9 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
@@ -15,22 +15,41 @@
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 負傷のため休養していた兵庫の小牧太騎手が21日に復帰へ　右足は「大丈夫」と全快宣言　いきなり6鞍に騎乗 ---
-[0] Gemini入力本文 344文字: '1日の園田競馬9レースで馬場に入場する際に騎乗馬が転倒し、落馬負傷した小牧太騎手(58)＝兵庫騎手会＝が21日から実戦に復帰することとなった。右足に力が入らなかったため翌2日以降は騎乗していなかったが、「(右足は)大丈夫」と問題ないことを強'
+--- 記事[0]: 【マイラーズC】重賞3勝のシックスペンス 約11カ月ぶりの芝で復活Vなるか ---
+[0] Gemini入力本文 350文字: '重賞3勝の実績を誇るシックスペンス(牡5、美浦・田中博康厩舎)が、マイラーズカップ(4歳上・GII・芝1600m)で約11カ月ぶりに芝にチャレンジする。\n\u3000シックスペンスは父キズナ、母フィンレイズラッキーチャーム、母の父Twirling C'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【地方競馬】浦和　シャベスが来日初勝利　初騎乗から２３戦目「なるべく多く勝つことが次の目標」 ---
-[1] Gemini入力本文 331文字: 'エリオネス・シャベス騎手（４２）＝大井・藤田輝＝が２０日の浦和競馬５Ｒでヨルデモアーサーに騎乗して、中団追走から直線で抜け出して来日初勝利を飾った。\n\u3000１３日の初騎乗から２３戦目。「先週の大井ではたくさん乗せてもらったのに勝てなかったのでう'
+--- 記事[1]: サトノレーヴは里見夢境&ジャンタルマンタルは遠觀天象　蒙面舞會は?　チャンピオンズデーでの日本馬の香港表記 ---
+[1] Gemini入力本文 378文字: '今週26日に香港でJRA海外馬券発売対象のチャンピオンズデー(シャティン競馬場)が行われ、G1・3競走に出走する日本調教馬6頭が出走する。日本調教馬の香港表記は以下の通り。\n\t\t\t\t\u3000◆チェアマンズスプリントプライズ\n\t\t\t\t\u3000\u3000サトノレー'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【浦和競馬】エリオネ・シャベス騎手が日本初勝利　達成までに23戦「勝ててうれしい、多く勝ちたい」 ---
-[2] Gemini入力本文 343文字: '南関東限定の短期騎手免許を取得し、先週の大井開催で騎乗を開始したエリオネ・シャベス(42＝スウェーデン)が20日、浦和5Rをヨルデモアーサーで勝利。日本初勝利を達成した。通算23戦目。\n\u3000シャベスは「大井ではたくさん乗って勝てなかったので、'
+--- 記事[2]: 【水沢競馬】20日の10〜12Rを取りやめ　地震による津波警報発令のため ---
+[2] Gemini入力本文 130文字: '岩手県競馬組合は、20日(2回水沢2日目)の水沢競馬・10Rから12Rを地震による津波警報発令のため、安全かつ公正な競馬の施行に支障があると判断されたため、取りやめた。… No.1競馬情報サイト「netkeiba」の競馬ニュース。 水沢競馬'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -47,8 +66,8 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
@@ -60,17 +79,44 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  HTTP 503
+  HTTP 503
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 178文字]: '兵庫の小牧太騎手が21日から実戦に復帰することとなりました。小牧太騎手は、1日の園田競馬9レースで馬場に入場する際に騎乗馬が転倒し、落馬負傷していました。右足に力が入らなかったため、翌2日以降は騎乗していませんでしたが、本人は「大丈夫」と右足に問題ないことを強調しています。復帰初日から6鞍に騎乗する予定で、人気馬への騎乗も多く、大暴れが期待されています。'
-[0]  → output/script_0.txt 保存 (178文字)
-[0]  プレビュー: 兵庫の小牧太騎手が21日から実戦に復帰することとなりました。小牧太騎手は、1日の園田競馬9レースで馬場に入場する際に騎乗馬が転倒し、落馬負傷していました。右足に...
+[1]  [Gemini生出力 226文字]: '今週26日に香港でJRA海外馬券発売対象のチャンピオンズデー(シャティン競馬場)が行われ、G1・3競走に出走する日本調教馬6頭が出走する。日本調教馬の香港表記は以下の通り。 チェアマンズスプリントプライズに出走するサトノレーヴ(里見夢境)と、チャンピオンズマイルに出走するジャンタルマンタル(遠觀天象)が予定されている。また、シュトラウス(一束芳花)もチェアマンズスプリントプライズに出走する。クイーンエリザベス2世Cにはマスカレードボールが出走する。'
+[1]  [重複除去] 226文字 → 225文字
+[1]  → output/script_1.txt 保存 (225文字)
+[1]  プレビュー: 今週26日に香港でJRA海外馬券発売対象のチャンピオンズデー(シャティン競馬場)が行われ、G1・3競走に出走する日本調教馬6頭が出走する。日本調教馬の香港表記は...
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 172文字]: '南関東限定の短期騎手免許を取得し、先週の大井開催で騎乗を開始したエリオネ・シャベス騎手が20日、浦和5Rをヨルデモアーサーで勝利し、日本初勝利を達成しました。これは通算23戦目での快挙です。シャベス騎手は「大井ではたくさん乗って勝てなかったので、勝ててうれしいです。この短期免許期間中に、できるだけ多く勝ちたいです」と柔らかな笑顔で語りました。'
-[2]  → output/script_2.txt 保存 (172文字)
-[2]  プレビュー: 南関東限定の短期騎手免許を取得し、先週の大井開催で騎乗を開始したエリオネ・シャベス騎手が20日、浦和5Rをヨルデモアーサーで勝利し、日本初勝利を達成しました。こ...
+[0]  [Gemini生出力 184文字]: '重賞3勝の実績を誇るシックスペンス(牡5、美浦・田中博康厩舎)が、マイラーズカップ(4歳上・GII・芝1600m)で約11カ月ぶりに芝にチャレンジする。シックスペンスは父キズナ、母フィンレイズラッキーチャーム、母の父Twirling Candyの血統。馬名の意味由来は「イギリス旧硬貨の名。幸運をもたらすお守り。母名より連想」。(有)キャロットクラブにおいて総額...'
+[0]  → output/script_0.txt 保存 (150文字)
+[0]  プレビュー: 重賞3勝の実績を誇るシックスペンスが、マイラーズカップ(4歳上・GII・芝1600m)で約11カ月ぶりに芝にチャレンジする。シックスペンスは父キズナ、母フィンレ...
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 190文字]: 'エリオネス・シャベス騎手が20日の浦和競馬5Rで、ヨルデモアーサーに騎乗し、来日初勝利を飾りました。中団追走から直線で抜け出しての勝利です。これは13日の初騎乗から23戦目での達成となりました。シャベス騎手は「先週の大井ではたくさん乗せてもらったのに勝てなかったのでうれしい。1勝できたので、スウェーデンに戻るまでになるべく多く勝つことが次の目標です」と笑顔でコメントしています。'
-[1]  → output/script_1.txt 保存 (190文字)
-[1]  プレビュー: エリオネス・シャベス騎手が20日の浦和競馬5Rで、ヨルデモアーサーに騎乗し、来日初勝利を飾りました。中団追走から直線で抜け出しての勝利です。これは13日の初騎乗...
+[2]  [Gemini生出力 87文字]: '岩手県競馬組合は、20日(2回水沢2日目)の水沢競馬・10Rから12Rを、地震による津波警報発令のため取りやめた。安全かつ公正な競馬の施行に支障があると判断されたためである。'
+[2]  → output/script_2.txt 保存 (87文字)
+[2]  プレビュー: 岩手県競馬組合は、20日(2回水沢2日目)の水沢競馬・10Rから12Rを、地震による津波警報発令のため取りやめた。安全かつ公正な競馬の施行に支障があると判断され...
 
 3 件の脚本を生成しました。
