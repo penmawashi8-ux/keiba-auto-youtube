@@ -862,22 +862,35 @@ def make_clip(
                     Path(_lf).write_text(_line, encoding="utf-8")
                     _lfe = _lf.replace("'", "\\'")
                     _y = 720 + _li * _line_h
-
-                    # この行が【...】の範囲を含む場合は強調色
                     _lo = _line_offsets[_li]
                     _le = _lo + len(_line)
-                    _in_bracket = any(
-                        max(_bs, _lo) < min(_be, _le)
-                        for _bs, _be in _bracket_ranges
-                    )
-                    _col = _color_hi if _in_bracket else _color_base
 
+                    # Pass1: 行全体を基本色で描画（ボックス付き）
                     chain += (
                         f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                        f"fontsize={_tfs}:fontcolor={_col}:"
+                        f"fontsize={_tfs}:fontcolor={_color_base}:"
                         f"x=(w-text_w)/2:y={_y}:"
                         f"{_box_style}"
                     )
+
+                    # Pass2: 【...】と交差する部分のみ強調色で上書き
+                    for _bs, _be in _bracket_ranges:
+                        _is = max(_bs, _lo) - _lo
+                        _ie = min(_be, _le) - _lo
+                        if _is < _ie:
+                            _bk_text = _line[_is:_ie]
+                            _line_w = _text_px(_line, _tfs)
+                            _x_start = (VIDEO_WIDTH - _line_w) // 2
+                            _bk_x = _x_start + _text_px(_line[:_is], _tfs)
+                            _bkf = f"{tmp_dir}/thumb_bk_{idx:04d}_{_li}_{_is}.txt"
+                            Path(_bkf).write_text(_bk_text, encoding="utf-8")
+                            _bkfe = _bkf.replace("'", "\\'")
+                            chain += (
+                                f",drawtext=textfile='{_bkfe}':fontfile='{fp}':"
+                                f"fontsize={_tfs}:fontcolor={_color_hi}:"
+                                f"x={_bk_x}:y={_y}:"
+                                f"borderw=3:bordercolor=0x000000"
+                            )
 
         elif is_ending:
             s = style or {}

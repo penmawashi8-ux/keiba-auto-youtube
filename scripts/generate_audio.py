@@ -18,6 +18,24 @@ OUTPUT_DIR = "output"
 NEWS_JSON = "news.json"
 VOLUME = "+0%"
 
+# 競馬用語の読み替えパターン（長いものを先に）
+_RACING_TERM_REPLACEMENTS = [
+    (re.compile(r'GIII|GⅢ'), 'ジースリー'),
+    (re.compile(r'GII|GⅡ'), 'ジーツー'),
+    (re.compile(r'GI|GⅠ'), 'ジーワン'),
+    (re.compile(r'G3'), 'ジースリー'),
+    (re.compile(r'G2'), 'ジーツー'),
+    (re.compile(r'G1'), 'ジーワン'),
+    (re.compile(r'(\d+)R'), r'\1レース'),
+]
+
+
+def normalize_racing_terms(text: str) -> str:
+    """GI/GII/GIII・数字Rなど競馬用語の読み上げを正規化する。"""
+    for pattern, repl in _RACING_TERM_REPLACEMENTS:
+        text = pattern.sub(repl, text)
+    return text
+
 # ランダム選択用ボイスプール（名馬シリーズは TTS_VOICE 環境変数で上書き）
 _VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
 
@@ -237,6 +255,7 @@ def main() -> None:
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
 
+        narration_text = normalize_racing_terms(narration_text)
         narration_text = apply_readings(narration_text)
         voice, rate, pitch_factor, volume_db = pick_tts_params()
         print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) voice={voice} rate={rate} ---")
