@@ -1,10 +1,10 @@
-date: 2026-04-19T23:57:29.181279Z
+date: 2026-04-20T05:50:25.037069Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=pIf2sGrGKEM title=【読売マイラーズC展望】G2を3勝のシックスペンスに注目　G1馬アドマイヤズーム
-OK project=1 video_id=LBPNZvr3sXg title=【小島太元調教師の競馬ジャーナル】ロブチェン1番人気で皐月賞を逃げ切ったのは力が
-OK project=1 video_id=x1SBbnHrC1A title=【皐月賞・レースメモ】松山弘平騎手が17年アルアイン以来の2勝目　G1勝利は通算
+OK project=1 video_id=ddm9SPbgEU0 title=【地方競馬ジョッキーズCS】出場14騎手発表　矢野貴之、小牧太は推薦で　6.2船
+OK project=1 video_id=FM1Y6Q2mq2Q title=【マイラーズC想定騎手】シックスペンスは戸崎圭太騎手、ウォーターリヒトは高杉吏麒
+OK project=1 video_id=iF680K5Uk80 title=ケンタッキーダービーのJRA海外馬券発売が決定　日本からダノンバーボン、ワンダー
