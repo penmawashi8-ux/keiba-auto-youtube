@@ -667,8 +667,11 @@ def wrap_text(text: str, max_chars: int = LINE_MAX_CHARS, max_lines: int = 0) ->
             para = para[max_chars:]
             if max_lines and len(lines) >= max_lines:
                 break
-        if para and (not max_lines or len(lines) < max_lines):
-            lines.append(para)
+        if para:
+            if not max_lines or len(lines) < max_lines:
+                lines.append(para)
+            elif lines:
+                lines[-1] += para
         if max_lines and len(lines) >= max_lines:
             break
     return "\n".join(lines)
