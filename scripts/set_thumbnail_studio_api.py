@@ -30,29 +30,40 @@ YOUTUBE_SCOPES = [
 _STUDIO_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"
 _STUDIO_BASE = "https://studio.youtube.com/youtubei/v1"
 
+# upload_youtube.py と同じ複数プロジェクト構成（トークン期限切れ時のフォールバック用）
+_CREDENTIAL_SETS = [
+    ("GOOGLE_CLIENT_ID",   "GOOGLE_CLIENT_SECRET",   "GOOGLE_REFRESH_TOKEN"),
+    ("GOOGLE_CLIENT_ID_2", "GOOGLE_CLIENT_SECRET_2", "GOOGLE_REFRESH_TOKEN_2"),
+    ("GOOGLE_CLIENT_ID_3", "GOOGLE_CLIENT_SECRET_3", "GOOGLE_REFRESH_TOKEN_3"),
+]
+
 
 def _get_credentials() -> Credentials:
-    client_id = os.environ.get("GOOGLE_CLIENT_ID")
-    client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
-    refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
-
-    if not all([client_id, client_secret, refresh_token]):
-        print(
-            "[エラー] GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN が未設定です",
-            file=sys.stderr,
+    """有効な OAuth2 認証情報を返す。プロジェクト1が失敗した場合は2→3と試みる。"""
+    for id_key, secret_key, token_key in _CREDENTIAL_SETS:
+        client_id = os.environ.get(id_key)
+        client_secret = os.environ.get(secret_key)
+        refresh_token = os.environ.get(token_key)
+        if not all([client_id, client_secret, refresh_token]):
+            continue
+        creds = Credentials(
+            token=None,
+            refresh_token=refresh_token,
+            token_uri="https://oauth2.googleapis.com/token",
+            client_id=client_id,
+            client_secret=client_secret,
+            scopes=YOUTUBE_SCOPES,
         )
-        sys.exit(1)
+        try:
+            creds.refresh(google.auth.transport.requests.Request())
+            print(f"OAuth2 トークン取得成功 ({id_key})")
+            return creds
+        except Exception as e:
+            print(f"[警告] トークンリフレッシュ失敗 ({id_key}): {e}", file=sys.stderr)
+            continue
 
-    creds = Credentials(
-        token=None,
-        refresh_token=refresh_token,
-        token_uri="https://oauth2.googleapis.com/token",
-        client_id=client_id,
-        client_secret=client_secret,
-        scopes=YOUTUBE_SCOPES,
-    )
-    creds.refresh(google.auth.transport.requests.Request())
-    return creds
+    print("[エラー] 有効な OAuth2 認証情報が見つかりませんでした", file=sys.stderr)
+    sys.exit(1)
 
 
 def _get_channel_id(creds: Credentials) -> str:
