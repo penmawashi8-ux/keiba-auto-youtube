@@ -9,6 +9,7 @@ Playwright もクッキーも不要。OAuth2 リフレッシュトークンの�
   GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN
 """
 
+import datetime
 import json
 import os
 import sys
@@ -91,10 +92,11 @@ def _studio_headers(access_token: str) -> dict:
 
 
 def _build_context(channel_id: str) -> dict:
+    today = datetime.datetime.utcnow().strftime("%Y%m%d")
     return {
         "client": {
             "clientName": "YOUTUBE_STUDIO",
-            "clientVersion": "1.20240420.01.00",
+            "clientVersion": f"1.{today}.01.00",
             "hl": "ja",
             "gl": "JP",
         },
@@ -146,7 +148,7 @@ def set_thumbnail_by_timestamp(
     if resp.status_code == 200:
         return True, f"{summary} (形式1: thumbnailDetails.stillImageTime)"
 
-    body_v1 = resp.text[:400]
+    body_v1 = resp.text[:800]
     print(f"  [試行1] {summary}: {body_v1}", file=sys.stderr)
 
     # --- 試行 2: thumbnail.videoStill ---
@@ -174,7 +176,7 @@ def set_thumbnail_by_timestamp(
     if resp.status_code == 200:
         return True, f"{summary} (形式2: thumbnail.videoStill)"
 
-    body_v2 = resp.text[:400]
+    body_v2 = resp.text[:800]
     print(f"  [試行2] {summary}: {body_v2}", file=sys.stderr)
 
     # --- 試行 3: エンドポイントを変えて試す ---
@@ -194,17 +196,43 @@ def set_thumbnail_by_timestamp(
     if resp.status_code == 200:
         return True, f"{summary} (形式3: update_video_thumbnail)"
 
-    body_v3 = resp.text[:400]
+    body_v3 = resp.text[:800]
     print(f"  [試行3] {summary}: {body_v3}", file=sys.stderr)
+
+    # --- 試行 4: defaultThumbnail.timeMs 形式 ---
+    payload_v4 = {
+        "context": context,
+        "encryptedVideoId": video_id,
+        "videoReadMask": {"videoId": True, "thumbnailDetails": True},
+        "videoMetadata": {
+            "thumbnailDetails": {
+                "defaultThumbnail": {"timeMs": str(time_ms)},
+            }
+        },
+    }
+    resp = requests.post(
+        f"{_STUDIO_BASE}/video_manager/metadata_update",
+        params=params,
+        headers=headers,
+        json=payload_v4,
+        timeout=30,
+    )
+    summary = f"HTTP {resp.status_code}"
+    if resp.status_code == 200:
+        return True, f"{summary} (形式4: defaultThumbnail.timeMs)"
+
+    body_v4 = resp.text[:800]
+    print(f"  [試行4] {summary}: {body_v4}", file=sys.stderr)
 
     # すべて失敗 → ログを保存して原因調査に役立てる
     _save_debug_log(video_id, {
-        "trial1": {"status": "failed", "body": body_v1},
-        "trial2": {"status": "failed", "body": body_v2},
-        "trial3": {"status": "failed", "body": body_v3},
+        "trial1": {"status": resp.status_code, "body": body_v1},
+        "trial2": {"status": resp.status_code, "body": body_v2},
+        "trial3": {"status": resp.status_code, "body": body_v3},
+        "trial4": {"status": resp.status_code, "body": body_v4},
     })
 
-    return False, "全試行失敗（output/debug_studio_api_{video_id}.json を確認してください）"
+    return False, f"全試行失敗（output/debug_studio_api_{video_id}.json を確認してください）"
 
 
 def _save_debug_log(video_id: str, data: dict) -> None:

@@ -220,27 +220,19 @@ jobs:
           GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
           GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
-        run: python scripts/set_thumbnail_studio_api.py
+        run: python scripts/set_thumbnail_studio_api.py 2>&1 | tee /tmp/thumbnail_studio_api.log; exit ${PIPESTATUS[0]}
 
       # Studio 内部 API が失敗した場合の Playwright フォールバック。
-      # YOUTUBE_COOKIES または OAuth2 認証情報のいずれかが必要。
+      # YOUTUBE_COOKIES（ブラウザからエクスポートした Cookie JSON）が必要。
       - name: Set thumbnails via YouTube Studio (Playwright fallback)
+        id: thumbnail_playwright
         if: steps.check_scripts.outputs.has_scripts == 'true' && steps.thumbnail_api.outcome == 'failure'
         continue-on-error: true
         env:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
-          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
-          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
-          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
-          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
-          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: |
           playwright install chromium --with-deps
-          python scripts/set_thumbnail_playwright.py
+          python scripts/set_thumbnail_playwright.py 2>&1 | tee /tmp/thumbnail_playwright.log; exit ${PIPESTATUS[0]}
 
       - name: Commit and push posted_ids.txt
         if: always() && steps.check_news.outputs.has_news == 'true'
@@ -264,11 +256,13 @@ jobs:
           mkdir -p debug
           cp /tmp/fetch_news.log debug/last_fetch_news.log 2>/dev/null || echo "(ログなし)" > debug/last_fetch_news.log
           cp /tmp/gemini.log debug/last_generate_script.log 2>/dev/null || echo "(ログなし)" > debug/last_generate_script.log
+          cp /tmp/thumbnail_studio_api.log debug/last_thumbnail_studio_api.log 2>/dev/null || echo "(ログなし)" > debug/last_thumbnail_studio_api.log
+          cp /tmp/thumbnail_playwright.log debug/last_thumbnail_playwright.log 2>/dev/null || echo "(ログなし)" > debug/last_thumbnail_playwright.log
           # APIキーパターンをログからマスク（key=AIzaSy... 形式）
-          for f in debug/last_fetch_news.log debug/last_generate_script.log; do
+          for f in debug/last_fetch_news.log debug/last_generate_script.log debug/last_thumbnail_studio_api.log debug/last_thumbnail_playwright.log; do
             sed -i 's/key=AIzaSy[A-Za-z0-9_-]*/key=***/g' "$f" 2>/dev/null || true
           done
-          git add debug/last_fetch_news.log debug/last_generate_script.log
+          git add debug/last_fetch_news.log debug/last_generate_script.log debug/last_thumbnail_studio_api.log debug/last_thumbnail_playwright.log
           if git diff --staged --quiet; then
             echo "ログ変更なし。"
           else

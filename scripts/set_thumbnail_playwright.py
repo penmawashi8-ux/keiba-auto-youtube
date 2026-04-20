@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """YouTube Studio のブラウザ操作でサムネイルを設定する。
 
-認証方法（優先順位順）:
-  1. OAuth2リフレッシュトークン（GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN）
-     → アップロード用と同じ認証情報を再利用できるため YOUTUBE_COOKIES は不要
-  2. ブラウザからエクスポートした Cookie（YOUTUBE_COOKIES）
+認証: YOUTUBE_COOKIES 環境変数（ブラウザからエクスポートした Cookie JSON）が必要。
 
 サムネイル設定方法（優先順位順）:
   1. カスタム画像アップロード（チャンネルの電話番号認証済みの場合）
@@ -17,9 +14,6 @@ import sys
 import time
 from pathlib import Path
 
-import google.auth.transport.requests
-import requests as http_requests
-from google.oauth2.credentials import Credentials
 from playwright.sync_api import sync_playwright
 
 UPLOAD_RESULTS_JSON = "output/upload_results.json"
@@ -53,114 +47,22 @@ def normalize_cookies(cookies: list) -> list:
     return result
 
 
-def load_cookies_from_oauth() -> list | None:
-    """OAuth2リフレッシュトークンからYouTube Studioセッションクッキーを取得する。
-
-    Google の OAuthLogin エンドポイントに OAuth2 アクセストークンを渡すことで
-    ブラウザセッション用クッキーを動的に生成する。毎回新鮮なセッションを取得
-    できるため、手動エクスポートのクッキーが期限切れになる問題を解決する。
-    """
-    client_id = os.environ.get("GOOGLE_CLIENT_ID")
-    client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
-    refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
-
-    if not all([client_id, client_secret, refresh_token]):
-        return None
-
-    print("OAuth2リフレッシュトークンからセッションクッキーを取得中...")
-
-    creds = Credentials(
-        token=None,
-        refresh_token=refresh_token,
-        token_uri="https://oauth2.googleapis.com/token",
-        client_id=client_id,
-        client_secret=client_secret,
-        scopes=YOUTUBE_SCOPES,
-    )
-    try:
-        creds.refresh(google.auth.transport.requests.Request())
-    except Exception as e:
-        print(f"[警告] OAuthトークンリフレッシュ失敗: {e}", file=sys.stderr)
-        return None
-
-    access_token = creds.token
-
-    session = http_requests.Session()
-    session.headers.update({
-        "User-Agent": (
-            "Mozilla/5.0 (X11; Linux x86_64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/120.0.0.0 Safari/537.36"
-        )
-    })
-
-    try:
-        resp = session.get(
-            "https://accounts.google.com/accounts/OAuthLogin",
-            params={
-                "source": "ogb",
-                "service": "youtube",
-                "ptok": access_token,
-                "continue": "https://studio.youtube.com",
-            },
-            allow_redirects=True,
-            timeout=30,
-        )
-
-        final_url = resp.url
-        if "accounts.google.com/signin" in final_url or "ServiceLogin" in final_url:
-            print(
-                f"[警告] OAuthLogin後にGoogleサインインページへリダイレクトされました: {final_url}\n"
-                "       トークンのスコープが不足している可能性があります。",
-                file=sys.stderr,
-            )
-            return None
-
-        cookies = []
-        for c in session.cookies:
-            domain = c.domain if c.domain else ".youtube.com"
-            if not domain.startswith("."):
-                domain = f".{domain}"
-            cookies.append({
-                "name": c.name,
-                "value": c.value,
-                "domain": domain,
-                "path": c.path or "/",
-                "sameSite": "None",
-                "expires": int(c.expires) if c.expires else -1,
-            })
-
-        if not cookies:
-            print("[警告] OAuthLogin後にクッキーが取得できませんでした", file=sys.stderr)
-            return None
-
-        print(f"OAuth2からクッキーを取得しました ({len(cookies)} 件)")
-        return cookies
-
-    except Exception as e:
-        print(f"[警告] OAuthLoginクッキー取得失敗: {e}", file=sys.stderr)
-        return None
-
-
 def load_cookies() -> list:
-    """利用可能な認証情報からクッキーを返す。
+    """YOUTUBE_COOKIES 環境変数からクッキーを読み込む。
 
-    優先順位:
-      1. OAuth2リフレッシュトークン（GOOGLE_CLIENT_ID 等）
-      2. YOUTUBE_COOKIES 環境変数（手動エクスポート・フォールバック）
+    ブラウザの Cookie-Editor 等でエクスポートした JSON を
+    GitHub Secret の YOUTUBE_COOKIES に設定しておく必要がある。
+
+    ※ Google の OAuthLogin エンドポイントを使ったクッキー自動生成は
+       Google 側で廃止されているため、手動エクスポートのみ対応。
     """
-    # 1. OAuth2から自動取得を試みる
-    oauth_cookies = load_cookies_from_oauth()
-    if oauth_cookies:
-        return oauth_cookies
-
-    # 2. YOUTUBE_COOKIES から読み込む（フォールバック）
     raw = os.environ.get("YOUTUBE_COOKIES", "").strip()
     if not raw:
         print(
-            "[エラー] YOUTUBE_COOKIES が未設定で OAuth2 からの取得も失敗しました。\n"
-            "       GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN を\n"
-            "       環境変数に設定するか、YOUTUBE_COOKIES にブラウザクッキーを設定してください。",
+            "[エラー] YOUTUBE_COOKIES が未設定です。\n"
+            "       ブラウザの Cookie-Editor 拡張等でエクスポートした JSON を\n"
+            "       GitHub Secret の YOUTUBE_COOKIES に設定してください。\n"
+            "       ※ 設定手順: YouTube Studio にログインした状態でクッキーをエクスポート",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -337,21 +239,15 @@ def _save_debug_screenshot(page, video_id: str, label: str) -> None:
 def main() -> None:
     print("=== YouTube サムネイル自動設定 (Playwright) ===")
 
-    # 認証情報の確認（OAuth2 または YOUTUBE_COOKIES のいずれかが必要）
-    has_oauth = all([
-        os.environ.get("GOOGLE_CLIENT_ID"),
-        os.environ.get("GOOGLE_CLIENT_SECRET"),
-        os.environ.get("GOOGLE_REFRESH_TOKEN"),
-    ])
-    has_cookies = bool(os.environ.get("YOUTUBE_COOKIES", "").strip())
-
-    if not has_oauth and not has_cookies:
+    # YOUTUBE_COOKIES が必要
+    if not os.environ.get("YOUTUBE_COOKIES", "").strip():
         print(
-            "YOUTUBE_COOKIES も OAuth2 認証情報も未設定のためサムネイル設定をスキップします。\n"
-            "設定方法: GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN を\n"
-            "GitHub Secrets に追加するか、YOUTUBE_COOKIES を設定してください。"
+            "[スキップ] YOUTUBE_COOKIES が未設定のためサムネイル設定をスキップします。\n"
+            "設定方法: ブラウザの Cookie-Editor 拡張でエクスポートした JSON を\n"
+            "GitHub Secret の YOUTUBE_COOKIES に設定してください。",
+            file=sys.stderr,
         )
-        sys.exit(0)
+        sys.exit(1)
 
     if not Path(UPLOAD_RESULTS_JSON).exists():
         print(f"[警告] {UPLOAD_RESULTS_JSON} が見つかりません。スキップします。")
