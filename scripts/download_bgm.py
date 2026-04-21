@@ -2,47 +2,69 @@
 """
 フリーBGMダウンロードスクリプト
 
-AI生成BGMを避けるため、以下の順で人間が演奏したCC0音源のみを取得する:
-  1. Musopen (CC0 クラシック録音): 人間の演奏家によるクラシック音楽
-  2. archive.org (CC0 クラシック・ピアノ・管弦楽): パブリックドメイン演奏
+AI生成BGMを避けるため、人間が演奏したCC0音源のみを使用する:
+  1. Musopen (CC0 クラシック録音): 実演奏家によるクラシック音楽
+  2. archive.org (CC0): パブリックドメインのクラシック・民謡・バロック
+
+毎回プールから3種類をランダム選択してダウンロードし、
+generate_video.py の random.choice() でさらに1つ選ばれる。
 """
 import json
+import random
 import subprocess
-import sys
 import time
 import urllib.request
 import urllib.parse
-import urllib.error
 from pathlib import Path
 
 BGM_DIR = "assets/bgm"
+BGM_SLOT_COUNT = 3  # 1回のワークフローでダウンロードするファイル数
 
 MUSOPEN_API = "https://api.musopen.org"
-
-# AI生成を避けるため、クラシック・ピアノ・管弦楽に限定した検索クエリ
-# 「background music」のような汎用ワードはAI生成を拾うため使用しない
-BGM_SEARCHES = [
-    ("bgm_1", "piano classical solo"),
-    ("bgm_2", "orchestral classical instrumental"),
-    ("bgm_3", "chamber music string quartet"),
-]
-
 CC0_FILTER = 'licenseurl:"https://creativecommons.org/publicdomain/zero/1.0/"'
 
-# ニュース動画向けに穏やかな曲を優先するキーワード
-CALM_KEYWORDS = [
-    "piano", "nocturne", "andante", "adagio", "waltz", "prelude",
-    "minuet", "serenade", "ballade", "impromptu",
-]
-
-# BGMとして不向きなもの（ボーカル入り・非常にテンポが速い）は後回し
-UNSUITABLE_KEYWORDS = [
-    "vocal", "singing", "opera", "presto", "vivace", "march", "fanfare",
+# AI生成を避けるため、実演奏が存在するジャンルに限定した30種類以上のプール
+BGM_QUERY_POOL = [
+    # ピアノ独奏
+    "chopin piano nocturne classical",
+    "beethoven piano sonata classical",
+    "debussy piano impressionist classical",
+    "schubert piano impromptu classical",
+    "schumann piano piece classical",
+    "bach piano prelude fugue",
+    "mozart piano sonata classical",
+    "liszt piano etude classical",
+    "brahms piano intermezzo classical",
+    "ravel piano classical",
+    # 弦楽
+    "string quartet classical chamber",
+    "violin sonata classical chamber",
+    "cello solo classical",
+    "violin concerto baroque classical",
+    "string orchestra classical",
+    # 管弦楽・バロック
+    "classical symphony orchestra",
+    "baroque ensemble harpsichord",
+    "chamber orchestra classical",
+    "flute classical baroque",
+    "organ classical baroque",
+    # ピアノ関連（スタイル別）
+    "waltz piano classical",
+    "ragtime piano 1920s",
+    "minuet classical keyboard",
+    "gavotte baroque harpsichord",
+    "menuetto string quartet classical",
+    # ムード別
+    "andante classical music peaceful",
+    "adagio classical strings calm",
+    "allegretto classical cheerful",
+    "folk traditional instrumental acoustic",
+    "acoustic guitar classical fingerstyle",
 ]
 
 
 def _download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
-    """MP3をダウンロードして音量正規化する。"""
+    """MP3をダウンロードしてffmpegで音量正規化する。"""
     tmp = dest + ".tmp.mp3"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -66,7 +88,6 @@ def _download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
             "-c:a", "libmp3lame", "-b:a", "128k", "-ac", "2",
             dest,
         ], check=True, capture_output=True)
-        Path(tmp).unlink(missing_ok=True)
         print(f"  正規化完了: {dest}")
         return True
     except subprocess.CalledProcessError:
@@ -79,12 +100,13 @@ def _download_and_normalize(url: str, dest: str, timeout: int = 120) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Source 1: Musopen (CC0 クラシック録音)
+# Source 1: Musopen (CC0 クラシック録音・人間演奏確定)
 # ---------------------------------------------------------------------------
 
-def try_musopen(dest: str) -> bool:
-    """Musopen からCC0クラシック音楽を取得する（人間演奏確定）。"""
-    print("  [Musopen] CC0クラシック録音を検索中...")
+def try_musopen(dest: str, query: str) -> bool:
+    """Musopen から query に関連するCC0クラシック音楽を取得する。"""
+    keywords = [w for w in query.lower().split() if len(w) > 3]
+    print(f"  [Musopen] CC0クラシック録音を検索中 (keywords: {keywords[:4]})...")
     try:
         url = f"{MUSOPEN_API}/recordings?" + urllib.parse.urlencode({
             "limit": 50,
@@ -99,18 +121,16 @@ def try_musopen(dest: str) -> bool:
             return False
         print(f"  [Musopen] {len(recordings)} 件取得")
 
-        # ニュース向け穏やかな曲を優先
-        calm = [r for r in recordings if any(
-            kw in r.get("title", "").lower() for kw in CALM_KEYWORDS
+        # クエリキーワードに近い曲を優先、それ以外はシャッフル
+        matched = [r for r in recordings if any(
+            kw in r.get("title", "").lower() for kw in keywords
         )]
-        unsuitable = [r for r in recordings if any(
-            kw in r.get("title", "").lower() for kw in UNSUITABLE_KEYWORDS
-        )]
-        neutral = [r for r in recordings if r not in calm and r not in unsuitable]
-        ordered = calm + neutral + unsuitable
-        print(f"  [Musopen] 穏やか={len(calm)}, ニュートラル={len(neutral)}, 不適={len(unsuitable)}")
+        others = [r for r in recordings if r not in matched]
+        random.shuffle(matched)
+        random.shuffle(others)
+        ordered = matched + others
 
-        for rec in ordered[:15]:
+        for rec in ordered[:12]:
             file_url = rec.get("file") or rec.get("url")
             if not file_url:
                 continue
@@ -126,11 +146,10 @@ def try_musopen(dest: str) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Source 2: archive.org (CC0 クラシック・管弦楽)
+# Source 2: archive.org (CC0 クラシック・民謡・バロック)
 # ---------------------------------------------------------------------------
 
-def search_archive(query: str, rows: int = 20) -> list[str]:
-    """archive.org でCC0限定のクラシック音楽を検索する。"""
+def _search_archive(query: str, rows: int = 20) -> list[str]:
     params = urllib.parse.urlencode({
         "q": f"({query}) AND mediatype:audio AND format:MP3 AND {CC0_FILTER}",
         "fl": "identifier",
@@ -144,15 +163,14 @@ def search_archive(query: str, rows: int = 20) -> list[str]:
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read())
         ids = [doc["identifier"] for doc in data.get("response", {}).get("docs", [])]
-        print(f"  CC0検索結果: {len(ids)} 件")
+        print(f"  [archive.org] CC0検索結果: {len(ids)} 件")
         return ids
     except Exception as e:
-        print(f"  [警告] archive.org 検索失敗: {e}")
+        print(f"  [archive.org] 検索失敗: {e}")
         return []
 
 
-def get_mp3_files(identifier: str) -> list[str]:
-    """アイテムのファイル一覧からMP3のURLを返す。"""
+def _get_mp3_files(identifier: str) -> list[str]:
     url = f"https://archive.org/metadata/{identifier}/files"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -166,19 +184,19 @@ def get_mp3_files(identifier: str) -> list[str]:
             and 100_000 < int(f.get("size", 0)) < 30_000_000
         ]
     except Exception as e:
-        print(f"  [警告] ファイル一覧取得失敗 ({identifier}): {e}")
+        print(f"  [archive.org] ファイル一覧取得失敗 ({identifier}): {e}")
         return []
 
 
 def try_archive(dest: str, query: str) -> bool:
-    """archive.org CC0から指定クエリでBGMを取得する。"""
-    identifiers = search_archive(query)
+    identifiers = _search_archive(query)
+    random.shuffle(identifiers)  # 毎回違うファイルが選ばれるよう
     for identifier in identifiers[:8]:
-        mp3_urls = get_mp3_files(identifier)
+        mp3_urls = _get_mp3_files(identifier)
         if not mp3_urls:
             continue
-        url = mp3_urls[0]
-        print(f"  試行: {identifier} → {Path(url).name[:50]}")
+        url = random.choice(mp3_urls)
+        print(f"  [archive.org] 試行: {identifier}")
         if _download_and_normalize(url, dest):
             return True
         time.sleep(1)
@@ -192,9 +210,16 @@ def try_archive(dest: str, query: str) -> bool:
 def main():
     Path(BGM_DIR).mkdir(parents=True, exist_ok=True)
 
+    # 毎回プールからランダムにBGM_SLOT_COUNT種類を選択
+    selected_queries = random.sample(BGM_QUERY_POOL, BGM_SLOT_COUNT)
+    print(f"今回のBGMスタイル: {selected_queries}")
+
     success = 0
-    for name, query in BGM_SEARCHES:
+    for i, query in enumerate(selected_queries, 1):
+        name = f"bgm_{i}"
         dest_mp3 = f"{BGM_DIR}/{name}.mp3"
+        # GitHub Actions では毎回新規ダウンロードだが、
+        # ローカル多重実行時は既存をスキップ
         if Path(dest_mp3).exists():
             size_kb = Path(dest_mp3).stat().st_size // 1024
             print(f"{name}.mp3 は既存のためスキップ ({size_kb} KB)")
@@ -203,14 +228,12 @@ def main():
 
         print(f"\n--- {name}: 「{query}」（CC0・人間演奏限定）---")
 
-        # Source 1: Musopen（人間演奏のCC0クラシック確定）
-        print(f"  ソース1: Musopen（CC0・クラシック）...")
-        if try_musopen(dest_mp3):
+        print("  ソース1: Musopen（CC0・実演奏クラシック）...")
+        if try_musopen(dest_mp3, query):
             success += 1
             continue
 
-        # Source 2: archive.org CC0 クラシック
-        print(f"  ソース2: archive.org CC0クラシック...")
+        print(f"  ソース2: archive.org CC0...")
         if try_archive(dest_mp3, query):
             success += 1
             continue
@@ -218,8 +241,7 @@ def main():
         print(f"  [警告] {name} のBGM取得失敗。BGMなしで続行します。")
         time.sleep(2)
 
-    print(f"\n=== BGM取得完了: {success}/{len(BGM_SEARCHES)} 件 ===")
-    # BGMが0件でも動画生成は続行できるため exit 1 しない
+    print(f"\n=== BGM取得完了: {success}/{BGM_SLOT_COUNT} 件 ===")
 
 
 if __name__ == "__main__":
