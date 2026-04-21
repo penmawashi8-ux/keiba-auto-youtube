@@ -1,10 +1,10 @@
-date: 2026-04-20T12:15:03.363784Z
+date: 2026-04-21T00:05:20.270294Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qmIghCvtFwg title=【名古屋競馬】山田祥雄騎手が地方通算1000勝達成　20日9Rのジョーテルプジで
-OK project=1 video_id=loh-nZQtIRQ title=【チャンピオンズマイル】24年の香港マイルは13着...日本最強マイラーとなった
-OK project=1 video_id=EH517e1w-w0 title=【QE2世C】歴代獲得賞金世界トップのロマンチックウォリアー フォーエバーヤング
+OK project=1 video_id=unUE-uLYWtA title=【青葉賞】叔父はGI・3勝のクロワデュノール タイダルロックが重賞初制覇狙う
+OK project=1 video_id=O0CZJGOrRDk title=あす浦和競馬11R「報知杯しらさぎ賞」力が違うホーリーグレイル
+OK project=1 video_id=3kLzvvY3Cy0 title=【香港・チェアマンズSP】世界史上最強スプリンターに挑む日本短距離王サトノレーヴ
