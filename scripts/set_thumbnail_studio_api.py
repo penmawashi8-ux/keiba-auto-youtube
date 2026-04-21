@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""YouTube Studio 内部 API でサムネイルを動画先頭フレームに設定する。
+"""YouTube サムネイルを自動設定する（2段階フォールバック）。
 
-Playwright もクッキーも不要。OAuth2 リフレッシュトークンのみで動作する。
-スチル選択（動画フレームから選ぶ）方式のため、チャンネル登録者数に関係なく
-全チャンネルで利用可能（カスタム画像アップロードの 1,000 人要件は不要）。
+手法1: thumbnails().set() 公式API（画像アップロード）
+  → チャンネル認証済みかつ要件を満たす場合に成功
+
+手法2: YouTube Studio 内部API（スチル選択）
+  → 公式APIが channelNotEligible で失敗した場合のフォールバック
 
 必要な環境変数:
   GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN
@@ -20,6 +22,8 @@ import google.auth.transport.requests
 import requests
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from googleapiclient.http import MediaFileUpload
 
 UPLOAD_RESULTS_JSON = "output/upload_results.json"
 
@@ -28,11 +32,9 @@ YOUTUBE_SCOPES = [
     "https://www.googleapis.com/auth/youtube.force-ssl",
 ]
 
-# YouTube Studio の JS に埋め込まれている公開 API キー
 _STUDIO_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"
 _STUDIO_BASE = "https://studio.youtube.com/youtubei/v1"
 
-# upload_youtube.py と同じ複数プロジェクト構成（トークン期限切れ時のフォールバック用）
 _CREDENTIAL_SETS = [
     ("GOOGLE_CLIENT_ID",   "GOOGLE_CLIENT_SECRET",   "GOOGLE_REFRESH_TOKEN"),
     ("GOOGLE_CLIENT_ID_2", "GOOGLE_CLIENT_SECRET_2", "GOOGLE_REFRESH_TOKEN_2"),
@@ -41,7 +43,6 @@ _CREDENTIAL_SETS = [
 
 
 def _get_credentials() -> Credentials:
-    """有効な OAuth2 認証情報を返す。プロジェクト1が失敗した場合は2→3と試みる。"""
     for id_key, secret_key, token_key in _CREDENTIAL_SETS:
         client_id = os.environ.get(id_key)
         client_secret = os.environ.get(secret_key)
@@ -62,7 +63,6 @@ def _get_credentials() -> Credentials:
             return creds
         except Exception as e:
             print(f"[警告] トークンリフレッシュ失敗 ({id_key}): {e}", file=sys.stderr)
-            continue
 
     print("[エラー] 有効な OAuth2 認証情報が見つかりませんでした", file=sys.stderr)
     sys.exit(1)
@@ -76,6 +76,40 @@ def _get_channel_id(creds: Credentials) -> str:
         raise RuntimeError("チャンネルが見つかりません")
     return items[0]["id"]
 
+
+# ---------------------------------------------------------------------------
+# 手法1: 公式 thumbnails().set() API
+# ---------------------------------------------------------------------------
+
+def try_official_thumbnail_set(
+    creds: Credentials,
+    video_id: str,
+    thumb_path: str,
+) -> tuple[bool, str]:
+    """公式 API で画像をサムネイルとしてアップロードする。"""
+    if not Path(thumb_path).exists():
+        return False, f"thumbnail file not found: {thumb_path}"
+
+    youtube = build("youtube", "v3", credentials=creds)
+    media = MediaFileUpload(thumb_path, mimetype="image/jpeg", resumable=False)
+    try:
+        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        return True, "thumbnails().set() 成功"
+    except HttpError as e:
+        body = e.content.decode("utf-8", errors="replace")
+        try:
+            reason = json.loads(body)["error"]["errors"][0].get("reason", "")
+        except Exception:
+            reason = ""
+        msg = f"HTTP {e.resp.status} reason={reason}: {body[:300]}"
+        return False, msg
+    except Exception as e:
+        return False, str(e)
+
+
+# ---------------------------------------------------------------------------
+# 手法2: YouTube Studio 内部 API（スチル選択）
+# ---------------------------------------------------------------------------
 
 def _studio_headers(access_token: str) -> dict:
     return {
@@ -95,36 +129,19 @@ def _studio_headers(access_token: str) -> dict:
 def _build_context(channel_id: str) -> dict:
     today = datetime.datetime.utcnow().strftime("%Y%m%d")
     return {
-        "client": {
-            "clientName": "WEB_CREATOR",
-            "clientVersion": f"1.{today}.01.00",
-            "hl": "ja",
-            "gl": "JP",
-        },
-        "user": {
-            "onBehalfOfUser": channel_id,
-        },
+        "client": {"clientName": "WEB_CREATOR", "clientVersion": f"1.{today}.01.00", "hl": "ja", "gl": "JP"},
+        "user": {"onBehalfOfUser": channel_id},
     }
 
 
 def _build_context_delegation(channel_id: str) -> dict:
-    """delegationContext 形式（旧フォーマット、フォールバック用）。"""
     today = datetime.datetime.utcnow().strftime("%Y%m%d")
     return {
-        "client": {
-            "clientName": "WEB_CREATOR",
-            "clientVersion": f"1.{today}.01.00",
-            "hl": "ja",
-            "gl": "JP",
-        },
-        "user": {
-            "delegationContext": {
-                "externalChannelId": channel_id,
-                "roleType": {
-                    "channelRoleType": "CREATOR_CHANNEL_ROLE_TYPE_OWNER"
-                },
-            }
-        },
+        "client": {"clientName": "WEB_CREATOR", "clientVersion": f"1.{today}.01.00", "hl": "ja", "gl": "JP"},
+        "user": {"delegationContext": {
+            "externalChannelId": channel_id,
+            "roleType": {"channelRoleType": "CREATOR_CHANNEL_ROLE_TYPE_OWNER"},
+        }},
     }
 
 
@@ -133,73 +150,104 @@ def _post(url, params, headers, payload) -> tuple[int, str]:
     return resp.status_code, resp.text[:800]
 
 
-def _try_all_formats(headers, ctx, ctx_d, params, video_id, time_ms) -> tuple[bool, str, dict]:
-    """5種のフォーマットを試す。成功フラグ・メッセージ・ボディ辞書を返す。"""
+def _try_studio_formats(access_token, channel_id, video_id, time_ms) -> tuple[bool, str, dict]:
+    headers = _studio_headers(access_token)
+    ctx = _build_context(channel_id)
+    ctx_d = _build_context_delegation(channel_id)
+    params = {"alt": "json", "key": _STUDIO_KEY}
     url = f"{_STUDIO_BASE}/video_manager/metadata_update"
     bodies = {}
 
     trials = [
-        ("1", {"context": ctx,   "encryptedVideoId": video_id, "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
-        ("2", {"context": ctx,   "encryptedVideoId": video_id, "videoMetadata": {"thumbnail": {"stillImageTime": time_ms}}}),
-        ("3", {"context": ctx,   "encryptedVideoId": video_id, "updatedMetadata": {"thumbnail": {"videoStill": {"operation": "SET_TIME", "timeMs": time_ms}}}}),
-        ("4", {"context": ctx_d, "encryptedVideoId": video_id, "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
-        ("5", {"context": ctx,   "videoId": video_id,          "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
+        ("1-obu-thumbnailDetails", ctx,   {"encryptedVideoId": video_id, "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
+        ("2-obu-thumbnail",        ctx,   {"encryptedVideoId": video_id, "videoMetadata": {"thumbnail": {"stillImageTime": time_ms}}}),
+        ("3-obu-videoStill",       ctx,   {"encryptedVideoId": video_id, "updatedMetadata": {"thumbnail": {"videoStill": {"operation": "SET_TIME", "timeMs": time_ms}}}}),
+        ("4-obu-videoId",          ctx,   {"videoId": video_id,          "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
+        ("5-del-thumbnailDetails", ctx_d, {"encryptedVideoId": video_id, "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
     ]
-    for label, payload in trials:
+    for label, context, extra in trials:
+        payload = {"context": context, **extra}
         sc, body = _post(url, params, headers, payload)
-        bodies[label] = body
+        bodies[label] = {"status": sc, "body": body}
         if sc == 200:
-            return True, f"HTTP {sc} (形式{label})", bodies
-        print(f"  [試行{label}] HTTP {sc}: {body}", file=sys.stderr)
+            return True, f"Studio API HTTP {sc} (形式{label})", bodies
+        print(f"  [Studio {label}] HTTP {sc}: {body[:200]}", file=sys.stderr)
 
     return False, "", bodies
 
 
-def set_thumbnail_by_timestamp(
-    access_token: str,
+def try_studio_api(
+    creds: Credentials,
     channel_id: str,
     video_id: str,
     time_ms: int = 500,
     max_retries: int = 3,
     retry_wait: int = 90,
-) -> tuple[bool, str]:
-    """動画の指定タイムスタンプのフレームをサムネイルに設定する。
-
-    HTTP 500（動画処理中）の場合は retry_wait 秒待機してリトライする。
-    """
-    headers = _studio_headers(access_token)
-    ctx = _build_context(channel_id)
-    ctx_d = _build_context_delegation(channel_id)
-    params = {"alt": "json", "key": _STUDIO_KEY}
-
+) -> tuple[bool, str, dict]:
+    """Studio 内部 API でスチル選択。HTTP 500 の場合はリトライ。"""
+    all_bodies = {}
     for attempt in range(1, max_retries + 1):
         if attempt > 1:
-            print(f"  [{attempt}回目] {retry_wait}秒待機後にリトライ...")
+            print(f"  [Studio リトライ {attempt}/{max_retries}] {retry_wait}秒待機...")
             time.sleep(retry_wait)
 
-        ok, msg, bodies = _try_all_formats(headers, ctx, ctx_d, params, video_id, time_ms)
+        ok, msg, bodies = _try_studio_formats(creds.token, channel_id, video_id, time_ms)
+        all_bodies.update(bodies)
         if ok:
-            return True, msg
+            return True, msg, all_bodies
 
-        # 全試行が 500 なら動画処理待ちの可能性 → リトライ
-        all_500 = all("500" in b or '"INTERNAL"' in b for b in bodies.values())
+        all_500 = all(b.get("status") == 500 for b in bodies.values())
         if not all_500 or attempt == max_retries:
             break
-        print(f"  全試行 HTTP 500（動画処理中の可能性）。リトライします ({attempt}/{max_retries})")
+        print(f"  全試行 HTTP 500。リトライします ({attempt}/{max_retries})")
 
-    _save_debug_log(video_id, bodies)
-    return False, f"全試行失敗（output/debug_studio_api_{video_id}.json を確認してください）"
+    return False, "Studio API 全試行失敗", all_bodies
+
+
+# ---------------------------------------------------------------------------
+# メイン
+# ---------------------------------------------------------------------------
+
+def set_thumbnail(
+    creds: Credentials,
+    channel_id: str,
+    video_id: str,
+    thumb_path: str,
+) -> bool:
+    """手法1→手法2の順で試す。"""
+    # 手法1: 公式 API
+    print("  [手法1] thumbnails().set() を試みます...")
+    ok, msg = try_official_thumbnail_set(creds, video_id, thumb_path)
+    if ok:
+        print(f"  ✅ 手法1 成功: {msg}")
+        return True
+    print(f"  [手法1] 失敗: {msg}", file=sys.stderr)
+
+    # channelNotEligible / forbidden 以外のエラーでも手法2を試す
+    # 手法2: Studio 内部 API
+    print("  [手法2] Studio 内部 API を試みます...")
+    ok, msg, bodies = try_studio_api(creds, channel_id, video_id)
+    if ok:
+        print(f"  ✅ 手法2 成功: {msg}")
+        return True
+
+    print(f"  [手法2] 失敗: {msg}", file=sys.stderr)
+    _save_debug_log(video_id, {
+        "method1": {"result": "failed", "msg": msg},
+        "method2": bodies,
+    })
+    return False
 
 
 def _save_debug_log(video_id: str, data: dict) -> None:
     Path("output").mkdir(exist_ok=True)
-    path = Path(f"output/debug_studio_api_{video_id}.json")
+    path = Path(f"output/debug_thumbnail_{video_id}.json")
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"  [デバッグ] レスポンスを保存: {path}", file=sys.stderr)
+    print(f"  [デバッグ] ログ保存: {path}", file=sys.stderr)
 
 
 def main() -> None:
-    print("=== YouTube サムネイル設定 (Studio 内部 API) ===")
+    print("=== YouTube サムネイル自動設定 ===")
 
     if not Path(UPLOAD_RESULTS_JSON).exists():
         print(f"[警告] {UPLOAD_RESULTS_JSON} が見つかりません。スキップします。")
@@ -211,32 +259,23 @@ def main() -> None:
         print("video_id が見つかりません。スキップします。")
         sys.exit(0)
 
-    print(f"サムネイル設定対象: {len(targets)} 件")
+    print(f"対象: {len(targets)} 件")
 
     creds = _get_credentials()
-    print("OAuth2 トークン取得成功")
-
     channel_id = _get_channel_id(creds)
     print(f"チャンネル ID: {channel_id}")
 
     success_count = 0
     for entry in targets:
         video_id = entry["video_id"]
+        thumb_path = entry.get("thumbnail", "")
         title = entry.get("title", "")[:50]
-
         print(f"\n--- {video_id} / {title} ---")
-        ok, msg = set_thumbnail_by_timestamp(
-            access_token=creds.token,
-            channel_id=channel_id,
-            video_id=video_id,
-            time_ms=500,
-        )
 
-        if ok:
+        if set_thumbnail(creds, channel_id, video_id, thumb_path):
             success_count += 1
-            print(f"  ✅ 完了: {msg}")
         else:
-            print(f"  ❌ 失敗: {msg}", file=sys.stderr)
+            print(f"  ❌ 失敗: {video_id}", file=sys.stderr)
 
     print(f"\n=== 完了: {success_count}/{len(targets)} 件 ===")
     if success_count < len(targets):
