@@ -261,7 +261,8 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
         "image_type": "photo",
         "category": "animals",
         "min_width": 640,
-        "per_page": 20,
+        "per_page": 200,
+        "order": "latest",
         "safesearch": "true",
     }
     try:
