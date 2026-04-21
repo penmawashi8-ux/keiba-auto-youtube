@@ -13,6 +13,7 @@ import datetime
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 import google.auth.transport.requests
@@ -132,79 +133,61 @@ def _post(url, params, headers, payload) -> tuple[int, str]:
     return resp.status_code, resp.text[:800]
 
 
+def _try_all_formats(headers, ctx, ctx_d, params, video_id, time_ms) -> tuple[bool, str, dict]:
+    """5種のフォーマットを試す。成功フラグ・メッセージ・ボディ辞書を返す。"""
+    url = f"{_STUDIO_BASE}/video_manager/metadata_update"
+    bodies = {}
+
+    trials = [
+        ("1", {"context": ctx,   "encryptedVideoId": video_id, "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
+        ("2", {"context": ctx,   "encryptedVideoId": video_id, "videoMetadata": {"thumbnail": {"stillImageTime": time_ms}}}),
+        ("3", {"context": ctx,   "encryptedVideoId": video_id, "updatedMetadata": {"thumbnail": {"videoStill": {"operation": "SET_TIME", "timeMs": time_ms}}}}),
+        ("4", {"context": ctx_d, "encryptedVideoId": video_id, "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
+        ("5", {"context": ctx,   "videoId": video_id,          "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}}}),
+    ]
+    for label, payload in trials:
+        sc, body = _post(url, params, headers, payload)
+        bodies[label] = body
+        if sc == 200:
+            return True, f"HTTP {sc} (形式{label})", bodies
+        print(f"  [試行{label}] HTTP {sc}: {body}", file=sys.stderr)
+
+    return False, "", bodies
+
+
 def set_thumbnail_by_timestamp(
     access_token: str,
     channel_id: str,
     video_id: str,
     time_ms: int = 500,
+    max_retries: int = 3,
+    retry_wait: int = 90,
 ) -> tuple[bool, str]:
-    """動画の指定タイムスタンプのフレームをサムネイルに設定する。"""
+    """動画の指定タイムスタンプのフレームをサムネイルに設定する。
+
+    HTTP 500（動画処理中）の場合は retry_wait 秒待機してリトライする。
+    """
     headers = _studio_headers(access_token)
     ctx = _build_context(channel_id)
     ctx_d = _build_context_delegation(channel_id)
     params = {"alt": "json", "key": _STUDIO_KEY}
-    url = f"{_STUDIO_BASE}/video_manager/metadata_update"
 
-    bodies = {}
+    for attempt in range(1, max_retries + 1):
+        if attempt > 1:
+            print(f"  [{attempt}回目] {retry_wait}秒待機後にリトライ...")
+            time.sleep(retry_wait)
 
-    # 試行1: onBehalfOfUser + thumbnailDetails.stillImageTime (readMask なし)
-    sc, body = _post(url, params, headers, {
-        "context": ctx,
-        "encryptedVideoId": video_id,
-        "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}},
-    })
-    bodies["1"] = body
-    if sc == 200:
-        return True, f"HTTP {sc} (形式1)"
-    print(f"  [試行1] HTTP {sc}: {body}", file=sys.stderr)
+        ok, msg, bodies = _try_all_formats(headers, ctx, ctx_d, params, video_id, time_ms)
+        if ok:
+            return True, msg
 
-    # 試行2: onBehalfOfUser + thumbnail.stillImageTime (readMask なし)
-    sc, body = _post(url, params, headers, {
-        "context": ctx,
-        "encryptedVideoId": video_id,
-        "videoMetadata": {"thumbnail": {"stillImageTime": time_ms}},
-    })
-    bodies["2"] = body
-    if sc == 200:
-        return True, f"HTTP {sc} (形式2)"
-    print(f"  [試行2] HTTP {sc}: {body}", file=sys.stderr)
+        # 全試行が 500 なら動画処理待ちの可能性 → リトライ
+        all_500 = all("500" in b or '"INTERNAL"' in b for b in bodies.values())
+        if not all_500 or attempt == max_retries:
+            break
+        print(f"  全試行 HTTP 500（動画処理中の可能性）。リトライします ({attempt}/{max_retries})")
 
-    # 試行3: onBehalfOfUser + updatedMetadata.thumbnail.videoStill
-    sc, body = _post(url, params, headers, {
-        "context": ctx,
-        "encryptedVideoId": video_id,
-        "updatedMetadata": {"thumbnail": {"videoStill": {"operation": "SET_TIME", "timeMs": time_ms}}},
-    })
-    bodies["3"] = body
-    if sc == 200:
-        return True, f"HTTP {sc} (形式3)"
-    print(f"  [試行3] HTTP {sc}: {body}", file=sys.stderr)
-
-    # 試行4: delegationContext + thumbnailDetails.stillImageTime (readMask なし)
-    sc, body = _post(url, params, headers, {
-        "context": ctx_d,
-        "encryptedVideoId": video_id,
-        "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}},
-    })
-    bodies["4"] = body
-    if sc == 200:
-        return True, f"HTTP {sc} (形式4)"
-    print(f"  [試行4] HTTP {sc}: {body}", file=sys.stderr)
-
-    # 試行5: onBehalfOfUser + videoId (encryptedVideoId でなく videoId)
-    sc, body = _post(url, params, headers, {
-        "context": ctx,
-        "videoId": video_id,
-        "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}},
-    })
-    bodies["5"] = body
-    if sc == 200:
-        return True, f"HTTP {sc} (形式5)"
-    print(f"  [試行5] HTTP {sc}: {body}", file=sys.stderr)
-
-    # すべて失敗 → ログを保存して原因調査に役立てる
     _save_debug_log(video_id, bodies)
-
     return False, f"全試行失敗（output/debug_studio_api_{video_id}.json を確認してください）"
 
 

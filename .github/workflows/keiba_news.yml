@@ -204,6 +204,10 @@ jobs:
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: python scripts/upload_youtube.py
 
+      - name: Wait for YouTube video processing
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        run: sleep 120
+
       - name: Set thumbnails via YouTube Studio API
         if: steps.check_scripts.outputs.has_scripts == 'true'
         continue-on-error: true
