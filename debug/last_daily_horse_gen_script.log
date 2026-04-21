@@ -14,143 +14,58 @@
   - トウカイテイオー (tokai_teio)
 
 [名馬選定・脚本生成・ファクトチェック中...]
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: テイエムオペラオー
-HORSE_KEY: tm_opera_o
+HORSE_NAME: ディープインパクト
+HORSE_KEY: deep_impact
 ERA: 2000年代
-CATCHPHRASE: 伝説の黒馬
-
+CATCHPHRASE: 飛ぶような走りで三冠を制した伝説
 ---SCRIPT---
-スタートラインで、GⅠ馬が24連敗した。
-その馬の名前、テイエムオペラオー。
-2001年の天皇賞（秋）で、初めてGⅠを制覇。
-しかし、その後のレースで、苦戦が続いた。
-2003年のサウジアラビア国際競馬クラシックで、16着。
-2004年の天皇賞（秋）では、11着と大きく落ちた。
-それでも陣営は諦めなかった。
-2005年の天皇賞（秋）で、再びGⅠを制す。
-58秒2の1600m平コースレコードを更新。
-着差は3馬身。
-その圧倒的な強さで、競馬ファンを魅了した。
-2006年の天皇賞（秋）も制覇。
-2007年のオークスで、母のテイエムオペラハウスに短差で敗れる。
-しかし、その年の有馬記念では、2着と好走。
-2008年の天皇賞（秋）も制覇。
-GⅠ連続勝利は、史上初。
-2009年、引退レースの有馬記念で、再びGⅠを制覇。
-生涯GⅠ勝利は6度。
-2009年11月22日、引退。
-「競馬は、心と体で戦うものだ」
-その言葉は、今も多くの馬に生きる。
+無敗でクラシック三冠を達成した馬がいる
+その名はディープインパクト
+2005年 皐月賞をレコードで勝利
+2分00秒9
+日本ダービーも制し 無敗の二冠馬に
+そして菊花賞
+ハーツクライとの壮絶な叩き合いをクビ差で制し
+史上6頭目の無敗三冠を達成した
+翌2006年 世界最高峰の凱旋門賞に挑戦
+結果は3着も後に失格となる
+だが国内では敵なし
+引退レースとなった2006年有馬記念
+後続を3馬身引き離す圧巻の勝利で
+G1 7勝目を飾った
+彼の蹄跡は 伝説として今も語り継がれる
 ---END---...
 
-[選定完了] 馬名: テイエムオペラオー  キー: tm_opera_o_2
+[選定完了] 馬名: ディープインパクト  キー: deep_impact
 [最終脚本]
-スタートラインで、GⅠ馬が24連敗した。
-その馬の名前、テイエムオペラオー。
-2001年の天皇賞（秋）で、初めてGⅠを制覇。
-しかし、その後のレースで、苦戦が続いた。
-2003年のサウジアラビア国際競馬クラシックで、16着。
-2004年の天皇賞（秋）では、11着と大きく落ちた。
-それでも陣営は諦めなかった。
-2005年の天皇賞（秋）で、再びGⅠを制す。
-58秒2の1600m平コースレコードを更新。
-着差は3馬身。
-その圧倒的な強さで、競馬ファンを魅了した。
-2006年の天皇賞（秋）も制覇。
-2007年のオークスで、母のテイエムオペラハウスに短差で敗れる。
-しかし、その年の有馬記念では、2着と好走。
-2008年の天皇賞（秋）も制覇。
-GⅠ連続勝利は、史上初。
-2009年、引退レースの有馬記念で、再びGⅠを制覇。
-生涯GⅠ勝利は6度。
-2009年11月22日、引退。
-「競馬は、心と体で戦うものだ」
-その言葉は、今も多くの馬に生きる。
+無敗でクラシック三冠を達成した馬がいる
+その名はディープインパクト
+2005年 皐月賞をレコードで勝利
+2分00秒9
+日本ダービーも制し 無敗の二冠馬に
+そして菊花賞
+ハーツクライとの壮絶な叩き合いをクビ差で制し
+史上6頭目の無敗三冠を達成した
+翌2006年 世界最高峰の凱旋門賞に挑戦
+結果は3着も後に失格となる
+だが国内では敵なし
+引退レースとなった2006年有馬記念
+後続を3馬身引き離す圧巻の勝利で
+G1 7勝目を飾った
+彼の蹄跡は 伝説として今も語り継がれる
 
 [20秒待機中（レート制限対策）...]
 [メタデータ生成中...]
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [メタデータ応答]
-TAGS: テイエムオペラオー, 天皇賞秋, 有馬記念, 競馬, 2000年代, レコード, 6度GⅠ, 引退
-THUMBNAIL_TOP: 伝説のオペラオー
-THUMBNAIL_MAIN: 24連敗からのGⅠ6勝
+TAGS: ディープインパクト, 無敗三冠, 皐月賞, 日本ダービー, 菊花賞, 有馬記念, 凱旋門賞, 伝説
+THUMBNAIL_TOP: 伝説の
+THUMBNAIL_MAIN: 無敗の三冠馬
 
 
 [名馬データ保存]
-  data/famous_horses/tm_opera_o_2.txt
-  data/famous_horses/tm_opera_o_2.json
+  data/famous_horses/deep_impact.txt
+  data/famous_horses/deep_impact.json
 [パイプライン用ファイル書き出し]
-  news.json: タイトル「テイエムオペラオー」
-  output/script_0.txt: 420 文字
+  news.json: タイトル「ディープインパクト」
+  output/script_0.txt: 234 文字
