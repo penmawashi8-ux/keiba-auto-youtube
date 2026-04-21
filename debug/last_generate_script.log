@@ -5,27 +5,43 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 皐月賞7着グリーンエナジー　ダービーへ上原佑師前向き「左回りの方がぴったり…逆転可能と思います」 ---
-[0] Gemini入力本文 408文字: '2番人気の皐月賞で7着だったグリーンエナジー(牡3＝上原佑)はダービー(5月31日、東京)で巻き返しを期すことになった。\n\u300021日、上原佑師は「最後で内にモタれて、京成杯もモタれは少しあったんですけど、それが顕著に出てしまいました。距離はも'
+--- 記事[0]: ジーティーアツモリなど、先週のゲート試験/栗東トレセンニュース ---
+[0] Gemini入力本文 525文字: '先々週に比べると、ゲート合格の頭数が減った先週のゲート試験。そんな中でも注目馬は多数いて、ルーラーシップ産駒のジーティーアツモリ(栗東・橋口慎介厩舎)は2025年セレクトセール1歳にて、7600万円(税抜き)で落札されている。\n\u3000祖母にアル'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【注目馬動向】昨年の菊花賞6着ミラージュナイトは目黒記念を視野　アンタレスSで2着のモックモックは三宮Sへ ---
-[1] Gemini入力本文 341文字: '昨年の菊花賞6着で、飛鳥Sを勝ったミラージュナイト(牡4歳、栗東・辻野泰之厩舎、父バゴ)は目黒記念(5月31日、東京競馬場・芝2500メートル)を視野に入れる。\n\t\t\t\t\u3000アンタレスSで2着のモックモックは三宮S(6月13日、阪神)へ向かう'
+--- 記事[1]: コンサートホールの2024(エルドボルグ)など、先週の入厩情報/栗東トレセンニュース ---
+[1] Gemini入力本文 340文字: '先々週の桜花賞、先週の皐月賞と3歳クラシックが行われているが、来年のクラシックを目指す2歳馬が続々と入厩している栗東。先週もPOGで人気を集めそうな馬たちが入厩しているが、その中でも注目しているのが、4月17日にノーザンファームしがらき(滋'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【注目馬動向】デビューから無傷2連勝でチャーチルダウンズCを勝利　アスクイキゴミはNHKマイルCへ ---
-[2] Gemini入力本文 297文字: '4月4日のチャーチルダウンズC・G3を勝ったアスクイキゴミ(牡3歳、栗東・藤原英昭厩舎、父ロードカナロア)は優先出走権を得たNHKマイルC・G1(5月10日、東京競馬場・芝1600メートル)に向かう。\n\t\t\t\t\u3000同馬は2月の新馬戦(東京・芝'
+--- 記事[2]: 皐月賞2着リアライズシリウスは次走ダービー　手塚久師「東京に替わるのはプラス。偶数の内枠が引ければ」 ---
+[2] Gemini入力本文 342文字: '皐月賞2着のリアライズシリウス(牡3＝手塚久)は予定通り、ダービー(5月31日、東京)に向かうことが決まった。21日、手塚久師は「頑張ってくれました。レース後も全然大丈夫です。木曜(23日)に放牧に出します」と今後の方針を明かした。\n\u3000次走'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -42,20 +58,44 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 189文字]: '4月4日のチャーチルダウンズC・G3を勝利したアスクイキゴミは、NHKマイルC・G1に向かいます。アスクイキゴミは、優先出走権を得たこのNHKマイルC・G1に参戦する予定です。このレースは5月10日に東京競馬場の芝1600メートルで行われます。同馬は2月の新馬戦でデビュー勝ちを収めています。重賞初挑戦だったチャーチルダウンズCでも勝利し、デビューから無傷の2連勝を飾りました。'
-[2]  → output/script_2.txt 保存 (189文字)
-[2]  プレビュー: 4月4日のチャーチルダウンズC・G3を勝利したアスクイキゴミは、NHKマイルC・G1に向かいます。アスクイキゴミは、優先出走権を得たこのNHKマイルC・G1に参...
+[2]  [Gemini生出力 286文字]: '皐月賞で2着だったリアライズシリウスは、予定通りダービーに向かうことが決まりました。ダービーは5月31日に東京で開催されます。手塚久師は21日、「頑張ってくれました。レース後も全然大丈夫です。木曜に放牧に出します」と今後の方針を明かしました。次走のダービーは、共同通信杯でロブチェンを負かした東京に戻ります。東京コースはリアライズシリウスにとって2戦2勝の得意コースです。手塚久師は「東京に替わるのはプラス。偶数の内枠が引ければ」と期待を語りました。また、皐月賞については「勝った馬が強かった」と振り返り、「400メートル延長は全く気にしていません」とコメントしています。'
+[2]  → output/script_2.txt 保存 (286文字)
+[2]  プレビュー: 皐月賞で2着だったリアライズシリウスは、予定通りダービーに向かうことが決まりました。ダービーは5月31日に東京で開催されます。手塚久師は21日、「頑張ってくれま...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 242文字]: '2番人気の皐月賞で7着だったグリーンエナジーは、5月31日に東京競馬場で行われるダービーでの巻き返しを期すことになりました。上原佑師は21日、皐月賞で最後に内にモタれたこと、京成杯でもモタれが少しあったものの、皐月賞ではそれが顕著に出てしまったと話しています。距離はもっと欲しいと思っていたとし、左回りの方が直線でまっすぐ走れるため、ダービーはグリーンエナジーにぴったりだと見ています。今回の折り合いを重視したことが生きるだろうとし、ダービーは逆転も十分可能だという見解を示しました。'
-[0]  → output/script_0.txt 保存 (242文字)
-[0]  プレビュー: 2番人気の皐月賞で7着だったグリーンエナジーは、5月31日に東京競馬場で行われるダービーでの巻き返しを期すことになりました。上原佑師は21日、皐月賞で最後に内に...
+[0]  [Gemini生出力 202文字]: '先週のゲート試験では、先々週に比べるとゲート合格の頭数が減少しました。注目馬は多数おり、ルーラーシップ産駒のジーティーアツモリは2025年セレクトセール1歳にて7600万円（税抜き）で落札されています。ジーティーアツモリは栗東・橋口慎介厩舎所属で、祖母にアルティマトゥーレ、よって母系にはキャプテントゥーレやシルヴァーソニックといった血統も存在し、デビュー時には注目を集めることになると予想されています。'
+[0]  → output/script_0.txt 保存 (202文字)
+[0]  プレビュー: 先週のゲート試験では、先々週に比べるとゲート合格の頭数が減少しました。注目馬は多数おり、ルーラーシップ産駒のジーティーアツモリは2025年セレクトセール1歳にて...
   HTTP 200
-[1]  [Gemini生出力 229文字]: '昨年の菊花賞で6着に入り、飛鳥Sを勝利したミラージュナイトは、5月31日に東京競馬場・芝2500メートルで行われる目黒記念を視野に入れています。アンタレスSで2着だったモックモックは、6月13日に阪神で開催される三宮Sへ向かう予定です。また、大阪―ハンブルクCで2着のウエストナウは、5月10日の東京でのメトロポリタンCに出走します。さらに、26日のオアシスSに登録していたハッピーマンは、同レースを回避し、5月17日に京都で行われる栗東Sに回る見込みです。'
-[1]  → output/script_1.txt 保存 (229文字)
-[1]  プレビュー: 昨年の菊花賞で6着に入り、飛鳥Sを勝利したミラージュナイトは、5月31日に東京競馬場・芝2500メートルで行われる目黒記念を視野に入れています。アンタレスSで2...
+[1]  [Gemini生出力 206文字]: '先週の桜花賞、先週の皐月賞と3歳クラシックが行われているが、来年のクラシックを目指す2歳馬が続々と入厩している栗東。先週もPOGで人気を集めそうな馬たちが入厩しているが、その中でも注目しているのが、4月17日にノーザンファームしがらき(滋賀県)から斉藤崇史厩舎へ入厩したキタサンブラック産駒のコンサートホールの2024(エルドボルグ)。斉藤崇史調教師へのPOG取材時に「本当にいい馬。めちゃめちゃ期待してい...'
+[1]  → output/script_1.txt 保存 (192文字)
+[1]  プレビュー: 先週の桜花賞、先週の皐月賞と3歳クラシックが行われているが、来年のクラシックを目指す2歳馬が続々と入厩している栗東。先週もPOGで人気を集めそうな馬たちが入厩し...
 
 3 件の脚本を生成しました。
