@@ -45,8 +45,8 @@
   }
 }
 
-  [デバッグ] レスポンスを保存: output/debug_studio_api_1xaW9Y2h2p0.json
-  ❌ 失敗: 全試行失敗（output/debug_studio_api_1xaW9Y2h2p0.json を確認してください）
+  [デバッグ] レスポンスを保存: output/debug_studio_api_IR7FhTmXQSQ.json
+  ❌ 失敗: 全試行失敗（output/debug_studio_api_IR7FhTmXQSQ.json を確認してください）
   [試行1] HTTP 400: {
   "error": {
     "code": 400,
@@ -93,8 +93,8 @@
   }
 }
 
-  [デバッグ] レスポンスを保存: output/debug_studio_api_P24d5kRvFq0.json
-  ❌ 失敗: 全試行失敗（output/debug_studio_api_P24d5kRvFq0.json を確認してください）
+  [デバッグ] レスポンスを保存: output/debug_studio_api_JJJ3rKTqvmQ.json
+  ❌ 失敗: 全試行失敗（output/debug_studio_api_JJJ3rKTqvmQ.json を確認してください）
   [試行1] HTTP 400: {
   "error": {
     "code": 400,
@@ -141,18 +141,18 @@
   }
 }
 
-  [デバッグ] レスポンスを保存: output/debug_studio_api_VuPLSRG1vqo.json
-  ❌ 失敗: 全試行失敗（output/debug_studio_api_VuPLSRG1vqo.json を確認してください）
+  [デバッグ] レスポンスを保存: output/debug_studio_api_5AP65-UvFFo.json
+  ❌ 失敗: 全試行失敗（output/debug_studio_api_5AP65-UvFFo.json を確認してください）
 === YouTube サムネイル設定 (Studio 内部 API) ===
 サムネイル設定対象: 3 件
 OAuth2 トークン取得成功 (GOOGLE_CLIENT_ID_2)
 OAuth2 トークン取得成功
 チャンネル ID: UCAMU37QZTf6C9IkNguVZBcg
 
---- 1xaW9Y2h2p0 / 競馬　フィールシンパシー繁殖入り ---
+--- IR7FhTmXQSQ / 皐月賞7着グリーンエナジー　ダービーへ上原佑師前向き「左回りの方がぴったり…逆転可能と思います」 ---
 
---- P24d5kRvFq0 / 【園田競馬】右足負傷で休養していた小牧太騎手の復帰戦は5着　2Rでミートザターゲットに騎乗し一度先頭 ---
+--- JJJ3rKTqvmQ / 【注目馬動向】昨年の菊花賞6着ミラージュナイトは目黒記念を視野　アンタレスSで2着のモックモックは三 ---
 
---- VuPLSRG1vqo / 【注目馬動向】東京スプリント5着ママコチャはさきたま杯を視野に　池江調教師「ダートでも走れるところを ---
+--- 5AP65-UvFFo / 【注目馬動向】デビューから無傷2連勝でチャーチルダウンズCを勝利　アスクイキゴミはNHKマイルCへ ---
 
 === 完了: 0/3 件 ===
