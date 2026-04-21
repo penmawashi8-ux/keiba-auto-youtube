@@ -93,7 +93,8 @@ def try_official_thumbnail_set(
     youtube = build("youtube", "v3", credentials=creds)
     media = MediaFileUpload(thumb_path, mimetype="image/jpeg", resumable=False)
     try:
-        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        resp = youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        print(f"  [手法1] レスポンス: {json.dumps(resp, ensure_ascii=False)[:300]}")
         return True, "thumbnails().set() 成功"
     except HttpError as e:
         body = e.content.decode("utf-8", errors="replace")
