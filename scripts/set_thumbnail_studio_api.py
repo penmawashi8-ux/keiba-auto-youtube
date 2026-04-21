@@ -95,7 +95,7 @@ def _build_context(channel_id: str) -> dict:
     today = datetime.datetime.utcnow().strftime("%Y%m%d")
     return {
         "client": {
-            "clientName": "YOUTUBE_STUDIO",
+            "clientName": "WEB_CREATOR",
             "clientVersion": f"1.{today}.01.00",
             "hl": "ja",
             "gl": "JP",
@@ -130,9 +130,9 @@ def set_thumbnail_by_timestamp(
     payload_v1 = {
         "context": context,
         "encryptedVideoId": video_id,
-        "videoReadMask": {"videoId": True, "thumbnailDetails": True},
+        "videoReadMask": {"videoId": True, "thumbnail": True},
         "videoMetadata": {
-            "thumbnailDetails": {
+            "thumbnail": {
                 "stillImageTime": time_ms,
             }
         },
@@ -146,7 +146,7 @@ def set_thumbnail_by_timestamp(
     )
     summary = f"HTTP {resp.status_code}"
     if resp.status_code == 200:
-        return True, f"{summary} (形式1: thumbnailDetails.stillImageTime)"
+        return True, f"{summary} (形式1: thumbnail.stillImageTime)"
 
     body_v1 = resp.text[:800]
     print(f"  [試行1] {summary}: {body_v1}", file=sys.stderr)
@@ -203,7 +203,7 @@ def set_thumbnail_by_timestamp(
     payload_v4 = {
         "context": context,
         "encryptedVideoId": video_id,
-        "videoReadMask": {"videoId": True, "thumbnailDetails": True},
+        "videoReadMask": {"videoId": True, "thumbnail": True},
         "videoMetadata": {
             "thumbnailDetails": {
                 "defaultThumbnail": {"timeMs": str(time_ms)},
