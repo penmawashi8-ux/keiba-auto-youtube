@@ -1,10 +1,10 @@
-date: 2026-04-21T04:17:47.430825Z
+date: 2026-04-21T05:32:37.342085Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1xaW9Y2h2p0 title=競馬　フィールシンパシー繁殖入り
-OK project=1 video_id=P24d5kRvFq0 title=【園田競馬】右足負傷で休養していた小牧太騎手の復帰戦は5着　2Rでミートザターゲ
-OK project=1 video_id=VuPLSRG1vqo title=【注目馬動向】東京スプリント5着ママコチャはさきたま杯を視野に　池江調教師「ダー
+OK project=1 video_id=IR7FhTmXQSQ title=皐月賞7着グリーンエナジー　ダービーへ上原佑師前向き「左回りの方がぴったり…逆転
+OK project=1 video_id=JJJ3rKTqvmQ title=【注目馬動向】昨年の菊花賞6着ミラージュナイトは目黒記念を視野　アンタレスSで2
+OK project=1 video_id=5AP65-UvFFo title=【注目馬動向】デビューから無傷2連勝でチャーチルダウンズCを勝利　アスクイキゴミ
