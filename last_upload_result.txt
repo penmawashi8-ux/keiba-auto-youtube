@@ -1,10 +1,10 @@
-date: 2026-04-21T07:06:53.328327Z
+date: 2026-04-21T08:36:22.014928Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0mnRFWPM1wc title=ジーティーアツモリなど、先週のゲート試験/栗東トレセンニュース
-OK project=1 video_id=kY0emBveCXs title=コンサートホールの2024(エルドボルグ)など、先週の入厩情報/栗東トレセンニュ
-OK project=1 video_id=cf_DahzBHqQ title=皐月賞2着リアライズシリウスは次走ダービー　手塚久師「東京に替わるのはプラス。偶
+OK project=1 video_id=XWLaFAfXojs title=【香港チャンピオンズデー】サトノレーヴは順調　陣営も「活気のある走り」　日本勢の
+OK project=1 video_id=S4Dqxw1Yf0A title=【香港QE2世C】陣営「輸送による疲労から回復した」　マスカレードボールはキャン
+OK project=1 video_id=t_uB5uwf7aI title=【園田競馬】負傷のため休養していた小牧太騎手が21日に復帰　10Rでは1番人気ブ
