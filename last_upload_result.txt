@@ -1,10 +1,10 @@
-date: 2026-04-21T05:32:37.342085Z
+date: 2026-04-21T07:06:53.328327Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IR7FhTmXQSQ title=皐月賞7着グリーンエナジー　ダービーへ上原佑師前向き「左回りの方がぴったり…逆転
-OK project=1 video_id=JJJ3rKTqvmQ title=【注目馬動向】昨年の菊花賞6着ミラージュナイトは目黒記念を視野　アンタレスSで2
-OK project=1 video_id=5AP65-UvFFo title=【注目馬動向】デビューから無傷2連勝でチャーチルダウンズCを勝利　アスクイキゴミ
+OK project=1 video_id=0mnRFWPM1wc title=ジーティーアツモリなど、先週のゲート試験/栗東トレセンニュース
+OK project=1 video_id=kY0emBveCXs title=コンサートホールの2024(エルドボルグ)など、先週の入厩情報/栗東トレセンニュ
+OK project=1 video_id=cf_DahzBHqQ title=皐月賞2着リアライズシリウスは次走ダービー　手塚久師「東京に替わるのはプラス。偶
