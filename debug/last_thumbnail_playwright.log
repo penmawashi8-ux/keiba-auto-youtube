@@ -1,0 +1,26 @@
+[エラー] 未ログイン状態です。
+       GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN を確認してください。
+  [デバッグ] スクリーンショット保存: output/debug_unUE-uLYWtA_login_redirect.png
+  ❌ 失敗: unUE-uLYWtA
+[エラー] 未ログイン状態です。
+       GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN を確認してください。
+  [デバッグ] スクリーンショット保存: output/debug_O0CZJGOrRDk_login_redirect.png
+  ❌ 失敗: O0CZJGOrRDk
+[エラー] 未ログイン状態です。
+       GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN を確認してください。
+  [デバッグ] スクリーンショット保存: output/debug_3kLzvvY3Cy0_login_redirect.png
+  ❌ 失敗: 3kLzvvY3Cy0
+=== YouTube サムネイル自動設定 (Playwright) ===
+サムネイル設定対象: 3 件
+YOUTUBE_COOKIES から 13 件のクッキーを読み込みました
+
+--- サムネイル設定: video_id=unUE-uLYWtA / 【青葉賞】叔父はGI・3勝のクロワデュノール タイダルロックが重賞初制覇狙う ---
+  YouTube Studio を開く: https://studio.youtube.com/video/unUE-uLYWtA/edit
+
+--- サムネイル設定: video_id=O0CZJGOrRDk / あす浦和競馬11R「報知杯しらさぎ賞」力が違うホーリーグレイル ---
+  YouTube Studio を開く: https://studio.youtube.com/video/O0CZJGOrRDk/edit
+
+--- サムネイル設定: video_id=3kLzvvY3Cy0 / 【香港・チェアマンズSP】世界史上最強スプリンターに挑む日本短距離王サトノレーヴに不安なし ---
+  YouTube Studio を開く: https://studio.youtube.com/video/3kLzvvY3Cy0/edit
+
+=== 完了: 0/3 件のサムネイルを設定 ===
