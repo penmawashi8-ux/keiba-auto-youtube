@@ -1,10 +1,10 @@
-date: 2026-04-21T08:36:22.014928Z
+date: 2026-04-21T10:28:34.643639Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XWLaFAfXojs title=【香港チャンピオンズデー】サトノレーヴは順調　陣営も「活気のある走り」　日本勢の
-OK project=1 video_id=S4Dqxw1Yf0A title=【香港QE2世C】陣営「輸送による疲労から回復した」　マスカレードボールはキャン
-OK project=1 video_id=t_uB5uwf7aI title=【園田競馬】負傷のため休養していた小牧太騎手が21日に復帰　10Rでは1番人気ブ
+OK project=1 video_id=-oQoJdHC4uc title=【青葉賞予想オッズ】ブラックオリンピアが予想1番人気
+OK project=1 video_id=IFAfp1bSnDQ title=【マイラーズC予想オッズ】アドマイヤズームが予想1番人気
+OK project=1 video_id=5VBikj-gfzc title=【フローラS予想オッズ】ラフターラインズが予想1番人気
