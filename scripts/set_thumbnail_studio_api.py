@@ -101,6 +101,22 @@ def _build_context(channel_id: str) -> dict:
             "gl": "JP",
         },
         "user": {
+            "onBehalfOfUser": channel_id,
+        },
+    }
+
+
+def _build_context_delegation(channel_id: str) -> dict:
+    """delegationContext 形式（旧フォーマット、フォールバック用）。"""
+    today = datetime.datetime.utcnow().strftime("%Y%m%d")
+    return {
+        "client": {
+            "clientName": "WEB_CREATOR",
+            "clientVersion": f"1.{today}.01.00",
+            "hl": "ja",
+            "gl": "JP",
+        },
+        "user": {
             "delegationContext": {
                 "externalChannelId": channel_id,
                 "roleType": {
@@ -111,126 +127,83 @@ def _build_context(channel_id: str) -> dict:
     }
 
 
+def _post(url, params, headers, payload) -> tuple[int, str]:
+    resp = requests.post(url, params=params, headers=headers, json=payload, timeout=30)
+    return resp.status_code, resp.text[:800]
+
+
 def set_thumbnail_by_timestamp(
     access_token: str,
     channel_id: str,
     video_id: str,
     time_ms: int = 500,
 ) -> tuple[bool, str]:
-    """動画の指定タイムスタンプのフレームをサムネイルに設定する。
-
-    複数の API リクエスト形式を順番に試す（内部 API は公式ドキュメントがないため）。
-    成功したかどうかと、レスポンスの概要を返す。
-    """
+    """動画の指定タイムスタンプのフレームをサムネイルに設定する。"""
     headers = _studio_headers(access_token)
-    context = _build_context(channel_id)
+    ctx = _build_context(channel_id)
+    ctx_d = _build_context_delegation(channel_id)
     params = {"alt": "json", "key": _STUDIO_KEY}
+    url = f"{_STUDIO_BASE}/video_manager/metadata_update"
 
-    # --- 試行 1: thumbnailDetails.stillImageTime ---
-    payload_v1 = {
-        "context": context,
+    bodies = {}
+
+    # 試行1: onBehalfOfUser + thumbnailDetails.stillImageTime (readMask なし)
+    sc, body = _post(url, params, headers, {
+        "context": ctx,
         "encryptedVideoId": video_id,
-        "videoReadMask": {"videoId": True, "thumbnail": True},
-        "videoMetadata": {
-            "thumbnail": {
-                "stillImageTime": time_ms,
-            }
-        },
-    }
-    resp = requests.post(
-        f"{_STUDIO_BASE}/video_manager/metadata_update",
-        params=params,
-        headers=headers,
-        json=payload_v1,
-        timeout=30,
-    )
-    summary = f"HTTP {resp.status_code}"
-    if resp.status_code == 200:
-        return True, f"{summary} (形式1: thumbnail.stillImageTime)"
+        "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}},
+    })
+    bodies["1"] = body
+    if sc == 200:
+        return True, f"HTTP {sc} (形式1)"
+    print(f"  [試行1] HTTP {sc}: {body}", file=sys.stderr)
 
-    body_v1 = resp.text[:800]
-    print(f"  [試行1] {summary}: {body_v1}", file=sys.stderr)
-
-    # --- 試行 2: thumbnail.videoStill ---
-    payload_v2 = {
-        "context": context,
+    # 試行2: onBehalfOfUser + thumbnail.stillImageTime (readMask なし)
+    sc, body = _post(url, params, headers, {
+        "context": ctx,
         "encryptedVideoId": video_id,
-        "videoReadMask": {"videoId": True, "thumbnail": True},
-        "updatedMetadata": {
-            "thumbnail": {
-                "videoStill": {
-                    "operation": "SET_TIME",
-                    "timeMs": time_ms,
-                }
-            }
-        },
-    }
-    resp = requests.post(
-        f"{_STUDIO_BASE}/video_manager/metadata_update",
-        params=params,
-        headers=headers,
-        json=payload_v2,
-        timeout=30,
-    )
-    summary = f"HTTP {resp.status_code}"
-    if resp.status_code == 200:
-        return True, f"{summary} (形式2: thumbnail.videoStill)"
+        "videoMetadata": {"thumbnail": {"stillImageTime": time_ms}},
+    })
+    bodies["2"] = body
+    if sc == 200:
+        return True, f"HTTP {sc} (形式2)"
+    print(f"  [試行2] HTTP {sc}: {body}", file=sys.stderr)
 
-    body_v2 = resp.text[:800]
-    print(f"  [試行2] {summary}: {body_v2}", file=sys.stderr)
+    # 試行3: onBehalfOfUser + updatedMetadata.thumbnail.videoStill
+    sc, body = _post(url, params, headers, {
+        "context": ctx,
+        "encryptedVideoId": video_id,
+        "updatedMetadata": {"thumbnail": {"videoStill": {"operation": "SET_TIME", "timeMs": time_ms}}},
+    })
+    bodies["3"] = body
+    if sc == 200:
+        return True, f"HTTP {sc} (形式3)"
+    print(f"  [試行3] HTTP {sc}: {body}", file=sys.stderr)
 
-    # --- 試行 3: エンドポイントを変えて試す ---
-    payload_v3 = {
-        "context": context,
+    # 試行4: delegationContext + thumbnailDetails.stillImageTime (readMask なし)
+    sc, body = _post(url, params, headers, {
+        "context": ctx_d,
+        "encryptedVideoId": video_id,
+        "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}},
+    })
+    bodies["4"] = body
+    if sc == 200:
+        return True, f"HTTP {sc} (形式4)"
+    print(f"  [試行4] HTTP {sc}: {body}", file=sys.stderr)
+
+    # 試行5: onBehalfOfUser + videoId (encryptedVideoId でなく videoId)
+    sc, body = _post(url, params, headers, {
+        "context": ctx,
         "videoId": video_id,
-        "thumbnailTimestamp": {"timeMs": time_ms},
-    }
-    resp = requests.post(
-        f"{_STUDIO_BASE}/video_manager/update_video_thumbnail",
-        params=params,
-        headers=headers,
-        json=payload_v3,
-        timeout=30,
-    )
-    summary = f"HTTP {resp.status_code}"
-    if resp.status_code == 200:
-        return True, f"{summary} (形式3: update_video_thumbnail)"
-
-    body_v3 = resp.text[:800]
-    print(f"  [試行3] {summary}: {body_v3}", file=sys.stderr)
-
-    # --- 試行 4: defaultThumbnail.timeMs 形式 ---
-    payload_v4 = {
-        "context": context,
-        "encryptedVideoId": video_id,
-        "videoReadMask": {"videoId": True, "thumbnail": True},
-        "videoMetadata": {
-            "thumbnailDetails": {
-                "defaultThumbnail": {"timeMs": str(time_ms)},
-            }
-        },
-    }
-    resp = requests.post(
-        f"{_STUDIO_BASE}/video_manager/metadata_update",
-        params=params,
-        headers=headers,
-        json=payload_v4,
-        timeout=30,
-    )
-    summary = f"HTTP {resp.status_code}"
-    if resp.status_code == 200:
-        return True, f"{summary} (形式4: defaultThumbnail.timeMs)"
-
-    body_v4 = resp.text[:800]
-    print(f"  [試行4] {summary}: {body_v4}", file=sys.stderr)
+        "videoMetadata": {"thumbnailDetails": {"stillImageTime": time_ms}},
+    })
+    bodies["5"] = body
+    if sc == 200:
+        return True, f"HTTP {sc} (形式5)"
+    print(f"  [試行5] HTTP {sc}: {body}", file=sys.stderr)
 
     # すべて失敗 → ログを保存して原因調査に役立てる
-    _save_debug_log(video_id, {
-        "trial1": {"status": resp.status_code, "body": body_v1},
-        "trial2": {"status": resp.status_code, "body": body_v2},
-        "trial3": {"status": resp.status_code, "body": body_v3},
-        "trial4": {"status": resp.status_code, "body": body_v4},
-    })
+    _save_debug_log(video_id, bodies)
 
     return False, f"全試行失敗（output/debug_studio_api_{video_id}.json を確認してください）"
 
