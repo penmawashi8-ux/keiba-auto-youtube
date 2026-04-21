@@ -5,43 +5,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【青葉賞】叔父はGI・3勝のクロワデュノール タイダルロックが重賞初制覇狙う ---
-[0] Gemini入力本文 345文字: 'GI・3勝のクロワデュノールの甥となるタイダルロック(牡3、美浦・武井亮厩舎)が、青葉賞(3歳・GII・芝2400m)で重賞初制覇を狙う。\n\u3000タイダルロックは父モーリス、母アースライズ、母の父マンハッタンカフェの血統。母は15年のフラワーC'
+--- 記事[0]: 競馬　フィールシンパシー繁殖入り ---
+[0] Gemini入力本文 254文字: '19日の福島牝馬Sで12着だったフィールシンパシー(牝7＝小島)は生まれ故郷の岡田スタッド(北海道新ひだか町)で繁殖入りする予定。管理する小島師が21日、明かした。\n\u300023年ターコイズSと24年福島牝馬Sで重賞2着2回と活躍した。通算32戦'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: あす浦和競馬11R「報知杯しらさぎ賞」力が違うホーリーグレイル ---
-[1] Gemini入力本文 590文字: '報知杯の第64回しらさぎ賞・S3は22日、浦和競馬場で牝馬13頭(南関東11、他地区2)が1400メートルを争う。昨年の優勝馬フェブランシェは、勢いに乗って続くスパーキングレディーC・Jpn3を制覇。今年もこのレースを足がかりに大舞台へ羽ば'
+--- 記事[1]: 【園田競馬】右足負傷で休養していた小牧太騎手の復帰戦は5着　2Rでミートザターゲットに騎乗し一度先頭も ---
+[1] Gemini入力本文 343文字: '右足負傷で休養していた小牧太騎手(58)＝兵庫騎手会＝が21日、園田競馬2Rで復帰。2番人気のミートザターゲット(牝4歳、兵庫・長倉功厩舎、父リアルスティール)に騎乗し、一度先頭に並ぶも、伸びを欠き5着だった。\n\t\t\t\t\u30001日の園田競馬9R'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【香港・チェアマンズSP】世界史上最強スプリンターに挑む日本短距離王サトノレーヴに不安なし ---
-[2] Gemini入力本文 350文字: '◆チェアマンズスプリントプライズ・G1(4月26日、シャティン競馬場・芝1200メートル)\n\t\t\t\t\u3000今週、国内G1はひと休み。香港ではJRA海外馬券発売対象レースとなるチャンピオンズデーのG1・3競走(26日、シャティン競馬場)が行われる'
+--- 記事[2]: 【注目馬動向】東京スプリント5着ママコチャはさきたま杯を視野に　池江調教師「ダートでも走れるところを見せたい」 ---
+[2] Gemini入力本文 348文字: '4月15日の東京スプリント・Jpn3で5着のママコチャ(牝7歳、栗東・池江泰寿厩舎、父クロフネ)は、さきたま杯・Jpn1(6月24日、浦和競馬場・ダート1400メートル)を視野に調整する方向。21日、池江調教師が明かした。\n\t\t\t\t\u3000前走の'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,45 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 238文字]: 'GI3勝のクロワデュノールの甥となるタイダルロックが、青葉賞で重賞初制覇を狙います。タイダルロックは武井亮厩舎に所属する3歳牡馬です。父はモーリス、母はアースライズ、母の父はマンハッタンカフェという血統です。母のアースライズは2015年のフラワーカップで2着に入っています。さらに、祖母のライジングクロスは2006年の英オークスの2着馬です。叔父のクロワデュノールは、2024年のホープフルステークス、2025年の日本ダービー、そして今年の大阪杯を制し、GIを3勝しています。'
-[0]  → output/script_0.txt 保存 (238文字)
-[0]  プレビュー: GI3勝のクロワデュノールの甥となるタイダルロックが、青葉賞で重賞初制覇を狙います。タイダルロックは武井亮厩舎に所属する3歳牡馬です。父はモーリス、母はアースラ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
-[2] 使用: key=***zGG0 model=gemma-3-4b-it
+[1]  [Gemini生出力 185文字]: '右足負傷で休養していた小牧太騎手が21日、園田競馬2Rで復帰しました。2番人気のミートザターゲットに騎乗し、一度は先頭に並んだものの、伸びを欠き5着という結果でした。小牧騎手は1日の園田競馬9Rで、馬場に入場する際に騎乗馬が転倒し落馬負傷。右足に力が入らなかったため、翌2日以降は騎乗を休んでいました。しかし、本人は「（右足は）大丈夫」と問題ないことを強調していました。'
+[1]  → output/script_1.txt 保存 (185文字)
+[1]  プレビュー: 右足負傷で休養していた小牧太騎手が21日、園田競馬2Rで復帰しました。2番人気のミートザターゲットに騎乗し、一度は先頭に並んだものの、伸びを欠き5着という結果で...
   HTTP 200
-[2]  [Gemini生出力 139文字]: '今週、国内G1はひと休み。香港ではJRA海外馬券発売対象レースとなるチャンピオンズデーのG1・3競走(26日、シャティン競馬場)が行われる。チェアマンズスプリントプライズには、高松宮記念を連覇したサトノレーヴが登場。香港記録の19連勝中カーインライジングと4度目の対決を迎える。'
-[2]  → output/script_2.txt 保存 (139文字)
-[2]  プレビュー: 今週、国内G1はひと休み。香港ではJRA海外馬券発売対象レースとなるチャンピオンズデーのG1・3競走(26日、シャティン競馬場)が行われる。チェアマンズスプリン...
+[0]  [Gemini生出力 179文字]: '19日の福島牝馬Sで12着だったフィールシンパシーが、生まれ故郷である北海道新ひだか町の岡田スタッドで繁殖入りする予定であることが明らかになりました。この情報は、管理する小島師が21日に明かしたものです。フィールシンパシーは、2023年のターコイズSと2024年の福島牝馬Sで重賞2着に2回入るなど、そのキャリアで活躍を見せました。通算成績は32戦4勝です。'
+[0]  → output/script_0.txt 保存 (179文字)
+[0]  プレビュー: 19日の福島牝馬Sで12着だったフィールシンパシーが、生まれ故郷である北海道新ひだか町の岡田スタッドで繁殖入りする予定であることが明らかになりました。この情報は...
   HTTP 200
-[1]  [Gemini生出力 454文字]: '報知杯の第64回しらさぎ賞・S3は22日、浦和競馬場で牝馬13頭(南関東11、他地区2)が1400メートルを争う。昨年の優勝馬フェブランシェは、勢いに乗って続くスパーキングレディーC・Jpn3を制覇。今年もこのレースを足がかりに大舞台へ羽ばたく馬が生まれるか注目だ。今年はホーリーグレイルが中心となりそう。ニューイヤーC・S3制覇、桜花賞・S1を2着と浦和との相性は最高だ。1、2着馬にスパーキングレディーC・Jpn3(7月8日、川… 重賞３勝と実績は十分のホーリーグレイル スポーツ報知 【浦和・しらさぎ賞枠順】重賞3勝のホーリーグレイルは8枠13番 春の南関東女王決定戦 【中京記念】障害練習効果で復調したコレペティトール 中竹調教師「期待していた効果が出た」しらさぎ賞3着好走 【スパーキングLC】重賞2連勝中のテンカジョウは8枠9番 しらさぎ賞圧勝フェブランシェは7枠7番 枠順確定 【浦和競馬・しらさぎ賞(23日)】 フェブランシェ逃げ切りV 【しらさぎ賞】フェブランシェ重賞2勝目!5馬身差圧勝。'
-[1]  [ナビ文言除去] 453文字 → 187文字
-[1]  → output/script_1.txt 保存 (187文字)
-[1]  プレビュー: 報知杯の第64回しらさぎ賞・S3は22日、浦和競馬場で牝馬13頭(南関東11、他地区2)が1400メートルを争う。昨年の優勝馬フェブランシェは、勢いに乗って続く...
+[2]  [Gemini生出力 249文字]: '4月15日の東京スプリント・Jpn3で5着だったママコチャは、さきたま杯・Jpn1を視野に調整する方向です。6月24日に浦和競馬場ダート1400メートルで行われるこのレースについて、21日に池江調教師が明かしました。池江調教師は、前走の東京スプリントではスタートがひと息で、前が止まらないこともあり5着だったと説明しています。2走前の高松宮記念も出遅れがあったとのことです。「ここ2戦は競馬をしていない。もともとゲートは速いほうなので。ダートでも走れるところを見せたい」と池江調教師は語っています。'
+[2]  → output/script_2.txt 保存 (249文字)
+[2]  プレビュー: 4月15日の東京スプリント・Jpn3で5着だったママコチャは、さきたま杯・Jpn1を視野に調整する方向です。6月24日に浦和競馬場ダート1400メートルで行われ...
 
 3 件の脚本を生成しました。
