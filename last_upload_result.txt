@@ -1,10 +1,10 @@
-date: 2026-04-21T00:05:20.270294Z
+date: 2026-04-21T04:17:47.430825Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=unUE-uLYWtA title=【青葉賞】叔父はGI・3勝のクロワデュノール タイダルロックが重賞初制覇狙う
-OK project=1 video_id=O0CZJGOrRDk title=あす浦和競馬11R「報知杯しらさぎ賞」力が違うホーリーグレイル
-OK project=1 video_id=3kLzvvY3Cy0 title=【香港・チェアマンズSP】世界史上最強スプリンターに挑む日本短距離王サトノレーヴ
+OK project=1 video_id=1xaW9Y2h2p0 title=競馬　フィールシンパシー繁殖入り
+OK project=1 video_id=P24d5kRvFq0 title=【園田競馬】右足負傷で休養していた小牧太騎手の復帰戦は5着　2Rでミートザターゲ
+OK project=1 video_id=VuPLSRG1vqo title=【注目馬動向】東京スプリント5着ママコチャはさきたま杯を視野に　池江調教師「ダー
