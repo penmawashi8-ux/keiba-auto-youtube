@@ -4,16 +4,19 @@
 OAuth2 トークン取得成功 (GOOGLE_CLIENT_ID_2)
 チャンネル ID: UCAMU37QZTf6C9IkNguVZBcg
 
---- -oQoJdHC4uc / 【青葉賞予想オッズ】ブラックオリンピアが予想1番人気 ---
+--- B-DaHpqrBuc / 【フローラS】東京2000で2連勝中!ファムクラジューズは闘争心マックス　黒岩調教師「気持ちで頑張っ ---
   [手法1] thumbnails().set() を試みます...
+  [手法1] レスポンス: {"kind": "youtube#thumbnailSetResponse", "etag": "opDGOjOUlA1OppDp658EB-p48wg", "items": [{"default": {"url": "https://i.ytimg.com/vi/B-DaHpqrBuc/default.jpg", "width": 120, "height": 90}, "medium": {"url": "https://i.ytimg.com/vi/B-DaHpqrBuc/mqdefault.jpg", "width": 320, "height": 180}, "high": {"u
   ✅ 手法1 成功: thumbnails().set() 成功
 
---- IFAfp1bSnDQ / 【マイラーズC予想オッズ】アドマイヤズームが予想1番人気 ---
+--- jg7_Iprl6LE / 【金沢・金沢スプリングC結果】フラップシグナスが差し切って重賞初制覇 ---
   [手法1] thumbnails().set() を試みます...
+  [手法1] レスポンス: {"kind": "youtube#thumbnailSetResponse", "etag": "oJH_e9W05oc0zhoOxzeXXEaqjsE", "items": [{"default": {"url": "https://i.ytimg.com/vi/jg7_Iprl6LE/default.jpg", "width": 120, "height": 90}, "medium": {"url": "https://i.ytimg.com/vi/jg7_Iprl6LE/mqdefault.jpg", "width": 320, "height": 180}, "high": {"u
   ✅ 手法1 成功: thumbnails().set() 成功
 
---- 5VBikj-gfzc / 【フローラS予想オッズ】ラフターラインズが予想1番人気 ---
+--- FUwKP350gkY / 【読売マイラーズC】田中博調教師「スピード負けはしない」　シックスペンスが転厩初戦で重賞4勝目へ ---
   [手法1] thumbnails().set() を試みます...
+  [手法1] レスポンス: {"kind": "youtube#thumbnailSetResponse", "etag": "0M2wzVIBNgyrkvRE0zCvjqomSw4", "items": [{"default": {"url": "https://i.ytimg.com/vi/FUwKP350gkY/default.jpg", "width": 120, "height": 90}, "medium": {"url": "https://i.ytimg.com/vi/FUwKP350gkY/mqdefault.jpg", "width": 320, "height": 180}, "high": {"u
   ✅ 手法1 成功: thumbnails().set() 成功
 
 === 完了: 3/3 件 ===
