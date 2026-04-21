@@ -890,13 +890,15 @@ def make_clip(
                         )
                     else:
                         # ブラケットあり: セグメント分割して色分け（重なりなし）
-                        # box=1 スタイルの場合: ほぼ透明テキストでボックス背景のみ先に描画
+                        # box=1 スタイルの場合: 完全透明テキストでボックス背景のみ描画
+                        # borderw は含めない（セグメント側で描画するため二重枠線を防ぐ）
                         if "box=1" in _box_style:
+                            _ghost_style = re.sub(r":borderw=\d+:bordercolor=\S+", "", _box_style)
                             chain += (
                                 f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                                f"fontsize={_tfs}:fontcolor=black@0.01:"
+                                f"fontsize={_tfs}:fontcolor=black@0.00:"
                                 f"x=(w-text_w)/2:y={_y}:"
-                                f"{_box_style}"
+                                f"{_ghost_style}"
                             )
                         # セグメントに分割して各色で描画（重なりなし）
                         _segs: list[tuple[str, str]] = []
