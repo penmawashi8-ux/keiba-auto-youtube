@@ -255,25 +255,35 @@ def save_image_bytes(content: bytes, filepath: str) -> bool:
 
 def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
     """Pixabay API で競馬写真を取得して保存する。"""
+    EXCLUDE_TAGS = {"zebra", "donkey", "mule", "pony", "ass"}
+    page = random.randint(1, 5)
     params = {
         "key": api_key,
         "q": query,
         "image_type": "photo",
         "category": "animals",
         "min_width": 640,
-        "per_page": 200,
-        "order": "latest",
+        "per_page": 100,
+        "page": page,
+        "order": "popular",
         "safesearch": "true",
     }
     try:
         r = requests.get(PIXABAY_API_URL, params=params, timeout=30)
-        print(f"    [Pixabay] status={r.status_code} query='{query}'", flush=True)
+        print(f"    [Pixabay] status={r.status_code} query='{query}' page={page}", flush=True)
         if r.status_code != 200:
             print(f"    エラー: {r.status_code} {r.text[:200]}", flush=True)
             return False
         hits = r.json().get("hits", [])
         if not hits:
             print(f"    [Pixabay] 該当画像なし: {query}", flush=True)
+            return False
+        hits = [
+            h for h in hits
+            if not EXCLUDE_TAGS & {t.strip().lower() for t in h.get("tags", "").split(",")}
+        ]
+        if not hits:
+            print(f"    [Pixabay] フィルター後に該当画像なし: {query}", flush=True)
             return False
         hit = random.choice(hits)
         img_url = hit.get("webformatURL") or hit.get("largeImageURL")
