@@ -840,89 +840,22 @@ def make_clip(
                 # タイトルテキスト（【】内の行は強調色、それ以外は基本色）
                 _color_pair = random.choice(_THUMB_COLOR_PAIRS)
                 _color_base = _color_pair[0]
-                _color_hi   = _color_pair[1]
                 _box_style_tpl = random.choice(_THUMB_BOX_STYLES)
                 _box_style = _box_style_tpl.replace("OP", str(title_op))
                 _t_lines = [l for l in wrapped.split("\n") if l]
                 _line_h = _tfs + 16
-
-                # 【...】の位置を特定（ラップ前タイトル基準）
-                _bracket_ranges: list[tuple[int, int]] = []
-                _bi = 0
-                while _bi < len(thumb_title):
-                    if thumb_title[_bi] == '【':
-                        _bj = thumb_title.find('】', _bi)
-                        if _bj != -1:
-                            _bracket_ranges.append((_bi, _bj + 1))
-                            _bi = _bj + 1
-                            continue
-                    _bi += 1
-
-                # 行オフセット計算
-                _line_offsets: list[int] = []
-                _off = 0
-                for _ln in _t_lines:
-                    _line_offsets.append(_off)
-                    _off += len(_ln)
 
                 for _li, _line in enumerate(_t_lines):
                     _lf = f"{tmp_dir}/thumb_line_{idx:04d}_{_li}.txt"
                     Path(_lf).write_text(_line, encoding="utf-8")
                     _lfe = _lf.replace("'", "\\'")
                     _y = 720 + _li * _line_h
-                    _lo = _line_offsets[_li]
-                    _le = _lo + len(_line)
-
-                    # この行に交差する【...】範囲（行内オフセット）
-                    _seg_brackets = sorted([
-                        (max(_bs, _lo) - _lo, min(_be, _le) - _lo)
-                        for _bs, _be in _bracket_ranges
-                        if max(_bs, _lo) < min(_be, _le)
-                    ])
-
-                    if not _seg_brackets:
-                        # ブラケットなし: 行全体を基本色で描画（ボックス付き）
-                        chain += (
-                            f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                            f"fontsize={_tfs}:fontcolor={_color_base}:"
-                            f"x=(w-text_w)/2:y={_y}:"
-                            f"{_box_style}"
-                        )
-                    else:
-                        # ブラケットあり: セグメント分割して色分け（重なりなし）
-                        # box=1 スタイルの場合: 完全透明テキストでボックス背景のみ描画
-                        # borderw は含めない（セグメント側で描画するため二重枠線を防ぐ）
-                        if "box=1" in _box_style:
-                            _ghost_style = re.sub(r":borderw=\d+:bordercolor=\S+", "", _box_style)
-                            chain += (
-                                f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
-                                f"fontsize={_tfs}:fontcolor=black@0.00:"
-                                f"x=(w-text_w)/2:y={_y}:"
-                                f"{_ghost_style}"
-                            )
-                        # セグメントに分割して各色で描画（重なりなし）
-                        _segs: list[tuple[str, str]] = []
-                        _prev = 0
-                        for _bis, _bie in _seg_brackets:
-                            if _prev < _bis:
-                                _segs.append((_line[_prev:_bis], _color_base))
-                            _segs.append((_line[_bis:_bie], _color_hi))
-                            _prev = _bie
-                        if _prev < len(_line):
-                            _segs.append((_line[_prev:], _color_base))
-                        _line_w = _text_px(_line, _tfs)
-                        _x_cur = (VIDEO_WIDTH - _line_w) // 2
-                        for _si, (_seg_text, _seg_col) in enumerate(_segs):
-                            _sf = f"{tmp_dir}/thumb_seg_{idx:04d}_{_li}_{_si}.txt"
-                            Path(_sf).write_text(_seg_text, encoding="utf-8")
-                            _sfe = _sf.replace("'", "\\'")
-                            chain += (
-                                f",drawtext=textfile='{_sfe}':fontfile='{fp}':"
-                                f"fontsize={_tfs}:fontcolor={_seg_col}:"
-                                f"x={_x_cur}:y={_y}:"
-                                f"borderw=4:bordercolor=0x000000"
-                            )
-                            _x_cur += _text_px(_seg_text, _tfs)
+                    chain += (
+                        f",drawtext=textfile='{_lfe}':fontfile='{fp}':"
+                        f"fontsize={_tfs}:fontcolor={_color_base}:"
+                        f"x=(w-text_w)/2:y={_y}:"
+                        f"{_box_style}"
+                    )
 
         elif is_ending:
             s = style or {}
