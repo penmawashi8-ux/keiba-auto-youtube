@@ -1251,8 +1251,9 @@ def main() -> None:
         subtitle   = item.get("summary", "")
         thumb_top  = item.get("thumbnail_top", "")
         thumb_main = item.get("thumbnail_main", "")
+        video_images = random.sample(assets_images, len(assets_images))
         build_video(
-            script_file, audio_path, output_path, assets_images, font_path,
+            script_file, audio_path, output_path, video_images, font_path,
             title=title, subtitle=subtitle, thumb_top=thumb_top, thumb_main=thumb_main,
         )
 
