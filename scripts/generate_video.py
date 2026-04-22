@@ -1235,6 +1235,9 @@ def main() -> None:
         print(f"[エラー] {OUTPUT_DIR}/script_*.txt が見つかりません。", file=sys.stderr)
         sys.exit(1)
 
+    n_videos = len(script_files)
+    images_per_video = max(1, len(assets_images) // n_videos)
+
     for script_file in script_files:
         idx = int(script_file.stem.split("_")[1])
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
@@ -1251,8 +1254,12 @@ def main() -> None:
         subtitle   = item.get("summary", "")
         thumb_top  = item.get("thumbnail_top", "")
         thumb_main = item.get("thumbnail_main", "")
+        video_idx = list(script_files).index(script_file)
+        start = video_idx * images_per_video
+        video_images = assets_images[start : start + images_per_video] or assets_images
+        print(f"  使用画像: {[Path(p).name for p in video_images]}")
         build_video(
-            script_file, audio_path, output_path, assets_images, font_path,
+            script_file, audio_path, output_path, video_images, font_path,
             title=title, subtitle=subtitle, thumb_top=thumb_top, thumb_main=thumb_main,
         )
 
