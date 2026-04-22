@@ -172,13 +172,13 @@ DEFAULT_PROMPTS = [
 ]
 
 
-def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list[str]:
+def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict], n: int = 4) -> list[str]:
     """Geminiテキストモデルで画像プロンプトを生成（全キー失敗時はデフォルト使用）"""
     item = news_items[0] if news_items else {}
     title = item.get("title", "")
     body = item.get("body", item.get("summary", ""))[:300]
     prompt_text = (
-        "以下の競馬ニュースの内容に合った、AI画像生成用の英語プロンプトを4つ作成してください。"
+        f"以下の競馬ニュースの内容に合った、AI画像生成用の英語プロンプトを{n}つ作成してください。"
         "競馬場・馬・騎手・レースの雰囲気が伝わるシーンを描写してください。"
         "各プロンプトは「cinematic photo of [描写], horse racing, dramatic lighting, high quality」"
         "の形式で50語以内。JSON配列で返してください。\n\n"
@@ -202,7 +202,7 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
             text = text.replace("```json", "").replace("```", "").strip()
             prompts = json.loads(text)
-            if isinstance(prompts, list) and len(prompts) >= 4:
+            if isinstance(prompts, list) and len(prompts) >= n:
                 result = []
                 for it in prompts:
                     if isinstance(it, str):
@@ -215,14 +215,14 @@ def get_prompts_from_gemini(api_keys: list[str], news_items: list[dict]) -> list
                             result.append(str(val))
                     else:
                         result.append(str(it))
-                if len(result) >= 4:
+                if len(result) >= n:
                     print(f"  Geminiプロンプト生成成功 (key={key_label}): {len(result)}件", flush=True)
-                    return result[:4]
+                    return result[:n]
         except Exception as e:
             safe = str(e).replace(api_key, "***") if api_key else str(e)
             print(f"  [警告] key={key_label} プロンプト生成失敗: {safe}", flush=True)
     print("  [警告] 全キーでプロンプト生成失敗。デフォルトプロンプトを使用します。", flush=True)
-    return random.sample(DEFAULT_PROMPTS, 4)
+    return random.sample(DEFAULT_PROMPTS, min(n, len(DEFAULT_PROMPTS)))
 
 
 def save_image_bytes(content: bytes, filepath: str) -> bool:
@@ -370,8 +370,13 @@ def main() -> None:
     except Exception:
         news_items = []
 
+    IMAGES_PER_VIDEO = 3
+    n_videos = max(1, len(news_items))
+    n_images = n_videos * IMAGES_PER_VIDEO
+    print(f"  ニュース{n_videos}件 × {IMAGES_PER_VIDEO}枚 = {n_images}枚を生成します", flush=True)
+
     print("  プロンプト生成中...", flush=True)
-    prompts = get_prompts_from_gemini(gemini_keys, news_items) if gemini_keys else random.sample(DEFAULT_PROMPTS, 4)
+    prompts = get_prompts_from_gemini(gemini_keys, news_items, n=n_images) if gemini_keys else random.sample(DEFAULT_PROMPTS, min(n_images, len(DEFAULT_PROMPTS)))
     for i, p in enumerate(prompts, 1):
         print(f"    [{i}] {p[:80]}", flush=True)
 
@@ -379,7 +384,7 @@ def main() -> None:
         i, prompt = args
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
         query = random.choice(PIXABAY_QUERIES)
-        print(f"\n  [{i}/4] 画像取得中...", flush=True)
+        print(f"\n  [{i}/{n_images}] 画像取得中...", flush=True)
 
         if pixabay_key:
             print(f"  [{i}] → Pixabay を試行 (query='{query}')", flush=True)
@@ -396,7 +401,7 @@ def main() -> None:
         return i, False
 
     failed = []
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=min(n_images, 6)) as executor:
         futures = {executor.submit(generate_one, (i, p)): i for i, p in enumerate(prompts, 1)}
         for future in as_completed(futures):
             i, ok = future.result()
@@ -404,7 +409,7 @@ def main() -> None:
                 failed.append(i)
 
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
-    print(f"\n=== 結果: {4 - len(failed)}/4 枚生成 ===", flush=True)
+    print(f"\n=== 結果: {n_images - len(failed)}/{n_images} 枚生成 ===", flush=True)
     print(f"  生成ファイル: {[f.name for f in ai_files]}", flush=True)
 
     if not ai_files:
