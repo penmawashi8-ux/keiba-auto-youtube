@@ -1,10 +1,10 @@
-date: 2026-04-21T23:55:04.595285Z
+date: 2026-04-22T04:07:43.638647Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LXqw3UX4zoQ title=モーリス快走から10年 日本馬唯一のチャンピオンズM制覇
-OK project=1 video_id=Y2L80rItnPs title=【追憶の青葉賞】02年シンボリクリスエス　意外?“うまさ”が光った重賞初制覇
-OK project=1 video_id=d8Z2nW9Nz_w title=【フローラS展望】好走データを満たすリアライズルミナスに注目
+OK project=1 video_id=Le8rYOmJcjA title=【NHKマイルC想定】アスクイキゴミ、レザベーションなど23頭
+OK project=1 video_id=xkfloSOoa6c title=【注目馬動向】シンエンペラーは米国遠征を回避　岩田望来騎手との新コンビで天皇賞・
+OK project=1 video_id=o3sfYGv4okw title=【マイラーズC】武豊騎手が32年ぶり3勝目なるか アドマイヤズームと初タッグで挑
