@@ -3,6 +3,7 @@
 
 import asyncio
 import json
+import os
 import random
 import re
 import subprocess
@@ -12,7 +13,15 @@ from pathlib import Path
 
 import edge_tts
 
-import os
+try:
+    from kokoro import KPipeline
+    import numpy as np
+    import soundfile as sf
+    _KOKORO_AVAILABLE = True
+    print("Kokoro TTS が利用可能です。")
+except ImportError:
+    _KOKORO_AVAILABLE = False
+    print("Kokoro TTS が見つかりません。edge-tts にフォールバックします。")
 
 OUTPUT_DIR = "output"
 NEWS_JSON = "news.json"
@@ -36,15 +45,51 @@ def normalize_racing_terms(text: str) -> str:
         text = pattern.sub(repl, text)
     return text
 
-# ランダム選択用ボイスプール（名馬シリーズは TTS_VOICE 環境変数で上書き）
-_VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
+# edge-tts フォールバック用ボイスプール
+_EDGE_VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
+
+# Kokoro 日本語ボイスプール
+_KOKORO_VOICE_POOL = ["jf_alpha", "jf_beta", "jm_alpha"]
+_kokoro_pipeline: "KPipeline | None" = None
+
+
+def _get_kokoro_pipeline() -> "KPipeline":
+    global _kokoro_pipeline
+    if _kokoro_pipeline is None:
+        _kokoro_pipeline = KPipeline(lang_code="j")
+    return _kokoro_pipeline
+
+
+def generate_audio_kokoro(text: str, audio_path: str, voice: str, speed: float) -> None:
+    """Kokoro TTS で音声を生成して MP3 に変換する。"""
+    pipeline = _get_kokoro_pipeline()
+    samples = []
+    for _, _, audio in pipeline(text, voice=voice, speed=speed):
+        samples.append(audio)
+    if not samples:
+        raise RuntimeError("Kokoro から音声データが得られませんでした")
+    audio_data = np.concatenate(samples)
+    wav_path = audio_path + ".wav"
+    sf.write(wav_path, audio_data, 24000)
+    result = subprocess.run(
+        ["ffmpeg", "-y", "-i", wav_path, "-c:a", "libmp3lame", "-b:a", "128k", audio_path],
+        capture_output=True,
+    )
+    Path(wav_path).unlink(missing_ok=True)
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg MP3変換失敗: {result.stderr[-200:]}")
 
 
 def pick_tts_params() -> tuple[str, str, float, float]:
     """ランダムなTTSパラメータを返す (voice, rate_str, pitch_factor, volume_db)。
     TTS_VOICE / TTS_RATE 環境変数が設定されている場合はそちらを優先する。"""
     forced_voice = os.environ.get("TTS_VOICE", "")
-    voice = forced_voice if forced_voice else random.choice(_VOICE_POOL)
+    if forced_voice:
+        voice = forced_voice
+    elif _KOKORO_AVAILABLE:
+        voice = random.choice(_KOKORO_VOICE_POOL)
+    else:
+        voice = random.choice(_EDGE_VOICE_POOL)
 
     forced_rate = os.environ.get("TTS_RATE", "")
     if forced_rate:
@@ -258,17 +303,30 @@ def main() -> None:
         narration_text = normalize_racing_terms(narration_text)
         narration_text = apply_readings(narration_text)
         voice, rate, pitch_factor, volume_db = pick_tts_params()
-        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) voice={voice} rate={rate} ---")
+        is_kokoro_voice = voice in _KOKORO_VOICE_POOL
+        engine = "Kokoro" if (_KOKORO_AVAILABLE and is_kokoro_voice) else "edge-tts"
+        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) engine={engine} voice={voice} rate={rate} ---")
         for attempt in range(1, 4):
             try:
-                asyncio.run(generate_audio_and_subtitles(
-                    narration_text, audio_path, ass_path, font_name,
-                    voice=voice, rate=rate,
-                ))
+                if _KOKORO_AVAILABLE and is_kokoro_voice:
+                    speed = 1.0 + (int(rate.replace("%", "").replace("+", "")) / 100)
+                    generate_audio_kokoro(narration_text, audio_path, voice=voice, speed=speed)
+                    # Kokoro は word boundary がないので空の ASS を出力
+                    write_ass([], ass_path, font_name)
+                else:
+                    asyncio.run(generate_audio_and_subtitles(
+                        narration_text, audio_path, ass_path, font_name,
+                        voice=voice, rate=rate,
+                    ))
                 break
             except Exception as e:
                 print(f"  [警告] 音声生成失敗 (attempt {attempt}/3): {e}", file=sys.stderr)
-                if attempt < 3:
+                if attempt == 1 and _KOKORO_AVAILABLE and is_kokoro_voice:
+                    print("  Kokoro失敗。edge-tts にフォールバックします。", file=sys.stderr)
+                    is_kokoro_voice = False
+                    engine = "edge-tts"
+                    voice = random.choice(_EDGE_VOICE_POOL)
+                elif attempt < 3:
                     time.sleep(10 * attempt)
                 else:
                     print(f"[エラー] 音声生成を3回試みましたが失敗しました。", file=sys.stderr)
