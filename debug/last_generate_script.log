@@ -5,43 +5,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【NHKマイルC想定】アスクイキゴミ、レザベーションなど23頭 ---
-[0] Gemini入力本文 347文字: '5月10日(日)に東京競馬場で行われるNHKマイルカップ(3歳牡牝・GI・芝1600m)。\n\u300021日時点では、チャーチルダウンズC覇者アスクイキゴミ、ニュージーランドTを制したレザベーション、昨年暮れの朝日杯FSで4着のエコロアルバなど、2'
+--- 記事[0]: 【注目馬動向】2年9か月ぶりVのサヴォーナは七夕賞へ　阪神大賞典9着のファミリータイムは宝塚記念へ ---
+[0] Gemini入力本文 351文字: '長欠明けの福島民報杯で約2年9か月ぶりの勝利を挙げたサヴォーナ(牡6歳、栗東・中竹和也厩舎、父キズナ)は七夕賞(7月12日、福島競馬場・芝2000メートル)で重賞初制覇に挑む。阪神大賞典9着のファミリータイムは宝塚記念(6月14日、阪神)へ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【注目馬動向】シンエンペラーは米国遠征を回避　岩田望来騎手との新コンビで天皇賞・春参戦へ ---
-[1] Gemini入力本文 347文字: 'オールドフォレスター・ターフクラシックS・米G1(5月2日、チャーチルダウンズ競馬場・芝1800メートル)への出走を予定していたシンエンペラー(牡5歳、栗東・矢作芳人厩舎、父シユーニ)が遠征を取りやめ、登録している天皇賞・春・G1(5月3日'
+--- 記事[1]: 「楽しみです」川須栄彦騎手が昨年10月の落馬事故から今週末の復帰へ意欲　かしわ記念ではシャマルに騎乗 ---
+[1] Gemini入力本文 341文字: '昨年10月5日の落馬事故で戦列を離れていた川須栄彦騎手＝栗東・フリー＝が今週末にも復帰する可能性があることが4月22日、分かった。同騎手は今月11日から栗東での調教騎乗を再開しており、「依頼があれば、今週からでも乗りたいと思っています」と説'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【マイラーズC】武豊騎手が32年ぶり3勝目なるか アドマイヤズームと初タッグで挑む ---
-[2] Gemini入力本文 349文字: '武豊騎手がアドマイヤズーム(牡4、栗東・友道康夫厩舎)で、マイラーズカップ(4歳上・GII・芝1600m)の32年ぶり3勝目を狙う。\n\u3000武豊騎手はこれまでマイラーズCに23回騎乗。91年に後にマイルCSを連覇するダイタクヘリオスで初制覇を果'
+--- 記事[2]: 京都競馬場が23日から天皇賞・春の記念イベント「〜おもてなし処〜京都競馬の間」を開催　“ウマ”診断もできる! ---
+[2] Gemini入力本文 556文字: '京都競馬場で5月3日に伝統の一戦、天皇賞・春・G1(芝3200メートル)が行われる。4月23日から26日(11〜20時)まで大阪・ビッグマン前広場、4月29日から5月2日(11〜20時)まで京都駅ビル南北自由通路の南北自由通路北側スペースで'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,44 +42,20 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 258文字]: '武豊騎手がアドマイヤズームで、マイラーズカップの32年ぶり3勝目を狙います。アドマイヤズームは牡4、栗東の友道康夫厩舎所属です。武豊騎手はこれまでマイラーズカップに23回騎乗しており、91年には後にマイルチャンピオンシップを連覇するダイタクヘリオスで初制覇を果たしました。そして94年には、後に安田記念とマイルチャンピオンシップを制するノースフライトで2勝目を挙げています。しかし、95年以降は17連敗中であり、その間には1番人気にも6回騎乗していますが、25年のジュンブロッサムなど4という情報も伝えられています。'
-[2]  → output/script_2.txt 保存 (258文字)
-[2]  プレビュー: 武豊騎手がアドマイヤズームで、マイラーズカップの32年ぶり3勝目を狙います。アドマイヤズームは牡4、栗東の友道康夫厩舎所属です。武豊騎手はこれまでマイラーズカッ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[1]  [Gemini生出力 240文字]: '昨年10月5日の落馬事故で戦列を離れていた川須栄彦騎手、栗東・フリーが、今週末にも復帰する可能性があることが4月22日に分かりました。川須騎手は昨年10月5日の落馬事故で左鎖骨の開放骨折とろっ骨骨折を負い、その後は感染症などもあり、長くリハビリ生活を送っていました。今月11日から栗東での調教騎乗を再開しており、本人は「依頼があれば、今週からでも乗りたいと思っています」と説明しています。かしわ記念・Jpn1が5月5日に船橋競馬場で開催され、川須騎手はシャマルに騎乗する予定です。'
+[1]  → output/script_1.txt 保存 (240文字)
+[1]  プレビュー: 昨年10月5日の落馬事故で戦列を離れていた川須栄彦騎手、栗東・フリーが、今週末にも復帰する可能性があることが4月22日に分かりました。川須騎手は昨年10月5日の...
   HTTP 200
-[0]  [Gemini生出力 204文字]: '5月10日(日)に東京競馬場で行われるNHKマイルカップ(3歳牡牝・GI・芝1600m)。21日時点では、チャーチルダウンズC覇者アスクイキゴミ、ニュージーランドTを制したレザベーション、昨年暮れの朝日杯FSで4着のエコロアルバなど、23頭が登録を予定している。フルゲートは18頭。想定馬は以下の通り。各馬とも出走予定の段階で、変更の可能性がございます。netkeiba独自の想定で、確定情報ではありません。'
-[0]  → output/script_0.txt 保存 (204文字)
-[0]  プレビュー: 5月10日(日)に東京競馬場で行われるNHKマイルカップ(3歳牡牝・GI・芝1600m)。21日時点では、チャーチルダウンズC覇者アスクイキゴミ、ニュージーラン...
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[2]  [Gemini生出力 240文字]: '京都競馬場で5月3日に行われる伝統の一戦、天皇賞・春・G1の記念イベント「〜おもてなし処〜京都競馬の間」が開催されます。このイベントは、4月23日から26日の午前11時から午後8時まで大阪・ビッグマン前広場で、そして4月29日から5月2日の午前11時から午後8時まで京都駅ビル南北自由通路の南北自由通路北側スペースで開催されます。天皇賞・春の伝統と格式を上質で落ち着いた“和”で表現する無料のイベントです。紫に染まる馬と和のイベントとして、“ウマ”診断もできる内容となっています。'
+[2]  → output/script_2.txt 保存 (240文字)
+[2]  プレビュー: 京都競馬場で5月3日に行われる伝統の一戦、天皇賞・春・G1の記念イベント「〜おもてなし処〜京都競馬の間」が開催されます。このイベントは、4月23日から26日の午...
   HTTP 200
-[1]  [Gemini生出力 186文字]: 'シンエンペラー（牡5歳、栗東・矢作芳人厩舎、父シユーニ）が、オールドフォレスター・ターフクラシックS・米G1（5月2日、チャーチルダウンズ競馬場・芝1800メートル）への出走を予定していた遠征を取りやめ、登録している天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）に出走することになった。新たに岩田望来騎手とコンビを組む。矢作調教師が4月22日に明らかにした。'
-[1]  → output/script_1.txt 保存 (165文字)
-[1]  プレビュー: シンエンペラーが、オールドフォレスター・ターフクラシックS・米G1（5月2日、チャーチルダウンズ競馬場・芝1800メートル）への出走を予定していた遠征を取りやめ...
+[0]  [Gemini生出力 212文字]: '長欠明けの福島民報杯で約2年9か月ぶりの勝利を挙げたサヴォーナは、七夕賞で重賞初制覇に挑みます。七夕賞は7月12日に福島競馬場・芝2000メートルで行われます。阪神大賞典9着のファミリータイムは、6月14日に阪神で開催される宝塚記念へ向かう予定です。きさらぎ賞9着のショウナンガルフは23日に帰厩し、予定通り5月31日東京の日本ダービーに向かいます。阪急杯6着のアルテヴェローチェは、5月10日新潟の谷川岳Sへ出走予定です。'
+[0]  → output/script_0.txt 保存 (212文字)
+[0]  プレビュー: 長欠明けの福島民報杯で約2年9か月ぶりの勝利を挙げたサヴォーナは、七夕賞で重賞初制覇に挑みます。七夕賞は7月12日に福島競馬場・芝2000メートルで行われます。...
 
 3 件の脚本を生成しました。
