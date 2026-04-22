@@ -5,35 +5,43 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: モーリス快走から10年 日本馬唯一のチャンピオンズM制覇 ---
-[0] Gemini入力本文 338文字: 'レベルの高さで知られる香港競馬。とりわけ短距離からマイルでは世界屈指の層の厚さを誇り、これまでも多くの日本馬が壁に跳ね返されてきた。だが今から10年前、その香港マイル路線で存在感を示した馬がいる。日本馬で唯一、チャンピオンズマイルを制したモ'
+--- 記事[0]: 【NHKマイルC想定】アスクイキゴミ、レザベーションなど23頭 ---
+[0] Gemini入力本文 347文字: '5月10日(日)に東京競馬場で行われるNHKマイルカップ(3歳牡牝・GI・芝1600m)。\n\u300021日時点では、チャーチルダウンズC覇者アスクイキゴミ、ニュージーランドTを制したレザベーション、昨年暮れの朝日杯FSで4着のエコロアルバなど、2'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【追憶の青葉賞】02年シンボリクリスエス　意外?“うまさ”が光った重賞初制覇 ---
-[1] Gemini入力本文 360文字: 'のちに有馬記念連覇などG1を4勝するスーパーホースの重賞初制覇。今、VTRで振り返っても、やっぱり強い。だが、のちのG1・4勝で見せた強さとは少々違う。3歳春とは思えぬうまさ、落ち着きを感じた。\n\u3000この一戦。藤沢和雄厩舎は3頭出し。岡部幸雄'
+--- 記事[1]: 【注目馬動向】シンエンペラーは米国遠征を回避　岩田望来騎手との新コンビで天皇賞・春参戦へ ---
+[1] Gemini入力本文 347文字: 'オールドフォレスター・ターフクラシックS・米G1(5月2日、チャーチルダウンズ競馬場・芝1800メートル)への出走を予定していたシンエンペラー(牡5歳、栗東・矢作芳人厩舎、父シユーニ)が遠征を取りやめ、登録している天皇賞・春・G1(5月3日'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【フローラS展望】好走データを満たすリアライズルミナスに注目 ---
-[2] Gemini入力本文 336文字: '東京競馬場で行われるオークストライアルのフローラS。過去の傾向を見ると、実績馬だけでなく条件をクリアして挑む伏兵馬の台頭も頻繁に見られ、馬券的な妙味のあるレースとなっている。今年も多様なステップレースを経てきたメンバーが集結しており、データ'
+--- 記事[2]: 【マイラーズC】武豊騎手が32年ぶり3勝目なるか アドマイヤズームと初タッグで挑む ---
+[2] Gemini入力本文 349文字: '武豊騎手がアドマイヤズーム(牡4、栗東・友道康夫厩舎)で、マイラーズカップ(4歳上・GII・芝1600m)の32年ぶり3勝目を狙う。\n\u3000武豊騎手はこれまでマイラーズCに23回騎乗。91年に後にマイルCSを連覇するダイタクヘリオスで初制覇を果'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -50,32 +58,44 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 194文字]: 'レベルの高さで知られる香港競馬は、とりわけ短距離からマイルで世界屈指の層の厚さを誇り、これまで多くの日本馬が壁に跳ね返されてきました。しかし今から10年前、その香港マイル路線で存在感を示した馬がいます。日本馬で唯一、チャンピオンズマイルを制したモーリスの走りを振り返ります。モーリスは3歳春までは7戦2勝と決して目立つ存在ではありませんでしたが、古馬になると驚くような急成長を見せました。'
-[0]  → output/script_0.txt 保存 (194文字)
-[0]  プレビュー: レベルの高さで知られる香港競馬は、とりわけ短距離からマイルで世界屈指の層の厚さを誇り、これまで多くの日本馬が壁に跳ね返されてきました。しかし今から10年前、その...
-  HTTP 200
-[1]  [Gemini生出力 231文字]: 'のちに有馬記念連覇などG1を4勝するスーパーホース、シンボリクリスエスの重賞初制覇についてです。今VTRで振り返ってもやはり強いですが、のちのG1・4勝で見せた強さとは少々違う、3歳春とは思えぬうまさ、落ち着きを感じさせました。この一戦では、藤沢和雄厩舎は3頭出しで臨み、岡部幸雄騎手はボールドブライアンの手綱を取りました。1番人気シンボリクリスエスの手綱は武豊騎手に託され、3番枠から互角のスタートを切っています。02年青葉賞を制したシンボリクリスエスでした。'
-[1]  → output/script_1.txt 保存 (231文字)
-[1]  プレビュー: のちに有馬記念連覇などG1を4勝するスーパーホース、シンボリクリスエスの重賞初制覇についてです。今VTRで振り返ってもやはり強いですが、のちのG1・4勝で見せた...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 258文字]: '武豊騎手がアドマイヤズームで、マイラーズカップの32年ぶり3勝目を狙います。アドマイヤズームは牡4、栗東の友道康夫厩舎所属です。武豊騎手はこれまでマイラーズカップに23回騎乗しており、91年には後にマイルチャンピオンシップを連覇するダイタクヘリオスで初制覇を果たしました。そして94年には、後に安田記念とマイルチャンピオンシップを制するノースフライトで2勝目を挙げています。しかし、95年以降は17連敗中であり、その間には1番人気にも6回騎乗していますが、25年のジュンブロッサムなど4という情報も伝えられています。'
+[2]  → output/script_2.txt 保存 (258文字)
+[2]  プレビュー: 武豊騎手がアドマイヤズームで、マイラーズカップの32年ぶり3勝目を狙います。アドマイヤズームは牡4、栗東の友道康夫厩舎所属です。武豊騎手はこれまでマイラーズカッ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 143文字]: 'フローラSについて、過去の傾向を見ると、実績馬だけでなく条件をクリアして挑む伏兵馬の台頭も頻繁に見られ、馬券的な妙味のあるレースとなっている。今年も多様なステップレースを経てきたメンバーが集結しており、データに基づいた的確な取捨選択が求められる一戦だ。前走着順が1着だった馬は妙味あり。'
-[2]  → output/script_2.txt 保存 (143文字)
-[2]  プレビュー: フローラSについて、過去の傾向を見ると、実績馬だけでなく条件をクリアして挑む伏兵馬の台頭も頻繁に見られ、馬券的な妙味のあるレースとなっている。今年も多様なステッ...
+[0]  [Gemini生出力 204文字]: '5月10日(日)に東京競馬場で行われるNHKマイルカップ(3歳牡牝・GI・芝1600m)。21日時点では、チャーチルダウンズC覇者アスクイキゴミ、ニュージーランドTを制したレザベーション、昨年暮れの朝日杯FSで4着のエコロアルバなど、23頭が登録を予定している。フルゲートは18頭。想定馬は以下の通り。各馬とも出走予定の段階で、変更の可能性がございます。netkeiba独自の想定で、確定情報ではありません。'
+[0]  → output/script_0.txt 保存 (204文字)
+[0]  プレビュー: 5月10日(日)に東京競馬場で行われるNHKマイルカップ(3歳牡牝・GI・芝1600m)。21日時点では、チャーチルダウンズC覇者アスクイキゴミ、ニュージーラン...
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[1]  [Gemini生出力 186文字]: 'シンエンペラー（牡5歳、栗東・矢作芳人厩舎、父シユーニ）が、オールドフォレスター・ターフクラシックS・米G1（5月2日、チャーチルダウンズ競馬場・芝1800メートル）への出走を予定していた遠征を取りやめ、登録している天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）に出走することになった。新たに岩田望来騎手とコンビを組む。矢作調教師が4月22日に明らかにした。'
+[1]  → output/script_1.txt 保存 (165文字)
+[1]  プレビュー: シンエンペラーが、オールドフォレスター・ターフクラシックS・米G1（5月2日、チャーチルダウンズ競馬場・芝1800メートル）への出走を予定していた遠征を取りやめ...
 
 3 件の脚本を生成しました。
