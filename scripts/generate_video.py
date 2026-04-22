@@ -435,10 +435,10 @@ _BG_PATTERNS: list[str] = _build_bg_patterns()
 def make_video_style() -> dict:
     """動画ごとのランダムスタイルを生成する。"""
     sub_box = random.choice(_BOX_COLORS)
-    # 字幕スタイルタイプ: box(ボックスあり) / no_box(影のみ)
+    # 字幕スタイルタイプ: box(ボックスあり) / no_box(影のみ) / diagonal(斜め)
     sub_type = random.choices(
-        ["box", "no_box"],
-        weights=[6, 4],
+        ["box", "no_box", "diagonal"],
+        weights=[5, 3, 2],
         k=1,
     )[0]
     # 字幕の縦位置（画面下からの距離）

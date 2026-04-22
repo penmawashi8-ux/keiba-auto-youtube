@@ -255,7 +255,7 @@ def save_image_bytes(content: bytes, filepath: str) -> bool:
 
 def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
     """Pixabay API で競馬写真を取得して保存する。"""
-    EXCLUDE_TAGS = {"zebra", "donkey", "mule", "pony", "ass", "foal", "colt", "filly", "baby"}
+    EXCLUDE_TAGS = {"zebra", "donkey", "mule", "pony", "ass"}
     page = random.randint(1, 5)
     params = {
         "key": api_key,

@@ -50,6 +50,7 @@ SYSTEM_PROMPT = (
     "- 記事に馬名がなく「世界最強のスプリンターたちが集う」程度の情報しかない場合はSKIPすること\n"
     "- 記事に騎手名・調教師名が書いてある場合は、必ずその名前を使うこと\n"
     "- 固有名詞は省略せず、正確に伝えること\n"
+    "- 馬名・騎手名が不確かな場合は「?」「..」「…」などの記号で補わず、記事本文に書かれている文字だけを使うこと\n"
     "- 馬名・騎手名の直後に続く括弧書き（性別・年齢・所属・厩舎・読み仮名など）は絶対に含めないこと。\n"
     "  例：「チャリングクロス（牡3、美浦・奥村武厩舎）」→「チャリングクロス」\n"
     "  例：「メイショウボヌール(牝5＝森沢、父ミッキーアイル)」→「メイショウボヌール」\n"
@@ -300,8 +301,8 @@ def main() -> None:
                 if len(script) != _before_redirect:
                     print(f"[{i}]  [redirectフィルター] {_before_redirect}文字 → {len(script)}文字")
                 # 三点リーダー（…）が含まれている場合は除去して句点前まで切る
-                if "…" in script or "..." in script:
-                    script = script.replace("...", "").replace("…", "")
+                if "…" in script or "..." in script or ".." in script:
+                    script = script.replace("...", "").replace("…", "").replace("..", "")
                     script = script.strip()
                     last_period = script.rfind("。")
                     script = script[:last_period + 1] if last_period != -1 else ""
