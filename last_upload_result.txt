@@ -1,10 +1,10 @@
-date: 2026-04-22T05:32:04.495135Z
+date: 2026-04-22T08:37:18.014770Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bTiG5mQUlLs title=【注目馬動向】2年9か月ぶりVのサヴォーナは七夕賞へ　阪神大賞典9着のファミリー
-OK project=1 video_id=4M5MvNl4ajc title=「楽しみです」川須栄彦騎手が昨年10月の落馬事故から今週末の復帰へ意欲　かしわ記
-OK project=1 video_id=KIWKmXg5Ayc title=京都競馬場が23日から天皇賞・春の記念イベント「〜おもてなし処〜京都競馬の間」を
+OK project=1 video_id=g17zR37hRAk title=【プレゼント】『天才！のPOG青本2026-2027』を抽選で5名様に
+OK project=1 video_id=G49W1lzvJtg title=【天皇賞・春・1週前】クロワデュノールはG1連勝へ気合注入デモ　斉藤崇調教師「こ
+OK project=1 video_id=XLnuZ9WKidk title=【有力馬動向】動き自体は正直『微妙』 クロワデュノールが天皇賞(春)で1週前追い
