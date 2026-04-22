@@ -5,33 +5,17 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
@@ -40,16 +24,16 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【プレゼント】『天才！のPOG青本2026-2027』を抽選で5名様に ---
-[0] Gemini入力本文 615文字: 'いつもnetkeibaをご利用いただきありがとうございます。\n\u3000netkeibaウマい馬券公式Xアカウント(＠netkeiba_umai)ではキャンペーンを実施中です。『天才！のPOG青本2026-2027』を抽選で5名様にプレゼントいたし'
+--- 記事[0]: 【読売マイラーズC】G1馬アドマイヤズームは迫力十分　朝日杯FS制した京都マイル戦で復活を狙う ---
+[0] Gemini入力本文 349文字: '◆第57回読売マイラーズC・G2(4月26日、京都競馬場・芝1600メートル、1着馬に安田記念の優先出走権)追い切り＝4月22日、栗東トレセン\n\t\t\t\t\u3000フレッシュな状態で巻き返しを図る。アドマイヤズームはDPコース(ポリトラック)を単走で'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【天皇賞・春・1週前】クロワデュノールはG1連勝へ気合注入デモ　斉藤崇調教師「これで上がってくると思います」 ---
-[1] Gemini入力本文 354文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)1週前追い切り＝4月22日、栗東トレセン\n\t\t\t\t\u3000大阪杯に続くG1連勝を狙うクロワデュノール(牡4歳、栗東・斉藤崇史厩舎、父キタサンブラック)はCWコースでの3頭併せ'
+--- 記事[1]: 【浦和競馬　しらさぎ賞】ツーシャドーがこのレース2年ぶりV　小沢師感服「引退やめます」 ---
+[1] Gemini入力本文 338文字: '牝馬の地方交流重賞「第64回しらさぎ賞」(S3)が22日、浦和競馬場で行われ、ツーシャドーが直線で抜け出して快勝。24年しらさぎ賞以来となる2度目の重賞制覇を成し遂げた。\n\u3000直線、2番手からツーシャドーが一気に先頭に躍り出る。あとはゴールを'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【有力馬動向】動き自体は正直『微妙』 クロワデュノールが天皇賞(春)で1週前追い切り/馬三郎のつぶやき ---
-[2] Gemini入力本文 347文字: '◆クロワデュノール(22日・城谷)\n\u3000大阪杯でGI3勝目を飾ったクロワデュノール(牡4歳、栗東・斉藤崇)がこの日、天皇賞(春)(5月3日・京都、芝3200m)へ向けて栗東CWで1週前追い切りを行った。団野(レースは北村友)を背に3頭併せ。前'
+--- 記事[2]: ノボバカラ産駒のエルダーフラワーが勝利 新種牡馬の勝ち上がり第1号に ---
+[2] Gemini入力本文 554文字: '22日、ホッカイドウ競馬の門別競馬場で今年3鞍目の2歳新馬戦「JRA認定フレッシュチャレンジ競走」が行われ、落合玄太騎手が手綱を取った新種牡馬ノボバカラ産駒のエルダーフラワー(牝2歳、田中淳司厩舎)がダート1000mを1分0秒9で逃げ切り勝'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -66,56 +50,32 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 245文字]: '第57回読売マイラーズC・G2の追い切りが4月22日に栗東トレセンで行われました。G1馬アドマイヤズームはDPコースを単走で追われ、馬なりのままでフィニッシュしています。前脚を大きくかき込む走りで、迫力十分の動きを見せました。友道調教師は「単走でサッと。1週前もしっかり時計が出ているからね」とうなずいています。アドマイヤズームは、朝日杯FSを制した京都マイル戦で復活を狙います。このレースは4月26日に京都競馬場・芝1600メートルで行われ、1着馬には安田記念の優先出走権が与えられます。'
+[0]  → output/script_0.txt 保存 (245文字)
+[0]  プレビュー: 第57回読売マイラーズC・G2の追い切りが4月22日に栗東トレセンで行われました。G1馬アドマイヤズームはDPコースを単走で追われ、馬なりのままでフィニッシュし...
+  HTTP 200
+[1]  [Gemini生出力 222文字]: '牝馬の地方交流重賞「第64回しらさぎ賞」(S3)が22日、浦和競馬場で行われ、ツーシャドーが直線で抜け出して快勝しました。ツーシャドーは、24年しらさぎ賞以来となる2度目の重賞制覇を成し遂げています。レースの直線では、2番手からツーシャドーが一気に先頭に躍り出ました。その後はゴールを決めるだけという状況でしたが、直後からアンジュフィールドが迫る展開となりました。しかし、一昨年覇者であるツーシャドーの力はだてではなく、見事に勝利を収めました。'
+[1]  → output/script_1.txt 保存 (222文字)
+[1]  プレビュー: 牝馬の地方交流重賞「第64回しらさぎ賞」(S3)が22日、浦和競馬場で行われ、ツーシャドーが直線で抜け出して快勝しました。ツーシャドーは、24年しらさぎ賞以来と...
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  HTTP 503
-  HTTP 503
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[1]  [Gemini生出力 183文字]: '第173回天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）1週前の追い切りが4月22日に栗東トレセンで行われました。クロワデュノール（牡4歳、栗東・斉藤崇史厩舎、父キタサンブラック）はCWコースで3頭併せを行い、しっかりと負荷をかけてきました。団野大成騎手を背に、大外から内センツブラッド、中イクオクコウネンを大きく追走し、直線に入ってからは促しました。'
-[1]  → output/script_1.txt 保存 (158文字)
-[1]  プレビュー: 第173回天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）1週前の追い切りが4月22日に栗東トレセンで行われました。クロワデュノールはCWコースで3...
-  HTTP 200
-[0]  [Gemini生出力 292文字]: 'いつもnetkeibaをご利用いただきありがとうございます。netkeibaウマい馬券公式Xアカウント（＠netkeiba_umai）ではキャンペーンを実施中です。『天才！のPOG青本2026-2027』を抽選で5名様にプレゼントいたします。POGファン必携の一冊として高い人気を誇る本書は、有力2歳馬の詳細情報や血統解説、注目ポイントを網羅した充実の内容です。また、全362頭の種牡馬総合分析書『パーフェクト種牡馬辞典2026-2027』を5名様にプレゼントいたします。さらに、シンボリルドルフ真実の回想録が40年ぶりに復刊、『ルドルフの背』を抽選で10名様にプレゼントいたします。'
-[0]  → output/script_0.txt 保存 (292文字)
-[0]  プレビュー: いつもnetkeibaをご利用いただきありがとうございます。netkeibaウマい馬券公式Xアカウント（＠netkeiba_umai）ではキャンペーンを実施中で...
 [2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 119文字]: 'クロワデュノールが22日、栗東CWで1週前追い切りを行った。団野を背に3頭併せ、スタートから4角にかけてややモタモタし、残り1Fでは逆に離されるような格好となった。斉藤崇調教師が、天皇賞(春)に向けた距離を確かめるための調整を行っている。'
-[2]  → output/script_2.txt 保存 (119文字)
-[2]  プレビュー: クロワデュノールが22日、栗東CWで1週前追い切りを行った。団野を背に3頭併せ、スタートから4角にかけてややモタモタし、残り1Fでは逆に離されるような格好となっ...
+[2]  [Gemini生出力 206文字]: '22日、ホッカイドウ競馬の門別競馬場で今年3鞍目の2歳新馬戦「JRA認定フレッシュチャレンジ競走」が行われ、落合玄太騎手が手綱を取った新種牡馬ノボバカラ産駒のエルダーフラワー(牝2歳、田中淳司厩舎)がダート1000mを1分0秒9で逃げ切り勝ち。今年から産駒をデビューさせる34頭の新種牡馬の産駒勝ち上がり第1号となった。ノボバカラは父アドマイヤオーラ、母ノボキッスという血統で、新ひだか町の萩澤泰博氏による生産。'
+[2]  → output/script_2.txt 保存 (194文字)
+[2]  プレビュー: 22日、ホッカイドウ競馬の門別競馬場で今年3鞍目の2歳新馬戦「JRA認定フレッシュチャレンジ競走」が行われ、落合玄太騎手が手綱を取った新種牡馬ノボバカラ産駒のエ...
 
 3 件の脚本を生成しました。
