@@ -1,10 +1,10 @@
-date: 2026-04-22T08:37:18.014770Z
+date: 2026-04-22T10:32:04.642024Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=g17zR37hRAk title=【プレゼント】『天才！のPOG青本2026-2027』を抽選で5名様に
-OK project=1 video_id=G49W1lzvJtg title=【天皇賞・春・1週前】クロワデュノールはG1連勝へ気合注入デモ　斉藤崇調教師「こ
-OK project=1 video_id=XLnuZ9WKidk title=【有力馬動向】動き自体は正直『微妙』 クロワデュノールが天皇賞(春)で1週前追い
+OK project=1 video_id=uaP_Nq7nUSA title=【読売マイラーズC】G1馬アドマイヤズームは迫力十分　朝日杯FS制した京都マイル
+OK project=1 video_id=LtbPt0bc1rk title=【浦和競馬　しらさぎ賞】ツーシャドーがこのレース2年ぶりV　小沢師感服「引退やめ
+OK project=1 video_id=wCefLxsvdjs title=ノボバカラ産駒のエルダーフラワーが勝利 新種牡馬の勝ち上がり第1号に
