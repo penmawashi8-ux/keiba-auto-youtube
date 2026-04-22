@@ -1,10 +1,1 @@
-=== 音声生成開始 ===
-字幕フォント: Noto Sans CJK JP
-  タイトル読み上げ追加: 「ディープインパクト」
-
---- 音声生成 [0] (246文字) voice=ja-JP-NanamiNeural rate=-3% ---
-  音声: output/audio_0.mp3 (337 KB)
-  字幕: output/subtitles_0.ass (0 セグメント)
-  音声バリエーション適用: pitch×1.0819 vol+0.75dB
-
-1 件の音声を生成しました。
+(ログなし)

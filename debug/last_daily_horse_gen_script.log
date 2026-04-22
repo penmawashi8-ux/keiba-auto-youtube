@@ -1,5 +1,6 @@
 [診断] Gemini APIキー: 3 件ロード
-[既存の名馬] 12 頭:
+[既存の名馬] 13 頭:
+  - ディープインパクト (deep_impact)
   - ゴールドシップ (gold_ship)
   - イスキリ (isukiri)
   - ラインクラフト (linecrafter)
@@ -14,58 +15,73 @@
   - トウカイテイオー (tokai_teio)
 
 [名馬選定・脚本生成・ファクトチェック中...]
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: ディープインパクト
-HORSE_KEY: deep_impact
+HORSE_NAME: イスキリ
+HORSE_KEY: isukiri
 ERA: 2000年代
-CATCHPHRASE: 飛ぶような走りで三冠を制した伝説
+CATCHPHRASE: 逆転の奇跡
+
 ---SCRIPT---
-無敗でクラシック三冠を達成した馬がいる
-その名はディープインパクト
-2005年 皐月賞をレコードで勝利
-2分00秒9
-日本ダービーも制し 無敗の二冠馬に
-そして菊花賞
-ハーツクライとの壮絶な叩き合いをクビ差で制し
-史上6頭目の無敗三冠を達成した
-翌2006年 世界最高峰の凱旋門賞に挑戦
-結果は3着も後に失格となる
-だが国内では敵なし
-引退レースとなった2006年有馬記念
-後続を3馬身引き離す圧巻の勝利で
-G1 7勝目を飾った
-彼の蹄跡は 伝説として今も語り継がれる
----END---...
+スタートラインで、馬が倒れた。
+その馬の名前、イスキリ。
+2004年の天皇賞（秋）。
+18頭立て1番人気の期待を背負う。
+しかし、レース直前、故障が判明。
+回避は不可能と宣告された。
+それでも、陣営は賭けに出た。
+「最後の騎手」として、騎手・蛯名正典が挑んだ。
+レースでは、後続を圧倒する展開。
+しかし、1600mから失速。
+16着と沈むように帰着。
+24戦無制覇。
+競馬界の不条理を象徴する存在となった。
+それでも、イスキリは走り続けた。
+2006年の有馬記念。
+18頭立て15番人気の期待を背負う。
+スタートから好位に付けて、
+徐々にペースを上げていく。
+1600mから再び失速。
+17着と沈むように帰着。
+最後のレース後、イスキリは引退。
+その生涯は、記録と失望だけだった。
+しかし、その不屈の精神は、今も語り継がれている。
+競馬の残酷さと、それでも走り続ける勇気。
+それが、イスキリの物語だ。...
 
-[選定完了] 馬名: ディープインパクト  キー: deep_impact
-[最終脚本]
-無敗でクラシック三冠を達成した馬がいる
-その名はディープインパクト
-2005年 皐月賞をレコードで勝利
-2分00秒9
-日本ダービーも制し 無敗の二冠馬に
-そして菊花賞
-ハーツクライとの壮絶な叩き合いをクビ差で制し
-史上6頭目の無敗三冠を達成した
-翌2006年 世界最高峰の凱旋門賞に挑戦
-結果は3着も後に失格となる
-だが国内では敵なし
-引退レースとなった2006年有馬記念
-後続を3馬身引き離す圧巻の勝利で
-G1 7勝目を飾った
-彼の蹄跡は 伝説として今も語り継がれる
-
-[20秒待機中（レート制限対策）...]
-[メタデータ生成中...]
-[メタデータ応答]
-TAGS: ディープインパクト, 無敗三冠, 皐月賞, 日本ダービー, 菊花賞, 有馬記念, 凱旋門賞, 伝説
-THUMBNAIL_TOP: 伝説の
-THUMBNAIL_MAIN: 無敗の三冠馬
-
-
-[名馬データ保存]
-  data/famous_horses/deep_impact.txt
-  data/famous_horses/deep_impact.json
-[パイプライン用ファイル書き出し]
-  news.json: タイトル「ディープインパクト」
-  output/script_0.txt: 234 文字
+[エラー] 「イスキリ」は既に紹介済みです。AIが指示を無視しました。中止します。
