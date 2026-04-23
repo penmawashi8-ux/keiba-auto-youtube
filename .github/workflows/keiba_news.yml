@@ -206,11 +206,44 @@ jobs:
           PYEOF
 
       - name: BGMをダウンロード (CC0 public domain only)
+        id: download_bgm
         if: steps.check_scripts.outputs.has_scripts == 'true'
         continue-on-error: true
         run: |
           mkdir -p assets/bgm
-          python scripts/download_bgm.py
+          python scripts/download_bgm.py 2>&1 | tee /tmp/download_bgm.log
+
+      - name: BGMログをIssueに投稿（失敗時のみ）
+        if: steps.download_bgm.outcome == 'failure' || steps.download_bgm.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime, glob
+          log_path = "/tmp/download_bgm.log"
+          try:
+              with open(log_path) as f:
+                  log = "".join(f.readlines()[:80])
+          except Exception:
+              log = "(ログなし)"
+          bgm_files = glob.glob("assets/bgm/*.mp3") + glob.glob("assets/bgm/*.m4a")
+          status = f"✅ {len(bgm_files)}件" if bgm_files else "❌ 0件（BGMなし）"
+          title = f"[DEBUG] BGMダウンロードログ {status} {datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M')}"
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Debug Issue作成: {data.get('html_url')}")
+          PYEOF
 
       - name: フォントをダウンロード (太ゴシック・デザイン系)
         if: steps.check_scripts.outputs.has_scripts == 'true'
