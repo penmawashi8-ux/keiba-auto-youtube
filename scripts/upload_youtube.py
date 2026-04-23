@@ -23,12 +23,22 @@ ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
 
 # YouTubeタイトルテンプレート（動画ごとにローテーション）
-# {date}=日付文字列, {title}=記事タイトル（末尾の #Shorts は固定）
+# prefix + short_title + suffix の形式。{date}=日付文字列
 _TITLE_TEMPLATES = [
-    ("【競馬速報】{date} ", " #Shorts"),          # 例: 【競馬速報】2026/4/23 〇〇 #Shorts
-    ("", "｜競馬最新情報 {date} #Shorts"),         # 例: 〇〇｜競馬最新情報 2026/4/23 #Shorts
-    ("{date}競馬NEWS｜", " #Shorts"),              # 例: 2026/4/23競馬NEWS｜〇〇 #Shorts
-    ("【最新競馬情報】{date} ", " #Shorts"),        # 例: 【最新競馬情報】2026/4/23 〇〇 #Shorts
+    ("【競馬速報】{date} ",    " #Shorts"),              # 【競馬速報】2026/4/23 〇〇 #Shorts
+    ("",                      "｜競馬最新情報 {date} #Shorts"),  # 〇〇｜競馬最新情報 2026/4/23 #Shorts
+    ("{date}競馬NEWS｜",       " #Shorts"),              # 2026/4/23競馬NEWS｜〇〇 #Shorts
+    ("【最新競馬情報】{date} ", " #Shorts"),              # 【最新競馬情報】2026/4/23 〇〇 #Shorts
+    ("競馬速報｜",             " {date} #Shorts"),        # 競馬速報｜〇〇 2026/4/23 #Shorts
+    ("{date} ",               "｜競馬ニュース #Shorts"),  # 2026/4/23 〇〇｜競馬ニュース #Shorts
+    ("【競馬ニュース】{date} ", " #Shorts"),              # 【競馬ニュース】2026/4/23 〇〇 #Shorts
+    ("",                      "｜{date} 競馬速報 #Shorts"), # 〇〇｜2026/4/23 競馬速報 #Shorts
+    ("競馬情報｜{date} ",      " #Shorts"),              # 競馬情報｜2026/4/23 〇〇 #Shorts
+    ("{date} ",               "【競馬速報】#Shorts"),     # 2026/4/23 〇〇【競馬速報】#Shorts
+    ("",                      " {date}｜競馬情報 #Shorts"), # 〇〇 2026/4/23｜競馬情報 #Shorts
+    ("【競馬NEWS】",           " {date} #Shorts"),        # 【競馬NEWS】〇〇 2026/4/23 #Shorts
+    ("{date}｜競馬速報｜",     " #Shorts"),              # 2026/4/23｜競馬速報｜〇〇 #Shorts
+    ("",                      "｜競馬速報{date} #Shorts"), # 〇〇｜競馬速報2026/4/23 #Shorts
 ]
 
 # YouTube説明文テンプレート（動画ごとにローテーション）

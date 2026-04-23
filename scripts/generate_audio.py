@@ -95,12 +95,11 @@ def pick_tts_params() -> tuple[str, str, float, float]:
     if forced_rate:
         rate_str = forced_rate
     else:
-        # 0.92〜1.08倍の範囲（-8%〜+8%）でランダム変化させる
-        rate_pct = random.randint(-8, 8)
+        rate_pct = random.randint(-15, 15)
         rate_str = f"{rate_pct:+d}%"
 
-    # ピッチ: ±1.5 半音 → 係数変換（ほどよい変化幅）
-    pitch_semitones = random.uniform(-1.5, 1.5)
+    # ピッチ: ±2.0 半音 → 係数変換
+    pitch_semitones = random.uniform(-2.0, 2.0)
     pitch_factor = 2 ** (pitch_semitones / 12)
 
     # 音量: ±1.5 dB
