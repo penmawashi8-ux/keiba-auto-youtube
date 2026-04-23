@@ -1,10 +1,10 @@
-date: 2026-04-23T07:08:58.533231Z
+date: 2026-04-23T09:02:13.538767Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6EaZEbBnHqU title=【青葉賞出走馬・騎手確定】ブラックオリンピア＆川田将雅騎手、ノーブルサヴェージ＆
-OK project=1 video_id=5zy6_ULQQtw title=【マイラーズC出走馬・騎手確定】アドマイヤズーム＆武豊騎手、ウォーターリヒト＆高
-OK project=1 video_id=oOxj_tM2Yao title=【フローラS出走馬・騎手確定】ラフターラインズ＆D.レーン騎手、ファムクラジュー
+OK project=1 video_id=Gqat9VO39Z8 title=異例の転身!　国枝栄厩務員の担当馬が25日の東京10Rで武豊騎手と初陣「うれしい
+OK project=1 video_id=QewVF3qwtlM title=【注目馬動向】3連勝中のダノンセンチュリーは京王杯SCへ　2度目の重賞挑戦は初の
+OK project=1 video_id=vlRWwbu4niE title=【注目馬動向】チャーチルダウンズC4着のシーミハットクは白百合Sへ　ジューンアヲ
