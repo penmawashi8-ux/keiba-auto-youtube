@@ -3,6 +3,7 @@ edge-tts
 kokoro>=0.9.4
 fugashi[unidic-lite]
 pyopenjtalk
+misaki[ja_espeak]
 soundfile
 google-api-python-client==2.151.0
 google-auth==2.35.0
