@@ -1,10 +1,10 @@
-date: 2026-04-23T04:24:32.091457Z
+date: 2026-04-23T05:37:18.333330Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PEJBqw7Y4PE title=落馬負傷で休業中の菅原明良騎手が来週5月2日から実戦復帰予定　今週末から調教騎乗
-OK project=1 video_id=vHKvuks84qs title=【園田競馬・今日の世麗】22日は2勝　11、10番人気で会心!　23日は8鞍に騎
-OK project=1 video_id=JlyWctbw-gE title=【園田競馬・人気ジョッキーは語る】ベラジオハルカでメイン制覇を目指す大山真吾騎手
+OK project=1 video_id=vnMJ0Gs2Jzs title=【香港・チェアマンズSP】サトノレーヴが最強スプリンターと4度目の対決へ好仕上が
+OK project=1 video_id=hY7EfVrokbI title=【香港・チャンピオンズマイル】ジャンタルマンタルは6番枠　シュトラウスは7番枠に
+OK project=1 video_id=EPD2V9F-wCM title=【香港・チェアマンズSP枠順】高松宮記念連覇のサトノレーヴは8番ゲート、19連勝
