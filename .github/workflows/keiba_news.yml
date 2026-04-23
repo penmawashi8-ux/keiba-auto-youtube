@@ -169,8 +169,41 @@ jobs:
           fi
 
       - name: Generate audio
+        id: generate_audio
         if: steps.check_scripts.outputs.has_scripts == 'true'
-        run: python scripts/generate_audio.py
+        run: python scripts/generate_audio.py 2>&1 | tee /tmp/generate_audio.log; exit ${PIPESTATUS[0]}
+
+      - name: 音声生成ログをIssueに投稿
+        if: always() && steps.check_scripts.outputs.has_scripts == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = "/tmp/generate_audio.log"
+          try:
+              with open(log_path) as f:
+                  lines = f.readlines()
+          except Exception:
+              lines = ["(ログなし)"]
+          log = "".join(lines[:100])
+          status = "✅ 成功" if os.path.exists("/tmp/generate_audio.log") else "❓ 不明"
+          title = f"[DEBUG] 音声生成ログ {datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M')}"
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Debug Issue作成: {data.get('html_url')}")
+          PYEOF
 
       - name: BGMをダウンロード (CC0 public domain only)
         if: steps.check_scripts.outputs.has_scripts == 'true'
