@@ -1,10 +1,10 @@
-date: 2026-04-23T05:37:18.333330Z
+date: 2026-04-23T07:08:58.533231Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vnMJ0Gs2Jzs title=【香港・チェアマンズSP】サトノレーヴが最強スプリンターと4度目の対決へ好仕上が
-OK project=1 video_id=hY7EfVrokbI title=【香港・チャンピオンズマイル】ジャンタルマンタルは6番枠　シュトラウスは7番枠に
-OK project=1 video_id=EPD2V9F-wCM title=【香港・チェアマンズSP枠順】高松宮記念連覇のサトノレーヴは8番ゲート、19連勝
+OK project=1 video_id=6EaZEbBnHqU title=【青葉賞出走馬・騎手確定】ブラックオリンピア＆川田将雅騎手、ノーブルサヴェージ＆
+OK project=1 video_id=5zy6_ULQQtw title=【マイラーズC出走馬・騎手確定】アドマイヤズーム＆武豊騎手、ウォーターリヒト＆高
+OK project=1 video_id=oOxj_tM2Yao title=【フローラS出走馬・騎手確定】ラフターラインズ＆D.レーン騎手、ファムクラジュー
