@@ -1,10 +1,10 @@
-date: 2026-04-22T12:10:58.293689Z
+date: 2026-04-23T00:03:42.734116Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WwR88Foi1kA title=【チャンピオンズマイル】ジャンタルマンタルが上々の仕上がり　海外G1・2度目の挑
-OK project=1 video_id=eoG3Fi9L7dc title=【地方競馬】しらさぎ賞　ツーシャドーが２回目の当大会制覇で引退撤回
-OK project=1 video_id=h3LWMeXdQKA title=【青葉賞】GLAYのTERUが名付け親のテルヒコウは坂路を楽走で好気配　矢作調教
+OK project=1 video_id=b_ACysmQbY4 title=【マイラーズC展望】充実期を迎える5歳馬ファーヴェントが重賞初制覇を狙う
+OK project=1 video_id=PIZCp6CWsPQ title=【青葉賞】アローメタル　ハードな３頭併せで好仕上がりアピール  太田助手「使うご
+OK project=1 video_id=qhfEFFiIe28 title=【青葉賞】ブラックオリンピア　軽快リハ　友道師「疲れもなくていい感じ、いい雰囲気
