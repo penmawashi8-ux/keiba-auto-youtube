@@ -1,7 +1,7 @@
 google-generativeai==0.8.3
 edge-tts
 kokoro>=0.9.4
-misaki[ja_espeak]
+pyopenjtalk
 soundfile
 google-api-python-client==2.151.0
 google-auth==2.35.0
