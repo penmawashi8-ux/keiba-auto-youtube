@@ -1,10 +1,9 @@
-date: 2026-04-23T09:02:13.538767Z
+date: 2026-04-23T10:34:55.840762Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Gqat9VO39Z8 title=異例の転身!　国枝栄厩務員の担当馬が25日の東京10Rで武豊騎手と初陣「うれしい
-OK project=1 video_id=QewVF3qwtlM title=【注目馬動向】3連勝中のダノンセンチュリーは京王杯SCへ　2度目の重賞挑戦は初の
-OK project=1 video_id=vlRWwbu4niE title=【注目馬動向】チャーチルダウンズC4着のシーミハットクは白百合Sへ　ジューンアヲ
+OK project=1 video_id=tNj4SonePqM title=【香港・チャンピオンズM】シュトラウス絶好調　武井調教師「『最高の状態』と言って
+OK project=1 video_id=4zl6dJZo3W4 title=障害の名手・石神深一騎手が今週末のラスト騎乗へ静かに闘志　土日とも京都「生まれ変
