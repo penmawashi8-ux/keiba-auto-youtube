@@ -5,28 +5,35 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【マイラーズC展望】充実期を迎える5歳馬ファーヴェントが重賞初制覇を狙う ---
-[0] Gemini入力本文 332文字: '安田記念に向けた重要な前哨戦となるマイラーズC。京都競馬場の芝外回りマイルコースを舞台に行われ、スピードと持ち前の瞬発力が問われる一戦である。過去の傾向からは、充実期にある世代や前走で上位人気に推されていた実力馬の活躍が目立っている。今年も'
+--- 記事[0]: 落馬負傷で休業中の菅原明良騎手が来週5月2日から実戦復帰予定　今週末から調教騎乗を再開へ ---
+[0] Gemini入力本文 308文字: '3月1日の中山9Rで落馬負傷して「第3腰椎椎体骨折」と診断されて休業に入っていた菅原明良騎手＝美浦・フリー＝が、今週末から調教騎乗を再開することが分かった。師匠の高木登調教師が4月23日、明かした。\n\t\t\t\t\u3000高木師は「今週の土曜日(25日'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【青葉賞】アローメタル　ハードな３頭併せで好仕上がりアピール  太田助手「使うごとに操縦性増しています」 ---
-[1] Gemini入力本文 331文字: '「青葉賞・Ｇ２」（２５日、東京）\n\u3000ダービーＴＲに東西から精鋭が集結。新緑の府中に秘めた素質がいよいよ解き放たれる。ゆりかもめ賞では２着に終わったものの、良血馬アローメタルは２２日、美浦Ｗの実戦さながらの３頭併せで万全の仕上がりをアピール。'
+--- 記事[1]: 【園田競馬・今日の世麗】22日は2勝　11、10番人気で会心!　23日は8鞍に騎乗　9Rキラキラリがお薦め ---
+[1] Gemini入力本文 345文字: '22日は7鞍に騎乗した佐々木世麗騎手＝園田・尾林幸二厩舎＝。1Rで11番人気の伏兵マインドユアリズムで勝利を挙げると10Rではこれまた人気薄10番人気のミスターエヌで勝ち、高配当の使者となった。\n\t\t\t\t\u3000特に10Rは自厩舎での勝利もあって'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【青葉賞】ブラックオリンピア　軽快リハ　友道師「疲れもなくていい感じ、いい雰囲気」　２度目の府中＆距離経験生かす ---
-[2] Gemini入力本文 331文字: '「青葉賞・Ｇ２」（２５日、東京）\n\u3000ダービーＴＲに東西から精鋭が集結。新緑の府中に秘めた素質がいよいよ解き放たれる。ゆりかもめ賞では２着に終わったものの、良血馬アローメタルは２２日、美浦Ｗの実戦さながらの３頭併せで万全の仕上がりをアピール。'
+--- 記事[2]: 【園田競馬・人気ジョッキーは語る】ベラジオハルカでメイン制覇を目指す大山真吾騎手「ハナにはこだわっていない」 ---
+[2] Gemini入力本文 362文字: '◆園田競馬6日目(4月23日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u30002勝を挙げ66勝。オトコノロマン(8R)で勝利を意識。「調子はいい。ブリンカーの効果にも期待」(◎)。ゼットシルヴィア(12R)も「好勝負を見込んでいる」(◎)。ファイアトー'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -43,22 +50,33 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 227文字]: '安田記念に向けた重要な前哨戦となるマイラーズCは、京都競馬場の芝外回りマイルコースを舞台に行われ、スピードと持ち前の瞬発力が問われる一戦です。過去の傾向からは、充実期にある世代や前走で上位人気に推されていた実力馬の活躍が目立っています。今年も各路線から実績馬や新鋭が集結し、激しい順位争いが期待されます。特に、充実期を迎える5歳馬ファーヴェントが重賞初制覇を狙います。過去の出走馬の年齢別成績を確認すると、4歳馬と5歳馬といった若い世代の活躍が顕著です。'
-[0]  → output/script_0.txt 保存 (227文字)
-[0]  プレビュー: 安田記念に向けた重要な前哨戦となるマイラーズCは、京都競馬場の芝外回りマイルコースを舞台に行われ、スピードと持ち前の瞬発力が問われる一戦です。過去の傾向からは、...
+[1]  [Gemini生出力 210文字]: '佐々木世麗騎手は22日に7鞍に騎乗し、2勝を挙げました。1Rでは11番人気の伏兵マインドユアリズムで勝利を挙げたほか、10Rでは人気薄の10番人気ミスターエヌで勝ち、高配当の使者となりました。特に10Rは自厩舎での勝利であり、佐々木世麗騎手自身も「ビックリ」と喜びを語っています。「きょうはいつも以上に気合が乗っていたし、道中も2頭に挟まれるような形でレースが進んだので、気持ちが切れなかったのかも」とコメントしました。'
+[1]  → output/script_1.txt 保存 (210文字)
+[1]  プレビュー: 佐々木世麗騎手は22日に7鞍に騎乗し、2勝を挙げました。1Rでは11番人気の伏兵マインドユアリズムで勝利を挙げたほか、10Rでは人気薄の10番人気ミスターエヌで...
   HTTP 200
-[1]  [Gemini生出力 249文字]: '青葉賞・G2は25日に東京で開催されるダービーTRです。ゆりかもめ賞で2着に終わった良血馬アローメタルは、22日に美浦Wの実戦さながらの3頭併せを行い、万全の仕上がりをアピールしました。太田助手は「使うごとに操縦性増しています」とコメントしています。アローメタルは前走の悔しさを力に、世代の頂点を決める大一番への扉をこじ開けます。アザレア賞を快勝したブラックオリンピアも、栗東CWで引き続き軽快な動きを見せました。ダービーTRに東西から精鋭が集結し、新緑の府中に秘めた素質がいよいよ解き放たれます。'
-[1]  → output/script_1.txt 保存 (249文字)
-[1]  プレビュー: 青葉賞・G2は25日に東京で開催されるダービーTRです。ゆりかもめ賞で2着に終わった良血馬アローメタルは、22日に美浦Wの実戦さながらの3頭併せを行い、万全の仕...
+[2]  [Gemini生出力 284文字]: '園田競馬6日目、4月23日の情報です。小牧太騎手は、この日までに2勝を挙げ、通算66勝としています。8レースのオトコノロマンでは「調子はいい。ブリンカーの効果にも期待」と勝利を意識しています。また、12レースのゼットシルヴィアについても「好勝負を見込んでいる」とコメントしました。4レースのファイアトーチは「調子はいいが、詰めが甘くて…」と語っています。\n\n一方、下原理騎手は1勝を追加し、通算49勝となりました。2レースのアコーダンスには「惜しいレースが続いているので」と力を入れています。10レースのエポカリーナについては「前走の走り?..」とコメントしています。'
+[2]  [重複除去] 281文字 → 279文字
+[2]  → output/script_2.txt 保存 (279文字)
+[2]  プレビュー: 園田競馬6日目、4月23日の情報です。小牧太騎手は、この日までに2勝を挙げ、通算66勝としています。8レースのオトコノロマンでは「調子はいい。ブリンカーの効果に...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 239文字]: '青葉賞・G2は25日に東京で開催され、ダービーTRに東西から精鋭が集結します。アザレア賞を快勝したブラックオリンピアは、栗東CWで引き続き軽快な動きを見せました。友道師は「疲れもなくていい感じ、いい雰囲気」とコメントしており、2度目の府中と距離経験を生かしたい考えです。ゆりかもめ賞で2着に終わった良血馬アローメタルは、22日に美浦Wで実戦さながらの3頭併せを行い、万全の仕上がりをアピールしました。前走の悔しさを力に、世代の頂点を決める大一番への扉をこじ開けたいとしています。'
-[2]  → output/script_2.txt 保存 (239文字)
-[2]  プレビュー: 青葉賞・G2は25日に東京で開催され、ダービーTRに東西から精鋭が集結します。アザレア賞を快勝したブラックオリンピアは、栗東CWで引き続き軽快な動きを見せました...
+[0]  [Gemini生出力 145文字]: '今週末から調教騎乗を再開することが発表されました。菅原明良騎手は、3月1日の中山9Rで落馬負傷し、「第3腰椎椎体骨折」と診断されて休業していました。師匠の高木登調教師は、4月23日に「今週の土曜日(25日)から調教に乗ります。順調なら来週の競馬から実戦復帰する予定です」と明らかにしました。'
+[0]  → output/script_0.txt 保存 (145文字)
+[0]  プレビュー: 今週末から調教騎乗を再開することが発表されました。菅原明良騎手は、3月1日の中山9Rで落馬負傷し、「第3腰椎椎体骨折」と診断されて休業していました。師匠の高木登...
 
 3 件の脚本を生成しました。
