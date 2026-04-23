@@ -22,23 +22,84 @@ OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
 
-# YouTubeタイトルテンプレート（動画ごとにローテーション）
-# prefix + short_title + suffix の形式。{date}=日付文字列
+# YouTubeタイトルテンプレート（動画ごとにランダム選択）
+# (prefix, suffix) 形式。実際のタイトルは prefix + article_title + suffix
+# {date} は _random_date_str() で生成された日付文字列に置換される
 _TITLE_TEMPLATES = [
-    ("【競馬速報】{date} ",    " #Shorts"),              # 【競馬速報】2026/4/23 〇〇 #Shorts
-    ("",                      "｜競馬最新情報 {date} #Shorts"),  # 〇〇｜競馬最新情報 2026/4/23 #Shorts
-    ("{date}競馬NEWS｜",       " #Shorts"),              # 2026/4/23競馬NEWS｜〇〇 #Shorts
-    ("【最新競馬情報】{date} ", " #Shorts"),              # 【最新競馬情報】2026/4/23 〇〇 #Shorts
-    ("競馬速報｜",             " {date} #Shorts"),        # 競馬速報｜〇〇 2026/4/23 #Shorts
-    ("{date} ",               "｜競馬ニュース #Shorts"),  # 2026/4/23 〇〇｜競馬ニュース #Shorts
-    ("【競馬ニュース】{date} ", " #Shorts"),              # 【競馬ニュース】2026/4/23 〇〇 #Shorts
-    ("",                      "｜{date} 競馬速報 #Shorts"), # 〇〇｜2026/4/23 競馬速報 #Shorts
-    ("競馬情報｜{date} ",      " #Shorts"),              # 競馬情報｜2026/4/23 〇〇 #Shorts
-    ("{date} ",               "【競馬速報】#Shorts"),     # 2026/4/23 〇〇【競馬速報】#Shorts
-    ("",                      " {date}｜競馬情報 #Shorts"), # 〇〇 2026/4/23｜競馬情報 #Shorts
-    ("【競馬NEWS】",           " {date} #Shorts"),        # 【競馬NEWS】〇〇 2026/4/23 #Shorts
-    ("{date}｜競馬速報｜",     " #Shorts"),              # 2026/4/23｜競馬速報｜〇〇 #Shorts
-    ("",                      "｜競馬速報{date} #Shorts"), # 〇〇｜競馬速報2026/4/23 #Shorts
+    # ── 【カテゴリ】date + title ─────────────────────────
+    ("【競馬速報】{date} ",     " #Shorts"),   # 【競馬速報】4月23日 〇〇 #Shorts
+    ("【競馬ニュース】{date} ", " #Shorts"),   # 【競馬ニュース】4/23 〇〇 #Shorts
+    ("【競馬NEWS】{date} ",     " #Shorts"),   # 【競馬NEWS】2026/4/23 〇〇 #Shorts
+    ("【競馬情報】{date} ",     " #Shorts"),   # 【競馬情報】4.23 〇〇 #Shorts
+    ("【最新競馬情報】{date} ", " #Shorts"),   # 【最新競馬情報】2026年4月23日 〇〇 #Shorts
+    ("【競馬最新情報】{date} ", " #Shorts"),
+    ("【重賞速報】{date} ",     " #Shorts"),
+    ("【競馬速報！】{date} ",   " #Shorts"),
+
+    # ── date + 【カテゴリ】+ title ──────────────────────
+    ("{date}【競馬速報】",     " #Shorts"),
+    ("{date}【競馬ニュース】", " #Shorts"),
+    ("{date}【競馬情報】",     " #Shorts"),
+    ("{date}【重賞速報】",     " #Shorts"),
+
+    # ── date + カテゴリ｜ + title ──────────────────────
+    ("{date}競馬NEWS｜",     " #Shorts"),
+    ("{date}競馬速報｜",     " #Shorts"),
+    ("{date}競馬ニュース｜", " #Shorts"),
+    ("{date}競馬情報｜",     " #Shorts"),
+    ("{date}重賞速報｜",     " #Shorts"),
+
+    # ── date｜カテゴリ｜ + title ───────────────────────
+    ("{date}｜競馬速報｜",     " #Shorts"),
+    ("{date}｜競馬ニュース｜", " #Shorts"),
+    ("{date}｜競馬情報｜",     " #Shorts"),
+    ("{date}｜競馬NEWS｜",     " #Shorts"),
+
+    # ── カテゴリ｜{date} + title ───────────────────────
+    ("競馬速報｜{date} ",     " #Shorts"),
+    ("競馬ニュース｜{date} ", " #Shorts"),
+    ("競馬情報｜{date} ",     " #Shorts"),
+    ("競馬NEWS｜{date} ",     " #Shorts"),
+
+    # ── カテゴリ｜ + title + date suffix ───────────────
+    ("競馬速報｜",     " {date} #Shorts"),
+    ("競馬ニュース｜", " {date} #Shorts"),
+    ("競馬情報｜",     " {date} #Shorts"),
+    ("競馬NEWS｜",     " {date} #Shorts"),
+    ("重賞速報｜",     " {date} #Shorts"),
+
+    # ── date + title + ｜カテゴリ suffix ──────────────
+    ("{date} ", "｜競馬速報 #Shorts"),
+    ("{date} ", "｜競馬ニュース #Shorts"),
+    ("{date} ", "｜競馬情報 #Shorts"),
+    ("{date} ", "｜競馬NEWS #Shorts"),
+    ("{date} ", "【競馬速報】#Shorts"),
+    ("{date} ", "【競馬ニュース】#Shorts"),
+
+    # ── title + ｜カテゴリ date suffix ────────────────
+    ("", "｜競馬速報 {date} #Shorts"),
+    ("", "｜競馬最新情報 {date} #Shorts"),
+    ("", "｜競馬ニュース {date} #Shorts"),
+    ("", "｜競馬情報 {date} #Shorts"),
+    ("", "｜競馬NEWS {date} #Shorts"),
+    ("", "｜重賞速報 {date} #Shorts"),
+
+    # ── title + 【カテゴリ】date suffix ───────────────
+    ("", "【競馬速報】{date} #Shorts"),
+    ("", "【競馬ニュース】{date} #Shorts"),
+    ("", "【競馬情報】{date} #Shorts"),
+
+    # ── title + date｜カテゴリ suffix ─────────────────
+    ("", " {date}｜競馬速報 #Shorts"),
+    ("", " {date}｜競馬ニュース #Shorts"),
+    ("", " {date}｜競馬情報 #Shorts"),
+    ("", " {date}｜競馬NEWS #Shorts"),
+
+    # ── title + ｜カテゴリdate suffix ─────────────────
+    ("", "｜競馬速報{date} #Shorts"),
+    ("", "｜競馬ニュース{date} #Shorts"),
+    ("", "｜競馬情報{date} #Shorts"),
+    ("", "｜競馬NEWS{date} #Shorts"),
 ]
 
 # YouTube説明文テンプレート（動画ごとにローテーション）
