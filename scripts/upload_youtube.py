@@ -4,7 +4,9 @@
 import io
 import json
 import os
+import random
 import re
+import string
 import subprocess
 import sys
 from pathlib import Path
@@ -19,6 +21,93 @@ NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
 POSTED_IDS_FILE = "posted_ids.txt"
+
+# YouTubeタイトルテンプレート（動画ごとにランダム選択）
+# (prefix, suffix) 形式。実際のタイトルは prefix + article_title + suffix
+# {date} は _random_date_str() で生成された日付文字列に置換される
+_TITLE_TEMPLATES = [
+    # ── 【カテゴリ】date + title ─────────────────────────
+    ("【競馬速報】{date} ",     " #Shorts"),   # 【競馬速報】4月23日 〇〇 #Shorts
+    ("【競馬ニュース】{date} ", " #Shorts"),   # 【競馬ニュース】4/23 〇〇 #Shorts
+    ("【競馬NEWS】{date} ",     " #Shorts"),   # 【競馬NEWS】2026/4/23 〇〇 #Shorts
+    ("【競馬情報】{date} ",     " #Shorts"),   # 【競馬情報】4.23 〇〇 #Shorts
+    ("【最新競馬情報】{date} ", " #Shorts"),   # 【最新競馬情報】2026年4月23日 〇〇 #Shorts
+    ("【競馬最新情報】{date} ", " #Shorts"),
+    ("【重賞速報】{date} ",     " #Shorts"),
+    ("【競馬速報！】{date} ",   " #Shorts"),
+
+    # ── date + 【カテゴリ】+ title ──────────────────────
+    ("{date}【競馬速報】",     " #Shorts"),
+    ("{date}【競馬ニュース】", " #Shorts"),
+    ("{date}【競馬情報】",     " #Shorts"),
+    ("{date}【重賞速報】",     " #Shorts"),
+
+    # ── date + カテゴリ｜ + title ──────────────────────
+    ("{date}競馬NEWS｜",     " #Shorts"),
+    ("{date}競馬速報｜",     " #Shorts"),
+    ("{date}競馬ニュース｜", " #Shorts"),
+    ("{date}競馬情報｜",     " #Shorts"),
+    ("{date}重賞速報｜",     " #Shorts"),
+
+    # ── date｜カテゴリ｜ + title ───────────────────────
+    ("{date}｜競馬速報｜",     " #Shorts"),
+    ("{date}｜競馬ニュース｜", " #Shorts"),
+    ("{date}｜競馬情報｜",     " #Shorts"),
+    ("{date}｜競馬NEWS｜",     " #Shorts"),
+
+    # ── カテゴリ｜{date} + title ───────────────────────
+    ("競馬速報｜{date} ",     " #Shorts"),
+    ("競馬ニュース｜{date} ", " #Shorts"),
+    ("競馬情報｜{date} ",     " #Shorts"),
+    ("競馬NEWS｜{date} ",     " #Shorts"),
+
+    # ── カテゴリ｜ + title + date suffix ───────────────
+    ("競馬速報｜",     " {date} #Shorts"),
+    ("競馬ニュース｜", " {date} #Shorts"),
+    ("競馬情報｜",     " {date} #Shorts"),
+    ("競馬NEWS｜",     " {date} #Shorts"),
+    ("重賞速報｜",     " {date} #Shorts"),
+
+    # ── date + title + ｜カテゴリ suffix ──────────────
+    ("{date} ", "｜競馬速報 #Shorts"),
+    ("{date} ", "｜競馬ニュース #Shorts"),
+    ("{date} ", "｜競馬情報 #Shorts"),
+    ("{date} ", "｜競馬NEWS #Shorts"),
+    ("{date} ", "【競馬速報】#Shorts"),
+    ("{date} ", "【競馬ニュース】#Shorts"),
+
+    # ── title + ｜カテゴリ date suffix ────────────────
+    ("", "｜競馬速報 {date} #Shorts"),
+    ("", "｜競馬最新情報 {date} #Shorts"),
+    ("", "｜競馬ニュース {date} #Shorts"),
+    ("", "｜競馬情報 {date} #Shorts"),
+    ("", "｜競馬NEWS {date} #Shorts"),
+    ("", "｜重賞速報 {date} #Shorts"),
+
+    # ── title + 【カテゴリ】date suffix ───────────────
+    ("", "【競馬速報】{date} #Shorts"),
+    ("", "【競馬ニュース】{date} #Shorts"),
+    ("", "【競馬情報】{date} #Shorts"),
+
+    # ── title + date｜カテゴリ suffix ─────────────────
+    ("", " {date}｜競馬速報 #Shorts"),
+    ("", " {date}｜競馬ニュース #Shorts"),
+    ("", " {date}｜競馬情報 #Shorts"),
+    ("", " {date}｜競馬NEWS #Shorts"),
+
+    # ── title + ｜カテゴリdate suffix ─────────────────
+    ("", "｜競馬速報{date} #Shorts"),
+    ("", "｜競馬ニュース{date} #Shorts"),
+    ("", "｜競馬情報{date} #Shorts"),
+    ("", "｜競馬NEWS{date} #Shorts"),
+]
+
+# YouTube説明文テンプレート（動画ごとにローテーション）
+_DESC_INTRO_TEMPLATES = [
+    "競馬の最新ニュースをお届けします。",
+    "注目の競馬情報をまとめました。",
+    "競馬ファン必見の速報情報です。",
+]
 
 YOUTUBE_SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
@@ -203,16 +292,42 @@ def build_tags(extra_keywords: list[str] | None = None) -> list[str]:
     return result
 
 
+def _random_date_str(dt: "datetime.datetime") -> str:
+    """日付を複数フォーマットからランダムに返す。"""
+    import datetime as _dt3
+    y, m, d = dt.year, dt.month, dt.day
+    formats = [
+        f"{y}/{m}/{d}",      # 2026/4/23
+        f"{m}/{d}",          # 4/23
+        f"{m}月{d}日",       # 4月23日
+        f"{y}年{m}月{d}日",  # 2026年4月23日
+        f"{m}.{d}",          # 4.23
+    ]
+    return random.choice(formats)
+
+
+def _make_video_filename(title: str) -> str:
+    """記事タイトルから意味のあるファイル名を生成する（連番回避）。"""
+    kata = re.findall(r'[ァ-ヶー]{3,}', title)
+    kw = kata[0][:6] if kata else "keiba"
+    import datetime as _dt2
+    date = _dt2.datetime.now(_dt2.timezone(_dt2.timedelta(hours=9))).strftime("%Y%m%d")
+    rand4 = "".join(random.choices(string.ascii_uppercase + string.digits, k=4))
+    return f"{kw}_{date}_{rand4}.mp4"
+
+
 def upload_video(youtube, title: str, description: str, video_path: str, extra_keywords: list[str] | None = None) -> str | None:
     """YouTube に動画をアップロードして videoId を返す。
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
-    # YouTubeタイトルの上限は100文字
+    # YouTubeタイトルの上限は100文字（テンプレート・日付フォーマットをランダム選択）
     import datetime as _dt
     _jst = _dt.timezone(_dt.timedelta(hours=9))
     _today = _dt.datetime.now(_jst)
-    date_str = f"{_today.year}/{_today.month}/{_today.day}"
-    prefix, suffix = f"【競馬速報】{date_str} ", " #Shorts"
+    date_str = _random_date_str(_today)
+    prefix_tpl, suffix = random.choice(_TITLE_TEMPLATES)
+    prefix = prefix_tpl.replace("{date}", date_str)
+    suffix = suffix.replace("{date}", date_str)
     max_body = 100 - len(prefix) - len(suffix)
     short_title = title if len(title) <= max_body else title[:max_body - 1] + "…"
     body = {
@@ -316,14 +431,15 @@ def extract_seo_keywords(title: str, script: str) -> list[str]:
 
 
 def build_description(script: str, seo_keywords: list[str] | None = None) -> str:
+    intro = random.choice(_DESC_INTRO_TEMPLATES)
     base_tags = "#競馬 #競馬ニュース #keiba #Shorts #競馬速報"
     if seo_keywords:
         kw_hashtags = " ".join(f"#{k}" for k in seo_keywords[:15])
         hashtags = f"\n\n{base_tags} {kw_hashtags}"
     else:
         hashtags = f"\n\n{base_tags}"
-    max_len = 5000 - len(hashtags)
-    return script[:max_len] + hashtags
+    max_len = 5000 - len(intro) - 1 - len(hashtags)
+    return intro + "\n" + script[:max_len] + hashtags
 
 
 def main() -> None:
@@ -376,9 +492,16 @@ def main() -> None:
         print(f"  SEOキーワード({len(seo_keywords)}): {', '.join(seo_keywords[:10])}")
 
         print(f"\n--- アップロード [{idx}]: {title[:50]} ---")
+
+        # 連番ファイル名を意味のある名前にリネーム（パターン検出回避）
+        new_filename = _make_video_filename(title)
+        new_video_path = video_file.parent / new_filename
+        video_file.rename(new_video_path)
+        print(f"  ファイルリネーム: {video_file.name} → {new_filename}")
+
         video_id = None
         while video_id is None:
-            result = upload_video(youtube, title, description, str(video_file), extra_keywords=seo_keywords)
+            result = upload_video(youtube, title, description, str(new_video_path), extra_keywords=seo_keywords)
             if result == "CHANNEL_LIMIT":
                 # チャンネル制限: プロジェクト切り替えでは解決しない → 即停止
                 quota_exceeded = True
@@ -405,7 +528,7 @@ def main() -> None:
         print("  サムネイル生成中...")
         thumb_path = ""
         try:
-            thumb_path = generate_thumbnail(str(video_file), idx)
+            thumb_path = generate_thumbnail(str(new_video_path), idx)
             upload_thumbnail(youtube, video_id, thumb_path)
         except Exception as e:
             print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)

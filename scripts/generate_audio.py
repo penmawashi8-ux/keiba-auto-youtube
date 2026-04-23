@@ -45,7 +45,7 @@ def normalize_racing_terms(text: str) -> str:
         text = pattern.sub(repl, text)
     return text
 
-# edge-tts フォールバック用ボイスプール
+# edge-tts フォールバック用ボイスプール（確認済み有効ボイスのみ）
 _EDGE_VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
 
 # Kokoro 日本語ボイスプール
