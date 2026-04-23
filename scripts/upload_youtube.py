@@ -231,6 +231,20 @@ def build_tags(extra_keywords: list[str] | None = None) -> list[str]:
     return result
 
 
+def _random_date_str(dt: "datetime.datetime") -> str:
+    """日付を複数フォーマットからランダムに返す。"""
+    import datetime as _dt3
+    y, m, d = dt.year, dt.month, dt.day
+    formats = [
+        f"{y}/{m}/{d}",      # 2026/4/23
+        f"{m}/{d}",          # 4/23
+        f"{m}月{d}日",       # 4月23日
+        f"{y}年{m}月{d}日",  # 2026年4月23日
+        f"{m}.{d}",          # 4.23
+    ]
+    return random.choice(formats)
+
+
 def _make_video_filename(title: str) -> str:
     """記事タイトルから意味のあるファイル名を生成する（連番回避）。"""
     kata = re.findall(r'[ァ-ヶー]{3,}', title)
@@ -245,11 +259,11 @@ def upload_video(youtube, title: str, description: str, video_path: str, extra_k
     """YouTube に動画をアップロードして videoId を返す。
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
-    # YouTubeタイトルの上限は100文字（テンプレートをランダム選択）
+    # YouTubeタイトルの上限は100文字（テンプレート・日付フォーマットをランダム選択）
     import datetime as _dt
     _jst = _dt.timezone(_dt.timedelta(hours=9))
     _today = _dt.datetime.now(_jst)
-    date_str = f"{_today.year}/{_today.month}/{_today.day}"
+    date_str = _random_date_str(_today)
     prefix_tpl, suffix = random.choice(_TITLE_TEMPLATES)
     prefix = prefix_tpl.replace("{date}", date_str)
     suffix = suffix.replace("{date}", date_str)
