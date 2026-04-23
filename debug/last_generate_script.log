@@ -5,29 +5,37 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0]: 【青葉賞出走馬・騎手確定】ブラックオリンピア＆川田将雅騎手、ノーブルサヴェージ＆D.レーン騎手など18頭 ---
-[0] Gemini入力本文 342文字: '4月25日に東京競馬場で行われる、第33回青葉賞(3歳・GII・芝2400m)の出走馬・騎手が確定した。\n\u3000未勝利・アザレア賞を連勝のブラックオリンピア(牡3、栗東・友道康夫厩舎)は川田将雅騎手、無傷2連勝中のノーブルサヴェージ(牡3、美浦'
+--- 記事[0]: 異例の転身!　国枝栄厩務員の担当馬が25日の東京10Rで武豊騎手と初陣「うれしいです」鎌倉Sのトクシーカイザー ---
+[0] Gemini入力本文 344文字: 'JRA史上10位の1123勝を挙げて今春に調教師を定年で引退し、今月から小島茂之厩舎＝美浦＝で補充員として働く国枝栄厩務員が、担当馬の初陣を迎える。25日の東京10R・鎌倉S(4歳上3勝クラス、ダート1400メートル)に手がけるトクシーカイ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1]: 【マイラーズC出走馬・騎手確定】アドマイヤズーム＆武豊騎手、ウォーターリヒト＆高杉吏麒騎手など18頭 ---
-[1] Gemini入力本文 344文字: '4月26日に京都競馬場で行われる、第57回マイラーズカップ(4歳上・GII・芝1600m)の出走馬・騎手が確定した。\n\u300024年の朝日杯FS勝ちの実績があるアドマイヤズーム(牡4、栗東・友道康夫厩舎)は武豊騎手、昨年のマイルCSで3着と好走し'
+--- 記事[1]: 【注目馬動向】3連勝中のダノンセンチュリーは京王杯SCへ　2度目の重賞挑戦は初の1400メートル ---
+[1] Gemini入力本文 323文字: '雲雀Sで3連勝を決めたダノンセンチュリー(牡4歳、美浦・萩原清厩舎、父フィエールマン)は、京王杯SC・G2(5月2日、東京競馬場・芝1400メートル)で2度目の重賞挑戦。1ハロン距離短縮し、初めての7ハロン戦に挑む。\n\t\t\t\t\u3000萩原調教師は'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2]: 【フローラS出走馬・騎手確定】ラフターラインズ＆D.レーン騎手、ファムクラジューズ＆横山武史騎手など13頭 ---
-[2] Gemini入力本文 343文字: '4月26日に東京競馬場で行われる、第61回フローラステークス(3歳・牝・GII・芝2000m)の出走馬・騎手が確定した。\n\u3000強力牡馬相手のきさらぎ賞でタイム差なしの3着に入ったラフターラインズ(牝3、美浦・小笠倫弘厩舎)はD.レーン騎手、未'
+--- 記事[2]: 【注目馬動向】チャーチルダウンズC4着のシーミハットクは白百合Sへ　ジューンアヲニヨシは浜中俊騎手と平安Sへ ---
+[2] Gemini入力本文 353文字: 'チャーチルダウンズC4着のシーミハットク(牡3歳、栗東・寺島良厩舎、父オルフェーヴル)は白百合S(5月31日、京都)を目標にする。\n\t\t\t\t\u3000ジューンアヲニヨシ(牡6歳、栗東・松下武士厩舎、父キズナ)は浜中俊騎手とのコンビ継続で平安S(5月'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -44,25 +52,36 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 192文字]: '4月26日に京都競馬場で行われる第57回マイラーズカップ、4歳上・GII・芝1600mの出走馬と騎手が確定しました。このレースには18頭が出走します。\n\n24年の朝日杯FS勝ちの実績があるアドマイヤズームは武豊騎手、昨年のマイルCSで3着と好走し、前走の東京新聞杯でも3着だったウォーターリヒトは高杉吏麒騎手です。アサヒは松本大輝騎手、エルトンバローズは西村淳騎手と発表されています。'
-[1]  [重複除去] 192文字 → 190文字
-[1]  → output/script_1.txt 保存 (190文字)
-[1]  プレビュー: 4月26日に京都競馬場で行われる第57回マイラーズカップ、4歳上・GII・芝1600mの出走馬と騎手が確定しました。このレースには18頭が出走します。24年の朝...
+[2]  [Gemini生出力 242文字]: 'チャーチルダウンズCで4着だったシーミハットクは、白百合Sを目標にします。白百合Sは5月31日に京都で開催される予定です。ジューンアヲニヨシは、浜中俊騎手とのコンビを継続し、平安Sへ向かいます。平安Sは5月23日に京都で行われます。大阪―ハンブルクCで2着だったウエストナウは、メトロポリタンSを予定しています。メトロポリタンSは5月10日に東京で開催されます。仁川Sで3着だったクールミラボーは、ブリリアントSを視野に入れています。ブリリアントSは5月3日に東京で行われる予定です。'
+[2]  → output/script_2.txt 保存 (242文字)
+[2]  プレビュー: チャーチルダウンズCで4着だったシーミハットクは、白百合Sを目標にします。白百合Sは5月31日に京都で開催される予定です。ジューンアヲニヨシは、浜中俊騎手とのコ...
   HTTP 200
-[0]  [Gemini生出力 245文字]: '4月25日に東京競馬場で行われる第33回青葉賞、3歳・GII・芝2400mの出走馬と騎手が確定し、全18頭が出揃いました。未勝利とアザレア賞を連勝しているブラックオリンピアには川田将雅騎手が騎乗します。また、無傷の2連勝中のノーブルサヴェージにはD.レーン騎手が騎乗することが決まりました。この他にも、アッカンに池添謙一騎手、カットソロに津村明秀騎手、ケントンに木幡巧也騎手、コスモギガンティアに矢野貴之騎手、ゴーイントゥスカイに武豊騎手、サガルマータに横山武史騎手などが名を連ねています。'
-[0]  → output/script_0.txt 保存 (245文字)
-[0]  プレビュー: 4月25日に東京競馬場で行われる第33回青葉賞、3歳・GII・芝2400mの出走馬と騎手が確定し、全18頭が出揃いました。未勝利とアザレア賞を連勝しているブラッ...
+[1]  [Gemini生出力 202文字]: '雲雀Sで3連勝を決めたダノンセンチュリーは、京王杯SC・G2へ向かいます。5月2日に東京競馬場・芝1400メートルで行われるこのレースで、ダノンセンチュリーは2度目の重賞挑戦となります。今回は1ハロン距離を短縮し、初めての7ハロン戦に挑みます。萩原調教師は「中間も順調に追い切りをこなして変わりなくきています。重賞で相手関係がカギになるのと、この距離でどんな競馬ができるかになります」とコメントしました。'
+[1]  → output/script_1.txt 保存 (202文字)
+[1]  プレビュー: 雲雀Sで3連勝を決めたダノンセンチュリーは、京王杯SC・G2へ向かいます。5月2日に東京競馬場・芝1400メートルで行われるこのレースで、ダノンセンチュリーは2...
+  HTTP 503
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 229文字]: '4月26日に東京競馬場で行われる、第61回フローラステークスの出走馬と騎手が確定しました。このレースは3歳牝馬によるGII、芝2000mで争われます。強力牡馬相手のきさらぎ賞でタイム差なしの3着に入ったラフターラインズにはD.レーン騎手が、未勝利とフリージア賞を連勝しているファムクラジューズには横山武史騎手が騎乗します。その他、エイシンウィスパーには松若風馬騎手、エンネにはM.ディー騎手、コウギョクには横山和生騎手などが名を連ね、合計13頭が出走します。'
-[2]  → output/script_2.txt 保存 (229文字)
-[2]  プレビュー: 4月26日に東京競馬場で行われる、第61回フローラステークスの出走馬と騎手が確定しました。このレースは3歳牝馬によるGII、芝2000mで争われます。強力牡馬相...
+[0]  [Gemini生出力 211文字]: 'JRA史上10位の1123勝を挙げて今春に調教師を定年で引退し、今月から小島茂之厩舎＝美浦＝で補充員として働く国枝栄厩務員が、担当馬の初陣を迎える。25日の東京10R・鎌倉S(4歳上3勝クラス、ダート1400メートル)に手がけるトクシーカイザー(牡6歳、父キンシャサノキセキ)が武豊騎手＝栗東・フリー＝とのコンビでの出走が決まり、「乗っていただけるのはうれしいですし、結果がついてくるのが一番。無事に競馬をしたいです」と。'
+[0]  → output/script_0.txt 保存 (195文字)
+[0]  プレビュー: JRA史上10位の1123勝を挙げて今春に調教師を定年で引退し、今月から小島茂之厩舎＝美浦＝で補充員として働く国枝栄厩務員が、担当馬の初陣を迎える。25日の東京...
 
 3 件の脚本を生成しました。
