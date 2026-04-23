@@ -101,6 +101,36 @@ RESULTS_SYSTEM_PROMPT = (
 )
 
 
+# 書き出しパターン（毎動画ランダム選択してGeminiに指示する）
+_OPENING_PATTERNS = [
+    "本日の競馬ニュースです。",
+    "競馬速報です。",
+    "最新のレース情報が入ってきました。",
+    "注目の競馬情報をお届けします。",
+    "今週の競馬注目情報をお伝えします。",
+    "レース関連の最新情報です。",
+    "今日の競馬情報です。",
+    "重要な競馬ニュースをお伝えします。",
+    "競馬ファン注目の情報です。",
+    "最新情報をお届けします。",
+]
+
+
+def _check_consecutive_endings(script: str, idx: int) -> None:
+    """同じ語尾が3文以上連続している場合に警告を出す（品質チェック）。"""
+    sentences = [s.strip() for s in script.split("。") if len(s.strip()) >= 2]
+    if len(sentences) < 3:
+        return
+    endings = [s[-2:] for s in sentences]
+    for i in range(len(endings) - 2):
+        if endings[i] == endings[i + 1] == endings[i + 2]:
+            print(
+                f"[{idx}]  [警告] 語尾の連続パターン検出: 「〜{endings[i]}」が3文以上連続",
+                file=sys.stderr,
+            )
+            return
+
+
 def get_system_prompt() -> str:
     """環境変数 SCRIPT_MODE に応じてシステムプロンプトを返す。"""
     mode = os.environ.get("SCRIPT_MODE", "news").strip().lower()
@@ -223,6 +253,10 @@ def main() -> None:
 
     def generate_one(args):
         i, item = args
+        # 書き出しパターンをランダム選択（動画ごとに変化させる）
+        opening_pattern = random.choice(_OPENING_PATTERNS)
+        print(f"\n--- 記事[{i}] 書き出しパターン: 「{opening_pattern}」 ---")
+
         summary_text = item.get('summary', '')
         # ウェブナビゲーション的な文言を除去してからGeminiに渡す
         # 例: 「ジュウリョクピエロの全成績と掲示板」「今村聖奈の全成績」など
@@ -242,7 +276,8 @@ def main() -> None:
         user_content = (
             f"【ニュース】\n"
             f"タイトル: {item['title']}\n"
-            f"内容: {summary_text[:1500]}"
+            f"内容: {summary_text[:1500]}\n\n"
+            f"【書き出し指示】このナレーションは必ず「{opening_pattern}」という一文で始めること。"
         )
         lenient_sys_prompt = (
             sys_prompt
@@ -405,6 +440,7 @@ def main() -> None:
                 out_path.write_text(script, encoding="utf-8")
                 print(f"[{i}]  → {out_path} 保存 ({len(script)}文字)")
                 print(f"[{i}]  プレビュー: {script[:80]}...")
+                _check_consecutive_endings(script, i)
                 return i, True
             except QuotaExceeded:
                 print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。20秒待機後に次へ切り替えます。", file=sys.stderr)

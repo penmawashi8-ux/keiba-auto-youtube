@@ -62,6 +62,23 @@ _BOX_COLORS = [
     "0x000014", "0x000000", "0x0A0A1A", "0x140000",
     "0x001400", "0x100010", "0x0A0A0A", "0x000A14",
 ]
+
+# 字幕スタイルプリセット: (文字色, ボックス色, 不透明度, ボーダー幅)
+# 文字色とボックス色をセットで管理して視認性の高い組み合わせを保証する
+_SUBTITLE_STYLE_PRESETS = [
+    ("0xFFFFFF", "0x000000", 0.88, 3),   # 白/黒（標準）
+    ("0xFFEB00", "0x000000", 0.85, 3),   # 黄/黒
+    ("0x00FFFF", "0x000A14", 0.88, 3),   # シアン/濃紺
+    ("0xFFAA00", "0x140000", 0.86, 3),   # オレンジ/濃赤
+    ("0xAAFF88", "0x001400", 0.90, 3),   # 黄緑/濃緑
+    ("0xFFD700", "0x0A0A1A", 0.88, 3),   # 金/紺
+    ("0xFFFFFF", "0x100010", 0.85, 3),   # 白/濃紫
+    ("0xFFCCAA", "0x0A0A0A", 0.88, 3),   # ピーチ/黒
+    ("0xAAFFFF", "0x000A14", 0.90, 4),   # ライトシアン/濃紺
+    ("0xFFFF88", "0x000000", 0.85, 3),   # 淡黄/黒
+    ("0xFFFFFF", "0x0A0A2E", 0.88, 4),   # 白/濃ネイビー
+    ("0xFF88AA", "0x000000", 0.86, 3),   # ピンク/黒
+]
 _BADGE_COLORS = [
     "0xD21E1E", "0x1E3AD2", "0x1E9A1E", "0x8B1ED2",
     "0xD27D1E", "0x1E8BD2", "0xBD0000", "0x006400",
@@ -434,15 +451,17 @@ _BG_PATTERNS: list[str] = _build_bg_patterns()
 
 def make_video_style() -> dict:
     """動画ごとのランダムスタイルを生成する。"""
-    sub_box = random.choice(_BOX_COLORS)
+    # 字幕カラープリセットを選択（文字色とボックス色を統一して視認性を保証）
+    preset = random.choice(_SUBTITLE_STYLE_PRESETS)
+    sub_col, sub_box, sub_op_base, sub_bw_base = preset
     # 字幕スタイルタイプ: box(ボックスあり) / no_box(影のみ)
     sub_type = random.choices(
         ["box", "no_box"],
         weights=[6, 4],
         k=1,
     )[0]
-    # 字幕の縦位置（画面下からの距離）
-    sub_y = random.choice([200, 350, 500, 650, 800])
+    # 字幕の縦位置（画面下からの距離）: 下段〜上段まで8段階
+    sub_y = random.choice([200, 350, 500, 650, 800, 950, 1100, 1200])
     # 字幕の横揃え
     sub_x_align = random.choices(
         ["center", "left", "right"],
@@ -459,12 +478,12 @@ def make_video_style() -> dict:
         "subtitle_y":              sub_y,
         "subtitle_x_align":        sub_x_align,
         "diagonal_angle_rad":      diagonal_angle,
-        "subtitle_color":          random.choice(_SUBTITLE_COLORS),
+        "subtitle_color":          sub_col,
         "subtitle_box_color":      sub_box,
-        "subtitle_box_opacity":    round(random.uniform(0.78, 0.96), 2),
+        "subtitle_box_opacity":    round(sub_op_base + random.uniform(-0.04, 0.04), 2),
         "subtitle_font_size":      sub_fs,
         "subtitle_line_max_chars": sub_lmc,
-        "subtitle_border_w":       random.randint(2, 10),
+        "subtitle_border_w":       sub_bw_base + random.randint(0, 4),
         "subtitle_line_spacing":   random.randint(8, 22),
         "anim_idx":                random.randint(0, len(_ANIM_PATTERNS) - 1),
         "badge_color":             random.choice(_BADGE_COLORS),
