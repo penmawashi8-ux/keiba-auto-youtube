@@ -280,13 +280,8 @@ def make_clip(idx: int, bg_img: str | None, seg: dict, duration: float,
 
 
 # ---------------------------------------------------------------------------
-def main() -> None:
-    news_items = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
-    if not news_items:
-        print("news.json が空です。スキップします。")
-        sys.exit(0)
-
-    meta      = news_items[0]
+def generate_video(idx: int, meta: dict, font: str, bg_imgs: list) -> str:
+    """1本分の動画を生成して出力パスを返す。"""
     race_meta = {
         "race_name": meta.get("race_name", meta.get("title", "")),
         "grade":     meta.get("grade", ""),
@@ -295,28 +290,20 @@ def main() -> None:
         "distance":  meta.get("distance", ""),
     }
 
-    script_path = Path(f"{OUTPUT_DIR}/script_0.txt")
-    audio_path  = f"{OUTPUT_DIR}/audio_0.mp3"
-    output_path = f"{OUTPUT_DIR}/video_0.mp4"
+    script_path = Path(f"{OUTPUT_DIR}/script_{idx}.txt")
+    audio_path  = f"{OUTPUT_DIR}/audio_{idx}.mp3"
+    output_path = f"{OUTPUT_DIR}/landscape_video_{idx}.mp4"
 
     if not script_path.exists():
-        print(f"[エラー] {script_path} が見つかりません。", file=sys.stderr)
-        sys.exit(1)
+        raise FileNotFoundError(f"{script_path} が見つかりません。")
     if not Path(audio_path).exists():
-        print(f"[エラー] {audio_path} が見つかりません。", file=sys.stderr)
-        sys.exit(1)
+        raise FileNotFoundError(f"{audio_path} が見つかりません。")
 
     script   = script_path.read_text(encoding="utf-8").strip()
     segments = parse_segments(script)
-    font     = find_font()
-    bg_imgs  = fetch_images(4)
-    if not bg_imgs:
-        print("[エラー] 背景画像の取得に失敗しました。", file=sys.stderr)
-        sys.exit(1)
 
     aud_dur    = audio_duration(audio_path)
     total_body = sum(len(s["text"]) for s in segments)
-    # オープニング + エンディング は固定秒数で音声から引く
     body_audio = max(aud_dur - OPEN_DUR - END_DUR, aud_dur * 0.8)
 
     def seg_dur(seg: dict) -> float:
@@ -324,21 +311,16 @@ def main() -> None:
         prop  = body_audio * chars / total_body if total_body else MIN_DUR
         return max(HDR_DUR if seg["type"] == "header" else MIN_DUR, prop)
 
-    Path(OUTPUT_DIR).mkdir(exist_ok=True)
-    tmp_dir = tempfile.mkdtemp(prefix="landscape_")
+    tmp_dir = tempfile.mkdtemp(prefix=f"landscape_{idx}_")
     try:
         clips = []
-        # オープニング
         clips.append(make_clip(0, bg_imgs[0], {"type":"opening"}, OPEN_DUR, font, tmp_dir, race_meta))
-        # 本文セグメント
         for i, seg in enumerate(segments, start=1):
             bg = bg_imgs[i % len(bg_imgs)]
             clips.append(make_clip(i, bg, seg, seg_dur(seg), font, tmp_dir, race_meta))
             print(f"  [{i}/{len(segments)}] {seg['type']} 「{seg['text'][:30]}」 {seg_dur(seg):.1f}s")
-        # エンディング
         clips.append(make_clip(len(segments)+1, bg_imgs[-1], {"type":"ending"}, END_DUR, font, tmp_dir, race_meta))
 
-        # concat
         concat_txt = f"{tmp_dir}/concat.txt"
         with open(concat_txt, "w") as f:
             for c in clips:
@@ -349,7 +331,6 @@ def main() -> None:
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast", silent,
         ], check=True, capture_output=True)
 
-        # 音声 + BGM ミックス
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         total_dur = OPEN_DUR + sum(seg_dur(s) for s in segments) + END_DUR
         cmd = ["ffmpeg", "-y", "-i", silent, "-i", audio_path]
@@ -368,9 +349,41 @@ def main() -> None:
 
         size_mb = Path(output_path).stat().st_size / (1024*1024)
         print(f"✅ {output_path} ({size_mb:.1f} MB)")
+        return output_path
 
     finally:
         shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def main() -> None:
+    news_items = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
+    if not news_items:
+        print("news.json が空です。スキップします。")
+        sys.exit(0)
+
+    print(f"動画生成対象: {len(news_items)} 件")
+
+    font    = find_font()
+    bg_imgs = fetch_images(4)
+    if not bg_imgs:
+        print("[エラー] 背景画像の取得に失敗しました。", file=sys.stderr)
+        sys.exit(1)
+
+    Path(OUTPUT_DIR).mkdir(exist_ok=True)
+    success = 0
+    for idx, meta in enumerate(news_items):
+        race_name = meta.get("race_name", f"レース{idx}")
+        print(f"\n=== [{idx}] {race_name} ===")
+        try:
+            generate_video(idx, meta, font, bg_imgs)
+            success += 1
+        except Exception as e:
+            print(f"[エラー] {race_name} の動画生成失敗: {e}", file=sys.stderr)
+
+    if success == 0:
+        print("[エラー] 全レースの動画生成に失敗しました。", file=sys.stderr)
+        sys.exit(1)
+    print(f"\n✅ {success}/{len(news_items)} 本の動画を生成しました。")
 
 
 if __name__ == "__main__":

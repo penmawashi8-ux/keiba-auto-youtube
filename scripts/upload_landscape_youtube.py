@@ -20,7 +20,7 @@ from googleapiclient.http import MediaFileUpload, MediaIoBaseUpload
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
-# POSTED_IDS_FILE への追記は行わない（Shortsと投稿管理を分離するため）
+POSTED_LANDSCAPE_IDS_FILE = "posted_landscape_ids.txt"
 
 # YouTubeタイトルテンプレート（横向き予想動画用・#Shortsなし）
 # (prefix, suffix) 形式。実際のタイトルは prefix + article_title + suffix
@@ -328,6 +328,76 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
         sys.exit(1)
 
 
+def append_posted_id(race_id: str) -> None:
+    """投稿済みレースIDをファイルに追記する。"""
+    with open(POSTED_LANDSCAPE_IDS_FILE, "a", encoding="utf-8") as f:
+        f.write(race_id + "\n")
+    print(f"  投稿済みID記録: {race_id}")
+
+
+def upload_one(
+    idx: int,
+    race_info: dict,
+    all_creds: list,
+    cred_idx: int,
+    date_str: str,
+) -> tuple[bool, bool, int, list[str]]:
+    """1本の動画をアップロードする。
+    Returns: (success, quota_exceeded, new_cred_idx, log_lines)
+    """
+    race_name = race_info.get("race_name", "重賞レース")
+    grade     = race_info.get("grade", "G1")
+    race_id   = race_info.get("id", f"{race_name}_unknown")
+
+    video_path = Path(OUTPUT_DIR) / f"landscape_video_{idx}.mp4"
+    if not video_path.exists():
+        print(f"  [スキップ] {video_path} が見つかりません。", file=sys.stderr)
+        return False, False, cred_idx, [f"SKIP missing={video_path.name}"]
+
+    script_path = Path(OUTPUT_DIR) / f"script_{idx}.txt"
+    script = script_path.read_text(encoding="utf-8").strip() if script_path.exists() else ""
+
+    title = build_title(race_name, grade, date_str)
+    description = build_description(race_name, grade, date_str, script)
+
+    new_filename = _make_video_filename(race_name)
+    new_video_path = video_path.parent / new_filename
+    video_path.rename(new_video_path)
+    print(f"  リネーム: {video_path.name} → {new_filename}")
+    print(f"  タイトル: {title}")
+
+    youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
+    log_lines: list[str] = []
+
+    video_id = None
+    while video_id is None:
+        result = upload_video(youtube, title, description, str(new_video_path))
+        if result == "CHANNEL_LIMIT":
+            log_lines.append(f"CHANNEL_LIMIT title={title[:50]}")
+            return False, True, cred_idx, log_lines
+        elif result is None:
+            cred_idx += 1
+            if cred_idx < len(all_creds):
+                print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
+                youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
+            else:
+                print("[警告] 全プロジェクトのAPIクォータが超過しました。")
+                log_lines.append(f"QUOTA_EXCEEDED title={title[:50]}")
+                return False, True, cred_idx, log_lines
+        else:
+            video_id = result
+
+    try:
+        thumb_path = generate_thumbnail(str(new_video_path), suffix=f"landscape_{idx}")
+        upload_thumbnail(youtube, video_id, thumb_path)
+    except Exception as e:
+        print(f"  [警告] サムネイル処理失敗: {e}", file=sys.stderr)
+
+    log_lines.append(f"OK project={cred_idx+1} video_id={video_id} title={title[:40]}")
+    append_posted_id(race_id)
+    return True, False, cred_idx, log_lines
+
+
 def main() -> None:
     print("=== YouTube 横向き予想動画 アップロード開始 ===")
 
@@ -336,109 +406,48 @@ def main() -> None:
         sys.exit(1)
 
     news_data = json.loads(Path(NEWS_JSON).read_text(encoding="utf-8"))
-    # news.json はリストまたは単一オブジェクトの場合どちらも対応
-    if isinstance(news_data, list):
-        race_info = news_data[0] if news_data else {}
-    else:
-        race_info = news_data
+    news_items: list[dict] = news_data if isinstance(news_data, list) else [news_data]
+    if not news_items:
+        print("news.json が空です。スキップします。")
+        sys.exit(0)
 
-    race_name = race_info.get("race_name", "重賞レース")
-    grade = race_info.get("grade", "G1")
-    date_str = _jst_date_str()
-
-    # 横向き動画ファイルを探す（landscape_video.py が output/landscape_video.mp4 を生成する想定）
-    landscape_video = Path(OUTPUT_DIR) / "landscape_video.mp4"
-    if not landscape_video.exists():
-        # フォールバック: video_*.mp4 から最初の1本
-        candidates = sorted(
-            f for f in Path(OUTPUT_DIR).glob("video_*.mp4")
-            if f.stem.split("_")[1].isdigit()
-        )
-        if not candidates:
-            print(f"[エラー] アップロード対象の動画ファイルが見つかりません。", file=sys.stderr)
-            sys.exit(1)
-        landscape_video = candidates[0]
-
-    # スクリプトを読み込む（あれば説明文に活用）
-    script_path = Path(OUTPUT_DIR) / "prediction_script.txt"
-    if not script_path.exists():
-        # フォールバック
-        candidates = sorted(Path(OUTPUT_DIR).glob("script_*.txt"))
-        script_path = candidates[0] if candidates else None
-
-    script = script_path.read_text(encoding="utf-8").strip() if script_path and script_path.exists() else ""
-
-    title = build_title(race_name, grade, date_str)
-    description = build_description(race_name, grade, date_str, script)
-
-    print(f"レース名: {race_name} / グレード: {grade} / 日付: {date_str}")
-    print(f"タイトル: {title}")
-
-    # 連番ファイル名を意味のある名前にリネーム（パターン検出回避）
-    new_filename = _make_video_filename(race_name)
-    new_video_path = landscape_video.parent / new_filename
-    landscape_video.rename(new_video_path)
-    print(f"ファイルリネーム: {landscape_video.name} → {new_filename}")
+    print(f"アップロード対象: {len(news_items)} 件")
 
     all_creds, load_log = load_all_credentials()
     cred_idx = 0
-    youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
-
+    date_str = _jst_date_str()
     uploaded_count = 0
     quota_exceeded = False
-    upload_log = []
+    upload_log: list[str] = []
 
-    video_id = None
-    while video_id is None:
-        result = upload_video(youtube, title, description, str(new_video_path))
-        if result == "CHANNEL_LIMIT":
+    for idx, race_info in enumerate(news_items):
+        race_name = race_info.get("race_name", f"レース{idx}")
+        print(f"\n--- [{idx}] {race_name} ---")
+
+        if quota_exceeded:
+            print(f"  クォータ超過のためスキップ: {race_name}")
+            upload_log.append(f"SKIP quota_exceeded race={race_name}")
+            continue
+
+        success, exceeded, cred_idx, logs = upload_one(idx, race_info, all_creds, cred_idx, date_str)
+        upload_log.extend(logs)
+        if success:
+            uploaded_count += 1
+        if exceeded:
             quota_exceeded = True
-            upload_log.append(f"CHANNEL_LIMIT title={title[:50]}")
-            break
-        elif result is None:
-            # APIクォータ超過: 次のGCPプロジェクトに切り替え
-            cred_idx += 1
-            if cred_idx < len(all_creds):
-                print(f"  プロジェクト {cred_idx + 1} に切り替えてリトライ...")
-                youtube = build("youtube", "v3", credentials=all_creds[cred_idx])
-            else:
-                print("[警告] 全プロジェクトのAPIクォータが超過しました。")
-                quota_exceeded = True
-                upload_log.append(f"QUOTA_EXCEEDED project={cred_idx} title={title[:50]}")
-                break
-        else:
-            video_id = result
 
-    if not quota_exceeded and video_id:
-        # サムネイル生成・アップロード（ffmpegで動画先頭フレームを抽出）
-        print("  サムネイル生成中...")
-        thumb_path = ""
-        try:
-            thumb_path = generate_thumbnail(str(new_video_path))
-            upload_thumbnail(youtube, video_id, thumb_path)
-        except Exception as e:
-            print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
-
-        upload_log.append(f"OK project={cred_idx+1} video_id={video_id} title={title[:40]}")
-        uploaded_count += 1
-
-    # POSTED_IDS_FILE への追記は行わない（Shortsと投稿管理を分離するため）
-
-    # 結果サマリーをファイルに書き出す（ワークフローでコミットして確認用）
     import datetime
     summary_lines = [
         f"date: {datetime.datetime.utcnow().isoformat()}Z",
         f"type: landscape_prediction",
-        f"race_name: {race_name}",
-        f"grade: {grade}",
-        f"projects_loaded: {len(all_creds)}",
+        f"total_races: {len(news_items)}",
         f"uploaded: {uploaded_count}",
         f"quota_exceeded: {quota_exceeded}",
     ] + load_log + upload_log
     Path("last_upload_result.txt").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
     print("\n".join(summary_lines))
 
-    if quota_exceeded:
+    if quota_exceeded and uploaded_count == 0:
         print(
             f"\n[エラー] 全プロジェクトのクォータが超過しました。\n"
             "明日UTC 0:00にクォータがリセットされます。",
@@ -446,7 +455,7 @@ def main() -> None:
         )
         sys.exit(1)
 
-    print(f"\n=== アップロード処理完了: {uploaded_count} 本 ===")
+    print(f"\n=== アップロード処理完了: {uploaded_count}/{len(news_items)} 本 ===")
 
 
 if __name__ == "__main__":
