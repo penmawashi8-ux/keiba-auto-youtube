@@ -1,10 +1,10 @@
-date: 2026-04-24T05:52:08.595135Z
+date: 2026-04-24T07:19:29.700665Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NF09gKZ30SY title=【読売マイラーズC】武豊騎手と復活V狙うアドマイヤズームは5枠9番　枠順確定
-OK project=1 video_id=xMSsCMfDpjI title=屈腱炎で休養していたシュガークンは鞍上・武豊で新潟大賞典へ　キタサンブラック半弟
-OK project=1 video_id=gVN_7vsp0IQ title=【フローラS】レーン騎手と初コンビのラフターラインズは4枠5番　初戦圧勝のラベル
+OK project=1 video_id=F4tPQIRbdoE title=【マイラーズC枠順確定】アドマイヤズームは5枠9番、シックスペンスは8枠16番
+OK project=1 video_id=QwAwibclrU0 title=【フローラS枠順確定】ラフターラインズは4枠5番、ファムクラジューズは7枠11番
+OK project=1 video_id=eqrxtwYNMbI title=【香港チェアマンズＳＰ】サトノレーヴ　昨年２着の雪辱へ好気配　斎藤助手が走りに手
