@@ -65,12 +65,13 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
         "generationConfig": {"temperature": temperature, "maxOutputTokens": 8192},
     }
     pairs = [(key, model) for key in api_keys for model in PREFERRED_MODELS]
-    inter_pass_waits = [0] + RATE_LIMIT_WAITS  # [0, 30, 60]
+    # 503（サービス停止）が回復するまで待てるよう、待機時間を長めに設定
+    inter_pass_waits = [0, 60, 180]
 
     with _api_lock:
         for pass_idx, wait in enumerate(inter_pass_waits):
             if wait:
-                print(f"  [全キー失敗のため {wait}秒待機してリトライ (pass {pass_idx+1}/{len(inter_pass_waits)})]", file=sys.stderr)
+                print(f"  [失敗のため {wait}秒待機してリトライ (pass {pass_idx+1}/{len(inter_pass_waits)})]", file=sys.stderr)
                 time.sleep(wait)
             for api_key, model in pairs:
                 key_label = f"{api_key[:8]}..."
@@ -78,10 +79,13 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
                 try:
                     resp = requests.post(url, json=payload, timeout=60)
                     if resp.status_code in NON_RETRY_STATUS:
-                        print(f"  [{key_label} {model}] {resp.status_code} スキップ", file=sys.stderr)
+                        print(f"  [{key_label} {model}] {resp.status_code} → スキップ", file=sys.stderr)
                         continue
                     if resp.status_code == 429:
                         print(f"  [{key_label} {model}] 429 レート制限", file=sys.stderr)
+                        continue
+                    if resp.status_code == 503:
+                        print(f"  [{key_label} {model}] 503 サービス停止", file=sys.stderr)
                         continue
                     resp.raise_for_status()
                     data = resp.json()
