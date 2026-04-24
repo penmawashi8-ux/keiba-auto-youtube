@@ -65,44 +65,33 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
         "generationConfig": {"temperature": temperature, "maxOutputTokens": 8192},
     }
     pairs = [(key, model) for key in api_keys for model in PREFERRED_MODELS]
+    inter_pass_waits = [0] + RATE_LIMIT_WAITS  # [0, 30, 60]
 
     with _api_lock:
-        for api_key, model in pairs:
-            key_label = f"{api_key[:8]}..."
-            url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
-            waits = [0] + RATE_LIMIT_WAITS
-
-            for attempt, wait in enumerate(waits):
-                if wait:
-                    print(f"  [{key_label} {model}] 429 → {wait}秒待機...", file=sys.stderr)
-                    time.sleep(wait)
+        for pass_idx, wait in enumerate(inter_pass_waits):
+            if wait:
+                print(f"  [全キー429のため {wait}秒待機してリトライ...]", file=sys.stderr)
+                time.sleep(wait)
+            for api_key, model in pairs:
+                key_label = f"{api_key[:8]}..."
+                url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
                 try:
                     resp = requests.post(url, json=payload, timeout=60)
                     if resp.status_code in NON_RETRY_STATUS:
-                        break
+                        continue
                     if resp.status_code == 429:
-                        if attempt < len(waits) - 1:
-                            continue
-                        break
+                        continue
                     resp.raise_for_status()
                     data = resp.json()
                     candidates = data.get("candidates", [])
                     if not candidates:
-                        raise ValueError("candidates が空")
+                        continue
                     result = candidates[0]["content"]["parts"][0]["text"].strip()
                     time.sleep(_INTER_CALL_SLEEP)
                     return result
-                except requests.exceptions.HTTPError as e:
-                    status = e.response.status_code if e.response is not None else 0
-                    if status in NON_RETRY_STATUS:
-                        break
-                    if status == 429 and attempt < len(waits) - 1:
-                        continue
-                    break
                 except Exception as e:
                     safe_msg = str(e).replace(api_key, "***")
                     print(f"  [{key_label} {model}] エラー: {safe_msg}", file=sys.stderr)
-                    break
 
         raise RuntimeError("Gemini API: 全キー×全モデルで失敗しました。")
 
