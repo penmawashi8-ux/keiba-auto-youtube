@@ -2,13 +2,14 @@
 """週末の重賞レース情報を取得して race_list.json に保存する。
 
 実行タイミング:
-  木曜 15:00 JST → 木曜14時に枠番確定する主要G1（10レース）の対象週かチェック。
+  木曜 15:00 JST → 木曜14時に枠番確定する主要G1の対象週かチェック。
                    対象外なら exit 0（後続ステップをスキップ）。
-  金曜 10:30 JST → Google NewsでRSSを検索して今週末の全重賞を取得。
+  金曜 10:30 JST → Geminiに今週末の全重賞を問い合わせ。
   それ以外       → 環境変数で手動指定された場合のみ動作。
 
-環境変数（workflow_dispatch 手動上書き用）:
-  RACE_NAME, RACE_DATE, RACE_VENUE, RACE_DISTANCE, RACE_GRADE
+環境変数:
+  RACE_NAME, RACE_DATE, RACE_VENUE, RACE_DISTANCE, RACE_GRADE  (手動上書き)
+  GEMINI_API_KEY, GEMINI_API_KEY_2, GEMINI_API_KEY_3           (金曜自動検出)
 
 出力: race_list.json（レース情報のリスト）
       投稿済みレースは posted_landscape_ids.txt を参照してスキップ。
@@ -18,6 +19,7 @@ import json
 import os
 import re
 import sys
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -39,9 +41,10 @@ HEADERS = {
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
 
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.0-flash-lite"]
+
 # ── 木曜14時に枠番確定するG1（2026年） ───────────────────────────────────────
-# key: レース日 (month, day) / value: (レース名, 会場, 距離, グレード)
-# 毎年1月に次年度のスケジュールへ更新すること
 G1_THURSDAY_SCHEDULE: dict[tuple[int, int], tuple[str, str, str, str]] = {
     (4, 12): ("桜花賞",               "阪神", "芝1600m", "G1"),
     (4, 19): ("皐月賞",               "中山", "芝2000m", "G1"),
@@ -55,47 +58,90 @@ G1_THURSDAY_SCHEDULE: dict[tuple[int, int], tuple[str, str, str, str]] = {
     (12, 27): ("有馬記念",            "中山", "芝2500m", "G1"),
 }
 
-# ── 重賞名抽出パターン ────────────────────────────────────────────────────────
-_RACE_NAME_RE = re.compile(
-    r"([ァ-ヶー一-鿿]{2,}"
-    r"(?:賞|杯|カップ|ステークス|記念|フィリーズレビュー|チャレンジトロフィー|ハンデキャップ|ダービー|オークス|Ｓ|Ｃ))"
-)
-_GRADE_RE = re.compile(r"\bG([123])\b|GI{1,3}\b")
-_PRIORITY = {"G1": 3, "G2": 2, "G3": 1}
 
-# 国際G1レースとして扱う海外レース名（カタカナ表記）
-_OVERSEAS_G1_RACES: set[str] = {
-    "ケンタッキーダービー", "プリークネスステークス", "ベルモントステークス",
-    "凱旋門賞", "ブリーダーズカップクラシック", "BCクラシック",
-    "ドバイワールドカップ", "ドバイシーマクラシック", "ドバイターフ",
-    "クイーンエリザベス二世カップ", "チャンピオンズカップ香港",
-    "香港カップ", "香港マイル", "香港スプリント", "香港ヴァーズ",
-    "キングジョージ六世クイーンエリザベスステークス",
-    "コロネーションカップ", "エクリプスステークス", "インターナショナルステークス",
-    "アイリッシュチャンピオンステークス", "チャンピオンステークス",
-    "ロイヤルアスコット", "ゴールドカップ",
-}
+# ── Gemini API ───────────────────────────────────────────────────────────────
+
+def load_api_keys() -> list[str]:
+    keys = []
+    for env_var in ["GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3"]:
+        k = os.environ.get(env_var, "").strip()
+        if k:
+            keys.append(k)
+    return keys
 
 
-def _grade_str(text: str) -> str:
-    """テキストから最上位グレードを返す。"""
-    m = _GRADE_RE.search(text)
-    if not m:
-        return "G3"
-    raw = m.group(0)
-    if raw in ("G1", "GI"):
-        return "G1"
-    if raw in ("G2", "GII"):
-        return "G2"
-    return "G3"
+def call_gemini(api_keys: list[str], prompt: str) -> str:
+    """Gemini API を呼び出してテキストを返す。失敗時は RuntimeError。"""
+    payload = {
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.1, "maxOutputTokens": 2048},
+    }
+    for api_key in api_keys:
+        for model in GEMINI_MODELS:
+            url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+            try:
+                resp = requests.post(url, json=payload, timeout=30)
+                if resp.status_code == 429:
+                    time.sleep(10)
+                    continue
+                resp.raise_for_status()
+                data = resp.json()
+                candidates = data.get("candidates", [])
+                if candidates:
+                    return candidates[0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                safe = str(e).replace(api_key, "***")
+                print(f"  [警告] Gemini {model}: {safe}", file=sys.stderr)
+            time.sleep(2)
+    raise RuntimeError("Gemini API: 全キー×全モデルで失敗しました。")
 
 
-def fetch_google_news(query: str, max_items: int = 10) -> list[dict]:
+def ask_gemini_for_races(api_keys: list[str], now: datetime) -> list[dict]:
+    """Geminiに今週末の重賞レース一覧を問い合わせ、dictリストで返す。"""
+    sat = now + timedelta(days=1)
+    sun = now + timedelta(days=2)
+    weekday_jp = "月火水木金土日"
+    sat_str = f"{sat.month}月{sat.day}日（{weekday_jp[sat.weekday()]}）"
+    sun_str = f"{sun.month}月{sun.day}日（{weekday_jp[sun.weekday()]}）"
+
+    prompt = f"""\
+今日は{now.year}年{now.month}月{now.day}日（金曜日）です。
+今週末（{sat_str}・{sun_str}）に開催される競馬の重賞レース（G1・G2・G3）を全て教えてください。
+JRAの国内重賞だけでなく、同じ週末に開催される主要な海外G1レースも含めてください。
+
+以下のJSON配列形式のみで出力してください（コードブロック・説明文は不要）:
+[
+  {{"race_name": "レース名", "grade": "G1", "venue": "東京", "distance": "芝2400m", "date": "{sat_str}", "overseas": false}},
+  ...
+]
+
+注意:
+- race_name は正式名称で（略称・通称不可）
+- grade は "G1" / "G2" / "G3" のいずれか
+- overseas は海外開催なら true、JRAなら false
+- 地方競馬（NAR）は含めない
+- 情報が不確かなレースは含めない
+"""
+    print("Geminiに今週末の重賞一覧を問い合わせ中...", file=sys.stderr)
+    raw = call_gemini(api_keys, prompt)
+
+    # JSON部分を抽出（```json ... ``` が混入している場合も対応）
+    raw = re.sub(r"```(?:json)?", "", raw).strip().rstrip("`").strip()
+    try:
+        races = json.loads(raw)
+        if not isinstance(races, list):
+            raise ValueError("リストでない")
+        return races
+    except Exception as e:
+        print(f"[警告] Geminiレスポンスのパース失敗: {e}\n---\n{raw[:500]}\n---", file=sys.stderr)
+        return []
+
+
+# ── Google News (スニペット取得用) ──────────────────────────────────────────
+
+def fetch_google_news(query: str, max_items: int = 8) -> list[dict]:
     """Google News RSSからタイトル・概要を取得する。"""
-    url = (
-        f"https://news.google.com/rss/search"
-        f"?q={quote(query)}&hl=ja&gl=JP&ceid=JP:ja"
-    )
+    url = f"https://news.google.com/rss/search?q={quote(query)}&hl=ja&gl=JP&ceid=JP:ja"
     try:
         r = requests.get(url, headers=HEADERS, timeout=20)
         r.raise_for_status()
@@ -113,68 +159,9 @@ def fetch_google_news(query: str, max_items: int = 10) -> list[dict]:
         return []
 
 
-def _has_this_weekend_signal(text: str, now: datetime) -> bool:
-    """記事が今週末について書かれているか判定する。"""
-    # 「今週」「週末」「今週末」のシグナル
-    if re.search(r"今週末|今週の|今週|週末の重賞|週末に", text):
-        return True
-    # 今週の土日の日付パターン（例: 4月25日, 4/25, 4-25）
-    for delta in range(1, 4):  # 翌日〜3日後（金→土・日・月）
-        d = now + timedelta(days=delta)
-        if d.weekday() in (5, 6):  # 土・日のみ
-            patterns = [
-                f"{d.month}月{d.day}日",
-                f"{d.month}/{d.day}",
-                f"{d.month}-{d.day}",
-                f"{d.month:02d}/{d.day:02d}",
-            ]
-            if any(p in text for p in patterns):
-                return True
-    return False
-
-
-def extract_all_races_from_news(items: list[dict], now: datetime) -> list[dict]:
-    """ニュース記事リストから今週末の全重賞を抽出する（グレード降順）。"""
-    seen: dict[str, dict] = {}  # race_name -> {grade, score}
-
-    for item in items:
-        text = item["title"] + " " + item["description"]
-        # 出馬表・枠順など「開催前」のシグナルが必要
-        if not re.search(r"出馬表|枠順|登録|出走予定|今週|週末", text):
-            continue
-        # 今週末のシグナルがある記事を優先（ない場合も候補に入れるがスコア低め）
-        is_this_weekend = _has_this_weekend_signal(text, now)
-
-        for m in _RACE_NAME_RE.finditer(text):
-            race_name = m.group(1)
-            start = max(0, m.start() - 80)
-            end = min(len(text), m.end() + 80)
-            # 海外G1リストに載っていれば G1 として扱う
-            if race_name in _OVERSEAS_G1_RACES:
-                grade = "G1"
-                is_overseas = True
-            else:
-                grade = _grade_str(text[start:end])
-                is_overseas = False
-            score = _PRIORITY.get(grade, 1) * 10 + (5 if is_this_weekend else 0)
-            if race_name not in seen or score > seen[race_name]["score"]:
-                seen[race_name] = {
-                    "race_name": race_name,
-                    "grade": grade,
-                    "score": score,
-                    "overseas": is_overseas,
-                }
-
-    # 今週末シグナルありのもの（score >= 15）を優先して返す
-    candidates = sorted(seen.values(), key=lambda x: x["score"], reverse=True)
-    has_weekend = any(c["score"] >= 15 for c in candidates)
-    if has_weekend:
-        candidates = [c for c in candidates if c["score"] >= 15]
-    return candidates
-
+# ── 共通ユーティリティ ───────────────────────────────────────────────────────
 
 def load_posted_ids() -> set[str]:
-    """投稿済みレースIDを読み込む。"""
     path = Path(POSTED_LANDSCAPE_IDS_FILE)
     if not path.exists():
         return set()
@@ -182,19 +169,36 @@ def load_posted_ids() -> set[str]:
 
 
 def make_race_id(race_name: str, now: datetime) -> str:
-    """レースIDを生成する（race_name_YYYYMM形式）。"""
     return f"{race_name}_{now.year}{now.month:02d}"
 
 
-def _day_jp(race_date: "datetime") -> str:
-    """日付を「5月3日（日）」形式に変換する。"""
-    weekday_jp = "月火水木金土日"[race_date.weekday()]
-    return f"{race_date.month}月{race_date.day}日（{weekday_jp}）"
+def _day_jp(d: datetime) -> str:
+    weekday_jp = "月火水木金土日"[d.weekday()]
+    return f"{d.month}月{d.day}日（{weekday_jp}）"
 
+
+def _build_race_entry(race_name: str, grade: str, date: str, venue: str,
+                      distance: str, source: str, race_id: str,
+                      news_items: list[dict], is_overseas: bool = False) -> dict:
+    snippets = [x["title"] for x in news_items[:12]]
+    return {
+        "race_name":    race_name,
+        "grade":        grade,
+        "date":         date,
+        "venue":        venue,
+        "distance":     distance,
+        "news_snippets": snippets,
+        "source":       source,
+        "race_id":      race_id,
+        "overseas":     is_overseas,
+    }
+
+
+# ── メイン ──────────────────────────────────────────────────────────────────
 
 def main() -> None:
     now = datetime.now(JST)
-    weekday = now.weekday()  # 0=月 … 3=木 … 4=金
+    weekday = now.weekday()
 
     print(
         f"実行日時（JST）: {now.strftime('%Y-%m-%d %H:%M')} "
@@ -211,23 +215,20 @@ def main() -> None:
     if manual_name:
         race_id = make_race_id(manual_name, now)
         if race_id in posted_ids:
-            print(f"手動指定レース {manual_name} は投稿済みのためスキップします。（ID: {race_id}）")
-            print("スキップしたい場合は RACE_NAME を空にしてください。")
+            print(f"手動指定 {manual_name} は投稿済みのためスキップ。")
         else:
-            race_info = {
-                "race_name": manual_name,
-                "grade":     os.environ.get("RACE_GRADE",    "G1").strip() or "G1",
-                "date":      os.environ.get("RACE_DATE",     "今週末").strip() or "今週末",
-                "venue":     os.environ.get("RACE_VENUE",    "").strip(),
-                "distance":  os.environ.get("RACE_DISTANCE", "").strip(),
-                "news_snippets": [],
-                "source":    "manual",
-                "race_id":   race_id,
-            }
-            items = fetch_google_news(f"{manual_name} 2026 出馬表 予想")
-            race_info["news_snippets"] = [x["title"] for x in items[:8]]
+            news = fetch_google_news(f"{manual_name} {now.year} 出馬表 予想")
+            race_list.append(_build_race_entry(
+                race_name=manual_name,
+                grade=os.environ.get("RACE_GRADE", "G1").strip() or "G1",
+                date=os.environ.get("RACE_DATE", "今週末").strip() or "今週末",
+                venue=os.environ.get("RACE_VENUE", "").strip(),
+                distance=os.environ.get("RACE_DISTANCE", "").strip(),
+                source="manual",
+                race_id=race_id,
+                news_items=news,
+            ))
             print(f"手動指定: {manual_name}")
-            race_list.append(race_info)
         _write_list(race_list)
         return
 
@@ -248,76 +249,58 @@ def main() -> None:
             print(f"{race_name} は投稿済みのためスキップします。")
             sys.exit(0)
 
-        snippets: list[str] = []
-        for q in [f"{race_name} 2026 出馬表", f"{race_name} 枠順 予想"]:
-            items = fetch_google_news(q, max_items=5)
-            snippets.extend(x["title"] for x in items)
+        news: list[dict] = []
+        for q in [f"{race_name} {now.year} 出馬表", f"{race_name} 枠順 予想"]:
+            news.extend(fetch_google_news(q, max_items=5))
 
-        race_list.append({
-            "race_name": race_name,
-            "grade":     grade,
-            "date":      date_str,
-            "venue":     venue,
-            "distance":  distance,
-            "news_snippets": snippets[:10],
-            "source":    "thursday_g1",
-            "race_id":   race_id,
-        })
+        race_list.append(_build_race_entry(
+            race_name=race_name, grade=grade, date=date_str,
+            venue=venue, distance=distance, source="thursday_g1",
+            race_id=race_id, news_items=news,
+        ))
         print(f"G1確定: {race_name}（{date_str} {venue} {distance}）")
 
-    # ── 金曜実行: 全重賞検索 ────────────────────────────────────────────────
+    # ── 金曜実行: Geminiで全重賞を取得 ─────────────────────────────────────
     elif weekday == 4:
-        # 今週末の土日の日付文字列（例: 4月25日, 4月26日）
-        sat = now + timedelta(days=1)
-        sun = now + timedelta(days=2)
-        sat_str = f"{sat.month}月{sat.day}日"
-        sun_str = f"{sun.month}月{sun.day}日"
+        api_keys = load_api_keys()
+        if not api_keys:
+            print("[エラー] GEMINI_API_KEY が未設定です。金曜の自動検出にはGemini APIが必要です。", file=sys.stderr)
+            sys.exit(1)
 
-        all_items: list[dict] = []
-        for q in [
-            f"今週末 重賞 競馬 出馬表",
-            f"今週 G1 G2 重賞 競馬 枠順",
-            f"{sat_str} 重賞 競馬",
-            f"{sun_str} 重賞 競馬",
-            f"今週末 G2 競馬",
-            f"海外競馬 今週 G1 レース",
-            f"海外 重賞 今週末 競馬",
-        ]:
-            all_items.extend(fetch_google_news(q, max_items=10))
-
-        candidates = extract_all_races_from_news(all_items, now)
-        if not candidates:
-            print("今週末の重賞情報を取得できませんでした。スキップします。")
+        gemini_races = ask_gemini_for_races(api_keys, now)
+        if not gemini_races:
+            print("Geminiから今週末の重賞情報を取得できませんでした。スキップします。")
             sys.exit(0)
 
-        print(f"検出レース: {len(candidates)} 件")
-        for c in candidates:
-            race_name = c["race_name"]
-            grade = c["grade"]
-            is_overseas = c.get("overseas", False)
-            race_id = make_race_id(race_name, now)
+        print(f"Gemini検出: {len(gemini_races)} 件")
+        for r in gemini_races:
+            race_name = r.get("race_name", "").strip()
+            grade     = r.get("grade", "G3").strip()
+            venue     = r.get("venue", "").strip()
+            distance  = r.get("distance", "").strip()
+            date      = r.get("date", "今週末").strip()
+            is_overseas = bool(r.get("overseas", False))
 
-            if race_id in posted_ids:
-                print(f"  スキップ（投稿済み）: {race_name}（ID: {race_id}）")
+            if not race_name:
                 continue
 
-            search_suffix = "海外競馬 出走予定" if is_overseas else "2026 出馬表 予想"
-            extra = fetch_google_news(f"{race_name} {search_suffix}", max_items=6)
-            snippets = [x["title"] for x in (all_items + extra)][:12]
+            race_id = make_race_id(race_name, now)
+            if race_id in posted_ids:
+                print(f"  スキップ（投稿済み）: {race_name}")
+                continue
 
-            race_list.append({
-                "race_name": race_name,
-                "grade":     grade,
-                "date":      "今週末",
-                "venue":     "海外" if is_overseas else "",
-                "distance":  "",
-                "news_snippets": snippets,
-                "source":    "overseas_search" if is_overseas else "friday_search",
-                "race_id":   race_id,
-            })
+            suffix = "海外競馬 出走予定" if is_overseas else f"{now.year} 出馬表 予想"
+            news = fetch_google_news(f"{race_name} {suffix}", max_items=8)
+
+            race_list.append(_build_race_entry(
+                race_name=race_name, grade=grade, date=date,
+                venue=venue, distance=distance,
+                source="overseas_gemini" if is_overseas else "friday_gemini",
+                race_id=race_id, news_items=news, is_overseas=is_overseas,
+            ))
             print(f"  追加: {race_name}（{grade}）{'🌍 海外' if is_overseas else ''}")
 
-    # ── それ以外（テスト実行など）──────────────────────────────────────────
+    # ── それ以外 ────────────────────────────────────────────────────────────
     else:
         print(f"木曜・金曜以外（weekday={weekday}）。RACE_NAME 環境変数で手動指定してください。")
         sys.exit(0)

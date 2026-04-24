@@ -63,11 +63,14 @@ jobs:
       - name: 週末の重賞情報を取得
         id: fetch_race
         env:
-          RACE_NAME:     ${{ github.event.inputs.race_name }}
-          RACE_DATE:     ${{ github.event.inputs.race_date }}
-          RACE_VENUE:    ${{ github.event.inputs.race_venue }}
-          RACE_DISTANCE: ${{ github.event.inputs.race_distance }}
-          RACE_GRADE:    ${{ github.event.inputs.race_grade }}
+          RACE_NAME:        ${{ github.event.inputs.race_name }}
+          RACE_DATE:        ${{ github.event.inputs.race_date }}
+          RACE_VENUE:       ${{ github.event.inputs.race_venue }}
+          RACE_DISTANCE:    ${{ github.event.inputs.race_distance }}
+          RACE_GRADE:       ${{ github.event.inputs.race_grade }}
+          GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         run: python scripts/fetch_weekly_race.py
 
       - name: 予想脚本を生成
