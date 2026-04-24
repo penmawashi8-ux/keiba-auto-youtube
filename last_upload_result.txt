@@ -1,10 +1,10 @@
-date: 2026-04-24T04:34:02.524688Z
+date: 2026-04-24T05:52:08.595135Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FdRrctR5wk4 title=【香港・QE2世C】マスカレードボールは「香港に着いて最高の状態」　手塚久調教師
-OK project=1 video_id=WBjLgIf5jw0 title=【注目馬動向】キャンディードがNHKマイルCを鼻出血のため見送り　2歳時にスター
-OK project=1 video_id=NV74WSDnBUc title=冬を思わせる名前なのに春開催？ 福島競馬「雪うさぎ賞」の由来とは
+OK project=1 video_id=NF09gKZ30SY title=【読売マイラーズC】武豊騎手と復活V狙うアドマイヤズームは5枠9番　枠順確定
+OK project=1 video_id=xMSsCMfDpjI title=屈腱炎で休養していたシュガークンは鞍上・武豊で新潟大賞典へ　キタサンブラック半弟
+OK project=1 video_id=gVN_7vsp0IQ title=【フローラS】レーン騎手と初コンビのラフターラインズは4枠5番　初戦圧勝のラベル
