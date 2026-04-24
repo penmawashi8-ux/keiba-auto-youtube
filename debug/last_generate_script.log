@@ -7,55 +7,43 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【読売マイラーズC】武豊騎手と復活V狙うアドマイヤズームは5枠9番　枠順確定 ---
-[0] Gemini入力本文 361文字: '◆第57回読売マイラーズC・G2(4月26日、京都競馬場・芝1600メートル、1着馬に安田記念の優先出走権)枠順確定＝4月24日\n\t\t\t\t\u3000出走馬18頭の枠順が確定した。\n\t\t\t\t\u30002024年の朝日杯FSを勝ち、武豊騎手＝栗東・フリー＝との'
+--- 記事[0]: 【マイラーズC枠順確定】アドマイヤズームは5枠9番、シックスペンスは8枠16番 ---
+[0] Gemini入力本文 357文字: '4月26日に京都競馬場で行われる、第57回マイラーズカップ(4歳上・GII・芝1600m)の枠順が24日確定した。\n\u300024年の朝日杯FS勝ちの実績があるアドマイヤズーム(牡4、栗東・友道康夫厩舎)は5枠9番、芝に戻るGII・3勝馬シックスペ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 屈腱炎で休養していたシュガークンは鞍上・武豊で新潟大賞典へ　キタサンブラック半弟　宝塚記念を目指す ---
-[1] Gemini入力本文 423文字: '24年青葉賞覇者でダービー7着後、秋に左前浅屈腱炎が判明し、休養していたシュガークン(牡5＝清水久、父ドゥラメンテ)は新潟大賞典(5月16日、新潟芝2000メートル、ハンデ)で復帰する。鞍上はデビュー5戦で騎乗した武豊。その後は宝塚記念(6'
+--- 記事[1]: 【フローラS枠順確定】ラフターラインズは4枠5番、ファムクラジューズは7枠11番 ---
+[1] Gemini入力本文 349文字: '4月26日に東京競馬場で行われる、第61回フローラステークス(3歳・牝・GII・芝2000m)の枠順が24日確定した。\n\u3000強力牡馬相手のきさらぎ賞でタイム差なしの3着に入ったラフターラインズ(牝3、美浦・小笠倫弘厩舎)は4枠5番、未勝利・フ'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【フローラS】レーン騎手と初コンビのラフターラインズは4枠5番　初戦圧勝のラベルセーヌは2枠2番 ---
-[2] Gemini入力本文 353文字: '◆第61回フローラS・G2(4月26日、東京競馬場・芝2000メートル＝2着馬までにオークスの優先出走権)\n\t\t\t\t\u3000オークストライアルのフローラSの枠順が4月24日、確定した。\n\t\t\t\t\u3000前走のきさらぎ賞で牡馬相手に3着と好走して、レーン'
+--- 記事[2]: 【香港チェアマンズＳＰ】サトノレーヴ　昨年２着の雪辱へ好気配　斎藤助手が走りに手応え「満足のいく内容」　大外８枠に堀師「 ---
+[2] Gemini入力本文 392文字: '「香港チェアマンズＳＰ・香港Ｇ１」（２６日、シャティン）\n\u3000昨年のチェアマンズスプリントプライズ２着からの前進を狙うサトノレーヴは、シャティンの厩舎地区で体をほぐして芝コースへ。残り１６００メートルから発進し、半マイルからピッチを上げる。直'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -73,58 +61,35 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[1]  [Gemini生出力 184文字]: '最新のレース情報が入ってきました。4月26日に東京競馬場で行われる、第61回フローラステークス(3歳・牝・GII・芝2000m)の枠順が24日確定しました。強力牡馬相手のきさらぎ賞でタイム差なしの3着に入ったラフターラインズは4枠5番に入りました。また、未勝利・フリージア賞を連勝しているファムクラジューズは7枠11番となりました。このレースの発走は15時45分です。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (184文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。4月26日に東京競馬場で行われる、第61回フローラステークス(3歳・牝・GII・芝2000m)の枠順が24日確定しました。強力...
+  HTTP 200
+[0]  [Gemini生出力 166文字]: '最新のレース情報が入ってきました。4月26日に京都競馬場で行われる、第57回マイラーズカップの枠順が24日確定しました。4歳上・GII・芝1600mのこのレースでは、24年の朝日杯FS勝ちの実績があるアドマイヤズームが5枠9番に入りました。また、芝に戻るGII・3勝馬シックスペンスは8枠16番となりました。発走は15時30分です。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (166文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。4月26日に京都競馬場で行われる、第57回マイラーズカップの枠順が24日確定しました。4歳上・GII・芝1600mのこのレース...
   HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[0]  [Gemini生出力 183文字]: '重要な競馬ニュースをお伝えします。\n出走馬18頭の枠順が確定しました。2024年の朝日杯FSを勝利したアドマイヤズームは5枠9番に入りました。牡4歳、栗東・友道康夫厩舎所属、父モーリスです。もう1頭のG1馬、シャンパンカラーは6歳、美浦・田中厩舎所属です。第57回読売マイラーズCは4月26日、京都競馬場で開催されます。1着馬には安田記念の優先出走権が与えられます。'
-[0]  [重複除去] 183文字 → 182文字
-[0]  → output/script_0.txt 保存 (182文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。出走馬18頭の枠順が確定しました。2024年の朝日杯FSを勝利したアドマイヤズームは5枠9番に入りました。牡4歳、栗東・友道康...
 [2] 使用: key=***zGG0 model=gemma-3-4b-it
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 238文字]: '競馬速報です。第61回フローラS・G2の枠順が確定しました。オークストライアルの一戦として4月26日に東京競馬場・芝2000メートルで行われます。2着馬にはオークスの優先出走権が与えられます。ラフターラインズは牝3歳、美浦・小笠倫弘厩舎所属で、父はアルアイン。デビュー戦で5馬身差をつけて圧勝し、キャリア1戦1勝の重賞初挑戦となります。レーン騎手と初コンビで4枠5番に決定しました。また、前走きさらぎ賞で牡馬相手に3着と好走したラベルセーヌは、2枠2番に位置付けられています。'
-[2]  → output/script_2.txt 保存 (238文字)
-[2]  プレビュー: 競馬速報です。第61回フローラS・G2の枠順が確定しました。オークストライアルの一戦として4月26日に東京競馬場・芝2000メートルで行われます。2着馬にはオー...
-  HTTP 200
-[1]  [Gemini生出力 308文字]: '今週の競馬注目情報をお伝えします。24年青葉賞覇者でダービー7着後、秋に左前浅屈腱炎が判明し、休養していたシュガークン(牡5＝清水久、父ドゥラメンテ)は新潟大賞典(5月16日、新潟芝2000メートル、ハンデ)で復帰する。鞍上はデビュー5戦で騎乗した武豊。その後は宝塚記念(6月14日、阪神芝2200メートル)を視野に入れている。同じく清水久厩舎に在籍し、G1を7勝したキタサンブラックの半弟にあたる血統。No.1競馬情報サイト「netkeiba」の競馬ニュース。。まずは無事にレースを終えてほしい。アドマイヤテラが天皇賞・春・1週前に登場し、武豊騎手がしっかり負荷をかけている。友道調教師は春を最大目標としています。'
-[1]  [redirectフィルター] 308文字 → 279文字
-[1]  [重複除去] 263文字 → 262文字
-[1]  → output/script_1.txt 保存 (262文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。24年青葉賞覇者でダービー7着後、秋に左前浅屈腱炎が判明し、休養していたシュガークンは新潟大賞典(5月16日、新潟芝2000メ...
+[2]  [Gemini生出力 243文字]: '今日の競馬情報です。\n香港チェアマンズＳＰ・香港Ｇ１（２６日、シャティン）において、昨年のチェアマンズスプリントプライズ２着からの前進を狙うサトノレーヴが、シャティンの厩舎地区で体をほぐして芝コースへ。残り１６００メートルから発進し、半マイルからピッチを上げる。直線はスムーズに加速し、４Ｆ５０秒０-２Ｆ２４秒５で軽快に風を切った。騎乗した斎藤助手は「適度な気合で暑さの影響も受けず、最後まで動けていたので満足いく内容」とコメント。堀師は「ベストパフォーマンスを出せるように」と伝えた。'
+[2]  [重複除去] 243文字 → 242文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (242文字)
+[2]  プレビュー: 今日の競馬情報です。香港チェアマンズＳＰ・香港Ｇ１（２６日、シャティン）において、昨年のチェアマンズスプリントプライズ２着からの前進を狙うサトノレーヴが、シャテ...
 
 3 件の脚本を生成しました。
