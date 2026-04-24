@@ -101,24 +101,54 @@ def fetch_google_news(query: str, max_items: int = 10) -> list[dict]:
         return []
 
 
-def extract_all_races_from_news(items: list[dict]) -> list[dict]:
+def _has_this_weekend_signal(text: str, now: datetime) -> bool:
+    """記事が今週末について書かれているか判定する。"""
+    # 「今週」「週末」「今週末」のシグナル
+    if re.search(r"今週末|今週の|今週|週末の重賞|週末に", text):
+        return True
+    # 今週の土日の日付パターン（例: 4月25日, 4/25, 4-25）
+    for delta in range(1, 4):  # 翌日〜3日後（金→土・日・月）
+        d = now + timedelta(days=delta)
+        if d.weekday() in (5, 6):  # 土・日のみ
+            patterns = [
+                f"{d.month}月{d.day}日",
+                f"{d.month}/{d.day}",
+                f"{d.month}-{d.day}",
+                f"{d.month:02d}/{d.day:02d}",
+            ]
+            if any(p in text for p in patterns):
+                return True
+    return False
+
+
+def extract_all_races_from_news(items: list[dict], now: datetime) -> list[dict]:
     """ニュース記事リストから今週末の全重賞を抽出する（グレード降順）。"""
-    seen: dict[str, dict] = {}  # race_name -> best grade candidate
+    seen: dict[str, dict] = {}  # race_name -> {grade, score}
 
     for item in items:
         text = item["title"] + " " + item["description"]
-        if not re.search(r"出馬表|枠順|重賞|G[123I]|今週|週末", text):
+        # 出馬表・枠順など「開催前」のシグナルが必要
+        if not re.search(r"出馬表|枠順|登録|出走予定|今週|週末", text):
             continue
+        # 今週末のシグナルがある記事を優先（ない場合も候補に入れるがスコア低め）
+        is_this_weekend = _has_this_weekend_signal(text, now)
+
         for m in _RACE_NAME_RE.finditer(text):
             race_name = m.group(1)
-            # グレードはレース名周辺のコンテキストから判定
             start = max(0, m.start() - 80)
             end = min(len(text), m.end() + 80)
             grade = _grade_str(text[start:end])
-            if race_name not in seen or _PRIORITY[grade] > _PRIORITY.get(seen[race_name]["grade"], 0):
-                seen[race_name] = {"race_name": race_name, "grade": grade}
+            score = _PRIORITY.get(grade, 1) * 10 + (5 if is_this_weekend else 0)
+            if race_name not in seen or score > seen[race_name]["score"]:
+                seen[race_name] = {"race_name": race_name, "grade": grade, "score": score}
 
-    return sorted(seen.values(), key=lambda x: _PRIORITY.get(x["grade"], 1), reverse=True)
+    # 今週末シグナルありのもの（score >= 15）を優先して返す
+    candidates = sorted(seen.values(), key=lambda x: x["score"], reverse=True)
+    # 今週末シグナルが1件でもあれば、シグナルなし（score < 15）は除外
+    has_weekend = any(c["score"] >= 15 for c in candidates)
+    if has_weekend:
+        candidates = [c for c in candidates if c["score"] >= 15]
+    return candidates
 
 
 def load_posted_ids() -> set[str]:
@@ -215,16 +245,23 @@ def main() -> None:
 
     # ── 金曜実行: 全重賞検索 ────────────────────────────────────────────────
     elif weekday == 4:
+        # 今週末の土日の日付文字列（例: 4月25日, 4月26日）
+        sat = now + timedelta(days=1)
+        sun = now + timedelta(days=2)
+        sat_str = f"{sat.month}月{sat.day}日"
+        sun_str = f"{sun.month}月{sun.day}日"
+
         all_items: list[dict] = []
         for q in [
-            "今週末 重賞 競馬 出馬表",
-            "今週 G1 G2 重賞 競馬 枠順",
-            "重賞 競馬 今週末",
-            "今週末 G2 G3 競馬",
+            f"今週末 重賞 競馬 出馬表",
+            f"今週 G1 G2 重賞 競馬 枠順",
+            f"{sat_str} 重賞 競馬",
+            f"{sun_str} 重賞 競馬",
+            f"今週末 G2 G3 競馬",
         ]:
             all_items.extend(fetch_google_news(q, max_items=10))
 
-        candidates = extract_all_races_from_news(all_items)
+        candidates = extract_all_races_from_news(all_items, now)
         if not candidates:
             print("今週末の重賞情報を取得できませんでした。スキップします。")
             sys.exit(0)
