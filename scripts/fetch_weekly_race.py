@@ -28,6 +28,7 @@ import requests
 JST = timezone(timedelta(hours=9))
 RACE_LIST_JSON = "race_list.json"
 POSTED_LANDSCAPE_IDS_FILE = "posted_landscape_ids.txt"
+MAX_RACES_PER_RUN = 3  # 1回の実行で処理するレース数の上限
 
 HEADERS = {
     "User-Agent": (
@@ -228,7 +229,7 @@ def main() -> None:
             print("今週末の重賞情報を取得できませんでした。スキップします。")
             sys.exit(0)
 
-        print(f"検出レース: {len(candidates)} 件")
+        print(f"検出レース: {len(candidates)} 件（上限 {MAX_RACES_PER_RUN} 件）")
         for c in candidates:
             race_name = c["race_name"]
             grade = c["grade"]
@@ -252,6 +253,9 @@ def main() -> None:
                 "race_id":   race_id,
             })
             print(f"  追加: {race_name}（{grade}）")
+            if len(race_list) >= MAX_RACES_PER_RUN:
+                print(f"  上限 {MAX_RACES_PER_RUN} 件に達したため残りをスキップ。")
+                break
 
     # ── それ以外（テスト実行など）──────────────────────────────────────────
     else:

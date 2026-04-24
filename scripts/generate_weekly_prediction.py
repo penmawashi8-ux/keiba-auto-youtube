@@ -179,8 +179,8 @@ def generate_one(race_info: dict, idx: int, api_keys: list[str]) -> dict:
     script_path.write_text(script, encoding="utf-8")
     print(f"  ✅ {script_path}")
 
-    print(f"  [20秒待機（レート制限対策）...]", file=sys.stderr)
-    time.sleep(20)
+    print(f"  [10秒待機（レート制限対策）...]", file=sys.stderr)
+    time.sleep(10)
     print(f"  メタデータ生成中...", file=sys.stderr)
     meta_resp = call_gemini(api_keys, generate_metadata_prompt(race_name, grade, script), temperature=0.5)
 
@@ -242,8 +242,8 @@ def main() -> None:
 
         # レース間のレート制限対策
         if idx < len(race_list) - 1:
-            print("  [次のレースまで30秒待機...]", file=sys.stderr)
-            time.sleep(30)
+            print("  [次のレースまで15秒待機...]", file=sys.stderr)
+            time.sleep(15)
 
     if not news_items:
         print("[エラー] 全レースの脚本生成に失敗しました。", file=sys.stderr)
