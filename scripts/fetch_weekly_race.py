@@ -76,23 +76,33 @@ def call_gemini(api_keys: list[str], prompt: str) -> str:
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.1, "maxOutputTokens": 4096},
     }
+    rate_limit_waits = [60, 120]
     for api_key in api_keys:
         for model in GEMINI_MODELS:
+            key_label = f"{api_key[:8]}..."
             url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
-            try:
-                resp = requests.post(url, json=payload, timeout=30)
-                if resp.status_code == 429:
-                    time.sleep(10)
-                    continue
-                resp.raise_for_status()
-                data = resp.json()
-                candidates = data.get("candidates", [])
-                if candidates:
-                    return candidates[0]["content"]["parts"][0]["text"].strip()
-            except Exception as e:
-                safe = str(e).replace(api_key, "***")
-                print(f"  [警告] Gemini {model}: {safe}", file=sys.stderr)
-            time.sleep(2)
+            waits = [0] + rate_limit_waits
+            for attempt, wait in enumerate(waits):
+                if wait:
+                    print(f"  [{key_label} {model}] 429 → {wait}秒待機...", file=sys.stderr)
+                    time.sleep(wait)
+                try:
+                    resp = requests.post(url, json=payload, timeout=60)
+                    if resp.status_code in {403, 404}:
+                        break
+                    if resp.status_code == 429:
+                        if attempt < len(waits) - 1:
+                            continue
+                        break
+                    resp.raise_for_status()
+                    data = resp.json()
+                    candidates = data.get("candidates", [])
+                    if candidates:
+                        return candidates[0]["content"]["parts"][0]["text"].strip()
+                except Exception as e:
+                    safe = str(e).replace(api_key, "***")
+                    print(f"  [警告] Gemini {model}: {safe}", file=sys.stderr)
+                    break
     raise RuntimeError("Gemini API: 全キー×全モデルで失敗しました。")
 
 
@@ -153,7 +163,11 @@ JRAの国内重賞だけでなく、同じ週末に開催される主要な海�
 - G1・G2・G3 全グレードを漏れなく含めること
 """
     print("Geminiに今週末の重賞一覧を問い合わせ中...", file=sys.stderr)
-    raw = call_gemini(api_keys, prompt)
+    try:
+        raw = call_gemini(api_keys, prompt)
+    except RuntimeError as e:
+        print(f"[エラー] Gemini呼び出し失敗: {e}", file=sys.stderr)
+        return []
 
     # JSON部分を抽出（```json ... ``` が混入している場合も対応）
     raw = re.sub(r"```(?:json)?", "", raw).strip().rstrip("`").strip()
