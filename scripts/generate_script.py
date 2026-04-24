@@ -102,6 +102,52 @@ RESULTS_SYSTEM_PROMPT = (
 )
 
 
+def fact_check_script(
+    api_key: str, model_name: str,
+    article_title: str, article_body: str, script: str,
+) -> tuple[bool, str]:
+    """生成された脚本が元記事の内容に忠実かGeminiでファクトチェックする。
+    Returns: (is_ok, reason)
+    gemmaモデルは精度が低いためスキップ（OK扱い）。
+    ファクトチェックAPI自体が失敗した場合もOK扱いとしてブロックしない。
+    """
+    if model_name.startswith("gemma"):
+        return True, "SKIPPED(gemma)"
+
+    prompt = (
+        "以下の【元のニュース記事】と【生成されたナレーション脚本】を照合してください。\n\n"
+        f"【元のニュース記事】\n"
+        f"タイトル: {article_title}\n"
+        f"本文: {article_body[:1200]}\n\n"
+        f"【生成されたナレーション脚本】\n{script}\n\n"
+        "【判定基準】脚本に以下が含まれていればNGです:\n"
+        "- 元記事に存在しない馬名・騎手名・調教師名などの固有名詞\n"
+        "- 元記事に書かれていないレース結果・着順・勝敗\n"
+        "- 元記事が予定・展望記事なのに脚本にレース結果・展開の描写がある\n"
+        "- 元記事に存在しない賞金額・配当・オッズ・タイムなどの数字\n\n"
+        "問題がなければ「OK」とだけ答えてください。\n"
+        "NGの場合は「NG: （元記事にない具体的な内容）」の形式で答えてください。\n"
+        "「本日の競馬ニュースです。」などの導入フレーズはチェック対象外です。"
+    )
+    url = f"{GEMINI_API_BASE}/{model_name}:generateContent"
+    body = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"maxOutputTokens": 256, "temperature": 0.1},
+    }
+    try:
+        resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        result = "".join(
+            p.get("text", "") for p in data["candidates"][0]["content"]["parts"]
+        ).strip()
+        is_ok = result.upper().startswith("OK")
+        return is_ok, result
+    except Exception as e:
+        print(f"  [警告] ファクトチェックAPI失敗: {e}", file=sys.stderr)
+        return True, f"SKIPPED(error:{type(e).__name__})"
+
+
 # 書き出しパターン（毎動画ランダム選択してGeminiに指示する）
 _OPENING_PATTERNS = [
     "本日の競馬ニュースです。",
@@ -437,6 +483,16 @@ def main() -> None:
                     last_period = script.rfind("。")
                     if last_period != -1:
                         script = script[:last_period + 1]
+                # ファクトチェック: 元記事にない情報が混入していないか検証
+                fc_ok, fc_reason = fact_check_script(
+                    key, model_name, item["title"], summary_text, script
+                )
+                if not fc_ok:
+                    print(f"[{i}]  [ファクトチェックNG] {fc_reason[:150]}", file=sys.stderr)
+                    print(f"[{i}]  → 元記事にない情報を検出。次のキー/モデルで再生成します。", file=sys.stderr)
+                    continue
+                print(f"[{i}]  ファクトチェック: {fc_reason[:60]}")
+
                 out_path = Path(f"{OUTPUT_DIR}/script_{i}.txt")
                 out_path.write_text(script, encoding="utf-8")
                 print(f"[{i}]  → {out_path} 保存 ({len(script)}文字)")
