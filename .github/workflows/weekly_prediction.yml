@@ -11,23 +11,23 @@ on:
       race_name:
         description: 'レース名（例: 天皇賞（春））'
         required: false
-        default: ''
+        default: '青葉賞'
       race_date:
         description: 'レース日（例: 5月3日（日））'
         required: false
-        default: ''
+        default: '4月27日（日）'
       race_venue:
         description: '会場（例: 京都）'
         required: false
-        default: ''
+        default: '東京'
       race_distance:
         description: '距離（例: 芝3200m）'
         required: false
-        default: ''
+        default: '芝2400m'
       race_grade:
         description: 'グレード（例: G1）'
         required: false
-        default: ''
+        default: 'G2'
 
 jobs:
   weekly-prediction:
