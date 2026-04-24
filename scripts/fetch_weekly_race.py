@@ -386,6 +386,7 @@ def main() -> None:
 
         if key not in G1_THURSDAY_SCHEDULE:
             print(f"今週末（{race_date}）は木曜枠番確定G1なし。スキップします。")
+            _set_skip_output()
             sys.exit(0)
 
         race_name, venue, distance, grade = G1_THURSDAY_SCHEDULE[key]
@@ -394,6 +395,7 @@ def main() -> None:
 
         if race_id in posted_ids:
             print(f"{race_name} は投稿済みのためスキップします。")
+            _set_skip_output()
             sys.exit(0)
 
         news: list[dict] = []
@@ -417,6 +419,7 @@ def main() -> None:
         gemini_races = ask_gemini_for_races(api_keys, now)
         if not gemini_races:
             print("Geminiから今週末の重賞情報を取得できませんでした。スキップします。")
+            _set_skip_output()
             sys.exit(0)
 
         print(f"Gemini検出: {len(gemini_races)} 件")
@@ -450,13 +453,23 @@ def main() -> None:
     # ── それ以外 ────────────────────────────────────────────────────────────
     else:
         print(f"木曜・金曜以外（weekday={weekday}）。RACE_NAME 環境変数で手動指定してください。")
+        _set_skip_output()
         sys.exit(0)
 
     if not race_list:
         print("処理対象のレースがありません（全て投稿済み）。スキップします。")
+        _set_skip_output()
         sys.exit(0)
 
     _write_list(race_list)
+
+
+def _set_skip_output() -> None:
+    """GitHub Actions の step output に skip=true を書き込む。"""
+    github_output = os.environ.get("GITHUB_OUTPUT", "")
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as f:
+            f.write("skip=true\n")
 
 
 def _write_list(race_list: list[dict]) -> None:
