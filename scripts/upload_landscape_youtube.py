@@ -388,7 +388,13 @@ def upload_one(
             video_id = result
 
     try:
-        thumb_path = generate_thumbnail(str(new_video_path), suffix=f"landscape_{idx}")
+        prebuilt = Path(OUTPUT_DIR) / f"thumbnail_{idx}.jpg"
+        if prebuilt.exists():
+            size_kb = prebuilt.stat().st_size // 1024
+            print(f"  事前生成サムネイル使用: {prebuilt} ({size_kb} KB)")
+            thumb_path = str(prebuilt)
+        else:
+            thumb_path = generate_thumbnail(str(new_video_path), suffix=f"landscape_{idx}")
         upload_thumbnail(youtube, video_id, thumb_path)
     except Exception as e:
         print(f"  [警告] サムネイル処理失敗: {e}", file=sys.stderr)

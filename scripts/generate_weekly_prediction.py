@@ -135,26 +135,39 @@ def build_combined_prompt(race_info: dict) -> str:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. 全体 1500〜2500 文字（音声読み上げで 5〜8 分が目安）
 2. 以下のセクション構成で書く。各セクションは空行で区切ること。
-   【レース概要】
-   【注目馬①：馬名】
-   【注目馬②：馬名】
-   （出走馬の情報が不明な場合は過去の有力馬や傾向から 3〜5 頭を取り上げる）
-   ...
-   【本命予想】
+
+   【レース紹介】
+   レース名・グレード・開催場所・距離・今年の注目ポイントを紹介。
+
+   【レース傾向・過去の結果】
+   過去数年の優勝馬・好走馬の傾向・有利な脚質・枠順傾向など具体的なデータを示す。
+
+   【本命馬：馬名】
+   本命馬の近走成績・強み・このレースに向く理由を詳述。
+
+   【対抗馬：馬名】
+   対抗馬の近走成績・脅威となるポイント・不安要素。
+
+   【消し馬】
+   データや適性から消せる人気馬とその根拠。1〜2頭を具体的に挙げる。
+
+   【エンディング】
+   予想まとめ（本命・対抗・消しの一言）＋チャンネル登録とコメントへの呼びかけ。
+
 3. 各セクションの 1 行目は必ず【...】のヘッダー行にする
 4. 本文の文は句点（。）で終わること
 5. 具体的な数字・レース名・騎手名・前走成績を積極的に入れる
 6. 感情語より事実と分析で語る
-7. 最後の【本命予想】セクションで本命・対抗・穴馬を明示し、その根拠を述べる
-8. 挨拶・呼びかけ（「みなさん」「こんにちは」など）は一切禁止
-9. 情報が不確かな箇所は「〜とみられる」「〜が想定される」など推測表現にとどめる
+7. 情報が不確かな箇所は「〜とみられる」「〜が想定される」など推測表現にとどめる
+8. 挨拶・呼びかけ（「みなさん」「こんにちは」など）は禁止。【エンディング】内のCTAは除く
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 出力形式
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-脚本本文を出力した後、必ず以下の2行を最後に追加してください（説明・コメント不要）:
+脚本本文を出力した後、必ず以下の3行を最後に追加してください（説明・コメント不要）:
 
 VIDEO_TITLE: [60文字以内のYouTubeタイトル。「【重賞予想】」で始め、レース名・年・ポイントを含める]
+THUMBNAIL_HOOK: [サムネイル用の煽り文句。15文字以内。「〇〇は危険！？」「これが本命だ！」「人気馬が消える！」など視聴者の興味を引く一文]
 TAGS: [レース名, 競馬予想, G1, 馬名など カンマ区切り 8〜12個]
 """
 
@@ -167,21 +180,18 @@ def _parse_combined_response(raw: str, race_name: str, grade: str) -> tuple[str,
 
     for i in range(len(lines) - 1, -1, -1):
         line = lines[i].strip()
-        if line.startswith("TAGS:") or line.startswith("TAGS："):
-            for sep in (":", "："):
-                if sep in line:
-                    _, _, v = line.partition(sep)
-                    meta["TAGS"] = v.strip()
-                    break
-            script_end = i
-        elif line.startswith("VIDEO_TITLE:") or line.startswith("VIDEO_TITLE："):
-            for sep in (":", "："):
-                if sep in line:
-                    _, _, v = line.partition(sep)
-                    meta["VIDEO_TITLE"] = v.strip()
-                    break
-            script_end = i
-        elif meta:
+        matched = False
+        for key in ("TAGS", "VIDEO_TITLE", "THUMBNAIL_HOOK"):
+            if line.startswith(f"{key}:") or line.startswith(f"{key}："):
+                for sep in (":", "："):
+                    if sep in line:
+                        _, _, v = line.partition(sep)
+                        meta[key] = v.strip()
+                        break
+                script_end = i
+                matched = True
+                break
+        if not matched and meta:
             break
 
     script = "\n".join(lines[:script_end]).strip()
@@ -204,23 +214,25 @@ def generate_one(race_info: dict, idx: int, api_keys: list[str]) -> dict:
     script_path.write_text(script, encoding="utf-8")
     print(f"  ✅ {script_path} ({len(script)} 文字)")
 
-    video_title = meta.get("VIDEO_TITLE", f"【重賞予想】{race_name} 2026年 徹底分析")
-    tags_raw    = meta.get("TAGS", "")
-    tags        = [t.strip() for t in tags_raw.split(",") if t.strip()]
+    video_title     = meta.get("VIDEO_TITLE", f"【重賞予想】{race_name} 2026年 徹底分析")
+    thumbnail_hook  = meta.get("THUMBNAIL_HOOK", f"{race_name}を徹底分析！")
+    tags_raw        = meta.get("TAGS", "")
+    tags            = [t.strip() for t in tags_raw.split(",") if t.strip()]
     if race_name not in tags:
         tags.insert(0, race_name)
 
     return {
-        "id":         race_info.get("race_id", f"weekly_prediction_{race_name}_{race_info.get('date', '')}"),
-        "title":      video_title,
-        "race_name":  race_name,
-        "grade":      grade,
-        "date":       race_info.get("date", ""),
-        "venue":      race_info.get("venue", ""),
-        "distance":   race_info.get("distance", ""),
-        "summary":    f"{race_name}（{grade}）予想解説",
-        "url":        "",
-        "tags_extra": tags,
+        "id":             race_info.get("race_id", f"weekly_prediction_{race_name}_{race_info.get('date', '')}"),
+        "title":          video_title,
+        "thumbnail_hook": thumbnail_hook,
+        "race_name":      race_name,
+        "grade":          grade,
+        "date":           race_info.get("date", ""),
+        "venue":          race_info.get("venue", ""),
+        "distance":       race_info.get("distance", ""),
+        "summary":        f"{race_name}（{grade}）予想解説",
+        "url":            "",
+        "tags_extra":     tags,
     }
 
 
