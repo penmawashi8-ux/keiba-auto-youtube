@@ -28,7 +28,6 @@ import requests
 JST = timezone(timedelta(hours=9))
 RACE_LIST_JSON = "race_list.json"
 POSTED_LANDSCAPE_IDS_FILE = "posted_landscape_ids.txt"
-MAX_RACES_PER_RUN = 3  # 1回の実行で処理するレース数の上限
 
 HEADERS = {
     "User-Agent": (
@@ -59,10 +58,23 @@ G1_THURSDAY_SCHEDULE: dict[tuple[int, int], tuple[str, str, str, str]] = {
 # ── 重賞名抽出パターン ────────────────────────────────────────────────────────
 _RACE_NAME_RE = re.compile(
     r"([ァ-ヶー一-鿿]{2,}"
-    r"(?:賞|杯|カップ|ステークス|記念|フィリーズレビュー|チャレンジトロフィー|ハンデキャップ|Ｓ|Ｃ))"
+    r"(?:賞|杯|カップ|ステークス|記念|フィリーズレビュー|チャレンジトロフィー|ハンデキャップ|ダービー|オークス|Ｓ|Ｃ))"
 )
 _GRADE_RE = re.compile(r"\bG([123])\b|GI{1,3}\b")
 _PRIORITY = {"G1": 3, "G2": 2, "G3": 1}
+
+# 国際G1レースとして扱う海外レース名（カタカナ表記）
+_OVERSEAS_G1_RACES: set[str] = {
+    "ケンタッキーダービー", "プリークネスステークス", "ベルモントステークス",
+    "凱旋門賞", "ブリーダーズカップクラシック", "BCクラシック",
+    "ドバイワールドカップ", "ドバイシーマクラシック", "ドバイターフ",
+    "クイーンエリザベス二世カップ", "チャンピオンズカップ香港",
+    "香港カップ", "香港マイル", "香港スプリント", "香港ヴァーズ",
+    "キングジョージ六世クイーンエリザベスステークス",
+    "コロネーションカップ", "エクリプスステークス", "インターナショナルステークス",
+    "アイリッシュチャンピオンステークス", "チャンピオンステークス",
+    "ロイヤルアスコット", "ゴールドカップ",
+}
 
 
 def _grade_str(text: str) -> str:
@@ -137,17 +149,29 @@ def extract_all_races_from_news(items: list[dict], now: datetime) -> list[dict]:
             race_name = m.group(1)
             start = max(0, m.start() - 80)
             end = min(len(text), m.end() + 80)
-            grade = _grade_str(text[start:end])
+            # 海外G1リストに載っていれば G1 として扱う
+            if race_name in _OVERSEAS_G1_RACES:
+                grade = "G1"
+                is_overseas = True
+            else:
+                grade = _grade_str(text[start:end])
+                is_overseas = False
             score = _PRIORITY.get(grade, 1) * 10 + (5 if is_this_weekend else 0)
             if race_name not in seen or score > seen[race_name]["score"]:
-                seen[race_name] = {"race_name": race_name, "grade": grade, "score": score}
+                seen[race_name] = {
+                    "race_name": race_name,
+                    "grade": grade,
+                    "score": score,
+                    "overseas": is_overseas,
+                }
 
     # 今週末シグナルありのもの（score >= 15）を優先して返す
     candidates = sorted(seen.values(), key=lambda x: x["score"], reverse=True)
-    # 今週末シグナルが1件でもあれば、シグナルなし（score < 15）は除外
     has_weekend = any(c["score"] >= 15 for c in candidates)
     if has_weekend:
         candidates = [c for c in candidates if c["score"] >= 15]
+    # G3は除外（G1・G2のみ）
+    candidates = [c for c in candidates if c["grade"] != "G3"]
     return candidates
 
 
@@ -257,7 +281,9 @@ def main() -> None:
             f"今週 G1 G2 重賞 競馬 枠順",
             f"{sat_str} 重賞 競馬",
             f"{sun_str} 重賞 競馬",
-            f"今週末 G2 G3 競馬",
+            f"今週末 G2 競馬",
+            f"海外競馬 今週 G1 レース",
+            f"海外 重賞 今週末 競馬",
         ]:
             all_items.extend(fetch_google_news(q, max_items=10))
 
@@ -266,33 +292,33 @@ def main() -> None:
             print("今週末の重賞情報を取得できませんでした。スキップします。")
             sys.exit(0)
 
-        print(f"検出レース: {len(candidates)} 件（上限 {MAX_RACES_PER_RUN} 件）")
-        for c in candidates:
+        g1g2 = [c for c in candidates if c["grade"] in ("G1", "G2")]
+        print(f"検出レース: G1/G2={len(g1g2)} 件（全候補 {len(candidates)} 件）")
+        for c in g1g2:
             race_name = c["race_name"]
             grade = c["grade"]
+            is_overseas = c.get("overseas", False)
             race_id = make_race_id(race_name, now)
 
             if race_id in posted_ids:
                 print(f"  スキップ（投稿済み）: {race_name}（ID: {race_id}）")
                 continue
 
-            extra = fetch_google_news(f"{race_name} 2026 出馬表 予想", max_items=6)
+            search_suffix = "海外競馬 出走予定" if is_overseas else "2026 出馬表 予想"
+            extra = fetch_google_news(f"{race_name} {search_suffix}", max_items=6)
             snippets = [x["title"] for x in (all_items + extra)][:12]
 
             race_list.append({
                 "race_name": race_name,
                 "grade":     grade,
                 "date":      "今週末",
-                "venue":     "",
+                "venue":     "海外" if is_overseas else "",
                 "distance":  "",
                 "news_snippets": snippets,
-                "source":    "friday_search",
+                "source":    "overseas_search" if is_overseas else "friday_search",
                 "race_id":   race_id,
             })
-            print(f"  追加: {race_name}（{grade}）")
-            if len(race_list) >= MAX_RACES_PER_RUN:
-                print(f"  上限 {MAX_RACES_PER_RUN} 件に達したため残りをスキップ。")
-                break
+            print(f"  追加: {race_name}（{grade}）{'🌍 海外' if is_overseas else ''}")
 
     # ── それ以外（テスト実行など）──────────────────────────────────────────
     else:

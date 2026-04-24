@@ -110,9 +110,11 @@ def build_prompt(race_info: dict) -> str:
 
     course_info = f"{venue} {distance}".strip()
     snippets_text = "\n".join(f"  - {s}" for s in snippets[:10]) if snippets else "  （なし）"
+    is_overseas = race_info.get("source") == "overseas_search" or venue == "海外"
+    expert_desc = "海外競馬に精通した競馬予想解説者" if is_overseas else "日本中央競馬（JRA）の熟練した競馬予想解説者"
 
     return f"""\
-あなたは日本中央競馬（JRA）の熟練した競馬予想解説者です。
+あなたは{expert_desc}です。
 以下の重賞レース情報をもとに、YouTube横向き動画（5〜8分）用の予想解説脚本を作成してください。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
