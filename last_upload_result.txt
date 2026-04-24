@@ -1,10 +1,10 @@
-date: 2026-04-24T10:42:55.221277Z
+date: 2026-04-24T12:19:16.740999Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MqRz-p1hOeQ title=【フローラS】ラフターラインズは課題のゲートに進境　小笠調教師「騎手に乗ってもら
-OK project=1 video_id=Lr7LAT-1oHA title=【フローラS】デビュー戦楽勝のラベルセーヌ　一気の重賞勝ちへ鹿戸調教師は「能力は
-OK project=1 video_id=E6GNLTxxfW4 title=和田竜二調教師×ディープボンドのコンビが復活!引退式当日の26日、読売マイラーズ
+OK project=1 video_id=7WG9WfJNaHU title=グランアレグリアの初仔グランマエストロ 5戦目で勝ち上がりなるか
+OK project=1 video_id=DSzzBOUTEvg title=【注目馬動向】兵庫女王盃2着のプロミストジーンは武豊騎手とのコンビ継続でエンプレ
+OK project=1 video_id=ts_pwsL-C5Q title=【名古屋競馬】近藤颯羽騎手が初勝利!　20日デビューの19歳
