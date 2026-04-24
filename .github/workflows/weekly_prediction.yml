@@ -91,6 +91,7 @@ jobs:
 
       - name: 横向き動画を生成
         id: gen_video
+        timeout-minutes: 30
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           HF_TOKEN:        ${{ secrets.HF_TOKEN }}

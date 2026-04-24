@@ -15,12 +15,12 @@ NEWS_JSON    = "news.json"
 OUTPUT_DIR   = "output"
 ASSETS_DIR   = "assets"
 BGM_DIR      = f"{ASSETS_DIR}/bgm"
-W, H         = 1920, 1080
+W, H         = 1280, 720
 FPS          = 30
-BAR_H        = 210          # ローワーサードバー高さ
-BAR_Y        = H - BAR_H   # = 870
-HDR_FS       = 72           # ヘッダーフォントサイズ
-BODY_FS      = 46           # ボディフォントサイズ
+BAR_H        = 140          # ローワーサードバー高さ
+BAR_Y        = H - BAR_H   # = 580
+HDR_FS       = 52           # ヘッダーフォントサイズ
+BODY_FS      = 36           # ボディフォントサイズ
 HDR_DUR      = 2.5          # ヘッダーカード最低秒数
 OPEN_DUR     = 3.0          # オープニングカード秒数
 END_DUR      = 5.0          # エンディング秒数
@@ -130,32 +130,7 @@ def fetch_images(count: int = 4) -> list[str]:
                                 continue
             except Exception as e:
                 print(f"  [警告] Pixabay失敗: {e}", file=sys.stderr)
-        # 2. HuggingFace
-        if hf_tokens:
-            for tok in hf_tokens:
-                try:
-                    import requests as _r
-                    r2 = _r.post(
-                        "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
-                        headers={"Authorization": f"Bearer {tok}"},
-                        json={"inputs": hf_prompts[i % len(hf_prompts)]},
-                        timeout=120,
-                    )
-                    if r2.status_code == 200:
-                        tmp = out + ".tmp"
-                        Path(tmp).write_bytes(r2.content)
-                        res = subprocess.run(["ffmpeg", "-y", "-i", tmp, "-frames:v", "1", "-q:v", "2", out], capture_output=True)
-                        Path(tmp).unlink(missing_ok=True)
-                        if res.returncode == 0:
-                            paths.append(out)
-                            break
-                    if r2.status_code in (402, 403):
-                        break
-                except Exception:
-                    pass
-            if Path(out).exists() and Path(out).stat().st_size > 1000:
-                continue
-        # 3. geqパターンフォールバック
+        # 2. geqパターンフォールバック（HF画像生成は削除：タイムアウトが長く時間ロスが大きい）
         colors = [
             ("clip(8+148*pow(Y/H,1.6),8,156)", "clip(4*pow(Y/H,2),0,4)",  "clip(4*pow(Y/H,2),0,4)"),
             ("clip(4*pow(1-Y/H,2),0,4)",        "clip(4*pow(1-Y/H,2),0,4)", "clip(10+105*pow(1-Y/H,1.5),10,115)"),
@@ -267,7 +242,7 @@ def make_clip(idx: int, bg_img: str | None, seg: dict, duration: float,
     chain += "[vout]"
     cmd = (["ffmpeg", "-y"] + inputs +
            ["-filter_complex", chain, "-map", "[vout]", "-an",
-            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
+            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "ultrafast",
             "-t", str(dur), out])
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
@@ -329,7 +304,7 @@ def generate_video(idx: int, meta: dict, font: str, bg_imgs: list) -> str:
         silent = f"{tmp_dir}/silent.mp4"
         subprocess.run([
             "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_txt,
-            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast", silent,
+            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "ultrafast", silent,
         ], check=True, capture_output=True)
 
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
