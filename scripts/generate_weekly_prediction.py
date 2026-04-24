@@ -41,7 +41,7 @@ PREFERRED_MODELS = [
     "gemini-2.0-flash",
     "gemini-2.0-flash-lite",
 ]
-RATE_LIMIT_WAITS = [30, 60]
+RATE_LIMIT_WAITS = [60, 120]
 NON_RETRY_STATUS = {403, 404}
 
 # API呼び出しを直列化して同時アクセスによるレート制限を防ぐ
@@ -239,6 +239,11 @@ def main() -> None:
         sys.exit(0)
 
     print(f"対象レース: {len(race_list)} 件")
+
+    # 直前の fetch_weekly_race.py がGemini APIを使用したため、
+    # 1分間のレート制限ウィンドウが回復するまで待機する
+    print("Geminiレート制限回復待機（60秒）...", file=sys.stderr)
+    time.sleep(60)
 
     api_keys = load_api_keys()
     if not api_keys:
