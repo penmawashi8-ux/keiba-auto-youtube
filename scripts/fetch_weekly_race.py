@@ -170,8 +170,6 @@ def extract_all_races_from_news(items: list[dict], now: datetime) -> list[dict]:
     has_weekend = any(c["score"] >= 15 for c in candidates)
     if has_weekend:
         candidates = [c for c in candidates if c["score"] >= 15]
-    # G3は除外（G1・G2のみ）
-    candidates = [c for c in candidates if c["grade"] != "G3"]
     return candidates
 
 
@@ -292,9 +290,8 @@ def main() -> None:
             print("今週末の重賞情報を取得できませんでした。スキップします。")
             sys.exit(0)
 
-        g1g2 = [c for c in candidates if c["grade"] in ("G1", "G2")]
-        print(f"検出レース: G1/G2={len(g1g2)} 件（全候補 {len(candidates)} 件）")
-        for c in g1g2:
+        print(f"検出レース: {len(candidates)} 件")
+        for c in candidates:
             race_name = c["race_name"]
             grade = c["grade"]
             is_overseas = c.get("overseas", False)
