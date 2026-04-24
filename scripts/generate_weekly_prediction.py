@@ -24,6 +24,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -43,6 +44,10 @@ PREFERRED_MODELS = [
 RATE_LIMIT_WAITS = [30, 60]
 NON_RETRY_STATUS = {403, 404}
 
+# API呼び出しを直列化して同時アクセスによるレート制限を防ぐ
+_api_lock = threading.Lock()
+_INTER_CALL_SLEEP = 8  # 成功後にAPIを休ませる秒数
+
 
 def load_api_keys() -> list[str]:
     keys = []
@@ -61,47 +66,49 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
     }
     pairs = [(key, model) for key in api_keys for model in PREFERRED_MODELS]
 
-    for api_key, model in pairs:
-        key_label = f"{api_key[:8]}..."
-        url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
-        waits = [0] + RATE_LIMIT_WAITS
+    with _api_lock:
+        for api_key, model in pairs:
+            key_label = f"{api_key[:8]}..."
+            url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+            waits = [0] + RATE_LIMIT_WAITS
 
-        for attempt, wait in enumerate(waits):
-            if wait:
-                print(f"  [{key_label} {model}] 429 → {wait}秒待機...", file=sys.stderr)
-                time.sleep(wait)
-            try:
-                resp = requests.post(url, json=payload, timeout=60)
-                if resp.status_code in NON_RETRY_STATUS:
-                    break
-                if resp.status_code == 429:
-                    if attempt < len(waits) - 1:
+            for attempt, wait in enumerate(waits):
+                if wait:
+                    print(f"  [{key_label} {model}] 429 → {wait}秒待機...", file=sys.stderr)
+                    time.sleep(wait)
+                try:
+                    resp = requests.post(url, json=payload, timeout=60)
+                    if resp.status_code in NON_RETRY_STATUS:
+                        break
+                    if resp.status_code == 429:
+                        if attempt < len(waits) - 1:
+                            continue
+                        break
+                    resp.raise_for_status()
+                    data = resp.json()
+                    candidates = data.get("candidates", [])
+                    if not candidates:
+                        raise ValueError("candidates が空")
+                    result = candidates[0]["content"]["parts"][0]["text"].strip()
+                    time.sleep(_INTER_CALL_SLEEP)
+                    return result
+                except requests.exceptions.HTTPError as e:
+                    status = e.response.status_code if e.response is not None else 0
+                    if status in NON_RETRY_STATUS:
+                        break
+                    if status == 429 and attempt < len(waits) - 1:
                         continue
                     break
-                resp.raise_for_status()
-                data = resp.json()
-                candidates = data.get("candidates", [])
-                if not candidates:
-                    raise ValueError("candidates が空")
-                return candidates[0]["content"]["parts"][0]["text"].strip()
-            except requests.exceptions.HTTPError as e:
-                status = e.response.status_code if e.response is not None else 0
-                if status in NON_RETRY_STATUS:
+                except Exception as e:
+                    safe_msg = str(e).replace(api_key, "***")
+                    print(f"  [{key_label} {model}] エラー: {safe_msg}", file=sys.stderr)
                     break
-                if status == 429 and attempt < len(waits) - 1:
-                    continue
-                break
-            except Exception as e:
-                safe_msg = str(e).replace(api_key, "***")
-                print(f"  [{key_label} {model}] エラー: {safe_msg}", file=sys.stderr)
-                break
 
-        time.sleep(3)
-
-    raise RuntimeError("Gemini API: 全キー×全モデルで失敗しました。")
+        raise RuntimeError("Gemini API: 全キー×全モデルで失敗しました。")
 
 
-def build_prompt(race_info: dict) -> str:
+def build_combined_prompt(race_info: dict) -> str:
+    """脚本とメタデータを1回のAPI呼び出しで生成するプロンプト。"""
     race_name = race_info["race_name"]
     grade     = race_info.get("grade", "")
     date      = race_info.get("date", "今週末")
@@ -111,7 +118,7 @@ def build_prompt(race_info: dict) -> str:
 
     course_info = f"{venue} {distance}".strip()
     snippets_text = "\n".join(f"  - {s}" for s in snippets[:10]) if snippets else "  （なし）"
-    is_overseas = race_info.get("source") == "overseas_search" or venue == "海外"
+    is_overseas = race_info.get("overseas", False) or race_info.get("source") == "overseas_search"
     expert_desc = "海外競馬に精通した競馬予想解説者" if is_overseas else "日本中央競馬（JRA）の熟練した競馬予想解説者"
 
     return f"""\
@@ -145,27 +152,44 @@ def build_prompt(race_info: dict) -> str:
 7. 最後の【本命予想】セクションで本命・対抗・穴馬を明示し、その根拠を述べる
 8. 挨拶・呼びかけ（「みなさん」「こんにちは」など）は一切禁止
 9. 情報が不確かな箇所は「〜とみられる」「〜が想定される」など推測表現にとどめる
-   （事実と異なる情報を断定的に書かない）
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-出力形式（余分な説明・コメント不要。脚本本文のみ出力）
+出力形式
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"""
+脚本本文を出力した後、必ず以下の2行を最後に追加してください（説明・コメント不要）:
 
-
-def generate_metadata_prompt(race_name: str, grade: str, script: str) -> str:
-    return f"""\
-以下の競馬予想解説脚本から YouTube 動画用のメタデータを生成してください。
-
-レース名: {race_name}（{grade}）
-
-【脚本冒頭】
-{script[:500]}
-
-以下の形式のみで出力してください:
 VIDEO_TITLE: [60文字以内のYouTubeタイトル。「【重賞予想】」で始め、レース名・年・ポイントを含める]
 TAGS: [レース名, 競馬予想, G1, 馬名など カンマ区切り 8〜12個]
 """
+
+
+def _parse_combined_response(raw: str, race_name: str, grade: str) -> tuple[str, dict]:
+    """脚本+メタデータの統合レスポンスをスクリプト本文とmetaに分離する。"""
+    lines = raw.splitlines()
+    meta: dict[str, str] = {}
+    script_end = len(lines)
+
+    for i in range(len(lines) - 1, -1, -1):
+        line = lines[i].strip()
+        if line.startswith("TAGS:") or line.startswith("TAGS："):
+            for sep in (":", "："):
+                if sep in line:
+                    _, _, v = line.partition(sep)
+                    meta["TAGS"] = v.strip()
+                    break
+            script_end = i
+        elif line.startswith("VIDEO_TITLE:") or line.startswith("VIDEO_TITLE："):
+            for sep in (":", "："):
+                if sep in line:
+                    _, _, v = line.partition(sep)
+                    meta["VIDEO_TITLE"] = v.strip()
+                    break
+            script_end = i
+        elif meta:
+            break
+
+    script = "\n".join(lines[:script_end]).strip()
+    return script, meta
 
 
 def generate_one(race_info: dict, idx: int, api_keys: list[str]) -> dict:
@@ -174,26 +198,15 @@ def generate_one(race_info: dict, idx: int, api_keys: list[str]) -> dict:
     grade     = race_info.get("grade", "G1")
 
     print(f"\n[{idx}] 脚本生成中: {race_name}（{grade}）...")
-    prompt = build_prompt(race_info)
-    script = call_gemini(api_keys, prompt, temperature=0.75)
-    print(f"  脚本生成完了: {len(script)} 文字", file=sys.stderr)
+    prompt = build_combined_prompt(race_info)
+    combined = call_gemini(api_keys, prompt, temperature=0.75)
+    print(f"  レスポンス取得: {len(combined)} 文字", file=sys.stderr)
+
+    script, meta = _parse_combined_response(combined, race_name, grade)
 
     script_path = Path(OUTPUT_DIR) / f"script_{idx}.txt"
     script_path.write_text(script, encoding="utf-8")
-    print(f"  ✅ {script_path}")
-
-    print(f"  [10秒待機（レート制限対策）...]", file=sys.stderr)
-    time.sleep(10)
-    print(f"  メタデータ生成中...", file=sys.stderr)
-    meta_resp = call_gemini(api_keys, generate_metadata_prompt(race_name, grade, script), temperature=0.5)
-
-    meta: dict[str, str] = {}
-    for line in meta_resp.strip().splitlines():
-        for sep in (":", "："):
-            if sep in line:
-                k, _, v = line.partition(sep)
-                meta[k.strip()] = v.strip()
-                break
+    print(f"  ✅ {script_path} ({len(script)} 文字)")
 
     video_title = meta.get("VIDEO_TITLE", f"【重賞予想】{race_name} 2026年 徹底分析")
     tags_raw    = meta.get("TAGS", "")
@@ -234,13 +247,14 @@ def main() -> None:
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
-    # APIキーをレースごとにローテーションして並列実行（レート制限分散）
     def _generate_with_rotated_key(args: tuple) -> dict:
         idx, race_info = args
         n = len(api_keys)
         rotated = api_keys[idx % n:] + api_keys[:idx % n]
         return generate_one(race_info, idx, rotated)
 
+    # _api_lock で直列化しているため workers を増やしても並列API呼び出しは起きない。
+    # ファイルI/O等の非API部分だけ並列化する。
     max_workers = min(len(api_keys), len(race_list), 3)
     print(f"並列ワーカー数: {max_workers}")
     results: dict[int, dict] = {}
