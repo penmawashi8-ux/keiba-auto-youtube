@@ -1,4 +1,4 @@
-date: 2026-04-24T15:01:06.517631Z
+date: 2026-04-24T16:18:54.042244Z
 type: landscape_prediction
 total_races: 1
 uploaded: 1
@@ -6,4 +6,4 @@ quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MHhhMqZEBg4 title=【競馬予想解説】青葉賞 4月25日
+OK project=1 video_id=re7em3mNsJk title=【重賞予想】 4月25日 徹底分析
