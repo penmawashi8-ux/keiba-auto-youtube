@@ -173,7 +173,7 @@ def make_clip(idx: int, bg_img: str | None, seg: dict, duration: float,
 
     if stype == "opening":
         # オープニングカード: 全体を暗く→グレードバッジ→レース名→日程
-        chain += ",geq=r='r(X,Y)*0.50':g='g(X,Y)*0.50':b='b(X,Y)*0.50'"
+        chain += ",colorchannelmixer=rr=0.50:gg=0.50:bb=0.50"
         if font:
             # グレードバッジ
             grade_f = f"{tmp}/grade.txt"
@@ -202,7 +202,7 @@ def make_clip(idx: int, bg_img: str | None, seg: dict, duration: float,
 
     elif stype == "header":
         # セクションヘッダーカード: 全体を暗く→中央に金色テキスト
-        chain += ",geq=r='r(X,Y)*0.45':g='g(X,Y)*0.45':b='b(X,Y)*0.45'"
+        chain += ",colorchannelmixer=rr=0.45:gg=0.45:bb=0.45"
         if font:
             tf = f"{tmp}/hdr_{idx:04d}.txt"
             Path(tf).write_text(wrap(text, LINE_HDR), encoding="utf-8")
@@ -214,7 +214,7 @@ def make_clip(idx: int, bg_img: str | None, seg: dict, duration: float,
 
     elif stype == "ending":
         # エンディング: 全体を暗く→CTAテキスト
-        chain += ",geq=r='r(X,Y)*0.40':g='g(X,Y)*0.40':b='b(X,Y)*0.40'"
+        chain += ",colorchannelmixer=rr=0.40:gg=0.40:bb=0.40"
         if font:
             ef = f"{tmp}/ending.txt"
             Path(ef).write_text("チャンネル登録＆通知ON\nで最新予想をGET！", encoding="utf-8")
@@ -226,10 +226,13 @@ def make_clip(idx: int, bg_img: str | None, seg: dict, duration: float,
                       f"line_spacing=20")
 
     else:
-        # ボディ: ローワーサードバー（geqで下部を暗く）＋テキスト
-        chain += (f",geq=r='if(gt(Y,{BAR_Y}),r(X,Y)*0.18,r(X,Y))'"
-                  f":g='if(gt(Y,{BAR_Y}),g(X,Y)*0.18,g(X,Y))'"
-                  f":b='if(gt(Y,{BAR_Y}),b(X,Y)*0.18,b(X,Y))'")
+        # ボディ: ローワーサードバー（split+crop+colorchannelmixer+overlay）＋テキスト
+        # geqの per-pixel 評価を避け、LUTベースのcolorchannelmixer+overlayで高速化
+        lb = f"b{idx}"
+        chain += (f"[{lb}s];[{lb}s]split[{lb}a][{lb}b]"
+                  f";[{lb}b]crop={W}:{BAR_H}:0:{BAR_Y},"
+                  f"colorchannelmixer=rr=0.18:gg=0.18:bb=0.18[{lb}d]"
+                  f";[{lb}a][{lb}d]overlay=0:{BAR_Y}")
         if font:
             tf = f"{tmp}/body_{idx:04d}.txt"
             Path(tf).write_text(wrap(text, LINE_BODY), encoding="utf-8")
