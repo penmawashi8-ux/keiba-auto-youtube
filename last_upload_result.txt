@@ -1,10 +1,10 @@
-date: 2026-04-23T12:10:24.931925Z
+date: 2026-04-24T02:04:38.779268Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PjvRm--nkXk title=【青葉賞】矢作厩舎のコントレイル産駒カットソロが異例の木曜追い　陣営「少しでも競
-OK project=1 video_id=oUliqvWTlng title=【天皇賞・春・1週前】連覇狙うレーン騎手がスティンガーグラスと初コンタクト「強み
-OK project=1 video_id=xjmmmLb8Rfg title=【香港・チャンピオンズマイル】地元の古豪ヴォイッジバブルのオーナー藤沢忠義氏「も
+OK project=1 video_id=7kFSmh2WFzA title=【青葉賞】2戦2勝のノーブルサヴェージは7枠15番　アザレア賞勝ち馬のブラックオ
+OK project=1 video_id=22J8LGjy1h8 title=キタサンブラック半弟のシュガークンは新潟大賞典で復帰　鞍上は引き続き武豊騎手　2
+OK project=1 video_id=ou0GDMb4p7o title=【青葉賞枠順確定】ブラックオリンピアは2枠4番、ノーブルサヴェージは7枠15番
