@@ -25,6 +25,7 @@ import os
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
@@ -233,20 +234,30 @@ def main() -> None:
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
-    news_items: list[dict] = []
-    for idx, race_info in enumerate(race_list):
-        try:
-            item = generate_one(race_info, idx, api_keys)
-            news_items.append(item)
-        except Exception as e:
-            print(f"[エラー] {race_info['race_name']} の脚本生成失敗: {e}", file=sys.stderr)
-            continue
+    # APIキーをレースごとにローテーションして並列実行（レート制限分散）
+    def _generate_with_rotated_key(args: tuple) -> dict:
+        idx, race_info = args
+        n = len(api_keys)
+        rotated = api_keys[idx % n:] + api_keys[:idx % n]
+        return generate_one(race_info, idx, rotated)
 
-        # レース間のレート制限対策
-        if idx < len(race_list) - 1:
-            print("  [次のレースまで15秒待機...]", file=sys.stderr)
-            time.sleep(15)
+    max_workers = min(len(api_keys), len(race_list), 3)
+    print(f"並列ワーカー数: {max_workers}")
+    results: dict[int, dict] = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(_generate_with_rotated_key, (idx, race_info)): idx
+            for idx, race_info in enumerate(race_list)
+        }
+        for future in as_completed(futures):
+            idx = futures[future]
+            race_name = race_list[idx]["race_name"]
+            try:
+                results[idx] = future.result()
+            except Exception as e:
+                print(f"[エラー] {race_name} の脚本生成失敗: {e}", file=sys.stderr)
 
+    news_items = [results[i] for i in sorted(results)]
     if not news_items:
         print("[エラー] 全レースの脚本生成に失敗しました。", file=sys.stderr)
         sys.exit(1)

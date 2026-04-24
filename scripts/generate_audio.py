@@ -9,6 +9,7 @@ import re
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import edge_tts
@@ -281,21 +282,18 @@ def main() -> None:
     font_name = detect_font_name()
     print(f"字幕フォント: {font_name}")
 
-    for script_file in script_files:
+    def _generate_one(script_file: Path) -> str:
         idx = script_file.stem.split("_")[1]
         script = script_file.read_text(encoding="utf-8").strip()
         if not script:
             print(f"  [警告] {script_file} が空です。スキップします。")
-            continue
+            return idx
 
-        # タイトルをナレーションの先頭に追加
         idx_int = int(idx)
         title = news_items[idx_int].get("title", "") if idx_int < len(news_items) else ""
+        narration_text = (title + "。" + script) if title else script
         if title:
-            narration_text = title + "。" + script
-            print(f"  タイトル読み上げ追加: 「{title[:40]}」")
-        else:
-            narration_text = script
+            print(f"  [{idx}] タイトル読み上げ追加: 「{title[:40]}」")
 
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
@@ -305,13 +303,12 @@ def main() -> None:
         voice, rate, pitch_factor, volume_db = pick_tts_params()
         is_kokoro_voice = voice in _KOKORO_VOICE_POOL
         engine = "Kokoro" if (_KOKORO_AVAILABLE and is_kokoro_voice) else "edge-tts"
-        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) engine={engine} voice={voice} rate={rate} ---")
+        print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) engine={engine} voice={voice} ---")
         for attempt in range(1, 4):
             try:
                 if _KOKORO_AVAILABLE and is_kokoro_voice:
                     speed = 1.0 + (int(rate.replace("%", "").replace("+", "")) / 100)
                     generate_audio_kokoro(narration_text, audio_path, voice=voice, speed=speed)
-                    # Kokoro は word boundary がないので空の ASS を出力
                     write_ass([], ass_path, font_name)
                 else:
                     asyncio.run(generate_audio_and_subtitles(
@@ -320,20 +317,35 @@ def main() -> None:
                     ))
                 break
             except Exception as e:
-                print(f"  [警告] 音声生成失敗 (attempt {attempt}/3): {e}", file=sys.stderr)
+                print(f"  [{idx}] 音声生成失敗 (attempt {attempt}/3): {e}", file=sys.stderr)
                 if attempt == 1 and _KOKORO_AVAILABLE and is_kokoro_voice:
-                    print("  Kokoro失敗。edge-tts にフォールバックします。", file=sys.stderr)
+                    print(f"  [{idx}] Kokoro失敗。edge-tts にフォールバックします。", file=sys.stderr)
                     is_kokoro_voice = False
                     engine = "edge-tts"
                     voice = random.choice(_EDGE_VOICE_POOL)
                 elif attempt < 3:
                     time.sleep(10 * attempt)
                 else:
-                    print(f"[エラー] 音声生成を3回試みましたが失敗しました。", file=sys.stderr)
-                    sys.exit(1)
+                    raise RuntimeError(f"音声生成を3回試みましたが失敗しました。idx={idx}")
         apply_audio_variation(audio_path, pitch_factor, volume_db)
+        return idx
 
-    print(f"\n{len(script_files)} 件の音声を生成しました。")
+    max_workers = min(2, len(script_files))
+    print(f"並列ワーカー数: {max_workers}")
+    failed = 0
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(_generate_one, f): f for f in script_files}
+        for future in as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"[エラー] {e}", file=sys.stderr)
+                failed += 1
+
+    if failed == len(script_files):
+        print("[エラー] 全ての音声生成に失敗しました。", file=sys.stderr)
+        sys.exit(1)
+    print(f"\n{len(script_files) - failed}/{len(script_files)} 件の音声を生成しました。")
 
 
 if __name__ == "__main__":

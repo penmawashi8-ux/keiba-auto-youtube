@@ -8,6 +8,7 @@
   - アニメーション無し（シンプル・落ち着いた演出）
 """
 import glob, json, os, re, shutil, subprocess, sys, tempfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 NEWS_JSON    = "news.json"
@@ -370,15 +371,32 @@ def main() -> None:
         sys.exit(1)
 
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
-    success = 0
-    for idx, meta in enumerate(news_items):
+
+    # ffmpegはCPUバウンドのためワーカー数は2（GitHub Actions: 2 vCPU）
+    max_workers = min(2, len(news_items))
+    print(f"並列ワーカー数: {max_workers}")
+
+    def _gen(args: tuple) -> int:
+        idx, meta = args
         race_name = meta.get("race_name", f"レース{idx}")
         print(f"\n=== [{idx}] {race_name} ===")
-        try:
-            generate_video(idx, meta, font, bg_imgs)
-            success += 1
-        except Exception as e:
-            print(f"[エラー] {race_name} の動画生成失敗: {e}", file=sys.stderr)
+        generate_video(idx, meta, font, bg_imgs)
+        return idx
+
+    success = 0
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(_gen, (idx, meta)): idx
+            for idx, meta in enumerate(news_items)
+        }
+        for future in as_completed(futures):
+            idx = futures[future]
+            try:
+                future.result()
+                success += 1
+            except Exception as e:
+                race_name = news_items[idx].get("race_name", f"レース{idx}")
+                print(f"[エラー] {race_name} の動画生成失敗: {e}", file=sys.stderr)
 
     if success == 0:
         print("[エラー] 全レースの動画生成に失敗しました。", file=sys.stderr)
