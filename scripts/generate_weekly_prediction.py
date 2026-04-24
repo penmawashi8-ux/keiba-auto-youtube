@@ -37,16 +37,16 @@ NEWS_JSON = "news.json"
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 PREFERRED_MODELS = [
-    "gemini-2.5-flash",
-    "gemini-2.0-flash",
-    "gemini-2.0-flash-lite",
+    "gemini-2.0-flash-lite",  # 30 RPM: 最もレート上限が高い
+    "gemini-2.0-flash",       # 15 RPM
+    "gemini-2.5-flash",       # 10 RPM: 最も制限が厳しい
 ]
-RATE_LIMIT_WAITS = [60, 120]
+RATE_LIMIT_WAITS = [30, 60]
 NON_RETRY_STATUS = {403, 404}
 
 # API呼び出しを直列化して同時アクセスによるレート制限を防ぐ
 _api_lock = threading.Lock()
-_INTER_CALL_SLEEP = 8  # 成功後にAPIを休ませる秒数
+_INTER_CALL_SLEEP = 5  # 成功後にAPIを休ませる秒数
 
 
 def load_api_keys() -> list[str]:
@@ -240,10 +240,9 @@ def main() -> None:
 
     print(f"対象レース: {len(race_list)} 件")
 
-    # 直前の fetch_weekly_race.py がGemini APIを使用したため、
-    # 1分間のレート制限ウィンドウが回復するまで待機する
-    print("Geminiレート制限回復待機（60秒）...", file=sys.stderr)
-    time.sleep(60)
+    # 直前の fetch_weekly_race.py がGemini APIを使用したため短い回復待機
+    print("Geminiレート制限回復待機（15秒）...", file=sys.stderr)
+    time.sleep(15)
 
     api_keys = load_api_keys()
     if not api_keys:
