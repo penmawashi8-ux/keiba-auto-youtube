@@ -1,10 +1,10 @@
-date: 2026-04-24T02:04:38.779268Z
+date: 2026-04-24T04:34:02.524688Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7kFSmh2WFzA title=【青葉賞】2戦2勝のノーブルサヴェージは7枠15番　アザレア賞勝ち馬のブラックオ
-OK project=1 video_id=22J8LGjy1h8 title=キタサンブラック半弟のシュガークンは新潟大賞典で復帰　鞍上は引き続き武豊騎手　2
-OK project=1 video_id=ou0GDMb4p7o title=【青葉賞枠順確定】ブラックオリンピアは2枠4番、ノーブルサヴェージは7枠15番
+OK project=1 video_id=FdRrctR5wk4 title=【香港・QE2世C】マスカレードボールは「香港に着いて最高の状態」　手塚久調教師
+OK project=1 video_id=WBjLgIf5jw0 title=【注目馬動向】キャンディードがNHKマイルCを鼻出血のため見送り　2歳時にスター
+OK project=1 video_id=NV74WSDnBUc title=冬を思わせる名前なのに春開催？ 福島競馬「雪うさぎ賞」の由来とは
