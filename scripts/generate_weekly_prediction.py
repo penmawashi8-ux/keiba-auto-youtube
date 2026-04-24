@@ -70,7 +70,7 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
     with _api_lock:
         for pass_idx, wait in enumerate(inter_pass_waits):
             if wait:
-                print(f"  [全キー429のため {wait}秒待機してリトライ...]", file=sys.stderr)
+                print(f"  [全キー失敗のため {wait}秒待機してリトライ (pass {pass_idx+1}/{len(inter_pass_waits)})]", file=sys.stderr)
                 time.sleep(wait)
             for api_key, model in pairs:
                 key_label = f"{api_key[:8]}..."
@@ -78,13 +78,16 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
                 try:
                     resp = requests.post(url, json=payload, timeout=60)
                     if resp.status_code in NON_RETRY_STATUS:
+                        print(f"  [{key_label} {model}] {resp.status_code} スキップ", file=sys.stderr)
                         continue
                     if resp.status_code == 429:
+                        print(f"  [{key_label} {model}] 429 レート制限", file=sys.stderr)
                         continue
                     resp.raise_for_status()
                     data = resp.json()
                     candidates = data.get("candidates", [])
                     if not candidates:
+                        print(f"  [{key_label} {model}] candidates 空", file=sys.stderr)
                         continue
                     result = candidates[0]["content"]["parts"][0]["text"].strip()
                     time.sleep(_INTER_CALL_SLEEP)
