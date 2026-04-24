@@ -1,10 +1,10 @@
-date: 2026-04-24T07:19:29.700665Z
+date: 2026-04-24T09:14:24.537905Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=F4tPQIRbdoE title=【マイラーズC枠順確定】アドマイヤズームは5枠9番、シックスペンスは8枠16番
-OK project=1 video_id=QwAwibclrU0 title=【フローラS枠順確定】ラフターラインズは4枠5番、ファムクラジューズは7枠11番
-OK project=1 video_id=eqrxtwYNMbI title=【香港チェアマンズＳＰ】サトノレーヴ　昨年２着の雪辱へ好気配　斎藤助手が走りに手
+OK project=1 video_id=6nMWZ_jxsJw title=今週の武豊騎手は重賞2鞍を含む10鞍 国枝栄厩務員とのタッグにも要注目
+OK project=1 video_id=-uuvVpPJ02o title=【チェアマンズSP】「2年連続短距離三冠」と「20連勝」 カーインライジングにか
+OK project=1 video_id=E3Bgs2m2u9g title=【週末情報】フローラSへ最終調整のラフターラインズ、脚さばき軽やかで雰囲気良し！

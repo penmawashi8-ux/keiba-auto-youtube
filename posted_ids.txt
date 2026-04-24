@@ -662,6 +662,7 @@ https://news.netkeiba.com/?pid=news_view&no=328795
 https://news.netkeiba.com/?pid=news_view&no=328796
 https://news.netkeiba.com/?pid=news_view&no=328797
 https://news.netkeiba.com/?pid=news_view&no=328823
+https://news.netkeiba.com/?pid=news_view&no=328830
 https://news.netkeiba.com/?pid=news_view&no=328831
 https://news.netkeiba.com/?pid=news_view&no=328833
 https://news.netkeiba.com/?pid=news_view&no=328838
@@ -687,6 +688,7 @@ https://news.netkeiba.com/?pid=news_view&no=328943
 https://news.netkeiba.com/?pid=news_view&no=328945
 https://news.netkeiba.com/?pid=news_view&no=328946
 https://news.netkeiba.com/?pid=news_view&no=328947
+https://news.netkeiba.com/?pid=news_view&no=328950
 https://news.netkeiba.com/?pid=news_view&no=328959
 https://news.netkeiba.com/?pid=news_view&no=328960
 https://news.netkeiba.com/?pid=news_view&no=328961
@@ -706,6 +708,7 @@ https://news.netkeiba.com/?pid=news_view&no=329016
 https://news.netkeiba.com/?pid=news_view&no=329017
 https://news.netkeiba.com/?pid=news_view&no=329021
 https://news.netkeiba.com/?pid=news_view&no=329022
+https://news.netkeiba.com/?pid=news_view&no=329032
 osaka_cup_2026_prediction
 osaka_cup_2026_prediction_wakuban
 oukasho_2026_prediction
