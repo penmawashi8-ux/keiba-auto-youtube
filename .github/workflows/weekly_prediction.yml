@@ -74,6 +74,7 @@ jobs:
         run: python scripts/fetch_weekly_race.py
 
       - name: 予想脚本を生成
+        if: steps.fetch_race.outputs.skip != 'true'
         env:
           GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
@@ -81,15 +82,18 @@ jobs:
         run: python scripts/generate_weekly_prediction.py
 
       - name: 音声を生成
+        if: steps.fetch_race.outputs.skip != 'true'
         run: python scripts/generate_audio.py
 
       - name: BGMをダウンロード
+        if: steps.fetch_race.outputs.skip != 'true'
         continue-on-error: true
         run: |
           mkdir -p assets/bgm
           python scripts/download_bgm.py
 
       - name: 横向き動画を生成
+        if: steps.fetch_race.outputs.skip != 'true'
         id: gen_video
         timeout-minutes: 30
         env:
@@ -100,7 +104,7 @@ jobs:
         run: python scripts/landscape_video.py
 
       - name: 動画生成ログをIssueに投稿（失敗時のみ）
-        if: failure() && steps.gen_video.conclusion == 'failure'
+        if: steps.fetch_race.outputs.skip != 'true' && failure() && steps.gen_video.conclusion == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO:  ${{ github.repository }}
@@ -124,6 +128,7 @@ jobs:
           PYEOF
 
       - name: YouTubeに投稿（横向き）
+        if: steps.fetch_race.outputs.skip != 'true'
         env:
           GOOGLE_CLIENT_ID:     ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
