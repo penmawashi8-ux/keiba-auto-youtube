@@ -2,8 +2,6 @@
 """Step 2: horses.csv の各馬のレース成績を uma-channel.jp から取得して results.csv に保存"""
 
 import csv
-import time
-import random
 import re
 import sys
 from pathlib import Path
@@ -201,10 +199,31 @@ def make_synthetic_results(horse_name, horse_url, g1_wins, birth_year):
     return results
 
 
+MAX_WORKERS = 5
+
+
+def _fetch_one(args):
+    """並列取得用ワーカー: (index, horse_dict) → (index, results, error_str|None, g1_count)"""
+    import requests as _requests
+
+    i, horse = args
+    name = horse["name"]
+    url = horse["url"]
+    g1_wins = int(horse.get("g1_wins", 0))
+    birth_year = int(horse.get("birth_year", 0))
+
+    session = _requests.Session()
+    try:
+        results = fetch_uma_channel_results(name, url, session)
+        g1_count = sum(1 for r in results if r["grade"] == "G1" and r["position"] == 1)
+        return i, results, None, g1_count
+    except Exception as e:
+        synthetic = make_synthetic_results(name, url, g1_wins, birth_year)
+        return i, synthetic, str(e), 0
+
+
 def main():
     print("=== Step 2: レース成績取得 (uma-channel.jp) ===")
-
-    import requests
 
     horses_path = "horses.csv"
     if not Path(horses_path).exists():
@@ -214,33 +233,30 @@ def main():
     with open(horses_path, encoding="utf-8") as f:
         horses = list(csv.DictReader(f))
 
-    print(f"{len(horses)}頭の成績を取得します")
+    total = len(horses)
+    print(f"{total}頭の成績を取得します (並列 {MAX_WORKERS} ワーカー)")
 
-    session = requests.Session()
-    all_results = []
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    results_by_idx = {}
     errors = []
 
-    for i, horse in enumerate(horses):
-        name       = horse["name"]
-        url        = horse["url"]
-        g1_wins    = int(horse.get("g1_wins", 0))
-        birth_year = int(horse.get("birth_year", 0))
-        print(f"[{i+1}/{len(horses)}] {name} ({url}) ...")
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {executor.submit(_fetch_one, (i, h)): i for i, h in enumerate(horses)}
+        for fut in as_completed(futures):
+            i, results, err, g1_count = fut.result()
+            name = horses[i]["name"]
+            url = horses[i]["url"]
+            if err:
+                print(f"[{i+1}/{total}] {name} WARNING: 取得失敗 → 合成レコード生成")
+                errors.append(f"{name}\t{url}\t{err}")
+            else:
+                print(f"[{i+1}/{total}] {name}: {len(results)}戦取得 (G1勝利:{g1_count})")
+            results_by_idx[i] = results
 
-        try:
-            results = fetch_uma_channel_results(name, url, session)
-            all_results.extend(results)
-            g1_count = sum(1 for r in results if r["grade"] == "G1" and r["position"] == 1)
-            print(f"  → {len(results)}戦取得 (G1勝利:{g1_count})")
-        except Exception as e:
-            print(f"  WARNING: 取得失敗 ({e})")
-            print(f"  → G1勝利数({g1_wins})から合成レコードを生成")
-            synthetic = make_synthetic_results(name, url, g1_wins, birth_year)
-            all_results.extend(synthetic)
-            errors.append(f"{name}\t{url}\t{e}")
-
-        if i < len(horses) - 1:
-            time.sleep(random.uniform(2, 3))
+    all_results = []
+    for i in range(total):
+        all_results.extend(results_by_idx[i])
 
     with open("results.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=RESULT_FIELDNAMES)

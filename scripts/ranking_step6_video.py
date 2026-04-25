@@ -131,14 +131,14 @@ def create_slideshow(output_path="slideshow_raw.mp4"):
              "-loop", "1", "-i", str(img_path),
              "-t", str(slide_duration),
              "-vf", vf,
-             "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+             "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23",
              "-pix_fmt", "yuv420p",
              clip_path],
             step_name=f"Step②:スライド{i+1}"
         )
         clip_files.append(clip_path)
 
-    # クリップを連結
+    # クリップを連結 (再エンコードなし)
     concat_list = os.path.join(tmp_dir, "concat.txt")
     with open(concat_list, "w") as f:
         for clip in clip_files:
@@ -146,8 +146,7 @@ def create_slideshow(output_path="slideshow_raw.mp4"):
 
     run_cmd(
         ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_list,
-         "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-         "-pix_fmt", "yuv420p", output_path],
+         "-c", "copy", output_path],
         step_name="Step②:クリップ連結"
     )
 
