@@ -113,11 +113,11 @@ def make_question_slide(q: dict, out_path: Path):
 
     for i, clue in enumerate(col_left):
         y = base_y - i * row_h
-        ax.text(0.06, y, f"✦ {clue}", ha="left", va="center",
+        ax.text(0.06, y, f"◆ {clue}", ha="left", va="center",
                 color=WHITE, fontsize=19, fontweight="bold")
     for i, clue in enumerate(col_right):
         y = base_y - i * row_h
-        ax.text(0.54, y, f"✦ {clue}", ha="left", va="center",
+        ax.text(0.54, y, f"◆ {clue}", ha="left", va="center",
                 color=WHITE, fontsize=19, fontweight="bold")
 
     # 4択（2×2グリッド）
@@ -185,7 +185,7 @@ def make_answer_slide(q: dict, out_path: Path):
         boxstyle="round,pad=0.015",
         facecolor=PANEL, edgecolor="#304060", linewidth=1,
     ))
-    ax.text(0.06, 0.32, "📖 解説", ha="left", va="center",
+    ax.text(0.06, 0.32, "◆ 解説", ha="left", va="center",
             color=ACCENT, fontsize=20, fontweight="bold")
     ax.text(0.5, 0.20, q["display_explanation"], ha="center", va="center",
             color=WHITE, fontsize=26, multialignment="center")
@@ -209,16 +209,14 @@ def make_title_slide(title: str, out_path: Path):
 
     draw_banner(ax, "競馬チャンネル")
 
-    ax.text(0.18, 0.50, "🏇", ha="center", va="center", fontsize=120)
-
     ax.add_patch(mpatches.FancyBboxPatch(
-        (0.30, 0.34), 0.68, 0.44,
+        (0.05, 0.34), 0.90, 0.44,
         boxstyle="round,pad=0.02",
         facecolor=PANEL, edgecolor=ACCENT, linewidth=3,
     ))
-    ax.text(0.64, 0.65, title, ha="center", va="center",
+    ax.text(0.50, 0.65, title, ha="center", va="center",
             color=ACCENT, fontsize=38, fontweight="bold", multialignment="center")
-    ax.text(0.64, 0.48, "全5問  ─  あなたは何問わかる？", ha="center", va="center",
+    ax.text(0.50, 0.48, "全5問  ─  あなたは何問わかる？", ha="center", va="center",
             color=WHITE, fontsize=26)
 
     ax.text(0.5, 0.16, "チャンネル登録・高評価よろしくお願いします！",
@@ -240,19 +238,17 @@ def make_result_slide(out_path: Path):
 
     draw_banner(ax, "名馬当てクイズ  ─  全問終了！")
 
-    ax.text(0.18, 0.50, "🏆", ha="center", va="center", fontsize=120)
-
     ax.add_patch(mpatches.FancyBboxPatch(
-        (0.30, 0.34), 0.68, 0.44,
+        (0.05, 0.34), 0.90, 0.44,
         boxstyle="round,pad=0.02",
         facecolor=PANEL, edgecolor=ACCENT, linewidth=2,
     ))
-    ax.text(0.64, 0.65, "全問終了！", ha="center", va="center",
+    ax.text(0.50, 0.65, "全問終了！", ha="center", va="center",
             color=ACCENT, fontsize=44, fontweight="bold")
-    ax.text(0.64, 0.50, "いくつ正解できましたか？", ha="center", va="center",
+    ax.text(0.50, 0.50, "いくつ正解できましたか？", ha="center", va="center",
             color=WHITE, fontsize=28)
 
-    ax.text(0.5, 0.16, "👍 高評価 & チャンネル登録お願いします！　次回もお楽しみに🏇",
+    ax.text(0.5, 0.16, "高評価 & チャンネル登録お願いします！　次回もお楽しみに！",
             ha="center", va="center", color="#9090b0", fontsize=22)
 
     plt.tight_layout(pad=0)
