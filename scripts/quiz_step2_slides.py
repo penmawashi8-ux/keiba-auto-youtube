@@ -94,22 +94,31 @@ def make_question_slide(q: dict, out_path: Path):
     ax.text(0.5, 0.82, "この馬は誰？", ha="center", va="center",
             color=ACCENT, fontsize=36, fontweight="bold")
 
-    # ヒント3つ（横並び）
+    # G1勝利歴（全件・2列レイアウト）
     clues = q["clues"]
-    clue_w = 0.28
-    total_w = clue_w * len(clues) + 0.02 * (len(clues) - 1)
-    start_x = (1.0 - total_w) / 2
-    for i, clue in enumerate(clues):
-        cx = start_x + i * (clue_w + 0.02)
-        ax.add_patch(mpatches.FancyBboxPatch(
-            (cx, 0.56), clue_w, 0.18,
-            boxstyle="round,pad=0.015",
-            facecolor=CLUE_BG, edgecolor=ACCENT, linewidth=1.5,
-        ))
-        ax.text(cx + clue_w / 2, 0.68, f"ヒント{i + 1}", ha="center", va="center",
-                color=ACCENT, fontsize=18, fontweight="bold")
-        ax.text(cx + clue_w / 2, 0.60, clue, ha="center", va="center",
-                color=WHITE, fontsize=22, fontweight="bold")
+    ax.add_patch(mpatches.FancyBboxPatch(
+        (0.03, 0.38), 0.94, 0.42,
+        boxstyle="round,pad=0.015",
+        facecolor=CLUE_BG, edgecolor=ACCENT, linewidth=1.5,
+    ))
+    ax.text(0.5, 0.77, "G1 勝利歴", ha="center", va="center",
+            color=ACCENT, fontsize=20, fontweight="bold")
+
+    # 2列に分割
+    half = (len(clues) + 1) // 2
+    col_left = clues[:half]
+    col_right = clues[half:]
+    row_h = min(0.30 / max(half, 1), 0.07)
+    base_y = 0.71 - row_h
+
+    for i, clue in enumerate(col_left):
+        y = base_y - i * row_h
+        ax.text(0.06, y, f"✦ {clue}", ha="left", va="center",
+                color=WHITE, fontsize=19, fontweight="bold")
+    for i, clue in enumerate(col_right):
+        y = base_y - i * row_h
+        ax.text(0.54, y, f"✦ {clue}", ha="left", va="center",
+                color=WHITE, fontsize=19, fontweight="bold")
 
     # 4択（2×2グリッド）
     choices = q["choices"]
