@@ -1,10 +1,10 @@
-date: 2026-04-25T10:14:33.329774Z
+date: 2026-04-25T11:54:03.261401Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mPel9E53GRs title=日本馬計6頭出走の香港チャンピオンズデー netkeibaTVのライブ配信に細江
-OK project=1 video_id=rN8hsgf2drA title=フォーエバーヤングは秋の目標がBCクラシックと凱旋門賞の2択!国内1走の意向も…
-OK project=1 video_id=NgoQi7R7hHY title=4月25日の出来事一覧/福島・東京・京都
+OK project=1 video_id=3E2UrUDiAko title=【ケンタッキーダービー】無傷3連勝ダノンバーボンが決戦の地に到着　陣営「輸送は問
+OK project=1 video_id=Lu5e3gzgh1A title=半兄は天皇賞(秋)覇者のマスカレードボール アナザーフェイスが初勝利狙う
+OK project=1 video_id=6bOYW6q3M60 title=【AI予想・フローラS】人工知能は新たなオークス候補誕生に期待!? 経験馬相手の
