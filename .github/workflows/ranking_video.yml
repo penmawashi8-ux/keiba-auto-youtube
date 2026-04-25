@@ -9,12 +9,6 @@ on:
         default: '1'
         type: choice
         options: ['1', '2', '3', '4', '5', '6']
-      whisper_model:
-        description: 'Whisperモデル (tiny=高速・低精度 / base=標準 / small=高精度・低速)'
-        required: false
-        default: 'tiny'
-        type: choice
-        options: ['tiny', 'base', 'small']
       enable_zoompan:
         description: 'ズームパンエフェクト有効化 (CI では低速なためデフォルトOFF)'
         required: false
@@ -24,7 +18,7 @@ on:
 jobs:
   generate-ranking-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 25
 
     steps:
       - name: リポジトリをチェックアウト
@@ -36,77 +30,40 @@ jobs:
           python-version: '3.11'
           cache: pip
 
-      # ── システム依存関係 ─────────────────────────────────────────
-      - name: システム依存関係インストール (ffmpeg / フォント / Chromium)
+      - name: システム依存関係インストール (ffmpeg / フォント)
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            ffmpeg \
-            fonts-noto-cjk \
-            libfontconfig1 \
-            chromium-browser \
-            chromium-chromedriver
-          echo "=== ChromeDriver 確認 ==="
-          which chromedriver 2>/dev/null && chromedriver --version || echo "chromedriver: なし"
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk libfontconfig1
 
-      # ── Python 依存関係 ──────────────────────────────────────────
-      - name: PyTorch (CPU版) を先にインストール
+      - name: Python パッケージインストール
         run: |
           pip install --upgrade pip
-          pip install torch --index-url https://download.pytorch.org/whl/cpu
-
-      - name: ランキング用 Python パッケージインストール
-        run: |
           pip install -r requirements-ranking.txt
 
-      - name: 既存 requirements.txt インストール (エラーは無視)
-        run: pip install -r requirements.txt || true
-
-      # ── BGM ダウンロード ─────────────────────────────────────────
       - name: BGM ダウンロード (失敗してもスキップ)
-        run: python scripts/download_bgm.py || echo "BGMダウンロードをスキップして続行します"
+        run: python scripts/download_bgm.py || echo "BGMダウンロードをスキップ"
 
-      # ── フォント確認 ─────────────────────────────────────────────
-      - name: 日本語フォント確認
-        run: |
-          fc-list | grep -i noto | head -5 || echo "Notoフォントが見つかりません"
-          find /usr/share/fonts -name "*CJK*" -o -name "*noto*" 2>/dev/null | head -5
-
-      # ── メインパイプライン ────────────────────────────────────────
       - name: ランキング動画パイプライン実行
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           EDGE_TTS_VOICE: ja-JP-KeitaNeural
-          WHISPER_MODEL: ${{ inputs.whisper_model }}
           ENABLE_ZOOMPAN: ${{ inputs.enable_zoompan && '1' || '0' }}
           BGM_PATH: assets/bgm/bgm.mp3
-          CHROME_BIN: /usr/bin/chromium-browser
-          CHROME_DRIVER_PATH: /usr/bin/chromedriver
           PYTHONUNBUFFERED: '1'
         run: |
           python scripts/ranking_pipeline.py --from ${{ inputs.from_step }}
 
-      # ── 生成ファイルの確認 ────────────────────────────────────────
       - name: 生成ファイル一覧表示
         if: always()
         run: |
-          echo "=== 生成ファイル ==="
-          for f in horses.csv results.csv errors.txt ranking.csv script.txt narration.mp3 subtitles.srt final_output.mp4; do
-            if [ -f "$f" ]; then
-              size=$(du -sh "$f" | cut -f1)
-              echo "✓ $f ($size)"
-            else
-              echo "✗ $f (なし)"
-            fi
+          for f in horses.csv results.csv ranking.csv script.txt narration.mp3 final_output.mp4; do
+            [ -f "$f" ] && echo "✓ $f ($(du -sh $f | cut -f1))" || echo "✗ $f (なし)"
           done
-          echo ""
-          echo "=== graphs/ ==="
           ls -lh graphs/ 2>/dev/null || echo "(グラフなし)"
 
-      # ── アーティファクトアップロード ──────────────────────────────
-      - name: 中間ファイルをアップロード (データ確認用)
+      - name: 中間ファイルをアップロード
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -114,7 +71,6 @@ jobs:
           path: |
             horses.csv
             results.csv
-            errors.txt
             ranking.csv
             script.txt
             graphs/
@@ -128,21 +84,6 @@ jobs:
           name: ranking-video-${{ github.run_number }}
           path: |
             narration.mp3
-            subtitles.srt
             final_output.mp4
           retention-days: 7
           if-no-files-found: warn
-
-      # ── エラー時のデバッグ情報 ────────────────────────────────────
-      - name: エラーログをGitHub Issueに投稿
-        if: failure()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if [ -f errors.txt ]; then
-            body="## ランキング動画生成エラー (Run #${{ github.run_number }})\n\`\`\`\n$(cat errors.txt)\n\`\`\`"
-            gh issue create \
-              --title "ranking_video: エラー発生 (run #${{ github.run_number }})" \
-              --body "$(printf '%b' "$body")" \
-              --label bug || true
-          fi
