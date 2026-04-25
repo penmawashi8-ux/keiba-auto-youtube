@@ -24,13 +24,7 @@ on:
 jobs:
   generate-ranking-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
-
-    services:
-      voicevox:
-        image: voicevox/voicevox_engine:cpu-ubuntu20.04-latest
-        ports:
-          - 50021:50021
+    timeout-minutes: 45
 
     steps:
       - name: リポジトリをチェックアウト
@@ -52,11 +46,6 @@ jobs:
             libfontconfig1 \
             chromium-browser \
             chromium-chromedriver
-          # インストール結果を確認
-          echo "=== Chrome/Chromium バイナリ確認 ==="
-          for bin in chromium-browser chromium google-chrome google-chrome-stable; do
-            path=$(which $bin 2>/dev/null) && echo "✓ $bin → $path" || echo "✗ $bin: なし"
-          done
           echo "=== ChromeDriver 確認 ==="
           which chromedriver 2>/dev/null && chromedriver --version || echo "chromedriver: なし"
 
@@ -64,7 +53,6 @@ jobs:
       - name: PyTorch (CPU版) を先にインストール
         run: |
           pip install --upgrade pip
-          # CPU 専用ビルドで容量を節約 (~700MB vs GPU版 ~2GB)
           pip install torch --index-url https://download.pytorch.org/whl/cpu
 
       - name: ランキング用 Python パッケージインストール
@@ -73,23 +61,6 @@ jobs:
 
       - name: 既存 requirements.txt インストール (エラーは無視)
         run: pip install -r requirements.txt || true
-
-      # ── VOICEVOX ヘルスチェック ──────────────────────────────────
-      - name: VOICEVOX 起動待機 (最大3分)
-        run: |
-          echo "VOICEVOXの起動を待機中..."
-          for i in $(seq 1 36); do
-            if curl -sf http://localhost:50021/version > /dev/null 2>&1; then
-              echo "✓ VOICEVOX 起動確認: $(curl -s http://localhost:50021/version)"
-              break
-            fi
-            if [ "$i" -eq 36 ]; then
-              echo "✗ VOICEVOX 起動タイムアウト (3分経過)"
-              exit 1
-            fi
-            echo "  待機中... ($i/36) 5秒後に再試行"
-            sleep 5
-          done
 
       # ── BGM ダウンロード ─────────────────────────────────────────
       - name: BGM ダウンロード (失敗してもスキップ)
@@ -107,14 +78,13 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
-          VOICEVOX_URL: http://localhost:50021
-          VOICEVOX_SPEAKER: '1'
+          EDGE_TTS_VOICE: ja-JP-KeitaNeural
           WHISPER_MODEL: ${{ inputs.whisper_model }}
           ENABLE_ZOOMPAN: ${{ inputs.enable_zoompan && '1' || '0' }}
           BGM_PATH: assets/bgm/bgm.mp3
-          # Selenium 用: ubuntu-latest は chromium-browser
           CHROME_BIN: /usr/bin/chromium-browser
           CHROME_DRIVER_PATH: /usr/bin/chromedriver
+          PYTHONUNBUFFERED: '1'
         run: |
           python scripts/ranking_pipeline.py --from ${{ inputs.from_step }}
 

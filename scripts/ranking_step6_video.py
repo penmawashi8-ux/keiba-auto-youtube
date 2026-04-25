@@ -1,29 +1,21 @@
 #!/usr/bin/env python3
 """Step 6: 音声・字幕・動画を生成して final_output.mp4 を出力 (PIL禁止・ffmpeg使用)"""
 
+import asyncio
 import os
 import sys
-import json
 import time
-import math
 import shutil
 import tempfile
 import subprocess
-import urllib.request
-import urllib.parse
-import urllib.error
 from pathlib import Path
-
-import requests as _requests
 
 
 # ─── 設定 ────────────────────────────────────────────────
-VOICEVOX_URL = os.environ.get("VOICEVOX_URL", "http://localhost:50021")
-VOICEVOX_SPEAKER = int(os.environ.get("VOICEVOX_SPEAKER", "1"))
+EDGE_TTS_VOICE = os.environ.get("EDGE_TTS_VOICE", "ja-JP-KeitaNeural")
 VIDEO_WIDTH = 1920
 VIDEO_HEIGHT = 1080
 BGM_VOLUME = 0.3
-# zoompan は CPU 負荷が高いため CI 環境ではオフにする（ENABLE_ZOOMPAN=1 で有効化）
 ENABLE_ZOOMPAN = os.environ.get("ENABLE_ZOOMPAN", "0") == "1"
 BGM_PATH = os.environ.get("BGM_PATH", "bgm.mp3")
 GRAPHS_DIR = Path("graphs")
@@ -46,66 +38,11 @@ def run_cmd(cmd, step_name="", check=True):
     return result
 
 
-# ─── Step ①: VOICEVOX TTS ────────────────────────────────
-
-def split_text_for_voicevox(text, max_chars=200):
-    """長いテキストを句点・改行で区切って分割"""
-    import re
-    # 句点・感嘆符・疑問符・改行で分割
-    sentences = re.split(r"(?<=[。！？\n])", text)
-    chunks = []
-    current = ""
-    for sent in sentences:
-        sent = sent.strip()
-        if not sent:
-            continue
-        if len(current) + len(sent) > max_chars:
-            if current:
-                chunks.append(current.strip())
-            current = sent
-        else:
-            current += sent
-    if current.strip():
-        chunks.append(current.strip())
-    return chunks
-
-
-def voicevox_synthesize(text, speaker=VOICEVOX_SPEAKER):
-    """VOICEVOX API で1チャンクを音声合成してバイト列を返す"""
-    # audio_query: text と speaker は URL クエリパラメータで渡す
-    resp = _requests.post(
-        f"{VOICEVOX_URL}/audio_query",
-        params={"text": text, "speaker": speaker},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    query = resp.json()
-
-    # synthesis
-    resp2 = _requests.post(
-        f"{VOICEVOX_URL}/synthesis",
-        params={"speaker": speaker},
-        json=query,
-        timeout=60,
-    )
-    resp2.raise_for_status()
-    return resp2.content
-
-
-def check_voicevox_available():
-    try:
-        resp = _requests.get(f"{VOICEVOX_URL}/version", timeout=5)
-        resp.raise_for_status()
-        print(f"  VOICEVOX バージョン: {resp.text.strip()}")
-        return True
-    except Exception as e:
-        print(f"  VOICEVOX 接続不可: {e}")
-        return False
-
+# ─── Step ①: edge-tts TTS ────────────────────────────────
 
 def generate_narration():
-    """script.txt → narration.mp3 (Step ①)"""
-    print("\n[Step ①] 音声合成 (VOICEVOX)")
+    """script.txt → narration.mp3 (edge-tts)"""
+    print("\n[Step ①] 音声合成 (edge-tts)", flush=True)
 
     if not Path(SCRIPT_PATH).exists():
         print(f"ERROR: {SCRIPT_PATH} が見つかりません")
@@ -114,51 +51,23 @@ def generate_narration():
     with open(SCRIPT_PATH, encoding="utf-8") as f:
         script = f.read().strip()
 
-    if not check_voicevox_available():
-        print("VOICEVOX が起動していません。")
-        print("  起動方法: docker run -p 50021:50021 voicevox/voicevox_engine:cpu-ubuntu20.04-latest")
-        print("  またはローカルで VOICEVOX を起動してから再実行してください")
+    try:
+        import edge_tts
+    except ImportError:
+        print("ERROR: edge-tts がインストールされていません (pip install edge-tts)")
         sys.exit(1)
 
-    chunks = split_text_for_voicevox(script, max_chars=200)
-    print(f"  テキストを {len(chunks)} チャンクに分割")
+    print(f"  音声: {EDGE_TTS_VOICE}", flush=True)
+    print(f"  テキスト: {len(script)}字", flush=True)
 
-    wav_files = []
-    tmp_dir = tempfile.mkdtemp(prefix="voicevox_")
+    async def _synthesize():
+        communicate = edge_tts.Communicate(script, EDGE_TTS_VOICE)
+        await communicate.save(NARRATION_PATH)
 
-    for i, chunk in enumerate(chunks):
-        print(f"  [{i+1}/{len(chunks)}] {chunk[:30]}...")
-        try:
-            wav_data = voicevox_synthesize(chunk, VOICEVOX_SPEAKER)
-            wav_path = os.path.join(tmp_dir, f"chunk_{i:04d}.wav")
-            with open(wav_path, "wb") as f:
-                f.write(wav_data)
-            wav_files.append(wav_path)
-        except Exception as e:
-            print(f"  WARNING: チャンク{i}失敗: {e}、スキップ")
-            time.sleep(1)
-
-    if not wav_files:
-        print("ERROR: 音声合成が全て失敗しました")
-        shutil.rmtree(tmp_dir, ignore_errors=True)
-        sys.exit(1)
-
-    # WAVファイルを連結して MP3 に変換 (ffmpeg)
-    concat_list = os.path.join(tmp_dir, "concat.txt")
-    with open(concat_list, "w") as f:
-        for wav in wav_files:
-            f.write(f"file '{wav}'\n")
-
-    run_cmd(
-        ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_list,
-         "-ar", "44100", "-ac", "1", "-b:a", "192k", NARRATION_PATH],
-        step_name="Step①:音声連結"
-    )
-
-    shutil.rmtree(tmp_dir, ignore_errors=True)
+    asyncio.run(_synthesize())
 
     duration = get_audio_duration(NARRATION_PATH)
-    print(f"  narration.mp3 生成完了 ({duration:.1f}秒)")
+    print(f"  narration.mp3 生成完了 ({duration:.1f}秒)", flush=True)
 
 
 # ─── Step ②: スライドショー動画生成 ──────────────────────
