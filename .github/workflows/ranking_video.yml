@@ -52,6 +52,13 @@ jobs:
             libfontconfig1 \
             chromium-browser \
             chromium-chromedriver
+          # インストール結果を確認
+          echo "=== Chrome/Chromium バイナリ確認 ==="
+          for bin in chromium-browser chromium google-chrome google-chrome-stable; do
+            path=$(which $bin 2>/dev/null) && echo "✓ $bin → $path" || echo "✗ $bin: なし"
+          done
+          echo "=== ChromeDriver 確認 ==="
+          which chromedriver 2>/dev/null && chromedriver --version || echo "chromedriver: なし"
 
       # ── Python 依存関係 ──────────────────────────────────────────
       - name: PyTorch (CPU版) を先にインストール
@@ -105,7 +112,8 @@ jobs:
           WHISPER_MODEL: ${{ inputs.whisper_model }}
           ENABLE_ZOOMPAN: ${{ inputs.enable_zoompan && '1' || '0' }}
           BGM_PATH: assets/bgm/bgm.mp3
-          # Selenium 用 ChromeDriver パス (GitHub Actions ubuntu-latest)
+          # Selenium 用: ubuntu-latest は chromium-browser
+          CHROME_BIN: /usr/bin/chromium-browser
           CHROME_DRIVER_PATH: /usr/bin/chromedriver
         run: |
           python scripts/ranking_pipeline.py --from ${{ inputs.from_step }}
