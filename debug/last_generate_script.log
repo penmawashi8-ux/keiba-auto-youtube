@@ -5,33 +5,39 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 日本馬計6頭出走の香港チャンピオンズデー netkeibaTVのライブ配信に細江純子＆青嶋達也アナが登場！ ---
-[0] Gemini入力本文 489文字: '4月26日(日)に香港・シャティン競馬場で、2026香港チャンピオンズデーが開催される。日本からは香G1・3競走に計6頭が出走。各路線の地元馬、遠征馬による熱戦が繰り広げられる。\n■カーインライジング 20連勝＆2年連続短距離三冠へ\n\u3000日本'
+--- 記事[0]: 【ケンタッキーダービー】無傷3連勝ダノンバーボンが決戦の地に到着　陣営「輸送は問題なくクリアできたかと思います」 ---
+[0] Gemini入力本文 354文字: '◆第152回ケンタッキーダービー・G1(5月2日、米国チャーチルダウンズ競馬場・ダート2000メートル)\n\t\t\t\t\u3000JRAはダノンバーボン(牡3歳、栗東・池添学厩舎、父マックスフィールド)が24日の現地時間8時10分(日本時間21時10分)'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
 --- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: フォーエバーヤングは秋の目標がBCクラシックと凱旋門賞の2択!国内1走の意向も…矢作厩舎公式Xで発表 ---
-[1] Gemini入力本文 350文字: '2月14日のサウジCで連覇を成し遂げ、3月28日の前走ドバイワールドCで2着のフォーエバーヤング(牡5＝矢作、父リアルスティール)は秋の路線が米国に遠征し、ジョッキークラブゴールドC(9月18日、ベルモントパーク)から連覇が懸かるBCクラシ'
+--- 記事[1]: 半兄は天皇賞(秋)覇者のマスカレードボール アナザーフェイスが初勝利狙う ---
+[1] Gemini入力本文 344文字: '25年の天皇賞(秋)を制したマスカレードボールの半弟となるアナザーフェイス(牡3、美浦・鹿戸雄一厩舎)が、日曜東京5Rの3歳未勝利(芝1800m)で初勝利を狙う。\n\u3000アナザーフェイスは父エピファネイア、母マスクオフ、母の父ディープインパクト'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 4月25日の出来事一覧/福島・東京・京都 ---
-[2] Gemini入力本文 449文字: '4月25日の開催(福島・東京・京都)で発生した競走中の疾病、競走中止などの事象は下記の通り。\n■京都3R 3歳未勝利\nビロングトゥミー(牝3、栗東・前川恭子厩舎)\nスタート後まもなく、内側に斜行した馬の影響を受けて歩様を乱したため、向正面で'
+--- 記事[2]: 【AI予想・フローラS】人工知能は新たなオークス候補誕生に期待!? 経験馬相手のデビュー戦で圧巻の走りを見せた本命馬とは ---
+[2] Gemini入力本文 341文字: '今週の日曜日は、東京競馬場でフローラステークス(GII)が行われます。\n\u3000過去10年のフローラSは2回東京の開幕週に開催されています。ここ10年の2回東京は前回の開催から2か月以上間隔が空いています。連続開催ではないので、当然馬場の傷みは少'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -48,24 +54,34 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 246文字]: '注目の競馬情報をお届けします。\n2月14日のサウジCで連覇を成し遂げ、3月28日の前走ドバイワールドCで2着だったフォーエバーヤングの秋の目標が、BCクラシックと凱旋門賞の2択となりました。矢作厩舎公式Xで発表された情報によると、米国に遠征し、9月18日のジョッキークラブゴールドCから10月31日のBCクラシック連覇を目指すプランがあります。もう一つは、芝替わりで欧州に狙いを絞り、9月12日の愛チャンピオンSから10月4日の凱旋門賞に参戦するプランです。国内1走の意向も伝えられています。'
-[1]  [redirectフィルター] 246文字 → 230文字
+[2]  [Gemini生出力 4文字]: 'SKIP'
+[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 341文字）
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[1]  [Gemini生出力 223文字]: '注目の競馬情報をお届けします。\n25年の天皇賞(秋)を制したマスカレードボールの半弟となるアナザーフェイスが、日曜東京5Rの3歳未勝利(芝1800m)で初勝利を狙います。アナザーフェイスは父エピファネイア、母マスクオフ、母の父ディープインパクトの血統です。半兄のマスカレードボールは25年の天皇賞(秋)を制しており、半姉のマスクトディーヴァは23年のローズSと24年の阪神牝馬Sの覇者です。また、半兄のトゥーフェイスもオープンまで出世しています。'
+[1]  [redirectフィルター] 223文字 → 207文字
+  HTTP 200
+[0]  [Gemini生出力 219文字]: '最新のレース情報が入ってきました。第152回ケンタッキーダービー・G1に出走するダノンバーボンが、現地時間24日の午前8時10分、日本時間では午後9時10分に、米国チャーチルダウンズ競馬場に到着したことをJRAが発表しました。大下助手は、無事に到着し、カイバもよく食べて落ち着いているため、輸送は問題なくクリアできたと思われるとコメントしています。このレースは5月2日に、米国チャーチルダウンズ競馬場・ダート2000メートルで行われます。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (219文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。第152回ケンタッキーダービー・G1に出走するダノンバーボンが、現地時間24日の午前8時10分、日本時間では午後9時10分に、...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (230文字)
-[1]  プレビュー: 2月14日のサウジCで連覇を成し遂げ、3月28日の前走ドバイワールドCで2着だったフォーエバーヤングの秋の目標が、BCクラシックと凱旋門賞の2択となりました。矢...
+[1]  → output/script_1.txt 保存 (207文字)
+[1]  プレビュー: 25年の天皇賞(秋)を制したマスカレードボールの半弟となるアナザーフェイスが、日曜東京5Rの3歳未勝利(芝1800m)で初勝利を狙います。アナザーフェイスは父エ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 221文字]: '今日の競馬情報です。4月25日の福島、東京、京都開催で発生した競走中の疾病や競走中止などの事象についてお伝えします。京都3Rの3歳未勝利では、ビロングトゥミーがスタート後まもなく、内側に斜行した馬の影響を受けて歩様を乱したため、向正面で競走を中止しました。この件で、ビロングトゥミーと松山弘平騎手ともに異状はありませんでした。また、京都4Rの4歳上障害オープンでは、ナックエルドラドが2周目6号障害飛越の着地時に転倒し、競走を中止しています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (221文字)
-[2]  プレビュー: 今日の競馬情報です。4月25日の福島、東京、京都開催で発生した競走中の疾病や競走中止などの事象についてお伝えします。京都3Rの3歳未勝利では、ビロングトゥミーが...
-  HTTP 200
-[0]  [Gemini生出力 299文字]: '今週の競馬注目情報をお伝えします。4月26日日曜日に香港・シャティン競馬場で、2026香港チャンピオンズデーが開催されます。日本からは香G1の3競走に計6頭が出走し、各路線の地元馬や遠征馬による熱戦が繰り広げられる予定です。日本時間15時35分発走のチェアマンズスプリントプライズは3歳上・香G1・芝1200mで行われ、地元のカーインライジングが20連勝と2年連続短距離三冠の快挙を狙います。また、クイーンエリザベス2世カップの枠順では、マスカレードボールが6番ゲート、ロマンチックウォリアーが5番ゲートに入りました。マスカレードボールがドゥラメンテ産駒の海外G1初勝利なるかにも注目が集まります。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (299文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。4月26日日曜日に香港・シャティン競馬場で、2026香港チャンピオンズデーが開催されます。日本からは香G1の3競走に計6頭が出...
+[2]  [Gemini生出力 135文字]: '競馬速報です。今週の日曜日は、東京競馬場でフローラステークス(GII)が行われます。過去10年のフローラSは2回東京の開幕週に開催されています。ここ10年の2回東京は前回の開催から2か月以上間隔が空いています。連続開催ではないので、当然馬場の傷みは少ない状況となります。'
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (135文字)
+[2]  プレビュー: 競馬速報です。今週の日曜日は、東京競馬場でフローラステークス(GII)が行われます。過去10年のフローラSは2回東京の開幕週に開催されています。ここ10年の2回...
 
 3 件の脚本を生成しました。
