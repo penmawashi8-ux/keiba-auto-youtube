@@ -18,7 +18,7 @@ TTS_VOICE = "ja-JP-KeitaNeural"
 
 # スライド表示時間（秒）
 TITLE_DURATION = 4
-QUESTION_PAUSE = 3    # 問題読み上げ後の考える時間
+THINK_DURATION = 15   # シンキングタイム（カウントダウン表示）
 ANSWER_EXTRA = 1      # 回答読み上げ後の余韻
 RESULT_DURATION = 5
 
@@ -26,6 +26,21 @@ RESULT_DURATION = 5
 FPS = 30
 WIDTH = 1920
 HEIGHT = 1080
+
+
+def find_noto_font() -> str | None:
+    candidates = [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/noto-cjk/NotoSansCJKjp-Regular.otf",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+        "/usr/share/fonts/noto/NotoSansCJK-Regular.ttc",
+        "/usr/local/share/fonts/NotoSansCJKjp-Regular.otf",
+    ]
+    for path in candidates:
+        if os.path.exists(path):
+            return path
+    return None
 
 
 async def synthesize_one(text: str, voice: str, out_path: Path):
@@ -49,13 +64,10 @@ async def synthesize_all(quiz: dict):
     ))
     paths.append(("title", title_audio))
 
-    # 各問TTS
+    # 各問TTS（問題文は読まない：シンキングタイムで視聴者が自分で読む）
     for q in quiz["questions"]:
-        q_audio = AUDIO_DIR / f"{q['number']:02d}q.mp3"
         a_audio = AUDIO_DIR / f"{q['number']:02d}a.mp3"
-        tasks.append(synthesize_one(q["tts_question"], TTS_VOICE, q_audio))
         tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
-        paths.append((f"q{q['number']}_question", q_audio))
         paths.append((f"q{q['number']}_answer", a_audio))
 
     # 結果TTS
@@ -113,7 +125,7 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
             "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a",
             "-c:a", "aac",
             "-b:a", "128k",
-            "-shortest",
+            "-af", f"apad=whole_dur={duration}",
             "-t", str(duration),
         ]
     else:
@@ -134,8 +146,41 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
         raise RuntimeError(f"ffmpeg failed: {result.stderr[-500:]}")
 
 
-def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float = 5.0):
-    """問題スライド表示中の無音クリップ（考える時間）"""
+def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float = 15.0):
+    """問題スライド + カウントダウンタイマーの無音クリップ（シンキングタイム）"""
+    duration_int = int(duration)
+    countdown_text = "%{eif\\:" + str(duration_int) + "-t\\:d}"
+
+    font_path = find_noto_font()
+
+    scale_f = (
+        f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
+        f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a"
+    )
+    countdown_f = (
+        f"drawtext=text='{countdown_text}':"
+        f"fontsize=180:fontcolor=white@0.95:"
+        f"x=(w-tw)/2:y=h*0.82-th/2:"
+        f"box=1:boxcolor=black@0.55:boxborderw=35"
+    )
+
+    if font_path:
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".txt", delete=False, encoding="utf-8"
+        ) as tf:
+            tf.write("シンキングタイム")
+            label_file = tf.name
+        label_f = (
+            f"drawtext=fontfile={font_path}:"
+            f"textfile={label_file}:"
+            f"fontsize=58:fontcolor=#e8c84a:"
+            f"x=(w-tw)/2:y=h*0.73-th/2"
+        )
+        vf = f"{scale_f},{countdown_f},{label_f}"
+    else:
+        label_file = None
+        vf = f"{scale_f},{countdown_f}"
+
     cmd = [
         "ffmpeg", "-y",
         "-loop", "1",
@@ -145,13 +190,17 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         "-preset", "ultrafast",
         "-crf", "28",
         "-pix_fmt", "yuv420p",
-        "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a",
+        "-vf", vf,
         "-c:a", "aac",
         "-b:a", "128k",
         "-t", str(duration),
         str(out_path),
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
+
+    if label_file:
+        os.unlink(label_file)
+
     if result.returncode != 0:
         raise RuntimeError(f"ffmpeg failed: {result.stderr[-500:]}")
 
@@ -221,22 +270,12 @@ def main():
         n = q["number"]
         print(f"  Q{n} 問題クリップ...")
 
-        # 問題読み上げクリップ
-        q_read_clip = clips_dir / f"{n:02d}q_read.mp4"
-        make_clip(
-            SLIDES_DIR / f"{n:02d}q_question.png",
-            AUDIO_DIR / f"{n:02d}q.mp3",
-            0,
-            q_read_clip,
-        )
-        clip_paths.append(q_read_clip)
-
-        # 考える時間クリップ（無音）
+        # シンキングタイムクリップ（カウントダウン表示・問題文は読まない）
         q_think_clip = clips_dir / f"{n:02d}q_think.mp4"
         make_question_silence_clip(
             SLIDES_DIR / f"{n:02d}q_question.png",
             q_think_clip,
-            QUESTION_PAUSE,
+            THINK_DURATION,
         )
         clip_paths.append(q_think_clip)
 
