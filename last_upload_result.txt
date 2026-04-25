@@ -1,10 +1,10 @@
-date: 2026-04-25T06:32:15.362750Z
+date: 2026-04-25T08:16:40.914591Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dAPgUSAIzcc title=【東京5R・3歳未勝利】良血馬を撃破!リラが1馬身半差で初白星　「まだ余力もある
-OK project=1 video_id=MoupC5VhrKc title=横山武史が甘〜いコメント?「馬にメルシージュテーム（ありがとう、大好き）と言いた
-OK project=1 video_id=fkwxbAQiurU title=【阪神アーバン競馬プレーバック】タイキフォースが1年1カ月ぶりV　田野は1日3勝
+OK project=1 video_id=-ZjhwwNrgT8 title=【観月橋Sレース後コメント】マイノワール浜中俊騎手ら
+OK project=1 video_id=AWKlNkmXmQ0 title=【フローラS予想】意外な種牡馬が結果を残せていないオークストライアル！ いくつも
+OK project=1 video_id=ZdbKFpydTGM title=【医王寺特別レース後コメント】ウィンストン和田陽希騎手ら
