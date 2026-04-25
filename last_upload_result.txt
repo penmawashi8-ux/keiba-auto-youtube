@@ -1,10 +1,10 @@
-date: 2026-04-25T00:10:01.590640Z
+date: 2026-04-25T04:09:45.331595Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=x_LMLIfW-Ls title=【石和特別】祖母は名牝ダンスインザムード 2.6億円馬のダノンミッションが待望の
-OK project=1 video_id=vg_l7eiJO6Q title=青葉賞は1番人気が堅実 外国人騎手は要チェック
-OK project=1 video_id=lWlMukWlRBs title=【青葉賞予想】ダービーへの直行切符かけた一戦 中4週への変更が変化もたらすか
+OK project=1 video_id=5Fvfx7BVS0c title=【ケンタッキーダービー】ワンダーディーンが現地で追い切り消化　陣営「これなら当日
+OK project=1 video_id=7gaHtnhj9Vs title=【香港・QE2世C】週中の雨の影響は?手塚久調教師が自ら歩いて芝コースを確認　こ
+OK project=1 video_id=sH2T-2KA3UY title=ロイヤルファミリー役ブレイヴソルジャーが初勝利　ドラマと同じオレンジのシャドーロ
