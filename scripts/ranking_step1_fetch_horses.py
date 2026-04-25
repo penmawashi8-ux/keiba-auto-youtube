@@ -130,20 +130,47 @@ def save_horses_csv(horses, path="horses.csv"):
     print(f"{len(horses)}頭を {path} に保存しました")
 
 
+FALLBACK_CSV = os.path.join(os.path.dirname(__file__), "..", "assets", "horses_fallback.csv")
+
+
+def load_fallback():
+    """assets/horses_fallback.csv をフォールバックとして読み込む"""
+    path = os.path.normpath(FALLBACK_CSV)
+    if not os.path.exists(path):
+        return None
+    horses = []
+    with open(path, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            horses.append({
+                "rank": int(row["rank"]),
+                "name": row["name"],
+                "url": row["url"],
+                "g1_wins": int(row["g1_wins"]),
+                "jra_g1": int(row["jra_g1"]),
+                "overseas_g1": int(row["overseas_g1"]),
+                "birth_year": int(row["birth_year"]),
+            })
+    return horses if horses else None
+
+
 def main():
     print("=== Step 1: G1勝利数ランキング取得 (uma-channel.jp) ===")
     print(f"  取得元: {SOURCE_URL}")
 
     html = fetch_html(SOURCE_URL)
-    if not html:
-        print("ERROR: ページの取得に失敗しました")
-        sys.exit(1)
+    if html:
+        print(f"  HTML取得成功 ({len(html)}文字)")
+        horses = parse_horses_from_html(html)
+        if not horses:
+            print("  WARNING: HTMLの解析に失敗。フォールバックデータを使用します")
+            horses = load_fallback()
+    else:
+        print("  WARNING: ページの取得に失敗。フォールバックデータを使用します")
+        horses = load_fallback()
 
-    print(f"  HTML取得成功 ({len(html)}文字)")
-
-    horses = parse_horses_from_html(html)
     if not horses:
-        print("ERROR: 馬データの解析に失敗しました")
+        print("ERROR: データ取得・フォールバックともに失敗しました")
         sys.exit(1)
 
     save_horses_csv(horses)
