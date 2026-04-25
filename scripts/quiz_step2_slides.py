@@ -4,7 +4,6 @@
 import json
 import os
 import sys
-import textwrap
 from pathlib import Path
 
 import matplotlib
@@ -14,16 +13,22 @@ import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 
 OUTPUT_DIR = Path("slides")
-# 横型動画: 1920×1080
-FIGSIZE = (19.2, 10.8)
+FIGSIZE = (19.2, 10.8)  # 1920×1080
 DPI = 100
 
-BG_COLOR = "#0d1b2a"
-ACCENT_COLOR = "#e8c84a"
-TEXT_COLOR = "#ffffff"
-PANEL_COLOR = "#1a2f4a"
-ANSWER_BG = "#0a3d1f"
-ANSWER_ACCENT = "#2ecc71"
+BG = "#0d1b2a"
+ACCENT = "#e8c84a"
+WHITE = "#ffffff"
+PANEL = "#1a2f4a"
+CHOICE_BG = "#162238"
+CHOICE_BORDER = "#304870"
+CORRECT_BG = "#0a3d1f"
+CORRECT_BORDER = "#2ecc71"
+WRONG_BG = "#3d0a0a"
+WRONG_BORDER = "#e74c3c"
+CLUE_BG = "#0f2235"
+
+CHOICE_LABELS = ["A", "B", "C", "D"]
 
 
 def setup_japanese_font():
@@ -41,220 +46,208 @@ def setup_japanese_font():
             prop = fm.FontProperties(fname=path)
             plt.rcParams["font.family"] = prop.get_name()
             return True
-
     for f in fm.findSystemFonts(fontpaths=None, fontext="ttf"):
         if "noto" in f.lower() and ("cjk" in f.lower() or "jp" in f.lower()):
             fm.fontManager.addfont(f)
             prop = fm.FontProperties(fname=f)
             plt.rcParams["font.family"] = prop.get_name()
             return True
-
     print("WARNING: 日本語フォントが見つかりません")
     return False
 
 
-def wrap_text(text, width=20):
-    return "\n".join(textwrap.fill(line, width) for line in text.splitlines())
+def draw_banner(ax, text, bg=ACCENT, fg="#0d1b2a", fontsize=30):
+    ax.add_patch(mpatches.FancyBboxPatch(
+        (0.0, 0.895), 1.0, 0.105,
+        boxstyle="square,pad=0",
+        facecolor=bg, edgecolor="none", transform=ax.transAxes, clip_on=False,
+    ))
+    ax.text(0.5, 0.948, text, ha="center", va="center",
+            color=fg, fontsize=fontsize, fontweight="bold", transform=ax.transAxes)
+
+
+def draw_choice_box(ax, x, y, w, h, label, text, bg, border, fontsize=22):
+    ax.add_patch(mpatches.FancyBboxPatch(
+        (x, y), w, h,
+        boxstyle="round,pad=0.01",
+        facecolor=bg, edgecolor=border, linewidth=2,
+    ))
+    # ラベル円
+    ax.add_patch(plt.Circle((x + 0.035, y + h / 2), 0.028, color=border, zorder=3))
+    ax.text(x + 0.035, y + h / 2, label, ha="center", va="center",
+            color=WHITE, fontsize=fontsize - 2, fontweight="bold", zorder=4)
+    ax.text(x + 0.085, y + h / 2, text, ha="left", va="center",
+            color=WHITE, fontsize=fontsize)
 
 
 def make_question_slide(q: dict, out_path: Path):
-    """問題スライド（横型 1920×1080）"""
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
-    fig.patch.set_facecolor(BG_COLOR)
-    ax.set_facecolor(BG_COLOR)
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    # 上部バナー
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.0, 0.88), 1.0, 0.12,
-        boxstyle="square,pad=0",
-        facecolor=ACCENT_COLOR, edgecolor="none",
-    ))
-    ax.text(0.5, 0.94, "競馬知識クイズ", ha="center", va="center",
-            color="#0d1b2a", fontsize=34, fontweight="bold")
+    draw_banner(ax, f"名馬当てクイズ  ─  第{q['number']}問")
 
-    # 問題番号バッジ（左側）
-    ax.add_patch(plt.Circle((0.08, 0.62), 0.075, color=ACCENT_COLOR, zorder=3))
-    ax.text(0.08, 0.62, f"Q{q['number']}", ha="center", va="center",
-            color="#0d1b2a", fontsize=32, fontweight="bold", zorder=4)
+    # 「この馬は誰？」
+    ax.text(0.5, 0.82, "この馬は誰？", ha="center", va="center",
+            color=ACCENT, fontsize=36, fontweight="bold")
 
-    # 問題パネル（中央）
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.04, 0.34), 0.92, 0.40,
-        boxstyle="round,pad=0.015",
-        facecolor=PANEL_COLOR, edgecolor=ACCENT_COLOR, linewidth=2,
-    ))
-    question_text = wrap_text(q["display_question"], width=22)
-    ax.text(0.5, 0.545, question_text, ha="center", va="center",
-            color=TEXT_COLOR, fontsize=40, fontweight="bold",
-            multialignment="center", linespacing=1.35)
+    # ヒント3つ（横並び）
+    clues = q["clues"]
+    clue_w = 0.28
+    total_w = clue_w * len(clues) + 0.02 * (len(clues) - 1)
+    start_x = (1.0 - total_w) / 2
+    for i, clue in enumerate(clues):
+        cx = start_x + i * (clue_w + 0.02)
+        ax.add_patch(mpatches.FancyBboxPatch(
+            (cx, 0.56), clue_w, 0.18,
+            boxstyle="round,pad=0.015",
+            facecolor=CLUE_BG, edgecolor=ACCENT, linewidth=1.5,
+        ))
+        ax.text(cx + clue_w / 2, 0.68, f"ヒント{i + 1}", ha="center", va="center",
+                color=ACCENT, fontsize=18, fontweight="bold")
+        ax.text(cx + clue_w / 2, 0.60, clue, ha="center", va="center",
+                color=WHITE, fontsize=22, fontweight="bold")
 
-    # 回答促進テキスト
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.25, 0.16), 0.50, 0.13,
-        boxstyle="round,pad=0.01",
-        facecolor="#1a1a2e", edgecolor="#404060", linewidth=1,
-    ))
-    ax.text(0.5, 0.225, "答えは何でしょう？", ha="center", va="center",
-            color="#9090b0", fontsize=26)
+    # 4択（2×2グリッド）
+    choices = q["choices"]
+    box_w, box_h = 0.44, 0.10
+    positions = [
+        (0.03, 0.38), (0.53, 0.38),
+        (0.03, 0.26), (0.53, 0.26),
+    ]
+    for i, (bx, by) in enumerate(positions):
+        if i < len(choices):
+            draw_choice_box(ax, bx, by, box_w, box_h,
+                            CHOICE_LABELS[i], choices[i],
+                            CHOICE_BG, CHOICE_BORDER, fontsize=24)
 
-    # プログレス（右下）
-    ax.text(0.95, 0.05, f"{q['number']} / 5問", ha="right", va="center",
-            color="#606080", fontsize=22)
+    # プログレス
+    ax.text(0.97, 0.03, f"{q['number']} / 5問", ha="right", va="center",
+            color="#606080", fontsize=20)
 
     plt.tight_layout(pad=0)
-    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG_COLOR)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"  保存: {out_path}")
 
 
 def make_answer_slide(q: dict, out_path: Path):
-    """回答スライド（横型 1920×1080）"""
+    correct_idx = q["correct_index"]
+    choices = q["choices"]
+    correct_label = CHOICE_LABELS[correct_idx]
+    correct_name = choices[correct_idx]
+
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
-    fig.patch.set_facecolor(ANSWER_BG)
-    ax.set_facecolor(ANSWER_BG)
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    # 上部バナー
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.0, 0.88), 1.0, 0.12,
-        boxstyle="square,pad=0",
-        facecolor=ANSWER_ACCENT, edgecolor="none",
-    ))
-    ax.text(0.5, 0.94, f"第{q['number']}問 答え合わせ！", ha="center", va="center",
-            color="#0a1a10", fontsize=34, fontweight="bold")
+    draw_banner(ax, f"第{q['number']}問  ─  答え合わせ！", bg="#1a5c32", fg=WHITE)
 
-    # 左半分: 問題の再掲
+    # 正解ラベル
+    ax.text(0.5, 0.82, f"正解は  {correct_label}. {correct_name}！",
+            ha="center", va="center",
+            color="#2ecc71", fontsize=38, fontweight="bold")
+
+    # 4択（正解=緑、不正解=暗赤色）
+    box_w, box_h = 0.44, 0.10
+    positions = [
+        (0.03, 0.56), (0.53, 0.56),
+        (0.03, 0.44), (0.53, 0.44),
+    ]
+    for i, (bx, by) in enumerate(positions):
+        if i < len(choices):
+            if i == correct_idx:
+                bg, border = CORRECT_BG, CORRECT_BORDER
+            else:
+                bg, border = WRONG_BG, WRONG_BORDER
+            draw_choice_box(ax, bx, by, box_w, box_h,
+                            CHOICE_LABELS[i], choices[i],
+                            bg, border, fontsize=24)
+
+    # 解説パネル
     ax.add_patch(mpatches.FancyBboxPatch(
-        (0.02, 0.44), 0.44, 0.38,
+        (0.03, 0.10), 0.94, 0.26,
         boxstyle="round,pad=0.015",
-        facecolor="#0d2a1a", edgecolor="#204030", linewidth=1,
+        facecolor=PANEL, edgecolor="#304060", linewidth=1,
     ))
-    ax.text(0.24, 0.83, "問題", ha="center", va="center",
-            color="#80c090", fontsize=20, fontweight="bold")
-    q_text = wrap_text(q["display_question"], width=16)
-    ax.text(0.24, 0.63, q_text, ha="center", va="center",
-            color="#c0d8c8", fontsize=24, multialignment="center", linespacing=1.3)
+    ax.text(0.06, 0.32, "📖 解説", ha="left", va="center",
+            color=ACCENT, fontsize=20, fontweight="bold")
+    ax.text(0.5, 0.20, q["display_explanation"], ha="center", va="center",
+            color=WHITE, fontsize=26, multialignment="center")
 
-    # 右半分: 答え（大きく）
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.52, 0.44), 0.46, 0.38,
-        boxstyle="round,pad=0.015",
-        facecolor="#0a3d1f", edgecolor=ANSWER_ACCENT, linewidth=3,
-    ))
-    ax.text(0.75, 0.83, "正解", ha="center", va="center",
-            color=ANSWER_ACCENT, fontsize=20, fontweight="bold")
-    ax.text(0.75, 0.63, q["display_answer"], ha="center", va="center",
-            color=ANSWER_ACCENT, fontsize=48, fontweight="bold")
-
-    # 下部: 解説パネル
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.02, 0.10), 0.96, 0.28,
-        boxstyle="round,pad=0.015",
-        facecolor="#112a1c", edgecolor="#204030", linewidth=1,
-    ))
-    ax.text(0.08, 0.34, "📖 解説", ha="left", va="center",
-            color="#80c090", fontsize=18)
-    explanation_text = wrap_text(q["display_explanation"], width=40)
-    ax.text(0.5, 0.22, explanation_text, ha="center", va="center",
-            color=TEXT_COLOR, fontsize=26, multialignment="center", linespacing=1.35)
-
-    # プログレス（右下）
-    ax.text(0.95, 0.04, f"{q['number']} / 5問", ha="right", va="center",
-            color="#406050", fontsize=22)
+    ax.text(0.97, 0.03, f"{q['number']} / 5問", ha="right", va="center",
+            color="#606080", fontsize=20)
 
     plt.tight_layout(pad=0)
-    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=ANSWER_BG)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"  保存: {out_path}")
 
 
 def make_title_slide(title: str, out_path: Path):
-    """タイトルスライド（横型 1920×1080）"""
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
-    fig.patch.set_facecolor(BG_COLOR)
-    ax.set_facecolor(BG_COLOR)
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    # 上部バナー
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.0, 0.88), 1.0, 0.12,
-        boxstyle="square,pad=0",
-        facecolor=ACCENT_COLOR, edgecolor="none",
-    ))
-    ax.text(0.5, 0.94, "競馬チャンネル", ha="center", va="center",
-            color="#0d1b2a", fontsize=28, fontweight="bold")
+    draw_banner(ax, "競馬チャンネル")
 
-    # 馬アイコン（左側）
-    ax.text(0.15, 0.52, "🏇", ha="center", va="center", fontsize=100)
+    ax.text(0.18, 0.50, "🏇", ha="center", va="center", fontsize=120)
 
-    # タイトルパネル（右側）
     ax.add_patch(mpatches.FancyBboxPatch(
-        (0.28, 0.34), 0.70, 0.42,
+        (0.30, 0.34), 0.68, 0.44,
         boxstyle="round,pad=0.02",
-        facecolor=PANEL_COLOR, edgecolor=ACCENT_COLOR, linewidth=3,
+        facecolor=PANEL, edgecolor=ACCENT, linewidth=3,
     ))
-    title_wrapped = wrap_text(title, width=16)
-    ax.text(0.63, 0.60, title_wrapped, ha="center", va="center",
-            color=ACCENT_COLOR, fontsize=42, fontweight="bold",
-            multialignment="center", linespacing=1.3)
+    ax.text(0.64, 0.65, title, ha="center", va="center",
+            color=ACCENT, fontsize=38, fontweight="bold", multialignment="center")
+    ax.text(0.64, 0.48, "全5問  ─  あなたは何問わかる？", ha="center", va="center",
+            color=WHITE, fontsize=26)
 
-    # サブテキスト
-    ax.text(0.5, 0.22, "全5問  ─  何問正解できる？", ha="center", va="center",
-            color=TEXT_COLOR, fontsize=28)
-
-    ax.text(0.5, 0.10, "チャンネル登録・高評価よろしくお願いします！", ha="center", va="center",
-            color="#8090a0", fontsize=20)
+    ax.text(0.5, 0.16, "チャンネル登録・高評価よろしくお願いします！",
+            ha="center", va="center", color="#8090a0", fontsize=22)
 
     plt.tight_layout(pad=0)
-    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG_COLOR)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"  保存: {out_path}")
 
 
 def make_result_slide(out_path: Path):
-    """結果スライド（横型 1920×1080）"""
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
-    fig.patch.set_facecolor(BG_COLOR)
-    ax.set_facecolor(BG_COLOR)
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    # 上部バナー
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (0.0, 0.88), 1.0, 0.12,
-        boxstyle="square,pad=0",
-        facecolor=ACCENT_COLOR, edgecolor="none",
-    ))
-    ax.text(0.5, 0.94, "競馬知識クイズ", ha="center", va="center",
-            color="#0d1b2a", fontsize=34, fontweight="bold")
+    draw_banner(ax, "名馬当てクイズ  ─  全問終了！")
 
-    # トロフィー（左）
-    ax.text(0.18, 0.52, "🏆", ha="center", va="center", fontsize=120)
+    ax.text(0.18, 0.50, "🏆", ha="center", va="center", fontsize=120)
 
-    # メッセージ（右）
     ax.add_patch(mpatches.FancyBboxPatch(
-        (0.32, 0.34), 0.66, 0.42,
+        (0.30, 0.34), 0.68, 0.44,
         boxstyle="round,pad=0.02",
-        facecolor=PANEL_COLOR, edgecolor=ACCENT_COLOR, linewidth=2,
+        facecolor=PANEL, edgecolor=ACCENT, linewidth=2,
     ))
-    ax.text(0.65, 0.65, "全問終了！", ha="center", va="center",
-            color=ACCENT_COLOR, fontsize=46, fontweight="bold")
-    ax.text(0.65, 0.52, "いくつ正解できましたか？", ha="center", va="center",
-            color=TEXT_COLOR, fontsize=28)
+    ax.text(0.64, 0.65, "全問終了！", ha="center", va="center",
+            color=ACCENT, fontsize=44, fontweight="bold")
+    ax.text(0.64, 0.50, "いくつ正解できましたか？", ha="center", va="center",
+            color=WHITE, fontsize=28)
 
-    ax.text(0.5, 0.20, "👍 高評価 & チャンネル登録お願いします！　次回もお楽しみに🏇",
+    ax.text(0.5, 0.16, "👍 高評価 & チャンネル登録お願いします！　次回もお楽しみに🏇",
             ha="center", va="center", color="#9090b0", fontsize=22)
 
     plt.tight_layout(pad=0)
-    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG_COLOR)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     print(f"  保存: {out_path}")
 
@@ -274,7 +267,7 @@ def main():
     plt.style.use("dark_background")
 
     questions = quiz.get("questions", [])
-    title = quiz.get("title", "競馬知識クイズ")
+    title = quiz.get("title", "名馬当てクイズ！この馬は誰？")
 
     print("タイトルスライド生成中...")
     make_title_slide(title, OUTPUT_DIR / "00_title.png")
