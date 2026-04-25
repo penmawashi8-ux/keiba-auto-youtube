@@ -1,10 +1,10 @@
-date: 2026-04-25T05:29:34.771363Z
+date: 2026-04-25T06:32:15.362750Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=s8eiRq0m_jY title=【阪神アーバン競馬プレーバック】馬への愛では負けないと自負する元騎手の調教師が2
-OK project=1 video_id=juLUV85AFTc title=【あやめ賞結果】ブレットパスが断然人気に応えてV
-OK project=1 video_id=plIUIVMBv4Q title=【東京5R】超良血馬グランマエストロがまたもや2着惜敗　ルメール騎手は渋い表情「
+OK project=1 video_id=dAPgUSAIzcc title=【東京5R・3歳未勝利】良血馬を撃破!リラが1馬身半差で初白星　「まだ余力もある
+OK project=1 video_id=MoupC5VhrKc title=横山武史が甘〜いコメント?「馬にメルシージュテーム（ありがとう、大好き）と言いた
+OK project=1 video_id=fkwxbAQiurU title=【阪神アーバン競馬プレーバック】タイキフォースが1年1カ月ぶりV　田野は1日3勝

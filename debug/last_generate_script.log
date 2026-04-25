@@ -5,39 +5,58 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 [2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【阪神アーバン競馬プレーバック】馬への愛では負けないと自負する元騎手の調教師が2カ月ぶり勝利 ---
-[0] Gemini入力本文 345文字: '21日の6R(ダート820メートル)で、笹田知宏騎乗の3番人気デュアルタスク(セン4＝父レッドファルクス)が5走ぶりの勝利。管理する松浦聡志調教師が2カ月ぶりとなる今年の4勝目を挙げた\n\u3000セファイドループ(牝4＝父ポアゾンブラック)との2頭'
+--- 記事[0]: 【東京5R・3歳未勝利】良血馬を撃破!リラが1馬身半差で初白星　「まだ余力もある」佐々木大輔騎手は飛躍期待 ---
+[0] Gemini入力本文 352文字: '4月25日の東京5R・3歳未勝利(芝1400メートル＝18頭立て)は、2番人気のリラ(牝、美浦・蛯名正義厩舎、父キズナ)が、直線で内から抜け出して初勝利を飾った。勝ち時計は1分21秒3(良)。\n\t\t\t\t\u30003番枠からスタートを決め、道中は内め'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【あやめ賞結果】ブレットパスが断然人気に応えてV ---
-[1] Gemini入力本文 345文字: '25日、京都競馬場で行われたあやめ賞(3歳・1勝クラス・芝1800m)は、6頭立ての後ろにつけて直線の追い比べを制した西村淳也騎手騎乗の1番人気ブレットパス(牡3、栗東・中内田充正厩舎)が、内で競り合った2番人気ブラックシャリマー(牡3、栗'
+--- 記事[1]: 横山武史が甘〜いコメント?「馬にメルシージュテーム（ありがとう、大好き）と言いたい」　東京７Ｒをメルシージュテームで勝利 ---
+[1] Gemini入力本文 331文字: '「４歳１勝クラス」（２５日、東京）\n\u3000横山武史騎手（２７）＝美浦・鈴木伸＝が、東京７Ｒをメルシージュテームで制した。\n\u3000内をロスなく回り、最後の直線で先頭をとらえて一気に抜け出し、猛追してきたクラリネットソナタを退けてゴールイン。鞍上は「テ'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【東京5R】超良血馬グランマエストロがまたもや2着惜敗　ルメール騎手は渋い表情「いつも通り、切れへんかった」 ---
-[2] Gemini入力本文 422文字: '4月25日の東京5R・3歳未勝利(芝1400メートル＝18頭立て)は、1番人気に支持された超良血馬のグランマエストロ(牡、美浦・木村哲也厩舎、父エピファネイア)が、またもや2着に惜敗となった。\n\t\t\t\t\u3000レースは6番枠からきっちりとスタート'
+--- 記事[2]: 【阪神アーバン競馬プレーバック】タイキフォースが1年1カ月ぶりV　田野は1日3勝の固め打ち ---
+[2] Gemini入力本文 350文字: '21日のメーン11R「穀雨(こくう)特別」(A1A2、8頭立て、1頭除外、ダート1700メートル)は田野豊三騎乗の5番人気タイキフォース(牡8＝永島、父スピルバーグ)が1年1カ月ぶりの勝利。3連単は25万7830円と、波乱の結末となった。\n'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -54,28 +73,60 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 255文字]: '今日の競馬情報です。21日の6R、ダート820メートルで、笹田知宏騎乗の3番人気デュアルタスクが5走ぶりの勝利を飾りました。この勝利により、デュアルタスクを管理する松浦聡志調教師は2カ月ぶりとなる今年の4勝目を挙げています。レースでは、デュアルタスクはまずまずのスタートを決め、逃げには持ち込めませんでしたが、先頭集団に取り付きました。そして、3コーナーで先頭に立つと、最後の直線でも上がり3F2位、36秒5の末脚を使って勝利しました。松浦聡志調教師はセファイドループとの2頭出しでこのレースに挑んでいました。'
-  HTTP 200
-[2]  [Gemini生出力 251文字]: '注目の競馬情報をお届けします。4月25日の東京5R、3歳未勝利、芝1400メートル、18頭立てのレースでは、1番人気に支持された超良血馬のグランマエストロが、またもや2着に惜敗しました。グランマエストロは美浦の木村哲也厩舎所属で、父はエピファネイアです。レースは6番枠からきっちりとスタートを決め、道中は好位で運びました。直線では馬群をさばいて進路を見つけ、じわじわと脚を使いましたが、勝ったリラに1馬身半差及ばず、惜敗となりました。ルメール騎手は「いつも通り、切れへんかった」と渋い表情を見せました。'
-[2]  [redirectフィルター] 251文字 → 236文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (255文字)
-[0]  プレビュー: 今日の競馬情報です。21日の6R、ダート820メートルで、笹田知宏騎乗の3番人気デュアルタスクが5走ぶりの勝利を飾りました。この勝利により、デュアルタスクを管理...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (236文字)
-[2]  プレビュー: 4月25日の東京5R、3歳未勝利、芝1400メートル、18頭立てのレースでは、1番人気に支持された超良血馬のグランマエストロが、またもや2着に惜敗しました。グラ...
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 192文字]: '最新のレース情報が入ってきました。25日、京都競馬場で行われたあやめ賞は、3歳・1勝クラスの芝1800mで争われました。6頭立てのレースで、西村淳也騎手騎乗の1番人気ブレットパスが、後方から直線の追い比べを制し優勝しました。内で競り合った2番人気ブラックシャリマーにクビ差をつけ、勝ちタイムは1分45秒1の良馬場でした。さらに1馬身差の3着には、3番人気キシダンチョウが入っています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (192文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。25日、京都競馬場で行われたあやめ賞は、3歳・1勝クラスの芝1800mで争われました。6頭立てのレースで、西村淳也騎手騎乗の1...
+[0]  [Gemini生出力 120文字]: '本日の競馬ニュースです。4月25日の東京5R・3歳未勝利(芝1400メートル＝18頭立て)は、2番人気のリラ(牝、美浦・蛯名正義厩舎、父キズナ)が、直線で内から抜け出して初勝利を飾りました。勝ち時計は1分21秒3(良)。2着のグランマエス。'
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (120文字)
+[0]  プレビュー: 本日の競馬ニュースです。4月25日の東京5R・3歳未勝利(芝1400メートル＝18頭立て)は、2番人気のリラ(牝、美浦・蛯名正義厩舎、父キズナ)が、直線で内から...
+  HTTP 200
+[1]  [Gemini生出力 212文字]: '今日の競馬情報です。\n４歳１勝クラス（２５日、東京）において、横山武史騎手（２７）＝美浦・鈴木伸＝が、メルシージュテームで東京７Ｒを制しました。内をロスなく回り、最後の直線で先頭をとらえて一気に抜け出し、猛追してきたクラリネットソナタを退けてゴールイン。鞍上は「テンションの高い馬なので、調教師と相談してゲート裏でメンコを外して臨みました。競馬では問題なかったし、欲しいポジションから進められ抜け出してからもしっかり伸?..'
+[1]  [重複除去] 170文字 → 169文字
+[1]  ファクトチェック: SKIPPED(gemma)
+[1]  → output/script_1.txt 保存 (169文字)
+[1]  プレビュー: 今日の競馬情報です。４歳１勝クラス（２５日、東京）において、横山武史騎手（２７）＝美浦・鈴木伸＝が、メルシージュテームで東京７Ｒを制しました。内をロスなく回り、...
+  HTTP 200
+[2]  [Gemini生出力 181文字]: '競馬ファン注目の情報です。21日のメーン11R「穀雨(こくう)特別」は、田野豊三騎乗のタイキフォースが1年1カ月ぶりに勝利しました。このレースは8頭立てのA1A2で行われ、ダート1700メートルでした。3連単投票は25万7830円と、波乱の結末となりました。インベルシオンが落馬競走中止したため、タイキフォースはマイペースでレースを進み、勝利を掴み取ったのです。'
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (181文字)
+[2]  プレビュー: 競馬ファン注目の情報です。21日のメーン11R「穀雨(こくう)特別」は、田野豊三騎乗のタイキフォースが1年1カ月ぶりに勝利しました。このレースは8頭立てのA1A...
 
 3 件の脚本を生成しました。
