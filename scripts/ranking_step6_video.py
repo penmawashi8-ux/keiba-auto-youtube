@@ -70,11 +70,11 @@ def split_text_for_voicevox(text, max_chars=200):
 
 def voicevox_synthesize(text, speaker=VOICEVOX_SPEAKER):
     """VOICEVOX API で1チャンクを音声合成してバイト列を返す"""
-    # audio_query
-    query_url = f"{VOICEVOX_URL}/audio_query?speaker={speaker}"
-    data = urllib.parse.urlencode({"text": text}).encode()
-    req = urllib.request.Request(query_url, data=data, method="POST")
-    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    # audio_query: text と speaker は URL クエリパラメータで渡す（ボディは空）
+    params = urllib.parse.urlencode({"text": text, "speaker": speaker})
+    query_url = f"{VOICEVOX_URL}/audio_query?{params}"
+    req = urllib.request.Request(query_url, data=b"", method="POST")
+    req.add_header("Content-Type", "application/json")
     with urllib.request.urlopen(req, timeout=30) as resp:
         query = json.load(resp)
 
