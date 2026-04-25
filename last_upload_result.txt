@@ -1,10 +1,10 @@
-date: 2026-04-25T08:16:40.914591Z
+date: 2026-04-25T10:14:33.329774Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-ZjhwwNrgT8 title=【観月橋Sレース後コメント】マイノワール浜中俊騎手ら
-OK project=1 video_id=AWKlNkmXmQ0 title=【フローラS予想】意外な種牡馬が結果を残せていないオークストライアル！ いくつも
-OK project=1 video_id=ZdbKFpydTGM title=【医王寺特別レース後コメント】ウィンストン和田陽希騎手ら
+OK project=1 video_id=mPel9E53GRs title=日本馬計6頭出走の香港チャンピオンズデー netkeibaTVのライブ配信に細江
+OK project=1 video_id=rN8hsgf2drA title=フォーエバーヤングは秋の目標がBCクラシックと凱旋門賞の2択!国内1走の意向も…
+OK project=1 video_id=NgoQi7R7hHY title=4月25日の出来事一覧/福島・東京・京都
