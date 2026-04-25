@@ -74,6 +74,13 @@ _DENY_TITLE_PREFIXES = [
     "video:", "watch:", "【動画】", "（動画）", "(動画)",
 ]
 
+# タイトルがこのパターンにマッチする記事はクリックベイト予想記事のため除外
+# 「本命馬とは」「注目馬とは」「穴馬とは」など、答えを記事本文に書かないタイプ
+import re as _re
+_DENY_TITLE_PATTERNS = _re.compile(
+    r"とは[？?]?\s*$"
+)
+
 
 def is_keiba_related(entry: dict) -> bool:
     """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
@@ -81,6 +88,10 @@ def is_keiba_related(entry: dict) -> bool:
     # 動画説明タイトルを除外
     if any(title.lower().startswith(p.lower()) for p in _DENY_TITLE_PREFIXES):
         print(f"  [除外] 動画タイトルのためスキップ: {title[:60]}")
+        return False
+    # 「本命馬とは」「〜とは？」形式のクリックベイト予想記事を除外
+    if _DENY_TITLE_PATTERNS.search(title):
+        print(f"  [除外] クリックベイト予想タイトルのためスキップ: {title[:60]}")
         return False
     text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
