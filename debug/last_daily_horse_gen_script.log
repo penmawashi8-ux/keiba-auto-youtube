@@ -15,72 +15,54 @@
   - トウカイテイオー (tokai_teio)
 
 [名馬選定・脚本生成・ファクトチェック中...]
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: イスキリ
-HORSE_KEY: isukiri
-ERA: 2000年代
-CATCHPHRASE: 逆転の奇跡
-
+HORSE_NAME: シンボリルドルフ
+HORSE_KEY: symboli_rudolf
+ERA: 1980年代
+CATCHPHRASE: 史上唯一の無敗三冠、皇帝
 ---SCRIPT---
-スタートラインで、馬が16頭。
-その中にいたのは、イスキリ。
-2004年のサマーオールスターズ。
-18戦無敗の最強馬、トーセンタートルが圧倒。
-イスキリは16番人気の116倍。
-誰もが予想しなかった、劇的な逆転劇の幕開け。
-レース展開は予想通り、トーセンタートルが逃げ込む。
-イスキリは群れから離れ、後方から静かに待つ。
-3コーナー、最後の直線。
-イスキリが猛進して、トーセンタートルに追いつく。
-着差は1馬身。
-ゴールは、わずか3/4差。
-イスキリが、トーセンタートルを破った。
-2004年7月18日、サマーオールスターズ。
-116倍の穴馬が、歴史を塗り替えた。
-その年の秋、ジャパンカップでGⅠ初制覇。
-父はサンてる、母はアポロベア。
-血統は、決して凡庸ではなかった。
-しかし、その勝利は、奇跡だった。
-誰もが、その劇的な逆転を忘れない。
-競馬は、予測不能なゲーム。
-運命は、一瞬で変わる。
-それが、競馬の真理。
+無敗の三冠馬は、一頭だけ
+その馬の名前、シンボリルドルフ
+史上初の無敗三冠を達成した、まさに皇帝
+1984年、皐月賞を2馬身差で圧勝
+日本ダービーは1馬身1/4差で勝利
+菊花賞は3馬身差で制し、無敗の三冠馬に輝いた
+さらに翌1985年には、天皇賞（春）を3馬身差で勝利
+ジャパンカップは1馬身1/4差で制覇した
+有馬記念も1/2馬身差で勝ち、G1・7勝を達成
+通算成績は16戦13勝、2着1回、3着1回
+海外遠征のサンルイレイSでは6着に敗れたが、その輝きは色褪せない
+皇帝の称号は、彼のためにある
+その名は、競馬史に深く刻まれている
 ---END---...
 
-[エラー] 「イスキリ」は既に紹介済みです。AIが指示を無視しました。中止します。
+[選定完了] 馬名: シンボリルドルフ  キー: symboli_rudolf
+[最終脚本]
+無敗の三冠馬は、一頭だけ
+その馬の名前、シンボリルドルフ
+史上初の無敗三冠を達成した、まさに皇帝
+1984年、皐月賞を2馬身差で圧勝
+日本ダービーは1馬身1/4差で勝利
+菊花賞は3馬身差で制し、無敗の三冠馬に輝いた
+さらに翌1985年には、天皇賞（春）を3馬身差で勝利
+ジャパンカップは1馬身1/4差で制覇した
+有馬記念も1/2馬身差で勝ち、G1・7勝を達成
+通算成績は16戦13勝、2着1回、3着1回
+海外遠征のサンルイレイSでは6着に敗れたが、その輝きは色褪せない
+皇帝の称号は、彼のためにある
+その名は、競馬史に深く刻まれている
+
+[20秒待機中（レート制限対策）...]
+[メタデータ生成中...]
+[メタデータ応答]
+TAGS: シンボリルドルフ, 無敗三冠, 皇帝, 皐月賞, 日本ダービー, 菊花賞, G1・7勝, 1980年代
+THUMBNAIL_TOP: 史上初の
+THUMBNAIL_MAIN: 無敗の三冠馬
+
+
+[名馬データ保存]
+  data/famous_horses/symboli_rudolf.txt
+  data/famous_horses/symboli_rudolf.json
+[パイプライン用ファイル書き出し]
+  news.json: タイトル「シンボリルドルフ」
+  output/script_0.txt: 267 文字
