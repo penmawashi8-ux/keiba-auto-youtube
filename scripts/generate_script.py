@@ -333,6 +333,7 @@ def main() -> None:
             "情報が少なくても、記事に書かれていることを最大限活用して必ず脚本を生成してください。"
         )
         skip_count = 0
+        best_short_script = ""
         for key, model_name in key_model_pairs:
             key_label = f"***{key[-4:]}"
             print(f"[{i}] 使用: key={key_label} model={model_name}")
@@ -483,6 +484,12 @@ def main() -> None:
                     last_period = script.rfind("。")
                     if last_period != -1:
                         script = script[:last_period + 1]
+                # 脚本が140文字未満の場合は次のモデルで再試行（ファクトチェック前に判定）
+                if len(script) < 140:
+                    if len(script) >= 80 and len(script) > len(best_short_script):
+                        best_short_script = script
+                    print(f"[{i}]  → 脚本が短すぎます（{len(script)}文字）。次のキー/モデルで再試行します。", file=sys.stderr)
+                    continue
                 # ファクトチェック: 元記事にない情報が混入していないか検証
                 fc_ok, fc_reason = fact_check_script(
                     key, model_name, item["title"], summary_text, script
@@ -502,6 +509,13 @@ def main() -> None:
             except QuotaExceeded:
                 print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。20秒待機後に次へ切り替えます。", file=sys.stderr)
                 time.sleep(20)
+        if best_short_script:
+            print(f"[{i}]  → 全モデルで短い脚本のみ生成。最長({len(best_short_script)}文字)を使用します。")
+            out_path = Path(f"{OUTPUT_DIR}/script_{i}.txt")
+            out_path.write_text(best_short_script, encoding="utf-8")
+            print(f"[{i}]  → {out_path} 保存 ({len(best_short_script)}文字)")
+            _check_consecutive_endings(best_short_script, i)
+            return i, True
         print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
         return i, False
 
