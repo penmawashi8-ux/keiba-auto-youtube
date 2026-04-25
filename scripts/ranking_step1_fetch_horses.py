@@ -2,6 +2,7 @@
 """Step 1: netkeiba から歴代G1勝利数ランキング上位50頭を取得して horses.csv に保存"""
 
 import csv
+import os
 import time
 import random
 import sys
@@ -137,8 +138,16 @@ def fetch_with_selenium():
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
+        # GitHub Actions / CI 環境の chromium パスに対応
+        chrome_bin = os.environ.get("CHROME_BIN", "")
+        if chrome_bin:
+            options.binary_location = chrome_bin
 
-        driver = webdriver.Chrome(options=options)
+        chrome_driver = os.environ.get("CHROME_DRIVER_PATH", "")
+        from selenium.webdriver.chrome.service import Service
+        service = Service(executable_path=chrome_driver) if chrome_driver else Service()
+
+        driver = webdriver.Chrome(service=service, options=options)
         all_horses = []
 
         try:

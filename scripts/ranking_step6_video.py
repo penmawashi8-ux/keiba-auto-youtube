@@ -21,6 +21,8 @@ VOICEVOX_SPEAKER = int(os.environ.get("VOICEVOX_SPEAKER", "1"))
 VIDEO_WIDTH = 1920
 VIDEO_HEIGHT = 1080
 BGM_VOLUME = 0.3
+# zoompan は CPU 負荷が高いため CI 環境ではオフにする（ENABLE_ZOOMPAN=1 で有効化）
+ENABLE_ZOOMPAN = os.environ.get("ENABLE_ZOOMPAN", "0") == "1"
 BGM_PATH = os.environ.get("BGM_PATH", "bgm.mp3")
 GRAPHS_DIR = Path("graphs")
 SCRIPT_PATH = "script.txt"
@@ -196,16 +198,20 @@ def create_slideshow(output_path="slideshow_raw.mp4"):
         clip_path = os.path.join(tmp_dir, f"clip_{i:03d}.mp4")
 
         # 画像をスケール・パッドして1920×1080に合わせる
-        # ケンバーンズ風のズームエフェクト (zoompan)
-        zoom_start = 1.0 + (0.05 * (i % 2))  # 奇数スライドは少し引く
-        zoom_end = zoom_start + 0.05
-
-        vf = (
+        scale_pad = (
             f"scale={VIDEO_WIDTH}:{VIDEO_HEIGHT}:force_original_aspect_ratio=decrease,"
-            f"pad={VIDEO_WIDTH}:{VIDEO_HEIGHT}:(ow-iw)/2:(oh-ih)/2:black,"
-            f"zoompan=z='if(lte(zoom,{zoom_start}),{zoom_end},max({zoom_start},zoom-0.001))':"
-            f"d={int(slide_duration * 25)}:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:fps=25"
+            f"pad={VIDEO_WIDTH}:{VIDEO_HEIGHT}:(ow-iw)/2:(oh-ih)/2:black"
         )
+        if ENABLE_ZOOMPAN:
+            zoom_start = 1.0 + (0.05 * (i % 2))
+            zoom_end = zoom_start + 0.05
+            vf = (
+                f"{scale_pad},"
+                f"zoompan=z='if(lte(zoom,{zoom_start}),{zoom_end},max({zoom_start},zoom-0.001))':"
+                f"d={int(slide_duration * 25)}:s={VIDEO_WIDTH}x{VIDEO_HEIGHT}:fps=25"
+            )
+        else:
+            vf = scale_pad
 
         run_cmd(
             ["ffmpeg", "-y",
