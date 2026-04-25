@@ -1,0 +1,82 @@
+name: 競馬知識クイズ動画生成
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_step:
+        description: '開始ステップ (1=全部 / 2=スライドから / 3=動画から)'
+        required: false
+        default: '1'
+        type: choice
+        options: ['1', '2', '3']
+
+jobs:
+  generate-quiz-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: システム依存関係インストール (ffmpeg / フォント)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk libfontconfig1
+
+      - name: Python パッケージインストール
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements-quiz.txt
+
+      - name: Step 1 クイズ問題生成 (Claude API)
+        if: inputs.from_step == '1'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PYTHONUNBUFFERED: '1'
+        run: python scripts/quiz_step1_questions.py
+
+      - name: Step 2 スライド生成
+        if: inputs.from_step <= '2'
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: python scripts/quiz_step2_slides.py
+
+      - name: Step 3 動画生成
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: python scripts/quiz_step3_video.py
+
+      - name: 生成ファイル一覧表示
+        if: always()
+        run: |
+          [ -f quiz.json ]      && echo "✓ quiz.json"      || echo "✗ quiz.json"
+          [ -d slides ]         && echo "✓ slides/ ($(ls slides/ | wc -l)枚)" || echo "✗ slides/"
+          [ -d audio ]          && echo "✓ audio/  ($(ls audio/  | wc -l)件)" || echo "✗ audio/"
+          [ -f quiz_video.mp4 ] && echo "✓ quiz_video.mp4 ($(du -sh quiz_video.mp4 | cut -f1))" || echo "✗ quiz_video.mp4"
+
+      - name: 中間ファイルをアップロード
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quiz-data-${{ github.run_number }}
+          path: |
+            quiz.json
+            slides/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: 動画ファイルをアップロード
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quiz-video-${{ github.run_number }}
+          path: quiz_video.mp4
+          retention-days: 7
+          if-no-files-found: warn
