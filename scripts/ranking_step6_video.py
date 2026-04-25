@@ -14,6 +14,8 @@ import urllib.parse
 import urllib.error
 from pathlib import Path
 
+import requests as _requests
+
 
 # ─── 設定 ────────────────────────────────────────────────
 VOICEVOX_URL = os.environ.get("VOICEVOX_URL", "http://localhost:50021")
@@ -70,30 +72,32 @@ def split_text_for_voicevox(text, max_chars=200):
 
 def voicevox_synthesize(text, speaker=VOICEVOX_SPEAKER):
     """VOICEVOX API で1チャンクを音声合成してバイト列を返す"""
-    # audio_query: text と speaker は URL クエリパラメータで渡す（ボディは空）
-    params = urllib.parse.urlencode({"text": text, "speaker": speaker})
-    query_url = f"{VOICEVOX_URL}/audio_query?{params}"
-    req = urllib.request.Request(query_url, data=b"", method="POST")
-    req.add_header("Content-Type", "application/json")
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        query = json.load(resp)
+    # audio_query: text と speaker は URL クエリパラメータで渡す
+    resp = _requests.post(
+        f"{VOICEVOX_URL}/audio_query",
+        params={"text": text, "speaker": speaker},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    query = resp.json()
 
     # synthesis
-    synth_url = f"{VOICEVOX_URL}/synthesis?speaker={speaker}"
-    body = json.dumps(query).encode("utf-8")
-    req2 = urllib.request.Request(synth_url, data=body, method="POST")
-    req2.add_header("Content-Type", "application/json")
-    with urllib.request.urlopen(req2, timeout=60) as resp2:
-        return resp2.read()
+    resp2 = _requests.post(
+        f"{VOICEVOX_URL}/synthesis",
+        params={"speaker": speaker},
+        json=query,
+        timeout=60,
+    )
+    resp2.raise_for_status()
+    return resp2.content
 
 
 def check_voicevox_available():
     try:
-        req = urllib.request.Request(f"{VOICEVOX_URL}/version", method="GET")
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            ver = resp.read().decode()
-            print(f"  VOICEVOX バージョン: {ver.strip()}")
-            return True
+        resp = _requests.get(f"{VOICEVOX_URL}/version", timeout=5)
+        resp.raise_for_status()
+        print(f"  VOICEVOX バージョン: {resp.text.strip()}")
+        return True
     except Exception as e:
         print(f"  VOICEVOX 接続不可: {e}")
         return False
