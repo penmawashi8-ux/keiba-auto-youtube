@@ -136,6 +136,9 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
             "-pix_fmt", "yuv420p",
             "-vf", scale_vf,
             "-c:a", "aac", "-b:a", "128k",
+            # edge-tts は 24kHz MP3 を生成するが、シンキングタイムクリップは
+            # 44100Hz なため concat 時に音ずれが起きる。-ar 44100 で統一する。
+            "-ar", "44100",
             "-af", f"apad=whole_dur={total_dur:.3f}",
             "-t", f"{total_dur:.3f}",
         ]
