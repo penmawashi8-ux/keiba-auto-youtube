@@ -44,18 +44,18 @@ jobs:
           pip install -r requirements-quiz.txt
 
       - name: クイズファイルをコピー (quiz_file 指定時・from_step問わず優先)
-        if: inputs.quiz_file != ''
+        if: ${{ inputs.quiz_file != '' }}
         run: cp "${{ inputs.quiz_file }}" quiz.json
 
       - name: Step 1 クイズ問題生成 (Claude API / quiz_file 未指定時のみ)
-        if: inputs.from_step == '1' && inputs.quiz_file == ''
+        if: ${{ inputs.from_step == '1' && inputs.quiz_file == '' }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PYTHONUNBUFFERED: '1'
         run: python scripts/quiz_step1_questions.py
 
       - name: Step 2 スライド生成
-        if: inputs.from_step <= '2'
+        if: ${{ inputs.from_step != '3' }}
         env:
           PYTHONUNBUFFERED: '1'
         run: python scripts/quiz_step2_slides.py
