@@ -1,10 +1,10 @@
-date: 2026-04-26T07:15:19.547173Z
+date: 2026-04-26T10:08:16.133075Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=i-ew_x_j0zs title=【JRA・WIN5】本日のWIN5は的中956票、配当54万1700円
-OK project=1 video_id=1FJHKhoEzZE title=【フローラS】ラフターラインズが抜け出して重賞初V&オークス切符ゲット　叔母スタ
-OK project=1 video_id=rPYE6-17H7k title=【香港・チェアマンズSP結果】カーインライジング圧勝で20連勝達成！ サトノレー
+OK project=1 video_id=KMF0ZQO0ZrM title=【フローラSレース後コメント】ラフターラインズ D.レーン騎手ら
+OK project=1 video_id=63vHU_hJ8dE title=【チェアマンズSPレース後コメント】サトノレーヴ J.モレイラ騎手
+OK project=1 video_id=-qIFSl7CgEg title=【比良山特別レース後コメント】オメガナビゲーター鮫島克駿騎手ら
