@@ -2,8 +2,10 @@
 """Step 3: quiz.json + slides/ から音声合成・動画組み立てを行い quiz_video.mp4 に保存"""
 
 import asyncio
+import glob
 import json
 import os
+import random
 import subprocess
 import sys
 import tempfile
@@ -21,6 +23,9 @@ TITLE_DURATION = 4
 THINK_DURATION = 15   # シンキングタイム（カウントダウン表示）
 ANSWER_EXTRA = 1      # 回答読み上げ後の余韻
 RESULT_DURATION = 5
+
+# BGM 設定
+BGM_VOL = 0.12
 
 # 動画設定
 FPS = 30
@@ -56,15 +61,17 @@ async def synthesize_all(quiz: dict):
     tasks = []
     paths = []
 
-    # タイトル TTS
+    # タイトル TTS（ルール説明含む）
     title_audio = AUDIO_DIR / "00_title.mp3"
     tasks.append(synthesize_one(
-        f"競馬知識クイズ、始めます！全{len(quiz['questions'])}問、何問正解できるか挑戦してみてください！",
+        f"名馬当てクイズ、スタートです！"
+        f"G1の勝利歴ヒントから名馬を当ててください。"
+        f"全{len(quiz['questions'])}問、制限時間は15秒！さあ、挑戦してみましょう！",
         TTS_VOICE, title_audio
     ))
     paths.append(("title", title_audio))
 
-    # 各問TTS（問題文は読まない：シンキングタイムで視聴者が自分で読む）
+    # 各問TTS（問題文は読まない、解説込みの回答のみ）
     for q in quiz["questions"]:
         a_audio = AUDIO_DIR / f"{q['number']:02d}a.mp3"
         tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
@@ -85,21 +92,20 @@ async def synthesize_all(quiz: dict):
 
 
 def get_audio_duration(audio_path: Path) -> float:
-    """ffprobe で音声の長さを取得"""
+    """ffprobe で音声/動画の長さを取得（format=duration が最も信頼性が高い）"""
     result = subprocess.run(
         [
-            "ffprobe", "-v", "quiet",
-            "-print_format", "json",
-            "-show_streams",
+            "ffprobe", "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
             str(audio_path),
         ],
         capture_output=True, text=True
     )
-    data = json.loads(result.stdout)
-    for stream in data.get("streams", []):
-        if "duration" in stream:
-            return float(stream["duration"])
-    return 3.0
+    try:
+        return float(result.stdout.strip())
+    except ValueError:
+        return 3.0
 
 
 def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_path: Path):
@@ -125,7 +131,7 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
             "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a",
             "-c:a", "aac",
             "-b:a", "128k",
-            "-af", f"apad=whole_dur={duration}",
+            "-af", f"apad=whole_dur={duration:.3f}",
             "-t", str(duration),
         ]
     else:
@@ -147,9 +153,14 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
 
 
 def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float = 15.0):
-    """問題スライド + カウントダウンタイマーの無音クリップ（シンキングタイム）"""
+    """問題スライド + カウントダウンタイマーの無音クリップ（シンキングタイム）
+
+    カウントダウンは問題スライドの下部空きスペース（choice下段より下）に配置。
+    下段 choice の下端: y=0.15 → 画面上端から (1-0.15)*1080=918px の位置。
+    """
     duration_int = int(duration)
-    countdown_text = "%{eif\\:" + str(duration_int) + "-t\\:d}"
+    # floor(t) で1秒ごとに整数が変わるカウントダウン (15→14→...→0)
+    countdown_text = r"%{eif\:" + str(duration_int) + r"-floor(t)\:d}"
 
     font_path = find_noto_font()
 
@@ -157,11 +168,13 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
         f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a"
     )
+    # カウントダウン数字: 下段choice下端(918px)より下に配置
+    # center at h*0.935 = 1010px (fontsize=95 → height≈95px → top 963px, bottom 1058px)
     countdown_f = (
         f"drawtext=text='{countdown_text}':"
-        f"fontsize=180:fontcolor=white@0.95:"
-        f"x=(w-tw)/2:y=h*0.82-th/2:"
-        f"box=1:boxcolor=black@0.55:boxborderw=35"
+        f"fontsize=95:fontcolor=white@0.95:"
+        f"x=(w-tw)/2:y=h*0.935-th/2:"
+        f"box=1:boxcolor=black@0.55:boxborderw=25"
     )
 
     if font_path:
@@ -170,11 +183,12 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         ) as tf:
             tf.write("シンキングタイム")
             label_file = tf.name
+        # ラベル: center at h*0.875 = 945px (fontsize=50 → top 920px > 918px ✓)
         label_f = (
             f"drawtext=fontfile={font_path}:"
             f"textfile={label_file}:"
-            f"fontsize=58:fontcolor=#e8c84a:"
-            f"x=(w-tw)/2:y=h*0.73-th/2"
+            f"fontsize=50:fontcolor=#e8c84a:"
+            f"x=(w-tw)/2:y=h*0.875-th/2"
         )
         vf = f"{scale_f},{countdown_f},{label_f}"
     else:
@@ -228,6 +242,39 @@ def concat_clips(clip_paths: list[Path], out_path: Path):
         os.unlink(list_file)
 
 
+def add_bgm(video_path: Path, out_path: Path) -> bool:
+    """BGMを動画にミックス（ニュース系と同じ方法: amix weights=1 BGM_VOL）"""
+    bgm_files = sorted(
+        glob.glob("assets/bgm/*.mp3") + glob.glob("assets/bgm/*.m4a")
+    )
+    if not bgm_files:
+        print("  BGMなし: assets/bgm/ に mp3 を置くと自動適用")
+        return False
+    bgm_path = random.choice(bgm_files)
+    print(f"  BGM: {Path(bgm_path).name} (vol={BGM_VOL})")
+
+    total_dur = get_audio_duration(video_path)
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", str(video_path),
+        "-stream_loop", "-1", "-i", bgm_path,
+        "-filter_complex",
+        f"[0:a]apad=whole_dur={total_dur:.3f}[narr];"
+        f"[narr][1:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]",
+        "-map", "0:v",
+        "-map", "[aout]",
+        "-c:v", "copy",
+        "-c:a", "aac",
+        "-b:a", "192k",
+        str(out_path),
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  BGM追加失敗: {result.stderr[-300:]}", file=sys.stderr)
+        return False
+    return True
+
+
 def main():
     print("=== Step 3: 動画生成 ===")
 
@@ -268,7 +315,7 @@ def main():
 
     for q in questions:
         n = q["number"]
-        print(f"  Q{n} 問題クリップ...")
+        print(f"  Q{n} 問題クリップ（シンキングタイム{THINK_DURATION}秒）...")
 
         # シンキングタイムクリップ（カウントダウン表示・問題文は読まない）
         q_think_clip = clips_dir / f"{n:02d}q_think.mp4"
@@ -304,6 +351,12 @@ def main():
     # --- 結合 ---
     print("③ クリップ結合中...")
     concat_clips(clip_paths, OUTPUT_VIDEO)
+
+    # --- BGM追加 ---
+    print("④ BGM追加中...")
+    bgm_out = OUTPUT_VIDEO.parent / (OUTPUT_VIDEO.stem + "_bgm.mp4")
+    if add_bgm(OUTPUT_VIDEO, bgm_out):
+        bgm_out.replace(OUTPUT_VIDEO)
 
     size_mb = OUTPUT_VIDEO.stat().st_size / 1024 / 1024
     print(f"\n{OUTPUT_VIDEO} に保存しました ({size_mb:.1f} MB)")

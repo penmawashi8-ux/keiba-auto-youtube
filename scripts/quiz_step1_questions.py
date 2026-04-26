@@ -82,7 +82,8 @@ def main():
     print(f"  {len(questions)}問生成されました")
 
     for q in questions:
-        print(f"  Q{q['number']}: {q['display_question']}")
+        correct = q["choices"][q["correct_index"]]
+        print(f"  Q{q['number']}: {correct}（正解）")
 
     with open("quiz.json", "w", encoding="utf-8") as f:
         json.dump(quiz, f, ensure_ascii=False, indent=2)

@@ -48,6 +48,13 @@ jobs:
           PYTHONUNBUFFERED: '1'
         run: python scripts/quiz_step2_slides.py
 
+      - name: BGM ダウンロード (archive.org Musopen CC0)
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py || echo "BGMダウンロード失敗（動画は BGM なしで継続）"
+
       - name: Step 3 動画生成
         env:
           PYTHONUNBUFFERED: '1'
