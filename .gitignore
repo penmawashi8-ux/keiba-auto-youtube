@@ -3,6 +3,9 @@ output/
 news.json
 script.txt
 assets/landscape_*.jpg
+quiz.json
+slides/
+audio/
 
 # 認証情報
 youtube_token.json

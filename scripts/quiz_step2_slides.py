@@ -6,7 +6,6 @@ import os
 import sys
 from pathlib import Path
 
-import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -67,7 +66,9 @@ def _draw_bg(ax, fig):
     """ネイビー背景に上→下グラデーションで奥行きを付ける"""
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
-    gradient = np.linspace(0, 1, 120).reshape(120, 1) * np.ones((120, 200))
+    rows = 120
+    cols = 200
+    gradient = [[i / (rows - 1)] * cols for i in range(rows)]
     cmap = mcolors.LinearSegmentedColormap.from_list("bg", [BG_MID, BG, "#090e16"])
     ax.imshow(
         gradient,
@@ -169,6 +170,7 @@ def make_question_slide(q: dict, out_path: Path, clue_header: str = "G1 勝利�
     ))
     # パネル内上部に細いアクセント線
     _draw_section_line(ax, 0.825, x_left=0.045, x_right=0.955, zorder=3)
+    is_partial = q.get("clue_is_partial", False)
     header_label = f"{clue_header}（一部）" if is_partial else clue_header
     draw_clue_header(ax, 0.812, header_label)
 
