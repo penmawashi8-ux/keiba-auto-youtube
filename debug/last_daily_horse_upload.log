@@ -1,21 +1,20 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (78 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (60 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: シンボリルドルフ (key=symboli_rudolf)
-  タイトル: 【名馬列伝】シンボリルドルフ〜史上唯一の無敗三冠、皇帝〜 #Shorts
+  馬名: ウォッカ (key=vodka)
+  タイトル: 【名馬列伝】ウォッカ〜牝馬がダービーを勝った〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】シンボリルドルフ〜史上唯一の無敗三冠、皇帝〜 #Shorts
-  進捗: 17%
-  進捗: 34%
-  進捗: 51%
-  進捗: 68%
-  進捗: 85%
-  完了! Video ID: svKei0gQgFM
-  URL: https://www.youtube.com/watch?v=svKei0gQgFM
-  サムネイルアップロード中: output/thumbnail_0.jpg (78 KB)
+  アップロード中: 【名馬列伝】ウォッカ〜牝馬がダービーを勝った〜 #Shorts
+  進捗: 20%
+  進捗: 41%
+  進捗: 61%
+  進捗: 82%
+  完了! Video ID: RwVhIJnzT3M
+  URL: https://www.youtube.com/watch?v=RwVhIJnzT3M
+  サムネイルアップロード中: output/thumbnail_0.jpg (60 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
