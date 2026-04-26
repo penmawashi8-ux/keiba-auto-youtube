@@ -93,9 +93,9 @@ def make_question_slide(q: dict, out_path: Path):
 
     # 「この馬は誰？」 + 問題番号
     ax.text(0.5, 0.858, "この馬は誰？", ha="center", va="center",
-            color=ACCENT, fontsize=52, fontweight="bold")
+            color=ACCENT, fontsize=58, fontweight="bold")
     ax.text(0.97, 0.858, f"{q['number']} / 5問", ha="right", va="center",
-            color="#8090a0", fontsize=26)
+            color="#8090a0", fontsize=28)
 
     # G1勝利歴（全件・2列レイアウト）
     clues = q["clues"]
@@ -106,7 +106,7 @@ def make_question_slide(q: dict, out_path: Path):
         zorder=2,
     ))
     ax.text(0.5, 0.81, "G1 勝利歴", ha="center", va="center",
-            color=ACCENT, fontsize=30, fontweight="bold", zorder=3)
+            color=ACCENT, fontsize=34, fontweight="bold", zorder=3)
 
     # 2列に分割
     half = (len(clues) + 1) // 2
@@ -118,11 +118,11 @@ def make_question_slide(q: dict, out_path: Path):
     for i, clue in enumerate(col_left):
         y = base_y - i * row_h
         ax.text(0.07, y, f"◆ {clue}", ha="left", va="center",
-                color=WHITE, fontsize=26, fontweight="bold", zorder=3)
+                color=WHITE, fontsize=32, fontweight="bold", zorder=3)
     for i, clue in enumerate(col_right):
         y = base_y - i * row_h
         ax.text(0.55, y, f"◆ {clue}", ha="left", va="center",
-                color=WHITE, fontsize=26, fontweight="bold", zorder=3)
+                color=WHITE, fontsize=32, fontweight="bold", zorder=3)
 
     # 4択（2×2グリッド）― choiceはクルーパネルより下に配置
     choices = q["choices"]
@@ -135,7 +135,7 @@ def make_question_slide(q: dict, out_path: Path):
         if i < len(choices):
             draw_choice_box(ax, bx, by, box_w, box_h,
                             CHOICE_LABELS[i], choices[i],
-                            CHOICE_BG, CHOICE_BORDER, fontsize=30)
+                            CHOICE_BG, CHOICE_BORDER, fontsize=36)
 
     plt.tight_layout(pad=0)
     fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
@@ -161,7 +161,7 @@ def make_answer_slide(q: dict, out_path: Path):
     # 正解ラベル
     ax.text(0.5, 0.82, f"正解は  {correct_label}. {correct_name}！",
             ha="center", va="center",
-            color="#2ecc71", fontsize=50, fontweight="bold")
+            color="#2ecc71", fontsize=56, fontweight="bold")
 
     # 4択（正解=緑、不正解=暗赤色）
     box_w, box_h = 0.44, 0.11
@@ -177,7 +177,7 @@ def make_answer_slide(q: dict, out_path: Path):
                 bg, border = WRONG_BG, WRONG_BORDER
             draw_choice_box(ax, bx, by, box_w, box_h,
                             CHOICE_LABELS[i], choices[i],
-                            bg, border, fontsize=30)
+                            bg, border, fontsize=36)
 
     # 解説パネル
     ax.add_patch(mpatches.FancyBboxPatch(
@@ -187,12 +187,12 @@ def make_answer_slide(q: dict, out_path: Path):
         zorder=2,
     ))
     ax.text(0.07, 0.33, "◆ 解説", ha="left", va="center",
-            color=ACCENT, fontsize=28, fontweight="bold", zorder=3)
+            color=ACCENT, fontsize=32, fontweight="bold", zorder=3)
     ax.text(0.5, 0.20, q["display_explanation"], ha="center", va="center",
-            color=WHITE, fontsize=32, multialignment="center", zorder=3)
+            color=WHITE, fontsize=38, multialignment="center", zorder=3)
 
     ax.text(0.97, 0.03, f"{q['number']} / 5問", ha="right", va="center",
-            color="#606080", fontsize=24)
+            color="#606080", fontsize=26)
 
     plt.tight_layout(pad=0)
     fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
