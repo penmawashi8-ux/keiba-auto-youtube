@@ -6,7 +6,6 @@ import os
 import sys
 from pathlib import Path
 
-import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -67,7 +66,9 @@ def _draw_bg(ax, fig):
     """ネイビー背景に上→下グラデーションで奥行きを付ける"""
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
-    gradient = np.linspace(0, 1, 120).reshape(120, 1) * np.ones((120, 200))
+    rows = 120
+    cols = 200
+    gradient = [[i / (rows - 1)] * cols for i in range(rows)]
     cmap = mcolors.LinearSegmentedColormap.from_list("bg", [BG_MID, BG, "#090e16"])
     ax.imshow(
         gradient,
