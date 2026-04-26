@@ -1,10 +1,10 @@
-date: 2026-04-26T05:58:07.425452Z
+date: 2026-04-26T07:15:19.547173Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BOlKzmZbBu8 title=【マイラーズC・馬体重】アドマイヤズームは482kg(+8)、ウォーターリヒトは
-OK project=1 video_id=d8IeXmTxlOw title=石神深一騎手、ラスト騎乗は７着「グッとくるものがありました」
-OK project=1 video_id=8AXPHeF3OwU title=矢野英一調教師がJRA通算300勝　現役では69人目「ありがとうが300回、とて
+OK project=1 video_id=i-ew_x_j0zs title=【JRA・WIN5】本日のWIN5は的中956票、配当54万1700円
+OK project=1 video_id=1FJHKhoEzZE title=【フローラS】ラフターラインズが抜け出して重賞初V&オークス切符ゲット　叔母スタ
+OK project=1 video_id=rPYE6-17H7k title=【香港・チェアマンズSP結果】カーインライジング圧勝で20連勝達成！ サトノレー
