@@ -13,7 +13,10 @@ on:
         required: false
         default: '1'
         type: choice
-        options: ['1', '2', '3']
+        options:
+          - '1'
+          - '2'
+          - '3'
 
 jobs:
   generate-quiz-video:
