@@ -56,29 +56,58 @@ async def synthesize_one(text: str, voice: str, out_path: Path):
 
 
 async def synthesize_all(quiz: dict):
-    """全問の TTS を並列生成"""
+    """全問の TTS を並列生成（シングルパート・マルチパート両対応）"""
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
 
     tasks = []
     paths = []
 
-    # タイトル TTS（ルール説明含む）
-    title_audio = AUDIO_DIR / "00_title.mp3"
-    tasks.append(synthesize_one(
-        f"名馬当てクイズ、スタートです！"
-        f"G1の勝利歴ヒントから名馬を当ててください。"
-        f"全{len(quiz['questions'])}問、制限時間は15秒！さあ、挑戦してみましょう！",
-        TTS_VOICE, title_audio
-    ))
-    paths.append(("title", title_audio))
+    if quiz.get("multipart"):
+        parts = quiz["parts"]
+        total_q = sum(len(p["questions"]) for p in parts)
 
-    # 各問TTS（問題文は読まない、解説込みの回答のみ）
-    for q in quiz["questions"]:
-        a_audio = AUDIO_DIR / f"{q['number']:02d}a.mp3"
-        tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
-        paths.append((f"q{q['number']}_answer", a_audio))
+        title_audio = AUDIO_DIR / "00_title.mp3"
+        tasks.append(synthesize_one(
+            f"名馬当てクイズ、スタートです！"
+            f"重賞勝利歴のヒントから名馬を当ててください。"
+            f"全{total_q}問、3つのパートに分かれています。制限時間は各15秒！さあ、挑戦してみましょう！",
+            TTS_VOICE, title_audio
+        ))
+        paths.append(("title", title_audio))
 
-    # 結果TTS
+        for part in parts:
+            pn = part["part_number"]
+            pt = part["part_title"]
+            questions = part["questions"]
+
+            part_audio = AUDIO_DIR / f"p{pn:02d}_00_intro.mp3"
+            tasks.append(synthesize_one(
+                f"第{pn}パート、{pt}です！全{len(questions)}問、制限時間は15秒！",
+                TTS_VOICE, part_audio
+            ))
+            paths.append((f"p{pn}_intro", part_audio))
+
+            for q in questions:
+                a_audio = AUDIO_DIR / f"p{pn:02d}_{q['number']:02d}a.mp3"
+                tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
+                paths.append((f"p{pn}_q{q['number']}_answer", a_audio))
+
+    else:
+        total_q = len(quiz["questions"])
+        title_audio = AUDIO_DIR / "00_title.mp3"
+        tasks.append(synthesize_one(
+            f"名馬当てクイズ、スタートです！"
+            f"G1の勝利歴ヒントから名馬を当ててください。"
+            f"全{total_q}問、制限時間は15秒！さあ、挑戦してみましょう！",
+            TTS_VOICE, title_audio
+        ))
+        paths.append(("title", title_audio))
+
+        for q in quiz["questions"]:
+            a_audio = AUDIO_DIR / f"{q['number']:02d}a.mp3"
+            tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
+            paths.append((f"q{q['number']}_answer", a_audio))
+
     result_audio = AUDIO_DIR / "99_result.mp3"
     tasks.append(synthesize_one(
         "全問終了です！いくつ正解できましたか？チャンネル登録と高評価もよろしくお願いします！次回もお楽しみに！",
@@ -265,8 +294,6 @@ def main():
     with open("quiz.json", encoding="utf-8") as f:
         quiz = json.load(f)
 
-    questions = quiz.get("questions", [])
-
     # --- 音声生成 ---
     print("① 音声生成中 (edge-tts)...")
     asyncio.run(synthesize_all(quiz))
@@ -281,45 +308,70 @@ def main():
     # タイトルクリップ
     print("  タイトル...")
     title_clip = clips_dir / "00_title.mp4"
-    make_clip(
-        SLIDES_DIR / "00_title.png",
-        AUDIO_DIR / "00_title.mp3",
-        TITLE_DURATION,
-        title_clip,
-    )
+    make_clip(SLIDES_DIR / "00_title.png", AUDIO_DIR / "00_title.mp3", TITLE_DURATION, title_clip)
     clip_paths.append(title_clip)
 
-    for q in questions:
-        n = q["number"]
-        print(f"  Q{n} 問題クリップ（シンキングタイム{THINK_DURATION}秒）...")
+    if quiz.get("multipart"):
+        for part in quiz["parts"]:
+            pn = part["part_number"]
+            pt = part["part_title"]
+            questions = part["questions"]
 
-        q_think_clip = clips_dir / f"{n:02d}q_think.mp4"
-        make_question_silence_clip(
-            SLIDES_DIR / f"{n:02d}q_question.png",
-            q_think_clip,
-            THINK_DURATION,
-        )
-        clip_paths.append(q_think_clip)
+            print(f"  パート{pn}（{pt}）導入クリップ...")
+            intro_clip = clips_dir / f"p{pn:02d}_00_intro.mp4"
+            make_clip(
+                SLIDES_DIR / f"p{pn:02d}_00_intro.png",
+                AUDIO_DIR / f"p{pn:02d}_00_intro.mp3",
+                TITLE_DURATION,
+                intro_clip,
+            )
+            clip_paths.append(intro_clip)
 
-        print(f"  Q{n} 回答クリップ...")
-        a_clip = clips_dir / f"{n:02d}a.mp4"
-        make_clip(
-            SLIDES_DIR / f"{n:02d}a_answer.png",
-            AUDIO_DIR / f"{n:02d}a.mp3",
-            ANSWER_EXTRA,
-            a_clip,
-        )
-        clip_paths.append(a_clip)
+            for q in questions:
+                n = q["number"]
+                print(f"  P{pn} Q{n} 問題クリップ（シンキングタイム{THINK_DURATION}秒）...")
+                q_think_clip = clips_dir / f"p{pn:02d}_{n:02d}q_think.mp4"
+                make_question_silence_clip(
+                    SLIDES_DIR / f"p{pn:02d}_{n:02d}q_question.png",
+                    q_think_clip,
+                    THINK_DURATION,
+                )
+                clip_paths.append(q_think_clip)
+
+                print(f"  P{pn} Q{n} 回答クリップ...")
+                a_clip = clips_dir / f"p{pn:02d}_{n:02d}a.mp4"
+                make_clip(
+                    SLIDES_DIR / f"p{pn:02d}_{n:02d}a_answer.png",
+                    AUDIO_DIR / f"p{pn:02d}_{n:02d}a.mp3",
+                    ANSWER_EXTRA,
+                    a_clip,
+                )
+                clip_paths.append(a_clip)
+
+    else:
+        for q in quiz.get("questions", []):
+            n = q["number"]
+            print(f"  Q{n} 問題クリップ（シンキングタイム{THINK_DURATION}秒）...")
+            q_think_clip = clips_dir / f"{n:02d}q_think.mp4"
+            make_question_silence_clip(
+                SLIDES_DIR / f"{n:02d}q_question.png", q_think_clip, THINK_DURATION
+            )
+            clip_paths.append(q_think_clip)
+
+            print(f"  Q{n} 回答クリップ...")
+            a_clip = clips_dir / f"{n:02d}a.mp4"
+            make_clip(
+                SLIDES_DIR / f"{n:02d}a_answer.png",
+                AUDIO_DIR / f"{n:02d}a.mp3",
+                ANSWER_EXTRA,
+                a_clip,
+            )
+            clip_paths.append(a_clip)
 
     # 結果クリップ
     print("  結果クリップ...")
     result_clip = clips_dir / "99_result.mp4"
-    make_clip(
-        SLIDES_DIR / "99_result.png",
-        AUDIO_DIR / "99_result.mp3",
-        RESULT_DURATION,
-        result_clip,
-    )
+    make_clip(SLIDES_DIR / "99_result.png", AUDIO_DIR / "99_result.mp3", RESULT_DURATION, result_clip)
     clip_paths.append(result_clip)
 
     # --- 結合 ---

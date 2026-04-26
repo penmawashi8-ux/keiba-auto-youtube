@@ -81,7 +81,8 @@ def draw_choice_box(ax, x, y, w, h, label, text, bg, border, fontsize=26):
             color=WHITE, fontsize=fontsize, zorder=7)
 
 
-def make_question_slide(q: dict, out_path: Path, clue_header: str = "G1 勝利歴"):
+def make_question_slide(q: dict, out_path: Path, clue_header: str = "G1 勝利歴",
+                        part_title: str = ""):
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
@@ -89,7 +90,8 @@ def make_question_slide(q: dict, out_path: Path, clue_header: str = "G1 勝利�
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    draw_banner(ax, f"名馬当てクイズ  ─  第{q['number']}問")
+    banner = f"名馬当てクイズ【{part_title}】  ─  第{q['number']}問" if part_title else f"名馬当てクイズ  ─  第{q['number']}問"
+    draw_banner(ax, banner)
 
     # 「この馬は誰？」 + 問題番号
     ax.text(0.5, 0.858, "この馬は誰？", ha="center", va="center",
@@ -143,7 +145,7 @@ def make_question_slide(q: dict, out_path: Path, clue_header: str = "G1 勝利�
     print(f"  保存: {out_path}")
 
 
-def make_answer_slide(q: dict, out_path: Path):
+def make_answer_slide(q: dict, out_path: Path, part_title: str = ""):
     correct_idx = q["correct_index"]
     choices = q["choices"]
     correct_label = CHOICE_LABELS[correct_idx]
@@ -156,7 +158,8 @@ def make_answer_slide(q: dict, out_path: Path):
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    draw_banner(ax, f"第{q['number']}問  ─  答え合わせ！", bg="#1a5c32", fg=WHITE)
+    banner = f"【{part_title}】第{q['number']}問  ─  答え合わせ！" if part_title else f"第{q['number']}問  ─  答え合わせ！"
+    draw_banner(ax, banner, bg="#1a5c32", fg=WHITE)
 
     # 正解ラベル
     ax.text(0.5, 0.82, f"正解は  {correct_label}. {correct_name}！",
@@ -200,7 +203,7 @@ def make_answer_slide(q: dict, out_path: Path):
     print(f"  保存: {out_path}")
 
 
-def make_title_slide(title: str, out_path: Path):
+def make_title_slide(title: str, out_path: Path, total_q: int = 5, multipart: bool = False):
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
@@ -208,7 +211,6 @@ def make_title_slide(title: str, out_path: Path):
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    # チャンネル名ではなくクイズタイトルをバナーに表示
     draw_banner(ax, "名馬当てクイズ")
 
     ax.add_patch(mpatches.FancyBboxPatch(
@@ -218,13 +220,46 @@ def make_title_slide(title: str, out_path: Path):
     ))
     ax.text(0.50, 0.68, title, ha="center", va="center",
             color=ACCENT, fontsize=44, fontweight="bold", multialignment="center")
-    ax.text(0.50, 0.54, "G1勝利歴のヒントから名馬を当てよう！", ha="center", va="center",
+    ax.text(0.50, 0.54, "ヒントから名馬を当てよう！", ha="center", va="center",
             color=WHITE, fontsize=30)
-    ax.text(0.50, 0.40, "全5問  ─  制限時間 15秒！", ha="center", va="center",
+    q_label = f"全{total_q}問  ─  制限時間 15秒！" if not multipart else f"全{total_q}問（3パート）  ─  制限時間 15秒！"
+    ax.text(0.50, 0.40, q_label, ha="center", va="center",
             color=ACCENT, fontsize=28)
 
     ax.text(0.5, 0.09, "チャンネル登録・高評価よろしくお願いします！",
             ha="center", va="center", color="#8090a0", fontsize=24)
+
+    plt.tight_layout(pad=0)
+    fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
+    plt.close(fig)
+    print(f"  保存: {out_path}")
+
+
+PART_COLORS = ["#c0392b", "#27ae60", "#8e44ad"]  # 初級=赤, 中級=緑, 上級=紫
+
+
+def make_part_intro_slide(part_number: int, part_title: str, total_q: int, out_path: Path):
+    color = PART_COLORS[(part_number - 1) % len(PART_COLORS)]
+    fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis("off")
+
+    draw_banner(ax, f"名馬当てクイズ  ─  第{part_number}パート")
+
+    ax.add_patch(mpatches.FancyBboxPatch(
+        (0.05, 0.20), 0.90, 0.62,
+        boxstyle="round,pad=0.02",
+        facecolor=PANEL, edgecolor=color, linewidth=3,
+    ))
+    ax.text(0.50, 0.69, f"第{part_number}パート", ha="center", va="center",
+            color="#8090a0", fontsize=34, fontweight="bold")
+    ax.text(0.50, 0.53, part_title, ha="center", va="center",
+            color=color, fontsize=72, fontweight="bold")
+    ax.text(0.50, 0.36, f"全{total_q}問  ─  制限時間 15秒！", ha="center", va="center",
+            color=WHITE, fontsize=30)
 
     plt.tight_layout(pad=0)
     fig.savefig(out_path, dpi=DPI, bbox_inches="tight", facecolor=BG)
@@ -275,23 +310,56 @@ def main():
     setup_japanese_font()
     plt.style.use("dark_background")
 
-    questions = quiz.get("questions", [])
     title = quiz.get("title", "名馬当てクイズ！この馬は誰？")
-    clue_header = quiz.get("clue_header", "G1 勝利歴")
 
-    print("タイトルスライド生成中...")
-    make_title_slide(title, OUTPUT_DIR / "00_title.png")
+    if quiz.get("multipart"):
+        parts = quiz["parts"]
+        total_q = sum(len(p["questions"]) for p in parts)
 
-    for q in questions:
-        print(f"Q{q['number']} スライド生成中...")
-        make_question_slide(q, OUTPUT_DIR / f"{q['number']:02d}q_question.png", clue_header)
-        make_answer_slide(q, OUTPUT_DIR / f"{q['number']:02d}a_answer.png")
+        print("タイトルスライド生成中...")
+        make_title_slide(title, OUTPUT_DIR / "00_title.png", total_q=total_q, multipart=True)
 
-    print("結果スライド生成中...")
-    make_result_slide(OUTPUT_DIR / "99_result.png")
+        slide_count = 1
+        for part in parts:
+            pn = part["part_number"]
+            pt = part["part_title"]
+            clue_header = part.get("clue_header", "G1 勝利歴")
+            questions = part["questions"]
 
-    total = 1 + len(questions) * 2 + 1
-    print(f"\nslides/ フォルダに {total} 枚のスライドを保存しました")
+            print(f"パート{pn}（{pt}）導入スライド生成中...")
+            make_part_intro_slide(pn, pt, len(questions), OUTPUT_DIR / f"p{pn:02d}_00_intro.png")
+            slide_count += 1
+
+            for q in questions:
+                print(f"  P{pn} Q{q['number']} スライド生成中...")
+                make_question_slide(q, OUTPUT_DIR / f"p{pn:02d}_{q['number']:02d}q_question.png",
+                                    clue_header, part_title=pt)
+                make_answer_slide(q, OUTPUT_DIR / f"p{pn:02d}_{q['number']:02d}a_answer.png",
+                                  part_title=pt)
+                slide_count += 2
+
+        print("結果スライド生成中...")
+        make_result_slide(OUTPUT_DIR / "99_result.png")
+        slide_count += 1
+        print(f"\nslides/ フォルダに {slide_count} 枚のスライドを保存しました")
+
+    else:
+        questions = quiz.get("questions", [])
+        clue_header = quiz.get("clue_header", "G1 勝利歴")
+
+        print("タイトルスライド生成中...")
+        make_title_slide(title, OUTPUT_DIR / "00_title.png", total_q=len(questions))
+
+        for q in questions:
+            print(f"Q{q['number']} スライド生成中...")
+            make_question_slide(q, OUTPUT_DIR / f"{q['number']:02d}q_question.png", clue_header)
+            make_answer_slide(q, OUTPUT_DIR / f"{q['number']:02d}a_answer.png")
+
+        print("結果スライド生成中...")
+        make_result_slide(OUTPUT_DIR / "99_result.png")
+        total = 1 + len(questions) * 2 + 1
+        print(f"\nslides/ フォルダに {total} 枚のスライドを保存しました")
+
     print("完了")
 
 
