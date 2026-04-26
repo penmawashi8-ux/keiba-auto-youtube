@@ -1,10 +1,10 @@
-date: 2026-04-26T04:43:19.307870Z
+date: 2026-04-26T05:58:07.425452Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cdotIv-YYbQ title=【大井・羽田盃枠順】京浜盃を制したロックターミガンは8枠13番、雲取賞覇者のリア
-OK project=1 video_id=wtgyXmtMCu4 title=【京都4R・障害4歳以上未勝利】名手・石神深一騎手のラスト騎乗は7着　「少し優し
-OK project=1 video_id=Vw0_5LDxq88 title=【羽田盃】「3歳ダート3冠」第1戦の枠順が確定!ロックターミガンは8枠13番から
+OK project=1 video_id=BOlKzmZbBu8 title=【マイラーズC・馬体重】アドマイヤズームは482kg(+8)、ウォーターリヒトは
+OK project=1 video_id=d8IeXmTxlOw title=石神深一騎手、ラスト騎乗は７着「グッとくるものがありました」
+OK project=1 video_id=8AXPHeF3OwU title=矢野英一調教師がJRA通算300勝　現役では69人目「ありがとうが300回、とて
