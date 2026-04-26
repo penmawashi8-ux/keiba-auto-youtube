@@ -17,6 +17,7 @@ OUTPUT_VIDEO = Path("quiz_video.mp4")
 
 # TTS ボイス（競馬ニュース系は KeitaNeural 男性）
 TTS_VOICE = "ja-JP-KeitaNeural"
+TTS_VOLUME = "+50%"   # 音声が小さい場合に増幅
 
 # スライド表示時間（秒）
 TITLE_DURATION = 4
@@ -50,7 +51,7 @@ def find_noto_font() -> str | None:
 
 async def synthesize_one(text: str, voice: str, out_path: Path):
     import edge_tts
-    communicate = edge_tts.Communicate(text, voice)
+    communicate = edge_tts.Communicate(text, voice, volume=TTS_VOLUME)
     await communicate.save(str(out_path))
 
 
@@ -91,58 +92,43 @@ async def synthesize_all(quiz: dict):
     return paths
 
 
-def get_audio_duration(audio_path: Path) -> float:
-    """ffprobe で音声/動画の長さを取得（format=duration が最も信頼性が高い）"""
-    result = subprocess.run(
-        [
-            "ffprobe", "-v", "error",
-            "-show_entries", "format=duration",
-            "-of", "default=noprint_wrappers=1:nokey=1",
-            str(audio_path),
-        ],
-        capture_output=True, text=True
-    )
-    try:
-        return float(result.stdout.strip())
-    except ValueError:
-        return 3.0
-
-
 def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_path: Path):
-    """スライド画像 + 音声から動画クリップを生成"""
-    if audio_path and audio_path.exists():
-        duration = get_audio_duration(audio_path) + extra_secs
-    else:
-        duration = extra_secs
+    """スライド画像 + 音声から動画クリップを生成。
 
+    apad=pad_dur + -shortest を使うことで、edge-tts MP3 の duration メタデータの
+    誤値（VBR推測値）に依存せず正確なクリップ長を得る。
+    """
     cmd = [
         "ffmpeg", "-y",
         "-loop", "1",
         "-i", str(slide_path),
     ]
 
+    scale_vf = (
+        f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
+        f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a"
+    )
+
     if audio_path and audio_path.exists():
         cmd += ["-i", str(audio_path)]
         cmd += [
-            "-c:v", "libx264",
-            "-preset", "ultrafast",
-            "-crf", "28",
+            "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
             "-pix_fmt", "yuv420p",
-            "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a",
-            "-c:a", "aac",
-            "-b:a", "128k",
-            "-af", f"apad=whole_dur={duration:.3f}",
-            "-t", str(duration),
+            "-vf", scale_vf,
+            "-c:a", "aac", "-b:a", "128k",
+            # apad=pad_dur で音声末尾に extra_secs の無音を追加し、
+            # -shortest でその終端に合わせて映像を停止する。
+            # duration計算不要なため VBR MP3の誤duration問題を完全回避。
+            "-af", f"apad=pad_dur={extra_secs}",
+            "-shortest",
         ]
     else:
         cmd += [
-            "-c:v", "libx264",
-            "-preset", "ultrafast",
-            "-crf", "28",
+            "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
             "-pix_fmt", "yuv420p",
-            "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a",
+            "-vf", scale_vf,
             "-an",
-            "-t", str(duration),
+            "-t", str(extra_secs),
         ]
 
     cmd.append(str(out_path))
@@ -153,13 +139,8 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
 
 
 def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float = 15.0):
-    """問題スライド + カウントダウンタイマーの無音クリップ（シンキングタイム）
-
-    カウントダウンは問題スライドの下部空きスペース（choice下段より下）に配置。
-    下段 choice の下端: y=0.15 → 画面上端から (1-0.15)*1080=918px の位置。
-    """
+    """問題スライド + カウントダウンタイマーの無音クリップ（シンキングタイム）"""
     duration_int = int(duration)
-    # floor(t) で1秒ごとに整数が変わるカウントダウン (15→14→...→0)
     countdown_text = r"%{eif\:" + str(duration_int) + r"-floor(t)\:d}"
 
     font_path = find_noto_font()
@@ -168,8 +149,7 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
         f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a"
     )
-    # カウントダウン数字: 下段choice下端(918px)より下に配置
-    # center at h*0.935 = 1010px (fontsize=95 → height≈95px → top 963px, bottom 1058px)
+    # カウントダウン: choice下段底辺(918px from top)より下に配置
     countdown_f = (
         f"drawtext=text='{countdown_text}':"
         f"fontsize=95:fontcolor=white@0.95:"
@@ -183,7 +163,6 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         ) as tf:
             tf.write("シンキングタイム")
             label_file = tf.name
-        # ラベル: center at h*0.875 = 945px (fontsize=50 → top 920px > 918px ✓)
         label_f = (
             f"drawtext=fontfile={font_path}:"
             f"textfile={label_file}:"
@@ -200,13 +179,10 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         "-loop", "1",
         "-i", str(slide_path),
         "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
-        "-c:v", "libx264",
-        "-preset", "ultrafast",
-        "-crf", "28",
+        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
         "-pix_fmt", "yuv420p",
         "-vf", vf,
-        "-c:a", "aac",
-        "-b:a", "128k",
+        "-c:a", "aac", "-b:a", "128k",
         "-t", str(duration),
         str(out_path),
     ]
@@ -229,8 +205,7 @@ def concat_clips(clip_paths: list[Path], out_path: Path):
     try:
         cmd = [
             "ffmpeg", "-y",
-            "-f", "concat",
-            "-safe", "0",
+            "-f", "concat", "-safe", "0",
             "-i", list_file,
             "-c", "copy",
             str(out_path),
@@ -243,7 +218,12 @@ def concat_clips(clip_paths: list[Path], out_path: Path):
 
 
 def add_bgm(video_path: Path, out_path: Path) -> bool:
-    """BGMを動画にミックス（ニュース系と同じ方法: amix weights=1 BGM_VOL）"""
+    """BGMを動画にミックス。
+
+    amix=duration=first のみ使用し、apadは不要。
+    first（ナレーション側）が終わった時点で出力終了するため
+    duration計算なしに正確な長さが得られる。
+    """
     bgm_files = sorted(
         glob.glob("assets/bgm/*.mp3") + glob.glob("assets/bgm/*.m4a")
     )
@@ -253,19 +233,16 @@ def add_bgm(video_path: Path, out_path: Path) -> bool:
     bgm_path = random.choice(bgm_files)
     print(f"  BGM: {Path(bgm_path).name} (vol={BGM_VOL})")
 
-    total_dur = get_audio_duration(video_path)
     cmd = [
         "ffmpeg", "-y",
         "-i", str(video_path),
         "-stream_loop", "-1", "-i", bgm_path,
         "-filter_complex",
-        f"[0:a]apad=whole_dur={total_dur:.3f}[narr];"
-        f"[narr][1:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]",
+        f"[0:a][1:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]",
         "-map", "0:v",
         "-map", "[aout]",
         "-c:v", "copy",
-        "-c:a", "aac",
-        "-b:a", "192k",
+        "-c:a", "aac", "-b:a", "192k",
         str(out_path),
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -317,7 +294,6 @@ def main():
         n = q["number"]
         print(f"  Q{n} 問題クリップ（シンキングタイム{THINK_DURATION}秒）...")
 
-        # シンキングタイムクリップ（カウントダウン表示・問題文は読まない）
         q_think_clip = clips_dir / f"{n:02d}q_think.mp4"
         make_question_silence_clip(
             SLIDES_DIR / f"{n:02d}q_question.png",
@@ -326,7 +302,6 @@ def main():
         )
         clip_paths.append(q_think_clip)
 
-        # 回答クリップ
         print(f"  Q{n} 回答クリップ...")
         a_clip = clips_dir / f"{n:02d}a.mp4"
         make_clip(
