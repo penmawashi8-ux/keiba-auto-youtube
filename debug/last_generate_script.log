@@ -5,49 +5,44 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名・騎
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【フローラS予想】激荒れレースにもパターンあり？ 過去データから探るGIIフローラS ---
-[0] Gemini入力本文 431文字: '今週からは「東京・京都・福島」の3場開催に。\n\u3000重賞は、土曜日に青葉賞(GII・東京・芝2400m)。日曜日にフローラS(GII・東京・芝2000m)と、マイラーズC(GII・京都・芝1600m)が行われる。\n\u3000今回はオークスへ向けての重要'
+--- 記事[0]: 【大井・羽田盃枠順】京浜盃を制したロックターミガンは8枠13番、雲取賞覇者のリアライズグリントは2枠2番 ---
+[0] Gemini入力本文 514文字: '4月29日(水・祝)に大井競馬場で行われる羽田盃(3歳牡牝・JpnI・ダ1800m)の枠順が確定した。\n\u3000京浜盃を制したロックターミガンは8枠13番、雲取賞覇者のリアライズグリントは2枠2番に入った。\n\u3000そのほかにも、前々走でブルーバードC'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【青葉賞・レースメモ】武豊騎手24年シュガークン以来の通算4勝目で最多勝タイ ---
-[1] Gemini入力本文 351文字: '◆第33回青葉賞・G2(4月25日、東京競馬場・芝2400メートル、良)\n\t\t\t\t\u3000日本ダービートライアルの青葉賞・G2は25日、東京競馬場の芝2400メートルで18頭で争われ、武豊騎手(57)＝栗東・フリー＝騎乗のゴーイントゥスカイが中団'
+--- 記事[1]: 【京都4R・障害4歳以上未勝利】名手・石神深一騎手のラスト騎乗は7着　「少し優しいお父さんになろうと思います」 ---
+[1] Gemini入力本文 344文字: 'オジュウチョウサンとのコンビでJG1・9勝を挙げ、史上初の障害重賞完全制覇を達成したハードル界の名手・石神深一騎手＝美浦・フリー＝が、4月26日の京都4R・障害4歳以上未勝利(直線ダート2910メートル＝14頭立て)で、現役ラスト騎乗を終え'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: マイラーズCは実績馬が好成績 ローテーションに注目 ---
-[2] Gemini入力本文 342文字: '日曜京都メインはマイラーズカップ(4歳上・GII・芝1600m)。ここではレース傾向を近10回のうち、京都開催だった8回の人気別、脚質別、枠順別、ローテーション別、レース間隔別、実績別の成績から探りたい。\n\u3000人気別は1番人気が【4-2-1-'
+--- 記事[2]: 【羽田盃】「3歳ダート3冠」第1戦の枠順が確定!ロックターミガンは8枠13番からJpn1初制覇目指す　リアライズグリント ---
+[2] Gemini入力本文 363文字: '◆第71回羽田盃・Jpn1(4月29日20時5分発走、大井競馬場・ダート1800メートル)\n\t\t\t\t\u3000「3歳ダート3冠」の第1戦に出走する3歳牡馬14頭(JRA4、南関東10)の枠順が確定した。\n\t\t\t\t\u3000JRA勢では、京浜盃の覇者のロック'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -64,46 +59,37 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 265文字]: '重要な競馬ニュースをお伝えします。\n第33回青葉賞・G2は4月25日、東京競馬場の芝2400メートルで18頭で争われました。日本ダービートライアルのこのレースでは、武豊騎手騎乗のゴーイントゥスカイが中団から鮮やかに抜け出し、重賞初勝利を飾っています。ゴーイントゥスカイは2着馬のタイダルロックとともにダービー切符をつかみ取りました。武豊騎手は24年シュガークン以来となる通算4勝目を挙げ、最多勝タイを記録しています。歴代最多を更新する日本ダービー7勝目を目指す武豊騎手は、大一番へ向けて「楽しめると思います」と胸を高鳴らせました。'
-[1]  [重複除去] 265文字 → 264文字
+[2]  [Gemini生出力 235文字]: '重要な競馬ニュースをお伝えします。第71回羽田盃・Jpn1の枠順が確定しました。4月29日20時5分に大井競馬場・ダート1800メートルで発走する「3歳ダート3冠」の第1戦には、3歳牡馬14頭が出走します。内訳はJRA勢4頭、南関東勢10頭です。JRA勢では、京浜盃の覇者であるロックターミガンは8枠13番に決定しました。ロックターミガンはダートで2戦2勝を記録しており、Jpn1初制覇を目指します。また、連勝で雲取賞を制したリアライズグリントは2枠2番に決定しました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (235文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。第71回羽田盃・Jpn1の枠順が確定しました。4月29日20時5分に大井競馬場・ダート1800メートルで発走する「3歳ダート3...
+  HTTP 200
+[0]  [Gemini生出力 214文字]: '本日の競馬ニュースです。\n4月29日水曜祝日に大井競馬場で行われる羽田盃、3歳牡牝のJpnI、ダート1800mの枠順が確定しました。京浜盃を制したロックターミガンは8枠13番、雲取賞覇者のリアライズグリントは2枠2番に入っています。そのほかにも、前々走でブルーバードCを勝利したフィンガー、昨年11月のJBC2歳優駿で地方馬最先着をしたアヤサンジョウタロなどが出走を予定しています。発走予定日時は29日水曜祝日の20時5分です。'
+[0]  [重複除去] 214文字 → 213文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (213文字)
+[0]  プレビュー: 本日の競馬ニュースです。4月29日水曜祝日に大井競馬場で行われる羽田盃、3歳牡牝のJpnI、ダート1800mの枠順が確定しました。京浜盃を制したロックターミガン...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 215文字]: 'レース関連の最新情報です。今週からは東京、京都、福島の3場開催となります。重賞は、土曜日に青葉賞が東京の芝2400mで行われ、日曜日はフローラSが東京の芝2000m、そしてマイラーズCが京都の芝1600mで開催されます。このうち、オークスへ向けての重要なトライアル戦であるフローラSがピックアップされ、過去10年データを使って馬券の傾向やヒントが探られています。特に、「狙うなら2番人気馬と超人気薄？」という点が注目されています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (215文字)
-[0]  プレビュー: レース関連の最新情報です。今週からは東京、京都、福島の3場開催となります。重賞は、土曜日に青葉賞が東京の芝2400mで行われ、日曜日はフローラSが東京の芝200...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
 [1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 146文字]: '重要な競馬ニュースをお伝えします。\n第33回青葉賞・G2は25日、東京競馬場の芝2400メートルで18頭で争われ、武豊騎手(57)＝栗東・フリー＝騎乗のゴーイントゥスカイが中団から鮮やかに抜け出し重賞初Vを果たしました。2着馬のタイダルロック(三浦)とともにダービー切符をつかみ取った形です。'
-[1]  [重複除去] 146文字 → 145文字
+[1]  [Gemini生出力 219文字]: '最新情報をお届けします。4月26日の京都4R・障害4歳以上未勝利(直線ダート2910メートル＝14頭立て)において、石神深一騎手がフジフォンテ(セン7歳、美浦・粕谷昌央厩舎、父ロージズインメイ)を率いて7着となりました。オジュウチョウサンとのコンビでJG1・9勝を挙げ、史上初の障害重賞完全制覇を達成した石神深一騎手が、現役ラスト騎乗を終えました。中団から折り合いをいった上で、気迫のこもったステッキで鼓舞し続けた結果、7着となりました。'
+[1]  [redirectフィルター] 219文字 → 207文字
 [1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (145文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。第33回青葉賞・G2は25日、東京競馬場の芝2400メートルで18頭で争われ、武豊騎手(57)＝栗東・フリー＝騎乗のゴーイント...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[2]  [Gemini生出力 232文字]: '今日の競馬情報です。日曜日に京都メインで行われたマイラーズカップ（4歳上・GII・芝1600m）について報じます。レース傾向を分析するため、近10回のうち京都開催が8回にのぼる人気別、脚質別、枠順別、ローテーション別、レース間隔別、実績別の成績を調査しました。人気別では1番人気が4勝4回と非常に堅実で、上位人気馬は全て上々の成績を残しています。一方、8番人気以下は3着が1回のみと、かなり堅いレースと言える状況でした。脚質別と枠順別には目立った偏りはありません。'
-[2]  ファクトチェック: SKIPPED(gemma)
-[2]  → output/script_2.txt 保存 (232文字)
-[2]  プレビュー: 今日の競馬情報です。日曜日に京都メインで行われたマイラーズカップ（4歳上・GII・芝1600m）について報じます。レース傾向を分析するため、近10回のうち京都開...
+[1]  → output/script_1.txt 保存 (207文字)
+[1]  プレビュー: 4月26日の京都4R・障害4歳以上未勝利(直線ダート2910メートル＝14頭立て)において、石神深一騎手がフジフォンテ(セン7歳、美浦・粕谷昌央厩舎、父ロージズ...
 
 3 件の脚本を生成しました。
