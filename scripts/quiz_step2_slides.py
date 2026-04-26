@@ -81,7 +81,7 @@ def draw_choice_box(ax, x, y, w, h, label, text, bg, border, fontsize=26):
             color=WHITE, fontsize=fontsize, zorder=7)
 
 
-def make_question_slide(q: dict, out_path: Path):
+def make_question_slide(q: dict, out_path: Path, clue_header: str = "G1 勝利歴"):
     fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI)
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
@@ -105,7 +105,7 @@ def make_question_slide(q: dict, out_path: Path):
         facecolor=CLUE_BG, edgecolor=ACCENT, linewidth=1.5,
         zorder=2,
     ))
-    ax.text(0.5, 0.81, "G1 勝利歴", ha="center", va="center",
+    ax.text(0.5, 0.81, clue_header, ha="center", va="center",
             color=ACCENT, fontsize=34, fontweight="bold", zorder=3)
 
     # 2列に分割
@@ -277,13 +277,14 @@ def main():
 
     questions = quiz.get("questions", [])
     title = quiz.get("title", "名馬当てクイズ！この馬は誰？")
+    clue_header = quiz.get("clue_header", "G1 勝利歴")
 
     print("タイトルスライド生成中...")
     make_title_slide(title, OUTPUT_DIR / "00_title.png")
 
     for q in questions:
         print(f"Q{q['number']} スライド生成中...")
-        make_question_slide(q, OUTPUT_DIR / f"{q['number']:02d}q_question.png")
+        make_question_slide(q, OUTPUT_DIR / f"{q['number']:02d}q_question.png", clue_header)
         make_answer_slide(q, OUTPUT_DIR / f"{q['number']:02d}a_answer.png")
 
     print("結果スライド生成中...")
