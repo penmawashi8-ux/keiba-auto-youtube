@@ -49,16 +49,25 @@ def find_noto_font() -> str | None:
     return None
 
 
-async def synthesize_one(text: str, voice: str, out_path: Path):
+async def synthesize_one(text: str, voice: str, out_path: Path, sem: asyncio.Semaphore):
     import edge_tts
-    communicate = edge_tts.Communicate(text, voice, volume=TTS_VOLUME)
-    await communicate.save(str(out_path))
+    for attempt in range(4):
+        try:
+            async with sem:
+                communicate = edge_tts.Communicate(text, voice, volume=TTS_VOLUME)
+                await communicate.save(str(out_path))
+            return
+        except Exception as e:
+            if attempt == 3:
+                raise
+            await asyncio.sleep(2 ** attempt)
 
 
 async def synthesize_all(quiz: dict):
     """全問の TTS を並列生成（シングルパート・マルチパート両対応）"""
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
 
+    sem = asyncio.Semaphore(5)  # edge-tts の同時接続数を制限してレート制限エラーを防ぐ
     tasks = []
     paths = []
 
@@ -71,7 +80,7 @@ async def synthesize_all(quiz: dict):
             f"名馬当てクイズ、スタートです！"
             f"重賞勝利歴のヒントから名馬を当ててください。"
             f"全{total_q}問、3つのパートに分かれています。制限時間は各15秒！さあ、挑戦してみましょう！",
-            TTS_VOICE, title_audio
+            TTS_VOICE, title_audio, sem
         ))
         paths.append(("title", title_audio))
 
@@ -83,13 +92,13 @@ async def synthesize_all(quiz: dict):
             part_audio = AUDIO_DIR / f"p{pn:02d}_00_intro.mp3"
             tasks.append(synthesize_one(
                 f"第{pn}パート、{pt}です！全{len(questions)}問、制限時間は15秒！",
-                TTS_VOICE, part_audio
+                TTS_VOICE, part_audio, sem
             ))
             paths.append((f"p{pn}_intro", part_audio))
 
             for q in questions:
                 a_audio = AUDIO_DIR / f"p{pn:02d}_{q['number']:02d}a.mp3"
-                tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
+                tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio, sem))
                 paths.append((f"p{pn}_q{q['number']}_answer", a_audio))
 
     else:
@@ -99,19 +108,19 @@ async def synthesize_all(quiz: dict):
             f"名馬当てクイズ、スタートです！"
             f"G1の勝利歴ヒントから名馬を当ててください。"
             f"全{total_q}問、制限時間は15秒！さあ、挑戦してみましょう！",
-            TTS_VOICE, title_audio
+            TTS_VOICE, title_audio, sem
         ))
         paths.append(("title", title_audio))
 
         for q in quiz["questions"]:
             a_audio = AUDIO_DIR / f"{q['number']:02d}a.mp3"
-            tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio))
+            tasks.append(synthesize_one(q["tts_answer"], TTS_VOICE, a_audio, sem))
             paths.append((f"q{q['number']}_answer", a_audio))
 
     result_audio = AUDIO_DIR / "99_result.mp3"
     tasks.append(synthesize_one(
         "全問終了です！いくつ正解できましたか？チャンネル登録と高評価もよろしくお願いします！次回もお楽しみに！",
-        TTS_VOICE, result_audio
+        TTS_VOICE, result_audio, sem
     ))
     paths.append(("result", result_audio))
 
