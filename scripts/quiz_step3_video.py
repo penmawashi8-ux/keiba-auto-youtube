@@ -6,6 +6,7 @@ import glob
 import json
 import os
 import random
+import re
 import subprocess
 import sys
 import tempfile
@@ -32,6 +33,23 @@ BGM_VOL = 0.12
 FPS = 30
 WIDTH = 1920
 HEIGHT = 1080
+
+
+def get_audio_duration(audio_path: Path) -> float:
+    """MP3の正確な再生時間を取得（VBR誤メタデータ回避）"""
+    try:
+        from mutagen.mp3 import MP3
+        return MP3(str(audio_path)).info.length
+    except Exception:
+        pass
+    result = subprocess.run(
+        ["ffmpeg", "-i", str(audio_path)], capture_output=True, text=True
+    )
+    m = re.search(r"Duration:\s*(\d+):(\d+):([\d.]+)", result.stderr)
+    if m:
+        h, mi, s = int(m.group(1)), int(m.group(2)), float(m.group(3))
+        return h * 3600 + mi * 60 + s
+    return 30.0
 
 
 def find_noto_font() -> str | None:
@@ -95,8 +113,8 @@ async def synthesize_all(quiz: dict):
 def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_path: Path):
     """スライド画像 + 音声から動画クリップを生成。
 
-    apad=pad_dur + -shortest を使うことで、edge-tts MP3 の duration メタデータの
-    誤値（VBR推測値）に依存せず正確なクリップ長を得る。
+    mutagen で正確な音声長を計測し -t で明示的にクリップ長を指定することで、
+    edge-tts VBR MP3 の duration メタデータ誤値に依存しない。
     """
     cmd = [
         "ffmpeg", "-y",
@@ -110,17 +128,16 @@ def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_
     )
 
     if audio_path and audio_path.exists():
+        audio_dur = get_audio_duration(audio_path)
+        total_dur = audio_dur + extra_secs
         cmd += ["-i", str(audio_path)]
         cmd += [
             "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
             "-pix_fmt", "yuv420p",
             "-vf", scale_vf,
             "-c:a", "aac", "-b:a", "128k",
-            # apad=pad_dur で音声末尾に extra_secs の無音を追加し、
-            # -shortest でその終端に合わせて映像を停止する。
-            # duration計算不要なため VBR MP3の誤duration問題を完全回避。
-            "-af", f"apad=pad_dur={extra_secs}",
-            "-shortest",
+            "-af", f"apad=whole_dur={total_dur:.3f}",
+            "-t", f"{total_dur:.3f}",
         ]
     else:
         cmd += [
