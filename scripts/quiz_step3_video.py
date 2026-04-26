@@ -6,6 +6,7 @@ import glob
 import json
 import os
 import random
+import re
 import subprocess
 import sys
 import tempfile
@@ -34,6 +35,32 @@ WIDTH = 1920
 HEIGHT = 1080
 
 
+_RACING_TERM_RE = [
+    (re.compile(r'GIII|GⅢ'), 'ジースリー'),
+    (re.compile(r'GII|GⅡ'), 'ジーツー'),
+    (re.compile(r'GI|GⅠ'), 'ジーワン'),
+    (re.compile(r'G3'), 'ジースリー'),
+    (re.compile(r'G2'), 'ジーツー'),
+    (re.compile(r'G1'), 'ジーワン'),
+]
+
+_readings_cache: dict | None = None
+
+
+def _apply_readings(text: str) -> str:
+    global _readings_cache
+    if _readings_cache is None:
+        p = Path("data/readings.json")
+        _readings_cache = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    for kanji in sorted(_readings_cache, key=len, reverse=True):
+        reading = _readings_cache[kanji]
+        if isinstance(reading, str) and kanji in text:
+            text = text.replace(kanji, reading)
+    for pattern, repl in _RACING_TERM_RE:
+        text = pattern.sub(repl, text)
+    return text
+
+
 def find_noto_font() -> str | None:
     candidates = [
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -51,6 +78,7 @@ def find_noto_font() -> str | None:
 
 async def synthesize_one(text: str, voice: str, out_path: Path, sem: asyncio.Semaphore):
     import edge_tts
+    text = _apply_readings(text)
     for attempt in range(4):
         try:
             async with sem:
