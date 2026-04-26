@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       quiz_file:
-        description: '使用するクイズファイル (例: quizzes/quiz_90s_easy.json)。空欄なら Claude API で自動生成'
+        description: '使用するクイズファイル (例: quizzes/quiz_90s_all.json / quizzes/quiz_90s_easy.json)。空欄なら Claude API で自動生成'
         required: false
         default: ''
         type: string
