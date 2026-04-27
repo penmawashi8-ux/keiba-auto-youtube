@@ -1,10 +1,10 @@
-date: 2026-04-27T04:46:32.796951Z
+date: 2026-04-27T06:07:51.719909Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t2RIpa07lNs title=【天皇賞(春)想定騎手】ヘデントールはC.ルメール騎手、クロワデュノールは北村友
-OK project=1 video_id=yZl2_ef4yPU title=KYダービー出走のダノンバーボンが軽めの調整 現地環境へも順応
-OK project=1 video_id=R2eJN7QeA5s title=【天皇賞・春】転厩2戦目の慣れ大きいスティンガーグラスは落ち着き十分　陣営「うち
+OK project=1 video_id=iclLL6M_Wf8 title=【ユニコーンS想定騎手】シルバーレシオは岩田望来騎手、メルカントゥールは川田将雅
+OK project=1 video_id=veDNxqOHo8Y title=【京王杯SC想定騎手】ファンダムはC.ルメール騎手、ダノンセンチュリーはD.レー
+OK project=1 video_id=6WWHqGQnUCk title=【天皇賞・春】アドマイヤテラは武豊騎手×アドマイヤで2週連続重賞Vへ　陣営「スピ
