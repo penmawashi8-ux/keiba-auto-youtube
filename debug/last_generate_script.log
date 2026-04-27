@@ -5,15 +5,16 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
@@ -22,20 +23,20 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【ユニコーンS想定騎手】シルバーレシオは岩田望来騎手、メルカントゥールは川田将雅騎手 ---
-[0] Gemini入力本文 340文字: '5月2日に京都競馬場で行われる、第31回ユニコーンステークス(3歳・GIII・ダ1900m)の登録馬・想定騎手は以下の通り。\n\u3000ダートでは掲示板を外していないシルバーレシオ(牡3、栗東・野中賢二厩舎)は岩田望来騎手、1勝クラスを圧勝したメル'
+--- 記事[0]: 【地方競馬】兵庫所属のオディロンの次走は５月４日の名古屋グランプリ ---
+[0] Gemini入力本文 331文字: '「競馬記者コラム\u3000仕事\u3000賭け事\u3000独り言」\n\u3000４月１８日のアンタレスステークス・Ｊｐｎ１（阪神）まで、今年のダートグレードは１６レースが実施されたが、地方所属馬で勝ったのは兵庫のオディロンだけ。３月１１日に船橋のダイオライト記念・Ｊｐｎ２を７'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【京王杯SC想定騎手】ファンダムはC.ルメール騎手、ダノンセンチュリーはD.レーン騎手 ---
-[1] Gemini入力本文 345文字: '5月2日に東京競馬場で行われる、第71回京王杯スプリングカップ(4歳上・GII・芝1400m)の登録馬・想定騎手は以下の通り。\n\u3000オーシャンS12着からの巻き返しを期すファンダム(牡4、美浦・辻哲英厩舎)はC.ルメール騎手、3連勝でOPに上'
+--- 記事[1]: 【天皇賞・春】クロワデュノールは攻めの調教で上昇ムード　陣営「上積みを加えて出せると思います」 ---
+[1] Gemini入力本文 357文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月27日、栗東トレセン\n\t\t\t\t\u3000大阪杯に続くG1連勝を狙うクロワデュノール(牡4歳、栗東・斉藤崇史厩舎、父キタサンブラック)が戦闘モードを取り戻しつつある。22日'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【天皇賞・春】アドマイヤテラは武豊騎手×アドマイヤで2週連続重賞Vへ　陣営「スピードの乗り方が良くなった」 ---
-[2] Gemini入力本文 349文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月27日、栗東トレセン\n\t\t\t\t\u3000アドマイヤテラ(牡5歳、栗東・友道康夫厩舎、父レイデオロ)は前走の阪神大賞典からの連勝を狙う。前走は3分2秒0のレコード決着で、後'
+--- 記事[2]: 【大井・東京プリンセス賞枠順】6連勝中のアンジュルナは6枠7番 ---
+[2] Gemini入力本文 347文字: '4月30日(木)に大井競馬場で行われる東京プリンセス賞(3歳牝・SI・ダ1800m)の枠順が確定した。\n\u30006連勝中のアンジュルナは6枠7番、桜花賞(浦和)の2着馬ブレイズエッジは3枠3番に入った。\n\u3000そのほかにも、暮れの東京2歳優駿牝馬で2'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -52,25 +53,31 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 183文字]: '競馬速報です。5月2日に東京競馬場で行われる第71回京王杯スプリングカップ、4歳以上、GII、芝1400mの登録馬と想定騎手が発表されました。オーシャンS12着からの巻き返しを期すファンダムはC.ルメール騎手、3連勝でオープンに上がってきたダノンセンチュリーはD.レーン騎手が想定されています。これらの情報は主に先週までの取材によるもので、変更の可能性もございます。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (183文字)
-[1]  プレビュー: 競馬速報です。5月2日に東京競馬場で行われる第71回京王杯スプリングカップ、4歳以上、GII、芝1400mの登録馬と想定騎手が発表されました。オーシャンS12着...
+[1]  [Gemini生出力 241文字]: '重要な競馬ニュースをお伝えします。第173回天皇賞・春・G1に出走予定のクロワデュノールの最新情報です。4月27日、栗東トレセンにて、大阪杯に続くG1連勝を狙うクロワデュノールは戦闘モードを取り戻しつつあります。22日にはCWコースで大外から追走する3頭併せで負荷をかけ、26日にも団野大成騎手の騎乗で併せ馬を行いました。この併せ馬ではCWコースで4ハロン55秒9―11秒5をマークしています。陣営は「上積みを加えて出せると思います」とコメントしており、攻めの調教で上昇ムードです。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (241文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。第173回天皇賞・春・G1に出走予定のクロワデュノールの最新情報です。4月27日、栗東トレセンにて、大阪杯に続くG1連勝を狙う...
   HTTP 200
-[0]  [Gemini生出力 201文字]: '重要な競馬ニュースをお伝えします。\n5月2日に京都競馬場で行われる、第31回ユニコーンステークス、3歳・GIII・ダート1900mの想定騎手に関する情報です。ダートでは掲示板を外していないシルバーレシオには岩田望来騎手が想定されています。また、1勝クラスを圧勝したメルカントゥールには川田将雅騎手が想定されています。これらの想定騎手情報は、主に先週までの取材によるものであり、変更の可能性がございます。'
-[0]  [重複除去] 201文字 → 200文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (200文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。5月2日に京都競馬場で行われる、第31回ユニコーンステークス、3歳・GIII・ダート1900mの想定騎手に関する情報です。ダー...
+[2]  [Gemini生出力 212文字]: 'レース関連の最新情報です。4月30日(木)に大井競馬場で行われる東京プリンセス賞(3歳牝・SI・ダ1800m)の枠順が確定しました。6連勝中のアンジュルナは6枠7番、桜花賞(浦和)の2着馬ブレイズエッジは3枠3番に入っています。そのほかにも、暮れの東京2歳優駿牝馬で2着に入ったナーサリーテイル、同じ大井ダ1800mのアザレア特別を勝利したヘスペリスなどが出走を予定しています。発走予定日時は30日(木)の20時10分です。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (212文字)
+[2]  プレビュー: レース関連の最新情報です。4月30日(木)に大井競馬場で行われる東京プリンセス賞(3歳牝・SI・ダ1800m)の枠順が確定しました。6連勝中のアンジュルナは6枠...
   HTTP 200
-[2]  [Gemini生出力 182文字]: '競馬速報です。\n第173回天皇賞・春・G1に出走予定のアドマイヤテラは、前走の阪神大賞典からの連勝を狙います。前走の阪神大賞典は3分2秒0のレコード決着で、後続に3馬身差の快勝でした。速い時計にもしっかりと対応しています。大江助手は、スピードの乗り方が良くなったと口にしています。また、調教でもしまいの脚を使えており、パワーアップしているのを感じると話しています。'
-[2]  [重複除去] 182文字 → 181文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (181文字)
-[2]  プレビュー: 競馬速報です。第173回天皇賞・春・G1に出走予定のアドマイヤテラは、前走の阪神大賞典からの連勝を狙います。前走の阪神大賞典は3分2秒0のレコード決着で、後続に...
+[0]  [Gemini生出力 228文字]: '重要な競馬ニュースをお伝えします。兵庫所属のオディロンの次走は、５月４日に開催される名古屋グランプリ・Jpn２（名古屋）に決定しました。今年のダートグレードは４月１８日のアンタレスステークス・Jpn１（阪神）まで１６レースが実施されていますが、地方所属馬で勝利を収めたのは兵庫のオディロンだけです。オディロンは３月１１日の船橋のダイオライト記念・Jpn２を７番人気で制覇しました。この勝利は、兵庫所属馬によるダートグレード優勝としては通算８頭目となります。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (228文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。兵庫所属のオディロンの次走は、５月４日に開催される名古屋グランプリ・Jpn２（名古屋）に決定しました。今年のダートグレードは４...
 
 3 件の脚本を生成しました。
