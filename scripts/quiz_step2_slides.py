@@ -250,9 +250,9 @@ def make_answer_slide(q: dict, out_path: Path, part_title: str = ""):
 
     # 正解ラベル（「正解は」を小さく、馬名を大きく）
     ax.text(0.50, 0.842, "正解は", ha="center", va="center",
-            color=GRAY, fontsize=28)
+            color=GRAY, fontsize=26)
     ax.text(0.50, 0.802, f"{correct_label}.  {correct_name}！", ha="center", va="center",
-            color=CORRECT_BORDER, fontsize=58, fontweight="bold")
+            color=CORRECT_BORDER, fontsize=44, fontweight="bold")
 
     # 4択（正解=緑、不正解=暗赤色）
     box_h = 0.105
