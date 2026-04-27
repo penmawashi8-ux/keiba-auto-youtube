@@ -7,55 +7,41 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 「CL by C.ルメール」がポップアップストアを開催 福岡・大阪にて ---
-[0] Gemini入力本文 345文字: 'C.ルメール騎手がプロデュースするアパレルブランド「CL by C.ルメール」は福岡、大阪でポップアップストアを開催する。同騎手が今年1月に小倉牝馬Sを制し、史上8人目のJRA全10競馬場での重賞制覇を達成したことを受け、福岡のポップアップ'
+--- 記事[0]: 武豊展が銀座で２８日から開催「（デビュー）４０年はあっという間」　特別ムービーで声優初挑戦「最近は声優をしたり、ドラマで ---
+[0] Gemini入力本文 331文字: '競馬界のレジェンド・武豊騎手（５７）＝栗東・フリー＝が２７日、自身の騎手生活４０周年を記念した特別展「武豊デビュー４０年〜前人未到の記録〜」（４月２８日〜６月１５日まで、東京・銀座三越で開催）のプレス内覧会に出席した。\n\u3000１９８７年にデビュ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【地方競馬】「純烈」リーダー・酒井一圭の愛馬サカイワンパクオーが大井競馬で初陣Ｖ ---
-[1] Gemini入力本文 331文字: '歌謡コーラスグループ「純烈」のリーダー・酒井一圭の愛馬サカイワンパクオー（牡３歳、大井・渡辺和）が２７日の大井競馬４Ｒで初陣Ｖを決めた。雨＆不良馬場の中、好スタートから主導権を握ると、直線では５３３キロの巨体を揺らせて後続に４馬身差。単勝１'
+--- 記事[1]: 【天皇賞・春・超ブル診断ステップレース編】非の打ちどころがない勝ちっぷりだった一頭が個別評価最高「G」 ---
+[1] Gemini入力本文 519文字: 'ベテラン・中野達哉記者が「超ブル診断」ステップレース編で前哨戦3鞍を徹底分析。注目したのは…。\n\t\t\t\t\u3000【阪神大賞典＝レース評価A】出走馬で重賞勝ち馬は3頭のみ。2、3番人気は上り馬のダノンシーマと格上挑戦のレッドバンデの4歳勢。決して、'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
 --- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【ケンタッキーダービー】無傷3連勝中の米国産馬ダノンバーボン　故郷で勝利の美酒を　池添調教師「米国の競馬の流れ合うと思っ ---
-[2] Gemini入力本文 346文字: '◆第152回ケンタッキーダービー・G1(日本時間5月3日朝7時57分、米国チャーチルダウンズ競馬場・ダート2000メートル)\n\t\t\t\t\u3000故郷に錦を飾るべく、決戦の地へ。米国産馬ダノンバーボン(牡3歳、栗東・池添学厩舎、父マックスフィールド)'
+--- 記事[2]: 【天皇賞・春】大阪杯4着健闘のタガノデュードは距離の壁に挑戦　陣営「心肺機能は高い馬なので」 ---
+[2] Gemini入力本文 347文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月27日、栗東トレセン\n\t\t\t\t\u3000タガノデュード(牡5歳、栗東・宮徹厩舎、父ヤマカツエース)は大阪杯で4着と健闘。直線では内の馬群をのみ込むような勢いで脚を伸ばし、'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -73,58 +59,38 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[1]  [Gemini生出力 293文字]: '競馬ファン注目の情報です。ベテラン・中野達哉記者が「超ブル診断」ステップレース編で前哨戦3鞍を徹底分析しました。阪神大賞典はレース評価Aとされ、出走馬で重賞勝ち馬は3頭のみでした。2番人気と3番人気は上り馬のダノンシーマと格上挑戦のレッドバンデの4歳勢でした。武豊騎手騎乗のアドマイヤテラは直線抜け出し、レコードタイムで完勝。アドマイヤテラの勝ちっぷりは文句なしで、3200メートルのG1の前哨戦としては非の打ちどころがないと評価されています。また、昨年の覇者ヘデントールが天皇賞(春)で復権を狙っており、C.ルメール騎手がヘデントールで天皇賞(春)の4勝目なるかにも注目が集まります。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (293文字)
+[1]  プレビュー: 競馬ファン注目の情報です。ベテラン・中野達哉記者が「超ブル診断」ステップレース編で前哨戦3鞍を徹底分析しました。阪神大賞典はレース評価Aとされ、出走馬で重賞勝ち...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
+  HTTP 200
+[0]  [Gemini生出力 283文字]: '最新のレース情報が入ってきました。\n競馬界のレジェンドである武豊騎手が、自身の騎手生活４０周年を記念した特別展「武豊デビュー４０年〜前人未到の記録〜」のプレス内覧会に２７日、出席しました。この特別展は、４月２８日から６月１５日まで東京・銀座三越で開催されます。１９８７年にデビューし、ＪＲＡ通算４６５２勝、うちＧ１・８４勝を誇る武豊騎手は、「４０年は気がつけばあっという間でした。まさか自分の展示会が銀座三越で開かれるとは」と語りました。また、特別ムービーでは声優に初挑戦し、「最近は声優をしたり、ドラマで演じたり、いろんなことをやっています」とコメントしています。'
+[0]  [重複除去] 283文字 → 282文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (282文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。競馬界のレジェンドである武豊騎手が、自身の騎手生活４０周年を記念した特別展「武豊デビュー４０年〜前人未到の記録〜」のプレス内覧...
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 185文字]: '今日の競馬情報です。第152回ケンタッキーダービー・G1が、日本時間5月3日朝7時57分に米国チャーチルダウンズ競馬場で行われました。米国産馬ダノンバーボン(牡3歳、栗東・池添学厩舎、父マックスフィールド)が、デビューから無敗で3連勝を続けています。池添調教師は、馬体は素晴らしいものの、デビュー前は緩かったとコメントし、今後の活躍に不安を抱いているとも語られています。'
+[2]  [Gemini生出力 204文字]: '今日の競馬情報です。\n第173回天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）において、タガノデュード（牡5歳、栗東・宮徹厩舎、父ヤマカツエース）は大阪杯で4着と健闘。直線では内の馬群をのみ込むような勢いで脚を伸ばし、充実ぶりを感じさせた。大村助手は「いい勝負になるかなという気持ちはありましたが、十分すぎる内容ですよ」と満足そうに口にする。今回は距離が一気に延びるため、その対応がカギを握る。'
+[2]  [重複除去] 182文字 → 181文字
 [2]  ファクトチェック: SKIPPED(gemma)
-[2]  → output/script_2.txt 保存 (160文字)
-[2]  プレビュー: 今日の競馬情報です。第152回ケンタッキーダービー・G1が、日本時間5月3日朝7時57分に米国チャーチルダウンズ競馬場で行われました。米国産馬ダノンバーボンが、...
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[0]  [Gemini生出力 216文字]: '競馬速報です。C.ルメール騎手がプロデュースするアパレルブランド「CL by C.ルメール」は福岡、大阪でポップアップストアを開催する。同騎手が今年1月に小倉牝馬Sを制し、史上8人目のJRA全10競馬場での重賞制覇を達成したことを受け、福岡のポップアップでは小倉競馬場に関連した特別展示も実施する。また、29日(水)、30日(木)にはサイン会も実施していた。今回の出店では、日本国内で生産された40点以上のコレクションが展示される。'
-[0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (216文字)
-[0]  プレビュー: 競馬速報です。C.ルメール騎手がプロデュースするアパレルブランド「CL by C.ルメール」は福岡、大阪でポップアップストアを開催する。同騎手が今年1月に小倉牝...
-  HTTP 200
-[1]  [Gemini生出力 192文字]: '今日の競馬情報です。２７日、大井競馬４Ｒで、歌謡コーラスグループ「純烈」のリーダー・酒井一圭の愛馬サカイワンパクオー（牡３歳、大井・渡辺和）が初陣Ｖを果たしました。雨＆不良馬場の中、好スタートから主導権を握り、直線では５３３キロの巨体を揺らせて後続に４馬身差をつけて勝利しました。単勝１・９倍の１番人気に応え、酒井一圭は「和田ジョッキーもうまく乗ってくれました」とコメントしています。'
-[1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (180文字)
-[1]  プレビュー: 今日の競馬情報です。２７日、大井競馬４Ｒで、歌謡コーラスグループ「純烈」のリーダー・酒井一圭の愛馬サカイワンパクオーが初陣Ｖを果たしました。雨＆不良馬場の中、好...
+[2]  → output/script_2.txt 保存 (181文字)
+[2]  プレビュー: 今日の競馬情報です。第173回天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）において、タガノデュードは大阪杯で4着と健闘。直線では内の馬群をのみ込...
 
 3 件の脚本を生成しました。
