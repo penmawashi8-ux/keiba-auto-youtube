@@ -1,10 +1,10 @@
-date: 2026-04-27T11:20:55.890523Z
+date: 2026-04-27T12:33:29.972808Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=l2_qIGD0HeI title=「CL by C.ルメール」がポップアップストアを開催 福岡・大阪にて
-OK project=1 video_id=-Lo_Eb-tPMM title=【地方競馬】「純烈」リーダー・酒井一圭の愛馬サカイワンパクオーが大井競馬で初陣Ｖ
-OK project=1 video_id=LRFD_s2415c title=【ケンタッキーダービー】無傷3連勝中の米国産馬ダノンバーボン　故郷で勝利の美酒を
+OK project=1 video_id=gbfvyUOxU5k title=武豊展が銀座で２８日から開催「（デビュー）４０年はあっという間」　特別ムービーで
+OK project=1 video_id=zvCFJsVRovM title=【天皇賞・春・超ブル診断ステップレース編】非の打ちどころがない勝ちっぷりだった一
+OK project=1 video_id=qu5fO4EhWl4 title=【天皇賞・春】大阪杯4着健闘のタガノデュードは距離の壁に挑戦　陣営「心肺機能は高
