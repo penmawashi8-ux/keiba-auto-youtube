@@ -1,10 +1,10 @@
-date: 2026-04-26T10:08:16.133075Z
+date: 2026-04-27T00:08:36.423924Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KMF0ZQO0ZrM title=【フローラSレース後コメント】ラフターラインズ D.レーン騎手ら
-OK project=1 video_id=63vHU_hJ8dE title=【チェアマンズSPレース後コメント】サトノレーヴ J.モレイラ騎手
-OK project=1 video_id=-qIFSl7CgEg title=【比良山特別レース後コメント】オメガナビゲーター鮫島克駿騎手ら
+OK project=1 video_id=o3QBcTABtX8 title=クロワデュノールが19年ぶり戴冠へ 春の盾を彩った日本ダービー馬の走りを回想
+OK project=1 video_id=3BmUSejQ8wU title=【ユニコーンS展望】杉山晴厩舎の秘蔵っ子メルカントゥールが重賞勝ちへ　ケイアイア
+OK project=1 video_id=IEchVAKt__c title=【フローラS・レースメモ】ダミアン・レーン騎手が22年から5年連続で重賞勝利
