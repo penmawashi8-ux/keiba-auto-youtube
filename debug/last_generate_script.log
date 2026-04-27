@@ -5,38 +5,53 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【地方競馬】兵庫所属のオディロンの次走は５月４日の名古屋グランプリ ---
-[0] Gemini入力本文 331文字: '「競馬記者コラム\u3000仕事\u3000賭け事\u3000独り言」\n\u3000４月１８日のアンタレスステークス・Ｊｐｎ１（阪神）まで、今年のダートグレードは１６レースが実施されたが、地方所属馬で勝ったのは兵庫のオディロンだけ。３月１１日に船橋のダイオライト記念・Ｊｐｎ２を７'
+--- 記事[0]: 「地元というと応援したくなる」 風吹ケイさんが語る羽田盃の注目馬 ---
+[0] Gemini入力本文 336文字: '4月29日(水・祝)に大井競馬場で行われる、3歳ダート三冠競走の第一弾・羽田盃(JpnI)まであと2日。今回はタレントかつ、佐久間宣行プロデュースのアイドルグループの一員でもある風吹ケイさんに、羽田盃の注目馬について聞いた。\n\u3000競馬はまだま'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【天皇賞・春】クロワデュノールは攻めの調教で上昇ムード　陣営「上積みを加えて出せると思います」 ---
-[1] Gemini入力本文 357文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月27日、栗東トレセン\n\t\t\t\t\u3000大阪杯に続くG1連勝を狙うクロワデュノール(牡4歳、栗東・斉藤崇史厩舎、父キタサンブラック)が戦闘モードを取り戻しつつある。22日'
+--- 記事[1]: 「令和の盾男」C.ルメール騎手 ヘデントールで天皇賞(春)の4勝目なるか ---
+[1] Gemini入力本文 347文字: '「令和の盾男」ことC.ルメール騎手が、ヘデントール(牡5、美浦・木村哲也厩舎)で天皇賞(春)(4歳上・GI・芝3200m)の3年ぶり4勝目を狙う。\n\u3000ルメール騎手はこれまで天皇賞(春)に9回騎乗。19年にフィエールマンで初制覇すると、20年'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【大井・東京プリンセス賞枠順】6連勝中のアンジュルナは6枠7番 ---
-[2] Gemini入力本文 347文字: '4月30日(木)に大井競馬場で行われる東京プリンセス賞(3歳牝・SI・ダ1800m)の枠順が確定した。\n\u30006連勝中のアンジュルナは6枠7番、桜花賞(浦和)の2着馬ブレイズエッジは3枠3番に入った。\n\u3000そのほかにも、暮れの東京2歳優駿牝馬で2'
+--- 記事[2]: 「純烈」酒井一圭の愛馬サカイワンパクオーがデビュー勝ち　4馬身差の逃げ切り勝ちに「本当に夢がかないました」　共同馬主は前 ---
+[2] Gemini入力本文 338文字: '人気ムード歌謡グループ『純烈』のリーダー、酒井一圭がオーナーのサカイワンパクオー(牡3歳、大井・渡辺和厩舎所属)が、27日の大井4Rでデビュー戦を迎え、4馬身差で逃げ切り勝ちを決めた。\n\t\t\t\t\u3000うれしい勝利に酒井は「オグリキャップ世代で、'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -53,31 +68,59 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 200
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 336文字）
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  HTTP 429
+  HTTP 503
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 241文字]: '重要な競馬ニュースをお伝えします。第173回天皇賞・春・G1に出走予定のクロワデュノールの最新情報です。4月27日、栗東トレセンにて、大阪杯に続くG1連勝を狙うクロワデュノールは戦闘モードを取り戻しつつあります。22日にはCWコースで大外から追走する3頭併せで負荷をかけ、26日にも団野大成騎手の騎乗で併せ馬を行いました。この併せ馬ではCWコースで4ハロン55秒9―11秒5をマークしています。陣営は「上積みを加えて出せると思います」とコメントしており、攻めの調教で上昇ムードです。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (241文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。第173回天皇賞・春・G1に出走予定のクロワデュノールの最新情報です。4月27日、栗東トレセンにて、大阪杯に続くG1連勝を狙う...
+[0]  [Gemini生出力 184文字]: '今日の競馬情報です。4月29日(水・祝)に大井競馬場で行われる、3歳ダート三冠競走の第一弾・羽田盃(JpnI)まであと2日。タレントかつ、佐久間宣行プロデュースのアイドルグループの一員でもある風吹ケイさんが、羽田盃の注目馬について語りました。風吹さんは競馬はまだ初心者で、自分の予想は確立できていないと話しており、基本的には解説者の意見を信じて馬券を買うとのことです。'
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (184文字)
+[0]  プレビュー: 今日の競馬情報です。4月29日(水・祝)に大井競馬場で行われる、3歳ダート三冠競走の第一弾・羽田盃(JpnI)まであと2日。タレントかつ、佐久間宣行プロデュース...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 212文字]: 'レース関連の最新情報です。4月30日(木)に大井競馬場で行われる東京プリンセス賞(3歳牝・SI・ダ1800m)の枠順が確定しました。6連勝中のアンジュルナは6枠7番、桜花賞(浦和)の2着馬ブレイズエッジは3枠3番に入っています。そのほかにも、暮れの東京2歳優駿牝馬で2着に入ったナーサリーテイル、同じ大井ダ1800mのアザレア特別を勝利したヘスペリスなどが出走を予定しています。発走予定日時は30日(木)の20時10分です。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (212文字)
-[2]  プレビュー: レース関連の最新情報です。4月30日(木)に大井競馬場で行われる東京プリンセス賞(3歳牝・SI・ダ1800m)の枠順が確定しました。6連勝中のアンジュルナは6枠...
+[1]  [Gemini生出力 189文字]: '注目の競馬情報をお届けします。\n「令和の盾男」ことC.ルメール騎手が、ヘデントール(牡5、美浦・木村哲也厩舎)で天皇賞(春)(4歳上・GI・芝3200m)の3年ぶり4勝目を狙う。ルメール騎手はこれまで天皇賞(春)に9回騎乗し、19年にフィエールマンで初制覇、20年に同馬で連覇。さらに23年にはジャスティンパレスで制覇し、武豊騎手の7勝に次ぐ現役2位タイとなる3勝を挙げている。'
+[1]  [redirectフィルター] 189文字 → 173文字
+[1]  ファクトチェック: SKIPPED(gemma)
+[1]  → output/script_1.txt 保存 (159文字)
+[1]  プレビュー: 「令和の盾男」ことC.ルメール騎手が、ヘデントールで天皇賞(春)(4歳上・GI・芝3200m)の3年ぶり4勝目を狙う。ルメール騎手はこれまで天皇賞(春)に9回騎...
   HTTP 200
-[0]  [Gemini生出力 228文字]: '重要な競馬ニュースをお伝えします。兵庫所属のオディロンの次走は、５月４日に開催される名古屋グランプリ・Jpn２（名古屋）に決定しました。今年のダートグレードは４月１８日のアンタレスステークス・Jpn１（阪神）まで１６レースが実施されていますが、地方所属馬で勝利を収めたのは兵庫のオディロンだけです。オディロンは３月１１日の船橋のダイオライト記念・Jpn２を７番人気で制覇しました。この勝利は、兵庫所属馬によるダートグレード優勝としては通算８頭目となります。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (228文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。兵庫所属のオディロンの次走は、５月４日に開催される名古屋グランプリ・Jpn２（名古屋）に決定しました。今年のダートグレードは４...
+[2]  [Gemini生出力 218文字]: '今日の競馬情報です。\n27日、大井競馬で、人気ムード歌謡グループ『純烈』のリーダー、酒井一圭がオーナーを務めるサカイワンパクオー(牡3歳)がデビュー戦を迎え、4馬身差で逃げ切り勝ちを収めました。\n渡辺和厩舎所属で、酒井一圭は「オグリキャップ世代で、馬の仕事に就きたかったが体が大きくて。馬に関わるには馬主しかないと思った。本当に夢がかないました。いいレースをしてくれましたし、この世界に入る背中を押してくださった」とコメントしています。'
+[2]  [重複除去] 218文字 → 216文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (216文字)
+[2]  プレビュー: 今日の競馬情報です。27日、大井競馬で、人気ムード歌謡グループ『純烈』のリーダー、酒井一圭がオーナーを務めるサカイワンパクオー(牡3歳)がデビュー戦を迎え、4馬...
 
 3 件の脚本を生成しました。
