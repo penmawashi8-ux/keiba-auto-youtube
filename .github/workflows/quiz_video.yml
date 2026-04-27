@@ -6,7 +6,7 @@ on:
       quiz_file:
         description: '使用するクイズファイル (例: quizzes/quiz_90s_all.json / quizzes/quiz_90s_easy.json)。空欄なら Claude API で自動生成'
         required: false
-        default: ''
+        default: 'quizzes/quiz_90s_all.json'
         type: string
       from_step:
         description: '開始ステップ (1=全部 / 2=スライドから / 3=動画から)'
