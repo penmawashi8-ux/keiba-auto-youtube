@@ -1,20 +1,20 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (60 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (43 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: ウォッカ (key=vodka)
-  タイトル: 【名馬列伝】ウォッカ〜牝馬がダービーを勝った〜 #Shorts
+  馬名: キタサンブラック (key=kitasan_black)
+  タイトル: 【名馬列伝】キタサンブラック〜最強の盾と矛、演歌界の夢を乗せて〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】ウォッカ〜牝馬がダービーを勝った〜 #Shorts
-  進捗: 20%
-  進捗: 41%
-  進捗: 61%
-  進捗: 82%
-  完了! Video ID: RwVhIJnzT3M
-  URL: https://www.youtube.com/watch?v=RwVhIJnzT3M
-  サムネイルアップロード中: output/thumbnail_0.jpg (60 KB)
+  アップロード中: 【名馬列伝】キタサンブラック〜最強の盾と矛、演歌界の夢を乗せて〜 #Shorts
+  進捗: 21%
+  進捗: 42%
+  進捗: 64%
+  進捗: 85%
+  完了! Video ID: cl92Ois3w18
+  URL: https://www.youtube.com/watch?v=cl92Ois3w18
+  サムネイルアップロード中: output/thumbnail_0.jpg (43 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
