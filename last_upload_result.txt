@@ -1,10 +1,10 @@
-date: 2026-04-27T07:43:19.800453Z
+date: 2026-04-27T09:26:50.880233Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=D7-WxPnExE4 title=【地方競馬】兵庫所属のオディロンの次走は５月４日の名古屋グランプリ
-OK project=1 video_id=y0Jy7ThAu1g title=【天皇賞・春】クロワデュノールは攻めの調教で上昇ムード　陣営「上積みを加えて出せ
-OK project=1 video_id=uMKQJcTqOYY title=【大井・東京プリンセス賞枠順】6連勝中のアンジュルナは6枠7番
+OK project=1 video_id=16UerIbaVv4 title=「地元というと応援したくなる」 風吹ケイさんが語る羽田盃の注目馬
+OK project=1 video_id=cX8gbDqLhQg title=「令和の盾男」C.ルメール騎手 ヘデントールで天皇賞(春)の4勝目なるか
+OK project=1 video_id=pdPaqbsFQKk title=「純烈」酒井一圭の愛馬サカイワンパクオーがデビュー勝ち　4馬身差の逃げ切り勝ちに
