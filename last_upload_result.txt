@@ -1,10 +1,10 @@
-date: 2026-04-27T06:07:51.719909Z
+date: 2026-04-27T07:43:19.800453Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=iclLL6M_Wf8 title=【ユニコーンS想定騎手】シルバーレシオは岩田望来騎手、メルカントゥールは川田将雅
-OK project=1 video_id=veDNxqOHo8Y title=【京王杯SC想定騎手】ファンダムはC.ルメール騎手、ダノンセンチュリーはD.レー
-OK project=1 video_id=6WWHqGQnUCk title=【天皇賞・春】アドマイヤテラは武豊騎手×アドマイヤで2週連続重賞Vへ　陣営「スピ
+OK project=1 video_id=D7-WxPnExE4 title=【地方競馬】兵庫所属のオディロンの次走は５月４日の名古屋グランプリ
+OK project=1 video_id=y0Jy7ThAu1g title=【天皇賞・春】クロワデュノールは攻めの調教で上昇ムード　陣営「上積みを加えて出せ
+OK project=1 video_id=uMKQJcTqOYY title=【大井・東京プリンセス賞枠順】6連勝中のアンジュルナは6枠7番
