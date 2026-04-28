@@ -1,3 +1,5 @@
 anthropic>=0.28.0
 edge-tts>=6.1.9
 matplotlib>=3.8.0
+google-api-python-client>=2.100.0
+google-auth>=2.20.0
