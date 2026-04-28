@@ -1,10 +1,10 @@
-date: 2026-04-27T12:33:29.972808Z
+date: 2026-04-28T00:17:58.624906Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gbfvyUOxU5k title=武豊展が銀座で２８日から開催「（デビュー）４０年はあっという間」　特別ムービーで
-OK project=1 video_id=zvCFJsVRovM title=【天皇賞・春・超ブル診断ステップレース編】非の打ちどころがない勝ちっぷりだった一
-OK project=1 video_id=qu5fO4EhWl4 title=【天皇賞・春】大阪杯4着健闘のタガノデュードは距離の壁に挑戦　陣営「心肺機能は高
+OK project=1 video_id=2dZ1J0xpiFw title=歴代最多8勝の「平成の盾男」武豊騎手 アドマイヤテラで天皇賞(春)の9年ぶりVな
+OK project=1 video_id=jXSrhKyviSg title=【羽田盃】フィンガーは京浜盃2着のリベンジへ舞台替わり歓迎　田中博調教師「この距
+OK project=1 video_id=lvpT3G2eFMY title=【ケンタッキーダービー】「ヤフーニュースに出ているのを見て...」　予備登録を1
