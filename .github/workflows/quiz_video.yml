@@ -51,6 +51,13 @@ jobs:
           PYTHONUNBUFFERED: '1'
         run: python scripts/quiz_step1_questions.py
 
+      - name: 馬の写真ダウンロード (Wikipedia)
+        if: inputs.from_step <= '2'
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: |
+          python scripts/download_horse_images.py || echo "馬の写真ダウンロード失敗（スライドは写真なしで継続）"
+
       - name: Step 2 スライド生成
         if: inputs.from_step <= '2'
         env:
