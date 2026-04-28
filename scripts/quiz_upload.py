@@ -17,8 +17,25 @@ from googleapiclient.http import MediaFileUpload
 
 VIDEO_PATH = Path("quiz_video.mp4")
 QUIZ_JSON = Path("quiz.json")
-THUMBNAIL_PATH = Path("assets/quiz_thumbnail.jpg")
 CATEGORY_ID = "17"   # スポーツ
+
+
+def find_thumbnail() -> Path | None:
+    assets = Path("assets")
+    if not assets.exists():
+        return None
+    candidates = [
+        assets / "quiz_thumbnail.jpg",
+        assets / "quiz_thumbnail.jpeg",
+        assets / "quiz_thumbnail.png",
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    for p in sorted(assets.iterdir()):
+        if "thumbnail" in p.name.lower() and p.suffix.lower() in (".jpg", ".jpeg", ".png"):
+            return p
+    return None
 
 YOUTUBE_SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
@@ -132,13 +149,15 @@ def upload_video(youtube, title: str, description: str, tags: list[str]) -> str 
 
 
 def upload_thumbnail(youtube, video_id: str) -> None:
-    if not THUMBNAIL_PATH.exists():
+    thumb = find_thumbnail()
+    if not thumb:
         print("  サムネイル画像なし → スキップ")
         return
-    media = MediaFileUpload(str(THUMBNAIL_PATH), mimetype="image/jpeg")
+    mimetype = "image/png" if thumb.suffix.lower() == ".png" else "image/jpeg"
+    media = MediaFileUpload(str(thumb), mimetype=mimetype)
     try:
         youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
-        print(f"  サムネイル設定完了: {THUMBNAIL_PATH}")
+        print(f"  サムネイル設定完了: {thumb}")
     except HttpError as e:
         print(f"  WARNING: サムネイル設定失敗: {e}")
 
