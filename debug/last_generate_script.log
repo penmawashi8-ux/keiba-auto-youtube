@@ -10,17 +10,16 @@
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
@@ -29,20 +28,20 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【京王杯SC】新戦法でアサカラキング12度目の重賞挑戦で初タイトルへ　斎藤誠調教師「逃げにはこだわらない」 ---
-[0] Gemini入力本文 355文字: '◆第71回京王杯スプリングC・G2(5月2日、東京競馬場・芝1400メートル＝1着馬に安田記念の優先出走権)＝4月28日、美浦トレセン\n\t\t\t\t\u3000阪急杯5着から臨むアサカラキング(牡6歳、美浦・斎藤誠厩舎、父キズナ)は、新たな戦法を身につけ'
+--- 記事[0]: 【天皇賞・春】宮調教師「楽しみなチャレンジ」　充実期タガノデュードが未知の3200メートルに挑む ---
+[0] Gemini入力本文 349文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月28日、栗東トレセン\n\t\t\t\t\u3000大阪杯4着のタガノデュード(牡5歳、栗東・宮徹厩舎、父ヤマカツエース)は坂路をゆったりとキャンターで調整し、翌日の追い切りに備えた'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【天皇賞・春】73年ぶり牝馬Vへ　ヴェルミセルは海外遠征明けでも好気配　鮫島克駿騎手「京都は合っています」 ---
-[1] Gemini入力本文 355文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月28日、栗東トレセン\n\t\t\t\t\u3000ヴェルミセル(牝6歳、栗東・吉村圭司厩舎、父ゴールドシップ)は、前走は初めての海外挑戦だったサウジアラビアのレッドシーターフHで1'
+--- 記事[1]: 【ブリーズアップセール】新種牡馬カラヴァッジオ産駒の牡馬「ブライトメッセージの2024」が3900万円で落札 ---
+[1] Gemini入力本文 392文字: 'JRAが購入、育成した2歳馬のトレーニングセール「2026\u3000JRA\u3000ブリーズアップセール」が4月28日、中山競馬場で開催された。今年で22回目を迎えて、オンラインビッドシステムによる購買を含むセリ方式で行われた。上場頭数は77頭で、71頭('
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【天皇賞(春)予想オッズ】アドマイヤテラが予想1番人気 ---
-[2] Gemini入力本文 353文字: '5月3日に京都競馬場で行われる、第173回天皇賞(春)(4歳上・GI・芝3200m)に16頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは27日時点で以下のようになっている。\n\u3000阪神大賞典を完勝した'
+--- 記事[2]: 【天皇賞・春・超ブル診断データ編】過去4年で勝ち馬3頭が父の父キングカメハメハ　24年菊花賞で好走2頭が1着候補 ---
+[2] Gemini入力本文 409文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)\n\t\t\t\t\u3000桜花賞は2歳女王の直行はVサインだったスターアニスを軸に指名。皐月賞は前走時の馬体重500キロ以上の馬の好成績からリアライズシリウスを軸にロブチェンを相手候'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -62,33 +61,31 @@ Gemini APIキー: 3 件ロード
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 275文字]: 'レース関連の最新情報です。第173回天皇賞・春G1に出走を予定しているタガノデュードについて、5月3日に京都競馬場・芝3200メートルで行われるこのレースに向け、4月28日には栗東トレセンで調整が行われました。大阪杯で4着だったタガノデュードは、坂路をゆったりとキャンターで調整し、翌日の追い切りに備えています。宮調教師は「絶好調。何も問題ないよ」と、タガノデュードの状態の良さを伝えています。タガノデュードは今年に入り、寿Sと小倉大賞典を連勝しました。前走のG1でも最後まで鋭く脚を伸ばして上位に食い込むなど、5歳を迎えての充実ぶりを見せています。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (275文字)
+[0]  プレビュー: レース関連の最新情報です。第173回天皇賞・春G1に出走を予定しているタガノデュードについて、5月3日に京都競馬場・芝3200メートルで行われるこのレースに向け...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[1]  [Gemini生出力 250文字]: '競馬速報です。第173回天皇賞・春・G1は5月3日に京都競馬場・芝3200メートルで行われます。73年ぶりの牝馬優勝へ向かうヴェルミセルは、4月28日に栗東トレセンで調整されました。前走は初めての海外挑戦だったサウジアラビアのレッドシーターフHで11着でしたが、遠征明けながら1週前にはCWコースで3頭併せを行い、6ハロン81秒0―11秒3と動きは良い状態です。2戦ぶりのコンビとなる鮫島克駿騎手は、1週前追い切りにも騎乗し「弾む感じ...」とコメントしており、「京都は合っています」と話しています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (247文字)
-[1]  プレビュー: 競馬速報です。第173回天皇賞・春・G1は5月3日に京都競馬場・芝3200メートルで行われます。73年ぶりの牝馬優勝へ向かうヴェルミセルは、4月28日に栗東トレ...
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 139文字]: 'レース関連の最新情報です。\n最終追い切り前日の4月28日、美浦トレセンにおいて、アサカラキング(牡6歳、美浦・斎藤誠厩舎、父キズナ)が坂路の1本目を64秒3―15秒5、2本目を63秒3―15秒0と軽快に駆け上がりました。阪急杯5着からの出走で、重賞初制覇を目指すことになります。'
-[0]  [重複除去] 120文字 → 119文字
-[0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (119文字)
-[0]  プレビュー: レース関連の最新情報です。最終追い切り前日の4月28日、美浦トレセンにおいて、アサカラキングが坂路の1本目を64秒3―15秒5、2本目を63秒3―15秒0と軽快...
+[1]  [Gemini生出力 208文字]: '本日の競馬ニュースです。\n2026年JRAブリーズアップセールが4月28日に中山競馬場で開催され、今年で22回目を迎えた。オンラインビッドシステムによる購買を含むセリ方式で行われ、上場頭数は77頭、71頭が売却された。新種牡馬の産駒16頭が上場され、カラヴァッジオ産駒の牡馬「ブライトメッセージの2024」が3900万円で落札された。JRAが購入、育成した2歳馬のトレーニングセールで、新たな血統の活躍が期待される。'
+[1]  [重複除去] 208文字 → 207文字
+[1]  ファクトチェック: SKIPPED(gemma)
+[1]  → output/script_1.txt 保存 (207文字)
+[1]  プレビュー: 本日の競馬ニュースです。2026年JRAブリーズアップセールが4月28日に中山競馬場で開催され、今年で22回目を迎えた。オンラインビッドシステムによる購買を含む...
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
     response = conn.getresponse()
