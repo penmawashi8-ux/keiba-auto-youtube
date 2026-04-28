@@ -1,20 +1,20 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (43 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (46 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: キタサンブラック (key=kitasan_black)
-  タイトル: 【名馬列伝】キタサンブラック〜最強の盾と矛、演歌界の夢を乗せて〜 #Shorts
+  馬名: メイショウドトウ (key=meisho_dotto)
+  タイトル: 【名馬列伝】メイショウドトウ〜最強の二番手、不屈の挑戦者〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】キタサンブラック〜最強の盾と矛、演歌界の夢を乗せて〜 #Shorts
-  進捗: 21%
-  進捗: 42%
-  進捗: 64%
-  進捗: 85%
-  完了! Video ID: cl92Ois3w18
-  URL: https://www.youtube.com/watch?v=cl92Ois3w18
-  サムネイルアップロード中: output/thumbnail_0.jpg (43 KB)
+  アップロード中: 【名馬列伝】メイショウドトウ〜最強の二番手、不屈の挑戦者〜 #Shorts
+  進捗: 22%
+  進捗: 45%
+  進捗: 68%
+  進捗: 91%
+  完了! Video ID: nu3jGQGk40Y
+  URL: https://www.youtube.com/watch?v=nu3jGQGk40Y
+  サムネイルアップロード中: output/thumbnail_0.jpg (46 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
