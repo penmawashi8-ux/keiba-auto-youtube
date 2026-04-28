@@ -5,43 +5,38 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: エルドボルグなど、先週のゲート試験/栗東トレセンニュース ---
-[0] Gemini入力本文 534文字: '先々週、栗東へ入厩したエルドボルグ(栗東・斉藤崇史厩舎)。先週の火曜日に前扉の開いたゲートを通す時も駐立するときも落ち着いていて、水曜日と木曜日の練習でも全く問題がなかったので、24日の金曜日にゲート試験を受けて合格している。\n\u30004月26日'
+--- 記事[0]: JRAブリーズアップセール　「ウインアルエット2024」がセール史上最高額の9020万円で落札 ---
+[0] Gemini入力本文 356文字: 'JRA育成の2歳馬調教セリ「第22回JRAブリーズアップセール」が28日、中山競馬場で行われ、上場番号19番の牡馬「ウインアルエット2024」が、同セール史上最高額となる9020万円(税込み)で落札された。\n\u3000父は今週の天皇賞・春に出走する'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 鋭い末脚で愛されたスマートギアが21歳で死す　12年の中日新聞杯でV　松山弘平騎手の重賞初勝利　障害レースでも白星 ---
-[1] Gemini入力本文 520文字: '2012年の中日新聞杯を制したスマートギア(21歳、父マーベラスサンデー・栗毛)が4月28日に死んだとジャパンスタッドブックインターナショナルが同日、Xで報告した。北海道えりも町の岡田スタッドで余生を過ごしていたという。\n\t\t\t\t\u3000同馬は0'
+--- 記事[1]: 【注目馬動向】カゼノランナーはG1級競走連勝かかる帝王賞へ参戦決定　ヤマニンブークリエは新潟大賞典 ---
+[1] Gemini入力本文 345文字: '川崎記念でG1級競走初制覇を飾ったカゼノランナー(牡5歳、栗東・松永幹夫厩舎、父キズナ)は帝王賞・Jpn1(7月1日、大井競馬場・ダート2000メートル)に参戦することになった。松永幹調教師が4月28日、明らかにした。\n\t\t\t\t\u3000同馬はポル'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【注目馬動向】京都2歳S勝ち馬ジャスティンビスタは日本ダービーでの復帰が目標 ---
-[2] Gemini入力本文 346文字: '昨年の京都2歳S勝ち馬で、現在は右第1指骨剥離(はくり)骨折で休養中のジャスティンビスタ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)が日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)で復帰することになった。吉岡調教師'
+--- 記事[2]: 【大井競馬　明日発走　羽田盃】トリグラフヒルが左後肢ハ行で出走取り消し ---
+[2] Gemini入力本文 295文字: 'TCK特別区競馬組合は28日、あす29日の大井競馬11Rで行われる3歳ダート3冠1冠目「第71回羽田盃」(Jpn1、ダート1800メートル)に出走を予定していた1枠1番トリグラフヒル(牡＝栗東・大久保、父ナダル、松山弘平騎乗予定)が疾病(左'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,35 +53,30 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 249文字]: '競馬ファン注目の情報です。昨年の京都2歳S勝ち馬ジャスティンビスタが、日本ダービーでの復帰を目標としていることが明らかになりました。ジャスティンビスタは現在、右第1指骨剥離骨折で休養中ですが、5月31日に東京競馬場・芝2400メートルで行われる日本ダービー・G1での復帰を目指します。吉岡辰弥調教師が4月28日にこの方針を明らかにしました。同馬は昨年末のホープフルSで8着となった後、骨折が判明し休養に入っていました。吉岡調教師は「ダービーを目標に、チャンピオンヒルズで順調」とコメントしています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (249文字)
-[2]  プレビュー: 競馬ファン注目の情報です。昨年の京都2歳S勝ち馬ジャスティンビスタが、日本ダービーでの復帰を目標としていることが明らかになりました。ジャスティンビスタは現在、右...
-  HTTP 200
-[1]  [Gemini生出力 262文字]: '重要な競馬ニュースをお伝えします。2012年の中日新聞杯を制したスマートギアが21歳で4月28日に死んだと、ジャパンスタッドブックインターナショナルが同日、Xで報告しました。北海道えりも町の岡田スタッドで余生を過ごしていた同馬は、12年の中日新聞杯で勝利を収め、これは松山弘平騎手の重賞初勝利となりました。スマートギアは09年の天の川Sで上がり3ハロン32秒2で追い込むなど、屈指の切れ者として強烈なインパクトを残し、鋭い末脚で愛されました。2008年1月に栗東・佐山優厩舎からデビューし、障害レースでも白星を挙げています。'
+[1]  [Gemini生出力 253文字]: '今週の競馬注目情報をお伝えします。川崎記念でG1級競走初制覇を飾ったカゼノランナーは、帝王賞・Jpn1への参戦が決定しました。7月1日に大井競馬場ダート2000メートルで行われるこのレースに、松永幹調教師が4月28日に参戦を明らかにしています。カゼノランナーはポルックスS、佐賀記念を連勝し、川崎記念では2着に2馬身差をつける完勝を見せました。先週、放牧先の大山ヒルズを訪れたトレーナーは「元気いっぱいでした。力もつけていますからね」と期待を語っています。なお、ヤマニンブークリエは新潟大賞典へ参戦します。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (262文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。2012年の中日新聞杯を制したスマートギアが21歳で4月28日に死んだと、ジャパンスタッドブックインターナショナルが同日、Xで...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[1]  → output/script_1.txt 保存 (253文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。川崎記念でG1級競走初制覇を飾ったカゼノランナーは、帝王賞・Jpn1への参戦が決定しました。7月1日に大井競馬場ダート2000...
   HTTP 200
-[0]  [Gemini生出力 204文字]: '競馬速報です。先々週、栗東へ入厩したエルドボルグ（栗東・斉藤崇史厩舎）。先週の火曜日に前扉の開いたゲートを通す時も駐立するときも落ち着いていて、水曜日と木曜日の練習でも全く問題がなかったので、24日の金曜日にゲート試験を受けて合格しています。4月26日の栗東坂路では4F57.1秒、1F12.6秒をマークしており、普段の様子を見ているかぎり、追い切りでもしっかりと動いてくることができそうな所作を見せている。'
-[0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (204文字)
-[0]  プレビュー: 競馬速報です。先々週、栗東へ入厩したエルドボルグ（栗東・斉藤崇史厩舎）。先週の火曜日に前扉の開いたゲートを通す時も駐立するときも落ち着いていて、水曜日と木曜日の...
+[2]  [Gemini生出力 182文字]: '重要な競馬ニュースをお伝えします。TCK特別区競馬組合は28日、明日29日の大井競馬11Rで行われる3歳ダート3冠1冠目、第71回羽田盃、Jpn1、ダート1800メートルに出走を予定していた1枠1番トリグラフヒルが、疾病の左後肢ハ行のため出走を取り消したと発表しました。松山弘平騎手が騎乗予定だったトリグラフヒルの出走取り消しにより、レースは13頭立てとなります。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (182文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。TCK特別区競馬組合は28日、明日29日の大井競馬11Rで行われる3歳ダート3冠1冠目、第71回羽田盃、Jpn1、ダート180...
+  HTTP 200
+[0]  [Gemini生出力 207文字]: '最新情報をお届けします。\n28日、中山競馬場で行われたJRA育成の2歳馬調教セリ「第22回JRAブリーズアップセール」で、上場番号19番の牡馬「ウインアルエット2024」が、同セール史上最高額となる9020万円（税込み）で落札されました。父は今年に入って重賞5勝と絶好調のレイデオロで、今週の天皇賞・春に出走するアドマイヤテラも産駒です。激しいコールの応酬の末、秋元竜弥氏が競り落とし、村田師に預託される予定です。'
+[0]  [redirectフィルター] 207文字 → 194文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (194文字)
+[0]  プレビュー: 28日、中山競馬場で行われたJRA育成の2歳馬調教セリ「第22回JRAブリーズアップセール」で、上場番号19番の牡馬「ウインアルエット2024」が、同セール史上...
 
 3 件の脚本を生成しました。
