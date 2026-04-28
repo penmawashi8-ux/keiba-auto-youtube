@@ -14,6 +14,12 @@ on:
         default: '1'
         type: choice
         options: ['1', '2', '3']
+      upload:
+        description: 'YouTube にアップロードする'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
 
 jobs:
   generate-quiz-video:
@@ -75,6 +81,15 @@ jobs:
         env:
           PYTHONUNBUFFERED: '1'
         run: python scripts/quiz_step3_video.py
+
+      - name: YouTube アップロード
+        if: inputs.upload == 'true'
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          PYTHONUNBUFFERED: '1'
+        run: python scripts/quiz_upload.py
 
       - name: 生成ファイル一覧表示
         if: always()
