@@ -5,43 +5,42 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 武豊展が銀座で２８日から開催「（デビュー）４０年はあっという間」　特別ムービーで声優初挑戦「最近は声優をしたり、ドラマで ---
-[0] Gemini入力本文 331文字: '競馬界のレジェンド・武豊騎手（５７）＝栗東・フリー＝が２７日、自身の騎手生活４０周年を記念した特別展「武豊デビュー４０年〜前人未到の記録〜」（４月２８日〜６月１５日まで、東京・銀座三越で開催）のプレス内覧会に出席した。\n\u3000１９８７年にデビュ'
+--- 記事[0]: 歴代最多8勝の「平成の盾男」武豊騎手 アドマイヤテラで天皇賞(春)の9年ぶりVなるか ---
+[0] Gemini入力本文 349文字: '「平成の盾男」武豊騎手が、アドマイヤテラ(牡5、栗東・友道康夫厩舎)で天皇賞(春)(4歳上・GI・芝3200m)の9年ぶり9勝目を狙う。\n\u3000武豊騎手はこれまで天皇賞(春)に歴代最多の31回騎乗している。初参戦の89年にイナリワンで初制覇を果'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
 --- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【天皇賞・春・超ブル診断ステップレース編】非の打ちどころがない勝ちっぷりだった一頭が個別評価最高「G」 ---
-[1] Gemini入力本文 519文字: 'ベテラン・中野達哉記者が「超ブル診断」ステップレース編で前哨戦3鞍を徹底分析。注目したのは…。\n\t\t\t\t\u3000【阪神大賞典＝レース評価A】出走馬で重賞勝ち馬は3頭のみ。2、3番人気は上り馬のダノンシーマと格上挑戦のレッドバンデの4歳勢。決して、'
+--- 記事[1]: 【羽田盃】フィンガーは京浜盃2着のリベンジへ舞台替わり歓迎　田中博調教師「この距離の方がいい」 ---
+[1] Gemini入力本文 359文字: '◆第71回羽田盃・Jpn1(4月29日20時5分発走、大井競馬場・ダート1800メートル)\n\t\t\t\t\u30003歳ダート3冠初戦の第71回羽田盃・Jpn1は29日、大井競馬場の1800メートルで行われる。京浜盃で2着のフィンガー(牡3歳、美浦・田中'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【天皇賞・春】大阪杯4着健闘のタガノデュードは距離の壁に挑戦　陣営「心肺機能は高い馬なので」 ---
-[2] Gemini入力本文 347文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月27日、栗東トレセン\n\t\t\t\t\u3000タガノデュード(牡5歳、栗東・宮徹厩舎、父ヤマカツエース)は大阪杯で4着と健闘。直線では内の馬群をのみ込むような勢いで脚を伸ばし、'
+--- 記事[2]: 【ケンタッキーダービー】「ヤフーニュースに出ているのを見て...」　予備登録を14頭&ワンダーディーンで挑む高柳大輔調教 ---
+[2] Gemini入力本文 356文字: '◆第152回ケンタッキーダービー・G1(日本時間5月3日朝7時57分、米国チャーチルダウンズ競馬場・ダート2000メートル)\n\t\t\t\t\u3000JRA海外馬券発売対象で、米3冠初戦の第152回ケンタッキーダービー・G1(日本時間5月3日、チャーチル'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,39 +57,36 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 293文字]: '競馬ファン注目の情報です。ベテラン・中野達哉記者が「超ブル診断」ステップレース編で前哨戦3鞍を徹底分析しました。阪神大賞典はレース評価Aとされ、出走馬で重賞勝ち馬は3頭のみでした。2番人気と3番人気は上り馬のダノンシーマと格上挑戦のレッドバンデの4歳勢でした。武豊騎手騎乗のアドマイヤテラは直線抜け出し、レコードタイムで完勝。アドマイヤテラの勝ちっぷりは文句なしで、3200メートルのG1の前哨戦としては非の打ちどころがないと評価されています。また、昨年の覇者ヘデントールが天皇賞(春)で復権を狙っており、C.ルメール騎手がヘデントールで天皇賞(春)の4勝目なるかにも注目が集まります。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (293文字)
-[1]  プレビュー: 競馬ファン注目の情報です。ベテラン・中野達哉記者が「超ブル診断」ステップレース編で前哨戦3鞍を徹底分析しました。阪神大賞典はレース評価Aとされ、出走馬で重賞勝ち...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+[2]  [Gemini生出力 188文字]: '競馬ファン注目の情報です。JRA海外馬券発売対象で、米3冠初戦となる第152回ケンタッキーダービー・G1に、日本調教馬2頭が参戦します。このレースは日本時間5月3日朝7時57分に、米国チャーチルダウンズ競馬場のダート2000メートルで行われます。UAEダービーの覇者であるワンダーディーンを送り込む高柳大輔調教師が、単独インタビューで歴史あるレースへの熱い思いを明かしました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (188文字)
+[2]  プレビュー: 競馬ファン注目の情報です。JRA海外馬券発売対象で、米3冠初戦となる第152回ケンタッキーダービー・G1に、日本調教馬2頭が参戦します。このレースは日本時間5月...
   HTTP 200
-[0]  [Gemini生出力 283文字]: '最新のレース情報が入ってきました。\n競馬界のレジェンドである武豊騎手が、自身の騎手生活４０周年を記念した特別展「武豊デビュー４０年〜前人未到の記録〜」のプレス内覧会に２７日、出席しました。この特別展は、４月２８日から６月１５日まで東京・銀座三越で開催されます。１９８７年にデビューし、ＪＲＡ通算４６５２勝、うちＧ１・８４勝を誇る武豊騎手は、「４０年は気がつけばあっという間でした。まさか自分の展示会が銀座三越で開かれるとは」と語りました。また、特別ムービーでは声優に初挑戦し、「最近は声優をしたり、ドラマで演じたり、いろんなことをやっています」とコメントしています。'
-[0]  [重複除去] 283文字 → 282文字
+[0]  [Gemini生出力 259文字]: '競馬ファン注目の情報です。\n「平成の盾男」武豊騎手が、アドマイヤテラで天皇賞(春)(4歳上・GI・芝3200m)の9年ぶり9勝目を狙います。武豊騎手はこれまで天皇賞(春)に歴代最多の31回騎乗しています。初参戦の89年にイナリワンで初制覇を果たすと、90年のスーパークリーク、91年と92年のメジロマックイーンと4連覇を達成し、「平成の盾男」の異名をとりました。さらには99年のスペシャルウィーク、06年のディープインパクト、16年と17年のキ?..でも勝利を収めています。アドマイヤテラは友道康夫厩舎の5歳牡馬です。'
+[0]  [重複除去] 257文字 → 256文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (282文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。競馬界のレジェンドである武豊騎手が、自身の騎手生活４０周年を記念した特別展「武豊デビュー４０年〜前人未到の記録〜」のプレス内覧...
+[0]  → output/script_0.txt 保存 (256文字)
+[0]  プレビュー: 競馬ファン注目の情報です。「平成の盾男」武豊騎手が、アドマイヤテラで天皇賞(春)(4歳上・GI・芝3200m)の9年ぶり9勝目を狙います。武豊騎手はこれまで天皇...
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***zGG0 model=gemma-3-4b-it
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 204文字]: '今日の競馬情報です。\n第173回天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）において、タガノデュード（牡5歳、栗東・宮徹厩舎、父ヤマカツエース）は大阪杯で4着と健闘。直線では内の馬群をのみ込むような勢いで脚を伸ばし、充実ぶりを感じさせた。大村助手は「いい勝負になるかなという気持ちはありましたが、十分すぎる内容ですよ」と満足そうに口にする。今回は距離が一気に延びるため、その対応がカギを握る。'
-[2]  [重複除去] 182文字 → 181文字
-[2]  ファクトチェック: SKIPPED(gemma)
-[2]  → output/script_2.txt 保存 (181文字)
-[2]  プレビュー: 今日の競馬情報です。第173回天皇賞・春・G1（5月3日、京都競馬場・芝3200メートル）において、タガノデュードは大阪杯で4着と健闘。直線では内の馬群をのみ込...
+[1]  [Gemini生出力 170文字]: '競馬ファン注目の情報です。第71回羽田盃・Jpn1は29日、大井競馬場の1800メートルで行われました。3歳ダート3冠初戦として、フィンガー(牡3歳、美浦・田中博厩舎)が好仕上がりを見せました。フィンガーは、ここまで6戦2勝、2着4回と全て連対しており、ブルーバードCで完勝した実力馬です。同レースでは、ブルーバードCで完勝したとも...。'
+[1]  ファクトチェック: SKIPPED(gemma)
+[1]  → output/script_1.txt 保存 (153文字)
+[1]  プレビュー: 競馬ファン注目の情報です。第71回羽田盃・Jpn1は29日、大井競馬場の1800メートルで行われました。3歳ダート3冠初戦として、フィンガーが好仕上がりを見せま...
 
 3 件の脚本を生成しました。
