@@ -1,10 +1,10 @@
-date: 2026-04-28T06:11:39.965518Z
+date: 2026-04-28T07:46:36.644719Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=y-dLM_COa54 title=エルドボルグなど、先週のゲート試験/栗東トレセンニュース
-OK project=1 video_id=LZXo9x2R5VU title=鋭い末脚で愛されたスマートギアが21歳で死す　12年の中日新聞杯でV　松山弘平騎
-OK project=1 video_id=HWZbLubPMW8 title=【注目馬動向】京都2歳S勝ち馬ジャスティンビスタは日本ダービーでの復帰が目標
+OK project=1 video_id=7zuVit7wFZo title=JRAブリーズアップセール　「ウインアルエット2024」がセール史上最高額の90
+OK project=1 video_id=IViKkjWbKgA title=【注目馬動向】カゼノランナーはG1級競走連勝かかる帝王賞へ参戦決定　ヤマニンブー
+OK project=1 video_id=tfNEVPHDAXI title=【大井競馬　明日発走　羽田盃】トリグラフヒルが左後肢ハ行で出走取り消し
