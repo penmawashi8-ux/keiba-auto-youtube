@@ -1,10 +1,10 @@
-date: 2026-04-28T00:17:58.624906Z
+date: 2026-04-28T04:52:26.274901Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2dZ1J0xpiFw title=歴代最多8勝の「平成の盾男」武豊騎手 アドマイヤテラで天皇賞(春)の9年ぶりVな
-OK project=1 video_id=jXSrhKyviSg title=【羽田盃】フィンガーは京浜盃2着のリベンジへ舞台替わり歓迎　田中博調教師「この距
-OK project=1 video_id=lvpT3G2eFMY title=【ケンタッキーダービー】「ヤフーニュースに出ているのを見て...」　予備登録を1
+OK project=1 video_id=GzFrPFpmHRc title=【注目馬動向】ディープモンスターが香港でロマンチックウォリアーと激突へ　現役唯一
+OK project=1 video_id=DN5vXYAcRdM title=【注目馬動向】ゴーイントゥスカイは引き続き武豊騎手で日本ダービーへ　上原佑紀調教
+OK project=1 video_id=ianEywm7g_E title=【羽田盃】トリグラフヒルが左後肢ハ行のため出走取り消し　3歳ダート3冠初戦は13
