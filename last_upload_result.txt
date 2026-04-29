@@ -1,10 +1,10 @@
-date: 2026-04-29T07:35:55.943066Z
+date: 2026-04-29T09:24:29.672291Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=j59A6d2HPsU title=【天皇賞・春】クロワデュノールは「もっともっといい走りができる」G1連勝へ北村友
-OK project=1 video_id=3WOQ8-LNNbw title=ディープモンスターがモレイラとの新コンビで香港のチャンピオンズ＆チャターＣに参戦
-OK project=1 video_id=jBxmwp9YQIU title=Mデムーロ騎手が栗東に姿見せる「温かいね、みんな」「いっぱいメッセージが来た」　
+OK project=1 video_id=L3EY8HhJBOg title=【大井競馬】高岩孝敏調教師が通算400勝達成「オーナーやスタッフのおかげ」
+OK project=1 video_id=1vyALawR8MM title=「絶好調の穴男」藤懸貴志騎手が3年ぶりのGI参戦 伏兵ケイアイサンデラで盾に波乱
+OK project=1 video_id=ibYPKCTDZr0 title=【注目馬動向】大阪杯6着のレーベンスティールは安田記念への出走を検討　キャロット
