@@ -5,43 +5,39 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【天皇賞・春】宮調教師「楽しみなチャレンジ」　充実期タガノデュードが未知の3200メートルに挑む ---
-[0] Gemini入力本文 349文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝4月28日、栗東トレセン\n\t\t\t\t\u3000大阪杯4着のタガノデュード(牡5歳、栗東・宮徹厩舎、父ヤマカツエース)は坂路をゆったりとキャンターで調整し、翌日の追い切りに備えた'
+--- 記事[0]: JRA重賞勝ち馬や現役ジョッキーが躍動 RRC滋賀大会をnetkeibaで無料ライブ ---
+[0] Gemini入力本文 355文字: '4月29日(祝・水)に滋賀県甲賀市の水口乗馬クラブで、RRC(Retired Racehorse Cup)の滋賀大会が行われる。JRA重賞で活躍した馬や現役ジョッキーも数多く参戦。模様はnetkeibaでもライブ配信する。\n\u3000RRCは201'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
 --- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【ブリーズアップセール】新種牡馬カラヴァッジオ産駒の牡馬「ブライトメッセージの2024」が3900万円で落札 ---
-[1] Gemini入力本文 392文字: 'JRAが購入、育成した2歳馬のトレーニングセール「2026\u3000JRA\u3000ブリーズアップセール」が4月28日、中山競馬場で開催された。今年で22回目を迎えて、オンラインビッドシステムによる購買を含むセリ方式で行われた。上場頭数は77頭で、71頭('
+--- 記事[1]: 31年目・古川吉洋騎手が天皇賞(春)初参戦 タガノデュードで29年ぶりのGI制覇なるか ---
+[1] Gemini入力本文 356文字: '31年目の古川吉洋騎手が、天皇賞(春)(4歳上・GI・芝3200m)のタガノデュード(牡5、栗東・宮徹厩舎)で29年ぶりのGI制覇を狙う。\n\u3000古川吉洋騎手は77年9月26日生まれ、岡山県出身の48歳。96年に栗東・長浜博之厩舎からデビューし'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【天皇賞・春・超ブル診断データ編】過去4年で勝ち馬3頭が父の父キングカメハメハ　24年菊花賞で好走2頭が1着候補 ---
-[2] Gemini入力本文 409文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)\n\t\t\t\t\u3000桜花賞は2歳女王の直行はVサインだったスターアニスを軸に指名。皐月賞は前走時の馬体重500キロ以上の馬の好成績からリアライズシリウスを軸にロブチェンを相手候'
+--- 記事[2]: 【天皇賞(春)】クロワデュノールが史上2頭目の偉業に挑戦 大阪杯からの連勝なるか ---
+[2] Gemini入力本文 353文字: 'GI・3勝のクロワデュノール(牡4、栗東・斉藤崇史厩舎)が、天皇賞(春)(4歳上・GI・芝3200m)で史上2頭目となる大阪杯からのGI連勝を狙う。\n\u3000クロワデュノールは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,117 +54,28 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 275文字]: 'レース関連の最新情報です。第173回天皇賞・春G1に出走を予定しているタガノデュードについて、5月3日に京都競馬場・芝3200メートルで行われるこのレースに向け、4月28日には栗東トレセンで調整が行われました。大阪杯で4着だったタガノデュードは、坂路をゆったりとキャンターで調整し、翌日の追い切りに備えています。宮調教師は「絶好調。何も問題ないよ」と、タガノデュードの状態の良さを伝えています。タガノデュードは今年に入り、寿Sと小倉大賞典を連勝しました。前走のG1でも最後まで鋭く脚を伸ばして上位に食い込むなど、5歳を迎えての充実ぶりを見せています。'
+[1]  [Gemini生出力 222文字]: '本日の競馬ニュースです。31年目の古川吉洋騎手が、天皇賞(春)にタガノデュードで初参戦し、29年ぶりのGI制覇を狙います。古川吉洋騎手は77年9月26日生まれ、岡山県出身の48歳です。96年に栗東・長浜博之厩舎からデビューした『花の12期生』で、同期には福永祐一調教師や和田竜二調教師がいます。JRA通算11843戦603勝を記録し、重賞は97年の阪神3歳牝馬Sのアインブライド、21年のマイラーズCのケイデンスコールなど15勝を挙げています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (222文字)
+[1]  プレビュー: 本日の競馬ニュースです。31年目の古川吉洋騎手が、天皇賞(春)にタガノデュードで初参戦し、29年ぶりのGI制覇を狙います。古川吉洋騎手は77年9月26日生まれ、...
+  HTTP 200
+[2]  [Gemini生出力 202文字]: '今週の競馬注目情報をお伝えします。GI・3勝のクロワデュノールが、天皇賞(春)で史上2頭目となる大阪杯からのGI連勝を狙います。クロワデュノールは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血統です。母のライジングクロスは2006年の英オークスで2着に入着しています。また、半姉のアースライズは2015年のフラワーCで2着馬となりました。馬名の意味由来はフランス語で北十字星です。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (202文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。GI・3勝のクロワデュノールが、天皇賞(春)で史上2頭目となる大阪杯からのGI連勝を狙います。クロワデュノールは父キタサンブラ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[0]  [Gemini生出力 268文字]: '最新情報をお届けします。\n4月29日(祝・水)に滋賀県甲賀市の水口乗馬クラブで、RRC(Retired Racehorse Cup)の滋賀大会が行われます。この大会には、JRA重賞で活躍した馬や現役ジョッキーも数多く参戦する予定です。その模様はnetkeibaでも無料ライブ配信されます。RRCは2018年にスタートし、引退競走馬杯とも呼ばれています。引退競走馬の乗馬・馬術の入り口と位置づけ、活躍の場とするとともに、セカンドキャリアの形成や人材育成のためのリトレーニング技術の向上、乗馬・馬術ファンの拡大を図ることを目的としています。'
+[0]  [redirectフィルター] 268文字 → 255文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (275文字)
-[0]  プレビュー: レース関連の最新情報です。第173回天皇賞・春G1に出走を予定しているタガノデュードについて、5月3日に京都競馬場・芝3200メートルで行われるこのレースに向け...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[1]  [Gemini生出力 208文字]: '本日の競馬ニュースです。\n2026年JRAブリーズアップセールが4月28日に中山競馬場で開催され、今年で22回目を迎えた。オンラインビッドシステムによる購買を含むセリ方式で行われ、上場頭数は77頭、71頭が売却された。新種牡馬の産駒16頭が上場され、カラヴァッジオ産駒の牡馬「ブライトメッセージの2024」が3900万円で落札された。JRAが購入、育成した2歳馬のトレーニングセールで、新たな血統の活躍が期待される。'
-[1]  [重複除去] 208文字 → 207文字
-[1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (207文字)
-[1]  プレビュー: 本日の競馬ニュースです。2026年JRAブリーズアップセールが4月28日に中山競馬場で開催され、今年で22回目を迎えた。オンラインビッドシステムによる購買を含む...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[0]  → output/script_0.txt 保存 (255文字)
+[0]  プレビュー: 4月29日(祝・水)に滋賀県甲賀市の水口乗馬クラブで、RRC(Retired Racehorse Cup)の滋賀大会が行われます。この大会には、JRA重賞で活躍...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 490, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 529, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 512, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 341, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 241, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
