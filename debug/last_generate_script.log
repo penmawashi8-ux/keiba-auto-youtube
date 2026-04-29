@@ -5,11 +5,13 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
@@ -18,6 +20,10 @@
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -26,28 +32,30 @@
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【天皇賞・春】クロワデュノールは「もっともっといい走りができる」G1連勝へ北村友一騎手が会見で意気込み語る ---
-[0] Gemini入力本文 349文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)4月29日、栗東トレセン＝共同会見\n\t\t\t\t\u3000北村友一騎手＝栗東・フリー＝がクロワデュノール(牡4歳、栗東・斉藤崇史)で挑む春の大一番について、共同会見で意気込みを語っ'
+--- 記事[0]: 【大井競馬】高岩孝敏調教師が通算400勝達成「オーナーやスタッフのおかげ」 ---
+[0] Gemini入力本文 311文字: '大井競馬所属の高岩孝敏調教師(64)は4月29日、大井競馬5Rに管理するシカレを出走させ1着。1998年7月の初出走以来、6559戦目で地方競馬通算400勝を達成した。\n\t\t\t\t\u3000高岩孝敏調教師「400勝はオーナーやスタッフのおかげ。これか'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: ディープモンスターがモレイラとの新コンビで香港のチャンピオンズ＆チャターＣに参戦 ---
-[1] Gemini入力本文 331文字: '２月にカタールで行われたアミールＴを制したディープモンスター（牡８歳、栗東・池江）が、出走を予定しているチャンピオンズ＆チャターＣ・Ｇ１（５月２４日・香港シャティン、芝２４００メートル）にモレイラとの新コンビで臨むことが明らかになった。所属'
+--- 記事[1]: 「絶好調の穴男」藤懸貴志騎手が3年ぶりのGI参戦 伏兵ケイアイサンデラで盾に波乱呼ぶか ---
+[1] Gemini入力本文 357文字: '「絶好調の穴男」藤懸貴志騎手が、天皇賞(春)(4歳上・GI・芝3200m)のケイアイサンデラ(セ6、栗東・小林真也厩舎)で3年ぶり3回目のGI参戦を果たす。\n\u3000藤懸騎手は93年2月25日生まれ、長野県出身の33歳。11年に栗東・平田修厩舎か'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: Mデムーロ騎手が栗東に姿見せる「温かいね、みんな」「いっぱいメッセージが来た」　5月2日の京都で復帰 ---
-[2] Gemini入力本文 354文字: '昨夏から米国を拠点としていたミルコ・デムーロ騎手(47)＝栗東・フリー＝が4月29日、栗東トレセンに姿を見せ、調教に騎乗した。5月2日の京都競馬から復帰する予定だ。\n\t\t\t\t\u300028日に日本へ到着したばかりで、「5時に起きた。時差ボケ」と苦笑'
+--- 記事[2]: 【注目馬動向】大阪杯6着のレーベンスティールは安田記念への出走を検討　キャロットクラブが発表 ---
+[2] Gemini入力本文 334文字: '大阪杯で6着に敗れたレーベンスティール(牡6歳、美浦・田中博康厩舎、父リアルスティール)が、次走は安田記念(6月7日、東京競馬場・芝1600メートル)への出走を検討していることが分かった。キャロットクラブが29日、ホームページで発表した。\n'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -64,22 +72,22 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 247文字]: 'レース関連の最新情報です。第173回天皇賞・春・G1は5月3日に京都競馬場・芝3200メートルで開催されます。このレースに、北村友一騎手がクロワデュノールで挑むことについて、4月29日に栗東トレセンで行われた共同会見で意気込みを語りました。大阪杯を振り返り、北村友一騎手は「道中のリズムがすごく良かったですし、追ってから少しフラフラしたり、反応が少し鈍いところもあったんですけど、しっかりととらえてくれて、改め...」とコメントしています。G1連勝へ向けた春の大一番への意気込みが示されました。'
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (244文字)
-[0]  プレビュー: レース関連の最新情報です。第173回天皇賞・春・G1は5月3日に京都競馬場・芝3200メートルで開催されます。このレースに、北村友一騎手がクロワデュノールで挑む...
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
   HTTP 503
   HTTP 503
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
@@ -88,25 +96,36 @@ Gemini APIキー: 3 件ロード
 [1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemma-3-4b-it
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[2]  [Gemini生出力 208文字]: '今日の競馬情報です。\n昨夏から米国を拠点としていたミルコ・デムーロ騎手(47)＝栗東・フリー＝が4月29日、栗東トレセンに姿を見せ、調教に騎乗した。5月2日の京都競馬から復帰する予定だ。28日に日本へ到着したばかりで、「5時に起きた。時差ボケ」と苦笑。多くの騎手仲間や関係者から「おかえり」と歓迎され、「温かいね、みんな。みんな優しい。さすが日本人」と笑顔で喜んだ。米国滞在期間中には42勝を挙げ、重賞4勝を挙げた。'
-[2]  [重複除去] 208文字 → 207文字
+[2]  [Gemini生出力 175文字]: '最新のレース情報が入ってきました。大阪杯で6着に入ったレーベンスティールが、次走は安田記念への出走を検討していることが発表されました。キャロットクラブが29日にホームページで発表した内容によりますと、同馬は前走後、福島・ノーザンファーム天栄で調整を進めているとのことです。安田記念へ参戦すれば、25年マイルCS以来、2度目のマイルG1出走となります。'
 [2]  ファクトチェック: SKIPPED(gemma)
-[2]  → output/script_2.txt 保存 (207文字)
-[2]  プレビュー: 今日の競馬情報です。昨夏から米国を拠点としていたミルコ・デムーロ騎手(47)＝栗東・フリー＝が4月29日、栗東トレセンに姿を見せ、調教に騎乗した。5月2日の京都...
+[2]  → output/script_2.txt 保存 (175文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。大阪杯で6着に入ったレーベンスティールが、次走は安田記念への出走を検討していることが発表されました。キャロットクラブが29日に...
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 197文字]: 'レース関連の最新情報です。\nディープモンスターがモレイラとの新コンビで香港のチャンピオンズ＆チャターＣに参戦することが発表されました。牡８歳、栗東・池江の厩舎所属のディープモンスターは、２月にカタールで行われたアミールＴを制しています。出走予定のチャンピオンズ＆チャターＣ・Ｇ１は５月２４日、香港シャティンで芝２４００メートルで行われます。所属するＤＭＭバヌーシーがホームページで発表しました。'
-[1]  [重複除去] 197文字 → 196文字
+[0]  [Gemini生出力 191文字]: '重要な競馬ニュースをお伝えします。大井競馬所属の高岩孝敏調教師が4月29日、大井競馬5Rに管理するシカレを出走させ1着となり、地方競馬通算400勝を達成しました。高岩孝敏調教師は64歳で、1998年7月の初出走以来、6559戦目でこの偉業を成し遂げました。高岩孝敏調教師は「400勝はオーナーやスタッフのおかげ。これからもひとつでも多く勝てるように頑張りたい」とコメントしています。'
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (191文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。大井競馬所属の高岩孝敏調教師が4月29日、大井競馬5Rに管理するシカレを出走させ1着となり、地方競馬通算400勝を達成しました...
+  HTTP 200
+[1]  [Gemini生出力 248文字]: '競馬速報です。絶好調の穴男、藤懸貴志騎手が3年ぶりのGI参戦。伏兵ケイアイサンデラで盾に波乱を呼ぶか、その情報を伝えます。藤懸貴志騎手は93年2月25日生まれ、長野県出身の33歳。11年に栗東・平田修厩舎からデビューし、JRA通算4466戦164勝を挙げています。23年には自己最多となる20勝、24年には自己2位タイとなる16勝をマーク。ケイアイサンデラ(セ6、栗東・小林真也厩舎)で3年ぶり3回目のGI参戦となります。詳細については、No.1競馬情報サイト「netkeiba」をご覧ください。'
+[1]  [redirectフィルター] 248文字 → 211文字
 [1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (196文字)
-[1]  プレビュー: レース関連の最新情報です。ディープモンスターがモレイラとの新コンビで香港のチャンピオンズ＆チャターＣに参戦することが発表されました。牡８歳、栗東・池江の厩舎所属...
+[1]  → output/script_1.txt 保存 (197文字)
+[1]  プレビュー: 競馬速報です。絶好調の穴男、藤懸貴志騎手が3年ぶりのGI参戦。伏兵ケイアイサンデラで盾に波乱を呼ぶか、その情報を伝えます。藤懸貴志騎手は93年2月25日生まれ、...
 
 3 件の脚本を生成しました。
