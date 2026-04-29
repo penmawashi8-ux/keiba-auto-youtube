@@ -793,6 +793,9 @@ https://news.netkeiba.com/?pid=news_view&no=329447
 https://news.netkeiba.com/?pid=news_view&no=329500
 https://news.netkeiba.com/?pid=news_view&no=329501
 https://news.netkeiba.com/?pid=news_view&no=329502
+https://news.netkeiba.com/?pid=news_view&no=329511
+https://news.netkeiba.com/?pid=news_view&no=329512
+https://news.netkeiba.com/?pid=news_view&no=329513
 osaka_cup_2026_prediction
 osaka_cup_2026_prediction_wakuban
 oukasho_2026_prediction
