@@ -1,10 +1,10 @@
-date: 2026-04-28T09:28:38.424683Z
+date: 2026-04-29T00:14:17.769482Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=QzFs_HQFonU title=「同世代なのにこんなすごい…」 二瓶有加さんが注目する坂井瑠星騎手と羽田盃
-OK project=1 video_id=ZslFA6xjSeg title=【天皇賞・春】騎手時代に牝馬のウオッカでダービー制覇　四位調教師がアクアヴァーナ
-OK project=1 video_id=Dzj3AOHctwA title=メイショウタバル　武豊とのコンビで凱旋門賞参戦を視野
+OK project=1 video_id=zvf6H_VaHXc title=JRA重賞勝ち馬や現役ジョッキーが躍動 RRC滋賀大会をnetkeibaで無料ラ
+OK project=1 video_id=GCJdFpPMLb8 title=31年目・古川吉洋騎手が天皇賞(春)初参戦 タガノデュードで29年ぶりのGI制覇
+OK project=1 video_id=1092ZcH4Abw title=【天皇賞(春)】クロワデュノールが史上2頭目の偉業に挑戦 大阪杯からの連勝なるか
