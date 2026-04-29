@@ -5,39 +5,43 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: JRA重賞勝ち馬や現役ジョッキーが躍動 RRC滋賀大会をnetkeibaで無料ライブ ---
-[0] Gemini入力本文 355文字: '4月29日(祝・水)に滋賀県甲賀市の水口乗馬クラブで、RRC(Retired Racehorse Cup)の滋賀大会が行われる。JRA重賞で活躍した馬や現役ジョッキーも数多く参戦。模様はnetkeibaでもライブ配信する。\n\u3000RRCは201'
+--- 記事[0]: メイショウタバルは凱旋門賞挑戦を視野　武豊騎手も「実現したらうれしい。雨は心配いらんもんね」と期待 ---
+[0] Gemini入力本文 342文字: '大阪杯2着のメイショウタバル(牡5歳、栗東・石橋守厩舎、父ゴールドシップ)は、凱旋門賞・仏G1(10月4日、パリロンシャン競馬場・芝2400メートル)への挑戦を視野に入れていることが、4月29日までに分かった。石橋調教師は「登録はまだ先だけ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
 --- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 31年目・古川吉洋騎手が天皇賞(春)初参戦 タガノデュードで29年ぶりのGI制覇なるか ---
-[1] Gemini入力本文 356文字: '31年目の古川吉洋騎手が、天皇賞(春)(4歳上・GI・芝3200m)のタガノデュード(牡5、栗東・宮徹厩舎)で29年ぶりのGI制覇を狙う。\n\u3000古川吉洋騎手は77年9月26日生まれ、岡山県出身の48歳。96年に栗東・長浜博之厩舎からデビューし'
+--- 記事[1]: 初めて短期免許で来日のゴンサルベス騎手が愛されるキャラクターもアピール　「“ゴンちゃん”と呼んで」 ---
+[1] Gemini入力本文 389文字: '今週から初めて短期免許で来日した南米の名手、フランシスコ・ゴンサルベス騎手(36)＝ブラジル出身、アルゼンチン拠点＝が4月29日、美浦トレセンで初めて追い切りに騎乗した。この日は3頭の調教をつけて、「日本のトレセンは今まで行ったところで一番'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【天皇賞(春)】クロワデュノールが史上2頭目の偉業に挑戦 大阪杯からの連勝なるか ---
-[2] Gemini入力本文 353文字: 'GI・3勝のクロワデュノール(牡4、栗東・斉藤崇史厩舎)が、天皇賞(春)(4歳上・GI・芝3200m)で史上2頭目となる大阪杯からのGI連勝を狙う。\n\u3000クロワデュノールは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血'
+--- 記事[2]: 【注目馬動向】QE2世C8着のジューンテイクは宝塚記念を視野に　武英調教師「状態を見ながら」 ---
+[2] Gemini入力本文 344文字: '香港G1・クイーンエリザベス2世Cで8着だったジューンテイク(牡5歳、栗東・武英智厩舎、父キズナ)は宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)を視野に入れて調整されることが分かった。4月29日、武英調教師が明かした。\n\t\t'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -54,28 +58,37 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 222文字]: '本日の競馬ニュースです。31年目の古川吉洋騎手が、天皇賞(春)にタガノデュードで初参戦し、29年ぶりのGI制覇を狙います。古川吉洋騎手は77年9月26日生まれ、岡山県出身の48歳です。96年に栗東・長浜博之厩舎からデビューした『花の12期生』で、同期には福永祐一調教師や和田竜二調教師がいます。JRA通算11843戦603勝を記録し、重賞は97年の阪神3歳牝馬Sのアインブライド、21年のマイラーズCのケイデンスコールなど15勝を挙げています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (222文字)
-[1]  プレビュー: 本日の競馬ニュースです。31年目の古川吉洋騎手が、天皇賞(春)にタガノデュードで初参戦し、29年ぶりのGI制覇を狙います。古川吉洋騎手は77年9月26日生まれ、...
-  HTTP 200
-[2]  [Gemini生出力 202文字]: '今週の競馬注目情報をお伝えします。GI・3勝のクロワデュノールが、天皇賞(春)で史上2頭目となる大阪杯からのGI連勝を狙います。クロワデュノールは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血統です。母のライジングクロスは2006年の英オークスで2着に入着しています。また、半姉のアースライズは2015年のフラワーCで2着馬となりました。馬名の意味由来はフランス語で北十字星です。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (202文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。GI・3勝のクロワデュノールが、天皇賞(春)で史上2頭目となる大阪杯からのGI連勝を狙います。クロワデュノールは父キタサンブラ...
+[2]  [Gemini生出力 233文字]: '最新のレース情報が入ってきました。香港G1・クイーンエリザベス2世Cで8着だったジューンテイクは、宝塚記念・G1を視野に入れて調整されることが分かりました。宝塚記念は6月14日に阪神競馬場・芝2200メートルで行われます。この情報は4月29日、武英調教師が明かしました。初の海外遠征となった香港での一戦は、後方から脚を伸ばすもスムーズさを欠き、武英調教師は「消化不良ですね。状態はすごく良かったんですが…。レース後もすぐに息が入っていました。」とコメントしています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (232文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。香港G1・クイーンエリザベス2世Cで8着だったジューンテイクは、宝塚記念・G1を視野に入れて調整されることが分かりました。宝塚...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 268文字]: '最新情報をお届けします。\n4月29日(祝・水)に滋賀県甲賀市の水口乗馬クラブで、RRC(Retired Racehorse Cup)の滋賀大会が行われます。この大会には、JRA重賞で活躍した馬や現役ジョッキーも数多く参戦する予定です。その模様はnetkeibaでも無料ライブ配信されます。RRCは2018年にスタートし、引退競走馬杯とも呼ばれています。引退競走馬の乗馬・馬術の入り口と位置づけ、活躍の場とするとともに、セカンドキャリアの形成や人材育成のためのリトレーニング技術の向上、乗馬・馬術ファンの拡大を図ることを目的としています。'
-[0]  [redirectフィルター] 268文字 → 255文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (255文字)
-[0]  プレビュー: 4月29日(祝・水)に滋賀県甲賀市の水口乗馬クラブで、RRC(Retired Racehorse Cup)の滋賀大会が行われます。この大会には、JRA重賞で活躍...
+[1]  [Gemini生出力 249文字]: '本日の競馬ニュースです。今週から初めて短期免許で来日した南米の名手、フランシスコ・ゴンサルベス騎手が、4月29日に美浦トレセンで初めて追い切りに騎乗しました。36歳の同騎手は、この日3頭の調教をつけ、「日本のトレセンは今まで行ったところで一番きれいです」と充実の笑顔を浮かべました。短期免許を取得した動機は、昨夏の「2025ワールドオールスタージョッキーズ」で日本競馬やファンの熱心さに心を打たれたためと語っています。また、愛されるキャラクターもアピールし、「“ゴンちゃん”と呼んで」と話しました。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (249文字)
+[1]  プレビュー: 本日の競馬ニュースです。今週から初めて短期免許で来日した南米の名手、フランシスコ・ゴンサルベス騎手が、4月29日に美浦トレセンで初めて追い切りに騎乗しました。3...
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 243文字]: '今週の競馬注目情報をお伝えします。\n大阪杯2着のメイショウタバル(牡5歳、栗東・石橋守厩舎、父ゴールドシップ)は、凱旋門賞・仏G1(10月4日、パリロンシャン競馬場・芝2400メートル)への挑戦を視野に入れていることが、4月29日までに分かった。石橋調教師は「登録はまだ先だけど、視野に入れて考えていきたい」と見通しを語った。主戦の武豊騎手は「まず今は宝塚記念に向けて」と前置きしたうえで、「実現したらうれしい。去年も宝塚記念を勝ったあと、凱旋門賞・仏G1への挑戦を視野に入れている。」'
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (220文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。大阪杯2着のメイショウタバルは、凱旋門賞・仏G1(10月4日、パリロンシャン競馬場・芝2400メートル)への挑戦を視野に入れて...
 
 3 件の脚本を生成しました。
