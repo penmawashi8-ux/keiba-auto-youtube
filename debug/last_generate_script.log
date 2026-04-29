@@ -7,55 +7,57 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【地方競馬】穂刈隆師が開業初勝利「とりあえず結果を出せて良かった」とホッとした表情 ---
-[0] Gemini入力本文 336文字: '２９日の大井競馬１０Ｒは２番人気のディルムッドが好位から抜け出してＶ。管理する穂刈隆志調教師（４１）＝大井＝が、１３日の初出走から８戦目でうれしい開業初勝利を挙げた。\n\u3000「まだうまくいかないことが多い中で、とりあえず結果を出せて良かったです'
+--- 記事[0]: 【羽田盃】早くも2冠制覇へ手応えのフィンガー　田中博康調教師「東京ダービーの方が向いている」 ---
+[0] Gemini入力本文 355文字: '◆第71回羽田盃・Jpn1(4月29日、大井競馬場・ダート1800メートル、稍重)\n\t\t\t\t\u3000今年から1着賞金が6000万円に増額された、3歳ダートクラシック1冠目に砂のスター候補13頭(JRA3、南関東10＝トリグラフヒルは出走取り消し)'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 武豊騎手が京王杯SCの26年ぶり4勝目へ 末脚自慢のヤブサメで一発狙う ---
-[1] Gemini入力本文 348文字: '武豊騎手がヤブサメ(牡5、栗東・石橋守厩舎)で京王杯スプリングカップ(4歳上・GII・芝1400m)の26年ぶり4勝目を狙う。\n\u3000武豊騎手はこれまで京王杯SCに23回騎乗している。94年に仏のスキーパラダイスで初制覇。さらに96年にハートレ'
+--- 記事[1]: 【羽田盃】TCKイメージキャラクターの横浜流星がプレゼンターとして登壇　スタンドから黄色い声援を浴びる ---
+[1] Gemini入力本文 628文字: '3歳ダートクラシック1冠目「第71回羽田盃」は4月29日、大井競馬の11R(ダート1800メートル)で争われた。13頭(JRA3、南関東10＝トリグラフヒルは出走取り消し)が出走。戸崎圭太騎手騎乗で3番人気のフィンガー(牡3歳、美浦・田中博'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【ユニコーンS】海外遠征明けケイアイアギトは力出せる仕上がり　加藤征調教師「何も心配ない」「中身はしっかり」 ---
-[2] Gemini入力本文 354文字: '◆第31回ユニコーンS・G3(5月2日、京都競馬場・ダート1900メートル)追い切り＝4月29日、美浦トレセン\n\t\t\t\t\u3000第31回ユニコーンS・G3(5月2日、京都)に出走するケイアイアギト(牡3歳、美浦・加藤征弘厩舎、父エスポワールシチー'
+--- 記事[2]: 【NHKマイルC・1週前】カヴァレリッツォが皐月賞後の初時計　吉岡調教師「マイルで力比べになれば一番いいのでは」 ---
+[2] Gemini入力本文 354文字: '◆第31回NHKマイルC・G1(5月10日、東京・芝1600メートル)＝29日、栗東トレセン\n\t\t\t\t\u3000昨年の朝日杯FSを制して最優秀2歳牡馬に輝いたカヴァレリッツォ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)が、13着だった皐月賞'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -73,8 +75,8 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
@@ -87,18 +89,18 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 503
   HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -108,24 +110,26 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
 [2] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[2]  [Gemini生出力 144文字]: 'レース関連の最新情報です。\n美浦トレセンで最終追い切りが行われ、ケイアイアギトがパワフルな脚さばきを披露しました。牡3歳で、父はエスポワールシチー、加藤征弘調教師が師を務めています。追い切りは美浦・Wコースで行われ、3頭併せの先頭でスタートし、中のロイヤルアデレードから2馬身離しました。'
-[2]  [重複除去] 144文字 → 143文字
-[2]  ファクトチェック: SKIPPED(gemma)
-[2]  → output/script_2.txt 保存 (143文字)
-[2]  プレビュー: レース関連の最新情報です。美浦トレセンで最終追い切りが行われ、ケイアイアギトがパワフルな脚さばきを披露しました。牡3歳で、父はエスポワールシチー、加藤征弘調教師...
 [0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 168文字]: '競馬速報です。２９日の大井競馬１０Ｒは２番人気のディルムッドが好位から抜け出してＶとなった。管理する穂刈隆志調教師（４１）＝大井＝が、１３日の初出走から８戦目でうれしい開業初勝利を挙げた。まだうまくいかないことが多い中で、とりあえず結果を出せて良かったです。スタッフもよくやってくれています。目標？目の前の１勝を積み上げていくことです。'
-[0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (168文字)
-[0]  プレビュー: 競馬速報です。２９日の大井競馬１０Ｒは２番人気のディルムッドが好位から抜け出してＶとなった。管理する穂刈隆志調教師（４１）＝大井＝が、１３日の初出走から８戦目で...
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[1]  [Gemini生出力 228文字]: 'レース関連の最新情報です。武豊騎手がヤブサメ(牡5、栗東・石橋守厩舎)で京王杯スプリングカップ(4歳上・GII・芝1400m)の26年ぶり4勝目を狙う。武豊騎手はこれまで京王杯SCに23回騎乗している。94年に仏のスキーパラダイスで初制覇。さらに96年にハートレイク、00年にスティンガーで勝ち、現役では柴田善臣騎手と並んでトップタイとなる3勝を挙げている。ただ、21世紀になって以降は13連敗中。1番人気に推されたことも3回あるが、06年のシンボリ?..'
+[1]  [Gemini生出力 200文字]: '注目の競馬情報をお届けします。第71回羽田盃は4月29日、大井競馬の11R(ダート1800メートル)で13頭が出走しました。戸崎圭太騎手騎乗の3番人気のフィンガーが、京浜盃2着のリベンジを果たし、ブルーバードCに続く重賞2勝目でビッグタイトルを獲得しました。勝ち時計は1分52秒7。2着にはロックターミガンが入り、表彰式ではプレゼンターの横浜流星氏と戸崎圭太騎手、田中博康調教師が握手を交わしました。'
+[1]  [redirectフィルター] 200文字 → 185文字
 [1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (186文字)
-[1]  プレビュー: レース関連の最新情報です。武豊騎手がヤブサメで京王杯スプリングカップ(4歳上・GII・芝1400m)の26年ぶり4勝目を狙う。武豊騎手はこれまで京王杯SCに23...
+[1]  → output/script_1.txt 保存 (185文字)
+[1]  プレビュー: 第71回羽田盃は4月29日、大井競馬の11R(ダート1800メートル)で13頭が出走しました。戸崎圭太騎手騎乗の3番人気のフィンガーが、京浜盃2着のリベンジを果...
+  HTTP 200
+[2]  [Gemini生出力 143文字]: '最新のレース情報が入ってきました。\n昨年の朝日杯FSを制して最優秀2歳牡馬に輝いたカヴァレリッツォが、皐月賞13着の後、初時計を出しました。坂路で59秒7―15秒1と計測されました。吉岡調教師は、脚さばきが軽く、テンションも上がっていない様子で、手綱を収めて走っていると評価しています。'
+[2]  [重複除去] 143文字 → 142文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (142文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。昨年の朝日杯FSを制して最優秀2歳牡馬に輝いたカヴァレリッツォが、皐月賞13着の後、初時計を出しました。坂路で59秒7―15秒...
+  HTTP 200
+[0]  [Gemini生出力 222文字]: 'レース関連の最新情報です。\n今年から1着賞金が6000万円に増額された、第71回羽田盃・Jpn1（4月29日、大井競馬場・ダート1800メートル、稍重）が開催されました。13頭の3歳ダートクラシック1冠目に砂のスター候補が集結し、フィンガーが勝利しました。フィンガーは牡3歳、美浦・田中博康厩舎所属で、戸崎圭太騎手騎乗でした。3番人気のフィンガーは、京浜盃2着のリベンジを果たし、ブルーバードCに続く重賞2勝目で、ビッグタイトルを獲得しました。'
+[0]  [重複除去] 222文字 → 221文字
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (221文字)
+[0]  プレビュー: レース関連の最新情報です。今年から1着賞金が6000万円に増額された、第71回羽田盃・Jpn1（4月29日、大井競馬場・ダート1800メートル、稍重）が開催され...
 
 3 件の脚本を生成しました。
