@@ -1,20 +1,24 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (46 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (61 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: メイショウドトウ (key=meisho_dotto)
-  タイトル: 【名馬列伝】メイショウドトウ〜最強の二番手、不屈の挑戦者〜 #Shorts
+  馬名: ヴェラスター (key=vera_star)
+  タイトル: 【名馬列伝】ヴェラスター〜逆転の奇跡〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】メイショウドトウ〜最強の二番手、不屈の挑戦者〜 #Shorts
-  進捗: 22%
-  進捗: 45%
-  進捗: 68%
-  進捗: 91%
-  完了! Video ID: nu3jGQGk40Y
-  URL: https://www.youtube.com/watch?v=nu3jGQGk40Y
-  サムネイルアップロード中: output/thumbnail_0.jpg (46 KB)
+  アップロード中: 【名馬列伝】ヴェラスター〜逆転の奇跡〜 #Shorts
+  進捗: 12%
+  進捗: 24%
+  進捗: 37%
+  進捗: 49%
+  進捗: 62%
+  進捗: 74%
+  進捗: 87%
+  進捗: 99%
+  完了! Video ID: QIY8w0Rjbkk
+  URL: https://www.youtube.com/watch?v=QIY8w0Rjbkk
+  サムネイルアップロード中: output/thumbnail_0.jpg (61 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===

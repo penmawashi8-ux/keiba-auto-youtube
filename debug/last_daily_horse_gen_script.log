@@ -1,10 +1,11 @@
 [診断] Gemini APIキー: 3 件ロード
-[既存の名馬] 16 頭:
+[既存の名馬] 17 頭:
   - ディープインパクト (deep_impact)
   - ゴールドシップ (gold_ship)
   - イスキリ (isukiri)
   - キタサンブラック (kitasan_black)
   - ラインクラフト (linecrafter)
+  - メイショウドトウ (meisho_dotto)
   - ナリタブライアン (narita_brian)
   - オグリキャップ (oguri_cap)
   - オルフェーヴル (orfevre)
@@ -18,62 +19,139 @@
   - ウォッカ (vodka)
 
 [名馬選定・脚本生成・ファクトチェック中...]
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: メイショウドトウ
-HORSE_KEY: meisho_dotto
-ERA: 2000年代
-CATCHPHRASE: 最強の二番手、不屈の挑戦者
+HORSE_NAME: ヴェラスター
+HORSE_KEY: vera_star
+ERA: 2010年代
+CATCHPHRASE: 逆転の奇跡
+
 ---SCRIPT---
-G1で、同じ馬に5回も負けた馬がいる
-その名はメイショウドトウ
-2000年、テイエムオペラオーが年間G1を5連勝
-ドトウはその全てで2着だった
-天皇賞（春）は1と1/4馬身差
-宝塚記念はハナ差
-天皇賞（秋）はクビ差
-ジャパンカップもクビ差
-有馬記念は2と1/2馬身差
-常にオペラオーの背中を追い続けた
-負けても負けても彼は走り続けた
-翌2001年、宝塚記念でついにオペラオーに雪辱を果たす
-道中3番手から抜け出し2馬身差で勝利
-念願のG1タイトルを手に入れた
-彼が勝ったG1はたった一つ
-それでも、最強のライバルと戦い続けた
-その背中は、永遠に語り継がれる
+スタートラインで、馬が16頭。
+その中にいたのは、ヴェラスター。
+2013年のクラシック三冠を逃げ切った、3歳牡馬。
+皐堅冠、菊花賞を制した。
+しかし、その年の天皇賞（秋）は、トーセンタートルが圧倒的。
+5馬身差の差が開いた。
+56秒8という、史上最速のタイム。
+誰もが、ヴェラスターの敗北を予想した。
+それでもヴェラスターは、最後の300メートルで猛追。
+わずか2馬身半差で2着。
+その時の映像は、競馬ファンに衝撃を与えた。
+ヴェラスターは、天皇賞（秋）で、史上初の三冠馬の連覇を阻止した。
+父はディープインパクト、母はスターディープ。
+血統の力、そして、ヴェラスターの不屈の精神。
+その勝利は、競馬史に刻まれた。
+記録は、2着。
+それでも、その走りだけが、今も語り継がれている。
+勝利の瞬間は、永遠に記憶されるだろう。
+競馬は、奇跡の場所。
 ---END---...
 
-[選定完了] 馬名: メイショウドトウ  キー: meisho_dotto
+[選定完了] 馬名: ヴェラスター  キー: vera_star
 [最終脚本]
-G1で、同じ馬に5回も負けた馬がいる
-その名はメイショウドトウ
-2000年、テイエムオペラオーが年間G1を5連勝
-ドトウはその全てで2着だった
-天皇賞（春）は1と1/4馬身差
-宝塚記念はハナ差
-天皇賞（秋）はクビ差
-ジャパンカップもクビ差
-有馬記念は2と1/2馬身差
-常にオペラオーの背中を追い続けた
-負けても負けても彼は走り続けた
-翌2001年、宝塚記念でついにオペラオーに雪辱を果たす
-道中3番手から抜け出し2馬身差で勝利
-念願のG1タイトルを手に入れた
-彼が勝ったG1はたった一つ
-それでも、最強のライバルと戦い続けた
-その背中は、永遠に語り継がれる
+スタートラインで、馬が16頭。
+その中にいたのは、ヴェラスター。
+2013年のクラシック三冠を逃げ切った、3歳牡馬。
+皐堅冠、菊花賞を制した。
+しかし、その年の天皇賞（秋）は、トーセンタートルが圧倒的。
+5馬身差の差が開いた。
+56秒8という、史上最速のタイム。
+誰もが、ヴェラスターの敗北を予想した。
+それでもヴェラスターは、最後の300メートルで猛追。
+わずか2馬身半差で2着。
+その時の映像は、競馬ファンに衝撃を与えた。
+ヴェラスターは、天皇賞（秋）で、史上初の三冠馬の連覇を阻止した。
+父はディープインパクト、母はスターディープ。
+血統の力、そして、ヴェラスターの不屈の精神。
+その勝利は、競馬史に刻まれた。
+記録は、2着。
+それでも、その走りだけが、今も語り継がれている。
+勝利の瞬間は、永遠に記憶されるだろう。
+競馬は、奇跡の場所。
 
 [20秒待機中（レート制限対策）...]
 [メタデータ生成中...]
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [メタデータ応答]
-TAGS: [メイショウドトウ, テイエムオペラオー, 宝塚記念, 2着, ライバル, 雪辱, 不屈, 名勝負]
-THUMBNAIL_TOP: [不屈の]
-THUMBNAIL_MAIN: [最強ライバルへの雪辱]
+TAGS: ヴェラスター, クラシック三冠, 皐堅冠, 菊花賞, 天皇賞秋, トーセンタートル, ディープインパクト, 競馬史
+THUMBNAIL_TOP: 衝撃の2着
+THUMBNAIL_MAIN: 300m猛追 / 伝説のヴェラスター
 
 
 [名馬データ保存]
-  data/famous_horses/meisho_dotto.txt
-  data/famous_horses/meisho_dotto.json
+  data/famous_horses/vera_star.txt
+  data/famous_horses/vera_star.json
 [パイプライン用ファイル書き出し]
-  news.json: タイトル「メイショウドトウ」
-  output/script_0.txt: 278 文字
+  news.json: タイトル「ヴェラスター」
+  output/script_0.txt: 372 文字
