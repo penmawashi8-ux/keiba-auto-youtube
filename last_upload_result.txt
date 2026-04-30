@@ -1,10 +1,10 @@
-date: 2026-04-29T12:35:45.096868Z
+date: 2026-04-30T00:19:43.982416Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HbQBbw-JiXg title=【羽田盃】早くも2冠制覇へ手応えのフィンガー　田中博康調教師「東京ダービーの方が
-OK project=1 video_id=5-KluxFCvYs title=【羽田盃】TCKイメージキャラクターの横浜流星がプレゼンターとして登壇　スタンド
-OK project=1 video_id=_3uxX2y5CXc title=【NHKマイルC・1週前】カヴァレリッツォが皐月賞後の初時計　吉岡調教師「マイル
+OK project=1 video_id=ziVjxwZiKE8 title=セレクト2.1億円の良血ダノンセンチュリー 京王杯SCで父に初タイトルを届けるか
+OK project=1 video_id=jPgYA2j8090 title=【天皇賞(春)展望】好走データを完備するクロワデュノールが春2冠へ
+OK project=1 video_id=DQA1MtvEzCQ title=【天皇賞】ヘデントール鋭く伸びた　連覇へ順調　木村師「変わらず元気」　前走の巻き
