@@ -1,10 +1,9 @@
-date: 2026-04-30T12:26:44.820869Z
-projects_loaded: 1
-uploaded: 3
+date: 2026-04-30T17:26:45.202665Z
+type: landscape_prediction
+total_races: 1
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=W94zNIVA4Vk title=【注目馬動向】エンブロイダリーが引き続きルメール騎手とのコンビでヴィクトリアマイ
-OK project=1 video_id=dR25OXQrUtg title=【門別・北斗盃結果】ゴッドバロックが人気に応えて重賞3勝目を挙げる
-OK project=1 video_id=CZN3khVLt1s title=高杉吏麒騎手が障害馬術競技で2位「参加することができてよかったです」減点なく巧み
+OK project=1 video_id=hX_NBEqPXK0 title=天皇賞（春） 予想 5月1日【完全版】
