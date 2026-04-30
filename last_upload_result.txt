@@ -1,10 +1,10 @@
-date: 2026-04-30T11:10:59.011323Z
+date: 2026-04-30T12:26:44.820869Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jTC8FoDL5N4 title=【ケンタッキーダービー】Wモット調教師が連覇を懸けて送り出すチーフワラビーの評価
-OK project=1 video_id=XRQcCyJVIL8 title=武豊騎手が皐月賞の秘話を披露!?「オレがワールドプレミアで勝ったから…」　父キタ
-OK project=1 video_id=1VNJpfUJkr8 title=セレクト3.1億円の良血 キングノジョーがオープン昇級狙う
+OK project=1 video_id=W94zNIVA4Vk title=【注目馬動向】エンブロイダリーが引き続きルメール騎手とのコンビでヴィクトリアマイ
+OK project=1 video_id=dR25OXQrUtg title=【門別・北斗盃結果】ゴッドバロックが人気に応えて重賞3勝目を挙げる
+OK project=1 video_id=CZN3khVLt1s title=高杉吏麒騎手が障害馬術競技で2位「参加することができてよかったです」減点なく巧み
