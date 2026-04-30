@@ -1,10 +1,10 @@
-date: 2026-04-30T09:24:13.615882Z
+date: 2026-04-30T11:10:59.011323Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jqI_x6FTeJ4 title=セレクト3.2億円のヘイジュード 未勝利からの格上挑戦で優駿切符獲得なるか
-OK project=1 video_id=l8Z8Qp6LylA title=【天皇賞・春】武豊騎手のアドマイヤテラは過去最多13勝の3番枠　陣営「豊さんに任
-OK project=1 video_id=t5vVriGyow4 title=【プリンシパルS】ショウグンマサムネは前走以上の気配　陣営「直線が長い左回りはい
+OK project=1 video_id=jTC8FoDL5N4 title=【ケンタッキーダービー】Wモット調教師が連覇を懸けて送り出すチーフワラビーの評価
+OK project=1 video_id=XRQcCyJVIL8 title=武豊騎手が皐月賞の秘話を披露!?「オレがワールドプレミアで勝ったから…」　父キタ
+OK project=1 video_id=1VNJpfUJkr8 title=セレクト3.1億円の良血 キングノジョーがオープン昇級狙う
