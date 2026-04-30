@@ -1,10 +1,10 @@
-date: 2026-04-30T00:19:43.982416Z
+date: 2026-04-30T04:51:06.160804Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ziVjxwZiKE8 title=セレクト2.1億円の良血ダノンセンチュリー 京王杯SCで父に初タイトルを届けるか
-OK project=1 video_id=jPgYA2j8090 title=【天皇賞(春)展望】好走データを完備するクロワデュノールが春2冠へ
-OK project=1 video_id=DQA1MtvEzCQ title=【天皇賞】ヘデントール鋭く伸びた　連覇へ順調　木村師「変わらず元気」　前走の巻き
+OK project=1 video_id=A4b8p9SDaqA title=04年当時最高額4億9000万円で落札のザサンデーフサイチが死ぬ　　22歳　母エ
+OK project=1 video_id=igtfVvjHEC0 title=角田大和騎手が5月1日から栗東・フリーに所属変更　今年のマーチSで重賞初制覇
+OK project=1 video_id=C__cfRyRPDw title=羽田盃を制したフィンガーが美浦に帰厩　一夜明けて田中博調教師が「よく寝ています」
