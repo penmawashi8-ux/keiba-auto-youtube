@@ -7,26 +7,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
@@ -35,20 +36,20 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: セレクト3.2億円のヘイジュード 未勝利からの格上挑戦で優駿切符獲得なるか ---
-[0] Gemini入力本文 346文字: '21年ホープフルSを制したキラーアビリティの半弟で、セレクトセールで高額取引されたヘイジュード(牡3、美浦・堀宣行厩舎)が、日曜東京11Rのプリンシパルステークス(3歳・リステッド・芝2000m)で日本ダービーの優先出走権獲得を狙う。\n\u3000ヘ'
+--- 記事[0]: 【ケンタッキーダービー】Wモット調教師が連覇を懸けて送り出すチーフワラビーの評価は!?　昨年覇者ソヴリンティは米年度代表 ---
+[0] Gemini入力本文 345文字: 'JRA海外馬券発売対象の米3冠初戦、第152回ケンタッキーダービー・G1は現地時間2日(日本時間5月3日朝7時57分発走)、チャーチルダウンズ競馬場で行われる。海外競馬に精通するフリーライターの土屋真光氏が、フロリダダービー3着のチーフワラ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【天皇賞・春】武豊騎手のアドマイヤテラは過去最多13勝の3番枠　陣営「豊さんに任せておけばいいと思っています」 ---
-[1] Gemini入力本文 349文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)枠順決定＝4月30日\n\t\t\t\t\u3000ラッキー7ならぬ、ラッキー3だ。武豊騎手とのコンビでG1初制覇を狙うアドマイヤテラ(牡5、栗東・友道康夫厩舎、父レイデオロ)は3番枠に決'
+--- 記事[1]: 武豊騎手が皐月賞の秘話を披露!?「オレがワールドプレミアで勝ったから…」　父キタサンブラックのクロワデュノールにも「同じ ---
+[1] Gemini入力本文 364文字: '武豊騎手が4月30日、滋賀県大津市のラクエドラゴンホースパークで行われた「サラブレッドホースショー\u3000ザ・セカンドキャリア」のスペシャルトークショーに出演。ウマ娘プリティーダービーで声優を務める亜咲花さん(エスポワールシチー役)、紫月杏朱彩さ'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【プリンシパルS】ショウグンマサムネは前走以上の気配　陣営「直線が長い左回りはいい」 ---
-[2] Gemini入力本文 351文字: '◆プリンシパルS(5月3日、東京競馬場・芝2000メートル＝1着馬に日本ダービーへの優先出走権)\n\t\t\t\t\u3000大寒桜賞2着のショウグンマサムネ(牡3歳、栗東・佐藤悠太厩舎、父スワーヴリチャード)が好仕上がりだ。ノーザンファームしがらきへの放牧'
+--- 記事[2]: セレクト3.1億円の良血 キングノジョーがオープン昇級狙う ---
+[2] Gemini入力本文 350文字: '23年天皇賞(春)を制したジャスティンパレスの半弟となるキングノジョー(牡4、美浦・田中博康厩舎)が、日曜東京9Rの府中ステークス(4歳上・3勝クラス・芝2000m)でオープン入りを狙う。\n\u3000キングノジョーは父シルバーステート、母パレスルー'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -66,50 +67,46 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[2]  [Gemini生出力 265文字]: '最新情報をお届けします。プリンシパルSは5月3日に東京競馬場・芝2000メートルで行われ、1着馬には日本ダービーへの優先出走権が与えられます。大寒桜賞2着のショウグンマサムネが好仕上がりを見せています。牡3歳で栗東・佐藤悠太厩舎に所属するショウグンマサムネは、ノーザンファームしがらきへの放牧を挟み、4月19日に帰厩しました。中4週で軽めの調整が行われ、26日には栗東・CWコースを5ハロン66秒2―11秒1でリズム良く駆け抜けています。福田助手は「ここを目標に(放牧に)短期で出してもらって、緩みす...」とコメントしています。'
-[2]  [redirectフィルター] 265文字 → 253文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (250文字)
-[2]  プレビュー: プリンシパルSは5月3日に東京競馬場・芝2000メートルで行われ、1着馬には日本ダービーへの優先出走権が与えられます。大寒桜賞2着のショウグンマサムネが好仕上が...
-  HTTP 503
-  HTTP 503
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 290文字]: '最新のレース情報が入ってきました。セレクトセールで3.1億円の良血馬、キングノジョーがオープン昇級を狙います。キングノジョーは、日曜東京9Rの府中ステークス、4歳上・3勝クラスの芝2000mでオープン入りを目指します。23年天皇賞(春)を制したジャスティンパレスの半弟にあたり、父はシルバーステート、母はパレスルーマー、母の父はRoyal Anthemの血統です。半兄3頭は重賞ウイナーで、パレスマリスは13年ベルモントS、ジャスティンパレスは23年天皇賞(春)、アイアンバローズはステイヤーズSを制しています。田中博康厩舎のキングノジョーが、このレースでオープン昇級を狙います。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (290文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。セレクトセールで3.1億円の良血馬、キングノジョーがオープン昇級を狙います。キングノジョーは、日曜東京9Rの府中ステークス、4...
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
-  HTTP 200
-[1]  [Gemini生出力 221文字]: '競馬ファン注目の情報です。\n第173回天皇賞・春の枠順が決定しました。アドマイヤテラが3番枠に入りました。\nラッキー7ならぬ、ラッキー3だ。武豊騎手とのコンビでG1初制覇を狙うアドマイヤテラ(牡5、栗東・友道康夫厩舎)は、3番枠に決定しています。\nレジェンドは99年にスペシャルウィーク、17年にキタサンブラックをこの馬番から勝利に導いています。\n藤本助手は「豊さんも何度も天皇賞・春を勝っていますし、相性のいいジョッキーに乗ってもらえ?..'
-[1]  [重複除去] 159文字 → 156文字
-[1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (156文字)
-[1]  プレビュー: 競馬ファン注目の情報です。第173回天皇賞・春の枠順が決定しました。アドマイヤテラが3番枠に入りました。ラッキー7ならぬ、ラッキー3だ。武豊騎手とのコンビでG1...
 [0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 260文字]: '競馬速報です。21年ホープフルSを制したキラーアビリティの半弟で、セレクトセールで高額取引されたヘイジュード(牡3、美浦・堀宣行厩舎)が、日曜東京11Rのプリンシパルステークス(3歳・リステッド・芝2000m)に出走予定です。父はキタサンブラック、母はキラーグレイシスで、母の父はCongareeの血統。母は11年ハリウッドスターレットＳの勝ち馬であり、半兄のキラーアビリティは21年ホープフルS、22年中日新聞?.. 21年ホープフルSを制しています。ヘイジュードは日本ダービーの優先出走権獲得を狙うレースとなります。'
+[0]  [Gemini生出力 175文字]: '競馬速報です。第152回ケンタッキーダービー・G1が現地時間2日、日本時間5月3日朝7時57分発走、チャーチルダウンズ競馬場で行われます。JRA海外馬券発売対象の米3冠初戦で、ウィリアム・モット調教師(72)がフロリダダービー3着のチーフワラビーを送り出します。米年度代表馬に輝いた昨年の覇者ソヴリンティに続く連覇が懸かる名伯楽の思惑が注目されます。'
 [0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (245文字)
-[0]  プレビュー: 競馬速報です。21年ホープフルSを制したキラーアビリティの半弟で、セレクトセールで高額取引されたヘイジュードが、日曜東京11Rのプリンシパルステークス(3歳・リ...
+[0]  → output/script_0.txt 保存 (175文字)
+[0]  プレビュー: 競馬速報です。第152回ケンタッキーダービー・G1が現地時間2日、日本時間5月3日朝7時57分発走、チャーチルダウンズ競馬場で行われます。JRA海外馬券発売対象...
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[1]  [Gemini生出力 211文字]: '今日の競馬情報です。武豊騎手が4月30日、滋賀県大津市のラクエドラゴンホースパークで行われた「サラブレッドホースショー\u3000ザ・セカンドキャリア」のスペシャルトークショーに出演しました。ウマ娘プリティーダービーで声優を務める亜咲花さん(エスポワールシチー役)、紫月杏朱彩さん(ブラストワンピース役)、嶋野花さん(ヴィクトワールピサ役)と共演したということです。ロブチェンが皐月賞を制したときの秘話を披露したと報じられています。'
+[1]  ファクトチェック: SKIPPED(gemma)
+[1]  → output/script_1.txt 保存 (211文字)
+[1]  プレビュー: 今日の競馬情報です。武豊騎手が4月30日、滋賀県大津市のラクエドラゴンホースパークで行われた「サラブレッドホースショー　ザ・セカンドキャリア」のスペシャルトーク...
 
 3 件の脚本を生成しました。
