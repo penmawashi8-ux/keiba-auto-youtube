@@ -36,7 +36,13 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: 天皇賞(春)2026 予想コンテンツを生成
+      - name: フォントをダウンロード（ホラー系含む）
+        continue-on-error: true
+        run: |
+          mkdir -p assets/fonts
+          python scripts/download_fonts.py
+
+      - name: 天皇賞(春)2026 予想コンテンツ・ホラーサムネイルを生成
         run: python scripts/create_tennosho_haru_prediction.py
 
       - name: Generate audio

@@ -27,6 +27,8 @@ FONTS = [
     ("Reggae+One",               "ReggaeOne-Regular.ttf",      "Reggae One（ポップ太字）"),
     # Rampart One：輪郭抜き太字
     ("Rampart+One",              "RampartOne-Regular.ttf",     "Rampart One（輪郭抜き太字）"),
+    # Kaisei Tokumin ExtraBold：ホラー系ゴシック明朝（天皇賞(春)サムネ用）
+    ("Kaisei+Tokumin:wght@800",  "KaiseiTokumin-ExtraBold.ttf", "Kaisei Tokumin ExtraBold（ホラー明朝）"),
 ]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"

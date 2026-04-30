@@ -218,6 +218,57 @@ def words_to_segments(words: list[dict], max_chars: int = 22) -> list[dict]:
     return segments
 
 
+def _audio_duration_s(audio_path: str) -> float:
+    """音声ファイルの長さを秒で返す（ffprobe使用）。"""
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", audio_path],
+        capture_output=True, text=True,
+    )
+    try:
+        return float(r.stdout.strip())
+    except Exception:
+        return 60.0
+
+
+def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int = 22) -> list[dict]:
+    """テキストと音声長から字幕セグメントを近似生成する（Kokoro TTS用）。
+    ワードタイミングが得られない場合に文字数比率でタイミングを推定する。
+    """
+    parts = [p.strip() for p in re.split(r"(?<=[。！？、\n])", text) if p.strip()]
+    if not parts:
+        return []
+
+    total_chars = max(sum(len(p) for p in parts), 1)
+    segments: list[dict] = []
+    current_t = 0.0
+
+    for part in parts:
+        part_dur = (len(part) / total_chars) * total_duration
+        remaining_dur = part_dur
+        while len(part) > max_chars:
+            chunk = part[:max_chars]
+            chunk_dur = part_dur * (max_chars / len(part))
+            segments.append({
+                "start": int(current_t * 10_000_000),
+                "end": int((current_t + chunk_dur) * 10_000_000),
+                "text": chunk,
+            })
+            current_t += chunk_dur
+            remaining_dur -= chunk_dur
+            part_dur = remaining_dur
+            part = part[max_chars:]
+        if part:
+            segments.append({
+                "start": int(current_t * 10_000_000),
+                "end": int((current_t + remaining_dur) * 10_000_000),
+                "text": part,
+            })
+        current_t += remaining_dur if part else 0
+
+    return segments
+
+
 def write_ass(segments: list[dict], path: str, font_name: str) -> None:
     with open(path, "w", encoding="utf-8") as f:
         f.write(ASS_HEADER.format(font_name=font_name))
@@ -309,7 +360,9 @@ def main() -> None:
                 if _KOKORO_AVAILABLE and is_kokoro_voice:
                     speed = 1.0 + (int(rate.replace("%", "").replace("+", "")) / 100)
                     generate_audio_kokoro(narration_text, audio_path, voice=voice, speed=speed)
-                    write_ass([], ass_path, font_name)
+                    aud_dur = _audio_duration_s(audio_path)
+                    segs = _estimate_subtitle_segments(narration_text, aud_dur)
+                    write_ass(segs, ass_path, font_name)
                 else:
                     asyncio.run(generate_audio_and_subtitles(
                         narration_text, audio_path, ass_path, font_name,

@@ -371,7 +371,10 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         size_mb = Path(output_path).stat().st_size / (1024 * 1024)
         print(f"✅ {output_path} ({size_mb:.1f} MB)")
 
-        generate_thumbnail(race_meta, font, bg_img, thumb_path, tmp_dir)
+        if Path(thumb_path).exists():
+            print(f"  サムネイル既存のためスキップ: {thumb_path}")
+        else:
+            generate_thumbnail(race_meta, font, bg_img, thumb_path, tmp_dir)
         return output_path
 
     finally:
