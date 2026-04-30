@@ -1,10 +1,10 @@
-date: 2026-04-30T04:51:06.160804Z
+date: 2026-04-30T06:17:43.831840Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A4b8p9SDaqA title=04年当時最高額4億9000万円で落札のザサンデーフサイチが死ぬ　　22歳　母エ
-OK project=1 video_id=igtfVvjHEC0 title=角田大和騎手が5月1日から栗東・フリーに所属変更　今年のマーチSで重賞初制覇
-OK project=1 video_id=C__cfRyRPDw title=羽田盃を制したフィンガーが美浦に帰厩　一夜明けて田中博調教師が「よく寝ています」
+OK project=1 video_id=slnvW5Nt-kA title=【天皇賞・春】牝馬73年ぶりのVを目指すホーエリートは8枠14番　田島調教師「決
+OK project=1 video_id=IvB-tQgNu3E title=【園田7R】兵庫の川原正一騎手が地方&JRA通算6000勝の快挙　「まだまだ頑張
+OK project=1 video_id=eBNzhfzjgxM title=【天皇賞・春】G1初挑戦のマイネルカンパーナは6枠10番に決定　青木調教師「スム
