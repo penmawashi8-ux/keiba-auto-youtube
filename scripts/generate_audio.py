@@ -311,6 +311,14 @@ async def generate_audio_and_subtitles(
                 })
 
     segments = words_to_segments(words)
+
+    # edge-tts が WordBoundary イベントを返さない場合のフォールバック
+    if not segments:
+        print("  [警告] WordBoundaryイベントなし。音声長から字幕タイミングを推定します。",
+              file=sys.stderr)
+        aud_dur = _audio_duration_s(audio_path)
+        segments = _estimate_subtitle_segments(script, aud_dur)
+
     write_ass(segments, ass_path, font_name)
 
     size_kb = Path(audio_path).stat().st_size // 1024

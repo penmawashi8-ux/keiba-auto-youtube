@@ -106,22 +106,57 @@ def fetch_images(count: int = 4) -> list[str]:
     return paths
 
 
-def adapt_ass_for_landscape(src: str, dst: str) -> None:
-    """ASSファイルを縦向き(1080×1920)から横向き(1280×720)用に変換する。"""
-    content = Path(src).read_text(encoding="utf-8")
-    content = re.sub(r"PlayResX:\s*\d+", "PlayResX: 1280", content)
-    content = re.sub(r"PlayResY:\s*\d+", "PlayResY: 720", content)
+def _ass_time_to_s(t: str) -> float:
+    """ASS時刻文字列（H:MM:SS.cc）を秒数に変換する。"""
+    h, m, rest = t.strip().split(":")
+    return int(h) * 3600 + int(m) * 60 + float(rest)
 
-    def fix_style(m: re.Match) -> str:
-        parts = m.group(0).split(",")
-        if len(parts) >= 23:
-            parts[2]  = "36"  # Fontsize 58→36
-            parts[16] = "3"   # Outline 4→3
-            parts[21] = "40"  # MarginV 80→40
-        return ",".join(parts)
 
-    content = re.sub(r"Style: Default,.+", fix_style, content)
-    Path(dst).write_text(content, encoding="utf-8")
+def ass_to_drawtext_filters(ass_path: str, font: str | None, tmp_dir: str) -> list[str]:
+    """ASSファイルのDialogueイベントをdrawtextフィルターに変換する。
+
+    ass フィルターは libass + fontconfig でフォントを名前検索するため、
+    GitHub Actions 環境で CJK フォントが見つからず字幕が描画されないことがある。
+    drawtext は fontfile= でファイルパスを直接指定できるため安定して動作する。
+    """
+    content = Path(ass_path).read_text(encoding="utf-8")
+    fp = _esc(font) if font else ""
+    filters: list[str] = []
+
+    for line in content.splitlines():
+        if not line.startswith("Dialogue:"):
+            continue
+        # Format: Dialogue: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+        parts = line.split(",", 9)
+        if len(parts) < 10:
+            continue
+        text = parts[9].replace("\\N", "\n").strip()
+        if not text:
+            continue
+        try:
+            t1 = _ass_time_to_s(parts[1])
+            t2 = _ass_time_to_s(parts[2])
+        except Exception:
+            continue
+        if t2 <= t1 + 0.01:
+            continue
+
+        tf = f"{tmp_dir}/s{len(filters)}.txt"
+        Path(tf).write_text(text, encoding="utf-8")
+
+        base = f"drawtext=textfile='{_esc(tf)}'"
+        if fp:
+            base += f":fontfile='{fp}'"
+        base += (
+            f":fontsize=36:fontcolor=0xFFFFFF"
+            f":x=(w-text_w)/2:y=h-text_h-40"
+            f":box=1:boxcolor=0x000000@0.65:boxborderw=10"
+            f":borderw=2:bordercolor=0x000000"
+            f":enable='between(t,{t1:.3f},{t2:.3f})'"
+        )
+        filters.append(base)
+
+    return filters
 
 
 def parse_chapters(script: str) -> list[tuple[str, int]]:
@@ -319,13 +354,17 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
                     f":enable='between(t,{t1:.2f},{t2:.2f})'"
                 )
 
-        # --- ASS subtitles ---
+        # --- ASS字幕 → drawtext フィルターに変換して適用 ---
+        # ass フィルターは libass+fontconfig でフォントを名前検索するため
+        # GitHub Actions 環境で CJK フォントが見つからず字幕未表示になる。
+        # drawtext は fontfile= で直接指定できるため確実に動作する。
         has_ass = Path(ass_path).exists() and Path(ass_path).stat().st_size > 100
-        ass_dst = f"{tmp_dir}/sub.ass"
         if has_ass:
-            adapt_ass_for_landscape(ass_path, ass_dst)
-            # ass filter: path must not contain special ffmpeg chars (our tmpdir is safe)
-            video_filters.append(f"ass={ass_dst}")
+            sub_filters = ass_to_drawtext_filters(ass_path, font, tmp_dir)
+            video_filters.extend(sub_filters)
+            print(f"  字幕 drawtext: {len(sub_filters)} セグメント")
+        else:
+            print("  [警告] ASS字幕ファイルなし。字幕なしで生成します。", file=sys.stderr)
 
         if not video_filters:
             video_filters.append(f"scale={W}:{H}")
