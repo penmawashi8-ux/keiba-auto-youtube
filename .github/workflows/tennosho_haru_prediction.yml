@@ -1,0 +1,106 @@
+name: 天皇賞(春)2026 枠順確定予想動画 生成・投稿（横向き）
+
+on:
+  workflow_dispatch:
+
+jobs:
+  post-tennosho-haru-prediction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: 天皇賞(春)2026 予想コンテンツを生成
+        run: python scripts/create_tennosho_haru_prediction.py
+
+      - name: Generate audio
+        run: python scripts/generate_audio.py
+
+      - name: BGMをダウンロード (CC0 public domain only)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py
+
+      - name: 横向き動画を生成
+        id: gen_video
+        timeout-minutes: 20
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python scripts/landscape_video.py
+
+      - name: 動画生成ログをIssueに投稿（失敗時のみ）
+        if: failure() && steps.gen_video.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          title = "[DEBUG] 天皇賞(春)2026予想 動画生成失敗 " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "天皇賞(春)2026予想ワークフローの動画生成ステップが失敗しました。ログを確認してください。"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo  = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Issue作成: {data.get('html_url')}")
+          PYEOF
+
+      - name: YouTubeに投稿（横向き）
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: python scripts/upload_landscape_youtube.py
+
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_landscape_ids.txt last_upload_result.txt 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: 天皇賞(春)2026枠順確定予想動画 投稿完了 [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
