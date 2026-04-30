@@ -3,6 +3,7 @@ output/
 news.json
 script.txt
 assets/landscape_*.jpg
+assets/fonts/
 quiz.json
 slides/
 audio/
