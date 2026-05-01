@@ -11,9 +11,12 @@ import os
 import random
 import re
 import shutil
+import ssl
 import subprocess
 import sys
 import tempfile
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 NEWS_JSON  = "news.json"
@@ -51,16 +54,71 @@ def audio_duration(path: str) -> float:
         return 60.0
 
 
-def fetch_images(count: int = 4) -> list[str]:
-    """Pixabay から競馬写真を取得。失敗時は geq グラデーションフォールバック。"""
+_SSL_CTX = ssl.create_default_context()
+_WP_UA   = "keiba-auto-youtube/1.0"
+_WP_SKIP = {".svg", ".ogv", ".ogg", ".webm", ".gif"}
+
+
+def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
+    """Wikipedia(ja→en)から馬の画像を取得してJPEGに変換する。"""
+    for lang in ("ja", "en"):
+        encoded = urllib.parse.quote(horse_name)
+        api_url = f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{encoded}"
+        try:
+            req = urllib.request.Request(
+                api_url, headers={"User-Agent": _WP_UA, "Accept": "application/json"}
+            )
+            with urllib.request.urlopen(req, timeout=12, context=_SSL_CTX) as r:
+                data = json.loads(r.read())
+        except Exception:
+            continue
+        src = (data.get("originalimage") or data.get("thumbnail") or {}).get("source", "")
+        if not src or Path(src.split("?")[0]).suffix.lower() in _WP_SKIP:
+            continue
+        ext = Path(src.split("?")[0]).suffix.lower() or ".jpg"
+        try:
+            req2 = urllib.request.Request(src, headers={"User-Agent": _WP_UA})
+            with urllib.request.urlopen(req2, timeout=30, context=_SSL_CTX) as r:
+                raw = r.read()
+        except Exception:
+            continue
+        tmp = out_path + ".raw" + ext
+        Path(tmp).write_bytes(raw)
+        res = subprocess.run(
+            ["ffmpeg", "-y", "-i", tmp, "-frames:v", "1", "-q:v", "2", out_path],
+            capture_output=True,
+        )
+        Path(tmp).unlink(missing_ok=True)
+        if res.returncode == 0:
+            return True
+    return False
+
+
+def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[str]:
+    """馬名が指定されればWikipedia、次いでPixabayから競馬写真を取得。
+    失敗時は geq グラデーションフォールバック。"""
     Path(ASSETS_DIR).mkdir(exist_ok=True)
-    queries = ["horse racing track", "horse racing", "jockey horse race", "thoroughbred racing"]
-    pixabay_key = os.environ.get("PIXABAY_API_KEY", "")
     paths: list[str] = []
 
+    # Wikipedia から馬専用画像を取得
+    if horse_names:
+        for i, name in enumerate(horse_names[:count]):
+            out = f"{ASSETS_DIR}/landscape_{i}.jpg"
+            if _fetch_wikipedia_image(name, out):
+                paths.append(out)
+                print(f"  Wikipedia画像: {name}")
+        if len(paths) >= count:
+            return paths[:count]
+
+    queries = ["horse racing track", "horse racing", "jockey horse race", "thoroughbred racing"]
+    pixabay_key = os.environ.get("PIXABAY_API_KEY", "")
+
     import requests
-    for i in range(count):
+    for i in range(len(paths), count):
         out = f"{ASSETS_DIR}/landscape_{i}.jpg"
+        if Path(out).exists() and Path(out).stat().st_size > 1000:
+            paths.append(out)
+            continue
         if pixabay_key:
             try:
                 r = requests.get("https://pixabay.com/api/", params={
@@ -284,21 +342,39 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
     tmp_dir = tempfile.mkdtemp(prefix=f"ls_{idx}_")
     try:
         fp = _esc(font or "")
-        bg_img = bg_imgs[0] if bg_imgs else None
+        valid_imgs = [p for p in bg_imgs if p and Path(p).exists()]
+        N = min(len(valid_imgs), 4)
 
-        # Input 0: background image (looped) or lavfi color
-        # Input 1: narration audio
-        # Input 2 (optional): BGM
-        if bg_img and Path(bg_img).exists():
-            bg_inputs  = ["-loop", "1", "-i", bg_img]
-            vid_init   = [
-                f"scale={W}:{H}:force_original_aspect_ratio=increase",
-                f"crop={W}:{H}",
-                "eq=brightness=-0.06",
-            ]
+        img_scale = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+                     f"crop={W}:{H},eq=brightness=-0.06")
+
+        if N >= 2:
+            # 複数画像をconcatしてシーンチェンジ
+            seg_dur = total_dur / N
+            bg_inputs = []
+            for i, img in enumerate(valid_imgs[:N]):
+                dur = seg_dur if i < N - 1 else (total_dur - (N - 1) * seg_dur + 1.0)
+                bg_inputs += ["-r", str(FPS), "-loop", "1", "-t", f"{dur:.3f}", "-i", img]
+            pre_filters = [f"[{i}:v]{img_scale}[vi{i}]" for i in range(N)]
+            concat_in = "".join(f"[vi{i}]" for i in range(N))
+            pre_filters.append(f"{concat_in}concat=n={N}:v=1:a=0[bgout]")
+            vid_start = "[bgout]"
+            vid_init  = []
+            audio_idx = N
+            print(f"  背景: {N}枚concat ({seg_dur:.1f}s×{N})")
+        elif N == 1:
+            bg_inputs = ["-loop", "1", "-i", valid_imgs[0]]
+            pre_filters = []
+            vid_start = "[0:v]"
+            vid_init  = [f"scale={W}:{H}:force_original_aspect_ratio=increase",
+                         f"crop={W}:{H}", "eq=brightness=-0.06"]
+            audio_idx = 1
         else:
             bg_inputs = ["-f", "lavfi", "-i", f"color=c=#0D1B2A:s={W}x{H}:r={FPS}"]
+            pre_filters = []
+            vid_start = "[0:v]"
             vid_init  = []
+            audio_idx = 1
 
         video_filters: list[str] = list(vid_init)
 
@@ -369,7 +445,8 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         if not video_filters:
             video_filters.append(f"scale={W}:{H}")
 
-        vid_chain = "[0:v]" + ",".join(video_filters) + "[vout]"
+        vid_chain = vid_start + ",".join(video_filters) + "[vout]"
+        fc_video_parts = list(pre_filters) + [vid_chain]
 
         # --- BGM ---
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
@@ -378,17 +455,17 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         if bgm_file:
             print(f"  BGM: {Path(bgm_file).name}")
             audio_chain = (
-                f"[1:a]apad=whole_dur={total_dur:.3f}[narr];"
-                f"[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]"
+                f"[{audio_idx}:a]apad=whole_dur={total_dur:.3f}[narr];"
+                f"[narr][{audio_idx+1}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]"
             )
-            fc = vid_chain + ";" + audio_chain
+            fc = ";".join(fc_video_parts) + ";" + audio_chain
             cmd = (["ffmpeg", "-y"] + bg_inputs +
                    ["-i", audio_path, "-stream_loop", "-1", "-i", bgm_file,
                     "-filter_complex", fc,
                     "-map", "[vout]", "-map", "[aout]"])
         else:
-            audio_chain = f"[1:a]apad=whole_dur={total_dur:.3f}[aout]"
-            fc = vid_chain + ";" + audio_chain
+            audio_chain = f"[{audio_idx}:a]apad=whole_dur={total_dur:.3f}[aout]"
+            fc = ";".join(fc_video_parts) + ";" + audio_chain
             cmd = (["ffmpeg", "-y"] + bg_inputs +
                    ["-i", audio_path,
                     "-filter_complex", fc,
@@ -410,6 +487,7 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         size_mb = Path(output_path).stat().st_size / (1024 * 1024)
         print(f"✅ {output_path} ({size_mb:.1f} MB)")
 
+        bg_img = valid_imgs[0] if valid_imgs else None
         if Path(thumb_path).exists():
             print(f"  サムネイル既存のためスキップ: {thumb_path}")
         else:
@@ -427,17 +505,17 @@ def main() -> None:
         sys.exit(0)
 
     print(f"動画生成対象: {len(news_items)} 件")
-    font    = find_font()
-    bg_imgs = fetch_images(4)
-    if not bg_imgs:
-        print("[警告] 背景画像取得失敗。ソリッドカラーを使用します。", file=sys.stderr)
-
+    font = find_font()
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
     success = 0
     for idx, meta in enumerate(news_items):
-        race_name = meta.get("race_name", f"レース{idx}")
+        race_name   = meta.get("race_name", f"レース{idx}")
+        horse_names = meta.get("horses")
         print(f"\n=== [{idx}] {race_name} ===")
+        bg_imgs = fetch_images(4, horse_names=horse_names)
+        if not bg_imgs:
+            print("[警告] 背景画像取得失敗。ソリッドカラーを使用します。", file=sys.stderr)
         try:
             generate_video(idx, meta, font, bg_imgs)
             success += 1

@@ -231,11 +231,11 @@ def _audio_duration_s(audio_path: str) -> float:
         return 60.0
 
 
-def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int = 22) -> list[dict]:
-    """テキストと音声長から字幕セグメントを近似生成する（Kokoro TTS用）。
-    ワードタイミングが得られない場合に文字数比率でタイミングを推定する。
+def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int = 28) -> list[dict]:
+    """テキストと音声長から字幕セグメントを近似生成する。
+    句点（。！？\n）のみで区切り、読点（、）では区切らない。
     """
-    parts = [p.strip() for p in re.split(r"(?<=[。！？、\n])", text) if p.strip()]
+    parts = [p.strip() for p in re.split(r"(?<=[。！？\n])", text) if p.strip()]
     if not parts:
         return []
 
@@ -292,38 +292,15 @@ def detect_font_name() -> str:
     return "Sans"
 
 
-async def generate_audio_and_subtitles(
-    script: str, audio_path: str, ass_path: str, font_name: str,
-    voice: str = "ja-JP-KeitaNeural", rate: str = "+0%",
-) -> None:
+async def _edge_tts_audio_only(script: str, audio_path: str, voice: str, rate: str) -> None:
+    """edge-tts で音声のみ生成する（字幕は別途 _estimate_subtitle_segments で作成）。"""
     communicate = edge_tts.Communicate(script, voice, rate=rate, volume=VOLUME)
-    words: list[dict] = []
-
     with open(audio_path, "wb") as f:
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
-            elif chunk["type"] == "WordBoundary":
-                words.append({
-                    "text": chunk["text"],
-                    "offset": chunk["offset"],
-                    "duration": chunk["duration"],
-                })
-
-    segments = words_to_segments(words)
-
-    # edge-tts が WordBoundary イベントを返さない場合のフォールバック
-    if not segments:
-        print("  [警告] WordBoundaryイベントなし。音声長から字幕タイミングを推定します。",
-              file=sys.stderr)
-        aud_dur = _audio_duration_s(audio_path)
-        segments = _estimate_subtitle_segments(script, aud_dur)
-
-    write_ass(segments, ass_path, font_name)
-
     size_kb = Path(audio_path).stat().st_size // 1024
     print(f"  音声: {audio_path} ({size_kb} KB)")
-    print(f"  字幕: {ass_path} ({len(segments)} セグメント)")
 
 
 def main() -> None:
@@ -350,15 +327,17 @@ def main() -> None:
 
         idx_int = int(idx)
         title = news_items[idx_int].get("title", "") if idx_int < len(news_items) else ""
-        narration_text = (title + "。" + script) if title else script
+        # subtitle_text: 原文テキスト（字幕表示用 — 人名は漢字のまま）
+        subtitle_text = (title + "。" + script) if title else script
+        # narration_text: 読み仮名置換済み（TTS用）
+        narration_text = normalize_racing_terms(subtitle_text)
+        narration_text = apply_readings(narration_text)
         if title:
             print(f"  [{idx}] タイトル読み上げ追加: 「{title[:40]}」")
 
         audio_path = f"{OUTPUT_DIR}/audio_{idx}.mp3"
         ass_path = f"{OUTPUT_DIR}/subtitles_{idx}.ass"
 
-        narration_text = normalize_racing_terms(narration_text)
-        narration_text = apply_readings(narration_text)
         voice, rate, pitch_factor, volume_db = pick_tts_params()
         is_kokoro_voice = voice in _KOKORO_VOICE_POOL
         engine = "Kokoro" if (_KOKORO_AVAILABLE and is_kokoro_voice) else "edge-tts"
@@ -368,13 +347,9 @@ def main() -> None:
                 if _KOKORO_AVAILABLE and is_kokoro_voice:
                     speed = 1.0 + (int(rate.replace("%", "").replace("+", "")) / 100)
                     generate_audio_kokoro(narration_text, audio_path, voice=voice, speed=speed)
-                    aud_dur = _audio_duration_s(audio_path)
-                    segs = _estimate_subtitle_segments(narration_text, aud_dur)
-                    write_ass(segs, ass_path, font_name)
                 else:
-                    asyncio.run(generate_audio_and_subtitles(
-                        narration_text, audio_path, ass_path, font_name,
-                        voice=voice, rate=rate,
+                    asyncio.run(_edge_tts_audio_only(
+                        narration_text, audio_path, voice=voice, rate=rate,
                     ))
                 break
             except Exception as e:
@@ -388,7 +363,13 @@ def main() -> None:
                     time.sleep(10 * attempt)
                 else:
                     raise RuntimeError(f"音声生成を3回試みましたが失敗しました。idx={idx}")
+
+        # 音声バリエーション適用後の実際の音声長で字幕タイミングを確定
         apply_audio_variation(audio_path, pitch_factor, volume_db)
+        aud_dur = _audio_duration_s(audio_path)
+        segs = _estimate_subtitle_segments(subtitle_text, aud_dur)
+        write_ass(segs, ass_path, font_name)
+        print(f"  字幕: {ass_path} ({len(segs)} セグメント)")
         return idx
 
     max_workers = min(2, len(script_files))
