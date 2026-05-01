@@ -59,7 +59,9 @@ jobs:
         timeout-minutes: 20
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-        run: python scripts/landscape_video.py
+        run: |
+          python -u scripts/landscape_video.py 2>&1 | tee "$GITHUB_WORKSPACE/landscape_video_log.txt"
+          exit ${PIPESTATUS[0]}
 
       - name: 動画生成ログをIssueに投稿（失敗時のみ）
         if: failure() && steps.gen_video.conclusion == 'failure'
@@ -69,8 +71,15 @@ jobs:
         run: |
           python3 - <<'PYEOF'
           import os, json, urllib.request, datetime
+          log_path = os.environ.get("GITHUB_WORKSPACE", "") + "/landscape_video_log.txt"
+          try:
+              with open(log_path, encoding="utf-8") as f:
+                  lines = f.readlines()
+              log = "".join(lines[-100:])
+          except Exception:
+              log = "(ログなし)"
           title = "[DEBUG] 天皇賞(春)2026予想 動画生成失敗 " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
-          body = "天皇賞(春)2026予想ワークフローの動画生成ステップが失敗しました。ログを確認してください。"
+          body = "```\n" + log + "\n```"
           payload = json.dumps({"title": title, "body": body}).encode()
           repo  = os.environ["GH_REPO"]
           token = os.environ["GH_TOKEN"]

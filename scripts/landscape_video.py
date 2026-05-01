@@ -346,7 +346,7 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         N = min(len(valid_imgs), 4)
 
         img_scale = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
-                     f"crop={W}:{H},eq=brightness=-0.06")
+                     f"crop={W}:{H},eq=brightness=-0.06,setsar=1")
 
         if N >= 2:
             # 複数画像をconcatしてシーンチェンジ
@@ -431,9 +431,6 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
                 )
 
         # --- ASS字幕 → drawtext フィルターに変換して適用 ---
-        # ass フィルターは libass+fontconfig でフォントを名前検索するため
-        # GitHub Actions 環境で CJK フォントが見つからず字幕未表示になる。
-        # drawtext は fontfile= で直接指定できるため確実に動作する。
         has_ass = Path(ass_path).exists() and Path(ass_path).stat().st_size > 100
         if has_ass:
             sub_filters = ass_to_drawtext_filters(ass_path, font, tmp_dir)
