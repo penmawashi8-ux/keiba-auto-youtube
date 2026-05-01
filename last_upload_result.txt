@@ -1,10 +1,10 @@
-date: 2026-05-01T09:09:14.733525Z
+date: 2026-05-01T10:35:16.135256Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FiAu5TKNYLE title=【エプソムC想定馬・騎手】ステレンボッシュ、トロヴァトーレなど17頭
-OK project=1 video_id=nXUEYBU0-m8 title=【注目馬動向】24年桜花賞馬のステレンボッシュは戸崎圭太騎手との再コンビでエプソ
-OK project=1 video_id=gd7jvBjb8ng title=【注目馬動向】東京新聞杯覇者のトロヴァトーレはルメール騎手とコンビ継続でエプソム
+OK project=1 video_id=PFpMtAPCxpI title=【大井競馬】新種牡馬インティが産駒初出走で初勝利　南関東で今年最初の新馬戦をキョ
+OK project=1 video_id=QYIvFfwhUqs title=【金沢競馬】青柳正義騎手と鈴木正也調教師が師弟で同日に節目の勝利　1500勝&1
+OK project=1 video_id=dOAAXqZKua0 title=【高知競馬】近藤翔月騎手がホッカイドウ競馬で期間限定騎乗　今月13日から3か月間
