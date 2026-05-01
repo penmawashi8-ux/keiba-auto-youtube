@@ -5,43 +5,39 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事にない具体的な内容: 「
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【名古屋グランプリ】川田将雅騎手のカズタンジャーは最内1枠1番　松山弘平騎手のアウトレンジは大外8枠12番 ---
-[0] Gemini入力本文 361文字: '◆第26回名古屋グランプリ・Jpn2(5月4日18時5分発走、名古屋競馬場・ダート2100メートル)＝枠順確定\n\t\t\t\t\u3000注目のダートグレード競走に出走する12頭(JRA5、名古屋4、他地区3)の枠順が5月1日に決まった。\n\t\t\t\t\u3000JRA'
+--- 記事[0]: 【名古屋GP枠順】5月4日開催のダートグレード重賞 川崎記念3着のアウトレンジは8枠12番 ---
+[0] Gemini入力本文 512文字: '5月4日(祝・月)に名古屋競馬場で行われる名古屋グランプリ(4歳上・JpnII・ダ2100m)の枠順が確定した。\n\u3000川崎記念3着のアウトレンジは8枠12番、ダイオライト記念を制したオディロンは7枠9番に入った。\n\u3000そのほかにも、重賞2勝のホ'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 兵庫アーバン競馬が5月4、5日にゴールデンウィーク開催PRイベント　阪急大阪梅田駅直結ビッグマン前広場で実施 ---
-[1] Gemini入力本文 347文字: '兵庫アーバン競馬(園田、姫路競馬)を主催する兵庫県競馬組合は5月1日、5月4日から7日のゴールデンウィーク開催に合わせ、4日(10時〜20時)と5日(10時〜19時)に阪急大阪梅田駅直結のビッグマン前広場でイベントを実施することを発表した。'
+--- 記事[1]: ペコリ…礼儀正しくお辞儀する“神様の馬”が「美しい」と大人気!京都「上賀茂神社」の神馬は元競走馬 ---
+[1] Gemini入力本文 339文字: '今年は午(うま)年。「馬とゆかりのある場所」を取り上げる企画「馬さんぽ」(随時掲載)第4弾は、京都市北区にある賀茂別雷神社(通称・上賀茂神社)を紹介。乗馬の発祥の地といわれる京都最古の神社には、とても“礼儀正しい”神馬がいた。\n\t\t\t\t■神'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: マンハッタンカフェ産駒が中央から消えた…　最後のJRA所属馬ダンディズムが現役引退　天皇賞・春で父子制覇ヒルノダムールな ---
-[2] Gemini入力本文 346文字: '2023年福島記念2着など長く一線級で活躍したダンディズム(セン10歳、栗東・野中賢二厩舎、父マンハッタンカフェ)が4月29日付けで競走馬登録を抹消されていたことが5月1日、分かった。今後は競馬学校で乗馬となる予定。これで中央に所属するマン'
+--- 記事[2]: 【天皇賞・春・金曜気配】最内枠のヴェルミセルは坂路で順調　「あとは早く雨が降ってくれれば」吉村調教師はタフな条件を希望 ---
+[2] Gemini入力本文 349文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝5月1日、栗東トレセン\n\t\t\t\t\u3000最内枠からスタートするヴェルミセル(牝6歳、栗東・吉村圭司厩舎、父ゴールドシップ)は、角馬場から坂路でキャンター。吉村調教師は「馬体'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -58,37 +54,112 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 245文字]: '最新のレース情報が入ってきました。兵庫アーバン競馬、園田、姫路競馬を主催する兵庫県競馬組合は、5月1日に発表しました。これは、5月4日から7日のゴールデンウィーク開催に合わせ、PRイベントを実施するものです。イベントは5月4日の午前10時から午後8時までと、5月5日の午前10時から午後7時まで、阪急大阪梅田駅直結のビッグマン前広場で行われます。HUK特設ブースでは、オリジナルグッズが当たる「うまガチャ」に挑戦でき、スペシャルアンバサダー「かまいたち」がデザインされたグッズももらえます。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (245文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。兵庫アーバン競馬、園田、姫路競馬を主催する兵庫県競馬組合は、5月1日に発表しました。これは、5月4日から7日のゴールデンウィー...
+[1]  [Gemini生出力 213文字]: '最新情報をお届けします。\n今年は午年で、「馬とゆかりのある場所」を取り上げる企画「馬さんぽ」の第4弾として、京都市北区にある賀茂別雷神社、通称・上賀茂神社が紹介されました。乗馬の発祥の地といわれる京都最古のこの神社には、とても“礼儀正しい”神馬がいるとのことです。その神馬の名前は「神山号」で、神に仕える神馬です。美しく厳かな神社の鳥居をくぐると、元気な白馬が出迎えてくれる「神山号」は、元競走馬であることも伝えられています。'
+[1]  [redirectフィルター] 213文字 → 200文字
   HTTP 200
-[2]  [Gemini生出力 202文字]: 'レース関連の最新情報です。\n2023年福島記念2着など長く一線級で活躍したダンディズムが、4月29日付けで競走馬登録を抹消されていたことが5月1日に分かりました。ダンディズムは10歳で、今後は競馬学校で乗馬となる予定です。この引退により、中央に所属するマンハッタンカフェ産駒はいなくなりました。父マンハッタンカフェは、現役時代に2001年の菊花賞、有馬記念、2002年の天皇賞・春とG1を3勝しています。'
-[2]  [重複除去] 202文字 → 201文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: レース関連の最新情報です。2023年福島記念2着など長く一線級で活躍したダンディズムが、4月29日付けで競走馬登録を抹消されていたことが5月1日に分かりました。...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0]  [Gemini生出力 195文字]: '最新情報をお届けします。\n5月4日(祝・月)に名古屋競馬場で行われる名古屋グランプリ、4歳上・JpnII・ダート2100mの枠順が確定しました。川崎記念で3着のアウトレンジは8枠12番、ダイオライト記念を制したオディロンは7枠9番に入っています。そのほかにも、重賞2勝のホウオウルーレット、佐賀記念3着のユメノホノオなどが出走を予定しています。発走予定日時は4日(祝・月)の18時5分です。'
+[0]  [redirectフィルター] 195文字 → 182文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (182文字)
+[0]  プレビュー: 5月4日(祝・月)に名古屋競馬場で行われる名古屋グランプリ、4歳上・JpnII・ダート2100mの枠順が確定しました。川崎記念で3着のアウトレンジは8枠12番、...
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[1] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 214文字]: 'レース関連の最新情報です。\n第26回名古屋グランプリ・Jpn2（5月4日18時5分発走、名古屋競馬場・ダート2100メートル）の枠順が確定しました。\n出走するのは12頭で、JRA勢5頭、名古屋競馬場4頭、他地区3頭です。\nカズタンジャー（牡5歳、栗東・新谷功一厩舎、父ドレフォン）は最内1枠1番、川田将雅騎手が騎乗します。\nアウトレンジ（牡6歳、名古屋・池江崎郎厩舎）は、大外8枠12番となりました。\n松山弘平騎手が騎乗します。'
-[0]  [重複除去] 176文字 → 171文字
-[0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (171文字)
-[0]  プレビュー: レース関連の最新情報です。第26回名古屋グランプリ・Jpn2（5月4日18時5分発走、名古屋競馬場・ダート2100メートル）の枠順が確定しました。出走するのは1...
+[1]  [Gemini生出力 160文字]: '最新情報をお届けします。\n今年度は午年。馬とゆかりのある場所を取り上げる企画「馬さんぽ」第4弾として、京都市北区にある賀茂別雷神社、通称上賀茂神社が紹介されました。乗馬の発祥の地とされるこの神社には、非常に礼儀正しい神馬がいます。その馬の名は神山号。神に仕える神馬として、神社には元気な白馬が出迎えてくれるとのことです。'
+[1]  [redirectフィルター] 160文字 → 147文字
+[1]  → 馬名を使わず抽象表現のためスキップ: 今年度は午年。馬とゆかりのある場所を取り上げる企画「馬さんぽ」第4弾として、京都市北区にある賀茂別雷神社、通称上賀茂神社
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
+    response.begin()
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
 
-3 件の脚本を生成しました。
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 529, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 512, in main
+    i, ok = future.result()
+            ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 341, in generate_one
+    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 241, in call_gemini
+    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
