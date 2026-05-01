@@ -1,1 +1,50 @@
-(ログなし)
+=== Wikimedia Commons 画像検索: エルコンドルパサー ===
+  検索クエリ: 「エルコンドルパサー racehorse」
+  ヒット数: 20 件
+  チェック: File:El Condor Pasa 19991128I1.jpg
+    OK: Goki (talk) / CC BY-SA 3.0 aspect=0.82
+  チェック: File:El cóndor pasa in Mexico.jpg
+    OK: Alfredo Gayou from Mexico, Mexico / CC BY 2.0 aspect=0.67
+  チェック: File:El cóndor pasa.pdf
+  チェック: File:El Condor Pasa (122006897).jpeg
+    OK: Mathieu Dupouy / CC BY 3.0 aspect=1.00
+  チェック: File:El Condor Pasa (232413017).jpeg
+    OK: Bhasker Thodla / CC BY 3.0 aspect=0.66
+  チェック: File:Daniel Alomía Robles - El Cóndor Pasa.ogg
+  チェック: File:El condor pasa- flou stroboscopique-partition.JPG
+    OK: Phprevet / CC BY-SA 4.0 aspect=0.67
+  チェック: File:El condor pasa- flou stroboscopique-en mouvement.JPG
+    OK: Phprevet / CC BY-SA 4.0 aspect=0.67
+  チェック: File:El cóndor pasa.jpg
+    OK: Andrés Monroy-Hernández from Cambridge, USA / CC BY-SA 2.0 aspect=0.75
+  チェック: File:Nelly with El Condor Pasa.jpg
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 195, in main
+    info = get_image_info(title)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 64, in get_image_info
+    data = api_get({
+           ^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 36, in api_get
+    with urllib.request.urlopen(req, timeout=20) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 429: Too Many Requests

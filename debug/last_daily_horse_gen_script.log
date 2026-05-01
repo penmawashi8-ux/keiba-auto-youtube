@@ -20,71 +20,60 @@
   - ウォッカ (vodka)
 
 [名馬選定・脚本生成・ファクトチェック中...]
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
-  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
-  [key=***... gemini-2.0-flash-lite] 429 詳細: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
-  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
 [API応答]
-HORSE_NAME: ヴェラスター
-HORSE_KEY: vera_star
-ERA: 2000年代
-CATCHPHRASE: 逃げ切る不屈の魂
-
+HORSE_NAME: エルコンドルパサー
+HORSE_KEY: el_condor_pasa
+ERA: 1990年代
+CATCHPHRASE: 世界への扉を開いた先駆者
 ---SCRIPT---
-スタートラインで、馬が12頭中11頭を逃げさせた。
-その馬の名前、ヴェラスター。
-2004年のサマーチャンピオンシップを、逃げ切りで制めた。
-父はディープインパクト、母はステイゴールド。
-血統は強力だった。
-しかし、その後の調教は困難を極めた。
-蹄葉炎と骨膜炎を繰り返す。
-それでもヴェラスターは、調教師の松山雅寛と共に戦い続けた。
-2006年の天皇賞（秋）に出走。
-スタートから猛ダッシュ。
-しかし、300m地点で失速。
-16着という結果に終わった。
-それでもヴェラスターは、最後まで走り抜いた。
-その姿は、まるで「不屈の魂」のようだった。
-松山雅寛調教師は言った。「ヴェラスターは、決して諦めない馬だ」。
-2008年、ヴェラスターは引退。
-その生涯は、短いものだった。
-4歳と半ばで、蹄葉炎が再発したことがきっかけ。
-それでも、ヴェラスターは、競馬ファンに感動を与えた。
-「逃げ切る」という、その姿は、今も多くの人々の記憶に残っている。
-短い生涯だったが、ヴェラスターは、競馬史に名を刻んだ。
-それは、勝利への執念と、諦めない心。
-それが、ヴェラスターの物語だ。...
+日本馬が、凱旋門賞で2着になったことがある
+その馬の名前、エルコンドルパサー
+デビューから無敗でNHKマイルカップを制覇
+ジャパンカップも制して国内G1を2勝
+しかし彼の目標は世界だった
+1999年、フランス遠征を決行
+初戦のイスパーン賞は惜しくも2着
+続くサンクルー大賞を4馬身差で圧勝
+フォワ賞も2馬身差で快勝し、凱旋門賞へ
+迎えた1999年凱旋門賞
+道悪のロンシャンを先行し直線へ
+世界の強豪モンジューと激しい叩き合い
+結果はクビ差の2着
+日本馬の凱旋門賞最高着順を記録した
+この挑戦が日本競馬の海外への扉を開いた
+世界という夢への道筋を、彼は照らし続けた
+---END---...
 
-[エラー] 「ヴェラスター」は既に紹介済みです。AIが指示を無視しました。中止します。
+[選定完了] 馬名: エルコンドルパサー  キー: el_condor_pasa
+[最終脚本]
+日本馬が、凱旋門賞で2着になったことがある
+その馬の名前、エルコンドルパサー
+デビューから無敗でNHKマイルカップを制覇
+ジャパンカップも制して国内G1を2勝
+しかし彼の目標は世界だった
+1999年、フランス遠征を決行
+初戦のイスパーン賞は惜しくも2着
+続くサンクルー大賞を4馬身差で圧勝
+フォワ賞も2馬身差で快勝し、凱旋門賞へ
+迎えた1999年凱旋門賞
+道悪のロンシャンを先行し直線へ
+世界の強豪モンジューと激しい叩き合い
+結果はクビ差の2着
+日本馬の凱旋門賞最高着順を記録した
+この挑戦が日本競馬の海外への扉を開いた
+世界という夢への道筋を、彼は照らし続けた
+
+[20秒待機中（レート制限対策）...]
+[メタデータ生成中...]
+[メタデータ応答]
+TAGS: エルコンドルパサー, 凱旋門賞, NHKマイルカップ, ジャパンカップ, 世界挑戦, 海外遠征, 伝説, 90年代
+THUMBNAIL_TOP: 史上初の
+THUMBNAIL_MAIN: 凱旋門賞2着
+
+
+[名馬データ保存]
+  data/famous_horses/el_condor_pasa.txt
+  data/famous_horses/el_condor_pasa.json
+[パイプライン用ファイル書き出し]
+  news.json: タイトル「エルコンドルパサー」
+  output/script_0.txt: 281 文字

@@ -1,1 +1,12 @@
-(ログなし)
+Kokoro TTS が利用可能です。
+=== 音声生成開始 ===
+字幕フォント: Noto Sans CJK JP
+並列ワーカー数: 1
+  [0] タイトル読み上げ追加: 「エルコンドルパサー」
+
+--- 音声生成 [0] (293文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
+  音声: output/audio_0.mp3 (410 KB)
+  音声バリエーション適用: pitch×0.9860 vol-1.49dB
+  字幕: output/subtitles_0.ass (17 セグメント)
+
+1/1 件の音声を生成しました。
