@@ -1,10 +1,9 @@
-date: 2026-05-01T06:33:32.267928Z
-projects_loaded: 1
-uploaded: 3
+date: 2026-05-01T07:50:02.438789Z
+type: landscape_prediction
+total_races: 1
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XKOfFHBeL6k title=【名古屋グランプリ】川田将雅騎手のカズタンジャーは最内1枠1番　松山弘平騎手のア
-OK project=1 video_id=Ocp9S7qALIM title=兵庫アーバン競馬が5月4、5日にゴールデンウィーク開催PRイベント　阪急大阪梅田
-OK project=1 video_id=zs1QfTKyvC4 title=マンハッタンカフェ産駒が中央から消えた…　最後のJRA所属馬ダンディズムが現役引
+OK project=1 video_id=_DTBSHt84oI title=天皇賞（春） 予想 5月1日【完全版】
