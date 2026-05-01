@@ -1,9 +1,10 @@
-date: 2026-04-30T23:46:05.082510Z
-type: landscape_prediction
-total_races: 1
-uploaded: 1
+date: 2026-05-01T00:15:15.331035Z
+projects_loaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=VZxqakWvrio title=【競馬予想】 5月1日 完全版
+OK project=1 video_id=ZSn2lJIYKwo title=障害2勝のインディゴブラック 約2年ぶりの平地参戦だ
+OK project=1 video_id=-lg4BFl9WjQ title=武豊騎手がウマ娘声優・亜咲花らとトークショー「4日連続重賞V狙う」
+OK project=1 video_id=RAwPIl5zPN4 title=武豊騎手がウマ娘声優・亜咲花らと共演「4日連続の重賞勝利を狙いたい」
