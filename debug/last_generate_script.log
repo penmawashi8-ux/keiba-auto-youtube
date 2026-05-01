@@ -5,22 +5,12 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
@@ -29,20 +19,20 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【エプソムC想定馬・騎手】ステレンボッシュ、トロヴァトーレなど17頭 ---
-[0] Gemini入力本文 343文字: '5月9日(土)に東京競馬場で行われるエプソムカップ(4歳上・GIII・芝1800m)。\n\u3000現時点では、一昨年の桜花賞馬ステレンボッシュ、東京新聞杯覇者のトロヴァトーレ、中山金杯と中山記念でともに好走したカラマティアノスなど17頭が登録を予定'
+--- 記事[0]: 【大井競馬】新種牡馬インティが産駒初出走で初勝利　南関東で今年最初の新馬戦をキョウエイアカギがV ---
+[0] Gemini入力本文 340文字: '5月1日の大井競馬5Rで南関東では今年最初となる2歳新馬戦が行われた。5頭立ての4番人気だったキョウエイアカギ(牡、阪本一栄厩舎)が直線で抜け出し、3／4馬身差をつけて1着。初陣を飾った。新種牡馬インティは産駒初出走で初勝利。手綱を執った藤'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【注目馬動向】24年桜花賞馬のステレンボッシュは戸崎圭太騎手との再コンビでエプソムCへ ---
-[1] Gemini入力本文 403文字: '24年桜花賞馬のステレンボッシュ(牝5歳、美浦・宮田敬介厩舎、父エピファネイア)は、エプソムC・G3(5月9日、東京競馬場・芝1800メートル)へ向かう。鞍上は戸崎圭太騎手＝美浦・田島俊明厩舎＝となることが分かった。サンデーサラブレッドクラ'
+--- 記事[1]: 【金沢競馬】青柳正義騎手と鈴木正也調教師が師弟で同日に節目の勝利　1500勝&1100勝 ---
+[1] Gemini入力本文 504文字: '金沢競馬所属の青柳正義騎手(41)＝鈴木正也厩舎＝は1日、金沢競馬競馬9Rでネバレチュゴーに騎乗して1着。2003年4月の初騎乗以来、1万2446戦目で地方競馬通算1500勝を達成した。\n\t\t\t\t\u3000また、鈴木正也調教師(68)は、同日の7R'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【注目馬動向】東京新聞杯覇者のトロヴァトーレはルメール騎手とコンビ継続でエプソムCへ ---
-[2] Gemini入力本文 343文字: '東京新聞杯で重賞2勝目を挙げたトロヴァトーレ(牡5歳、美浦・鹿戸雄一厩舎、父レイデオロ)は、エプソムC・G3(5月9日、東京競馬場・芝1800メートル)へ向かう。鞍上は前走に引き続き、クリストフ・ルメール騎手＝栗東・フリー＝となることが分か'
+--- 記事[2]: 【高知競馬】近藤翔月騎手がホッカイドウ競馬で期間限定騎乗　今月13日から3か月間 ---
+[2] Gemini入力本文 372文字: '高知競馬所属の近藤翔月騎手(18)＝宮川浩一厩舎＝は、5月13日から8月13日までホッカイドウ競馬で期間限定騎乗する。期間中の所属は川島雅人厩舎。\n\t\t\t\t\u3000同騎手は2025年4月のデビューで、5月1日現在で通算65勝を挙げている。 高知競'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -59,38 +49,25 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 232文字]: '今週の競馬注目情報をお伝えします。東京新聞杯で重賞2勝目を挙げたトロヴァトーレは、エプソムC・G3へ向かうことが分かりました。エプソムCは5月9日に東京競馬場の芝1800メートルで行われます。鞍上は前走に引き続き、クリストフ・ルメール騎手となることが決定しました。この情報はサンデーサラブレッドクラブが5月1日までにホームページで発表しています。トロヴァトーレは前走後、放牧先の福島・ノーザンファーム天栄で調整が進められ、4月15日に美浦トレセンへ帰厩しています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (232文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。東京新聞杯で重賞2勝目を挙げたトロヴァトーレは、エプソムC・G3へ向かうことが分かりました。エプソムCは5月9日に東京競馬場の...
+[1]  [Gemini生出力 229文字]: '本日の競馬ニュースです。\n金沢競馬所属の青柳正義騎手は1日、金沢競馬9Rでネバレチュゴーに騎乗し1着となり、地方競馬通算1500勝を達成しました。これは2003年4月の初騎乗以来、1万2446戦目での節目となる勝利です。また、鈴木正也調教師は同日の7Rで管理するカミノマジックを出走させ1着となり、地方競馬通算1100勝を達成しました。鈴木調教師の1100勝は1991年4月の初出走以来、9412戦目での記録です。師弟が同日にそれぞれ節目の勝利を飾りました。'
+[1]  [重複除去] 229文字 → 228文字
   HTTP 200
-[0]  [Gemini生出力 206文字]: '最新情報をお届けします。5月9日(土)に東京競馬場で行われるエプソムカップは、4歳上・GIII・芝1800mのレースです。現時点では17頭が登録を予定しており、フルゲートは18頭となっています。登録予定馬には、一昨年の桜花賞馬ステレンボッシュ、東京新聞杯覇者のトロヴァトーレ、中山金杯と中山記念でともに好走したカラマティアノスなどが名を連ねています。これらの各馬は出走予定の段階であり、変更の可能性がございます。'
-[0]  [redirectフィルター] 206文字 → 194文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (194文字)
-[0]  プレビュー: 5月9日(土)に東京競馬場で行われるエプソムカップは、4歳上・GIII・芝1800mのレースです。現時点では17頭が登録を予定しており、フルゲートは18頭となっ...
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
+[0]  [Gemini生出力 251文字]: '最新情報をお届けします。\n5月1日の大井競馬5Rで南関東では今年最初となる2歳新馬戦が行われました。5頭立ての4番人気だったキョウエイアカギが直線で抜け出し、3／4馬身差をつけて1着となり、初陣を飾りました。この勝利は新種牡馬インティにとって、産駒初出走での初勝利となります。手綱を執った藤田凌騎手は「反応は良かったし、この競馬ができたのなら、どんな競馬もできそう」と評価しました。キョウエイアカギの母は、2009年のローレル賞・S3を制したキョウエイトリガーで、母も阪本一栄調教師が管理していました。'
+[0]  [redirectフィルター] 251文字 → 238文字
   HTTP 200
-[1]  [Gemini生出力 228文字]: 'レース関連の最新情報です。24年桜花賞馬のステレンボッシュが、戸崎圭太騎手との再コンビでエプソムC・G3(5月9日、東京競馬場・芝1800メートル)へ向かうことが発表されました。ステレンボッシュは牝5歳で、美浦・宮田敬介厩舎に預けられており、父はエピファネイアです。戸崎圭太騎手とは、25年ヴィクトリアマイルで8着を喫した後、4戦ぶり4度目のコンビとなります。前走の中山牝馬Sでは7着に敗れましたが、今後はエプソムC・G3でのレースを目指すことになります。'
-[1]  ファクトチェック: SKIPPED(gemma)
+[2]  [Gemini生出力 168文字]: 'レース関連の最新情報です。高知競馬所属の近藤翔月騎手が、ホッカイドウ競馬で期間限定騎乗します。現在18歳の近藤翔月騎手は、宮川浩一厩舎に所属しています。この期間限定騎乗は5月13日から8月13日までの3か月間行われ、期間中の所属は川島雅人厩舎となります。近藤翔月騎手は2025年4月のデビューで、5月1日現在で通算65勝を挙げています。'
+[1]  ファクトチェック: OK
 [1]  → output/script_1.txt 保存 (228文字)
-[1]  プレビュー: レース関連の最新情報です。24年桜花賞馬のステレンボッシュが、戸崎圭太騎手との再コンビでエプソムC・G3(5月9日、東京競馬場・芝1800メートル)へ向かうこと...
+[1]  プレビュー: 本日の競馬ニュースです。金沢競馬所属の青柳正義騎手は1日、金沢競馬9Rでネバレチュゴーに騎乗し1着となり、地方競馬通算1500勝を達成しました。これは2003年...
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (238文字)
+[0]  プレビュー: 5月1日の大井競馬5Rで南関東では今年最初となる2歳新馬戦が行われました。5頭立ての4番人気だったキョウエイアカギが直線で抜け出し、3／4馬身差をつけて1着とな...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (168文字)
+[2]  プレビュー: レース関連の最新情報です。高知競馬所属の近藤翔月騎手が、ホッカイドウ競馬で期間限定騎乗します。現在18歳の近藤翔月騎手は、宮川浩一厩舎に所属しています。この期間...
 
 3 件の脚本を生成しました。
