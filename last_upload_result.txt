@@ -1,10 +1,10 @@
-date: 2026-05-01T05:02:59.668798Z
+date: 2026-05-01T06:33:32.267928Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=suMk5ap2fnc title=【かしわ記念・追い切り】ウィルソンテソーロがしっかりと負荷をかけてラスト11秒6
-OK project=1 video_id=_5gXybr6kdY title=【天皇賞・春・金曜調整】ケイアイサンデラは坂路からゲート練習　小林調教師「障害の
-OK project=1 video_id=3KSriJ2BPqM title=【天皇賞・春・金曜調整】3枠4番のアクアヴァーナルは坂路をキャンター　四位調教師
+OK project=1 video_id=XKOfFHBeL6k title=【名古屋グランプリ】川田将雅騎手のカズタンジャーは最内1枠1番　松山弘平騎手のア
+OK project=1 video_id=Ocp9S7qALIM title=兵庫アーバン競馬が5月4、5日にゴールデンウィーク開催PRイベント　阪急大阪梅田
+OK project=1 video_id=zs1QfTKyvC4 title=マンハッタンカフェ産駒が中央から消えた…　最後のJRA所属馬ダンディズムが現役引
