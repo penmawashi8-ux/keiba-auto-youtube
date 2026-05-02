@@ -1,10 +1,10 @@
-date: 2026-05-02T10:09:43.557168Z
+date: 2026-05-02T11:55:43.355377Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=w7xlOIeCdz4 title=“スポーツの中で最も偉大な2分間” ケンタッキーダービーをnetkeibaでもラ
-OK project=1 video_id=Om3tE96HmTM title=【兵庫CS】武豊騎手のスマートジュリアスは3枠3番　サウジダービー3着のサトノボ
-OK project=1 video_id=aqYLsJLrfnc title=5月2日の出来事一覧/新潟・東京・京都
+OK project=1 video_id=mTSdcQ8W4jY title=【AI予想・天皇賞(春)】ハイレベル世代の総大将が格の違いを見せる!? 不安らし
+OK project=1 video_id=WeQkj8Lplxg title=【園田・兵庫CS枠順】3歳ダート短距離王決定戦 同舞台で重賞勝ちがあるトウカイマ
+OK project=1 video_id=KpE1Gnr80FE title=【スイートピーSレース後コメント】カナルサンマルタン C.ルメール騎手ら
