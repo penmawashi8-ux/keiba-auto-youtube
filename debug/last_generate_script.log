@@ -11,36 +11,45 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【船橋競馬　5日発走　かしわ記念枠順決まる】3連覇狙うシャマルが1枠1番　コスタノヴァは2枠2番 ---
-[0] Gemini入力本文 351文字: '「こどもの日」の5日に船橋競馬11Rで行われる「第38回かしわ記念」(Jpn1、ダート1600メートル)の枠順が2日、確定した。\n\u3000このレース3連覇を狙うシャマル(牡8＝栗東・松下、父スマートファルコン)が1枠1番、G1フェブラリーステーク'
+--- 記事[0]: 【東京4R・3歳未勝利】セレクト1・9億円馬スワーヴマルスが2番手から押し切り初勝利　武豊騎手「乗り味がよく素質がありそ ---
+[0] Gemini入力本文 349文字: '5月2日の東京4R・3歳未勝利(芝2000メートル＝10頭立て)は、1番人気のスワーヴマルス(牡、美浦・田中博康厩舎、父キタサンブラック)が、デビュー2戦目で初勝利を飾った。勝ち時計は2分0秒3(良)。\n\t\t\t\t\u300023年のセレクトセール当歳'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【天皇賞・春・土曜気配】武豊騎手とV狙うアドマイヤテラはCWコースをキャンター　陣営「全く疲労感もなくフレッシュ」 ---
-[1] Gemini入力本文 346文字: '◆第173回天皇賞・春・G1(5月3日、京都競馬場・芝3200メートル)＝5月2日、栗東トレセン\n\t\t\t\t\u3000阪神大賞典をレコードで勝利したアドマイヤテラ(牡5歳、栗東・友道康夫厩舎、父レイデオロ)は角馬場で乗り込み、栗東・CWコース半周を単'
+--- 記事[1]: 【NHKマイルC・1週前】マイルに戻るカヴァレリッツォは坂路で力強い脚取り　陣営「しっかりケアして疲れも取れました」 ---
+[1] Gemini入力本文 353文字: '◆第31回NHKマイルC・G1(5月10日、東京・芝1600メートル)1週前追い切り＝5月2日、栗東トレセン\n\t\t\t\t\u3000疲労を感じさせない脚取りだった。カヴァレリッツォ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)は栗東・坂路でエリカ'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【かしわ記念】フェブラリーS連覇のコスタノヴァは2枠2番　川須栄彦騎手とコンビ復活のシャマルは最内1枠1番 ---
-[2] Gemini入力本文 359文字: '◆第38回かしわ記念・Jpn1(5月5日20時5分発走、船橋競馬場・ダート1600メートル)＝枠順確定\n\t\t\t\t\u3000注目のダートマイル決戦に挑む13頭(JRA6、船橋4、他地区3)の枠順が5月2日に確定した。\n\t\t\t\t\u3000JRA勢では、フェブラ'
+--- 記事[2]: 【船橋・かしわ記念枠順】JRA所属6頭中5頭がGI/JpnI覇者 フェブラリーS連覇のコスタノヴァは2枠2番 ---
+[2] Gemini入力本文 531文字: '5月5日(祝・火)に船橋競馬場で行われるかしわ記念(4歳上・JpnI・ダ1600m)の枠順が確定した。\n\u3000フェブラリーSを連覇したコスタノヴァは2枠2番、3連覇がかかるシャマルは1枠1番に入った。\n\u3000そのほかにも、JpnI・3勝目がかかるミ'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -62,32 +71,45 @@ Gemini APIキー: 3 件ロード
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 247文字]: '本日の競馬ニュースです。第173回天皇賞・春・G1は、5月3日に京都競馬場・芝3200メートルで開催されます。このレースで武豊騎手と勝利を狙うアドマイヤテラは、5月2日に栗東トレセンで調整を行いました。阪神大賞典をレコードで勝利したアドマイヤテラは、角馬場で乗り込んだ後、栗東のCWコース半周を単走でキャンターしました。大江助手は「今日は微調整で十分。全く疲労感もなく、フレッシュな感じを維持できていていいと思います。競走馬としてはいい時期に入ってきた」と、その状態の良さをアピールしています。'
-  HTTP 200
-[2]  [Gemini生出力 242文字]: '競馬速報です。\n第38回かしわ記念・Jpn1の枠順が5月2日に確定しました。このダートマイル決戦は5月5日20時5分、船橋競馬場・ダート1600メートルで発走します。注目の13頭が出走し、JRA勢からは6頭、船橋から4頭、他地区から3頭が挑みます。フェブラリーSを連覇したコスタノヴァは2枠2番に決定しました。コスタノヴァは昨年の同レース以来となるダミアン・レーン騎手とのコンビで挑みます。同レース初の3連覇がかかるシャマルは最内1枠1番に決まり、川須栄彦騎手とコンビ復活となります。'
-[2]  [重複除去] 242文字 → 241文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (241文字)
-[2]  プレビュー: 競馬速報です。第38回かしわ記念・Jpn1の枠順が5月2日に確定しました。このダートマイル決戦は5月5日20時5分、船橋競馬場・ダート1600メートルで発走しま...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (247文字)
-[1]  プレビュー: 本日の競馬ニュースです。第173回天皇賞・春・G1は、5月3日に京都競馬場・芝3200メートルで開催されます。このレースで武豊騎手と勝利を狙うアドマイヤテラは、...
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***zGG0 model=gemma-3-4b-it
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 224文字]: '注目の競馬情報をお届けします。\n「こどもの日」の5日に船橋競馬11Rで行われる「第38回かしわ記念」(Jpn1、ダート1600メートル)の枠順が2日、確定しました。このレース3連覇を狙うシャマル(牡8＝栗東・松下、父スマートファルコン)が1枠1番、G1フェブラリーステークス連覇のコスタノヴァ(牡6＝美浦・木村哲、父ロードカナロア)は2枠2番となっています。メンバーは以下の通りです。1枠1番シャマル 57川須栄、2枠2番コスタノヴァ 57レーン。'
-[0]  [redirectフィルター] 224文字 → 208文字
+[1]  [Gemini生出力 208文字]: 'レース関連の最新情報です。第31回NHKマイルC・G1の1週前追い切りが5月2日に栗東トレセンで行われました。カヴァレリッツォは栗東・坂路でエリカヴェネチアを3馬身追走し、51秒8―12秒5で1馬身半先着しています。疲労を感じさせない脚取りでした。田嶋助手は「折り合いも良かったし、しまいもしっかりしていました。反応も良かった」とコメントしています。陣営からは「しっかりケアして疲れも取れました」と報告されています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (208文字)
+[1]  プレビュー: レース関連の最新情報です。第31回NHKマイルC・G1の1週前追い切りが5月2日に栗東トレセンで行われました。カヴァレリッツォは栗東・坂路でエリカヴェネチアを3...
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 120文字]: '競馬ファン注目の情報です。5月2日の東京4R・3歳未勝利(芝2000メートル＝10頭立て)において、1番人気のスワーヴマルス(牡、美浦・田中博康厩舎、父キタサンブラック)がデビュー2戦目で初勝利を飾りました。勝ち時計は2分0秒3(良)です。'
 [0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (167文字)
-[0]  プレビュー: 「こどもの日」の5日に船橋競馬11Rで行われる「第38回かしわ記念」(Jpn1、ダート1600メートル)の枠順が2日、確定しました。このレース3連覇を狙うシャマ...
+[0]  → output/script_0.txt 保存 (120文字)
+[0]  プレビュー: 競馬ファン注目の情報です。5月2日の東京4R・3歳未勝利(芝2000メートル＝10頭立て)において、1番人気のスワーヴマルス(牡、美浦・田中博康厩舎、父キタサン...
+  HTTP 200
+[2]  [Gemini生出力 257文字]: '最新情報をお届けします。5月5日に船橋競馬場で開催されるかしわ記念の枠順が確定しました。フェブラリーS連覇のコスタノヴァは2枠2番、3連覇がかかるシャマルは1枠1番に入りました。JRA所属馬は6頭中5頭がGI/JpnI勝ち馬という顔ぶれで、ミッキーファイトやウィルソンテソーロも出走予定です。発走予定日は5月5日(祝・火)の20時5分です。かしわ記念では、名古屋GPの枠順が8枠12番のアウトレンジ、大井・東京プリンセス賞ではヘスペリスが4戦目で戴冠、羽田盃ではエルダーフラワーがノボバカラ産駒として勝利しました。'
+[2]  [redirectフィルター] 257文字 → 245文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (245文字)
+[2]  プレビュー: 5月5日に船橋競馬場で開催されるかしわ記念の枠順が確定しました。フェブラリーS連覇のコスタノヴァは2枠2番、3連覇がかかるシャマルは1枠1番に入りました。JRA...
 
 3 件の脚本を生成しました。
