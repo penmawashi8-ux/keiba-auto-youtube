@@ -1,10 +1,10 @@
-date: 2026-05-02T03:48:36.077072Z
+date: 2026-05-02T04:28:46.739303Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PoSGw41tCvM title=【船橋競馬　5日発走　かしわ記念枠順決まる】3連覇狙うシャマルが1枠1番　コスタ
-OK project=1 video_id=XoS9EHinP20 title=【天皇賞・春・土曜気配】武豊騎手とV狙うアドマイヤテラはCWコースをキャンター　
-OK project=1 video_id=-7zmvvmBlac title=【かしわ記念】フェブラリーS連覇のコスタノヴァは2枠2番　川須栄彦騎手とコンビ復
+OK project=1 video_id=n_XL3A7Rb2M title=【東京4R・3歳未勝利】セレクト1・9億円馬スワーヴマルスが2番手から押し切り初
+OK project=1 video_id=oT5OSBHGJCE title=【NHKマイルC・1週前】マイルに戻るカヴァレリッツォは坂路で力強い脚取り　陣営
+OK project=1 video_id=nm2-8lMwPdU title=【船橋・かしわ記念枠順】JRA所属6頭中5頭がGI/JpnI覇者 フェブラリーS
