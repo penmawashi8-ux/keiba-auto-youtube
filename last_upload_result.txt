@@ -1,10 +1,10 @@
-date: 2026-05-02T05:47:15.123772Z
+date: 2026-05-02T07:14:13.332701Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=N1wss399YwQ title=【矢車賞結果】トリニティが押し切り勝ち 母はオークス馬ヌーヴォレコルト
-OK project=1 video_id=QSLH8sp96Gg title=【わらび賞結果】タガノエルーが断然人気に応えて快勝
-OK project=1 video_id=-E3DEjNPiNI title=【阪神アーバン競馬プレーバック】代打起用に応えた!下原理がワンダーブリングを10
+OK project=1 video_id=IGsSY1Uv3sQ title=【JRA・WIN5】本日のWIN5は的中61票、配当525万8560円
+OK project=1 video_id=yFIqKSnjeMo title=【京王杯SC】見事な逃げ切り!　ワールズエンドが重賞初制覇　 　津村明秀騎手は自
+OK project=1 video_id=Jpw6BSlxk1Y title=【ユニコーンS】中東帰りの5番人気ケイアイアギトが追い込んで3着　サウジダービー
