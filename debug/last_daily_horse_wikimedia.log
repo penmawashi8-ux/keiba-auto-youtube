@@ -1,23 +1,16 @@
-=== Wikimedia Commons 画像検索: エルコンドルパサー ===
-  検索クエリ: 「エルコンドルパサー racehorse」
+=== Wikimedia Commons 画像検索: ステイゴールド ===
+  検索クエリ: 「ステイゴールド racehorse」
   ヒット数: 20 件
-  チェック: File:El Condor Pasa 19991128I1.jpg
-    OK: Goki (talk) / CC BY-SA 3.0 aspect=0.82
-  チェック: File:El cóndor pasa in Mexico.jpg
-    OK: Alfredo Gayou from Mexico, Mexico / CC BY 2.0 aspect=0.67
-  チェック: File:El cóndor pasa.pdf
-  チェック: File:El Condor Pasa (122006897).jpeg
-    OK: Mathieu Dupouy / CC BY 3.0 aspect=1.00
-  チェック: File:El Condor Pasa (232413017).jpeg
-    OK: Bhasker Thodla / CC BY 3.0 aspect=0.66
-  チェック: File:Daniel Alomía Robles - El Cóndor Pasa.ogg
-  チェック: File:El condor pasa- flou stroboscopique-partition.JPG
-    OK: Phprevet / CC BY-SA 4.0 aspect=0.67
-  チェック: File:El condor pasa- flou stroboscopique-en mouvement.JPG
-    OK: Phprevet / CC BY-SA 4.0 aspect=0.67
-  チェック: File:El cóndor pasa.jpg
-    OK: Andrés Monroy-Hernández from Cambridge, USA / CC BY-SA 2.0 aspect=0.75
-  チェック: File:Nelly with El Condor Pasa.jpg
+  チェック: File:Stay Gold 19991226P1.jpg
+  チェック: File:Stay gold (29368236980).jpg
+  チェック: File:First Aid Kit - Stay Gold.svg
+  チェック: File:Staygold.jpg
+  チェック: File:StayGoldLogo.png
+  チェック: File:Butch Walker at Varsity Theater 2016.jpg
+  チェック: File:Gold; a play in four acts (IA goldaplayinfour00oneirich).pdf
+  チェック: File:COMBATING HUMAN TRAFFICKING- FEDERAL, STATE, AND LOCAL PERSPECTIVES (IA gov.gpo.fdsys.CHRG-113shrg85505).pdf
+  チェック: File:Comic tragedies (IA comictragedies00alcoiala).pdf
+  チェック: File:Themes and variations (IA themesvariations00wils).pdf
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()
