@@ -1,10 +1,10 @@
-date: 2026-05-01T12:15:56.057918Z
+date: 2026-05-02T03:48:36.077072Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DjIOYbbSZbQ title=【大井競馬】笹川翼騎手が通算2600勝　31歳10か月でのスピード達成も「謙虚さ
-OK project=1 video_id=hegm-yQ0f8o title=園田競馬場に80万球のイルミネーション誕生　入場門、スタンド、パドック…昨年より
-OK project=1 video_id=z99MsOJyzSI title=【阪神アーバン競馬】昨年比2倍!80万個の電飾が彩るイルミネーション点灯式を開催
+OK project=1 video_id=PoSGw41tCvM title=【船橋競馬　5日発走　かしわ記念枠順決まる】3連覇狙うシャマルが1枠1番　コスタ
+OK project=1 video_id=XoS9EHinP20 title=【天皇賞・春・土曜気配】武豊騎手とV狙うアドマイヤテラはCWコースをキャンター　
+OK project=1 video_id=-7zmvvmBlac title=【かしわ記念】フェブラリーS連覇のコスタノヴァは2枠2番　川須栄彦騎手とコンビ復
