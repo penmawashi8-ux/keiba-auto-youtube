@@ -1,10 +1,10 @@
-date: 2026-05-02T11:55:43.355377Z
+date: 2026-05-02T23:44:21.413880Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mTSdcQ8W4jY title=【AI予想・天皇賞(春)】ハイレベル世代の総大将が格の違いを見せる!? 不安らし
-OK project=1 video_id=WeQkj8Lplxg title=【園田・兵庫CS枠順】3歳ダート短距離王決定戦 同舞台で重賞勝ちがあるトウカイマ
-OK project=1 video_id=KpE1Gnr80FE title=【スイートピーSレース後コメント】カナルサンマルタン C.ルメール騎手ら
+OK project=1 video_id=ZYyp0iUjjfw title=【ケンタッキーダービー】ダノンバーボンは直線半ばまで先頭も...ワンダーディーン
+OK project=1 video_id=l3OcV7cz3y0 title=【ケンタッキーダービー速報】ゴールデンテンポが優勝！
+OK project=1 video_id=YDRCX83RI5I title=古川吉洋騎手が落馬負傷で天皇賞・春のタガノデュードはレーンに乗り代わりに　ＪＲＡ
