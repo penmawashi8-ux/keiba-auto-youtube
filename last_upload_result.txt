@@ -1,10 +1,10 @@
-date: 2026-05-02T08:36:20.824124Z
+date: 2026-05-02T10:09:43.557168Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NpD1lvpHLRY title=【京極特別レース後コメント】クアトロジャック吉村誠之助騎手ら
-OK project=1 video_id=5ldn4-rrChk title=ミルコ・デムーロ騎手が5か月ぶりに日本で騎乗　ユニコーンSなど4鞍に騎乗し「ファ
-OK project=1 video_id=wa0lznsFoGQ title=【三条Sレース後コメント】クインズショコラ田山旺佑騎手ら
+OK project=1 video_id=w7xlOIeCdz4 title=“スポーツの中で最も偉大な2分間” ケンタッキーダービーをnetkeibaでもラ
+OK project=1 video_id=Om3tE96HmTM title=【兵庫CS】武豊騎手のスマートジュリアスは3枠3番　サウジダービー3着のサトノボ
+OK project=1 video_id=aqYLsJLrfnc title=5月2日の出来事一覧/新潟・東京・京都
