@@ -1,10 +1,10 @@
-date: 2026-05-02T04:28:46.739303Z
+date: 2026-05-02T05:47:15.123772Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=n_XL3A7Rb2M title=【東京4R・3歳未勝利】セレクト1・9億円馬スワーヴマルスが2番手から押し切り初
-OK project=1 video_id=oT5OSBHGJCE title=【NHKマイルC・1週前】マイルに戻るカヴァレリッツォは坂路で力強い脚取り　陣営
-OK project=1 video_id=nm2-8lMwPdU title=【船橋・かしわ記念枠順】JRA所属6頭中5頭がGI/JpnI覇者 フェブラリーS
+OK project=1 video_id=N1wss399YwQ title=【矢車賞結果】トリニティが押し切り勝ち 母はオークス馬ヌーヴォレコルト
+OK project=1 video_id=QSLH8sp96Gg title=【わらび賞結果】タガノエルーが断然人気に応えて快勝
+OK project=1 video_id=-E3DEjNPiNI title=【阪神アーバン競馬プレーバック】代打起用に応えた!下原理がワンダーブリングを10
