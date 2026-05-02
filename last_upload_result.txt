@@ -1,10 +1,10 @@
-date: 2026-05-02T07:14:13.332701Z
+date: 2026-05-02T08:36:20.824124Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IGsSY1Uv3sQ title=【JRA・WIN5】本日のWIN5は的中61票、配当525万8560円
-OK project=1 video_id=yFIqKSnjeMo title=【京王杯SC】見事な逃げ切り!　ワールズエンドが重賞初制覇　 　津村明秀騎手は自
-OK project=1 video_id=Jpw6BSlxk1Y title=【ユニコーンS】中東帰りの5番人気ケイアイアギトが追い込んで3着　サウジダービー
+OK project=1 video_id=NpD1lvpHLRY title=【京極特別レース後コメント】クアトロジャック吉村誠之助騎手ら
+OK project=1 video_id=5ldn4-rrChk title=ミルコ・デムーロ騎手が5か月ぶりに日本で騎乗　ユニコーンSなど4鞍に騎乗し「ファ
+OK project=1 video_id=wa0lznsFoGQ title=【三条Sレース後コメント】クインズショコラ田山旺佑騎手ら
