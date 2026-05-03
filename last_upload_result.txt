@@ -1,10 +1,10 @@
-date: 2026-05-02T23:44:21.413880Z
+date: 2026-05-03T00:15:46.694794Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZYyp0iUjjfw title=【ケンタッキーダービー】ダノンバーボンは直線半ばまで先頭も...ワンダーディーン
-OK project=1 video_id=l3OcV7cz3y0 title=【ケンタッキーダービー速報】ゴールデンテンポが優勝！
-OK project=1 video_id=YDRCX83RI5I title=古川吉洋騎手が落馬負傷で天皇賞・春のタガノデュードはレーンに乗り代わりに　ＪＲＡ
+OK project=1 video_id=16_AUrhyVjY title=【ケンタッキーダービー】日本調教馬2頭ダノンバーボン、ワンダーディーン勝利ならず
+OK project=1 video_id=zkzSFe1QDlM title=半兄はKYダービー馬 JRA最年長のディープ産駒が約1年9カ月ぶりの復帰戦だ
+OK project=1 video_id=xg7HXbr89HA title=【天皇賞(春)予想】深掘ればレースの実体は明らかに？ 過去10年データから探るG
