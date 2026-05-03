@@ -1,10 +1,10 @@
-date: 2026-05-03T08:42:10.667130Z
+date: 2026-05-03T10:22:51.995723Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=STq7o8xq_mw title=【エプソムC】ステレンボッシュ、トロヴァトーレなどが登録
-OK project=1 video_id=SGoSL4wgH40 title=【京都新聞杯】ベレシート、エムズビギンなどが登録
-OK project=1 video_id=5bQiSTp4xvc title=【天皇賞・春】ヘデントールは連覇ならず　ルメール「直線はじりじり伸びてくれた」
+OK project=1 video_id=rv5pD0QZP5c title=牧浦充徳調教師がJRA通算300勝達成！ 「これからもひとつひとつ勝ち星積み重ね
+OK project=1 video_id=W6cBsnSQrgE title=「緊張感」「不安」「本心」推定2センチ差で天皇賞V　北村友一騎手と武豊騎手のやり
+OK project=1 video_id=AV-pWm1s3dw title=平岩大典調教師がJRA初勝利！ のべ24頭目の出走
