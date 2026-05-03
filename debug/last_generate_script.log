@@ -10,6 +10,19 @@
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
@@ -18,20 +31,20 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 牧浦充徳調教師がJRA通算300勝達成！ 「これからもひとつひとつ勝ち星積み重ねていけたら」 ---
-[0] Gemini入力本文 350文字: '3日、新潟競馬場9Rで行われた咲花特別(4歳上・牝・2勝クラス・ダ1800m)で、丹内祐次騎手騎乗の1番人気レイバックスピン(牝4)が第1着となり、牧浦充徳調教師(栗東)はJRA通算300勝を達成した。\n\u3000牧浦充徳調教師は1974年生まれ。'
+--- 記事[0]: 【高知・黒潮皐月賞結果】カツテナイオイシサが接戦を制し重賞3連勝 ---
+[0] Gemini入力本文 348文字: '3日、高知競馬場で行われた第30回黒潮皐月賞(3歳・重賞・ダ1400m・1着賞金800万円)は、中団から上がっていって直線の競り合いを制した岡村卓弥騎手騎乗の1番人気カツテナイオイシサ(牡3、高知・雑賀正光厩舎)が、2番手追走から一旦は先頭'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 「緊張感」「不安」「本心」推定2センチ差で天皇賞V　北村友一騎手と武豊騎手のやりとりにネット興奮　ジョッキーカメラ公開 ---
-[1] Gemini入力本文 374文字: '5月3日に京都競馬場で行われた天皇賞・G1のジョッキーカメラが同日、JRAの公式YouTubeチャンネルで公開された。\n\t\t\t\t\u3000公開されたのは、1着だったクロワデュノール(牡4歳、栗東・斉藤崇史厩舎、父キタサンブラック)に騎乗していた北村'
+--- 記事[1]: 5月3日の出来事一覧/新潟・東京・京都 ---
+[1] Gemini入力本文 452文字: '5月3日の開催(新潟・東京・京都)で発生した競走中の疾病、競走中止などの事象は下記の通り。\n■京都1R 3歳未勝利\nタガノシルフィー(牝3、栗東・石橋守厩舎)\n左前肢跛行のため出走取消。\n■新潟2R 3歳未勝利\nポッドスモーカー(牡3、美浦'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 平岩大典調教師がJRA初勝利！ のべ24頭目の出走 ---
-[2] Gemini入力本文 725文字: '3日、新潟競馬場5Rで行われた3歳未勝利(3歳・未勝利・芝1800m)で、菊沢一樹騎手騎乗の4番人気ワールドブレイヴ(牡3)が第1着となり、平岩大典調教師(美浦)はJRA初勝利を挙げた。\n\u3000平岩大典調教師は1983年生まれ。のべ24頭目の出'
+--- 記事[2]: 【天皇賞・春】クロワデュノールV　2着は12番人気の伏兵　スポニチ予想陣は万哲&柏原が3連単ゲット ---
+[2] Gemini入力本文 351文字: '◇第173回天皇賞・春\u3000芝3200メートル(2026年5月3日\u3000京都競馬場)\n\u3000伝統の長距離G1「第173回天皇賞・春」が3日、京都競馬場で行われた。4コーナー3番手から抜け出した1番人気クロワデュノール(牡4＝斉藤崇)が、ヴェルテンベルク'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -51,23 +64,37 @@ Gemini APIキー: 3 件ロード
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 328文字]: '重要な競馬ニュースをお伝えします。\n3日、新潟競馬場5Rで行われた3歳未勝利で、平岩大典調教師がJRA初勝利を挙げました。菊沢一樹騎手騎乗の4番人気ワールドブレイヴが芝1800mのレースで第1着となりました。平岩大典調教師は1983年生まれで、のべ24頭目の出走での初勝利です。平岩大典調教師は「素晴らしい馬を預けていただいたオーナーにまず感謝と、宮田先生が育てて土台を作ってくださった馬なので、上手くバトンを引き継いで結果を出せたことにすごく喜びを感じています」とコメントしています。また、「もちろんスタッフも頑張ってくれていますし、獣医さん、装蹄師さん、JRAの方々も含めて、皆さんの協力・努力が結果として出たことが非常に嬉しいです」とも述べています。'
-[2]  [重複除去] 328文字 → 327文字
+[0]  [Gemini生出力 240文字]: '今日の競馬情報です。\n3日、高知競馬場で行われた第30回黒潮皐月賞は、1着賞金800万円を懸けて争われました。この重賞レースは、中団から上がっていって直線の競り合いを制した岡村卓弥騎手騎乗の1番人気カツテナイオイシサが優勝しました。2番手追走から一旦は先頭に立った3番人気クスダマにハナ差をつけ、勝ちタイムは不良馬場の1分28秒0でした。高知・雑賀正光厩舎のカツテナイオイシサは、これで重賞3連勝を達成しています。さらに8馬身差の3着には、2番人気サンフラワームーンが入りました。'
+[0]  [重複除去] 240文字 → 239文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (239文字)
+[0]  プレビュー: 今日の競馬情報です。3日、高知競馬場で行われた第30回黒潮皐月賞は、1着賞金800万円を懸けて争われました。この重賞レースは、中団から上がっていって直線の競り合...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 238文字]: '今日の競馬情報です。\n3日に新潟競馬場9Rで行われた咲花特別で、丹内祐次騎手騎乗の1番人気レイバックスピンが1着となり、牧浦充徳調教師はJRA通算300勝を達成しました。このレースは4歳上・牝・2勝クラス・ダート1800mの条件でした。牧浦充徳調教師は1974年生まれで、21年の全日本2歳優駿を制したドライスタウトなどを管理し、重賞11勝、そのうち中央で5勝、地方で6勝を挙げています。牧浦充徳調教師は「これからもひとつひとつ勝ち星積み重ねていけたら」とコメントしています。'
-[0]  [重複除去] 238文字 → 237文字
+[1]  [Gemini生出力 217文字]: '注目の競馬情報をお届けします。\n5月3日の新潟、東京、京都の各開催で発生した競走中の疾病や競走中止などの事象についてお伝えします。京都1Rの3歳未勝利戦では、タガノシルフィーが左前肢跛行のため出走を取り消しました。また、新潟2Rの3歳未勝利戦では、ポッドスモーカーがスタート後に異常歩様となり、騎手がバランスをくずし落馬したため競走を中止しています。ポッドスモーカーは鼻出血と診断されましたが、大久保友雅騎手に異状はありませんでした。'
+[1]  [redirectフィルター] 217文字 → 201文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (201文字)
+[1]  プレビュー: 5月3日の新潟、東京、京都の各開催で発生した競走中の疾病や競走中止などの事象についてお伝えします。京都1Rの3歳未勝利戦では、タガノシルフィーが左前肢跛行のため...
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 258文字]: '最新情報をお届けします。\n5月3日に京都競馬場で行われた天皇賞・G1のジョッキーカメラが、同日、JRAの公式YouTubeチャンネルで公開されました。公開されたのは、1着だったクロワデュノールに騎乗していた北村友一騎手と、3着だったアドマイヤテラの武豊騎手のバージョンです。北村友一騎手のジョッキーカメラでは、ゴール後に武豊騎手が「勝った？」と声をかけるやりとりが収められています。このやりとりは、推定2センチ差での天皇賞勝利を巡るもので、「緊張感」「不安」「本心」が垣間見える内容としてネットで興奮を呼んでいます。'
-[1]  [redirectフィルター] 258文字 → 245文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (327文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。3日、新潟競馬場5Rで行われた3歳未勝利で、平岩大典調教師がJRA初勝利を挙げました。菊沢一樹騎手騎乗の4番人気ワールドブレイ...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (237文字)
-[0]  プレビュー: 今日の競馬情報です。3日に新潟競馬場9Rで行われた咲花特別で、丹内祐次騎手騎乗の1番人気レイバックスピンが1着となり、牧浦充徳調教師はJRA通算300勝を達成し...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (245文字)
-[1]  プレビュー: 5月3日に京都競馬場で行われた天皇賞・G1のジョッキーカメラが、同日、JRAの公式YouTubeチャンネルで公開されました。公開されたのは、1着だったクロワデュ...
+[2]  [Gemini生出力 192文字]: '競馬ファン注目の情報です。\n第173回天皇賞・春、芝3200メートルが3日、京都競馬場で施行されました。4コーナー3番手から抜け出した1番人気のクロワデュノール(牡4＝斉藤崇)が、ヴェルテンベルクの猛追を鼻差しのいで4度目のG1制覇を飾りました。2着は12番人気の伏兵、3着は2番人気のアドマイヤテラでした。3連単の配当は7万630円となり、好配当を逃したファンもいたかもしれません。'
+[2]  [重複除去] 184文字 → 183文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (183文字)
+[2]  プレビュー: 競馬ファン注目の情報です。第173回天皇賞・春、芝3200メートルが3日、京都競馬場で施行されました。4コーナー3番手から抜け出した1番人気のクロワデュノールが...
 
 3 件の脚本を生成しました。
