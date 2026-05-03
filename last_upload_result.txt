@@ -1,10 +1,10 @@
-date: 2026-05-03T06:12:45.491221Z
+date: 2026-05-03T07:25:31.073654Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6m9V9FzrZds title=【新潟5R・3歳未勝利】平岩大典調教師が4番人気のワールドブレイヴで開業初勝利　
-OK project=1 video_id=V9dEJqHA2SI title=【米G1チャーチルダウンズS】テーオーエルビス快勝　日本調教馬の米G1制覇は3頭
-OK project=1 video_id=6zsQn61otCc title=【天皇賞(春)・馬体重】クロワデュノールは514kg(-8)、アドマイヤテラは5
+OK project=1 video_id=-3xzUYkIGrE title=【JRA・WIN5】本日のWIN5は的中227票、配当254万2050円
+OK project=1 video_id=pWkGRM_XmQk title=【天皇賞・春】単勝208・4倍　12番人気ヴェルテンベルクは惜しくも2着　クロワ
+OK project=1 video_id=77-o23uEMcs title=【阪神アーバン競馬展望】2冠狙うゴッドフェンサー　盛本師「万全の態勢」
