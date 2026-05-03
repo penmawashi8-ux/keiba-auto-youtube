@@ -5,37 +5,40 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 発売金額の数字が元
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【新潟5R・3歳未勝利】平岩大典調教師が4番人気のワールドブレイヴで開業初勝利　初出走から24戦目 ---
-[0] Gemini入力本文 348文字: '3日の新潟5R・3歳未勝利(芝1800メートル＝14頭立て)で、菊沢一樹騎手が騎乗の4番人気ワールドブレイヴ(牡3歳、美浦・平岩大典厩舎、父ワールドプレミア)が勝利。平岩調教師は今年3月に開業し、3月15日の初出走(タイキインドラ、10着)'
+--- 記事[0]: 【JRA・WIN5】本日のWIN5は的中227票、配当254万2050円 ---
+[0] Gemini入力本文 488文字: '5/3(日)のWIN5対象レースの結果は、以下の通り。\n的中馬番 14-3-4-12-7\n払戻金 2,542,050円\n的中票数 227票\n次回へのキャリーオーバー 0円\n発売票数 8,243,521票\n発売金額 824,352,100円\n'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【米G1チャーチルダウンズS】テーオーエルビス快勝　日本調教馬の米G1制覇は3頭目 ---
-[1] Gemini入力本文 703文字: 'ケンタッキーダービーの2つ前のレースに行われたG1チャーチルダウンズS(ダート1400メートル、1着賞金52万4520ドル＝約8339万8680円)は、日本から遠征したテーオーエルビス(牡4＝高柳大、父ヴォラティル)がV。日本調教馬による米'
+--- 記事[1]: 【天皇賞・春】単勝208・4倍　12番人気ヴェルテンベルクは惜しくも2着　クロワデュノールと写真判定も鼻差届かず ---
+[1] Gemini入力本文 353文字: '◆第173回天皇賞・春(5月3日、京都競馬場・芝3200メートル、良)\n\t\t\t\t\u3000淀の長距離G1が15頭で争われ、12番人気のヴェルテンベルク(牡6歳、栗東・宮本博厩舎、父キタサンブラック)がゴール前で大外から追い込んだが、写真判定の末、2'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【天皇賞(春)・馬体重】クロワデュノールは514kg(-8)、アドマイヤテラは500kg(-4) ---
-[2] Gemini入力本文 523文字: '5月3日に京都競馬場で行われる第173回天皇賞(春)(4歳上・GI・芝3200m)の馬体重が発表された。\n\u3000大阪杯でGI・3勝目を挙げたクロワデュノール(牡4、栗東・斉藤崇史厩舎)は514kg(-8)。阪神大賞典を完勝したアドマイヤテラ(牡'
+--- 記事[2]: 【阪神アーバン競馬展望】2冠狙うゴッドフェンサー　盛本師「万全の態勢」 ---
+[2] Gemini入力本文 339文字: '兵庫3冠第2ラウンド、3歳王者を決める兵庫優駿(ダート1870メートル)が5日に行われる。単勝1倍台前半の断然人気が想定されるのが、1冠目の菊水賞を制し、3冠ロードをばく進するゴッドフェンサー(牡3、父ルヴァンスレーヴ)。管理する盛本信春調'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -52,26 +55,34 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
   HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 235文字]: '競馬速報です。兵庫3冠第2ラウンド、3歳王者を決める兵庫優駿が5日に行われます。ダート1870メートルで行われるこのレースでは、単勝1倍台前半の断然人気が想定されるのがゴッドフェンサーです。ゴッドフェンサーは1冠目の菊水賞を制し、3冠ロードをばく進しています。管理する盛本信春調教師は「万全の態勢で臨める」と自信をにじませました。盛本師は最も良化した点として毛ヅヤを挙げており、「今まではくすんでいるようなところもあったけど、本当に良くなってきた」とコメントしています。'
+[2]  ファクトチェック: OK
+  HTTP 200
+[2]  → output/script_2.txt 保存 (235文字)
+[2]  プレビュー: 競馬速報です。兵庫3冠第2ラウンド、3歳王者を決める兵庫優駿が5日に行われます。ダート1870メートルで行われるこのレースでは、単勝1倍台前半の断然人気が想定さ...
+[0]  [Gemini生出力 247文字]: '最新のレース情報が入ってきました。\n5月3日日曜日のWIN5は、的中票数が227票、配当は254万2050円となりました。次回へのキャリーオーバーは0円です。発売票数は824万3521票、発売金額は8億243万52100円でした。WIN5の的中馬番は14-3-4-12-7です。1レース目の東京10RブリリアントSを制したのは、3番人気の14番タイトニットで、残票は88万1200票でした。続く2レース目の京都10R朱雀Sでは、1番人気の3番ルシードが勝利し、残票は24万746票となりました。'
+[0]  [重複除去] 247文字 → 246文字
+  HTTP 200
+[1]  [Gemini生出力 243文字]: '競馬ファン注目の情報です。第173回天皇賞・春が5月3日、京都競馬場・芝3200メートル、良馬場で15頭により争われました。このレースで、12番人気のヴェルテンベルクがゴール前で大外から追い込みましたが、クロワデュノールとの写真判定の末、鼻差届かず惜しくも2着に敗れました。単勝208・4倍の超伏兵だったヴェルテンベルクは、大金星を逃す形となりました。2走前からステイヤーズS、ダイヤモンドSと長距離重賞で6着、4着と奮闘し、マラソンレースに手応えをつかんで淀の大舞台に臨んでいました。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (243文字)
+[1]  プレビュー: 競馬ファン注目の情報です。第173回天皇賞・春が5月3日、京都競馬場・芝3200メートル、良馬場で15頭により争われました。このレースで、12番人気のヴェルテン...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 258文字]: '重要な競馬ニュースをお伝えします。3日の新潟5R・3歳未勝利、芝1800メートル、14頭立てのレースで、菊沢一樹騎手が騎乗した4番人気のワールドブレイヴが勝利しました。これにより、平岩大典調教師が開業初勝利を飾っています。平岩調教師は今年3月に開業し、3月15日の初出走となったタイキインドラの10着から数えて、24戦目での初勝利となりました。平岩大典調教師はワールドブレイヴの勝利に対し、「素晴らしい馬を預けていただいたオーナーにまず感謝と、宮田先生が育てて土台を作ってくださった馬な...」とコメントしています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (255文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。3日の新潟5R・3歳未勝利、芝1800メートル、14頭立てのレースで、菊沢一樹騎手が騎乗した4番人気のワールドブレイヴが勝利し...
-  HTTP 200
-[2]  [Gemini生出力 215文字]: '最新のレース情報が入ってきました。5月3日に京都競馬場で行われる第173回天皇賞(春)の馬体重が発表されました。大阪杯でGI・3勝目を挙げたクロワデュノールは514kgで、前回から8kg減となっています。阪神大賞典を完勝したアドマイヤテラは500kgで、前回から4kg減です。また、ヴェルミセルは470kg、サンライズソレイユは526kgで、前回から6kg減となっています。第173回天皇賞(春)の発走予定時刻は15時40分です。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (215文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。5月3日に京都競馬場で行われる第173回天皇賞(春)の馬体重が発表されました。大阪杯でGI・3勝目を挙げたクロワデュノールは5...
-  HTTP 200
-[1]  [Gemini生出力 307文字]: '競馬速報です。\nケンタッキーダービーの2つ前のレースとして行われたG1チャーチルダウンズS、ダート1400メートルで、日本から遠征したテーオーエルビスが快勝しました。1着賞金は52万4520ドル、日本円で約8339万8680円です。日本調教馬による米国のダートG1制覇は、25年BCクラシックのフォーエバーヤングに次いで3頭目となります。テーオーエルビスは好位追走から直線半ばで先頭に立ち、3馬身1/4差をつけて勝利しました。勝利に導いた坂井は「非常に強かったと思います」と振り返り、海外G1初制覇を飾った高柳大師は「この馬を信じてやってきたのでうれしい。今後は海外遠征を含めて考えていきたい」と喜びを語りました。'
-[1]  [重複除去] 307文字 → 306文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (306文字)
-[1]  プレビュー: 競馬速報です。ケンタッキーダービーの2つ前のレースとして行われたG1チャーチルダウンズS、ダート1400メートルで、日本から遠征したテーオーエルビスが快勝しまし...
+[0]  [Gemini生出力 271文字]: '最新のレース情報が入ってきました。\n5月3日(日)のWIN5対象レースの結果は、的中馬番14-3-4-12-7で、払戻金は2,542,050円、的中票数は227票でした。次回へのキャリーオーバーは0円、発売票数は8,243,521票、発売金額は824,352,100円です。\n東京10R ブリリアントSの勝馬は14番目のタイトニットで、人気は3番人気でした。残票は881,200票です。\n京都10R 朱雀Sの勝馬は3番目のルシードで、人気は1番人気でした。残票は240,746票です。\n新潟11R 越後Sの勝馬は4...（情報不足のため省略）'
+[0]  [重複除去] 242文字 → 239文字
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (239文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。5月3日(日)のWIN5対象レースの結果は、的中馬番14-3-4-12-7で、払戻金は2,542,050円、的中票数は227票...
 
 3 件の脚本を生成しました。
