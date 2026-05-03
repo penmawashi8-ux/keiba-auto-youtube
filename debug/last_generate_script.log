@@ -7,16 +7,18 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -27,22 +29,22 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【ケンタッキーダービー】ダノンバーボンは直線半ばまで先頭も...ワンダーディーンともに日本勢は金星ならず　またも分厚い本 ---
-[0] Gemini入力本文 345文字: '◆第152回ケンタッキーダービー・G1(日本時間5月3日、米国チャーチルダウンズ競馬場・ダート2000メートル)\n\t\t\t\t\u3000日本から参戦した西村淳也騎手＝栗東・フリー＝騎乗のダノンバーボン(牡3歳、栗東・池添学厩舎、父マックスフィールド)、'
+--- 記事[0]: 【ケンタッキーダービー】日本調教馬2頭ダノンバーボン、ワンダーディーン勝利ならず ---
+[0] Gemini入力本文 342文字: '米クラシック3冠初戦「第152回ケンタッキーダービー」が日本時間3日朝、チャーチルダウンズ競馬場で行われた。「スポーツの中で最も偉大な2分間」とも称されるダート大国の祭典。日本調教馬の2頭は、今年も地元の厚い壁に跳ね返された。\n\u3000西村淳也('
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【ケンタッキーダービー速報】ゴールデンテンポが優勝！ ---
-[1] Gemini入力本文 345文字: '現地時間2日、アメリカのチャーチルダウンズ競馬場で行われたケンタッキーダービー(3歳・G1・ダ2000m)は、J.オルティス騎手騎乗のゴールデンテンポ(牡3、米・C.ドゥヴォー厩舎)が1位入線を果たした。\n\u3000以下、レネゲイド(牡3、米・T.'
+--- 記事[1]: 半兄はKYダービー馬 JRA最年長のディープ産駒が約1年9カ月ぶりの復帰戦だ ---
+[1] Gemini入力本文 348文字: 'JRAで現役のディープインパクト産駒では最年長となるディープキング(牡9、美浦・田村康仁厩舎)が、日曜東京7Rの4歳上1勝クラス(ダ1600m)で約1年9カ月ぶりの復帰戦を迎える。\n\u3000ディープキングは父ディープインパクト、母ダリシア、母の父'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 古川吉洋騎手が落馬負傷で天皇賞・春のタガノデュードはレーンに乗り代わりに　ＪＲＡが発表 ---
-[2] Gemini入力本文 331文字: 'ＪＲＡは３日、２日の京都３Ｒで馬場入りした際に落馬負傷した古川吉洋騎手（４８）＝栗東・フリー＝が騎乗予定だった全８鞍で乗り代わると発表した。天皇賞・春では、小倉大賞典覇者で前走・大阪杯４着のタガノデュード（牡５歳、栗東・宮）とコンビを組む予'
+--- 記事[2]: 【天皇賞(春)予想】深掘ればレースの実体は明らかに？ 過去10年データから探るGI・天皇賞(春) ---
+[2] Gemini入力本文 438文字: 'ゴールデンウィーク中の週末。開催は「東京・京都・新潟」3場となる。日曜日には京都競馬場で天皇賞(春)(GI・芝3200m)が行われる。\n\u3000過去10年データを使って探るこのコーナー。今週も馬券のヒントや傾向を探っていこう(天皇賞(春)21・2'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -60,35 +62,45 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-[0] 使用: key=***zGG0 model=gemini-2.5-flash
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+[0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 183文字]: '競馬ファン注目の情報です。JRAは3日、2日の京都3Rで馬場入りした際に落馬負傷した古川吉洋騎手が、騎乗予定だった全8鞍で乗り代わると発表しました。天皇賞・春では、小倉大賞典覇者で前走大阪杯4着のタガノデュードとコンビを組む予定でしたが、ダミアン・レーン騎手が騎乗することになりました。古川吉洋騎手は、落馬負傷後、土曜に騎乗予定だった全4鞍でも乗り代わっていました。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (183文字)
-[2]  プレビュー: 競馬ファン注目の情報です。JRAは3日、2日の京都3Rで馬場入りした際に落馬負傷した古川吉洋騎手が、騎乗予定だった全8鞍で乗り代わると発表しました。天皇賞・春で...
+[2]  [Gemini生出力 4文字]: 'SKIP'
+[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 438文字）
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 157文字]: '重要な競馬ニュースをお伝えします。現地時間2日、アメリカのチャーチルダウンズ競馬場で行われたケンタッキーダービー(3歳・G1・ダ2000m)は、J.オルティス騎手騎乗のゴールデンテンポが1位入線を果たしました。ゴール板を通過したのは、以下レネゲイド、オシェリの順です。日本馬のダノンバーボンは5位入線となりました。'
+[1]  [Gemini生出力 216文字]: '最新のレース情報が入ってきました。JRAで現役のディープインパクト産駒では最年長となるディープキングが、日曜東京7Rの4歳上1勝クラス、ダート1600メートルで約1年9カ月ぶりの復帰戦を迎えます。ディープキングは父ディープインパクト、母ダリシア、母の父Acatenangoの血統です。半兄のアニマルキングダムは、2011年のケンタッキーダービーと2013年のドバイワールドカップの覇者であり、現在は日本で種牡馬として活躍しています。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (157文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。現地時間2日、アメリカのチャーチルダウンズ競馬場で行われたケンタッキーダービー(3歳・G1・ダ2000m)は、J.オルティス騎...
+[1]  → output/script_1.txt 保存 (216文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。JRAで現役のディープインパクト産駒では最年長となるディープキングが、日曜東京7Rの4歳上1勝クラス、ダート1600メートルで...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[2]  [Gemini生出力 203文字]: '本日の競馬ニュースです。ゴールデンウィーク中の週末。開催は「東京・京都・新潟」3場となる。日曜日には京都競馬場で天皇賞(春)(GI・芝3200m)が行われる。過去10年データを使って探るこのコーナー。今週も馬券のヒントや傾向を探っていこう(天皇賞(春)21・22年分は阪神競馬場での開催データです)。まずは人気上位馬の成績チェックから。1番人気馬は過去10年で5勝。成績は[5-3-0-2]でなかなか優…。'
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (202文字)
+[2]  プレビュー: 本日の競馬ニュースです。ゴールデンウィーク中の週末。開催は「東京・京都・新潟」3場となる。日曜日には京都競馬場で天皇賞(春)(GI・芝3200m)が行われる。過...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[0]  [Gemini生出力 204文字]: '最新情報をお届けします。第152回ケンタッキーダービー・G1は、日本から参戦したダノンバーボンが好スタートを切りました。西村淳也騎手、栗東・池添学厩舎所属の3歳牡馬、マックスフィールドの産駒です。直線半ばまで先頭を争いましたが、分厚い本場の壁に阻まれ、敗戦を喫しました。また、坂井瑠星騎手によるワンダーディーンも敗れました。ワンダーディーンは栗東・高柳大輔厩舎所属の3歳牡馬で、ディーマジェスティの産駒です。'
-[0]  [redirectフィルター] 204文字 → 192文字
+[0]  [Gemini生出力 231文字]: 'レース関連の最新情報です。\n米クラシック3冠初戦「第152回ケンタッキーダービー」が日本時間3日朝、チャーチルダウンズ競馬場で行われました。スポーツの中で最も偉大な2分間とも称されるダート大国の祭典です。日本調教馬の2頭は、今年も地元の厚い壁に跳ね返されました。西村淳也騎乗のダノンバーボン(牡3＝池添学、父マックスフィールド)は好位からレースを進め、4コーナーから直線途中まで先頭に立っても、最後は力尽きました。坂井瑠星騎乗のワンダーディーン(牡3＝高柳...'
+[0]  [重複除去] 188文字 → 187文字
 [0]  ファクトチェック: SKIPPED(gemma)
-[0]  → output/script_0.txt 保存 (192文字)
-[0]  プレビュー: 第152回ケンタッキーダービー・G1は、日本から参戦したダノンバーボンが好スタートを切りました。西村淳也騎手、栗東・池添学厩舎所属の3歳牡馬、マックスフィールド...
+[0]  → output/script_0.txt 保存 (187文字)
+[0]  プレビュー: レース関連の最新情報です。米クラシック3冠初戦「第152回ケンタッキーダービー」が日本時間3日朝、チャーチルダウンズ競馬場で行われました。スポーツの中で最も偉大...
 
 3 件の脚本を生成しました。
