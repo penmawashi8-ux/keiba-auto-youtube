@@ -1,10 +1,10 @@
-date: 2026-05-03T00:15:46.694794Z
+date: 2026-05-03T04:51:08.775581Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=16_AUrhyVjY title=【ケンタッキーダービー】日本調教馬2頭ダノンバーボン、ワンダーディーン勝利ならず
-OK project=1 video_id=zkzSFe1QDlM title=半兄はKYダービー馬 JRA最年長のディープ産駒が約1年9カ月ぶりの復帰戦だ
-OK project=1 video_id=xg7HXbr89HA title=【天皇賞(春)予想】深掘ればレースの実体は明らかに？ 過去10年データから探るG
+OK project=1 video_id=1zBjCB_KL9E title=【天皇賞・春】馬トク外厩情報…天皇賞・春は“育成がすべて”　勝ち馬の共通点から有
+OK project=1 video_id=l6poE_heqBM title=クールモア所有馬がJRA初出走　フランケル産駒スノースケープで3着惜敗　中内田調
+OK project=1 video_id=cED5Yo5tMn4 title=【天皇賞】皆藤愛子が馬体にホレボレ?　あの馬を軸に勝負！
