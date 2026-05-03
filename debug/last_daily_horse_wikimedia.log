@@ -1,16 +1,25 @@
-=== Wikimedia Commons 画像検索: ステイゴールド ===
-  検索クエリ: 「ステイゴールド racehorse」
-  ヒット数: 20 件
-  チェック: File:Stay Gold 19991226P1.jpg
-  チェック: File:Stay gold (29368236980).jpg
-  チェック: File:First Aid Kit - Stay Gold.svg
-  チェック: File:Staygold.jpg
-  チェック: File:StayGoldLogo.png
-  チェック: File:Butch Walker at Varsity Theater 2016.jpg
-  チェック: File:Gold; a play in four acts (IA goldaplayinfour00oneirich).pdf
-  チェック: File:COMBATING HUMAN TRAFFICKING- FEDERAL, STATE, AND LOCAL PERSPECTIVES (IA gov.gpo.fdsys.CHRG-113shrg85505).pdf
-  チェック: File:Comic tragedies (IA comictragedies00alcoiala).pdf
-  チェック: File:Themes and variations (IA themesvariations00wils).pdf
+=== Wikimedia Commons 画像検索: マヤノトップガン ===
+  検索クエリ: 「マヤノトップガン racehorse」
+  ヒット数: 10 件
+  チェック: File:Mayano Topgun 19960309P1.jpg
+  チェック: File:Brian and topgun.jpg
+  チェック: File:MayanoTopGun-1997-4-27sb.jpg
+  チェック: File:MayanoTopGun-1997-4-27sa.jpg
+  チェック: File:115th-tennousho.jpg
+  チェック: File:MayanoTopGun-1995-11-5.jpg
+  チェック: File:MayanoTopGun-1996-7-7.jpg
+  チェック: File:MayanoTopGun-1997-11-30i.jpg
+  チェック: File:56th-kikka-shou1.jpg
+  チェック: File:Seiki Tabara-1997-11-30.jpg
+  検索クエリ: 「マヤノトップガン 競走馬」
+  ヒット数: 10 件
+  チェック: File:Mayano Topgun 19960309P1.jpg
+  チェック: File:Brian and topgun.jpg
+  チェック: File:MayanoTopGun-1997-4-27sa.jpg
+  チェック: File:MayanoTopGun-1997-4-27sb.jpg
+  チェック: File:115th-tennousho.jpg
+  チェック: File:MayanoTopGun-1995-11-5.jpg
+  チェック: File:MayanoTopGun-1996-7-7.jpg
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()
