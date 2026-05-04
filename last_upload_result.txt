@@ -1,10 +1,10 @@
-date: 2026-05-04T06:24:23.894932Z
+date: 2026-05-04T08:03:28.544336Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=aLMD-7P0Wc8 title=【NHKマイルC想定騎手】カヴァレリッツォは西村淳也騎手、ダイヤモンドノットは川
-OK project=1 video_id=KFHVVzjhczg title=【エプソムカップ展望】重賞連勝狙うトロヴァトーレが中心　中山金杯覇者のカラマティ
-OK project=1 video_id=41pKmRTp0Qw title=【競走伝】衝撃の5馬身差レコード勝ち!名手・安藤勝己騎手が勝利を確信していたキン
+OK project=1 video_id=HTz_c5LkDfg title=全米で2440万人がケンタッキーダービー見た!米メディアの瞬間視聴者数が過去最多
+OK project=1 video_id=X0pbLdPMMEA title=【園田・兵庫大賞典結果】フラフが重賞6度目の挑戦で初制覇
+OK project=1 video_id=X8Z4xy5E32o title=天皇賞・春を2センチ差で制したクロワデュノール　レース翌日は馬房で静養　間宮助手
