@@ -1,10 +1,10 @@
-date: 2026-05-04T00:14:56.416931Z
+date: 2026-05-04T04:52:49.424035Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JSGvssdYfwM title=【京都新聞杯展望】クロノジェネシスの子ベレシートが重賞Vを狙う　超高額馬エムズビ
-OK project=1 video_id=T2Fp6cS6k98 title=【かしわ記念】すべて3着以内と堅実なミッキーファイトの課題は　田中博調教師「経験
-OK project=1 video_id=qkEv96pk2P4 title=【小島太元調教師の競馬ジャーナル】自ら勝ちにいき押し切ったクロワデュノール　着差
+OK project=1 video_id=5EqyjrQcFpY title=【エプソムC想定騎手】トロヴァトーレはC.ルメール騎手、カラマティアノスは津村明
+OK project=1 video_id=mtIbgTOTAGc title=推定2センチ差の激戦から一夜明け　天皇賞・春Vのクロワデュノールは馬房で元気な姿
+OK project=1 video_id=pmVQUynHurA title=【京都新聞杯想定騎手】ベレシートは北村友一騎手、エムズビギンは川田将雅騎手
