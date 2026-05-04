@@ -10,7 +10,15 @@
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。ファルコンSはレース評価Aの有力な前哨戦とされています。本番より1ハロン短いものの、右
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
+【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライ
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
@@ -19,20 +27,20 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【NHKマイルC】前走は12着も陣営は「器は大きいと思っている」と期待　サンダーストラックが巻き返しに好態勢 ---
-[0] Gemini入力本文 350文字: '◆第31回NHKマイルC・G1(5月10日、東京・芝1600メートル)\n\t\t\t\t\u3000シンザン記念勝ち馬のサンダーストラック(牡3歳、美浦・木村哲也厩舎、父ロードカナロア)は、前走のチャーチルダウンズCで1番人気に推されるも12着。道中で他馬に'
+--- 記事[0]: 【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースをレースレコードで制した一頭が個別評価最高「G」 ---
+[0] Gemini入力本文 534文字: '【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 絶好調の原優介騎手 NHKマイルCのレザベーションでGI初制覇なるか ---
-[1] Gemini入力本文 350文字: '7年目の原優介騎手が、NHKマイルカップ(3歳牡牝・GI・芝1600m)のレザベーション(牡3、栗東・松下武士厩舎)でGI初制覇を狙う。\n\u3000原騎手は00年6月10日生まれ、東京都出身の25歳。20年に美浦・武井亮厩舎からデビューした。同期に'
+--- 記事[1]: 【NHKマイルC】ニュージーランドT覇者レザベーションは今年4戦目でも好気配　陣営「ずっと在厩だが、イライラすることもな ---
+[1] Gemini入力本文 351文字: '◆第31回NHKマイルC・G1(5月10日、東京競馬場・芝1600メートル)＝4日、栗東トレセン\n\t\t\t\t\u3000ニュージーランドT覇者のレザベーション(牡3歳、栗東・松下武士厩舎、父ダノンプレミアム)が、勢いに乗ってG1に臨む。全休日の4日は馬'
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【AI予想・NHKマイルC】今年のファルコンSはハイレベルなレース!? 人工知能が推奨する本命候補3頭とは ---
-[2] Gemini入力本文 485文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は土曜日にエプソムC(GIII)と京都新聞杯(GII)、日曜日にNHKマイルカップ(GI)が行われます。その中から東'
+--- 記事[2]: 【NHKマイルC】レシステンシアの半弟バルセシートがG1挑戦　姉は20年2着　陣営「体つきはすごくたくましくなった」 ---
+[2] Gemini入力本文 354文字: '◆第31回NHKマイルC・G1(5月10日、東京競馬場・芝1600メートル)＝4日、栗東トレセン\n\t\t\t\t\u3000レシステンシアの半弟バルセシート(牡3歳、栗東・松下武士厩舎、父キズナ)が、姉が20年に2着に敗れたG1に挑む。きょうだい両頭を手が'
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -53,100 +61,102 @@ Gemini APIキー: 3 件ロード
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 240文字]: '注目の競馬情報をお届けします。7年目の原優介騎手が、NHKマイルカップのレザベーションでGI初制覇を狙います。原優介騎手は00年6月10日生まれ、東京都出身の25歳で、20年に美浦・武井亮厩舎からデビューしました。同期には秋山稔樹騎手や泉谷楓真騎手などがいます。JRA通算3586戦116勝を記録しており、当初は苦しい時期が続きましたが、小桧山悟厩舎への所属変更がきっかけとなって徐々に成績を上げてきました。原優介騎手が騎乗するレザベーションは、栗東の松下武士厩舎所属の牡3です。'
-[1]  [redirectフィルター] 240文字 → 225文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (225文字)
-[1]  プレビュー: 7年目の原優介騎手が、NHKマイルカップのレザベーションでGI初制覇を狙います。原優介騎手は00年6月10日生まれ、東京都出身の25歳で、20年に美浦・武井亮厩...
+[2]  [Gemini生出力 254文字]: '本日の競馬ニュースです。第31回NHKマイルC・G1が5月10日に東京競馬場・芝1600メートルで開催されます。このG1に、レシステンシアの半弟バルセシートが挑戦します。バルセシートは牡3歳、栗東・松下武士厩舎所属で、父はキズナです。姉のレシステンシアは20年にこのG1で2着に敗れています。きょうだい両頭を手がける金浜厩務員は「姉は完成度が高かったけど、この馬は新馬を勝ったときびっくりしたね。京都2歳Sの7着以外は形になっているから、うれしいね」と話しています。前走のチャーチルダウンズCでは3着でした。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (254文字)
+[2]  プレビュー: 本日の競馬ニュースです。第31回NHKマイルC・G1が5月10日に東京競馬場・芝1600メートルで開催されます。このG1に、レシステンシアの半弟バルセシートが挑...
   HTTP 200
-[2]  [Gemini生出力 285文字]: '今日の競馬情報です。\n今週の重賞競走は、土曜日にエプソムCのGIIIと京都新聞杯のGII、日曜日にNHKマイルカップのGIが行われます。この中から東京競馬場で行われるNHKマイルカップを取り上げます。本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を、特筆すべき過去の傾向とともにご紹介します。過去10年のNHKマイルカップで3着以内に入った30頭のうち、18頭がダンチヒかヴァイスリージェントの血を有していました。また、穴馬としてファルコンSからの巻き返しも注目されています。netkeibaオリジナルAIが推奨する本命候補3頭は、本記事で紹介されます。'
-[2]  [重複除去] 285文字 → 284文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (284文字)
-[2]  プレビュー: 今日の競馬情報です。今週の重賞競走は、土曜日にエプソムCのGIIIと京都新聞杯のGII、日曜日にNHKマイルカップのGIが行われます。この中から東京競馬場で行わ...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[1]  [Gemini生出力 226文字]: '今日の競馬情報です。第31回NHKマイルC・G1に出走予定のニュージーランドT覇者レザベーションは、勢いに乗ってG1に臨みます。5月10日に東京競馬場・芝1600メートルで行われるこのレースに向けて、4日は栗東トレセンで馬房で穏やかに過ごしました。今年4戦目となるレザベーションについて、大野木厩務員は「ずっと使い詰めで3走前から在厩しているが、イライラすることもない。カイバも食べている」と好気配を伝えています。前走は未勝利勝ち直後の重賞制覇でした。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (226文字)
+[1]  プレビュー: 今日の競馬情報です。第31回NHKマイルC・G1に出走予定のニュージーランドT覇者レザベーションは、勢いに乗ってG1に臨みます。5月10日に東京競馬場・芝160...
+  HTTP 200
+[0]  [Gemini生出力 259文字]: '最新のレース情報が入ってきました。ファルコンSはレース評価Aの有力な前哨戦とされています。本番より1ハロン短いものの、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることがその理由です。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めています。今年のファルコンSでは、ラスト3ハロンがいずれも11秒4という、切れる脚を継続的に求められる流れのなか、ダイヤモンドノットが好位から楽に抜け出し、1分19秒8のタイムでレースレコードを記録し、際立った勝ちっぷりを見せました。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 218文字]: '最新のレース情報が入ってきました。\n【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\nラスト3ハロンはいずれも11秒4。切れる脚を継続的に求められる流れのなか、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立った。1分19秒8のタイム。'
+[0] 使用: key=***zGG0 model=gemma-3-1b-it
+  HTTP 200
+[0]  [Gemini生出力 524文字]: '最新のレース情報が入ってきました。\n\n【タイトル】【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースをレースレコードで制した一頭が個別評価最高「G」\n\n本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n\nレースのラスト3ハロンはいずれも11秒4。切れる脚を継続的に求められる流れのなか、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立った。1分19秒8の時… 【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n\nこのレースは、評価Aのトップクラスのレースをレースレコードで制した一頭が、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。'[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
 
-The above exception was the direct cause of the following exception:
+【タイトル】【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースを
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
+NHKマイルCの超ブル診断ステップレース編において、ファルコンSがレース評価Aの高レ
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
+【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライ
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
 
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 490, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+【タイトル】【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースを
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。NHKマイルCのステップレースであるファルコンSは、本番より1ハロン短いものの、同じ左
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
+【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライ
+[0]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 最新のレース情報が入ってきました。
 
-During handling of the above exception, another exception occurred:
+【タイトル】【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースを
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
 
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 529, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 512, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 341, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 241, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 299文字]: '最新のレース情報が入ってきました。\nNHKマイルCの超ブル診断ステップレース編において、ファルコンSがレース評価Aの高レベルレースと評価されています。このレースは本番より1ハロン短いものの、同じ左回りであることやレース間隔に余裕があることから、有力な前哨戦となっています。昨年もこのレースで4着だったパンジャタワーが3歳マイル王の座を射止めています。今年のファルコンSでは、ラスト3ハロンがいずれも11秒4と切れる脚を継続的に求められる流れの中、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立ちました。ダイヤモンドノットは1分19秒8のタイムで制し、個別評価最高「G」を獲得しています。'
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 319文字]: '最新のレース情報が入ってきました。\n【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\nラスト3ハロンはいずれも11秒4。切れる脚を継続的に求められる流れのなか、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立った。1分19秒8のタイム。\n【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャ…'
+[0] 使用: key=***189Y model=gemma-3-1b-it
+  HTTP 200
+[0]  [Gemini生出力 524文字]: '最新のレース情報が入ってきました。\n\n【タイトル】【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースをレースレコードで制した一頭が個別評価最高「G」\n\n本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n\nレースのラスト3ハロンはいずれも11秒4。切れる脚を継続的に求められる流れのなか、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立った。1分19秒8の時… 【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n\nこのレースは、評価Aのトップクラスのレースをレースレコードで制した一頭が、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。'
+[0] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 333文字]: '最新のレース情報が入ってきました。NHKマイルCのステップレースであるファルコンSは、本番より1ハロン短いものの、同じ左回りであることやレース間隔に余裕があることから有力な前哨戦と評価Aの高レベルレースでした。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めています。ファルコンSでは、ラスト3ハロンがいずれも11秒4という切れる脚を継続的に求められる流れの中、好位から楽に抜け出したダイヤモンドノットが1分19秒8のレースレコードで制し、個別評価最高「G」を獲得しました。NHKマイルCでは福永祐一厩舎のG1初制覇へダイヤモンドノットが中心と見られており、2歳マイル王カヴァレリッツォの反撃や、マイルで真価を発揮するジーネキングの一発も注目されます。'
+[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemma-3-4b-it
+  HTTP 200
+[0]  [Gemini生出力 218文字]: '最新のレース情報が入ってきました。\n【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\nラスト3ハロンはいずれも11秒4。切れる脚を継続的に求められる流れのなか、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立った。1分19秒8のタイム。'
+[0] 使用: key=***l-ME model=gemma-3-1b-it
+  HTTP 200
+[0]  [Gemini生出力 524文字]: '最新のレース情報が入ってきました。\n\n【タイトル】【NHKマイルC・超ブル診断ステップレース編】評価Aの高レベルレースをレースレコードで制した一頭が個別評価最高「G」\n\n本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n\nレースのラスト3ハロンはいずれも11秒4。切れる脚を継続的に求められる流れのなか、好位から楽に抜け出したダイヤモンドノットの勝ちっぷりが際立った。1分19秒8の時… 【ファルコンS＝レース評価A】本番より1ハロン短いが、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。\n\nこのレースは、評価Aのトップクラスのレースをレースレコードで制した一頭が、右回りのマイルで行われるトライアルよりも同じ左回りであること、レース間隔に余裕があることから有力な前哨戦となった。昨年もこのレース4着のパンジャタワーが3歳マイル王の座を射止めている。'
