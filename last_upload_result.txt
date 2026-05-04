@@ -1,10 +1,10 @@
-date: 2026-05-03T11:59:25.349863Z
+date: 2026-05-04T00:14:56.416931Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XushOY3eR7g title=【高知・黒潮皐月賞結果】カツテナイオイシサが接戦を制し重賞3連勝
-OK project=1 video_id=syvWeYlTljQ title=5月3日の出来事一覧/新潟・東京・京都
-OK project=1 video_id=GYxlhaN5QDE title=【天皇賞・春】クロワデュノールV　2着は12番人気の伏兵　スポニチ予想陣は万哲&
+OK project=1 video_id=JSGvssdYfwM title=【京都新聞杯展望】クロノジェネシスの子ベレシートが重賞Vを狙う　超高額馬エムズビ
+OK project=1 video_id=T2Fp6cS6k98 title=【かしわ記念】すべて3着以内と堅実なミッキーファイトの課題は　田中博調教師「経験
+OK project=1 video_id=qkEv96pk2P4 title=【小島太元調教師の競馬ジャーナル】自ら勝ちにいき押し切ったクロワデュノール　着差
