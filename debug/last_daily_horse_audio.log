@@ -2,11 +2,11 @@ Kokoro TTS が利用可能です。
 === 音声生成開始 ===
 字幕フォント: Noto Sans CJK JP
 並列ワーカー数: 1
-  [0] タイトル読み上げ追加: 「マヤノトップガン」
+  [0] タイトル読み上げ追加: 「サニーブライアン」
 
---- 音声生成 [0] (222文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
-  音声: output/audio_0.mp3 (318 KB)
-  音声バリエーション適用: pitch×1.0431 vol+1.49dB
-  字幕: output/subtitles_0.ass (14 セグメント)
+--- 音声生成 [0] (297文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
+  音声: output/audio_0.mp3 (403 KB)
+  音声バリエーション適用: pitch×1.1015 vol+1.07dB
+  字幕: output/subtitles_0.ass (15 セグメント)
 
 1/1 件の音声を生成しました。
