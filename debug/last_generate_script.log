@@ -2,74 +2,101 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-3-1b-it', 'gemma-3-4b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite', 'gemma-3-4b-it', 'gemma-3-1b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【注目馬動向】オークスに向かうスマートプリエールは引き続き原優介騎手　名古屋GP勝ちのアウトレンジは帝王賞へ ---
-[0] Gemini入力本文 345文字: '重賞4勝の名牝、スマートレイアーを母に持つスマートプリエール(牝3歳、栗東・大久保龍志厩舎、父エピファネイア)は次戦のオークス・G1(5月24日、東京競馬場・芝2400メートル)で引き続き、原優介騎手＝美浦・青木孝文厩舎＝とコンビを組むこと'
+--- 記事[0]: G1制覇で全米に衝撃与えたテーオーエルビスとケンタッキーダービー挑戦のワンダーディーンが帰国　JRA発表 ---
+[0] Gemini入力本文 347文字: 'JRAは5月5日、米国に遠征していたテーオーエルビス(牡4歳、栗東・高柳大輔厩舎、父ヴォラタイル)とワンダーディーン(牡3歳、栗東・高柳大輔厩舎、父ディーマジェスティ)が帰国したと発表した。\n\t\t\t\t\u3000テーオーエルビスはチャーチルダウンズS'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【船橋・かしわ記念注目馬】上半期の地方ダートマイル王決定戦に好メンバー集結 ---
-[1] Gemini入力本文 526文字: '5月5日(祝・火)に船橋競馬場で行われるかしわ記念(4歳上・JpnI・ダ1600m)。上半期の地方ダートマイル王者を決する一戦で、レース名は1950年代前半まで存在した柏競馬場が由来とされる。\n\u3000今年出走する中央馬6頭のうち、5頭がGI/J'
+--- 記事[1]: インカーヴィルの2024(ホウオウモノポリー)など、先週のゲート試験/栗東トレセンニュース ---
+[1] Gemini入力本文 573文字: '先週、入厩のニュースで取り上げたインカーヴィルの2024(ホウオウモノポリー)(栗東・友道康夫厩舎)が4月30日のゲート試験に合格。2024年ノーザンファームミックスセールにて、2億円で落札されたキズナ産駒。馬主は本馬が初預託となる小笹芳央'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【NHKマイルC】「元気が余っている感じ」中2週でも友道調教師はアドマイヤクワッズの状態に不安感じず ---
-[2] Gemini入力本文 356文字: '◆第31回NHKマイルC・G1(5月10日、東京競馬場・芝1600メートル)＝5月5日、栗東トレセン\n\t\t\t\t\u3000アドマイヤクワッズ(牡3歳、栗東・友道康夫厩舎、父リアルスティール)は皐月賞15着から中2週での転戦。中間は先月29日と今月3日'
+--- 記事[2]: ヒロシゲハートの2024など、先週の入厩情報/栗東トレセンニュース ---
+[2] Gemini入力本文 481文字: '先週の5月1日は北出成人厩舎に2頭の2歳が入厩。西山牧場阿見分場(茨城県)からタニノフランケル産駒のニシノカグラの2024(ニシノフランケン)、信楽牧場(滋賀県)からはヒロシゲゴールド産駒のヒロシゲハートの2024。\n\u3000同厩舎で管理され、京'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 207文字]: '今日の競馬情報です。第31回NHKマイルC G1に出走予定のアドマイヤクワッズは、皐月賞15着から中2週での転戦となります。5月5日の栗東トレセンでの情報によると、中間は先月29日と今月3日にしっかりと時計を出しており、特に3日にはCWコースで6ハロン83秒3―11秒3をマークしました。友道調教師は「元気が余っている感じがします。調教で前進気勢があるのに、競馬でガッといかないので、距離…」とコメントしています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (206文字)
-[2]  プレビュー: 今日の競馬情報です。第31回NHKマイルC G1に出走予定のアドマイヤクワッズは、皐月賞15着から中2週での転戦となります。5月5日の栗東トレセンでの情報による...
+[1]  [Gemini生出力 188文字]: '今日の競馬情報です。先週、入厩のニュースで取り上げられたインカーヴィルの2024(ホウオウモノポリー)が、4月30日のゲート試験に合格しました。この馬は、2024年ノーザンファームミックスセールにて2億円で落札されたキズナ産駒です。馬主は本馬が初預託となる小笹芳央氏で、友道康夫厩舎に預託されています。オーナーと厩舎の「絆」になって不思議ない高額馬だけに、今後が注目されます。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (188文字)
+[1]  プレビュー: 今日の競馬情報です。先週、入厩のニュースで取り上げられたインカーヴィルの2024(ホウオウモノポリー)が、4月30日のゲート試験に合格しました。この馬は、202...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[0]  [Gemini生出力 176文字]: 'レース関連の最新情報です。重賞4勝の名牝スマートレイアーを母に持つスマートプリエールは、次戦のオークス・G1に出走します。オークスは5月24日に東京競馬場の芝2400メートルで行われます。このスマートプリエールには、引き続き原優介騎手がコンビを組むことになりました。原騎手は、スマートプリエールとの初コンビだったフラワーCで、重賞初制覇へ導いています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (176文字)
-[0]  プレビュー: レース関連の最新情報です。重賞4勝の名牝スマートレイアーを母に持つスマートプリエールは、次戦のオークス・G1に出走します。オークスは5月24日に東京競馬場の芝2...
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***zGG0 model=gemma-3-4b-it
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemma-3-4b-it
+[0] 使用: key=***zGG0 model=gemma-3-4b-it
   HTTP 200
-[1]  [Gemini生出力 334文字]: '今日の競馬情報です。5月5日に船橋競馬場でかしわ記念が開催されます。上半期の地方ダートマイル王者を決定するJpnIのダート1600メートルレースです。レース名は1950年代前半まで存在した柏競馬場に由来するとされています。今年出走予定の中央馬6頭のうち5頭がGI/JpnI勝ち馬という、素晴らしい顔ぶれです。地方馬としては、京成盃グランドマイラーズを制したジョージテソーロ、復帰2戦目を圧勝したベアバッキューンなどがエントリーしています。また、川崎記念3着のアウトレンジは8枠12番、大井・東京プリンセス賞ではヘスペリスが僅か4戦目で戴冠し、アンジュルナが2着となりました。羽田盃では、ノボバカラ産駒のエルダーフラワーが勝利し、新種牡馬の勝ち上がり第1号となりました。'
-[1]  ファクトチェック: SKIPPED(gemma)
-[1]  → output/script_1.txt 保存 (334文字)
-[1]  プレビュー: 今日の競馬情報です。5月5日に船橋競馬場でかしわ記念が開催されます。上半期の地方ダートマイル王者を決定するJpnIのダート1600メートルレースです。レース名は...
+[2]  [Gemini生出力 111文字]: '本日の競馬ニュースです。\n先週の5月1日に北出成人厩舎に入厩したのは、西山牧場阿見分場からタニノフランケル産駒のニシノカグラの2024（ニシノフランケン）と、信楽牧場からヒロシゲゴールド産駒のヒロシゲハートの2024です。'
+[2]  [重複除去] 111文字 → 110文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (110文字)
+[2]  プレビュー: 本日の競馬ニュースです。先週の5月1日に北出成人厩舎に入厩したのは、西山牧場阿見分場からタニノフランケル産駒のニシノカグラの2024（ニシノフランケン）と、信楽...
+  HTTP 200
+[0]  [Gemini生出力 239文字]: '重要な競馬ニュースをお伝えします。JRAは5月5日、米国に遠征していたテーオーエルビス(牡4歳、栗東・高柳大輔厩舎、父ヴォラタイル)とワンダーディーン(牡3歳、栗東・高柳大輔厩舎、父ディーマジェスティ)が帰国したと発表しました。テーオーエルビスはチャーチルダウンズSで日本調教馬としては3頭目の米ダートG1制覇の快挙を成し遂げ、ワンダーディーンはケンタッキーダービーで8着でした。2頭は6時49分に成田国際空港に到着し、その後、10時20分にJRA施設へ向かったということです。'
+[0]  ファクトチェック: SKIPPED(gemma)
+[0]  → output/script_0.txt 保存 (190文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。JRAは5月5日、米国に遠征していたテーオーエルビスとワンダーディーンが帰国したと発表しました。テーオーエルビスはチャーチルダ...
 
 3 件の脚本を生成しました。
