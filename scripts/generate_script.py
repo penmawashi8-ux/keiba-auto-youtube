@@ -16,8 +16,8 @@ NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 PREFERRED_MODELS = [
-    "gemini-2.0-flash",
     "gemini-2.5-flash",
+    "gemini-2.0-flash",
     "gemini-2.0-flash-lite",
     "gemma-3-4b-it",
     "gemma-3-1b-it",
@@ -427,8 +427,10 @@ def main() -> None:
                 )
                 article_text = item.get("title", "") + item.get("body", item.get("summary", ""))
                 if future_race_keywords.search(article_text) and fabricated_result_pattern.search(script):
-                    print(f"[{i}]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: {script[:60]}", file=sys.stderr)
-                    continue
+                    # 元記事のsummaryに同じ表現がある場合はステップレース結果の引用であり創作ではない
+                    if not fabricated_result_pattern.search(summary_text):
+                        print(f"[{i}]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: {script[:60]}", file=sys.stderr)
+                        continue
                 # 馬を抽象的に表現している場合はスキップ
                 # 「ある馬」「2着となった馬」「スプリンターたち」「注目激走馬」など、馬名なしの曖昧表現を検出
                 # ただし、カタカナ5文字以上の固有名詞（≒競走馬名）がある場合は馬名あり扱いでスキップしない
