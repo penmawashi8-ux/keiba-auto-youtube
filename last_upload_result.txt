@@ -1,10 +1,10 @@
-date: 2026-05-05T02:51:09.637043Z
+date: 2026-05-05T04:35:03.572448Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=pwX1fVl3tUQ title=【ヴィクトリアM出走馬決定順】フルゲート18頭に20頭登録 サフィラとチェルビア
-OK project=1 video_id=7nnPqc6u3vs title=昨年の凱旋門賞2着馬ミニーホークが26年V発進　貫禄の差し切り　今年のオッズは昨
-OK project=1 video_id=nfskThOzZ8U title=【園田競馬・今日の世麗】4日は3勝の固め勝ち　初騎乗の兵庫優駿でも波乱を起こすか
+OK project=1 video_id=TmUqxRQrMsQ title=【注目馬動向】オークスに向かうスマートプリエールは引き続き原優介騎手　名古屋GP
+OK project=1 video_id=s31WgOs9QAY title=【船橋・かしわ記念注目馬】上半期の地方ダートマイル王決定戦に好メンバー集結
+OK project=1 video_id=KFN8vfo96YQ title=【NHKマイルC】「元気が余っている感じ」中2週でも友道調教師はアドマイヤクワッ
