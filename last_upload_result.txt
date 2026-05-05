@@ -1,10 +1,10 @@
-date: 2026-05-05T07:25:19.799063Z
+date: 2026-05-05T09:23:14.553449Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8asPu0Dgu_g title=10年JRA年度代表馬ブエナビスタが「少しのんびりと、お母さんのお腹の中で過ごし
-OK project=1 video_id=UtmY5DTaE-s title=チャーチルダウンズSを制したテーオーエルビス、KYダービー8着ワンダーディーンが
-OK project=1 video_id=fKdA7xyQgeI title=NHKマイルC着差ランキング のちの名種牡馬が魅せた圧勝劇が1位
+OK project=1 video_id=cQX_W6CrFwo title=【NHKマイルC】誤算があっても3着と力を見せたフクチャンショウ　加藤征調教師「
+OK project=1 video_id=joKSp9y_Oqk title=【京都新聞杯】名門厩舎が祭典への「最終切符」を託すエムズビギン　友道調教師「徐々
+OK project=1 video_id=5Xr1Vr1ssW8 title=ローシャムパーク香港遠征の鞍上ボウマン「日本馬に乗るのはいつだってうれしい」「凄
