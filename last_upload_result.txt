@@ -1,10 +1,10 @@
-date: 2026-05-05T05:55:50.407848Z
+date: 2026-05-05T07:25:19.799063Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Q6UU5UbSI6M title=G1制覇で全米に衝撃与えたテーオーエルビスとケンタッキーダービー挑戦のワンダーデ
-OK project=1 video_id=LiOmWU1D0HI title=インカーヴィルの2024(ホウオウモノポリー)など、先週のゲート試験/栗東トレセ
-OK project=1 video_id=UCP8fs3vBsA title=ヒロシゲハートの2024など、先週の入厩情報/栗東トレセンニュース
+OK project=1 video_id=8asPu0Dgu_g title=10年JRA年度代表馬ブエナビスタが「少しのんびりと、お母さんのお腹の中で過ごし
+OK project=1 video_id=UtmY5DTaE-s title=チャーチルダウンズSを制したテーオーエルビス、KYダービー8着ワンダーディーンが
+OK project=1 video_id=fKdA7xyQgeI title=NHKマイルC着差ランキング のちの名種牡馬が魅せた圧勝劇が1位
