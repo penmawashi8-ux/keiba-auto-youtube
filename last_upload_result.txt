@@ -1,10 +1,10 @@
-date: 2026-05-05T09:23:14.553449Z
+date: 2026-05-05T11:05:43.212586Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cQX_W6CrFwo title=【NHKマイルC】誤算があっても3着と力を見せたフクチャンショウ　加藤征調教師「
-OK project=1 video_id=joKSp9y_Oqk title=【京都新聞杯】名門厩舎が祭典への「最終切符」を託すエムズビギン　友道調教師「徐々
-OK project=1 video_id=5Xr1Vr1ssW8 title=ローシャムパーク香港遠征の鞍上ボウマン「日本馬に乗るのはいつだってうれしい」「凄
+OK project=1 video_id=0jTIDxo-aWY title=【NHKマイルC】上原佑調教師「健闘できてもいい」　リゾートアイランドは折り合い
+OK project=1 video_id=UQqQqLzEIF0 title=【ホッカイドウ競馬】素質馬アペリティーヴォが評判通りデビュー勝ち 能力試験で唯一
+OK project=1 video_id=tvZsWISaMx0 title=「お前だったのか、オルフェの後継は」「凄い競馬」名古屋競馬の単勝1・2倍、大本命
