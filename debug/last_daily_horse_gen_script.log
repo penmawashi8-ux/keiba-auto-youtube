@@ -60,40 +60,96 @@
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
   [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
-[API応答]
-HORSE_NAME: ヴェラスター
-HORSE_KEY: vera_star
-ERA: 2000年代
-CATCHPHRASE: 逃げ切る鋼の心
-
----SCRIPT---
-スタートラインで、馬が1200mを57秒台で駆け抜けた。
-その馬の名はヴェラスター。
-2004年のサマークラシックを、5馬身差で制めた。
-父はディープインパクト、母はシルポート。
-血統は、スピードとスタミナを兼ね備えていた。
-しかし、その後の活躍は期待外れ。
-GⅠでは3着以内が全て。
-それでもヴェラスターは、逃げのスタイルを貫いた。
-2006年の天皇賞（秋）で、ついにGⅠ初制覇。
-スタートから先頭に飛び出し、
-後半失速するまで逃げ続けた。
-58秒3のタイム、
-当時のシンボリルドルフをわずかに下回る。
-着差は4馬身。
-その圧倒的な逃げ強さで、
-競馬界に衝撃を与えた。
-しかし、その走りにはリスクも伴った。
-2008年の有馬記念で、
-脚気を発症し、レースを回避。
-その後、競走生活を引退した。
-58歳という、
-競馬界で最も長い競走期間を誇る馬。
-その生涯は、
-逃げの美学と、
-病との闘いを象徴していた。
-一瞬の閃きで、
-全てを制した馬。
-それがヴェラスターだ。...
-
-[エラー] 「ヴェラスター」は既に紹介済みです。AIが指示を無視しました。中止します。
+  [key=***... gemma-3-4b-it] HTTP 404 → 次へ
+  [key=***... gemma-3-1b-it] HTTP 404 → 次へ
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+  [key=***... gemma-3-4b-it] HTTP 404 → 次へ
+  [key=***... gemma-3-1b-it] HTTP 404 → 次へ
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 503 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+  [key=***... gemma-3-4b-it] HTTP 404 → 次へ
+  [key=***... gemma-3-1b-it] HTTP 404 → 次へ
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 463, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 410, in main
+    result = select_and_generate(api_keys, covered)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 257, in select_and_generate
+    response = call_gemini(api_keys, prompt, temperature=0.7)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_famous_horse_script.py", line 183, in call_gemini
+    raise RuntimeError(
+RuntimeError: Gemini API: 全キー×全モデルで失敗しました。
+・APIキーの残クォータを Google AI Studio で確認してください。
+・GEMINI_API_KEY_2 / GEMINI_API_KEY_3 を設定すると複数キーでフォールバックできます。
+・ニュースワークフローと同時実行するとクォータが枯渇する場合があります。
