@@ -1,10 +1,10 @@
-date: 2026-05-06T04:38:50.937899Z
+date: 2026-05-06T06:07:41.712368Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qprDOtkcJXo title=【NHKマイルC・追い切り】エコロアルバは美浦・Wコースで自己ベストタイをマーク
-OK project=1 video_id=BoQKNZGMpIU title=【注目馬動向】スイートピーSを制したカナルサンマルタンは優先出走権獲得のオークス
-OK project=1 video_id=sDic_7tAsN0 title=【注目馬動向】レガレイラが宝塚記念で4年連続G1勝利へ　6日に美浦トレセン帰厩　
+OK project=1 video_id=o36Skv770pY title=【園田競馬】「ただいまー」尼崎出身の南果歩が故郷でトークショー　「私も数々の荒波
+OK project=1 video_id=wzStFr4F6mo title=【オークス想定】スターアニス、ラフターラインズなど15頭
+OK project=1 video_id=gC59x9MwgxE title=スイートピーS覇者カナルサンマルタンはオークス見送り　優先出走権獲得も放牧でリフ
