@@ -1,10 +1,10 @@
-date: 2026-05-06T06:07:41.712368Z
+date: 2026-05-06T07:51:06.615880Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=o36Skv770pY title=【園田競馬】「ただいまー」尼崎出身の南果歩が故郷でトークショー　「私も数々の荒波
-OK project=1 video_id=wzStFr4F6mo title=【オークス想定】スターアニス、ラフターラインズなど15頭
-OK project=1 video_id=gC59x9MwgxE title=スイートピーS覇者カナルサンマルタンはオークス見送り　優先出走権獲得も放牧でリフ
+OK project=1 video_id=7zLOd37J2bY title=【兵庫CS】1番人気サトノボヤージュが重賞初制覇　戸崎圭太騎手「人気も1倍台で、
+OK project=1 video_id=AX7pNfQZlq4 title=【園田・兵庫チャンピオンシップ結果】1番人気サトノボヤージュが差し切って重賞初制
+OK project=1 video_id=G1w5n400Kmw title=【注目馬動向】サトノレーヴが英国到着　次走はクイーンエリザベス2世ジュビリーSな
