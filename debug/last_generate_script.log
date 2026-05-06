@@ -1,74 +1,53 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (32個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【園田競馬】「ただいまー」尼崎出身の南果歩が故郷でトークショー　「私も数々の荒波を乗り越えてきて今がある」 ---
-[0] Gemini入力本文 374文字: '俳優の南果歩(62)が6日、阪神アーバン競馬・園田競馬場で4R終了後にトークショーを行った。兵庫・尼崎市出身の南にとってはまさに地元。「ただいまー」と大きな声でステージに登場すると、集まった観客から大きな拍手と歓声で迎えられた。\n\t\t\t\t\u3000'
+--- 記事[0]: 【兵庫CS】1番人気サトノボヤージュが重賞初制覇　戸崎圭太騎手「人気も1倍台で、応えられてホッとしています」 ---
+[0] Gemini入力本文 357文字: '◆第27回兵庫チャンピオンシップ・Jpn2(5月6日、園田競馬場・ダート1400メートル、稍重)\n\t\t\t\t\u30003歳春のダートグレード競走に11頭(JRA5、地元4、大井1、高知1)が出走して争われ、1番人気で戸崎圭太騎手騎乗のサトノボヤージュ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【オークス想定】スターアニス、ラフターラインズなど15頭 ---
-[1] Gemini入力本文 342文字: '5月24日(日)に東京競馬場で行われるオークス(3歳牝・GI・芝2400m)。\n\u30005日時点では、桜花賞馬のスターアニス、フローラSを制したラフターラインズ、忘れな草を勝利したジュウリョクピエロなど、15頭が登録を予定している。\n\u3000フルゲート'
+--- 記事[1]: 【園田・兵庫チャンピオンシップ結果】1番人気サトノボヤージュが差し切って重賞初制覇 ---
+[1] Gemini入力本文 352文字: '6日、園田競馬場で行われた第27回兵庫チャンピオンシップ(3歳・JpnII・ダ1400m・1着賞金5000万円)は、好位から脚を伸ばした戸崎圭太騎手騎乗の1番人気サトノボヤージュ(牡3、美浦・田中博康厩舎)が、中団から内を突いて上がって脚を'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: スイートピーS覇者カナルサンマルタンはオークス見送り　優先出走権獲得も放牧でリフレッシュを図る ---
-[2] Gemini入力本文 341文字: '未勝利に続く連勝で2日のスイートピーSを制したカナルサンマルタン(牝3＝宮田、父リアルスティール)は優先出走権を確保したオークス(24日、東京芝2400メートル)を見送る。\n\u30006日、サンデーサラブレッドクラブが発表した。\n\u3000レース内容は良か'
+--- 記事[2]: 【注目馬動向】サトノレーヴが英国到着　次走はクイーンエリザベス2世ジュビリーSなど欧州の複数レースを検討 ---
+[2] Gemini入力本文 342文字: '4月26日に香港のシャティン競馬場で行われたチェアマンズスプリントプライズで、2年連続でカーインライジングの2着だったサトノレーヴ(牡7歳、美浦・堀宣行厩舎、父ロードカナロア)は3日、香港からの直行便で英国のヒースロー空港へ到着。その後はニ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 206文字]: '競馬速報です。5月24日(日)に東京競馬場で行われるオークス、3歳牝・GI・芝2400mについてお伝えします。5日時点では、桜花賞馬のスターアニス、フローラSを制したラフターラインズ、忘れな草を勝利したジュウリョクピエロなど、15頭が登録を予定しています。フルゲートは18頭です。各馬とも出走予定の段階で、変更の可能性がございます。なお、netkeiba独自の想定で、確定情報ではありませんので、ご了承ください。'
+[2]  [Gemini生出力 243文字]: '競馬ファン注目の情報です。\n4月26日に香港のシャティン競馬場で行われたチェアマンズスプリントプライズで、2年連続でカーインライジングの2着だったサトノレーヴが、3日に香港からの直行便で英国のヒースロー空港へ到着しました。その後、サトノレーヴはニューマーケット競馬場のジェームズ・ホートン厩舎へ入厩しています。堀調教師によると、今後は昨年2着のクイーンエリザベス2世ジュビリーS・英G1、6月20日にアスコット競馬場で行われるこのレースなど、欧州の複数レースを検討しているとのことです。'
+[2]  [重複除去] 243文字 → 242文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (242文字)
+[2]  プレビュー: 競馬ファン注目の情報です。4月26日に香港のシャティン競馬場で行われたチェアマンズスプリントプライズで、2年連続でカーインライジングの2着だったサトノレーヴが、...
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[1]  [Gemini生出力 231文字]: '今週の競馬注目情報をお伝えします。\n6日、園田競馬場で行われた第27回兵庫チャンピオンシップは、1番人気サトノボヤージュが戸崎圭太騎手騎乗で差し切り、重賞初制覇を飾りました。3歳・JpnII・ダート1400m、1着賞金5000万円のこのレースで、サトノボヤージュは好位から脚を伸ばして優勝。勝ちタイムは稍重の馬場で1分28秒1でした。2着には中団から内を突いた4番人気トウカイマシェリが1/2馬身差で入り、さらに2馬身差の3着には6番人気ゼーロスが入っています。'
+[1]  [重複除去] 231文字 → 230文字
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (206文字)
-[1]  プレビュー: 競馬速報です。5月24日(日)に東京競馬場で行われるオークス、3歳牝・GI・芝2400mについてお伝えします。5日時点では、桜花賞馬のスターアニス、フローラSを...
+[1]  → output/script_1.txt 保存 (230文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。6日、園田競馬場で行われた第27回兵庫チャンピオンシップは、1番人気サトノボヤージュが戸崎圭太騎手騎乗で差し切り、重賞初制覇を...
   HTTP 200
-[2]  [Gemini生出力 227文字]: '本日の競馬ニュースです。未勝利に続く連勝で2日のスイートピーSを制したカナルサンマルタンは、優先出走権を確保していたオークスを見送ることが発表されました。オークスは24日に東京芝2400メートルで行われる予定でした。この見送りは6日、サンデーサラブレッドクラブが発表したものです。レース内容は良かったものの、課題のメンタル面に改善の余地があること、現状の距離適性、そして2400メートルを走った際の今後への影響を考慮し、放牧でリフレッシュを図る方針です。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (227文字)
-[2]  プレビュー: 本日の競馬ニュースです。未勝利に続く連勝で2日のスイートピーSを制したカナルサンマルタンは、優先出走権を確保していたオークスを見送ることが発表されました。オーク...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 254文字]: '最新のレース情報が入ってきました。\n俳優の南果歩さんが6日、阪神アーバン競馬・園田競馬場で4R終了後にトークショーを行いました。兵庫・尼崎市出身の南果歩さんにとって、園田競馬場はまさに地元です。「ただいまー」と大きな声でステージに登場すると、集まった観客からは大きな拍手と歓声で迎えられました。18歳で上京した南果歩さんにとって、園田競馬場を訪れるのは初めてのことでした。ファミリー層の多い競馬場の雰囲気に驚いた様子で、80万個の電球を使ったイルミネーションがあることを聞くと、「夜もき...」と話しました。'
-[0]  [重複除去] 251文字 → 250文字
+[0]  [Gemini生出力 237文字]: '注目の競馬情報をお届けします。5月6日に園田競馬場ダート1400メートル、稍重で行われた第27回兵庫チャンピオンシップ・Jpn2は、JRA5頭、地元4頭、大井1頭、高知1頭の計11頭が出走し争われました。1番人気に推された戸崎圭太騎手騎乗のサトノボヤージュが、好位から直線で差し切り、重賞初制覇を飾っています。勝ちタイムは1分28秒1でした。これによりJRA勢は25年連続勝利を達成しています。戸崎圭太騎手は「人気も1倍台で、応えられてホッとしています」とコメントしました。'
+[0]  [redirectフィルター] 237文字 → 222文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (250文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。俳優の南果歩さんが6日、阪神アーバン競馬・園田競馬場で4R終了後にトークショーを行いました。兵庫・尼崎市出身の南果歩さんにとっ...
+[0]  → output/script_0.txt 保存 (222文字)
+[0]  プレビュー: 5月6日に園田競馬場ダート1400メートル、稍重で行われた第27回兵庫チャンピオンシップ・Jpn2は、JRA5頭、地元4頭、大井1頭、高知1頭の計11頭が出走し...
 
 3 件の脚本を生成しました。
