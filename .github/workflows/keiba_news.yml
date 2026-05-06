@@ -22,12 +22,6 @@ jobs:
       issues: write
 
     steps:
-      - name: ランダム開始遅延（視聴者習慣形成のため時間帯固定＋毎回±10分のランダムずれ）
-        run: |
-          DELAY=$((RANDOM % 601))
-          echo "開始遅延: ${DELAY}秒 ($(( DELAY / 60 ))分$(( DELAY % 60 ))秒)"
-          sleep "${DELAY}"
-
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
