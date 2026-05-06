@@ -320,10 +320,19 @@ def main() -> None:
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
         print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
         sys_prompt = get_system_prompt()
+        _BODY_LIMIT = 1500
+        if len(summary_text) > _BODY_LIMIT:
+            # 文境界（句点または改行）で切り詰めて引用が途中で途切れないようにする
+            _cut = summary_text.rfind("。", 0, _BODY_LIMIT)
+            if _cut == -1:
+                _cut = summary_text.rfind("\n", 0, _BODY_LIMIT)
+            body_for_gemini = summary_text[:_cut + 1] if _cut != -1 else summary_text[:_BODY_LIMIT]
+        else:
+            body_for_gemini = summary_text
         user_content = (
             f"【ニュース】\n"
             f"タイトル: {item['title']}\n"
-            f"内容: {summary_text[:1500]}\n\n"
+            f"内容: {body_for_gemini}\n\n"
             f"【書き出し指示】このナレーションは必ず「{opening_pattern}」という一文で始めること。"
         )
         lenient_sys_prompt = (
