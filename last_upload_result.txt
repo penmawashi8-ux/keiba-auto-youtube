@@ -1,10 +1,10 @@
-date: 2026-05-06T09:31:23.515919Z
+date: 2026-05-06T12:46:47.374535Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=msd4BGFvm9A title=【地方競馬】サトノボヤージュが兵庫チャンピオンシップを制し、国内４連勝で重賞初制
-OK project=1 video_id=mKLsijaIxbM title=【注目馬動向】ベラジオボンドがしらさぎSで重賞初制覇目指す　デビットバローズは同
-OK project=1 video_id=vrQaJMXIgzo title=BCクラシック2着など実績馬のデルマソトガケが栗東の牧田厩舎へ転厩
+OK project=1 video_id=3dGaKkC0iEo title=【京都新聞杯】ホープフルS4着のアーレムアレスは好馬体でパワフルな伸び　橋口調教
+OK project=1 video_id=l1wk0DV1fsw title=【京都新聞杯】5・9億円のエムズビギンは坂路で重厚感あふれる動き　友道調教師「よ
+OK project=1 video_id=AKp2prKby2s title=【京都新聞杯】“黄金コンビ”で2週連続重賞制覇へ　ベレシートが時計以上の伸び　斉
