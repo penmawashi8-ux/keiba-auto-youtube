@@ -1,43 +1,74 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (32個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【NHKマイルC・追い切り】エコロアルバは美浦・Wコースで自己ベストタイをマーク　田村調教師「完全に仕上がった」 ---
-[0] Gemini入力本文 356文字: '◆第31回NHKマイルC・G1(5月10日、東京・芝1600メートル)追い切り＝5月6日、美浦トレセン\n\t\t\t\t\u3000エコロアルバ(牡3歳、美浦・田村康仁厩舎、父モズアスコット)はWコースでの併せ馬で5ハロン65秒1―11秒1。推進力ある動きで'
+--- 記事[0]: 【園田競馬】「ただいまー」尼崎出身の南果歩が故郷でトークショー　「私も数々の荒波を乗り越えてきて今がある」 ---
+[0] Gemini入力本文 374文字: '俳優の南果歩(62)が6日、阪神アーバン競馬・園田競馬場で4R終了後にトークショーを行った。兵庫・尼崎市出身の南にとってはまさに地元。「ただいまー」と大きな声でステージに登場すると、集まった観客から大きな拍手と歓声で迎えられた。\n\t\t\t\t\u3000'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【注目馬動向】スイートピーSを制したカナルサンマルタンは優先出走権獲得のオークスへは向かわず ---
-[1] Gemini入力本文 342文字: 'トライアルのスイートピーSを制したカナルサンマルタン(牝3歳、美浦・宮田敬介厩舎、父リアルスティール)は、優先出走権を獲得したオークス・G1(5月24日、東京競馬場・芝2400メートル)への出走を回避することが分かった。6日、サンデーサラブ'
+--- 記事[1]: 【オークス想定】スターアニス、ラフターラインズなど15頭 ---
+[1] Gemini入力本文 342文字: '5月24日(日)に東京競馬場で行われるオークス(3歳牝・GI・芝2400m)。\n\u30005日時点では、桜花賞馬のスターアニス、フローラSを制したラフターラインズ、忘れな草を勝利したジュウリョクピエロなど、15頭が登録を予定している。\n\u3000フルゲート'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【注目馬動向】レガレイラが宝塚記念で4年連続G1勝利へ　6日に美浦トレセン帰厩　サンデーサラブレッドクラブ発表 ---
-[2] Gemini入力本文 415文字: '23年のホープフルS、24年の有馬記念、25年のエリザベス女王杯と3年連続でG1を勝っているレガレイラ(牝5歳、美浦・木村哲也厩舎、父スワーヴリチャード)が宝塚記念・G1(6月14日、阪神・芝2200メートル)を予定していることがわかった。'
+--- 記事[2]: スイートピーS覇者カナルサンマルタンはオークス見送り　優先出走権獲得も放牧でリフレッシュを図る ---
+[2] Gemini入力本文 341文字: '未勝利に続く連勝で2日のスイートピーSを制したカナルサンマルタン(牝3＝宮田、父リアルスティール)は優先出走権を確保したオークス(24日、東京芝2400メートル)を見送る。\n\u30006日、サンデーサラブレッドクラブが発表した。\n\u3000レース内容は良か'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 267文字]: '重要な競馬ニュースをお伝えします。トライアルのスイートピーSを制したカナルサンマルタンは、優先出走権を獲得したオークス・G1への出走を回避することが分かりました。オークスは5月24日に東京競馬場の芝2400メートルで行われるレースです。この情報は6日、サンデーサラブレッドクラブがホームページ上で発表しました。回避の理由として、課題となるメンタル面の改善が見られず、現状で長い距離を走らせるとその後に良くない影響を及ぼすことが予想されるためとされています。カナルサンマルタンは牝3歳、美浦の宮田敬介厩舎所属、父はリアルスティールです。'
+[1]  [Gemini生出力 206文字]: '競馬速報です。5月24日(日)に東京競馬場で行われるオークス、3歳牝・GI・芝2400mについてお伝えします。5日時点では、桜花賞馬のスターアニス、フローラSを制したラフターラインズ、忘れな草を勝利したジュウリョクピエロなど、15頭が登録を予定しています。フルゲートは18頭です。各馬とも出走予定の段階で、変更の可能性がございます。なお、netkeiba独自の想定で、確定情報ではありませんので、ご了承ください。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (267文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。トライアルのスイートピーSを制したカナルサンマルタンは、優先出走権を獲得したオークス・G1への出走を回避することが分かりました...
+[1]  → output/script_1.txt 保存 (206文字)
+[1]  プレビュー: 競馬速報です。5月24日(日)に東京競馬場で行われるオークス、3歳牝・GI・芝2400mについてお伝えします。5日時点では、桜花賞馬のスターアニス、フローラSを...
   HTTP 200
-[0]  [Gemini生出力 228文字]: '競馬ファン注目の情報です。\n第31回NHKマイルCの追い切りが、5月6日に美浦トレセンで行われました。5月10日に東京・芝1600メートルで行われるこのG1レースに向けて、エコロアルバはWコースでの併せ馬で5ハロン65秒1―11秒1をマークしました。推進力ある動きで自己ベストタイを記録し、状態の良さをアピールしています。共同会見での田村調教師のコメントは、「先週横山和君に乗っていただいて良い調教ができていましたが、今回は久し...」と述べられています。'
-[0]  [重複除去] 225文字 → 224文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (224文字)
-[0]  プレビュー: 競馬ファン注目の情報です。第31回NHKマイルCの追い切りが、5月6日に美浦トレセンで行われました。5月10日に東京・芝1600メートルで行われるこのG1レース...
+[2]  [Gemini生出力 227文字]: '本日の競馬ニュースです。未勝利に続く連勝で2日のスイートピーSを制したカナルサンマルタンは、優先出走権を確保していたオークスを見送ることが発表されました。オークスは24日に東京芝2400メートルで行われる予定でした。この見送りは6日、サンデーサラブレッドクラブが発表したものです。レース内容は良かったものの、課題のメンタル面に改善の余地があること、現状の距離適性、そして2400メートルを走った際の今後への影響を考慮し、放牧でリフレッシュを図る方針です。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (227文字)
+[2]  プレビュー: 本日の競馬ニュースです。未勝利に続く連勝で2日のスイートピーSを制したカナルサンマルタンは、優先出走権を確保していたオークスを見送ることが発表されました。オーク...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 248文字]: '最新のレース情報が入ってきました。レガレイラが宝塚記念・G1を予定していることがわかりました。この情報は5月6日、サンデーサラブレッドクラブがホームページで発表したものです。宝塚記念・G1は6月14日に阪神・芝2200メートルで行われます。レガレイラは美浦・木村哲也厩舎に所属し、23年のホープフルS、24年の有馬記念、25年のエリザベス女王杯と3年連続でG1を勝っています。昨年の有馬記念・G1で4着となった後、脚部不安のため牧場で調整を続けていましたが、5月6日に美浦トレセンに帰厩しました。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (248文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。レガレイラが宝塚記念・G1を予定していることがわかりました。この情報は5月6日、サンデーサラブレッドクラブがホームページで発表...
+[0]  [Gemini生出力 254文字]: '最新のレース情報が入ってきました。\n俳優の南果歩さんが6日、阪神アーバン競馬・園田競馬場で4R終了後にトークショーを行いました。兵庫・尼崎市出身の南果歩さんにとって、園田競馬場はまさに地元です。「ただいまー」と大きな声でステージに登場すると、集まった観客からは大きな拍手と歓声で迎えられました。18歳で上京した南果歩さんにとって、園田競馬場を訪れるのは初めてのことでした。ファミリー層の多い競馬場の雰囲気に驚いた様子で、80万個の電球を使ったイルミネーションがあることを聞くと、「夜もき...」と話しました。'
+[0]  [重複除去] 251文字 → 250文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (250文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。俳優の南果歩さんが6日、阪神アーバン競馬・園田競馬場で4R終了後にトークショーを行いました。兵庫・尼崎市出身の南果歩さんにとっ...
 
 3 件の脚本を生成しました。
