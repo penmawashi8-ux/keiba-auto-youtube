@@ -1,10 +1,10 @@
-date: 2026-05-05T11:05:43.212586Z
+date: 2026-05-06T01:49:08.030268Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0jTIDxo-aWY title=【NHKマイルC】上原佑調教師「健闘できてもいい」　リゾートアイランドは折り合い
-OK project=1 video_id=UQqQqLzEIF0 title=【ホッカイドウ競馬】素質馬アペリティーヴォが評判通りデビュー勝ち 能力試験で唯一
-OK project=1 video_id=tvZsWISaMx0 title=「お前だったのか、オルフェの後継は」「凄い競馬」名古屋競馬の単勝1・2倍、大本命
+OK project=1 video_id=SCBh4DawfqY title=【NHKマイルC】戸崎圭太騎手がアスクイキゴミと初コンタクト　上々の感触で「追い
+OK project=1 video_id=f_7zMpiAQH0 title=【NHKマイルC】3歳マイル王へダイヤモンドノットが坂路で万全の仕上がり　福永調
+OK project=1 video_id=jctnL613eV0 title=【かしわ記念レース後コメント】ウィルソンテソーロ川田将雅騎手ら
