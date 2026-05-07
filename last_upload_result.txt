@@ -1,10 +1,10 @@
-date: 2026-05-07T06:12:01.372968Z
+date: 2026-05-07T07:56:26.389847Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0xUVrRXc-BE title=【注目馬動向】大阪―ハンブルクCを制したウィクトルウェルスは目黒記念で重賞初挑戦
-OK project=1 video_id=y1m4JSmSggI title=【NHKマイルC出走馬・騎手確定】ダイヤモンドノット＆川田将雅騎手、ロデオドライ
-OK project=1 video_id=dnUipQAOwsU title=クロワデュノールの天皇賞・春Vはレーティング117ポンド　JRA発表
+OK project=1 video_id=iEEZIwKjAgM title=【注目馬動向】オークスへドリームコアが美浦トレセンに帰厩　萩原調教師「しっかり調
+OK project=1 video_id=9E3KwBKlCDU title=【ヴィクトリアM・1週前】武豊騎手と4戦連続コンビのエリカエクスプレス　杉山晴調
+OK project=1 video_id=NzngGnUGEGs title=西村淳也騎手が5月7日の騎乗停止処分　ケンタッキーダービーでのムチの使用超過のた
