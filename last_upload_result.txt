@@ -1,10 +1,10 @@
-date: 2026-05-06T12:46:47.374535Z
+date: 2026-05-07T00:12:47.614846Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3dGaKkC0iEo title=【京都新聞杯】ホープフルS4着のアーレムアレスは好馬体でパワフルな伸び　橋口調教
-OK project=1 video_id=l1wk0DV1fsw title=【京都新聞杯】5・9億円のエムズビギンは坂路で重厚感あふれる動き　友道調教師「よ
-OK project=1 video_id=AKp2prKby2s title=【京都新聞杯】“黄金コンビ”で2週連続重賞制覇へ　ベレシートが時計以上の伸び　斉
+OK project=1 video_id=yNXWCovI0Fo title=【NHKマイルC】森秀行調教師が18年ぶりGI制覇へ ユウファラオが再び波乱呼ぶ
+OK project=1 video_id=Z-QSppT_S_c title=【NHKマイルC展望】ロデオドライブが前走の惜敗を糧に戴冠を狙う
+OK project=1 video_id=ni1Ec6064rs title=【エプソムＣ】カラマティアノス　手応え良く併入　津村「かなりいい状態に仕上がった
