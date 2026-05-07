@@ -1,8 +1,10 @@
-date: 2026-05-07T09:20:40.932547Z
+date: 2026-05-07T09:35:51.063904Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rM0rTNYNfUQ title=【NHKマイルカップ2026枠順確定前予想】PR116カヴァレリッツォより怖い馬
+OK project=1 video_id=FQ2RqiJbUo0 title=【地方競馬】川島一師が地方競馬通算１０００勝を達成
+OK project=1 video_id=ZCmz_OL6zkQ title=高額的中も出た！ 地方予想家ボーナスキャンペーン4月の結果をお届け
+OK project=1 video_id=S_7H90lu3yw title=セレクト1.5億円の良血 ランブルスコがルメール騎手と初タッグで初勝利狙う
