@@ -1,10 +1,10 @@
-date: 2026-05-07T11:17:40.645082Z
+date: 2026-05-07T12:47:33.273752Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bkAF_2g51fw title=全姉ゴージャスの白毛馬 ジャジャミンがデビュー勝ち狙う
-OK project=1 video_id=cdU34dg3WW8 title=【ヴィクトリアM・1週前】力強く伸びたニシノティアモが11秒0　上原佑調教師「手
-OK project=1 video_id=kVgGrWbnAg4 title=【NHKマイルC】 調教後馬体重2ケタ増は4頭　前走が大幅減で重賞初制覇のギリー
+OK project=1 video_id=k6tLFEVzwa0 title=ラッキードリームが浦和から1戦で岩手競馬に移籍　野田善己オーナー「少しでも長く競
+OK project=1 video_id=9g_xvRg8fOc title=【新潟大賞典・1週前】重賞2着4回ドゥラドーレスは悲願の初タイトルへ　宮田調教師
+OK project=1 video_id=ckd3HT4jS0s title=【NHKマイルC・追い切り】リゾートアイランドは3頭併せで鋭く併入　佐々木大輔騎

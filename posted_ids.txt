@@ -959,8 +959,11 @@ https://news.netkeiba.com/?pid=news_view&no=330406
 https://news.netkeiba.com/?pid=news_view&no=330408
 https://news.netkeiba.com/?pid=news_view&no=330409
 https://news.netkeiba.com/?pid=news_view&no=330424
+https://news.netkeiba.com/?pid=news_view&no=330429
 https://news.netkeiba.com/?pid=news_view&no=330430
 https://news.netkeiba.com/?pid=news_view&no=330431
+https://news.netkeiba.com/?pid=news_view&no=330432
+https://news.netkeiba.com/?pid=news_view&no=330433
 nhk_mile_2026_prediction
 osaka_cup_2026_prediction
 osaka_cup_2026_prediction_wakuban
