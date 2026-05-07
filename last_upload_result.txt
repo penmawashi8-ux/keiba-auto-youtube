@@ -1,10 +1,10 @@
-date: 2026-05-07T00:12:47.614846Z
+date: 2026-05-07T04:50:50.732721Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yNXWCovI0Fo title=【NHKマイルC】森秀行調教師が18年ぶりGI制覇へ ユウファラオが再び波乱呼ぶ
-OK project=1 video_id=Z-QSppT_S_c title=【NHKマイルC展望】ロデオドライブが前走の惜敗を糧に戴冠を狙う
-OK project=1 video_id=ni1Ec6064rs title=【エプソムＣ】カラマティアノス　手応え良く併入　津村「かなりいい状態に仕上がった
+OK project=1 video_id=uf4jcxBmKgI title=【ヴィクトリアM・1週前】厩舎G1初挑戦アイサンサンが坂路で好調アピール　橋田調
+OK project=1 video_id=bM2We3mkZKE title=ケンタッキーダービーで5着に健闘したダノンバーボンが帰国　競馬学校で検疫へ
+OK project=1 video_id=wDUWFsoCbBE title=【ヴィクトリアマイル・1週前】ラヴァンダがソフト調整で反撃へ　岩田望来騎手「一変
