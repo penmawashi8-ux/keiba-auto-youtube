@@ -1,10 +1,10 @@
-date: 2026-05-08T10:46:56.977654Z
+date: 2026-05-08T12:19:38.272681Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PPQUSE5pMk4 title=【エプソムC予想】テンから流れるレースは大型馬に不向き!? 臨戦過程も気になる有
-OK project=1 video_id=l1smNeZzAI8 title=【京都新聞杯・金曜気配】ダービー出走を目指すアーレムアレスが先輩G1馬と最終調整
-OK project=1 video_id=GIyIy18Y55M title=【週末情報】ダイヤモンドノット悲願のGI獲りへ！ 4枠7番からの横綱相撲に期待/
+OK project=1 video_id=vsoVZjED1nI title=【記者メモ】引手の持ち方１つで馬の“しつけ”　暴れ馬がたった２０分で我慢を覚えた
+OK project=1 video_id=Ts3ZkmAP58I title=叔母はGI・9勝の歴史的名牝 カフジエメンタールが京都新聞杯で重賞初制覇狙う
+OK project=1 video_id=yyolcKLU5ZA title=【NHKマイルC予想】上位人気馬に赤信号点灯か？ GI・NHKマイルC調子偏差値
