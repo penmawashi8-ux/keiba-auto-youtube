@@ -1,10 +1,10 @@
-date: 2026-05-07T12:47:33.273752Z
+date: 2026-05-08T00:07:49.298074Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=k6tLFEVzwa0 title=ラッキードリームが浦和から1戦で岩手競馬に移籍　野田善己オーナー「少しでも長く競
-OK project=1 video_id=9g_xvRg8fOc title=【新潟大賞典・1週前】重賞2着4回ドゥラドーレスは悲願の初タイトルへ　宮田調教師
-OK project=1 video_id=ckd3HT4jS0s title=【NHKマイルC・追い切り】リゾートアイランドは3頭併せで鋭く併入　佐々木大輔騎
+OK project=1 video_id=jriSXuQEKQk title=過去10年で9勝 NHKマイルCは“外枠有利”な傾向あり
+OK project=1 video_id=hBHU_-2sq2w title=フランケル×レッツゴードンキの超良血 アスクヴォルテージが初の芝1200mで1年
+OK project=1 video_id=CO9gt0iZBaw title=【ヴィクトリアM・1週前】エンブロイダリー超抜の伸び4馬身先着
