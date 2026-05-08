@@ -1,4 +1,4 @@
-name: NHKマイルカップ2026 枠順確定前予想動画 生成・投稿
+name: NHKマイルカップ2026 枠順確定予想動画 生成・投稿
 
 on:
   workflow_dispatch:
@@ -36,7 +36,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: NHKマイルカップ2026 予想コンテンツを生成
+      - name: NHKマイルカップ2026 枠順確定予想コンテンツを生成
         run: python scripts/create_nhk_mile_prediction.py
 
       - name: Generate audio
@@ -79,6 +79,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "変更なし。コミットをスキップします。"
           else
-            git commit -m "chore: NHKマイルカップ2026枠順確定前予想動画 投稿完了 [skip ci]"
+            git commit -m "chore: NHKマイルカップ2026枠順確定予想動画 投稿完了 [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
           fi
