@@ -1,10 +1,10 @@
-date: 2026-05-08T08:38:16.881118Z
+date: 2026-05-08T10:46:56.977654Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AUR_J0z2kjY title=【新潟大賞典想定馬・騎手】シュガークン、ドゥラドーレスなど13頭
-OK project=1 video_id=tTlAWbPrA38 title=【オークス想定馬・騎手】スターアニス、ラフターラインズなど23頭
-OK project=1 video_id=S5_CkchHTtI title=かしわ記念4着のコスタノヴァは左前肢第4中手骨の骨折が判明　全治3か月　社台グル
+OK project=1 video_id=PPQUSE5pMk4 title=【エプソムC予想】テンから流れるレースは大型馬に不向き!? 臨戦過程も気になる有
+OK project=1 video_id=l1smNeZzAI8 title=【京都新聞杯・金曜気配】ダービー出走を目指すアーレムアレスが先輩G1馬と最終調整
+OK project=1 video_id=GIyIy18Y55M title=【週末情報】ダイヤモンドノット悲願のGI獲りへ！ 4枠7番からの横綱相撲に期待/
