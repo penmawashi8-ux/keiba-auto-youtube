@@ -28,6 +28,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from pathlib import Path
 
 import requests
@@ -1006,7 +1007,7 @@ def build_video(
     thumb_top: str = "",
     thumb_main: str = "",
 ) -> None:
-    script = script_path.read_text(encoding="utf-8").strip()
+    script = unicodedata.normalize("NFKC", script_path.read_text(encoding="utf-8").strip())
     # 「。」でも改行でも分割する
     # 名馬列伝スクリプトは改行区切り、ニューススクリプトは「。」区切りのため両対応
     raw = [s.strip() for s in re.split(r"[。\n]+", script) if s.strip()]

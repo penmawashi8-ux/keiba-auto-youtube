@@ -7,6 +7,7 @@ import random
 import re
 import sys
 import time
+import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -505,7 +506,7 @@ def main() -> None:
                 print(f"[{i}]  ファクトチェック: {fc_reason[:60]}")
 
                 out_path = Path(f"{OUTPUT_DIR}/script_{i}.txt")
-                out_path.write_text(script, encoding="utf-8")
+                out_path.write_text(unicodedata.normalize("NFKC", script), encoding="utf-8")
                 print(f"[{i}]  → {out_path} 保存 ({len(script)}文字)")
                 print(f"[{i}]  プレビュー: {script[:80]}...")
                 _check_consecutive_endings(script, i)
