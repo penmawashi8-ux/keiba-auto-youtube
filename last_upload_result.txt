@@ -1,10 +1,10 @@
-date: 2026-05-08T06:45:07.570100Z
+date: 2026-05-08T08:38:16.881118Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TxYdXAwrrDo title=【NHKマイルC・金曜気配】ダイヤモンドノットは4枠7番　福永調教師「スタートが
-OK project=1 video_id=1tw_z8iroy8 title=【兵庫アーバン競馬】通信機器の不適切使用で騎手7人に60日間の騎乗停止処分
-OK project=1 video_id=6aaOulrYKOc title=福永祐一調教師×武豊騎手の黄金タッグが特別初勝利なるか 良血ケールハイムが橘Sに
+OK project=1 video_id=AUR_J0z2kjY title=【新潟大賞典想定馬・騎手】シュガークン、ドゥラドーレスなど13頭
+OK project=1 video_id=tTlAWbPrA38 title=【オークス想定馬・騎手】スターアニス、ラフターラインズなど23頭
+OK project=1 video_id=S5_CkchHTtI title=かしわ記念4着のコスタノヴァは左前肢第4中手骨の骨折が判明　全治3か月　社台グル
