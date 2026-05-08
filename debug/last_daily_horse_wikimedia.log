@@ -1,17 +1,16 @@
-=== Wikimedia Commons 画像検索: グラスワンダー ===
-  検索クエリ: 「グラスワンダー racehorse」
-  ヒット数: 15 件
-  チェック: File:Grass Wonder 19991226.jpg
-  チェック: File:Grass Wonder 001.jpg
-  チェック: File:Owner Hanzawa.svg
-  スキップ（アニメ/コスプレ）: File:Cosplayer of Grass Wonder at Rainbow Gala 28 - D1T1655.jpg
-  チェック: File:Perseus and Andromeda; the story retold (IA cu31924029056492).pdf
-  チェック: File:New Zealand; (IA newzealand00reev).pdf
-  チェック: File:Translations, imitations, and a few originals. (IA translationsimit01rayf).pdf
-  チェック: File:Harper's New Monthly Magazine, Volume 78.pdf
-  チェック: File:The ring of nature (IA ringofnature00desmiala).pdf
-  チェック: File:Gabriel Tolliver - a story of reconstruction (IA gabrieltolliver00harrrich).pdf
-  チェック: File:Poet Lore, volume 7, 1895.djvu
+=== Wikimedia Commons 画像検索: アーモンドアイ ===
+  検索クエリ: 「アーモンドアイ racehorse」
+  ヒット数: 20 件
+  チェック: File:Almond Eye(JPN) IMG 9225-1 20181014.jpg
+  チェック: File:2018-4-8-AlmondEye.jpg
+  チェック: File:Almond Eye(Japan Cup).jpg
+  チェック: File:Almond Eye Syukasyo 2018(IMG1).jpg
+  チェック: File:Almond Eye Syukasyo 2018(IMG2).jpg
+  チェック: File:Almond Eye Retirement Celemony(IMG3).jpg
+  チェック: File:Almond Eye Yushun Himba 2018(IMG1).jpg
+  チェック: File:Almond Eye Retirement Celemony(IMG2).jpg
+  チェック: File:Almond Eye Ouka Sho 2018(IMG1).jpg
+  チェック: File:Almond Eye Japan Cup 2018(IMG1).jpg
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()

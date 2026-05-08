@@ -1,22 +1,24 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (60 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (59 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: グラスワンダー (key=grass_wonder)
-  タイトル: 【名馬列伝】グラスワンダー〜怪我を乗り越え、王者の頂へ〜 #Shorts
+  馬名: アーモンドアイ (key=almond_eye)
+  タイトル: 【名馬列伝】アーモンドアイ〜GⅠ9勝 時代を彩る女王〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】グラスワンダー〜怪我を乗り越え、王者の頂へ〜 #Shorts
-  進捗: 15%
-  進捗: 31%
+  アップロード中: 【名馬列伝】アーモンドアイ〜GⅠ9勝 時代を彩る女王〜 #Shorts
+  進捗: 11%
+  進捗: 23%
+  進捗: 34%
   進捗: 46%
-  進捗: 62%
-  進捗: 78%
-  進捗: 93%
-  完了! Video ID: HroLBVEwsqI
-  URL: https://www.youtube.com/watch?v=HroLBVEwsqI
-  サムネイルアップロード中: output/thumbnail_0.jpg (60 KB)
+  進捗: 57%
+  進捗: 69%
+  進捗: 80%
+  進捗: 92%
+  完了! Video ID: CJGlVQsyT3I
+  URL: https://www.youtube.com/watch?v=CJGlVQsyT3I
+  サムネイルアップロード中: output/thumbnail_0.jpg (59 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
