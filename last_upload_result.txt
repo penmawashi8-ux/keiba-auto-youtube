@@ -1,10 +1,10 @@
-date: 2026-05-08T04:34:45.943507Z
-type: landscape_prediction
-total_races: 2
-uploaded: 2
+date: 2026-05-08T05:41:16.623977Z
+projects_loaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2tNY1GErdCM title=【重賞予想】 5月8日 徹底分析
-OK project=1 video_id=qOKCpNVbV1s title=NHKマイルカップ 予想 5月8日【完全版】
+OK project=1 video_id=2u_DsLotMIo title=10年ダービー馬が凱旋!　エイシンフラッシュが東京競馬場に到着　NHKマイルC当
+OK project=1 video_id=pwA1UATTA7s title=クロワデュノールの母ライジングクロスが昨年10月末に死んでいた　孝行息子の活躍を
+OK project=1 video_id=lN3R_IyWSUY title=【NHKマイルC・金曜気配】2戦2勝アスクイキゴミは坂路で活気十分　3戦連続8枠
