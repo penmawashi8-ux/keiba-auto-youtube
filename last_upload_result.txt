@@ -1,8 +1,10 @@
-date: 2026-05-08T03:40:52.630878Z
-projects_loaded: 1
-uploaded: 1
+date: 2026-05-08T04:34:45.943507Z
+type: landscape_prediction
+total_races: 2
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=48uUpyFQkH4 title=【NHKマイルカップ2026枠順確定予想】4枠7番ダイヤモンドノットが黄金枠！カ
+OK project=1 video_id=2tNY1GErdCM title=【重賞予想】 5月8日 徹底分析
+OK project=1 video_id=qOKCpNVbV1s title=NHKマイルカップ 予想 5月8日【完全版】
