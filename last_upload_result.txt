@@ -1,10 +1,8 @@
-date: 2026-05-08T00:07:49.298074Z
+date: 2026-05-08T03:40:52.630878Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jriSXuQEKQk title=過去10年で9勝 NHKマイルCは“外枠有利”な傾向あり
-OK project=1 video_id=hBHU_-2sq2w title=フランケル×レッツゴードンキの超良血 アスクヴォルテージが初の芝1200mで1年
-OK project=1 video_id=CO9gt0iZBaw title=【ヴィクトリアM・1週前】エンブロイダリー超抜の伸び4馬身先着
+OK project=1 video_id=48uUpyFQkH4 title=【NHKマイルカップ2026枠順確定予想】4枠7番ダイヤモンドノットが黄金枠！カ
