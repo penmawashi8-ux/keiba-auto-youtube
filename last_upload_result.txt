@@ -1,10 +1,10 @@
-date: 2026-05-09T00:17:41.200497Z
+date: 2026-05-09T04:28:17.116416Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=f9GZOCfrUOg title=GI・25勝の友道康夫調教師が千直初勝利なるか ジュンヴァンケットで駿風Sに挑む
-OK project=1 video_id=8wBrzBsUFAo title=京都新聞杯は波乱傾向 好成績のタッグに注目だ
-OK project=1 video_id=LCp4RKqx8DA title=名牝グランアレグリアの初仔 グランマエストロが惜敗続きにピリオドを打つか
+OK project=1 video_id=ARZ51l6wG0s title=【NHKマイルC・土曜気配】アドマイヤクワッズ輸送完了　今年3度目で陣営も「汗を
+OK project=1 video_id=WZ8spj279CU title=超良血馬が6戦目でも勝てずファン落胆「前が壁か〜」「ダートでみたい」　一口500
+OK project=1 video_id=fSoltuLS2_o title=【注目馬動向】皐月賞5着のフォルテアンジェロは日本ダービーへ　シルク・ホースクラ
