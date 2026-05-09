@@ -1,10 +1,10 @@
-date: 2026-05-09T05:59:11.521051Z
+date: 2026-05-09T08:38:58.809618Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cBd-lDn5tpc title=【ゆきつばき賞結果】7番人気トップアタックが接戦を制す
-OK project=1 video_id=ZRS4BrzK6s8 title=【東京6R・3歳1勝クラス】リッツパーティーが鮮やかに抜けだし勝利　オープン入り
-OK project=1 video_id=LUtfLjiA3ho title=「G1を勝ったみたい」Mデムーロ騎手が京都7Rでアメリカから帰国後初V　国内では
+OK project=1 video_id=6Rkk4GhXDrc title=【エプソムC】武豊騎手騎乗の4番人気サブマリーナは末脚不発で11着　重賞初制覇な
+OK project=1 video_id=iFnlKyHgKrg title=【注目馬動向】東風Sで約1年ぶりの勝利を飾ったヴァルキリーバースは府中牝馬Sへ　
+OK project=1 video_id=CurJBaHyBkk title=【東京10R・青竜S】ドンエレクトスがオープン4度目の挑戦で待望の初V　荻野極騎
