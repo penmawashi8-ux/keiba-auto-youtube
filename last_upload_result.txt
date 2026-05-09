@@ -1,10 +1,10 @@
-date: 2026-05-08T12:19:38.272681Z
+date: 2026-05-09T00:17:41.200497Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vsoVZjED1nI title=【記者メモ】引手の持ち方１つで馬の“しつけ”　暴れ馬がたった２０分で我慢を覚えた
-OK project=1 video_id=Ts3ZkmAP58I title=叔母はGI・9勝の歴史的名牝 カフジエメンタールが京都新聞杯で重賞初制覇狙う
-OK project=1 video_id=yyolcKLU5ZA title=【NHKマイルC予想】上位人気馬に赤信号点灯か？ GI・NHKマイルC調子偏差値
+OK project=1 video_id=f9GZOCfrUOg title=GI・25勝の友道康夫調教師が千直初勝利なるか ジュンヴァンケットで駿風Sに挑む
+OK project=1 video_id=8wBrzBsUFAo title=京都新聞杯は波乱傾向 好成績のタッグに注目だ
+OK project=1 video_id=LCp4RKqx8DA title=名牝グランアレグリアの初仔 グランマエストロが惜敗続きにピリオドを打つか
