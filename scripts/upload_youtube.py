@@ -97,22 +97,6 @@ _TITLE_TEMPLATES = [
     ("", "｜競馬NEWS{date} #Shorts"),
 ]
 
-# 重賞レース記事にのみ使用するテンプレート（タイトル・概要に重賞/G1/G2/G3 を含む場合）
-_GRADE_TITLE_TEMPLATES = [
-    ("【重賞速報】{date} ",  " #Shorts"),
-    ("{date}【重賞速報】",   " #Shorts"),
-    ("{date}重賞速報｜",     " #Shorts"),
-    ("重賞速報｜",           " {date} #Shorts"),
-    ("", "｜重賞速報 {date} #Shorts"),
-]
-
-_GRADE_KEYWORDS = re.compile(r"G[123Ⅰ-Ⅲ]|重賞|グレード")
-
-
-def _is_grade_race(title: str, description: str = "") -> bool:
-    """タイトルまたは概要に重賞キーワードが含まれるか判定する。"""
-    return bool(_GRADE_KEYWORDS.search(title) or _GRADE_KEYWORDS.search(description))
-
 # YouTube説明文テンプレート（動画ごとにローテーション）
 _DESC_INTRO_TEMPLATES = [
     "競馬の最新ニュースをお届けします。",
@@ -336,8 +320,7 @@ def upload_video(youtube, title: str, description: str, video_path: str, extra_k
     _jst = _dt.timezone(_dt.timedelta(hours=9))
     _today = _dt.datetime.now(_jst)
     date_str = _random_date_str(_today)
-    pool = _TITLE_TEMPLATES + (_GRADE_TITLE_TEMPLATES if _is_grade_race(title, description) else [])
-    prefix_tpl, suffix = random.choice(pool)
+    prefix_tpl, suffix = random.choice(_TITLE_TEMPLATES)
     prefix = prefix_tpl.replace("{date}", date_str)
     suffix = suffix.replace("{date}", date_str)
     max_body = 100 - len(prefix) - len(suffix)
