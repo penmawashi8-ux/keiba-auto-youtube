@@ -33,21 +33,18 @@ _TITLE_TEMPLATES = [
     ("【競馬情報】{date} ",     " #Shorts"),   # 【競馬情報】4.23 〇〇 #Shorts
     ("【最新競馬情報】{date} ", " #Shorts"),   # 【最新競馬情報】2026年4月23日 〇〇 #Shorts
     ("【競馬最新情報】{date} ", " #Shorts"),
-    ("【重賞速報】{date} ",     " #Shorts"),
     ("【競馬速報！】{date} ",   " #Shorts"),
 
     # ── date + 【カテゴリ】+ title ──────────────────────
     ("{date}【競馬速報】",     " #Shorts"),
     ("{date}【競馬ニュース】", " #Shorts"),
     ("{date}【競馬情報】",     " #Shorts"),
-    ("{date}【重賞速報】",     " #Shorts"),
 
     # ── date + カテゴリ｜ + title ──────────────────────
     ("{date}競馬NEWS｜",     " #Shorts"),
     ("{date}競馬速報｜",     " #Shorts"),
     ("{date}競馬ニュース｜", " #Shorts"),
     ("{date}競馬情報｜",     " #Shorts"),
-    ("{date}重賞速報｜",     " #Shorts"),
 
     # ── date｜カテゴリ｜ + title ───────────────────────
     ("{date}｜競馬速報｜",     " #Shorts"),
@@ -66,7 +63,6 @@ _TITLE_TEMPLATES = [
     ("競馬ニュース｜", " {date} #Shorts"),
     ("競馬情報｜",     " {date} #Shorts"),
     ("競馬NEWS｜",     " {date} #Shorts"),
-    ("重賞速報｜",     " {date} #Shorts"),
 
     # ── date + title + ｜カテゴリ suffix ──────────────
     ("{date} ", "｜競馬速報 #Shorts"),
@@ -82,7 +78,6 @@ _TITLE_TEMPLATES = [
     ("", "｜競馬ニュース {date} #Shorts"),
     ("", "｜競馬情報 {date} #Shorts"),
     ("", "｜競馬NEWS {date} #Shorts"),
-    ("", "｜重賞速報 {date} #Shorts"),
 
     # ── title + 【カテゴリ】date suffix ───────────────
     ("", "【競馬速報】{date} #Shorts"),
@@ -101,6 +96,22 @@ _TITLE_TEMPLATES = [
     ("", "｜競馬情報{date} #Shorts"),
     ("", "｜競馬NEWS{date} #Shorts"),
 ]
+
+# 重賞レース記事にのみ使用するテンプレート（タイトル・概要に重賞/G1/G2/G3 を含む場合）
+_GRADE_TITLE_TEMPLATES = [
+    ("【重賞速報】{date} ",  " #Shorts"),
+    ("{date}【重賞速報】",   " #Shorts"),
+    ("{date}重賞速報｜",     " #Shorts"),
+    ("重賞速報｜",           " {date} #Shorts"),
+    ("", "｜重賞速報 {date} #Shorts"),
+]
+
+_GRADE_KEYWORDS = re.compile(r"G[123Ⅰ-Ⅲ]|重賞|グレード")
+
+
+def _is_grade_race(title: str, description: str = "") -> bool:
+    """タイトルまたは概要に重賞キーワードが含まれるか判定する。"""
+    return bool(_GRADE_KEYWORDS.search(title) or _GRADE_KEYWORDS.search(description))
 
 # YouTube説明文テンプレート（動画ごとにローテーション）
 _DESC_INTRO_TEMPLATES = [
@@ -325,7 +336,8 @@ def upload_video(youtube, title: str, description: str, video_path: str, extra_k
     _jst = _dt.timezone(_dt.timedelta(hours=9))
     _today = _dt.datetime.now(_jst)
     date_str = _random_date_str(_today)
-    prefix_tpl, suffix = random.choice(_TITLE_TEMPLATES)
+    pool = _TITLE_TEMPLATES + (_GRADE_TITLE_TEMPLATES if _is_grade_race(title, description) else [])
+    prefix_tpl, suffix = random.choice(pool)
     prefix = prefix_tpl.replace("{date}", date_str)
     suffix = suffix.replace("{date}", date_str)
     max_body = 100 - len(prefix) - len(suffix)
@@ -413,7 +425,7 @@ def extract_seo_keywords(title: str, script: str) -> list[str]:
         found.add(m.group())
 
     # 漢字混じりのレース名（〇〇賞・杯・カップ・ステークス・記念など）
-    for m in re.finditer(r'[\u4e00-\u9fff\u30a1-\u30f6ー]{2,}(?:賞|杯|カップ|ステークス|ハンデ|記念)', text):
+    for m in re.finditer(r'[一-鿿ァ-ヶー]{2,}(?:賞|杯|カップ|ステークス|ハンデ|記念)', text):
         found.add(m.group())
 
     # G1/G2/G3 グレード
@@ -421,9 +433,9 @@ def extract_seo_keywords(title: str, script: str) -> list[str]:
         found.add(m.group())
 
     # 漢字2〜4文字の騎手名（「騎手」「騎乗」前後に出現するもの）
-    for m in re.finditer(r'([\u4e00-\u9fff]{2,4})(?=騎手|騎乗)', text):
+    for m in re.finditer(r'([一-鿿]{2,4})(?=騎手|騎乗)', text):
         found.add(m.group(1))
-    for m in re.finditer(r'(?<=騎手・)([\u4e00-\u9fff]{2,4})', text):
+    for m in re.finditer(r'(?<=騎手・)([一-鿿]{2,4})', text):
         found.add(m.group(1))
 
     # 30文字以下のもののみ、最大20個
