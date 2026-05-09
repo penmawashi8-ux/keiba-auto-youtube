@@ -1,24 +1,3 @@
-[0]  [ファクトチェックNG] NG: 武豊騎手は「
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 武豊騎手は「あまり
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 [0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
@@ -26,69 +5,39 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【エプソムC】武豊騎手騎乗の4番人気サブマリーナは末脚不発で11着　重賞初制覇ならず「あまり速い上がりのレースは苦手かな ---
-[0] Gemini入力本文 353文字: '◆第43回エプソムC・G3(5月9日、東京競馬場・芝1800メートル、良)\n\t\t\t\t\u300017頭立てで行われ、武豊騎手騎乗で4番人気のサブマリーナ(牡5歳、栗東・庄野靖志厩舎、父スワーヴリチャード)は11着に終わった。\n\t\t\t\t\u3000道中は中段後方'
+--- 記事[0]: 5月9日の出来事一覧/新潟・東京・京都 ---
+[0] Gemini入力本文 451文字: '5月9日の開催(新潟・東京・京都)で発生した競走中の疾病、競走中止などの事象は下記の通り。\n■新潟1R 4歳上障害未勝利\nマーゴットソラーレ(牡5、美浦・伊坂重信厩舎)\n疾病を発症したため、2周目4号障害手前で競走を中止。馬は右前肢跛行、草'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【注目馬動向】東風Sで約1年ぶりの勝利を飾ったヴァルキリーバースは府中牝馬Sへ　サンデーサラブレッドクラブが発表 ---
-[1] Gemini入力本文 344文字: '東風Sで約1年ぶりの白星を挙げたヴァルキリーバース(牝4歳、美浦・田中博康厩舎、父エピファネイア)が府中牝馬S・G3(6月21日、東京競馬場・芝1800メートル)を目指すことが分かった。サンデーサラブレッドクラブが9日、ホームページで発表し'
+--- 記事[1]: 【駿風Sレース後コメント】シュラフ嶋田純次騎手ら ---
+[1] Gemini入力本文 1010文字: '新潟11Rの駿風ステークス(4歳以上3勝クラス・芝1000m)は6番人気シュラフ(嶋田純次騎手)が勝利した。勝ちタイムは56秒7(良)。クビ差の2着に8番人気ロードトレイル、さらにクビ差の3着に2番人気カウスリップが入った。\n\u3000シュラフは美'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【東京10R・青竜S】ドンエレクトスがオープン4度目の挑戦で待望の初V　荻野極騎手「今後に弾みがつく内容」 ---
-[2] Gemini入力本文 346文字: '5月9日の東京10R・青竜S・3歳オープン(ダート1600メートル＝15頭立て)はドンエレクトス(牡3歳、美浦・高木登厩舎、父ダノンレジェンド)が1番人気に応えて3馬身半差で圧勝した。勝ち時計は1分36秒5。\n\t\t\t\t\u3000好スタートから楽に2'
+--- 記事[2]: 復活した桜花賞馬の走りにネット歓喜「トンネル長かった」「着差を見ると…」　ステレンボッシュがエプソムCで2着に好走 ---
+[2] Gemini入力本文 345文字: '長いトンネルから抜け出した桜花賞馬にネットでは歓喜の反応が寄せらている。9日に行われたエプソムC・G3(東京・芝1800メートル、17頭立て)で、5番人気だったステレンボッシュ(牝5歳、美浦・宮田敬介厩舎、父エピファネイア)が2着に好走。復'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 238文字]: '競馬ファン注目の情報です。第43回エプソムC・G3が5月9日に東京競馬場・芝1800メートルで17頭立てで行われました。武豊騎手騎乗で4番人気のサブマリーナは11着に終わり、重賞初制覇はなりませんでした。道中は中段後方に待機し、直線ではムチが飛んだものの、前との差は詰まりませんでした。武豊騎手は「あまり速い上がりのレースは苦手かな」とコメントしています。サブマリーナは25年3月の難波Sでオープン入りを決め、昇級初戦の新潟大賞典で2着、チャレンジCで4着と好走していました。'
+[2]  [Gemini生出力 219文字]: '今週の競馬注目情報をお伝えします。9日に行われたエプソムC・G3で、桜花賞馬ステレンボッシュが2着に好走しました。東京の芝1800メートル、17頭立てで行われたこのレースで、5番人気だったステレンボッシュは復調の兆しを見せました。長いトンネルから抜け出した24年桜花賞馬の走りに、ネットでは歓喜の反応が寄せられ、Xではトレンド上位に入る反響を見せています。戸崎圭太騎手とコンビを組んだステレンボッシュは16番枠から好スタートを切りました。'
   HTTP 200
-[1]  [Gemini生出力 229文字]: '注目の競馬情報をお届けします。東風Sで約1年ぶりの白星を挙げたヴァルキリーバースが、府中牝馬S・G3を目指すことが分かりました。このレースは6月21日に東京競馬場・芝1800メートルで行われます。サンデーサラブレッドクラブが9日、ホームページで発表しました。ヴァルキリーバースは昨年のフローラSで、後のオークス馬・カムニャックの2着という実績があります。前走は右前脚の怪我から復帰戦でした。現在は、放牧先の福島・ノーザンファーム天栄で調整が進められています。'
-[1]  [redirectフィルター] 229文字 → 214文字
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[2]  [Gemini生出力 275文字]: '競馬ファン注目の情報です。\n5月9日に行われた東京10R、青竜ステークス、3歳オープン、ダート1600メートル、15頭立てのレースで、ドンエレクトスが待望のオープン初勝利を飾りました。美浦の高木登厩舎に所属するドンエレクトスは、1番人気に応え、3馬身半差で圧勝。勝ち時計は1分36秒5でした。レースでは好スタートから楽に2番手を確保し、道中で砂をかぶらずに運べたことで、直線では上がり最速の脚を使って後続を突き放しました。騎乗した荻野極騎手は、「いいスタートでした。ペースも楽でした。強い勝ちっぷり。今後に弾みがつく内容だった」とコメントしています。'
-[2]  [重複除去] 275文字 → 274文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (214文字)
-[1]  プレビュー: 東風Sで約1年ぶりの白星を挙げたヴァルキリーバースが、府中牝馬S・G3を目指すことが分かりました。このレースは6月21日に東京競馬場・芝1800メートルで行われ...
+[0]  [Gemini生出力 213文字]: '最新情報をお届けします。5月9日の新潟、東京、京都開催で発生した競走中の疾病、競走中止、競走除外などの事象についてお伝えします。新潟1Rの4歳上障害未勝利では、マーゴットソラーレが疾病を発症したため、2周目4号障害手前で競走を中止しました。マーゴットソラーレは右前肢跛行と診断され、草野太郎騎手には異状はありませんでした。また、京都1Rの3歳未勝利では、グーフィーが馬場入場後に右前肢跛行を発症したため、競走除外となりました。'
+[0]  [redirectフィルター] 213文字 → 201文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (274文字)
-[2]  プレビュー: 競馬ファン注目の情報です。5月9日に行われた東京10R、青竜ステークス、3歳オープン、ダート1600メートル、15頭立てのレースで、ドンエレクトスが待望のオープ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[2]  → output/script_2.txt 保存 (219文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。9日に行われたエプソムC・G3で、桜花賞馬ステレンボッシュが2着に好走しました。東京の芝1800メートル、17頭立てで行われた...
   HTTP 200
-[0]  [Gemini生出力 254文字]: '競馬ファン注目の情報です。第43回エプソムC・G3が5月9日に東京競馬場・芝1800メートルで良馬場の中、17頭立てで行われました。武豊騎手が騎乗した4番人気のサブマリーナは11着に終わり、重賞初制覇はなりませんでした。道中は中段後方に待機し、直線ではムチが飛びましたが、前との差は詰まりませんでした。武豊騎手は「あまり速い上がりのレースは苦手かな」とコメントしています。サブマリーナは25年3月の難波Sでオープン入りを決め、昇級初戦の新潟大賞典で2着、チャレンジCで4着と重賞制覇が間近と見られていました。'
-[0] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 264文字]: '競馬ファン注目の情報です。第43回エプソムC・G3が5月9日に東京競馬場・芝1800メートルで良馬場のもと17頭立てで行われました。武豊騎手騎乗の4番人気サブマリーナは末脚不発で11着に終わり、重賞初制覇はなりませんでした。道中は中段後方に待機し、直線ではレジェンドのムチが飛びましたが、前との差は詰まりませんでした。武豊騎手は「あまり速い上がりのレースは苦手かな」とコメントしています。サブマリーナは25年3月の難波Sでオープン入りを決め、昇級初戦の新潟大賞典で2着、チャレンジCで4着と、重賞制覇が間近かと思われていました。'
+[1]  [Gemini生出力 441文字]: '競馬速報です。\n新潟11Rの駿風ステークス、4歳以上3勝クラス・芝1000mは、6番人気のシュラフが嶋田純次騎手で勝利しました。勝ちタイムは良馬場で56秒7でした。クビ差の2着には8番人気のロードトレイル、さらにクビ差の3着には2番人気のカウスリップが入っています。\n勝利したシュラフは美浦・佐藤吉勝厩舎所属の4歳牝馬で、父はフォーウィールドライブ、母はテイア、母の父はマヤノトップガンです。通算成績は18戦3勝となりました。\nレース後、1着のシュラフに騎乗した嶋田純次騎手は「直線1000mは得意の条件です。馬が千直をわかっているので、ただ乗っているだけでした。馬がよく頑張ってくれました」とコメントしています。2着のロードトレイルに騎乗した横山琉人騎手は「初めての直線1000mでしたが、良い競馬ができましたし、適性があると思います」と語りました。3着のカウスリップに騎乗したF.ゴンサルベス騎手は「進路がなかなか開きませんでした。馬はベストの状態でした」とコメントしています。'
+[1]  [重複除去] 441文字 → 438文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (264文字)
-[0]  プレビュー: 競馬ファン注目の情報です。第43回エプソムC・G3が5月9日に東京競馬場・芝1800メートルで良馬場のもと17頭立てで行われました。武豊騎手騎乗の4番人気サブマ...
+[0]  → output/script_0.txt 保存 (201文字)
+[0]  プレビュー: 5月9日の新潟、東京、京都開催で発生した競走中の疾病、競走中止、競走除外などの事象についてお伝えします。新潟1Rの4歳上障害未勝利では、マーゴットソラーレが疾病...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (438文字)
+[1]  プレビュー: 競馬速報です。新潟11Rの駿風ステークス、4歳以上3勝クラス・芝1000mは、6番人気のシュラフが嶋田純次騎手で勝利しました。勝ちタイムは良馬場で56秒7でした...
 
 3 件の脚本を生成しました。
