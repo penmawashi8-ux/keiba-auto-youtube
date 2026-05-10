@@ -295,7 +295,67 @@ def _parse_select_response(response: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# ステップ2: メタデータ生成（タグ・サムネイルテキスト）
+# ステップ2: 独立ファクトチェック＆修正
+# ---------------------------------------------------------------------------
+
+def fact_check_and_revise(api_keys: list[str], horse_name: str, script: str) -> str:
+    """独立した API 呼び出しで脚本をファクトチェックし、誤りがあれば修正済み脚本を返す。
+    API 失敗時は元の脚本をそのまま返す（フォールバック）。
+    """
+    prompt = f"""\
+あなたは日本中央競馬（JRA）の専門家です。
+以下の名馬列伝ナレーション脚本を厳密にファクトチェックしてください。
+
+【馬名】{horse_name}
+
+【脚本】
+{script}
+
+【チェック項目】
+- レース名・開催年・着順・着差・タイムの正確性
+- 騎手名・調教師名・父・母など血統情報の正確性
+- GⅠ勝利数・重賞勝利数・その他の数字・記録の正確性
+- 他の馬・騎手との比較情報（「〜より速い」「〜以来」など）の正確性
+- 実際には起きていない出来事や結果の捏造がないか
+
+【出力ルール】
+- 事実として確認できる明確な誤りのみ指摘すること（不確実な情報は指摘しない）
+- 誤りが一切ない場合は「PASS」とだけ出力する
+
+誤りがある場合は以下の形式で出力する：
+ISSUES:
+- [誤りの説明と正しい情報]
+---CORRECTED---
+[修正済みの脚本全文（元のスタイルを維持すること）]
+---END---
+"""
+    try:
+        response = call_gemini(api_keys, prompt, temperature=0.2)
+    except RuntimeError as e:
+        print(f"[ファクトチェック] API失敗 → 元の脚本を使用: {e}", file=sys.stderr)
+        return script
+
+    print(f"[ファクトチェック応答]\n{response[:800]}\n", file=sys.stderr)
+
+    if response.strip().upper().startswith("PASS"):
+        print("[ファクトチェック] 問題なし（PASS）", file=sys.stderr)
+        return script
+
+    m = re.search(r"---CORRECTED---\s*(.*?)\s*---END---", response, re.DOTALL)
+    if not m:
+        m = re.search(r"---CORRECTED---\s*(.*)", response, re.DOTALL)
+    if m:
+        corrected = m.group(1).strip()
+        if len(corrected) >= 50:
+            print("[ファクトチェック] 修正あり → 修正済み脚本を採用", file=sys.stderr)
+            return corrected
+
+    print("[ファクトチェック] 修正脚本の抽出失敗 → 元の脚本を使用", file=sys.stderr)
+    return script
+
+
+# ---------------------------------------------------------------------------
+# ステップ3: メタデータ生成（タグ・サムネイルテキスト）
 # ---------------------------------------------------------------------------
 
 def generate_metadata(api_keys: list[str], horse_name: str, script: str,
@@ -429,7 +489,14 @@ def main() -> None:
     print(f"[選定完了] 馬名: {horse_name}  キー: {horse_key}", file=sys.stderr)
     print(f"[最終脚本]\n{script}\n", file=sys.stderr)
 
-    # ── API呼び出し2回目（20秒インターバル後） ──────────────────────────
+    # ── API呼び出し2回目: 独立ファクトチェック（20秒インターバル後） ────
+    print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
+    time.sleep(20)
+    print("[独立ファクトチェック中...]", file=sys.stderr)
+    script = fact_check_and_revise(api_keys, horse_name, script)
+    print(f"[ファクトチェック後の脚本]\n{script}\n", file=sys.stderr)
+
+    # ── API呼び出し3回目: メタデータ生成（20秒インターバル後） ──────────
     print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
     time.sleep(20)
     print("[メタデータ生成中...]", file=sys.stderr)
