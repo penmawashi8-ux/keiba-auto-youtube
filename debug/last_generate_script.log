@@ -1,4 +1,27 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -7,37 +30,73 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【佐賀競馬】田中直人騎手が通算800勝　6Rアスターニルギリで達成 ---
-[0] Gemini入力本文 233文字: '佐賀競馬所属の田中直人騎手(36)＝土井道隆厩舎＝は5月9日、佐賀競馬6Rでアスターニルギリに騎乗して1着。2007年4月の初騎乗以来、1万1086戦目で地方競馬通算800勝を達成した。… No.1競馬情報サイト「netkeiba」の競馬ニ'
+--- 記事[0]: 前走は10馬身差の大楽勝 ミスターキャンベラが2連勝狙う ---
+[0] Gemini入力本文 341文字: '前走の未勝利を10馬身差で圧勝したミスターキャンベラ(牡3、美浦・稲垣幸雄厩舎)が、日曜東京5Rの3歳1勝クラス(ダ2100m)で連勝を狙う。\n\u3000ミスターキャンベラは父クリソベリル、母ミトス、母の父エンパイアメーカーの血統。母のきょうだいは'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【AI予想・NHKマイルC】芝1400での実績に注目！3歳マイル王へ勢い十分の一頭 ---
-[1] Gemini入力本文 454文字: '今週の日曜日は、東京競馬場でNHKマイルカップ(GI)が行われます。\n\u300020年以降のNHKマイルCで3着以内に入った18頭のうち、9頭が芝1400mのオープン特別以上で連対実績があった馬。特にここ3年のNHKマイルCは芝1400mで良績を残'
+--- 記事[1]: 【NHKマイルC予想】今年も馬番10番以降が必須？ 過去データから探るGI・NHKマイルC ---
+[1] Gemini入力本文 435文字: '今週も開催は「東京・京都・新潟」の3場。\n\u3000東京競馬場では日曜日に3歳GI・NHKマイルC(芝1600m)が行われる。まだまだ力量差不確定な3歳勢の一戦は例年波乱傾向強め。春のGIシリーズのなかでも荒れることで知られるレースとなっている。今'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【ＮＨＫマイルＣ】馬場状態から浮上するのはこの馬だ ---
-[2] Gemini入力本文 535文字: '「ＮＨＫマイルＣ・Ｇ１」（１０日、東京）\n\u3000東京競馬場のある府中市は晴れ予報。良馬場での開催が見込まれる。土曜の芝レースは６鞍あり、逃げ馬は１頭も馬券に絡めなかった。強風の影響もあってか、Ａコースながら差しも比較的届いていた印象だ。芝マイル'
+--- 記事[2]: 粗品「手を出しにくいオッズ」の人気馬をNHKマイルCの本命に指名も「対抗が飛ぶやつ?」「さすがにそろそろ」 ---
+[2] Gemini入力本文 363文字: '「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露しているお笑いコンビ「霜降り明星」の粗品が9日、自身のYouTubeチャンネルを更新。NHKマイルC・G1(10日、東京・芝1600メートル)の予想を公開した。\n\t\t\t\t\u3000粗品は「'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 233文字]: '競馬速報です。今週の日曜日は、東京競馬場でNHKマイルカップが行われます。20年以降のNHKマイルカップで3着以内に入った18頭のうち、9頭が芝1400mのオープン特別以上で連対実績があった馬でした。特にここ3年のNHKマイルカップでは、芝1400mで良績を残していた馬が活躍しています。昨年のNHKマイルカップを9番人気で優勝したパンジャタワーは京王杯2歳Sで勝利実績があり、同年の3着馬で12番人気だったチェルビアットはフィリーズレビューで2着に入っていました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (233文字)
-[1]  プレビュー: 競馬速報です。今週の日曜日は、東京競馬場でNHKマイルカップが行われます。20年以降のNHKマイルカップで3着以内に入った18頭のうち、9頭が芝1400mのオー...
-  HTTP 200
-[2]  [Gemini生出力 321文字]: '今日の競馬情報です。\nNHKマイルカップ・G1は10日に東京競馬場で開催されます。東京競馬場のある府中市は晴れ予報で、良馬場での開催が見込まれています。土曜の芝レースは6鞍あり、逃げ馬は1頭も馬券に絡めませんでした。強風の影響もあってか、Aコースながら差しも比較的届いていた印象です。芝マイルで行われた9レース古馬3勝クラスは1分32秒2、レースの上がり3ハロン33秒4で決着。例年通りの高速馬場で、決め手を問われるコンディションとみられています。アドマイヤクワッズについて友道師は、マイルでの逆襲に手応えを示し、ダメージもなかったし、変わりなくとコメント。ジーネキングの陣営はマイル適性を実感しており、これくらいの距離が合うと話しています。'
-[2]  [重複除去] 321文字 → 320文字
-  HTTP 200
-[0]  [Gemini生出力 173文字]: '最新のレース情報が入ってきました。\n佐賀競馬所属の田中直人騎手が、地方競馬通算800勝を達成しました。\n田中直人騎手は5月9日の佐賀競馬6Rで、アスターニルギリに騎乗しました。\nアスターニルギリが1着となり、これにより田中直人騎手は地方競馬通算800勝を達成しました。\nこの記録は、2007年4月の初騎乗以来、1万1086戦目での達成となります。'
-[0]  [重複除去] 173文字 → 169文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (320文字)
-[2]  プレビュー: 今日の競馬情報です。NHKマイルカップ・G1は10日に東京競馬場で開催されます。東京競馬場のある府中市は晴れ予報で、良馬場での開催が見込まれています。土曜の芝レ...
+[0]  [Gemini生出力 239文字]: '最新のレース情報が入ってきました。\n前走の未勝利を10馬身差で圧勝したミスターキャンベラが、日曜東京5Rの3歳1勝クラス、ダート2100mで連勝を狙います。ミスターキャンベラは稲垣幸雄厩舎所属の牡3です。父はクリソベリル、母はミトス、母の父はエンパイアメーカーという血統です。母のきょうだいはJRAで8頭が走り、そのうち7頭が勝ち上がっています。伯父のアルムダプタは2012年北海道2歳優駿の覇者です。また、伯母のタガノジョーカーとタガノリベラノは準オープンまで出世しています。'
+[0]  [重複除去] 239文字 → 238文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (169文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。佐賀競馬所属の田中直人騎手が、地方競馬通算800勝を達成しました。田中直人騎手は5月9日の佐賀競馬6Rで、アスターニルギリに騎...
+[0]  → output/script_0.txt 保存 (238文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。前走の未勝利を10馬身差で圧勝したミスターキャンベラが、日曜東京5Rの3歳1勝クラス、ダート2100mで連勝を狙います。ミスタ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 236文字]: 'レース関連の最新情報です。お笑いコンビ「霜降り明星」の粗品さんが9日、自身のYouTubeチャンネルを更新し、NHKマイルC・G1の予想を公開しました。「生涯収支マイナス5億円君(マイ億君)」として競馬予想を披露している粗品さんは、10番のエコロアルバを本命に指名しています。粗品さんは「かなり迷ったが、東京マイルのパフォーマンスなら、この馬を選びたい」と本命理由を説明しました。また、「前走の朝日杯では1着のカヴァレリッツォから0秒3差の4着」だったことも挙げています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (236文字)
+[2]  プレビュー: レース関連の最新情報です。お笑いコンビ「霜降り明星」の粗品さんが9日、自身のYouTubeチャンネルを更新し、NHKマイルC・G1の予想を公開しました。「生涯収...
+  HTTP 200
+[1]  [Gemini生出力 220文字]: '競馬速報です。\n今週も開催は東京、京都、新潟の3場です。東京競馬場では日曜日に3歳GIのNHKマイルC、芝1600mが行われます。まだまだ力量差が不確定な3歳勢の一戦は例年波乱傾向が強く、春のGIシリーズの中でも荒れることで知られるレースです。今週も過去10年データを使って、レース傾向と馬券のヒントを探る予定です。データからは、なぜか9番人気馬が3勝しているという傾向が見られます。まずは人気上位馬の成績チェックから分析を進める予定です。'
+[1]  [重複除去] 220文字 → 219文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (219文字)
+[1]  プレビュー: 競馬速報です。今週も開催は東京、京都、新潟の3場です。東京競馬場では日曜日に3歳GIのNHKマイルC、芝1600mが行われます。まだまだ力量差が不確定な3歳勢の...
 
 3 件の脚本を生成しました。
