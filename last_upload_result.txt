@@ -1,10 +1,10 @@
-date: 2026-05-10T08:55:31.455910Z
+date: 2026-05-10T10:23:54.498666Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0bXzBdDe7bI title=【佐賀スプリングC結果】ビキニボーイが人気に応え連覇達成
-OK project=1 video_id=LEAH_RARofk title=【NHKマイルCレース後コメント】ロデオドライブ D.レーン騎手ら
-OK project=1 video_id=SjaHsRN-wes title=【新潟大賞典】シュガークン、ドゥラドーレスなどが登録
+OK project=1 video_id=XFhRJiW0B1o title=【NHKマイルC】推定6センチ差でG1初制覇のロデオドライブ　吉田勝己氏「本当に
+OK project=1 video_id=t3Eh51koN0k title=【盛岡・シアンモア記念結果】ルコルセールが差し切り重賞連勝
+OK project=1 video_id=ITWd8hn-gXw title=【金沢・北日本新聞杯結果】グリーゼが6馬身差で圧勝
