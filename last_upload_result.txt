@@ -1,10 +1,10 @@
-date: 2026-05-10T00:09:41.713681Z
+date: 2026-05-10T04:53:26.453810Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=J2XBvBBcq5o title=前走は10馬身差の大楽勝 ミスターキャンベラが2連勝狙う
-OK project=1 video_id=b4g-vKIPh7M title=【NHKマイルC予想】今年も馬番10番以降が必須？ 過去データから探るGI・NH
-OK project=1 video_id=J-rdw0a2vxg title=粗品「手を出しにくいオッズ」の人気馬をNHKマイルCの本命に指名も「対抗が飛ぶや
+OK project=1 video_id=swyHTa5uxYg title=【川崎・エンプレス杯枠順】上半期のダート女王決定戦は8頭立て 連覇狙うテンカジョ
+OK project=1 video_id=-coLzR609RQ title=【NHKマイルカップ】馬トク外厩情報…東京芝重賞で存在感　“山元トレーニングセン
+OK project=1 video_id=nosFmjA5gIM title=【東京4R・3歳未勝利】シャケトラの弟ランブルスコがしぶとい脚で初V　ルメール騎
