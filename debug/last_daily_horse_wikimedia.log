@@ -1,25 +1,16 @@
-=== Wikimedia Commons 画像検索: クロフネ ===
-  検索クエリ: 「クロフネ racehorse」
+=== Wikimedia Commons 画像検索: ブエナビスタ ===
+  検索クエリ: 「ブエナビスタ racehorse」
   ヒット数: 20 件
-  チェック: File:Kurofune at NHK Mile Cup.jpg
-  チェック: File:Kurofune at Japan Cup Dirt.jpg
-  チェック: File:Kurofune (Yamada Kōsaku) 1954 programme (Hibiya Kōkaidō).jpg
-  チェック: File:Kurofune 2.jpg
-  チェック: File:Kurofune 3.jpg
-  チェック: File:Kurofune-surprise-20130407.JPG
-  チェック: File:Izukyu Kurofune and Boso Express.jpg
-  チェック: File:Izukyu 2100 kurofune train.jpg
-  チェック: File:Tōkyō Shinagawa oki no kurofune LCCN2002700171.jpg
-  チェック: File:Izukyu Resort21 Kurofune Kawana Futo.jpg
-  チェック: File:Izukyu-2100-Kurofune-Nanbu Line tamagawa.jpg
-  チェック: File:Sina kurofune nihon shirofune - buta no taibyō LCCN2009615026.jpg
-  チェック: File:Izukyu Series 2100 R-4 Kurofune Train in Atami Station.jpg
-  チェック: File:Izukyu Series 2100 R-4 Kurofune Train in Itō Station.jpg
-  チェック: File:Izukyu Series 2100 R-4 Kurofune Train in Atami Station 03.jpg
-  チェック: File:Izukyu Series 2100 R-4 Kurofune Train in Atami Station 02.jpg
-  チェック: File:Shinmachi 新町 Gokumon Shōbei 獄門庄兵衛 et Kurofune Chūemon 黒舩忠右ヱ門, Paris Musées 20231006155815.jpg
-  チェック: File:Kurofune.jpg
-  チェック: File:Yoake (Yamada Kosaku) piano score (Ongaku Shincho).jpg
+  チェック: File:Buena-Vista-horse20111225.jpg
+  チェック: File:Buena Vista horse.jpg
+  チェック: File:Buena-Vista-horse20100220.jpg
+  チェック: File:Buena-Vista-horse20111127.jpg
+  チェック: File:Buena Vista (horse).jpg
+  チェック: File:34th Queen Elizabeth II Cup.jpg
+  チェック: File:The 69th Oka Sho 20090412.jpg
+  チェック: File:2011Japan cup Buena Vista (4：3).JPG
+  チェック: File:Buena-Vista-Welcome.jpg
+  チェック: File:Buena-Vista-Park.jpg
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()

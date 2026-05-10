@@ -1,22 +1,23 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (58 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (55 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: クロフネ (key=kurofune)
-  タイトル: 【名馬列伝】クロフネ〜芝とダートの二刀流〜 #Shorts
+  馬名: ブエナビスタ (key=buena_vista)
+  タイトル: 【名馬列伝】ブエナビスタ〜不運を越え、時代を彩った女王〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】クロフネ〜芝とダートの二刀流〜 #Shorts
-  進捗: 16%
-  進捗: 32%
-  進捗: 49%
-  進捗: 65%
-  進捗: 82%
+  アップロード中: 【名馬列伝】ブエナビスタ〜不運を越え、時代を彩った女王〜 #Shorts
+  進捗: 14%
+  進捗: 28%
+  進捗: 42%
+  進捗: 56%
+  進捗: 70%
+  進捗: 84%
   進捗: 98%
-  完了! Video ID: 8d1Aa5g0DxE
-  URL: https://www.youtube.com/watch?v=8d1Aa5g0DxE
-  サムネイルアップロード中: output/thumbnail_0.jpg (58 KB)
+  完了! Video ID: JT3PFOzF358
+  URL: https://www.youtube.com/watch?v=JT3PFOzF358
+  サムネイルアップロード中: output/thumbnail_0.jpg (55 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
