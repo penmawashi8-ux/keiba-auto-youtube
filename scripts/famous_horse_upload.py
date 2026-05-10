@@ -191,6 +191,20 @@ def upload_video(youtube, video_path: str, title: str, description: str, tags: l
         raise
 
 
+def disable_comments(youtube, video_id: str) -> None:
+    """アップロード後にコメントを無効化する。"""
+    try:
+        youtube.videos().update(
+            part="status",
+            body={"id": video_id, "status": {"commentStatus": "disabled"}},
+        ).execute()
+        print("  コメント無効化完了。")
+    except HttpError as e:
+        print(f"  [警告] コメント無効化失敗 HTTP {e.resp.status}: {e.content.decode()[:200]}", file=sys.stderr)
+    except Exception as e:
+        print(f"  [警告] コメント無効化失敗: {e}", file=sys.stderr)
+
+
 def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
     """ffmpegで生成したサムネイル画像をアップロードする。"""
     if not Path(thumb_path).exists():
@@ -270,6 +284,9 @@ def main() -> None:
     if not video_id:
         print("[エラー] 全GCPプロジェクトでアップロードが失敗しました。", file=sys.stderr)
         sys.exit(1)
+
+    # コメント無効化
+    disable_comments(youtube, video_id)
 
     # サムネイルアップロード（最後に成功したyoutubeクライアントを使用）
     upload_thumbnail(youtube, video_id, thumb_path)
