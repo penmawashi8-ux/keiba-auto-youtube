@@ -1,120 +1,43 @@
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【橘Sレース後コメント】タガノアラリア鮫島克駿騎手ら ---
-[0] Gemini入力本文 344文字: '京都10Rの橘ステークス(3歳オープン・リステッド・芝1400m)は1番人気タガノアラリア(鮫島克駿騎手)が勝利した。勝ちタイムは1分19秒7(良)。半馬身差の2着に4番人気フォーゲル、さらに1馬身半差の3着に2番人気スペルーチェが入った。'
+--- 記事[0]: 【佐賀スプリングC結果】ビキニボーイが人気に応え連覇達成 ---
+[0] Gemini入力本文 350文字: '10日、佐賀競馬場で行われた第9回佐賀スプリングC(3歳上・重賞・ダ1800m・1着賞金400万円)は、中団から前に取り付いて直線で外から抜け出した山口勲騎手騎乗の1番人気ビキニボーイ(牡6、佐賀・東眞市厩舎)が、好位から脚を伸ばした4番人'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【注目馬動向】阪神JF、桜花賞で2着のギャラボーグが次戦予定のオークスを回避　右前肢にフレグモーネ発症のため ---
-[1] Gemini入力本文 345文字: '昨年の阪神JF、今年の桜花賞で2着に入っているギャラボーグ(牝3歳、栗東・杉山晴紀厩舎、父ロードカナロア)が次戦に予定していたオークス・G1(5月24日、東京競馬場・芝2400メートル)を回避することが5月10日、分かった。右前肢にフレグモ'
+--- 記事[1]: 【NHKマイルCレース後コメント】ロデオドライブ D.レーン騎手ら ---
+[1] Gemini入力本文 351文字: '東京11Rの第31回NHKマイルカップ(3歳GI・芝1600m)は1番人気ロデオドライブ(D.レーン騎手)が勝利した。勝ちタイムは1分31秒5(良)。ハナ差の2着に4番人気アスクイキゴミ、さらに1馬身1/4差の3着に6番人気アドマイヤクワッ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【ＮＨＫマイルＣ】１番人気ロデオドライブが混戦を制してＧ１初Ｖ　レーン「ベリーベリーハッピー」 ---
-[2] Gemini入力本文 331文字: '「ＮＨＫマイルＣ・Ｇ１」（１０日、東京）\n\u3000１番人気のロデオドライブがゴール前で大外から豪快に伸びて差し切り勝ち。Ｇ１初制覇で見事に３歳マイル王に輝いた。鼻差の２着には４番人気のアスクイキゴミが入り、３着は６番人気のアドマイヤクワッズ。３番'
+--- 記事[2]: 【新潟大賞典】シュガークン、ドゥラドーレスなどが登録 ---
+[2] Gemini入力本文 309文字: '5月16日に新潟競馬場で行われる新潟大賞典(GIII・芝2000m)の登録馬は以下の通り。\nアンゴラブラック\nガイアメンテ\nグランディア\nグランドカリナン\nサフィラ\nシュガークン\nシュトルーヴェ\nシンハナーダ\nセキトバイースト\nタイキラフタ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 232文字]: '本日の競馬ニュースです。\n昨年の阪神JF、今年の桜花賞で2着に入っているギャラボーグが、次戦に予定していたオークス・G1を回避することが5月10日に分かりました。オークスは5月24日、東京競馬場・芝2400メートルで行われるレースです。回避理由は右前肢にフレグモーネを発症したためで、管理する杉山晴調教師が明らかにしました。ギャラボーグは先週栗東に帰厩し、7日には栗東・坂路で59秒6と初時計を出していました。杉山晴調教師は、今後は様子を見て決めると述べています。'
-[1]  [重複除去] 232文字 → 231文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (231文字)
-[1]  プレビュー: 本日の競馬ニュースです。昨年の阪神JF、今年の桜花賞で2着に入っているギャラボーグが、次戦に予定していたオークス・G1を回避することが5月10日に分かりました。...
+[2]  [Gemini生出力 206文字]: '本日の競馬ニュースです。\n5月16日に新潟競馬場で行われる新潟大賞典(GIII・芝2000m)の登録馬が発表されました。登録馬は以下の通りです。\nアンゴラブラック、ガイアメンテ、グランディア、グランドカリナン、サフィラ、シュガークン、シュトルーヴェ、シンハナーダ、セキトバイースト、タイキラフター、ドゥラドーレス、トーセンリョウ、バレエマスター、フクノブルーレイク、ホールネス、ヤマニンブークリエ、ラインベック。'
+[2]  [重複除去] 206文字 → 204文字
   HTTP 200
-[0]  [Gemini生出力 230文字]: '今日の競馬情報です。京都10Rの橘ステークス、3歳オープン・リステッドの芝1400m戦は、1番人気のタガノアラリアが鮫島克駿騎手と共に勝利しました。勝ちタイムは良馬場で1分19秒7です。半馬身差の2着には4番人気のフォーゲルが入り、さらに1馬身半差の3着には2番人気のスペルーチェが入着しています。タガノアラリアは栗東の西園翔太厩舎に所属する3歳牡馬です。父はミスターメロディ、母はエイシンジルコン、母の父はディープインパクトで、通算成績は8戦3勝となります。'
+[1]  [Gemini生出力 207文字]: '今日の競馬情報です。東京11Rの第31回NHKマイルカップは、1番人気ロデオドライブがD.レーン騎手で勝利しました。勝ちタイムは1分31秒5、馬場は良でした。ハナ差の2着には4番人気アスクイキゴミが入り、さらに1馬身1/4差の3着には6番人気アドマイヤクワッズが入着しました。勝利したロデオドライブは美浦・辻哲英厩舎所属の3歳牡馬で、父はサートゥルナーリア、母はビバリーヒルズです。通算成績は4戦3勝となりました。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (204文字)
+[2]  プレビュー: 本日の競馬ニュースです。5月16日に新潟競馬場で行われる新潟大賞典(GIII・芝2000m)の登録馬が発表されました。登録馬は以下の通りです。アンゴラブラック、...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (207文字)
+[1]  プレビュー: 今日の競馬情報です。東京11Rの第31回NHKマイルカップは、1番人気ロデオドライブがD.レーン騎手で勝利しました。勝ちタイムは1分31秒5、馬場は良でした。ハ...
+  HTTP 200
+[0]  [Gemini生出力 219文字]: '注目の競馬情報をお届けします。\n\n10日、佐賀競馬場で行われた第9回佐賀スプリングCは、3歳上・重賞・ダ1800m、1着賞金400万円として開催されました。山口勲騎手騎乗の1番人気ビキニボーイが、中団から前に取り付いて直線で外から抜け出し、人気に応え連覇を達成。好位から脚を伸ばした4番人気ムーンオブザエースに1馬身差をつけ優勝しました。勝ちタイムは1分56秒6です。さらに3/4馬身差の3着には6番人気のコスモファルネーゼが入りました。'
+[0]  [redirectフィルター] 219文字 → 202文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (230文字)
-[0]  プレビュー: 今日の競馬情報です。京都10Rの橘ステークス、3歳オープン・リステッドの芝1400m戦は、1番人気のタガノアラリアが鮫島克駿騎手と共に勝利しました。勝ちタイムは...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[0]  → output/script_0.txt 保存 (202文字)
+[0]  プレビュー: 10日、佐賀競馬場で行われた第9回佐賀スプリングCは、3歳上・重賞・ダ1800m、1着賞金400万円として開催されました。山口勲騎手騎乗の1番人気ビキニボーイが...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 541, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 524, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 351, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
