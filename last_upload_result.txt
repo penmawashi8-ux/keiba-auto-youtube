@@ -1,10 +1,10 @@
-date: 2026-05-10T10:23:54.498666Z
+date: 2026-05-10T12:03:03.811119Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XFhRJiW0B1o title=【NHKマイルC】推定6センチ差でG1初制覇のロデオドライブ　吉田勝己氏「本当に
-OK project=1 video_id=t3Eh51koN0k title=【盛岡・シアンモア記念結果】ルコルセールが差し切り重賞連勝
-OK project=1 video_id=ITWd8hn-gXw title=【金沢・北日本新聞杯結果】グリーゼが6馬身差で圧勝
+OK project=1 video_id=GTfonOLMNsY title=【ばんえい競馬】カーネーションCは2年連続で同じ馬が1、2着　カフカが連覇達成
+OK project=1 video_id=0zlhACIOpag title=【帯広・カーネーションC結果】カフカが叩き合いを制し連覇達成
+OK project=1 video_id=aibtiNQXw6U title=【金沢競馬】金沢3冠初戦はグリーゼが優勝　北日本新聞杯で重賞初制覇
