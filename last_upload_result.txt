@@ -1,10 +1,10 @@
-date: 2026-05-10T06:21:00.941928Z
+date: 2026-05-10T08:55:31.455910Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0t-mfpf8FRM title=【橘S結果】タガノアラリアが断然人気に応えて逃げ切りV
-OK project=1 video_id=Mo5cHqxV0Hw title=【阪神アーバン競馬プレーバック】「HUK」浸透効果も　6日の売得金額はレコードラ
-OK project=1 video_id=-KJyh4mJ2bo title=【NHKマイルC・馬体重】ダイヤモンドノットは480kg(+6)、エコロアルバは
+OK project=1 video_id=0bXzBdDe7bI title=【佐賀スプリングC結果】ビキニボーイが人気に応え連覇達成
+OK project=1 video_id=LEAH_RARofk title=【NHKマイルCレース後コメント】ロデオドライブ D.レーン騎手ら
+OK project=1 video_id=SjaHsRN-wes title=【新潟大賞典】シュガークン、ドゥラドーレスなどが登録
