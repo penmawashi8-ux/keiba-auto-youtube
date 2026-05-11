@@ -1,10 +1,10 @@
-date: 2026-05-11T08:35:32.071012Z
+date: 2026-05-11T13:59:07.790520Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9X2_rplYcfc title=【新潟大賞典】転厩初戦のシンハナーダが2度目の重賞挑戦　巻き返しに向けて陣営「確
-OK project=1 video_id=l5loXarGP_4 title=【新潟大賞典】武豊騎手のシュガークンは2年ぶり復帰戦で58キロ　ルメール騎手のド
-OK project=1 video_id=O_TGdKGRf3c title=【新潟大賞典】キタサンブラック半弟シュガークンが武豊の手綱で2年ぶり復帰
+OK project=1 video_id=0B20Ys58MhM title=【ヴィクトリアM】「8割の出来」で小倉牝馬S制覇のジョスラン　上積み加えて全兄エ
+OK project=1 video_id=leCZK0zCGyU title=【ヴィクトリアM】前哨戦の大敗から巻き返しを誓うカピリナ　田島調教師「ノリさんら
+OK project=1 video_id=9jllRUmb8Lo title=【ヴィクトリアM】エンブロイダリーVSカムニャック　対戦は過去3度　25年牝馬2
