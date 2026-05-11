@@ -1,10 +1,10 @@
-date: 2026-05-11T00:15:44.071241Z
+date: 2026-05-11T08:35:32.071012Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3vfYjeazPmg title=ばんえいの頂点へ!馬主になった元ガールズケイリン選手の日野未来さん「この馬なら馬
-OK project=1 video_id=DXm3epd42_U title=初代女王誕生から20年 ダンスインザムードのヴィクトリアM快走を振り返る
-OK project=1 video_id=QJ6579LOXec title=【NHKマイルC】ロデオドライブ6センチ差V津村騎手の助言に感謝
+OK project=1 video_id=9X2_rplYcfc title=【新潟大賞典】転厩初戦のシンハナーダが2度目の重賞挑戦　巻き返しに向けて陣営「確
+OK project=1 video_id=l5loXarGP_4 title=【新潟大賞典】武豊騎手のシュガークンは2年ぶり復帰戦で58キロ　ルメール騎手のド
+OK project=1 video_id=O_TGdKGRf3c title=【新潟大賞典】キタサンブラック半弟シュガークンが武豊の手綱で2年ぶり復帰
