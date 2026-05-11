@@ -1,97 +1,133 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[1]  [ファクトチェックNG] NG: 元記事に存在しないルメール
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名・騎
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名・
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 地元馬は3冠王
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名「
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【新潟大賞典】転厩初戦のシンハナーダが2度目の重賞挑戦　巻き返しに向けて陣営「確実に変化してきています」 ---
-[0] Gemini入力本文 353文字: '◆第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル)\n\t\t\t\t\u3000今年3月に国枝栄厩舎の定年解散に伴い、新天地へ移ったシンハナーダ(牡5歳、美浦・木村哲也厩舎、父レイデオロ)。転厩初戦で昨年12月の中日新聞杯(4着)以来、'
+--- 記事[0]: 【AI予想・ヴィクトリアM】春の女王決定戦は社台グループ生産馬に注目!? 本命候補は前走敗戦も牝馬トップレベルの能力 ---
+[0] Gemini入力本文 342文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の平地重賞競走は土曜日に新潟大賞典(GIII)、日曜日にヴィクトリアマイル(GI)が行われます。その中から東京競馬場で行われる'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【新潟大賞典】武豊騎手のシュガークンは2年ぶり復帰戦で58キロ　ルメール騎手のドゥラドーレスも58キロ　ハンデ発表 ---
-[1] Gemini入力本文 354文字: '第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル)のハンデが、5月11日、JRAから発表された。\n\t\t\t\t\u3000約2年ぶりの実戦となるキタサンブラックの半弟シュガークン(牡5歳、栗東・清水久詞厩舎、父ドゥラメンテ)は58キロ'
+--- 記事[1]: 【ヴィクトリアM】西山茂行オーナーに最高の良薬を　ニシノティアモの津村明秀騎手「(回復が)早まるよう頑張りたい」 ---
+[1] Gemini入力本文 347文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)\n\t\t\t\t\u3000勝負強さを見せる津村明秀騎手が、闘病中のオーナーに最高の良薬を届ける。ニシノティアモ(牝5歳、美浦・上原佑紀厩舎、父ドゥラメンテ)を所有するのは『ニ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【新潟大賞典】キタサンブラック半弟シュガークンが武豊の手綱で2年ぶり復帰 ---
-[2] Gemini入力本文 341文字: '24年ダービー7着後、左前浅屈腱炎が判明して休養していたシュガークン(牡5＝清水久、父ドゥラメンテ)が2年ぶりに復帰する。これまでの5戦と同じく、武豊が手綱を取る。\n\u30004月1日に滋賀県のチャンピオンヒルズから栗東トレセンに帰厩。その後は入念'
+--- 記事[2]: 香港チャンピオンズ&チャターC登録馬発表　3冠王手ロマンチックウォリアーなど地元馬7頭　日本馬は2頭 ---
+[2] Gemini入力本文 344文字: '香港競馬のシーズン(9月から翌年7月)最後のG1となるチャンピオンズ＆チャターC(24日、シャティン芝2400メートル)は11日、香港調教馬の無料登録と海外調教馬の追加登録が締め切られ、香港ジョッキークラブが登録馬9頭を発表した。\n\u3000海外調'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 240文字]: '今日の競馬情報です。\nキタサンブラック半弟のシュガークンが、2年ぶりに復帰します。シュガークンは、24年ダービーで7着となった後、左前浅屈腱炎が判明し休養していました。これまでの5戦と同じく、武豊が手綱を取ります。4月1日に滋賀県のチャンピオンヒルズから栗東トレセンに帰厩し、その後は入念に乗り込まれています。今月10日には坂路で吉村を背に、4F49秒8から1F12秒0の猛時計をマークしました。宮本助手は、この調教について「あれでも余力があると言っていた」とコメントしています。'
-[2]  [重複除去] 240文字 → 239文字
-  HTTP 200
-[0]  [Gemini生出力 261文字]: '今週の競馬注目情報をお伝えします。\n第48回新潟大賞典・G3が5月16日に新潟競馬場・芝2000メートルで行われます。このレースに、今年3月に国枝栄厩舎の定年解散に伴い、新天地の木村哲也厩舎へ移ったシンハナーダが転厩初戦で挑みます。シンハナーダは昨年12月の中日新聞杯で4着となって以来、2度目の重賞挑戦です。前走の1月白富士Sでは、序盤から折り合いを欠く場面があり見せ場を作れず7着に敗れました。この時の馬体重はデビュー以来最高の478キロでした。巻き返しに向けて陣営は「確実に変化してきています」とコメントしています。'
-[0]  [重複除去] 261文字 → 260文字
-  HTTP 200
-[1]  [Gemini生出力 282文字]: 'レース関連の最新情報です。第48回新潟大賞典・G3のハンデが、5月11日にJRAから発表されました。このレースは5月16日、新潟競馬場の芝2000メートルで行われます。約2年ぶりの実戦となるシュガークンは58キロとなりました。シュガークンはキタサンブラックの半弟で、栗東・清水久詞厩舎所属です。3歳時に出走した全5戦は57kgで、今回は今までより1kg重い斤量での出走となります。2024年の日本ダービー7着後に左前浅屈腱炎を発症し、長期休養していました。前回に続き武豊騎手とのコンビで注目が集まります。また、ルメール騎手のドゥラドーレスも58キロとなっています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (239文字)
-[2]  プレビュー: 今日の競馬情報です。キタサンブラック半弟のシュガークンが、2年ぶりに復帰します。シュガークンは、24年ダービーで7着となった後、左前浅屈腱炎が判明し休養していま...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (260文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。第48回新潟大賞典・G3が5月16日に新潟競馬場・芝2000メートルで行われます。このレースに、今年3月に国枝栄厩舎の定年解散...
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 342文字）
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 281文字]: 'レース関連の最新情報です。\n第48回新潟大賞典・G3のハンデが、5月11日、JRAから発表されました。5月16日に新潟競馬場・芝2000メートルで行われるこのレースで、約2年ぶりの実戦となるシュガークンは58キロのハンデとなりました。キタサンブラックの半弟であるシュガークンは、3歳時に出走した全5戦では57kgでしたが、今回は今までより1kg重い斤量での出走となります。2024年の日本ダービー7着後に左前浅屈腱炎を発症し長期休養しており、前回に続き武豊騎手とのコンビで注目が集まります。また、ルメール騎手のドゥラドーレスも58キロのハンデが発表されています。'
-[1]  [重複除去] 281文字 → 280文字
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 269文字]: 'レース関連の最新情報です。第48回新潟大賞典・G3のハンデが、5月11日にJRAから発表されました。5月16日に新潟競馬場・芝2000メートルで行われるこのレースで、約2年ぶりの実戦となるキタサンブラックの半弟シュガークンは58キロとなりました。シュガークンは3歳時に出走した全5戦では57kgでしたが、今回は今までより1kg重い斤量での出走となります。2024年の日本ダービー7着後に左前浅屈腱炎を発症し、長期休養していました。前回に続き武豊騎手とのコンビで注目が集まります。また、ルメール騎手のドゥラドーレスも58キロとなっています。'
+[1]  [Gemini生出力 247文字]: 'レース関連の最新情報です。\n第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで開催されます。勝負強さを見せる津村明秀騎手が、ニシノティアモで闘病中のオーナーに最高の良薬を届けたいと語っています。ニシノティアモを所有する西山茂行氏は、『ニシノ』『セイウン』の冠名で多くの活躍馬を送り出してきたオーナーです。西山氏は自身のオフィシャルブログで4月3日に急性骨髄性白血病を公表し、闘病生活を続けています。津村騎手は、オーナーの回復が早まるよう頑張りたいとコメントしました。'
+[1]  [重複除去] 247文字 → 246文字
+  HTTP 200
+[2]  [Gemini生出力 272文字]: '重要な競馬ニュースをお伝えします。香港競馬のシーズン最後のG1となるチャンピオンズ＆チャターCの登録馬が発表されました。24日にシャティン芝2400メートルで行われるこのレースは、11日に香港調教馬の無料登録と海外調教馬の追加登録が締め切られ、香港ジョッキークラブが登録馬9頭を公表しました。登録された9頭のうち、地元馬は3冠王手がかかるロマンチックウォリアーなど7頭です。日本馬からは2頭が登録されており、カタール遠征の前走アミールトロフィーを制したディープモンスターと、今年初戦の前走日経賞で3着だったローシャムパ...が名を連ねています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (269文字)
-[1]  プレビュー: レース関連の最新情報です。第48回新潟大賞典・G3のハンデが、5月11日にJRAから発表されました。5月16日に新潟競馬場・芝2000メートルで行われるこのレー...
-
-3 件の脚本を生成しました。
+[1]  → output/script_1.txt 保存 (246文字)
+[1]  プレビュー: レース関連の最新情報です。第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで開催されます。勝負強さを見せる津村明秀騎手が、ニシノティ...
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → 再試行後もSKIPのためスキップ（動画生成しない）
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 229文字]: '重要な競馬ニュースをお伝えします。\n香港競馬のシーズン最後のG1となるチャンピオンズ＆チャターCの登録馬が発表されました。24日にシャティン芝2400メートルで行われるこのレースは、11日に香港調教馬の無料登録と海外調教馬の追加登録が締め切られ、香港ジョッキークラブが登録馬9頭を発表しています。地元馬は3冠王手ロマンチックウォリアーなど7頭が登録。日本馬は2頭が登録しており、カタール遠征の前走アミールトロフィーを制したディープモンスターが含まれています。'
+[2]  [重複除去] 229文字 → 228文字
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 252文字]: '重要な競馬ニュースをお伝えします。香港競馬のシーズン最後のG1となるチャンピオンズ＆チャターCの登録馬が発表されました。24日にシャティン芝2400メートルで行われるこのレースは、11日に香港調教馬の無料登録と海外調教馬の追加登録が締め切られ、香港ジョッキークラブが登録馬9頭を公表しました。地元馬は3冠王手のロマンチックウォリアーを含む7頭が登録。日本馬からは、カタール遠征の前走アミールトロフィーを制したディープモンスターと、今年初戦の前走日経賞で3着だったローシャムパークの2頭が登録されています。'
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
