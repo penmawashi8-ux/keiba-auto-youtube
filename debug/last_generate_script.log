@@ -1,29 +1,18 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 元記事に存在しない騎手名
+[2]  [ファクトチェックNG] NG: 元記事に存在しない「坂
 [2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -33,80 +22,72 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [ファクトチェックNG] NG: 元記事に存在しないタイム（20
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: ばんえいの頂点へ!馬主になった元ガールズケイリン選手の日野未来さん「この馬なら馬主人生の第一歩を託せるのでは」 ---
-[0] Gemini入力本文 549文字: 'ガールズケイリン選手として一線級で活躍を続けた日野未来さん(33)は、昨年6月に惜しまれつつ現役生活を引退。以後は公営競技を中心にさまざまなメディアで活躍をしている。その一方で、以前から大のばんえい競馬ファンを公言。昨年5月に地方競馬の馬主'
+--- 記事[0]: 【ヴィクトリアM】G1現役最多タイ23勝の友道厩舎が勝負をかけるカムニャック　エンブロイダリー逆転へのカギ ---
+[0] Gemini入力本文 347文字: '【◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)\n\t\t\t\t\u3000昨年のオークス馬のカムニャック(牝4歳、栗東・友道康夫厩舎、父ブラックタイド)が逆転を目指す。前走の阪神牝馬Sはエンブロイダリーの首差の惜敗。「こ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 初代女王誕生から20年 ダンスインザムードのヴィクトリアM快走を振り返る ---
-[1] Gemini入力本文 340文字: '今年で創設20年を迎えるヴィクトリアマイルでは、数々の名牝が勝利を収めてきた。その歴史の幕開けを飾ったのが、初代女王のダンスインザムードである。前々年の桜花賞以来、約2年ぶりの勝利を手にした06年の戦いを振り返ろう。\n\u3000ダンスインザムードは'
+--- 記事[1]: 【ヴィクトリアM・ヤマタケの特注馬】持続力ある末脚は広いコースでこそ　パラディレーヌが大舞台で輝く ---
+[1] Gemini入力本文 347文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月11日、栗東トレセン\n\t\t\t\t\u3000パラディレーヌ(牝4歳、栗東・千田輝彦厩舎、父キズナ)は過去に何度も本命で勝負してきた。ただ、今年は本命を打っていない。持'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【NHKマイルC】ロデオドライブ6センチ差V津村騎手の助言に感謝 ---
-[2] Gemini入力本文 358文字: '◆第31回NHKマイルC・G1(5月10日、東京競馬場・芝1600メートル、良)\n\t\t\t\t\u3000第31回NHKマイルCは10日、東京競馬場の芝1600メートルを18頭で争い、1番人気のロデオドライブ(レーン)がアスクイキゴミとの激戦を推定6セン'
+--- 記事[2]: 【新潟大賞典】武豊騎手と2年ぶり復帰戦のシュガークン　キタサンブラック弟が坂路で49秒8を出す「キャラ変」 ---
+[2] Gemini入力本文 349文字: '◆第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル)＝5月11日、栗東トレセン\n\t\t\t\t\u3000キタサンブラックの弟、シュガークン(牡5歳、栗東・清水久詞厩舎、父ドゥラメンテ)がターフに戻ってくる。2024年の日本ダービー7着'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 243文字]: '最新情報をお届けします。\n今年で創設20年を迎えるヴィクトリアマイルでは、数々の名牝が勝利を収めてきました。その歴史の幕開けを飾ったのが、初代女王のダンスインザムードです。06年の戦いを振り返ると、ダンスインザムードは前々年の桜花賞以来、約2年ぶりの勝利を手にしていました。ダンスインザムードは父サンデーサイレンス、母ダンシングキイ、母の父Nijinskyの血統です。95年オークスと96年エリザベス女王杯を制したダンスパートナー、96年菊花賞を制したダンスインザダークも同じ血統です。'
-[1]  [redirectフィルター] 243文字 → 230文字
+[0]  [Gemini生出力 258文字]: '本日の競馬ニュースです。第21回ヴィクトリアマイル・G1が5月17日に東京競馬場・芝1600メートルで行われます。昨年のオークス馬であるカムニャックが、このレースでの逆転を目指します。カムニャックは前走の阪神牝馬Sでエンブロイダリーに首差の惜敗を喫しました。これについて大江助手は、「ここを見据えて、そんなにメイチという感じではなかったですから。いいあんばいで使えたと思います」と説明しています。カムニャックを管理する友道康夫厩舎は、JRAのG1で現役最多タイとなる23勝を挙げており、池江泰寿調教師と並んでいます。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (258文字)
+[0]  プレビュー: 本日の競馬ニュースです。第21回ヴィクトリアマイル・G1が5月17日に東京競馬場・芝1600メートルで行われます。昨年のオークス馬であるカムニャックが、このレー...
+  HTTP 200
+[1]  [Gemini生出力 238文字]: '今週の競馬注目情報をお伝えします。第21回ヴィクトリアマイル・G1は、5月17日に東京競馬場・芝1600メートルで開催されます。5月11日の栗東トレセン情報によると、千田輝彦厩舎の4歳牝馬パラディレーヌは、過去に何度も本命で勝負してきた馬です。今年は本命を打っていませんが、持続力のある末脚は広いコースでこそ持ち味が生きるとされています。今回は東京での一戦となり、仁岸助手は「体は見た目にいいです。使ってきても、へこたれることなく、カイバも食べています」とコメントしています。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (230文字)
-[1]  プレビュー: 今年で創設20年を迎えるヴィクトリアマイルでは、数々の名牝が勝利を収めてきました。その歴史の幕開けを飾ったのが、初代女王のダンスインザムードです。06年の戦いを...
+[1]  → output/script_1.txt 保存 (238文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。第21回ヴィクトリアマイル・G1は、5月17日に東京競馬場・芝1600メートルで開催されます。5月11日の栗東トレセン情報によ...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
 [2] 使用: key=***189Y model=gemini-2.5-flash
-[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 274文字]: '注目の競馬情報をお届けします。元ガールズケイリン選手の日野未来さんが、地方競馬の馬主として新たな一歩を踏み出しました。日野未来さんは昨年6月に惜しまれつつ現役生活を引退後、公営競技を中心にさまざまなメディアで活躍しています。その一方で、以前から大のばんえい競馬ファンであることを公言していました。昨年5月に地方競馬の馬主となり、オーナーとして初めて購入した馬はグランプリスラムです。グランプリスラムはブチが特徴の牝2歳馬で、今井茂雅厩舎に所属し、デビューへ向けて奮闘しています。日野さんは「この馬なら馬主人生の第一歩を託せるのでは」と語っています。'
-[0]  [redirectフィルター] 274文字 → 259文字
-  HTTP 200
-[2]  [Gemini生出力 218文字]: '最新情報をお届けします。第31回NHKマイルCは5月10日、東京競馬場の芝1600メートルを18頭で争われました。1番人気のロデオドライブが、アスクイキゴミとの激戦を推定6センチの鼻差で制し、G1初勝利を飾りました。レーン騎手鞍上のロデオドライブは3歳マイル王者の座に就き、管理する辻哲英調教師は開業6年目でうれしいG1初制覇となりました。母の日にピンク帽の8枠からタイトルを手にしたサートゥルナーリア産駒が、見事な勝利を収めています。'
-[2]  [redirectフィルター] 218文字 → 206文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (259文字)
-[0]  プレビュー: 元ガールズケイリン選手の日野未来さんが、地方競馬の馬主として新たな一歩を踏み出しました。日野未来さんは昨年6月に惜しまれつつ現役生活を引退後、公営競技を中心にさ...
+[2]  [Gemini生出力 233文字]: '最新のレース情報が入ってきました。第48回新潟大賞典・G3に、キタサンブラックの弟であるシュガークンがターフに戻ってきます。5月11日、栗東トレセンの情報によると、シュガークンは2024年の日本ダービー7着後に左前浅屈けん炎を発症し休養していましたが、2年ぶりの復帰戦を迎えます。引き続き武豊騎手とのコンビで出走予定です。坂路では49秒8を記録しており、清水久詞厩舎のコメントとして「帰ってきた時は馬体に余裕もあったし、どうかなと思っていたけ…」と伝えられています。'
 [2] 使用: key=***189Y model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -120,11 +101,19 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 216文字]: '最新情報をお届けします。第31回NHKマイルCは5月10日、東京競馬場の芝1600メートルを18頭で争われました。1番人気のロデオドライブがレーン騎手とともに、アスクイキゴミとの激戦を推定6センチの鼻差で制し、G1初勝利を飾りました。ロデオドライブは3歳マイル王者の座に就いています。管理する辻哲英調教師は開業6年目でうれしいG1初制覇となりました。「母の日」にピンク帽の8枠からタイトルを手にしたサートゥルナーリア産駒の勝利です。'
-[2]  [redirectフィルター] 216文字 → 204文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (204文字)
-[2]  プレビュー: 第31回NHKマイルCは5月10日、東京競馬場の芝1600メートルを18頭で争われました。1番人気のロデオドライブがレーン騎手とともに、アスクイキゴミとの激戦を...
-
-3 件の脚本を生成しました。
+[2]  [Gemini生出力 204文字]: '最新のレース情報が入ってきました。第48回新潟大賞典・G3が5月16日に新潟競馬場・芝2000メートルで行われます。このレースで、キタサンブラックの弟であるシュガークンがターフに戻ってきます。シュガークンは2024年の日本ダービー7着後、左前浅屈けん炎を発症し休養していましたが、約2年ぶりの復帰戦を迎えます。引き続き武豊騎手とのコンビで出走予定です。栗東トレセンでの調教では、坂路で49秒8を記録しました。'
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
