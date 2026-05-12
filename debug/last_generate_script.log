@@ -4,39 +4,118 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【ヴィクトリアM】牝馬の最高馬体重GI制覇記録更新なるか 昨年2着のクイーンズウォークが今年こそ ---
-[0] Gemini入力本文 350文字: '重賞3勝のクイーンズウォーク(牝5、栗東・中内田充正厩舎)が、ヴィクトリアマイル(4歳上牝・GI・芝1600m)でGI初制覇を狙う。\n\u3000クイーンズウォークは父キズナ、母ウェイヴェルアベニュー、母の父Harlingtonの血統。母は15年のB'
+--- 記事[0]: 【新潟大賞典】ドゥラドーレス重賞初Vへの課題は精神面　宮田調教師「ネガティブになることなく取り組めている」 ---
+[0] Gemini入力本文 351文字: '◆第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル)＝5月12日、美浦トレセン\n\t\t\t\t\u3000重賞で2着4回のドゥラドーレス(牡7歳、美浦・宮田敬介厩舎、父ドゥラメンテ)は、坂路を67秒8で駆け上がると、約15分後に再び姿を'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【ヴィクトリアマイル】アイサンサンがG1の舞台でさんさんと輝く　橋田調教師「勝負根性があります」 ---
-[1] Gemini入力本文 350文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル、牝馬)＝5月12日、栗東トレセン\n\t\t\t\t\u3000アイサンサン(牝4歳、栗東・橋田宣長厩舎、父キズナ)は、坂路で64秒8―15秒0で明日の最終追い切りに備えた。折り合'
+--- 記事[1]: ヴィクトリアマイル出走のアイサンサンは英国のロイヤルアスコット開催に登録　橋田調教師「結果次第です」 ---
+[1] Gemini入力本文 350文字: 'ヴィクトリアマイル(5月17日、東京競馬場・芝1600メートル)でG1初制覇を目指すアイサンサン(牝4歳、栗東・橋田宜長厩舎、父キズナ)は、英国ロイヤルアスコット開催のキングチャールズ3世S・G1(6月16日、直線芝1000メートル)に登録'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【ヴィクトリアM】「1勝馬の賞金王」ボンドガール 藤田晋オーナーに初のJRA・GIタイトルを届けるか ---
-[2] Gemini入力本文 348文字: '「ウマ娘」の藤田晋オーナーが所有するボンドガール(牝5、美浦・手塚貴久厩舎)が、ヴィクトリアマイル(4歳上牝・GI・芝1600m)でGI初制覇を狙う。\n\u3000ボンドガールは父ダイワメジャー、母コーステッド、母の父Tizwayの血統。母は16年B'
+--- 記事[2]: 【ヴィクトリアM・超ブル診断データ編】上位人気馬が苦戦のG1だからこそ狙ってみたい穴馬は?　阪神牝馬S組の7歳馬に食指 ---
+[2] Gemini入力本文 535文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)\n\t\t\t\t\u30001番人気は【3・2・2・3】(データは以降も過去10年)、複勝率7割でまずまずではあるが、2番人気は3着1度、3番人気は2着2度があるだけ。致命的な'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 220文字]: '最新情報をお届けします。第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで牝馬により行われます。5月12日、栗東トレセンにて、アイサンサンは坂路で64秒8―15秒0を記録し、明日の最終追い切りに備えました。折り合いもつき、大人びた雰囲気を見せています。橋田調教師は「変わらずにいいですよ。馬の雰囲気も緩みすぎず、集中してくれています」と笑顔を浮かべました。アイサンサンはここ2戦ともに逃げ切り勝ちを収めています。'
-[1]  [redirectフィルター] 220文字 → 208文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (208文字)
-[1]  プレビュー: 第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで牝馬により行われます。5月12日、栗東トレセンにて、アイサンサンは坂路で64秒8―...
+[0]  [Gemini生出力 250文字]: '最新のレース情報が入ってきました。\n第48回新潟大賞典・G3に5月16日、新潟競馬場・芝2000メートルで出走を予定しているドゥラドーレスは、重賞で2着4回の実績を持つ牡7歳馬です。5月12日、美浦トレセンで行われた調教では、坂路を67秒8で駆け上がった後、約15分後に再び姿を見せ、64秒7でゆったりとしたキャンター2本を消化しました。宮田調教師は「1週前はストライドを伸ばして前後のバランスを整えて調整。脚元を含めて、しっかりと固まってきました」と、体質面の強化を感じているとコメントしています。'
+[0]  [重複除去] 250文字 → 249文字
   HTTP 200
-[2]  [Gemini生出力 273文字]: '今日の競馬情報です。\n「ウマ娘」の藤田晋オーナーが所有するボンドガールが、ヴィクトリアマイルでGI初制覇を狙います。ボンドガールは牝5、美浦・手塚貴久厩舎所属で、ヴィクトリアマイルは4歳上牝・GI・芝1600mのレースです。血統は父ダイワメジャー、母コーステッド、母の父Tizway。母コーステッドは2016年BCジュベナイルフィリーズターフの2着馬です。また、半兄のダノンベルーガは2022年共同通信杯の覇者であり、2023年ドバイターフで2着に入るなど、古馬中距離戦線で活躍しました。ボンドガールの馬名の意味は「強く賢く美しい女性たち」です。'
-[2]  [重複除去] 273文字 → 272文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (272文字)
-[2]  プレビュー: 今日の競馬情報です。「ウマ娘」の藤田晋オーナーが所有するボンドガールが、ヴィクトリアマイルでGI初制覇を狙います。ボンドガールは牝5、美浦・手塚貴久厩舎所属で、...
-  HTTP 200
-[0]  [Gemini生出力 224文字]: '競馬ファン注目の情報です。重賞3勝のクイーンズウォークが、ヴィクトリアマイルでGI初制覇を狙います。クイーンズウォークは父キズナ、母ウェイヴェルアベニュー、母の父Harlingtonの血統です。母親のウェイヴェルアベニューは、2015年のBCフィリー＆メアスプリントの覇者です。また、半兄のグレナディアガーズは、2020年の朝日杯FSと2021年の阪神Cを制しています。馬名の意味由来は「ロンドンのランベスブリッジとタワーブリッジ間の遊歩道」です。'
+[1]  [Gemini生出力 216文字]: '本日の競馬ニュースです。\nヴィクトリアマイルでG1初制覇を目指すアイサンサンは、英国ロイヤルアスコット開催のキングチャールズ3世S・G1に登録しています。キングチャールズ3世S・G1は6月16日に直線芝1000メートルで行われます。参戦について橋田調教師は「結果次第です。選択肢として残しています」と説明しました。橋田調教師は助手時代に、2019年の英国ナッソーS・G1を制したディアドラの欧州への長期遠征に帯同した経験があります。'
+[1]  [重複除去] 216文字 → 215文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (224文字)
-[0]  プレビュー: 競馬ファン注目の情報です。重賞3勝のクイーンズウォークが、ヴィクトリアマイルでGI初制覇を狙います。クイーンズウォークは父キズナ、母ウェイヴェルアベニュー、母の...
+[0]  → output/script_0.txt 保存 (249文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。第48回新潟大賞典・G3に5月16日、新潟競馬場・芝2000メートルで出走を予定しているドゥラドーレスは、重賞で2着4回の実績...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (215文字)
+[1]  プレビュー: 本日の競馬ニュースです。ヴィクトリアマイルでG1初制覇を目指すアイサンサンは、英国ロイヤルアスコット開催のキングチャールズ3世S・G1に登録しています。キングチ...
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
+    response.begin()
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
 
-3 件の脚本を生成しました。
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 541, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 524, in main
+    i, ok = future.result()
+            ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 351, in generate_one
+    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
+    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
