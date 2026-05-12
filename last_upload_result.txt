@@ -1,10 +1,10 @@
-date: 2026-05-12T09:37:35.551814Z
+date: 2026-05-12T13:17:56.996819Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1P1VQM8kpzo title=【ヴィクトリアM】牝馬の最高馬体重GI制覇記録更新なるか 昨年2着のクイーンズウ
-OK project=1 video_id=6PGWuoXM5Mk title=【ヴィクトリアマイル】アイサンサンがG1の舞台でさんさんと輝く　橋田調教師「勝負
-OK project=1 video_id=9Nc_r5Bp94Q title=【ヴィクトリアM】「1勝馬の賞金王」ボンドガール 藤田晋オーナーに初のJRA・G
+OK project=1 video_id=tfz3tQ7fiDg title=金沢競馬の藤田弘調教師が地方通算100勝　10Rのカズロレアートで達成「皆さんの
+OK project=1 video_id=M1Awi6KCZKs title=ジョスランの兄エフフォーリアは産駒が今年デビュー　チェルヴィニアの半弟などが控え
+OK project=1 video_id=5FqAzlEJF8o title=【新潟大賞典】ドゥラドーレス重賞初Vへの課題は精神面　宮田調教師「ネガティブにな
