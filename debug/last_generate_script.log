@@ -1,73 +1,48 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【注目馬動向】オークスのアメティスタは2戦ぶりに横山武史騎手とのコンビ　エンネは坂井瑠星騎手に決定 ---
-[0] Gemini入力本文 341文字: '5月24日のオークス・G1を予定しているアメティスタ(牝3歳、栗東・牧浦充徳厩舎、父キタサンブラック)の鞍上は横山武史騎手＝美浦・鈴木伸尋厩舎＝に決まった。2勝目を挙げた菜の花賞以来、2戦ぶりのコンビとなる。\n\t\t\t\t\u3000また、同レースに向か'
+--- 記事[0]: 【注目馬動向】シリウスコルトは安田記念と函館スプリントSの両にらみ　安田記念なら田中勝春厩舎はG1初出走に ---
+[0] Gemini入力本文 327文字: '京王杯スプリングC5着のシリウスコルト(牡5歳、美浦・田中勝春厩舎、父マクフィ)は、安田記念・G1(6月7日、東京競馬場・芝1600メートル)か、その翌週の函館スプリントS(6月13日、函館競馬場・芝1200メートル)の両にらみとなっている'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【注目馬動向】ミステリーウェイが宝塚記念を検討　天皇賞・春で逃げて8着　メイショウタバルとの先行争いに注目 ---
-[1] Gemini入力本文 343文字: '5月3日の天皇賞・春で8着だったミステリーウェイ(セン8歳、栗東・小林真也厩舎、父ジャスタウェイ)は、宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)への出走を検討していることが分かった。12日、社台サラブレッドクラブがホームペ'
+--- 記事[1]: 【注目馬動向】日経賞2着のミクニインスパイアは宝塚記念でG1初挑戦へ　鞍上は引き続き丹内祐次騎手 ---
+[1] Gemini入力本文 299文字: '日経賞2着のミクニインスパイア(牡4歳、美浦・林徹厩舎、父アドマイヤマーズ)は、宝塚記念(6月14日、阪神競馬場・芝2200メートル)を目標とすることが分かった。\n\t\t\t\t\u3000同馬は未勝利から4連勝を飾り、オープン昇級初戦の前走で2着と好走。'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【注目馬動向】佐々木厩舎から松永幹厩舎に転厩したラムジェットはマーキュリーCを視野　フェブラリーSで8着 ---
-[2] Gemini入力本文 346文字: '2024年の東京ダービーの勝ち馬で、3月に定年解散した栗東・佐々木晶三厩舎から栗東・松永幹夫厩舎に転厩したラムジェット(牡5歳、父マジェスティックウォリアー)はJpn3のマーキュリーC(7月20日、盛岡競馬場・ダート2000メートル)での復'
+--- 記事[2]: 【プリークネスS】ケンタッキーダービー馬回避で大混戦　想定オッズ1番人気のアイアンオナーは9番ゲート ---
+[2] Gemini入力本文 356文字: '◆第151回プリークネスステークス・G1(現地時間5月16日、米国ローレルパーク競馬場・ダート1900メートル)\n\t\t\t\t\u3000米国クラシック3冠2冠目の出走馬14頭と枠順が現地時間の5月11日、発表された。\n\t\t\t\t\u30002走前にゴッサムS・G3'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 228文字]: 'レース関連の最新情報です。2024年の東京ダービーの勝ち馬であるラムジェットが、3月に定年解散した栗東・佐々木晶三厩舎から栗東・松永幹夫厩舎に転厩しました。このラムジェットは、Jpn3のマーキュリーC、7月20日に盛岡競馬場ダート2000メートルでの復帰を視野に入れていることが5月12日に分かりました。転厩前の最後のレースであるフェブラリーSでは8着でしたが、ゴール後に鞍上が下馬したものの、順調に回復しており、復帰戦に向けて放牧先で調整を続けています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (228文字)
-[2]  プレビュー: レース関連の最新情報です。2024年の東京ダービーの勝ち馬であるラムジェットが、3月に定年解散した栗東・佐々木晶三厩舎から栗東・松永幹夫厩舎に転厩しました。この...
+[1]  [Gemini生出力 194文字]: '最新情報をお届けします。日経賞2着のミクニインスパイアは、宝塚記念を目標とすることが分かりました。宝塚記念は6月14日に阪神競馬場・芝2200メートルで行われます。鞍上は引き続き丹内祐次騎手が務めます。ミクニインスパイアは未勝利から4連勝を飾り、オープン昇級初戦の前走で2着と好走しました。丹内騎手とはキャリア8戦のうち6戦でコンビを組んでおり、宝塚記念へ出走すればG1初挑戦となります。'
+[1]  [redirectフィルター] 194文字 → 182文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (182文字)
+[1]  プレビュー: 日経賞2着のミクニインスパイアは、宝塚記念を目標とすることが分かりました。宝塚記念は6月14日に阪神競馬場・芝2200メートルで行われます。鞍上は引き続き丹内祐...
   HTTP 200
-[1]  [Gemini生出力 248文字]: '今週の競馬注目情報をお伝えします。5月3日の天皇賞・春で8着だったミステリーウェイは、宝塚記念・G1への出走を検討していることが分かりました。宝塚記念は6月14日に阪神競馬場・芝2200メートルで行われます。この情報は12日、社台サラブレッドクラブがホームページで明らかにしました。ミステリーウェイは現在、三重県の社台ファーム鈴鹿に放牧中です。前走の天皇賞・春では、逃げて8着に健闘していました。同じ逃げ馬で連覇がかかるメイショウタバルが既に参戦を表明しており、両馬の先行争いに注目が集まります。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (248文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。5月3日の天皇賞・春で8着だったミステリーウェイは、宝塚記念・G1への出走を検討していることが分かりました。宝塚記念は6月14...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 240文字]: '注目の競馬情報をお届けします。第151回プリークネスステークス・G1の出走馬14頭と枠順が、現地時間5月11日に発表されました。このレースは米国クラシック3冠の2冠目にあたり、現地時間5月16日に米国ローレルパーク競馬場のダート1900メートルで行われます。想定オッズ5.5の1番人気には、2走前にゴッサムS・G3を制したアイアンオナーが選ばれ、9番ゲートに決まりました。また、想定オッズ6倍の2番人気は3頭おり、その中にはデビューから無傷3連勝のタージマ...が含まれています。'
+[2]  [redirectフィルター] 240文字 → 225文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (222文字)
+[2]  プレビュー: 第151回プリークネスステークス・G1の出走馬14頭と枠順が、現地時間5月11日に発表されました。このレースは米国クラシック3冠の2冠目にあたり、現地時間5月1...
   HTTP 200
-[0]  [Gemini生出力 173文字]: '競馬速報です。\n5月24日に予定されているオークス・G1に出走を予定しているアメティスタの鞍上は、横山武史騎手に決まりました。このコンビは、アメティスタが2勝目を挙げた菜の花賞以来、2戦ぶりとなります。また、同じオークスに向かうエンネの鞍上は坂井瑠星騎手に決定しました。さらに、抽選対象となっているリアライズルミナスも、同レースを予定しています。'
-[0]  [重複除去] 173文字 → 172文字
+[0]  [Gemini生出力 218文字]: '今週の競馬注目情報をお伝えします。京王杯スプリングCで5着だったシリウスコルトは、安田記念と函館スプリントSの両にらみとなっています。安田記念は6月7日に東京競馬場の芝1600メートルで、函館スプリントSは翌週の6月13日に函館競馬場の芝1200メートルで開催予定です。シリウスコルトは、美浦の田中勝春厩舎に昨年5月の新潟大賞典で重賞初制覇をもたらした馬です。もし安田記念に出走すれば、田中勝春厩舎にとって初のG1挑戦となる見込みです。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (172文字)
-[0]  プレビュー: 競馬速報です。5月24日に予定されているオークス・G1に出走を予定しているアメティスタの鞍上は、横山武史騎手に決まりました。このコンビは、アメティスタが2勝目を...
+[0]  → output/script_0.txt 保存 (218文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。京王杯スプリングCで5着だったシリウスコルトは、安田記念と函館スプリントSの両にらみとなっています。安田記念は6月7日に東京競...
 
 3 件の脚本を生成しました。
