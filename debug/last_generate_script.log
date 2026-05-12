@@ -1,121 +1,115 @@
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【新潟大賞典】ドゥラドーレス重賞初Vへの課題は精神面　宮田調教師「ネガティブになることなく取り組めている」 ---
-[0] Gemini入力本文 351文字: '◆第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル)＝5月12日、美浦トレセン\n\t\t\t\t\u3000重賞で2着4回のドゥラドーレス(牡7歳、美浦・宮田敬介厩舎、父ドゥラメンテ)は、坂路を67秒8で駆け上がると、約15分後に再び姿を'
+--- 記事[0]: 金沢競馬の藤田弘調教師が地方通算100勝　10Rのカズロレアートで達成「皆さんのおかげです」騎手時代に地方1512勝 ---
+[0] Gemini入力本文 360文字: '金沢競馬所属の藤田弘治調教師(45)が5月12日、金沢競馬10R(ダート1500メートル)に管理するカズロレアート(牡8歳、父スピルバーグ)を出走させて1着。2024年3月の初出走以来、725戦目で地方競馬通算100勝を達成した。\n\t\t\t\t'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: ヴィクトリアマイル出走のアイサンサンは英国のロイヤルアスコット開催に登録　橋田調教師「結果次第です」 ---
-[1] Gemini入力本文 350文字: 'ヴィクトリアマイル(5月17日、東京競馬場・芝1600メートル)でG1初制覇を目指すアイサンサン(牝4歳、栗東・橋田宜長厩舎、父キズナ)は、英国ロイヤルアスコット開催のキングチャールズ3世S・G1(6月16日、直線芝1000メートル)に登録'
+--- 記事[1]: ジョスランの兄エフフォーリアは産駒が今年デビュー　チェルヴィニアの半弟などが控える鹿戸調教師「見栄えがいい」 ---
+[1] Gemini入力本文 340文字: '今年デビューの2歳馬が初年度産駒となるG1・3勝馬のエフフォーリア(牡8歳)。現役時代に父は2021年の皐月賞、天皇賞・秋、有馬記念と3度のG1勝利を飾った。\n\t\t\t\t\u3000父を管理した鹿戸雄一調教師は「見栄えがいい馬が多いですね。厩舎に入って'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【ヴィクトリアM・超ブル診断データ編】上位人気馬が苦戦のG1だからこそ狙ってみたい穴馬は?　阪神牝馬S組の7歳馬に食指 ---
-[2] Gemini入力本文 535文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)\n\t\t\t\t\u30001番人気は【3・2・2・3】(データは以降も過去10年)、複勝率7割でまずまずではあるが、2番人気は3着1度、3番人気は2着2度があるだけ。致命的な'
+--- 記事[2]: 【新潟大賞典】ドゥラドーレス重賞初Vへの課題は精神面　宮田調教師「ネガティブになることなく取り組めている」 ---
+[2] Gemini入力本文 351文字: '◆第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル)＝5月12日、美浦トレセン\n\t\t\t\t\u3000重賞で2着4回のドゥラドーレス(牡7歳、美浦・宮田敬介厩舎、父ドゥラメンテ)は、坂路を67秒8で駆け上がると、約15分後に再び姿を'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 250文字]: '最新のレース情報が入ってきました。\n第48回新潟大賞典・G3に5月16日、新潟競馬場・芝2000メートルで出走を予定しているドゥラドーレスは、重賞で2着4回の実績を持つ牡7歳馬です。5月12日、美浦トレセンで行われた調教では、坂路を67秒8で駆け上がった後、約15分後に再び姿を見せ、64秒7でゆったりとしたキャンター2本を消化しました。宮田調教師は「1週前はストライドを伸ばして前後のバランスを整えて調整。脚元を含めて、しっかりと固まってきました」と、体質面の強化を感じているとコメントしています。'
-[0]  [重複除去] 250文字 → 249文字
+[1]  [Gemini生出力 235文字]: '今週の競馬注目情報をお伝えします。\nG1・3勝馬のエフフォーリアの初年度産駒が今年デビューします。エフフォーリアは現役時代、2021年の皐月賞、天皇賞・秋、有馬記念と3度のG1勝利を飾りました。エフフォーリアを管理した鹿戸雄一調教師は、産駒について「見栄えがいい馬が多いですね」とコメントしています。さらに、「厩舎に入ってきた馬も真面目で、走ることに対して一生懸命な馬が多いのかなという印象です」と好印象を抱いており、走ることに対して前向きな部分があるとも述べています。'
+[1]  [重複除去] 235文字 → 234文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (234文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。G1・3勝馬のエフフォーリアの初年度産駒が今年デビューします。エフフォーリアは現役時代、2021年の皐月賞、天皇賞・秋、有馬記...
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 216文字]: '本日の競馬ニュースです。\nヴィクトリアマイルでG1初制覇を目指すアイサンサンは、英国ロイヤルアスコット開催のキングチャールズ3世S・G1に登録しています。キングチャールズ3世S・G1は6月16日に直線芝1000メートルで行われます。参戦について橋田調教師は「結果次第です。選択肢として残しています」と説明しました。橋田調教師は助手時代に、2019年の英国ナッソーS・G1を制したディアドラの欧州への長期遠征に帯同した経験があります。'
-[1]  [重複除去] 216文字 → 215文字
+[0]  [Gemini生出力 260文字]: '競馬ファン注目の情報です。\n金沢競馬所属の藤田弘治調教師が、5月12日に地方通算100勝を達成しました。この記録は、金沢競馬10Rのダート1500メートル戦に出走した管理馬カズロレアートが1着となったことで達成されたものです。2024年3月の初出走以来、725戦目での偉業となりました。藤田弘治調教師は「皆さんのおかげです」とコメントしています。ジョッキー時代には地方通算1512勝を挙げ、金沢競馬のリーディングにも輝いた元名手です。JRAでは1勝を記録し、2015ワールドオールスタージョッキーズにも出場していました。'
+[0]  [重複除去] 260文字 → 259文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (249文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。第48回新潟大賞典・G3に5月16日、新潟競馬場・芝2000メートルで出走を予定しているドゥラドーレスは、重賞で2着4回の実績...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (215文字)
-[1]  プレビュー: 本日の競馬ニュースです。ヴィクトリアマイルでG1初制覇を目指すアイサンサンは、英国ロイヤルアスコット開催のキングチャールズ3世S・G1に登録しています。キングチ...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[0]  → output/script_0.txt 保存 (259文字)
+[0]  プレビュー: 競馬ファン注目の情報です。金沢競馬所属の藤田弘治調教師が、5月12日に地方通算100勝を達成しました。この記録は、金沢競馬10Rのダート1500メートル戦に出走...
+  HTTP 200
+[2]  [Gemini生出力 281文字]: '競馬速報です。第48回新潟大賞典・G3は5月16日に新潟競馬場・芝2000メートルで行われます。5月12日、美浦トレセンでの調整状況が報じられました。重賞で2着4回のドゥラドーレスは、坂路を67秒8で駆け上がった後、約15分後に再び姿を見せ64秒7でゆったりとしたキャンター2本を消化しました。宮田調教師は「1週前はストライドを伸ばして前後のバランスを整えて調整。脚元を含めて、しっかりと固まってきました」と体質面の強化を感じているとコメントしています。重賞初Vへの課題は精神面とされており、宮田調教師は「ネガティブになることなく取り組めている」と述べています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (281文字)
+[2]  プレビュー: 競馬速報です。第48回新潟大賞典・G3は5月16日に新潟競馬場・芝2000メートルで行われます。5月12日、美浦トレセンでの調整状況が報じられました。重賞で2着...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 541, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 524, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 351, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
