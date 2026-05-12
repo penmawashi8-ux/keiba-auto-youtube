@@ -1,10 +1,10 @@
-date: 2026-05-12T00:17:50.065897Z
+date: 2026-05-12T04:45:30.373369Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LZl3qPUv6Z0 title=【ヴィクトリアM】自己新の重賞5勝すべてタイム差なし、勝負強い津村明秀騎手
-OK project=1 video_id=aaWPp3OjrVY title=【ヴィクトリアM】闘病中の西山茂行オーナーへ、ニシノティアモ津村明秀騎手が勝利届
-OK project=1 video_id=y4_sdXki9OQ title=【注目馬動向】米G1勝ちのテーオーエルビスは秋のBCスプリント参戦へ　今後は直行
+OK project=1 video_id=qs-eNjzOtHQ title=【注目馬動向】オークスのアメティスタは2戦ぶりに横山武史騎手とのコンビ　エンネは
+OK project=1 video_id=IAaib3_1W3o title=【注目馬動向】ミステリーウェイが宝塚記念を検討　天皇賞・春で逃げて8着　メイショ
+OK project=1 video_id=prFoEma0t-E title=【注目馬動向】佐々木厩舎から松永幹厩舎に転厩したラムジェットはマーキュリーCを視
