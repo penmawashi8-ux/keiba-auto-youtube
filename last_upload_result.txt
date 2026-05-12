@@ -1,10 +1,10 @@
-date: 2026-05-12T04:45:30.373369Z
+date: 2026-05-12T06:20:38.673186Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qs-eNjzOtHQ title=【注目馬動向】オークスのアメティスタは2戦ぶりに横山武史騎手とのコンビ　エンネは
-OK project=1 video_id=IAaib3_1W3o title=【注目馬動向】ミステリーウェイが宝塚記念を検討　天皇賞・春で逃げて8着　メイショ
-OK project=1 video_id=prFoEma0t-E title=【注目馬動向】佐々木厩舎から松永幹厩舎に転厩したラムジェットはマーキュリーCを視
+OK project=1 video_id=gyy01vyc0BM title=【注目馬動向】シリウスコルトは安田記念と函館スプリントSの両にらみ　安田記念なら
+OK project=1 video_id=Ff3HpXBT40c title=【注目馬動向】日経賞2着のミクニインスパイアは宝塚記念でG1初挑戦へ　鞍上は引き
+OK project=1 video_id=sGdL5dta4VA title=【プリークネスS】ケンタッキーダービー馬回避で大混戦　想定オッズ1番人気のアイア
