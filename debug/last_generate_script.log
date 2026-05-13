@@ -1,44 +1,73 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【ヴィクトリアM】エリカエクスプレスは坂路で軽快　武豊騎手は「以前より落ち着きが出てきた」と好感触 ---
-[0] Gemini入力本文 349文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)追い切り＝13日、栗東トレセン\n\t\t\t\t\u3000中山牝馬Sで4着だったエリカエクスプレス(牝4歳、栗東・杉山晴紀厩舎、父エピファネイア)は、武豊騎手を背に坂路で単走。'
+--- 記事[0]: 【オークス1週前追い】アランカールがポリトラックでシャープな動き　武豊「状態は良さそうです」 ---
+[0] Gemini入力本文 360文字: '桜花賞5着のアランカール(牝3＝斉藤崇、父エピファネイア)が24日のオークス(東京芝2400メートル)に向けて1週前追い切りを行った。\n\u3000ポリトラック3頭併せ。オリバナム(4歳2勝クラス)、ディーンズリスター(7歳1勝クラス)を追走して、直'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: ディープ産駒が17年連続のJRA重賞制覇なるか トーセンリョウが新潟大賞典で初タイトル狙う ---
-[1] Gemini入力本文 350文字: 'ディープインパクト産駒のトーセンリョウ(牡7、美浦・加藤征弘厩舎)が、父の偉業をかけて新潟大賞典(4歳上・GIII・芝2000m)に出走する。\n\u3000ディープインパクト産駒はこれまでJRA重賞を10年ラジオNIKKEI杯のダノンバラードから25'
+--- 記事[1]: 【日本ダービー・2週前】皐月賞の雪辱を期すリアライズシリウスが迫力満点の動き　手塚久調教師「言うことないです」 ---
+[1] Gemini入力本文 356文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)2週前追い切り＝5月13日、美浦トレセン\n\t\t\t\t\u3000今年の共同通信杯で重賞2勝目を挙げて、前走の皐月賞で惜しくも2着だったリアライズシリウス(牡3歳、美浦・手塚貴久厩'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【ヴィクトリアM】エリカエクスプレス　坂路で最終追い　武豊「思ったより馬が落ち着いてくれている」 ---
-[2] Gemini入力本文 341文字: '中山牝馬S4着から臨むエリカエクスプレス(牝4＝杉山晴、父エピファネイア)が17日のヴィクトリアマイル(東京芝1600メートル)に向けて最終追い切りを行った。\n\u3000坂路単走で4F53秒7〜1F12秒1をマークした。\n\u3000稽古をつけた武豊は「思っ'
+--- 記事[2]: 【ヴィクトリアM】軽快なリズムで登坂!パラディレーヌが反撃ムード　千田調教師「土曜日もラスト11秒台で動いていたし... ---
+[2] Gemini入力本文 353文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)追い切り＝5月13日、栗東トレセン\n\t\t\t\t\u3000福島牝馬S8着から巻き返しを期すパラディレーヌ(牝4歳、栗東・千田輝彦厩舎、父キズナ)は坂路を57秒3―12秒3。'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 212文字]: '最新のレース情報が入ってきました。ディープインパクト産駒のトーセンリョウが、父の偉業をかけて新潟大賞典に出走します。ディープインパクト産駒は、これまでJRA重賞を10年ラジオNIKKEI杯のダノンバラードから25年京都大賞典のディープモンスターまで298勝を挙げています。実に16年連続でJRA重賞を制しており、トーセンリョウには17年連続のJRA重賞制覇がかかっています。トーセンリョウは新潟大賞典で初タイトルを狙います。'
+[0]  [Gemini生出力 188文字]: '今日の競馬情報です。\n桜花賞で5着だったアランカールが、24日に東京芝2400メートルで行われるオークスに向けて1週前追い切りを行いました。ポリトラックでの3頭併せでは、オリバナム、ディーンズリスターを追走し、直線では最内から鋭く脚を伸ばして併入しました。稽古をつけた武豊騎手は「直線に向いてから少し伸ばしたくらいでしたけど、状態は良さそうですよ」と上々の感触を話しています。'
+[0]  [重複除去] 188文字 → 187文字
   HTTP 200
-[2]  [Gemini生出力 226文字]: '重要な競馬ニュースをお伝えします。中山牝馬S4着から臨むエリカエクスプレスが、17日のヴィクトリアマイルに向けて最終追い切りを行いました。坂路単走で4F53秒7から1F12秒1をマークしています。稽古をつけた武豊騎手は「思ったより馬が落ち着いてくれているのが何より。軽い追い切りでした」と振り返りました。武豊騎手はさらに「当日のテンションと入れ込み、レースでの折り合いですね。すぐカーッとなりますからね。マイルで折り合いが...」とコメントしています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (223文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。中山牝馬S4着から臨むエリカエクスプレスが、17日のヴィクトリアマイルに向けて最終追い切りを行いました。坂路単走で4F53秒7...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (212文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。ディープインパクト産駒のトーセンリョウが、父の偉業をかけて新潟大賞典に出走します。ディープインパクト産駒は、これまでJRA重賞...
-  HTTP 200
-[0]  [Gemini生出力 253文字]: '最新情報をお届けします。\n第21回ヴィクトリアマイルG1の追い切りが13日、栗東トレセンで行われました。5月17日に東京競馬場・芝1600メートルで発走予定のこのレースに向け、中山牝馬Sで4着だったエリカエクスプレスが、武豊騎手を背に坂路で単走追い切りを実施しました。ほぼ馬なりで軽快に脚を伸ばし、53秒7―12秒1のタイムを記録しています。武豊騎手は「状態がいいと聞いていたので、坂路でさらっとという感じ」とコメント。さらに「以前より落ち着きが出てきた」と、エリカエクスプレスの状態に好感触を示しました。'
-[0]  [redirectフィルター] 253文字 → 240文字
+[1]  [Gemini生出力 202文字]: '今日の競馬情報です。第93回日本ダービー・G1の2週前追い切りが5月13日に美浦トレセンで行われました。今年の共同通信杯で重賞2勝目を挙げ、前走の皐月賞で惜しくも2着だったリアライズシリウスが、迫力十分の動きを見せています。Wコースで外フォルラニーニを約4馬身追走する形から、6ハロン83秒2、5ハロン66秒5、3ハロン36秒8をマークしました。手塚貴久調教師は「言うことないです」とコメントしています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (240文字)
-[0]  プレビュー: 第21回ヴィクトリアマイルG1の追い切りが13日、栗東トレセンで行われました。5月17日に東京競馬場・芝1600メートルで発走予定のこのレースに向け、中山牝馬S...
+[0]  → output/script_0.txt 保存 (187文字)
+[0]  プレビュー: 今日の競馬情報です。桜花賞で5着だったアランカールが、24日に東京芝2400メートルで行われるオークスに向けて1週前追い切りを行いました。ポリトラックでの3頭併...
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (202文字)
+[1]  プレビュー: 今日の競馬情報です。第93回日本ダービー・G1の2週前追い切りが5月13日に美浦トレセンで行われました。今年の共同通信杯で重賞2勝目を挙げ、前走の皐月賞で惜しく...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 206文字]: '今週の競馬注目情報をお伝えします。第21回ヴィクトリアマイル・G1の追い切りが5月13日に栗東トレセンで行われました。福島牝馬Sで8着だったパラディレーヌは、巻き返しを期して坂路を57秒3―12秒3で登坂しました。この厩舎流の調整では目立った時計は出ませんでしたが、軽快なリズムを刻み駆け上がっています。千田調教師は「土曜日もラスト11秒台で動いていたし、具合はいいです」とコメントし、仕上がりに胸を張りました。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (206文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。第21回ヴィクトリアマイル・G1の追い切りが5月13日に栗東トレセンで行われました。福島牝馬Sで8着だったパラディレーヌは、巻...
 
 3 件の脚本を生成しました。
