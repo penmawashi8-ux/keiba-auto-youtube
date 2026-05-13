@@ -1004,6 +1004,7 @@ https://news.netkeiba.com/?pid=news_view&no=330591
 https://news.netkeiba.com/?pid=news_view&no=330598
 https://news.netkeiba.com/?pid=news_view&no=330604
 https://news.netkeiba.com/?pid=news_view&no=330606
+https://news.netkeiba.com/?pid=news_view&no=330609
 https://news.netkeiba.com/?pid=news_view&no=330610
 https://news.netkeiba.com/?pid=news_view&no=330613
 https://news.netkeiba.com/?pid=news_view&no=330662
@@ -1042,6 +1043,8 @@ https://news.netkeiba.com/?pid=news_view&no=330878
 https://news.netkeiba.com/?pid=news_view&no=330886
 https://news.netkeiba.com/?pid=news_view&no=330888
 https://news.netkeiba.com/?pid=news_view&no=330889
+https://news.netkeiba.com/?pid=news_view&no=330909
+https://news.netkeiba.com/?pid=news_view&no=330910
 nhk_mile_2026_post_prediction
 nhk_mile_2026_prediction
 osaka_cup_2026_prediction

@@ -1,10 +1,10 @@
-date: 2026-05-12T13:17:56.996819Z
+date: 2026-05-13T00:26:32.107757Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tfz3tQ7fiDg title=金沢競馬の藤田弘調教師が地方通算100勝　10Rのカズロレアートで達成「皆さんの
-OK project=1 video_id=M1Awi6KCZKs title=ジョスランの兄エフフォーリアは産駒が今年デビュー　チェルヴィニアの半弟などが控え
-OK project=1 video_id=5FqAzlEJF8o title=【新潟大賞典】ドゥラドーレス重賞初Vへの課題は精神面　宮田調教師「ネガティブにな
+OK project=1 video_id=TjIDzAew7ec title=【ヴィクトリアM】エリカエクスプレスは坂路で軽快　武豊騎手は「以前より落ち着きが
+OK project=1 video_id=7EBIoXvmObk title=ディープ産駒が17年連続のJRA重賞制覇なるか トーセンリョウが新潟大賞典で初タ
+OK project=1 video_id=4mLmFa-zV5g title=【ヴィクトリアM】エリカエクスプレス　坂路で最終追い　武豊「思ったより馬が落ち着
