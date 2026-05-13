@@ -1,16 +1,19 @@
-=== Wikimedia Commons 画像検索: ジェンティルドンナ ===
-  検索クエリ: 「ジェンティルドンナ racehorse」
-  ヒット数: 20 件
-  チェック: File:Gentildonna20120408(1).jpg
-  チェック: File:Gentildonna Arima Kinen 2014(IMG2).jpg
-  チェック: File:Gentildonna 20121125a.jpg
-  チェック: File:Gentildonna Arima Kinen 2014(IMG1).jpg
-  チェック: File:Gentildonna Retirement Celemony.jpg
-  チェック: File:Gentildonna Japan Cup 2013(IMG2).jpg
-  チェック: File:Gentildonna Japan Cup 2013(IMG1).jpg
-  チェック: File:11 Gentildonna (June 23, 2013. 54th Takarazuka Kinen) (9115306003).jpg
-  チェック: File:Gentildonna.jpg
-  チェック: File:ジャパンカップ.JPG
+=== Wikimedia Commons 画像検索: サクラローレル ===
+  検索クエリ: 「サクラローレル racehorse」
+  ヒット数: 3 件
+  チェック: File:Sakura Laurel.jpg
+  チェック: File:SakuraLaurel-1997-4--27s2.jpg
+  チェック: File:SakuraLaurel-1997-4--27s.jpg
+  検索クエリ: 「サクラローレル 競走馬」
+  ヒット数: 3 件
+  チェック: File:Sakura Laurel.jpg
+  チェック: File:SakuraLaurel-1997-4--27s2.jpg
+  チェック: File:SakuraLaurel-1997-4--27s.jpg
+  検索クエリ: 「サクラローレル horse portrait」
+  ヒット数: 0 件
+  検索クエリ: 「サクラローレル horse race」
+  ヒット数: 1 件
+  チェック: File:Sakura Laurel.jpg
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()
