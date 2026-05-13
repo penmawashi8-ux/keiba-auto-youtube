@@ -1,10 +1,10 @@
-date: 2026-05-13T06:35:08.105081Z
+date: 2026-05-13T11:38:46.791710Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dN5iex8Z9vg title=【注目馬動向】NHKマイルC13着のコントレイル産駒ジーネキング　次走はラジオN
-OK project=1 video_id=qopFo2iGdXo title=【注目馬動向】ベレシートは引き続き北村友一騎手と日本ダービーへ　“クロワデュノー
-OK project=1 video_id=wJ1UiD4Nydc title=京都新聞杯2着ベレシートは北村友とコンビ継続で日本ダービーへ　　母クロノジェネシ
+OK project=1 video_id=LBwFK0QSdzU title=【エンプレス杯】スタート後手もお構いなし!メモリアカフェが強烈末脚でV　ルメール
+OK project=1 video_id=Fa_ndxU2NVY title=【POG2026-2027】netkeiba厳選のPOG2歳馬リストを大公開！
+OK project=1 video_id=U18vsgOISTE title=【川崎・エンプレス杯結果】メモリアカフェが差し切って連勝で重賞3勝目を挙げる
