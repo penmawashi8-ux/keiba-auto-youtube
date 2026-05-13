@@ -1045,6 +1045,9 @@ https://news.netkeiba.com/?pid=news_view&no=330888
 https://news.netkeiba.com/?pid=news_view&no=330889
 https://news.netkeiba.com/?pid=news_view&no=330909
 https://news.netkeiba.com/?pid=news_view&no=330910
+https://news.netkeiba.com/?pid=news_view&no=330930
+https://news.netkeiba.com/?pid=news_view&no=330931
+https://news.netkeiba.com/?pid=news_view&no=330932
 nhk_mile_2026_post_prediction
 nhk_mile_2026_prediction
 osaka_cup_2026_prediction

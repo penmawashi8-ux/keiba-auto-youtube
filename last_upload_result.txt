@@ -1,10 +1,10 @@
-date: 2026-05-13T00:26:32.107757Z
+date: 2026-05-13T04:52:41.505764Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TjIDzAew7ec title=【ヴィクトリアM】エリカエクスプレスは坂路で軽快　武豊騎手は「以前より落ち着きが
-OK project=1 video_id=7EBIoXvmObk title=ディープ産駒が17年連続のJRA重賞制覇なるか トーセンリョウが新潟大賞典で初タ
-OK project=1 video_id=4mLmFa-zV5g title=【ヴィクトリアM】エリカエクスプレス　坂路で最終追い　武豊「思ったより馬が落ち着
+OK project=1 video_id=VR9bzJ9o30Q title=【オークス1週前追い】アランカールがポリトラックでシャープな動き　武豊「状態は良
+OK project=1 video_id=rCiflw1blQA title=【日本ダービー・2週前】皐月賞の雪辱を期すリアライズシリウスが迫力満点の動き　手
+OK project=1 video_id=WS3pQubOhnk title=【ヴィクトリアM】軽快なリズムで登坂!パラディレーヌが反撃ムード　千田調教師「土
