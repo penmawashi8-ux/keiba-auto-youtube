@@ -1,19 +1,16 @@
-=== Wikimedia Commons 画像検索: サクラローレル ===
-  検索クエリ: 「サクラローレル racehorse」
-  ヒット数: 3 件
-  チェック: File:Sakura Laurel.jpg
-  チェック: File:SakuraLaurel-1997-4--27s2.jpg
-  チェック: File:SakuraLaurel-1997-4--27s.jpg
-  検索クエリ: 「サクラローレル 競走馬」
-  ヒット数: 3 件
-  チェック: File:Sakura Laurel.jpg
-  チェック: File:SakuraLaurel-1997-4--27s2.jpg
-  チェック: File:SakuraLaurel-1997-4--27s.jpg
-  検索クエリ: 「サクラローレル horse portrait」
-  ヒット数: 0 件
-  検索クエリ: 「サクラローレル horse race」
-  ヒット数: 1 件
-  チェック: File:Sakura Laurel.jpg
+=== Wikimedia Commons 画像検索: キングカメハメハ ===
+  検索クエリ: 「キングカメハメハ racehorse」
+  ヒット数: 20 件
+  チェック: File:King Kamehameha 20081005P1.jpg
+  チェック: File:2004-9-26-KingKamehameha.JPG
+  チェック: File:King Kamehameha Day Lei Draping Ceremony Hawaii (34390423424).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773268860).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773255684).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773261990).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773271908).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773259674).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773268520).jpg
+  チェック: File:King Kamehameha Day Parade, 2009 (3773260480).jpg
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()
