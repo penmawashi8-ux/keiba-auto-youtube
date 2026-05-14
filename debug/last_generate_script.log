@@ -1,46 +1,73 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 24年青葉賞を制した超良血馬 シュガークンが新潟大賞典で約2年ぶりの復帰戦だ ---
-[0] Gemini入力本文 343文字: '名馬キタサンブラックの半弟となるシュガークン(牡5、栗東・清水久詞厩舎)が、新潟大賞典(4歳上・GIII・芝2000m)で約2年ぶりの復帰戦を迎える。\n\u3000シュガークンは父ドゥラメンテ、母シュガーハート、母の父サクラバクシンオーの血統。半兄の'
+--- 記事[0]: テイエムアンコールが死す　10年の大阪杯で単勝1・2倍のドリームジャーニー撃破　オペラオーの再来を願って命名 ---
+[0] Gemini入力本文 347文字: 'ジャパン・スタッドブック・インターナショナルは5月14日、2010年の大阪杯を制したテイエムアンコールが5月5日に死んでいたことをXで報告した。22歳だった。\n\t\t\t\t\u3000連絡があったことを伝える形で、「滋賀県犬上郡豊郷町の大野牧場で繋養され'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: ダノンバーボンは左膝の手根骨の骨折が判明、休養へ　池添調教師「(この休みで)成長してくれたら」 ---
-[1] Gemini入力本文 340文字: '5月3日のケンタッキーダービー・G1で5着に入ったダノンバーボン(牡3歳、栗東・池添学厩舎、父マックスフィールド)は、左膝の手根骨を骨折したことが分かった。全治は現段階では不明。\n\t\t\t\t\u300014日、栗東トレセンで取材に応じた池添調教師は「た'
+--- 記事[1]: 【注目馬動向】重賞2勝馬ショウヘイは札幌記念へ　友道調教師「合うと思います」　大阪杯10着から巻き返し狙う ---
+[1] Gemini入力本文 324文字: '重賞2勝馬ショウヘイ(牡4歳、栗東・友道康夫厩舎、父サートゥルナーリア)は、次走に札幌記念・G2(8月16日、札幌・芝2000メートル)を視野に入れていることが分かった。5月14日、友道調教師が明らかにした。\n\t\t\t\t\u3000前走の大阪杯では10'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【ヴィクトリアM・ヤマタケが見た】千六ボディーでカムニャック、女王エンブロイダリーに勝つ ---
-[2] Gemini入力本文 378文字: '◆ヴィクトリアマイル追い切り(5月13日、栗東トレセン)\n\t\t\t\t\u3000第21回ヴィクトリアマイル・G1(17日、東京)の最終追い切りが13日、東西トレセンで行われた。\n\t\t\t\t\u3000迫力が伝わった。カムニャックは栗東・坂路を単走。最初の2ハロンは'
+--- 記事[2]: 【注目馬動向】天皇賞・春3着のアドマイヤテラは武豊騎手で札幌記念を視野 ---
+[2] Gemini入力本文 319文字: '天皇賞・春で3着だったアドマイヤテラ(牡5歳、栗東・友道康夫厩舎、父レイデオロ)は、札幌記念・G2(8月16日、札幌競馬場・芝2000メートル)への参戦を視野に入れていることが分かった。鞍上は引き続き武豊騎手が務める予定。5月14日、管理す'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 194文字]: '最新情報をお届けします。5月3日のケンタッキーダービー・G1で5着に入ったダノンバーボンは、左膝の手根骨を骨折したことが分かりました。全治は現段階では不明です。14日、栗東トレセンで取材に応じた池添調教師は「たぶん年内は休養に充てると思います。(この休みで)成長してくれたら。アメリカから連れて帰ってこられて良かったです」と説明しました。昨日13日が検疫明けで、いまは北海道に移動中です。'
-[1]  [redirectフィルター] 194文字 → 182文字
+[1]  [Gemini生出力 206文字]: '本日の競馬ニュースです。重賞2勝馬ショウヘイは、次走に札幌記念・G2を視野に入れていることが明らかになりました。札幌記念は8月16日に札幌の芝2000メートルで開催されます。この情報は5月14日、友道調教師が明かしたものです。前走の大阪杯では10着に敗れており、巻き返しを狙う一戦となります。友道調教師は、参戦の意図として「宝塚記念は距離が長いし、安田記念は距離が短い。札幌記念は合うと思います」と説明しました。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (182文字)
-[1]  プレビュー: 5月3日のケンタッキーダービー・G1で5着に入ったダノンバーボンは、左膝の手根骨を骨折したことが分かりました。全治は現段階では不明です。14日、栗東トレセンで取...
+[1]  → output/script_1.txt 保存 (206文字)
+[1]  プレビュー: 本日の競馬ニュースです。重賞2勝馬ショウヘイは、次走に札幌記念・G2を視野に入れていることが明らかになりました。札幌記念は8月16日に札幌の芝2000メートルで...
   HTTP 200
-[0]  [Gemini生出力 210文字]: '今日の競馬情報です。\n名馬キタサンブラックの半弟となるシュガークンが、新潟大賞典で約2年ぶりの復帰戦を迎えます。シュガークンは牡5で、栗東の清水久詞厩舎に所属しています。新潟大賞典は4歳以上・GIII・芝2000mのレースです。シュガークンは父ドゥラメンテ、母シュガーハート、母の父サクラバクシンオーの血統です。半兄のキタサンブラックは、2016年と2017年の天皇賞(春)を連覇するなど、GIを7勝した歴史的名馬です。'
-[0]  [重複除去] 210文字 → 209文字
+[0]  [Gemini生出力 250文字]: 'レース関連の最新情報です。ジャパン・スタッドブック・インターナショナルは5月14日、2010年の大阪杯を制したテイエムアンコールが5月5日に死んでいたことをXで報告しました。22歳でした。滋賀県犬上郡豊郷町の大野牧場で繋養され、余生を過ごしていましたと、連絡があったことを伝える形で記されています。同馬は現役時代、栗東・柴田政見厩舎に所属し、42戦6勝を挙げました。6歳だった2010年の大阪杯（当時G2）では、浜中俊騎手とのコンビで6番人気ながら、単勝1・2倍のドリームジャーニーを撃破しています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (209文字)
-[0]  プレビュー: 今日の競馬情報です。名馬キタサンブラックの半弟となるシュガークンが、新潟大賞典で約2年ぶりの復帰戦を迎えます。シュガークンは牡5で、栗東の清水久詞厩舎に所属して...
+[0]  → output/script_0.txt 保存 (250文字)
+[0]  プレビュー: レース関連の最新情報です。ジャパン・スタッドブック・インターナショナルは5月14日、2010年の大阪杯を制したテイエムアンコールが5月5日に死んでいたことをXで...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 194文字]: '最新情報をお届けします。第21回ヴィクトリアマイル・G1の最終追い切りが5月13日、東西トレセンで行われました。17日に東京で開催されるこのレースに向け、カムニャックが栗東・坂路で単走の追い切りを披露し、迫力が伝わる走りを見せました。最初の2ハロンは15秒台で入り、そこから徐々に力強さが増していくようなフォームで加速。メリハリを利かせ、ラスト2ハロンは13秒3、12秒1でまとめました。'
-[2]  [redirectフィルター] 194文字 → 182文字
+[2]  [Gemini生出力 202文字]: '最新情報をお届けします。天皇賞・春で3着だったアドマイヤテラは、札幌記念・G2への参戦を視野に入れていることが分かりました。8月16日に札幌競馬場・芝2000メートルで行われるこのレースで、鞍上は引き続き武豊騎手が務める予定です。この情報は5月14日、管理する友道康夫調教師が明らかにしました。友道調教師は、アドマイヤテラが現在北海道で放牧中であるため、直接現地の競馬場に入厩させる見通しを語っています。'
+[2]  [redirectフィルター] 202文字 → 190文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (182文字)
-[2]  プレビュー: 第21回ヴィクトリアマイル・G1の最終追い切りが5月13日、東西トレセンで行われました。17日に東京で開催されるこのレースに向け、カムニャックが栗東・坂路で単走...
+[2]  → output/script_2.txt 保存 (190文字)
+[2]  プレビュー: 天皇賞・春で3着だったアドマイヤテラは、札幌記念・G2への参戦を視野に入れていることが分かりました。8月16日に札幌競馬場・芝2000メートルで行われるこのレー...
 
 3 件の脚本を生成しました。
