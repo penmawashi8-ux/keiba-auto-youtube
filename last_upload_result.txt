@@ -1,10 +1,10 @@
-date: 2026-05-13T13:33:14.106613Z
+date: 2026-05-14T00:18:18.901892Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AzuSeoBOjfI title=GDJ古馬・春シーズンは大井のマーブルマウンテンが総合優勝　1位ボーナス賞金10
-OK project=1 video_id=NzkqVEd6j34 title=【地方競馬】エンプレス杯　メモリアカフェが直線で豪脚を発揮して重賞連勝
-OK project=1 video_id=um_cVDk0e2s title=【新潟大賞典】アンゴラブラックは牝馬と感じさせないド迫力の動き　尾関調教師が挙げ
+OK project=1 video_id=mc7Zz-pC8mA title=24年青葉賞を制した超良血馬 シュガークンが新潟大賞典で約2年ぶりの復帰戦だ
+OK project=1 video_id=9IDg8ns2WWA title=ダノンバーボンは左膝の手根骨の骨折が判明、休養へ　池添調教師「(この休みで)成長
+OK project=1 video_id=mdFMNYwgcTk title=【ヴィクトリアM・ヤマタケが見た】千六ボディーでカムニャック、女王エンブロイダリ
