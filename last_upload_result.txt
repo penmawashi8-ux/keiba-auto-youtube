@@ -1,10 +1,10 @@
-date: 2026-05-14T04:52:43.570846Z
+date: 2026-05-14T07:45:21.423319Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1fS-R3xDXQI title=テイエムアンコールが死す　10年の大阪杯で単勝1・2倍のドリームジャーニー撃破　
-OK project=1 video_id=rCNRvyKZu_0 title=【注目馬動向】重賞2勝馬ショウヘイは札幌記念へ　友道調教師「合うと思います」　大
-OK project=1 video_id=oNlGk0WmYSo title=【注目馬動向】天皇賞・春3着のアドマイヤテラは武豊騎手で札幌記念を視野
+OK project=1 video_id=rtmK6XGEnzI title=【園田・のじぎく賞結果】大井のプリンセスデイジーが逃げ切って重賞初制覇
+OK project=1 video_id=k7gKE6iZy-s title=宝塚記念ファン投票の第1回中間発表　G1連勝中のクロワデュノールが17万1253
+OK project=1 video_id=jf532-Z-h74 title=【注目馬動向】昨年の京都2歳S覇者ジャスティンビスタ　日本ダービーで坂井瑠星騎手
