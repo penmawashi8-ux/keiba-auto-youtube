@@ -1,10 +1,10 @@
-date: 2026-05-14T07:45:21.423319Z
+date: 2026-05-14T11:20:51.874571Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rtmK6XGEnzI title=【園田・のじぎく賞結果】大井のプリンセスデイジーが逃げ切って重賞初制覇
-OK project=1 video_id=k7gKE6iZy-s title=宝塚記念ファン投票の第1回中間発表　G1連勝中のクロワデュノールが17万1253
-OK project=1 video_id=jf532-Z-h74 title=【注目馬動向】昨年の京都2歳S覇者ジャスティンビスタ　日本ダービーで坂井瑠星騎手
+OK project=1 video_id=RBN0xN-VhuI title=【プレゼント】戸崎圭太騎手サイン入り 『やり抜く力 天才じゃなくてもトップになれ
+OK project=1 video_id=6OvMADV2UMg title=【ヴィクトリアM】6頭が調教後馬体重で2ケタ増を計測　16キロの大幅増は東京巧者
+OK project=1 video_id=xb0aDymhTKc title=【ヴィクトリアM】上村調教師が納得の笑み　ココナッツブラウンは厩舎周りの運動で調
