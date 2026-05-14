@@ -4,39 +4,118 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【園田・のじぎく賞結果】大井のプリンセスデイジーが逃げ切って重賞初制覇 ---
-[0] Gemini入力本文 353文字: '14日、園田競馬場で行われた第64回のじぎく賞(3歳・牝・重賞・ダ1700m・1着賞金900万円)は、逃げた西啓太騎手騎乗の3番人気プリンセスデイジー(牝3、大井・田中正人厩舎)が、中団から脚を伸ばした5番人気ウィルラウス(牝3、北海道・小'
+--- 記事[0]: 兄姉2頭は海外G1勝ち馬 ディーンズリスターが約4年ぶりの2勝目なるか ---
+[0] Gemini入力本文 350文字: '海外G1勝ち馬2頭の全弟となるディーンズリスター(セ7、栗東・斉藤崇史厩舎)が、日曜新潟7Rの4歳上1勝クラス(芝2000m)で約4年ぶりの2勝目を狙う。\n\u3000ディーンズリスターは父ディープインパクト、母ラヴズオンリーミー、母の父Storm '
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 宝塚記念ファン投票の第1回中間発表　G1連勝中のクロワデュノールが17万1253票を集め首位　2位は昨年覇者メイショウタ ---
-[1] Gemini入力本文 361文字: '◆\n\t\t\t\t\u3000JRAは5月14日、第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)のファン投票第1回中間発表を行った。\n\t\t\t\t\u3000有効投票は196万3990票。第1位は大阪杯、天皇賞・春を連勝したクロワデュノール(牡4歳'
+--- 記事[1]: 【オークス・1週前】「すごく乗りやすかった」ジュウリョクピエロは今村聖奈騎手とCWコースで余裕たっぷりに11秒1 ---
+[1] Gemini入力本文 350文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル)1週前追い切り＝5月14日、栗東トレセン\n\t\t\t\t\u3000忘れな草賞を快勝したジュウリョクピエロ(牝3歳、栗東・寺島良厩舎、父オルフェーヴル)が、圧巻の動きを見せた。芝転向後、'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【注目馬動向】昨年の京都2歳S覇者ジャスティンビスタ　日本ダービーで坂井瑠星騎手と新コンビ ---
-[2] Gemini入力本文 345文字: '昨年の京都2歳S覇者ジャスティンビスタ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)は、日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)で坂井瑠星騎手と新コンビを組むことが分かった。14日、管理する吉岡調教師が明らかに'
+--- 記事[2]: 【ヴィクトリアM】上原佑調教師に聞く　最終追い切り終えたニシノティアモの状態は?「この相手でも十分戦える手応えがある」 ---
+[2] Gemini入力本文 353文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月14日、美浦トレセン\n\t\t\t\t\u300025年の福島記念覇者ニシノティアモ(牝5歳、美浦・上原佑紀調教師、父ドゥラメンテ)は、Wコースで2頭併せを行った。楽な加速'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 235文字]: '競馬速報です。昨年の京都2歳S覇者ジャスティンビスタは、日本ダービー・G1で坂井瑠星騎手と新コンビを組むことが分かりました。この情報は14日、管理する吉岡調教師が明らかにしたものです。ジャスティンビスタはホープフルSで8着となった後、右第1指骨剥離骨折が判明し休養しており、日本ダービーが復帰戦となります。吉岡調教師は「牧場とは、京都新聞杯からダービーに行こうと話していました」と述べています。日本ダービーは5月31日に東京競馬場・芝2400メートルで行われる予定です。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (235文字)
-[2]  プレビュー: 競馬速報です。昨年の京都2歳S覇者ジャスティンビスタは、日本ダービー・G1で坂井瑠星騎手と新コンビを組むことが分かりました。この情報は14日、管理する吉岡調教師...
-  HTTP 200
-[0]  [Gemini生出力 208文字]: '今週の競馬注目情報をお伝えします。\n14日、園田競馬場で行われた第64回のじぎく賞は、3番人気のプリンセスデイジーが逃げ切って重賞初制覇を飾りました。西啓太騎手騎乗のプリンセスデイジーは、ダート1700m、1着賞金900万円のこのレースを、1分52秒7の良馬場で優勝しています。中団から脚を伸ばした5番人気のウィルラウスに3.1/2馬身差をつけ、さらに1.1/2馬身差の3着には1番人気のティーズセラフが入りました。'
-[0]  [重複除去] 208文字 → 207文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (207文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。14日、園田競馬場で行われた第64回のじぎく賞は、3番人気のプリンセスデイジーが逃げ切って重賞初制覇を飾りました。西啓太騎手騎...
-  HTTP 200
-[1]  [Gemini生出力 196文字]: '今日の競馬情報です。\nJRAは5月14日、第67回宝塚記念・G1のファン投票第1回中間発表を行いました。このレースは6月14日に阪神競馬場・芝2200メートルで開催されます。有効投票は196万3990票でした。第1位には、大阪杯と天皇賞・春を連勝したクロワデュノールが17万1253票を集めました。そして第2位は、昨年の同レース覇者であるメイショウタバルで、16万7332票を獲得しています。'
-[1]  [重複除去] 196文字 → 195文字
+[1]  [Gemini生出力 265文字]: '注目の競馬情報をお届けします。第87回オークス・G1の1週前追い切りが、5月14日に栗東トレセンで行われました。5月24日に東京競馬場・芝2400メートルで予定されているこのレースに向け、忘れな草賞を快勝したジュウリョクピエロが圧巻の動きを見せました。芝転向後2連勝と勢いに乗るジュウリョクピエロは、今村聖奈騎手を背にBコースで体をほぐした後、CWコースでロザーンジュの外を1馬身追走。終始楽々と力強い脚取りで進み、直線ではあふれるパワーを見せて11秒1を記録しました。今村聖奈騎手は「すごく乗りやすかった」とコメントしています。'
+[1]  [redirectフィルター] 265文字 → 250文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (195文字)
-[1]  プレビュー: 今日の競馬情報です。JRAは5月14日、第67回宝塚記念・G1のファン投票第1回中間発表を行いました。このレースは6月14日に阪神競馬場・芝2200メートルで開...
+[1]  → output/script_1.txt 保存 (250文字)
+[1]  プレビュー: 第87回オークス・G1の1週前追い切りが、5月14日に栗東トレセンで行われました。5月24日に東京競馬場・芝2400メートルで予定されているこのレースに向け、忘...
+  HTTP 200
+[2]  [Gemini生出力 202文字]: '重要な競馬ニュースをお伝えします。\n第21回ヴィクトリアマイル・G1に出走予定のニシノティアモについてです。5月14日、美浦トレセンで最終追い切りが行われました。25年の福島記念覇者ニシノティアモは、Wコースで2頭併せを行い、僚馬ローズプリンセスを楽な加速で追走し、併入に持ち込みました。管理する上原佑調教師は共同会見に出席し、最終追いの内容について「この相手でも十分戦える手応えがある」と述べています。'
+[2]  [重複除去] 202文字 → 201文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (201文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。第21回ヴィクトリアマイル・G1に出走予定のニシノティアモについてです。5月14日、美浦トレセンで最終追い切りが行われました。...
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
+    response.begin()
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
 
-3 件の脚本を生成しました。
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 541, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 524, in main
+    i, ok = future.result()
+            ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 351, in generate_one
+    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
+    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
