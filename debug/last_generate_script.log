@@ -1,6 +1,9 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[1]  [ファクトチェックNG] NG: 元記事に存在しない「人気
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -17,35 +20,37 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 阪神アーバンナイター開幕!　園田競馬場でバージョンアップしたイルミネーションの点灯式に大歓声 ---
-[0] Gemini入力本文 340文字: 'よりファンに親しみをもってもらおうと今年から“阪神アーバンナイター”に名称が変わった、兵庫競馬恒例の金曜ナイターレースが15日、園田競馬場で開幕した。\n\t\t\t\t\u3000毎年、競馬場を華やかに彩っていたイルミネーションも今年はさらにバージョンアップ'
+--- 記事[0]: 半兄は今年の中山金杯覇者 ギリーカラムがダートでガラリ一変なるか ---
+[0] Gemini入力本文 343文字: '今年の中山金杯を制したカラマティアノスの半弟となるギリーカラム(牡3、美浦・栗田徹厩舎)が、土曜東京2Rの3歳未勝利(ダ1600m)で初勝利を狙う。\n\u3000ギリーカラムは父ロードカナロア、母ダンサール、母の父ハーツクライの血統。母はJRAで3勝'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【ヴィクトリアM予想】人気の一角は数値下降で注意信号!? ヴィクトリアM調子偏差値速報！ ---
-[1] Gemini入力本文 439文字: '今週も引き続き「東京・京都・新潟」の3場開催。\n\u3000日曜日にはGIヴィクトリアマイル(東京・芝1600m)が行われます。時に大きく荒れることで有名なレース。今年はどんな結末が待ち受けているのでしょうか。\n\u3000それでは出走予定のメンバーを確認して'
+--- 記事[1]: 【注目馬動向】目黒記念で重賞初挑戦のウィクトルウェルス　鞍上は引き続きルメール騎手　シルク・ホースクラブが発表 ---
+[1] Gemini入力本文 343文字: '大阪―ハンブルクCを勝ったウィクトルウェルス(牡4歳、美浦・宮田敬介厩舎、父リアルスティール)は、目黒記念・G2(5月31日、東京競馬場・芝2500メートル)へ向かう。鞍上は引き続き、クリストフ・ルメール騎手＝栗東・フリー＝となることが分か'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 名牝ラヴズオンリーユーの子を異例の「一口1円」で募集　DMMドリームクラブで合計口数は4万口 ---
-[2] Gemini入力本文 352文字: '5月15日、一口クラブ「DMM\u3000BANUSY」(馬主登録名はDMMドリームクラブ)が、ラヴズオンリーユーの2026(牝、父モーリス、栗東・矢作芳人厩舎に入厩予定)を「一口1円」の計4万口で、この日から募集することをホームページで発表した。\n'
+--- 記事[2]: 阪神アーバンナイター開幕!　園田競馬場でバージョンアップしたイルミネーションの点灯式に大歓声 ---
+[2] Gemini入力本文 340文字: 'よりファンに親しみをもってもらおうと今年から“阪神アーバンナイター”に名称が変わった、兵庫競馬恒例の金曜ナイターレースが15日、園田競馬場で開幕した。\n\t\t\t\t\u3000毎年、競馬場を華やかに彩っていたイルミネーションも今年はさらにバージョンアップ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 225文字]: '競馬速報です。\nよりファンに親しみをもってもらおうと今年から“阪神アーバンナイター”に名称が変わった、兵庫競馬恒例の金曜ナイターレースが15日、園田競馬場で開幕しました。毎年競馬場を華やかに彩っていたイルミネーションも今年はさらにバージョンアップし、お披露目を兼ねた点灯式がHUKガーデンにある特設ステージで開催されました。点灯式にはHUK女子会の海江田麻貴、春名凛和、上村沙弥香、舞桜が参加し、10レース発走前の19時15分に一斉に点灯されました。'
-[0]  [重複除去] 225文字 → 224文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (224文字)
-[0]  プレビュー: 競馬速報です。よりファンに親しみをもってもらおうと今年から“阪神アーバンナイター”に名称が変わった、兵庫競馬恒例の金曜ナイターレースが15日、園田競馬場で開幕し...
+[2]  [Gemini生出力 248文字]: '本日の競馬ニュースです。兵庫競馬恒例の金曜ナイターレースが、15日に園田競馬場で開幕しました。よりファンに親しみをもってもらおうと、今年から名称が“阪神アーバンナイター”に変わっています。毎年競馬場を華やかに彩っていたイルミネーションも今年はさらにバージョンアップし、お披露目を兼ねた点灯式がHUKガーデンにある特設ステージで行われました。点灯式にはHUK女子会の海江田麻貴、春名凛和、上村沙弥香、舞桜が参加し、10レース発走前の19時15分に一斉に点灯されると、会場からは大歓声があがりました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (248文字)
+[2]  プレビュー: 本日の競馬ニュースです。兵庫競馬恒例の金曜ナイターレースが、15日に園田競馬場で開幕しました。よりファンに親しみをもってもらおうと、今年から名称が“阪神アーバン...
   HTTP 200
-[2]  [Gemini生出力 194文字]: '競馬速報です。\n一口クラブ「DMM BANUSY」、馬主登録名DMMドリームクラブが、名牝ラヴズオンリーユーの2026を「一口1円」の計4万口で、5月15日から募集することをホームページで発表しました。\nラヴズオンリーユーは、2019年のオークスのほか、2021年のクイーンエリザベス2世C、ブリーダーズCフィリー＆メアターフ、香港Cを勝ち、米国エクリプス賞最優秀芝牝馬に輝いた名牝です。'
-[2]  [重複除去] 194文字 → 192文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (192文字)
-[2]  プレビュー: 競馬速報です。一口クラブ「DMM BANUSY」、馬主登録名DMMドリームクラブが、名牝ラヴズオンリーユーの2026を「一口1円」の計4万口で、5月15日から募...
-  HTTP 200
-[1]  [Gemini生出力 271文字]: '今週の競馬注目情報をお伝えします。今週も引き続き東京、京都、新潟の3場開催です。日曜日にはGIヴィクトリアマイルが東京・芝1600mで行われます。このレースは時に大きく荒れることで有名で、今年の結末にも注目が集まります。出走予定のメンバーを見ていきましょう。4歳勢からは、前走GII阪神牝馬Sを勝ったエンブロイダリーが名を連ねています。エンブロイダリーは昨年、GI桜花賞と秋華賞を勝利している世代のトップ馬です。しかし、ヴィクトリアマイルの調子偏差値速報によると、人気の一角であるエンブロイダリーには数値下降の注意信号が出ているとのことです。'
+[0]  [Gemini生出力 223文字]: '競馬速報です。\n今年の中山金杯を制したカラマティアノスの半弟となるギリーカラムが、土曜東京2Rの3歳未勝利、ダート1600mで初勝利を狙います。ギリーカラムは栗田徹厩舎所属の3歳牡馬です。父はロードカナロア、母はJRAで3勝を挙げたダンサール、母の父はハーツクライの血統です。半兄のカラマティアノスは今年の中山金杯を制しています。さらに叔父のサトノフラッグは20年弥生賞の勝ち馬で、叔母のサトノレイナスは20年阪神JFと21年桜花賞の2着馬です。'
+[0]  [重複除去] 223文字 → 222文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (222文字)
+[0]  プレビュー: 競馬速報です。今年の中山金杯を制したカラマティアノスの半弟となるギリーカラムが、土曜東京2Rの3歳未勝利、ダート1600mで初勝利を狙います。ギリーカラムは栗田...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -59,89 +64,11 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+  HTTP 200
+[1]  [Gemini生出力 232文字]: '注目の競馬情報をお届けします。\n大阪―ハンブルクCを勝ったウィクトルウェルスは、目黒記念・G2へ向かうことが分かりました。この4歳馬は、5月31日に東京競馬場・芝2500メートルで行われる目黒記念で重賞初挑戦となります。鞍上は引き続きクリストフ・ルメール騎手が務める予定です。この情報は、シルク・ホースクラブが15日までにホームページで発表しました。ウィクトルウェルスは前走後、放牧先のノーザンファーム天栄で調整が進められ、5月5日に美浦トレセンへ帰厩しています。'
+[1]  [redirectフィルター] 232文字 → 216文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (216文字)
+[1]  プレビュー: 大阪―ハンブルクCを勝ったウィクトルウェルスは、目黒記念・G2へ向かうことが分かりました。この4歳馬は、5月31日に東京競馬場・芝2500メートルで行われる目黒...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 541, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 524, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 351, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
