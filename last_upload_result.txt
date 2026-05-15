@@ -1,10 +1,8 @@
-date: 2026-05-15T00:16:33.883557Z
+date: 2026-05-15T03:11:48.033503Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=W-x4_ez3hds title=半妹はレガレイラ ドゥラドーレスが新潟大賞典で悲願の初タイトル狙う
-OK project=1 video_id=8G-JPKqw3Jg title=【ヴィクトリアＭ】アイサンサンで橋田師挑む開業７４日目Ｇ１制覇　「芯の強さを感じ
-OK project=1 video_id=QkcWTvH1MlM title=【オークス】ジュウリョクピエロ　今村聖奈を背に悠々２馬身突き放した　寺島師は「や
+OK project=1 video_id=nw-hz9r4Pp0 title=【ヴィクトリアマイル2026枠順確定予想】6枠12番エンブロイダリーがルメール×
