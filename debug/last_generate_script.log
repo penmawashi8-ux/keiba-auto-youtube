@@ -1,45 +1,72 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【門別・フロイラインスプリント結果】トリップスが5馬身差逃げ切りV！重賞2勝目を挙げる ---
-[0] Gemini入力本文 349文字: '14日、門別競馬場で行われた第3回フロイラインスプリント(3歳・牝・重賞・ダ1200m・1着賞金500万円)は、ダッシュ良くハナを切り4角で後続を突き放した小野楓馬騎手騎乗の1番人気トリップス(牝3、北海道・小野望厩舎)が、2番手から脚を伸'
+--- 記事[0]: 半妹はレガレイラ ドゥラドーレスが新潟大賞典で悲願の初タイトル狙う ---
+[0] Gemini入力本文 348文字: '重賞で2着4回のドゥラドーレス(牡7、美浦・宮田敬介厩舎)が、土曜新潟11Rの新潟大賞典(4歳上・GIII・芝2000m)で初のタイトル獲得を目指す。\n\u3000ドゥラドーレスは父ドゥラメンテ、母ロカ、母の父ハービンジャーの血統。母は15年クイーン'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 半兄は天皇賞(秋)覇者のマスカレードボール アナザーフェイスが初勝利狙う ---
-[1] Gemini入力本文 381文字: '25年の天皇賞(秋)を制したマスカレードボールの半弟となるアナザーフェイス(牡3、美浦・鹿戸雄一厩舎)が、土曜新潟5Rの3歳未勝利(芝1800m)で初勝利を狙う。\n\u3000アナザーフェイスは父エピファネイア、母マスクオフ、母の父ディープインパクト'
+--- 記事[1]: 【ヴィクトリアＭ】アイサンサンで橋田師挑む開業７４日目Ｇ１制覇　「芯の強さを感じます」Ｖで弾みつけ海外Ｇ１挑戦も ---
+[1] Gemini入力本文 331文字: '「ヴィクトリアＭ・Ｇ１」（１７日、東京）\n\u3000３月に開業したばかりの橋田師が、愛知杯を制したアイサンサンで厩舎として初のＧ１に挑む。開業から７４日目での勝利となれば、８４年のグレード制導入後、史上２位（最速は９３年ジャパンＣ・森秀師の６９日）'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【日本ダービー・2週前】皐月賞12着から巻き返し狙うゾロアストロが2頭併せ　宮田調教師「息遣いがまだ本物では」 ---
-[2] Gemini入力本文 355文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)2週前追い切り＝5月14日、美浦トレセン\n\t\t\t\t\u3000皐月賞12着のゾロアストロ(牡3歳、美浦・宮田敬介厩舎、父モーリス)が、競馬の祭典に向けて2週前追い切りを行った。'
+--- 記事[2]: 【オークス】ジュウリョクピエロ　今村聖奈を背に悠々２馬身突き放した　寺島師は「やればラスト１Ｆ１０秒台が出るくらい」 ---
+[2] Gemini入力本文 332文字: '「オークス・Ｇ１」（２４日、東京）\n\u3000忘れな草賞を制したジュウリョクピエロは１４日、今村聖奈を背に栗東ＣＷへ。抜群の手応えで直線へ向くと、鞍上の合図にピリッと反応。一気にギアチェンジして悠々とロザーンジュ（３歳１勝クラス）を２馬身突き放し、'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 209文字]: '本日の競馬ニュースです。\n25年の天皇賞秋を制したマスカレードボールの半弟となるアナザーフェイスが、土曜新潟5Rの3歳未勝利、芝1800mで初勝利を狙います。アナザーフェイスは父エピファネイア、母マスクオフ、母の父ディープインパクトの血統です。半兄のマスカレードボールは25年の天皇賞秋の覇者、半姉のマスクトディーヴァは23年のローズSと24年の阪神牝馬Sの覇者です。半兄のトゥーフェイスもオープンまで出世しています。'
-[1]  [重複除去] 209文字 → 208文字
-  HTTP 200
-[0]  [Gemini生出力 243文字]: 'レース関連の最新情報です。14日に門別競馬場で行われた第3回フロイラインスプリントは、3歳牝馬によるダート1200mの重賞で、1着賞金は500万円でした。このレースでは、小野楓馬騎手騎乗の1番人気トリップスが優勝し、重賞2勝目を挙げました。トリップスはダッシュ良くハナを切り、4コーナーで後続を突き放し、2番手から脚を伸ばした9番人気カイシンパジェントに5馬身差をつけ逃げ切りました。勝ちタイムは1分13秒4の良馬場でした。さらに2馬身差の3着には、3番人気のタケノルルが入っています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (243文字)
-[0]  プレビュー: レース関連の最新情報です。14日に門別競馬場で行われた第3回フロイラインスプリントは、3歳牝馬によるダート1200mの重賞で、1着賞金は500万円でした。このレ...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (208文字)
-[1]  プレビュー: 本日の競馬ニュースです。25年の天皇賞秋を制したマスカレードボールの半弟となるアナザーフェイスが、土曜新潟5Rの3歳未勝利、芝1800mで初勝利を狙います。アナ...
-  HTTP 200
-[2]  [Gemini生出力 177文字]: '本日の競馬ニュースです。\n第93回日本ダービーの2週前追い切りが5月14日、美浦トレセンで実施されました。皐月賞12着のゾロアストロは、Wコースで目黒記念出走予定のウィクトルウェルスから2馬身先行し、馬なりのまま併入。5ハロン68秒8―11秒5をマークしました。管理する宮田調教師は「感触を確かめる形」と述べ、「息遣いがまだ本物では」とコメントしました。'
-[2]  [重複除去] 177文字 → 176文字
+[2]  [Gemini生出力 201文字]: '競馬速報です。オークス・G1に出走を予定している忘れな草賞を制したジュウリョクピエロが、14日に今村聖奈を背に栗東CWで追い切りを行いました。抜群の手応えで直線へ向かうと、鞍上の合図にピリッと反応し、一気にギアチェンジ。悠々とロザーンジュを2馬身突き放し、6F83秒0-36秒5-11秒1を計時しました。寺島師は「時計的には予定通り。やればラスト1F10秒台が出るくらいでしたね」と納得の口ぶりでした。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (176文字)
-[2]  プレビュー: 本日の競馬ニュースです。第93回日本ダービーの2週前追い切りが5月14日、美浦トレセンで実施されました。皐月賞12着のゾロアストロは、Wコースで目黒記念出走予定...
+[2]  → output/script_2.txt 保存 (201文字)
+[2]  プレビュー: 競馬速報です。オークス・G1に出走を予定している忘れな草賞を制したジュウリョクピエロが、14日に今村聖奈を背に栗東CWで追い切りを行いました。抜群の手応えで直線...
+  HTTP 200
+[0]  [Gemini生出力 274文字]: '競馬ファン注目の情報です。重賞で2着4回のドゥラドーレスが、土曜新潟11Rの新潟大賞典で悲願の初タイトル獲得を目指します。7歳のドゥラドーレスは、宮田敬介厩舎所属で、4歳上・GIII・芝2000mのレースに挑みます。その血統は父ドゥラメンテ、母ロカ、母の父ハービンジャーです。母ロカは15年クイーンCで3着に入っています。また、半妹のレガレイラは23年ホープフルS、24年有馬記念、25年エリザベス女王杯を制覇。いとこのアーバンシックは24年菊花賞、同じくいとこのステレンボッシュは24年桜花賞の覇者という、活躍馬が多数いる血統背景を持っています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (274文字)
+[0]  プレビュー: 競馬ファン注目の情報です。重賞で2着4回のドゥラドーレスが、土曜新潟11Rの新潟大賞典で悲願の初タイトル獲得を目指します。7歳のドゥラドーレスは、宮田敬介厩舎所...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 247文字]: '最新のレース情報が入ってきました。ヴィクトリアM・G1が17日に東京で開催されます。3月に開業したばかりの橋田師が、愛知杯を制したアイサンサンで厩舎として初のG1に挑みます。開業から74日目での勝利となれば、1984年のグレード制導入後、史上2位のG1制覇となります。これまでの最速記録は、1993年ジャパンCでの森秀師による69日です。厩舎に初タイトルをもたらしたアイサンサンは、2021年エリザベス女王杯を制したアカイイトの全姉にあたる良血馬で、佐々木晶三元調教師から受け継がれた一頭です。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (247文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。ヴィクトリアM・G1が17日に東京で開催されます。3月に開業したばかりの橋田師が、愛知杯を制したアイサンサンで厩舎として初のG...
 
 3 件の脚本を生成しました。
