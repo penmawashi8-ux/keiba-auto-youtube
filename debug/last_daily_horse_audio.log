@@ -2,11 +2,11 @@ Kokoro TTS が利用可能です。
 === 音声生成開始 ===
 字幕フォント: Noto Sans CJK JP
 並列ワーカー数: 1
-  [0] タイトル読み上げ追加: 「キングカメハメハ」
+  [0] タイトル読み上げ追加: 「スペシャルウィーク」
 
---- 音声生成 [0] (295文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
-  音声: output/audio_0.mp3 (368 KB)
-  音声バリエーション適用: pitch×1.0103 vol-0.71dB
-  字幕: output/subtitles_0.ass (15 セグメント)
+--- 音声生成 [0] (403文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
+  音声: output/audio_0.mp3 (505 KB)
+  音声バリエーション適用: pitch×1.0388 vol+0.35dB
+  字幕: output/subtitles_0.ass (19 セグメント)
 
 1/1 件の音声を生成しました。

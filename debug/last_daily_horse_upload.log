@@ -1,22 +1,24 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (59 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (61 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: キングカメハメハ (key=king_kamehameha)
-  タイトル: 【名馬列伝】キングカメハメハ〜唯一無二の変則二冠馬〜 #Shorts
+  馬名: スペシャルウィーク (key=special_week)
+  タイトル: 【名馬列伝】スペシャルウィーク〜黄金世代を駆け抜けた王道〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】キングカメハメハ〜唯一無二の変則二冠馬〜 #Shorts
-  進捗: 19%
-  進捗: 38%
-  進捗: 57%
-  進捗: 76%
-  進捗: 95%
-  完了! Video ID: FZCQxiHH1vw
-  URL: https://www.youtube.com/watch?v=FZCQxiHH1vw
+  アップロード中: 【名馬列伝】スペシャルウィーク〜黄金世代を駆け抜けた王道〜 #Shorts
+  進捗: 13%
+  進捗: 27%
+  進捗: 40%
+  進捗: 54%
+  進捗: 67%
+  進捗: 81%
+  進捗: 94%
+  完了! Video ID: ILxazQYN-Bk
+  URL: https://www.youtube.com/watch?v=ILxazQYN-Bk
   コメント無効化完了。
-  サムネイルアップロード中: output/thumbnail_0.jpg (59 KB)
+  サムネイルアップロード中: output/thumbnail_0.jpg (61 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===
