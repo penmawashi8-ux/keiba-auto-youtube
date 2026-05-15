@@ -1,10 +1,10 @@
-date: 2026-05-15T04:57:41.763960Z
+date: 2026-05-15T07:56:55.779155Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HhxFzXiVFeQ title=【ヴィクトリアM・金曜気配】ジョスランの状態は鹿戸調教師「坂路で元気いっぱい」　
-OK project=1 video_id=MmjN68EGWYA title=【ヴィクトリアM・金曜気配】上原佑調教師は納得の表情　ニシノティアモ8枠16番に
-OK project=1 video_id=HA44O9mRCgI title=【ヴィクトリアM・金曜気配】展開のカギ握るアイサンサンは坂路でいい動き　7枠15
+OK project=1 video_id=Gnm0okO7VTU title=【オークス・1週前】フローラS覇者ラフターラインズが鋭く伸びて最先着　小笠調教師
+OK project=1 video_id=fMRA0-Nf-WQ title=ダービー主役爆誕!「震えている」「強いフランケル産駒の走り」とネットも沸く　無傷
+OK project=1 video_id=O8sXr3say_M title=【ヴィクトリアM・金曜気配】4枠7番に決定したクイーンズウォークは軽めの調整　陣
