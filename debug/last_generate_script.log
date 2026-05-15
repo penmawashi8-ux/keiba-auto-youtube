@@ -1,6 +1,8 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -11,44 +13,46 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 半妹はレガレイラ ドゥラドーレスが新潟大賞典で悲願の初タイトル狙う ---
-[0] Gemini入力本文 348文字: '重賞で2着4回のドゥラドーレス(牡7、美浦・宮田敬介厩舎)が、土曜新潟11Rの新潟大賞典(4歳上・GIII・芝2000m)で初のタイトル獲得を目指す。\n\u3000ドゥラドーレスは父ドゥラメンテ、母ロカ、母の父ハービンジャーの血統。母は15年クイーン'
+--- 記事[0]: 【ヴィクトリアM・金曜気配】ジョスランの状態は鹿戸調教師「坂路で元気いっぱい」　7枠14番にも「極端な枠じゃないからね」 ---
+[0] Gemini入力本文 353文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月15日、美浦トレセン\n\t\t\t\t\u3000G1・3勝馬エフフォーリアの全妹ジョスラン(牝4歳、美浦・鹿戸雄一厩舎、父エピファネイア)は、朝一番の坂路を活気十分に58'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【ヴィクトリアＭ】アイサンサンで橋田師挑む開業７４日目Ｇ１制覇　「芯の強さを感じます」Ｖで弾みつけ海外Ｇ１挑戦も ---
-[1] Gemini入力本文 331文字: '「ヴィクトリアＭ・Ｇ１」（１７日、東京）\n\u3000３月に開業したばかりの橋田師が、愛知杯を制したアイサンサンで厩舎として初のＧ１に挑む。開業から７４日目での勝利となれば、８４年のグレード制導入後、史上２位（最速は９３年ジャパンＣ・森秀師の６９日）'
+--- 記事[1]: 【ヴィクトリアM・金曜気配】上原佑調教師は納得の表情　ニシノティアモ8枠16番に「この枠なら競馬がしやすいと思います」 ---
+[1] Gemini入力本文 350文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月15日、美浦トレセン\n\t\t\t\t\u30002週連続で津村明秀騎手を背にして、14日に最終追い切りを終えたニシノティアモ(牝5歳、美浦・上原佑紀厩舎、父ドゥラメンテ)'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【オークス】ジュウリョクピエロ　今村聖奈を背に悠々２馬身突き放した　寺島師は「やればラスト１Ｆ１０秒台が出るくらい」 ---
-[2] Gemini入力本文 332文字: '「オークス・Ｇ１」（２４日、東京）\n\u3000忘れな草賞を制したジュウリョクピエロは１４日、今村聖奈を背に栗東ＣＷへ。抜群の手応えで直線へ向くと、鞍上の合図にピリッと反応。一気にギアチェンジして悠々とロザーンジュ（３歳１勝クラス）を２馬身突き放し、'
+--- 記事[2]: 【ヴィクトリアM・金曜気配】展開のカギ握るアイサンサンは坂路でいい動き　7枠15番に橋田調教師「戦略は幸さんと相談しなが ---
+[2] Gemini入力本文 346文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月15日、栗東トレセン\n\t\t\t\t\u3000今春開業した栗東・橋田宜長厩舎が送り出すアイサンサン(牝4歳、父キズナ)は7枠15番に決定した。前走の愛知杯は逃げ切ってお'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 201文字]: '競馬速報です。オークス・G1に出走を予定している忘れな草賞を制したジュウリョクピエロが、14日に今村聖奈を背に栗東CWで追い切りを行いました。抜群の手応えで直線へ向かうと、鞍上の合図にピリッと反応し、一気にギアチェンジ。悠々とロザーンジュを2馬身突き放し、6F83秒0-36秒5-11秒1を計時しました。寺島師は「時計的には予定通り。やればラスト1F10秒台が出るくらいでしたね」と納得の口ぶりでした。'
+[2]  [Gemini生出力 240文字]: '競馬速報です。第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで行われます。5月15日の栗東トレセンでの情報によると、今春開業した栗東・橋田宜長厩舎が送り出すアイサンサンは7枠15番に決定しました。アイサンサンは前走の愛知杯を逃げ切っており、展開のカギを握る存在です。橋田調教師は「大外枠でいい競馬をしていますからね。自然なスピードが速いかなと思っています。前回も、ハナにこだわったわけではありません。戦略は幸さんと相談しながら」とコメントしています。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: 競馬速報です。オークス・G1に出走を予定している忘れな草賞を制したジュウリョクピエロが、14日に今村聖奈を背に栗東CWで追い切りを行いました。抜群の手応えで直線...
-  HTTP 200
-[0]  [Gemini生出力 274文字]: '競馬ファン注目の情報です。重賞で2着4回のドゥラドーレスが、土曜新潟11Rの新潟大賞典で悲願の初タイトル獲得を目指します。7歳のドゥラドーレスは、宮田敬介厩舎所属で、4歳上・GIII・芝2000mのレースに挑みます。その血統は父ドゥラメンテ、母ロカ、母の父ハービンジャーです。母ロカは15年クイーンCで3着に入っています。また、半妹のレガレイラは23年ホープフルS、24年有馬記念、25年エリザベス女王杯を制覇。いとこのアーバンシックは24年菊花賞、同じくいとこのステレンボッシュは24年桜花賞の覇者という、活躍馬が多数いる血統背景を持っています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (274文字)
-[0]  プレビュー: 競馬ファン注目の情報です。重賞で2着4回のドゥラドーレスが、土曜新潟11Rの新潟大賞典で悲願の初タイトル獲得を目指します。7歳のドゥラドーレスは、宮田敬介厩舎所...
+[2]  → output/script_2.txt 保存 (240文字)
+[2]  プレビュー: 競馬速報です。第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで行われます。5月15日の栗東トレセンでの情報によると、今春開業した栗...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[0]  [Gemini生出力 215文字]: '本日の競馬ニュースです。\n第21回ヴィクトリアマイルに出走するジョスランは、5月15日に美浦トレセンで朝一番の坂路を活気十分に58秒7―13秒9で駆け上がりました。G1・3勝馬エフフォーリアの全妹であるジョスランについて、鹿戸調教師は「坂路で元気いっぱいだったね。明日も軽くやって備えます」と説明しています。7枠14番に入ったことについては「特に枠は気にしていなかったけど、極端な枠じゃないからね」と前向きなコメントを述べました。'
+[0]  [重複除去] 215文字 → 214文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (214文字)
+[0]  プレビュー: 本日の競馬ニュースです。第21回ヴィクトリアマイルに出走するジョスランは、5月15日に美浦トレセンで朝一番の坂路を活気十分に58秒7―13秒9で駆け上がりました...
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
@@ -64,9 +68,9 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 247文字]: '最新のレース情報が入ってきました。ヴィクトリアM・G1が17日に東京で開催されます。3月に開業したばかりの橋田師が、愛知杯を制したアイサンサンで厩舎として初のG1に挑みます。開業から74日目での勝利となれば、1984年のグレード制導入後、史上2位のG1制覇となります。これまでの最速記録は、1993年ジャパンCでの森秀師による69日です。厩舎に初タイトルをもたらしたアイサンサンは、2021年エリザベス女王杯を制したアカイイトの全姉にあたる良血馬で、佐々木晶三元調教師から受け継がれた一頭です。'
+[1]  [Gemini生出力 231文字]: 'レース関連の最新情報です。第21回ヴィクトリアマイル・G1に出走予定のニシノティアモの枠順が、8枠16番に決定しました。上原佑調教師は「真ん中よりも外が希望でした。この枠なら競馬がしやすいと思います。あとは騎手と作戦を組み立てます」とコメントしています。ニシノティアモは、5月15日に美浦トレセンで、2週連続で津村明秀騎手を背にして、14日に最終追い切りを終えました。第21回ヴィクトリアマイル・G1は、5月17日に東京競馬場・芝1600メートルで開催されます。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (247文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。ヴィクトリアM・G1が17日に東京で開催されます。3月に開業したばかりの橋田師が、愛知杯を制したアイサンサンで厩舎として初のG...
+[1]  → output/script_1.txt 保存 (231文字)
+[1]  プレビュー: レース関連の最新情報です。第21回ヴィクトリアマイル・G1に出走予定のニシノティアモの枠順が、8枠16番に決定しました。上原佑調教師は「真ん中よりも外が希望でし...
 
 3 件の脚本を生成しました。
