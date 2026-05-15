@@ -1,10 +1,10 @@
-date: 2026-05-15T07:56:55.779155Z
+date: 2026-05-15T09:48:10.582543Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Gnm0okO7VTU title=【オークス・1週前】フローラS覇者ラフターラインズが鋭く伸びて最先着　小笠調教師
-OK project=1 video_id=fMRA0-Nf-WQ title=ダービー主役爆誕!「震えている」「強いフランケル産駒の走り」とネットも沸く　無傷
-OK project=1 video_id=O8sXr3say_M title=【ヴィクトリアM・金曜気配】4枠7番に決定したクイーンズウォークは軽めの調整　陣
+OK project=1 video_id=28PyIiRYYz0 title=【笠松競馬】川嶋弘吉調教師が通算2600勝　過去には北関東ダービー3連覇を達成
+OK project=1 video_id=E_qq5GDzR7w title=【注目馬動向】アーモンドアイの初子アロンズロッドはダービーデーの青嵐賞へ　鞍上は
+OK project=1 video_id=ugptAkkGSbU title=【新潟大賞典予想】前走で大敗した関東馬には要注意！ 今の新潟の馬場も不向きな軽視
