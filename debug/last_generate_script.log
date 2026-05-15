@@ -1,151 +1,53 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: ダービー主役爆誕!「震えている」「強いフランケル産駒の走り」とネットも沸く　無傷3連勝を飾った英3歳馬アイテム ---
-[0] Gemini入力本文 629文字: '突如現れたダービー候補に、SNSでは様々な反応が寄せられている。\n\t\t\t\t\u3000英ダービー・G1(6月6日、エプソム競馬場・芝2410メートル)の重要ステップレースである、ダンテステークス・G2が5月14日、英国・ヨーク競馬場(芝約2051メー'
+--- 記事[0]: 【オークス・1週前】フローラS覇者ラフターラインズが鋭く伸びて最先着　小笠調教師「しまい素晴らしい反応」 ---
+[0] Gemini入力本文 350文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル)1週前追い切り＝5月15日、美浦トレセン\n\t\t\t\t\u3000フローラSをメンバー最速タイの32秒8を繰り出して制したラフターラインズ(牝3歳、美浦・小笠倫弘厩舎、父アルアイン)が'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【ヴィクトリアM・金曜気配】4枠7番に決定したクイーンズウォークは軽めの調整　陣営「今年も好レースを期待します」 ---
-[1] Gemini入力本文 351文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月15日、栗東トレセン\n\t\t\t\t\u3000昨年の2着馬クイーンズウォーク(牝5歳、栗東・中内田充正厩舎、父キズナ)は、この日はCWコースで軽めの調整を行った。今回は'
+--- 記事[1]: ダービー主役爆誕!「震えている」「強いフランケル産駒の走り」とネットも沸く　無傷3連勝を飾った英3歳馬アイテム ---
+[1] Gemini入力本文 629文字: '突如現れたダービー候補に、SNSでは様々な反応が寄せられている。\n\t\t\t\t\u3000英ダービー・G1(6月6日、エプソム競馬場・芝2410メートル)の重要ステップレースである、ダンテステークス・G2が5月14日、英国・ヨーク競馬場(芝約2051メー'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【ヴィクトリアM・金曜気配】活気あふれるエンブロイダリー　6枠12番に森一調教師はルメール騎手と「相談して作戦を考えます ---
-[2] Gemini入力本文 352文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月15日、美浦トレセン\n\t\t\t\t\u3000昨年の2冠牝馬エンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)は、坂路をキャンターで66秒1―15秒4で駆'
+--- 記事[2]: 【ヴィクトリアM・金曜気配】4枠7番に決定したクイーンズウォークは軽めの調整　陣営「今年も好レースを期待します」 ---
+[2] Gemini入力本文 351文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月15日、栗東トレセン\n\t\t\t\t\u3000昨年の2着馬クイーンズウォーク(牝5歳、栗東・中内田充正厩舎、父キズナ)は、この日はCWコースで軽めの調整を行った。今回は'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 259文字]: '競馬ファン注目の情報です。第21回ヴィクトリアマイル・G1に出走するエンブロイダリーの金曜気配が、5月15日に美浦トレセンで伝えられました。昨年の2冠牝馬エンブロイダリーは、坂路をキャンターで66秒1―15秒4で駆け上がっています。森一誠調教師は「きのう楽をさせて活気があったし、馬体や歩様も問題なくリズム良く走れていました」と、馬の雰囲気を伝えました。また、6枠12番に決まったことについて、森一誠調教師は「極端な内、外じゃないので競馬がしやすい」とコメント。ルメール騎手と「相談して作戦を考えます」と述べています。'
+[1]  [Gemini生出力 183文字]: '競馬ファン注目の情報です。英ダービー・G1の重要ステップレースであるダンテステークス・G2が、5月14日に英国・ヨーク競馬場の芝約2051メートル、良馬場で行われました。8頭立てのこのレースで、コリン・キーン騎手が騎乗した4番人気のアイテムが、無敗の3連勝をマークし、重賞初挑戦で勝利を飾っています。突如現れたダービー候補に、SNSでは様々な反応が寄せられています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (183文字)
+[1]  プレビュー: 競馬ファン注目の情報です。英ダービー・G1の重要ステップレースであるダンテステークス・G2が、5月14日に英国・ヨーク競馬場の芝約2051メートル、良馬場で行わ...
+  HTTP 200
+[2]  [Gemini生出力 220文字]: '本日の競馬ニュースです。第21回ヴィクトリアマイル・G1に出走する昨年の2着馬クイーンズウォークは、5月15日に栗東トレセンのCWコースで軽めの調整を行いました。今回は西村淳也騎手との初コンビとなります。福永助手は、追い切りに騎乗したジョッキーも好感触をつかんでくれたようだと信頼を寄せています。枠順は4枠7番に決定しました。昨年は8枠16番でしたが、今年は真ん中の枠となりました。陣営は「今年も好レースを期待します」とコメントしています。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (259文字)
-[2]  プレビュー: 競馬ファン注目の情報です。第21回ヴィクトリアマイル・G1に出走するエンブロイダリーの金曜気配が、5月15日に美浦トレセンで伝えられました。昨年の2冠牝馬エンブ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[2]  → output/script_2.txt 保存 (220文字)
+[2]  プレビュー: 本日の競馬ニュースです。第21回ヴィクトリアマイル・G1に出走する昨年の2着馬クイーンズウォークは、5月15日に栗東トレセンのCWコースで軽めの調整を行いました...
   HTTP 200
-[1]  [Gemini生出力 211文字]: '注目の競馬情報をお届けします。第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで行われます。昨年の2着馬クイーンズウォークは、5月15日に栗東トレセンで軽めの調整を行いました。今回は西村淳也騎手との初コンビで、福永助手は「ジョッキーも好感触をつかんでくれたようです」と信頼を寄せています。枠順は4枠7番に決定し、昨年は8枠16番でした。陣営は「今年も好レースを期待します」とコメントしています。'
-[1]  [redirectフィルター] 211文字 → 196文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (196文字)
-[1]  プレビュー: 第21回ヴィクトリアマイル・G1は5月17日に東京競馬場・芝1600メートルで行われます。昨年の2着馬クイーンズウォークは、5月15日に栗東トレセンで軽めの調整...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[0]  [Gemini生出力 275文字]: '注目の競馬情報をお届けします。\n第87回オークス・G1の1週前追い切りが、5月15日に美浦トレセンで行われました。フローラSをメンバー最速タイの32秒8を繰り出して制したラフターラインズが金曜追いを実施。Wコースで武藤雅騎手を背に僚馬2頭を追走し、最後の直線入り口で内から2頭に並びかけると、鋭く反応してグイッと前に出て、そのまま先着を果たしました。小笠倫弘調教師は「しまい素晴らしい反応」とコメントしています。なお、オークス本番ではダミアン・レーン騎手が騎乗する予定です。第87回オークスは5月24日、東京競馬場・芝2400メートルで開催されます。'
+[0]  [redirectフィルター] 275文字 → 259文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (259文字)
+[0]  プレビュー: 第87回オークス・G1の1週前追い切りが、5月15日に美浦トレセンで行われました。フローラSをメンバー最速タイの32秒8を繰り出して制したラフターラインズが金曜...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 541, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 524, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 351, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
