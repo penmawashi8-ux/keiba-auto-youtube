@@ -1,10 +1,10 @@
-date: 2026-05-15T09:48:10.582543Z
+date: 2026-05-15T13:04:31.127042Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=28PyIiRYYz0 title=【笠松競馬】川嶋弘吉調教師が通算2600勝　過去には北関東ダービー3連覇を達成
-OK project=1 video_id=E_qq5GDzR7w title=【注目馬動向】アーモンドアイの初子アロンズロッドはダービーデーの青嵐賞へ　鞍上は
-OK project=1 video_id=ugptAkkGSbU title=【新潟大賞典予想】前走で大敗した関東馬には要注意！ 今の新潟の馬場も不向きな軽視
+OK project=1 video_id=Ct9NVEdd6Mw title=半兄は今年の中山金杯覇者 ギリーカラムがダートでガラリ一変なるか
+OK project=1 video_id=XtLieQPym88 title=【注目馬動向】目黒記念で重賞初挑戦のウィクトルウェルス　鞍上は引き続きルメール騎
+OK project=1 video_id=jtsrTVgTYzs title=阪神アーバンナイター開幕!　園田競馬場でバージョンアップしたイルミネーションの点
