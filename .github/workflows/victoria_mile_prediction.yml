@@ -1,10 +1,10 @@
-name: 桜花賞2026 前日予想動画 生成・投稿
+name: ヴィクトリアマイル2026 枠順確定予想動画 生成・投稿
 
 on:
   workflow_dispatch:
 
 jobs:
-  post-oukasho-prediction:
+  post-victoria-mile-prediction:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -36,8 +36,8 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: 桜花賞2026 予想コンテンツを生成
-        run: python scripts/create_oukasho_prediction.py
+      - name: ヴィクトリアマイル2026 枠順確定予想コンテンツを生成
+        run: python scripts/create_victoria_mile_prediction.py
 
       - name: Generate audio
         run: python scripts/generate_audio.py
@@ -79,6 +79,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "変更なし。コミットをスキップします。"
           else
-            git commit -m "chore: 桜花賞2026前日予想動画 投稿完了 [skip ci]"
+            git commit -m "chore: ヴィクトリアマイル2026枠順確定予想動画 投稿完了 [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
           fi
