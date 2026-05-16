@@ -1,10 +1,10 @@
-date: 2026-05-16T10:24:53.638743Z
+date: 2026-05-16T12:04:44.648414Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9D9j5dBrYIM title=六社Sで1番人気14着のトリプルコークはレース中に鼻出血を発症　サンデーサラブレ
-OK project=1 video_id=63Dss3oGF0c title=【ヴィクトリアM・土曜気配】エリザベス女王杯2着のパラディレーヌが東京競馬場に到
-OK project=1 video_id=8sWjGEHSEuY title=【石打特別レース後コメント】ルールーリマ C.ルメール騎手ら
+OK project=1 video_id=uzXqOIH_6Xg title=【AI予想・ヴィクトリアM】前走敗戦も復調を感じさせる走り！ 牝馬二冠の実力馬の
+OK project=1 video_id=W7qLi8h0DG4 title=霜降り明星・粗品がヴィクトリアMを予想 ラヴァンダ軸の馬連・3連複で勝負
+OK project=1 video_id=LQQy_kF8aAk title=5月16日の出来事一覧/新潟・東京・京都
