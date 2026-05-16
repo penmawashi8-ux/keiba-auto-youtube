@@ -1,10 +1,10 @@
-date: 2026-05-16T07:20:26.512207Z
+date: 2026-05-16T10:24:53.638743Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ty14eqNyru8 title=【JRA・WIN5】本日のWIN5は的中130票、配当250万570円
-OK project=1 video_id=C4XDX8n4S-k title=【新潟大賞典】スタート直後の接触が響いた1番人気ドゥラドーレスは4着　悲願タイト
-OK project=1 video_id=id3CErB7H_4 title=【阪神アーバン競馬プレーバック】菊の姫が菊を制した　重賞・のじぎく賞は大井のプリ
+OK project=1 video_id=9D9j5dBrYIM title=六社Sで1番人気14着のトリプルコークはレース中に鼻出血を発症　サンデーサラブレ
+OK project=1 video_id=63Dss3oGF0c title=【ヴィクトリアM・土曜気配】エリザベス女王杯2着のパラディレーヌが東京競馬場に到
+OK project=1 video_id=8sWjGEHSEuY title=【石打特別レース後コメント】ルールーリマ C.ルメール騎手ら
