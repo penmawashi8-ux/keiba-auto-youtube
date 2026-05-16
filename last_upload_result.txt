@@ -1,10 +1,10 @@
-date: 2026-05-16T04:33:36.704081Z
+date: 2026-05-16T06:04:47.602877Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OERb0gkyxsY title=【ヴィクトリアM・土曜気配】「ノリさんなので一発があっても」と陣営も期待　最内枠
-OK project=1 video_id=IX8L_t2_b-E title=【ヴィクトリアM・土曜気配】24年2冠牝馬チェルヴィニアが好気配　2戦連続ブリン
-OK project=1 video_id=eCd7Li11lS4 title=【ヴィクトリアM・土曜気配】エンブロイダリーは最終調整でも落ち着き十分　陣営「何
+OK project=1 video_id=t4Q8n83bToU title=新潟で衝撃の走り!前走14着から連闘で5馬身差Vの激変ぶりに「すんごい脚」「やば
+OK project=1 video_id=MiD1v_uZ9v0 title=岩田望来騎手が京都3Rで騎乗停止処分に　日本ダービーが行われる週の5月30日、3
+OK project=1 video_id=zDvD2vZLjhA title=【あずさ賞結果】4番人気レッドラージャが接戦を制してV
