@@ -1,46 +1,74 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【ヴィクトリアM・土曜気配】「ノリさんなので一発があっても」と陣営も期待　最内枠ゲットのカピリナに大駆けムード漂う ---
-[0] Gemini入力本文 348文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月16日、美浦トレセン\n\t\t\t\t\u3000最内枠をゲットしたカピリナ(牝5歳、美浦・田島俊明厩舎、父ダンカーク)に大駆けムードが漂う。この日は坂路をリズミカルに65'
+--- 記事[0]: 新潟で衝撃の走り!前走14着から連闘で5馬身差Vの激変ぶりに「すんごい脚」「やばいわ」　新潟7Rのシャンハイナイト ---
+[0] Gemini入力本文 384文字: '連闘でレースぶりが激変した4歳馬の圧勝劇にSNSでは衝撃の反応が広がっている。ネット民を驚かせたのは、16日の新潟7R・4歳上1勝クラス(ダート1200メートル、13頭立て)を5馬身差で圧勝した5番人気のシャンハイナイト(牝4歳、美浦・村田'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【ヴィクトリアM・土曜気配】24年2冠牝馬チェルヴィニアが好気配　2戦連続ブリンカー着用で完全復活へ ---
-[1] Gemini入力本文 350文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月16日、美浦トレセン\n\t\t\t\t\u300024年の2冠牝馬チェルヴィニア(牝5歳、美浦・木村哲也厩舎、父ハービンジャー)が好気配を漂わせる。この日は坂路を64秒6―'
+--- 記事[1]: 岩田望来騎手が京都3Rで騎乗停止処分に　日本ダービーが行われる週の5月30日、31日の2日間 ---
+[1] Gemini入力本文 313文字: 'JRAは5月16日、京都3Rで4着に入ったアクアアイに騎乗していた岩田望来騎手＝栗東・フリー＝を、日本ダービーが行われる週の5月30日と31日の2日間、騎乗停止処分とした。\n\t\t\t\t\u3000同レースの最後の直線で、岩田望騎手が乗ったアクアアイが外'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【ヴィクトリアM・土曜気配】エンブロイダリーは最終調整でも落ち着き十分　陣営「何も言うことがないぐらいの状態」 ---
-[2] Gemini入力本文 349文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月16日、美浦トレセン\n\t\t\t\t\u300016日の坂路での最終追い切りで文句なしの動きを見せたエンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)は、こ'
+--- 記事[2]: 【あずさ賞結果】4番人気レッドラージャが接戦を制してV ---
+[2] Gemini入力本文 346文字: '16日、京都競馬場で行われたあずさ賞(3歳・1勝クラス・芝2000m)は、5番手追走から脚を伸ばして最後の接戦を制した坂井瑠星騎手騎乗の4番人気レッドラージャ(牡3、栗東・友道康夫厩舎)が、逃げ粘った5番人気ミッキージャンプ(牡3、栗東・池'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 212文字]: 'レース関連の最新情報です。第21回ヴィクトリアマイル・G1を翌日に控えた5月16日、美浦トレセンでの情報です。24年の2冠牝馬であるチェルヴィニアが好気配を漂わせています。この日は坂路を64秒6―14秒2で駆け上がり、その後はWコースへ向かいました。終始、気合が乗った様子で臨戦態勢を整えています。木村調教師は「特にトラブルはなく、元気に過ごしてくれています。いい状態で出せるように努めたいと思います」とコメントしています。'
+[0]  [Gemini生出力 228文字]: '今日の競馬情報です。\n16日の新潟7R、4歳上1勝クラス、ダート1200メートル、13頭立てにおいて、5番人気のシャンハイナイトが5馬身差で圧勝しました。シャンハイナイトは美浦・村田一誠厩舎所属の4歳馬です。前走で同じ舞台で14着と惨敗していたにもかかわらず、連闘でレースぶりが激変したこの圧勝劇に、SNSでは「すんごい脚」「やばいわ」といった衝撃の反応が広がっています。負担重量52キロとなる河原田菜々騎手と初タッグを組み、五分の好スタートを切りました。'
+[0]  [重複除去] 228文字 → 227文字
   HTTP 200
-[0]  [Gemini生出力 235文字]: '最新のレース情報が入ってきました。5月17日に東京競馬場・芝1600メートルで行われる第21回ヴィクトリアマイル・G1についてです。最内枠をゲットしたカピリナに大駆けムードが漂っています。5月16日、美浦トレセンでの調整では、坂路をリズミカルに65秒1―14秒3で上がった後、角馬場でクールダウンし調整を終えました。実川助手は、特にイレ込んだりもせず、テンションもカイ食いも普段と変わらないとコメントしています。元気いっぱいですねと、カピリナの状態の良さを強調しました。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (235文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。5月17日に東京競馬場・芝1600メートルで行われる第21回ヴィクトリアマイル・G1についてです。最内枠をゲットしたカピリナに...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (212文字)
-[1]  プレビュー: レース関連の最新情報です。第21回ヴィクトリアマイル・G1を翌日に控えた5月16日、美浦トレセンでの情報です。24年の2冠牝馬であるチェルヴィニアが好気配を漂わ...
+[1]  [Gemini生出力 177文字]: '今週の競馬注目情報をお伝えします。JRAは5月16日、岩田望来騎手を騎乗停止処分としました。処分期間は日本ダービーが行われる週の5月30日と31日の2日間です。これは、京都3Rで4着に入ったアクアアイに騎乗した際、最後の直線で外側に斜行したことによるものです。この斜行により、ルナフィオーレ、メイショウユウゲン、タワワの進路が狭くなる事象が発生しました。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (177文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。JRAは5月16日、岩田望来騎手を騎乗停止処分としました。処分期間は日本ダービーが行われる週の5月30日と31日の2日間です。...
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (227文字)
+[0]  プレビュー: 今日の競馬情報です。16日の新潟7R、4歳上1勝クラス、ダート1200メートル、13頭立てにおいて、5番人気のシャンハイナイトが5馬身差で圧勝しました。シャンハ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 288文字]: '本日の競馬ニュースです。第21回ヴィクトリアマイル・G1に出走予定のエンブロイダリーは、5月16日に美浦トレセンで最終調整を行いました。坂路での最終追い切りで文句なしの動きを見せたエンブロイダリーは、この日も坂路で最終調整し、65秒3―15秒3で落ち着き十分に駆け上がっています。小西助手は「きのうレース用の蹄鉄に履き替えましたが、特に違和感もなくバランスも良かったです。冷静でいて気合乗りも良く我...」とコメントしており、陣営は「何も言うことがないぐらいの状態」と評価しています。第21回ヴィクトリアマイル・G1は、5月17日に東京競馬場・芝1600メートルで行われます。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (285文字)
-[2]  プレビュー: 本日の競馬ニュースです。第21回ヴィクトリアマイル・G1に出走予定のエンブロイダリーは、5月16日に美浦トレセンで最終調整を行いました。坂路での最終追い切りで文...
+[2]  [Gemini生出力 211文字]: '重要な競馬ニュースをお伝えします。\n16日、京都競馬場で行われたあずさ賞の結果です。3歳・1勝クラスの芝2000mで行われたこのレースは、4番人気のレッドラージャが接戦を制し優勝しました。坂井瑠星騎手が騎乗したレッドラージャは、5番手追走から脚を伸ばし、逃げ粘った5番人気のミッキージャンプにハナ差をつけ勝利しました。勝ちタイムは1分57秒9の良馬場でした。さらにクビ差の3着には、7番人気のワンダフルデイズが入りました。'
+[2]  [重複除去] 211文字 → 210文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (210文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。16日、京都競馬場で行われたあずさ賞の結果です。3歳・1勝クラスの芝2000mで行われたこのレースは、4番人気のレッドラージャ...
 
 3 件の脚本を生成しました。
