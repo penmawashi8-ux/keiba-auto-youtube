@@ -1,24 +1,24 @@
   [警告] トークンリフレッシュ失敗 (GOOGLE_CLIENT_ID): ('unauthorized_client: Unauthorized', {'error': 'unauthorized_client', 'error_description': 'Unauthorized'})
   サムネイル抽出中...
-  サムネイル抽出完了: output/thumbnail_0.jpg (61 KB)
+  サムネイル抽出完了: output/thumbnail_0.jpg (58 KB)
 === 名馬シリーズ YouTube アップロード開始 ===
-  馬名: スペシャルウィーク (key=special_week)
-  タイトル: 【名馬列伝】スペシャルウィーク〜黄金世代を駆け抜けた王道〜 #Shorts
+  馬名: メジロパーマー (key=mejiro_palmer)
+  タイトル: 【名馬列伝】メジロパーマー〜孤高の大逃げ馬〜 #Shorts
   OAuth2 リフレッシュ成功 (FAMOUS_HORSE_CLIENT_ID)
   OAuth2 リフレッシュ成功 (GOOGLE_CLIENT_ID_2)
   認証情報: 2 プロジェクト分ロード完了
-  アップロード中: 【名馬列伝】スペシャルウィーク〜黄金世代を駆け抜けた王道〜 #Shorts
+  アップロード中: 【名馬列伝】メジロパーマー〜孤高の大逃げ馬〜 #Shorts
   進捗: 13%
-  進捗: 27%
-  進捗: 40%
-  進捗: 54%
-  進捗: 67%
-  進捗: 81%
-  進捗: 94%
-  完了! Video ID: ILxazQYN-Bk
-  URL: https://www.youtube.com/watch?v=ILxazQYN-Bk
+  進捗: 26%
+  進捗: 39%
+  進捗: 52%
+  進捗: 65%
+  進捗: 79%
+  進捗: 92%
+  完了! Video ID: R6umtPIg_Tk
+  URL: https://www.youtube.com/watch?v=R6umtPIg_Tk
   コメント無効化完了。
-  サムネイルアップロード中: output/thumbnail_0.jpg (61 KB)
+  サムネイルアップロード中: output/thumbnail_0.jpg (58 KB)
   サムネイルアップロード完了。
   結果を保存: output/famous_horse_upload_result.txt
 === アップロード完了 ===

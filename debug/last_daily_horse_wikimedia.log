@@ -1,16 +1,20 @@
-=== Wikimedia Commons 画像検索: スペシャルウィーク ===
-  検索クエリ: 「スペシャルウィーク racehorse」
-  ヒット数: 20 件
-  チェック: File:Special Week 19991031.jpg
-  チェック: File:Owner Usuda Hiroyoshi.svg
-  チェック: File:Special Week.png
-  チェック: File:Mum special - week of July 6, closing July 11th - Geneva Floral Co. (IA CAT31335994).pdf
-  チェック: File:National Police Week 5k (52902762364).jpg
-  チェック: File:National wildlife week (IA nationalwildlife1939unit).pdf
-  チェック: File:Spring clean-up week to prevent fires, accidents, waste (IA CAT31064486).pdf
-  チェック: File:Grow trees. Facts for American forest week, April 18-24, 1926 (IA CAT10680093).pdf
-  チェック: File:KATUSA-U.S. Friendship Week Day 1 - U.S. Army Garrison Humphreys, South Korea - 16 April 2012.jpg
-  チェック: File:KATUSA U.S. Friendship Week - Day 3 - U.S. Army Garrison Humphreys, South Korea - 18 April 2012 (7089886465).jpg
+=== Wikimedia Commons 画像検索: メジロパーマー ===
+  検索クエリ: 「メジロパーマー racehorse」
+  ヒット数: 2 件
+  チェック: File:Mejiropa-ma.JPG
+  チェック: File:En-voristu-mejiro palmer.ogg
+  検索クエリ: 「メジロパーマー 競走馬」
+  ヒット数: 2 件
+  チェック: File:Mejiropa-ma.JPG
+  チェック: File:En-voristu-mejiro palmer.ogg
+  検索クエリ: 「メジロパーマー horse portrait」
+  ヒット数: 0 件
+  検索クエリ: 「メジロパーマー horse race」
+  ヒット数: 1 件
+  チェック: File:Mejiropa-ma.JPG
+  検索クエリ: 「メジロパーマー」
+  ヒット数: 2 件
+  チェック: File:Mejiropa-ma.JPG
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()
