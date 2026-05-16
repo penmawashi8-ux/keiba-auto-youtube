@@ -1,68 +1,135 @@
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[2]  [ファクトチェックNG] NG: 4コーナー手前で西啓
+[2]  [ファクトチェックNG] NG: イフェイオンは202
 [2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [ファクトチェックNG] NG: 元記事に存在しないオッズ
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 元記事に存在しないオッズ「2
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【JRA・WIN5】本日のWIN5は的中130票、配当250万570円 ---
-[0] Gemini入力本文 485文字: '5/16(土)のWIN5対象レースの結果は、以下の通り。\n的中馬番 8-1-12-7-3\n払戻金 2,500,570円\n的中票数 130票\n次回へのキャリーオーバー 0円\n発売票数 4,643,923票\n発売金額 464,392,300円\n'
+--- 記事[0]: 【ヴィクトリアマイル前日オッズ】エンブロイダリーが2.0倍で1番人気 ---
+[0] Gemini入力本文 347文字: '5月17日に東京競馬場で行われる第21回ヴィクトリアマイル(4歳上・牝・GI・芝1600m)の前日オッズがJRAより発表された。\n\u3000単勝オッズ1番人気には、昨年の2冠牝馬で前哨戦の阪神牝馬Sを勝ったエンブロイダリー(牝4、美浦・森一誠厩舎)'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【新潟大賞典】スタート直後の接触が響いた1番人気ドゥラドーレスは4着　悲願タイトルはまたもお預け ---
-[1] Gemini入力本文 351文字: '◆第48回新潟大賞典・G3(5月16日、新潟競馬場・芝2000メートル、良)\n\t\t\t\t\u3000春の新潟ハンデ重賞が15頭で争われ、1番人気のドゥラドーレス(牡7歳、美浦・宮田敬介厩舎、父ドゥラメンテ)は4着。最後は内から伸びてきたが、外を回った3'
+--- 記事[1]: 7頭の進路に影響　富田暁騎手が新潟6Rの斜行で日本ダービーウィークの5月30日、31日が騎乗停止処分に ---
+[1] Gemini入力本文 349文字: 'JRAは富田暁騎手＝栗東・フリー＝に5月30日、31日の2日間の騎乗停止処分を科した。\n\t\t\t\t\u3000同騎手は16日の新潟6R・3歳未勝利(直線芝1000メートル)で、勝ったアカウフリューゲルに騎乗した際、スタート直後から外ラチまで大きく斜行し'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【阪神アーバン競馬プレーバック】菊の姫が菊を制した　重賞・のじぎく賞は大井のプリンセスデイジーが快勝 ---
-[2] Gemini入力本文 342文字: '14日のメーン11Rでは3歳牝馬限定戦の重賞「のじぎく賞」(12頭立てフルゲート、ダート1700メートル)が行われ、3番人気で大井から遠征のプリンセスデイジー(田中人、父シニスターミニスター)が快勝。重賞初制覇をつかんだ。\n\u3000後続の馬を一度'
+--- 記事[2]: 2024年フェアリーS覇者イフェイオンはレース中に故障を発症し予後不良に ---
+[2] Gemini入力本文 348文字: '2024年のフェアリーSを制したイフェイオン(牝5歳、栗東・杉山佳明厩舎、父エピファネイア)が5月16日、京都11R・鞍馬Sのレース中に故障を発症し、予後不良と診断された。\n\t\t\t\t\u30004コーナーでバランスを崩して転倒し、競走を中止。その後の'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 178文字]: '競馬ファン注目の情報です。第48回新潟大賞典・G3が5月16日に新潟競馬場・芝2000メートル、良馬場で開催されました。春の新潟ハンデ重賞は15頭で争われ、1番人気のドゥラドーレスは4着となりました。最後は内から伸びてきましたが、外を回った3頭には届きませんでした。ドゥラドーレスにとって重賞8度目の挑戦でしたが、悲願のタイトルはまたもお預けとなりました。'
+[1]  [Gemini生出力 211文字]: '競馬速報です。JRAは富田暁騎手に5月30日、31日の2日間の騎乗停止処分を科しました。この処分は、同騎手が16日の新潟6R・3歳未勝利、直線芝1000メートルで、勝ったアカウフリューゲルに騎乗した際に発生した斜行が理由です。スタート直後から外ラチまで大きく斜行し、セイウンプーパ、イヌボウノシオカゼ、ツトムユニバース、シュタルク、ジョイアミーア、コンフィアンサ、クールフィールドの7頭の進路が狭くなる事象が発生しました。'
   HTTP 200
-[0]  [Gemini生出力 249文字]: '本日の競馬ニュースです。\n5月16日土曜日のWIN5は、的中130票で配当は250万570円となりました。次回へのキャリーオーバーは0円です。この日のWIN5の発売票数は4,643,923票、発売金額は4億6439万2300円でした。対象レースの的中馬番は8-1-12-7-3です。1レース目の東京10R立川特別では、1番人気のメリディアンスターが勝利し、残票は1,243,744票となりました。続く2レース目の新潟10R中ノ岳特別では、2番人気のアークドールが勝ち、残票は146,087票でした。'
-[0]  [重複除去] 249文字 → 248文字
+[2]  [Gemini生出力 247文字]: '今日の競馬情報です。\n2024年のフェアリーSを制したイフェイオンが、5月16日の京都11R・鞍馬Sのレース中に故障を発症し、予後不良と診断されました。イフェイオンは牝5歳、栗東の杉山佳明厩舎所属です。レースでは4コーナーでバランスを崩して転倒し、競走を中止しました。その後の検査で右第1指関節開放性脱臼の症状が確認され、安楽死の処置がとられています。また、騎乗していた吉村誠之助騎手は左肩の負傷により、12Rを乗り替わりとなりました。イフェイオンは2023年10月に京都でデビューしています。'
+[2]  [重複除去] 247文字 → 246文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (178文字)
-[1]  プレビュー: 競馬ファン注目の情報です。第48回新潟大賞典・G3が5月16日に新潟競馬場・芝2000メートル、良馬場で開催されました。春の新潟ハンデ重賞は15頭で争われ、1番...
-  HTTP 200
-[2]  [Gemini生出力 219文字]: '競馬速報です。14日のメーン11Rでは、3歳牝馬限定戦の重賞「のじぎく賞」が行われました。12頭立てフルゲート、ダート1700メートルで行われたこのレースで、3番人気の大井から遠征したプリンセスデイジーが快勝し、重賞初制覇を飾りました。プリンセスデイジーは、後続の馬を一度も前に出させず、好発を決めて主導権を握りました。並んできた同じ大井のファーマドールを制し、3コーナーまではほぼ並走状態でしたが、4コーナー手前で西啓騎手が動きました。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (248文字)
-[0]  プレビュー: 本日の競馬ニュースです。5月16日土曜日のWIN5は、的中130票で配当は250万570円となりました。次回へのキャリーオーバーは0円です。この日のWIN5の発...
+[1]  → output/script_1.txt 保存 (211文字)
+[1]  プレビュー: 競馬速報です。JRAは富田暁騎手に5月30日、31日の2日間の騎乗停止処分を科しました。この処分は、同騎手が16日の新潟6R・3歳未勝利、直線芝1000メートル...
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 245文字]: '今週の競馬注目情報をお伝えします。5月17日に東京競馬場で行われる第21回ヴィクトリアマイルの前日オッズがJRAより発表されました。このレースは4歳上・牝のGI、芝1600mで行われます。単勝オッズ1番人気には、2.0倍でエンブロイダリーが支持されました。エンブロイダリーは昨年の2冠牝馬で、前哨戦の阪神牝馬Sを勝っています。続いての2番人気は、前走の阪神牝馬Sで僅差2着だったオークス馬カムニャックです。そして3番人気には、中山牝馬S5着からの巻き返しを期すニシノティアモが入っています。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
 [2] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 235文字]: '競馬速報です。14日のメーン11Rでは、3歳牝馬限定戦の重賞「のじぎく賞」が行われました。12頭立てフルゲート、ダート1700メートルで行われたこのレースでは、3番人気で大井から遠征したプリンセスデイジーが快勝し、重賞初制覇を飾りました。プリンセスデイジーは田中人騎手が騎乗し、後続の馬を一度も前に出さないレース運びを見せました。好発を決め、並んできた同じ大井のファーマドールを制して主導権を握りました。3コーナーまではほぼ並走状態でしたが、4コーナー手前で西啓...。'
+[2]  [Gemini生出力 213文字]: '今日の競馬情報です。2024年のフェアリーSを制したイフェイオンが、5月16日の京都11R・鞍馬Sのレース中に故障を発症し、予後不良と診断されました。イフェイオンは4コーナーでバランスを崩して転倒し、競走を中止。その後の検査で右第1指関節開放性脱臼の症状が確認され、安楽死の処置がとられました。騎乗していた吉村誠之助騎手は左肩の負傷により、12Rを乗り替わりとなっています。同馬は2023年10月に京都でデビューしていました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (232文字)
-[2]  プレビュー: 競馬速報です。14日のメーン11Rでは、3歳牝馬限定戦の重賞「のじぎく賞」が行われました。12頭立てフルゲート、ダート1700メートルで行われたこのレースでは、...
+[2]  → output/script_2.txt 保存 (213文字)
+[2]  プレビュー: 今日の競馬情報です。2024年のフェアリーSを制したイフェイオンが、5月16日の京都11R・鞍馬Sのレース中に故障を発症し、予後不良と診断されました。イフェイオ...
+  HTTP 200
+[0]  [Gemini生出力 216文字]: '今週の競馬注目情報をお伝えします。5月17日に東京競馬場で行われる第21回ヴィクトリアマイル、4歳上・牝・GI・芝1600mの前日オッズがJRAより発表されました。単勝オッズ1番人気には、昨年の2冠牝馬で前哨戦の阪神牝馬Sを勝ったエンブロイダリーが2.0倍で支持されています。続いて2番人気は、前走・阪神牝馬Sで僅差2着のオークス馬カムニャックです。3番人気には、中山牝馬S5着からの巻き返しを期すニシノティアモが名を連ねています。'
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 206文字]: '今週の競馬注目情報をお伝えします。5月17日に東京競馬場で行われる第21回ヴィクトリアマイルの前日オッズがJRAより発表されました。単勝オッズ1番人気には、昨年の2冠牝馬で前哨戦の阪神牝馬Sを勝ったエンブロイダリーが2.0倍で支持されています。続いての2番人気は、前走・阪神牝馬Sで僅差2着だったオークス馬カムニャックです。そして3番人気には、中山牝馬S5着からの巻き返しを期すニシノティアモが名を連ねています。'[0]  [ファクトチェックNG] NG: 元記事に存在しないオ
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
 
-3 件の脚本を生成しました。
+[0] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
