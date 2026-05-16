@@ -1,10 +1,10 @@
-date: 2026-05-15T13:04:31.127042Z
+date: 2026-05-16T00:11:17.584583Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ct9NVEdd6Mw title=半兄は今年の中山金杯覇者 ギリーカラムがダートでガラリ一変なるか
-OK project=1 video_id=XtLieQPym88 title=【注目馬動向】目黒記念で重賞初挑戦のウィクトルウェルス　鞍上は引き続きルメール騎
-OK project=1 video_id=jtsrTVgTYzs title=阪神アーバンナイター開幕!　園田競馬場でバージョンアップしたイルミネーションの点
+OK project=1 video_id=F8c5H1cTW-s title=荒れるハンデ重賞新潟大賞典 距離短縮組に注目だ
+OK project=1 video_id=FoPA-y3R4Hc title=【京都HJ予想】名物障害コースに実力馬集う 三段跳び攻略が焦点
+OK project=1 video_id=oqerw6gJ1Gc title=【新潟大賞典予想】直線勝負の名物ハンデ重賞 実績馬に試練の舞台
