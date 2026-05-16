@@ -1,68 +1,46 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 荒れるハンデ重賞新潟大賞典 距離短縮組に注目だ ---
-[0] Gemini入力本文 562文字: '土曜新潟メインは新潟大賞典(4歳上・GIII・芝2000m)。ここではレース傾向を近10回の人気別、脚質別、枠順別、ローテーション別、前走距離別、血統別の成績から探りたい。\n\u3000とにかく荒れるレースだ。人気別は1番人気が【0-2-2-6】、2'
+--- 記事[0]: 【ヴィクトリアM・土曜気配】「ノリさんなので一発があっても」と陣営も期待　最内枠ゲットのカピリナに大駆けムード漂う ---
+[0] Gemini入力本文 348文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月16日、美浦トレセン\n\t\t\t\t\u3000最内枠をゲットしたカピリナ(牝5歳、美浦・田島俊明厩舎、父ダンカーク)に大駆けムードが漂う。この日は坂路をリズミカルに65'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【京都HJ予想】名物障害コースに実力馬集う 三段跳び攻略が焦点 ---
-[1] Gemini入力本文 446文字: '京都競馬場のダートコースのさらに内側に設けられている障害コースを2周半。3930mの距離に「三段跳び」と言われる独特のバンケット含む延べ18回の障害が用意されている難コースだけに操作性はもちろん、レースにおける集中力も問われるレースだ。最終'
+--- 記事[1]: 【ヴィクトリアM・土曜気配】24年2冠牝馬チェルヴィニアが好気配　2戦連続ブリンカー着用で完全復活へ ---
+[1] Gemini入力本文 350文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月16日、美浦トレセン\n\t\t\t\t\u300024年の2冠牝馬チェルヴィニア(牝5歳、美浦・木村哲也厩舎、父ハービンジャー)が好気配を漂わせる。この日は坂路を64秒6―'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【新潟大賞典予想】直線勝負の名物ハンデ重賞 実績馬に試練の舞台 ---
-[2] Gemini入力本文 487文字: 'ワンターンの舞台で行われる芝2000m戦のハンデ戦。4角を回ってからゴールまで659m。上がり3ハロンの最速馬は過去10年間で[2-3-3-3]だから、長い直線を走り切れる持久力と同時に、最後に瞬発力も要求されるコースだ。過去10年で1番人'
+--- 記事[2]: 【ヴィクトリアM・土曜気配】エンブロイダリーは最終調整でも落ち着き十分　陣営「何も言うことがないぐらいの状態」 ---
+[2] Gemini入力本文 349文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル)＝5月16日、美浦トレセン\n\t\t\t\t\u300016日の坂路での最終追い切りで文句なしの動きを見せたエンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)は、こ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 291文字]: '最新のレース情報が入ってきました。京都ハイジャンプは、京都競馬場のダートコースのさらに内側に設けられている障害コースを2周半するレースです。3930mの距離には、「三段跳び」と言われる独特のバンケットを含む延べ18回の障害が用意されており、操作性はもちろん、レースにおける集中力も問われる難コースとなっています。最終障害を跳んだあとはダートコースを横切り、芝コースに出るため、最後の直線に障害はないものの、ある程度の先行力も欲しいところです。このレースでは◎シホノスペランツァが注目されており、枠順も確定しました。ネビーイームは4枠4番、シホノスペランツァは5枠5番に入っています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (291文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。京都ハイジャンプは、京都競馬場のダートコースのさらに内側に設けられている障害コースを2周半するレースです。3930mの距離には...
+[1]  [Gemini生出力 212文字]: 'レース関連の最新情報です。第21回ヴィクトリアマイル・G1を翌日に控えた5月16日、美浦トレセンでの情報です。24年の2冠牝馬であるチェルヴィニアが好気配を漂わせています。この日は坂路を64秒6―14秒2で駆け上がり、その後はWコースへ向かいました。終始、気合が乗った様子で臨戦態勢を整えています。木村調教師は「特にトラブルはなく、元気に過ごしてくれています。いい状態で出せるように努めたいと思います」とコメントしています。'
   HTTP 200
-[0]  [Gemini生出力 340文字]: '重要な競馬ニュースをお伝えします。土曜新潟メインは新潟大賞典、4歳上・GIII・芝2000mです。このレースはとにかく荒れる傾向があり、近10回の人気別成績では、1番人気が【0-2-2-6】、2番人気が【0-1-1-8】と散々な成績です。対照的に7番人気は【3-1-1-5】と大活躍しており、2桁人気も2勝、2着1回、3着4回と健闘しています。過去5年で見ても1番人気は(0-1-0-4)と不振です。昨年の新潟大賞典を制したシリウスコルトに続き、今年は24年青葉賞を制した超良血馬シュガークンが約2年ぶりの復帰戦を迎えます。また、ディープ産駒が17年連続のJRA重賞制覇なるかにも注目が集まり、トーセンリョウが新潟大賞典で初タイトルを狙います。距離短縮組にも注目が集まる一戦です。'
-  HTTP 200
-[2]  [Gemini生出力 4文字]: 'SKIP'
-[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 487文字）
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
+[0]  [Gemini生出力 235文字]: '最新のレース情報が入ってきました。5月17日に東京競馬場・芝1600メートルで行われる第21回ヴィクトリアマイル・G1についてです。最内枠をゲットしたカピリナに大駆けムードが漂っています。5月16日、美浦トレセンでの調整では、坂路をリズミカルに65秒1―14秒3で上がった後、角馬場でクールダウンし調整を終えました。実川助手は、特にイレ込んだりもせず、テンションもカイ食いも普段と変わらないとコメントしています。元気いっぱいですねと、カピリナの状態の良さを強調しました。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (340文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。土曜新潟メインは新潟大賞典、4歳上・GIII・芝2000mです。このレースはとにかく荒れる傾向があり、近10回の人気別成績では...
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[0]  → output/script_0.txt 保存 (235文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。5月17日に東京競馬場・芝1600メートルで行われる第21回ヴィクトリアマイル・G1についてです。最内枠をゲットしたカピリナに...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (212文字)
+[1]  プレビュー: レース関連の最新情報です。第21回ヴィクトリアマイル・G1を翌日に控えた5月16日、美浦トレセンでの情報です。24年の2冠牝馬であるチェルヴィニアが好気配を漂わ...
   HTTP 200
-[2]  [Gemini生出力 278文字]: '競馬速報です。\n新潟大賞典は、ワンターンの舞台で行われる芝2000mのハンデ戦です。4コーナーを回ってからゴールまでは659mと長く、上がり3ハロンの最速馬は過去10年間で[2-3-3-3]という成績です。このことから、長い直線を走り切れる持久力と同時に、最後に瞬発力も要求されるコースと言えます。過去10年で1番人気馬は[0-2-2-6]と不振傾向にあり、3番人気以内まで枠を広げても[2-7-3-18]と、人気馬にとっては鬼門のようなレースです。また、トップハンデ馬も延べ15頭の出走で[2-1-0-12]と、実績上位馬には厳しいレースとなっています。'
-[2]  [重複除去] 278文字 → 277文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (277文字)
-[2]  プレビュー: 競馬速報です。新潟大賞典は、ワンターンの舞台で行われる芝2000mのハンデ戦です。4コーナーを回ってからゴールまでは659mと長く、上がり3ハロンの最速馬は過去...
+[2]  [Gemini生出力 288文字]: '本日の競馬ニュースです。第21回ヴィクトリアマイル・G1に出走予定のエンブロイダリーは、5月16日に美浦トレセンで最終調整を行いました。坂路での最終追い切りで文句なしの動きを見せたエンブロイダリーは、この日も坂路で最終調整し、65秒3―15秒3で落ち着き十分に駆け上がっています。小西助手は「きのうレース用の蹄鉄に履き替えましたが、特に違和感もなくバランスも良かったです。冷静でいて気合乗りも良く我...」とコメントしており、陣営は「何も言うことがないぐらいの状態」と評価しています。第21回ヴィクトリアマイル・G1は、5月17日に東京競馬場・芝1600メートルで行われます。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (285文字)
+[2]  プレビュー: 本日の競馬ニュースです。第21回ヴィクトリアマイル・G1に出走予定のエンブロイダリーは、5月16日に美浦トレセンで最終調整を行いました。坂路での最終追い切りで文...
 
 3 件の脚本を生成しました。
