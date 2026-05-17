@@ -1,73 +1,68 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: このヴィクトリアマイル
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【テレ玉杯】ゴンサルベスが東京初勝利!「最高です」 1番人気エルマーゴで差し切りV ---
-[0] Gemini入力本文 341文字: '17日の東京9R・テレ玉杯(芝1600メートル)で1番人気エルマーゴ(牡4＝加藤征、父サートゥルナーリア)が直線外から差し切りV。騎乗したゴンサルベスは東京初勝利を挙げた。\n\u3000鞍上は「手応えがありましたし、枠も良かった。ラスト200メートル'
+--- 記事[0]: 【ヴィクトリアM】重賞3勝馬で3番人気のクイーンズウォークは3着　またもG1タイトル届かず ---
+[0] Gemini入力本文 354文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル、良)\n\t\t\t\t\u3000マイル女王決定戦が18頭で争われ、3番人気のクイーンズウォーク(牝5歳、栗東・中内田充正厩舎、父キズナ)は4角10番手から上がり3ハロン33秒1'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【テレ玉杯】「最高です!　夢でした」短期免許で来日中のゴンサルベス騎手が東京初勝利　エルマーゴを勝利導く ---
-[1] Gemini入力本文 348文字: '5月17日の東京9R・テレ玉杯(4歳上2勝クラス、芝1600メートル＝12頭立て)は、1番人気のエルマーゴ(牡4歳、美浦・加藤征弘厩舎、父サートゥルナーリア)が、直線で鋭く抜け出して2連勝を飾った。短期免許で来日中のゴンサルベス騎手は、この'
+--- 記事[1]: 【ヴィクトリアM】エフフォーリアの全妹ジョスランは8着　G1・2度目の挑戦で結果残せず ---
+[1] Gemini入力本文 353文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル、良)\n\t\t\t\t\u3000マイル女王決定戦が18頭で争われ、戸崎圭太騎手騎乗で9番人気のジョスラン(牝4歳、美浦・鹿戸雄一厩舎、父エピファネイア)は8着に終わった。\n\t\t'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【阪神アーバン競馬プレーバック】約2000人が光に包まれた　阪神アーバンナイターが開幕 ---
-[2] Gemini入力本文 340文字: '15日、今年初のナイター開催となる「阪神アーバンナイター」が開幕した。25週にわたって行われる。9R終了後、イルミネーションの点灯式が開かれた。\n\u30001日には地元住民へ向け先行して開催されたが、この日は1994人もの入場者が、きらびやかな電飾'
+--- 記事[2]: “ヴィクトリアマイル男”だ!　エンブロイダリーで完勝のC・ルメール、このレース2年連続5勝目! ---
+[2] Gemini入力本文 376文字: '◇第21回ヴィクトリアマイル\u3000芝1600メートル(2026年5月17日\u3000東京競馬場)\n\u30005月らしからぬ暑さの中での決戦となった「ヴィクトリアマイル」は1番人気のエンブロイダリーが完勝した。\n\u3000直線横並ぶから抜け出し、1馬身1/4の着差以上の'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 269文字]: '注目の競馬情報をお届けします。\n第21回ヴィクトリアマイルが2026年5月17日、東京競馬場にて芝1600メートルで行われました。5月らしからぬ暑さの中での決戦となったこのレースは、1番人気のエンブロイダリーが完勝しました。直線で横並ぶ状態から抜け出し、2着に入った同期のライバル・カムニャックを1馬身1/4の着差で寄せ付けない走りを見せました。エンブロイダリーは昨年、桜花賞と秋華賞を制しており、G1は3勝目となります。鞍上のC・ルメールは昨年のアスコリピチェーノに続く連覇を達成し、このヴィクトリアマイルで2年連続5勝目を飾りました。'
+[2]  [redirectフィルター] 269文字 → 253文字
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 245文字]: '重要な競馬ニュースをお伝えします。15日、今年初のナイター開催となる「阪神アーバンナイター」が開幕しました。このナイター開催は25週にわたって行われます。9R終了後にはイルミネーションの点灯式が開かれました。1日には地元住民へ向け先行して開催されましたが、この日は1994人もの入場者が、きらびやかな電飾の彩りに見入りました。昨年比2倍となる約80万個の電飾は圧巻です。また、芝生広場も新設され、家族連れでも安心して楽しめる設計になりました。梅田からは乗り継ぎ時間を考慮しても約25分です。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (245文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。15日、今年初のナイター開催となる「阪神アーバンナイター」が開幕しました。このナイター開催は25週にわたって行われます。9R終...
+[0]  [Gemini生出力 278文字]: '本日の競馬ニュースです。第21回ヴィクトリアマイル・G1が5月17日に東京競馬場・芝1600メートルで行われました。マイル女王決定戦は18頭で争われ、3番人気のクイーンズウォークは3着に終わっています。クイーンズウォークは重賞3勝をマークし、昨年の当レースでも2着でしたが、またもG1タイトルには届きませんでした。レースでは、4角10番手から上がり3ハロン33秒1の末脚で追い上げましたが、エリカエクスプレスとの写真判定の末、3着という結果でした。このクイーンズウォークは、16日の新潟大賞典をグランディアで制した西村淳也騎手と中内田充正厩舎のコンビです。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (278文字)
+[0]  プレビュー: 本日の競馬ニュースです。第21回ヴィクトリアマイル・G1が5月17日に東京競馬場・芝1600メートルで行われました。マイル女王決定戦は18頭で争われ、3番人気の...
   HTTP 200
-[0]  [Gemini生出力 205文字]: '注目の競馬情報をお届けします。\n17日の東京9R・テレ玉杯、芝1600メートルでは、1番人気エルマーゴが直線外から差し切り勝利を収めました。騎乗したゴンサルベスは、この勝利で東京初勝利を挙げました。鞍上は「手応えがありましたし、枠も良かった。ラスト200メートルでも少し余裕がありました。クラスが上がっても期待できる」と愛馬を称賛しています。東京での記念すべき1勝については「最高です」と笑顔で振り返りました。'
-[0]  [redirectフィルター] 205文字 → 189文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (189文字)
-[0]  プレビュー: 17日の東京9R・テレ玉杯、芝1600メートルでは、1番人気エルマーゴが直線外から差し切り勝利を収めました。騎乗したゴンサルベスは、この勝利で東京初勝利を挙げま...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 185文字]: 'レース関連の最新情報です。5月17日の東京9R・テレ玉杯は、4歳上2勝クラスの芝1600メートル、12頭立てで行われました。このレースでは、1番人気のエルマーゴが直線で鋭く抜け出し、見事2連勝を飾っています。勝ち時計は良馬場で1分32秒8でした。短期免許で来日中のゴンサルベス騎手は、自身初参戦となる東京コースで初白星を挙げ、「最高です! 夢でした」と喜びを語りました。'
+[1]  [Gemini生出力 237文字]: '今週の競馬注目情報をお伝えします。第21回ヴィクトリアマイル・G1、マイル女王決定戦が5月17日に東京競馬場・芝1600メートル、良で18頭により争われました。戸崎圭太騎手騎乗で9番人気のジョスランは8着に終わっています。ジョスランは21年に有馬記念などG1・3勝をマークし、年度代表馬に輝いたエフフォーリアの全妹です。今年初戦の小倉牝馬Sで重賞初制覇を達成し、タイトルを手にしました。昨年の秋華賞(4着)に続き、2度目のG1挑戦でしたが、結果を残すことはできませんでした。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (185文字)
-[1]  プレビュー: レース関連の最新情報です。5月17日の東京9R・テレ玉杯は、4歳上2勝クラスの芝1600メートル、12頭立てで行われました。このレースでは、1番人気のエルマーゴ...
+[1]  → output/script_1.txt 保存 (237文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。第21回ヴィクトリアマイル・G1、マイル女王決定戦が5月17日に東京競馬場・芝1600メートル、良で18頭により争われました。...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 242文字]: '注目の競馬情報をお届けします。\n2026年5月17日に東京競馬場で行われた第21回ヴィクトリアマイル、芝1600メートルは、5月らしからぬ暑さの中での決戦となりました。1番人気のエンブロイダリーが完勝し、直線横並ぶから抜け出して、1馬身1/4の着差以上の完勝を見せました。2着に入った同期のライバル・カムニャックを寄せ付けませんでした。エンブロイダリーは昨年、桜花賞と秋華賞を制しており、G1は3勝目となります。鞍上のC・ルメールは、昨年のアスコリピチェーノに続く連覇を達成しました。'
+[2]  [redirectフィルター] 242文字 → 226文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (226文字)
+[2]  プレビュー: 2026年5月17日に東京競馬場で行われた第21回ヴィクトリアマイル、芝1600メートルは、5月らしからぬ暑さの中での決戦となりました。1番人気のエンブロイダリ...
 
 3 件の脚本を生成しました。
