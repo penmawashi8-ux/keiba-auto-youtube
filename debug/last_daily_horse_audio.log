@@ -2,11 +2,11 @@ Kokoro TTS が利用可能です。
 === 音声生成開始 ===
 字幕フォント: Noto Sans CJK JP
 並列ワーカー数: 1
-  [0] タイトル読み上げ追加: 「メジロパーマー」
+  [0] タイトル読み上げ追加: 「テンポイント」
 
---- 音声生成 [0] (345文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
-  音声: output/audio_0.mp3 (455 KB)
-  音声バリエーション適用: pitch×0.9242 vol-0.55dB
-  字幕: output/subtitles_0.ass (19 セグメント)
+--- 音声生成 [0] (317文字) engine=edge-tts voice=ja-JP-NanamiNeural ---
+  音声: output/audio_0.mp3 (446 KB)
+  音声バリエーション適用: pitch×0.9127 vol-0.41dB
+  字幕: output/subtitles_0.ass (18 セグメント)
 
 1/1 件の音声を生成しました。
