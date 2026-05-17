@@ -1,10 +1,10 @@
-date: 2026-05-17T06:33:35.337164Z
+date: 2026-05-17T07:40:38.119008Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lGzUBEdNXkc title=【テレ玉杯】ゴンサルベスが東京初勝利!「最高です」 1番人気エルマーゴで差し切り
-OK project=1 video_id=JoJzHvaNGMw title=【テレ玉杯】「最高です!　夢でした」短期免許で来日中のゴンサルベス騎手が東京初勝
-OK project=1 video_id=iXoeqzmIymQ title=【阪神アーバン競馬プレーバック】約2000人が光に包まれた　阪神アーバンナイター
+OK project=1 video_id=AOCSkNOfrxk title=【ヴィクトリアM】重賞3勝馬で3番人気のクイーンズウォークは3着　またもG1タイ
+OK project=1 video_id=puvuyVOX37U title=【ヴィクトリアM】エフフォーリアの全妹ジョスランは8着　G1・2度目の挑戦で結果
+OK project=1 video_id=7NVgvheQzq8 title=“ヴィクトリアマイル男”だ!　エンブロイダリーで完勝のC・ルメール、このレース2
