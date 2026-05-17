@@ -1,10 +1,10 @@
-date: 2026-05-17T09:05:42.986140Z
+date: 2026-05-17T10:29:52.939473Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XozbmbBpvMA title=【ヴィクトリアMレース後コメント】エンブロイダリー C.ルメール騎手ら
-OK project=1 video_id=i3IY9Uy_7To title=【佐賀かささぎスプリント結果】ラウダーティオが追い比べを制し重賞2勝目
-OK project=1 video_id=QQIM8oPP6r4 title=【平安S】ナルカミ、ロードクロンヌなどが登録
+OK project=1 video_id=VRQ0sy72kGE title=【錦Sレース後コメント】カズミクラーシュ浜中俊騎手ら
+OK project=1 video_id=FoqeT1KYoJU title=【信濃川特別レース後コメント】マリアイリダータ舟山瑠泉騎手ら
+OK project=1 video_id=7O1w6B5N4WA title=【ヴィクトリアM】「本当にこの距離では敵なし」エンブロイダリー完勝劇に　ノーザン
