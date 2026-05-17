@@ -165,6 +165,7 @@ def upload_video(youtube, video_path: str, title: str, description: str, tags: l
         "status": {
             "privacyStatus": "public",
             "selfDeclaredMadeForKids": False,
+            "commentStatus": "disabled",
         },
     }
     media = MediaFileUpload(video_path, mimetype="video/mp4", resumable=True, chunksize=1024 * 1024)
@@ -192,17 +193,18 @@ def upload_video(youtube, video_path: str, title: str, description: str, tags: l
 
 
 def disable_comments(youtube, video_id: str) -> None:
-    """アップロード後にコメントを無効化する。"""
+    """アップロード後にコメント無効化を確認・再設定する（upload時に設定済みだがフォールバック）。"""
     try:
-        youtube.videos().update(
+        response = youtube.videos().update(
             part="status",
             body={"id": video_id, "status": {"commentStatus": "disabled"}},
         ).execute()
-        print("  コメント無効化完了。")
+        actual_status = response.get("status", {}).get("commentStatus", "unknown")
+        print(f"  コメント設定確認: commentStatus={actual_status}")
     except HttpError as e:
-        print(f"  [警告] コメント無効化失敗 HTTP {e.resp.status}: {e.content.decode()[:200]}", file=sys.stderr)
+        print(f"  [警告] コメント無効化確認失敗 HTTP {e.resp.status}: {e.content.decode()[:200]}", file=sys.stderr)
     except Exception as e:
-        print(f"  [警告] コメント無効化失敗: {e}", file=sys.stderr)
+        print(f"  [警告] コメント無効化確認失敗: {e}", file=sys.stderr)
 
 
 def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
