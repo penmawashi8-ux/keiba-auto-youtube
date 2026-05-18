@@ -1,5 +1,6 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 [0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -12,52 +13,42 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【平安S・松ケ下の特注馬】ロードクロンヌがコーナー4つの舞台で巻き返す　ここでは主役を張れる一頭 ---
-[0] Gemini入力本文 349文字: '◆第33回平安S・G3(5月23日、京都競馬場・ダート1900メートル)\n\t\t\t\t\u3000フェブラリーSで11着に敗れたロードクロンヌ(牡5歳、栗東・四位洋文厩舎、父リオンディーズ)が巻き返す。前走は初のG1で、初のマイル戦、初の東京コースと厳し'
+--- 記事[0]: 【平安S・坂本の特注馬】7歳馬ヴァルツァーシャルは古豪健在　状態は高いレベルで安定し馬券的な妙味も ---
+[0] Gemini入力本文 348文字: '◆第33回平安S・G3(5月23日、京都競馬場・ダート1900メートル)\n\t\t\t\t\u3000幅広い世代の馬が激突する一戦で、昨年のジャパンダートクラシックの覇者ナルカミなど4歳勢に目がいきがちだが、ここは実績上位のベテランを評価したい。24年のマー'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【日本ダービー出走馬決定順】エムズビギンまでの18頭が出走可能 カフジエメンタールとケントンが除外対象 ---
-[1] Gemini入力本文 511文字: '5月31日(日)に東京競馬場で行われる日本ダービー(3歳牡牝・GI・芝2400m)。フルゲート18頭に対し20頭が登録しており、回避馬が出ない場合、エムズビギンまでが出走可能。カフジエメンタールとケントンが除外対象となる。\n\u3000出走馬決定順、'
+--- 記事[1]: 【平安S想定騎手】ナルカミは戸崎圭太騎手、ロードクロンヌは横山和生騎手 ---
+[1] Gemini入力本文 343文字: '5月23日に京都競馬場で行われる、第33回平安ステークス(4歳上・GIII・ダ1900m)の登録馬・想定騎手は以下の通り。\n\u3000昨年のジャパンダートクラシック勝ちの実績があるナルカミ(牡4、美浦・田中博康厩舎)は戸崎圭太騎手、昨年の2着馬で前'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 「エイの奇襲攻撃」で豪州の快速牝馬が引退決定　毒のトゲで左前脚を負傷　レディオブキャメロットが繁殖入りへ ---
-[2] Gemini入力本文 353文字: '5月12日にオーストラリアの海岸での運動中にエイに刺されて左前脚を負傷したオーストラリアのレディオブキャメロット(牝4歳、豪州・Gウォーターハウス＆Aボット厩舎、父リトゥンタイクーン＝年齢表記は豪州のもの)が引退したことが5月18日、分かっ'
+--- 記事[2]: 【平安ステークス展望】ダート重賞で好成績の田中博厩舎のナルカミに注目　堅実派ロードクロンヌも上位争い ---
+[2] Gemini入力本文 359文字: '第33回平安ステークス・G3は5月23日、京都競馬場のダート1900メートルで行われる。\n\t\t\t\t\u3000混戦模様だが、昨年のジャパンダートクラシックを勝ったナルカミ(牡4歳、美浦・田中博康厩舎、父サンダースノー)が反撃を狙う。昨年末のチャンピオ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 261文字]: 'レース関連の最新情報です。オーストラリアのレディオブキャメロットが引退したことが、5月18日に分かりました。この牝4歳の馬は、5月12日にオーストラリアの海岸での運動中にエイに刺され、左前脚を負傷したため引退が決定しました。レディオブキャメロットは、豪州のGウォーターハウス＆Aボット厩舎に所属し、父はリトゥンタイクーンです。2024年のゴールデンスリッパーSでG1初制覇を果たした豪州の強豪スプリンターでした。複数の海外メディアがこのニュースを報じており、英国のレーシングポスト電子版は「エイの奇襲攻撃」と伝えています。'
+[2]  [Gemini生出力 210文字]: '競馬ファン注目の情報です。\n第33回平安ステークス・G3は、5月23日に京都競馬場のダート1900メートルで行われます。混戦模様の中、昨年のジャパンダートクラシックを勝ったナルカミが反撃を狙います。ナルカミは、昨年末のチャンピオンズカップで13着、東京大賞典で6着、前走のダイオライト記念で5着と、近走はかみ合っていません。しかし、京都では新馬戦で圧勝した実績があります。堅実派のロードクロンヌも上位争いに注目されます。'
+[2]  [重複除去] 210文字 → 209文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (209文字)
+[2]  プレビュー: 競馬ファン注目の情報です。第33回平安ステークス・G3は、5月23日に京都競馬場のダート1900メートルで行われます。混戦模様の中、昨年のジャパンダートクラシッ...
   HTTP 200
-[0]  [Gemini生出力 231文字]: '今週の競馬注目情報をお伝えします。第33回平安S・G3が5月23日に京都競馬場、ダート1900メートルで開催されます。このレースでは、フェブラリーSで11着に敗れたロードクロンヌが巻き返しを図ります。前走は初のG1、初のマイル戦、初の東京コースと厳しい条件が重なりました。そのような状況でも、ロードクロンヌは果敢に2番手を先行し、初の大舞台で直線半ばまでは見せ場十分の内容でした。今回は舞台設定も好転し、ロードクロンヌはここでは主役を張れる一頭と見られています。'
+[0]  [Gemini生出力 264文字]: '最新のレース情報が入ってきました。第33回平安S・G3は、5月23日に京都競馬場のダート1900メートルで行われます。幅広い世代の馬が激突するこの一戦では、昨年のジャパンダートクラシックの覇者ナルカミなど4歳勢に注目が集まりがちです。しかし、実績上位のベテランを評価したいとされています。特に、24年のマーチSを制しているヴァルツァーシャルは、7歳を迎えても衰え知らずで期待が寄せられています。その状態は高いレベルで安定しており、馬券的な妙味もあると評価されています。ヴァルツァーシャルは重賞勝利以来、白星から遠ざかっています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (231文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。第33回平安S・G3が5月23日に京都競馬場、ダート1900メートルで開催されます。このレースでは、フェブラリーSで11着に敗...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (261文字)
-[2]  プレビュー: レース関連の最新情報です。オーストラリアのレディオブキャメロットが引退したことが、5月18日に分かりました。この牝4歳の馬は、5月12日にオーストラリアの海岸で...
+[0]  → output/script_0.txt 保存 (264文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。第33回平安S・G3は、5月23日に京都競馬場のダート1900メートルで行われます。幅広い世代の馬が激突するこの一戦では、昨年...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -75,26 +66,9 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 260文字]: '最新情報をお届けします。5月31日(日)に東京競馬場で行われる日本ダービーは、フルゲート18頭に対し20頭が登録しました。回避馬が出ない場合、エムズビギンまでが出走可能となり、カフジエメンタールとケントンが除外対象となります。優先出走馬にはロブチェン、リアライズシリウス、ライヒスアドラー、アスクエジンバラなどが名を連ねています。また、アウダーシアの日本ダービー鞍上がレーン騎手に決定し、23年タスティエーラ以来のテン乗りVを目指します。ゾロアストロは17日の追い切り後に肺からの鼻出血があり、日本ダービーを見送ります。'
-[1]  [redirectフィルター] 260文字 → 248文字
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 328文字]: '最新情報をお届けします。5月31日(日)に東京競馬場で行われる日本ダービー、3歳牡牝・GI・芝2400mについてです。フルゲート18頭に対し20頭が登録しており、回避馬が出ない場合、エムズビギンまでが出走可能となります。カフジエメンタールとケントンが除外対象です。優先出走馬にはロブチェン、リアライズシリウス、ライヒスアドラー、アスクエジンバラ、フォルテアンジ...などが名を連ねています。また、アウダーシアの日本ダービー鞍上がレーン騎手に決定し、23年タスティエーラ以来のテン乗りVを目指します。スプリングS覇者アウダーシアはレーンとの新コンビで日本ダービーに参戦します。ゾロアストロは17日の追い切り後に肺からの鼻出血があり、日本ダービーを見送ります。'
-[1]  [redirectフィルター] 328文字 → 316文字
+[1]  [Gemini生出力 176文字]: '最新のレース情報が入ってきました。5月23日に京都競馬場で行われる第33回平安ステークス、4歳上・GIII・ダート1900mの登録馬と想定騎手が明らかになりました。昨年のジャパンダートクラシック勝ちの実績があるナルカミには戸崎圭太騎手が、そして昨年の2着馬で前走フェブラリーS11着からの巻き返しを期すロードクロンヌには横山和生騎手が想定されています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (313文字)
-[1]  プレビュー: 5月31日(日)に東京競馬場で行われる日本ダービー、3歳牡牝・GI・芝2400mについてです。フルゲート18頭に対し20頭が登録しており、回避馬が出ない場合、エ...
+[1]  → output/script_1.txt 保存 (176文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。5月23日に京都競馬場で行われる第33回平安ステークス、4歳上・GIII・ダート1900mの登録馬と想定騎手が明らかになりまし...
 
 3 件の脚本を生成しました。
