@@ -1,10 +1,10 @@
-date: 2026-05-17T12:07:37.646832Z
+date: 2026-05-18T04:40:26.213599Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JjLAgbxyrGg title=【ヴィクトリアM】「それでも逆らいたい」「ヒモ穴を」エンブロイダリーVで1番人気
-OK project=1 video_id=r9Hpn9azw8o title=【BSイレブン賞レース後コメント】ラファル C.ルメール騎手ら
-OK project=1 video_id=1ygS5Je6kr8 title=【オークス展望】主役はスターアニス　20年3冠ジョッキーが2冠へ導く　今村聖奈は
+OK project=1 video_id=qhz4fuGYoDk title=【平安S・松ケ下の特注馬】ロードクロンヌがコーナー4つの舞台で巻き返す　ここでは
+OK project=1 video_id=fjmx7sUTH00 title=【日本ダービー出走馬決定順】エムズビギンまでの18頭が出走可能 カフジエメンター
+OK project=1 video_id=PXpGxR98jWk title=「エイの奇襲攻撃」で豪州の快速牝馬が引退決定　毒のトゲで左前脚を負傷　レディオブ
