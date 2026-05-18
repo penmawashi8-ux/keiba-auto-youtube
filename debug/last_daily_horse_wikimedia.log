@@ -1,16 +1,17 @@
-=== Wikimedia Commons 画像検索: テンポイント ===
-  検索クエリ: 「テンポイント racehorse」
-  ヒット数: 20 件
-  チェック: File:Streckenteiler (Ten-Point Divider).jpg
-  チェック: File:Ten-Point Divider (30245415453).jpg
-  チェック: File:Ten-Point Divider (30245415273).jpg
-  チェック: File:Ten-Point Divider (30245415333).jpg
-  チェック: File:Ten-Point Divider (30579642120).jpg
-  チェック: File:Interlaced ten-point star in irregular decagon.svg
-  チェック: File:Ten-Point Stag Brought Down by Two Scotch Hounds MET 21122.jpg
-  チェック: File:NDL11922119 Def. Doc. No. 980M- Ten Point-platform of the Anti-Japanese Save-the-Nation Movement.pdf
-  チェック: File:Cartographic Publishing - Road Maps - Drafting (NBY 4972).jpg
-  チェック: File:Cartographic Publishing - Road Maps - Drafting (NBY 5277).jpg
+=== Wikimedia Commons 画像検索: ハーツクライ ===
+  検索クエリ: 「ハーツクライ racehorse」
+  ヒット数: 7 件
+  チェック: File:Heart's Cry 20051225P01.jpg
+  チェック: File:The Arima Kinen 2005.jpg
+  チェック: File:A world my own (IA aworldmyown00kautrich).pdf
+  チェック: File:Many gods (IA manygods00ricerich).pdf
+  チェック: File:Collected plays and poems (IA collplayspoems02ricerich).pdf
+  チェック: File:Poems (IA poemsmaurice00thomrich).pdf
+  チェック: File:Memorial ode, and other poems (IA memorialode00newcrich).pdf
+  検索クエリ: 「ハーツクライ 競走馬」
+  ヒット数: 7 件
+  チェック: File:Heart's Cry 20051225P01.jpg
+  チェック: File:The Arima Kinen 2005.jpg
 Traceback (most recent call last):
   File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/download_famous_horse_image.py", line 258, in <module>
     main()
