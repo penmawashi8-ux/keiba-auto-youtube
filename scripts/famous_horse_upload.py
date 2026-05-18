@@ -178,8 +178,10 @@ def upload_video(youtube, video_path: str, title: str, description: str, tags: l
             if status:
                 print(f"  進捗: {int(status.progress() * 100)}%")
         video_id = response["id"]
+        upload_status = response.get("status", {})
         print(f"  完了! Video ID: {video_id}")
         print(f"  URL: https://www.youtube.com/watch?v={video_id}")
+        print(f"  [診断] アップロード時status: {upload_status}")
         return video_id
     except HttpError as e:
         reasons = _get_error_reasons(e)
@@ -193,18 +195,44 @@ def upload_video(youtube, video_path: str, title: str, description: str, tags: l
 
 
 def disable_comments(youtube, video_id: str) -> None:
-    """アップロード後にコメント無効化を確認・再設定する（upload時に設定済みだがフォールバック）。"""
+    """アップロード後にコメント設定を確認・強制無効化する。"""
     try:
-        response = youtube.videos().update(
+        # 現在のステータスを取得して診断
+        list_resp = youtube.videos().list(part="status", id=video_id).execute()
+        items = list_resp.get("items", [])
+        if not items:
+            print(f"  [警告] videos.list でビデオが見つかりません: {video_id}", file=sys.stderr)
+            return
+        current_status = items[0].get("status", {})
+        print(f"  [診断] 更新前status: {current_status}")
+
+        # 既存の書き込み可能フィールドを保持しつつ commentStatus を上書き
+        update_status = {
+            "privacyStatus": current_status.get("privacyStatus", "public"),
+            "selfDeclaredMadeForKids": current_status.get("selfDeclaredMadeForKids", False),
+            "commentStatus": "disabled",
+        }
+        update_resp = youtube.videos().update(
             part="status",
-            body={"id": video_id, "status": {"commentStatus": "disabled"}},
+            body={"id": video_id, "status": update_status},
         ).execute()
-        actual_status = response.get("status", {}).get("commentStatus", "unknown")
-        print(f"  コメント設定確認: commentStatus={actual_status}")
+        print(f"  [診断] 更新後status: {update_resp.get('status', {})}")
+
+        # 反映確認: videos.list で再取得
+        verify_resp = youtube.videos().list(part="status", id=video_id).execute()
+        verify_items = verify_resp.get("items", [])
+        if verify_items:
+            verified = verify_items[0].get("status", {})
+            print(f"  [診断] 反映確認status: {verified}")
+            comment_val = verified.get("commentStatus", "フィールドなし")
+            if comment_val == "disabled":
+                print("  コメント無効化 OK")
+            else:
+                print(f"  [警告] コメント無効化が反映されていません (commentStatus={comment_val})", file=sys.stderr)
     except HttpError as e:
-        print(f"  [警告] コメント無効化確認失敗 HTTP {e.resp.status}: {e.content.decode()[:200]}", file=sys.stderr)
+        print(f"  [警告] コメント無効化失敗 HTTP {e.resp.status}: {e.content.decode()[:400]}", file=sys.stderr)
     except Exception as e:
-        print(f"  [警告] コメント無効化確認失敗: {e}", file=sys.stderr)
+        print(f"  [警告] コメント無効化失敗: {e}", file=sys.stderr)
 
 
 def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
