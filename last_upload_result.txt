@@ -1,10 +1,10 @@
-date: 2026-05-18T05:16:05.423490Z
+date: 2026-05-18T07:02:58.250585Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Hl8Yo7WWsW0 title=【平安S・坂本の特注馬】7歳馬ヴァルツァーシャルは古豪健在　状態は高いレベルで安
-OK project=1 video_id=rIaFlHL2EgI title=【平安S想定騎手】ナルカミは戸崎圭太騎手、ロードクロンヌは横山和生騎手
-OK project=1 video_id=b91gBZbsSfs title=【平安ステークス展望】ダート重賞で好成績の田中博厩舎のナルカミに注目　堅実派ロー
+OK project=1 video_id=WZFI1yFgpiU title=ヴィクトリアMを制したエンブロイダリー　陣営「まだ化けるのでは」一夜明けて激戦の
+OK project=1 video_id=YmhYWI3WW2s title=「フランスの天才ジョッキー」ルメール騎手のG1・100勝記念Tシャツを100枚限
+OK project=1 video_id=MiHNNwUgevo title=ヴィクトリアマイル制したエンブロイダリーは一夜明け、馬房で静養
