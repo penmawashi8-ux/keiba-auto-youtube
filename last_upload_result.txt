@@ -1,10 +1,10 @@
-date: 2026-05-18T04:40:26.213599Z
+date: 2026-05-18T05:16:05.423490Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qhz4fuGYoDk title=【平安S・松ケ下の特注馬】ロードクロンヌがコーナー4つの舞台で巻き返す　ここでは
-OK project=1 video_id=fjmx7sUTH00 title=【日本ダービー出走馬決定順】エムズビギンまでの18頭が出走可能 カフジエメンター
-OK project=1 video_id=PXpGxR98jWk title=「エイの奇襲攻撃」で豪州の快速牝馬が引退決定　毒のトゲで左前脚を負傷　レディオブ
+OK project=1 video_id=Hl8Yo7WWsW0 title=【平安S・坂本の特注馬】7歳馬ヴァルツァーシャルは古豪健在　状態は高いレベルで安
+OK project=1 video_id=rIaFlHL2EgI title=【平安S想定騎手】ナルカミは戸崎圭太騎手、ロードクロンヌは横山和生騎手
+OK project=1 video_id=b91gBZbsSfs title=【平安ステークス展望】ダート重賞で好成績の田中博厩舎のナルカミに注目　堅実派ロー
