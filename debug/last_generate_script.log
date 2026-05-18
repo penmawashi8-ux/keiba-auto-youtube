@@ -1,74 +1,47 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【平安S・坂本の特注馬】7歳馬ヴァルツァーシャルは古豪健在　状態は高いレベルで安定し馬券的な妙味も ---
-[0] Gemini入力本文 348文字: '◆第33回平安S・G3(5月23日、京都競馬場・ダート1900メートル)\n\t\t\t\t\u3000幅広い世代の馬が激突する一戦で、昨年のジャパンダートクラシックの覇者ナルカミなど4歳勢に目がいきがちだが、ここは実績上位のベテランを評価したい。24年のマー'
+--- 記事[0]: ヴィクトリアMを制したエンブロイダリー　陣営「まだ化けるのでは」一夜明けて激戦の疲れを癒やす ---
+[0] Gemini入力本文 338文字: 'ヴィクトリアマイルで3つめのG1タイトルを獲得したエンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)は、決戦から一夜明けた5月18日、美浦トレセンの馬房内を歩き回り元気な姿を見せた。\n\t\t\t\t\u3000さすがにレース直後は疲れがあった'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【平安S想定騎手】ナルカミは戸崎圭太騎手、ロードクロンヌは横山和生騎手 ---
-[1] Gemini入力本文 343文字: '5月23日に京都競馬場で行われる、第33回平安ステークス(4歳上・GIII・ダ1900m)の登録馬・想定騎手は以下の通り。\n\u3000昨年のジャパンダートクラシック勝ちの実績があるナルカミ(牡4、美浦・田中博康厩舎)は戸崎圭太騎手、昨年の2着馬で前'
+--- 記事[1]: 「フランスの天才ジョッキー」ルメール騎手のG1・100勝記念Tシャツを100枚限定で発売　エンブロイダリーでヴィクトリア ---
+[1] Gemini入力本文 351文字: 'ヴィクトリアマイルでエンブロイダリーを勝利に導き、海外G1と合わせて「100勝できてよかった」と喜んだクリストフ・ルメール騎手＝栗東・フリー＝は、自身のアパレルブランド「cl＿by＿c．lemaire」のインスタグラムで「100\u3000G1」記念'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【平安ステークス展望】ダート重賞で好成績の田中博厩舎のナルカミに注目　堅実派ロードクロンヌも上位争い ---
-[2] Gemini入力本文 359文字: '第33回平安ステークス・G3は5月23日、京都競馬場のダート1900メートルで行われる。\n\t\t\t\t\u3000混戦模様だが、昨年のジャパンダートクラシックを勝ったナルカミ(牡4歳、美浦・田中博康厩舎、父サンダースノー)が反撃を狙う。昨年末のチャンピオ'
+--- 記事[2]: ヴィクトリアマイル制したエンブロイダリーは一夜明け、馬房で静養 ---
+[2] Gemini入力本文 337文字: 'ヴィクトリアマイルでG13勝目を飾ったエンブロイダリー(牝4＝森一)はレースから一夜明けた18日、美浦トレセンで静養した。\n\u3000担当の及川厩務員は「午後8時30分頃に帰ってきました。今はケロッとしていますが、競馬の後はぐたっとしましたね。やっ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 210文字]: '競馬ファン注目の情報です。\n第33回平安ステークス・G3は、5月23日に京都競馬場のダート1900メートルで行われます。混戦模様の中、昨年のジャパンダートクラシックを勝ったナルカミが反撃を狙います。ナルカミは、昨年末のチャンピオンズカップで13着、東京大賞典で6着、前走のダイオライト記念で5着と、近走はかみ合っていません。しかし、京都では新馬戦で圧勝した実績があります。堅実派のロードクロンヌも上位争いに注目されます。'
-[2]  [重複除去] 210文字 → 209文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (209文字)
-[2]  プレビュー: 競馬ファン注目の情報です。第33回平安ステークス・G3は、5月23日に京都競馬場のダート1900メートルで行われます。混戦模様の中、昨年のジャパンダートクラシッ...
+[1]  [Gemini生出力 273文字]: '最新のレース情報が入ってきました。\nヴィクトリアマイルでエンブロイダリーを勝利に導き、海外G1と合わせて100勝を達成したクリストフ・ルメール騎手が、G1・100勝記念Tシャツを発売すると18日に発表しました。自身のアパレルブランド「cl＿by＿c．lemaire」のインスタグラムで告知されたこのTシャツは、100枚限定で21日から発売されます。ルメール騎手は「100勝できてよかった」と喜びを語っており、2003年のフランスでの初G1制覇から始まった挑戦が、日本、フランス、ドバイ、イギリス、アメリカ、香港など多岐にわたることを示しています。'
+[1]  [重複除去] 273文字 → 272文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (272文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。ヴィクトリアマイルでエンブロイダリーを勝利に導き、海外G1と合わせて100勝を達成したクリストフ・ルメール騎手が、G1・100...
   HTTP 200
-[0]  [Gemini生出力 264文字]: '最新のレース情報が入ってきました。第33回平安S・G3は、5月23日に京都競馬場のダート1900メートルで行われます。幅広い世代の馬が激突するこの一戦では、昨年のジャパンダートクラシックの覇者ナルカミなど4歳勢に注目が集まりがちです。しかし、実績上位のベテランを評価したいとされています。特に、24年のマーチSを制しているヴァルツァーシャルは、7歳を迎えても衰え知らずで期待が寄せられています。その状態は高いレベルで安定しており、馬券的な妙味もあると評価されています。ヴァルツァーシャルは重賞勝利以来、白星から遠ざかっています。'
+[2]  [Gemini生出力 222文字]: '最新のレース情報が入ってきました。\nヴィクトリアマイルでG13勝目を飾ったエンブロイダリーは、レースから一夜明けた18日、美浦トレセンで静養しました。担当の及川厩務員によると、エンブロイダリーは午後8時30分頃に帰厩したとのことです。競馬の後はぐったりしていたものの、現在はケロッとしており、カイバも食べていつもと変わらない様子を見せています。暑さと激しい競馬の影響があったものの、歩様チェックでは元気よく歩いていたと及川厩務員は話しています。'
+[2]  [重複除去] 222文字 → 221文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (221文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。ヴィクトリアマイルでG13勝目を飾ったエンブロイダリーは、レースから一夜明けた18日、美浦トレセンで静養しました。担当の及川厩...
+  HTTP 200
+[0]  [Gemini生出力 248文字]: '本日の競馬ニュースです。ヴィクトリアマイルで3つめのG1タイトルを獲得したエンブロイダリーは、決戦から一夜明けた5月18日、美浦トレセンの馬房内を歩き回り元気な姿を見せました。及川厩務員によると、レース直後は疲れがあったようで、「今はケロッとしていますが、競馬の後はグタッとしましたね。やっぱり暑さと、競馬がかなり激しかったのだなと。首がうなだれちゃって、見たことないくらいで...」とコメントしています。陣営は「まだ化けるのでは」と期待を寄せており、一夜明けて激戦の疲れを癒やしている様子です。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (264文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。第33回平安S・G3は、5月23日に京都競馬場のダート1900メートルで行われます。幅広い世代の馬が激突するこの一戦では、昨年...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 176文字]: '最新のレース情報が入ってきました。5月23日に京都競馬場で行われる第33回平安ステークス、4歳上・GIII・ダート1900mの登録馬と想定騎手が明らかになりました。昨年のジャパンダートクラシック勝ちの実績があるナルカミには戸崎圭太騎手が、そして昨年の2着馬で前走フェブラリーS11着からの巻き返しを期すロードクロンヌには横山和生騎手が想定されています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (176文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。5月23日に京都競馬場で行われる第33回平安ステークス、4歳上・GIII・ダート1900mの登録馬と想定騎手が明らかになりまし...
+[0]  → output/script_0.txt 保存 (245文字)
+[0]  プレビュー: 本日の競馬ニュースです。ヴィクトリアマイルで3つめのG1タイトルを獲得したエンブロイダリーは、決戦から一夜明けた5月18日、美浦トレセンの馬房内を歩き回り元気な...
 
 3 件の脚本を生成しました。
