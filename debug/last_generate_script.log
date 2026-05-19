@@ -1,69 +1,43 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 「にゃあ?」競馬中継人気、清楚な美人キャスターの雰囲気激変姿に反響　ピンクジャージ、猫耳ヘッドホンで大変身「超絶可愛すぎ ---
-[0] Gemini入力本文 375文字: '中央競馬の専門チャンネル「グリーンチャンネル」の「中央競馬全レース中継」日曜午前のキャスターを務めるタレントの吉宮るりが驚きの変身姿を公開し、反響を呼んだ。\n\u3000ＹｏｕＴｕｂｅチャンネル「るりのゆるげ〜」のアイコン＆ヘッダーの画像をリニューア'
+--- 記事[0]: 【大井競馬】「丁寧に乗って勝てるジョキーに」厩務員から転身の西優哉騎手が58戦目で初勝利 ---
+[0] Gemini入力本文 586文字: '今年デビューの西優哉騎手(26)＝大井・沢佳宏厩舎所属＝が5月19日の大井3Rでコトブキエースに騎乗し1着となり、今年4月13日の初騎乗から58戦目で初勝利を挙げた。西は地方競馬教養センターに96期として入所したが体重などに悩み退所。牧場経'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 史上3頭目の香港3冠制覇を狙うロマンチックウォリアーが芝コースで追い切り「いい動き」シャム師 ---
-[1] Gemini入力本文 354文字: '香港競馬のシーズン(9月から翌年7月)最後のG1となるチャンピオンズ＆チャターC(24日、シャティン芝2400メートル)に出走予定のロマンチックウォリアー(セン8＝シャム、父アクラメイション)が19日、シャティン芝コースで追い切った。\n\u30002'
+--- 記事[1]: 【注目馬動向】ヴィクトリアマイル2着のカムニャック　秋はエリザベス女王杯が目標　友道調教師「秋は距離を戻していこうかな」 ---
+[1] Gemini入力本文 343文字: 'ヴィクトリアマイルで2着だったカムニャック(牝4歳、栗東・友道康夫厩舎、父ブラックタイド)は、秋はエリザベス女王杯・G1(11月15日、京都・芝2200メートル)を目標にする。それまでに1戦挟む予定。5月19日、友道調教師が発表した。\n\t\t'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: ラピッドライズの2024など、先週のゲート試験/栗東トレセンニュース ---
-[2] Gemini入力本文 573文字: '4月28日と29日に中山競馬場で行われた「2026年JRAブリーズアップセール」ここで1000万円(税抜き)で落札された、マテラスカイ産駒のラピッドライズの2024が5月13日のゲート試験に合格している。\n\u3000本馬について「スピードがありそう'
+--- 記事[2]: 【平安S】マーチS4着のヴァルツァーシャルが2つ目の重賞Vへ　高木調教師「リズム良く行ってもらえれば」 ---
+[2] Gemini入力本文 351文字: '◆第33回平安S・G3(5月23日、京都競馬場・ダート1900メートル)＝5月19日、美浦トレセン\n\t\t\t\t\u3000古豪が2年2か月ぶりの勝利へ闘志を燃やす。ヴァルツァーシャル(牡7歳、美浦・高木登厩舎、父マクフィ)は、前走のマーチSで2番人気に'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 4文字]: 'SKIP'
-[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 375文字）
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[1]  [Gemini生出力 180文字]: '今日の競馬情報です。ヴィクトリアマイルで2着だったカムニャックは、秋はエリザベス女王杯・G1を目標にすることが発表されました。エリザベス女王杯は11月15日に京都の芝2200メートルで行われます。それまでに1戦挟む予定です。友道調教師は5月19日にこの発表を行い、「元々、距離があった方が良さそうな馬だったし、秋は距離を戻していこうかな」と見通しを語りました。'
   HTTP 200
-[2]  [Gemini生出力 220文字]: '競馬ファン注目の情報です。\n4月28日と29日に中山競馬場で行われた「2026年JRAブリーズアップセール」で、1000万円(税抜き)で落札されたマテラスカイ産駒のラピッドライズの2024が、5月13日のゲート試験に合格しました。本馬について松下武士調教師は「スピードがありそうなタイプ。ゲートも速かったですよ。即戦力として期待できると思いますし、このまま在厩して、6月開催のデビューに向けて調整を進めていく予定です」とコメントしています。'
-[2]  [重複除去] 220文字 → 219文字
+[2]  [Gemini生出力 244文字]: '最新のレース情報が入ってきました。\n第33回平安S・G3は、5月23日に京都競馬場・ダート1900メートルで行われます。ヴァルツァーシャルは2年2か月ぶりの勝利へ闘志を燃やしています。前走のマーチSでは2番人気に支持され、道中からポジションを上げて大外から懸命に伸びましたが、4着まででした。高木調教師は「展開が向かなかった」と悔しさをにじませています。ハンデ戦の58.5キロから、別定戦で57キロの斤量と条件が好転します。高木調教師は「リズム良く行ってもらえれば」と期待を寄せています。'
+[2]  [重複除去] 244文字 → 243文字
+  HTTP 200
+[0]  [Gemini生出力 245文字]: '注目の競馬情報をお届けします。今年デビューした西優哉騎手が、5月19日の大井3Rでコトブキエースに騎乗し1着となり、初騎乗から58戦目で念願の初勝利を挙げました。26歳の西優哉騎手は大井・沢佳宏厩舎所属です。地方競馬教養センターに96期として入所しましたが、体重などに悩み退所。牧場経験を経て大井の調教専門厩務員となりました。その後も騎手への思いを諦めきれず、一発試験を6回受験し合格した経緯があります。念願の勝利に「厩舎側だった時は、騎手にもっとこう乗ってほしかったと思」と語っています。'
+[0]  [redirectフィルター] 245文字 → 230文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (219文字)
-[2]  プレビュー: 競馬ファン注目の情報です。4月28日と29日に中山競馬場で行われた「2026年JRAブリーズアップセール」で、1000万円(税抜き)で落札されたマテラスカイ産駒...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[1]  [Gemini生出力 236文字]: 'レース関連の最新情報です。史上3頭目の香港3冠制覇を狙うロマンチックウォリアーが、19日にシャティン芝コースで追い切りを行いました。香港競馬のシーズン最後のG1となるチャンピオンズ＆チャターCに24日、シャティン芝2400メートルで出走予定です。ロマンチックウォリアーは僚馬ロマンチックトールと併せ、6F77秒3から2F23秒4でゴールしました。一方、ロマンチックトールは6F77秒7から2F23秒5で駆け抜けています。シャム師は「2頭ともいい動きだ」とコメントしました。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (236文字)
-[1]  プレビュー: レース関連の最新情報です。史上3頭目の香港3冠制覇を狙うロマンチックウォリアーが、19日にシャティン芝コースで追い切りを行いました。香港競馬のシーズン最後のG1...
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 234文字]: '今日の競馬情報です。中央競馬の専門チャンネル「グリーンチャンネル」の「中央競馬全レース中継」日曜午前のキャスターを務めるタレントの吉宮るりが、驚きの変身姿を公開し反響を呼びました。これは、自身のYouTubeチャンネル「るりのゆるげ〜」のアイコンとヘッダー画像をリニューアルしたものです。吉宮るりは、ピンクのジャージと猫耳ヘッドホンをつけたキュートな姿を投稿しました。声優で気象予報士の私見にも合格した才女の雰囲気激変に、コメント欄などで大きな反響が寄せられています。'
+[2]  → output/script_2.txt 保存 (243文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第33回平安S・G3は、5月23日に京都競馬場・ダート1900メートルで行われます。ヴァルツァーシャルは2年2か月ぶりの勝利へ...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (180文字)
+[1]  プレビュー: 今日の競馬情報です。ヴィクトリアマイルで2着だったカムニャックは、秋はエリザベス女王杯・G1を目標にすることが発表されました。エリザベス女王杯は11月15日に京...
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (234文字)
-[0]  プレビュー: 今日の競馬情報です。中央競馬の専門チャンネル「グリーンチャンネル」の「中央競馬全レース中継」日曜午前のキャスターを務めるタレントの吉宮るりが、驚きの変身姿を公開...
+[0]  → output/script_0.txt 保存 (230文字)
+[0]  プレビュー: 今年デビューした西優哉騎手が、5月19日の大井3Rでコトブキエースに騎乗し1着となり、初騎乗から58戦目で念願の初勝利を挙げました。26歳の西優哉騎手は大井・沢...
 
 3 件の脚本を生成しました。
