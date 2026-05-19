@@ -1,10 +1,10 @@
-date: 2026-05-19T00:26:57.180678Z
+date: 2026-05-19T05:08:29.559181Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5KEofIJSSKg title=勝てば30年ぶり！ 武豊騎手がオークス4勝目なるか
-OK project=1 video_id=4E6Z_QXJE0Y title=【平安S】ロードクロンヌ、帝王賞へ負けられない一戦「グッと変わる」
-OK project=1 video_id=uWeEV-esZwY title=【オークス】東大文学部出身、小笠倫弘調教師ラフターラインズでG1初制覇に挑む
+OK project=1 video_id=IJceRbHBHwo title=ノームコアの2024(ソブリオ)など、先週の入厩情報/栗東トレセンニュース
+OK project=1 video_id=ORJ-JJvD4FE title=【注目馬動向】ヴィクトリアマイル11着のボンドガールは放牧へ　夏に一戦挟むか検討
+OK project=1 video_id=OwsxEn99HS0 title=キタサンブラックの半弟　シュガークンは宝塚記念を目標
