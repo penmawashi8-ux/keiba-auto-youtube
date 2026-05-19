@@ -1,10 +1,10 @@
-date: 2026-05-19T10:40:42.153259Z
+date: 2026-05-19T12:26:20.978290Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DvsoXcfhmcM title=【オークス】スイートピーS6着のミツカネベネラは精神面も馬体も成長　鈴木伸尋調教
-OK project=1 video_id=r4szJtpxeI8 title=【平安S予想オッズ】ロードクロンヌが予想1番人気
-OK project=1 video_id=7f_ITPZBgYE title=【オークス予想オッズ】スターアニスが予想1番人気
+OK project=1 video_id=ZLv1AqAlySI title=【大井競馬】「調整ルーム内で外部との通信」大井で期間限定騎乗中のシャベス騎手に騎
+OK project=1 video_id=tUeSly451i8 title=【大井競馬】エリオネ・シャベスに騎乗変更命令　調整ルーム内で外部と通信　処分決定
+OK project=1 video_id=MRdEJWW25nY title=北出成人調教師が初のGIタイトル獲得へ スウィートハピネスで一発狙う
