@@ -1,189 +1,76 @@
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [ファクトチェックNG] NG: 2024年にはチで
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [ファクトチェックNG] NG: 2017年
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 元記事に存在しない馬名
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【オークス・超ブル診断ステップレース編】名馬たちに匹敵する末脚繰り出した一頭が最高評価「G」　G1連勝馬よりも高評価 ---
-[0] Gemini入力本文 552文字: '【フローラS＝レース評価A】61秒3−58秒0の前後半の差は3秒3と過去10年で最大のギャップ。ラスト3ハロン11秒3、11秒2、11秒1の尻上がりのラップを刻んだ直線でラフターラインズが中団から差し切った。舞台は違うが、これで3戦連続で上'
+--- 記事[0]: 勝てば30年ぶり！ 武豊騎手がオークス4勝目なるか ---
+[0] Gemini入力本文 365文字: '武豊騎手がアランカール(牝3、栗東・斉藤崇史厩舎)でオークス(3歳牝・GI・芝2400m)の30年ぶり4勝目を狙う。\n\u3000武豊騎手はこれまでオークスに31回騎乗。6回目の参戦となった93年にベガで初制覇を果たした。その後も95年にダンスパート'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: スターアニスが断然トップ116M　2位に7差も未知の2400メートルで逆転は?　オークスのプレレーティング発表 ---
-[1] Gemini入力本文 362文字: 'JRAはオークスのプレレーティングを5月18日に発表した。\n\t\t\t\t\u3000数値を持つ馬で、今年のレーティング最高値は桜花賞馬のスターアニス(牝3歳、栗東・高野友和厩舎、父ドレフォン)で116M(1600から1899メートル)。2位で109Mのド'
+--- 記事[1]: 【平安S】ロードクロンヌ、帝王賞へ負けられない一戦「グッと変わる」 ---
+[1] Gemini入力本文 355文字: '◆第33回平安S・G3(5月23日、京都競馬場、ダート1900メートル)\n\t\t\t\t\u3000第33回平安S・G3(23日、京都)でロードクロンヌが重賞2勝目を狙う。前走のフェブラリーSは11着に終わったが、初G1、初の砂マイル戦など厳しい条件も重な'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 歴代最多タイのオークス5勝目へ C.ルメール騎手がドリームコアで参戦だ ---
-[2] Gemini入力本文 345文字: 'C.ルメール騎手がドリームコア(牝3、美浦・萩原清厩舎)で、歴代最多タイとなるオークス(3歳牝・GI・芝2400m)の5勝目を狙う。\n\u3000ルメール騎手はこれまでオークスに10回騎乗。3回目の参戦となった17年にソウルスターリングで初制覇。母の'
+--- 記事[2]: 【オークス】東大文学部出身、小笠倫弘調教師ラフターラインズでG1初制覇に挑む ---
+[2] Gemini入力本文 354文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル)\n\t\t\t\t\u3000第87回オークス・G1は24日、東京競馬場の芝2400メートルで行われる。東大文学部出身と“異色”の経歴を持つ小笠倫弘調教師(54)＝美浦＝は、フローラSを勝'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 271文字]: '最新情報をお届けします。C.ルメール騎手がドリームコアで、歴代最多タイとなるオークス5勝目を狙います。オークスは3歳牝のGI、芝2400mで行われるレースです。ルメール騎手はこれまでオークスに10回騎乗しており、3回目の参戦となった2017年にソウルスターリングで初制覇を達成しました。ソウルスターリングの母であるスタセリタは2009年の仏オークスを制しており、母娘で仏日オークス制覇という偉業でもありました。その後、2018年にはアーモンドアイで連覇を達成し、2022年にはスターズオンアース、そして2024年にはチ...で勝利しています。'
-[2]  [redirectフィルター] 271文字 → 259文字
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[2]  [Gemini生出力 190文字]: '最新情報をお届けします。第87回オークス・G1は5月24日、東京競馬場の芝2400メートルで行われます。東大文学部出身という異色の経歴を持つ小笠倫弘調教師（54）が、フローラSを勝ったラフターラインズでG1初制覇に挑みます。開業21年目の小笠調教師にとって、G1挑戦は今回が13度目となります。自慢の末脚でフローラSを制したラフターラインズとともに、厩舎初のG1制覇を目指します。'
+[2]  [redirectフィルター] 190文字 → 178文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (178文字)
+[2]  プレビュー: 第87回オークス・G1は5月24日、東京競馬場の芝2400メートルで行われます。東大文学部出身という異色の経歴を持つ小笠倫弘調教師（54）が、フローラSを勝った...
   HTTP 200
-[1]  [Gemini生出力 179文字]: '最新情報をお届けします。JRAは5月18日にオークスのプレレーティングを発表しました。数値を持つ馬の中で、今年のレーティング最高値は桜花賞馬のスターアニスで116Mです。スターアニスは、2位で109Mのドリームコアに7差をつけ、断然トップとなっています。3位はフローラS優勝馬のラフターラインズで108Iでした。また、桜花賞5着のアランカールは107Mです。'
-[1]  [redirectフィルター] 179文字 → 167文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (167文字)
-[1]  プレビュー: JRAは5月18日にオークスのプレレーティングを発表しました。数値を持つ馬の中で、今年のレーティング最高値は桜花賞馬のスターアニスで116Mです。スターアニスは...
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
+[0]  [Gemini生出力 203文字]: '競馬速報です。\n武豊騎手がアランカールでオークスの30年ぶり4勝目を狙います。武豊騎手はこれまでオークスに31回騎乗しており、6回目の参戦となった93年にベガで初制覇を果たしました。その後も95年にダンスパートナー、96年にエアグルーヴで制し、ルメール騎手に次いで現役2位の3勝を挙げています。ただ、以降は99年のトゥザヴィクトリー、05年のエアメサイアで2着が2回あるものの、戴冠には手が届いていません。'
+[0]  [重複除去] 203文字 → 202文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (202文字)
+[0]  プレビュー: 競馬速報です。武豊騎手がアランカールでオークスの30年ぶり4勝目を狙います。武豊騎手はこれまでオークスに31回騎乗しており、6回目の参戦となった93年にベガで初...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 256文字]: '最新情報をお届けします。C.ルメール騎手がドリームコアで、歴代最多タイとなるオークス5勝目を狙います。オークスは3歳牝馬のGI、芝2400mのレースです。ルメール騎手はこれまでオークスに10回騎乗しており、3回目の参戦となった2017年にソウルスターリングで初制覇を飾りました。母のスタセリタで2009年の仏オークスを制しているので、母娘で仏日オークス制覇という偉業も達成しています。そして2018年にはアーモンドアイで連覇を達成し、さらには2022年にスターズオンアース、2024年にはチ...と続いています。'
-[2]  [redirectフィルター] 256文字 → 244文字
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 429
-  HTTP 200
-[0]  [Gemini生出力 350文字]: '最新のレース情報が入ってきました。フローラSはレース評価Aで、前後半の差は61秒3−58秒0の3秒3と過去10年で最大のギャップを記録しました。ラスト3ハロンは11秒3、11秒2、11秒1と尻上がりのラップを刻んだ直線で、ラフターラインズが中団から差し切っています。ラフターラインズはこれで3戦連続で上がり32秒台をマークし、世代限定戦で32秒9以下の上がりを3度マークしたのはこの馬が初めてです。また、東京の芝2000メートルで勝ち時計2分割れで上がり32秒台という“史上初”も記録しました。オークスではスターアニスが断然トップで116M、2位に7差をつけており、C.ルメール騎手がドリームコアで歴代最多タイのオークス5勝目へ参戦します。高野調教師はスターアニスに「最強馬」への思いを託しています。'
-[0] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 279文字]: '最新情報をお届けします。\nC.ルメール騎手がドリームコアで、歴代最多タイとなるオークス5勝目を狙います。ドリームコアは美浦・萩原清厩舎所属の3歳牝馬で、レースはGI、芝2400mで行われます。ルメール騎手はこれまでオークスに10回騎乗しており、3回目の参戦となった2017年にソウルスターリングで初制覇を達成しました。母のスタセリタで2009年の仏オークスを制しているため、母娘での仏日オークス制覇という偉業も成し遂げています。そして2018年にはアーモンドアイで連覇を達成し、さらに2022年にはスターズオンアース、2024年にはチ...で勝利しています。'[2]  [ファクトチェックNG] NG: 元記事に存在しないレース結果
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 元記事に存在しない馬名
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2] [エラー] 全キー・全モデルでクォータ超過。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2, 0] のスクリプト生成失敗。
+[1]  [Gemini生出力 227文字]: '今週の競馬注目情報をお伝えします。第33回平安S・G3が5月23日に京都競馬場のダート1900メートルで行われます。このレースでロードクロンヌが重賞2勝目を狙います。前走のフェブラリーSでは11着に終わりましたが、初G1、初の砂マイル戦など厳しい条件も重なりました。昨年の当レースで2着、2走前のプロキオンSで重賞初制覇を飾った京都なら巻き返しが必至です。四位調教師は「ここでいい結果を出して、大井の帝王賞(7月1日)に向かいたいね」と力を込めています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (227文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。第33回平安S・G3が5月23日に京都競馬場のダート1900メートルで行われます。このレースでロードクロンヌが重賞2勝目を狙い...
 
-[2]  [redirectフィルター] 279文字 → 266文字
-[2] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 322文字]: '最新のレース情報が入ってきました。フローラステークスのレース評価はAで、前後半の差は61秒3−58秒0の3秒3と、過去10年で最大のギャップを記録しました。ラスト3ハロンは11秒3、11秒2、11秒1の尻上がりのラップを刻んだ直線で、ラフターラインズが中団から差し切っています。ラフターラインズはこれで3戦連続で上がり32秒台をマークし、世代限定戦の2歳、3歳で32秒9以下の上がりを3度マークしたのはこの馬が初めてです。オークスではスターアニスが断然トップの116Mで、2位に7差をつけています。C.ルメール騎手はドリームコアで参戦し、歴代最多タイとなるオークス5勝目を目指します。高野調教師はスターアニスに「最強馬」への思いを託しています。'
-[0] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+3 件の脚本を生成しました。
