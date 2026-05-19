@@ -1,10 +1,10 @@
-date: 2026-05-19T06:57:04.474826Z
+date: 2026-05-19T08:27:52.457006Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=oKIRtNjGXcU title=「にゃあ?」競馬中継人気、清楚な美人キャスターの雰囲気激変姿に反響　ピンクジャー
-OK project=1 video_id=Jz9J2nMfktI title=史上3頭目の香港3冠制覇を狙うロマンチックウォリアーが芝コースで追い切り「いい動
-OK project=1 video_id=-hqKTMh155w title=ラピッドライズの2024など、先週のゲート試験/栗東トレセンニュース
+OK project=1 video_id=opND1H8UUHM title=【大井競馬】「丁寧に乗って勝てるジョキーに」厩務員から転身の西優哉騎手が58戦目
+OK project=1 video_id=PX24EFjGYIU title=【注目馬動向】ヴィクトリアマイル2着のカムニャック　秋はエリザベス女王杯が目標　
+OK project=1 video_id=B5WLbF7Xong title=【平安S】マーチS4着のヴァルツァーシャルが2つ目の重賞Vへ　高木調教師「リズム
