@@ -1,0 +1,63 @@
+name: Factcheck Horse Script - 名馬スクリプトファクトチェック
+
+on:
+  workflow_dispatch:
+    inputs:
+      horse_key:
+        description: "馬名キー（例: hearts_cry）"
+        required: true
+        default: "hearts_cry"
+
+jobs:
+  factcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run factcheck
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_FAMOUS_HORSE }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python scripts/factcheck_only.py "${{ inputs.horse_key }}" \
+            2>&1 | tee /tmp/factcheck.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::ファクトチェック失敗"
+            exit $STATUS
+          fi
+
+      - name: Commit updated script (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "data/famous_horses/${{ inputs.horse_key }}.txt" 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "fix: ファクトチェックで修正 [${{ inputs.horse_key }}] [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+            echo "スクリプトを更新しました"
+          else
+            echo "変更なし"
+          fi
