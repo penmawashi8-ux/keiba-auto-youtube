@@ -30,6 +30,12 @@ PREFERRED_MODELS = [
     "gemma-3-4b-it",
     "gemma-3-1b-it",
 ]
+# Google 検索グラウンディング対応モデル（gemma 系は非対応）
+SEARCH_CAPABLE_MODELS = [
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+]
 # 429 時のリトライ待機（秒）: 30s・60s の 2 回リトライ。それでも駄目なら次モデルへ。
 RATE_LIMIT_WAITS = [30, 60]
 # これらの HTTP ステータスはリトライせず即座に次モデルへ
@@ -102,12 +108,16 @@ def load_api_keys() -> list[str]:
     return keys
 
 
-def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> str:
+def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7,
+                extra_tools: list | None = None,
+                model_list: list[str] | None = None) -> str:
     """Gemini API を呼び出す（マルチキー対応）。
     - キー × モデルの全組み合わせを試みる
     - 403 / 404: このモデルは使えないので即次へ（リトライなし）
     - 429: RATE_LIMIT_WAITS に従ってリトライし、上限後に次の組み合わせへ
     - その他エラー: 即次へ
+    extra_tools: Google Search グラウンディングなど追加ツール
+    model_list: 使用するモデルリスト（None の場合は PREFERRED_MODELS）
     """
     payload = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -116,9 +126,12 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
             "maxOutputTokens": 8192,
         },
     }
+    if extra_tools:
+        payload["tools"] = extra_tools
 
+    models = model_list if model_list is not None else PREFERRED_MODELS
     # (APIキー, モデル名) の全組み合わせ（キー優先でローテーション）
-    pairs = [(key, model) for key in api_keys for model in PREFERRED_MODELS]
+    pairs = [(key, model) for key in api_keys for model in models]
 
     for api_key, model in pairs:
         key_label = f"{api_key[:8]}..."
@@ -186,6 +199,23 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
         "・GEMINI_API_KEY_2 / GEMINI_API_KEY_3 を設定すると複数キーでフォールバックできます。\n"
         "・ニュースワークフローと同時実行するとクォータが枯渇する場合があります。"
     )
+
+
+def call_gemini_with_search(api_keys: list[str], prompt: str, temperature: float = 0.1) -> str:
+    """Google 検索グラウンディングを有効にして Gemini API を呼び出す。
+    検索対応モデル（SEARCH_CAPABLE_MODELS）のみ試行し、失敗時は通常モードにフォールバック。
+    """
+    try:
+        result = call_gemini(
+            api_keys, prompt, temperature,
+            extra_tools=[{"google_search": {}}],
+            model_list=SEARCH_CAPABLE_MODELS,
+        )
+        print("    [検索グラウンディング使用]", file=sys.stderr)
+        return result
+    except RuntimeError:
+        print("    [警告] 検索対応モデル全滅 → 通常モードにフォールバック", file=sys.stderr)
+        return call_gemini(api_keys, prompt, temperature)
 
 
 # ---------------------------------------------------------------------------
@@ -332,7 +362,7 @@ def fact_check_sentence_by_sentence(api_keys: list[str], horse_name: str, script
 ・余分な説明・コメントは書かない
 """
         try:
-            resp = call_gemini(api_keys, prompt, temperature=0.1)
+            resp = call_gemini_with_search(api_keys, prompt, temperature=0.1)
             resp = resp.strip()
             if resp.upper().startswith("PASS"):
                 corrected_lines.append(line)
@@ -398,7 +428,7 @@ ISSUES:
 ---END---
 """
     try:
-        response = call_gemini(api_keys, prompt, temperature=0.2)
+        response = call_gemini_with_search(api_keys, prompt, temperature=0.2)
     except RuntimeError as e:
         print(f"[全体ファクトチェック] API失敗 → 元の脚本を使用: {e}", file=sys.stderr)
         return script
