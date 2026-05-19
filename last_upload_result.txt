@@ -1,10 +1,10 @@
-date: 2026-05-19T08:27:52.457006Z
+date: 2026-05-19T10:40:42.153259Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=opND1H8UUHM title=【大井競馬】「丁寧に乗って勝てるジョキーに」厩務員から転身の西優哉騎手が58戦目
-OK project=1 video_id=PX24EFjGYIU title=【注目馬動向】ヴィクトリアマイル2着のカムニャック　秋はエリザベス女王杯が目標　
-OK project=1 video_id=B5WLbF7Xong title=【平安S】マーチS4着のヴァルツァーシャルが2つ目の重賞Vへ　高木調教師「リズム
+OK project=1 video_id=DvsoXcfhmcM title=【オークス】スイートピーS6着のミツカネベネラは精神面も馬体も成長　鈴木伸尋調教
+OK project=1 video_id=r4szJtpxeI8 title=【平安S予想オッズ】ロードクロンヌが予想1番人気
+OK project=1 video_id=7f_ITPZBgYE title=【オークス予想オッズ】スターアニスが予想1番人気
