@@ -1,10 +1,10 @@
-date: 2026-05-18T11:08:52.958755Z
+date: 2026-05-19T00:26:57.180678Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5hvnkhxA2tc title=高杉吏麒騎手がGI初制覇なるか スウィートハピネスで直線一気狙う
-OK project=1 video_id=G2R7GjLBzk4 title=【オークス】多くの名牝知る高野調教師がスターアニス参戦を即決した3つの理由　「自
-OK project=1 video_id=3EYsAWCyJ3Y title=【オークス】今村聖奈騎手と挑むジュウリョクピエロが前走以上の気配　陣営「体つきに
+OK project=1 video_id=5KEofIJSSKg title=勝てば30年ぶり！ 武豊騎手がオークス4勝目なるか
+OK project=1 video_id=4E6Z_QXJE0Y title=【平安S】ロードクロンヌ、帝王賞へ負けられない一戦「グッと変わる」
+OK project=1 video_id=uWeEV-esZwY title=【オークス】東大文学部出身、小笠倫弘調教師ラフターラインズでG1初制覇に挑む
