@@ -1,42 +1,80 @@
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【オークス】スイートピーS6着のミツカネベネラは精神面も馬体も成長　鈴木伸尋調教師「雰囲気は満点だね」 ---
-[0] Gemini入力本文 348文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル)＝5月19日、美浦トレセン\n\t\t\t\t\u3000スイートピーS6着から臨むミツカネベネラ(牝3歳、美浦・鈴木伸尋厩舎、父モーリス)は好気配が漂う。オークストライアルはデビュー以来初'
+--- 記事[0]: 【大井競馬】「調整ルーム内で外部との通信」大井で期間限定騎乗中のシャベス騎手に騎乗変更命令　処分決定までの間は騎乗拒否 ---
+[0] Gemini入力本文 371文字: 'TCK特別区競馬組合(大井競馬場)は19日、期間限定騎乗中のエリオネ・シャベス騎手(42)＝スウェーデン国籍、期間中の所属は大井・藤田輝厩舎＝に騎乗変更を命じたと発表した。調整ルーム内で外部との通信を行ったためで、この事実が判明した19日の'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【平安S予想オッズ】ロードクロンヌが予想1番人気 ---
-[1] Gemini入力本文 352文字: '5月23日に京都競馬場で行われる、第33回平安ステークス(4歳上・GIII・ダ1900m)に19頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは18日時点で以下のようになっている。\n\u3000昨年の2着馬で'
+--- 記事[1]: 【大井競馬】エリオネ・シャベスに騎乗変更命令　調整ルーム内で外部と通信　処分決定まで騎乗できず ---
+[1] Gemini入力本文 585文字: '東京シティ競馬(大井競馬場)は19日、地方競馬短期騎手免許を取得して南関で騎乗中だったエリオネ・シャベス(42＝スウェーデン)に22日までの騎乗変更命令を出したと発表した。\n\u3000開催執務委員長の指示事項に違反(調整ルーム内で外部との通信を行っ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【オークス予想オッズ】スターアニスが予想1番人気 ---
-[2] Gemini入力本文 352文字: '5月24日に東京競馬場で行われる、第87回オークス(3歳・牝・GI・芝2400m)に22頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは18日時点で以下のようになっている。\n\u3000阪神JFと桜花賞を圧勝'
+--- 記事[2]: 北出成人調教師が初のGIタイトル獲得へ スウィートハピネスで一発狙う ---
+[2] Gemini入力本文 348文字: '開業22年目の北出成人調教師が、オークス(3歳牝・GI・芝2400m)のスウィートハピネス(牝3)でGI初制覇を狙う。\n\u3000北出調教師は64年1月11日生まれ、兵庫県宝塚市出身の62歳。・大根田裕也厩舎と大久保正陽厩舎の調教助手を務め、06年'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 274文字]: '最新のレース情報が入ってきました。第87回オークス・G1は5月24日に東京競馬場・芝2400メートルで開催されます。このオークスに、スイートピーS6着から臨むミツカネベネラが好気配を見せています。5月19日の美浦トレセンでの状況です。オークストライアルではデビュー以来初めての逃げの競馬を経験し、これまでの課題だったテンション面について、鈴木伸尋調教師は「普通の競馬ができた」とレース内容を評価しています。メンタル面も「落ち着いている」と中間も気配が良く、鈴木伸尋調教師は「雰囲気は満点だね」とコメントし、精神面も馬体も成長していると伝えています。'
-  HTTP 200
-[2]  [Gemini生出力 210文字]: '本日の競馬ニュースです。\n5月24日に東京競馬場で行われる第87回オークス、3歳牝馬のGI、芝2400mには22頭が登録しています。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズが18日時点で発表されました。阪神JFと桜花賞を圧勝したスターアニスが単勝2.2倍で1番人気に推されています。また、フローラSの勝ち馬ラフターラインズ、得意の東京で巻き返しを期すドリームコアも注目されています。'
-[2]  [重複除去] 210文字 → 209文字
+[0]  [Gemini生出力 203文字]: '競馬速報です。TCK特別区競馬組合(大井競馬場)は19日、期間限定騎乗中のエリオネ・シャベス騎手に騎乗変更を命じたと発表しました。これは、調整ルーム内で外部との通信を行ったためです。この事実が判明した19日の大井7R以降、シャベス騎手の騎乗はすべて乗り替わりとなりました。同騎手は、処分委員会の処分が決定するまでの間の騎乗を拒否されます。シャベス騎手の限定騎乗期間は、今年4月13日から7月3日まででした。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (274文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。第87回オークス・G1は5月24日に東京競馬場・芝2400メートルで開催されます。このオークスに、スイートピーS6着から臨むミ...
+[0]  → output/script_0.txt 保存 (203文字)
+[0]  プレビュー: 競馬速報です。TCK特別区競馬組合(大井競馬場)は19日、期間限定騎乗中のエリオネ・シャベス騎手に騎乗変更を命じたと発表しました。これは、調整ルーム内で外部との...
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 200
-[1]  [Gemini生出力 248文字]: '今週の競馬注目情報をお伝えします。5月23日に京都競馬場で行われる第33回平安ステークス、GIIIダート1900mには19頭が登録しています。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズが18日時点で発表され、ロードクロンヌが単勝2.4倍で1番人気に推されています。ロードクロンヌは昨年の平安ステークスで2着に入っており、前走フェブラリーS11着からの巻き返しを期しています。また、昨年のジャパンダートクラシック勝ちの実績があるナルカミが2番人気となっています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (209文字)
-[2]  プレビュー: 本日の競馬ニュースです。5月24日に東京競馬場で行われる第87回オークス、3歳牝馬のGI、芝2400mには22頭が登録しています。競馬ファンの予想などを元にne...
+[2]  [Gemini生出力 240文字]: 'レース関連の最新情報です。開業22年目の北出成人調教師が、オークスでGI初制覇を狙います。スウィートハピネスで大舞台に挑む北出調教師は、1964年1月11日生まれの62歳、兵庫県宝塚市出身です。大根田裕也厩舎と大久保正陽厩舎の調教助手を務め、2006年に開業しました。JRA通算成績は5443戦337勝を記録しています。ダイタクリーヴァ産駒のルールプロスパー、スタチューオブリバティ産駒のアクティブミノル、キンシャサノキセキ産駒のサクセスエナジーといった馬たちを手掛けてきました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (240文字)
+[2]  プレビュー: レース関連の最新情報です。開業22年目の北出成人調教師が、オークスでGI初制覇を狙います。スウィートハピネスで大舞台に挑む北出調教師は、1964年1月11日生ま...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[1]  [Gemini生出力 252文字]: 'レース関連の最新情報です。東京シティ競馬(大井競馬場)は19日、地方競馬短期騎手免許を取得して南関で騎乗中だったエリオネ・シャベスに、22日までの騎乗変更命令を出したと発表しました。これは、開催執務委員長の指示事項に違反し、調整ルーム内で外部との通信を行ったことで、競馬の公正を害したと判断されたためです。すでに騎乗を終えていた2、3、7Rを除き、10Rは吉井騎手、11Rは鷹見騎手にそれぞれ乗り替わりました。また、同競馬場は処分委員会の処分が決定するまでの間、同騎手の騎乗を拒否することも決定しました。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (248文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。5月23日に京都競馬場で行われる第33回平安ステークス、GIIIダート1900mには19頭が登録しています。競馬ファンの予想な...
+[1]  → output/script_1.txt 保存 (252文字)
+[1]  プレビュー: レース関連の最新情報です。東京シティ競馬(大井競馬場)は19日、地方競馬短期騎手免許を取得して南関で騎乗中だったエリオネ・シャベスに、22日までの騎乗変更命令を...
 
 3 件の脚本を生成しました。
