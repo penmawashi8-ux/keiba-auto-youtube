@@ -1,10 +1,10 @@
-date: 2026-05-20T03:20:24.134820Z
+date: 2026-05-20T05:12:25.608421Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hNC8t4oYTro title=アルアイン産駒に勢い！ ラフターラインズが父にGIタイトルを届けるか
-OK project=1 video_id=IdlVOAClLV0 title=北海道市場トレーニングセールは売上総額3億円超 最高価格は「トップギャルの202
-OK project=1 video_id=aLb2RZpWb8w title=【日本ダービー・1週前】ルメール騎手を背にパントルナイーフが鋭伸　「絶対能力はあ
+OK project=1 video_id=UxFH4f9MhaE title=ロブチェン、日本ダービー1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=rMPm5P8GEgI title=【オークス】フラワーC覇者スマートプリエールが力強い脚取りで51秒8　大久保調教
+OK project=1 video_id=qwLpeiaBCsA title=【平安S】重賞初Vを狙うタイトニットはエネルギッシュな動き　今野調教師が信頼「川
