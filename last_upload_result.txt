@@ -1,10 +1,10 @@
-date: 2026-05-20T06:53:23.390641Z
+date: 2026-05-20T08:36:09.567505Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZBiSiRRQnU8 title=バステール、日本ダービー1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=WH25vLnhr1g title=新潟大賞典4着のドゥラドーレスは右前脚の骨折が判明　社台グループオーナーズが発表
-OK project=1 video_id=A90VbLLQEZU title=【注目馬動向】エプソムC2着のステレンボッシュは安田記念へ　社台グループオーナー
+OK project=1 video_id=yhPu4CqoJek title=【オークス・追い切り】ミツカネベネラは馬なりで併入　鈴木伸調教師「重い(馬場)が
+OK project=1 video_id=4nfwx-jeypw title=【オークス・追い切り】ラフターラインズがレーン騎手を背にスムーズな加速　小笠調教
+OK project=1 video_id=MAeNd3J34Nk title=【日本ダービー・1週前】アウダーシア半馬身遅れるも初コンビのレーン騎手は好感触　
