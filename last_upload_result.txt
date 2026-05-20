@@ -1,10 +1,10 @@
-date: 2026-05-20T10:30:27.412876Z
+date: 2026-05-20T11:59:13.652118Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=quY7ULZs-Qw title=【オークス】坂路2本乗りの最終追いから伝わる高野調教師の「流儀」　スターアニス2
-OK project=1 video_id=HZYowp9Qd_0 title=【名古屋競馬】安部幸夫調教師が通算700勝達成　騎手としては3000勝超　マイネ
-OK project=1 video_id=aRh6LhW-4BU title=C.ルメール騎手がG1・100勝達成 「CL by C.ルメール」が限定Tシャツ
+OK project=1 video_id=L88QyAlwdSg title=【日本ダービー・1週前】報知杯弥生賞馬バステールは徐々に良化　斉藤崇調教師「さら
+OK project=1 video_id=xEx66yxwYG8 title=【大井・大井記念結果】サントノーレが6馬身差逃げ切りV！重賞5勝目を挙げる
+OK project=1 video_id=lTMHxGFEHag title=【日本ダービー・1週前】ショウナンガルフが巻き返しへCWコースでラスト11秒2　
