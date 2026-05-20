@@ -1,8 +1,8 @@
 name: Daily Famous Horse - 名馬列伝 毎日自動投稿
 
 on:
-  schedule:
-    - cron: '0 8 * * *'   # 17:00 JST (UTC+9 → UTC 08:00)
+  # schedule:
+  #   - cron: '0 8 * * *'   # 17:00 JST (UTC+9 → UTC 08:00)  ← 自動投稿を一時停止
   workflow_dispatch:
     inputs:
       dry_run:
