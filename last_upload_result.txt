@@ -1,10 +1,10 @@
-date: 2026-05-19T14:01:32.252203Z
+date: 2026-05-20T03:20:24.134820Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=za0mVGYdxO0 title=【名古屋競馬】丸野勝虎騎手が通算3400勝　1992年のデビューから2万3208
-OK project=1 video_id=9WwymOHhwoI title=【チャンピオンズ&チャーターC】世界最高賞金54億円超　ロマンチックウォリアーが
-OK project=1 video_id=RcGOEGLbUts title=暑い暑い…最高気温が30度超え　19日から名古屋競馬場にシャワー設置　暑熱対策「
+OK project=1 video_id=hNC8t4oYTro title=アルアイン産駒に勢い！ ラフターラインズが父にGIタイトルを届けるか
+OK project=1 video_id=IdlVOAClLV0 title=北海道市場トレーニングセールは売上総額3億円超 最高価格は「トップギャルの202
+OK project=1 video_id=aLb2RZpWb8w title=【日本ダービー・1週前】ルメール騎手を背にパントルナイーフが鋭伸　「絶対能力はあ
