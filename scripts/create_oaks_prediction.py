@@ -1,137 +1,281 @@
 #!/usr/bin/env python3
 """
-オークス2026 枠順確定予想動画用の news.json・output/script_0.txt・専用背景画像を生成する。
+オークス2026 枠順確定予想動画生成スクリプト。
 
-枠順確定情報（2026-05-24 東京11R GI オークス 芝2400m 18頭）:
-  枠1 馬1  ミツカネベネラ       横山和生  牝3  164.8 (15人気)
-  枠1 馬2  レイクラシック       M.ディー  牝3   61.5 (11人気)
-  枠2 馬3  アランカール         武豊      牝3    7.0  ( 3人気)
-  枠2 馬4  ロングトールサリー   戸崎圭太  牝3  215.2 (17人気)
-  枠3 馬5  リアライズルミナス   津村明秀  牝3  168.6 (16人気)
-  枠3 馬6  ロンギングセリーヌ   石橋脩    牝3  131.0 (14人気)
-  枠4 馬7  スタニングレディ     三浦皇成  牝3  481.2 (18人気)
-  枠4 馬8  スマートプリエール   原優介    牝3   32.6  ( 9人気)
-  枠5 馬9  トリニティ           西村淳也  牝3   31.6  ( 8人気)
-  枠5 馬10 スターアニス         松山弘平  牝3    2.6  ( 1人気)
-  枠6 馬11 アメティスタ         横山武史  牝3   56.1 (10人気)
-  枠6 馬12 ドリームコア         C.ルメール牝3    7.4  ( 4人気)
-  枠7 馬13 エンネ               坂井瑠星  牝3   13.1  ( 5人気)
-  枠7 馬14 ソルパッサーレ       浜中俊    牝3   86.1 (13人気)
-  枠7 馬15 アンジュドジョワ     岩田望来  牝3   22.9  ( 7人気)
-  枠8 馬16 ジュウリョクピエロ   今村聖奈  牝3   20.6  ( 6人気)
-  枠8 馬17 スウィートハピネス   高杉史麒  牝3   71.0 (12人気)
-  枠8 馬18 ラフターラインズ     D.レーン  牝3    4.0  ( 2人気)
+フロー:
+  1. 予想上位10頭をGemini+Google検索で個別調査（事実データのみ取得）
+  2. 取得した事実データのみを素材にGeminiで予想ナレーション脚本を生成
+  3. news.json / output/script_0.txt / 背景画像を出力
 """
 
 import json
+import os
 import subprocess
+import sys
+import time
 from pathlib import Path
+
+import requests
+
+# ── Gemini API ───────────────────────────────────────────────────────────────
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+SEARCH_CAPABLE_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.0-flash-lite"]
+PREFERRED_MODELS = SEARCH_CAPABLE_MODELS + ["gemma-3-4b-it", "gemma-3-1b-it"]
+RATE_LIMIT_WAITS = [30, 60]
+NON_RETRY_STATUS = {403, 404}
 
 NEWS_JSON  = "news.json"
 OUTPUT_DIR = "output"
 ASSETS_DIR = "assets"
 
-NEWS_ENTRY = {
-    "id": "oaks_2026_post_prediction",
-    "title": "【オークス2026枠順確定予想】5枠10番スターアニス松山弘平が中枠から断然！6枠12番ドリームコアルメールで牝馬クラシック制覇へ",
-    "url": "https://www.jra.go.jp/",
-    "summary": (
-        "2026年5月24日(日)東京競馬場・芝2400m オークスGIの枠順確定予想。"
-        "本命は5枠10番スターアニス（松山弘平騎手）。予想オッズ1番人気、中枠からロスなく運べる理想的な枠順。"
-        "対抗は6枠12番ドリームコア（C.ルメール騎手）。予想オッズ4番人気、東京芝でルメール騎手は鉄板の信頼感。"
-        "3着は2枠3番アランカール（武豊騎手）。予想オッズ3番人気、内枠の距離節約と武豊の長距離巧者ぶりに期待。"
-        "穴は7枠15番アンジュドジョワ（岩田望来騎手）。予想オッズ7番人気、長距離の展開次第で一発狙える。"
-    ),
-    "image_url": "",
-    "published_date": "2026-05-24T12:00:00+09:00",
-}
+# ── 出走表（枠順確定・2026-05-24）────────────────────────────────────────────
+ENTRIES = [
+    {"frame": 1, "number":  1, "name": "ミツカネベネラ",    "jockey": "横山和生",   "odds_rank": 15},
+    {"frame": 1, "number":  2, "name": "レイクラシック",    "jockey": "M.ディー",   "odds_rank": 11},
+    {"frame": 2, "number":  3, "name": "アランカール",      "jockey": "武豊",       "odds_rank":  3},
+    {"frame": 2, "number":  4, "name": "ロングトールサリー","jockey": "戸崎圭太",   "odds_rank": 17},
+    {"frame": 3, "number":  5, "name": "リアライズルミナス","jockey": "津村明秀",   "odds_rank": 16},
+    {"frame": 3, "number":  6, "name": "ロンギングセリーヌ","jockey": "石橋脩",     "odds_rank": 14},
+    {"frame": 4, "number":  7, "name": "スタニングレディ",  "jockey": "三浦皇成",   "odds_rank": 18},
+    {"frame": 4, "number":  8, "name": "スマートプリエール","jockey": "原優介",     "odds_rank":  9},
+    {"frame": 5, "number":  9, "name": "トリニティ",        "jockey": "西村淳也",   "odds_rank":  8},
+    {"frame": 5, "number": 10, "name": "スターアニス",      "jockey": "松山弘平",   "odds_rank":  1},
+    {"frame": 6, "number": 11, "name": "アメティスタ",      "jockey": "横山武史",   "odds_rank": 10},
+    {"frame": 6, "number": 12, "name": "ドリームコア",      "jockey": "C.ルメール", "odds_rank":  4},
+    {"frame": 7, "number": 13, "name": "エンネ",            "jockey": "坂井瑠星",   "odds_rank":  5},
+    {"frame": 7, "number": 14, "name": "ソルパッサーレ",    "jockey": "浜中俊",     "odds_rank": 13},
+    {"frame": 7, "number": 15, "name": "アンジュドジョワ",  "jockey": "岩田望来",   "odds_rank":  7},
+    {"frame": 8, "number": 16, "name": "ジュウリョクピエロ","jockey": "今村聖奈",   "odds_rank":  6},
+    {"frame": 8, "number": 17, "name": "スウィートハピネス","jockey": "高杉史麒",   "odds_rank": 12},
+    {"frame": 8, "number": 18, "name": "ラフターラインズ",  "jockey": "D.レーン",   "odds_rank":  2},
+]
 
-PREDICTION_SCRIPT = (
-    "オークス2026、18頭の枠順が確定した。東京芝2400メートル、5月24日の牝馬クラシック最大の舞台だ。"
-    "断然本命は5枠10番スターアニス。予想オッズ1番人気の実力馬だ。"
-    "鞍上は松山弘平騎手。5枠10番の中枠は2400メートルのオークスで最も戦いやすい枠番のひとつ。"
-    "スタートから無理なく好位を取り、直線で末脚を爆発させる条件が整っている。"
-    "本命は5枠10番スターアニス。ここから入る。"
-    "対抗は6枠12番ドリームコア。予想オッズ4番人気だ。"
-    "鞍上はC.ルメール騎手。東京芝でルメール騎手が乗る馬はとにかく信頼できる。"
-    "6枠12番の中枠から直線の長い東京コースで末脚を引き出す。4番人気はむしろお買い得の評価だ。"
-    "3着候補は2枠3番アランカール。予想オッズ3番人気。鞍上は武豊騎手だ。"
-    "2枠の内枠は2400メートルの長距離で距離を大幅に節約できる。"
-    "武豊騎手は長距離の内枠でこそ真価を発揮する。人気通りの結果に持ってくる手腕に期待したい。"
-    "注目の穴馬は7枠15番アンジュドジョワ。予想オッズ7番人気だ。鞍上は岩田望来騎手。"
-    "上位人気が外枠に集まる中、7枠15番から岩田望来騎手が積極的な競馬を見せれば一発がある。"
-    "2400メートルの長距離は展開ひとつで人気薄が台頭しやすい。穴党はここを狙え。"
-    "本命5枠10番スターアニス、対抗6枠12番ドリームコア、3着2枠3番アランカール。"
-    "東京の長い直線で3歳牝馬たちが頂点を争う。みんなの本命は？コメントで教えてくれ！"
+# 調査対象: 予想オッズ上位10頭（穴馬候補も含む）
+RESEARCH_TARGETS = sorted(
+    [e for e in ENTRIES if e["odds_rank"] <= 10],
+    key=lambda x: x["odds_rank"],
 )
 
 
-def generate_prediction_backgrounds() -> None:
-    """予想動画専用背景3枚を ffmpeg geq フィルターで生成（Pillow不使用）。
-    オークスイメージ（春・東京・クラシック）で緑〜エメラルド系3パターン。
-    """
-    Path(ASSETS_DIR).mkdir(exist_ok=True)
+# ── Gemini API 呼び出し ──────────────────────────────────────────────────────
+def load_api_keys() -> list[str]:
+    keys = []
+    for v in ["GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3"]:
+        k = os.environ.get(v, "").strip()
+        if k:
+            keys.append(k)
+    print(f"[Gemini] APIキー {len(keys)} 件", file=sys.stderr)
+    return keys
 
-    backgrounds = [
-        # 0: 漆黒→エメラルドグリーン（東京の芝2400m）
-        (
-            "ai_0.jpg",
-            "geq="
-            "r='clip(4+30*pow(Y/H,2),4,34)':"
-            "g='clip(8+170*pow(Y/H,1.4),8,178)':"
-            "b='clip(6+80*pow(Y/H,1.6),6,86)'",
-        ),
-        # 1: 漆黒→ロイヤルブルー（クラシックの格調）
-        (
-            "ai_1.jpg",
-            "geq="
-            "r='clip(4+30*pow(Y/H,1.8),4,34)':"
-            "g='clip(6+60*pow(Y/H,1.8),6,66)':"
-            "b='clip(10+180*pow(Y/H,1.4),10,190)'",
-        ),
-        # 2: 漆黒→ゴールデンイエロー（G1の栄光）
-        (
-            "ai_2.jpg",
-            "geq="
-            "r='clip(8+160*pow(1-Y/H,1.4),8,168)':"
-            "g='clip(6+120*pow(1-Y/H,1.6),6,126)':"
-            "b='clip(4+20*pow(Y/H,2),4,24)'",
-        ),
-    ]
 
-    for filename, vf_expr in backgrounds:
-        out_path = f"{ASSETS_DIR}/{filename}"
-        subprocess.run(
-            [
-                "ffmpeg", "-y",
-                "-f", "lavfi", "-i", "color=black:s=1080x1920:r=1",
-                "-vf", vf_expr,
-                "-frames:v", "1",
-                "-q:v", "3",
-                out_path,
-            ],
-            check=True,
-            capture_output=True,
+def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.1,
+                extra_tools: list | None = None,
+                model_list: list[str] | None = None) -> str:
+    payload = {
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": temperature, "maxOutputTokens": 4096},
+    }
+    if extra_tools:
+        payload["tools"] = extra_tools
+
+    models = model_list or PREFERRED_MODELS
+    pairs  = [(k, m) for k in api_keys for m in models]
+
+    for api_key, model in pairs:
+        url   = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+        waits = [0] + RATE_LIMIT_WAITS
+        for attempt, wait in enumerate(waits):
+            if wait:
+                time.sleep(wait)
+            try:
+                resp = requests.post(url, json=payload, timeout=60)
+                if resp.status_code in NON_RETRY_STATUS:
+                    break
+                if resp.status_code in (429, 503):
+                    if attempt < len(waits) - 1:
+                        continue
+                    break
+                resp.raise_for_status()
+                candidates = resp.json().get("candidates", [])
+                if not candidates:
+                    raise ValueError("candidates が空")
+                return candidates[0]["content"]["parts"][0]["text"].strip()
+            except requests.exceptions.HTTPError as e:
+                status = e.response.status_code if e.response else 0
+                if status in NON_RETRY_STATUS:
+                    break
+                if status == 429 and attempt < len(waits) - 1:
+                    continue
+                break
+            except Exception as e:
+                print(f"  [{model}] {str(e)[:60]}", file=sys.stderr)
+                break
+        time.sleep(3)
+
+    raise RuntimeError("Gemini API: 全キー×全モデルで失敗")
+
+
+def call_gemini_with_search(api_keys: list[str], prompt: str) -> str:
+    """Google検索グラウンディング付き（検索対応モデルのみ・失敗時は通常モードへ）。"""
+    try:
+        return call_gemini(api_keys, prompt, temperature=0.0,
+                           extra_tools=[{"google_search": {}}],
+                           model_list=SEARCH_CAPABLE_MODELS)
+    except RuntimeError:
+        print("  [警告] 検索モデル全滅 → 通常モードにフォールバック", file=sys.stderr)
+        return call_gemini(api_keys, prompt, temperature=0.0)
+
+
+# ── Phase 1: 各馬の事実データ取得 ────────────────────────────────────────────
+def fetch_horse_facts(api_keys: list[str], horse: dict) -> str:
+    """Google検索で馬の事実データだけを取得する。分析・推測は求めない。"""
+    prompt = f"""\
+netkeiba.com などの競馬情報サイトを検索し、以下の馬の事実データのみを返してください。
+分析・推測・コメントは一切不要です。見つからない情報は「不明」と書いてください。
+
+【馬名】{horse['name']}（2026年オークス出走・牝3歳）
+【騎手】{horse['jockey']}
+
+【返してほしい情報】
+1. 父馬名
+2. 母父馬名
+3. 直近3走（各走：開催年月・レース名・芝ダ別・距離・着順・人気）
+4. 東京競馬場での出走歴（あれば：レース名・距離・着順）
+5. 芝2000m以上での出走歴（あれば：レース名・距離・着順）
+6. 前走の上がり3ハロンタイム（あれば）
+
+箇条書きで事実のみ。分析・評価・コメント不要。
+"""
+    try:
+        result = call_gemini_with_search(api_keys, prompt)
+        print(f"  ✓ {horse['name']}", file=sys.stderr)
+        return result
+    except RuntimeError as e:
+        print(f"  ✗ {horse['name']} 失敗: {e}", file=sys.stderr)
+        return "（データ取得失敗）"
+
+
+# ── Phase 2: 事実データのみで脚本生成 ────────────────────────────────────────
+def generate_script(api_keys: list[str], facts: list[dict]) -> str:
+    """取得した事実データを素材に、補完なしで予想ナレーションを生成する。"""
+
+    entries_text = "\n".join(
+        f"  {e['frame']}枠{e['number']}番 {e['name']}（鞍上:{e['jockey']}）予想{e['odds_rank']}番人気"
+        for e in ENTRIES
+    )
+
+    facts_text = ""
+    for item in facts:
+        h = item["horse"]
+        facts_text += (
+            f"\n▼{h['frame']}枠{h['number']}番 {h['name']}"
+            f"（鞍上:{h['jockey']} / 予想{h['odds_rank']}番人気）\n"
         )
-        print(f"背景画像を生成: {out_path}")
+        facts_text += item["facts"] + "\n"
+
+    prompt = f"""\
+あなたは競馬予想ナレーターです。
+以下の【各馬の事実データ】のみを使って、オークス2026の予想ナレーション脚本を書いてください。
+
+【絶対ルール】
+・提供されたデータにある事実のみで根拠を述べること
+・データにない情報・推測・分析は一切書かない
+・「〜と思われる」「〜だろう」「〜のはず」などの推測表現禁止
+・データが不足している馬については根拠の言及を省略する
+・事実データにある数字（着順・タイム・上がり・距離実績）をそのまま使う
+
+【レース情報】
+オークス2026 / 東京競馬場GI / 芝2400m / 2026年5月24日(日)
+
+【全出走馬・枠順】
+{entries_text}
+
+【各馬の事実データ（検索で取得）】
+{facts_text}
+
+【脚本の条件】
+・全体200〜400文字
+・本命・対抗・3着・穴馬の4頭を選ぶ（事実データと枠番を根拠に）
+・各馬：枠番・馬番・馬名を明記し、根拠は取得データにある事実のみ1〜2文
+・最後に「みんなの本命は？コメントで教えてくれ！」で締める
+・句点（。）で文を区切る
+・挨拶・呼びかけ禁止
+
+脚本のみ出力。余分な説明不要。
+"""
+    return call_gemini(api_keys, prompt, temperature=0.2)
 
 
+# ── 背景画像生成 ──────────────────────────────────────────────────────────────
+def generate_backgrounds() -> None:
+    Path(ASSETS_DIR).mkdir(exist_ok=True)
+    backgrounds = [
+        ("ai_0.jpg",
+         "geq=r='clip(4+30*pow(Y/H,2),4,34)':g='clip(8+170*pow(Y/H,1.4),8,178)':b='clip(6+80*pow(Y/H,1.6),6,86)'"),
+        ("ai_1.jpg",
+         "geq=r='clip(4+30*pow(Y/H,1.8),4,34)':g='clip(6+60*pow(Y/H,1.8),6,66)':b='clip(10+180*pow(Y/H,1.4),10,190)'"),
+        ("ai_2.jpg",
+         "geq=r='clip(8+160*pow(1-Y/H,1.4),8,168)':g='clip(6+120*pow(1-Y/H,1.6),6,126)':b='clip(4+20*pow(Y/H,2),4,24)'"),
+    ]
+    for filename, vf in backgrounds:
+        subprocess.run(
+            ["ffmpeg", "-y", "-f", "lavfi", "-i", "color=black:s=1080x1920:r=1",
+             "-vf", vf, "-frames:v", "1", "-q:v", "3", f"{ASSETS_DIR}/{filename}"],
+            check=True, capture_output=True,
+        )
+        print(f"背景画像生成: {ASSETS_DIR}/{filename}")
+
+
+# ── メイン ────────────────────────────────────────────────────────────────────
 def main() -> None:
-    generate_prediction_backgrounds()
+    api_keys = load_api_keys()
+    if not api_keys:
+        print("[エラー] GEMINI_API_KEY が設定されていません", file=sys.stderr)
+        sys.exit(1)
 
+    # ── Phase 1: 各馬の事実データをGoogle検索で取得 ──────────────────────────
+    print(f"\n[Phase 1] {len(RESEARCH_TARGETS)} 頭の事実データを取得中...", file=sys.stderr)
+    facts = []
+    for i, horse in enumerate(RESEARCH_TARGETS):
+        print(f"  [{i+1}/{len(RESEARCH_TARGETS)}] {horse['name']} 検索中...", file=sys.stderr)
+        result = fetch_horse_facts(api_keys, horse)
+        facts.append({"horse": horse, "facts": result})
+        if i < len(RESEARCH_TARGETS) - 1:
+            time.sleep(5)  # レート制限対策
+
+    # 取得データをログ出力
+    print("\n[Phase 1 完了] 取得データ:", file=sys.stderr)
+    for item in facts:
+        h = item["horse"]
+        print(f"\n▼{h['number']}番 {h['name']}", file=sys.stderr)
+        print(item["facts"][:300], file=sys.stderr)
+
+    # ── Phase 2: 事実データのみで脚本生成 ────────────────────────────────────
+    print("\n[Phase 2] 事実データのみで脚本生成中...", file=sys.stderr)
+    time.sleep(10)
+    script = generate_script(api_keys, facts)
+    print(f"\n[生成された脚本]\n{script}\n", file=sys.stderr)
+
+    # ── 背景・ファイル出力 ────────────────────────────────────────────────────
+    generate_backgrounds()
+
+    Path(OUTPUT_DIR).mkdir(exist_ok=True)
+    (Path(OUTPUT_DIR) / "script_0.txt").write_text(script, encoding="utf-8")
+    print(f"output/script_0.txt を生成しました（{len(script)} 文字）")
+
+    news_entry = {
+        "id": "oaks_2026_post_prediction",
+        "title": "【オークス2026枠順確定予想】事実データで徹底分析",
+        "url": "https://www.jra.go.jp/",
+        "summary": script[:200],
+        "image_url": "",
+        "published_date": "2026-05-24T12:00:00+09:00",
+    }
     Path(NEWS_JSON).write_text(
-        json.dumps([NEWS_ENTRY], ensure_ascii=False, indent=2),
+        json.dumps([news_entry], ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     print(f"{NEWS_JSON} を生成しました。")
-
-    output_dir = Path(OUTPUT_DIR)
-    output_dir.mkdir(exist_ok=True)
-    script_path = output_dir / "script_0.txt"
-    script_path.write_text(PREDICTION_SCRIPT, encoding="utf-8")
-    print(f"{script_path} を生成しました。")
-    print(f"   文字数: {len(PREDICTION_SCRIPT)} 字")
-    print(f"   プレビュー: {PREDICTION_SCRIPT[:80]}...")
 
 
 if __name__ == "__main__":
