@@ -1,10 +1,8 @@
-date: 2026-05-21T10:46:51.033668Z
+date: 2026-05-21T11:07:16.181427Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yr7XQ5MND00 title=セレクト4億円の超良血 ダノンアスコルティが三度目の正直で初勝利なるか
-OK project=1 video_id=FiZ4EomGkto title=【オークス】長距離輸送を控えるのに調教後馬体重は微増どまり　馬体の維持がカギを握
-OK project=1 video_id=juJyo2ri-14 title=【週末情報】母と重なる成長力で！ スマートプリエールはGI獲りへ視界良好/馬三郎
+OK project=1 video_id=dMtEqWg7n6E title=【オークス2026枠順確定予想】桜花賞馬スターアニスvs最外枠ラフターラインズ！
