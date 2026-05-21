@@ -1,10 +1,10 @@
-date: 2026-05-21T05:17:42.995090Z
+date: 2026-05-21T07:10:02.323508Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9m_o-gbNXO4 title=田村太雅騎手が21日から栗東・谷厩舎所属に変更　JRAが発表
-OK project=1 video_id=hv3m7BgSUqg title=【園田競馬】20日に落馬負傷の下原理騎手が21日に予定していた騎乗をキャンセル　
-OK project=1 video_id=otPpMFF6BTU title=【日本ダービー】グリーンエナジーが軽い発熱で1週前追い切りを延期
+OK project=1 video_id=444UxFuMFgk title=【平安S出走馬・騎手確定】ロードクロンヌ＆横山和生騎手、ナルカミ＆戸崎圭太騎手な
+OK project=1 video_id=nC0BF1JUvxY title=宝塚記念ファン投票の第2回中間発表　クロワデュノールが26万3292票で首位をキ
+OK project=1 video_id=0QZWEgjCkNk title=【オークス】前走逃げたミツカネベネラは過去10年で2着3回の1枠1番　最内枠に鈴
