@@ -1,99 +1,75 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [ファクトチェックNG] NG: 父オルフェーヴルは
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【注目馬動向】「3歳牝馬で斤量も軽い」オルフェーヴルの娘ジュウリョクピエロの凱旋門賞出走はオークスの内容次第 ---
-[0] Gemini入力本文 352文字: '今週のオークス・G1(5月24日、東京競馬場・芝2400メートル)に出走するジュウリョクピエロ(牝3歳、栗東・寺島良厩舎、父オルフェーヴル)の凱旋門賞・G1(10月4日、パリロンシャン競馬場・芝2400メートル)への登録について、寺島調教師'
+--- 記事[0]: 田村太雅騎手が21日から栗東・谷厩舎所属に変更　JRAが発表 ---
+[0] Gemini入力本文 197文字: 'JRAは21日、田村太雅(40＝栗東・フリー)が21日から栗東・谷厩舎所属になると発表した。\n\u30002006年3月にデビューし、JRA通算1279戦34勝(21日現在)。 JRAは21日、田村太雅(40＝栗東・フリー)が21日から栗東・谷厩舎所'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【注目馬動向】「選択肢の一つです」凱旋門賞登録のアドマイヤテラの秋は3択　国内路線に加え、もう一つ目標のレースとは… ---
-[1] Gemini入力本文 346文字: '今年の阪神大賞典など重賞2勝を挙げるアドマイヤテラ(牡5歳、栗東・友道康夫厩舎、父レイデオロ)が凱旋門賞・G1(10月4日、パリロンシャン競馬場・芝2400メートル)に登録したことに関し、友道調教師は「選択肢の一つです」と現状を説明した。\n'
+--- 記事[1]: 【園田競馬】20日に落馬負傷の下原理騎手が21日に予定していた騎乗をキャンセル　5鞍すべて乗り替わりに ---
+[1] Gemini入力本文 464文字: '20日の園田競馬3Rで落馬し負傷。その後の騎乗を取りやめた下原理騎手(48)＝西脇・栗林徹治厩舎＝は、21日も足の痛みが引かないために予定していた5鞍の騎乗をキャンセル。すべて乗り替わりとなった。\n\t\t\t\t\u300022日の騎乗に関しては当日の様子'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: Mデムーロ騎手が20日に亡くなった萩原清調教師をしのぶ「すごく優しい人だった」ルヴァンスレーヴとコンビ ---
-[2] Gemini入力本文 340文字: '5月20日に病気のため、67歳で死去した萩原清調教師＝美浦＝を、ルヴァンスレーヴとのコンビでG1級レースを4勝したミルコ・デムーロ騎手＝栗東・フリー＝が21日、栗東トレセンで追悼した。\n\t\t\t\t\u3000ミルコ・デムーロ騎手は「びっくりしています。'
+--- 記事[2]: 【日本ダービー】グリーンエナジーが軽い発熱で1週前追い切りを延期 ---
+[2] Gemini入力本文 352文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)\n\t\t\t\t\u30005月21日に日本ダービーの1週前追い切りを予定していた京成杯覇者のグリーンエナジー(牡3歳、美浦・上原佑紀厩舎、父スワーヴリチャード)は、軽い発熱があり追'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 201文字]: '競馬速報です。5月20日に病気のため67歳で死去した萩原清調教師を、ミルコ・デムーロ騎手が21日、栗東トレセンで追悼しました。ミルコ・デムーロ騎手は、ルヴァンスレーヴとのコンビでG1級レースを4勝しています。同騎手は「びっくりしています。最近も競馬場で会って話したりしたので、ショックです。まだ若い。僕の父と同じじゃないかな。G1を一緒に勝って、すごく優しい人だった。悲しいですね」とコメントしました。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: 競馬速報です。5月20日に病気のため67歳で死去した萩原清調教師を、ミルコ・デムーロ騎手が21日、栗東トレセンで追悼しました。ミルコ・デムーロ騎手は、ルヴァンス...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+[1]  [Gemini生出力 204文字]: '注目の競馬情報をお届けします。\n20日の園田競馬3Rで落馬し負傷した下原理騎手は、21日も足の痛みが引かないため、予定していた5鞍の騎乗をすべてキャンセルし、乗り替わりとなりました。22日の騎乗に関しては当日の様子を見て決めるとしています。騎乗変更となったのは、6Rのシズカノウミで杉浦健太騎手が55キロで騎乗し、8Rのエマージェンスには吉村智騎手が57キロで騎乗します。10Rと11Rも斤量が変更されます。'
+[1]  [redirectフィルター] 204文字 → 188文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (188文字)
+[1]  プレビュー: 20日の園田競馬3Rで落馬し負傷した下原理騎手は、21日も足の痛みが引かないため、予定していた5鞍の騎乗をすべてキャンセルし、乗り替わりとなりました。22日の騎...
   HTTP 200
-[0]  [Gemini生出力 277文字]: '今日の競馬情報です。今週のオークス・G1、5月24日に東京競馬場・芝2400メートルに出走するジュウリョクピエロの凱旋門賞・G1への登録について、寺島調教師が5月21日に状況を説明しました。ジュウリョクピエロは牝3歳、栗東・寺島良厩舎所属で、父はオルフェーヴルです。寺島調教師は「本当はオークスの結果を見てからにしたかっらけど、締め切りが早いので、オーナーの了承を得て、登録しました」と話しています。凱旋門賞は10月4日にパリロンシャン競馬場・芝2400メートルで開催されます。父オルフェーヴルは2012年、2013年と2年連続で凱旋門賞に出走しました。'
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 214文字]: '今日の競馬情報です。今週のオークス・G1、5月24日に東京競馬場・芝2400メートルに出走するジュウリョクピエロ（牝3歳、父オルフェーヴル）の凱旋門賞・G1への登録について、寺島調教師が5月21日、状況を説明しました。寺島調教師は「本当はオークスの結果を見てからにしたかったけど、締め切りが早いので、オーナーの了承を得て、登録しました」と話しています。凱旋門賞は10月4日にパリロンシャン競馬場・芝2400メートルで行われます。'
+[0]  [Gemini生出力 157文字]: '最新のレース情報が入ってきました。\nJRAは21日、田村太雅騎手が21日から栗東の谷厩舎所属に変更となることを発表しました。田村太雅騎手はこれまで栗東のフリーとして活動していましたが、この度、谷厩舎に所属することになります。同騎手は2006年3月にデビューし、21日現在でJRA通算1279戦34勝を挙げています。'
+[0]  [重複除去] 157文字 → 156文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (200文字)
-[0]  プレビュー: 今日の競馬情報です。今週のオークス・G1、5月24日に東京競馬場・芝2400メートルに出走するジュウリョクピエロの凱旋門賞・G1への登録について、寺島調教師が5...
+[0]  → output/script_0.txt 保存 (156文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。JRAは21日、田村太雅騎手が21日から栗東の谷厩舎所属に変更となることを発表しました。田村太雅騎手はこれまで栗東のフリーとし...
   HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 223文字]: '今日の競馬情報です。今年の阪神大賞典など重賞2勝を挙げるアドマイヤテラが、凱旋門賞・G1に登録しました。凱旋門賞は10月4日にパリロンシャン競馬場・芝2400メートルで行われます。友道調教師は、この登録について「選択肢の一つです」と現状を説明しました。アドマイヤテラは武豊騎手とのコンビで、8月16日に札幌競馬場・芝2000メートルで行われる札幌記念・G2での復帰を視野に入れています。この札幌記念の内容などを考えて、国内路線か…とされています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (222文字)
-[1]  プレビュー: 今日の競馬情報です。今年の阪神大賞典など重賞2勝を挙げるアドマイヤテラが、凱旋門賞・G1に登録しました。凱旋門賞は10月4日にパリロンシャン競馬場・芝2400メ...
+[2]  [Gemini生出力 174文字]: '重要な競馬ニュースをお伝えします。\n第93回日本ダービー・G1は5月31日に東京競馬場・芝2400メートルで開催されます。この日本ダービーに向けて、5月21日に1週前追い切りを予定していた京成杯覇者のグリーンエナジーが、軽い発熱のため追い切りを延期しました。グリーンエナジーはデビュー3戦目の京成杯で重賞初挑戦Vを飾り、前走の皐月賞では7着でした。'
+[2]  [重複除去] 174文字 → 173文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (173文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。第93回日本ダービー・G1は5月31日に東京競馬場・芝2400メートルで開催されます。この日本ダービーに向けて、5月21日に1...
 
 3 件の脚本を生成しました。
