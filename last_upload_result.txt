@@ -1,8 +1,10 @@
-date: 2026-05-21T11:07:16.181427Z
+date: 2026-05-21T12:28:47.692957Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dMtEqWg7n6E title=【オークス2026枠順確定予想】桜花賞馬スターアニスvs最外枠ラフターラインズ！
+OK project=1 video_id=3CJROn6PC3I title=新潟開催リーディングを独走中　デビュー2年目の舟山瑠泉騎手「田中(博康)先生や関
+OK project=1 video_id=nPVhRGLUXV8 title=全兄はアリストテレス コンフェルマが1年1カ月ぶり復帰戦で障害デビューだ
+OK project=1 video_id=B3jH9s62Lew title=世界最高賞金54億円超のロマンチックウォリアーは4番ゲート　ディープモンスターは
