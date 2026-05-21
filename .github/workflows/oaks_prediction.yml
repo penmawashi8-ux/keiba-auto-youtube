@@ -36,6 +36,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: オークス2026 枠順確定予想コンテンツを生成
+        env:
+          GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         run: python scripts/create_oaks_prediction.py
 
       - name: Generate audio
