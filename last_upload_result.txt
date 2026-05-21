@@ -1,8 +1,10 @@
-date: 2026-05-21T08:07:09.928728Z
+date: 2026-05-21T08:33:41.777668Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=QmSqSkf0T1g title=【オークス2026枠順確定予想】5枠10番スターアニス松山弘平が中枠から断然！6
+OK project=1 video_id=4BsepW0JjU8 title=【オークス・調教後馬体重】スターアニスは484kg、アランカールは432kg
+OK project=1 video_id=NEmMm9D3DJ8 title=【オークス】武豊×アランカールは母シンハライトと同じ枠から頂点へ　斉藤崇調教師「
+OK project=1 video_id=M9xGaR-gS1E title=【オークス】ジュウリョクピエロは2戦2勝のピンク帽子で大一番へ　今村聖奈騎手「大
