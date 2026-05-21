@@ -44,10 +44,10 @@ VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 FPS = 30
 FONT_SIZE = 64
-ENDING_DURATION = 4.0    # エンディングカード表示秒数
-THUMBNAIL_DURATION = 1.5  # 先頭サムネイルフレーム最低表示秒数
+ENDING_DURATION = 2.0    # エンディングカード表示秒数
+THUMBNAIL_DURATION = 1.0  # 先頭サムネイルフレーム最低表示秒数
 BGM_VOLUME = 0.12        # BGM音量（ナレーションに対する比率）
-MIN_CUT_DURATION = 1.5
+MIN_CUT_DURATION = 1.0
 LINE_MAX_CHARS = 13       # 字幕1行最大文字数
 
 # ---------------------------------------------------------------------------

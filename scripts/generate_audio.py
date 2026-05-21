@@ -96,7 +96,7 @@ def pick_tts_params() -> tuple[str, str, float, float]:
     if forced_rate:
         rate_str = forced_rate
     else:
-        rate_pct = random.randint(-15, 15)
+        rate_pct = random.randint(20, 30)
         rate_str = f"{rate_pct:+d}%"
 
     # ピッチ: ±2.0 半音 → 係数変換
