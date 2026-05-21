@@ -1,7 +1,6 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -9,31 +8,21 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 [1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
@@ -41,45 +30,43 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: セレクト4億円の超良血 ダノンアスコルティが三度目の正直で初勝利なるか ---
-[0] Gemini入力本文 353文字: 'GI・2勝のアスコリピチェーノの半妹となるダノンアスコルティ(牝3、美浦・大竹正博厩舎)が、日曜東京4Rの3歳未勝利(牝・芝1600m)で初勝利を狙う。\n\u3000ダノンアスコルティは父キタサンブラック、母アスコルティ、母の父Danehill Da'
+--- 記事[0]: 新潟開催リーディングを独走中　デビュー2年目の舟山瑠泉騎手「田中(博康)先生や関係者の方々のおかげです」 ---
+[0] Gemini入力本文 343文字: 'デビュー2年目を迎えた舟山瑠泉騎手＝美浦・田中博康厩舎＝。24日で最終日を迎える第1回新潟開催のリーディングを独走中だ。17日の開催を終えて10勝。2位の斎藤新騎手(5勝)にダブルスコアをつけている。邁進する19歳に活躍の秘けつを聞いた。\n'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【オークス】長距離輸送を控えるのに調教後馬体重は微増どまり　馬体の維持がカギを握るアランカール ---
-[1] Gemini入力本文 559文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル)\n\t\t\t\t\u3000JRAは21日、オークス出走馬の調教後馬体重(増減は前走からの比較)を発表した。\n\t\t\t\t\u3000有力馬で最も気になるのは、馬体重の維持がカギを握る3番のアランカー'
+--- 記事[1]: 全兄はアリストテレス コンフェルマが1年1カ月ぶり復帰戦で障害デビューだ ---
+[1] Gemini入力本文 345文字: '21年AJCC覇者のアリストテレスの全弟となるコンフェルマ(セ5、栗東・寺島良厩舎)が、土曜新潟1Rの障害未勝利(直線芝2890m)でジャンパーへの転向初戦を迎える。\n\u3000コンフェルマは父エピファネイア、母ブルーダイアモンド、母の父ディープイ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【週末情報】母と重なる成長力で！ スマートプリエールはGI獲りへ視界良好/馬三郎のつぶやき ---
-[2] Gemini入力本文 462文字: '◆スマートプリエール(21日・堀尾)\n\u3000日曜東京11R・オークス(芝2400m)に出走するスマートプリエール(牝3歳、栗東・大久保)。「お母さん(スマートレイアー)もこの時期にグンと成長したけど、よく似た感じでいいところを受け継いでいる」と'
+--- 記事[2]: 世界最高賞金54億円超のロマンチックウォリアーは4番ゲート　ディープモンスターは2番　ローシャムパークは3番　香港・チャ ---
+[2] Gemini入力本文 358文字: '◆チャンピオンズ＆チャターカップ・G1(5月24日、シャティン競馬場・芝2400メートル)枠順確定＝5月21日\n\t\t\t\t\u3000出走馬9頭とゲート順が確定し、香港最強馬のロマンチックウォリアー(セン8歳、香港・ダニー・シャム厩舎、父アクラメイショ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 201文字]: '最新情報をお届けします。\n5月24日開催のチャンピオンズ＆チャターカップ・G1、芝2400メートルの枠順が5月21日に確定しました。出走馬9頭。歴代世界最高の54億円超の獲得賞金を持つ香港最強馬ロマンチックウォリアーは4番ゲートです。1着賞金は約1億4657万円で、ロマンチックウォリアーがこれを加えられるか注目されます。日本からはディープモンスターが2番、ローシャムパークが3番ゲートからの出走です。'
+[2]  [redirectフィルター] 201文字 → 188文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (188文字)
+[2]  プレビュー: 5月24日開催のチャンピオンズ＆チャターカップ・G1、芝2400メートルの枠順が5月21日に確定しました。出走馬9頭。歴代世界最高の54億円超の獲得賞金を持つ香...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -87,47 +74,30 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
 [0] 使用: key=***189Y model=gemini-2.5-flash
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 241文字]: '本日の競馬ニュースです。\n日曜東京11R・オークス、芝2400mに出走するスマートプリエールについてです。大久保師は、スマートプリエールの成長力に目を細めています。母スマートレイアーもこの時期にグンと成長しましたが、スマートプリエールもよく似た感じでいいところを受け継いでいるとのことです。また、大久保師は、母スマートレイアーが2400mの京都大賞典を勝っており、父がエピファネイアであることから、スマートプリエールも距離に対応できると見ています。GI獲りへ視界良好だとしています。'
-[2]  [重複除去] 241文字 → 240文字
+[0]  [Gemini生出力 211文字]: '最新のレース情報が入ってきました。デビュー2年目を迎えた美浦の田中博康厩舎所属、舟山瑠泉騎手が、24日で最終日を迎える第1回新潟開催のリーディングを独走中です。17日の開催を終えて10勝を挙げており、2位の斎藤新騎手の5勝にダブルスコアをつけています。10日には1日4勝を挙げるなど、目覚ましい活躍を見せる19歳の舟山瑠泉騎手は、「馬質を上げていただいて、田中先生や関係者の方々のおかげです」と周囲への感謝を述べています。'
   HTTP 200
-[1]  [Gemini生出力 276文字]: '今日の競馬情報です。JRAは21日、第87回オークス・G1に出走する馬の調教後馬体重を発表しました。有力馬で特に注目されるのは、3番のアランカールです。アランカールの調教後馬体重は、前走の桜花賞からプラス2キロの432キロでした。デビュー時の馬体重が430キロだったことから、長距離輸送を控える同馬の馬体維持がカギを握ると見られています。また、スターアニスは484キロで、クラシックG1連勝中の松山弘平騎手に全権委任されると高野調教師がコメントしています。エンネは最多の5勝を挙げる7枠13番に入り、吉岡調教師は今回はメンコをする予定だと話しています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (240文字)
-[2]  プレビュー: 本日の競馬ニュースです。日曜東京11R・オークス、芝2400mに出走するスマートプリエールについてです。大久保師は、スマートプリエールの成長力に目を細めています...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (276文字)
-[1]  プレビュー: 今日の競馬情報です。JRAは21日、第87回オークス・G1に出走する馬の調教後馬体重を発表しました。有力馬で特に注目されるのは、3番のアランカールです。アランカ...
-  HTTP 200
-[0]  [Gemini生出力 229文字]: '本日の競馬ニュースです。\nGI・2勝のアスコリピチェーノの半妹であるダノンアスコルティが、日曜東京4Rの3歳未勝利、芝1600mで初勝利を狙います。ダノンアスコルティは父キタサンブラック、母アスコルティ、母の父Danehill Dancerの血統です。母はJRAで2勝を挙げています。半姉のアスコリピチェーノは23年の阪神JFと25年のヴィクトリアマイルの覇者です。そして祖母のリッスンは07年にフィリーズマイル、叔母のタッチングスピーチは15年にロー...'
-[0]  [重複除去] 183文字 → 182文字
+[1]  [Gemini生出力 259文字]: '重要な競馬ニュースをお伝えします。21年AJCC覇者アリストテレスの全弟となるコンフェルマが、1年1カ月ぶりの復帰戦で障害デビューを迎えます。コンフェルマは、土曜新潟1Rの障害未勝利、直線芝2890mでジャンパーへの転向初戦に挑みます。栗東の寺島良厩舎所属で、父はエピファネイア、母はブルーダイアモンド、母の父はディープインパクトの血統です。全兄のアリストテレスは21年のAJCCを制し、20年の菊花賞では三冠がかかるコントレイルをクビ差まで追い詰めて2着となりました。また、伯父のヴィクトリーは07年の皐月賞馬です。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (182文字)
-[0]  プレビュー: 本日の競馬ニュースです。GI・2勝のアスコリピチェーノの半妹であるダノンアスコルティが、日曜東京4Rの3歳未勝利、芝1600mで初勝利を狙います。ダノンアスコル...
+[0]  → output/script_0.txt 保存 (211文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。デビュー2年目を迎えた美浦の田中博康厩舎所属、舟山瑠泉騎手が、24日で最終日を迎える第1回新潟開催のリーディングを独走中です。...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (259文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。21年AJCC覇者アリストテレスの全弟となるコンフェルマが、1年1カ月ぶりの復帰戦で障害デビューを迎えます。コンフェルマは、土...
 
 3 件の脚本を生成しました。
