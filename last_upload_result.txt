@@ -1,10 +1,10 @@
-date: 2026-05-21T03:25:21.023786Z
+date: 2026-05-21T05:17:42.995090Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=S9ALZQPZ8Mo title=【注目馬動向】「3歳牝馬で斤量も軽い」オルフェーヴルの娘ジュウリョクピエロの凱旋
-OK project=1 video_id=4WU7xBCcvMw title=【注目馬動向】「選択肢の一つです」凱旋門賞登録のアドマイヤテラの秋は3択　国内路
-OK project=1 video_id=AgPtCTnq-9g title=Mデムーロ騎手が20日に亡くなった萩原清調教師をしのぶ「すごく優しい人だった」ル
+OK project=1 video_id=9m_o-gbNXO4 title=田村太雅騎手が21日から栗東・谷厩舎所属に変更　JRAが発表
+OK project=1 video_id=hv3m7BgSUqg title=【園田競馬】20日に落馬負傷の下原理騎手が21日に予定していた騎乗をキャンセル　
+OK project=1 video_id=otPpMFF6BTU title=【日本ダービー】グリーンエナジーが軽い発熱で1週前追い切りを延期
