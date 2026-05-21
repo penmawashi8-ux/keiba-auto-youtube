@@ -232,7 +232,7 @@ def disable_comments(youtube, video_id: str) -> None:
     except HttpError as e:
         print(f"  [警告] コメント無効化失敗 HTTP {e.resp.status}: {e.content.decode()[:400]}", file=sys.stderr)
     except Exception as e:
-        print(f"  [警告] コメント無効化失敗: {e}", file=sys.stderr)
+        print(f"  [警告] コメント無効化確認失敗: {e}", file=sys.stderr)
 
 
 def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
