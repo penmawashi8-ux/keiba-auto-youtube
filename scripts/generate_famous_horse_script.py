@@ -30,6 +30,12 @@ PREFERRED_MODELS = [
     "gemma-3-4b-it",
     "gemma-3-1b-it",
 ]
+# Google 検索グラウンディング対応モデル（gemma 系は非対応）
+SEARCH_CAPABLE_MODELS = [
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+]
 # 429 時のリトライ待機（秒）: 30s・60s の 2 回リトライ。それでも駄目なら次モデルへ。
 RATE_LIMIT_WAITS = [30, 60]
 # これらの HTTP ステータスはリトライせず即座に次モデルへ
@@ -102,12 +108,16 @@ def load_api_keys() -> list[str]:
     return keys
 
 
-def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> str:
+def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7,
+                extra_tools: list | None = None,
+                model_list: list[str] | None = None) -> str:
     """Gemini API を呼び出す（マルチキー対応）。
     - キー × モデルの全組み合わせを試みる
     - 403 / 404: このモデルは使えないので即次へ（リトライなし）
     - 429: RATE_LIMIT_WAITS に従ってリトライし、上限後に次の組み合わせへ
     - その他エラー: 即次へ
+    extra_tools: Google Search グラウンディングなど追加ツール
+    model_list: 使用するモデルリスト（None の場合は PREFERRED_MODELS）
     """
     payload = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -116,9 +126,12 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
             "maxOutputTokens": 8192,
         },
     }
+    if extra_tools:
+        payload["tools"] = extra_tools
 
+    models = model_list if model_list is not None else PREFERRED_MODELS
     # (APIキー, モデル名) の全組み合わせ（キー優先でローテーション）
-    pairs = [(key, model) for key in api_keys for model in PREFERRED_MODELS]
+    pairs = [(key, model) for key in api_keys for model in models]
 
     for api_key, model in pairs:
         key_label = f"{api_key[:8]}..."
@@ -186,6 +199,23 @@ def call_gemini(api_keys: list[str], prompt: str, temperature: float = 0.7) -> s
         "・GEMINI_API_KEY_2 / GEMINI_API_KEY_3 を設定すると複数キーでフォールバックできます。\n"
         "・ニュースワークフローと同時実行するとクォータが枯渇する場合があります。"
     )
+
+
+def call_gemini_with_search(api_keys: list[str], prompt: str, temperature: float = 0.1) -> str:
+    """Google 検索グラウンディングを有効にして Gemini API を呼び出す。
+    検索対応モデル（SEARCH_CAPABLE_MODELS）のみ試行し、失敗時は通常モードにフォールバック。
+    """
+    try:
+        result = call_gemini(
+            api_keys, prompt, temperature,
+            extra_tools=[{"google_search": {}}],
+            model_list=SEARCH_CAPABLE_MODELS,
+        )
+        print("    [検索グラウンディング使用]", file=sys.stderr)
+        return result
+    except RuntimeError:
+        print("    [警告] 検索対応モデル全滅 → 通常モードにフォールバック", file=sys.stderr)
+        return call_gemini(api_keys, prompt, temperature)
 
 
 # ---------------------------------------------------------------------------
@@ -295,11 +325,78 @@ def _parse_select_response(response: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# ステップ2: 独立ファクトチェック＆修正
+# ステップ2: 1文ずつファクトチェック
+# ---------------------------------------------------------------------------
+
+def fact_check_sentence_by_sentence(api_keys: list[str], horse_name: str, script: str) -> str:
+    """脚本を1行ずつ個別にファクトチェックし、修正済み脚本を返す。"""
+    lines = script.split('\n')
+    non_empty = [l for l in lines if l.strip()]
+    print(f"[1文ずつファクトチェック] 対象: {len(non_empty)} 文", file=sys.stderr)
+
+    corrected_lines = []
+    changes = []
+    checked = 0
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            corrected_lines.append(line)
+            continue
+
+        checked += 1
+        print(f"  [{checked}/{len(non_empty)}] {stripped[:55]}", file=sys.stderr)
+
+        prompt = f"""\
+あなたは日本中央競馬（JRA）の専門家です。
+以下の1文について事実確認をしてください。
+
+【馬名】{horse_name}
+【チェックする1文】
+{stripped}
+
+【出力ルール（厳守）】
+・事実として確認できる明確な誤りがない → 「PASS」とだけ出力
+・明確な誤りがある → 「CORRECTED: 修正後の1文」の形式のみで出力
+・不確実・曖昧な情報は誤りと見なさない
+・余分な説明・コメントは書かない
+"""
+        try:
+            resp = call_gemini_with_search(api_keys, prompt, temperature=0.1)
+            resp = resp.strip()
+            if resp.upper().startswith("PASS"):
+                corrected_lines.append(line)
+                print(f"    PASS", file=sys.stderr)
+            elif resp.upper().startswith("CORRECTED:"):
+                fixed = resp.split(":", 1)[1].strip().strip("「」\"'")
+                corrected_lines.append(fixed)
+                changes.append((stripped, fixed))
+                print(f"    修正 → {fixed[:55]}", file=sys.stderr)
+            else:
+                # 想定外の応答は元の行を保持
+                corrected_lines.append(line)
+                print(f"    応答不明 → 元を保持: {resp[:50]}", file=sys.stderr)
+        except RuntimeError:
+            corrected_lines.append(line)
+            print(f"    API失敗 → 元を保持", file=sys.stderr)
+
+        if checked < len(non_empty):
+            time.sleep(3)  # 連続呼び出しのレート制限対策
+
+    print(f"\n[1文ずつファクトチェック完了] {len(changes)} 箇所を修正", file=sys.stderr)
+    for orig, corr in changes:
+        print(f"  「{orig[:40]}」→「{corr[:40]}」", file=sys.stderr)
+
+    return '\n'.join(corrected_lines)
+
+
+# ---------------------------------------------------------------------------
+# ステップ3: 全体ファクトチェック（整合性・抜け落ち確認）
 # ---------------------------------------------------------------------------
 
 def fact_check_and_revise(api_keys: list[str], horse_name: str, script: str) -> str:
-    """独立した API 呼び出しで脚本をファクトチェックし、誤りがあれば修正済み脚本を返す。
+    """脚本全体を通して整合性・抜け落ちをファクトチェックし、修正済み脚本を返す。
+    1文ずつチェックの後に実行し、文間の矛盾や見落としを拾う。
     API 失敗時は元の脚本をそのまま返す（フォールバック）。
     """
     prompt = f"""\
@@ -317,6 +414,7 @@ def fact_check_and_revise(api_keys: list[str], horse_name: str, script: str) -> 
 - GⅠ勝利数・重賞勝利数・その他の数字・記録の正確性
 - 他の馬・騎手との比較情報（「〜より速い」「〜以来」など）の正確性
 - 実際には起きていない出来事や結果の捏造がないか
+- 文間の矛盾（同じ事実を別の箇所で違う数字で書いているなど）
 
 【出力ルール】
 - 事実として確認できる明確な誤りのみ指摘すること（不確実な情報は指摘しない）
@@ -330,15 +428,15 @@ ISSUES:
 ---END---
 """
     try:
-        response = call_gemini(api_keys, prompt, temperature=0.2)
+        response = call_gemini_with_search(api_keys, prompt, temperature=0.2)
     except RuntimeError as e:
-        print(f"[ファクトチェック] API失敗 → 元の脚本を使用: {e}", file=sys.stderr)
+        print(f"[全体ファクトチェック] API失敗 → 元の脚本を使用: {e}", file=sys.stderr)
         return script
 
-    print(f"[ファクトチェック応答]\n{response[:800]}\n", file=sys.stderr)
+    print(f"[全体ファクトチェック応答]\n{response[:800]}\n", file=sys.stderr)
 
     if response.strip().upper().startswith("PASS"):
-        print("[ファクトチェック] 問題なし（PASS）", file=sys.stderr)
+        print("[全体ファクトチェック] 問題なし（PASS）", file=sys.stderr)
         return script
 
     m = re.search(r"---CORRECTED---\s*(.*?)\s*---END---", response, re.DOTALL)
@@ -347,10 +445,10 @@ ISSUES:
     if m:
         corrected = m.group(1).strip()
         if len(corrected) >= 50:
-            print("[ファクトチェック] 修正あり → 修正済み脚本を採用", file=sys.stderr)
+            print("[全体ファクトチェック] 修正あり → 修正済み脚本を採用", file=sys.stderr)
             return corrected
 
-    print("[ファクトチェック] 修正脚本の抽出失敗 → 元の脚本を使用", file=sys.stderr)
+    print("[全体ファクトチェック] 修正脚本の抽出失敗 → 元の脚本を使用", file=sys.stderr)
     return script
 
 
@@ -489,14 +587,21 @@ def main() -> None:
     print(f"[選定完了] 馬名: {horse_name}  キー: {horse_key}", file=sys.stderr)
     print(f"[最終脚本]\n{script}\n", file=sys.stderr)
 
-    # ── API呼び出し2回目: 独立ファクトチェック（20秒インターバル後） ────
+    # ── API呼び出し2回目: 1文ずつファクトチェック ───────────────────────
     print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
     time.sleep(20)
-    print("[独立ファクトチェック中...]", file=sys.stderr)
-    script = fact_check_and_revise(api_keys, horse_name, script)
-    print(f"[ファクトチェック後の脚本]\n{script}\n", file=sys.stderr)
+    print("[1文ずつファクトチェック中...]", file=sys.stderr)
+    script = fact_check_sentence_by_sentence(api_keys, horse_name, script)
+    print(f"[1文ずつファクトチェック後の脚本]\n{script}\n", file=sys.stderr)
 
-    # ── API呼び出し3回目: メタデータ生成（20秒インターバル後） ──────────
+    # ── API呼び出し3回目: 全体ファクトチェック（整合性・抜け落ち確認） ──
+    print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
+    time.sleep(20)
+    print("[全体ファクトチェック中...]", file=sys.stderr)
+    script = fact_check_and_revise(api_keys, horse_name, script)
+    print(f"[全体ファクトチェック後の脚本]\n{script}\n", file=sys.stderr)
+
+    # ── API呼び出し4回目: メタデータ生成（20秒インターバル後） ──────────
     print("[20秒待機中（レート制限対策）...]", file=sys.stderr)
     time.sleep(20)
     print("[メタデータ生成中...]", file=sys.stderr)

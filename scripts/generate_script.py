@@ -263,6 +263,10 @@ def call_gemini(api_key: str, model_name: str, prompt: str, system_prompt: str =
                 print(f"  [警告] finishReason={finish_reason} ({len(text)}文字)", file=sys.stderr)
             elif finish_reason == "MAX_TOKENS":
                 print(f"  [警告] finishReason=MAX_TOKENS: トークン上限で打ち切り ({len(text)}文字)", file=sys.stderr)
+                last_kuten = text.rfind("。")
+                if last_kuten != -1:
+                    text = text[: last_kuten + 1]
+                    print(f"  → 最後の句点でトリム ({len(text)}文字)", file=sys.stderr)
             return text
         except (KeyError, IndexError) as e:
             print(f"[エラー] レスポンス解析失敗: {e}\n{json.dumps(data)[:300]}", file=sys.stderr)

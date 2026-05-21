@@ -1,10 +1,8 @@
-date: 2026-05-17T12:07:37.646832Z
+date: 2026-05-21T07:41:46.701155Z
 projects_loaded: 1
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JjLAgbxyrGg title=【ヴィクトリアM】「それでも逆らいたい」「ヒモ穴を」エンブロイダリーVで1番人気
-OK project=1 video_id=r9Hpn9azw8o title=【BSイレブン賞レース後コメント】ラファル C.ルメール騎手ら
-OK project=1 video_id=1ygS5Je6kr8 title=【オークス展望】主役はスターアニス　20年3冠ジョッキーが2冠へ導く　今村聖奈は
+OK project=1 video_id=Q46H3FZNRaE title=【オークス2026枠順確定予想】5枠10番スターアニス松山弘平が中枠から断然！6

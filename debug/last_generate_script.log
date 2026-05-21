@@ -1,51 +1,103 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
-利用可能モデル (33個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
+利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
 --- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【ヴィクトリアM】「それでも逆らいたい」「ヒモ穴を」エンブロイダリーVで1番人気7連勝　JRA・G1タイ記録　オークスは ---
-[0] Gemini入力本文 347文字: '◆第21回ヴィクトリアマイル・G1(5月17日、東京競馬場・芝1600メートル、良)\n\t\t\t\t\u3000マイル女王決定戦が18頭で争われ、クリストフ・ルメール騎手騎乗で1番人気のエンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)がG1'
+--- 記事[0]: 【平安S出走馬・騎手確定】ロードクロンヌ＆横山和生騎手、ナルカミ＆戸崎圭太騎手など16頭 ---
+[0] Gemini入力本文 343文字: '5月23日に京都競馬場で行われる、第33回平安ステークス(4歳上・GIII・ダ1900m)の出走馬・騎手が確定した。\n\u3000昨年の2着馬で前走フェブラリーS11着からの巻き返しを期すロードクロンヌ(牡5、栗東・四位洋文厩舎)は横山和生騎手、昨年'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【BSイレブン賞レース後コメント】ラファル C.ルメール騎手ら ---
-[1] Gemini入力本文 352文字: '東京12RのBSイレブン賞(4歳以上3勝クラス・ダート1400m)は1番人気ラファル(C.ルメール騎手)が勝利した。勝ちタイムは1分24秒3(良)。1馬身3/4差の2着に6番人気サトノガレオン、さらに1馬身1/4差の3着に7番人気スニーカー'
+--- 記事[1]: 宝塚記念ファン投票の第2回中間発表　クロワデュノールが26万3292票で首位をキープ　2位も昨年覇者で変わらず ---
+[1] Gemini入力本文 360文字: 'JRAは5月21日、第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)のファン投票第2回中間発表を行った。\n\t\t\t\t\u3000有効投票数は299万8268票。第1位は第1回中間発表と変わらず、大阪杯、天皇賞・春を連勝したクロワデュ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【オークス展望】主役はスターアニス　20年3冠ジョッキーが2冠へ導く　今村聖奈は女性騎手初クラシック ---
-[2] Gemini入力本文 345文字: '今週の日曜東京メインは牝馬クラシック第2弾「第87回オークス」(24日、G1、芝2400メートル)。桜花賞組と別路線組が集結し、白熱したレースが期待される。\n\u3000主役は桜花賞馬スターアニスだ。昨年暮れの阪神JFに続き、爆発な決め手でG1連続制'
+--- 記事[2]: 【オークス】前走逃げたミツカネベネラは過去10年で2着3回の1枠1番　最内枠に鈴木伸調教師「枠はどこでも良かった」 ---
+[2] Gemini入力本文 354文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル)枠順確定＝21日、美浦トレセン\n\t\t\t\t\u3000前走のスイートピーSでハナを切ったミツカネベネラ(牝3歳、美浦・鈴木伸尋厩舎、父モーリス)は、最内の1枠1番に決まった。鈴木伸調'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 221文字]: '今日の競馬情報です。東京12RのBSイレブン賞、4歳以上3勝クラス・ダート1400mは、1番人気ラファルとC.ルメール騎手が勝利しました。勝ちタイムは1分24秒3で馬場は良でした。1馬身3/4差の2着には6番人気サトノガレオン、さらに1馬身1/4差の3着には7番人気スニーカースキルが入りました。勝利したラファルは栗東・田中克典厩舎の4歳牡馬で、父ドレフォン、母アグネスリース、母の父フレンチデピュティです。通算成績は13戦4勝となりました。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (221文字)
-[1]  プレビュー: 今日の競馬情報です。東京12RのBSイレブン賞、4歳以上3勝クラス・ダート1400mは、1番人気ラファルとC.ルメール騎手が勝利しました。勝ちタイムは1分24秒...
+[2]  [Gemini生出力 236文字]: '今週の競馬注目情報をお伝えします。\n第87回オークス・G1の枠順が5月21日に美浦トレセンで確定しました。5月24日に東京競馬場・芝2400メートルで行われます。前走のスイートピーSでハナを切ったミツカネベネラは、最内の1枠1番に決まりました。鈴木伸調教師は「枠はどこでも良かったです。当日に雨が降ってくれれば」とコメントし、湿った馬場を希望しています。この1枠1番は、過去10年で17年モズカッチャン、18年リリーノーブル、25年アルマヴェローチェが2着に入っています。'
+[2]  [重複除去] 236文字 → 235文字
   HTTP 200
-[0]  [Gemini生出力 247文字]: '今日の競馬情報です。第21回ヴィクトリアマイル・G1が5月17日に東京競馬場・芝1600メートルで18頭により争われました。マイル女王決定戦では、クリストフ・ルメール騎手騎乗で1番人気のエンブロイダリーがG1・3勝目を飾っています。ルメール騎手は昨年アスコリピチェーノで制覇しており、20年アーモンドアイ、21年グランアレグリアに続く当レース連覇で、自身の持つ最多勝記録を更新する5勝目をマークしました。この結果、ヴィクトリアマイルでは1番人気が7連勝となり、JRA・G1タイ記録となりました。'
+[0]  [Gemini生出力 238文字]: '今日の競馬情報です。\n5月23日に京都競馬場で行われる第33回平安ステークス、4歳上・GIII・ダート1900mの出走馬と騎手が確定しました。このレースには16頭が出走します。昨年の2着馬で前走フェブラリーステークス11着からの巻き返しを期すロードクロンヌには横山和生騎手が騎乗します。また、昨年のジャパンダートクラシック勝ちの実績があるナルカミには戸崎圭太騎手。アクションプランには松山弘平騎手、キョウキランブには菅原明良騎手、サイモンザナドゥには池添謙一騎手が騎乗します。'
+[0]  [重複除去] 238文字 → 237文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (247文字)
-[0]  プレビュー: 今日の競馬情報です。第21回ヴィクトリアマイル・G1が5月17日に東京競馬場・芝1600メートルで18頭により争われました。マイル女王決定戦では、クリストフ・ル...
+[0]  → output/script_0.txt 保存 (237文字)
+[0]  プレビュー: 今日の競馬情報です。5月23日に京都競馬場で行われる第33回平安ステークス、4歳上・GIII・ダート1900mの出走馬と騎手が確定しました。このレースには16頭...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (235文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。第87回オークス・G1の枠順が5月21日に美浦トレセンで確定しました。5月24日に東京競馬場・芝2400メートルで行われます。...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 268文字]: '今週の競馬注目情報をお伝えします。今週の日曜東京メインは、牝馬クラシック第2弾「第87回オークス」が24日に開催されます。G1、芝2400メートルで行われるこのレースには、桜花賞組と別路線組が集結し、白熱したレースが期待されています。主役は桜花賞馬スターアニスです。スターアニスは昨年暮れの阪神JFに続き、爆発的な決め手でG1連続制覇を達成しました。その強靱な勝負根性が際立っています。しかし、1600メートルまでしか距離経験がなく、2400メートルの距離が鍵を握るでしょう。また、鞍上の松山にはオークスまでマイルしか経験がありません。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (268文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。今週の日曜東京メインは、牝馬クラシック第2弾「第87回オークス」が24日に開催されます。G1、芝2400メートルで行われるこの...
+[1]  [Gemini生出力 254文字]: '今週の競馬注目情報をお伝えします。JRAは5月21日、第67回宝塚記念G1のファン投票第2回中間発表を行いました。有効投票数は299万8268票です。第1位は第1回中間発表と変わらず、大阪杯、天皇賞・春を連勝したクロワデュノールが26万3292票を集め、首位をキープしています。クロワデュノールは斉藤崇史厩舎の馬です。第2位は25万2887票で、昨年の同レース覇者であるメイショウタバルでした。メイショウタバルは石橋守厩舎の馬です。この宝塚記念G1は6月14日、阪神競馬場・芝2200メートルで開催されます。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (254文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。JRAは5月21日、第67回宝塚記念G1のファン投票第2回中間発表を行いました。有効投票数は299万8268票です。第1位は第...
 
 3 件の脚本を生成しました。

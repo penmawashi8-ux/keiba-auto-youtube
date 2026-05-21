@@ -171,6 +171,8 @@ jobs:
       - name: Generate audio
         id: generate_audio
         if: steps.check_scripts.outputs.has_scripts == 'true'
+        env:
+          TTS_RATE: "+20%"
         run: python scripts/generate_audio.py 2>&1 | tee /tmp/generate_audio.log; exit ${PIPESTATUS[0]}
 
       - name: 音声生成ログをIssueに投稿

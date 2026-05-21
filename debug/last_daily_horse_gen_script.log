@@ -1,5 +1,5 @@
 [診断] Gemini APIキー: 3 件ロード
-[既存の名馬] 32 頭:
+[既存の名馬] 34 頭:
   - アグネスデジタル (agnes_digital)
   - アーモンドアイ (almond_eye)
   - ブエナビスタ (buena_vista)
@@ -8,6 +8,7 @@
   - ジェンティルドンナ (gentile_donna)
   - ゴールドシップ (gold_ship)
   - グラスワンダー (grass_wonder)
+  - ハーツクライ (hearts_cry)
   - イスキリ (isukiri)
   - キングカメハメハ (king_kamehameha)
   - キタサンブラック (kitasan_black)
@@ -28,105 +29,522 @@
   - サニーブライアン (sunny_brian)
   - シンボリルドルフ (symboli_rudolf)
   - テイエムプリキュア (teiem_purikyua)
+  - テンポイント (ten_point)
   - テイエムオペラオー (tm_opera_o)
   - トウカイテイオー (tokai_teio)
   - ヴェラスター (vera_star)
   - ウォッカ (vodka)
 
 [名馬選定・脚本生成・ファクトチェック中...]
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
 [API応答]
-HORSE_NAME: テンポイント
-HORSE_KEY: ten_point
-ERA: 1970年代
-CATCHPHRASE: 悲劇の貴公子、競馬の未来を変えた命
+HORSE_NAME: ミホノブルボン
+HORSE_KEY: mihono_bourbon
+ERA: 1990年代
+CATCHPHRASE: 鉄の意志が宿る無敗の二冠馬
 ---SCRIPT---
-1頭の馬の死が、競馬のルールを変えた
-その馬の名前はテンポイント
-「TTG」と称された時代を彩る関西の貴公子
-天皇賞（春）と有馬記念を制した八大競走2勝馬
-1977年 天皇賞（春）では3分19秒0のレコードで圧勝
-同年の有馬記念では宿敵トウショウボーイと死闘
-クビ差で制し 年度代表馬に輝いた
-そして1978年1月22日 日経新春杯
-圧倒的1番人気で出走するも 第3コーナーで左後肢を開放骨折
-競走中止
-日本中のファンが回復を祈り 募金活動も行われた
-しかし47日後の3月5日 懸命な治療の甲斐なく死亡
-享年5歳だった
-その悲劇的な最期は 馬運車の改善や競走馬の治療体制を大きく変えた
-彼の命は、競馬の未来を照らし続けた
+無敗の二冠馬が、三冠を目前に引退した。
+その馬の名前、ミホノブルボン。
+戸山為夫調教師が課した、異例のスパルタ調教。
+坂路をひたすら駆け上がる、その鍛錬は「戸山流」と呼ばれた。
+その成果か、デビューから無傷の6連勝。
+1992年、皐月賞では他馬を寄せ付けない逃げ切りで5馬身差の圧勝。
+続く日本ダービーも、ライスシャワーを抑え、後続に2馬身差をつけて逃げ切った。
+無敗の二冠達成。
+史上5頭目の三冠馬が確実視された。
+しかし菊花賞直前、右トモの骨折が判明。
+そのままターフを去った。
+幻の三冠馬。
+鉄の意志と、叶わなかった夢。
 ---END---...
 
-[選定完了] 馬名: テンポイント  キー: ten_point
+[選定完了] 馬名: ミホノブルボン  キー: mihono_bourbon
 [最終脚本]
-1頭の馬の死が、競馬のルールを変えた
-その馬の名前はテンポイント
-「TTG」と称された時代を彩る関西の貴公子
-天皇賞（春）と有馬記念を制した八大競走2勝馬
-1977年 天皇賞（春）では3分19秒0のレコードで圧勝
-同年の有馬記念では宿敵トウショウボーイと死闘
-クビ差で制し 年度代表馬に輝いた
-そして1978年1月22日 日経新春杯
-圧倒的1番人気で出走するも 第3コーナーで左後肢を開放骨折
-競走中止
-日本中のファンが回復を祈り 募金活動も行われた
-しかし47日後の3月5日 懸命な治療の甲斐なく死亡
-享年5歳だった
-その悲劇的な最期は 馬運車の改善や競走馬の治療体制を大きく変えた
-彼の命は、競馬の未来を照らし続けた
+無敗の二冠馬が、三冠を目前に引退した。
+その馬の名前、ミホノブルボン。
+戸山為夫調教師が課した、異例のスパルタ調教。
+坂路をひたすら駆け上がる、その鍛錬は「戸山流」と呼ばれた。
+その成果か、デビューから無傷の6連勝。
+1992年、皐月賞では他馬を寄せ付けない逃げ切りで5馬身差の圧勝。
+続く日本ダービーも、ライスシャワーを抑え、後続に2馬身差をつけて逃げ切った。
+無敗の二冠達成。
+史上5頭目の三冠馬が確実視された。
+しかし菊花賞直前、右トモの骨折が判明。
+そのままターフを去った。
+幻の三冠馬。
+鉄の意志と、叶わなかった夢。
 
 [20秒待機中（レート制限対策）...]
-[独立ファクトチェック中...]
-[ファクトチェック応答]
+[1文ずつファクトチェック中...]
+[1文ずつファクトチェック] 対象: 13 文
+  [1/13] 無敗の二冠馬が、三冠を目前に引退した。
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+    [検索グラウンディング使用]
+    修正 → 無敗の二冠馬だったが、三冠をかけた菊花賞で敗れ、その後引退した。
+  [2/13] その馬の名前、ミホノブルボン。
+    [検索グラウンディング使用]
+    PASS
+  [3/13] 戸山為夫調教師が課した、異例のスパルタ調教。
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+    [検索グラウンディング使用]
+    PASS
+  [4/13] 坂路をひたすら駆け上がる、その鍛錬は「戸山流」と呼ばれた。
+    [検索グラウンディング使用]
+    PASS
+  [5/13] その成果か、デビューから無傷の6連勝。
+    [検索グラウンディング使用]
+    修正 → その成果か、デビューから無傷の7連勝。
+  [6/13] 1992年、皐月賞では他馬を寄せ付けない逃げ切りで5馬身差の圧勝。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+    [検索グラウンディング使用]
+    修正 → 1992年、皐月賞では他馬を寄せ付けない逃げ切りで2馬身半差の圧勝。
+  [7/13] 続く日本ダービーも、ライスシャワーを抑え、後続に2馬身差をつけて逃げ切った。
+    [検索グラウンディング使用]
+    修正 → 続く日本ダービーも、ライスシャワーを抑え、後続に4馬身差をつけて逃げ切った。
+  [8/13] 無敗の二冠達成。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+    [検索グラウンディング使用]
+    PASS
+  [9/13] 史上5頭目の三冠馬が確実視された。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+    [検索グラウンディング使用]
+    PASS
+  [10/13] しかし菊花賞直前、右トモの骨折が判明。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+    [検索グラウンディング使用]
+    修正 → しかし菊花賞後、脚部不安を発症し、その後骨折が判明した。
+  [11/13] そのままターフを去った。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+    [検索グラウンディング使用]
+    PASS
+  [12/13] 幻の三冠馬。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.5-flash] 503 サービス停止。リトライ...
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+    [検索グラウンディング使用]
+    PASS
+  [13/13] 鉄の意志と、叶わなかった夢。
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+    [検索グラウンディング使用]
+    PASS
+
+[1文ずつファクトチェック完了] 5 箇所を修正
+  「無敗の二冠馬が、三冠を目前に引退した。」→「無敗の二冠馬だったが、三冠をかけた菊花賞で敗れ、その後引退した。」
+  「その成果か、デビューから無傷の6連勝。」→「その成果か、デビューから無傷の7連勝。」
+  「1992年、皐月賞では他馬を寄せ付けない逃げ切りで5馬身差の圧勝。」→「1992年、皐月賞では他馬を寄せ付けない逃げ切りで2馬身半差の圧勝。」
+  「続く日本ダービーも、ライスシャワーを抑え、後続に2馬身差をつけて逃げ切った。」→「続く日本ダービーも、ライスシャワーを抑え、後続に4馬身差をつけて逃げ切った。」
+  「しかし菊花賞直前、右トモの骨折が判明。」→「しかし菊花賞後、脚部不安を発症し、その後骨折が判明した。」
+[1文ずつファクトチェック後の脚本]
+無敗の二冠馬だったが、三冠をかけた菊花賞で敗れ、その後引退した。
+その馬の名前、ミホノブルボン。
+戸山為夫調教師が課した、異例のスパルタ調教。
+坂路をひたすら駆け上がる、その鍛錬は「戸山流」と呼ばれた。
+その成果か、デビューから無傷の7連勝。
+1992年、皐月賞では他馬を寄せ付けない逃げ切りで2馬身半差の圧勝。
+続く日本ダービーも、ライスシャワーを抑え、後続に4馬身差をつけて逃げ切った。
+無敗の二冠達成。
+史上5頭目の三冠馬が確実視された。
+しかし菊花賞後、脚部不安を発症し、その後骨折が判明した。
+そのままターフを去った。
+幻の三冠馬。
+鉄の意志と、叶わなかった夢。
+
+[20秒待機中（レート制限対策）...]
+[全体ファクトチェック中...]
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 リトライ上限 → 次へ
+    [検索グラウンディング使用]
+[全体ファクトチェック応答]
 ISSUES:
-- テンポイントの死亡までの日数が誤っています。1978年1月22日の故障発生から1978年3月5日の死亡までは「42日後」です。「47日後」ではありません。
+- 日本ダービーの着差が誤っています。ミホノブルボンはライスシャワーに1馬身3/4差で勝利しました。脚本では「後続に4馬身差」と記載されています。
+- 菊花賞後の脚部不安について、骨折ではなく屈腱炎を発症しました。脚本では「その後骨折が判明した」と記載されています。
 ---CORRECTED---
-1頭の馬の死が、競馬のルールを変えた
-その馬の名前はテンポイント
-「TTG」と称された時代を彩る関西の貴公子
-天皇賞（春）と有馬記念を制した八大競走2勝馬
-1977年 天皇賞（春）では3分19秒0のレコードで圧勝
-同年の有馬記念では宿敵トウショウボーイと死闘
-クビ差で制し 年度代表馬に輝いた
-そして1978年1月22日 日経新春杯
-圧倒的1番人気で出走するも 第3コーナーで左後肢を開放骨折
-競走中止
-日本中のファンが回復を祈り 募金活動も行われた
-しかし42日後の3月5日 懸命な治療の甲斐なく死亡
-享年5歳だった
-その悲劇的な最期は 馬運車の改善や競走馬の治療体制を大きく変えた
-彼の命は、競馬の未来を照らし続けた
+無敗の二冠馬だったが、三冠をかけた菊花賞で敗れ、その後引退した。
+その馬の名前、ミホノブルボン。
+戸山為夫調教師が課した、異例のスパルタ調教。
+坂路をひたすら駆け上がる、その鍛錬は「戸山流」と呼ばれた。
+その成果か、デビューから無傷の7連勝。
+1992年、皐月賞では他馬を寄せ付けない逃げ切りで2馬身半差の圧勝。
+続く日本ダービーも、ライスシャワーを抑え、後続に1馬身3/4差をつけて逃げ切った。
+無敗の二冠達成。
+史上5頭目の三冠馬が確実視された。
+しかし菊花賞後、脚部不安を発症し、その後屈腱炎が判明した。
+そのままターフを去った。
+幻の三冠馬。
+鉄の意志と、叶わなかった夢。
 ---END---
 
-[ファクトチェック] 修正あり → 修正済み脚本を採用
-[ファクトチェック後の脚本]
-1頭の馬の死が、競馬のルールを変えた
-その馬の名前はテンポイント
-「TTG」と称された時代を彩る関西の貴公子
-天皇賞（春）と有馬記念を制した八大競走2勝馬
-1977年 天皇賞（春）では3分19秒0のレコードで圧勝
-同年の有馬記念では宿敵トウショウボーイと死闘
-クビ差で制し 年度代表馬に輝いた
-そして1978年1月22日 日経新春杯
-圧倒的1番人気で出走するも 第3コーナーで左後肢を開放骨折
-競走中止
-日本中のファンが回復を祈り 募金活動も行われた
-しかし42日後の3月5日 懸命な治療の甲斐なく死亡
-享年5歳だった
-その悲劇的な最期は 馬運車の改善や競走馬の治療体制を大きく変えた
-彼の命は、競馬の未来を照らし続けた
+[全体ファクトチェック] 修正あり → 修正済み脚本を採用
+[全体ファクトチェック後の脚本]
+無敗の二冠馬だったが、三冠をかけた菊花賞で敗れ、その後引退した。
+その馬の名前、ミホノブルボン。
+戸山為夫調教師が課した、異例のスパルタ調教。
+坂路をひたすら駆け上がる、その鍛錬は「戸山流」と呼ばれた。
+その成果か、デビューから無傷の7連勝。
+1992年、皐月賞では他馬を寄せ付けない逃げ切りで2馬身半差の圧勝。
+続く日本ダービーも、ライスシャワーを抑え、後続に1馬身3/4差をつけて逃げ切った。
+無敗の二冠達成。
+史上5頭目の三冠馬が確実視された。
+しかし菊花賞後、脚部不安を発症し、その後屈腱炎が判明した。
+そのままターフを去った。
+幻の三冠馬。
+鉄の意志と、叶わなかった夢。
 
 [20秒待機中（レート制限対策）...]
 [メタデータ生成中...]
-[メタデータ応答]
-TAGS: テンポイント, 天皇賞（春）, 有馬記念, TTG, 骨折, 悲劇, 競馬史, 名馬
-THUMBNAIL_TOP: 悲劇の
-THUMBNAIL_MAIN: 競馬を変えた死
-
-
-[名馬データ保存]
-  data/famous_horses/ten_point.txt
-  data/famous_horses/ten_point.json
-[パイプライン用ファイル書き出し]
-  news.json: タイトル「テンポイント」
-  output/script_0.txt: 310 文字
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.5-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.5-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 レート制限。60秒待機...
+  [key=***... gemini-2.0-flash] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash] 429 リトライ上限 → 次へ
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。30秒待機...
+  [key=***... gemini-2.0-flash-lite] 429 詳細: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+  [key=***... gemini-2.0-flash-lite] 429 レート制限。60秒待機...
