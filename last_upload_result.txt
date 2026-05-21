@@ -1,8 +1,8 @@
-date: 2026-05-21T07:22:39.260153Z
+date: 2026-05-21T07:41:46.701155Z
 projects_loaded: 1
 uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=btv-G0AohUE title=【オークス2026枠順確定予想】5枠10番スターアニス松山弘平が中枠から断然！6
+OK project=1 video_id=Q46H3FZNRaE title=【オークス2026枠順確定予想】5枠10番スターアニス松山弘平が中枠から断然！6
