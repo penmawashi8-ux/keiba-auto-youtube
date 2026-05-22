@@ -1,10 +1,10 @@
-date: 2026-05-22T05:15:05.497084Z
+date: 2026-05-22T06:54:36.522836Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tHHaKe-r9gM title=【オークス・金曜気配】堅実さが光るアメティスタは金曜に東京競馬場へ輸送　牧浦調教
-OK project=1 video_id=ywA_sXWLpho title=【オークス・金曜気配】抽選突破のスタニングレディは申し分ない出来　陣営「目いっぱ
-OK project=1 video_id=5sK8akDuszM title=【オークス・金曜気配】最少キャリアでの優勝を目指すエンネ　吉岡調教師は「前走より
+OK project=1 video_id=fJJyZre9DDI title=【オークス】今村聖奈「競馬では疲れない」　デビュー前から感じていたジュウリョクピ
+OK project=1 video_id=_izaU1TUqDg title=ソダシの妹、白毛のマルガ天国へ旅立つ　放牧先での疾病のため　須貝調教師「やりきれ
+OK project=1 video_id=AlDe5tvU75Q title=「寂しくなる」「鬼脚に脱帽」「もっと見たかった」G1牝馬アスコリピチェーノの電撃
