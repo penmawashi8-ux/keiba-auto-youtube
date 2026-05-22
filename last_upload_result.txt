@@ -1,10 +1,10 @@
-date: 2026-05-22T00:23:36.132780Z
+date: 2026-05-22T05:15:05.497084Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=u7gENEMBoJo title=半姉は名牝リバティアイランド マディソンガールが半年ぶり復帰戦だ
-OK project=1 video_id=SMqBc0wGEgk title=【オークス】ラフターラインズは後入れの8枠18番　小笠調教師は前向き「大外は極端
-OK project=1 video_id=-Ia7GNkgsgc title=今年の凱旋門賞の1番人気　連覇かかるダリズがG1・3連勝で6→5倍に評価UP　ア
+OK project=1 video_id=tHHaKe-r9gM title=【オークス・金曜気配】堅実さが光るアメティスタは金曜に東京競馬場へ輸送　牧浦調教
+OK project=1 video_id=ywA_sXWLpho title=【オークス・金曜気配】抽選突破のスタニングレディは申し分ない出来　陣営「目いっぱ
+OK project=1 video_id=5sK8akDuszM title=【オークス・金曜気配】最少キャリアでの優勝を目指すエンネ　吉岡調教師は「前走より
