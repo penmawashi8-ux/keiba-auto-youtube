@@ -1,162 +1,48 @@
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [ファクトチェックNG] NG: 坂井騎手で目黒記念
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [ファクトチェックNG] NG: 元記事に書かれていないレース結果
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [1] のスクリプト生成失敗。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【POG】橘S2着フォーゲルは葵Sへ 斉藤崇師「展開ひとつでチャンスはあると思います」/馬三郎のつぶやき ---
-[0] Gemini入力本文 345文字: '◆フォーゲル(22日・森岡)\n\u3000先週京都の橘Sで2着に惜敗したフォーゲル(牡3歳、栗東・斉藤崇)は、次週の葵S(30日・京都、芝1200m)で重賞初制覇を狙う。「前回は千四でしたが、上手に立ち回れていました。チークを外してもしっかりと走れて'
+--- 記事[0]: 【netkeibaTV】細江純子×じゃいがオークスを展望 桜花賞組or別路線組…2人の結論は ---
+[0] Gemini入力本文 431文字: 'ホースコラボレーターの細江純子、生粋のギャンブラーとして知られるじゃいの2人が、5月24日(日)に東京競馬場で行われるオークス(3歳牝・GI・芝2400m)を展望します。\n\u3000じゃいは桜花賞について、「今年の3歳馬は牝馬が牡馬に勝てない流れ。'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【有力馬動向】素質開花ムードのキングスコールは坂井騎手で目黒記念へ「試行錯誤の連続だった」/馬三郎のつぶやき ---
-[1] Gemini入力本文 339文字: '◆キングスコール(22日・森田)\n\u3000先週東京の六社Sで差し切りVを決めて、キングスコール(牡4歳、栗東・矢作)は晴れてオープン馬に。新馬戦レコードV→2戦目で長欠明けのスプリングS3着と早くから素質の高さを示していたドゥラメンテ産駒が、脚質'
+--- 記事[1]: 千葉サラブレッドセールでキタサンブラック産駒の牡馬が最高額の2億2000万円　窪田芳郎氏が落札 ---
+[1] Gemini入力本文 400文字: '千葉サラブレッドセール(千葉県両総馬匹農業協同組合主催)が5月22日、船橋競馬場で行われた。2歳馬60頭が上場されて、57頭が落札されて、売却率は95・0％だった。\n\t\t\t\t\u3000最高額は父キタサンブラック、母デイアウトオブジオフィスの牡馬で、'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: ローカルでまさかの対決!?　23日新潟12Rは大谷翔平VSヌートバーの代理戦争の様相? ---
-[2] Gemini入力本文 353文字: '5月23日の新潟12R・4歳1勝クラス(ダート1200メートル)で、話題馬2頭が“対決”する。\n\t\t\t\t\u3000同レースには15頭の出走が決定。目を引くのが、珍名馬として話題の4枠6番に入ったオオタニサーン(牡5歳、美浦・堀宣行厩舎、父ジャスティ'
+--- 記事[2]: 24年エルムS覇者のペイシャエスが現役引退し、美浦トレセンで乗馬に　前日に屈腱炎と発表 ---
+[2] Gemini入力本文 347文字: 'JRAは5月22日、22年のユニコーンS・G3や24年のエルムS・G3を勝ったペイシャエス(牡7歳、美浦・高木登厩舎、父エスポワールシチー)が21日付で競走馬登録を抹消したと発表した。前日21日には、右前浅屈腱炎で全治9か月以上の休養を要す'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
   HTTP 200
-[2]  [Gemini生出力 237文字]: '競馬ファン注目の情報です。5月23日の新潟12R・4歳1勝クラス、ダート1200メートルで、話題馬2頭が“対決”します。同レースには15頭の出走が決定しました。珍名馬として話題の4枠6番オオタニサーンと、6枠10番ペッパーミルが、くしくもともにゲートインすることとなりました。オオタニサーンは美浦・堀宣行厩舎所属で父がジャスティファイです。ペッパーミルは美浦・加藤士津八厩舎所属で父がコパノリッキーです。2023年WBCつながり？とも言えるこの2頭の出走に注目が集まります。'
-  HTTP 503
+[2]  [Gemini生出力 212文字]: '競馬速報です。JRAは5月22日、22年のユニコーンステークス・G3や24年のエルムステークス・G3を勝ったペイシャエスが21日付で競走馬登録を抹消したと発表しました。前日21日には、右前浅屈腱炎で全治9か月以上の休養を要する見込みと発表されたばかりでした。今後は美浦トレーニングセンターで乗馬になる予定です。同馬は26年2月まで美浦の小西一男厩舎に所属しており、同厩舎の定年解散に伴って3月に高木登厩舎へ転厩していました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (237文字)
-[2]  プレビュー: 競馬ファン注目の情報です。5月23日の新潟12R・4歳1勝クラス、ダート1200メートルで、話題馬2頭が“対決”します。同レースには15頭の出走が決定しました。...
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[2]  → output/script_2.txt 保存 (212文字)
+[2]  プレビュー: 競馬速報です。JRAは5月22日、22年のユニコーンステークス・G3や24年のエルムステークス・G3を勝ったペイシャエスが21日付で競走馬登録を抹消したと発表し...
   HTTP 200
-[0]  [Gemini生出力 210文字]: '競馬ファン注目の情報です。\n先週京都の橘Sで2着に惜敗したフォーゲルは、次週の葵Sで重賞初制覇を狙います。\n葵Sは30日に京都の芝1200mで行われる予定です。\n斉藤崇調教師は、前回は千四でしたが上手に立ち回れていましたとコメントしました。\nチークを外してもしっかりと走れていましたし、距離が1F詰まるのはいいと思いますと好感触を伝えています。\n展開ひとつでチャンスはあると思いますよ、と重賞初制覇への期待を示しました。'
-[0]  [重複除去] 210文字 → 205文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (205文字)
-[0]  プレビュー: 競馬ファン注目の情報です。先週京都の橘Sで2着に惜敗したフォーゲルは、次週の葵Sで重賞初制覇を狙います。葵Sは30日に京都の芝1200mで行われる予定です。斉藤...
+[0]  [Gemini生出力 238文字]: 'レース関連の最新情報です。ホースコラボレーターの細江純子さんと生粋のギャンブラーとして知られるじゃいさんが、5月24日(日)に東京競馬場で行われるオークス、3歳牝・GI・芝2400mを展望しました。じゃいさんは桜花賞について、「今年の3歳馬は牝馬が牡馬に勝てない流れ。レベルがそこまで高くなかった」と振り返っています。その上で、「別路線組の逆転も生まれる可能性が高いのでは」とジャッジしました。細江純子さんも桜花賞組を気にかけつつ、「別路線組も気になる」とコメントしています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (238文字)
+[0]  プレビュー: レース関連の最新情報です。ホースコラボレーターの細江純子さんと生粋のギャンブラーとして知られるじゃいさんが、5月24日(日)に東京競馬場で行われるオークス、3歳...
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 220文字]: '今日の競馬情報です。\nキングスコールは、先週東京の六社ステークスで差し切り勝利を決め、オープン馬となりました。新馬戦でのレコード勝利や、2戦目で長欠明けのスプリングステークス3着と、早くから素質の高さを示していたドゥラメンテ産駒です。能力は高いものの難しい面があり、矢作調教師はこれまで試行錯誤の連続だったと語っています。しかし、脚質転換に大成功し、ブリンカー効果も相まって充実の時を迎えています。次走は坂井騎手で目黒記念へ向かう予定です。'
-[1]  [重複除去] 220文字 → 219文字
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 255文字]: '今日の競馬情報です。先週東京の六社Sで差し切りVを決めたキングスコールは、晴れてオープン馬となりました。このキングスコールは、坂井騎手で目黒記念へ向かう予定です。新馬戦レコードV、そして2戦目で長欠明けのスプリングS3着と、早くから素質の高さを示していました。ドゥラメンテ産駒であるキングスコールは、脚質転換にも大成功し、充実の時を迎えています。能力が高いことは分かっていたものの、難しい面があったため、ここまで試行錯誤の連続だったと伝えられています。ブリンカー効果も相まって、やっと結果を出したとのことです。'
-[1] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[1]  [Gemini生出力 223文字]: '最新のレース情報が入ってきました。\n千葉サラブレッドセールが5月22日に船橋競馬場で行われました。2歳馬60頭が上場され、57頭が落札されて、売却率は95.0％でした。最高額は父キタサンブラック、母デイアウトオブジオフィスの牡馬で、窪田芳郎氏が税抜き2億2000万円で落札しました。この馬は社台ファームの生産馬で、母はフリゼットS・米G1（ダート1600メートル）の勝ち馬です。また、2番目に高額だったのは父レイデオロ、母カラクレナイの馬でした。'
+[1]  [重複除去] 223文字 → 222文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (222文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。千葉サラブレッドセールが5月22日に船橋競馬場で行われました。2歳馬60頭が上場され、57頭が落札されて、売却率は95.0％で...
+
+3 件の脚本を生成しました。
