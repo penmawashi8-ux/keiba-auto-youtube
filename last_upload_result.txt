@@ -1,10 +1,10 @@
-date: 2026-05-22T11:57:10.523901Z
+date: 2026-05-22T13:48:00.398688Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IfzF-4SrwJQ title=【POG2026-2027】有力馬2歳馬1-50位の番付を大公開！
-OK project=1 video_id=93CgWqcpv0o title=【netkeibaTV】ロマンチックウォリアーが史上3頭目の香港古馬三冠なるか 
-OK project=1 video_id=FzrySKCADLY title=【オークス予想】人気上位勢も低数値の波乱模様に!? GIオークス・調子偏差値速報
+OK project=1 video_id=Fqtguh45zLw title=半姉は二冠牝馬チェルヴィニア チェルヴァーラが9カ月ぶりの復帰戦だ
+OK project=1 video_id=kLC-lcB5rNI title=ロイヤルファミリー役のブレイヴソルジャー 新潟千直で連勝なるか
+OK project=1 video_id=lD2h5rPQVIY title=オークスも1番人気!?　JRA・G1は1番人気が7連勝中　過去10年のデータから
