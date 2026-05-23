@@ -1,10 +1,10 @@
-date: 2026-05-23T10:33:00.803464Z
+date: 2026-05-23T12:10:54.128621Z
 projects_loaded: 1
 uploaded: 2
 quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZyBfxxCIsgw title=【オーストラリアTレース後コメント】ヨリノレジェンド団野大成騎手ら
-OK project=1 video_id=oyx0ps1XDD0 title=松尾卓哉調教師がJRA初勝利！ 「非常に大きな1勝だと思う」
-QUOTA_EXCEEDED project=1 title=秋本大介調教師がJRA初勝利！ 「本当に感謝しかありません」
+OK project=1 video_id=NPyR8aNKztQ title=【AI予想・オークス】さらなる成長を見せる2歳女王！ 連対率100％のデータとも
+OK project=1 video_id=XI9HewHBGAY title=【高知競馬】妹尾浩一朗騎手が通算400勝　8Rアンビシューで達成
+QUOTA_EXCEEDED project=1 title=昆貢調教師がJRA通算500勝達成！ 「もっともっと成績を出せるように頑張りたい」
