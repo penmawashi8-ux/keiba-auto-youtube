@@ -1,10 +1,10 @@
-date: 2026-05-23T00:24:43.948820Z
+date: 2026-05-23T04:43:08.417015Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=faINYHuhDtU title=【日本ダービー】ジャスティンビスタは骨折明けでも「本追い切り」で好時計　吉岡調教
-OK project=1 video_id=tke0WO7H_fM title=「気持ちよかった。馬の上が一番いい」岩田康誠騎手が右鎖骨骨折から6日で調教復帰　
-OK project=1 video_id=Ba1i-SgVeAA title=全兄は名馬イクイノックス イクシードがカーネーションCで確勝期す
+OK project=1 video_id=lbMAV7lu-3Q title=小林美駒が７週連続Ｖで今年の１７勝目　２着に永島まなみ、３着今村聖奈で女性騎手が
+OK project=1 video_id=RjRVVOlKiFA title=22日に千葉サラブレッドセール開催 最高落札額は2億2000万円
+OK project=1 video_id=d1kvkjpibRk title=ダービートレーナー昆貢調教師がゆかりの馬でJRA通算500勝を達成　「残り少ない
