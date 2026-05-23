@@ -1,10 +1,10 @@
-date: 2026-05-23T06:23:04.485987Z
+date: 2026-05-23T07:32:54.223755Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3PzHozlUW-s title=【阪神アーバン競馬プレーバック】2カ月ぶり!スネークアイズに騎乗した笹田知宏がメ
-OK project=1 video_id=Lc1mMAgAohA title=【メルボルンT結果】8番人気テイエムアイランが逃げ切り2連勝
-OK project=1 video_id=dXlgbSFQk3c title=【カーネーションC結果】イクイノックスの全妹イクシードが差し切りV
+OK project=1 video_id=5MwVjLl_MNI title=【平安S】当レース最多勝男・川田将雅騎手のタイトニットは3着　最後方から猛然と追
+OK project=1 video_id=YofDW5LFnHw title=【平安Ｓ】１番人気のロードクロンヌが３馬身半差の完勝劇で重賞Ｖ２　横山和「本当に
+OK project=1 video_id=E03wK_zdNlA title=【平安S】積極策のナルカミ復活への道険し…　8着に終わる
