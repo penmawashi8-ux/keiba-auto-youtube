@@ -1,10 +1,10 @@
-date: 2026-05-22T13:48:00.398688Z
+date: 2026-05-23T00:24:43.948820Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Fqtguh45zLw title=半姉は二冠牝馬チェルヴィニア チェルヴァーラが9カ月ぶりの復帰戦だ
-OK project=1 video_id=kLC-lcB5rNI title=ロイヤルファミリー役のブレイヴソルジャー 新潟千直で連勝なるか
-OK project=1 video_id=lD2h5rPQVIY title=オークスも1番人気!?　JRA・G1は1番人気が7連勝中　過去10年のデータから
+OK project=1 video_id=faINYHuhDtU title=【日本ダービー】ジャスティンビスタは骨折明けでも「本追い切り」で好時計　吉岡調教
+OK project=1 video_id=tke0WO7H_fM title=「気持ちよかった。馬の上が一番いい」岩田康誠騎手が右鎖骨骨折から6日で調教復帰　
+OK project=1 video_id=Ba1i-SgVeAA title=全兄は名馬イクイノックス イクシードがカーネーションCで確勝期す
