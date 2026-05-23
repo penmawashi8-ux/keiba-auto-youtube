@@ -1,10 +1,10 @@
-date: 2026-05-23T07:32:54.223755Z
+date: 2026-05-23T09:07:37.636406Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5MwVjLl_MNI title=【平安S】当レース最多勝男・川田将雅騎手のタイトニットは3着　最後方から猛然と追
-OK project=1 video_id=YofDW5LFnHw title=【平安Ｓ】１番人気のロードクロンヌが３馬身半差の完勝劇で重賞Ｖ２　横山和「本当に
-OK project=1 video_id=E03wK_zdNlA title=【平安S】積極策のナルカミ復活への道険し…　8着に終わる
+OK project=1 video_id=ma3dmNkTeqc title=【高尾特別レース後コメント】シャイフ安田景一朗調教助手ら
+OK project=1 video_id=Z3aEzRxhPUU title=【オークス・土曜気配】レイクラシックが決戦の地に到着　陣営は距離延長を歓迎「東京
+OK project=1 video_id=anI4qkh4C04 title=【オークス前日オッズ】スターアニスが3.0倍で1番人気
