@@ -1,10 +1,10 @@
-date: 2026-05-24T07:53:15.461085Z
+date: 2026-05-24T09:21:55.130596Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=w0E7SOq0VL4 title=【国分寺特別レース後コメント】フォルラニーニ D.レーン騎手ら
-OK project=1 video_id=M7mhnXpT7js title=【オークス】惜しい…2着ドリームコア、急逝・萩原調教師への弔い星までわずか　今村
-OK project=1 video_id=jncJzMRzbcQ title=【聖護院特別レース後コメント】アラタマフェーヴル松若風馬騎手ら
+OK project=1 video_id=yDm_zb_YNFQ title=【オークス】今村聖奈騎手の師匠である寺島調教師が快挙達成の愛弟子に感謝「いきなり
+OK project=1 video_id=jmrU3zQxDlk title=同姓同名でＳＮＳ大騒ぎ　オークス馬のジュウリョクピエロはソフトバンク・近藤健介が
+OK project=1 video_id=UX1do6ffMTE title=イクイノックスの全弟は額に珍しい特徴を持つ「とても活発な男の子」　シャトーブラン
