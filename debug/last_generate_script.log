@@ -1,5 +1,35 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [ファクトチェックNG] NG: ディープモンスターは3着に入
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: ディープモンスターは3着となり
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: ディープモンスターは3着となり、池
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -8,37 +38,74 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【オークス】今村聖奈騎手の師匠である寺島調教師が快挙達成の愛弟子に感謝「いきなりチャンスをものにして、お礼というか... ---
-[0] Gemini入力本文 355文字: '◆第87回オークス・G1(5月24日、東京競馬場・芝2400メートル、良)\n\t\t\t\t\u30003歳牝馬18頭立てで争われ、5番人気で今村聖奈騎手が手綱を執るジュウリョクピエロ(栗東・寺島良厩舎、父オルフェーヴル)が、最後の直線で馬群を割って一気の末'
+--- 記事[0]: 「凱旋門賞も」「感動した」「競馬界に激震」オークスで快挙達成の今村聖奈騎手にSNSは大興奮 ---
+[0] Gemini入力本文 347文字: '3歳牝馬で争われるオークス・G1(24日、東京・芝2400メートル)は、5番人気で今村聖奈騎手が手綱を執るジュウリョクピエロ(栗東・寺島良厩舎、父オルフェーヴル)が直線で一気の末脚で樫の女王の座に就いた。今村騎手はJRA女性騎手初のクラシッ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 同姓同名でＳＮＳ大騒ぎ　オークス馬のジュウリョクピエロはソフトバンク・近藤健介がオーナー？ ---
-[1] Gemini入力本文 331文字: '「オークス・Ｇ１」（２４日、東京）\n\u3000今村聖奈騎手が騎乗したジュウリョクピエロが馬群をさばいてＧ１初制覇。今村騎手は女性騎手として初のクラシック制覇を成し遂げたのだが、別角度でＳＮＳが沸いている。\n\u3000同馬のオーナーは近藤健介氏。ソフトバンク'
+--- 記事[1]: 【オークス】売り上げは対前年比105・4%とアップ　入場人員も4万4539人で同111・0% ---
+[1] Gemini入力本文 294文字: '24日に東京競馬場で行われたオークスの売り上げは211億1692万4300円で対前年比105・4％とアップした。また、同日の東京競馬場の入場人員も4万4539人で同111・0％とこちらもアップして、大盛況だった。 24日に東京競馬場で行われ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: イクイノックスの全弟は額に珍しい特徴を持つ「とても活発な男の子」　シャトーブランシュが4月に出産 ---
-[2] Gemini入力本文 342文字: 'ノーザンホースパークの公式Xは24日、G1・6勝を挙げたイクイノックスの母シャトーブランシュがキタサンブラックの牡馬を4月10日に出産していたことを写真とリール動画を添えて報告した。\n\t\t\t\t\u3000公式インスタグラムでは【ノーザンファームからの'
+--- 記事[2]: 【香港チャンピオンズ&チャターC】ディープモンスター3着「応援ありがとうございました」池江泰寿師 ---
+[2] Gemini入力本文 351文字: '香港競馬のシーズン(9月から翌年7月)最後のG1となるチャンピオンズ＆チャターC(芝2400メートル)は24日、シャティン競馬場で9頭で争われ、ジェームズ・マクドナルド(34)騎乗のロマンチックウォリアー(セン8＝シャム、父アクラメイション'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 309文字]: '最新のレース情報が入ってきました。第87回オークス・G1が5月24日、東京競馬場・芝2400メートル、良馬場で行われました。3歳牝馬18頭立てで争われたこのレースでは、5番人気のジュウリョクピエロが今村聖奈騎手の手綱で勝利を収めました。ジュウリョクピエロは最後の直線で馬群を割って一気の末脚で抜け出し、樫の女王の座に就き、勝ち時計は2分25秒6でした。今村騎手はJRA女性騎手初のクラシック騎乗で、JRA女性騎手初のG1タイトルを獲得し、歴史に新たな1ページを刻みました。今村聖奈騎手の師匠である寺島調教師は、この快挙達成の愛弟子に対し、「いきなりチャンスをものにして、お礼というか...」と感謝の言葉を述べています。'
-  HTTP 200
-[1]  [Gemini生出力 232文字]: '競馬ファン注目の情報です。\nオークス・G1が24日に東京で開催され、今村聖奈騎手が騎乗したジュウリョクピエロが馬群をさばいてG1初制覇を飾りました。今村騎手は女性騎手として初のクラシック制覇を成し遂げました。一方で、同馬のオーナーは近藤健介氏であり、ソフトバンクの近藤健介外野手とは別人ですが、同姓同名であることからSNSが沸騰しました。優勝直後からSNSでは「コンちゃん、馬主だったの？」「コンちゃん、おめでと」「オーナーの近藤健介」といった声が上がっています。'
-[1]  [重複除去] 232文字 → 231文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (306文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。第87回オークス・G1が5月24日、東京競馬場・芝2400メートル、良馬場で行われました。3歳牝馬18頭立てで争われたこのレー...
+[1]  [Gemini生出力 121文字]: '今日の競馬情報です。24日に東京競馬場で行われたオークスの売り上げは211億1692万4300円で、対前年比105.4%とアップしました。また、同日の東京競馬場の入場人員も4万4539人で、こちらも対前年比111.0%と増加し、大盛況でした。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (231文字)
-[1]  プレビュー: 競馬ファン注目の情報です。オークス・G1が24日に東京で開催され、今村聖奈騎手が騎乗したジュウリョクピエロが馬群をさばいてG1初制覇を飾りました。今村騎手は女性...
+[1]  → output/script_1.txt 保存 (121文字)
+[1]  プレビュー: 今日の競馬情報です。24日に東京競馬場で行われたオークスの売り上げは211億1692万4300円で、対前年比105.4%とアップしました。また、同日の東京競馬場...
   HTTP 200
-[2]  [Gemini生出力 217文字]: '注目の競馬情報をお届けします。\nノーザンホースパークの公式Xは24日、G1・6勝を挙げたイクイノックスの母シャトーブランシュが、キタサンブラックの牡馬を4月10日に出産していたことを報告しました。この報告には、写真とリール動画が添えられています。また、公式インスタグラムでも【ノーザンファームからのお便り】と題し、「イクイノックスの母、シャトーブランシュが元気な男の子を出産しました！お父さんはキタサンブラックです」と投稿されました。'
-[2]  [redirectフィルター] 217文字 → 201文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: ノーザンホースパークの公式Xは24日、G1・6勝を挙げたイクイノックスの母シャトーブランシュが、キタサンブラックの牡馬を4月10日に出産していたことを報告しまし...
-
-3 件の脚本を生成しました。
+[0]  [Gemini生出力 244文字]: '最新のレース情報が入ってきました。\n3歳牝馬で争われるオークス・G1が24日に東京・芝2400メートルで行われ、5番人気で今村聖奈騎手が手綱を執るジュウリョクピエロが直線で一気の末脚を見せ、樫の女王の座に就きました。今村騎手はJRA女性騎手として初のクラシック騎乗を果たし、さらにJRA女性騎手初のG1制覇という快挙を達成しています。この偉業に対し、X（旧ツイッター）では今村聖奈騎手の関連ワードがトレンド上位を占めるなど、SNSでは「今村祭り」と称されるほど大きな興奮が広がっています。'
+[0]  [重複除去] 244文字 → 243文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (243文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。3歳牝馬で争われるオークス・G1が24日に東京・芝2400メートルで行われ、5番人気で今村聖奈騎手が手綱を執るジュウリョクピエ...
+  HTTP 200
+[2]  [Gemini生出力 291文字]: '競馬速報です。香港競馬のシーズン最後のG1、チャンピオンズ＆チャターCが24日、シャティン競馬場で開催されました。芝2400メートル、9頭立てで争われたこのレースは、ジェームズ・マクドナルド騎乗のロマンチックウォリアーが道中4番手から直線で追い比べを半馬身差で制し、15度目のG1制覇を飾りました。ロマンチックウォリアーは、1月のスチュワーズCと2月の香港ゴールドCを合わせ、史上3頭目となる香港古馬3冠制覇を達成しています。これは過去に93〜94年シーズンに達成されています。日本馬のディープモンスターは3着に入り、池江泰寿師は「応援ありがとうございました」とコメントしています。'
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 250文字]: '競馬速報です。香港競馬のシーズン最後のG1となるチャンピオンズ＆チャターCが24日、シャティン競馬場で9頭により芝2400メートルで争われました。ジェームズ・マクドナルド騎乗のロマンチックウォリアーが道中4番手から直線、追い比べを半馬身差で制し、15度目のG1制覇を飾っています。ロマンチックウォリアーは1月のスチュワーズC、2月の香港ゴールドCを合わせ、史上3頭目となる香港古馬3冠制覇を達成しました。ディープモンスターは3着となり、池江泰寿師は「応援ありがとうございました」とコメントしています。'
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 238文字]: '競馬速報です。\n香港競馬のシーズン最後のG1となるチャンピオンズ＆チャターCが24日、シャティン競馬場で9頭立てで行われました。ジェームズ・マクドナルド騎乗のロマンチックウォリアーが道中4番手から直線で追い比べを半馬身差で制し、15度目のG1制覇を飾りました。ロマンチックウォリアーは1月のスチュワーズC、2月の香港ゴールドCを合わせ、史上3頭目となる香港古馬3冠を達成しています。ディープモンスターは3着となり、池江泰寿師は「応援ありがとうございました」とコメントしました。'
+[2]  [重複除去] 238文字 → 237文字
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
