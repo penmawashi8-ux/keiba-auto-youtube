@@ -1,9 +1,10 @@
-date: 2026-05-24T12:12:25.813407Z
+date: 2026-05-25T00:24:43.723919Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 2
 quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=f0EoaZJNntQ title=日本ダービー最高配当は285万6300円 古くは単勝5万5430円という記録も
-QUOTA_EXCEEDED project=1 title=オークス馬ジュウリョクピエロの凱旋門賞オッズ上方修正!51倍から34倍へ　英ブックメーカー
+OK project=1 video_id=4ay6wGM9BQ0 title=【日本ダービー】歴代最多6勝の武豊騎手 ゴーイントゥスカイで4年ぶりVなるか
+OK project=1 video_id=fqAZEA7fwUo title=【葵ステークス展望】エイシンディードのスピードに注目　アンジュプロミスの古川奈穂
+QUOTA_EXCEEDED project=1 title=【日本ダービー】父も祖父も銀メダル グリーンエナジーが皐月賞7着からの巻き返しなるか
