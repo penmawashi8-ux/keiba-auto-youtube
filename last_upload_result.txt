@@ -1,10 +1,10 @@
-date: 2026-05-25T08:57:50.229661Z
+date: 2026-05-25T11:12:28.659669Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PnLN8qYmOt8 title=【大井競馬】東京ダービー選定馬発表　羽田盃完勝フィンガーが2冠狙う
-OK project=1 video_id=xJ3hkeYIuXM title=武豊騎手が日本ダービーVへ「来週、1個増えていたらいいですね」　オークスVの今村
-OK project=1 video_id=jOv_I7fsKLg title=【日本ダービー】フォルテアンジェロが皐月賞5着から巻き返し狙う　上原佑調教師「状
+OK project=1 video_id=fjs7Hiwdf9Q title=【日本ダービー過去10年傾向】前走皐月賞組が7勝、2着10回、3着6回と圧倒的
+OK project=1 video_id=-s-QmfM3kaM title=【松山康久元調教師のダービー血統診断】ロブチェンは父ワールドプレミアの持続型末脚
+OK project=1 video_id=zeMZ_Rna-Ho title=【松山康久元調教師のダービー馬体診断】ライヒスアドラーは9・5点　名馬に多い左後
