@@ -1,10 +1,10 @@
-date: 2026-05-25T11:12:28.659669Z
+date: 2026-05-25T14:10:10.730378Z
 projects_loaded: 1
-uploaded: 3
-quota_exceeded: False
+uploaded: 2
+quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fjs7Hiwdf9Q title=【日本ダービー過去10年傾向】前走皐月賞組が7勝、2着10回、3着6回と圧倒的
-OK project=1 video_id=-s-QmfM3kaM title=【松山康久元調教師のダービー血統診断】ロブチェンは父ワールドプレミアの持続型末脚
-OK project=1 video_id=zeMZ_Rna-Ho title=【松山康久元調教師のダービー馬体診断】ライヒスアドラーは9・5点　名馬に多い左後
+OK project=1 video_id=mzHZOtvEt8Y title=【日本ダービー・超ブル診断ステップレース編】逃げ切りは力の証明　個別評価最高「G
+OK project=1 video_id=SjtxOLzRUd8 title=【葵S】スピード豊かなハイヤーマークは指揮官期待の一頭　手塚久調教師「個人的に評
+QUOTA_EXCEEDED project=1 title=【記者メモ】今村聖奈騎手　オークスＶ直後の大バズリジャンプ「ヤバイ、やっちゃった！」「人生変わっちゃ
