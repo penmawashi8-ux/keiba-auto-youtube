@@ -1,10 +1,10 @@
-date: 2026-05-25T00:24:43.723919Z
+date: 2026-05-25T05:29:40.601753Z
 projects_loaded: 1
 uploaded: 2
 quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4ay6wGM9BQ0 title=【日本ダービー】歴代最多6勝の武豊騎手 ゴーイントゥスカイで4年ぶりVなるか
-OK project=1 video_id=fqAZEA7fwUo title=【葵ステークス展望】エイシンディードのスピードに注目　アンジュプロミスの古川奈穂
-QUOTA_EXCEEDED project=1 title=【日本ダービー】父も祖父も銀メダル グリーンエナジーが皐月賞7着からの巻き返しなるか
+OK project=1 video_id=N7n9mCiyQkQ title=「G1ジョッキーにさせてくれてありがとう　夢と希望を沢山与えてくれてありがとう」
+OK project=1 video_id=LnKjQDjna2A title=ダービー初Ｖを狙う坂井「当日は誕生日…今年は１着」に武豊が即ツッコミ「そんなに甘
+QUOTA_EXCEEDED project=1 title=【日本ダービー】「何回勝っても、また勝ちたい」武豊騎手が前人未到の7勝目へ　第93回日本ダービーPR
