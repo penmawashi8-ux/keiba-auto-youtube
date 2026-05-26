@@ -1,9 +1,10 @@
-date: 2026-05-26T00:25:30.375282Z
+date: 2026-05-26T05:05:33.181445Z
 projects_loaded: 1
-uploaded: 1
+uploaded: 2
 quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YD9hsMWU3cU title=【ダービー記録】過去最多はサンデーサイレンス初年度の1995年1万492頭　今年
-QUOTA_EXCEEDED project=1 title=武豊騎手が過去最多6勝 日本ダービー騎手勝利数ランキング
+OK project=1 video_id=Y_-K1rpaSKc title=【注目馬動向】宝塚記念予定のジューンテイクは松山弘平騎手と初コンビ　ロードクロン
+OK project=1 video_id=LeZ7Cu3ThbA title=クロワデュノールなど、先週の入厩情報/栗東トレセンニュース
+QUOTA_EXCEEDED project=1 title=左のくるぶしの骨折から復活!古川吉洋騎手が今週から実戦に復帰　「待っていてくれた人の気持ちに応えたい
