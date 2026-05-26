@@ -1262,8 +1262,11 @@ https://news.netkeiba.com/?pid=news_view&no=332301
 https://news.netkeiba.com/?pid=news_view&no=332341
 https://news.netkeiba.com/?pid=news_view&no=332345
 https://news.netkeiba.com/?pid=news_view&no=332350
+https://news.netkeiba.com/?pid=news_view&no=332351
+https://news.netkeiba.com/?pid=news_view&no=332352
 https://news.netkeiba.com/?pid=news_view&no=332353
 https://news.netkeiba.com/?pid=news_view&no=332355
+https://news.netkeiba.com/?pid=news_view&no=332356
 nhk_mile_2026_post_prediction
 nhk_mile_2026_prediction
 oaks_2026_post_prediction

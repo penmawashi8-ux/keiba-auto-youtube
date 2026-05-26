@@ -1,10 +1,9 @@
-date: 2026-05-26T05:05:33.181445Z
+date: 2026-05-26T06:56:02.131473Z
 projects_loaded: 1
-uploaded: 2
+uploaded: 1
 quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Y_-K1rpaSKc title=【注目馬動向】宝塚記念予定のジューンテイクは松山弘平騎手と初コンビ　ロードクロン
-OK project=1 video_id=LeZ7Cu3ThbA title=クロワデュノールなど、先週の入厩情報/栗東トレセンニュース
-QUOTA_EXCEEDED project=1 title=左のくるぶしの骨折から復活!古川吉洋騎手が今週から実戦に復帰　「待っていてくれた人の気持ちに応えたい
+OK project=1 video_id=1qBaju5W4y0 title=凄いぞ今村聖奈効果!小説「重力ピエロ」の大重版決定　オークスVで話題　新潮文庫が
+QUOTA_EXCEEDED project=1 title=【注目馬動向】24年のサマーマイルシリーズ王者トゥードジボン引退　四位調教師「屈腱炎が再発」社台ファ
