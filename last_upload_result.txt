@@ -1,9 +1,10 @@
-date: 2026-05-26T06:56:02.131473Z
+date: 2026-05-26T08:37:38.892162Z
 projects_loaded: 1
-uploaded: 1
-quota_exceeded: True
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1qBaju5W4y0 title=凄いぞ今村聖奈効果!小説「重力ピエロ」の大重版決定　オークスVで話題　新潮文庫が
-QUOTA_EXCEEDED project=1 title=【注目馬動向】24年のサマーマイルシリーズ王者トゥードジボン引退　四位調教師「屈腱炎が再発」社台ファ
+OK project=1 video_id=Eb37ZtENcwA title=カンビーナの2024(フォコンノワール)など、先週のゲート試験/栗東トレセンニュ
+OK project=1 video_id=SYydJkryDHQ title=【初めてのダービー1】1990年ナカノコール痛恨の見逃し...アイネスフウジン世
+OK project=1 video_id=bAjC_H7Gt14 title=【日本ダービー】7年連続参戦の友道厩舎　今年は「滑り込み」5・9億円ホースのエム
