@@ -1,10 +1,9 @@
-date: 2026-05-25T14:10:10.730378Z
+date: 2026-05-26T00:25:30.375282Z
 projects_loaded: 1
-uploaded: 2
+uploaded: 1
 quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mzHZOtvEt8Y title=【日本ダービー・超ブル診断ステップレース編】逃げ切りは力の証明　個別評価最高「G
-OK project=1 video_id=SjtxOLzRUd8 title=【葵S】スピード豊かなハイヤーマークは指揮官期待の一頭　手塚久調教師「個人的に評
-QUOTA_EXCEEDED project=1 title=【記者メモ】今村聖奈騎手　オークスＶ直後の大バズリジャンプ「ヤバイ、やっちゃった！」「人生変わっちゃ
+OK project=1 video_id=YD9hsMWU3cU title=【ダービー記録】過去最多はサンデーサイレンス初年度の1995年1万492頭　今年
+QUOTA_EXCEEDED project=1 title=武豊騎手が過去最多6勝 日本ダービー騎手勝利数ランキング
