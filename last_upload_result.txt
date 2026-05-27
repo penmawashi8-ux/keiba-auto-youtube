@@ -1,10 +1,10 @@
-date: 2026-05-27T00:26:46.732810Z
+date: 2026-05-27T07:10:06.071881Z
 projects_loaded: 1
-uploaded: 2
-quota_exceeded: True
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_J2huU5r8io title=【ダービー記録】最多勝　ジョッキーは武豊騎手の6勝　種牡馬ではディープインパクト
-OK project=1 video_id=VAm2eqoxAWU title=【日本ダービー】2週連続で騎乗のレーン騎手がアウダーシアに上々の手応え　「先週と
-QUOTA_EXCEEDED project=1 title=【日本ダービー】史上最年少の30代での戴冠なるか 上原佑紀調教師が豪華4頭出しだ
+OK project=1 video_id=MRLvcibSAX0 title=【注目馬動向】かしわ記念2着のミッキーファイトは帝王賞へ　史上2頭目の連覇を目指
+OK project=1 video_id=b3fHz4tN6Ks title=セイウンハーデス＆パンジャタワー、安田記念1週前追い切り速報/栗東トレセンニュー
+OK project=1 video_id=iWbxh_XuyhQ title=香港遠征からローシャムパークが帰国　24日のチャンピオンズ&チャターCで6着
