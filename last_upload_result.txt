@@ -1,10 +1,10 @@
-date: 2026-05-27T10:58:20.628676Z
+date: 2026-05-27T12:34:36.036512Z
 projects_loaded: 1
-uploaded: 3
-quota_exceeded: False
+uploaded: 2
+quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LpS9_8UvhLY title=福永祐一騎手が涙の日本ダービー初制覇 ワグネリアンと制した2018年を振り返る
-OK project=1 video_id=HJ7SEEMzRV8 title=武豊騎手が悔しさ押し殺し今村聖奈騎手を祝福　ダービーへ向けては「特別な週にワクワ
-OK project=1 video_id=GF8KCPNWR8E title=【葵S】1200メートルで連対率100%のタマモイカロスはCWで軽快な脚取り　藤
+OK project=1 video_id=l3uAgArZLDI title=【目黒記念】ウィクトルウェルスは重賞初制覇へ順調さアピール　宮田調教師「前回より
+OK project=1 video_id=XbMpskPGxbI title=【安田記念・1週前】重賞連勝中トロヴァトーレは鋭く11秒2　鹿戸調教師「ダートを
+QUOTA_EXCEEDED project=1 title=【目黒記念】重賞初V狙うダノンシーマは坂路で軽快　陣営「トップハンデを背負う立場となりますが…」
