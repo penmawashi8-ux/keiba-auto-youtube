@@ -1,8 +1,13 @@
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [ファクトチェックNG] NG: レーン騎手はア
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
@@ -10,49 +15,77 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名・騎
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 脚本の「ローシャムパークにとって
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【ダービー記録】最多勝　ジョッキーは武豊騎手の6勝　種牡馬ではディープインパクト7勝　馬主はサンデーレーシング5勝 ---
-[0] Gemini入力本文 356文字: '▽調教師\u3000尾形藤吉調教師の8勝が最多(1934年フレーモア、36年トクマサ、43年クリフジ、52年クリノハナ、56年ハクチカラ、61年ハクシヨウ、63年メイズイ、77年ラッキールーラ)。現役では友道康夫調教師の3勝(2016年マカヒキ、18'
+--- 記事[0]: セイウンハーデス＆パンジャタワー、安田記念1週前追い切り速報/栗東トレセンニュース ---
+[0] Gemini入力本文 341文字: '5月24日に特別登録が発表され、20頭がエントリーしている安田記念(6月7日・東京芝1600m)。ここにセイウンハーデスとパンジャタワーの2頭出しを予定している橋口慎介厩舎だが、この2頭が今朝27日、レースに向けた1週前追い切りを行っている'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【日本ダービー】2週連続で騎乗のレーン騎手がアウダーシアに上々の手応え　「先週と比べて上がっている」 ---
-[1] Gemini入力本文 348文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)追い切り＝5月27日、美浦トレセン\n\t\t\t\t\u3000前走のスプリングSで重賞初制覇を果たした後、直行で大一番に挑むアウダーシア(牡3歳、美浦・手塚貴久厩舎、父キズナ)が、仕'
+--- 記事[1]: 香港遠征からローシャムパークが帰国　24日のチャンピオンズ&チャターCで6着 ---
+[1] Gemini入力本文 350文字: 'JRAは5月27日、24日の香港・チャンピオンズ＆チャターCで6着だったローシャムパーク(牡7歳、美浦・田中博康厩舎、父ハービンジャー)が帰国したことを発表した。\n\t\t\t\t\u3000同日午前6時27分に成田空港に到着。8時38分に輸入検疫のため、千'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【日本ダービー】史上最年少の30代での戴冠なるか 上原佑紀調教師が豪華4頭出しだ ---
-[2] Gemini入力本文 347文字: '上原佑紀調教師が豪華4頭出しで、トレーナーでは史上初となる日本ダービー(3歳牡牝・GI・芝2400m)の30代での戴冠を狙う。\n\u3000上原佑紀調教師は90年1月29日生まれ、東京都出身の36歳。父は上原博之調教師。池上昌和厩舎、堀宣行厩舎の調教'
+--- 記事[2]: 【日本ダービー】追分ファームが初制覇なるか 皐月賞3着のライヒスアドラーが挑む ---
+[2] Gemini入力本文 338文字: '幾多の名馬を輩出してきた追分ファームが、ライヒスアドラー(牡3、美浦・上原佑紀厩舎)で日本ダービー(3歳牡牝・GI・芝2400m)の初制覇を狙う。\n\u3000追分ファームは96年に開場。故・吉田善哉氏の三男の吉田晴哉氏が代表を務め、社台グループでは'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 253文字]: '今日の競馬情報です。第93回日本ダービー・G1が5月31日に東京競馬場・芝2400メートルで行われます。その追い切りが5月27日、美浦トレセンで行われました。前走のスプリングSで重賞初制覇を果たした後、直行で大一番に挑むアウダーシアが、仕上がりの良さをアピールしています。2週連続でレーン騎手が騎乗し、Wコースで外ジオセントリックを追走する形からスタートしました。前半で少し行きたがる面を見せるも、問題なく折り合いはつき、レーン騎手はアウダーシアに「先週と比べて上がっている」と上々の手応えを語っています。'
-  HTTP 200
-[0]  [Gemini生出力 357文字]: '最新のレース情報が入ってきました。ダービーの最多勝記録についてです。調教師では尾形藤吉調教師が8勝で最多を誇り、1934年のフレーモア、36年のトクマサ、43年のクリフジ、52年のクリノハナ、56年のハクチカラ、61年のハクシヨウ、63年のメイズイ、77年のラッキールーラで勝利しています。現役では友道康夫調教師が3勝を挙げており、2016年のマカヒキ、18年のワグネリアン、22年のドウデュースで勝利しています。友道康夫調教師が勝てば、歴代単独2位の4勝目となります。騎手では武豊騎手が6勝で最多です。1998年のスペシャルウィーク、99年のアドマイヤベガ、02年のタニノギムレット、05年のディープインで勝利を挙げています。種牡馬ではディープインパクトが7勝、馬主ではサンデーレーシングが5勝を記録しています。'
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (357文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。ダービーの最多勝記録についてです。調教師では尾形藤吉調教師が8勝で最多を誇り、1934年のフレーモア、36年のトクマサ、43年...
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[2]  [Gemini生出力 290文字]: '本日の競馬ニュースです。\n上原佑紀調教師が、トレーナーでは史上初となる日本ダービーでの30代での戴冠を狙っています。3歳牡牝のGI、芝2400mで行われるこのレースに、上原佑紀調教師は豪華4頭出しで臨みます。上原佑紀調教師は1990年1月29日生まれの東京都出身で、現在36歳です。父は上原博之調教師で、池上昌和厩舎、堀宣行厩舎の調教助手を経て2023年に開業しました。JRA通算成績は732戦84勝を記録しています。これまでに、2025年スプリングSのピコチャンブラック、福島記念のニシノティアモ、今年の京成杯のグリーンエナジー、青葉賞のゴーイントゥスカイで重賞を制しています。'
-[2]  [重複除去] 290文字 → 289文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (289文字)
-[2]  プレビュー: 本日の競馬ニュースです。上原佑紀調教師が、トレーナーでは史上初となる日本ダービーでの30代での戴冠を狙っています。3歳牡牝のGI、芝2400mで行われるこのレー...
+[0]  [Gemini生出力 244文字]: '今日の競馬情報です。6月7日に東京芝1600mで行われる安田記念は、5月24日に特別登録が発表され、20頭がエントリーしています。この安田記念にセイウンハーデスとパンジャタワーの2頭出しを予定している橋口慎介厩舎の2頭が、今朝27日、レースに向けた1週前追い切りを行いました。追い切りは朝一番のCWコースで行われ、幸英明騎手が跨ったセイウンハーデスはグランドオーパスに続き、松山弘平騎手が跨ったパンジャタワーは最後方から追走しました。セイウンハーデスはかなり落ち着いた様子を見せています。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (244文字)
+[0]  プレビュー: 今日の競馬情報です。6月7日に東京芝1600mで行われる安田記念は、5月24日に特別登録が発表され、20頭がエントリーしています。この安田記念にセイウンハーデス...
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 200文字]: '競馬ファン注目の情報です。幾多の名馬を輩出してきた追分ファームが、ライヒスアドラーで日本ダービーの初制覇を狙います。ライヒスアドラーは皐月賞で3着に入着しています。追分ファームは1996年に開場し、故・吉田善哉氏の三男である吉田晴哉氏が代表を務める、社台グループでは最も新しい牧場です。これまでにゴールドアリュールやハットトリック、フェノーメノ、ペルシアンナイトなど、数々のGI馬を送り出しています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (200文字)
+[2]  プレビュー: 競馬ファン注目の情報です。幾多の名馬を輩出してきた追分ファームが、ライヒスアドラーで日本ダービーの初制覇を狙います。ライヒスアドラーは皐月賞で3着に入着していま...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
@@ -62,9 +95,31 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 223文字]: '今日の競馬情報です。第93回日本ダービー・G1に出走するアウダーシアの追い切りが、5月27日に美浦トレセンで行われました。2週連続で騎乗したレーン騎手は、アウダーシアに上々の手応えを感じており、「先週と比べて上がっている」とコメントしています。アウダーシアは前走のスプリングSで重賞初制覇を果たした後、直行で大一番に挑みます。Wコースで外ジオセントリックを追走する形からスタートし、前半で少し行きたがる面を見せるも、問題なく折り合いはつきました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (223文字)
-[1]  プレビュー: 今日の競馬情報です。第93回日本ダービー・G1に出走するアウダーシアの追い切りが、5月27日に美浦トレセンで行われました。2週連続で騎乗したレーン騎手は、アウダ...
-
-3 件の脚本を生成しました。
+[1]  [Gemini生出力 223文字]: '競馬ファン注目の情報です。JRAは5月27日、24日の香港・チャンピオンズ＆チャターCで6着だったローシャムパークが帰国したことを発表しました。ローシャムパークは同日午前6時27分に成田空港に到着し、8時38分には輸入検疫のため、千葉県白井市のJRA競馬学校に入厩しました。美浦の田中博康厩舎に所属するローシャムパークは、昨年12月の香港Cで5着となって以来の海外遠征に臨みましたが、再び地元最強馬ロマンチックウォリアーに敗れる結果となりました。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 206文字]: '競馬ファン注目の情報です。JRAは5月27日、香港遠征を終えたローシャムパークが帰国したことを発表しました。ローシャムパークは24日の香港・チャンピオンズ＆チャターCで6着でした。同日午前6時27分に成田空港に到着し、8時38分には輸入検疫のため千葉県白井市のJRA競馬学校に入厩しています。ローシャムパークにとって、昨年12月の香港Cで5着となって以来の海外遠征でしたが、再び地元最強馬ロマンチックウォリアー。'
+[1] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
