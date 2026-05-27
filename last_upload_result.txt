@@ -1,10 +1,10 @@
-date: 2026-05-27T08:41:22.563490Z
+date: 2026-05-27T10:58:20.628676Z
 projects_loaded: 1
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6DpZ3XyURpE title=【日本ダービー】史上初の年明け初戦Vなるか 京都2歳S覇者のジャスティンビスタが
-OK project=1 video_id=l2wYD93NT20 title=【G1トク捜リレー】別路線組の伏兵アウダーシアに大駆けムード　レーン騎手と息の合
-OK project=1 video_id=2Gn1fnYAS4c title=【有力馬動向】ガイアフォースが坂路で堂々の一番時計/馬三郎のつぶやき
+OK project=1 video_id=LpS9_8UvhLY title=福永祐一騎手が涙の日本ダービー初制覇 ワグネリアンと制した2018年を振り返る
+OK project=1 video_id=HJ7SEEMzRV8 title=武豊騎手が悔しさ押し殺し今村聖奈騎手を祝福　ダービーへ向けては「特別な週にワクワ
+OK project=1 video_id=GF8KCPNWR8E title=【葵S】1200メートルで連対率100%のタマモイカロスはCWで軽快な脚取り　藤
