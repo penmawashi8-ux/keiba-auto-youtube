@@ -1,10 +1,10 @@
-date: 2026-05-26T14:02:52.861219Z
+date: 2026-05-27T00:26:46.732810Z
 projects_loaded: 1
-uploaded: 3
-quota_exceeded: False
+uploaded: 2
+quota_exceeded: True
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZiRBZ3t7iw0 title=【浦和競馬】野口寛仁調教師が地方通算100勝「これまでよりスピードを上げて200
-OK project=1 video_id=ykajs2mBWC0 title=【浦和競馬】「牝馬ですがパワーがある」笹川翼騎手騎乗のオーキッドティアラが逃げ切
-OK project=1 video_id=zNcgGkS5V3Y title=【葵S】ショウナンカリスは2ハロンの距離短縮が魅力　課題の折り合い克服でスピード
+OK project=1 video_id=_J2huU5r8io title=【ダービー記録】最多勝　ジョッキーは武豊騎手の6勝　種牡馬ではディープインパクト
+OK project=1 video_id=VAm2eqoxAWU title=【日本ダービー】2週連続で騎乗のレーン騎手がアウダーシアに上々の手応え　「先週と
+QUOTA_EXCEEDED project=1 title=【日本ダービー】史上最年少の30代での戴冠なるか 上原佑紀調教師が豪華4頭出しだ
