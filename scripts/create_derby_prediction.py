@@ -46,6 +46,10 @@ NEWS_ENTRY = {
     ),
     "image_url": "",
     "published_date": "2026-05-28T20:00:00+09:00",
+    # landscape_video.py / upload_landscape_youtube.py が参照するフィールド
+    "race_name": "日本ダービー",
+    "grade": "G1",
+    "horses": ["ロブチェン", "ライヒスアドラー", "リアライズシリウス", "バステール"],
     # 自動抽出されないタグを手動で追加（日本語レース名・競馬用語）
     "extra_tags": [
         "日本ダービー", "東京優駿", "ダービー2026", "枠順", "二冠",
