@@ -1,171 +1,44 @@
-[0]  [ファクトチェックNG] NG: 元記事に存在しない馬
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 元記事に存在しない馬名・
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (35個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【ダービー】調教後馬体重2ケタ増は3頭　皐月賞馬ロブチェンは長距離輸送を控えた想定内の10キロ増か ---
-[0] Gemini入力本文 355文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)\n\t\t\t\t\u3000JRAは28日、日本ダービー出走馬の調教後馬体重(増減は前走からの比較)を発表した。\n\t\t\t\t\u30002桁の増減があったのは3頭のみでいずれもプラス体重。最も増'
+--- 記事[0]: 【門別・ヒダカソウC結果】バレンタインケーキが差し切って重賞2勝目を挙げる ---
+[0] Gemini入力本文 348文字: '28日、門別競馬場で行われた第12回ヒダカソウC(3歳上・牝・重賞・ダ1600m・1着賞金500万円)は、好位から脚を伸ばした桑村真明騎手騎乗の3番人気バレンタインケーキ(牝3、北海道・角川秀樹厩舎)が、逃げた2番人気ゼロアワー(牝4、北海'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【POG】ラガリーガは力強い伸び脚が好印象/馬三郎のつぶやき ---
-[1] Gemini入力本文 1554文字: '◆カツダルマ(28日・浜口)\n\u3000この日の栗東CWで好印象を抱かせたのがカツダルマ(牡2歳、栗東・秋山、父ビッグアーサー、母レッドマーキュリー)だ。6F87秒1-11秒9(仕掛け)で時計としては平凡だったが、トップギアに入った直線の走りは躍動'
+--- 記事[1]: 【日本ダービー・オーナー直撃3】「あとは岩田さんのマジックですね」アスクエジンバラの廣崎利洋氏は頼れる豪腕に期待 ---
+[1] Gemini入力本文 349文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)\n\t\t\t\t\u3000皐月賞4着から世代の頂点を狙うアスクエジンバラ(牡3歳、栗東・福永祐一厩舎、父リオンディーズ)。廣崎利洋オーナーは、この春のG1に次々と所有馬を送り出して'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【有力馬動向】脚取りに力強さがあったシンエンペラー/馬三郎のつぶやき ---
-[2] Gemini入力本文 353文字: '◆シンエンペラー(28日・河西)\n\u3000宝塚記念(6月14日・阪神、芝2200m)を予定するシンエンペラー(牡5歳、栗東・矢作)が栗東CWで追い切りを行い、6F86秒9-11秒2(馬なり)をマークした。脚取りに力強さがあり、終始手応えは楽だった'
+--- 記事[2]: 【POG】新種牡馬エフフォーリア産駒のベルウッドディープが6・6東京デビューへ　室井調教師「水準以上の動き」 ---
+[2] Gemini入力本文 350文字: '現役時代の21年にJRA年度代表馬に輝いた新種牡馬エフフォーリア産駒のベルウッドディープ(牡2歳、美浦・室井潔厩舎)は、6月6日の東京5R・2歳新馬(芝1600メートル)でのデビューを目指している。鞍上は丹内祐次騎手の予定となっている。04'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 247文字]: 'レース関連の最新情報です。宝塚記念を予定するシンエンペラーは、6月14日に阪神の芝2200mで行われるレースに向けて、栗東CWで追い切りを行い、6F86秒9-11秒2を馬なりでマークしました。栗東の矢作厩舎所属のシンエンペラーは、脚取りに力強さがあり、終始手応えは楽でした。ラストもシャープに伸びており、天皇賞(春)で7着だったダメージはなさそうです。また、栗東の藤野厩舎所属のドラゴンブーストは、松若騎手を背に栗東坂路で安田記念に向けた追い切りを行いました。安田記念は6月7日に開催されます。'
+[2]  [Gemini生出力 213文字]: '本日の競馬ニュースです。現役時代の21年にJRA年度代表馬に輝いた新種牡馬エフフォーリア産駒のベルウッドディープは、6月6日の東京5R・2歳新馬、芝1600メートルでのデビューを目指しています。鞍上は丹内祐次騎手の予定です。この馬は04年のエーデルワイス賞を制したカシマフラワーを祖母に持つ血統で、今年のJRAブリーズアップセールでは鈴木照雄氏が2400万円で落札しました。室井調教師は「水準以上の動き」とコメントしています。'
   HTTP 200
-[0]  [Gemini生出力 202文字]: '最新のレース情報が入ってきました。JRAは5月28日、5月31日に東京競馬場・芝2400メートルで行われる第93回日本ダービー出走馬の調教後馬体重を発表しました。増減は前走からの比較で、2桁の増減があったのは3頭のみで、いずれもプラス体重でした。最も増えていたのは14キロで、皐月賞3着のライヒスアドラーと、同4着のアスクエジンバラでした。皐月賞馬ロブチェンは長距離輸送を控えた想定内の10キロ増でした。'
+[0]  [Gemini生出力 225文字]: '今週の競馬注目情報をお伝えします。28日、門別競馬場で行われた第12回ヒダカソウCは、3歳上・牝・重賞・ダート1600mで争われ、1着賞金は500万円でした。このレースでは、桑村真明騎手騎乗の3番人気バレンタインケーキが好位から脚を伸ばし、逃げた2番人気ゼロアワーにアタマ差をつけ優勝しました。勝ちタイムは重馬場で1分43秒1でした。さらに6馬身差の3着には、1番人気イージーオンミーが入っています。勝ったバレンタインケーキは重賞2勝目を挙げました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (247文字)
-[2]  プレビュー: レース関連の最新情報です。宝塚記念を予定するシンエンペラーは、6月14日に阪神の芝2200mで行われるレースに向けて、栗東CWで追い切りを行い、6F86秒9-1...
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[2]  → output/script_2.txt 保存 (213文字)
+[2]  プレビュー: 本日の競馬ニュースです。現役時代の21年にJRA年度代表馬に輝いた新種牡馬エフフォーリア産駒のベルウッドディープは、6月6日の東京5R・2歳新馬、芝1600メー...
   HTTP 200
-[0]  [Gemini生出力 183文字]: '最新のレース情報が入ってきました。\n第93回日本ダービー・G1の調教後馬体重が、JRAより28日に発表されました。増減は前走からの比較で、2桁の増減があったのは3頭のみで、いずれもプラス体重でした。最も増えていたのは14キロで、皐月賞3着のライヒスアドラーと、同4着のアスクエジンバラでした。皐月賞馬ロブチェンは、長距離輸送を控えた想定内の10キロ増となっています。'
-[0]  [重複除去] 183文字 → 182文字
-[0] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 258文字]: '最新のレース情報が入ってきました。\nJRAは28日、5月31日に東京競馬場・芝2400メートルで開催される第93回日本ダービー・G1に出走する各馬の調教後馬体重を発表しました。増減は前走からの比較です。2桁の増減があったのは3頭のみで、いずれもプラス体重でした。最も増えていたのは14キロで、皐月賞3着のライヒスアドラーと、同4着のアスクエジンバラの2頭です。ライヒスアドラーは美浦・上原佑紀厩舎、アスクエジンバラは栗東・福永祐一厩舎の所属です。また、皐月賞馬ロブチェンは長距離輸送を控えた想定内の10キロ増でした。'
-[0]  [重複除去] 258文字 → 257文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (257文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。JRAは28日、5月31日に東京競馬場・芝2400メートルで開催される第93回日本ダービー・G1に出走する各馬の調教後馬体重を...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[1]  [Gemini生出力 265文字]: '本日の競馬ニュースです。第93回日本ダービー・G1に出走を予定しているアスクエジンバラについて、廣崎利洋オーナーが「あとは岩田さんのマジックですね」と頼れる豪腕に期待を寄せています。アスクエジンバラは皐月賞4着から世代の頂点を狙う牡3歳馬で、栗東・福永祐一厩舎に所属しています。廣崎利洋オーナーは、この春のG1に次々と所有馬を送り出しており、グループで既に今年20勝（5月24日時点）と快進撃を続けています。オーナーは、活躍馬を送り出す秘訣や、アスクエジンバラへの思い、馬主としてのキャリア、競馬の祭典への展望などを語っています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (265文字)
+[1]  プレビュー: 本日の競馬ニュースです。第93回日本ダービー・G1に出走を予定しているアスクエジンバラについて、廣崎利洋オーナーが「あとは岩田さんのマジックですね」と頼れる豪腕...
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (225文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。28日、門別競馬場で行われた第12回ヒダカソウCは、3歳上・牝・重賞・ダート1600mで争われ、1着賞金は500万円でした。こ...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 545, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 528, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 355, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
