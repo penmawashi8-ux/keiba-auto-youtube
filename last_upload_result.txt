@@ -1,10 +1,10 @@
-date: 2026-05-28T12:35:09.705917Z
+date: 2026-05-28T14:54:45.030744Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=157IyAIM8LA title=【門別・ヒダカソウC結果】バレンタインケーキが差し切って重賞2勝目を挙げる
-OK project=1 video_id=NFu2Xjsd6Hg title=【日本ダービー・オーナー直撃3】「あとは岩田さんのマジックですね」アスクエジンバ
-OK project=1 video_id=hFlkmeDUJ_8 title=【POG】新種牡馬エフフォーリア産駒のベルウッドディープが6・6東京デビューへ　
+OK project=1 video_id=86oOkaP-vzs title=JRAが来年夏の開催で1日のレース数の削減を検討　暑熱対策として従来の12レース
+OK project=1 video_id=i3-FQn1aJuk title=函館2歳Sトライアル ロゼットリボンが「ウィナーズチャレンジI」制す
+OK project=2 video_id=e1upxJN_Ml8 title=白毛一族の良血 アマンテビアンコが休み明け2戦目で本領発揮なるか
