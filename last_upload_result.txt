@@ -1,10 +1,10 @@
-date: 2026-05-28T10:38:08.084924Z
+date: 2026-05-28T12:35:09.705917Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t2IIBYEaJLg title=24年ニュージーランドT覇者 エコロブルームが約1年ぶりの復帰戦だ
-OK project=1 video_id=mQWYDPSVht4 title=【日本ダービー・オーナー直撃1】「敬意を表します」アスクエジンバラの廣崎利洋氏　
-OK project=1 video_id=3te_8xZUeT8 title=【G1トク捜リレー】日本ダービーのカギは「上昇度」　水納愛美記者は皐月賞とは出来
+OK project=1 video_id=157IyAIM8LA title=【門別・ヒダカソウC結果】バレンタインケーキが差し切って重賞2勝目を挙げる
+OK project=1 video_id=NFu2Xjsd6Hg title=【日本ダービー・オーナー直撃3】「あとは岩田さんのマジックですね」アスクエジンバ
+OK project=1 video_id=hFlkmeDUJ_8 title=【POG】新種牡馬エフフォーリア産駒のベルウッドディープが6・6東京デビューへ　
