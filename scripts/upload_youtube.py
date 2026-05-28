@@ -483,6 +483,9 @@ def main() -> None:
         title = item["title"]
         script = script_path.read_text(encoding="utf-8").strip()
         seo_keywords = extract_seo_keywords(title, script)
+        extra_tags = item.get("extra_tags", [])
+        if extra_tags:
+            seo_keywords = list(dict.fromkeys(seo_keywords + extra_tags))
         description = build_description(script, seo_keywords)
         print(f"  SEOキーワード({len(seo_keywords)}): {', '.join(seo_keywords[:10])}")
 
