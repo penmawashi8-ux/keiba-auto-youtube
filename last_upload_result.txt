@@ -1,10 +1,10 @@
-date: 2026-05-27T12:34:36.036512Z
-projects_loaded: 1
-uploaded: 2
-quota_exceeded: True
-p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => FAILED
+date: 2026-05-28T10:38:08.084924Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
+p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=l3uAgArZLDI title=【目黒記念】ウィクトルウェルスは重賞初制覇へ順調さアピール　宮田調教師「前回より
-OK project=1 video_id=XbMpskPGxbI title=【安田記念・1週前】重賞連勝中トロヴァトーレは鋭く11秒2　鹿戸調教師「ダートを
-QUOTA_EXCEEDED project=1 title=【目黒記念】重賞初V狙うダノンシーマは坂路で軽快　陣営「トップハンデを背負う立場となりますが…」
+OK project=1 video_id=t2IIBYEaJLg title=24年ニュージーランドT覇者 エコロブルームが約1年ぶりの復帰戦だ
+OK project=1 video_id=mQWYDPSVht4 title=【日本ダービー・オーナー直撃1】「敬意を表します」アスクエジンバラの廣崎利洋氏　
+OK project=1 video_id=3te_8xZUeT8 title=【G1トク捜リレー】日本ダービーのカギは「上昇度」　水納愛美記者は皐月賞とは出来
