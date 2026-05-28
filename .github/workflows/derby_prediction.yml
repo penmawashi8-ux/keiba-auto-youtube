@@ -2,6 +2,12 @@ name: 日本ダービー2026 枠順確定予想動画 生成・投稿
 
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "テストモード（YouTubeにアップせずArtifactのみ）"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   post-derby-prediction:
@@ -56,7 +62,15 @@ jobs:
       - name: Generate video
         run: python scripts/generate_video.py
 
+      - name: Upload video as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: derby-2026-prediction-video
+          path: output/video_0.mp4
+          retention-days: 7
+
       - name: Upload to YouTube
+        if: ${{ inputs.dry_run != true }}
         env:
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
