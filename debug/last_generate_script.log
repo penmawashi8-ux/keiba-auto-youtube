@@ -1,3 +1,7 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
@@ -5,116 +9,42 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 「とても朗報」「注文しました」今村聖奈騎手のXでの告知にネットは大喜び　歴史的偉業達成でメモリアルキャップを再販 ---
-[0] Gemini入力本文 346文字: '偉業達成から5日たっての朗報に、SNS上が沸いている。5月24日のオークス・G1で、JRA女性騎手として初めてのG1制覇を成し遂げた今村聖奈騎手(22)＝栗東・寺島良厩舎＝が29日、自身のXを更新。100勝記念キャップを再販するとポストした'
+--- 記事[0]: 23年札幌2歳S覇者セットアップが引退…乗馬に ---
+[0] Gemini入力本文 283文字: '23年札幌2歳Sを制したセットアップ(セン5＝西田、父デクラレーションオブウォー)が29日付でJRA競走馬登録を抹消された。\n\u3000今後は北海道新冠町の新冠ゴールドアップカンパニーで乗馬になる予定。\n\u3000通算11戦2勝、獲得賞金は3976万400'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【日本ダービー・金曜気配】パントルナイーフは坂路で軽く調整　木村調教師「元気に過ごしているのが何より」 ---
-[1] Gemini入力本文 351文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)＝5月29日、美浦トレセン\n\t\t\t\t\u3000昨年の東京スポーツ杯・2歳Sを制したパントルナイーフ(牡3歳、美浦・木村哲也厩舎、父キズナ)は、坂路を69秒4―16秒4で流して'
+--- 記事[1]: G1・3勝の名牝ストレイトガール死す　17歳　藤原師「夢をもらった」「感謝の言葉しかありません」 ---
+[1] Gemini入力本文 403文字: '15＆16年ヴィクトリアマイル連覇、15年スプリンターズSとG1を3勝したストレイトガール(牝、父フジキセキ)がけい養先のASK\u3000STUD(北海道平取町)で腸捻転のため息を引き取ったことが29日、分かった。17歳だった。\n\u3000現役時代に管理し'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【日本ダービー・金曜気配】同期の今村聖奈騎手に続く!ライヒスアドラーに佐々木大輔騎手「今までで一番」「ロスなくいけたら」 ---
-[2] Gemini入力本文 351文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)＝5月29日、美浦トレセン\n\t\t\t\t\u3000皐月賞3着のライヒスアドラー(牡3歳、美浦・上原佑紀厩舎、父シスキン)は、軽い運動で汗を流した。上原佑調教師は「追い切り後もテン'
+--- 記事[2]: 「とても朗報」「注文しました」今村聖奈騎手のXでの告知にネットは大喜び　歴史的偉業達成でメモリアルキャップを再販 ---
+[2] Gemini入力本文 346文字: '偉業達成から5日たっての朗報に、SNS上が沸いている。5月24日のオークス・G1で、JRA女性騎手として初めてのG1制覇を成し遂げた今村聖奈騎手(22)＝栗東・寺島良厩舎＝が29日、自身のXを更新。100勝記念キャップを再販するとポストした'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 222文字]: '重要な競馬ニュースをお伝えします。第93回日本ダービー・G1に出走を予定しているパントルナイーフは、5月29日に美浦トレセンで調整を行いました。坂路を69秒4―16秒4で流して調整しており、昨年の東京スポーツ杯・2歳Sを制した実績を持つこの馬は、頓挫明けだった皐月賞での14着と比較すると、気配の良さが際立っています。木村調教師は「水曜日に追い切ったあとも特にトラブルはありません。元気に過ごしてくれているのが何よりです」とコメントしています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (222文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。第93回日本ダービー・G1に出走を予定しているパントルナイーフは、5月29日に美浦トレセンで調整を行いました。坂路を69秒4―...
+[2]  [Gemini生出力 246文字]: '本日の競馬ニュースです。5月24日のオークス・G1で、JRA女性騎手として初めてのG1制覇を成し遂げた今村聖奈騎手が、偉業達成から5日後の29日に自身のXを更新しました。今村聖奈騎手は、100勝記念キャップを再販するとポストしています。商品はハートマークがかわいらしい、今村聖奈騎手オリジナルロゴをあしらったもので、カラーはブラック×ホワイト、ブラック×ブルー、ホワイト×パープル、ライトブルー×ブルーの4種類です。この朗報に、SNS上では「とても朗報」「注文しました」と大いに沸いています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (246文字)
+[2]  プレビュー: 本日の競馬ニュースです。5月24日のオークス・G1で、JRA女性騎手として初めてのG1制覇を成し遂げた今村聖奈騎手が、偉業達成から5日後の29日に自身のXを更新...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 248文字]: 'レース関連の最新情報です。JRA女性騎手として初めてのG1制覇を5月24日のオークス・G1で成し遂げた今村聖奈騎手が、偉業達成から5日後の29日に自身のXを更新しました。今村聖奈騎手は、100勝記念キャップを再販するとポストし、SNS上では「とても朗報」「注文しました」と大喜びの声が上がっています。この商品は、ハートマークがかわいらしい今村聖奈騎手オリジナルロゴをあしらったもので、カラーはブラック×ホワイト、ブラック×ブルー、ホワイト×パープル、ライトブルー×ブルーの4色が用意されています。'
+[1]  [Gemini生出力 273文字]: '重要な競馬ニュースをお伝えします。\nG1を3勝した名牝ストレイトガールが、17歳で息を引き取ったことが29日に分かりました。けい養先のASK STUDで腸捻転のためでした。ストレイトガールは、2015年と2016年のヴィクトリアマイル連覇、そして2015年のスプリンターズステークスと、G1を3勝しています。現役時代に管理した藤原英昭師は「連絡があり、本当に残念です。腸捻転で、しっかりケアしてくださっていましたが…」とコメントしました。師はさらに、「当歳にイクイノックスの子供もいるしね。夢をもらった。感謝の言葉しかありません」と語っています。'
+[1]  [重複除去] 272文字 → 271文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (271文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。G1を3勝した名牝ストレイトガールが、17歳で息を引き取ったことが29日に分かりました。けい養先のASK STUDで腸捻転のた...
+  HTTP 200
+[0]  [Gemini生出力 170文字]: '重要な競馬ニュースをお伝えします。23年札幌2歳Sを制したセットアップが、29日付でJRA競走馬登録を抹消され引退しました。今後は北海道新冠町の新冠ゴールドアップカンパニーで乗馬になる予定です。セットアップの通算成績は11戦2勝で、獲得賞金は3976万4000円でした。ラストランは24日に行われた新潟の障害未勝利で、競走中止となりました。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (248文字)
-[0]  プレビュー: レース関連の最新情報です。JRA女性騎手として初めてのG1制覇を5月24日のオークス・G1で成し遂げた今村聖奈騎手が、偉業達成から5日後の29日に自身のXを更新...
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 1415, in getresponse
-    response.begin()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 330, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/http/client.py", line 291, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/socket.py", line 718, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1314, in recv_into
-    return self.read(nbytes, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/ssl.py", line 1166, in read
-    return self._sslobj.read(len, buffer)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
+[0]  → output/script_0.txt 保存 (170文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。23年札幌2歳Sを制したセットアップが、29日付でJRA競走馬登録を抹消され引退しました。今後は北海道新冠町の新冠ゴールドアッ...
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 545, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 528, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 355, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 242, in call_gemini
-    resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+3 件の脚本を生成しました。
