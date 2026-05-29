@@ -239,7 +239,11 @@ def call_gemini(api_key: str, model_name: str, prompt: str, system_prompt: str =
         if wait:
             print(f"  {wait}秒待機後にリトライ... (attempt {attempt + 1})")
             time.sleep(wait)
-        resp = requests.post(url, json=body, params={"key": api_key}, timeout=30)
+        try:
+            resp = requests.post(url, json=body, params={"key": api_key}, timeout=120)
+        except requests.exceptions.ReadTimeout:
+            print(f"  [警告] タイムアウト (attempt {attempt + 1})。リトライします。", file=sys.stderr)
+            continue
         print(f"  HTTP {resp.status_code}")
         if resp.status_code == 429:
             err = resp.json().get("error", {})
