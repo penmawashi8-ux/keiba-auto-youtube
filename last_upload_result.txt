@@ -1,10 +1,10 @@
-date: 2026-05-29T07:01:46.611103Z
+date: 2026-05-29T08:47:28.629020Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JPce1PZPJhU title=23年札幌2歳S覇者セットアップが引退…乗馬に
-OK project=1 video_id=U5N_llwp5R4 title=G1・3勝の名牝ストレイトガール死す　17歳　藤原師「夢をもらった」「感謝の言葉
-OK project=1 video_id=W5otxjNG8m0 title=「とても朗報」「注文しました」今村聖奈騎手のXでの告知にネットは大喜び　歴史的偉
+OK project=1 video_id=SNVdt0lcRQk title=【週末情報】敵は暑さだけ…パドック気配を注視したいギャンブルルーム/馬三郎のつぶ
+OK project=1 video_id=ldgLJdK4AOk title=【有力馬動向】ファンダム迫力十分、しらさぎSへ雰囲気良好/馬三郎のつぶやき
+OK project=1 video_id=J5Ro_d63LCc title=【日本ダービー・金曜気配】皐月賞11着から反撃へ!バステールは落ち着きあり　斉藤
