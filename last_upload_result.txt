@@ -1,10 +1,10 @@
-date: 2026-05-29T10:50:04.111030Z
+date: 2026-05-29T12:27:14.344131Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=VuGDXGKK9bE title=全国に9頭在籍 誘導馬として活躍する日本ダービー出走馬たち
-OK project=1 video_id=wIexLgbpZyc title=【netkeibaTV】細江純子×じゃいが日本ダービーを展望 「上位の評価には確
-OK project=1 video_id=BZRXj3LFfrI title=半弟は皐月賞馬ロブチェン テーオーシュタインが連勝狙う
+OK project=1 video_id=s8YIclU9fZM title=今年は午年ダービー 近5回の共通項に「3番」or「3枠」
+OK project=1 video_id=Ni4RZBSePek title=母は名牝グランアレグリア グランマエストロが初ダートで初勝利なるか
+OK project=1 video_id=MFr44sSNzFs title=【日本ダービー過去10年傾向】近年は枠順の偏りなし 一方で40年以上続くジンクス
