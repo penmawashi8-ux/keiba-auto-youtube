@@ -1,10 +1,10 @@
-date: 2026-05-29T00:28:43.153822Z
+date: 2026-05-29T07:01:46.611103Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Nn190IFGqQw title=日本ダービーの調教師にまつわる記録 最多勝利は「大尾形」の8勝
-OK project=1 video_id=zQimacmW-U0 title=Ｇ１・３勝のストレイトガール死去　腸捻転で　藤原師「厩舎の功労馬だし色々と勉強さ
-OK project=1 video_id=kH9oLdH74po title=【園田競馬　29日発走　大日本プロレスカップ】積極的なレース運びでサンウイキョウ
+OK project=1 video_id=JPce1PZPJhU title=23年札幌2歳S覇者セットアップが引退…乗馬に
+OK project=1 video_id=U5N_llwp5R4 title=G1・3勝の名牝ストレイトガール死す　17歳　藤原師「夢をもらった」「感謝の言葉
+OK project=1 video_id=W5otxjNG8m0 title=「とても朗報」「注文しました」今村聖奈騎手のXでの告知にネットは大喜び　歴史的偉
