@@ -1,13 +1,28 @@
-[2]  [ファクトチェックNG] NG: 元記事に存在しない斉藤
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [ファクトチェックNG] NG: 元記事に存在しない「全国
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [ファクトチェックNG] NG: 元記事に存在しない馬
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -16,53 +31,76 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【週末情報】敵は暑さだけ…パドック気配を注視したいギャンブルルーム/馬三郎のつぶやき ---
-[0] Gemini入力本文 438文字: '◆ギャンブルルーム(29日・堀尾)\n\u3000日曜東京12R・目黒記念(芝2500m)に出走するギャンブルルーム(牡5歳、栗東・大久保)。「ムラだけど、もともと能力的には重賞でもと思っていた馬。力を出し切れば通用します」と師。ポイントに挙げていたの'
+--- 記事[0]: 全国に9頭在籍 誘導馬として活躍する日本ダービー出走馬たち ---
+[0] Gemini入力本文 551文字: 'いよいよ日本ダービーの開催が近づいてきた。競馬の祭典として多くのファンを魅了する一戦だが、その大舞台を駆け抜けた馬たちの中には、引退後に各競馬場で誘導馬として“第二の馬生”を送っている馬もいる。13年の日本ダービーに出走し、東京競馬場で誘導'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【有力馬動向】ファンダム迫力十分、しらさぎSへ雰囲気良好/馬三郎のつぶやき ---
-[1] Gemini入力本文 350文字: '◆ファンダム(29日・森元)\n\u3000しらさぎS(6月21日・阪神、芝1600m)を目標に、27日に帰厩したファンダム(牡4歳、美浦・辻)が、美浦Wで5F70秒9-12秒4(馬なり)をマーク。馬場の大外を迫力十分のフットワークで駆け抜けた。雰囲気'
+--- 記事[1]: 【netkeibaTV】細江純子×じゃいが日本ダービーを展望 「上位の評価には確実にする」と断言した一頭とは ---
+[1] Gemini入力本文 512文字: 'ホースコラボレーターの細江純子、生粋のギャンブラーとして知られるじゃいの2人が、5月31日(日)に東京競馬場で行われる日本ダービー(3歳牡牝・GI・芝2400m)を展望します。\n\u3000番組冒頭では皐月賞を回顧。じゃいはロブチェンの強さを認めつつ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【日本ダービー・金曜気配】皐月賞11着から反撃へ!バステールは落ち着きあり　斉藤崇調教師「リラックスしてゲート入りまで迎 ---
-[2] Gemini入力本文 347文字: '◆第93回日本ダービー(5月31日、東京競馬場・芝2400メートル)＝29日、栗東トレセン\n\t\t\t\t\u3000皐月賞11着からの巻き返しを図るバステール(牡3歳、栗東・斉藤崇史厩舎、父キタサンブラック)はCWコース半マイルで調整。落ち着いた雰囲気で'
+--- 記事[2]: 半弟は皐月賞馬ロブチェン テーオーシュタインが連勝狙う ---
+[2] Gemini入力本文 352文字: "今年の皐月賞を制したロブチェンの半兄となるテーオーシュタイン(牡4、栗東・梅田智之厩舎)が、土曜京都8Rの4歳上2勝クラス(芝1400m)で連勝を狙う。\n\u3000テーオーシュタインは父ワールドエース、母ソングライティング、母の父Giant's C"
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 212文字]: '最新情報をお届けします。日曜東京12R・目黒記念(芝2500m)に出走するギャンブルルームについて、大久保師は「ムラだけど、もともと能力的には重賞でもと思っていた馬。力を出し切れば通用します」と話しています。師がポイントに挙げているのは当日の気温で、「30度ぐらいまで上がるみたいな予報だから、暑さが鍵ですね。我慢できればいいのですが」とコメントしました。ある程度の発汗は覚悟しており、パドック気配を注視したいとしています。'
-[0]  [redirectフィルター] 212文字 → 200文字
-  HTTP 200
-[2]  [Gemini生出力 248文字]: '注目の競馬情報をお届けします。第93回日本ダービーは5月31日に東京競馬場・芝2400メートルで開催されます。皐月賞11着からの巻き返しを図るバステールは、29日に栗東トレセンで調整されました。CWコース半マイルで調整されたバステールは、落ち着いた雰囲気で駆け抜けています。斉藤崇調教師は「いつものパターンです。前走に比べればいいと思います」とうなずきました。前走は大外枠でスタートで後手に回ったこともあり大敗しており、斉藤崇調教師は「リラックスしてゲート入りまで迎えたら楽しみ」と語っています。'
-[2]  [redirectフィルター] 248文字 → 233文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (200文字)
-[0]  プレビュー: 日曜東京12R・目黒記念(芝2500m)に出走するギャンブルルームについて、大久保師は「ムラだけど、もともと能力的には重賞でもと思っていた馬。力を出し切れば通用...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 166文字]: '競馬速報です。ファンダムの動向です。しらさぎSを目標とするファンダムは、27日に帰厩しました。6月21日に阪神の芝1600mで行われるしらさぎSに向け、ファンダムは美浦Wで5ハロン70秒9、ラスト1ハロン12秒4を馬なりでマークしました。馬場の大外を迫力十分のフットワークで駆け抜け、雰囲気は良好で、調整は順調と言っていいでしょう。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (166文字)
-[1]  プレビュー: 競馬速報です。ファンダムの動向です。しらさぎSを目標とするファンダムは、27日に帰厩しました。6月21日に阪神の芝1600mで行われるしらさぎSに向け、ファンダ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 254文字]: "レース関連の最新情報です。今年の皐月賞を制したロブチェンの半兄となるテーオーシュタインが、土曜京都8Rの4歳上2勝クラス、芝1400mで連勝を狙います。テーオーシュタインは牡4で、栗東の梅田智之厩舎に所属しています。血統は父ワールドエース、母ソングライティング、母の父Giant's Causewayです。半弟のロブチェンは25年のホープフルSと今年の皐月賞の勝ち馬であり、半兄のブラックボイスは平地で2勝、障害で3勝を挙げています。また、23年のセレクトセール1歳では2100万円（税抜）で取引されました。"
   HTTP 200
-[2]  [Gemini生出力 228文字]: '注目の競馬情報をお届けします。第93回日本ダービーに出走するバステールは、29日に栗東トレセンでCWコース半マイルを調整しました。皐月賞で11着だったバステールは、落ち着いた雰囲気で駆け抜け、巻き返しを図っています。斉藤崇調教師は「いつものパターンです。前走に比べればいいと思います」とコメントしました。前走の大敗は、大外枠でスタートで後手に回ったことが原因とされています。斉藤崇調教師は「リラックスしてゲート入りまで迎えたら楽しみ」と期待を寄せています。'
-[2]  [redirectフィルター] 228文字 → 213文字
+[0]  [Gemini生出力 382文字]: '最新情報をお届けします。\n日本ダービーの開催が近づく中、その大舞台を駆け抜けた馬たちの中には、引退後に各競馬場で誘導馬として“第二の馬生”を送っている馬もいます。全国には9頭の日本ダービー出走馬が誘導馬として在籍しており、2013年の日本ダービーに出走したマイネルホウオウは、東京競馬場で誘導馬を務めています。\nまた、今年の日本ダービーでは、上原佑調教師が4頭を送り出す予定で、全馬に手応えを感じているとコメント。「携わる色々な方々の期待に応えたい」と話しました。上原佑調教師は、2013年のキズナなど、1992年以降最多タイの5勝を挙げています。\n1枠1番のライヒスアドラーについて、上原佑調教師は「スムーズに競馬ができるかがカギ」とコメント。さらに、2分の1の抽選を突破し2枠3番に入ったケントンについて、田島調教師は「本当に運のいい馬」とコメントしています。'
+[0]  [redirectフィルター] 382文字 → 369文字
+[0]  [重複除去] 369文字 → 367文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (213文字)
-[2]  プレビュー: 第93回日本ダービーに出走するバステールは、29日に栗東トレセンでCWコース半マイルを調整しました。皐月賞で11着だったバステールは、落ち着いた雰囲気で駆け抜け...
+[2]  → output/script_2.txt 保存 (254文字)
+[2]  プレビュー: レース関連の最新情報です。今年の皐月賞を制したロブチェンの半兄となるテーオーシュタインが、土曜京都8Rの4歳上2勝クラス、芝1400mで連勝を狙います。テーオー...
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[1]  [Gemini生出力 195文字]: '注目の競馬情報をお届けします。\n細江純子とじゃいが、5月31日(日)東京競馬場で行われる日本ダービー(3歳牡牝・GI・芝2400m)を展望します。じゃいは皐月賞を回顧し、ロブチェンとリアライズシリウスが残った前有利な馬場だと分析しました。ダービーでの巻き返しにも注目です。落馬骨折の翌日に厩舎にいた岩田康誠騎手の話題、そして日本ダービーの調教師記録で最多の「大尾形」8勝も紹介されています。'
+[1]  [redirectフィルター] 195文字 → 179文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
+  HTTP 200
+[0]  [Gemini生出力 220文字]: '最新情報をお届けします。日本ダービーの開催が近づく中、その大舞台を駆け抜けた馬たちの中には、引退後に各競馬場で誘導馬として“第二の馬生”を送っている馬もいます。全国には9頭の日本ダービー出走馬が誘導馬として在籍しており、活躍しています。その一例として、2013年の日本ダービーに出走したマイネルホウオウが挙げられます。マイネルホウオウは現在、東京競馬場で誘導馬を務めています。また、マイネルホウオウは2013年のNHKマイルCを人気...。'
+[0]  [redirectフィルター] 220文字 → 208文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (205文字)
+[0]  プレビュー: 日本ダービーの開催が近づく中、その大舞台を駆け抜けた馬たちの中には、引退後に各競馬場で誘導馬として“第二の馬生”を送っている馬もいます。全国には9頭の日本ダービ...
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 218文字]: '注目の競馬情報をお届けします。ホースコラボレーターの細江純子と生粋のギャンブラーとして知られるじゃいの2人が、netkeibaTVで5月31日(日)に東京競馬場で行われる日本ダービー、3歳牡牝・GI・芝2400mを展望します。番組冒頭では皐月賞を回顧し、じゃいはロブチェンの強さを認めながらも、リアライズシリウスも残っていることから「前有利な馬場だと思う」と分析しました。そして「これがダービーにいってどうか」と疑問を投げかけています。'
+[1]  [redirectフィルター] 218文字 → 203文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (203文字)
+[1]  プレビュー: ホースコラボレーターの細江純子と生粋のギャンブラーとして知られるじゃいの2人が、netkeibaTVで5月31日(日)に東京競馬場で行われる日本ダービー、3歳牡...
 
 3 件の脚本を生成しました。
