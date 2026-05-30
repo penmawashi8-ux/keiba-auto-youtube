@@ -1,10 +1,10 @@
-date: 2026-05-30T11:02:33.789486Z
+date: 2026-05-30T12:14:39.361645Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FIhoGcIo328 title=名牝ジェンティルドンナの初孫 カフェラバーが自己条件で2勝目狙う
-OK project=1 video_id=K7f78sqkl3Y title=冬季五輪開催年の日本ダービーは伏兵に注意？ 過去の傾向を探ってみると
-OK project=1 video_id=y_Rwp04tTv8 title=【日本ダービー】バステールは距離延長を歓迎　陣営「2400メートルの方がレースは
+OK project=1 video_id=M8-0M-2pqzk title=霜降り明星・粗品の日本ダービー本命はライヒスアドラー 3連複で勝負だ
+OK project=1 video_id=MTaWo-nAjZE title=【AI予想・日本ダービー】前走惜敗も能力の高さは証明！ 3戦3勝の左回りで大逆転
+OK project=1 video_id=2elgTJoXwTs title=【日本ダービー】単勝1番人気はロブチェンの2・9倍でやや抜けた人気　リアライズシ
