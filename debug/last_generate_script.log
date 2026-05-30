@@ -1,65 +1,59 @@
-[1]  [ファクトチェックNG] NG: 元記事に存在しないレース
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 元記事に存在しないレース結果
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 名牝ジェンティルドンナの初孫 カフェラバーが自己条件で2勝目狙う ---
-[0] Gemini入力本文 385文字: '名牝ジェンティルドンナの初孫となるカフェラバー(牝3、美浦・和田正一郎厩舎)が、土曜東京7Rの3歳1勝クラス(芝1400m)で2勝目を狙う。\n\u3000カフェラバーは父モーリス、母モアナアネラ、母の父キングカメハメハの血統。母はJRAで3勝。祖母の'
+--- 記事[0]: 霜降り明星・粗品の日本ダービー本命はライヒスアドラー 3連複で勝負だ ---
+[0] Gemini入力本文 507文字: '30日、霜降り明星・粗品が自身のYouTubeチャンネルを更新。日本ダービー(3歳牡牝・GI・芝2400m)の予想および馬券の買い目を公開した。\n\u3000粗品はライヒスアドラーを本命に指名。その理由について、「最高の枠に入った」「臨戦過程、枠を見'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 冬季五輪開催年の日本ダービーは伏兵に注意？ 過去の傾向を探ってみると ---
-[1] Gemini入力本文 595文字: '5月31日(日)に東京競馬場で行われる日本ダービー(3歳牡牝・GI・芝2400m)。世代の頂点を決する大一番を、ひと味違った視点から読み解いてみたい。今年2月にイタリアで「ミラノ・コルティナ2026冬季オリンピック・パラリンピック」が開催さ'
+--- 記事[1]: 【AI予想・日本ダービー】前走惜敗も能力の高さは証明！ 3戦3勝の左回りで大逆転をもくろむ人工知能の本命馬 ---
+[1] Gemini入力本文 461文字: '今週の日曜日は、東京競馬場で日本ダービー(GI)が行われます。\n\u3000過去10年の日本ダービーで最も多くの3着以内馬が出ているのは前走で皐月賞(GI)に出走していた組です。前走皐月賞組は[8-10-6-76]と多くの好走馬が出ています。しかし、'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【日本ダービー】バステールは距離延長を歓迎　陣営「2400メートルの方がレースはしやすい」 ---
-[2] Gemini入力本文 351文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)＝5月30日、東京競馬場\n\t\t\t\t\u3000皐月賞11着から巻き返しを狙うバステール(牡3歳、栗東・斉藤崇史厩舎、父キタサンブラック)は、16時3分に東京競馬場に到着した。下'
+--- 記事[2]: 【日本ダービー】単勝1番人気はロブチェンの2・9倍でやや抜けた人気　リアライズシリウスが6・2倍、ゴーイントゥスカイが7 ---
+[2] Gemini入力本文 357文字: '第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)の前日最終オッズが5月30日、JRAから発表された。\n\t\t\t\t\u3000皐月賞でG1・2勝目を挙げた(17)ロブチェン(牡3歳、栗東・杉山晴紀厩舎、父ワールドプレミア)が2・9'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 234文字]: '最新情報をお届けします。\n名牝ジェンティルドンナの初孫であるカフェラバーが、土曜東京7Rの3歳1勝クラス、芝1400mで2勝目を狙います。カフェラバーの父はモーリス、母はモアナアネラ、母の父はキングカメハメハです。母のモアナアネラはJRAで3勝を挙げています。祖母のジェンティルドンナは史上4頭目の三冠牝馬であり、2012年と2013年のジャパンC、2014年のドバイSCと有馬記念を制しました。さらに、叔母のジェラルディーナは2022年のエリザベス女王杯の覇者です。'
-[0]  [redirectフィルター] 234文字 → 221文字
-  HTTP 200
-[2]  [Gemini生出力 196文字]: '重要な競馬ニュースをお伝えします。第93回日本ダービー・G1に出走を予定しているバステールは、5月30日に東京競馬場へ16時3分に到着しました。下澤助手は、輸送はいつも通りでカイバも完食していると伝えています。皐月賞で11着だったバステールは、報知杯弥生賞ディープインパクト記念を勝って前走の皐月賞に挑んでいました。陣営は、2400メートルの方がレースはしやすいと、距離延長を歓迎しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (221文字)
-[0]  プレビュー: 名牝ジェンティルドンナの初孫であるカフェラバーが、土曜東京7Rの3歳1勝クラス、芝1400mで2勝目を狙います。カフェラバーの父はモーリス、母はモアナアネラ、母...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (196文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。第93回日本ダービー・G1に出走を予定しているバステールは、5月30日に東京競馬場へ16時3分に到着しました。下澤助手は、輸送...
-  HTTP 200
-[1]  [Gemini生出力 403文字]: '注目の競馬情報をお届けします。\n5月31日(日)に東京競馬場で行われる日本ダービーは、3歳牡牝・GI・芝2400mの世代の頂点を決する大一番です。今年2月にイタリアで「ミラノ・コルティナ2026冬季オリンピック・パラリンピック」が開催されたことにちなみ、冬季五輪開催年の日本ダービーに見られる共通項として、伏兵に注意が必要とされています。1984年のグレード制導入以降、冬季オリンピックは84年、88年、92年、94年、98年、02年、06年、10年に開催されており、18年には16番人気でコズミックフォースが3着に食い込みました。金曜気配では、パントルナイーフが坂路で軽く調整され、木村調教師は「元気に過ごしているのが何より」とコメントしています。ライヒスアドラーに騎乗する佐々木大輔騎手は「今までで一番」「ロスなくいけたら」と語り、岩田康誠騎手とアスクエジンバラは最終調整で人馬一体の走りを見せました。'
-[1]  [redirectフィルター] 403文字 → 387文字
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 461文字）
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 263文字]: '重要な競馬ニュースをお伝えします。30日、霜降り明星の粗品さんが自身のYouTubeチャンネルを更新し、日本ダービーの予想と馬券の買い目を公開しました。3歳牡牝のGI、芝2400mで行われるこのレースで、粗品さんはライヒスアドラーを本命に指名しています。その理由について、「最高の枠に入った」「臨戦過程、枠を見て、本命まで上がってきた」「1戦毎に確実に成長しているので、更なる成長を期待している」と語りました。2番手にはゴーイントゥスカイをチョイスし、買い目はゴーイントゥスカイとロブ...で、3連複での勝負だということです。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (260文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。30日、霜降り明星の粗品さんが自身のYouTubeチャンネルを更新し、日本ダービーの予想と馬券の買い目を公開しました。3歳牡牝...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[2]  [Gemini生出力 182文字]: '競馬速報です。\n第93回日本ダービー・G1、5月31日に東京競馬場・芝2400メートルで行われるレースの前日最終オッズが、5月30日にJRAから発表されました。単勝1番人気は、皐月賞でG1・2勝目を挙げたロブチェンで2・9倍です。2番人気には、皐月賞で2着に惜敗したリアライズシリウスが6・2倍で支持されています。また、ゴーイントゥスカイが7・1倍で続いています。'
+[2]  [重複除去] 182文字 → 181文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (181文字)
+[2]  プレビュー: 競馬速報です。第93回日本ダービー・G1、5月31日に東京競馬場・芝2400メートルで行われるレースの前日最終オッズが、5月30日にJRAから発表されました。単...
   HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
@@ -69,26 +63,9 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 350文字]: '注目の競馬情報をお届けします。5月31日(日)に東京競馬場で行われる日本ダービーは、世代の頂点を決する大一番です。今年2月にイタリアで「ミラノ・コルティナ2026冬季オリンピック・パラリンピック」が開催されたことにちなみ、冬季五輪開催年の日本ダービーは伏兵に注意が必要とされています。1984年のグレード制導入以降、18年には16番人気でコズミックフォースが3着に食い込む例が見られました。金曜気配では、パントルナイーフが坂路で軽く調整され、木村調教師は「元気に過ごしているのが何より」とコメントしています。ライヒスアドラーの佐々木大輔騎手は「今までで一番」「ロスなくいけたら」と語り、同期の今村聖奈騎手に続くことを目指します。岩田康誠騎手とアスクエジンバラは最終調整で人馬一体の走りを見せています。'
-[1]  [redirectフィルター] 350文字 → 335文字
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 404文字]: '注目の競馬情報をお届けします。5月31日(日)に東京競馬場で行われる日本ダービー、3歳牡牝・GI・芝2400mは、世代の頂点を決する大一番です。今年2月にイタリアで「ミラノ・コルティナ2026冬季オリンピック・パラリンピック」が開催されたことにちなみ、冬季五輪開催年の日本ダービーに見られる共通項を探る視点が提示されています。1984年のグレード制導入以降の冬季オリンピック開催年では、伏兵に注意が必要かもしれないという傾向が示唆されており、18年には16番人気で3着に食い込んだコズミックフォースの例が挙げられています。また、日本ダービーの金曜気配として、パントルナイーフは坂路で軽く調整され、木村調教師は「元気に過ごしているのが何より」とコメント。ライヒスアドラーに騎乗する佐々木大輔騎手は「今までで一番」「ロスなくいけたら」と語り、岩田康誠騎手とアスクエジンバラは最終調整で人馬一体の走りを見せました。'
-[1]  [redirectフィルター] 404文字 → 389文字
+[1]  [Gemini生出力 226文字]: '今週の競馬注目情報をお伝えします。今週の日曜日は、東京競馬場で日本ダービー(GI)が行われます。過去10年の日本ダービーでは、前走で皐月賞(GI)に出走していた組が最も多くの3着以内馬を出しています。前走皐月賞組の成績は[8-10-6-76]です。しかし、単勝回収率は84％、複勝回収率に至っては59％と低い数字になっているため、前走で皐月賞に出走していた馬をすべて購入すると損をしてしまいます。皐月賞組の取捨選択は、前走の着順と人気が重要となります。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (389文字)
-[1]  プレビュー: 5月31日(日)に東京競馬場で行われる日本ダービー、3歳牡牝・GI・芝2400mは、世代の頂点を決する大一番です。今年2月にイタリアで「ミラノ・コルティナ202...
+[1]  → output/script_1.txt 保存 (226文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。今週の日曜日は、東京競馬場で日本ダービー(GI)が行われます。過去10年の日本ダービーでは、前走で皐月賞(GI)に出走していた...
 
 3 件の脚本を生成しました。
