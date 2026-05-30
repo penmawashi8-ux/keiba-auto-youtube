@@ -1,10 +1,10 @@
-date: 2026-05-29T12:27:14.344131Z
+date: 2026-05-30T00:23:28.928824Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=s8YIclU9fZM title=今年は午年ダービー 近5回の共通項に「3番」or「3枠」
-OK project=1 video_id=Ni4RZBSePek title=母は名牝グランアレグリア グランマエストロが初ダートで初勝利なるか
-OK project=1 video_id=MFr44sSNzFs title=【日本ダービー過去10年傾向】近年は枠順の偏りなし 一方で40年以上続くジンクス
+OK project=1 video_id=0v5NgLeOUzg title=【ダービー記録】最大着差は8馬身差セントライトVの1941年など　接戦は鼻差のシ
+OK project=1 video_id=6k4q5gA08kc title=【きょうの注目】名牝5年ぶりの子供!兄姉にタイトルホルダー、メロディーレーンのシ
+OK project=1 video_id=vllp3HRqrcs title=葵Sはとにかく荒れる一戦 馬体重や前走に注目だ
