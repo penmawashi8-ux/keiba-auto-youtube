@@ -1,10 +1,10 @@
-date: 2026-05-30T07:42:39.632188Z
+date: 2026-05-30T09:17:09.017423Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xY5ZVRVmqwE title=【日本ダービー予想】過去傾向や血統背景から過信は禁物!? 二冠制覇に暗雲立ち込め
-OK project=1 video_id=r9Tb5L85mls title=【葵S】タマモイカロスは上がり最速32秒7も3着　デビュー3年目の高杉吏麒騎手は
-OK project=1 video_id=laqyVUYCz-Q title=【富嶽賞レース後コメント】サンドブラスト菊沢一樹騎手ら
+OK project=1 video_id=IDzH0sh5dr8 title=5月30日の出来事一覧/東京・京都
+OK project=1 video_id=BzhQ7pStt9Y title=【日本ダービー・土曜気配】無敗での戴冠目指すコンジェスタスは態勢整う　父子3代制
+OK project=1 video_id=aVm1z58qijQ title=【ダービー馬体診断・まとめ】松山康久元調教師のベスト3は?　1位は文句なし10点
