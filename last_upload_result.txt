@@ -1,10 +1,10 @@
-date: 2026-05-30T00:23:28.928824Z
+date: 2026-05-30T04:56:56.765131Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0v5NgLeOUzg title=【ダービー記録】最大着差は8馬身差セントライトVの1941年など　接戦は鼻差のシ
-OK project=1 video_id=6k4q5gA08kc title=【きょうの注目】名牝5年ぶりの子供!兄姉にタイトルホルダー、メロディーレーンのシ
-OK project=1 video_id=vllp3HRqrcs title=葵Sはとにかく荒れる一戦 馬体重や前走に注目だ
+OK project=1 video_id=mWlS4KyE5D0 title=津村が東京7Rで落馬　担架で運ばれる　鈴木伸師「足が痛いといっている。会話はでき
+OK project=1 video_id=-PQKjXB9Y30 title=土曜東京７Ｒでエルハーベンが競走中止　津村が落馬　担架で運ばれる　ダービーでリア
+OK project=1 video_id=rOdPGuKuoSQ title=津村明秀騎手が落馬　担架で運ばれる　あすダービーではリアライズシリウスに騎乗予定
