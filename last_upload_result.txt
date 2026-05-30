@@ -1,10 +1,10 @@
-date: 2026-05-30T06:39:34.522604Z
+date: 2026-05-30T07:42:39.632188Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cLd-zoqU0eA title=ホリエモン所有馬イッテラッシャイが単勝１・８倍の１番人気に応えて快勝　堀江氏「マ
-OK project=1 video_id=uhB6lc33Mno title=【阪神アーバン競馬プレーバック】今年2戦2勝の園田男襲名!藤懸貴志が穴馬を勝利に
-OK project=1 video_id=yhjaURM2Ohs title=菊沢一樹騎手が東京7RのトライアンフパスでJRA通算200勝を達成　3Rで達成の
+OK project=1 video_id=xY5ZVRVmqwE title=【日本ダービー予想】過去傾向や血統背景から過信は禁物!? 二冠制覇に暗雲立ち込め
+OK project=1 video_id=r9Tb5L85mls title=【葵S】タマモイカロスは上がり最速32秒7も3着　デビュー3年目の高杉吏麒騎手は
+OK project=1 video_id=laqyVUYCz-Q title=【富嶽賞レース後コメント】サンドブラスト菊沢一樹騎手ら
