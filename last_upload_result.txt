@@ -1,10 +1,10 @@
-date: 2026-05-30T09:17:09.017423Z
+date: 2026-05-30T11:02:33.789486Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IDzH0sh5dr8 title=5月30日の出来事一覧/東京・京都
-OK project=1 video_id=BzhQ7pStt9Y title=【日本ダービー・土曜気配】無敗での戴冠目指すコンジェスタスは態勢整う　父子3代制
-OK project=1 video_id=aVm1z58qijQ title=【ダービー馬体診断・まとめ】松山康久元調教師のベスト3は?　1位は文句なし10点
+OK project=1 video_id=FIhoGcIo328 title=名牝ジェンティルドンナの初孫 カフェラバーが自己条件で2勝目狙う
+OK project=1 video_id=K7f78sqkl3Y title=冬季五輪開催年の日本ダービーは伏兵に注意？ 過去の傾向を探ってみると
+OK project=1 video_id=y_Rwp04tTv8 title=【日本ダービー】バステールは距離延長を歓迎　陣営「2400メートルの方がレースは
