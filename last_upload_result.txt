@@ -1,10 +1,10 @@
-date: 2026-05-30T04:56:56.765131Z
+date: 2026-05-30T06:39:34.522604Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mWlS4KyE5D0 title=津村が東京7Rで落馬　担架で運ばれる　鈴木伸師「足が痛いといっている。会話はでき
-OK project=1 video_id=-PQKjXB9Y30 title=土曜東京７Ｒでエルハーベンが競走中止　津村が落馬　担架で運ばれる　ダービーでリア
-OK project=1 video_id=rOdPGuKuoSQ title=津村明秀騎手が落馬　担架で運ばれる　あすダービーではリアライズシリウスに騎乗予定
+OK project=1 video_id=cLd-zoqU0eA title=ホリエモン所有馬イッテラッシャイが単勝１・８倍の１番人気に応えて快勝　堀江氏「マ
+OK project=1 video_id=uhB6lc33Mno title=【阪神アーバン競馬プレーバック】今年2戦2勝の園田男襲名!藤懸貴志が穴馬を勝利に
+OK project=1 video_id=yhjaURM2Ohs title=菊沢一樹騎手が東京7RのトライアンフパスでJRA通算200勝を達成　3Rで達成の
