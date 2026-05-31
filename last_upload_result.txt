@@ -1,10 +1,10 @@
-date: 2026-05-31T07:08:36.116527Z
+date: 2026-05-31T08:17:17.377849Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t5kj4C-J6uw title=【日本ダービー速報】ロブチェンが二冠達成！
-OK project=1 video_id=mxzq_Gi-1aM title=【ダービー】松山弘平　涙の初制覇!　1番人気の皐月賞馬・ロブチェンが鮮やか差し切
-OK project=1 video_id=xC9fwjZ4dU0 title=【薫風Sレース後コメント】メイショウハチロー福永祐一調教師ら
+OK project=1 video_id=I-LZnO7glcM title=【目黒記念速報】ファイアンクランツが優勝!
+OK project=1 video_id=Y5SxPuPuAk4 title=【阪神アーバン競馬展望】6月4日の重賞・六甲盃　エイシンレオが悲願の重賞初Vへ
+OK project=1 video_id=F4I-qfIcRQs title=【ダービー】4頭出し上原佑厩舎はゴーイントゥスカイ4着が最高　「最後はいい脚を使
