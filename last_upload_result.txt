@@ -1,9 +1,10 @@
-date: 2026-05-31T05:24:39.911214Z
+date: 2026-05-31T07:08:36.116527Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wpRk6_4rtM4 title=【阪神アーバン競馬プレーバック】佐々木世麗が通算250勝!今年中の300勝達成へ
-OK project=1 video_id=ljxmquF5VGs title=【日本ダービー】馬トク外厩情報…皐月賞を使わなかったことが武器　“外厩帰りのフレ
+OK project=1 video_id=t5kj4C-J6uw title=【日本ダービー速報】ロブチェンが二冠達成！
+OK project=1 video_id=mxzq_Gi-1aM title=【ダービー】松山弘平　涙の初制覇!　1番人気の皐月賞馬・ロブチェンが鮮やか差し切
+OK project=1 video_id=xC9fwjZ4dU0 title=【薫風Sレース後コメント】メイショウハチロー福永祐一調教師ら
