@@ -1,42 +1,141 @@
+[0]  [ファクトチェックNG] NG: 元記事に存在しない馬名「ロ
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [ファクトチェックNG] NG: 元記事に存在しない賞金額
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 元記事に存在しない「引き続き、中央
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【目黒記念レース後コメント】ファイアンクランツ D.レーン騎手ら ---
-[0] Gemini入力本文 348文字: '東京12Rの第140回目黒記念(4歳以上GII・ハンデ・芝2500m)は3番人気ファイアンクランツ(D.レーン騎手)が勝利した。勝ちタイムは2分29秒8(良)。クビ差の2着に1番人気ウィクトルウェルス、さらにハナ差の3着に2番人気ダノンシー'
+--- 記事[0]: 「歓声の迫力に改めて圧倒されました」日本ダービー表彰式でプレゼンターの竹内涼真がコメント　「引き続き、中央競馬を盛り上げ ---
+[0] Gemini入力本文 340文字: '第93回日本ダービーの表彰式でプレゼンターを務めたJRA年間プロモーションキャラクターで俳優の竹内涼真(33)、見上愛(25)が大一番を目の当たりにした感想をコメントした。\n\t\t\t\t\u3000竹内涼真「昨年に続き日本ダービーのプレゼンターを務めさせ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【金沢・百万石賞結果】ナミダノキスが大差圧勝で連覇達成 ---
-[1] Gemini入力本文 350文字: '31日、金沢競馬場で行われた第69回百万石賞(重賞・ダ2100m・1着賞金1000万円)は、早め進出から先頭に立ち、あとは後続を大きく離して独走した望月洵輝騎手騎乗の2番人気ナミダノキス(牡5、金沢・金田一昌厩舎)が、6番人気リュウノブレイ'
+--- 記事[1]: 【日本ダービー】2冠馬ロブチェンはミックスセールで2100万円　ノーザンFの中島文彦GM「夢がありますよね」 ---
+[1] Gemini入力本文 355文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル、良)\n\t\t\t\t\u300023年生まれの3歳馬7944頭の頂上決戦が18頭で争われ、1番人気のロブチェン(牡3歳、栗東・杉山晴紀厩舎、父ワールドプレミア)が直線の競り合いを制し'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【日本ダービー】管理馬4頭出し上原佑調教師は悔しさかみ締める「残念ですね…」　最先着はゴーイントゥスカイの4着 ---
-[2] Gemini入力本文 429文字: '◆第93回日本ダービー・G1(5月31日、東京競馬場・芝2400メートル、良)\n\t\t\t\t\u3000フルゲートが18頭になった1992年以降で、02年の藤沢和雄元調教師以来2人目の管理馬4頭出しとなった上原佑紀厩舎は、武豊騎手とのコンビで青葉賞からの'
+--- 記事[2]: 「メイショウ」の松本好雄さんなど多くの関係者に愛されてきた松山弘平騎手　ついにつかんだダービージョッキーの称号 ---
+[2] Gemini入力本文 485文字: '日本ダービー・G1(5月31日、東京競馬場・芝2400メートル)でロブチェン(牡3歳、栗東・杉山晴紀厩舎、父ワールドプレミア)が勝ち、デビュー18年目の松山弘平騎手＝栗東・フリー＝が11度目の挑戦でダービージョッキーとなった。中央競馬担当の'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 234文字]: '注目の競馬情報をお届けします。東京12Rの第140回目黒記念は、3番人気ファイアンクランツがD.レーン騎手と共に勝利しました。勝ちタイムは2分29秒8の良馬場でした。クビ差の2着には1番人気のウィクトルウェルスが入り、さらにハナ差の3着には2番人気のダノンシーマが入着しています。勝利したファイアンクランツは美浦の堀宣行厩舎に所属する4歳牡馬です。父はドゥラメンテ、母はカラフルブラッサムで、母の父はハーツクライです。この勝利により、通算成績は10戦2勝となりました。'
-[0]  [redirectフィルター] 234文字 → 219文字
+[0]  [Gemini生出力 234文字]: '競馬速報です。第93回日本ダービーの表彰式でプレゼンターを務めたJRA年間プロモーションキャラクターで俳優の竹内涼真と見上愛が、大一番を目の当たりにした感想をコメントしました。竹内涼真は「昨年に続き日本ダービーのプレゼンターを務めさせていただき、大変光栄に思います」と述べました。さらに、「一生に一度の舞台を駆け抜けるサラブレッドの気迫、そして地響きのような歓声の迫力に、改めて圧倒されました」と語っています。優勝されたロブチェンと松山弘平騎手についても言及しました。'
   HTTP 200
-[1]  [Gemini生出力 201文字]: 'レース関連の最新情報です。31日、金沢競馬場で行われた第69回百万石賞は、1着賞金1000万円の重賞、ダート2100mで争われました。望月洵輝騎手騎乗の2番人気ナミダノキスが、早め進出から先頭に立ち、後続を大きく離して独走。6番人気リュウノブレイクに2.3秒の大差をつけ、大差圧勝で連覇を達成しました。勝ちタイムは2分18秒3、馬場は良でした。さらに1馬身差の3着には、9番人気マンガンが入っています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: 東京12Rの第140回目黒記念は、3番人気ファイアンクランツがD.レーン騎手と共に勝利しました。勝ちタイムは2分29秒8の良馬場でした。クビ差の2着には1番人気...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (201文字)
-[1]  プレビュー: レース関連の最新情報です。31日、金沢競馬場で行われた第69回百万石賞は、1着賞金1000万円の重賞、ダート2100mで争われました。望月洵輝騎手騎乗の2番人気...
-  HTTP 200
-[2]  [Gemini生出力 238文字]: '注目の競馬情報をお届けします。\n第93回日本ダービーが5月31日、東京競馬場・芝2400メートルで行われました。フルゲートが18頭になった1992年以降で、02年の藤沢和雄元調教師以来2人目の管理馬4頭出しとなった上原佑紀厩舎は、武豊騎手とのコンビで青葉賞からの2連勝を狙ったゴーイントゥスカイの4着が最高でした。この結果に、上原佑調教師は「残念ですね…」と悔しさをかみ締めています。23年に生まれたサラブレット7944頭の中から、ダービーの舞台に立つだけでも名誉なことです。'
-[2]  [redirectフィルター] 238文字 → 222文字
+[2]  [Gemini生出力 248文字]: '今日の競馬情報です。日本ダービー・G1が5月31日に東京競馬場・芝2400メートルで行われ、ロブチェンが勝利しました。これにより、デビュー18年目の松山弘平騎手が11度目の挑戦でダービージョッキーの称号をつかみました。ロブチェンは牡3歳、栗東・杉山晴紀厩舎、父ワールドプレミアの馬です。松山弘平騎手は「メイショウ」の松本好雄さんなど多くの関係者に愛されてきた騎手で、今回の勝利は悲願達成となりました。ロブチェンは1番人気の皐月賞馬として、史上25頭目の春2冠を達成し、差し切り2冠を飾っています。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (221文字)
-[2]  プレビュー: 第93回日本ダービーが5月31日、東京競馬場・芝2400メートルで行われました。フルゲートが18頭になった1992年以降で、02年の藤沢和雄元調教師以来2人目の...
+[2]  → output/script_2.txt 保存 (248文字)
+[2]  プレビュー: 今日の競馬情報です。日本ダービー・G1が5月31日に東京競馬場・芝2400メートルで行われ、ロブチェンが勝利しました。これにより、デビュー18年目の松山弘平騎手...
+  HTTP 200
+[1]  [Gemini生出力 207文字]: '本日の競馬ニュースです。第93回日本ダービー・G1が5月31日、東京競馬場・芝2400メートルで行われました。23年生まれの3歳馬7944頭の頂上決戦が18頭で争われ、1番人気のロブチェンが直線の競り合いを制し、皐月賞に続くクラシック2冠を飾りました。松山弘平騎手はデビュー18年目で悲願のダービージョッキーとなっています。勝ちタイムは2分22秒7でした。この2冠馬ロブチェンはミックスセールで2100万円でした。'
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
+  HTTP 200
+[0]  [Gemini生出力 261文字]: '競馬速報です。\n第93回日本ダービーの表彰式でプレゼンターを務めたJRA年間プロモーションキャラクターの俳優、竹内涼真と見上愛が大一番を目の当たりにした感想をコメントしました。竹内涼真は「昨年に続き日本ダービーのプレゼンターを務めさせていただき、大変光栄に思います。」と述べました。続けて「一生に一度の舞台を駆け抜けるサラブレッドの気迫、そして地響きのような歓声の迫力に、改めて圧倒されました。」とコメントしています。優勝されたロブチェンと松山弘平騎手について触れ、「引き続き、中央競馬を盛り上げられるよう」と語りました。'
+[0]  [重複除去] 261文字 → 260文字
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 222文字]: '本日の競馬ニュースです。\n第93回日本ダービー・G1が5月31日、東京競馬場・芝2400メートル、良馬場で行われました。23年生まれの3歳馬7944頭の頂上決戦は18頭で争われ、1番人気のロブチェンが直線の競り合いを制し、皐月賞に続くクラシック2冠を飾りました。松山弘平騎手はデビュー18年目で悲願のダービージョッキーとなり、勝ちタイムは2分22秒7でした。ノーザンファームの中島文彦GMは「どの位置からでも競馬が...」とコメントしています。'
+[1]  [重複除去] 219文字 → 218文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (218文字)
+[1]  プレビュー: 本日の競馬ニュースです。第93回日本ダービー・G1が5月31日、東京競馬場・芝2400メートル、良馬場で行われました。23年生まれの3歳馬7944頭の頂上決戦は...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 215文字]: '競馬速報です。\n第93回日本ダービーの表彰式プレゼンター、竹内涼真と見上愛が感想をコメントしました。竹内涼真は「昨年に続き日本ダービーのプレゼンターを務めさせていただき、大変光栄に思います」と語りました。「一生に一度の舞台を駆け抜けるサラブレッドの気迫、そして地響きのような歓声の迫力に、改めて圧倒されました」と述べました。優勝したロブチェンと松山弘平騎手にも言及し、「引き続き、中央競馬を盛り上げられるよう」とコメントしました。'[0]  [ファクトチェックNG] NG: 元記事に存在しない馬名・
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
 
-3 件の脚本を生成しました。
+[0]  [重複除去] 215文字 → 214文字
+[0] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
