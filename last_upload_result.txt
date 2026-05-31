@@ -1,10 +1,10 @@
-date: 2026-05-30T12:14:39.361645Z
+date: 2026-05-31T00:18:00.501355Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=M8-0M-2pqzk title=霜降り明星・粗品の日本ダービー本命はライヒスアドラー 3連複で勝負だ
-OK project=1 video_id=MTaWo-nAjZE title=【AI予想・日本ダービー】前走惜敗も能力の高さは証明！ 3戦3勝の左回りで大逆転
-OK project=1 video_id=2elgTJoXwTs title=【日本ダービー】単勝1番人気はロブチェンの2・9倍でやや抜けた人気　リアライズシ
+OK project=1 video_id=GqejVujLVvo title=【ダービー】赤星憲広　無理なく好位確保ロブチェン
+OK project=1 video_id=Hgxhw9sSHrA title=【ダービー】リアライズシリウスが仕掛けたオフサイドトラップ?
+OK project=1 video_id=3VxZqR87tYs title=【日本ダービー予想】今年も中心は前走皐月賞組？ 過去データから探るGI日本ダービ
