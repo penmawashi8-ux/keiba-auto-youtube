@@ -1,10 +1,9 @@
-date: 2026-05-31T00:18:00.501355Z
+date: 2026-05-31T05:24:39.911214Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=GqejVujLVvo title=【ダービー】赤星憲広　無理なく好位確保ロブチェン
-OK project=1 video_id=Hgxhw9sSHrA title=【ダービー】リアライズシリウスが仕掛けたオフサイドトラップ?
-OK project=1 video_id=3VxZqR87tYs title=【日本ダービー予想】今年も中心は前走皐月賞組？ 過去データから探るGI日本ダービ
+OK project=1 video_id=wpRk6_4rtM4 title=【阪神アーバン競馬プレーバック】佐々木世麗が通算250勝!今年中の300勝達成へ
+OK project=1 video_id=ljxmquF5VGs title=【日本ダービー】馬トク外厩情報…皐月賞を使わなかったことが武器　“外厩帰りのフレ
