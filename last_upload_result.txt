@@ -1,10 +1,10 @@
-date: 2026-05-31T08:17:17.377849Z
+date: 2026-05-31T09:51:11.641347Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=I-LZnO7glcM title=【目黒記念速報】ファイアンクランツが優勝!
-OK project=1 video_id=Y5SxPuPuAk4 title=【阪神アーバン競馬展望】6月4日の重賞・六甲盃　エイシンレオが悲願の重賞初Vへ
-OK project=1 video_id=F4I-qfIcRQs title=【ダービー】4頭出し上原佑厩舎はゴーイントゥスカイ4着が最高　「最後はいい脚を使
+OK project=1 video_id=ohuNMJbkMUE title=【目黒記念レース後コメント】ファイアンクランツ D.レーン騎手ら
+OK project=1 video_id=3AH8iM9FlM8 title=【金沢・百万石賞結果】ナミダノキスが大差圧勝で連覇達成
+OK project=1 video_id=E4awjRPgGLk title=【日本ダービー】管理馬4頭出し上原佑調教師は悔しさかみ締める「残念ですね…」　最
