@@ -1,8 +1,11 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -15,44 +18,45 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【阪神アーバン競馬プレーバック】佐々木世麗が通算250勝!今年中の300勝達成へ前進 ---
-[0] Gemini入力本文 347文字: '28日の4R(ダート820メートル)で1番人気のサマーエンジェル(牝4＝田中範、父ラブリーデイ)に騎乗した佐々木世麗が今年34勝目を挙げ、通算250勝を達成。公式のメモリアル記録ではないものの、当面の目標としてきた節目の数字に到達した。\n\u3000'
+--- 記事[0]: 【日本ダービー速報】ロブチェンが二冠達成！ ---
+[0] Gemini入力本文 355文字: '31日、東京競馬場で行われた第93回日本ダービー(3歳・牡牝・GI・芝2400m)は、松山弘平騎手騎乗の1番人気ロブチェン(牡3、栗東・杉山晴紀厩舎)が1位入線を果たした。\n\u30002位は4番人気パントルナイーフ(牡3、美浦・木村哲也厩舎)、3位'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【日本ダービー】馬トク外厩情報…皐月賞を使わなかったことが武器　“外厩帰りのフレッシュな伏兵”が浮上 ---
-[1] Gemini入力本文 570文字: '今年の日本ダービーで見逃せないのが、“皐月賞を使わなかった組”の存在だ。\n\t\t\t\t\u3000アウダーシアはスプリングステークスで、その後に皐月賞4着となるアスクエジンバラ、さらに6着に入ったサウンドムーブにも先着。決して相手関係に恵まれたわけではな'
+--- 記事[1]: 【ダービー】松山弘平　涙の初制覇!　1番人気の皐月賞馬・ロブチェンが鮮やか差し切りで2冠達成! ---
+[1] Gemini入力本文 346文字: '◇第93回日本ダービー\u3000芝2400メートル(2026年5月31日\u3000東京競馬場)\n\u30002023年生まれのサラブレッド7944頭の頂点を決める「日本ダービー」はロブチェンが優勝し、皐月賞に続く2冠を達成した。\n\u3000ゴール前で先に抜け出したパントルナ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【日本ダービー】皆藤愛子が４週連続的中目指し栗東トレセン生取材！　本命は“しっとりもっちもち”筋肉に感動したあの馬 ---
-[2] Gemini入力本文 550文字: '「日本ダービー・Ｇ１」（３１日、東京）\n\u3000ダービーの取材で、初めて栗東トレーニングセンターに行かせていただきました。競走馬たちが行き交う別世界、見るもの全てにワクワクしてずっと鼓動が速かったです！\n\u3000調教映像好きな私、調教コースの全貌が実は'
+--- 記事[2]: 【薫風Sレース後コメント】メイショウハチロー福永祐一調教師ら ---
+[2] Gemini入力本文 345文字: '東京9Rの薫風ステークス(4歳以上3勝クラス・ダート1600m)は1番人気メイショウハチロー(川田将雅騎手)が勝利した。勝ちタイムは1分35秒3(良)。半馬身差の2着に5番人気サムシャイン、さらに2馬身差の3着に4番人気ヴァンドームが入った'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 4文字]: 'SKIP'
-[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 550文字）
+[1]  [Gemini生出力 242文字]: '重要な競馬ニュースをお伝えします。\n第93回日本ダービーが2026年5月31日、東京競馬場芝2400メートルで行われました。2023年生まれのサラブレッド7944頭の頂点を決めるこのレースは、ロブチェンが優勝し、皐月賞に続く2冠を達成しました。ゴール前では、先に抜け出したパントルナイーフを強烈な末脚で差し切る形となりました。松山弘平騎手は悲願のダービー初制覇を飾り、脱帽してお辞儀すると、涙があふれました。ダービーは1932年に英国のダービーステークスを範として創設されたものです。'
+[1]  [重複除去] 242文字 → 241文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (241文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。第93回日本ダービーが2026年5月31日、東京競馬場芝2400メートルで行われました。2023年生まれのサラブレッド7944...
+  HTTP 200
+[0]  [Gemini生出力 197文字]: "今週の競馬注目情報をお伝えします。\n31日、東京競馬場で行われた第93回日本ダービー、芝2400mのGIレースでは、松山弘平騎手騎乗の1番人気ロブチェンが1位入線を果たしました。2位には4番人気のパントルナイーフが入り、3位は接戦となっています。1位入線馬ロブチェンの厩舎は栗東の杉山晴紀厩舎です。また、父はワールドプレミア、母はソングライティング、母父はGiant's Causewayです。"
+[0]  [重複除去] 197文字 → 196文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (196文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。31日、東京競馬場で行われた第93回日本ダービー、芝2400mのGIレースでは、松山弘平騎手騎乗の1番人気ロブチェンが1位入線...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 253文字]: '注目の競馬情報をお届けします。28日の4R、ダート820メートル戦で、佐々木世麗騎手が1番人気のサマーエンジェルに騎乗し、今年34勝目を挙げました。これにより、佐々木世麗騎手は通算250勝を達成しました。この勝利は公式のメモリアル記録ではないものの、当面の目標としてきた節目の数字に到達したものです。レースでは抜群のスタートを決め、逃げ切り勝ちを収めました。スーパースプリント戦としては圧勝とも言える2馬身の差をつけています。また、10Rのダート1230メートル戦では、6番人気のワローテルに騎乗しました。'
-[0]  [redirectフィルター] 253文字 → 238文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (238文字)
-[0]  プレビュー: 28日の4R、ダート820メートル戦で、佐々木世麗騎手が1番人気のサマーエンジェルに騎乗し、今年34勝目を挙げました。これにより、佐々木世麗騎手は通算250勝を...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[1]  [Gemini生出力 221文字]: '競馬速報です。今年の日本ダービーにおいて、“皐月賞を使わなかった組”の存在が見逃せないと報じられています。その中でもアウダーシアは、スプリングステークスで、皐月賞4着のアスクエジンバラや6着のサウンドムーブに先着しました。これは決して相手関係に恵まれたわけではなく、世代上位クラスと互角以上に戦ってきた実績があることを示しています。特に評価すべきはレース内容で、ラスト3ハロン11秒9−11秒7−11秒7という厳しい持続力勝負を見せています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (221文字)
-[1]  プレビュー: 競馬速報です。今年の日本ダービーにおいて、“皐月賞を使わなかった組”の存在が見逃せないと報じられています。その中でもアウダーシアは、スプリングステークスで、皐月...
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
@@ -62,7 +66,10 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 4文字]: 'SKIP'
-[2]  → 再試行後もSKIPのためスキップ（動画生成しない）
+[2]  [Gemini生出力 243文字]: '競馬速報です。\n東京9Rの薫風ステークスは、4歳以上3勝クラスのダート1600mで行われました。このレースは1番人気メイショウハチロー(川田将雅騎手)が勝利し、勝ちタイムは1分35秒3(良)でした。半馬身差の2着には5番人気サムシャインが入り、さらに2馬身差の3着には4番人気ヴァンドームが入線しています。勝利したメイショウハチローは、栗東・福永祐一厩舎に所属する4歳牡馬です。父はシニスターミニスター、母はメイショウミハル(母の父ダイワメジャー)で、通算成績は12戦4勝となりました。'
+[2]  [重複除去] 243文字 → 242文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (242文字)
+[2]  プレビュー: 競馬速報です。東京9Rの薫風ステークスは、4歳以上3勝クラスのダート1600mで行われました。このレースは1番人気メイショウハチロー(川田将雅騎手)が勝利し、勝...
 
-2 件の脚本を生成しました。
+3 件の脚本を生成しました。
