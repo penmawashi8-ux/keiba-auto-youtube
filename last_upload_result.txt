@@ -1,10 +1,10 @@
-date: 2026-06-01T12:45:17.699685Z
+date: 2026-06-01T15:37:34.355284Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WNeLrLgEJJ0 title=【安田記念】復活目指す桜花賞馬ステレンボッシュは1週前に好調教　宮田調教師「本当
-OK project=1 video_id=LHFF6sFIpbs title=【安田記念】シャンパンカラーは1週前に田中剛調教師が騎乗しラスト10秒8　23年
-OK project=1 video_id=jaUTkjMW9kU title=【安田記念・超ブル診断ステップレース編】切れ味&勝負強さに磨きがかかってきた重賞
+OK project=1 video_id=vyuPYOepH3g title=【安田記念】ロングランは調子の良さをアピール　ゴンサルベス騎手「レベルの高い馬で
+OK project=1 video_id=d9nByI89O5c title=【安田記念】おぱんち×東京マイル×ダービージョッキー=勝利!　「1600メートル
+OK project=1 video_id=ATD-ctj5zXk title=【安田記念】穴党大注目のセイウンハーデスが4年4か月ぶりマイル戦　陣営「東京の1
