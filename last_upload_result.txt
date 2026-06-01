@@ -1,10 +1,10 @@
-date: 2026-05-31T12:22:47.317178Z
+date: 2026-06-01T00:28:57.242342Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Fwzap9z5vQU title=ミカエル・ミシェルが南アフリカでG1初制覇　大外から力強く追い込み決めた
-OK project=1 video_id=nZkbFPLnfJI title=「ロブ。勝った」「ダービーか…」　感涙Vの松山弘平騎手のジョッキーカメラが公開
-OK project=1 video_id=H6iCMDVYA9Y title=「え?」「競馬に絶対はない」単勝1・2倍の断然人気馬まさかの黒星にネット驚き　九
+OK project=1 video_id=Gm_nt2nxbVI title=【目黒記念・レースメモ】ファイアンクランツV導いた　レーン騎手3年ぶり3勝目　重
+OK project=1 video_id=yW9kMWFPLas title=【日本ダービー】1番人気のロブチェンが7944頭の頂点に　新種牡馬ワールドプレミ
+OK project=1 video_id=kY_yvnNf_eE title=【日本ダービー】ロブチェンが史上25頭目の2冠を達成!「まさか松山弘平がダービー
