@@ -1,10 +1,10 @@
-date: 2026-06-01T00:28:57.242342Z
+date: 2026-06-01T06:10:53.885505Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Gm_nt2nxbVI title=【目黒記念・レースメモ】ファイアンクランツV導いた　レーン騎手3年ぶり3勝目　重
-OK project=1 video_id=yW9kMWFPLas title=【日本ダービー】1番人気のロブチェンが7944頭の頂点に　新種牡馬ワールドプレミ
-OK project=1 video_id=kY_yvnNf_eE title=【日本ダービー】ロブチェンが史上25頭目の2冠を達成!「まさか松山弘平がダービー
+OK project=1 video_id=UhxMfcLOOVA title=【安田記念想定騎手】ガイアフォースは横山武史騎手、トロヴァトーレはC.ルメール騎
+OK project=1 video_id=6JG4yEJO-Tc title=【安田記念】武豊騎手騎乗のアドマイヤズームは週末追い切って不安なし　陣営「カイバ
+OK project=1 video_id=orbpSLijHgk title=【安田記念・理貴の特注馬】上昇気配ウォーターリヒトの巻き返しに期待　得意の東京マ
