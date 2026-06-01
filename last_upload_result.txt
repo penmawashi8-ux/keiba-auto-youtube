@@ -1,10 +1,10 @@
-date: 2026-06-01T08:46:33.553004Z
+date: 2026-06-01T10:22:02.405313Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BpTknQUpv5s title=【安田記念】シックスペンスは転厩2戦目で復活V狙う　田中博調教師「前走は思ったよ
-OK project=1 video_id=OPU2cDndgHA title=ダービージョッキー松山弘平騎手が電撃訪問　ロブチェンねぎらう　「助けられました」
-OK project=1 video_id=yv8K6XueuGQ title=【先週のJRA抹消馬】24年のサマーマイル王者トゥードジボン、23年の札幌2歳S
+OK project=1 video_id=SDbPJrDx4CQ title=【AI予想・安田記念】春の最強マイラー決定戦は混戦ムード！ 人気薄の大駆けも警戒
+OK project=1 video_id=1BjiqnlGi2g title=【安田記念・西山が占う】東京マイルは実力馬が復活しやすい舞台　パンジャタワーやス
+OK project=1 video_id=f1gxjcZdtXY title=【今週デビュー予定・トク注新馬】「この馬でダービーに行きたいです」武井調教師が早
