@@ -1,72 +1,80 @@
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
+[1]  [ファクトチェックNG] NG: 元記事に存在しないタイム
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [ファクトチェックNG] NG: 東西の注目新馬が集
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 宮田調教師のコメント「本当に素晴らしい
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [ファクトチェックNG] NG: 元記事に存在しないタイム「ラスト
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【AI予想・安田記念】春の最強マイラー決定戦は混戦ムード！ 人気薄の大駆けも警戒する人工知能の本命候補 ---
-[0] Gemini入力本文 478文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は日曜日に安田記念(GI)のみとなります。ここでは安田記念の過去傾向や人工知能の週明け時点での本命候補をご紹介してい'
+--- 記事[0]: 【安田記念】復活目指す桜花賞馬ステレンボッシュは1週前に好調教　宮田調教師「本当に素晴らしい動き」 ---
+[0] Gemini入力本文 354文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月1日\n\t\t\t\t\u300024年の桜花賞馬ステレンボッシュ(牝5歳、美浦・宮田敬介厩舎、父エピファネイア)はそれ以降、勝ち星がなく25年は掲示板さえ外す結果が続いていたが、前走'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【安田記念・西山が占う】東京マイルは実力馬が復活しやすい舞台　パンジャタワーやステレンボッシュが再び輝くか ---
-[1] Gemini入力本文 354文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月1日\n\t\t\t\t\u3000東京の芝1600メートルはスタートから3コーナーまで500メートル以上の直線距離があるため、枠順の有利不利がほとんどない。それぞれの馬が能力を発揮しや'
+--- 記事[1]: 【安田記念】シャンパンカラーは1週前に田中剛調教師が騎乗しラスト10秒8　23年NHKマイルC以来の勝利へ ---
+[1] Gemini入力本文 357文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月1日\n\t\t\t\t\u3000シャンパンカラー(牡6歳、美浦・田中剛厩舎、父ドゥラメンテ)は23年NHKマイルCの勝ち馬。それ以降は勝利から遠ざかっているが、今年初戦の東京新聞杯・'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【今週デビュー予定・トク注新馬】「この馬でダービーに行きたいです」武井調教師が早くもホレ込むエフフォーリア産駒 ---
-[2] Gemini入力本文 337文字: '今週から東西で2歳馬の新馬戦がスタートする。3回東京開催の開幕週にスタンバイしている関東の注目株は、21年年度代表馬で新種牡馬エフフォーリアの産駒ジョドレルバンク(牡、美浦・武井亮厩舎)だ。まだ1歳だった昨年のこの時期から素材の良さを評価し'
+--- 記事[2]: 【安田記念・超ブル診断ステップレース編】切れ味&勝負強さに磨きがかかってきた重賞連勝馬が「G」評価 ---
+[2] Gemini入力本文 533文字: '【エプソムC＝レース評価A】従来は安田記念の翌週に行われていたが、昨年から1か月開催時期が早められた。今年初めて、ここをステップに春のマイル王決定戦に駒を進めてくる。それも1、2着馬がそろって有力馬として。新たな路線として確立されるか。\n\t'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 200
+[1]  [Gemini生出力 256文字]: '最新のレース情報が入ってきました。第76回安田記念・G1は6月7日に東京競馬場・芝1600メートルで行われます。シャンパンカラーは2023年NHKマイルCの勝ち馬ですが、それ以降は勝利から遠ざかっています。しかし、今年初戦の東京新聞杯・G3では0秒1差の4着、前走の読売マイラーズC・G2も9着ながら0秒4差と、復調気配を漂わせています。1週前追い切りでは美浦・Wコースで田中剛調教師が自ら騎乗し、一杯に追われて6ハロン82秒1をマークし、ラストは10秒8でした。2023年NHKマイルC以来の勝利を目指します。'
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 217文字]: '今日の競馬情報です。今週から東西で2歳馬の新馬戦がスタートします。3回東京開催の開幕週にスタンバイしている関東の注目株は、21年年度代表馬で新種牡馬エフフォーリアの産駒ジョドレルバンクです。美浦の武井亮調教師は、まだ1歳だった昨年のこの時期から素材の良さを評価しており、「この馬でダービーに行きたいです」と語るほどの逸材です。早くも来春のクラシックを見据えているジョドレルバンクは、東西の注目新馬が集う7日のレースに予定されています。'
+[2]  [Gemini生出力 377文字]: '今日の競馬情報です。エプソムCはレース評価Aとされています。このレースは従来、安田記念の翌週に行われていましたが、昨年から1か月開催時期が早められました。今年初めて、ここをステップに春のマイル王決定戦に1、2着馬がそろって有力馬として駒を進めており、新たな路線として確立されるか注目されています。エプソムCは1800メートルを前半35秒4、中盤36秒3、後半33秒6の瞬発力勝負で、逃げたストレイトトーカーの番手からサクラファレルが抜け出しました。メイショウタバルと併せた1週前追い切りでウォーターリヒトが目覚めたと陣営は「もっとやれる馬」とコメントしています。昨年覇者ジャンタルマンタルが不在で混戦ムードの中、G1馬が過去10年連続連対中であり、今年は4頭がスタンバイしています。ルクソールカフェは史上2頭目の初芝でのJRA・GI勝ちへ意欲の参戦です。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (377文字)
+[2]  プレビュー: 今日の競馬情報です。エプソムCはレース評価Aとされています。このレースは従来、安田記念の翌週に行われていましたが、昨年から1か月開催時期が早められました。今年初...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 200
-[0]  [Gemini生出力 4文字]: 'SKIP'
-[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 478文字）
+[0]  [Gemini生出力 250文字]: '最新情報をお届けします。\n第76回安田記念・G1は6月7日に東京競馬場・芝1600メートルで行われます。24年の桜花賞馬ステレンボッシュは、桜花賞以降勝ち星がなく、25年は掲示板さえ外す結果が続いていました。しかし、前走のエプソムC・G3ではタイム差なし2着と好走し、久しぶりに存在感を見せています。前走後は短期放牧を挟み、5月22日に美浦トレセンに帰厩しました。1週前追い切りはWコースでの単走馬なりで、5ハロン66...という内容でした。宮田調教師は「本当に素晴らしい動き」とコメントしています。'
+[0]  [redirectフィルター] 250文字 → 237文字
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 286文字]: 'レース関連の最新情報です。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。東京の芝1600メートルは、スタートから3コーナーまで500メートル以上の直線距離があるため、枠順の有利不利がほとんどありません。それぞれの馬が能力を発揮しやすい舞台で行われる安田記念は、「やっぱり強かったか」と実力を再確認する結果に終わることが多いとされています。ちょうど10年前の2016年には、ロゴタイプが2013年の皐月賞以来、実に17戦ぶりの白星でG1・2勝目を挙げています。今回の安田記念では、パンジャタワーやステレンボッシュが再び輝くか注目されています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (286文字)
-[1]  プレビュー: レース関連の最新情報です。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。東京の芝1600メートルは、スタートから3コーナーまで5...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -76,7 +84,11 @@ Gemini APIキー: 3 件ロード
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 268文字]: '最新のレース情報が入ってきました。\n第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。このレースには、23年NHKマイルCの勝ち馬であるシャンパンカラーが出走を予定しています。シャンパンカラーはNHKマイルC以降、勝利から遠ざかっていますが、復調気配を漂わせています。今年初戦の東京新聞杯・G3では0秒1差の4着に入り、前走の読売マイラーズC・G2でも9着ながら0秒4差と僅差でした。1週前追い切りでは、美浦・Wコースで田中剛調教師が自ら騎乗し、一杯に追われて6ハロン82秒1、ラスト10秒8を記録しました。'
+[1]  [重複除去] 268文字 → 267文字
+[1] 使用: key=***189Y model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -84,19 +96,30 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
-[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
   HTTP 200
-[0]  [Gemini生出力 268文字]: '今日の競馬情報です。\n今週の重賞競走は日曜日に安田記念(GI)のみとなります。netkeibaオリジナルAIは、特筆すべき過去の傾向とともに本命候補3頭を推奨しています。安田記念の過去傾向として、過去10年の前走人気別成績(前走が海外だった馬は除く)では、前走4番人気以内の馬が8勝2着5回3..という結果が出ています。また、ストームキャットなどナスキロ差しが優勢とされ、前残りならヌレイエフ≒サドラーズウェルズの血が注目されています。想定騎手では、ガイアフォースには横山武史騎手、トロヴァトーレにはC.ルメール騎手が予定されています。'
-[0]  [重複除去] 266文字 → 265文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (265文字)
-[0]  プレビュー: 今日の競馬情報です。今週の重賞競走は日曜日に安田記念(GI)のみとなります。netkeibaオリジナルAIは、特筆すべき過去の傾向とともに本命候補3頭を推奨して...
+[0]  [Gemini生出力 261文字]: '最新情報をお届けします。\n第76回安田記念に出走を予定している桜花賞馬ステレンボッシュは、1週前追い切りで好調教を見せました。ステレンボッシュは24年の桜花賞馬ですが、それ以降勝ち星がなく、25年は掲示板さえ外す結果が続いていました。しかし、前走のエプソムC・G3でタイム差なしの2着と好走し、久しぶりに存在感を示しています。前走後は短期放牧を挟み、5月22日に美浦トレセンへ帰厩しました。1週前追い切りはWコースでの単走馬なりで、5ハロン66...という動きでした。宮田調教師は「本当に素晴らしい動き」と評価しています。'
+[0]  [redirectフィルター] 261文字 → 248文字
+[0]  ファクトチェック: OK  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+
+[0]  → output/script_0.txt 保存 (245文字)
+[0]  プレビュー: 第76回安田記念に出走を予定している桜花賞馬ステレンボッシュは、1週前追い切りで好調教を見せました。ステレンボッシュは24年の桜花賞馬ですが、それ以降勝ち星がな...
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 217文字]: '今日の競馬情報です。今週から東西で2歳馬の新馬戦がスタートします。3回東京開催の開幕週にスタンバイしている関東の注目株は、21年年度代表馬で新種牡馬エフフォーリアの産駒、ジョドレルバンクです。美浦の武井亮厩舎に所属するこの馬について、武井調教師はまだ1歳だった昨年のこの時期から素材の良さを評価しており、「この馬でダービーに行きたいです」と言わしめるほどの逸材だと語っています。早くも視線は来春のクラシックを見据えているとのことです。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (217文字)
-[2]  プレビュー: 今日の競馬情報です。今週から東西で2歳馬の新馬戦がスタートします。3回東京開催の開幕週にスタンバイしている関東の注目株は、21年年度代表馬で新種牡馬エフフォーリ...
+[1]  [Gemini生出力 233文字]: '最新のレース情報が入ってきました。第76回安田記念・G1は、6月7日に東京競馬場・芝1600メートルで行われます。シャンパンカラーは2023年NHKマイルCの勝ち馬ですが、それ以降は勝利から遠ざかっています。しかし、今年初戦の東京新聞杯・G3では0秒1差の4着、前走の読売マイラーズC・G2でも9着ながら0秒4差と、復調気配を漂わせています。1週前追い切りでは、美浦・Wコースで田中剛調教師が自ら騎乗し一杯に追われ、6ハロン82秒1、ラスト10秒8をマークしました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (233文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。第76回安田記念・G1は、6月7日に東京競馬場・芝1600メートルで行われます。シャンパンカラーは2023年NHKマイルCの勝...
 
 3 件の脚本を生成しました。
