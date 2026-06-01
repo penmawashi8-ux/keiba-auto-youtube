@@ -1,10 +1,10 @@
-date: 2026-06-01T15:37:34.355284Z
+date: 2026-06-01T16:48:30.902092Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vyuPYOepH3g title=【安田記念】ロングランは調子の良さをアピール　ゴンサルベス騎手「レベルの高い馬で
-OK project=1 video_id=d9nByI89O5c title=【安田記念】おぱんち×東京マイル×ダービージョッキー=勝利!　「1600メートル
-OK project=1 video_id=ATD-ctj5zXk title=【安田記念】穴党大注目のセイウンハーデスが4年4か月ぶりマイル戦　陣営「東京の1
+OK project=1 video_id=r5gGDuiaE68 title=【安田記念】ガイアフォースが12回目のG1挑戦で今度こそ　陣営「不安なく競馬にい
+OK project=1 video_id=sFbAo5t2lWY title=【安田記念】トロヴァトーレは重賞連勝で勢い十分　鹿戸調教師「前走は思っていたより
+OK project=1 video_id=znWgVXtBo7Y title=【独自】ミシェル騎手が日本のファンへコメント「地球の裏側にいても、いつも温かい応
