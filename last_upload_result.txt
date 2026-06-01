@@ -1,10 +1,10 @@
-date: 2026-06-01T06:10:53.885505Z
+date: 2026-06-01T08:46:33.553004Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UhxMfcLOOVA title=【安田記念想定騎手】ガイアフォースは横山武史騎手、トロヴァトーレはC.ルメール騎
-OK project=1 video_id=6JG4yEJO-Tc title=【安田記念】武豊騎手騎乗のアドマイヤズームは週末追い切って不安なし　陣営「カイバ
-OK project=1 video_id=orbpSLijHgk title=【安田記念・理貴の特注馬】上昇気配ウォーターリヒトの巻き返しに期待　得意の東京マ
+OK project=1 video_id=BpTknQUpv5s title=【安田記念】シックスペンスは転厩2戦目で復活V狙う　田中博調教師「前走は思ったよ
+OK project=1 video_id=OPU2cDndgHA title=ダービージョッキー松山弘平騎手が電撃訪問　ロブチェンねぎらう　「助けられました」
+OK project=1 video_id=yv8K6XueuGQ title=【先週のJRA抹消馬】24年のサマーマイル王者トゥードジボン、23年の札幌2歳S
