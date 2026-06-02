@@ -1,41 +1,107 @@
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【G1トク捜リレー】栗東・松ケ下記者は安田記念で穴狙い?　前走▲の脚質自在の4歳馬を先物買いだ ---
-[0] Gemini入力本文 523文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)\n\t\t\t\t\u3000読売マイラーズCで近走の充実ぶりと直前取材の感触が良く、9番人気でも単穴の▲を打ったドラゴンブースト(牡4歳、栗東・藤野健太厩舎、父スクリーンヒーロー)が侮れな'
+--- 記事[0]: 【安田記念】重賞3連勝でのG1初制覇狙うトロヴァトーレ　陣営は台風の影響を心配...「良馬場が希望」 ---
+[0] Gemini入力本文 348文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月2日、美浦トレセン\n\t\t\t\t\u3000トロヴァトーレ(牡5歳、美浦・鹿戸雄一厩舎、父レイデオロ)は全休日明けの2日、朝一番で坂路に登場して61秒6―14秒4で軽快に駆け上がっ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: C・ルメールのカフェでメルボルンC優勝トロフィー除幕式　かつて制した岩田康、角居元調教師の姿も ---
-[1] Gemini入力本文 724文字: '歴史と伝統あるオーストラリアの国際G1レース・メルボルンカップ(11月3日開催)の優勝トロフィーなどが展示される特別イベントが京都市中京区にある「CL\u3000FASHION＆CAFE」で行われ、11年にフランス馬のドゥーナデンで同レースを制したク'
+--- 記事[1]: 2026地方競馬ジョッキーズチャンピオンシップは吉村智洋騎手が3度目の優勝　WASJへ「素直にうれしい」 ---
+[1] Gemini入力本文 353文字: '全国のリーディングジョッキー14人が集結し、地方競馬NO1騎手を決める「2026地方競馬ジョッキーズチャンピオンシップ」が6月2日、船橋競馬場で行われ、吉村智洋騎手(41)＝兵庫＝が19年、24年に続き3度目の総合優勝を果たした。\n\t\t\t\t'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【安田記念】充実ぶりが光るスズハロームは絶好調　牧田調教師「お酒飲んで作戦会議します」 ---
-[2] Gemini入力本文 351文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月2日、栗東トレセン\n\t\t\t\t\u3000スズハローム(牡6歳、栗東・牧田和弥厩舎、父サトノダイヤモンド)は、藤懸貴志騎手がまたがり、坂路を63秒7―14秒9で3日の最終追い切り'
+--- 記事[2]: 【安田記念・超ブル診断データ編】マイル王ジャンタルマンタル不在で上半期で最も難解なG1...不当に人気落とす馬が狙い目 ---
+[2] Gemini入力本文 352文字: 'マイル王ジャンタルマンタルが不在で、【2・5・0・8】(データは以降も過去10年)のヴィクトリアマイル組もいない。上半期で最も難解なG1かもしれない。過去10年で単勝10倍以上が1着6回、2着5回、3着3回。3連単が発売されて以降、21年す'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
   HTTP 200
-[2]  [Gemini生出力 235文字]: 'レース関連の最新情報です。第76回安田記念・G1は6月7日に東京競馬場・芝1600メートルで行われます。6月2日、栗東トレセンでスズハロームが藤懸貴志騎手を背に坂路を63秒7―14秒9で駆け、3日の最終追い切りに備えました。牧田調教師は「すごく状態がいい。体もパンパンですよ」と笑みを浮かべ、充実ぶりが光るスズハロームは絶好調と見られます。ここに来て、洛陽S、ダービー卿チャレンジTを連勝し勢いに乗っており、牧田調教師は「お酒飲んで作戦会議します」とコメントしています。'
+[2]  [Gemini生出力 256文字]: '本日の競馬ニュースです。安田記念はマイル王ジャンタルマンタルが不在で、過去10年のデータで【2・5・0・8】のヴィクトリアマイル組もいないことから、上半期で最も難解なG1となる可能性があります。過去10年では単勝10倍以上が1着6回、2着5回、3着3回を記録しています。また、3連単が発売されて以降、21年すべてが万馬券決着と、歴史的にもひと筋縄ではいかないレースです。目が離せないのは前走海外組で【2・4・2・16】の数字ですが、前走ダートは【0・0・0・5】、7歳以上でも【0・1・2・26】となっています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (256文字)
+[2]  プレビュー: 本日の競馬ニュースです。安田記念はマイル王ジャンタルマンタルが不在で、過去10年のデータで【2・5・0・8】のヴィクトリアマイル組もいないことから、上半期で最も...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 268文字]: '本日の競馬ニュースです。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで開催されます。このレースで、松ケ下記者は穴狙いとしてドラゴンブーストに注目しています。ドラゴンブーストは読売マイラーズCで近走の充実ぶりと直前取材の感触が良く、9番人気ながら単穴の▲を打たれました。藤野調教師は、前走の読売マイラーズCで速い時計で走れて収穫があり、強い相手とやって結果も出たことに手応えをつかんでいると話しています。前哨戦の読売マイラーズCでは2着に入りました。昨年の日本ダービーでは15着でしたが、その後に骨折が判明しています。'
+[1]  [Gemini生出力 248文字]: '最新のレース情報が入ってきました。全国のリーディングジョッキー14人が集結し、地方競馬NO1騎手を決める「2026地方競馬ジョッキーズチャンピオンシップ」が6月2日、船橋競馬場で行われました。吉村智洋騎手が19年、24年に続き3度目の総合優勝を果たしています。吉村智洋騎手は、第1戦の7Rで7着、第2戦の9Rで14着と、2戦を終えた時点で12位と苦しみました。しかし、最終戦の11Rで騎乗したラップランドでは、鬼気迫る怒濤の追い込みを見せ、1馬身差で勝利し、ここで1着30ポイントを獲得しました。'
   HTTP 200
-[1]  [Gemini生出力 238文字]: '今日の競馬情報です。歴史と伝統あるオーストラリアの国際G1レース、メルボルンカップの優勝トロフィーなどが展示される特別イベントが、京都市中京区にある「CL FASHION＆CAFE」で行われました。このイベントでは、1億円相当のメルボルンカップ優勝トロフィーが披露されました。11年にフランス馬のドゥーナデンで同レースを制したクリストフ・ルメール、06年にデルタブルースで日本馬初の偉業を達成した岩田康誠をはじめ、当時の調教師である角居勝彦氏らが登場し、当時を振り返りました。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (235文字)
-[2]  プレビュー: レース関連の最新情報です。第76回安田記念・G1は6月7日に東京競馬場・芝1600メートルで行われます。6月2日、栗東トレセンでスズハロームが藤懸貴志騎手を背に...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (268文字)
-[0]  プレビュー: 本日の競馬ニュースです。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで開催されます。このレースで、松ケ下記者は穴狙いとしてドラゴンブーストに...
+[0]  [Gemini生出力 238文字]: '競馬ファン注目の情報です。第76回安田記念・G1に出走を予定しているトロヴァトーレは、6月2日、美浦トレセンで全休日明けの朝一番に坂路に登場し、61秒6―14秒4で軽快に駆け上がりました。水出助手は「状態は安定しています。以前と比べて大きく変わっていません」と説明しています。また、「折り合いはまだ難しいが、だいぶ良くなっています」ともコメントしました。陣営は台風の影響を心配しており、「良馬場が希望」と述べています。トロヴァトーレは東京新聞杯、エプソムCと重賞を連勝中です。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (238文字)
-[1]  プレビュー: 今日の競馬情報です。歴史と伝統あるオーストラリアの国際G1レース、メルボルンカップの優勝トロフィーなどが展示される特別イベントが、京都市中京区にある「CL FA...
+[1]  → output/script_1.txt 保存 (248文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。全国のリーディングジョッキー14人が集結し、地方競馬NO1騎手を決める「2026地方競馬ジョッキーズチャンピオンシップ」が6月...
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (238文字)
+[0]  プレビュー: 競馬ファン注目の情報です。第76回安田記念・G1に出走を予定しているトロヴァトーレは、6月2日、美浦トレセンで全休日明けの朝一番に坂路に登場し、61秒6―14秒...
 
 3 件の脚本を生成しました。
