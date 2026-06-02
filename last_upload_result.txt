@@ -1,10 +1,10 @@
-date: 2026-06-02T00:32:45.480821Z
+date: 2026-06-02T05:46:45.775412Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tNUK7lH5Er0 title=G1初制覇のミシェル騎手「地球の裏側にいても、いつも温かい応援を本当にありがとう
-OK project=1 video_id=J4VaHUO8e4E title=【安田記念】いつもは辛口の指揮官が笑顔に　田中博康調教師、レーベンスティールは「
-OK project=1 video_id=UuKKrW8-n2M title=【安田記念展望】美浦の実力馬トロヴァトーレがマイル王戴冠を狙う
+OK project=1 video_id=MrVzrOCYSm8 title=【安田記念】ウォーターリヒトは短期放牧の効果が出れば一発　石橋調教師「力はある馬
+OK project=1 video_id=ZtpNkyBUoLA title=【安田記念】白くて強い!人気者ガイアフォースが今年こそ頂点へ　陣営「今年の方が乗
+OK project=1 video_id=GoFHyffPVjY title=【安田記念】「充実の40歳」丹内祐次騎手がGI初制覇へ 伏兵ドラゴンブーストで一
