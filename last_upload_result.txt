@@ -1,10 +1,10 @@
-date: 2026-06-02T09:09:18.221667Z
+date: 2026-06-02T11:19:52.619337Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=s-YXsAWBi3w title=【POG】母がJpn1・1着馬の良血ラピッドテソーロは函館デビューを視野に調整
-OK project=1 video_id=5GgiBNawzmo title=【POG・ヤマタケが見た】イクイ効果でキタサンブラック産駒に期待馬ずらり　昨年の
-OK project=1 video_id=Y3ci-veMHl8 title=【今週デビュー予定・トク注新馬】「2歳戦マスター」須貝厩舎が送り出すロジクラウン
+OK project=1 video_id=o_n1JtIUkxk title=【G1トク捜リレー】栗東・松ケ下記者は安田記念で穴狙い?　前走▲の脚質自在の4歳
+OK project=1 video_id=Vk7VRJpYb6A title=C・ルメールのカフェでメルボルンC優勝トロフィー除幕式　かつて制した岩田康、角居
+OK project=1 video_id=JDUHMVDsSKc title=【安田記念】充実ぶりが光るスズハロームは絶好調　牧田調教師「お酒飲んで作戦会議し
