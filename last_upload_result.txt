@@ -1,10 +1,10 @@
-date: 2026-06-02T12:55:55.860225Z
+date: 2026-06-02T14:59:41.637100Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qv2W5Bhs7Ok title=【安田記念】重賞3連勝でのG1初制覇狙うトロヴァトーレ　陣営は台風の影響を心配.
-OK project=1 video_id=4m0nUFaVe2Y title=2026地方競馬ジョッキーズチャンピオンシップは吉村智洋騎手が3度目の優勝　WA
-OK project=1 video_id=T_TuafctJ-s title=【安田記念・超ブル診断データ編】マイル王ジャンタルマンタル不在で上半期で最も難解
+OK project=1 video_id=7d_kP9hGCAU title=【地方競馬】吉村智が３回目の地方競馬ジョッキーズチャンピオンシップを制覇
+OK project=1 video_id=QX4VFQm0tqs title=【安田記念】オフトレイルは馬体も充実期に突入　吉村調教師「5歳なんで勝負の時です
+OK project=1 video_id=PSk5rZRzcFA title=【安田記念】芝初挑戦のルクソールカフェは坂路で調整　堀調教師「遠征の疲れはなく、
