@@ -1,10 +1,10 @@
-date: 2026-06-02T05:46:45.775412Z
+date: 2026-06-02T07:28:35.094519Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MrVzrOCYSm8 title=【安田記念】ウォーターリヒトは短期放牧の効果が出れば一発　石橋調教師「力はある馬
-OK project=1 video_id=ZtpNkyBUoLA title=【安田記念】白くて強い!人気者ガイアフォースが今年こそ頂点へ　陣営「今年の方が乗
-OK project=1 video_id=GoFHyffPVjY title=【安田記念】「充実の40歳」丹内祐次騎手がGI初制覇へ 伏兵ドラゴンブーストで一
+OK project=1 video_id=x_S09BjbPzk title=【船橋競馬】台風6号の影響で若潮スプリントの前売り中止　6月3日の開催有無は午前
+OK project=1 video_id=sYQU7Zm3LxQ title=シックパラソルなど、先週のゲート試験/栗東トレセンニュース
+OK project=1 video_id=kdgcraOBDnc title=ミエルモーサなど、先週の入厩情報/栗東トレセンニュース
