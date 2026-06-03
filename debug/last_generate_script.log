@@ -1,66 +1,44 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【POG2026-2027】山本昌さん自信の出資馬なども登場！POG2歳馬ランキング ---
-[0] Gemini入力本文 529文字: '今週末からいよいよ2歳戦が開幕。皆さま、netkeibaのPOG大会「POGダービー」へのご登録はお済みでしょうか？\n\u3000クラシックに向かえそうな大物候補やメディアであまり注目されていないような隠し玉を知りたい方におすすめなのが『POG直球勝'
+--- 記事[0]: 【注目馬動向】ヴィクトリアマイルを制したエンブロイダリーが仏G1・ジャックルマロワ賞登録　シルク・ホースクラブ発表 ---
+[0] Gemini入力本文 336文字: '先月のヴィクトリアマイルを制したエンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)が、仏G1・ジャックルマロワ賞(8月16日、芝1600メートル、ドーヴィル競馬場)に登録することが分かった。3日、シルク・ホースクラブが発表した'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【船橋競馬】菅原吏久人　1Rでデビュー初勝利　「ホッとしています」 ---
-[1] Gemini入力本文 501文字: '5月5日にデビューした船橋所属の菅原吏久人(りくと、18＝山下)が船橋1R(ダート1200メートル、10頭立て)の2番人気ララティーナ(牝8＝山下、父スクリーンヒーロー)で初勝利を挙げた。\n\u3000ここまで僅差の2着が4回、デビュー18戦目での勝'
+--- 記事[1]: 死去から1年　長嶋茂雄さんは今でも「特別な人」　中山馬主協会会長・西川賢氏 ---
+[1] Gemini入力本文 383文字: '長嶋茂雄さん(享年89)の死去から1年となる6月3日、本紙でG1コラムを連載している歌手の山田太郎こと中山馬主協会会長・西川賢氏は「特別な人ですよね。今も私にとっては憧れの人を亡くした気持ちのままです。いつも『山田さん！』とあの声で呼んでく'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【安田記念】レーベンスティールが悲願のG1初制覇へ　田中博調教師「少し時計は速くなりましたが、順調です」 ---
-[2] Gemini入力本文 349文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)追い切り＝6月3日、美浦トレセン\n\t\t\t\t\u3000今度こそG1初制覇へ。あふれんばかりの闘志を内に秘め、レーベンスティール(牡6歳、美浦・田中博康厩舎、父リアルスティール)がWコ'
+--- 記事[2]: 【門別競馬】桑村真明騎手が通算1900勝　5Rアンサラーで達成 ---
+[2] Gemini入力本文 389文字: 'ホッカイドウ競馬所属の桑村真明騎手(39)＝角川秀樹厩舎＝は6月3日、門別競馬5Rでアンサラーに騎乗して1着。2005年4月の初騎乗以来、1万3515戦目で地方競馬通算1900勝を達成した。重賞はベルピットでの2023年道営3冠など74勝。'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 4文字]: 'SKIP'
-[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 529文字）
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 202文字]: '重要な競馬ニュースをお伝えします。\n5月5日にデビューした船橋所属の菅原吏久人騎手が、船橋1Rのダート1200メートル、10頭立てのレースで、2番人気のララティーナに騎乗し、デビュー初勝利を挙げました。デビューから18戦目での勝利となり、これまで僅差の2着が4回ありました。菅原吏久人騎手は「ようやく勝つことができてホッとしています。次の1勝を早く挙げられるように頑張っていきます」と笑顔を見せています。'
-[1]  [重複除去] 202文字 → 201文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (201文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。5月5日にデビューした船橋所属の菅原吏久人騎手が、船橋1Rのダート1200メートル、10頭立てのレースで、2番人気のララティー...
-  HTTP 200
-[2]  [Gemini生出力 251文字]: '競馬速報です。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。このレースに向けた追い切りが6月3日、美浦トレセンで行われました。G1初制覇を目指すレーベンスティールは、あふれんばかりの闘志を内に秘め、Wコースで最終追い切りを行いました。台風6号接近による大雨の中、単走で6ハロン80秒3―11秒9をマークしています。乗り役の手綱が全く動かないまま、大きなストライドで余力十分の動きを披露しました。田中博調教師は「少し時計は速くなりましたが、順調です」とコメントしています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (251文字)
-[2]  プレビュー: 競馬速報です。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。このレースに向けた追い切りが6月3日、美浦トレセンで行われました。G...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 258文字]: 'レース関連の最新情報です。今週末からいよいよ2歳戦が開幕します。netkeibaのPOG大会「POGダービー」へのご登録は、もうお済みでしょうか。クラシックに向かえそうな大物候補や、メディアであまり注目されていない隠し玉を知りたい方には、『POG直球勝負』とnetkeibaの人気コラボ企画「POG土壇場逆転リスト」がおすすめです。この企画では、最新取材も踏まえたPOG2歳馬ランキングが公開中です。ランキングには、山本昌さんが自信を持つサンデーレーシングの出資馬なども登場し、ロブ..といった馬も紹介されています。'
+[0]  [Gemini生出力 219文字]: '競馬ファン注目の情報です。先月のヴィクトリアマイルを制したエンブロイダリーが、仏G1・ジャックルマロワ賞に登録することが分かりました。この情報は3日、シルク・ホースクラブが発表しました。ジャックルマロワ賞は8月16日にドーヴィル競馬場の芝1600メートルで行われる、欧州のマイル路線最高峰のレースです。日本調教馬は過去に7頭が参戦しており、1986年にはギャロップダイナが12着、1998年にはタイキシャトルがこのレースを制覇しています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (256文字)
-[0]  プレビュー: レース関連の最新情報です。今週末からいよいよ2歳戦が開幕します。netkeibaのPOG大会「POGダービー」へのご登録は、もうお済みでしょうか。クラシックに向...
+[0]  → output/script_0.txt 保存 (219文字)
+[0]  プレビュー: 競馬ファン注目の情報です。先月のヴィクトリアマイルを制したエンブロイダリーが、仏G1・ジャックルマロワ賞に登録することが分かりました。この情報は3日、シルク・ホ...
+  HTTP 200
+[2]  [Gemini生出力 156文字]: '今週の競馬注目情報をお伝えします。\nホッカイドウ競馬所属の桑村真明騎手は6月3日、門別競馬5Rでアンサラーに騎乗し1着となり、地方競馬通算1900勝を達成しました。2005年4月の初騎乗以来、1万3515戦目での記録達成です。桑村騎手は重賞でベルピットでの2023年道営3冠など、これまでに74勝を挙げています。'
+[2]  [重複除去] 156文字 → 155文字
+  HTTP 200
+[1]  [Gemini生出力 257文字]: '注目の競馬情報をお届けします。長嶋茂雄さんの死去から1年となる6月3日、中山馬主協会会長の西川賢氏が改めて別れを惜しみました。西川氏は、長嶋茂雄さんを「特別な人ですよね。今も私にとっては憧れの人を亡くした気持ちのままです」と語っています。また、「いつも『山田さん！』とあの声で呼んでくださって…」と、長嶋さんとの思い出を振り返りました。長年親交が深く、昨年11月に東京ドームで開催された「ミスタージャイアンツ 長嶋茂雄 お別れの会」にも参列した西川氏にとって、長嶋茂雄さんは今でも「特別な人」であると述べています。'
+[1]  [redirectフィルター] 257文字 → 242文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (241文字)
+[1]  プレビュー: 長嶋茂雄さんの死去から1年となる6月3日、中山馬主協会会長の西川賢氏が改めて別れを惜しみました。西川氏は、長嶋茂雄さんを「特別な人ですよね。今も私にとっては憧れ...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (155文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。ホッカイドウ競馬所属の桑村真明騎手は6月3日、門別競馬5Rでアンサラーに騎乗し1着となり、地方競馬通算1900勝を達成しました...
 
 3 件の脚本を生成しました。
