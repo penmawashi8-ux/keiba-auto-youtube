@@ -1,10 +1,10 @@
-date: 2026-06-03T09:27:57.415011Z
+date: 2026-06-03T12:01:59.933190Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RN8pipbJKqk title=【注目馬動向】レーベンスティール、シックスペンス、シュトラウスがジャックルマロワ
-OK project=1 video_id=-5yLnTgeNUA title=【宝塚記念・1週前】レガレイラは3頭併せでゴール板を過ぎても緩めないハードトレ　
-OK project=1 video_id=yvyQ41Mdr34 title=シックスペンス、シュトラウス、レーベンスティールが8・16仏ジャックルマロワ賞登
+OK project=1 video_id=St7B90dbLdI title=【POG2026-2027】山本昌さん自信の出資馬なども登場！POG2歳馬ランキ
+OK project=1 video_id=m4qvbD-HdO8 title=【船橋競馬】菅原吏久人　1Rでデビュー初勝利　「ホッとしています」
+OK project=1 video_id=PgL_EohOfUE title=【安田記念】レーベンスティールが悲願のG1初制覇へ　田中博調教師「少し時計は速く
