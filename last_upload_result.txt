@@ -1,10 +1,10 @@
-date: 2026-06-03T08:20:30.189804Z
+date: 2026-06-03T09:27:57.415011Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AwmuuZDMcq0 title=【宝塚記念・1週前】ジューンテイクがダービージョッキー松山弘平騎手と初コンタクト
-OK project=1 video_id=VhA2RNfD8wo title=【安田記念・一問一答】横山武史騎手がガイアフォースとともに春のマイル王へ　「東京
-OK project=1 video_id=0z88JKqcRuA title=【船橋競馬】菅原吏久人騎手が18戦目で初勝利「勝ててホッとしました」
+OK project=1 video_id=RN8pipbJKqk title=【注目馬動向】レーベンスティール、シックスペンス、シュトラウスがジャックルマロワ
+OK project=1 video_id=-5yLnTgeNUA title=【宝塚記念・1週前】レガレイラは3頭併せでゴール板を過ぎても緩めないハードトレ　
+OK project=1 video_id=yvyQ41Mdr34 title=シックスペンス、シュトラウス、レーベンスティールが8・16仏ジャックルマロワ賞登
