@@ -1,48 +1,121 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない「1
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 鹿戸調教師のコメント「1
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【地方競馬】吉村智が３回目の地方競馬ジョッキーズチャンピオンシップを制覇 ---
-[0] Gemini入力本文 381文字: '「ジョッキーズチャンピオンシップ」（２日、船橋）\n\u3000兵庫の吉村智が大逆転で３度目のＶ-。世界のひのき舞台へ、たった１枚の“ゴールドチケット”をかけた「２０２６地方競馬ジョッキーズチャンピオンシップ」が２日の船橋競馬７、９、１１Ｒの３レースで'
+--- 記事[0]: 【園田競馬・今日の世麗】3日は8鞍に騎乗　11Rのサトノシュトラーセでメイン制覇を目指す ---
+[0] Gemini入力本文 343文字: '先週も2勝を挙げる活躍を見せた佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝。今週も多くの依頼を受けて3日間で20鞍に騎乗予定。\n\t\t\t\t\u30003日の注目は5Rのリュウノヒナコ。距離延長に対応できるかがポイントになるが、前走の感触からも連勝の可能'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【安田記念】オフトレイルは馬体も充実期に突入　吉村調教師「5歳なんで勝負の時ですね」 ---
-[1] Gemini入力本文 348文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月2日、栗東トレセン\n\t\t\t\t\u3000堅実な末脚を武器にG1初制覇を狙うオフトレイル(牡5歳、栗東・吉村圭司厩舎、父ファー)は坂路をキャンター。軽快な脚取りで好調ぶりをアピー'
+--- 記事[1]: 【園田競馬・人気ジョッキーは語る】スマートイザナミ(7R)に自信を見せる杉浦健太騎手「2連勝を目指したい」 ---
+[1] Gemini入力本文 1622文字: '◆園田競馬4日目(6月3日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u300086勝。エナアニマル(11R)でメイン制覇に意欲。「好勝負を見込んでいる」(◎)。クラシカルカイザー(8R)も「調子は変わらない。距離を延ばして」(◎)。ナナン(10R)は「今'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【安田記念】芝初挑戦のルクソールカフェは坂路で調整　堀調教師「遠征の疲れはなく、いい状態です」 ---
-[2] Gemini入力本文 350文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)美浦トレセン＝6月2日\n\t\t\t\t\u3000ルクソールカフェ(牡4歳、美浦・堀宣行厩舎、父アメリカンファラオ)は昨年のジャパンダートクラシックの3着馬で、昨秋には武蔵野S・G3で重賞'
+--- 記事[2]: 【安田記念】トロヴァトーレが抜群の推進力を披露　鹿戸調教師「1コーナー過ぎまで加速していたし良かった」 ---
+[2] Gemini入力本文 352文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)追い切り＝6月3日、美浦トレセン\n\t\t\t\t\u3000重賞連勝中と勢いに乗るトロヴァトーレ(牡5歳、美浦・鹿戸雄一厩舎、父レイデオロ)、はWコースでイゾラフェリーチェ(5歳2勝クラス'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 220文字]: '注目の競馬情報をお届けします。\n第76回安田記念・G1に出走予定のオフトレイルが、6月2日に栗東トレセンで坂路をキャンターで軽快な脚取りを見せ、好調ぶりをアピールしました。G1初制覇を狙うオフトレイルについて、吉村圭司調教師は「順調ですよ。5歳になって充実して体もしっかりしてきました。しっかり負荷もかけられるようになって、5歳なんで勝負の時ですね」と力を込めてコメントしています。馬体も充実期に突入し、まさに勝負の時を迎えているようです。'
-[1]  [redirectフィルター] 220文字 → 204文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (204文字)
-[1]  プレビュー: 第76回安田記念・G1に出走予定のオフトレイルが、6月2日に栗東トレセンで坂路をキャンターで軽快な脚取りを見せ、好調ぶりをアピールしました。G1初制覇を狙うオフ...
+[0]  [Gemini生出力 236文字]: '最新情報をお届けします。先週も2勝を挙げる活躍を見せた佐々木世麗騎手は、今週も多くの依頼を受けて3日間で20鞍に騎乗予定です。3日の注目は5Rのリュウノヒナコで、距離延長に対応できるかがポイントになるものの、前走の感触からも連勝の可能性は十分と見られています。メイン11Rのサトノシュトラーセではメイン制覇を目指しており、5月26日の能力検査に騎乗してだいぶ特徴はつかめた様子です。佐々木騎手は「ゲートで潜るような感じがしたので、気をつけて乗りたい」とコメントしています。'
+[0]  [redirectフィルター] 236文字 → 224文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (224文字)
+[0]  プレビュー: 先週も2勝を挙げる活躍を見せた佐々木世麗騎手は、今週も多くの依頼を受けて3日間で20鞍に騎乗予定です。3日の注目は5Rのリュウノヒナコで、距離延長に対応できるか...
   HTTP 200
-[2]  [Gemini生出力 227文字]: '注目の競馬情報をお届けします。\n第76回安田記念・G1に出走を予定しているルクソールカフェは、6月2日に美浦トレセンで坂路調整を行いました。堀調教師は「遠征の疲れはなく、いい状態です」とコメントしています。ルクソールカフェはデビューから全11戦をダートで使われており、今回が初の芝挑戦となります。昨年のジャパンダートクラシックで3着、昨秋には武蔵野S・G3で重賞初制覇を果たしました。また、フォーエバーヤングが勝った今年のサウジCでは5着に入っています。'
-[2]  [redirectフィルター] 227文字 → 211文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (211文字)
-[2]  プレビュー: 第76回安田記念・G1に出走を予定しているルクソールカフェは、6月2日に美浦トレセンで坂路調整を行いました。堀調教師は「遠征の疲れはなく、いい状態です」とコメン...
+[1]  [Gemini生出力 276文字]: '最新情報をお届けします。杉浦 健太騎手は42勝。園田競馬4日目、6月3日の7R、スマートイザナミに自信を見せており、「メンバーにも恵まれたし、枠もいい。2連勝目指して」とコメントしています。小牧 太騎手は86勝。11Rのエナアニマルでメイン制覇に意欲を示し、「好勝負を見込んでいる」と語っています。下原 理騎手は66勝。10Rのエポカリーナで勝利を意識しており、「メンバーは強くなるが、どこまでやれるか楽しみ」と期待を寄せています。田野 豊三騎手は61勝。11Rのライトピラーに力を入れ、「状態はいいと思う。距離は合うので位置を取って」と話しています。'
+[1]  [redirectフィルター] 276文字 → 264文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (264文字)
+[1]  プレビュー: 杉浦 健太騎手は42勝。園田競馬4日目、6月3日の7R、スマートイザナミに自信を見せており、「メンバーにも恵まれたし、枠もいい。2連勝目指して」とコメントしてい...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 248文字]: '今週の競馬注目情報をお伝えします。2日に船橋で開催された「ジョッキーズチャンピオンシップ」では、兵庫の吉村智騎手が大逆転で3度目の優勝を飾りました。この「2026地方競馬ジョッキーズチャンピオンシップ」は、世界のひのき舞台へたった1枚の“ゴールドチケット”をかけた戦いです。全国各地の地方競馬場のリーディングジョッキー14人が集結し、船橋競馬の7、9、11Rの3レースで競い合いました。台風6号の影響による雨の中、2戦終了時点で最下位まで全員に優勝のチャンスがあるという接戦が繰り広げられました。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (248文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。2日に船橋で開催された「ジョッキーズチャンピオンシップ」では、兵庫の吉村智騎手が大逆転で3度目の優勝を飾りました。この「202...
-
-3 件の脚本を生成しました。
+[2]  [Gemini生出力 222文字]: '今週の競馬注目情報をお伝えします。\n6月7日に東京競馬場・芝1600メートルで行われる第76回安田記念・G1に向けた追い切りが、6月3日に美浦トレセンで行われました。重賞連勝中のトロヴァトーレはWコースでイゾラフェリーチェと併せ馬を行い、雨が降りしきる中、最後の直線では馬なりのまま内から僚馬を突き放す抜群の推進力を披露。6ハロン85秒2―11秒3をマークしました。鹿戸調教師は「1コーナー過ぎまで加速していたし良かった」とコメントしています。'
+[2]  [重複除去] 222文字 → 221文字
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 215文字]: '今週の競馬注目情報をお伝えします。第76回安田記念・G1の追い切りが6月3日に美浦トレセンで行われました。重賞連勝中と勢いに乗るトロヴァトーレは、Wコースでイゾラフェリーチェと併せ馬を実施しています。台風の接近で強く雨が降りしきる中、最後の直線では馬なりのまま内から僚馬を突き放す抜群の推進力を披露しました。6ハロン85秒2―11秒3をマークしています。鹿戸調教師は「1コーナー過ぎまで加速していたし良かった」とコメントしました。'
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
