@@ -1,44 +1,74 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【注目馬動向】ヴィクトリアマイルを制したエンブロイダリーが仏G1・ジャックルマロワ賞登録　シルク・ホースクラブ発表 ---
-[0] Gemini入力本文 336文字: '先月のヴィクトリアマイルを制したエンブロイダリー(牝4歳、美浦・森一誠厩舎、父アドマイヤマーズ)が、仏G1・ジャックルマロワ賞(8月16日、芝1600メートル、ドーヴィル競馬場)に登録することが分かった。3日、シルク・ホースクラブが発表した'
+--- 記事[0]: JRA平地GI最高齢Vあるぞ 9歳のサクラトゥジュールが大激変なるか ---
+[0] Gemini入力本文 345文字: '重賞2勝のサクラトゥジュール(セ9、美浦・堀宣行厩舎)が、安田記念(3歳上・GI・芝1600m)でJRA平地GI最高齢制覇を目指す。\n\u3000サクラトゥジュールは父ネオユニヴァース、母サクラレーヌ、母の父シンボリクリスエスの血統。JRAの現役に残'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 死去から1年　長嶋茂雄さんは今でも「特別な人」　中山馬主協会会長・西川賢氏 ---
-[1] Gemini入力本文 383文字: '長嶋茂雄さん(享年89)の死去から1年となる6月3日、本紙でG1コラムを連載している歌手の山田太郎こと中山馬主協会会長・西川賢氏は「特別な人ですよね。今も私にとっては憧れの人を亡くした気持ちのままです。いつも『山田さん！』とあの声で呼んでく'
+--- 記事[1]: 【安田記念】重賞連勝中トロヴァトーレは万全　鹿戸調教師「ようやく実が入っていい状態でGIに挑戦できる」 ---
+[1] Gemini入力本文 347文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)追い切り＝6月3日、美浦トレセン\n\t\t\t\t\u3000目下の充実ぶりを証明する躍動感あふれる動きだった。重賞連勝で大一番を迎えるトロヴァトーレ(牡5歳、美浦・鹿戸雄一厩舎、父レイデオ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【門別競馬】桑村真明騎手が通算1900勝　5Rアンサラーで達成 ---
-[2] Gemini入力本文 389文字: 'ホッカイドウ競馬所属の桑村真明騎手(39)＝角川秀樹厩舎＝は6月3日、門別競馬5Rでアンサラーに騎乗して1着。2005年4月の初騎乗以来、1万3515戦目で地方競馬通算1900勝を達成した。重賞はベルピットでの2023年道営3冠など74勝。'
+--- 記事[2]: 2か月連続での回収率100%超えは!? 激戦が繰り広げられた地方予想家ボーナスキャンペーンの最終結果はいかに ---
+[2] Gemini入力本文 523文字: 'ウマい馬券で活躍するプロ予想家が4月、5月の地方競馬の予想において、2か月連続で回収率100%以上を目指す企画として開催された『地方予想家ボーナスキャンペーン』。2か月にわたって繰り広げられた激戦も先週ついにフィナーレを迎えました。\n\u3000地方'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 219文字]: '競馬ファン注目の情報です。先月のヴィクトリアマイルを制したエンブロイダリーが、仏G1・ジャックルマロワ賞に登録することが分かりました。この情報は3日、シルク・ホースクラブが発表しました。ジャックルマロワ賞は8月16日にドーヴィル競馬場の芝1600メートルで行われる、欧州のマイル路線最高峰のレースです。日本調教馬は過去に7頭が参戦しており、1986年にはギャロップダイナが12着、1998年にはタイキシャトルがこのレースを制覇しています。'
+[1]  [Gemini生出力 222文字]: '最新情報をお届けします。第76回安田記念・G1に向けて、6月3日に美浦トレセンで追い切りが行われました。重賞連勝中で大一番を迎えるトロヴァトーレは、美浦・Wコースで先週と同じ相手のイゾラフェリーチェを4馬身追走しました。最後の直線入り口では内から早々に僚馬に馬体を併せ、抜群の推進力で一気に前に躍り出る、目下の充実ぶりを証明する躍動感あふれる動きを見せています。鹿戸調教師は「ようやく実が入っていい状態でGIに挑戦できる」とコメントしています。'
+[1]  [redirectフィルター] 222文字 → 210文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (210文字)
+[1]  プレビュー: 第76回安田記念・G1に向けて、6月3日に美浦トレセンで追い切りが行われました。重賞連勝中で大一番を迎えるトロヴァトーレは、美浦・Wコースで先週と同じ相手のイゾ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[0]  [Gemini生出力 265文字]: '重要な競馬ニュースをお伝えします。\n重賞2勝のサクラトゥジュールが、美浦・堀宣行厩舎から安田記念でJRA平地GI最高齢制覇を目指します。安田記念は3歳以上、芝1600mのGIです。サクラトゥジュールの血統は、父ネオユニヴァース、母サクラレーヌ、母の父シンボリクリスエスです。JRA現役で残り4頭となった父ネオユニヴァースの産駒の中で、サクラトゥジュールは唯一のオープン馬です。母系は4代母スワンズウッドグローヴを祖とする谷岡牧場の名牝系で、伯父サクラプレジデントは2002年の札幌2歳ステークスと2003年の札幌記念を制しました。'
+[0]  [重複除去] 265文字 → 264文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: 競馬ファン注目の情報です。先月のヴィクトリアマイルを制したエンブロイダリーが、仏G1・ジャックルマロワ賞に登録することが分かりました。この情報は3日、シルク・ホ...
+[0]  → output/script_0.txt 保存 (264文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。重賞2勝のサクラトゥジュールが、美浦・堀宣行厩舎から安田記念でJRA平地GI最高齢制覇を目指します。安田記念は3歳以上、芝16...
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 156文字]: '今週の競馬注目情報をお伝えします。\nホッカイドウ競馬所属の桑村真明騎手は6月3日、門別競馬5Rでアンサラーに騎乗し1着となり、地方競馬通算1900勝を達成しました。2005年4月の初騎乗以来、1万3515戦目での記録達成です。桑村騎手は重賞でベルピットでの2023年道営3冠など、これまでに74勝を挙げています。'
-[2]  [重複除去] 156文字 → 155文字
-  HTTP 200
-[1]  [Gemini生出力 257文字]: '注目の競馬情報をお届けします。長嶋茂雄さんの死去から1年となる6月3日、中山馬主協会会長の西川賢氏が改めて別れを惜しみました。西川氏は、長嶋茂雄さんを「特別な人ですよね。今も私にとっては憧れの人を亡くした気持ちのままです」と語っています。また、「いつも『山田さん！』とあの声で呼んでくださって…」と、長嶋さんとの思い出を振り返りました。長年親交が深く、昨年11月に東京ドームで開催された「ミスタージャイアンツ 長嶋茂雄 お別れの会」にも参列した西川氏にとって、長嶋茂雄さんは今でも「特別な人」であると述べています。'
-[1]  [redirectフィルター] 257文字 → 242文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (241文字)
-[1]  プレビュー: 長嶋茂雄さんの死去から1年となる6月3日、中山馬主協会会長の西川賢氏が改めて別れを惜しみました。西川氏は、長嶋茂雄さんを「特別な人ですよね。今も私にとっては憧れ...
+[2]  [Gemini生出力 217文字]: '本日の競馬ニュースです。ウマい馬券で活躍するプロ予想家が、4月と5月の地方競馬予想において、2か月連続で回収率100%以上を目指す企画として開催された『地方予想家ボーナスキャンペーン』が、先週ついにフィナーレを迎えました。2か月にわたって繰り広げられた激戦の最終結果が注目されています。地方競馬で2か月連続の高回収率をマークするのは至難の業とされており、そんな偉業を達成した予想家がいるのか、成績上位者を中心に結果が公開されています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (155文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。ホッカイドウ競馬所属の桑村真明騎手は6月3日、門別競馬5Rでアンサラーに騎乗し1着となり、地方競馬通算1900勝を達成しました...
+[2]  → output/script_2.txt 保存 (217文字)
+[2]  プレビュー: 本日の競馬ニュースです。ウマい馬券で活躍するプロ予想家が、4月と5月の地方競馬予想において、2か月連続で回収率100%以上を目指す企画として開催された『地方予想...
 
 3 件の脚本を生成しました。
