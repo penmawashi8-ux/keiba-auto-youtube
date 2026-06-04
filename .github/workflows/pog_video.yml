@@ -1,0 +1,85 @@
+name: POG2026-2027 横動画生成
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-pog-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: スクリプトとメタデータを生成
+        run: python scripts/create_pog_video.py
+
+      - name: 音声とASS字幕を生成
+        env:
+          TTS_VOICE: "ja-JP-KeitaNeural"
+        run: python scripts/generate_audio.py
+
+      - name: BGMをダウンロード
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py
+
+      - name: フォントをダウンロード
+        continue-on-error: true
+        run: |
+          mkdir -p assets/fonts
+          python scripts/download_fonts.py
+
+      - name: 馬ごとの背景画像取得・動画生成
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python scripts/pog_landscape_video.py
+
+      - name: 動画をアーティファクトとしてアップロード
+        uses: actions/upload-artifact@v4
+        with:
+          name: pog-2026-2027-landscape-video
+          path: |
+            output/pog_landscape_video_0.mp4
+            output/thumbnail_0.jpg
+          retention-days: 14
+
+      - name: デバッグ情報を保存
+        if: always()
+        run: |
+          mkdir -p debug
+          ls -lh output/ 2>/dev/null | tee debug/pog_output_files.txt || true
+          ls -lh assets/ 2>/dev/null | tee -a debug/pog_output_files.txt || true
+
+      - name: デバッグファイルをアーティファクトとして保存
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pog-debug-info
+          path: debug/
+          retention-days: 7
