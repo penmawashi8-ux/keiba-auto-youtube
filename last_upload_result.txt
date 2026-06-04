@@ -1,10 +1,10 @@
-date: 2026-06-04T12:08:47.385031Z
+date: 2026-06-04T14:04:10.451186Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=s7L-O2AqkFA title=【門別・グランシャリオ門別スプリント結果】ストリームが3連覇で重賞8勝目を挙げる
-OK project=1 video_id=DOA8r2MtAyc title=【名古屋競馬　東海優駿】アストラビアンコ　2着に2秒1差の圧勝劇で断然人気に応え
-OK project=1 video_id=KjOdnb-E0pc title=【船橋・若潮スプリント結果】ブルーメンガルテンが差し切って重賞初制覇を飾る
+OK project=1 video_id=8NKtAzdJY9c title=【名古屋競馬　東海優駿】アストラビアンコ重賞4勝目　細川智史騎手「展開というより
+OK project=1 video_id=-XBGQ37lg1E title=【地方競馬】若潮スプリント　転入初戦のブルーメンガルテンが差し切り重賞初制覇
+OK project=1 video_id=TyOigDFkEPU title=川島正一厩舎が1、2着を独占　ブルーメンガルテンが若潮スプリント制覇
