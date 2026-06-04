@@ -311,7 +311,19 @@ def prepare_landscape_ass(src_ass: str, tmp_dir: str) -> str | None:
 # ─────────────────────────────────────────────────────────
 
 def chapters_from_meta(meta_chapters: list[dict], stripped_len: int,
-                        aud_dur: float) -> list[tuple[str, float]]:
+                        aud_dur: float, timings_path: str | None = None) -> list[tuple[str, float]]:
+    """チャプター開始時刻リストを返す。
+    generate_audio.pyが保存したWordBoundaryベースのJSONがあればそちらを優先する。
+    """
+    if timings_path and Path(timings_path).exists():
+        try:
+            data = json.loads(Path(timings_path).read_text(encoding="utf-8"))
+            times = [(d["title"], float(d["time_s"])) for d in data]
+            print(f"  チャプタータイミング使用: {timings_path}")
+            return times
+        except Exception as e:
+            print(f"  [警告] チャプタータイミング読み込み失敗: {e}", file=sys.stderr)
+    # フォールバック: 文字数比率で近似
     return [
         (ch["title"], (ch.get("stripped_char_pos", 0) / max(stripped_len, 1)) * aud_dur)
         for ch in meta_chapters
@@ -484,7 +496,10 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
     horses          = meta.get("horses", [])
     meta_chapters   = meta.get("chapters", [])
 
-    ch_times  = chapters_from_meta(meta_chapters, len(stripped_script), aud_dur)
+    ch_times  = chapters_from_meta(
+        meta_chapters, len(stripped_script), aud_dur,
+        timings_path=f"{OUTPUT_DIR}/chapter_timings_0.json",
+    )
     segments: list[dict] = []
     for ci, (title, t_start) in enumerate(ch_times):
         t_end = ch_times[ci + 1][1] if ci + 1 < len(ch_times) else aud_dur

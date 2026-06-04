@@ -269,6 +269,48 @@ def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int
     return segments
 
 
+def _save_chapter_timings(idx: str, words: list[dict]) -> None:
+    """WordBoundaryイベントとpog_meta.jsonからチャプター開始時刻を計算してJSONに保存する。
+    各チャプターのstripped_char_posとwordの累積文字位置を照合して正確な秒数を求める。
+    """
+    meta_path = Path("pog_meta.json")
+    if not meta_path.exists():
+        return
+    try:
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    chapters = meta.get("chapters", [])
+    if not chapters:
+        return
+
+    # word → 累積文字位置 → 開始秒 のマッピングを構築
+    cum_pos = 0
+    char_times: list[tuple[int, float]] = []
+    for w in words:
+        char_times.append((cum_pos, w["offset"] / 10_000_000))
+        cum_pos += len(w["text"])
+    if not char_times:
+        return
+
+    result = []
+    for ch in chapters:
+        target = ch.get("stripped_char_pos", 0)
+        # target以上の最初のwordの時刻を使う
+        t_s = 0.0
+        for pos, t in char_times:
+            if pos >= target:
+                t_s = t
+                break
+        else:
+            t_s = char_times[-1][1]
+        result.append({"title": ch["title"], "time_s": t_s})
+
+    out = Path(OUTPUT_DIR) / f"chapter_timings_{idx}.json"
+    out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  チャプタータイミング保存: {out} ({len(result)}件)")
+
+
 def write_ass(segments: list[dict], path: str, font_name: str) -> None:
     with open(path, "w", encoding="utf-8") as f:
         f.write(ASS_HEADER.format(font_name=font_name))
@@ -380,6 +422,8 @@ def main() -> None:
         if words:
             # WordBoundary イベントから正確なタイミングで字幕を生成（1行最大30文字で折り返し）
             segs = words_to_segments(words, max_chars=30)
+            # POGメタが存在する場合、WordBoundaryからチャプター開始時刻を計算して保存
+            _save_chapter_timings(idx, words)
         else:
             # Kokoro TTS はタイミングイベントなし → 推定で補完
             segs = _estimate_subtitle_segments(subtitle_text, aud_dur)
