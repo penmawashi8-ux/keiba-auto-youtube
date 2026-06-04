@@ -68,28 +68,39 @@ _NAME_TO_COLOR: dict[str, str] = {
     "レニュアージュ": "大穴_red",
 }
 
-# ── geq フォールバック（Pixabay 失敗時）─────────────────────────
-# sqrt() を使ったラジアルスポットライト効果
-_GEQ: dict[str, dict] = {
-    # 本命: 上部中央から降り注ぐ金/アンバー光（暖色スポットライト）
-    "本命": dict(
-        r="clip(8+220*pow(max(0,1-2.2*sqrt(pow((X/W-0.5)*1.3,2)+pow(Y/H-0.22,2))),2.0)+40*pow(1-Y/H,4),0,255)",
-        g="clip(4+75*pow(max(0,1-2.2*sqrt(pow((X/W-0.5)*1.3,2)+pow(Y/H-0.22,2))),2.8)+8*pow(1-Y/H,4),0,255)",
-        b="clip(2+10*pow(max(0,1-2.2*sqrt(pow((X/W-0.5)*1.3,2)+pow(Y/H-0.22,2))),4.0),0,255)",
+# ── geq フォールバック（Pixabay 失敗時）: 馬ごとに異なるスポットライト配置 ──
+_GEQ_HORSE: dict[str, dict] = {
+    # ダノンダックス: 左上からのアンバー日射し（競馬場の朝日）
+    "ダノンダックス": dict(
+        r="clip(8+210*pow(max(0,1-2.0*sqrt(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2))),1.8)+28*pow(1-Y/H,5),0,255)",
+        g="clip(4+72*pow(max(0,1-2.0*sqrt(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2))),2.6)+6*pow(1-Y/H,5),0,255)",
+        b="clip(2+8*pow(max(0,1-2.0*sqrt(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2))),4.5),0,255)",
     ),
-    # 大穴_blue: 中心から広がるエレクトリックブルーの宇宙的グロー
-    "大穴_blue": dict(
+    # ジャンゴッド: 右上からのゴールドスポット（疾走・力強さ）
+    "ジャンゴッド": dict(
+        r="clip(10+215*pow(max(0,1-2.1*sqrt(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2))),1.9),0,255)",
+        g="clip(5+68*pow(max(0,1-2.1*sqrt(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2))),2.7),0,255)",
+        b="clip(2+7*pow(max(0,1-2.1*sqrt(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2))),5.0),0,255)",
+    ),
+    # ソブリオ: 真上中央からの純金スポット（最高格の威厳）
+    "ソブリオ": dict(
+        r="clip(8+230*pow(max(0,1-2.3*sqrt(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2))),2.0),0,255)",
+        g="clip(4+82*pow(max(0,1-2.3*sqrt(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2))),2.8),0,255)",
+        b="clip(1+5*pow(max(0,1-2.3*sqrt(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2))),6.0),0,255)",
+    ),
+    # ノイエルング: 中心から広がるエレクトリックブルー（宇宙・星空）
+    "ノイエルング": dict(
         r="clip(3+18*pow(max(0,1-2.8*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),2.5),0,255)",
         g="clip(5+45*pow(max(0,1-2.8*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),2.0),0,255)",
         b="clip(16+225*pow(max(0,1-2.3*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),1.6),0,255)",
     ),
-    # 大穴_red: 右中央からのクリムゾン大気光
-    "大穴_red": dict(
+    # レニュアージュ: 右中央からのクリムゾン大気光
+    "レニュアージュ": dict(
         r="clip(12+210*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),1.8),0,255)",
         g="clip(3+14*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),3.5),0,255)",
         b="clip(2+6*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),4.5),0,255)",
     ),
-    # 汎用: 中心の微弱な白グロー（オープニング等）
+    # 汎用: 中心の微弱な白グロー（オープニング/エンディング）
     "__general__": dict(
         r="clip(6+70*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
         g="clip(5+60*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
@@ -155,13 +166,13 @@ def _apply_color_vf(src: str, color_key: str, out: str) -> bool:
     return res.returncode == 0
 
 
-def _geq_fallback(color_key: str, out: str) -> None:
-    """geq グラデーションのフォールバック背景を生成する。"""
-    g = _GEQ.get(color_key, _GEQ["__general__"])
+def _geq_fallback(name: str, out: str) -> None:
+    """馬名ごとに異なるgeqスポットライト背景を生成する。"""
+    g = _GEQ_HORSE.get(name, _GEQ_HORSE["__general__"])
     geq = f"r='{g['r']}':g='{g['g']}':b='{g['b']}'"
     res = subprocess.run([
         "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}:r=1",
-        "-vf", f"geq={geq},vignette=PI/4",
+        "-vf", f"geq={geq},vignette=PI/2.5",
         "-frames:v", "1", "-q:v", "2", out,
     ], capture_output=True)
     if res.returncode != 0:
@@ -210,7 +221,7 @@ def fetch_bg(name: str, queries: list[str], color_key: str, out: str, pixabay_ke
             pass
 
     if not fetched:
-        _geq_fallback(color_key, out)
+        _geq_fallback(name, out)
         print(f"  geqフォールバック: {name}")
 
     return out

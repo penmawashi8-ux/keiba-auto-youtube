@@ -378,8 +378,8 @@ def main() -> None:
         apply_audio_variation(audio_path, pitch_factor, volume_db)
         aud_dur = _audio_duration_s(audio_path)
         if words:
-            # WordBoundary イベントから正確なタイミングで字幕を生成
-            segs = words_to_segments(words)
+            # WordBoundary イベントから正確なタイミングで字幕を生成（1行最大30文字で折り返し）
+            segs = words_to_segments(words, max_chars=30)
         else:
             # Kokoro TTS はタイミングイベントなし → 推定で補完
             segs = _estimate_subtitle_segments(subtitle_text, aud_dur)
