@@ -344,8 +344,9 @@ def pedigree_card_filters(horse: dict, t1: float, t2: float,
 
     # 厩舎
     if horse.get("trainer"):
+        trainer_text = "厩舎：" + horse["trainer"]
         vf.append(
-            f"drawtext=textfile='{tf(f'trainer_{ci}', f'厩舎：{horse[\"trainer\"]}')}':fontfile='{fp}':"
+            f"drawtext=textfile='{tf(f'trainer_{ci}', trainer_text)}':fontfile='{fp}':"
             f"fontsize=30:fontcolor=0xCCCCCC:"
             f"x=(w-text_w)/2:y=h/2+{y_off}:"
             f"borderw=1:bordercolor=0x000000:"
