@@ -1,115 +1,75 @@
-[1]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
-[2]  [ファクトチェックNG] NG: 元記事に存在しない馬
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【安田記念】「I’ll　do　my　best!」オーストラリアへ武者修行に旅立つ菅原明良騎手がオフトレイルの末脚を引き出 ---
-[0] Gemini入力本文 349文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル)＝6月4日、美浦トレセン\n\t\t\t\t\u3000直線一気で海外挑戦に弾みをつける。オフトレイル(牡5歳、栗東・吉村圭司厩舎、父ファー)と安田記念に挑む25歳の菅原明良騎手は、同開催を最'
+--- 記事[0]: 【門別・グランシャリオ門別スプリント結果】ストリームが3連覇で重賞8勝目を挙げる ---
+[0] Gemini入力本文 349文字: '4日、門別競馬場で行われた第12回グランシャリオ門別スプリント(3歳上・重賞・ダ1000m・1着賞金500万円)は、2番手から直線で力強く伸びた岩橋勇二騎手騎乗の1番人気ストリーム(牡5、北海道・田中淳司厩舎)が、逃げた2番人気スペシャルチ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 半兄はJDD覇者のダノンファラオ シャインラブがデビュー勝ちなるか ---
-[1] Gemini入力本文 350文字: '20年のジャパンダートダービー覇者のダノンファラオの半妹となるシャインラブ(牝2、栗東・井上智史厩舎)が、土曜阪神5Rの2歳新馬(芝1600m)でデビュー勝ちを狙う。\n\u3000シャインラブは父オルフェーヴル、母クリスプ、母の父El Corredo'
+--- 記事[1]: 【名古屋競馬　東海優駿】アストラビアンコ　2着に2秒1差の圧勝劇で断然人気に応える ---
+[1] Gemini入力本文 352文字: '名古屋競馬の3歳限定重賞「愛知県知事杯第56回東海優駿」(SP1、ダート2100メートル、12頭立て)は4日の11Rで行われ、単勝1.1倍の断然人気に支持されたアストラビアンコ(牡＝角田輝、父バゴ)が1周目3コーナーで先頭に立つと、直線でリ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【JRA新馬戦】JRA新馬戦がスタート セレクトセール1億5000万円のウィンターブリーズなどがデビュー ---
-[2] Gemini入力本文 1626文字: '6日(土)・7日(日)に行われる新馬戦の出走馬が、4日確定した。\n\u3000今週は東京、阪神で計5鞍の新馬戦が組まれている。主な出走馬は以下の通り。\n◆6/6(土)\n・東京4R(芝1400m・7頭)\nオオセイケイ(牝、横山武史・竹内正洋、サートゥル'
+--- 記事[2]: 【船橋・若潮スプリント結果】ブルーメンガルテンが差し切って重賞初制覇を飾る ---
+[2] Gemini入力本文 350文字: '4日、船橋競馬場で行われた第6回若潮スプリント(3歳・重賞・ダ1200m・1着賞金1700万円)は、中団から早めに進出し直線半ばで先頭に立った御神本訓史騎手騎乗の2番人気ブルーメンガルテン(牡3、船橋・川島正一厩舎)が、好位から脚を伸ばした'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 245文字]: '本日の競馬ニュースです。20年のジャパンダートダービー覇者であるダノンファラオの半妹となるシャインラブが、土曜阪神5Rの2歳新馬、芝1600mでデビュー勝ちを狙います。シャインラブは栗東の井上智史厩舎所属です。シャインラブの血統は父オルフェーヴル、母クリスプ、母の父El Corredorです。半兄のダノンファラオは、20年のジャパンダートダービーと浦和記念、そして21年のダイオライト記念の覇者です。シャインラブは25年のセレクトセール1歳において、4400万円（税抜）で取引されました。'
+[1]  [Gemini生出力 243文字]: '最新のレース情報が入ってきました。名古屋競馬の3歳限定重賞「愛知県知事杯第56回東海優駿」が4日の11R、ダート2100メートル、12頭立てで行われました。単勝1.1倍の断然人気に支持されたアストラビアンコが、1周目3コーナーで先頭に立つと、直線でリードを広げ、2着のアルティメイタムに2秒1の大差をつける圧勝で1着となりました。角田輝調教師が手掛けるアストラビアンコは、昨年12月10日のゴールドウィング賞、1月15日の新春ペガサスカップ、2月26日のスプリングカップに続く勝利です。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (243文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。名古屋競馬の3歳限定重賞「愛知県知事杯第56回東海優駿」が4日の11R、ダート2100メートル、12頭立てで行われました。単勝...
   HTTP 200
-[0]  [Gemini生出力 219文字]: '競馬ファン注目の情報です。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。6月4日の美浦トレセンからの情報によると、オフトレイルと安田記念に挑む菅原明良騎手は、同開催を最後にオーストラリアへ約半年間の滞在を予定しています。25歳の菅原明良騎手は「ウィリアム ビュイックやダリオ バルジューが好きで、小さい頃から海外へ憧れがあったので」と率直な動機を明かしました。直線一気で海外挑戦に弾みをつけるとしています。'
+[2]  [Gemini生出力 231文字]: 'レース関連の最新情報です。4日、船橋競馬場で行われた第6回若潮スプリントは、2番人気のブルーメンガルテンが差し切って重賞初制覇を飾りました。御神本訓史騎手が騎乗したブルーメンガルテンは、中団から早めに進出し直線半ばで先頭に立ちました。1着賞金1700万円のこのレースで、好位から脚を伸ばした1番人気のメイクセンスに2馬身差をつけ優勝しています。勝ちタイムは1分14秒6(稍重)でした。さらに1.1/2馬身差の3着には、7番人気のフークアンビションが入っています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (231文字)
+[2]  プレビュー: レース関連の最新情報です。4日、船橋競馬場で行われた第6回若潮スプリントは、2番人気のブルーメンガルテンが差し切って重賞初制覇を飾りました。御神本訓史騎手が騎乗...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 212文字]: '本日の競馬ニュースです。\n4日、門別競馬場で行われた第12回グランシャリオ門別スプリントは、1着賞金500万円の重賞です。このレースでは、岩橋勇二騎手騎乗の1番人気ストリームが優勝し、3連覇を達成して重賞8勝目を挙げました。ストリームは2番手から直線で力強く伸び、逃げた2番人気スペシャルチャンスに2馬身差をつけました。勝ちタイムは1分00秒3の良馬場でした。さらに1馬身差の3着には、4番人気ボイラーハウスが入っています。'
+[0]  [重複除去] 212文字 → 211文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: 競馬ファン注目の情報です。第76回安田記念・G1が6月7日に東京競馬場・芝1600メートルで行われます。6月4日の美浦トレセンからの情報によると、オフトレイルと...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (245文字)
-[1]  プレビュー: 本日の競馬ニュースです。20年のジャパンダートダービー覇者であるダノンファラオの半妹となるシャインラブが、土曜阪神5Rの2歳新馬、芝1600mでデビュー勝ちを狙...
-  HTTP 200
-[2]  [Gemini生出力 409文字]: '注目の競馬情報をお届けします。\n6月6日土曜日と7日日曜日に開催されるJRA新馬戦の出走馬が、4日に確定しました。今週は東京と阪神で計5鞍の新馬戦が組まれています。\n6日土曜日の東京5R芝1600mでは、セレクトセール1歳1億5000万円のウィンターブリーズがD.レーン騎手でデビュー予定です。同じく東京5Rでは、母がフェアリーS勝ち馬のフィリオソラーレがC.ルメール騎手で出走し、調教の動きも良く初戦から期待されます。\n7日日曜日の東京5R芝1800mでは、セレクトセール当歳1億4500万円のマテンロウアルカナが横山典弘騎手でデビューを予定しており、調教の動きも良いと報じられています。また、ジョドレルバンクは調教で古馬3勝クラスの馬を抜き去る動きを見せ、素質の高さがうかがえます。\n阪神の新馬戦にも、セレクトセール1歳4400万円のシャインラブや、当歳9200万円のロジクラウンなど、良血馬が多数登録しています。'
-[2]  [redirectフィルター] 409文字 → 393文字
-[2]  [重複除去] 393文字 → 390文字
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 349文字]: '注目の競馬情報をお届けします。6日土曜日と7日日曜日に行われるJRA新馬戦の出走馬が、4日に確定しました。今週は東京と阪神で計5鞍の新馬戦が組まれています。\n主な出走馬では、東京5R芝1600mでセレクトセール1億5000万円のウィンターブリーズがデビュー予定です。半兄アドマイヤデイトナは25年UAEダービーを勝っています。\n阪神5R芝1600mには、セレクトセール4400万円のシャインラブ、9200万円のロジクラウンが登場します。\n7日日曜日の東京5R芝1800mでは、セレクトセール1億4500万円のマテンロウアルカナがデビュー予定です。母ハーレクイーンは英オークス、愛オークスで3着の実績があります。\nいずれの馬も順調に乗り込まれ、調教でも良い動きを見せており、初戦から期待できそうです。'
-[2]  [redirectフィルター] 349文字 → 334文字
-[2]  [重複除去] 334文字 → 330文字
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 411文字]: '注目の競馬情報をお届けします。6月6日(土)と7日(日)に行われるJRA新馬戦の出走馬が、4日に確定しました。今週は東京と阪神で計5鞍の新馬戦が組まれています。6日(土)東京5Rでは、セレクトセール1歳で1億5000万円のウィンターブリーズがD.レーン騎手と田中博康調教師のコンビでデビュー予定です。同じく東京5Rでは、母フィリアプーラが19年フェアリーSを勝ったフィリオソラーレがC.ルメール騎手と木村哲也調教師のコンビで出走します。阪神5Rでは、セレクトセール当歳9200万円のロジクラウンが川田将雅騎手と須貝尚介調教師のコンビで登場します。7日(日)東京5Rでは、セレクトセール当歳1億4500万円のマテンロウアルカナが横山典弘騎手と松永幹夫調教師のコンビで出走予定です。また、ジョドレルバンクはD.レーン騎手と武井亮調教師のコンビで、調教で古馬3勝クラスの馬を大きく追走して直線で一気に抜き去る動きを見せています。'[2]  [ファクトチェックNG] NG: 元記事に存在しない馬
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2] のスクリプト生成失敗。
+[0]  → output/script_0.txt 保存 (211文字)
+[0]  プレビュー: 本日の競馬ニュースです。4日、門別競馬場で行われた第12回グランシャリオ門別スプリントは、1着賞金500万円の重賞です。このレースでは、岩橋勇二騎手騎乗の1番人...
 
-[2]  [redirectフィルター] 411文字 → 396文字
-[2] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+3 件の脚本を生成しました。
