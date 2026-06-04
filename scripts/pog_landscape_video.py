@@ -39,22 +39,20 @@ PIXABAY_QUERIES: dict[str, list[str]] = {
 }
 
 # ── タイプ別 ffmpeg 色処理フィルター ───────────────────────────
+# 写真を自然に見せるため、色処理は最小限にとどめる
 _COLOR_VF: dict[str, str] = {
-    # 本命: ダーク＋暖色ゴールド（gamma_r↑, gamma_b↓, 強コントラスト）
     "本命":    ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                "eq=brightness=-0.55:contrast=1.30:saturation=1.20:gamma_r=1.45:gamma_b=0.48,"
-                "vignette=PI/2.5"),
-    # 大穴_blue: ダーク＋電気ブルー（gamma_b↑↑, gamma_r↓↓, 低彩度）
+                "eq=brightness=-0.08:contrast=1.05:saturation=1.05,"
+                "vignette=PI/4"),
     "大穴_blue": ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                  "eq=brightness=-0.55:contrast=1.35:saturation=0.75:gamma_r=0.42:gamma_b=1.75,"
-                  "vignette=PI/2.5"),
-    # 大穴_red: ダーク＋クリムゾン赤（gamma_r↑↑, gamma_b↓↓）
+                  "eq=brightness=-0.08:contrast=1.05:saturation=0.95,"
+                  "vignette=PI/4"),
     "大穴_red":  ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                  "eq=brightness=-0.55:contrast=1.30:saturation=1.15:gamma_r=1.65:gamma_b=0.35,"
-                  "vignette=PI/2.5"),
+                  "eq=brightness=-0.08:contrast=1.05:saturation=1.00,"
+                  "vignette=PI/4"),
     "__general__": ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                    "eq=brightness=-0.58:contrast=1.15,"
-                    "vignette=PI/2.5"),
+                    "eq=brightness=-0.05:contrast=1.00,"
+                    "vignette=PI/4"),
 }
 
 # ── 馬名 → 色タイプ ─────────────────────────────────────────
@@ -66,37 +64,40 @@ _NAME_TO_COLOR: dict[str, str] = {
     "レニュアージュ": "大穴_red",
 }
 
-# ── geq フォールバック（Pixabay 失敗時）: pow/abs/max/clip のみ使用（確実に動く）
+# ── geq フォールバック（Pixabay 失敗時）: 画面全体に渡って視認可能なグラデーション
 _GEQ_HORSE: dict[str, dict] = {
+    # 本命3頭: 暖かいゴールド〜ブラウン系グラデーション
     "ダノンダックス": dict(
-        r="clip(10+200*pow(Y/H,2.0)*(0.4+0.6*pow(1-abs(2*X/W-1),1.5)),0,255)",
-        g="clip(5+85*pow(Y/H,2.2)*(0.4+0.6*pow(1-abs(2*X/W-1),2.0)),0,255)",
-        b="clip(3+18*pow(Y/H,2.5),0,255)",
+        r="clip(40+155*pow(Y/H,1.2),0,255)",
+        g="clip(22+68*pow(Y/H,1.5),0,255)",
+        b="clip(8+28*pow(Y/H,2.0),0,255)",
     ),
     "ジャンゴッド": dict(
-        r="clip(14+170*pow(Y/H,1.8)*(0.3+0.7*pow(1-abs(2*X/W-1),1.2)),0,255)",
-        g="clip(4+30*pow(Y/H,2.5),0,255)",
-        b="clip(3+8*pow(Y/H,3.0),0,255)",
+        r="clip(35+145*pow(Y/H,1.2),0,255)",
+        g="clip(18+55*pow(Y/H,1.6),0,255)",
+        b="clip(6+20*pow(Y/H,2.2),0,255)",
     ),
     "ソブリオ": dict(
-        r="clip(10+150*pow(Y/H,2.0)*(0.35+0.65*pow(1-abs(2*X/W-1),1.4)),0,255)",
-        g="clip(8+120*pow(Y/H,2.0)*(0.35+0.65*pow(1-abs(2*X/W-1),1.6)),0,255)",
-        b="clip(3+22*pow(Y/H,2.8),0,255)",
+        r="clip(38+150*pow(Y/H,1.2),0,255)",
+        g="clip(28+90*pow(Y/H,1.4),0,255)",
+        b="clip(10+35*pow(Y/H,1.8),0,255)",
     ),
+    # 大穴_blue: 深いブルー〜ネイビー系グラデーション
     "ノイエルング": dict(
-        r="clip(5+12*pow(1-abs(2*Y/H-1),4),0,255)",
-        g="clip(8+22*pow(1-abs(2*Y/H-1),3.5),0,255)",
-        b="clip(18+155*pow(1-abs(2*Y/H-1),2.5)*(0.5+0.5*pow(1-abs(2*X/W-1),1.5)),0,255)",
+        r="clip(8+22*pow(Y/H,2.0),0,255)",
+        g="clip(15+50*pow(Y/H,1.6),0,255)",
+        b="clip(45+155*pow(1-abs(2*Y/H-1),1.2),0,255)",
     ),
+    # 大穴_red: クリムゾン〜ダークレッド系グラデーション
     "レニュアージュ": dict(
-        r="clip(14+180*pow(Y/H,1.7)*(0.3+0.7*pow(1-abs(2*X/W-1),1.0)),0,255)",
-        g="clip(4+16*pow(Y/H,2.8),0,255)",
-        b="clip(3+6*pow(Y/H,3.5),0,255)",
+        r="clip(40+155*pow(Y/H,1.2),0,255)",
+        g="clip(8+28*pow(Y/H,2.0),0,255)",
+        b="clip(8+18*pow(Y/H,2.5),0,255)",
     ),
     "__general__": dict(
-        r="clip(8+55*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
-        g="clip(6+42*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
-        b="clip(5+30*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
+        r="clip(25+80*pow(Y/H,1.4),0,255)",
+        g="clip(20+60*pow(Y/H,1.5),0,255)",
+        b="clip(30+90*pow(Y/H,1.3),0,255)",
     ),
 }
 
@@ -210,7 +211,9 @@ def fetch_bg(name: str, queries: list[str], color_key: str, out: str, pixabay_ke
                     hits = r.json().get("hits", [])
                     if not hits:
                         continue
-                    url = random.choice(hits).get("webformatURL", "")
+                    hit = random.choice(hits)
+                    # 高解像度を優先（largeImageURL > webformatURL）
+                    url = hit.get("largeImageURL") or hit.get("webformatURL", "")
                     if not url:
                         continue
                     img = req_lib.get(url, timeout=30)
@@ -559,16 +562,31 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                     pedigree_card_filters(seg["horse"], t1, t2, ci, tmp_dir, fp)
                 )
 
-            # 字幕: ffmpeg ネイティブ ass= フィルター（マージロジック不要）
-            landscape_ass = prepare_landscape_ass(ass_path, tmp_dir)
-            if landscape_ass:
-                font_dir = str(Path(font).parent)
+            # 要所字幕: 各馬の章頭にタイトルバナーのみ表示（連続字幕は廃止）
+            TITLE_BANNER_DUR = 4.0
+            for ci, seg in enumerate(segments):
+                raw_title = seg["title"].strip()
+                if "オープニング" in raw_title or "エンディング" in raw_title:
+                    continue
+                display_title = re.sub(r'^【|】$', '', raw_title)
+                if not display_title:
+                    continue
+                t1 = seg["t_start"]
+                t2 = min(t1 + TITLE_BANNER_DUR, seg["t_end"])
+                if t2 <= t1 + 0.1:
+                    continue
+                enable = f"between(t,{t1:.3f},{t2:.3f})"
+                p = f"{tmp_dir}/ch_title_{ci}.txt"
+                Path(p).write_text(display_title, encoding="utf-8")
                 video_filters.append(
-                    f"ass='{_esc(landscape_ass)}':fontsdir='{_esc(font_dir)}'"
+                    f"drawtext=textfile='{_esc(p)}':fontfile='{fp}':"
+                    f"fontsize=46:fontcolor=0xFFFFFF:"
+                    f"x=(w-text_w)/2:y=h-100:"
+                    f"box=1:boxcolor=0x000000@0.72:boxborderw=18:"
+                    f"borderw=2:bordercolor=0x444444:"
+                    f"enable='{enable}'"
                 )
-                print("  字幕: ASS フィルター適用")
-            else:
-                print("  [警告] ASS字幕なし / 変換失敗", file=sys.stderr)
+            print("  要所字幕: 各馬章タイトルバナーを設定")
 
         if not video_filters:
             video_filters.append(f"scale={W}:{H}")
