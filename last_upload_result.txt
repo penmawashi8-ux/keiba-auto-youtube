@@ -1,10 +1,10 @@
-date: 2026-06-04T08:50:35.275458Z
+date: 2026-06-04T12:08:47.385031Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=--11SXnNTAM title=【宝塚記念・1週前】ダノンデサイルは3頭併せで豪快に最先着　戸崎圭太騎手「また乗
-OK project=1 video_id=6ORvbaMmVTU title=【宝塚記念・1週前】「あとはスーパースターに任すだけ」メイショウタバルは力強い伸
-OK project=1 video_id=E5WEH0ifch4 title=【宝塚記念・1週前】グイッと先着　コスモキュランダは気配上々　加藤士調教師「馬場
+OK project=1 video_id=s7L-O2AqkFA title=【門別・グランシャリオ門別スプリント結果】ストリームが3連覇で重賞8勝目を挙げる
+OK project=1 video_id=DOA8r2MtAyc title=【名古屋競馬　東海優駿】アストラビアンコ　2着に2秒1差の圧勝劇で断然人気に応え
+OK project=1 video_id=KjOdnb-E0pc title=【船橋・若潮スプリント結果】ブルーメンガルテンが差し切って重賞初制覇を飾る
