@@ -28,32 +28,35 @@ OPEN_DUR      = 3.5
 PEDIGREE_DUR  = 5.0
 BGM_VOL       = 0.12
 SUB_WRAP      = 22    # 字幕折り返し文字数
-MERGE_GAP     = 0.55  # この秒数以内の ASS イベントを1センテンスにまとめる
+MERGE_GAP     = 0.25  # この秒数以内の ASS イベントを1センテンスにまとめる
 
 # ── Pixabay クエリ（馬ごと） ────────────────────────────────────
 PIXABAY_QUERIES: dict[str, list[str]] = {
-    "ダノンダックス": ["horse racing track dramatic", "thoroughbred race dark", "horse racing japan"],
-    "ジャンゴッド":   ["horse jockey race action", "horse racing speed track", "horse galloping race"],
-    "ソブリオ":      ["black horse dramatic", "black stallion dark", "horse portrait dark"],
-    "ノイエルング":   ["horse night sky blue", "horse dark blue dramatic", "horse running dark"],
-    "レニュアージュ": ["horse portrait brown dramatic", "horse red dramatic", "thoroughbred portrait"],
-    "__general__":   ["horse racing japan", "horse race crowd", "horse racing"],
+    "ダノンダックス": ["horse portrait dark dramatic gold", "thoroughbred horse dark background", "horse racing dark spotlight"],
+    "ジャンゴッド":   ["horse jockey racing dramatic", "horse galloping dark dramatic", "horse racing action dark"],
+    "ソブリオ":      ["black stallion dark background dramatic", "horse portrait black dark", "stallion dark cinematic"],
+    "ノイエルング":   ["horse blue night dramatic", "horse dark blue portrait", "stallion blue dramatic night"],
+    "レニュアージュ": ["horse portrait brown red dramatic", "thoroughbred dark red portrait", "horse dark red atmospheric"],
+    "__general__":   ["horse racing dramatic dark", "horse silhouette dramatic", "thoroughbred dark"],
 }
 
 # ── タイプ別 ffmpeg 色処理フィルター ───────────────────────────
 _COLOR_VF: dict[str, str] = {
+    # 本命: ダーク＋暖色ゴールド（gamma_r↑, gamma_b↓, 強コントラスト）
     "本命":    ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                "eq=brightness=-0.50:contrast=1.15:saturation=1.15:gamma_r=1.35:gamma_b=0.55,"
-                "vignette=PI/3"),
+                "eq=brightness=-0.55:contrast=1.30:saturation=1.20:gamma_r=1.45:gamma_b=0.48,"
+                "vignette=PI/2.5"),
+    # 大穴_blue: ダーク＋電気ブルー（gamma_b↑↑, gamma_r↓↓, 低彩度）
     "大穴_blue": ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                  "eq=brightness=-0.50:contrast=1.20:saturation=0.90:gamma_r=0.50:gamma_b=1.60,"
-                  "vignette=PI/3"),
+                  "eq=brightness=-0.55:contrast=1.35:saturation=0.75:gamma_r=0.42:gamma_b=1.75,"
+                  "vignette=PI/2.5"),
+    # 大穴_red: ダーク＋クリムゾン赤（gamma_r↑↑, gamma_b↓↓）
     "大穴_red":  ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                  "eq=brightness=-0.50:contrast=1.20:saturation=1.10:gamma_r=1.55:gamma_b=0.40,"
-                  "vignette=PI/3"),
+                  "eq=brightness=-0.55:contrast=1.30:saturation=1.15:gamma_r=1.65:gamma_b=0.35,"
+                  "vignette=PI/2.5"),
     "__general__": ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-                    "eq=brightness=-0.55:contrast=1.10,"
-                    "vignette=PI/3"),
+                    "eq=brightness=-0.58:contrast=1.15,"
+                    "vignette=PI/2.5"),
 }
 
 # ── 馬名 → 色タイプ ─────────────────────────────────────────
@@ -66,26 +69,31 @@ _NAME_TO_COLOR: dict[str, str] = {
 }
 
 # ── geq フォールバック（Pixabay 失敗時）─────────────────────────
+# sqrt() を使ったラジアルスポットライト効果
 _GEQ: dict[str, dict] = {
+    # 本命: 上部中央から降り注ぐ金/アンバー光（暖色スポットライト）
     "本命": dict(
-        r="clip(10+200*pow(max(0,Y/H-0.5)*2,1.5)*pow(1-abs(2*X/W-1),0.4),0,255)",
-        g="clip(3+55*pow(max(0,Y/H-0.55)*2,2.0)*pow(1-abs(2*X/W-1),0.6),0,255)",
-        b="clip(2+12*pow(max(0,Y/H-0.6)*2,2.5),0,255)",
+        r="clip(8+220*pow(max(0,1-2.2*sqrt(pow((X/W-0.5)*1.3,2)+pow(Y/H-0.22,2))),2.0)+40*pow(1-Y/H,4),0,255)",
+        g="clip(4+75*pow(max(0,1-2.2*sqrt(pow((X/W-0.5)*1.3,2)+pow(Y/H-0.22,2))),2.8)+8*pow(1-Y/H,4),0,255)",
+        b="clip(2+10*pow(max(0,1-2.2*sqrt(pow((X/W-0.5)*1.3,2)+pow(Y/H-0.22,2))),4.0),0,255)",
     ),
+    # 大穴_blue: 中心から広がるエレクトリックブルーの宇宙的グロー
     "大穴_blue": dict(
-        r="clip(5+15*pow(1-abs(2*Y/H-1),4),0,255)",
-        g="clip(8+28*pow(1-abs(2*Y/H-1),3.5),0,255)",
-        b="clip(18+160*pow(1-abs(2*Y/H-1),2.5)*pow(1-abs(2*X/W-1),0.6),0,255)",
+        r="clip(3+18*pow(max(0,1-2.8*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),2.5),0,255)",
+        g="clip(5+45*pow(max(0,1-2.8*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),2.0),0,255)",
+        b="clip(16+225*pow(max(0,1-2.3*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),1.6),0,255)",
     ),
+    # 大穴_red: 右中央からのクリムゾン大気光
     "大穴_red": dict(
-        r="clip(14+185*pow(max(0,Y/H-0.4)*1.67,1.5)*pow(1-abs(2*X/W-1),0.3),0,255)",
-        g="clip(4+18*pow(max(0,Y/H-0.5)*2,2.0),0,255)",
-        b="clip(3+6*pow(max(0,Y/H-0.6)*2.5,2.5),0,255)",
+        r="clip(12+210*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),1.8),0,255)",
+        g="clip(3+14*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),3.5),0,255)",
+        b="clip(2+6*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),4.5),0,255)",
     ),
+    # 汎用: 中心の微弱な白グロー（オープニング等）
     "__general__": dict(
-        r="clip(8+55*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
-        g="clip(6+42*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
-        b="clip(5+30*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
+        r="clip(6+70*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
+        g="clip(5+60*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
+        b="clip(4+50*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
     ),
 }
 

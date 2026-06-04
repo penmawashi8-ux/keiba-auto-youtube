@@ -292,15 +292,25 @@ def detect_font_name() -> str:
     return "Sans"
 
 
-async def _edge_tts_audio_only(script: str, audio_path: str, voice: str, rate: str) -> None:
-    """edge-tts で音声のみ生成する（字幕は別途 _estimate_subtitle_segments で作成）。"""
+async def _edge_tts_with_words(script: str, audio_path: str, voice: str, rate: str) -> list[dict]:
+    """edge-tts で音声と WordBoundary イベントを同時取得する。
+    戻り値: [{"text": ..., "offset": ...(100ns), "duration": ...(100ns)}, ...]
+    """
     communicate = edge_tts.Communicate(script, voice, rate=rate, volume=VOLUME)
+    words: list[dict] = []
     with open(audio_path, "wb") as f:
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
+            elif chunk["type"] == "WordBoundary":
+                words.append({
+                    "text":     chunk["text"],
+                    "offset":   chunk["offset"],
+                    "duration": chunk["duration"],
+                })
     size_kb = Path(audio_path).stat().st_size // 1024
-    print(f"  音声: {audio_path} ({size_kb} KB)")
+    print(f"  音声: {audio_path} ({size_kb} KB), 単語境界: {len(words)} 件")
+    return words
 
 
 def main() -> None:
@@ -342,13 +352,14 @@ def main() -> None:
         is_kokoro_voice = voice in _KOKORO_VOICE_POOL
         engine = "Kokoro" if (_KOKORO_AVAILABLE and is_kokoro_voice) else "edge-tts"
         print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) engine={engine} voice={voice} ---")
+        words: list[dict] = []
         for attempt in range(1, 4):
             try:
                 if _KOKORO_AVAILABLE and is_kokoro_voice:
                     speed = 1.0 + (int(rate.replace("%", "").replace("+", "")) / 100)
                     generate_audio_kokoro(narration_text, audio_path, voice=voice, speed=speed)
                 else:
-                    asyncio.run(_edge_tts_audio_only(
+                    words = asyncio.run(_edge_tts_with_words(
                         narration_text, audio_path, voice=voice, rate=rate,
                     ))
                 break
@@ -364,10 +375,14 @@ def main() -> None:
                 else:
                     raise RuntimeError(f"音声生成を3回試みましたが失敗しました。idx={idx}")
 
-        # 音声バリエーション適用後の実際の音声長で字幕タイミングを確定
         apply_audio_variation(audio_path, pitch_factor, volume_db)
         aud_dur = _audio_duration_s(audio_path)
-        segs = _estimate_subtitle_segments(subtitle_text, aud_dur)
+        if words:
+            # WordBoundary イベントから正確なタイミングで字幕を生成
+            segs = words_to_segments(words)
+        else:
+            # Kokoro TTS はタイミングイベントなし → 推定で補完
+            segs = _estimate_subtitle_segments(subtitle_text, aud_dur)
         write_ass(segs, ass_path, font_name)
         print(f"  字幕: {ass_path} ({len(segs)} セグメント)")
         return idx
