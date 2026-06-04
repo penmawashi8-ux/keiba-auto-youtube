@@ -1,75 +1,45 @@
-  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 [1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【門別・グランシャリオ門別スプリント結果】ストリームが3連覇で重賞8勝目を挙げる ---
-[0] Gemini入力本文 349文字: '4日、門別競馬場で行われた第12回グランシャリオ門別スプリント(3歳上・重賞・ダ1000m・1着賞金500万円)は、2番手から直線で力強く伸びた岩橋勇二騎手騎乗の1番人気ストリーム(牡5、北海道・田中淳司厩舎)が、逃げた2番人気スペシャルチ'
+--- 記事[0]: 【名古屋競馬　東海優駿】アストラビアンコ重賞4勝目　細川智史騎手「展開というより馬と僕との勝負」 ---
+[0] Gemini入力本文 344文字: '名古屋競馬の3歳重賞「第56回東海優駿」(SP1)が4日、11Rで行われた。単勝1・1倍と断然人気を背負ったアストラビアンコ(牡＝角田輝、父バゴ)が終始主導権を握る形で3角から後続を突き放し、2着アルティメイタムに2秒1差の大差をつけて重賞'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【名古屋競馬　東海優駿】アストラビアンコ　2着に2秒1差の圧勝劇で断然人気に応える ---
-[1] Gemini入力本文 352文字: '名古屋競馬の3歳限定重賞「愛知県知事杯第56回東海優駿」(SP1、ダート2100メートル、12頭立て)は4日の11Rで行われ、単勝1.1倍の断然人気に支持されたアストラビアンコ(牡＝角田輝、父バゴ)が1周目3コーナーで先頭に立つと、直線でリ'
+--- 記事[1]: 【地方競馬】若潮スプリント　転入初戦のブルーメンガルテンが差し切り重賞初制覇 ---
+[1] Gemini入力本文 331文字: '「若潮スプリント・Ｓ３」（４日、船橋）\n\u3000川島一厩舎のワンツーだ。ホッカイドウ競馬からやって来た２番人気のブルーメンガルテンが直線の叩き合いを制して重賞初制覇。「第１６回優駿スプリント・Ｓ２」（３０日・大井）、「第１６回習志野きらっとスプリ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【船橋・若潮スプリント結果】ブルーメンガルテンが差し切って重賞初制覇を飾る ---
-[2] Gemini入力本文 350文字: '4日、船橋競馬場で行われた第6回若潮スプリント(3歳・重賞・ダ1200m・1着賞金1700万円)は、中団から早めに進出し直線半ばで先頭に立った御神本訓史騎手騎乗の2番人気ブルーメンガルテン(牡3、船橋・川島正一厩舎)が、好位から脚を伸ばした'
+--- 記事[2]: 川島正一厩舎が1、2着を独占　ブルーメンガルテンが若潮スプリント制覇 ---
+[2] Gemini入力本文 348文字: '第6回若潮スプリント・S3は6月4日、船橋競馬場で3歳のスプリンター12頭が1200メートルを争った。2番人気のブルーメンガルテン(御神本訓史騎手騎乗)が直線で抜け出し、1番人気で同じ川島正一厩舎所属のメイクセンスに2馬身差をつけて優勝。優'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 243文字]: '最新のレース情報が入ってきました。名古屋競馬の3歳限定重賞「愛知県知事杯第56回東海優駿」が4日の11R、ダート2100メートル、12頭立てで行われました。単勝1.1倍の断然人気に支持されたアストラビアンコが、1周目3コーナーで先頭に立つと、直線でリードを広げ、2着のアルティメイタムに2秒1の大差をつける圧勝で1着となりました。角田輝調教師が手掛けるアストラビアンコは、昨年12月10日のゴールドウィング賞、1月15日の新春ペガサスカップ、2月26日のスプリングカップに続く勝利です。'
+[1]  [Gemini生出力 259文字]: '最新のレース情報が入ってきました。若潮スプリント・Ｓ３が４日に船橋で開催され、川島一厩舎のワンツーフィニッシュとなりました。ホッカイドウ競馬から転入初戦の２番人気ブルーメンガルテンが直線の叩き合いを制し、重賞初制覇を飾りました。ブルーメンガルテンは、第１６回優駿スプリント・Ｓ２（３０日・大井）と、第１６回習志野きらっとスプリント・Ｓ２（８月６日・船橋）への優先出走権を獲得しています。２馬身差の２着には１番人気のメイクセンスが入着しました。そして、３着には後方から追い込んだ７番人気のフークアンビションが入りました。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (243文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。名古屋競馬の3歳限定重賞「愛知県知事杯第56回東海優駿」が4日の11R、ダート2100メートル、12頭立てで行われました。単勝...
+[1]  → output/script_1.txt 保存 (259文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。若潮スプリント・Ｓ３が４日に船橋で開催され、川島一厩舎のワンツーフィニッシュとなりました。ホッカイドウ競馬から転入初戦の２番人...
   HTTP 200
-[2]  [Gemini生出力 231文字]: 'レース関連の最新情報です。4日、船橋競馬場で行われた第6回若潮スプリントは、2番人気のブルーメンガルテンが差し切って重賞初制覇を飾りました。御神本訓史騎手が騎乗したブルーメンガルテンは、中団から早めに進出し直線半ばで先頭に立ちました。1着賞金1700万円のこのレースで、好位から脚を伸ばした1番人気のメイクセンスに2馬身差をつけ優勝しています。勝ちタイムは1分14秒6(稍重)でした。さらに1.1/2馬身差の3着には、7番人気のフークアンビションが入っています。'
+[2]  [Gemini生出力 266文字]: '最新のレース情報が入ってきました。第6回若潮スプリント・S3が6月4日、船橋競馬場で開催され、3歳のスプリンター12頭が1200メートルを争いました。このレースでは、2番人気のブルーメンガルテンが御神本訓史騎手騎乗で直線から抜け出し、優勝しました。1番人気で同じ川島正一厩舎所属のメイクセンスに2馬身差をつけ、川島正一厩舎が1、2着を独占する形となりました。ブルーメンガルテンは、優駿スプリント・S2が6月30日に大井で、習志野きらっとスプリント・S2が8月6日に船橋で開催される、これら二つのレースへの優先出走権を獲得しています。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (231文字)
-[2]  プレビュー: レース関連の最新情報です。4日、船橋競馬場で行われた第6回若潮スプリントは、2番人気のブルーメンガルテンが差し切って重賞初制覇を飾りました。御神本訓史騎手が騎乗...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[2]  → output/script_2.txt 保存 (266文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第6回若潮スプリント・S3が6月4日、船橋競馬場で開催され、3歳のスプリンター12頭が1200メートルを争いました。このレース...
   HTTP 200
-[0]  [Gemini生出力 212文字]: '本日の競馬ニュースです。\n4日、門別競馬場で行われた第12回グランシャリオ門別スプリントは、1着賞金500万円の重賞です。このレースでは、岩橋勇二騎手騎乗の1番人気ストリームが優勝し、3連覇を達成して重賞8勝目を挙げました。ストリームは2番手から直線で力強く伸び、逃げた2番人気スペシャルチャンスに2馬身差をつけました。勝ちタイムは1分00秒3の良馬場でした。さらに1馬身差の3着には、4番人気ボイラーハウスが入っています。'
-[0]  [重複除去] 212文字 → 211文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (211文字)
-[0]  プレビュー: 本日の競馬ニュースです。4日、門別競馬場で行われた第12回グランシャリオ門別スプリントは、1着賞金500万円の重賞です。このレースでは、岩橋勇二騎手騎乗の1番人...
+[0]  [Gemini生出力 232文字]: '競馬速報です。名古屋競馬の3歳重賞「第56回東海優駿」が4日、11Rで行われました。単勝1・1倍と断然人気を背負ったアストラビアンコが重賞4勝目を飾っています。アストラビアンコは終始主導権を握る形で3角から後続を突き放し、2着アルティメイタムに2秒1差の大差をつけて勝利しました。鞍上の細川智史騎手は涙ながらに、「先生から好きなように乗っていいと指示があったので、一頭馬を置いてレースしようかなと思ったんですけど、雰囲気が良くてそのま...」とコメントしています。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (229文字)
+[0]  プレビュー: 競馬速報です。名古屋競馬の3歳重賞「第56回東海優駿」が4日、11Rで行われました。単勝1・1倍と断然人気を背負ったアストラビアンコが重賞4勝目を飾っています。...
 
 3 件の脚本を生成しました。
