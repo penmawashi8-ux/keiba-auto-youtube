@@ -1,10 +1,10 @@
-date: 2026-06-04T07:29:27.684499Z
+date: 2026-06-04T08:50:35.275458Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cX58BCsMLvk title=【園田・六甲盃結果】ダンテバローズが3連勝で重賞初制覇
-OK project=1 video_id=hs1rb4QRFX4 title=【POG】2億4000万円馬ダイナマイクが3頭併せで最先着 追われるごとに力感ア
-OK project=1 video_id=iEPGPLTTETw title=【週末情報】安田記念のセイウンハーデスとパンジャタワーに橋口師は満足「言うことあ
+OK project=1 video_id=--11SXnNTAM title=【宝塚記念・1週前】ダノンデサイルは3頭併せで豪快に最先着　戸崎圭太騎手「また乗
+OK project=1 video_id=6ORvbaMmVTU title=【宝塚記念・1週前】「あとはスーパースターに任すだけ」メイショウタバルは力強い伸
+OK project=1 video_id=E5WEH0ifch4 title=【宝塚記念・1週前】グイッと先着　コスモキュランダは気配上々　加藤士調教師「馬場
