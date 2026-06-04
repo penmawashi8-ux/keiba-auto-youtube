@@ -1,10 +1,10 @@
-date: 2026-06-03T15:43:22.271445Z
+date: 2026-06-04T04:13:14.818435Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=69Xf-f3j6xM title=JRA平地GI最高齢Vあるぞ 9歳のサクラトゥジュールが大激変なるか
-OK project=1 video_id=H5YAohKp5mo title=【安田記念】重賞連勝中トロヴァトーレは万全　鹿戸調教師「ようやく実が入っていい状
-OK project=1 video_id=EPStIG_HL-4 title=2か月連続での回収率100%超えは!? 激戦が繰り広げられた地方予想家ボーナスキ
+OK project=1 video_id=cBpMURxjLpw title=ダノンデサイル、宝塚記念1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=L3XPQVbv5FM title=メイショウタバル、宝塚記念1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=wI-2lhWf_9A title=ミュージアムマイル、宝塚記念1週前追い切り速報/栗東トレセンニュース
