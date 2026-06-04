@@ -3,7 +3,7 @@
 
 主な特徴：
 - Pixabay の馬写真 + タイプ別色処理（本命=暗赤金、大穴①=ブルー、大穴②=クリムゾン）
-- ASS 字幕の単語イベントをセンテンス単位にマージして字幕ちらつき・途切れを解消
+- ffmpeg ass= フィルターでネイティブ字幕レンダリング（マージバグ解消）
 - 血統表カード（父=青系・母=桃系）を章頭に表示
 - 各章の背景は章全体で持続
 """
@@ -27,8 +27,6 @@ FPS           = 30
 OPEN_DUR      = 3.5
 PEDIGREE_DUR  = 5.0
 BGM_VOL       = 0.12
-SUB_WRAP      = 22    # 字幕折り返し文字数
-MERGE_GAP     = 0.05  # この秒数以内の ASS イベントのみ結合（文間パウズは100ms以上あるので結合しない）
 
 # ── Pixabay クエリ（馬ごと） ────────────────────────────────────
 PIXABAY_QUERIES: dict[str, list[str]] = {
@@ -68,46 +66,55 @@ _NAME_TO_COLOR: dict[str, str] = {
     "レニュアージュ": "大穴_red",
 }
 
-# ── geq フォールバック（Pixabay 失敗時）: 馬ごとに異なるスポットライト配置 ──
-# sqrt(x) の代わりに pow(x,0.5) を使用（ffmpeg バージョン互換性のため）
+# ── geq フォールバック（Pixabay 失敗時）: pow/abs/max/clip のみ使用（確実に動く）
 _GEQ_HORSE: dict[str, dict] = {
-    # ダノンダックス: 左上からのアンバー日射し
     "ダノンダックス": dict(
-        r="clip(8+210*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),1.8)+28*pow(1-Y/H,5),0,255)",
-        g="clip(4+72*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),2.6)+6*pow(1-Y/H,5),0,255)",
-        b="clip(2+8*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),4.5),0,255)",
+        r="clip(10+200*pow(Y/H,2.0)*(0.4+0.6*pow(1-abs(2*X/W-1),1.5)),0,255)",
+        g="clip(5+85*pow(Y/H,2.2)*(0.4+0.6*pow(1-abs(2*X/W-1),2.0)),0,255)",
+        b="clip(3+18*pow(Y/H,2.5),0,255)",
     ),
-    # ジャンゴッド: 右上からのゴールドスポット
     "ジャンゴッド": dict(
-        r="clip(10+215*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),1.9),0,255)",
-        g="clip(5+68*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),2.7),0,255)",
-        b="clip(2+7*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),5.0),0,255)",
+        r="clip(14+170*pow(Y/H,1.8)*(0.3+0.7*pow(1-abs(2*X/W-1),1.2)),0,255)",
+        g="clip(4+30*pow(Y/H,2.5),0,255)",
+        b="clip(3+8*pow(Y/H,3.0),0,255)",
     ),
-    # ソブリオ: 真上中央からの純金スポット
     "ソブリオ": dict(
-        r="clip(8+230*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),2.0),0,255)",
-        g="clip(4+82*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),2.8),0,255)",
-        b="clip(1+5*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),6.0),0,255)",
+        r="clip(10+150*pow(Y/H,2.0)*(0.35+0.65*pow(1-abs(2*X/W-1),1.4)),0,255)",
+        g="clip(8+120*pow(Y/H,2.0)*(0.35+0.65*pow(1-abs(2*X/W-1),1.6)),0,255)",
+        b="clip(3+22*pow(Y/H,2.8),0,255)",
     ),
-    # ノイエルング: 中心からのエレクトリックブルー
     "ノイエルング": dict(
-        r="clip(3+18*pow(max(0,1-2.8*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),2.5),0,255)",
-        g="clip(5+45*pow(max(0,1-2.8*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),2.0),0,255)",
-        b="clip(16+225*pow(max(0,1-2.3*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),1.6),0,255)",
+        r="clip(5+12*pow(1-abs(2*Y/H-1),4),0,255)",
+        g="clip(8+22*pow(1-abs(2*Y/H-1),3.5),0,255)",
+        b="clip(18+155*pow(1-abs(2*Y/H-1),2.5)*(0.5+0.5*pow(1-abs(2*X/W-1),1.5)),0,255)",
     ),
-    # レニュアージュ: 右中央からのクリムゾン
     "レニュアージュ": dict(
-        r="clip(12+210*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),1.8),0,255)",
-        g="clip(3+14*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),3.5),0,255)",
-        b="clip(2+6*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),4.5),0,255)",
+        r="clip(14+180*pow(Y/H,1.7)*(0.3+0.7*pow(1-abs(2*X/W-1),1.0)),0,255)",
+        g="clip(4+16*pow(Y/H,2.8),0,255)",
+        b="clip(3+6*pow(Y/H,3.5),0,255)",
     ),
-    # 汎用: 中心の微弱な白グロー
     "__general__": dict(
-        r="clip(6+70*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
-        g="clip(5+60*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
-        b="clip(4+50*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
+        r="clip(8+55*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
+        g="clip(6+42*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
+        b="clip(5+30*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
     ),
 }
+
+# ── 横動画用 ASS ヘッダーテンプレート ──────────────────────────
+_LANDSCAPE_ASS_HEADER = """\
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,{font_name},40,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,3,1,2,20,20,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
 
 
 # ─────────────────────────────────────────────────────────
@@ -168,7 +175,7 @@ def _apply_color_vf(src: str, color_key: str, out: str) -> bool:
 
 
 def _geq_fallback(name: str, out: str) -> None:
-    """馬名ごとに異なるgeqスポットライト背景を生成する。"""
+    """馬名ごとに異なるgeqグラデーション背景を生成する。"""
     g = _GEQ_HORSE.get(name, _GEQ_HORSE["__general__"])
     geq = f"r='{g['r']}':g='{g['g']}':b='{g['b']}'"
     res = subprocess.run([
@@ -177,8 +184,9 @@ def _geq_fallback(name: str, out: str) -> None:
         "-frames:v", "1", "-q:v", "2", out,
     ], capture_output=True)
     if res.returncode != 0:
+        print(f"  [警告] geq失敗 ({name}), 単色フォールバック", file=sys.stderr)
         subprocess.run([
-            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=#0A0A14:s={W}x{H}:r={FPS}",
+            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=#1A1008:s={W}x{H}:r={FPS}",
             "-frames:v", "1", "-q:v", "3", out,
         ], capture_output=True)
 
@@ -249,27 +257,28 @@ def prepare_backgrounds(horses: list[dict], pixabay_key: str) -> dict[str, str]:
 
 
 # ─────────────────────────────────────────────────────────
-# ASS 字幕 → drawtext 変換（センテンスマージ対応）
+# ASS 字幕 → 横動画用に変換（ass= フィルターで使うため）
 # ─────────────────────────────────────────────────────────
 
-def _ass_time_to_s(t: str) -> float:
-    h, m, rest = t.strip().split(":")
-    return int(h) * 3600 + int(m) * 60 + float(rest)
+def prepare_landscape_ass(src_ass: str, tmp_dir: str) -> str | None:
+    """縦動画用 ASS（PlayResX:1080 PlayResY:1920）を横動画用に変換して tmp_dir に保存。"""
+    if not Path(src_ass).exists() or Path(src_ass).stat().st_size < 100:
+        return None
 
+    content = Path(src_ass).read_text(encoding="utf-8")
 
-def ass_to_drawtext_filters(ass_path: str, font: str | None, tmp_dir: str) -> list[str]:
-    """ASS の単語イベントをセンテンス単位にマージして drawtext フィルターに変換する。
+    # 元ファイルのフォント名を引き継ぐ
+    font_name = "Noto Sans CJK JP"
+    for line in content.splitlines():
+        if line.startswith("Style:"):
+            parts = line.split(",")
+            if len(parts) > 1:
+                font_name = parts[1].strip()
+            break
 
-    edge-tts は単語ごとに Dialogue イベントを生成する。そのまま使うと
-    0.3 秒ごとに1単語が点滅して「字幕がずれている」「途切れる」ように見える。
-    MERGE_GAP 秒以内に連続するイベントをまとめることで自然な字幕表示にする。
-    """
-    content = Path(ass_path).read_text(encoding="utf-8")
-    fp       = _esc(font) if font else ""
+    # 章マーカー（【...】だけの行）を除いたダイアログ行のみ抽出
     marker_re = re.compile(r'^【[^】]+】$')
-
-    # ① 全イベントをパース
-    raw: list[tuple[float, float, str]] = []
+    dialogue_lines = []
     for line in content.splitlines():
         if not line.startswith("Dialogue:"):
             continue
@@ -277,52 +286,20 @@ def ass_to_drawtext_filters(ass_path: str, font: str | None, tmp_dir: str) -> li
         if len(parts) < 10:
             continue
         text = parts[9].replace("\\N", " ").strip()
-        if not text or marker_re.match(text):
+        if marker_re.match(text):
             continue
-        try:
-            t1 = _ass_time_to_s(parts[1])
-            t2 = _ass_time_to_s(parts[2])
-        except Exception:
-            continue
-        if t2 <= t1 + 0.01:
-            continue
-        raw.append((t1, t2, text))
+        dialogue_lines.append(line)
 
-    if not raw:
-        return []
+    if not dialogue_lines:
+        return None
 
-    # ② センテンス単位にマージ（MERGE_GAP 秒以内のギャップは同一センテンスとみなす）
-    groups: list[tuple[float, float, str]] = []
-    g_start, g_end, g_words = raw[0][0], raw[0][1], [raw[0][2]]
-    for t1, t2, text in raw[1:]:
-        if t1 - g_end <= MERGE_GAP:
-            g_end = t2
-            g_words.append(text)
-        else:
-            groups.append((g_start, g_end, "".join(g_words)))
-            g_start, g_end, g_words = t1, t2, [text]
-    groups.append((g_start, g_end, "".join(g_words)))
+    out = f"{tmp_dir}/landscape_subs.ass"
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(_LANDSCAPE_ASS_HEADER.format(font_name=font_name))
+        for line in dialogue_lines:
+            f.write(line + "\n")
 
-    # ③ drawtext フィルターに変換
-    filters: list[str] = []
-    for i, (t1, t2, text) in enumerate(groups):
-        wrapped = wrap_text(text, SUB_WRAP)
-        tf = f"{tmp_dir}/sub{i}.txt"
-        Path(tf).write_text(wrapped, encoding="utf-8")
-        f = f"drawtext=textfile='{_esc(tf)}'"
-        if fp:
-            f += f":fontfile='{fp}'"
-        f += (
-            f":fontsize=40:fontcolor=0xFFFFFF"
-            f":x=(w-text_w)/2:y=h-text_h-55"
-            f":box=1:boxcolor=0x000000@0.75:boxborderw=16"
-            f":borderw=2:bordercolor=0x000000"
-            f":line_spacing=10"
-            f":enable='between(t,{t1:.3f},{t2:.3f})'"
-        )
-        filters.append(f)
-
-    return filters
+    return out
 
 
 # ─────────────────────────────────────────────────────────
@@ -484,64 +461,6 @@ def corner_filters(fp: str, tmp_dir: str) -> list[str]:
 
 
 # ─────────────────────────────────────────────────────────
-# サムネイル
-# ─────────────────────────────────────────────────────────
-
-def generate_thumbnail(meta: dict, font: str | None,
-                        bg_img: str | None, thumb_path: str, tmp_dir: str) -> None:
-    fp   = _esc(font or "")
-    hook = meta.get("thumbnail_hook", "")
-
-    if bg_img and Path(bg_img).exists():
-        inputs = ["-loop", "1", "-i", bg_img]
-        v_init = [f"scale={W}:{H}:force_original_aspect_ratio=increase", f"crop={W}:{H}"]
-    else:
-        inputs = ["-f", "lavfi", "-i", f"color=c=#0D1B2A:s={W}x{H}:r=1"]
-        v_init = []
-
-    filters: list[str] = v_init + ["eq=brightness=-0.35:contrast=1.05"]
-
-    if font:
-        def tf(name: str, text: str) -> str:
-            p = f"{tmp_dir}/{name}.txt"
-            Path(p).write_text(text, encoding="utf-8")
-            return _esc(p)
-
-        filters.append(
-            f"drawtext=textfile='{tf('th_badge', 'POG 2026-2027')}':fontfile='{fp}':"
-            f"fontsize=38:fontcolor=0xFFFFFF:"
-            f"x=30:y=28:box=1:boxcolor=0x8B0000@0.96:boxborderw=16"
-        )
-        if hook:
-            filters.append(
-                f"drawtext=textfile='{tf('th_hook', wrap_text(hook, 14))}':fontfile='{fp}':"
-                f"fontsize=72:fontcolor=0xFFFF00:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2-30:"
-                f"box=1:boxcolor=0x000000@0.88:boxborderw=30:"
-                f"borderw=5:bordercolor=0xFF6600"
-            )
-        title = meta.get("title", "")
-        if title:
-            filters.append(
-                f"drawtext=textfile='{tf('th_title', wrap_text(title, 20))}':fontfile='{fp}':"
-                f"fontsize=36:fontcolor=0xFFFFFF:"
-                f"x=(w-text_w)/2:y=h-text_h-48:"
-                f"box=1:boxcolor=0x000000@0.80:boxborderw=16"
-            )
-
-    fc  = "[0:v]" + ",".join(filters) + "[vout]"
-    res = subprocess.run(
-        ["ffmpeg", "-y"] + inputs + ["-filter_complex", fc, "-map", "[vout]",
-                                      "-frames:v", "1", "-q:v", "2", thumb_path],
-        capture_output=True, text=True,
-    )
-    if res.returncode == 0:
-        print(f"  サムネイル: {thumb_path} ({Path(thumb_path).stat().st_size//1024} KB)")
-    else:
-        print(f"  [警告] サムネイル失敗:\n{res.stderr[-300:]}", file=sys.stderr)
-
-
-# ─────────────────────────────────────────────────────────
 # 動画生成
 # ─────────────────────────────────────────────────────────
 
@@ -550,7 +469,6 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
     audio_path    = f"{OUTPUT_DIR}/audio_0.mp3"
     ass_path      = f"{OUTPUT_DIR}/subtitles_0.ass"
     output_path   = f"{OUTPUT_DIR}/pog_landscape_video_0.mp4"
-    thumb_path    = f"{OUTPUT_DIR}/thumbnail_0.jpg"
 
     if not script_path.exists():
         raise FileNotFoundError(f"{script_path} が見つかりません。")
@@ -641,14 +559,16 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                     pedigree_card_filters(seg["horse"], t1, t2, ci, tmp_dir, fp)
                 )
 
-            # 字幕
-            has_ass = Path(ass_path).exists() and Path(ass_path).stat().st_size > 100
-            if has_ass:
-                sub_fts = ass_to_drawtext_filters(ass_path, font, tmp_dir)
-                video_filters.extend(sub_fts)
-                print(f"  字幕: {len(sub_fts)} センテンス")
+            # 字幕: ffmpeg ネイティブ ass= フィルター（マージロジック不要）
+            landscape_ass = prepare_landscape_ass(ass_path, tmp_dir)
+            if landscape_ass:
+                font_dir = str(Path(font).parent)
+                video_filters.append(
+                    f"ass='{_esc(landscape_ass)}':fontsdir='{_esc(font_dir)}'"
+                )
+                print("  字幕: ASS フィルター適用")
             else:
-                print("  [警告] ASS字幕なし", file=sys.stderr)
+                print("  [警告] ASS字幕なし / 変換失敗", file=sys.stderr)
 
         if not video_filters:
             video_filters.append(f"scale={W}:{H}")
@@ -689,8 +609,6 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
 
         size_mb = Path(output_path).stat().st_size / 1024 / 1024
         print(f"✅ {output_path} ({size_mb:.1f} MB)")
-
-        generate_thumbnail(meta, font, bg_imgs.get("__general__"), thumb_path, tmp_dir)
         return output_path
 
     finally:
