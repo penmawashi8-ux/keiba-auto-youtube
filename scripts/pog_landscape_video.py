@@ -28,37 +28,43 @@ MIN_CLIP_DUR  = 0.5
 
 _MARKER_RE = re.compile(r'^【[^】]+】$')
 
-# ── geq背景: 馬ごとに異なるスポットライト配置 ──────────────────────
+# ── geq背景: 馬ごとに異なるスポットライト配置（pow(x,0.5) でffmpeg互換性確保）──
 _GEQ_HORSE: dict[str, dict] = {
+    # ダノンダックス: 左上からのアンバー日射し
     "ダノンダックス": dict(
-        r="clip(8+210*pow(max(0,1-2.0*sqrt(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2))),1.8)+28*pow(1-Y/H,5),0,255)",
-        g="clip(4+72*pow(max(0,1-2.0*sqrt(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2))),2.6)+6*pow(1-Y/H,5),0,255)",
-        b="clip(2+8*pow(max(0,1-2.0*sqrt(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2))),4.5),0,255)",
+        r="clip(8+210*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),1.8)+28*pow(1-Y/H,5),0,255)",
+        g="clip(4+72*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),2.6)+6*pow(1-Y/H,5),0,255)",
+        b="clip(2+8*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),4.5),0,255)",
     ),
+    # ジャンゴッド: 右上からのゴールドスポット
     "ジャンゴッド": dict(
-        r="clip(10+215*pow(max(0,1-2.1*sqrt(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2))),1.9),0,255)",
-        g="clip(5+68*pow(max(0,1-2.1*sqrt(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2))),2.7),0,255)",
-        b="clip(2+7*pow(max(0,1-2.1*sqrt(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2))),5.0),0,255)",
+        r="clip(10+215*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),1.9),0,255)",
+        g="clip(5+68*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),2.7),0,255)",
+        b="clip(2+7*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),5.0),0,255)",
     ),
+    # ソブリオ: 真上中央からの純金スポット
     "ソブリオ": dict(
-        r="clip(8+230*pow(max(0,1-2.3*sqrt(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2))),2.0),0,255)",
-        g="clip(4+82*pow(max(0,1-2.3*sqrt(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2))),2.8),0,255)",
-        b="clip(1+5*pow(max(0,1-2.3*sqrt(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2))),6.0),0,255)",
+        r="clip(8+230*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),2.0),0,255)",
+        g="clip(4+82*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),2.8),0,255)",
+        b="clip(1+5*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),6.0),0,255)",
     ),
+    # ノイエルング: 中心からのエレクトリックブルー
     "ノイエルング": dict(
-        r="clip(3+18*pow(max(0,1-2.8*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),2.5),0,255)",
-        g="clip(5+45*pow(max(0,1-2.8*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),2.0),0,255)",
-        b="clip(16+225*pow(max(0,1-2.3*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),1.6),0,255)",
+        r="clip(3+18*pow(max(0,1-2.8*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),2.5),0,255)",
+        g="clip(5+45*pow(max(0,1-2.8*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),2.0),0,255)",
+        b="clip(16+225*pow(max(0,1-2.3*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),1.6),0,255)",
     ),
+    # レニュアージュ: 右中央からのクリムゾン
     "レニュアージュ": dict(
-        r="clip(12+210*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),1.8),0,255)",
-        g="clip(3+14*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),3.5),0,255)",
-        b="clip(2+6*pow(max(0,1-2.0*sqrt(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2))),4.5),0,255)",
+        r="clip(12+210*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),1.8),0,255)",
+        g="clip(3+14*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),3.5),0,255)",
+        b="clip(2+6*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),4.5),0,255)",
     ),
+    # 汎用: 中心の微弱な白グロー
     "__general__": dict(
-        r="clip(6+70*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
-        g="clip(5+60*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
-        b="clip(4+50*pow(max(0,1-3.2*sqrt(pow(X/W-0.5,2)+pow(Y/H-0.5,2))),3.0),0,255)",
+        r="clip(6+70*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
+        g="clip(5+60*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
+        b="clip(4+50*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
     ),
 }
 
@@ -155,14 +161,14 @@ def prepare_backgrounds(horses: list[dict]) -> dict[str, str]:
 
 def parse_script_chapters(chapters_script: str, horses: list[dict]) -> list[dict]:
     """章マーカー付きスクリプトを章ごとのセンテンスリストに変換する。"""
-    chapters: list[dict]  = []
+    chapters: list[dict]      = []
     current_title: str | None = None
     current_texts: list[str]  = []
 
     def _flush(title: str, texts: list[str]) -> None:
         if not texts:
             return
-        full = " ".join(texts)
+        full  = " ".join(texts)
         sents = [s.strip() for s in re.split(r"(?<=[。！？])", full) if s.strip()]
         if not sents:
             sents = [full.strip()]
@@ -253,7 +259,7 @@ def make_pog_clip(
                 f"box=1:boxcolor={badge_col}@0.97:boxborderw=18"
             )
 
-            # 馬名（大きく、読みやすいように半透明ボックス付き）
+            # 馬名（大きく、半透明ボックス付き）
             chain += (
                 f",drawtext=textfile='{tf('hname', horse['name'])}':"
                 f"fontfile='{fp}':fontsize=100:fontcolor={name_col}:"
