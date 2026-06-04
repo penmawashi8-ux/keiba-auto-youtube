@@ -1,8 +1,9 @@
-[0]  [ファクトチェックNG] NG: 7Rのデイムサンライズ
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
@@ -10,62 +11,48 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 元記事に存在しないレース結果
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 4日も8鞍に騎乗
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【園田競馬・今日の世麗】4日も8鞍に騎乗　7Rのデイムサンライズに「力上位」と期待を寄せる ---
-[0] Gemini入力本文 345文字: '6月3日は8鞍に騎乗した佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝だったが、1Rと9Rで3着に入ったのが最高で勝ち星を挙げることはできなかった。\n\t\t\t\t\u3000期待していたメインのサトノシュトラーセだったが、先行有利の馬場コンディションもあっ'
+--- 記事[0]: ダノンデサイル、宝塚記念1週前追い切り速報/栗東トレセンニュース ---
+[0] Gemini入力本文 406文字: '2024年のダービー馬ダノンデサイル(栗東・安田翔伍厩舎)。これまで有馬記念には2回出走していずれも3着だったが、春のグランプリ、宝塚記念(6月14日・阪神芝2200m)は初めて。今朝4日はレースに向けた1週前追い切りを行った。\n\u3000前走大阪'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【園田競馬・人気ジョッキーは語る】ララヴァニーユ(4R)に自信を見せる小谷哲平騎手「やっと順番が回ってきた感じ」 ---
-[1] Gemini入力本文 361文字: '◆園田競馬5日目(6月4日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u300086勝。アンノドミニ(9R)に力が入る。「うまく立ち回って上位を目指す」(◎)。マットーネロッソ(6R)は「堅実には走っているが…」(○)。\n\t\t\t\t\u3000《下原\u3000理》\n\t\t\t\t\u3000'
+--- 記事[1]: メイショウタバル、宝塚記念1週前追い切り速報/栗東トレセンニュース ---
+[1] Gemini入力本文 458文字: '6月14日(日)に阪神競馬場、芝2200mで行われるGI、宝塚記念。昨年の覇者であり、ファン投票では2位の支持を受けているメイショウタバル(栗東・石橋守厩舎)。今朝4日はレースに向けた1週前追い切りを行っている。\n\u30002回目のハローが終了した'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: マイル8戦8勝 地方出身トロットサンダーの安田記念Vから30年 ---
-[2] Gemini入力本文 337文字: 'オグリキャップの余韻が残る90年代半ば、地方出身で中央の頂点に駆け上がったトロットサンダーの蹄跡は、奇跡的なサクセスストーリーといえる。その競走馬人生を振り返ろう。\n\u3000トロットサンダーは父ダイナコスモス、母ラセーヌワンダ、母の父テスコボーイ'
+--- 記事[2]: ミュージアムマイル、宝塚記念1週前追い切り速報/栗東トレセンニュース ---
+[2] Gemini入力本文 493文字: '昨年の有馬記念の覇者ミュージアムマイル(栗東・高柳大輔厩舎)。4歳になった2026年はドバイターフから始動の予定だったが、現地の情勢から遠征を見送り。次に香港遠征が予定されたが、こちらも見送りということで、宝塚記念(6月14日・阪神芝220'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 270文字]: '今週の競馬注目情報をお伝えします。マイル8戦8勝を記録した地方出身のトロットサンダーが安田記念を制してから30年が経ちました。オグリキャップの余韻が残る90年代半ば、地方出身から中央の頂点に駆け上がったトロットサンダーの蹄跡は、奇跡的なサクセスストーリーとして振り返られています。トロットサンダーは父ダイナコスモス、母ラセーヌワンダ、母の父テスコボーイの血統です。1992年に地方・浦和でデビューし、約2年の間に9戦8勝の成績を残した後、美浦の相川勝敏厩舎に移籍しました。大事に使われながら1995年5月の府中Sで中央3勝目を挙げています。'
-  HTTP 200
-[0]  [Gemini生出力 251文字]: '今日の競馬情報です。\n園田競馬の佐々木世麗騎手は、6月3日に8鞍に騎乗しましたが、勝ち星を挙げることはできませんでした。1Rと9Rで3着に入ったのが最高着順でした。期待していたメインのサトノシュトラーセでは、先行有利の馬場コンディションもあり、伸び切れずに5着どまりでした。佐々木世麗騎手は「最後はそれなりに伸びてはいるんですが、能検ほど、ガツンと来るものがなかった。残念」と悔しさをにじませました。佐々木世麗騎手は4日も8鞍に騎乗する予定で、7Rのデイムサンライズには「力上位」と期待を寄せています。'
-[0]  [重複除去] 251文字 → 250文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (270文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。マイル8戦8勝を記録した地方出身のトロットサンダーが安田記念を制してから30年が経ちました。オグリキャップの余韻が残る90年代...
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 280文字]: '注目の競馬情報をお届けします。\n園田競馬5日目、6月4日の情報です。小牧太騎手は現在86勝を挙げています。9レースのアンノドミニには力が入っており、「うまく立ち回って上位を目指す」とコメントしています。また、6レースのマットーネロッソについては「堅実には走っているが…」と述べています。下原理騎手は現在66勝。5レースのアズユーライクには好感触を得ており、「追い切りの動きはよかった」と語っています。12レースのエイシンアニーモについても「テンからしっかり行きたい」と意欲を見せています。3レースのナムラダニーは「大外枠がいい方に出れば」とコメントしています。'
-[1]  [redirectフィルター] 280文字 → 264文字
+[2]  [Gemini生出力 276文字]: '重要な競馬ニュースをお伝えします。昨年の有馬記念の覇者ミュージアムマイルは、4歳になった2026年、ドバイターフから始動する予定でしたが、現地の情勢から遠征を見送りました。次に香港遠征も予定されましたが、こちらも見送りとなり、宝塚記念（6月14日・阪神芝2200m）が今年の初戦となります。今朝4日には、その1週前追い切りが行われ、レースで騎乗予定のD.レーン騎手が跨り、1回目のハロー終了直後のCWコースへ入場しました。宝塚記念の指定席倍率は最大「356.0倍」となっています。また、クロワデュノールやメイショウタバルなどが宝塚記念に登録しています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (276文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。昨年の有馬記念の覇者ミュージアムマイルは、4歳になった2026年、ドバイターフから始動する予定でしたが、現地の情勢から遠征を見...
+  HTTP 200
+[1]  [Gemini生出力 254文字]: '重要な競馬ニュースをお伝えします。\n6月14日(日)に阪神競馬場、芝2200mで行われるGI、宝塚記念。昨年の覇者であり、ファン投票では2位の支持を受けているメイショウタバルが、今朝4日、レースに向けた1週前追い切りを行いました。栗東のCWコースへ一番に入場し、太宰啓介騎手を背に単走という内容でしたが、1コーナーから2コーナーの行きっぷりは先週までに比べると、少し行きたがっている様子でした。なお、レースでは武豊騎手が騎乗予定です。豪華メンバーが集う宝塚記念の指定席倍率は、最大356.0倍に達しています。'
+[1]  [重複除去] 254文字 → 253文字
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (263文字)
-[1]  プレビュー: 園田競馬5日目、6月4日の情報です。小牧太騎手は現在86勝を挙げています。9レースのアンノドミニには力が入っており、「うまく立ち回って上位を目指す」とコメントし...
+[1]  → output/script_1.txt 保存 (253文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。6月14日(日)に阪神競馬場、芝2200mで行われるGI、宝塚記念。昨年の覇者であり、ファン投票では2位の支持を受けているメイ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -77,39 +64,9 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 232文字]: '今日の競馬情報です。\n佐々木世麗騎手は、6月3日に8鞍に騎乗しましたが、1Rと9Rで3着に入ったのが最高で、勝ち星を挙げることはできませんでした。期待していたメインのサトノシュトラーセでは、先行有利の馬場コンディションもあって伸び切れず5着どまりでした。佐々木騎手は「最後はそれなりに伸びてはいるんですが、能検ほど、ガツンと来るものがなかった。残念」と悔しさをにじませています。4日も8鞍に騎乗する予定で、7Rのデイムサンライズには「力上位」と期待を寄せています。'
-[0]  [重複除去] 232文字 → 231文字
-[0] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 232文字]: '今日の競馬情報です。\n佐々木世麗騎手は6月3日に8鞍に騎乗しましたが、1Rと9Rで3着に入ったのが最高で、勝ち星を挙げることはできませんでした。期待していたメインのサトノシュトラーセでは、先行有利の馬場コンディションもあって伸び切れず5着どまりでした。佐々木騎手は「最後はそれなりに伸びてはいるんですが、能検ほど、ガツンと来るものがなかった。残念」と悔しさをにじませました。4日も8鞍に騎乗する予定で、特に7Rのデイムサンライズには「力上位」と期待を寄せています。'
-[0]  [重複除去] 232文字 → 231文字
-[0] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.0-flash-lite  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [0] のスクリプト生成失敗。
+[0]  [Gemini生出力 233文字]: '競馬速報です。2024年のダービー馬ダノンデサイルが、宝塚記念の1週前追い切りを行いました。安田翔伍厩舎所属のダノンデサイルは、6月14日に阪神芝2200mで行われる春のグランプリ、宝塚記念に初めて出走します。これまでに有馬記念には2回出走し、いずれも3着という成績です。今朝4日の追い切りでは、前走大阪杯で騎乗停止だった戸崎圭太騎手が騎乗し、レース本番も騎乗予定です。CWコースで3歳未勝利の2頭を追走する内容で、馬場入り時から少し気持ちが乗った走りを見せました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (233文字)
+[0]  プレビュー: 競馬速報です。2024年のダービー馬ダノンデサイルが、宝塚記念の1週前追い切りを行いました。安田翔伍厩舎所属のダノンデサイルは、6月14日に阪神芝2200mで行...
 
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+3 件の脚本を生成しました。
