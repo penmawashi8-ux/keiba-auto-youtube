@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """POG2026-2027 横向き（1280×720）動画生成。
 
-ニュース動画と同じ「センテンスごとにクリップ作成→concat」方式で音声ズレを防ぐ。
-馬紹介章では全センテンスを通じて血統カードを常時表示。
-背景はgeqフィルターのみ（Pixabay不使用）。
+主な特徴：
+- Pixabay の馬写真 + タイプ別色処理（本命=暗赤金、大穴①=ブルー、大穴②=クリムゾン）
+- ffmpeg ass= フィルターでネイティブ字幕レンダリング（マージバグ解消）
+- 血統表カード（父=青系・母=桃系）を章頭に表示
+- 各章の背景は章全体で持続
 """
 import glob
 import json
@@ -22,51 +24,97 @@ ASSETS_DIR    = "assets"
 BGM_DIR       = f"{ASSETS_DIR}/bgm"
 W, H          = 1280, 720
 FPS           = 30
+OPEN_DUR      = 3.5
+PEDIGREE_DUR  = 5.0
 BGM_VOL       = 0.12
-SUB_WRAP      = 22
-MIN_CLIP_DUR  = 0.5
 
-_MARKER_RE = re.compile(r'^【[^】]+】$')
+# ── Pixabay クエリ（馬ごと） ────────────────────────────────────
+PIXABAY_QUERIES: dict[str, list[str]] = {
+    "ダノンダックス": ["horse portrait dark dramatic gold", "thoroughbred horse dark background", "horse racing dark spotlight"],
+    "ジャンゴッド":   ["horse jockey racing dramatic", "horse galloping dark dramatic", "horse racing action dark"],
+    "ソブリオ":      ["black stallion dark background dramatic", "horse portrait black dark", "stallion dark cinematic"],
+    "ノイエルング":   ["horse blue night dramatic", "horse dark blue portrait", "stallion blue dramatic night"],
+    "レニュアージュ": ["horse portrait brown red dramatic", "thoroughbred dark red portrait", "horse dark red atmospheric"],
+    "__general__":   ["horse racing dramatic dark", "horse silhouette dramatic", "thoroughbred dark"],
+}
 
-# ── geq背景: 馬ごとに異なるスポットライト配置（pow(x,0.5) でffmpeg互換性確保）──
+# ── タイプ別 ffmpeg 色処理フィルター ───────────────────────────
+_COLOR_VF: dict[str, str] = {
+    # 本命: ダーク＋暖色ゴールド（gamma_r↑, gamma_b↓, 強コントラスト）
+    "本命":    ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                "eq=brightness=-0.55:contrast=1.30:saturation=1.20:gamma_r=1.45:gamma_b=0.48,"
+                "vignette=PI/2.5"),
+    # 大穴_blue: ダーク＋電気ブルー（gamma_b↑↑, gamma_r↓↓, 低彩度）
+    "大穴_blue": ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                  "eq=brightness=-0.55:contrast=1.35:saturation=0.75:gamma_r=0.42:gamma_b=1.75,"
+                  "vignette=PI/2.5"),
+    # 大穴_red: ダーク＋クリムゾン赤（gamma_r↑↑, gamma_b↓↓）
+    "大穴_red":  ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                  "eq=brightness=-0.55:contrast=1.30:saturation=1.15:gamma_r=1.65:gamma_b=0.35,"
+                  "vignette=PI/2.5"),
+    "__general__": ("scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                    "eq=brightness=-0.58:contrast=1.15,"
+                    "vignette=PI/2.5"),
+}
+
+# ── 馬名 → 色タイプ ─────────────────────────────────────────
+_NAME_TO_COLOR: dict[str, str] = {
+    "ダノンダックス": "本命",
+    "ジャンゴッド":   "本命",
+    "ソブリオ":      "本命",
+    "ノイエルング":   "大穴_blue",
+    "レニュアージュ": "大穴_red",
+}
+
+# ── geq フォールバック（Pixabay 失敗時）: pow/abs/max/clip のみ使用（確実に動く）
 _GEQ_HORSE: dict[str, dict] = {
-    # ダノンダックス: 左上からのアンバー日射し
     "ダノンダックス": dict(
-        r="clip(8+210*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),1.8)+28*pow(1-Y/H,5),0,255)",
-        g="clip(4+72*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),2.6)+6*pow(1-Y/H,5),0,255)",
-        b="clip(2+8*pow(max(0,1-2.0*pow(pow((X/W-0.22)*1.2,2)+pow(Y/H-0.12,2),0.5)),4.5),0,255)",
+        r="clip(10+200*pow(Y/H,2.0)*(0.4+0.6*pow(1-abs(2*X/W-1),1.5)),0,255)",
+        g="clip(5+85*pow(Y/H,2.2)*(0.4+0.6*pow(1-abs(2*X/W-1),2.0)),0,255)",
+        b="clip(3+18*pow(Y/H,2.5),0,255)",
     ),
-    # ジャンゴッド: 右上からのゴールドスポット
     "ジャンゴッド": dict(
-        r="clip(10+215*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),1.9),0,255)",
-        g="clip(5+68*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),2.7),0,255)",
-        b="clip(2+7*pow(max(0,1-2.1*pow(pow((X/W-0.78)*1.3,2)+pow(Y/H-0.15,2),0.5)),5.0),0,255)",
+        r="clip(14+170*pow(Y/H,1.8)*(0.3+0.7*pow(1-abs(2*X/W-1),1.2)),0,255)",
+        g="clip(4+30*pow(Y/H,2.5),0,255)",
+        b="clip(3+8*pow(Y/H,3.0),0,255)",
     ),
-    # ソブリオ: 真上中央からの純金スポット
     "ソブリオ": dict(
-        r="clip(8+230*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),2.0),0,255)",
-        g="clip(4+82*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),2.8),0,255)",
-        b="clip(1+5*pow(max(0,1-2.3*pow(pow((X/W-0.5)*1.4,2)+pow(Y/H-0.18,2),0.5)),6.0),0,255)",
+        r="clip(10+150*pow(Y/H,2.0)*(0.35+0.65*pow(1-abs(2*X/W-1),1.4)),0,255)",
+        g="clip(8+120*pow(Y/H,2.0)*(0.35+0.65*pow(1-abs(2*X/W-1),1.6)),0,255)",
+        b="clip(3+22*pow(Y/H,2.8),0,255)",
     ),
-    # ノイエルング: 中心からのエレクトリックブルー
     "ノイエルング": dict(
-        r="clip(3+18*pow(max(0,1-2.8*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),2.5),0,255)",
-        g="clip(5+45*pow(max(0,1-2.8*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),2.0),0,255)",
-        b="clip(16+225*pow(max(0,1-2.3*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),1.6),0,255)",
+        r="clip(5+12*pow(1-abs(2*Y/H-1),4),0,255)",
+        g="clip(8+22*pow(1-abs(2*Y/H-1),3.5),0,255)",
+        b="clip(18+155*pow(1-abs(2*Y/H-1),2.5)*(0.5+0.5*pow(1-abs(2*X/W-1),1.5)),0,255)",
     ),
-    # レニュアージュ: 右中央からのクリムゾン
     "レニュアージュ": dict(
-        r="clip(12+210*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),1.8),0,255)",
-        g="clip(3+14*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),3.5),0,255)",
-        b="clip(2+6*pow(max(0,1-2.0*pow(pow((X/W-0.62)*1.2,2)+pow((Y/H-0.5)*1.3,2),0.5)),4.5),0,255)",
+        r="clip(14+180*pow(Y/H,1.7)*(0.3+0.7*pow(1-abs(2*X/W-1),1.0)),0,255)",
+        g="clip(4+16*pow(Y/H,2.8),0,255)",
+        b="clip(3+6*pow(Y/H,3.5),0,255)",
     ),
-    # 汎用: 中心の微弱な白グロー
     "__general__": dict(
-        r="clip(6+70*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
-        g="clip(5+60*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
-        b="clip(4+50*pow(max(0,1-3.2*pow(pow(X/W-0.5,2)+pow(Y/H-0.5,2),0.5)),3.0),0,255)",
+        r="clip(8+55*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
+        g="clip(6+42*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
+        b="clip(5+30*pow(1-abs(2*X/W-1),3)*pow(1-abs(2*Y/H-1),3),0,255)",
     ),
 }
+
+# ── 横動画用 ASS ヘッダーテンプレート ──────────────────────────
+_LANDSCAPE_ASS_HEADER = """\
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,{font_name},40,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,3,1,2,20,20,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
 
 
 # ─────────────────────────────────────────────────────────
@@ -111,6 +159,161 @@ def wrap_text(text: str, max_chars: int) -> str:
     return "\n".join(lines)
 
 
+# ─────────────────────────────────────────────────────────
+# 背景画像取得・生成
+# ─────────────────────────────────────────────────────────
+
+def _apply_color_vf(src: str, color_key: str, out: str) -> bool:
+    """src 画像にタイプ別色処理を適用して out に保存。"""
+    template = _COLOR_VF.get(color_key, _COLOR_VF["__general__"])
+    vf = template.format(W=W, H=H)
+    res = subprocess.run(
+        ["ffmpeg", "-y", "-i", src, "-vf", vf, "-frames:v", "1", "-q:v", "2", out],
+        capture_output=True,
+    )
+    return res.returncode == 0
+
+
+def _geq_fallback(name: str, out: str) -> None:
+    """馬名ごとに異なるgeqグラデーション背景を生成する。"""
+    g = _GEQ_HORSE.get(name, _GEQ_HORSE["__general__"])
+    geq = f"r='{g['r']}':g='{g['g']}':b='{g['b']}'"
+    res = subprocess.run([
+        "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}:r=1",
+        "-vf", f"geq={geq},vignette=PI/2.5",
+        "-frames:v", "1", "-q:v", "2", out,
+    ], capture_output=True)
+    if res.returncode != 0:
+        print(f"  [警告] geq失敗 ({name}), 単色フォールバック", file=sys.stderr)
+        subprocess.run([
+            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=#1A1008:s={W}x{H}:r={FPS}",
+            "-frames:v", "1", "-q:v", "3", out,
+        ], capture_output=True)
+
+
+def fetch_bg(name: str, queries: list[str], color_key: str, out: str, pixabay_key: str) -> str:
+    """Pixabay から馬写真を取得して色処理を適用。失敗時は geq フォールバック。"""
+    if Path(out).exists() and Path(out).stat().st_size > 5000:
+        return out
+
+    fetched = False
+    if pixabay_key:
+        try:
+            import requests as req_lib
+            for q in queries:
+                try:
+                    r = req_lib.get("https://pixabay.com/api/", params={
+                        "key": pixabay_key, "q": q, "image_type": "photo",
+                        "orientation": "horizontal", "min_width": 1280, "min_height": 720,
+                        "per_page": 20, "safesearch": "true",
+                    }, timeout=30)
+                    hits = r.json().get("hits", [])
+                    if not hits:
+                        continue
+                    url = random.choice(hits).get("webformatURL", "")
+                    if not url:
+                        continue
+                    img = req_lib.get(url, timeout=30)
+                    if img.status_code != 200:
+                        continue
+                    tmp = out + ".dl.jpg"
+                    Path(tmp).write_bytes(img.content)
+                    ok = _apply_color_vf(tmp, color_key, out)
+                    Path(tmp).unlink(missing_ok=True)
+                    if ok:
+                        fetched = True
+                        print(f"  Pixabay取得: {name} ({q})")
+                        break
+                except Exception as e:
+                    print(f"  Pixabay失敗 {q}: {e}", file=sys.stderr)
+        except ImportError:
+            pass
+
+    if not fetched:
+        _geq_fallback(name, out)
+        print(f"  geqフォールバック: {name}")
+
+    return out
+
+
+def prepare_backgrounds(horses: list[dict], pixabay_key: str) -> dict[str, str]:
+    """全章分の背景画像を準備してパスマップを返す。"""
+    Path(ASSETS_DIR).mkdir(exist_ok=True)
+    imgs: dict[str, str] = {}
+    for horse in horses:
+        name      = horse["name"]
+        color_key = _NAME_TO_COLOR.get(name, "__general__")
+        out       = f"{ASSETS_DIR}/pog_bg_{name}.jpg"
+        queries   = PIXABAY_QUERIES.get(name, PIXABAY_QUERIES["__general__"])
+        imgs[name] = fetch_bg(name, queries, color_key, out, pixabay_key)
+    imgs["__general__"] = fetch_bg(
+        "__general__",
+        PIXABAY_QUERIES["__general__"],
+        "__general__",
+        f"{ASSETS_DIR}/pog_bg_general.jpg",
+        pixabay_key,
+    )
+    return imgs
+
+
+# ─────────────────────────────────────────────────────────
+# ASS 字幕 → 横動画用に変換（ass= フィルターで使うため）
+# ─────────────────────────────────────────────────────────
+
+def prepare_landscape_ass(src_ass: str, tmp_dir: str) -> str | None:
+    """縦動画用 ASS（PlayResX:1080 PlayResY:1920）を横動画用に変換して tmp_dir に保存。"""
+    if not Path(src_ass).exists() or Path(src_ass).stat().st_size < 100:
+        return None
+
+    content = Path(src_ass).read_text(encoding="utf-8")
+
+    # 元ファイルのフォント名を引き継ぐ
+    font_name = "Noto Sans CJK JP"
+    for line in content.splitlines():
+        if line.startswith("Style:"):
+            parts = line.split(",")
+            if len(parts) > 1:
+                font_name = parts[1].strip()
+            break
+
+    # 章マーカー（【...】だけの行）を除いたダイアログ行のみ抽出
+    marker_re = re.compile(r'^【[^】]+】$')
+    dialogue_lines = []
+    for line in content.splitlines():
+        if not line.startswith("Dialogue:"):
+            continue
+        parts = line.split(",", 9)
+        if len(parts) < 10:
+            continue
+        text = parts[9].replace("\\N", " ").strip()
+        if marker_re.match(text):
+            continue
+        dialogue_lines.append(line)
+
+    if not dialogue_lines:
+        return None
+
+    out = f"{tmp_dir}/landscape_subs.ass"
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(_LANDSCAPE_ASS_HEADER.format(font_name=font_name))
+        for line in dialogue_lines:
+            f.write(line + "\n")
+
+    return out
+
+
+# ─────────────────────────────────────────────────────────
+# 章タイミング
+# ─────────────────────────────────────────────────────────
+
+def chapters_from_meta(meta_chapters: list[dict], stripped_len: int,
+                        aud_dur: float) -> list[tuple[str, float]]:
+    return [
+        (ch["title"], (ch.get("stripped_char_pos", 0) / max(stripped_len, 1)) * aud_dur)
+        for ch in meta_chapters
+    ]
+
+
 def match_horse(chapter_title: str, horses: list[dict]) -> dict | None:
     for h in horses:
         if h["name"] in chapter_title:
@@ -119,344 +322,293 @@ def match_horse(chapter_title: str, horses: list[dict]) -> dict | None:
 
 
 # ─────────────────────────────────────────────────────────
-# 背景画像生成（geqのみ、Pixabay不使用）
+# 血統表カード
 # ─────────────────────────────────────────────────────────
 
-def generate_bg(name: str, out: str) -> None:
-    g   = _GEQ_HORSE.get(name, _GEQ_HORSE["__general__"])
-    geq = f"r='{g['r']}':g='{g['g']}':b='{g['b']}'"
-    res = subprocess.run([
-        "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}:r=1",
-        "-vf", f"geq={geq},vignette=PI/2.5",
-        "-frames:v", "1", "-q:v", "2", out,
-    ], capture_output=True)
-    if res.returncode != 0:
-        subprocess.run([
-            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c=#0A0A14:s={W}x{H}:r={FPS}",
-            "-frames:v", "1", "-q:v", "3", out,
-        ], capture_output=True)
+def pedigree_card_filters(horse: dict, t1: float, t2: float,
+                           ci: int, tmp_dir: str, fp: str) -> list[str]:
+    enable = f"between(t,{t1:.3f},{t2:.3f})"
+    vf: list[str] = []
 
+    def tf(name: str, text: str) -> str:
+        p = f"{tmp_dir}/{name}.txt"
+        Path(p).write_text(text, encoding="utf-8")
+        return _esc(p)
 
-def prepare_backgrounds(horses: list[dict]) -> dict[str, str]:
-    Path(ASSETS_DIR).mkdir(exist_ok=True)
-    imgs: dict[str, str] = {}
-    for horse in horses:
-        name = horse["name"]
-        out  = f"{ASSETS_DIR}/pog_bg_{name}.jpg"
-        if not Path(out).exists() or Path(out).stat().st_size < 5000:
-            generate_bg(name, out)
-            print(f"  背景生成: {name}")
-        imgs[name] = out
-    out_g = f"{ASSETS_DIR}/pog_bg_general.jpg"
-    if not Path(out_g).exists() or Path(out_g).stat().st_size < 5000:
-        generate_bg("__general__", out_g)
-        print(f"  背景生成: general")
-    imgs["__general__"] = out_g
-    return imgs
+    # 背景パネル
+    vf.append(
+        f"drawtext=textfile='{tf(f'panel_{ci}', chr(12288)*22)}':fontfile='{fp}':"
+        f"fontsize=52:fontcolor=0x000000@0:"
+        f"x=(w-text_w)/2:y=h/2-185:"
+        f"box=1:boxcolor=0x080818@0.92:boxborderw=210:"
+        f"enable='{enable}'"
+    )
 
+    # タイプバッジ
+    horse_type = horse.get("type", "本命")
+    badge_col  = "0x8B0000" if horse_type == "本命" else "0xBF4500"
+    vf.append(
+        f"drawtext=textfile='{tf(f'badge_{ci}', f'【{horse_type}】')}':fontfile='{fp}':"
+        f"fontsize=36:fontcolor=0xFFFFFF:"
+        f"x=(w-text_w)/2:y=h/2-178:"
+        f"box=1:boxcolor={badge_col}@0.97:boxborderw=14:"
+        f"enable='{enable}'"
+    )
 
-# ─────────────────────────────────────────────────────────
-# スクリプト解析
-# ─────────────────────────────────────────────────────────
+    # 馬名
+    name_col = "0xFFD700" if horse_type == "本命" else "0xFF6347"
+    vf.append(
+        f"drawtext=textfile='{tf(f'hname_{ci}', horse['name'])}':fontfile='{fp}':"
+        f"fontsize=80:fontcolor={name_col}:"
+        f"x=(w-text_w)/2:y=h/2-112:"
+        f"borderw=4:bordercolor=0x000000:"
+        f"enable='{enable}'"
+    )
 
-def parse_script_chapters(chapters_script: str, horses: list[dict]) -> list[dict]:
-    """章マーカー付きスクリプトを章ごとのセンテンスリストに変換する。"""
-    chapters: list[dict]      = []
-    current_title: str | None = None
-    current_texts: list[str]  = []
+    # 父セル（青）
+    vf.append(
+        f"drawtext=textfile='{tf(f'sl_{ci}', '父')}':fontfile='{fp}':"
+        f"fontsize=40:fontcolor=0x1A3A6E:"
+        f"x=(w-text_w)/2-205:y=h/2-18:"
+        f"box=1:boxcolor=0xB8D8F0@0.92:boxborderw=24:"
+        f"enable='{enable}'"
+    )
+    vf.append(
+        f"drawtext=textfile='{tf(f'sire_{ci}', horse['sire'])}':fontfile='{fp}':"
+        f"fontsize=48:fontcolor=0x1A3A6E:"
+        f"x=(w-text_w)/2+30:y=h/2-24:"
+        f"box=1:boxcolor=0xD6EAF8@0.88:boxborderw=20:"
+        f"borderw=1:bordercolor=0x5B9BD5:"
+        f"enable='{enable}'"
+    )
 
-    def _flush(title: str, texts: list[str]) -> None:
-        if not texts:
-            return
-        full  = " ".join(texts)
-        sents = [s.strip() for s in re.split(r"(?<=[。！？])", full) if s.strip()]
-        if not sents:
-            sents = [full.strip()]
-        chapters.append({
-            "title":     title,
-            "horse":     match_horse(title, horses),
-            "sentences": sents,
-        })
+    # 母セル（桃）
+    vf.append(
+        f"drawtext=textfile='{tf(f'dl_{ci}', '母')}':fontfile='{fp}':"
+        f"fontsize=40:fontcolor=0x7A1A3A:"
+        f"x=(w-text_w)/2-205:y=h/2+46:"
+        f"box=1:boxcolor=0xFFB6C1@0.92:boxborderw=24:"
+        f"enable='{enable}'"
+    )
+    vf.append(
+        f"drawtext=textfile='{tf(f'dam_{ci}', horse['dam'])}':fontfile='{fp}':"
+        f"fontsize=48:fontcolor=0x7A1A3A:"
+        f"x=(w-text_w)/2+30:y=h/2+40:"
+        f"box=1:boxcolor=0xFAD7E0@0.88:boxborderw=20:"
+        f"borderw=1:bordercolor=0xE07090:"
+        f"enable='{enable}'"
+    )
 
-    for line in chapters_script.splitlines():
-        s = line.strip()
-        if _MARKER_RE.match(s):
-            if current_title is not None:
-                _flush(current_title, current_texts)
-            current_title = s
-            current_texts = []
-        elif s:
-            current_texts.append(s)
-
-    if current_title is not None:
-        _flush(current_title, current_texts)
-
-    return chapters
-
-
-# ─────────────────────────────────────────────────────────
-# クリップ生成
-# ─────────────────────────────────────────────────────────
-
-def make_pog_clip(
-    idx:      int,
-    bg:       str | None,
-    sentence: str,
-    duration: float,
-    font:     str | None,
-    tmp_dir:  str,
-    horse:    dict | None = None,
-) -> str:
-    """1センテンス分のMP4クリップを生成する。馬章では血統カードを常時表示。"""
-    clip_path = f"{tmp_dir}/clip_{idx:04d}.mp4"
-    duration  = max(duration, MIN_CLIP_DUR)
-
-    cmd = ["ffmpeg", "-y"]
-    if bg and Path(bg).exists():
-        cmd  += ["-loop", "1", "-i", bg]
-        chain = (
-            f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,"
-            f"crop={W}:{H},setsar=1"
+    # 落札額・注記・厩舎
+    y_off = 108
+    sale = horse.get("sale_price", "―")
+    if sale and sale != "―":
+        vf.append(
+            f"drawtext=textfile='{tf(f'sale_{ci}', '落札額　' + sale)}':fontfile='{fp}':"
+            f"fontsize=34:fontcolor=0xFFFF99:"
+            f"x=(w-text_w)/2:y=h/2+{y_off}:"
+            f"borderw=2:bordercolor=0x000000:"
+            f"enable='{enable}'"
         )
-    else:
-        cmd  += ["-f", "lavfi", "-i", f"color=c=#0A0A14:s={W}x{H}:r={FPS}"]
-        chain = "[0:v]setsar=1"
+        y_off += 44
 
-    if font:
-        fp = _esc(font)
+    note = horse.get("note", "")
+    if note:
+        vf.append(
+            f"drawtext=textfile='{tf(f'note_{ci}', note)}':fontfile='{fp}':"
+            f"fontsize=34:fontcolor=0x7FFF00:"
+            f"x=(w-text_w)/2:y=h/2+{y_off}:"
+            f"borderw=2:bordercolor=0x000000:"
+            f"enable='{enable}'"
+        )
+        y_off += 44
 
-        def tf(label: str, text: str) -> str:
-            p = f"{tmp_dir}/{label}_{idx}.txt"
-            Path(p).write_text(text, encoding="utf-8")
-            return _esc(p)
+    trainer = horse.get("trainer", "")
+    if trainer:
+        trainer_text = "厩舎：" + trainer
+        vf.append(
+            f"drawtext=textfile='{tf(f'trainer_{ci}', trainer_text)}':fontfile='{fp}':"
+            f"fontsize=30:fontcolor=0xCCCCCC:"
+            f"x=(w-text_w)/2:y=h/2+{y_off}:"
+            f"borderw=1:bordercolor=0x000000:"
+            f"enable='{enable}'"
+        )
 
-        # ── コーナー装飾 ──────────────────────────────────
-        for cname, cx, cy in [
-            ("ctl", "22",          "18"),
-            ("ctr", "w-text_w-22", "18"),
-            ("cbl", "22",          "h-text_h-18"),
-            ("cbr", "w-text_w-22", "h-text_h-18"),
-        ]:
-            p = f"{tmp_dir}/{cname}_{idx}.txt"
-            Path(p).write_text("◆", encoding="utf-8")
-            chain += (
-                f",drawtext=textfile='{_esc(p)}':fontfile='{fp}':"
-                f"fontsize=32:fontcolor=0xFFD700@0.80:"
-                f"x={cx}:y={cy}:borderw=1:bordercolor=0x806000"
-            )
-
-        # ── 馬章の血統カード ─────────────────────────────
-        if horse:
-            horse_type = horse.get("type", "本命")
-            badge_col  = "0x8B0000" if horse_type == "本命" else "0xBF4500"
-            name_col   = "0xFFD700" if horse_type == "本命" else "0xFF8C00"
-
-            # タイプバッジ
-            chain += (
-                f",drawtext=textfile='{tf('badge', f'【{horse_type}】')}':"
-                f"fontfile='{fp}':fontsize=42:fontcolor=0xFFFFFF:"
-                f"x=(w-text_w)/2:y=22:"
-                f"box=1:boxcolor={badge_col}@0.97:boxborderw=18"
-            )
-
-            # 馬名（大きく、半透明ボックス付き）
-            chain += (
-                f",drawtext=textfile='{tf('hname', horse['name'])}':"
-                f"fontfile='{fp}':fontsize=100:fontcolor={name_col}:"
-                f"x=(w-text_w)/2:y=90:"
-                f"box=1:boxcolor=0x000000@0.55:boxborderw=20:"
-                f"borderw=4:bordercolor=0x000000"
-            )
-
-            # 父ラベル（青）
-            chain += (
-                f",drawtext=textfile='{tf('sl', '父')}':"
-                f"fontfile='{fp}':fontsize=46:fontcolor=0x1A3A6E:"
-                f"x=(w-text_w)/2-240:y=238:"
-                f"box=1:boxcolor=0xB8D8F0@0.95:boxborderw=28"
-            )
-            # 父名
-            chain += (
-                f",drawtext=textfile='{tf('sire', horse['sire'])}':"
-                f"fontfile='{fp}':fontsize=46:fontcolor=0x1A3A6E:"
-                f"x=(w-text_w)/2+40:y=238:"
-                f"box=1:boxcolor=0xD6EAF8@0.92:boxborderw=24:"
-                f"borderw=1:bordercolor=0x5B9BD5"
-            )
-
-            # 母ラベル（桃）
-            chain += (
-                f",drawtext=textfile='{tf('dl', '母')}':"
-                f"fontfile='{fp}':fontsize=46:fontcolor=0x7A1A3A:"
-                f"x=(w-text_w)/2-240:y=320:"
-                f"box=1:boxcolor=0xFFB6C1@0.95:boxborderw=28"
-            )
-            # 母名
-            chain += (
-                f",drawtext=textfile='{tf('dam', horse['dam'])}':"
-                f"fontfile='{fp}':fontsize=46:fontcolor=0x7A1A3A:"
-                f"x=(w-text_w)/2+40:y=320:"
-                f"box=1:boxcolor=0xFAD7E0@0.92:boxborderw=24:"
-                f"borderw=1:bordercolor=0xE07090"
-            )
-
-            # 落札額・注記
-            y_note = 418
-            sale = horse.get("sale_price", "―")
-            if sale and sale != "―":
-                chain += (
-                    f",drawtext=textfile='{tf('sale', '落札額　' + sale)}':"
-                    f"fontfile='{fp}':fontsize=36:fontcolor=0xFFFF99:"
-                    f"x=(w-text_w)/2:y={y_note}:"
-                    f"borderw=2:bordercolor=0x000000"
-                )
-                y_note += 50
-
-            note = horse.get("note", "")
-            if note:
-                chain += (
-                    f",drawtext=textfile='{tf('note', note)}':"
-                    f"fontfile='{fp}':fontsize=36:fontcolor=0x7FFF00:"
-                    f"x=(w-text_w)/2:y={y_note}:"
-                    f"borderw=2:bordercolor=0x000000"
-                )
-
-        # ── センテンス字幕（画面下部に常時表示） ─────────────
-        if sentence:
-            wrapped = wrap_text(sentence, SUB_WRAP)
-            chain += (
-                f",drawtext=textfile='{tf('sub', wrapped)}':"
-                f"fontfile='{fp}':fontsize=44:fontcolor=0xFFFFFF:"
-                f"x=(w-text_w)/2:y=h-text_h-40:"
-                f"box=1:boxcolor=0x000000@0.78:boxborderw=22:"
-                f"borderw=2:bordercolor=0x000000:"
-                f"line_spacing=10"
-            )
-
-    chain += "[vout]"
-
-    cmd += [
-        "-filter_complex", chain,
-        "-map", "[vout]",
-        "-an",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
-        "-t", str(duration),
-        clip_path,
-    ]
-
-    res = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
-    if res.returncode != 0:
-        print(f"  [警告] clip_{idx} 失敗: {res.stderr[-300:]}", file=sys.stderr)
-        fb = [
-            "ffmpeg", "-y", "-f", "lavfi", "-i",
-            f"color=c=#0A0A14:s={W}x{H}:r={FPS}:d={duration}",
-            "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p",
-            "-t", str(duration), clip_path,
-        ]
-        subprocess.run(fb, check=True, capture_output=True)
-
-    return clip_path
+    return vf
 
 
 # ─────────────────────────────────────────────────────────
-# 動画生成（ニュース動画と同じclip concat方式）
+# コーナー装飾
+# ─────────────────────────────────────────────────────────
+
+def corner_filters(fp: str, tmp_dir: str) -> list[str]:
+    vf: list[str] = []
+    sym = "◆"
+    for name, cx, cy in [
+        ("c_tl", "22",          "18"),
+        ("c_tr", "w-text_w-22", "18"),
+        ("c_bl", "22",          "h-text_h-18"),
+        ("c_br", "w-text_w-22", "h-text_h-18"),
+    ]:
+        p = f"{tmp_dir}/{name}.txt"
+        Path(p).write_text(sym, encoding="utf-8")
+        vf.append(
+            f"drawtext=textfile='{_esc(p)}':fontfile='{fp}':"
+            f"fontsize=32:fontcolor=0xFFD700@0.80:"
+            f"x={cx}:y={cy}:borderw=1:bordercolor=0x806000"
+        )
+    return vf
+
+
+# ─────────────────────────────────────────────────────────
+# 動画生成
 # ─────────────────────────────────────────────────────────
 
 def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str:
-    chapters_script_path = Path(f"{OUTPUT_DIR}/script_chapters_0.txt")
-    audio_path  = f"{OUTPUT_DIR}/audio_0.mp3"
-    output_path = f"{OUTPUT_DIR}/pog_landscape_video_0.mp4"
-    thumb_path  = f"{OUTPUT_DIR}/thumbnail_0.jpg"
+    script_path   = Path(f"{OUTPUT_DIR}/script_0.txt")
+    audio_path    = f"{OUTPUT_DIR}/audio_0.mp3"
+    ass_path      = f"{OUTPUT_DIR}/subtitles_0.ass"
+    output_path   = f"{OUTPUT_DIR}/pog_landscape_video_0.mp4"
 
+    if not script_path.exists():
+        raise FileNotFoundError(f"{script_path} が見つかりません。")
     if not Path(audio_path).exists():
         raise FileNotFoundError(f"{audio_path} が見つかりません。")
-    if not chapters_script_path.exists():
-        raise FileNotFoundError(f"{chapters_script_path} が見つかりません。")
 
-    aud_dur = audio_duration(audio_path)
-    horses  = meta.get("horses", [])
+    stripped_script = script_path.read_text(encoding="utf-8").strip()
+    aud_dur         = audio_duration(audio_path)
+    horses          = meta.get("horses", [])
+    meta_chapters   = meta.get("chapters", [])
 
-    chapters = parse_script_chapters(
-        chapters_script_path.read_text(encoding="utf-8"), horses,
-    )
-    print(f"  章数: {len(chapters)}, 総音声: {aud_dur:.1f}s")
-
-    # 全センテンスをフラット化して（文章, 馬）のリストにする
-    all_items: list[tuple[str, dict | None]] = []
-    for ch in chapters:
-        for sent in ch["sentences"]:
-            all_items.append((sent, ch["horse"]))
-
-    if not all_items:
-        raise RuntimeError("センテンスが0件です。スクリプトを確認してください。")
-
-    # 文字数比でクリップ尺を計算（ニュース動画と同じ方式 → 音声ズレなし）
-    total_chars = max(sum(len(s) for s, _ in all_items), 1)
-    durations   = [max(MIN_CLIP_DUR, aud_dur * len(s) / total_chars) for s, _ in all_items]
-    total_dur   = sum(durations)
-
-    print(f"  センテンス数: {len(all_items)}, 動画尺: {total_dur:.1f}s")
+    ch_times  = chapters_from_meta(meta_chapters, len(stripped_script), aud_dur)
+    segments: list[dict] = []
+    for ci, (title, t_start) in enumerate(ch_times):
+        t_end = ch_times[ci + 1][1] if ci + 1 < len(ch_times) else aud_dur
+        horse = match_horse(title, horses)
+        bg    = bg_imgs.get(horse["name"]) if horse else bg_imgs.get("__general__")
+        segments.append({
+            "title":   title,
+            "t_start": t_start,
+            "t_end":   t_end,
+            "dur":     max(t_end - t_start, 0.1),
+            "horse":   horse,
+            "bg":      bg or bg_imgs["__general__"],
+        })
 
     tmp_dir = tempfile.mkdtemp(prefix="pog_ls_")
     try:
-        clip_paths: list[str] = []
-        for i, ((sent, horse), dur) in enumerate(zip(all_items, durations)):
-            name = horse["name"] if horse else "__general__"
-            bg   = bg_imgs.get(name, bg_imgs["__general__"])
-            clip_paths.append(make_pog_clip(i, bg, sent, dur, font, tmp_dir, horse=horse))
-            if (i + 1) % 10 == 0 or (i + 1) == len(all_items):
-                print(f"  クリップ {i+1}/{len(all_items)} 完了")
+        fp = _esc(font or "")
+        N  = len(segments)
 
-        # クリップ結合
-        concat_txt = f"{tmp_dir}/concat.txt"
-        with open(concat_txt, "w", encoding="utf-8") as f:
-            for cp in clip_paths:
-                f.write(f"file '{cp}'\n")
+        bg_inputs: list[str] = []
+        pre_filters: list[str] = []
+        img_scale = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+                     f"crop={W}:{H},setsar=1")
 
-        silent_mp4 = f"{tmp_dir}/silent.mp4"
-        print("  クリップ結合中...")
-        res = subprocess.run([
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0", "-i", concat_txt,
-            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
-            silent_mp4,
-        ], capture_output=True, text=True)
-        if res.returncode != 0:
-            raise RuntimeError(f"concat失敗:\n{res.stderr[-400:]}")
+        for i, seg in enumerate(segments):
+            if seg["bg"] and Path(seg["bg"]).exists():
+                bg_inputs += ["-r", str(FPS), "-loop", "1",
+                               "-t", f"{seg['dur']:.3f}", "-i", seg["bg"]]
+                pre_filters.append(f"[{i}:v]{img_scale}[vi{i}]")
+            else:
+                bg_inputs += ["-f", "lavfi", "-i",
+                               f"color=c=#0D1B2A:s={W}x{H}:r={FPS}:d={seg['dur']:.3f}"]
+                pre_filters.append(f"[{i}:v]setsar=1[vi{i}]")
 
-        # 音声 + BGM ミックス
+        concat_in = "".join(f"[vi{i}]" for i in range(N))
+        pre_filters.append(f"{concat_in}concat=n={N}:v=1:a=0[bgout]")
+        audio_idx = N
+
+        video_filters: list[str] = []
+
+        if font:
+            def tf(name: str, text: str) -> str:
+                p = f"{tmp_dir}/{name}.txt"
+                Path(p).write_text(text, encoding="utf-8")
+                return _esc(p)
+
+            # コーナー装飾（常時）
+            video_filters.extend(corner_filters(fp, tmp_dir))
+
+            # オープニングカード
+            video_filters.append(
+                f"drawtext=textfile='{tf('open_t', wrap_text(meta.get('title', 'POG2026-2027'), 18))}':"
+                f"fontfile='{fp}':fontsize=64:fontcolor=0xFFD700:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2-22:"
+                f"box=1:boxcolor=0x000000@0.85:boxborderw=28:"
+                f"borderw=3:bordercolor=0x000000:"
+                f"enable='between(t,0,{OPEN_DUR})'"
+            )
+            video_filters.append(
+                f"drawtext=textfile='{tf('open_s', '本命3頭＋大穴2頭　完全解説')}':"
+                f"fontfile='{fp}':fontsize=38:fontcolor=0xFFFFFF:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2+60:"
+                f"borderw=2:bordercolor=0x000000:"
+                f"enable='between(t,0,{OPEN_DUR})'"
+            )
+
+            # 各章の血統カード
+            for ci, seg in enumerate(segments):
+                if not seg["horse"]:
+                    continue
+                t1 = seg["t_start"]
+                t2 = min(t1 + PEDIGREE_DUR, seg["t_end"])
+                if t2 <= t1 + 0.1:
+                    continue
+                video_filters.extend(
+                    pedigree_card_filters(seg["horse"], t1, t2, ci, tmp_dir, fp)
+                )
+
+            # 字幕: ffmpeg ネイティブ ass= フィルター（マージロジック不要）
+            landscape_ass = prepare_landscape_ass(ass_path, tmp_dir)
+            if landscape_ass:
+                font_dir = str(Path(font).parent)
+                video_filters.append(
+                    f"ass='{_esc(landscape_ass)}':fontsdir='{_esc(font_dir)}'"
+                )
+                print("  字幕: ASS フィルター適用")
+            else:
+                print("  [警告] ASS字幕なし / 変換失敗", file=sys.stderr)
+
+        if not video_filters:
+            video_filters.append(f"scale={W}:{H}")
+
+        vid_chain = "[bgout]" + ",".join(video_filters) + "[vout]"
+        fc_parts  = list(pre_filters) + [vid_chain]
+
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_file  = random.choice(bgm_files) if bgm_files else None
 
         if bgm_file:
             print(f"  BGM: {Path(bgm_file).name}")
-            fc  = (
-                f"[1:a]apad=whole_dur={total_dur:.3f}[narr];"
-                f"[narr][2:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]"
-            )
-            cmd = (["ffmpeg", "-y", "-i", silent_mp4,
-                    "-i", audio_path, "-stream_loop", "-1", "-i", bgm_file,
-                    "-filter_complex", fc, "-map", "0:v", "-map", "[aout]"])
+            ac = (f"[{audio_idx}:a]apad=whole_dur={aud_dur:.3f}[narr];"
+                  f"[narr][{audio_idx+1}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]")
+            fc  = ";".join(fc_parts) + ";" + ac
+            cmd = (["ffmpeg", "-y"] + bg_inputs +
+                   ["-i", audio_path, "-stream_loop", "-1", "-i", bgm_file,
+                    "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]"])
         else:
-            cmd = (["ffmpeg", "-y", "-i", silent_mp4, "-i", audio_path,
-                    "-af", f"apad=whole_dur={total_dur:.3f}",
-                    "-map", "0:v", "-map", "1:a"])
+            ac  = f"[{audio_idx}:a]apad=whole_dur={aud_dur:.3f}[aout]"
+            fc  = ";".join(fc_parts) + ";" + ac
+            cmd = (["ffmpeg", "-y"] + bg_inputs +
+                   ["-i", audio_path, "-filter_complex", fc,
+                    "-map", "[vout]", "-map", "[aout]"])
 
-        cmd += ["-c:v", "copy", "-c:a", "aac", "-b:a", "192k", output_path]
-        print("  音声結合中...")
-        res = subprocess.run(cmd, capture_output=True, text=True)
+        cmd += [
+            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "ultrafast",
+            "-c:a", "aac", "-b:a", "192k",
+            "-t", str(aud_dur + 0.5),
+            output_path,
+        ]
+
+        print(f"  動画生成中... (音声: {aud_dur:.1f}s, 章: {N})")
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
         if res.returncode != 0:
-            raise RuntimeError(f"音声結合失敗:\n{res.stderr[-400:]}")
+            print(f"  [エラー] ffmpeg:\n{res.stderr[-800:]}", file=sys.stderr)
+            raise RuntimeError(f"ffmpeg 失敗 rc={res.returncode}")
 
         size_mb = Path(output_path).stat().st_size / 1024 / 1024
         print(f"✅ {output_path} ({size_mb:.1f} MB)")
-
-        # サムネイル（先頭フレーム抽出）
-        subprocess.run([
-            "ffmpeg", "-y", "-ss", "0.5", "-i", output_path,
-            "-vframes", "1", "-q:v", "2", thumb_path,
-        ], capture_output=True)
-
         return output_path
 
     finally:
@@ -473,13 +625,14 @@ def main() -> None:
               file=sys.stderr)
         sys.exit(1)
 
-    meta   = json.loads(Path(POG_META_JSON).read_text(encoding="utf-8"))
-    horses = meta.get("horses", [])
-    font   = find_font()
+    meta         = json.loads(Path(POG_META_JSON).read_text(encoding="utf-8"))
+    horses       = meta.get("horses", [])
+    font         = find_font()
+    pixabay_key  = os.environ.get("PIXABAY_API_KEY", "")
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
-    print("=== 背景画像を生成中 ===")
-    bg_imgs = prepare_backgrounds(horses)
+    print("=== 背景画像を準備中 ===")
+    bg_imgs = prepare_backgrounds(horses, pixabay_key)
 
     print("\n=== POG横動画生成中 ===")
     generate_video(meta, font, bg_imgs)
