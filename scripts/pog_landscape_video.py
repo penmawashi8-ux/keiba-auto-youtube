@@ -28,14 +28,14 @@ OPEN_DUR      = 3.5
 PEDIGREE_DUR  = 5.0
 BGM_VOL       = 0.12
 
-# ── Pixabay クエリ（馬ごと） ────────────────────────────────────
+# ── Pixabay クエリ（馬ごと）: category=animals と組み合わせて使用 ────
 PIXABAY_QUERIES: dict[str, list[str]] = {
-    "ダノンダックス": ["horse portrait dark dramatic gold", "thoroughbred horse dark background", "horse racing dark spotlight"],
-    "ジャンゴッド":   ["horse jockey racing dramatic", "horse galloping dark dramatic", "horse racing action dark"],
-    "ソブリオ":      ["black stallion dark background dramatic", "horse portrait black dark", "stallion dark cinematic"],
-    "ノイエルング":   ["horse blue night dramatic", "horse dark blue portrait", "stallion blue dramatic night"],
-    "レニュアージュ": ["horse portrait brown red dramatic", "thoroughbred dark red portrait", "horse dark red atmospheric"],
-    "__general__":   ["horse racing dramatic dark", "horse silhouette dramatic", "thoroughbred dark"],
+    "ダノンダックス": ["racehorse galloping track", "thoroughbred horse racing", "horse running field"],
+    "ジャンゴッド":   ["horse jockey racing", "thoroughbred horse track", "racehorse running"],
+    "ソブリオ":      ["horse portrait elegant", "thoroughbred horse standing", "horse paddock"],
+    "ノイエルング":   ["horse running evening", "racehorse dark", "horse racing sunset"],
+    "レニュアージュ": ["horse mare portrait", "filly racehorse", "horse racing female"],
+    "__general__":   ["horse racing track", "thoroughbred horse", "racehorse"],
 }
 
 # ── タイプ別 ffmpeg 色処理フィルター ───────────────────────────
@@ -207,6 +207,7 @@ def fetch_bg(name: str, queries: list[str], color_key: str, out: str, pixabay_ke
                         "key": pixabay_key, "q": q, "image_type": "photo",
                         "orientation": "horizontal", "min_width": 1280, "min_height": 720,
                         "per_page": 20, "safesearch": "true",
+                        "category": "animals",
                     }, timeout=30)
                     hits = r.json().get("hits", [])
                     if not hits:
@@ -550,43 +551,17 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                 f"enable='between(t,0,{OPEN_DUR})'"
             )
 
-            # 各章の血統カード
+            # 各章の血統カード（章全体で表示）
             for ci, seg in enumerate(segments):
                 if not seg["horse"]:
                     continue
                 t1 = seg["t_start"]
-                t2 = min(t1 + PEDIGREE_DUR, seg["t_end"])
+                t2 = seg["t_end"]  # 章終了まで表示し続ける
                 if t2 <= t1 + 0.1:
                     continue
                 video_filters.extend(
                     pedigree_card_filters(seg["horse"], t1, t2, ci, tmp_dir, fp)
                 )
-
-            # 要所字幕: 各馬の章頭にタイトルバナーのみ表示（連続字幕は廃止）
-            TITLE_BANNER_DUR = 4.0
-            for ci, seg in enumerate(segments):
-                raw_title = seg["title"].strip()
-                if "オープニング" in raw_title or "エンディング" in raw_title:
-                    continue
-                display_title = re.sub(r'^【|】$', '', raw_title)
-                if not display_title:
-                    continue
-                t1 = seg["t_start"]
-                t2 = min(t1 + TITLE_BANNER_DUR, seg["t_end"])
-                if t2 <= t1 + 0.1:
-                    continue
-                enable = f"between(t,{t1:.3f},{t2:.3f})"
-                p = f"{tmp_dir}/ch_title_{ci}.txt"
-                Path(p).write_text(display_title, encoding="utf-8")
-                video_filters.append(
-                    f"drawtext=textfile='{_esc(p)}':fontfile='{fp}':"
-                    f"fontsize=46:fontcolor=0xFFFFFF:"
-                    f"x=(w-text_w)/2:y=h-100:"
-                    f"box=1:boxcolor=0x000000@0.72:boxborderw=18:"
-                    f"borderw=2:bordercolor=0x444444:"
-                    f"enable='{enable}'"
-                )
-            print("  要所字幕: 各馬章タイトルバナーを設定")
 
         if not video_filters:
             video_filters.append(f"scale={W}:{H}")
