@@ -1,10 +1,10 @@
-date: 2026-06-05T08:45:30.667509Z
+date: 2026-06-05T10:48:07.853811Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nfQ5AXMZyhc title=【有力馬動向】シュタールヴィントは函館SSへ！ 鞍上・岩田康誠騎手で一発の魅力あ
-OK project=1 video_id=jlChQ0xIfy0 title=【地方競馬】林正人調教師が１０００勝を達成「こんなに勝てるとは思ってもいなかった
-OK project=1 video_id=dRxS3wGKFNM title=【POG】プルヴィナルはフットワークに大物感あり！/馬三郎のつぶやき
+OK project=1 video_id=vr24srzzdxw title=【園田競馬】田野豊三騎手が地方通算700勝　「これからも勝っていけるように」
+OK project=1 video_id=jNj4OTrxXWQ title=阪神競馬場で“大物”誘導馬2頭が今週末デビュー!引退わずか2か月のマテンロウオリ
+OK project=1 video_id=BQIYo5GdS58 title=林正人調教師が通算1000勝達成「今まで通りのスタンスで戦っていきたい」南関東で
