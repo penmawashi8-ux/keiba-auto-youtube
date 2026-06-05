@@ -355,8 +355,102 @@ async def _edge_tts_with_words(script: str, audio_path: str, voice: str, rate: s
     return words
 
 
+def _generate_pog_chapters() -> bool:
+    """output/pog_ch*.txt をチャプターごとに音声生成して結合する。
+    chapter_timings_0.json に正確な開始時刻を保存し、audio_0.mp3 として連結する。
+    対象ファイルが存在しない場合は False を返す。
+    """
+    ch_scripts = sorted(
+        Path(OUTPUT_DIR).glob("pog_ch*.txt"),
+        key=lambda p: int(p.stem[len("pog_ch"):]),
+    )
+    if not ch_scripts:
+        return False
+
+    meta_path = Path("pog_meta.json")
+    meta_chapters: list[dict] = []
+    if meta_path.exists():
+        try:
+            meta_chapters = json.loads(meta_path.read_text(encoding="utf-8")).get("chapters", [])
+        except Exception:
+            pass
+
+    print(f"\n=== POGチャプター別音声生成 ({len(ch_scripts)} チャプター) ===")
+    voice, rate, pitch_factor, volume_db = pick_tts_params()
+    print(f"voice={voice} rate={rate}")
+
+    for ch_script in ch_scripts:
+        i = int(ch_script.stem[len("pog_ch"):])
+        script_text = ch_script.read_text(encoding="utf-8").strip()
+        if not script_text:
+            print(f"  [スキップ] {ch_script} が空")
+            continue
+        narration_text = normalize_racing_terms(script_text)
+        narration_text = apply_readings(narration_text)
+        ch_audio = str(Path(OUTPUT_DIR) / f"pog_ch{i}_audio.mp3")
+        print(f"\n--- チャプター {i} ({len(narration_text)}文字) ---")
+        for attempt in range(1, 4):
+            try:
+                asyncio.run(_edge_tts_with_words(
+                    narration_text, ch_audio, voice=voice, rate=rate,
+                ))
+                break
+            except Exception as e:
+                print(f"  [失敗 {attempt}/3]: {e}", file=sys.stderr)
+                if attempt < 3:
+                    time.sleep(10 * attempt)
+                else:
+                    raise RuntimeError(f"チャプター {i} の音声生成失敗")
+        apply_audio_variation(ch_audio, pitch_factor, volume_db)
+        dur = _audio_duration_s(ch_audio)
+        print(f"  → {ch_audio} ({dur:.1f}s)")
+
+    # チャプターごとの音声長から正確な開始時刻を計算
+    cum_t = 0.0
+    timings: list[dict] = []
+    ch_audio_paths: list[str] = []
+    for ci, ch in enumerate(meta_chapters):
+        ch_audio = str(Path(OUTPUT_DIR) / f"pog_ch{ci}_audio.mp3")
+        if not Path(ch_audio).exists():
+            print(f"  [警告] {ch_audio} が見つかりません", file=sys.stderr)
+            continue
+        timings.append({"title": ch["title"], "time_s": cum_t})
+        ch_audio_paths.append(ch_audio)
+        cum_t += _audio_duration_s(ch_audio)
+
+    if timings:
+        t_path = Path(OUTPUT_DIR) / "chapter_timings_0.json"
+        t_path.write_text(json.dumps(timings, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\n  チャプタータイミング保存: {t_path} (合計 {cum_t:.1f}s)")
+
+    # 全チャプター音声を audio_0.mp3 に連結
+    if ch_audio_paths:
+        concat_list = Path(OUTPUT_DIR) / "_pog_concat.txt"
+        with open(concat_list, "w", encoding="utf-8") as f:
+            for p in ch_audio_paths:
+                f.write(f"file '{Path(p).resolve()}'\n")
+        audio_out = str(Path(OUTPUT_DIR) / "audio_0.mp3")
+        res = subprocess.run(
+            ["ffmpeg", "-y", "-f", "concat", "-safe", "0",
+             "-i", str(concat_list), "-c:a", "libmp3lame", "-b:a", "128k", audio_out],
+            capture_output=True,
+        )
+        concat_list.unlink(missing_ok=True)
+        if res.returncode == 0:
+            print(f"  音声連結完了: {audio_out} ({_audio_duration_s(audio_out):.1f}s)")
+        else:
+            print(f"  [警告] 音声連結失敗: {res.stderr[-300:]}", file=sys.stderr)
+
+    return True
+
+
 def main() -> None:
     print("=== 音声生成開始 ===")
+
+    # POGチャプター別スクリプトがあれば優先して処理
+    if _generate_pog_chapters():
+        print("\nPOGチャプター別音声生成完了")
+        return
 
     script_files = sorted(Path(OUTPUT_DIR).glob("script_*.txt"))
     if not script_files:
