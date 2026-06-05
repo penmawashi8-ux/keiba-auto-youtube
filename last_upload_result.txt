@@ -1,10 +1,10 @@
-date: 2026-06-05T10:48:07.853811Z
+date: 2026-06-05T12:20:01.529041Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vr24srzzdxw title=【園田競馬】田野豊三騎手が地方通算700勝　「これからも勝っていけるように」
-OK project=1 video_id=jNj4OTrxXWQ title=阪神競馬場で“大物”誘導馬2頭が今週末デビュー!引退わずか2か月のマテンロウオリ
-OK project=1 video_id=BQIYo5GdS58 title=林正人調教師が通算1000勝達成「今まで通りのスタンスで戦っていきたい」南関東で
+OK project=1 video_id=xkAd5Zw27uY title=【安田記念予想】上位に人気薄が混じって乱戦模様？ GI安田記念「調子偏差値」速報
+OK project=1 video_id=jz4Sch4qq1Q title=【あすの注目】新種牡馬産駒4頭が東京5Rで一気にデビュー　ホットロッドチャーリー
+OK project=1 video_id=7yyrhhqzq2Y title=【あすの注目】豪州セリの3・2億円馬リアララが阪神4Rでデビュー　両親がG1馬の
