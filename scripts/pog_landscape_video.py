@@ -343,6 +343,7 @@ def match_horse(chapter_title: str, horses: list[dict]) -> dict | None:
 
 def pedigree_card_filters(horse: dict, t1: float, t2: float,
                            ci: int, tmp_dir: str, fp: str) -> list[str]:
+    """血統カードを画面中央に表示する。父/母は1行に統合してレイアウト崩れを防ぐ。"""
     enable = f"between(t,{t1:.3f},{t2:.3f})"
     vf: list[str] = []
 
@@ -351,100 +352,87 @@ def pedigree_card_filters(horse: dict, t1: float, t2: float,
         Path(p).write_text(text, encoding="utf-8")
         return _esc(p)
 
-    # 背景パネル
+    # 背景パネル（半透明・画面中央）
     vf.append(
-        f"drawtext=textfile='{tf(f'panel_{ci}', chr(12288)*22)}':fontfile='{fp}':"
-        f"fontsize=52:fontcolor=0x000000@0:"
-        f"x=(w-text_w)/2:y=h/2-185:"
-        f"box=1:boxcolor=0x080818@0.92:boxborderw=210:"
+        f"drawtext=textfile='{tf(f'panel_{ci}', chr(12288)*18)}':fontfile='{fp}':"
+        f"fontsize=54:fontcolor=0x000000@0:"
+        f"x=(w-text_w)/2:y=h/2-148:"
+        f"box=1:boxcolor=0x050510@0.88:boxborderw=170:"
         f"enable='{enable}'"
     )
 
     # タイプバッジ
     horse_type = horse.get("type", "本命")
-    badge_col  = "0x8B0000" if horse_type == "本命" else "0xBF4500"
+    badge_col = "0x8B0000" if horse_type == "本命" else "0xBF4500"
     vf.append(
         f"drawtext=textfile='{tf(f'badge_{ci}', f'【{horse_type}】')}':fontfile='{fp}':"
-        f"fontsize=36:fontcolor=0xFFFFFF:"
-        f"x=(w-text_w)/2:y=h/2-178:"
-        f"box=1:boxcolor={badge_col}@0.97:boxborderw=14:"
+        f"fontsize=30:fontcolor=0xFFFFFF:"
+        f"x=(w-text_w)/2:y=h/2-155:"
+        f"box=1:boxcolor={badge_col}@0.97:boxborderw=10:"
         f"enable='{enable}'"
     )
 
-    # 馬名
+    # 馬名（中央・大きく）
     name_col = "0xFFD700" if horse_type == "本命" else "0xFF6347"
     vf.append(
         f"drawtext=textfile='{tf(f'hname_{ci}', horse['name'])}':fontfile='{fp}':"
-        f"fontsize=80:fontcolor={name_col}:"
-        f"x=(w-text_w)/2:y=h/2-112:"
-        f"borderw=4:bordercolor=0x000000:"
+        f"fontsize=68:fontcolor={name_col}:"
+        f"x=(w-text_w)/2:y=h/2-104:"
+        f"borderw=3:bordercolor=0x000000:"
         f"enable='{enable}'"
     )
 
-    # 父セル（青）
+    # 父行（「父　○○○」を1テキストで中央配置）
+    sire_row = f"父　{horse['sire']}"
     vf.append(
-        f"drawtext=textfile='{tf(f'sl_{ci}', '父')}':fontfile='{fp}':"
-        f"fontsize=40:fontcolor=0x1A3A6E:"
-        f"x=(w-text_w)/2-205:y=h/2-18:"
-        f"box=1:boxcolor=0xB8D8F0@0.92:boxborderw=24:"
-        f"enable='{enable}'"
-    )
-    vf.append(
-        f"drawtext=textfile='{tf(f'sire_{ci}', horse['sire'])}':fontfile='{fp}':"
-        f"fontsize=48:fontcolor=0x1A3A6E:"
-        f"x=(w-text_w)/2+30:y=h/2-24:"
-        f"box=1:boxcolor=0xD6EAF8@0.88:boxborderw=20:"
+        f"drawtext=textfile='{tf(f'sire_{ci}', sire_row)}':fontfile='{fp}':"
+        f"fontsize=36:fontcolor=0x1A3A6E:"
+        f"x=(w-text_w)/2:y=h/2-26:"
+        f"box=1:boxcolor=0xD6EAF8@0.92:boxborderw=14:"
         f"borderw=1:bordercolor=0x5B9BD5:"
         f"enable='{enable}'"
     )
 
-    # 母セル（桃）
+    # 母行（「母　○○○」を1テキストで中央配置）
+    dam_row = f"母　{horse['dam']}"
     vf.append(
-        f"drawtext=textfile='{tf(f'dl_{ci}', '母')}':fontfile='{fp}':"
-        f"fontsize=40:fontcolor=0x7A1A3A:"
-        f"x=(w-text_w)/2-205:y=h/2+46:"
-        f"box=1:boxcolor=0xFFB6C1@0.92:boxborderw=24:"
-        f"enable='{enable}'"
-    )
-    vf.append(
-        f"drawtext=textfile='{tf(f'dam_{ci}', horse['dam'])}':fontfile='{fp}':"
-        f"fontsize=48:fontcolor=0x7A1A3A:"
-        f"x=(w-text_w)/2+30:y=h/2+40:"
-        f"box=1:boxcolor=0xFAD7E0@0.88:boxborderw=20:"
+        f"drawtext=textfile='{tf(f'dam_{ci}', dam_row)}':fontfile='{fp}':"
+        f"fontsize=36:fontcolor=0x7A1A3A:"
+        f"x=(w-text_w)/2:y=h/2+28:"
+        f"box=1:boxcolor=0xFAD7E0@0.92:boxborderw=14:"
         f"borderw=1:bordercolor=0xE07090:"
         f"enable='{enable}'"
     )
 
     # 落札額・注記・厩舎
-    y_off = 108
+    y_off = 84
     sale = horse.get("sale_price", "―")
     if sale and sale != "―":
         vf.append(
             f"drawtext=textfile='{tf(f'sale_{ci}', '落札額　' + sale)}':fontfile='{fp}':"
-            f"fontsize=34:fontcolor=0xFFFF99:"
+            f"fontsize=28:fontcolor=0xFFFF99:"
             f"x=(w-text_w)/2:y=h/2+{y_off}:"
             f"borderw=2:bordercolor=0x000000:"
             f"enable='{enable}'"
         )
-        y_off += 44
+        y_off += 36
 
     note = horse.get("note", "")
     if note:
         vf.append(
             f"drawtext=textfile='{tf(f'note_{ci}', note)}':fontfile='{fp}':"
-            f"fontsize=34:fontcolor=0x7FFF00:"
+            f"fontsize=26:fontcolor=0x7FFF00:"
             f"x=(w-text_w)/2:y=h/2+{y_off}:"
             f"borderw=2:bordercolor=0x000000:"
             f"enable='{enable}'"
         )
-        y_off += 44
+        y_off += 34
 
     trainer = horse.get("trainer", "")
     if trainer:
-        trainer_text = "厩舎：" + trainer
         vf.append(
-            f"drawtext=textfile='{tf(f'trainer_{ci}', trainer_text)}':fontfile='{fp}':"
-            f"fontsize=30:fontcolor=0xCCCCCC:"
+            f"drawtext=textfile='{tf(f'trainer_{ci}', '厩舎：' + trainer)}':fontfile='{fp}':"
+            f"fontsize=24:fontcolor=0xCCCCCC:"
             f"x=(w-text_w)/2:y=h/2+{y_off}:"
             f"borderw=1:bordercolor=0x000000:"
             f"enable='{enable}'"
@@ -549,19 +537,19 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
             # コーナー装飾（常時）
             video_filters.extend(corner_filters(fp, tmp_dir))
 
-            # オープニングカード
+            # オープニングカード（フォントを小さくして1行に収める・重なり解消）
             video_filters.append(
-                f"drawtext=textfile='{tf('open_t', wrap_text(meta.get('title', 'POG2026-2027'), 18))}':"
-                f"fontfile='{fp}':fontsize=64:fontcolor=0xFFD700:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2-22:"
-                f"box=1:boxcolor=0x000000@0.85:boxborderw=28:"
+                f"drawtext=textfile='{tf('open_t', 'POG2026-2027 本命3頭＋大穴2頭【AI予想】')}':"
+                f"fontfile='{fp}':fontsize=44:fontcolor=0xFFD700:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2-28:"
+                f"box=1:boxcolor=0x000000@0.85:boxborderw=22:"
                 f"borderw=3:bordercolor=0x000000:"
                 f"enable='between(t,0,{OPEN_DUR})'"
             )
             video_filters.append(
                 f"drawtext=textfile='{tf('open_s', '本命3頭＋大穴2頭　完全解説')}':"
-                f"fontfile='{fp}':fontsize=38:fontcolor=0xFFFFFF:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2+60:"
+                f"fontfile='{fp}':fontsize=30:fontcolor=0xFFFFFF:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2+38:"
                 f"borderw=2:bordercolor=0x000000:"
                 f"enable='between(t,0,{OPEN_DUR})'"
             )
@@ -571,11 +559,38 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                 if not seg["horse"]:
                     continue
                 t1 = seg["t_start"]
-                t2 = seg["t_end"]  # 章終了まで表示し続ける
+                t2 = seg["t_end"]
                 if t2 <= t1 + 0.1:
                     continue
                 video_filters.extend(
                     pedigree_card_filters(seg["horse"], t1, t2, ci, tmp_dir, fp)
+                )
+
+            # 非馬チャプター（オープニング・エンディング）の要点テキスト常時表示
+            _NON_HORSE_TEXT: dict[str, str] = {
+                "オープニング": "AI競馬予想が厳選　本命3頭＋大穴2頭を完全解説",
+                "エンディング": "本命：ダノンダックス・ジャンゴッド・ソブリオ　大穴：ノイエルング・レニュアージュ",
+            }
+            for ci, seg in enumerate(segments):
+                if seg["horse"]:
+                    continue
+                key = next((k for k in _NON_HORSE_TEXT if k in seg["title"]), None)
+                if not key:
+                    continue
+                t1 = OPEN_DUR if "オープニング" in seg["title"] else seg["t_start"]
+                t2 = seg["t_end"]
+                if t2 <= t1 + 0.1:
+                    continue
+                enable = f"between(t,{t1:.3f},{t2:.3f})"
+                p = f"{tmp_dir}/nonhorse_{ci}.txt"
+                Path(p).write_text(_NON_HORSE_TEXT[key], encoding="utf-8")
+                video_filters.append(
+                    f"drawtext=textfile='{_esc(p)}':fontfile='{fp}':"
+                    f"fontsize=32:fontcolor=0xFFFFFF:"
+                    f"x=(w-text_w)/2:y=h-82:"
+                    f"box=1:boxcolor=0x000000@0.72:boxborderw=14:"
+                    f"borderw=2:bordercolor=0x333333:"
+                    f"enable='{enable}'"
                 )
 
         if not video_filters:

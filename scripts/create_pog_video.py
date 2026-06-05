@@ -155,6 +155,33 @@ def strip_chapter_markers(script: str) -> str:
     return re.sub(r'\n{3,}', '\n\n', '\n'.join(lines)).strip()
 
 
+def save_chapter_scripts(script: str) -> int:
+    """スクリプトをチャプターごとに output/pog_ch{N}.txt に分割保存する。
+    タイミングを完全に正確にするため、チャプターごとに音声を別々に生成する用途に使う。
+    """
+    current_title: str | None = None
+    current_lines: list[str] = []
+    idx = 0
+
+    def _flush() -> None:
+        nonlocal idx
+        text = "\n".join(current_lines).strip()
+        if current_title is not None and text:
+            Path(f"{OUTPUT_DIR}/pog_ch{idx}.txt").write_text(text, encoding="utf-8")
+            idx += 1
+
+    for line in script.splitlines():
+        s = line.strip()
+        if _MARKER_RE.match(s):
+            _flush()
+            current_title = s
+            current_lines = []
+        else:
+            current_lines.append(line)
+    _flush()
+    return idx
+
+
 def build_chapters_info(script: str) -> list[dict]:
     """各章マーカーの stripped スクリプト内の文字位置を計算して返す。
     pog_landscape_video.py が章の開始時刻を正確に算出するために使用。
@@ -183,6 +210,9 @@ def main() -> None:
     tts_script = strip_chapter_markers(script)
     Path(f"{OUTPUT_DIR}/script_0.txt").write_text(tts_script, encoding="utf-8")
     print(f"✅ TTS用脚本: {OUTPUT_DIR}/script_0.txt")
+
+    n_ch = save_chapter_scripts(script)
+    print(f"✅ チャプター別スクリプト: {n_ch} ファイル (output/pog_ch0.txt〜)")
 
     meta = {
         "title":          "POG2026-2027 本命3頭＋大穴2頭【AI予想】",
