@@ -1,10 +1,10 @@
-date: 2026-06-05T12:20:01.529041Z
+date: 2026-06-05T13:58:10.661302Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xkAd5Zw27uY title=【安田記念予想】上位に人気薄が混じって乱戦模様？ GI安田記念「調子偏差値」速報
-OK project=1 video_id=jz4Sch4qq1Q title=【あすの注目】新種牡馬産駒4頭が東京5Rで一気にデビュー　ホットロッドチャーリー
-OK project=1 video_id=7yyrhhqzq2Y title=【あすの注目】豪州セリの3・2億円馬リアララが阪神4Rでデビュー　両親がG1馬の
+OK project=1 video_id=5-cJZ5rrVPE title=【土曜注目】「今回も起きてくれれば」　前走5馬身差圧勝で「お目覚め」のボクマダネ
+OK project=1 video_id=nucY0mjePEk title=今週の武豊騎手は8鞍 シックスペンスで安田記念の17年ぶり4勝目なるか
+OK project=1 video_id=_pTi62EsSjU title=【週末情報】ミュージシャンの押し切りに期待/馬三郎のつぶやき
