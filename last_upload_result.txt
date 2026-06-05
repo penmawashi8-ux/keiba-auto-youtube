@@ -1,10 +1,10 @@
-date: 2026-06-05T05:20:45.602134Z
+date: 2026-06-05T07:13:12.172480Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fnoWgFs__uc title=総賞金1200万米ドル　来年のドバイ・ワールドCは3・27に開催　今年はフォーエ
-OK project=1 video_id=PTddm_IHP_o title=ダービー２着のパントルナイーフが右前膝骨折で手術
-OK project=1 video_id=BA1L9bcwNZw title=【大井競馬】8日のレース数は11に　新馬競走の取りやめに伴い
+OK project=1 video_id=E75zesLBgBk title=「阪神競馬場のアイドル」誘導馬として活躍!元“アイドル馬1位”アフリカンゴールド
+OK project=1 video_id=LCPlWsx9dCE title=【安田記念・特選有力馬チェック】24年の桜花賞馬ステレンボッシュは買うべき?　エ
+OK project=1 video_id=V0xzvGqMLW0 title=マスカレードボールとヴェルテンベルクがキングジョージ参戦へ　マスカレードボールの
