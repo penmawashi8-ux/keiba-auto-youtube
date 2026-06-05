@@ -469,44 +469,73 @@ def corner_filters(fp: str, tmp_dir: str) -> list[str]:
 # ─────────────────────────────────────────────────────────
 
 def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str:
-    script_path   = Path(f"{OUTPUT_DIR}/script_0.txt")
-    audio_path    = f"{OUTPUT_DIR}/audio_0.mp3"
-    ass_path      = f"{OUTPUT_DIR}/subtitles_0.ass"
-    output_path   = f"{OUTPUT_DIR}/pog_landscape_video_0.mp4"
+    output_path  = f"{OUTPUT_DIR}/pog_landscape_video_0.mp4"
+    horses       = meta.get("horses", [])
+    meta_chapters = meta.get("chapters", [])
 
-    if not script_path.exists():
-        raise FileNotFoundError(f"{script_path} が見つかりません。")
-    if not Path(audio_path).exists():
-        raise FileNotFoundError(f"{audio_path} が見つかりません。")
-
-    stripped_script = script_path.read_text(encoding="utf-8").strip()
-    aud_dur         = audio_duration(audio_path)
-    horses          = meta.get("horses", [])
-    meta_chapters   = meta.get("chapters", [])
-
-    ch_times  = chapters_from_meta(
-        meta_chapters, len(stripped_script), aud_dur,
-        timings_path=f"{OUTPUT_DIR}/chapter_timings_0.json",
+    # チャプター別音声ファイルがあればそちらを優先（タイミングが完全に正確になる）
+    ch_audio_files = [
+        f"{OUTPUT_DIR}/pog_ch{ci}_audio.mp3"
+        for ci in range(len(meta_chapters))
+    ]
+    use_ch_audio = bool(meta_chapters) and all(
+        Path(f).exists() for f in ch_audio_files
     )
-    segments: list[dict] = []
-    for ci, (title, t_start) in enumerate(ch_times):
-        t_end = ch_times[ci + 1][1] if ci + 1 < len(ch_times) else aud_dur
-        horse = match_horse(title, horses)
-        bg    = bg_imgs.get(horse["name"]) if horse else bg_imgs.get("__general__")
-        segments.append({
-            "title":   title,
-            "t_start": t_start,
-            "t_end":   t_end,
-            "dur":     max(t_end - t_start, 0.1),
-            "horse":   horse,
-            "bg":      bg or bg_imgs["__general__"],
-        })
+
+    if use_ch_audio:
+        # 各チャプターの音声長をそのままセグメント長にする → ズレ不可能
+        print("  チャプター別音声モード（タイミング完全同期）")
+        cum_t = 0.0
+        segments: list[dict] = []
+        for ci, ch in enumerate(meta_chapters):
+            dur = audio_duration(ch_audio_files[ci])
+            title = ch["title"]
+            horse = match_horse(title, horses)
+            bg = bg_imgs.get(horse["name"]) if horse else bg_imgs.get("__general__")
+            segments.append({
+                "title":   title,
+                "t_start": cum_t,
+                "t_end":   cum_t + dur,
+                "dur":     dur,
+                "horse":   horse,
+                "bg":      bg or bg_imgs["__general__"],
+            })
+            cum_t += dur
+        aud_dur = cum_t
+    else:
+        # フォールバック: audio_0.mp3 + chapter_timings
+        audio_path = f"{OUTPUT_DIR}/audio_0.mp3"
+        script_path = Path(f"{OUTPUT_DIR}/script_0.txt")
+        if not script_path.exists():
+            raise FileNotFoundError(f"{script_path} が見つかりません。")
+        if not Path(audio_path).exists():
+            raise FileNotFoundError(f"{audio_path} が見つかりません。")
+        stripped_script = script_path.read_text(encoding="utf-8").strip()
+        aud_dur = audio_duration(audio_path)
+        ch_times = chapters_from_meta(
+            meta_chapters, len(stripped_script), aud_dur,
+            timings_path=f"{OUTPUT_DIR}/chapter_timings_0.json",
+        )
+        segments = []
+        for ci, (title, t_start) in enumerate(ch_times):
+            t_end = ch_times[ci + 1][1] if ci + 1 < len(ch_times) else aud_dur
+            horse = match_horse(title, horses)
+            bg = bg_imgs.get(horse["name"]) if horse else bg_imgs.get("__general__")
+            segments.append({
+                "title":   title,
+                "t_start": t_start,
+                "t_end":   t_end,
+                "dur":     max(t_end - t_start, 0.1),
+                "horse":   horse,
+                "bg":      bg or bg_imgs["__general__"],
+            })
 
     tmp_dir = tempfile.mkdtemp(prefix="pog_ls_")
     try:
         fp = _esc(font or "")
         N  = len(segments)
 
+        # ── 背景映像インプット ──────────────────────────────
         bg_inputs: list[str] = []
         pre_filters: list[str] = []
         img_scale = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
@@ -524,8 +553,8 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
 
         concat_in = "".join(f"[vi{i}]" for i in range(N))
         pre_filters.append(f"{concat_in}concat=n={N}:v=1:a=0[bgout]")
-        audio_idx = N
 
+        # ── テキストオーバーレイ ────────────────────────────
         video_filters: list[str] = []
 
         if font:
@@ -534,10 +563,9 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                 Path(p).write_text(text, encoding="utf-8")
                 return _esc(p)
 
-            # コーナー装飾（常時）
             video_filters.extend(corner_filters(fp, tmp_dir))
 
-            # オープニングカード（フォントを小さくして1行に収める・重なり解消）
+            # オープニングカード
             video_filters.append(
                 f"drawtext=textfile='{tf('open_t', 'POG2026-2027 本命3頭＋大穴2頭【AI予想】')}':"
                 f"fontfile='{fp}':fontsize=44:fontcolor=0xFFD700:"
@@ -554,19 +582,18 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                 f"enable='between(t,0,{OPEN_DUR})'"
             )
 
-            # 各章の血統カード（章全体で表示）
+            # 各チャプターの血統カード（チャプター全体で表示）
             for ci, seg in enumerate(segments):
                 if not seg["horse"]:
                     continue
-                t1 = seg["t_start"]
-                t2 = seg["t_end"]
+                t1, t2 = seg["t_start"], seg["t_end"]
                 if t2 <= t1 + 0.1:
                     continue
                 video_filters.extend(
                     pedigree_card_filters(seg["horse"], t1, t2, ci, tmp_dir, fp)
                 )
 
-            # 非馬チャプター（オープニング・エンディング）の要点テキスト常時表示
+            # 非馬チャプターの要点テキスト
             _NON_HORSE_TEXT: dict[str, str] = {
                 "オープニング": "AI競馬予想が厳選　本命3頭＋大穴2頭を完全解説",
                 "エンディング": "本命：ダノンダックス・ジャンゴッド・ソブリオ　大穴：ノイエルング・レニュアージュ",
@@ -581,7 +608,6 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                 t2 = seg["t_end"]
                 if t2 <= t1 + 0.1:
                     continue
-                enable = f"between(t,{t1:.3f},{t2:.3f})"
                 p = f"{tmp_dir}/nonhorse_{ci}.txt"
                 Path(p).write_text(_NON_HORSE_TEXT[key], encoding="utf-8")
                 video_filters.append(
@@ -590,7 +616,7 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
                     f"x=(w-text_w)/2:y=h-82:"
                     f"box=1:boxcolor=0x000000@0.72:boxborderw=14:"
                     f"borderw=2:bordercolor=0x333333:"
-                    f"enable='{enable}'"
+                    f"enable='between(t,{t1:.3f},{t2:.3f})'"
                 )
 
         if not video_filters:
@@ -599,28 +625,57 @@ def generate_video(meta: dict, font: str | None, bg_imgs: dict[str, str]) -> str
         vid_chain = "[bgout]" + ",".join(video_filters) + "[vout]"
         fc_parts  = list(pre_filters) + [vid_chain]
 
+        # ── 音声インプット & BGM ────────────────────────────
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_file  = random.choice(bgm_files) if bgm_files else None
 
+        if use_ch_audio:
+            # チャプター別音声をffmpegに直接入力してconcat
+            audio_inputs: list[str] = []
+            for f_path in ch_audio_files:
+                audio_inputs += ["-i", f_path]
+            audio_start_idx = N  # 背景N個の次から音声インプット
+            audio_concat = (
+                "".join(f"[{audio_start_idx + i}:a]" for i in range(N))
+                + f"concat=n={N}:v=0:a=1[acat]"
+            )
+            if bgm_file:
+                bgm_idx = audio_start_idx + N
+                ac = audio_concat + (
+                    f";[acat][{bgm_idx}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]"
+                )
+                fc = ";".join(fc_parts) + ";" + ac
+                cmd = (["ffmpeg", "-y"] + bg_inputs + audio_inputs +
+                       ["-stream_loop", "-1", "-i", bgm_file,
+                        "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]"])
+            else:
+                ac = audio_concat + ";[acat]acopy[aout]"
+                fc = ";".join(fc_parts) + ";" + ac
+                cmd = (["ffmpeg", "-y"] + bg_inputs + audio_inputs +
+                       ["-filter_complex", fc, "-map", "[vout]", "-map", "[aout]"])
+        else:
+            # フォールバック: 単一 audio_0.mp3
+            audio_idx = N
+            if bgm_file:
+                ac = (f"[{audio_idx}:a]apad=whole_dur={aud_dur:.3f}[narr];"
+                      f"[narr][{audio_idx+1}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]")
+                fc = ";".join(fc_parts) + ";" + ac
+                cmd = (["ffmpeg", "-y"] + bg_inputs +
+                       ["-i", audio_path, "-stream_loop", "-1", "-i", bgm_file,
+                        "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]"])
+            else:
+                ac = f"[{audio_idx}:a]apad=whole_dur={aud_dur:.3f}[aout]"
+                fc = ";".join(fc_parts) + ";" + ac
+                cmd = (["ffmpeg", "-y"] + bg_inputs +
+                       ["-i", audio_path, "-filter_complex", fc,
+                        "-map", "[vout]", "-map", "[aout]"])
+
         if bgm_file:
             print(f"  BGM: {Path(bgm_file).name}")
-            ac = (f"[{audio_idx}:a]apad=whole_dur={aud_dur:.3f}[narr];"
-                  f"[narr][{audio_idx+1}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]")
-            fc  = ";".join(fc_parts) + ";" + ac
-            cmd = (["ffmpeg", "-y"] + bg_inputs +
-                   ["-i", audio_path, "-stream_loop", "-1", "-i", bgm_file,
-                    "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]"])
-        else:
-            ac  = f"[{audio_idx}:a]apad=whole_dur={aud_dur:.3f}[aout]"
-            fc  = ";".join(fc_parts) + ";" + ac
-            cmd = (["ffmpeg", "-y"] + bg_inputs +
-                   ["-i", audio_path, "-filter_complex", fc,
-                    "-map", "[vout]", "-map", "[aout]"])
 
         cmd += [
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "ultrafast",
             "-c:a", "aac", "-b:a", "192k",
-            "-t", str(aud_dur + 0.5),
             output_path,
         ]
 
