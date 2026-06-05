@@ -1,10 +1,10 @@
-date: 2026-06-04T14:04:10.451186Z
+date: 2026-06-05T00:23:55.970188Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8NKtAzdJY9c title=【名古屋競馬　東海優駿】アストラビアンコ重賞4勝目　細川智史騎手「展開というより
-OK project=1 video_id=-XBGQ37lg1E title=【地方競馬】若潮スプリント　転入初戦のブルーメンガルテンが差し切り重賞初制覇
-OK project=1 video_id=TyOigDFkEPU title=川島正一厩舎が1、2着を独占　ブルーメンガルテンが若潮スプリント制覇
+OK project=1 video_id=k7n4T6W9U1o title=【安田記念枠順確定】トロヴァトーレは8枠17番、ガイアフォースは7枠14番
+OK project=1 video_id=y-EXo0yDOWY title=【園田競馬　5日発走　向夏特別】重賞ウイナーのフラフが中心
+OK project=1 video_id=8PX2DkVJ5ao title=エフフォーリア初年度産駒 クロワデュノールの甥ジョドレルバンクがデビュー勝ち狙う
