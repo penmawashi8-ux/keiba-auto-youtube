@@ -1,10 +1,10 @@
-date: 2026-06-06T00:28:05.808187Z
+date: 2026-06-06T04:58:06.310610Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8UpLhvDdt7s title=垂水Sは馬体重に注目だ 伏兵も侮れない一戦
-OK project=1 video_id=wm4nEPIlFco title=【今日の注目ポイント】阪神競馬が開幕 新馬戦がスタート
-OK project=1 video_id=x4s1CHN-DUk title=【安田記念】オフトレイル２枠３番　Ｇ１奪取へ追い風　重賞連対時は７番より内め　宇
+OK project=1 video_id=1MrDv76tXeA title=【東京5R・2歳新馬戦】1番人気フィリオソラーレが出世レース快勝!　ルメール「未
+OK project=1 video_id=Jo9XgLC5-gQ title=2歳新馬戦開幕週に早くも大物候補　ジーティーサクラ衝撃V　上がり32秒4にネット
+OK project=1 video_id=B1cTxhHQFp4 title=【東京5R・2歳新馬】圧倒的1番人気に応えフィリオソラーレが快勝　ルメール騎手も
