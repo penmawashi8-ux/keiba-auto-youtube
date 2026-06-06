@@ -1,10 +1,10 @@
-date: 2026-06-06T06:39:30.798100Z
+date: 2026-06-06T11:01:30.148182Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rrnjD9LjJas title=【メイクデビュー東京4Rレース後コメント】ラードンチェイス C.ルメール騎手ら
-OK project=1 video_id=uflFN9ew0YY title=【阪神5R・2歳新馬戦】上がり3F32秒4!キタサンブラック産駒ジーティーサクラ
-OK project=1 video_id=ji8xwDBYY9I title=【東京５Ｒ新馬戦】エフフォーリア産駒がデビュー　横山武史騎乗で３着「良くなるのは
+OK project=1 video_id=EI-80IjhmR0 title=【安田記念・土曜気配】輸送にも動じず!ガイアフォース悲願のG1タイトルへ万全　陣
+OK project=1 video_id=543NJqZURB4 title=半姉はエンブロイダリー バートラガッツが無傷2連勝なるか
+OK project=1 video_id=452B8VXVIU0 title=【安田記念】パンジャタワーは万全の態勢で東京競馬場に到着!　あとは距離だけも陣営
