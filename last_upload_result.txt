@@ -1,10 +1,10 @@
-date: 2026-06-07T10:10:03.135305Z
+date: 2026-06-07T11:23:04.845877Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-kHxLc6o81w title=【安田記念】主な記録　G1の2着同着は3例目、キズナ産駒G1通算7勝目、ノーザン
-OK project=1 video_id=BoK_h8L1sGw title=【水沢・早池峰賞結果】ルコルセールが断然人気に応えて重賞3連勝
-OK project=1 video_id=Qw0fQX28yWY title=【安田記念】24年桜花賞馬の復活は遠く…レーン騎手「全体的に忙しいレースに」ステ
+OK project=1 video_id=qm9hz6MILzo title=【武豊騎手記録メモ】8番人気はJRA・G1・85勝で最も下位の人気　25年宝塚記
+OK project=1 video_id=UxunW9W13BI title=林修が安田記念表彰式プレゼンター「今日勝ったシックスペンスも本当に強い馬」勝利馬
+OK project=1 video_id=UbkNH1r3sAM title=【水沢競馬】ルコルセールが移籍後破竹の重賞3連勝!　単勝1.2倍の断然人気に応え
