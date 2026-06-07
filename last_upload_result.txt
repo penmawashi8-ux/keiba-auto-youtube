@@ -1,10 +1,10 @@
-date: 2026-06-07T11:23:04.845877Z
+date: 2026-06-07T12:32:49.784965Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qm9hz6MILzo title=【武豊騎手記録メモ】8番人気はJRA・G1・85勝で最も下位の人気　25年宝塚記
-OK project=1 video_id=UxunW9W13BI title=林修が安田記念表彰式プレゼンター「今日勝ったシックスペンスも本当に強い馬」勝利馬
-OK project=1 video_id=UbkNH1r3sAM title=【水沢競馬】ルコルセールが移籍後破竹の重賞3連勝!　単勝1.2倍の断然人気に応え
+OK project=1 video_id=9J95b8_7Szk title=【函館ＳＳ展望】夏のスプリント王者を目指してレイピアが気合
+OK project=1 video_id=08m6aETO-yU title=【宝塚記念展望】史上初となる春の古馬３冠制覇を目指すクロワデュノールがＶ最有力　
+OK project=1 video_id=rU13RI7ep3w title=【宝塚記念展望】あなたの夢が走ります　春3冠がかかるクロワデュノールを巡るハイレ
