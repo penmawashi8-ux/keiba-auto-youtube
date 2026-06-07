@@ -1,118 +1,47 @@
-[2]  [ファクトチェックNG] NG: 2着にはワールズエンド
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [ファクトチェックNG] NG: 2着にガイアフォース
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2] のスクリプト生成失敗。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【メイクデビュー阪神5Rレース後コメント】ビスケットサンド北村友一ら ---
-[0] Gemini入力本文 1056文字: '阪神5Rのメイクデビュー阪神(芝1400m)は4番人気ビスケットサンド(北村友一騎手)が勝利した。勝ちタイムは1分21秒9(稍重)。1馬身1/4差の2着に3番人気シスキンブルーム、さらに1馬身1/4差の3着に10番人気ニシノフランケンが入っ'
+--- 記事[0]: 【水無月Sレース後コメント】アンズアメ川田将雅騎手ら ---
+[0] Gemini入力本文 346文字: '阪神11Rの水無月ステークス(3歳以上オープン・ハンデ・ダート1200m)は1番人気アンズアメ(川田将雅騎手)が勝利した。勝ちタイムは1分10秒3(稍重)。アタマ差の2着に6番人気ショウナンアビアス、さらにクビ差の3着に12番人気スマートフ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【安田記念】史上最年長G1V!武豊騎手がキズナの子シックスペンスを勝利に導く　新コンビでいきなり結果出した ---
-[1] Gemini入力本文 358文字: '◆第76回安田記念・G1(6月7日、東京競馬場・芝1600メートル、良)\n\t\t\t\t\u3000春のマイル王決定戦は17頭立てで争われ、武豊騎手が騎乗したシックスペンス(牡5歳、美浦・田中博康厩舎、父キズナ)が1着。G1・5度目の挑戦で白星をつかんだ。'
+--- 記事[1]: 【三木特別レース後コメント】ウインリベラシオン田口貫太騎手ら ---
+[1] Gemini入力本文 346文字: '阪神10Rの三木特別(3歳以上2勝クラス・芝1800m)は4番人気ウインリベラシオン(田口貫太騎手)が勝利した。勝ちタイムは1分47秒7(稍重)。クビ差の2着に1番人気ジョイエッロ、さらにクビ差の3着に5番人気ユメハハテシナクが入った。\n\u3000'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【安田記念】武豊が導いて8番人気シックスペンスV!　2着はワールズエンド、ガイアフォース同着 ---
-[2] Gemini入力本文 346文字: '◇第76回安田記念\u3000芝1600メートル(2026年6月7日\u3000東京競馬場)\n\u3000スピードとパワーのハイブリッドコース東京芝1600メートルでマイルの覇を競う「安田記念」は武豊騎乗のシックスペンスが1着入線した。\n\u3000シックスペンスは逃げたワールズ'
+--- 記事[2]: 【阪神アーバン競馬プレーバック】サトノルフィアンで9馬身差圧勝も調教師が「情けない」そのワケとは ---
+[2] Gemini入力本文 346文字: '5日のメーン11R「向暑特別」(A1、ダート1400メートル)は吉村智洋騎乗の1番人気サトノルフィアン(牡7＝永島、父ゼンノロブロイ)が勝利。5月4日の重賞・兵庫大賞典(ダート1400メートル)で3着に敗れた後の大事な一戦で結果を残した。\n'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 214文字]: '競馬速報です。第76回安田記念は、2026年6月7日に東京競馬場、芝1600メートルで行われ、武豊騎乗の8番人気シックスペンスが1着入線しました。シックスペンスは逃げたワールズエンドをゴール直前で差し切り、定年解散した国枝厩舎から転厩2戦目でG1初制覇を飾りました。鞍上の武豊は、2009年ウオッカ以来17年ぶり、歴代最多タイとなる4度目の安田記念制覇となりました。2着にはワールズエンドとガイアフォースが同着で入線しています。'
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 335文字]: '重要な競馬ニュースをお伝えします。阪神5Rのメイクデビュー阪神芝1400mは、4番人気ビスケットサンドが北村友一騎手で勝利しました。勝ちタイムは1分21秒9、馬場は稍重でした。1馬身1/4差の2着には3番人気シスキンブルーム、さらに1馬身1/4差の3着には10番人気ニシノフランケンが入っています。ビスケットサンドは栗東・佐藤悠太厩舎所属の2歳牝馬で、父マインドユアビスケッツ、母ガルデルスリールという血統です。北村友一騎手はレース後、「繊細な馬ですが、きょうに関してはマイルドな精神状態で行けました。理想的な走り方ができて、しっかり脚も使ってくれました」とコメントしました。2着のシスキンブルームに騎乗した団野大成騎手は、勝った馬の決め手が上だったと振り返っています。'
-  HTTP 200
-[1]  [Gemini生出力 260文字]: '注目の競馬情報をお届けします。\n第76回安田記念・G1が6月7日に東京競馬場・芝1600メートル、良馬場で開催されました。春のマイル王決定戦は17頭立てで争われ、武豊騎手が騎乗したシックスペンスが1着となりました。シックスペンスは牡5歳、美浦・田中博康厩舎所属で、父はキズナです。G1・5度目の挑戦で白星をつかんだシックスペンスは、これまで24年スプリングS、同毎日王冠、25年中山記念といずれもG2で重賞勝利を収めています。レース前日6日には美浦・Wコースでしまい1ハロン12秒1、5ハロン77秒5を記録していました。'
-[1]  [redirectフィルター] 260文字 → 244文字
+[0]  [Gemini生出力 222文字]: '注目の競馬情報をお届けします。\n阪神11Rの水無月ステークス(3歳以上オープン・ハンデ・ダート1200m)は、1番人気アンズアメ(川田将雅騎手)が勝利しました。勝ちタイムは1分10秒3(稍重)です。アタマ差の2着に6番人気ショウナンアビアス、さらにクビ差の3着に12番人気スマートフォルスが入りました。アンズアメは栗東・高柳大輔厩舎の4歳牝馬で、父ドレフォン、母ホウライマツリ(母の父エンパイアメーカー)です。通算成績は16戦5勝となりました。'
+[0]  [redirectフィルター] 222文字 → 206文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (335文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。阪神5Rのメイクデビュー阪神芝1400mは、4番人気ビスケットサンドが北村友一騎手で勝利しました。勝ちタイムは1分21秒9、馬...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (244文字)
-[1]  プレビュー: 第76回安田記念・G1が6月7日に東京競馬場・芝1600メートル、良馬場で開催されました。春のマイル王決定戦は17頭立てで争われ、武豊騎手が騎乗したシックスペン...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[0]  → output/script_0.txt 保存 (206文字)
+[0]  プレビュー: 阪神11Rの水無月ステークス(3歳以上オープン・ハンデ・ダート1200m)は、1番人気アンズアメ(川田将雅騎手)が勝利しました。勝ちタイムは1分10秒3(稍重)...
   HTTP 200
-[2]  [Gemini生出力 246文字]: '競馬速報です。第76回安田記念は、2026年6月7日に東京競馬場の芝1600メートルで行われ、武豊騎乗の8番人気シックスペンスが1着入線しました。シックスペンスは、スピードとパワーのハイブリッドコースで、逃げたワールズエンドをゴール直前で差し切り、G1初制覇を飾りました。定年解散した国枝厩舎から転厩2戦目での勝利です。鞍上の武豊騎手は、2009年のウオッカ以来17年ぶりとなる、歴代最多タイの4度目の安田記念制覇を達成しました。2着にはワールズエンドとガイアフォースが同着で入線しています。'
-[2] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[2]  [Gemini生出力 228文字]: '最新のレース情報が入ってきました。5日のメーン11R「向暑特別」、A1、ダート1400メートルでは、吉村智洋騎手騎乗の1番人気サトノルフィアンが勝利しました。サトノルフィアンは、5月4日の重賞・兵庫大賞典ダート1400メートルで3着に敗れた後の大事な一戦で結果を残しました。レースではまずまずのスタートを切り、道中は2番手を追走しました。そして4コーナー手前で先頭に立ちました。後ろをぴったりマークして同じく進出してきた兵庫大賞典の覇者・フラフもいました。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (228文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。5日のメーン11R「向暑特別」、A1、ダート1400メートルでは、吉村智洋騎手騎乗の1番人気サトノルフィアンが勝利しました。サ...
+  HTTP 200
+[1]  [Gemini生出力 216文字]: '今週の競馬注目情報をお伝えします。\n阪神10Rの三木特別、3歳以上2勝クラス・芝1800mは、4番人気ウインリベラシオンが田口貫太騎手で勝利しました。勝ちタイムは稍重の1分47秒7でした。クビ差の2着には1番人気ジョイエッロ、さらにクビ差の3着には5番人気ユメハハテシナクが入りました。勝利したウインリベラシオンは栗東・緒方努厩舎所属の4歳牡馬で、父ブリックスアンドモルタル、母ウインリバティです。通算成績は14戦2勝となりました。'
+[1]  [重複除去] 216文字 → 215文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (215文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。阪神10Rの三木特別、3歳以上2勝クラス・芝1800mは、4番人気ウインリベラシオンが田口貫太騎手で勝利しました。勝ちタイムは...
+
+3 件の脚本を生成しました。
