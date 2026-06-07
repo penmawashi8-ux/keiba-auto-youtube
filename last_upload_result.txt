@@ -1,10 +1,10 @@
-date: 2026-06-07T05:31:10.116733Z
+date: 2026-06-07T08:25:26.371949Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CsI80sL5ymU title=新たな冒険は大成功!「ハイラル城…」「トライフォースの力」牝馬ゼルダが逃げ切りV
-OK project=1 video_id=-e1U4igIF50 title=【阪神アーバン競馬プレーバック】JBC見えた!ダンテバローズが強豪を蹴散らし六甲
-OK project=1 video_id=TcSKdFmYcDM title=【阪神5R】混戦ムードを断ち切ったビスケットサンドが新馬勝ち　北村友「理想的でし
+OK project=1 video_id=sDjxCaIPSos title=【水無月Sレース後コメント】アンズアメ川田将雅騎手ら
+OK project=1 video_id=c0MHDv_Qb6E title=【三木特別レース後コメント】ウインリベラシオン田口貫太騎手ら
+OK project=1 video_id=Sks9dyyBGHg title=【阪神アーバン競馬プレーバック】サトノルフィアンで9馬身差圧勝も調教師が「情けな
