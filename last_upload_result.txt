@@ -1,10 +1,10 @@
-date: 2026-06-06T12:18:48.505135Z
+date: 2026-06-07T00:24:49.679495Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WlLCD-2bQ3I title=【安田記念】決戦の地に到着したウォーターリヒト　陣営が「河内さんの時からそうだか
-OK project=1 video_id=nCC06j0ysoY title=競馬ファンに爆売れ!入手困難なTシャツ持つ名手に「ドヤ顔の1枠1番やね」安藤勝己
-OK project=1 video_id=PddJJ-7WYUw title=父は新種牡馬のオメガパフューム サンシルヴァリーがデビュー勝ち狙う
+OK project=1 video_id=JjQDFd4uZic title=【メトロポリタンH】「強い!トップハンデ関係なし!!」ナイソスが4馬身差の圧勝　
+OK project=1 video_id=Ii7nD0oMfPw title=【安田記念予想】人気順・枠・騎手の傾向は？ 過去データから狙うGI安田記念
+OK project=1 video_id=hTg9-Xx5xag title=粗品「堅く決まりそうな」安田記念の本命を発表　G1予想連敗中で「どの予想家よりも
