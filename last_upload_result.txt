@@ -1,10 +1,10 @@
-date: 2026-06-07T08:25:26.371949Z
+date: 2026-06-07T10:10:03.135305Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=sDjxCaIPSos title=【水無月Sレース後コメント】アンズアメ川田将雅騎手ら
-OK project=1 video_id=c0MHDv_Qb6E title=【三木特別レース後コメント】ウインリベラシオン田口貫太騎手ら
-OK project=1 video_id=Sks9dyyBGHg title=【阪神アーバン競馬プレーバック】サトノルフィアンで9馬身差圧勝も調教師が「情けな
+OK project=1 video_id=-kHxLc6o81w title=【安田記念】主な記録　G1の2着同着は3例目、キズナ産駒G1通算7勝目、ノーザン
+OK project=1 video_id=BoK_h8L1sGw title=【水沢・早池峰賞結果】ルコルセールが断然人気に応えて重賞3連勝
+OK project=1 video_id=Qw0fQX28yWY title=【安田記念】24年桜花賞馬の復活は遠く…レーン騎手「全体的に忙しいレースに」ステ
