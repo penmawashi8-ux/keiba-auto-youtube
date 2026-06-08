@@ -1,99 +1,47 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [ファクトチェックNG] NG: 元記事に存在しない調教師名「
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: “6度目の正直”でオペラオー撃破 メイショウドトウの悲願Vから25年 ---
-[0] Gemini入力本文 336文字: '01年の宝塚記念は「テイエムオペラオーVSメイショウドトウ」のライバルストーリーに欠かせない一戦である。前年からGIで5戦続けてオペラオーの2着に敗れていたドトウが、遂に宿敵を打ち破ったのだ。四半世紀前の激闘を振り返ろう。\n\u3000メイショウドト'
+--- 記事[0]: 【三宮S・松ケ下の特注馬】驚異の連対率100%継続中!グランドプラージュがここも不動の軸か ---
+[0] Gemini入力本文 348文字: '◆三宮S(6月13日、阪神競馬場・ダート1800メートル)\n\t\t\t\t\u3000グランドプラージュ(牡4歳、栗東・杉山晴紀厩舎、父シニスターミニスター)は、キャリア6戦で4勝、2着2回と抜群の安定感を誇っている。\n\t\t\t\t\u3000前走の平城京Sは、初のオー'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【東京ジャンプステークス】ジューンベロシティが4連覇に挑む ---
-[1] Gemini入力本文 364文字: '第28回東京ジャンプステークス・JG3は6月13日、東京競馬場の芝3110メートルで行われる。\n\t\t\t\t\u3000ジューンベロシティ(牡8歳、栗東・武英智厩舎、父ロードカナロア)は23年から当レースを3連覇中。秋に行われる東京ハイジャンプも2連覇中'
+--- 記事[1]: 武豊騎手が宝塚記念6勝目なるか メイショウタバルで連覇狙う ---
+[1] Gemini入力本文 346文字: '武豊騎手がメイショウタバル(牡5、栗東・石橋守厩舎)で、歴代最多を更新する宝塚記念(3歳上・GI・芝2200m)の2年連続6勝目を狙う。\n\u3000武豊騎手はこれまで宝塚記念に32回騎乗している。89年にイナリワンで初制覇。その後も93年にメジロマ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【G1・1週前まとめ】メイショウタバルが武豊と連覇狙う　軽快な動きに石橋調教師「これで変わると思う」　宝塚記念 ---
-[2] Gemini入力本文 350文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)\n\t\t\t\t\u3000いよいよラストの春G1。第67回宝塚記念は14日、阪神競馬場の芝2200メートルで争われる。豪華メンバーがそろったが、中心は大阪杯と天皇賞・春を連勝中のクロワ'
+--- 記事[2]: 1位は唯一の2分9秒台 宝塚記念勝ち時計ランキング ---
+[2] Gemini入力本文 545文字: '6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)。上半期を締めくくるグランプリには、春古馬三冠を狙うクロワデュノール、連覇がかかるメイショウタバル、4つ目のGIタイトルを目指すレガレイラなど、18頭がエントリーし'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 221文字]: '本日の競馬ニュースです。\n2001年の宝塚記念は、テイエムオペラオーとメイショウドトウのライバルストーリーに欠かせない一戦として、四半世紀前の激闘が振り返られています。前年からGIで5戦続けてテイエムオペラオーの2着に敗れていたメイショウドトウが、この一戦で遂に宿敵を打ち破りました。故・松本好雄オーナーの所有馬としては珍しい外国産馬だったメイショウドトウは、4歳を迎えて本格化し、2000年には中京記念、金鯱賞、オールカマーを制しています。'
-[0]  [重複除去] 221文字 → 220文字
+[0]  [Gemini生出力 260文字]: '重要な競馬ニュースをお伝えします。三宮Sは6月13日に阪神競馬場のダート1800メートルで行われます。このレースではグランドプラージュが注目されています。栗東の杉山晴紀厩舎に所属する牡4歳のグランドプラージュは、父がシニスターミニスターです。キャリア6戦で4勝、2着2回という抜群の安定感を誇っています。前走の平城京Sは、初のオープン級競走で16頭立てという初物づくしでした。さらに、出走を予定していたアンタレスSを抽選除外後のレースでした。それでも、グランドプラージュは先団で追走し、抜群の手応えで直線へ向かいました。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (260文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。三宮Sは6月13日に阪神競馬場のダート1800メートルで行われます。このレースではグランドプラージュが注目されています。栗東の...
   HTTP 200
-[2]  [Gemini生出力 260文字]: '競馬ファン注目の情報です。ラストの春G1となる第67回宝塚記念・G1は、6月14日に阪神競馬場の芝2200メートルで争われます。豪華メンバーがそろい、中心は大阪杯と天皇賞・春を連勝中のクロワデュノールです。史上初の古馬G1春3冠を達成し、褒賞金3億円を獲得なるか注目が集まります。また、安田記念で最年長G1勝利となった武豊騎手が騎乗するメイショウタバルは連覇を狙います。メイショウタバルは軽快な動きを見せ、石橋調教師は「これで変わると思う」とコメントしています。皐月賞と有馬記念を勝ったミュージアムマイルも出走予定です。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (220文字)
-[0]  プレビュー: 本日の競馬ニュースです。2001年の宝塚記念は、テイエムオペラオーとメイショウドトウのライバルストーリーに欠かせない一戦として、四半世紀前の激闘が振り返られてい...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[1]  [Gemini生出力 236文字]: '今週の競馬注目情報をお伝えします。\n武豊騎手がメイショウタバルで、歴代最多を更新する宝塚記念の2年連続6勝目を狙います。この宝塚記念は3歳上・GI・芝2200mのレースです。武豊騎手はこれまで宝塚記念に32回騎乗しており、89年にはイナリワンで初制覇を飾りました。その後も93年にメジロマックイーン、97年にマーベラスサンデー、そして06年にはディープインパクトで勝利を挙げています。07年以降は悔しいレースが続いていましたが、今回メイショウタバルと共に連覇を目指します。'
+[1]  [重複除去] 236文字 → 235文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (235文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。武豊騎手がメイショウタバルで、歴代最多を更新する宝塚記念の2年連続6勝目を狙います。この宝塚記念は3歳上・GI・芝2200mの...
   HTTP 200
-[2]  [Gemini生出力 268文字]: '競馬ファン注目の情報です。\n第67回宝塚記念・G1は、6月14日に阪神競馬場の芝2200メートルで争われるラストの春G1です。豪華メンバーがそろい、中心は大阪杯と天皇賞・春を連勝中のクロワデュノールです。クロワデュノールは史上初の古馬G1春3冠を達成し、褒賞金3億円を獲得なるか注目されています。また、安田記念で最年長G1勝利となった武豊が騎乗し、連覇を狙うメイショウタバルも出走します。メイショウタバルの軽快な動きについて、石橋調教師は「これで変わると思う」とコメントしています。皐月賞と有馬記念勝ちのミュージアムマイルも参戦します。'
-[2]  [重複除去] 268文字 → 267文字
+[2]  [Gemini生出力 393文字]: '最新情報をお届けします。\n6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)には、上半期を締めくくるグランプリとして18頭がエントリーしています。春古馬三冠を狙うクロワデュノール、連覇がかかるメイショウタバル、4つ目のGIタイトルを目指すレガレイラなどが名を連ねています。同レースの開催にあたり、歴代勝ち時計ランキングでは、阪神芝2200mでの開催に限り、4位タイに2021年のクロノジェネシスが記録した2分10秒9があります。メイショウタバルは武豊騎手と連覇を狙っており、石橋調教師は軽快な動きに「これで変わると思う」とコメントしています。レガレイラは昨年11着の雪辱へ気配が上々で、陣営は「中身のある調教ができた」と述べています。また、武豊騎手は安田記念で史上最年長57歳G1制覇を達成しており、連覇がかかる14日の宝塚記念で「更新したい」と語っています。'
+[2]  [redirectフィルター] 393文字 → 380文字
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (267文字)
-[2]  プレビュー: 競馬ファン注目の情報です。第67回宝塚記念・G1は、6月14日に阪神競馬場の芝2200メートルで争われるラストの春G1です。豪華メンバーがそろい、中心は大阪杯と...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 232文字]: '本日の競馬ニュースです。第28回東京ジャンプステークス・JG3は6月13日、東京競馬場の芝3110メートルで行われます。ジューンベロシティは23年から当レースを3連覇中です。秋に行われる東京ハイジャンプも2連覇中と、東京障害コースとの相性は抜群です。今年で8歳を迎えましたが、前走の小倉ジャンプステークスでは勝負どころで厳しいプレッシャーを受けながら2着と崩れず、3着には4馬身差をつけました。このジューンベロシティが、東京ジャンプステークスでの4連覇に挑みます。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (232文字)
-[1]  プレビュー: 本日の競馬ニュースです。第28回東京ジャンプステークス・JG3は6月13日、東京競馬場の芝3110メートルで行われます。ジューンベロシティは23年から当レースを...
+[2]  → output/script_2.txt 保存 (380文字)
+[2]  プレビュー: 6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)には、上半期を締めくくるグランプリとして18頭がエントリーしています。春古馬三冠を狙...
 
 3 件の脚本を生成しました。
