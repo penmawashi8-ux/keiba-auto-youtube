@@ -1,11 +1,9 @@
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [ファクトチェックNG] NG: 史上初の春古馬三冠達成
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
@@ -13,10 +11,8 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 史上初の春古馬
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -25,7 +21,8 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [ファクトチェックNG] NG: 元記事に存在しない馬
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [ファクトチェックNG] NG: 褒賞金3億円
 [0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -33,55 +30,45 @@
 [0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [0] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 甦る名牝グランアレグリア　ルメールとサンデーレーシングのコラボで新作発表 ---
-[0] Gemini入力本文 348文字: 'JRAのクリストフ・ルメール(47)のアパレルブランド「CL\u3000by\u3000C・ルメール」がサンデーレーシングとのコラボ新作4点を発表し、京都市内で展開するカフェ「CL\u3000FASHION＆CAFE」でお披露目された。\n\u300023年のシルクレーシング、24'
+--- 記事[0]: 史上初の春古馬三冠なるか クロワデュノールが褒賞金3億円狙う ---
+[0] Gemini入力本文 352文字: '大阪杯と天皇賞(春)を連勝したクロワデュノール(牡4、栗東・斉藤崇史厩舎)が、宝塚記念(3歳上・GI・芝2200m)でGI・3連勝を狙う。\n\u3000クロワデュノールは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血統。母のラ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 高知でベテラン馬が大活躍!12歳馬グッドヒューマーが準重賞V　278戦目17歳馬は最速末脚で1年1か月ぶり馬券圏内 ---
-[1] Gemini入力本文 394文字: '6月7日に高知競馬場で行われた7Rの瀬戸特別・準重賞(ダート1600メートル)で4番人気の12歳馬、グッドヒューマー(セン、高知・打越勇児厩舎、父ローエングリン)が、逃げ切って昨年11月の黒潮マイルCS以来の勝利を飾った。\n\t\t\t\t\u3000201'
+--- 記事[1]: 「頭1つ以上抜けている」 亜咲花さんの東京ダービー注目馬とは ---
+[1] Gemini入力本文 615文字: '6月10日(水)に大井競馬場で行われる、3歳ダート三冠競走の第二弾・東京ダービー(JpnI)まであと2日。本業のアニソンシンガーに加えて、近年では声優(ウマ娘のエスポワールシチー役)や、競馬関連の場内イベントや配信番組出演など、大忙しの亜咲'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【函館スプリントステークス】高松宮記念5着のレイピアが重賞初制覇狙う ---
-[2] Gemini入力本文 363文字: 'サマースプリントシリーズ開幕戦の第33回函館スプリントステークス・G3は6月13日、函館競馬場の芝1200メートルで行われる。\n\t\t\t\t\u3000レイピア(牡4歳、栗東・中竹和也厩舎、父タワーオブロンドン)はG1初挑戦だった高松宮記念で5着と健闘。'
+--- 記事[2]: 半兄にGI馬ラウダシオン メアグローリアが土曜阪神にスタンバイ/関西馬メイクデビュー情報 ---
+[2] Gemini入力本文 560文字: '先週の阪神マイルは当欄で紹介したジーティーサクラ(栗東・吉岡辰弥厩舎)が上がり32.4秒を使って、2着に1馬身3/4差をつける完勝。3着とは1.2秒離れており、先々が楽しみになる勝ちっぷりを見せてくれた。\n\u3000ジーティーサクラの田畑利彦オーナ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 266文字]: '今週の競馬注目情報をお伝えします。6月7日に高知競馬場で行われた7Rの瀬戸特別・準重賞、ダート1600メートルにおいて、4番人気の12歳馬、グッドヒューマーが高知の打越勇児厩舎所属として、逃げ切って勝利を飾りました。これは昨年11月の黒潮マイルCS以来の勝利となります。グッドヒューマーは2016年10月にJRAでデビューし、通算64戦目でした。JRA所属時には25戦3勝を挙げ、高知競馬では39戦で19勝目を記録しています。2021年秋に高知競馬に移籍してからは、いきなり9連勝を飾るなど、この日はベテラン馬が大活躍を見せました。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (266文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。6月7日に高知競馬場で行われた7Rの瀬戸特別・準重賞、ダート1600メートルにおいて、4番人気の12歳馬、グッドヒューマーが高...
+[2]  [Gemini生出力 239文字]: '今日の競馬情報です。半兄にGI馬ラウダシオンを持つメアグローリアが、土曜阪神にスタンバイしています。先週の阪神マイルでは、当欄で紹介されたジーティーサクラが上がり32.4秒を使い、2着に1馬身3/4差をつける完勝を見せました。ジーティーサクラは3着とは1.2秒離れており、先々が楽しみになる勝ちっぷりでした。ジーティーサクラの田畑利彦オーナーは、栗東・松下武士厩舎のジーティーキャリー、栗東・池添学厩舎のアイゼンフォルク、栗東・橋口慎介厩舎のジーティーアツモリも所有しています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (239文字)
+[2]  プレビュー: 今日の競馬情報です。半兄にGI馬ラウダシオンを持つメアグローリアが、土曜阪神にスタンバイしています。先週の阪神マイルでは、当欄で紹介されたジーティーサクラが上が...
   HTTP 200
-[2]  [Gemini生出力 237文字]: '競馬速報です。サマースプリントシリーズ開幕戦となる第33回函館スプリントステークス・G3は、6月13日に函館競馬場の芝1200メートルで行われます。このレースで重賞初制覇を狙うのはレイピアです。栗東の中竹和也厩舎に所属するレイピアは、G1初挑戦だった高松宮記念で5着と健闘しました。このパフォーマンスは、2走前と3走前のオーシャンステークス、シルクロードステークスでの連続2着がフロックではなかったことを証明するものでした。なお、函館競馬場での出走は今回が初めてとなります。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (237文字)
-[2]  プレビュー: 競馬速報です。サマースプリントシリーズ開幕戦となる第33回函館スプリントステークス・G3は、6月13日に函館競馬場の芝1200メートルで行われます。このレースで...
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
+[0]  [Gemini生出力 269文字]: '最新のレース情報が入ってきました。\n大阪杯と天皇賞(春)を連勝したクロワデュノールが、宝塚記念でGI・3連勝を狙います。史上初の春古馬三冠達成と、褒賞金3億円獲得がかかっています。クロワデュノールは斉藤崇史厩舎所属で、父はキタサンブラック、母はライジングクロスという血統です。母のライジングクロスは2006年の英オークスで2着に入った実績を持ちます。また、半姉のアースライズは2015年のフラワーCで2着となっています。馬名の意味はフランス語で「北十字星」です。この馬はサンデーサラブレッドクラブにおいて総額5000万円で募集されました。'
+[0]  [重複除去] 269文字 → 268文字
+  HTTP 200
+[1]  [Gemini生出力 305文字]: '競馬ファン注目の情報です。6月10日水曜日に大井競馬場で行われる、3歳ダート三冠競走の第二弾・東京ダービー(JpnI)まであと2日となりました。このレースは1着賞金1億円をかけた春の3歳ダート王決定戦です。アニソンシンガーで声優の亜咲花さんが東京ダービーの注目馬について語りました。出走する16頭のうち、ユニコーンS覇者のシルバーレシオは野中調教師が前走より「かなりいい仕上がり」とコメントしています。羽田盃を圧勝したフィンガーは2冠制覇へ万全の態勢で、陣営は「体調面や内臓面が良くなっている印象」と述べています。枠順は、二冠を狙うフィンガーが6枠12番、1冠目2着のロックターミガンは2枠4番となっています。'
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (305文字)
+[1]  プレビュー: 競馬ファン注目の情報です。6月10日水曜日に大井競馬場で行われる、3歳ダート三冠競走の第二弾・東京ダービー(JpnI)まであと2日となりました。このレースは1着...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -92,11 +79,8 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
+  HTTP 200
+[0]  [Gemini生出力 252文字]: '最新のレース情報が入ってきました。大阪杯と天皇賞(春)を連勝したクロワデュノールが、宝塚記念でGI・3連勝を狙います。史上初の春古馬三冠達成がかかっており、褒賞金3億円を目指します。クロワデュノールは父キタサンブラック、母ライジングクロス、母の父Cape Crossの血統です。母のライジングクロスは2006年の英オークスの2着馬で、半姉のアースライズは2015年のフラワーCの2着馬です。馬名の意味由来は「北十字星(フランス語)」で、サンデーサラブレッドクラブにおいて総額5000万円で募集されました。'
 [0] 使用: key=***189Y model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -110,8 +94,10 @@ Gemini APIキー: 3 件ロード
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 265文字]: '競馬ファン注目の情報です。JRAのクリストフ・ルメールのアパレルブランド「CL by C・ルメール」が、サンデーレーシングとのコラボ新作4点を発表しました。これらの新作は、京都市内で展開するカフェ「CL FASHION＆CAFE」でお披露目されています。ルメールは、2023年のシルクレーシング、2024年の社台RH、2025年のキャロットファームと、日本を代表するレーシングクラブとタッグを組んできました。今回共闘したサンデーレーシングでは、ルメール自身もチェルヴィニアやフィエールマンなど、同クラブの馬たちと関わりがあります。'
+[0]  [Gemini生出力 260文字]: '最新のレース情報が入ってきました。大阪杯と天皇賞(春)を連勝したクロワデュノールが、宝塚記念でGI・3連勝を狙っています。史上初の春古馬三冠達成と褒賞金3億円獲得を目指しており、注目が集まります。クロワデュノールの父はキタサンブラック、母はライジングクロス、母の父はCape Crossです。母のライジングクロスは2006年の英オークスで2着に入着しており、半姉のアースライズも2015年のフラワーCで2着でした。馬名の意味由来は「北十字星(フランス語)」で、サンデーサラブレッドクラブにおいて総額5000万円で募...'
 [0] 使用: key=***l-ME model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -122,5 +108,9 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+  60秒待機後にリトライ... (attempt 3)  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
+
   HTTP 429
