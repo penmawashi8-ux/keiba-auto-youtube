@@ -1,10 +1,10 @@
-date: 2026-06-08T11:58:03.764518Z
+date: 2026-06-08T13:25:32.286921Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UBuDtAnbQr0 title=【宝塚記念・超ブル診断ステップレース編】3億円ボーナスは難題だから...　最高評
-OK project=1 video_id=nBu58UAWuO4 title=【宝塚記念・ヤマタケが見た】能力か経験か　クロワデュノールが父キタサンブラックも
-OK project=1 video_id=xIOMrYMk700 title=【宝塚記念】クロワデュノールが古馬G1春3冠の偉業達成へ　ファンの期待にも応え歴
+OK project=1 video_id=tZ051CtcPC8 title=19年ぶりのレコード更新!　重賞7勝ヒロシクンがA級戦を貫禄勝ち!　祖母はファビ
+OK project=1 video_id=GotieTU9JPU title=【宝塚記念】ビザンチンドリームが約1年ぶりに日本のターフへ　陣営はパワーアップを
+OK project=1 video_id=N-a8lpdzyKI title=【AI予想・宝塚記念】人工知能は人気薄の大駆けにも警戒!? 波乱も予感させる本命
