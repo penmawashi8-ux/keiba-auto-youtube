@@ -1,10 +1,10 @@
-date: 2026-06-07T12:32:49.784965Z
+date: 2026-06-08T00:31:12.697815Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9J95b8_7Szk title=【函館ＳＳ展望】夏のスプリント王者を目指してレイピアが気合
-OK project=1 video_id=08m6aETO-yU title=【宝塚記念展望】史上初となる春の古馬３冠制覇を目指すクロワデュノールがＶ最有力　
-OK project=1 video_id=rU13RI7ep3w title=【宝塚記念展望】あなたの夢が走ります　春3冠がかかるクロワデュノールを巡るハイレ
+OK project=1 video_id=FnW0yJTMwuM title=“6度目の正直”でオペラオー撃破 メイショウドトウの悲願Vから25年
+OK project=1 video_id=_IJ2UNMlBjc title=【東京ジャンプステークス】ジューンベロシティが4連覇に挑む
+OK project=1 video_id=4LwnwFKUPt0 title=【G1・1週前まとめ】メイショウタバルが武豊と連覇狙う　軽快な動きに石橋調教師「
