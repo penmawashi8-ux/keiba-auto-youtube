@@ -1,10 +1,10 @@
-date: 2026-06-08T05:34:14.813227Z
+date: 2026-06-08T11:58:03.764518Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9O9cJshow0w title=【三宮S・松ケ下の特注馬】驚異の連対率100%継続中!グランドプラージュがここも
-OK project=1 video_id=qi96fTx2SmM title=武豊騎手が宝塚記念6勝目なるか メイショウタバルで連覇狙う
-OK project=1 video_id=1qGfqdFjF-M title=1位は唯一の2分9秒台 宝塚記念勝ち時計ランキング
+OK project=1 video_id=UBuDtAnbQr0 title=【宝塚記念・超ブル診断ステップレース編】3億円ボーナスは難題だから...　最高評
+OK project=1 video_id=nBu58UAWuO4 title=【宝塚記念・ヤマタケが見た】能力か経験か　クロワデュノールが父キタサンブラックも
+OK project=1 video_id=xIOMrYMk700 title=【宝塚記念】クロワデュノールが古馬G1春3冠の偉業達成へ　ファンの期待にも応え歴
