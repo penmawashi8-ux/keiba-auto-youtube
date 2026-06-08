@@ -1,127 +1,91 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名・
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 19年ぶりのレコード更新!　重賞7勝ヒロシクンがA級戦を貫禄勝ち!　祖母はファビラスラフイン ---
-[0] Gemini入力本文 977文字: '6月8日の水沢競馬12Rで、A級1組による初夏特別が行われた。8頭立てのダート1600メートル戦は、雨により重馬場。レースの主導権を奪ったヒロシクン(高松亮騎手騎乗)が快調に飛ばし、追いすがるヒューゴに4馬身差をつけて圧勝。単勝1．0倍の断'
+--- 記事[0]: 【宝塚記念】ダービージョッキー松山弘平騎手と挑むジューンテイクが巻き返しへ　陣営「全部耐えてくれて、いい経験」 ---
+[0] Gemini入力本文 346文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)＝6月8日、栗東トレセン\n\t\t\t\t\u3000ジューンテイク(牡5歳、栗東・武英智厩舎、父キズナ)がダービージョッキーの松山弘平騎手との初コンビで巻き返しを狙う。前走は香港のクイー'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【宝塚記念】ビザンチンドリームが約1年ぶりに日本のターフへ　陣営はパワーアップを実感「今は割と食べてます」 ---
-[1] Gemini入力本文 348文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)＝6月8日、栗東トレセン\n\t\t\t\t\u3000昨年天皇賞・春(2着)以来の日本での競馬となるビザンチンドリーム(牡5歳、栗東・坂口智康厩舎、父エピファネイア)は、全休日のこの日は馬'
+--- 記事[1]: 世界的名馬フライトラインの初年度産駒 土曜東京でデミアンが初陣/関東馬メイクデビュー情報 ---
+[1] Gemini入力本文 550文字: '前週からJRAの2歳戦が始まり、東京の開幕週は当欄で取り上げたフィリオソラーレ、ジョドレルバンクが順当に勝ち上がった。今週は土日で計4鞍のメイクデビューが組まれている。昨年の2週目にはドリームコア、サンアントワーヌ、リアライズシリウスが初陣'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【AI予想・宝塚記念】人工知能は人気薄の大駆けにも警戒!? 波乱も予感させる本命候補3頭とは ---
-[2] Gemini入力本文 474文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は土曜日に函館スプリントS(GIII)、日曜日に宝塚記念(GI)が行われます。その中から阪神競馬場で行われる宝塚記念'
+--- 記事[2]: 今春の福島リーディング獲得の小林美駒騎手が6・11の楽天―巨人戦で自身初の始球式登板 ---
+[2] Gemini入力本文 344文字: '今春の1回福島開催で7勝を挙げて、自身初の開催リーディングを獲得した小林美駒騎手(21)＝美浦・鈴木伸尋厩舎＝が、「JRA福島競馬場＆VIESTA仙台ナイター」として開催される6月11日の楽天―巨人戦(楽天モバイル最強パーク宮城)で始球式を'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 227文字]: '今日の競馬情報です。第67回宝塚記念・G1に出走を予定しているビザンチンドリームが、約1年ぶりに日本のターフへ戻ります。昨年天皇賞・春で2着となって以来の日本での競馬です。ビザンチンドリームはフォワ賞を制し、凱旋門賞でも5着と見せ場十分の走りを見せました。6月8日の栗東トレセンでは、全休日に馬房でリラックスしていました。久保助手は「順調に来ていますね。いつも通り順調で問題ないですよ」と語り、陣営は「今は割と食べてます」とパワーアップを実感しています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (227文字)
-[1]  プレビュー: 今日の競馬情報です。第67回宝塚記念・G1に出走を予定しているビザンチンドリームが、約1年ぶりに日本のターフへ戻ります。昨年天皇賞・春で2着となって以来の日本で...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 4文字]: 'SKIP'
-[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 474文字）
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 296文字]: '最新情報をお届けします。\n6月8日の水沢競馬12R、A級1組による初夏特別で、ヒロシクンが高松亮騎手騎乗で圧勝しました。8頭立てのダート1600メートル戦、雨による重馬場の中、レースの主導権を奪ったヒロシクンは、追いすがるヒューゴに4馬身差をつけ、単勝1.0倍の断然人気に応えました。勝ちタイム1分37秒8はコースレコードを更新し、従来の記録だった2007年11月12日にテンショウボスが計時した1分38秒5を0秒7上回る、19年ぶりの快挙です。ヒロシクンは岩手移籍後、昨年のシアンモア記念など重賞7勝を挙げており、祖母は1996年秋華賞を勝ちジャパンCで2着に入ったファビラスラフインです。'
-[0]  [redirectフィルター] 296文字 → 283文字
+[0]  [Gemini生出力 226文字]: '競馬速報です。第67回宝塚記念・G1が6月14日に阪神競馬場・芝2200メートルで開催されます。このレースに、ジューンテイクがダービージョッキーの松山弘平騎手との初コンビで巻き返しを狙います。ジューンテイクは栗東・武英智厩舎所属です。前走は香港のクイーンエリザベス2世Cで8着に敗れましたが、吉田助手は「予定通り順調に来ていますね。この遠征でも意外とどっしりしてたし、いろいろありましたけど全部耐えてくれて、いい経験になりました」とコメントしています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (283文字)
-[0]  プレビュー: 6月8日の水沢競馬12R、A級1組による初夏特別で、ヒロシクンが高松亮騎手騎乗で圧勝しました。8頭立てのダート1600メートル戦、雨による重馬場の中、レースの主...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+[0]  → output/script_0.txt 保存 (226文字)
+[0]  プレビュー: 競馬速報です。第67回宝塚記念・G1が6月14日に阪神競馬場・芝2200メートルで開催されます。このレースに、ジューンテイクがダービージョッキーの松山弘平騎手と...
+  HTTP 200
+[2]  [Gemini生出力 223文字]: '最新情報をお届けします。今春の1回福島開催で7勝を挙げ、自身初の開催リーディングを獲得した小林美駒騎手が、6月11日に楽天モバイル最強パーク宮城で開催される楽天―巨人戦で始球式を務めることになりました。この試合は「JRA福島競馬場＆VIESTA仙台ナイター」として開催されます。東北楽天ゴールデンイーグルスが8日までにホームページで発表しました。当日は馬ロボの騎乗体験やターフィー、ハローキティのグリーティングなどのイベントも実施される予定です。'
+[2]  [redirectフィルター] 223文字 → 211文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (211文字)
+[2]  プレビュー: 今春の1回福島開催で7勝を挙げ、自身初の開催リーディングを獲得した小林美駒騎手が、6月11日に楽天モバイル最強パーク宮城で開催される楽天―巨人戦で始球式を務める...
+  HTTP 200
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 550文字）
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 217文字]: '今週の競馬注目情報をお伝えします。今週の重賞競走は土曜日に函館スプリントS、日曜日に宝塚記念が行われます。その中から阪神競馬場で行われる宝塚記念を取り上げます。netkeibaオリジナルAIは、人気薄の大駆けにも警戒し、波乱も予感させる本命候補3頭を推奨しています。特筆すべき過去の傾向として、過去10年の宝塚記念での前走着順別成績を見ると、前走3着以内の馬が[7-5-6-42]で、勝率11.7％、連対率20.0％を記録しています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (217文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。今週の重賞競走は土曜日に函館スプリントS、日曜日に宝塚記念が行われます。その中から阪神競馬場で行われる宝塚記念を取り上げます。...
+[1]  [Gemini生出力 218文字]: '競馬速報です。世界的名馬フライトラインの初年度産駒であるデミアンが、土曜東京で初陣を迎えます。JRAの2歳戦は前週から始まっており、東京の開幕週ではフィリオソラーレとジョドレルバンクが順当に勝ち上がりました。今週は土日で計4鞍のメイクデビューが組まれています。6月13日(土)の東京芝1600m・牝馬のメイクデビューには、シャンデヴァーグが出走予定です。この馬の父はロードカナロア、母はプールヴィルで、美浦の森一誠厩舎に所属しています。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 285文字]: '競馬速報です。世界的名馬フライトラインの初年度産駒であるデミアンが、土曜東京で初陣を迎えます。JRAの2歳戦は前週から始まっており、東京の開幕週では当欄で取り上げたフィリオソラーレとジョドレルバンクが順当に勝ち上がりました。今週は土日で計4鞍のメイクデビューが組まれています。昨年の2週目にはドリームコア、サンアントワーヌ、リアライズシリウスが初陣を飾っており、どの馬が勝ち上がるのか注目が集まります。6月13日土曜日の東京芝1600メートル牝馬のレースでは、シャンデヴァーグが出走予定です。シャンデヴァーグは父ロードカナロア、母プールヴィル、美浦の森一誠厩舎所属です。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (285文字)
+[1]  プレビュー: 競馬速報です。世界的名馬フライトラインの初年度産駒であるデミアンが、土曜東京で初陣を迎えます。JRAの2歳戦は前週から始まっており、東京の開幕週では当欄で取り上...
 
 3 件の脚本を生成しました。
