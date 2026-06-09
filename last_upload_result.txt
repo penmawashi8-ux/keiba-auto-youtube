@@ -1,10 +1,10 @@
-date: 2026-06-09T08:34:02.477504Z
+date: 2026-06-09T12:13:55.797200Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jEmzQl9wHfA title=【クイーンエリザベス2世ジュビリーS】国内最終追い切りで力強い動き見せたルガルに
-OK project=1 video_id=vRUicVZc6yk title=【注目馬動向】安田記念6着のオフトレイルは一戦使い、マイルCSを目標　吉村調教師
-OK project=1 video_id=w4CJvDSAJE4 title=【宝塚記念】頭文字が「レ」の馬が勝てば史上初 レガレイラが4年連続GI制覇なるか
+OK project=1 video_id=ougesP9QZPI title=【今週のトク注新馬】“旬”のエフフォーリア産駒インカルナータが好仕上がり　西園調
+OK project=1 video_id=ppDYE9OZX-Q title=【宝塚記念過去10回傾向】1番人気馬の信頼度は低め 伏兵の台頭も目立つ一戦
+OK project=1 video_id=_ZjKje2BX_0 title=【宝塚記念】キタサンブラック半弟のシュガークンは坂路を2本キャンター　清水久調教
