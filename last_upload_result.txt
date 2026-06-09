@@ -1,10 +1,10 @@
-date: 2026-06-08T15:01:02.845174Z
+date: 2026-06-09T05:18:51.977311Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tT8sjGUs1tM title=【宝塚記念】ダービージョッキー松山弘平騎手と挑むジューンテイクが巻き返しへ　陣営
-OK project=1 video_id=XwIYGVzXWU0 title=世界的名馬フライトラインの初年度産駒 土曜東京でデミアンが初陣/関東馬メイクデビ
-OK project=1 video_id=bIBLkQ0Eolc title=今春の福島リーディング獲得の小林美駒騎手が6・11の楽天―巨人戦で自身初の始球式
+OK project=1 video_id=ncOctgP80cU title=偉業達成した武豊騎手の本音に迫る動画に「JRAさんお願いします」「ガチで優秀すぎ
+OK project=1 video_id=2S8i_53law4 title=【宝塚記念】兄キタサンブラックの悔しさを晴らすか シュガークンが一発狙う
+OK project=1 video_id=WttYcfbz_jU title=宝塚記念着差ランキングTOP5 1位は6馬身差の歴史的圧勝
