@@ -1,79 +1,133 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 [1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[0]  [ファクトチェックNG] NG: 元記事に存在しない騎手
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【函館スプリントS】エーティーマクフィは馬なりのまま単走でスムーズな加速　富田暁騎手「今日もいい動きでした」 ---
-[0] Gemini入力本文 342文字: 'サマースプリントシリーズ第1戦、第33回函館スプリントS・G3(13日、函館)の追い切りが、函館競馬場で行われた。昨年の京阪杯に続いて2つ目の重賞タイトルを狙うエーティーマクフィ(牡7歳、栗東・武英智厩舎、父マクフィ)が、軽快な走りを見せた'
+--- 記事[0]: 【地方競馬】東京ダービー　フィンガーが逃げ切って２冠を達成　戸崎圭は「地元で…感無量」と笑みがはじける ---
+[0] Gemini入力本文 331文字: '「東京ダービー・Ｊｐｎ１」（１０日、大井）\n\u3000“３代目”の東京ダービー馬は２番人気のフィンガー。昨年のナチュラルライズに続いて羽田盃との２冠を達成した。２着に１番人気のシルバーレシオ。３着に４番人気のリアライズグリントが入り、一昨年以来のＪ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【函館スプリントS】洋芝巧者カルプスペルシュは馬なりで先着　「余力十分でした」新コンビの丹内祐次騎手が手応え ---
-[1] Gemini入力本文 351文字: '◆第33回函館スプリントS・G3(6月13日、函館競馬場・芝1200メートル)追い切り＝6月10日、函館競馬場\n\t\t\t\t\u3000愛知杯11着から巻き返しを期すカルプスペルシュ(牝4歳、栗東・石坂公一厩舎、父シュヴァルグラン)は、芝コースで追い切り'
+--- 記事[1]: 【東京ダービー】ロックターミガンはハナを奪われて4着　羽田盃2着からの雪辱ならず　西村淳也騎手「勝ち馬に主張されました」 ---
+[1] Gemini入力本文 359文字: '◆第72回東京ダービー・Jpn1(6月10日、大井競馬場・ダート2000メートル、重)\n\t\t\t\t\u30003歳ダート3冠の頂点レースは16頭(JRA4頭、南関東9頭、他地区3頭)によって争われた。\n\t\t\t\t\u3000西村淳也騎手騎乗のロックターミガン(牡3'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【東京ダービー】リアライズグリントは離れた3番手追走から3着　坂井瑠星騎手「勝った馬が強かった」羽田盃に続き2冠目も逃す ---
-[2] Gemini入力本文 535文字: '◆第72回東京ダービー・Jpn1(64月10日、大井競馬場・ダート2000メートル、重)\n\t\t\t\t\u30003歳ダートクラシックの3冠第2戦は16頭(JRA4頭、南関東9頭、他地区3頭)によって争われ、坂井瑠星騎手が騎乗した4番人気でJRAのリアラ'
+--- 記事[2]: 【函館スプリントS】快速牝馬ピューロマジックは馬なりで併入　北村友一騎手「並びかけてゴールするという指示」 ---
+[2] Gemini入力本文 351文字: '◆第33回函館スプリントS・G3(6月13日、函館競馬場・芝1200メートル)追い切り＝6月10日、函館競馬場\n\t\t\t\t\u3000高松宮記念13着から挑むピューロマジック(牝5歳、栗東・安田翔伍厩舎、父アジアエクスプレス)は、芝コースを軽快に駆け抜'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 218文字]: '最新のレース情報が入ってきました。\n第33回函館スプリントS・G3に出走を予定しているカルプスペルシュは、6月10日に函館競馬場の芝コースで追い切りを行いました。愛知杯11着からの巻き返しを期すカルプスペルシュには、新コンビとなる丹内祐次騎手が騎乗しました。追い切りでは、サタデーサンライズを2馬身追走し、直線では外に持ち出して馬なりのまま首差で先着しています。初めてまたがった丹内祐次騎手は、「余力十分でした」と手応えを語っています。'
-[1]  [重複除去] 218文字 → 217文字
+[1]  [Gemini生出力 257文字]: 'レース関連の最新情報です。第72回東京ダービー・Jpn1が6月10日に大井競馬場ダート2000メートル、重馬場で行われました。3歳ダート3冠の頂点レースは、JRA4頭、南関東9頭、他地区3頭の計16頭によって争われました。西村淳也騎手騎乗のロックターミガンは、2番手追走で進めるも4着に敗れ、羽田盃2着からの雪辱はなりませんでした。西村淳也騎手は「勝ち馬に主張されました」とコメントしています。ロックターミガンは昨年7月に中京の芝2000メートル新馬戦でデビューVを飾り、4戦目からはダートへ矛先を向けていました。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (217文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。第33回函館スプリントS・G3に出走を予定しているカルプスペルシュは、6月10日に函館競馬場の芝コースで追い切りを行いました。...
-  HTTP 200
-[0]  [Gemini生出力 259文字]: 'レース関連の最新情報です。サマースプリントシリーズ第1戦、第33回函館スプリントS・G3の追い切りが、函館競馬場で行われました。昨年の京阪杯に続いて2つ目の重賞タイトルを狙うエーティーマクフィは、軽快な走りを見せています。主戦の富田暁騎手を背に、芝コースを単走。コースの大外を回って、最後まで馬なりの楽な手応えのまま鋭く伸びました。富田暁騎手は「今日もいい動きでした」とコメントしています。エーティーマクフィは牡7歳、栗東の武英智厩舎所属で、父はマクフィです。5月30日には栗東・坂路で自己ベストタイを記録しています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (259文字)
-[0]  プレビュー: レース関連の最新情報です。サマースプリントシリーズ第1戦、第33回函館スプリントS・G3の追い切りが、函館競馬場で行われました。昨年の京阪杯に続いて2つ目の重賞...
+[1]  → output/script_1.txt 保存 (257文字)
+[1]  プレビュー: レース関連の最新情報です。第72回東京ダービー・Jpn1が6月10日に大井競馬場ダート2000メートル、重馬場で行われました。3歳ダート3冠の頂点レースは、JR...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
 [2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
+  HTTP 200
+[0]  [Gemini生出力 229文字]: '最新情報をお届けします。東京ダービー・Jpn1が大井競馬場で10日に開催され、2番人気のフィンガーが逃げ切って勝利しました。フィンガーは昨年のナチュラルライズに続いて羽田盃との2冠を達成しました。2着には1番人気のシルバーレシオ、3着には4番人気のリアライズグリントが入り、一昨年以来のJRA勢が上位を独占する堅い決着となりました。地方最先着馬は6番人気の兵庫のゴッドフェンサーで、5着と奮闘しました。戸崎圭騎手は「地元で…感無量」と笑みがはじけていました。'
+[0]  [redirectフィルター] 229文字 → 217文字
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 252文字]: '競馬速報です。\n第72回東京ダービー・Jpn1が6月10日、大井競馬場ダート2000メートル、重馬場で行われました。3歳ダートクラシックの3冠第2戦は、JRA4頭、南関東9頭、他地区3頭の計16頭によって争われました。坂井瑠星騎手が騎乗した4番人気でJRAのリアライズグリントは、離れた3番手追走から、最後の直線で2番手に浮上するも、外から差されて離れた3着に敗れました。これにより、リアライズグリントは羽田盃に続き2冠目も逃す結果となりました。坂井瑠星騎手は「勝った馬が強かった」とコメントしています。'
-[2]  [重複除去] 252文字 → 251文字
+[2]  [Gemini生出力 197文字]: '競馬ファン注目の情報です。第33回函館スプリントS・G3の追い切りが6月10日に函館競馬場で行われました。高松宮記念13着から挑むピューロマジックは、芝コースを軽快に駆け抜けています。2戦連続コンビとなる北村友一騎手を背に併せ馬を行い、ミレニアルピンクを5馬身ほど追走し、馬なりで楽な手応えのままフィニッシュしました。北村友一騎手は「並びかけてゴールするという指示」だったとコメントしています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (251文字)
-[2]  プレビュー: 競馬速報です。第72回東京ダービー・Jpn1が6月10日、大井競馬場ダート2000メートル、重馬場で行われました。3歳ダートクラシックの3冠第2戦は、JRA4頭...
+[2]  → output/script_2.txt 保存 (197文字)
+[2]  プレビュー: 競馬ファン注目の情報です。第33回函館スプリントS・G3の追い切りが6月10日に函館競馬場で行われました。高松宮記念13着から挑むピューロマジックは、芝コースを...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 243文字]: '最新情報をお届けします。\n東京ダービー・Jpn1が10日、大井で開催され、2番人気のフィンガーが逃げ切って2冠を達成しました。フィンガーは昨年のナチュラルライズに続いて羽田盃との2冠を達成した3代目東京ダービー馬です。2着には1番人気のシルバーレシオが入り、3着は4番人気のリアライズグリントでした。一昨年以来のJRA勢が上位を独占し、堅い決着となりました。地方最先着馬は6番人気の兵庫のゴッドフェンサーが5着と奮闘を見せました。戸崎圭騎手は「地元で…感無量」と笑みがはじけていました。'
+[0]  [redirectフィルター] 243文字 → 230文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (229文字)
+[0]  プレビュー: 東京ダービー・Jpn1が10日、大井で開催され、2番人気のフィンガーが逃げ切って2冠を達成しました。フィンガーは昨年のナチュラルライズに続いて羽田盃との2冠を達...
 
 3 件の脚本を生成しました。
