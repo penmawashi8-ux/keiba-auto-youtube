@@ -1,10 +1,10 @@
-date: 2026-06-10T00:29:34.998500Z
+date: 2026-06-10T05:27:18.976528Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ThAhXH7AeV4 title=【園田競馬　10日発走　兵庫馬事畜産特別】ベラジオガルフが底力でねじ伏せる
-OK project=1 video_id=0qZJLE8MNyk title=【宝塚記念】クロワデュノールは春の古馬3冠へ復調気配見えた!　斉藤崇調教師「これ
-OK project=1 video_id=MT8qmIcl62w title=22年ぶり6頭目の外国産馬Vなるか シンエンペラーが宝塚記念で復活狙う
+OK project=1 video_id=WfPmV5kvH5k title=マスカレードボール、ヴェルテンベルクなど37頭　英G1のキングジョージ6世&クイ
+OK project=1 video_id=d4nQVxNyYqk title=「只今練習中です　よろしくお願いします」オークス制覇の今村聖奈騎手が7・1ソフト
+OK project=1 video_id=9SerXblbGws title=クロワデュノール、宝塚記念最終追い切り速報/栗東トレセンニュース
