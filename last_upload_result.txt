@@ -1,10 +1,10 @@
-date: 2026-06-10T07:15:24.573690Z
+date: 2026-06-10T08:50:47.088180Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=oQsn9ZCHk0s title=サウンドムーブ、ラジオNIKKEI賞2週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=rYPVfR4qEYw title=【注目馬動向】ヴィクトリアマイル2着のカムニャック　秋はアイルランドTから始動予
-OK project=1 video_id=1ypB6DVRbz0 title=【しらさぎS想定】キープカルム、ショウナンアデイブなど19頭
+OK project=1 video_id=jxbWogGw4kw title=【宝塚記念】一発ムードが漂うコスモキュランダは坂路で楽々と併入　加藤士調教師「楽
+OK project=1 video_id=RrEQhKj90lM title=【注目馬動向】オークス3着のラフターラインズが左前脚を骨折　エリザベス女王杯を目
+OK project=1 video_id=j8qlGAash5g title=【POG】セレクト2億4000万円ダイナマイクは順調な仕上がり　宝塚記念当日の阪
