@@ -1,10 +1,10 @@
-date: 2026-06-10T08:50:47.088180Z
+date: 2026-06-10T10:59:36.920670Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jxbWogGw4kw title=【宝塚記念】一発ムードが漂うコスモキュランダは坂路で楽々と併入　加藤士調教師「楽
-OK project=1 video_id=RrEQhKj90lM title=【注目馬動向】オークス3着のラフターラインズが左前脚を骨折　エリザベス女王杯を目
-OK project=1 video_id=j8qlGAash5g title=【POG】セレクト2億4000万円ダイナマイクは順調な仕上がり　宝塚記念当日の阪
+OK project=1 video_id=4Gas-EZYDRw title=【宝塚記念・一問一答】「相当レベルアップ」レーン騎手が断言　ダービー以来のコンビ
+OK project=1 video_id=Gcm4sTQrxz4 title=【地方競馬】大井に長州力が登場　過去の競馬実況チャレンジに「とんでもない大失敗」
+OK project=1 video_id=7ZMtkFamgGY title=【G1トク捜リレー】栗東・理貴記者の2つの不安は解消!　秋春グランプリ連覇狙える
