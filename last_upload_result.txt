@@ -1,10 +1,10 @@
-date: 2026-06-09T12:13:55.797200Z
+date: 2026-06-10T00:29:34.998500Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ougesP9QZPI title=【今週のトク注新馬】“旬”のエフフォーリア産駒インカルナータが好仕上がり　西園調
-OK project=1 video_id=ppDYE9OZX-Q title=【宝塚記念過去10回傾向】1番人気馬の信頼度は低め 伏兵の台頭も目立つ一戦
-OK project=1 video_id=_ZjKje2BX_0 title=【宝塚記念】キタサンブラック半弟のシュガークンは坂路を2本キャンター　清水久調教
+OK project=1 video_id=ThAhXH7AeV4 title=【園田競馬　10日発走　兵庫馬事畜産特別】ベラジオガルフが底力でねじ伏せる
+OK project=1 video_id=0qZJLE8MNyk title=【宝塚記念】クロワデュノールは春の古馬3冠へ復調気配見えた!　斉藤崇調教師「これ
+OK project=1 video_id=MT8qmIcl62w title=22年ぶり6頭目の外国産馬Vなるか シンエンペラーが宝塚記念で復活狙う
