@@ -1,10 +1,10 @@
-date: 2026-06-10T10:59:36.920670Z
+date: 2026-06-10T12:35:44.945833Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4Gas-EZYDRw title=【宝塚記念・一問一答】「相当レベルアップ」レーン騎手が断言　ダービー以来のコンビ
-OK project=1 video_id=Gcm4sTQrxz4 title=【地方競馬】大井に長州力が登場　過去の競馬実況チャレンジに「とんでもない大失敗」
-OK project=1 video_id=7ZMtkFamgGY title=【G1トク捜リレー】栗東・理貴記者の2つの不安は解消!　秋春グランプリ連覇狙える
+OK project=1 video_id=ZdbWPO46nPw title=【函館スプリントS】エーティーマクフィは馬なりのまま単走でスムーズな加速　富田暁
+OK project=1 video_id=W0L5dIwvYaU title=【函館スプリントS】洋芝巧者カルプスペルシュは馬なりで先着　「余力十分でした」新
+OK project=1 video_id=1FC6bTW2SrE title=【東京ダービー】リアライズグリントは離れた3番手追走から3着　坂井瑠星騎手「勝っ
