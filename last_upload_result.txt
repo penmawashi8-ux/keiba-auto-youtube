@@ -1,10 +1,10 @@
-date: 2026-06-11T13:01:31.089869Z
+date: 2026-06-11T14:46:52.755876Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qXGMO-h8IC8 title=【POG】パンジャケリーは14日の函館・芝1000メートル戦でデビュー　陣営「初
-OK project=1 video_id=Kq-cJG_2-4A title=ザライオンインウィンターが調教中の骨折で安楽死　日本馬と何度も対決した名マイラー
-OK project=1 video_id=ZXqtt5LjRjY title=【POG】近親にマジックサンズなど活躍馬が多数　ショウナンカノアが13日函館でデ
+OK project=1 video_id=EAN0bMyceIk title=世界1位は引き続きカーインライジング　日本調教馬はフォーエバーヤング、クロワデュ
+OK project=1 video_id=MTQU7njVYNs title=オンブズマン、ナイソス、ノータブルスピーチがレーティング125ポンドで世界ランク
+OK project=1 video_id=zbVShCqhOL0 title=フランスのブドー騎手が13日にコンピエーニュ競馬場で復帰　強制わいせつ容疑が晴れ
