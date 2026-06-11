@@ -199,9 +199,12 @@ def is_channel_upload_limit(http_error: HttpError) -> bool:
     return bool(_get_error_reasons(http_error) & CHANNEL_LIMIT_REASONS)
 
 
-def build_tags() -> list[str]:
+def build_tags(extra_tags: list[str] | None = None) -> list[str]:
     """予想動画用タグをYouTubeタグ上限(500文字合計)内で返す。"""
     tags = list(LANDSCAPE_TAGS)
+    for tag in extra_tags or []:
+        if tag not in tags:
+            tags.append(tag)
     result: list[str] = []
     total = 0
     for tag in tags:
@@ -251,7 +254,8 @@ def build_description(race_name: str, grade: str, date_str: str, script: str) ->
     return intro + "\n" + script[:max_len] + hashtags
 
 
-def upload_video(youtube, title: str, description: str, video_path: str) -> str | None:
+def upload_video(youtube, title: str, description: str, video_path: str,
+                 extra_tags: list[str] | None = None) -> str | None:
     """YouTube に動画をアップロードして videoId を返す。
     クォータ超過の場合は None を返す（呼び出し元で判定）。
     """
@@ -259,7 +263,7 @@ def upload_video(youtube, title: str, description: str, video_path: str) -> str 
         "snippet": {
             "title": title,
             "description": description,
-            "tags": build_tags(),
+            "tags": build_tags(extra_tags),
             "categoryId": CATEGORY_ID,
             "defaultLanguage": "ja",
             "defaultAudioLanguage": "ja",
@@ -357,8 +361,10 @@ def upload_one(
     script_path = Path(OUTPUT_DIR) / f"script_{idx}.txt"
     script = script_path.read_text(encoding="utf-8").strip() if script_path.exists() else ""
 
-    title = build_title(race_name, grade, date_str)
-    description = build_description(race_name, grade, date_str, script)
+    # news.json にカスタムタイトル・説明文があればテンプレートより優先する
+    title = (race_info.get("youtube_title") or "").strip()[:100] or build_title(race_name, grade, date_str)
+    description = (race_info.get("youtube_description") or "").strip()[:5000] \
+        or build_description(race_name, grade, date_str, script)
 
     new_filename = _make_video_filename(race_name)
     new_video_path = video_path.parent / new_filename
@@ -371,7 +377,8 @@ def upload_one(
 
     video_id = None
     while video_id is None:
-        result = upload_video(youtube, title, description, str(new_video_path))
+        result = upload_video(youtube, title, description, str(new_video_path),
+                              extra_tags=race_info.get("extra_tags"))
         if result == "CHANNEL_LIMIT":
             log_lines.append(f"CHANNEL_LIMIT title={title[:50]}")
             return False, True, cred_idx, log_lines

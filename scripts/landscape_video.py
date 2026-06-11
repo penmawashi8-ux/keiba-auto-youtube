@@ -333,11 +333,15 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
     script      = script_path.read_text(encoding="utf-8").strip()
     aud_dur     = audio_duration(audio_path)
     total_dur   = aud_dur
-    total_chars = max(len(script), 1)
     chapters    = parse_chapters(script)
 
+    # generate_audio.py は news.json のタイトルを冒頭に読み上げるため、
+    # チャプター時刻はタイトル文字数分を加味して推定する
+    title_offset = len(meta.get("title", "")) + 1 if meta.get("title") else 0
+    total_chars  = max(title_offset + len(script), 1)
+
     def ch_t(char_pos: int) -> float:
-        return (char_pos / total_chars) * aud_dur
+        return ((title_offset + char_pos) / total_chars) * aud_dur
 
     tmp_dir = tempfile.mkdtemp(prefix=f"ls_{idx}_")
     try:
@@ -416,7 +420,8 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
 
             # --- Chapter title cards ---
             for ci, (ch_title, ch_pos) in enumerate(chapters):
-                t1 = ch_t(ch_pos)
+                # オープニングカードと重ならないよう先頭チャプターは後ろにずらす
+                t1 = max(ch_t(ch_pos), OPEN_DUR)
                 t2 = min(t1 + CARD_DUR, total_dur)
                 if t2 <= t1 + 0.1:
                     continue
