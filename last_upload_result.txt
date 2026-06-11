@@ -1,10 +1,10 @@
-date: 2026-06-11T05:32:51.903286Z
+date: 2026-06-11T07:35:38.871395Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zhiCNAEjM5s title=【宝塚記念枠順確定】クロワデュノールは3枠5番、メイショウタバルは8枠16番
-OK project=1 video_id=Bvfgt003mn4 title=ローベルクランツ、ラジオNIKKEI賞2週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=W1xNW_WI3YY title=サトノレーヴが仏モーリスドゲスト賞に登録　ジャックルマロワ賞は日本調教馬4頭が登
+OK project=1 video_id=RG1DjFzWboI title=【宝塚記念・枠順確定】ミュージアムマイルは1枠2番からグランプリ連勝へ　陣営「有
+OK project=1 video_id=qDu5p73HS8E title=【POG】「初戦で勝てればいい」関西発ニドヅケキンシが13日阪神5Rで佐藤悠厩舎
+OK project=1 video_id=JJpylDKnsk8 title=【宝塚記念枠順確定】武豊騎手×メイショウタバルは勝率トップの8枠16番　石橋調教
