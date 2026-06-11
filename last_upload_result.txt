@@ -1,10 +1,10 @@
-date: 2026-06-10T14:37:22.778296Z
+date: 2026-06-11T05:32:51.903286Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kKHQNNor_cA title=【地方競馬】東京ダービー　フィンガーが逃げ切って２冠を達成　戸崎圭は「地元で…感
-OK project=1 video_id=esZW_FSa8cY title=【東京ダービー】ロックターミガンはハナを奪われて4着　羽田盃2着からの雪辱ならず
-OK project=1 video_id=i9tKNGGtg64 title=【函館スプリントS】快速牝馬ピューロマジックは馬なりで併入　北村友一騎手「並びか
+OK project=1 video_id=zhiCNAEjM5s title=【宝塚記念枠順確定】クロワデュノールは3枠5番、メイショウタバルは8枠16番
+OK project=1 video_id=Bvfgt003mn4 title=ローベルクランツ、ラジオNIKKEI賞2週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=W1xNW_WI3YY title=サトノレーヴが仏モーリスドゲスト賞に登録　ジャックルマロワ賞は日本調教馬4頭が登
