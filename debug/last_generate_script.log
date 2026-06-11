@@ -1,19 +1,25 @@
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: クロワデュノール
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: レイデアルマスの母が
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名「シェ
 [2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -23,76 +29,74 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: レイデアルマスに関する「母
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【よもやま話】シーガルワールド次戦は函館/馬三郎のつぶやき ---
-[0] Gemini入力本文 752文字: '◆シーガルワールド(11日・玉川)\n\u3000先月末にGI3勝のタイトルホルダーの半妹シーガルワールド(牝3歳、美浦・栗田)が東京でデビューして5着だったが、兄の主戦でもあった鞍上・横山和騎手のコメントは実に印象的だった。「乗りながら見えるクビ差し'
+--- 記事[0]: 【府中牝馬S・1週前】菊沢一樹騎手を背に「前走に比べてリラックス」　コガネノソラが重賞連勝へ好ムード ---
+[0] Gemini入力本文 355文字: '◆第74回府中牝馬S・G3(6月21日、東京競馬場・芝1800メートル)1週前追い切り＝6月11日、美浦トレセン\n\t\t\t\t\u3000コガネノソラ(牝5歳、美浦・菊沢隆徳厩舎、父ゴールドシップ)は、前走の福島牝馬Sで勝利へ導いた菊沢一樹騎手を背にWコ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【有力馬動向】ブエナオンダ坂路で豪快な動き/馬三郎のつぶやき ---
-[1] Gemini入力本文 342文字: '◆エストゥペンダ(11日・常木)\n\u3000府中牝馬S(21日・東京、芝1800m)に出走予定のエストゥペンダ(牝4歳、美浦・高柳瑞)。オープン昇級初戦となるが、3歳時には再三の重賞好走歴があり、格負け感はない。師は「前走は窮屈なレースだったが、何'
+--- 記事[1]: 【宝塚記念過去10回傾向】ファン投票1位馬の成績は クロワデュノールにかかる36万6039票の期待 ---
+[1] Gemini入力本文 362文字: '6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)。豪華メンバーが集う上半期のグランプリをデータ面から分析する。本稿では阪神開催過去10回の「ファン投票1位馬」に着目し、ヒントを探っていく。\n\u3000さっそくだが、過去1'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【POG】ステラトップガンは馬格があり芝、ダート不問/馬三郎のつぶやき ---
-[2] Gemini入力本文 1405文字: '◆レッチュベルク(11日・森元)\n\u300024年セレクトセールにて3500万円(税抜き)で取引されたレッチュベルク(牡2歳、美浦・久保田、父インディチャンプ、母リヴィア)が、美浦Wで荻野極を背に6F81秒7-11秒6(仕掛け)をマーク。軽く仕掛け'
+--- 記事[2]: 【宝塚記念】28年ぶり参戦　宮調教師がタガノデュードとシェイクユアハートの2頭出し「どこまで食らいつけるか」 ---
+[2] Gemini入力本文 355文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル)＝6月11日、栗東トレセン\n\t\t\t\t\u300028年ぶりのドリームレースに2頭の精鋭で挑む。開業30年目の宮徹調教師(65)＝栗東＝は、これが2度目の宝塚記念参戦。前回はホウエイ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 246文字]: '競馬速報です。先月末にGI3勝のタイトルホルダーの半妹シーガルワールドが東京でデビューし、5着でした。このレースで兄の主戦でもあった鞍上・横山和騎手は、「乗りながら見えるクビ差しの雰囲気、4角で少し右へ行きたがるところなど、タイトルホルダーにそっくり。道中で懐かしくて泣きそうになったよ」と印象的なコメントを残しています。注目の次戦は、函館の3週目か4週目の芝2000mとなる見込みです。師は「兄と同じで右回りの方がスムーズだから、次は楽しみ」と、シーガルワールドの勝利に期待を寄せています。'
-  HTTP 200
-[1]  [Gemini生出力 197文字]: '今日の競馬情報です。府中牝馬Sに出走予定のエストゥペンダの動向です。21日に東京の芝1800mで行われるこのレースに、エストゥペンダはオープン昇級初戦として出走します。3歳時には再三の重賞好走歴があり、格負け感はないとされています。師は「前走は窮屈なレースだったが、何とか届いてくれた。体は戻っているし、動きもいい。直線の長いコースが合っているし、ここでも期待したい」と意気込みを語っています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (197文字)
-[1]  プレビュー: 今日の競馬情報です。府中牝馬Sに出走予定のエストゥペンダの動向です。21日に東京の芝1800mで行われるこのレースに、エストゥペンダはオープン昇級初戦として出走...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (246文字)
-[0]  プレビュー: 競馬速報です。先月末にGI3勝のタイトルホルダーの半妹シーガルワールドが東京でデビューし、5着でした。このレースで兄の主戦でもあった鞍上・横山和騎手は、「乗りな...
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
+[2]  [Gemini生出力 242文字]: '最新情報をお届けします。第67回宝塚記念・G1に、開業30年目の宮徹調教師が28年ぶりに参戦します。宮調教師はタガノデュードとシェイクユアハートの2頭出しで挑みます。これが2度目の宝塚記念参戦となる宮調教師は65歳で、前回は98年にホウエイコスモスで13着でした。10年にはコパノジングーが出走取消となっています。宮調教師は「全然、使ったことがなかった。当時はデビューして間もなかったね」と振り返り、「どこまで食らいつけるか」とコメントしています。タガノデュードは春古馬3冠皆勤です。'
+[2]  [redirectフィルター] 242文字 → 230文字
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 235文字]: '重要な競馬ニュースをお伝えします。第74回府中牝馬S・G3の1週前追い切りが6月11日に美浦トレセンで行われました。東京競馬場・芝1800メートルで行われるこのレースに向けて、コガネノソラは、前走の福島牝馬Sで勝利へ導いた菊沢一樹騎手を背にWコースで追い切りを実施。3馬身ほど先行したコブラに直線で馬体を並べると、半馬身先着してフィニッシュしました。追い切りのタイムは5ハロン66秒7―11秒0です。菊沢騎手は「道中は前走に比べてリラックスして走」とコメントしています。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (235文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。第74回府中牝馬S・G3の1週前追い切りが6月11日に美浦トレセンで行われました。東京競馬場・芝1800メートルで行われるこの...
+  HTTP 200
+[1]  [Gemini生出力 295文字]: '最新のレース情報が入ってきました。\n6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)に関するデータ分析です。上半期のグランプリをデータ面から分析する本稿では、阪神開催過去10回の「ファン投票1位馬」に着目し、ヒントを探っています。過去10回のファン投票1位馬の成績は、2015年ゴールドシップが66,123票で15着、2016年キタサンブラックが82,121票で3着でした。また、2017年キタサンブラックは101,621票で9着、2018年サトノダイヤモンドは63...と続きます。今年の宝塚記念では、クロワデュノールに36万6039票の期待がかかっています。'
+[1]  [重複除去] 292文字 → 291文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
 [2] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 418文字]: '今週の競馬注目情報をお伝えします。\nレッチュベルクは24年セレクトセールにて3500万円で取引され、美浦Wで荻野極を背に6F81秒7-11秒6をマークしました。軽く仕掛けられると瞬時に反応し、年長馬を抜き去る上々の動きを見せ、初戦から注目したい一頭です。ブレイクガールは坂井を背に栗東CWで追われ、持ったままの手応えで6F83秒2-37秒3-11秒2をマークしました。25年のセレクトセールで1億4000万円の高値で取引された見栄えの良い馬で、ポテンシャルは高そうです。ステラトップガンは函館競馬場でゲート練習を行い、鮫島駿を背に1F目に14秒7を記録しました。母は09年の函館2歳Sの勝ち馬で、馬格があり芝、ダートは問わないタイプと見られています。レイデアルマスは栗東CWで3頭併せを行い、ラストまで粘り強い伸びを見せて1F11秒6をマークしました。母はGII勝ちの実績馬で、近親にはGIを2勝したアスコリピチェーノがいる良血馬です。'
-[2]  [重複除去] 418文字 → 417文字
+[2]  [Gemini生出力 265文字]: '最新情報をお届けします。第67回宝塚記念G1は6月14日に阪神競馬場・芝2200メートルで開催されます。宮徹調教師が28年ぶりにドリームレースに参戦し、タガノデュードとシェイクユアハートの2頭出しで挑みます。開業30年目の宮徹調教師は65歳で、これが2度目の宝塚記念参戦となります。前回は98年のホウエイコスモスで13着でした。また、10年にはコパノジングーが出走取消となっています。宮調教師は「全然、使ったことがなかった。当時はデビューして間もなかったね」と懐かしそうに振り返り、「どこまで食らいつけるか」とコメントしています。'
+[2]  [redirectフィルター] 265文字 → 253文字
+  HTTP 200
+[1]  [Gemini生出力 268文字]: '最新のレース情報が入ってきました。6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)について、豪華メンバーが集う上半期のグランプリをデータ面から分析します。本稿では、阪神開催過去10回の「ファン投票1位馬」に着目し、ヒントを探っていきます。過去10回のファン投票1位馬の成績は以下の通りです。2015年のゴールドシップは66,123票で15着。2016年のキタサンブラックは82,121票で3着。2017年のキタサンブラックは101,621票で9着でした。2018年のサトノダイヤモンドは63...と続きます。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (265文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。6月14日(日)に阪神競馬場で行われる宝塚記念(3歳上・GI・芝2200m)について、豪華メンバーが集う上半期のグランプリをデ...
 [2] 使用: key=***189Y model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
@@ -105,9 +109,22 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
+[2] 使用: key=***l-ME model=gemini-2.5-flash[2]  [ファクトチェックNG] NG: 元記事に存在しない馬
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
+
   HTTP 200
-[2]  [Gemini生出力 371文字]: '今週の競馬注目情報をお伝えします。24年セレクトセールにて3500万円で取引されたレッチュベルクは、美浦Wで荻野極を背に6F81秒7-11秒6をマークし、上々の動きで初戦から注目の一頭です。ブレイクガールは坂井を背に栗東CWで追われ、持ったままの手応えで6F83秒2-37秒3-11秒2をマークしました。25年セレクトセールで1億4000万円の高値で取引された馬で、ポテンシャルは高そうです。ステラトップガンは函館競馬場でゲート練習を行い、鮫島駿Jを背に1F目に14秒7を記録。母は09年の函館2歳S勝ち馬で、馬格があり芝、ダートは問わないタイプでしょう。レイデアルマスは栗東CWで3頭併せを行い、ラストまで粘り強い伸びを見せて1F11秒6をマークしました。母はGII勝ちの実績馬で、近親にはGIを2勝したアスコリピチェーノがいる良血馬です。'
+[2]  [Gemini生出力 279文字]: '最新情報をお届けします。\n第67回宝塚記念・G1が6月14日に阪神競馬場・芝2200メートルで開催されます。このレースに、宮徹調教師が28年ぶりに参戦し、2頭の精鋭で挑みます。開業30年目の宮調教師は、これが2度目の宝塚記念参戦となります。前回は98年のホウエイコスモスで13着でした。10年のコパノジングーは出走取消となっています。宮調教師は当時を振り返り、「全然、使ったことがなかった。当時はデビューして間もなかったね」と語っています。今年は春古馬3冠皆勤のタガノデュードとシェイクユアハートの2頭出しで、「どこまで食らいつけるか」とコメントしています。'
+[2]  [redirectフィルター] 279文字 → 266文字
 [2] 使用: key=***l-ME model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
