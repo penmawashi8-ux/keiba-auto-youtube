@@ -1,10 +1,10 @@
-date: 2026-06-11T07:35:38.871395Z
+date: 2026-06-11T13:01:31.089869Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RG1DjFzWboI title=【宝塚記念・枠順確定】ミュージアムマイルは1枠2番からグランプリ連勝へ　陣営「有
-OK project=1 video_id=qDu5p73HS8E title=【POG】「初戦で勝てればいい」関西発ニドヅケキンシが13日阪神5Rで佐藤悠厩舎
-OK project=1 video_id=JJpylDKnsk8 title=【宝塚記念枠順確定】武豊騎手×メイショウタバルは勝率トップの8枠16番　石橋調教
+OK project=1 video_id=qXGMO-h8IC8 title=【POG】パンジャケリーは14日の函館・芝1000メートル戦でデビュー　陣営「初
+OK project=1 video_id=Kq-cJG_2-4A title=ザライオンインウィンターが調教中の骨折で安楽死　日本馬と何度も対決した名マイラー
+OK project=1 video_id=ZXqtt5LjRjY title=【POG】近親にマジックサンズなど活躍馬が多数　ショウナンカノアが13日函館でデ
