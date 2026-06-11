@@ -1,80 +1,58 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【POG】パンジャケリーは14日の函館・芝1000メートル戦でデビュー　陣営「初戦から期待しています」 ---
-[0] Gemini入力本文 344文字: '6月14日の函館5R・芝1000メートルでデビューするパンジャケリー(牡2歳、栗東・橋田宜長厩舎、父ディスクリートキャット)が、好仕上がりを見せている。10日の最終追い切りは佐々木大輔騎手＝美浦・菊川正達厩舎＝が騎乗。Wコースを馬なり単走で'
+--- 記事[0]: 世界1位は引き続きカーインライジング　日本調教馬はフォーエバーヤング、クロワデュノールなど6頭がランクイン ---
+[0] Gemini入力本文 348文字: 'IFHA(国際競馬統括機関連盟)は6月11日、2026年1月1日から6月7日までの世界の主要レースを対象とした「ロンジンワールドベストレースホースランキング」の第4回中間発表をした。レーティング120ポンド以上の29頭が掲載されている。\n\t'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: ザライオンインウィンターが調教中の骨折で安楽死　日本馬と何度も対決した名マイラー「どうか安らかに」「ショック」 ---
-[1] Gemini入力本文 384文字: 'アイルランドの調教馬で数々のG1で健闘したザライオンインウィンター(牡4歳、愛国・エイダン・オブライエン厩舎、父シーザスターズ)が調教中に骨折し、安楽死となったことを6月11日、複数の欧州の競馬メディアが伝えた。\n\t\t\t\t\u3000クイーンアンステ'
+--- 記事[1]: オンブズマン、ナイソス、ノータブルスピーチがレーティング125ポンドで世界ランク5位タイにランクイン ---
+[1] Gemini入力本文 375文字: 'IFHA(国際競馬統括機関連盟)は11日、今年のロンジンワールドベストレースホースランキング第4回中間発表を行った。\n\u30001月1日から6月7日までの主要レースが対象でチェアマンズスプリントプライズ覇者カーインライジング(セン5＝香港)がレーテ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【POG】近親にマジックサンズなど活躍馬が多数　ショウナンカノアが13日函館でデビュー　陣営「大人っぽい一面も」 ---
-[2] Gemini入力本文 343文字: '良血馬のショウナンカノア(牝2歳、栗東・清水久詞厩舎、父ドレフォン)は、順調な調整が進んでいる。デビュー戦は13日の函館5R・芝1200メートルで、鞍上は池添謙一騎手＝栗東・フリー＝。近親に25年NHKマイルC2着のマジックサンズや、23年'
+--- 記事[2]: フランスのブドー騎手が13日にコンピエーニュ競馬場で復帰　強制わいせつ容疑が晴れて免許再取得 ---
+[2] Gemini入力本文 348文字: '女性への強制わいせつ容疑が5日に無罪となり、9日にフランスの騎手免許を再取得したピエールシャルル・ブドー(33)が13日にコンピエーニュ競馬場の3R(芝2400メートル)で復帰する。\n\u300015、16、20年と3度の仏リーディングに輝き、ヴァル'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 206文字]: '今日の競馬情報です。女性への強制わいせつ容疑が5日に無罪となり、9日にフランスの騎手免許を再取得したピエールシャルル・ブドーが、13日にコンピエーニュ競馬場の3R、芝2400メートルで復帰します。ブドー騎手は15年、16年、20年と3度の仏リーディングに輝き、ヴァルトガイストとのコンビで19年凱旋門賞を制したトップジョッキーです。21年2月の女性への強制わいせつ容疑で5月に起訴され、騎乗停止となっていました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (206文字)
+[2]  プレビュー: 今日の競馬情報です。女性への強制わいせつ容疑が5日に無罪となり、9日にフランスの騎手免許を再取得したピエールシャルル・ブドーが、13日にコンピエーニュ競馬場の3...
+  HTTP 200
+[1]  [Gemini生出力 276文字]: '重要な競馬ニュースをお伝えします。IFHA(国際競馬統括機関連盟)は11日、今年のロンジンワールドベストレースホースランキング第4回中間発表を行いました。このランキングは1月1日から6月7日までの主要レースが対象です。チェアマンズスプリントプライズ覇者のカーインライジングがレーティング130ポンドで単独首位をキープしています。また、オンブズマン、ナイソス、ノータブルスピーチの3頭がレーティング125ポンドで世界ランク5位タイにランクインしました。この中間、出走したメンバーの中には、昨年の凱旋門賞馬でアガカーン4世賞を制したダリズも含まれています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (276文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。IFHA(国際競馬統括機関連盟)は11日、今年のロンジンワールドベストレースホースランキング第4回中間発表を行いました。このラ...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[1]  [Gemini生出力 228文字]: '本日の競馬ニュースです。\nアイルランドの調教馬ザライオンインウィンターが調教中に骨折し、安楽死となったことを複数の欧州の競馬メディアが6月11日に伝えました。数々のG1で健闘した牡4歳の同馬は、エイダン・オブライエン厩舎に所属し、父はシーザスターズです。6月16日に英アスコット競馬場・芝1600メートルで行われるクイーンアンステークス・G1を目指していた最中、アクシデントに見舞われ世を去りました。同馬は2歳だった24年にデビュー2連勝を飾っていました。'
-[1]  [重複除去] 228文字 → 227文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (227文字)
-[1]  プレビュー: 本日の競馬ニュースです。アイルランドの調教馬ザライオンインウィンターが調教中に骨折し、安楽死となったことを複数の欧州の競馬メディアが6月11日に伝えました。数々...
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -82,30 +60,14 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 266文字]: '今週の競馬注目情報をお伝えします。\n良血馬のショウナンカノアは、13日の函館5R・芝1200メートルでデビューする予定です。鞍上は池添謙一騎手です。ショウナンカノアは、近親に25年NHKマイルC2着のマジックサンズや、23年桜花賞2着のコナコーストなどを持つ血統です。マジックサンズは札幌2歳Sを制しており、同族には早い時期から活躍する馬が多いとされています。吉田光助手は「栗東である程度作ってきていて、動ける状態で連れてきた」とコメントしており、順調な調整が進んでいます。陣営からは「大人っぽい一面も」という言葉も聞かれています。'
-[2]  [重複除去] 266文字 → 265文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (265文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。良血馬のショウナンカノアは、13日の函館5R・芝1200メートルでデビューする予定です。鞍上は池添謙一騎手です。ショウナンカノ...
-  HTTP 200
-[0]  [Gemini生出力 241文字]: '注目の競馬情報をお届けします。6月14日の函館5R・芝1000メートルでデビューするパンジャケリーは、牡2歳、栗東・橋田宜長厩舎所属で、父はディスクリートキャットです。このパンジャケリーが好仕上がりを見せています。10日の最終追い切りでは、佐々木大輔騎手が騎乗し、Wコースを馬なり単走で4ハロン55秒2―12秒6と、上々の動きを披露しました。島津助手は「佐々木騎手も『だいぶいいですね』と言ってくれました。普段僕が乗っていてもいいので、初戦から期待しています」とコメントしています。'
-[0]  [redirectフィルター] 241文字 → 226文字
+[0]  [Gemini生出力 294文字]: '競馬ファン注目の情報です。\nIFHA(国際競馬統括機関連盟)は6月11日、「ロンジンワールドベストレースホースランキング」の第4回中間発表を行いました。このランキングは2026年1月1日から6月7日までの世界の主要レースを対象としており、レーティング120ポンド以上の29頭が掲載されています。世界1位は引き続きカーインライジングです。日本調教馬はフォーエバーヤング、クロワデュノールなど6頭がランクインしていますが、新たな馬の登場はなく、ポイントを加えた馬もいませんでした。日本調教馬の最上位はサウジCを連覇した栗東・矢作芳人厩舎のフォーエバーヤングで、レーティングは123ポンドです。'
+[0]  [重複除去] 294文字 → 293文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (226文字)
-[0]  プレビュー: 6月14日の函館5R・芝1000メートルでデビューするパンジャケリーは、牡2歳、栗東・橋田宜長厩舎所属で、父はディスクリートキャットです。このパンジャケリーが好...
+[0]  → output/script_0.txt 保存 (293文字)
+[0]  プレビュー: 競馬ファン注目の情報です。IFHA(国際競馬統括機関連盟)は6月11日、「ロンジンワールドベストレースホースランキング」の第4回中間発表を行いました。このランキ...
 
 3 件の脚本を生成しました。
