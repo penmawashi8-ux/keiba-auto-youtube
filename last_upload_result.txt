@@ -1,10 +1,10 @@
-date: 2026-06-11T14:46:52.755876Z
+date: 2026-06-12T00:29:44.753352Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=EAN0bMyceIk title=世界1位は引き続きカーインライジング　日本調教馬はフォーエバーヤング、クロワデュ
-OK project=1 video_id=MTQU7njVYNs title=オンブズマン、ナイソス、ノータブルスピーチがレーティング125ポンドで世界ランク
-OK project=1 video_id=zbVShCqhOL0 title=フランスのブドー騎手が13日にコンピエーニュ競馬場で復帰　強制わいせつ容疑が晴れ
+OK project=1 video_id=O-ij-CUCxZc title=宝塚記念の調教師別勝利数ランキング 最多Vは“昭和の名伯楽”
+OK project=1 video_id=4k8Mkdkbun0 title=海外武者修行に出た菅原明良騎手がフランス初騎乗初勝利　24年には豪メルボルンC2
+OK project=1 video_id=ovZsC35onVo title=【宝塚記念】2番枠ミュージアムマイル49年ぶり偉業へ追い風
