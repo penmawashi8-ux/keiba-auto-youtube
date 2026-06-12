@@ -1,10 +1,10 @@
-date: 2026-06-12T11:05:02.154871Z
+date: 2026-06-12T12:28:01.087350Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YBCc0HY3uLM title=古賀大生調教師が7月21日の開業へ向け思いを語る　「萩原先生の大切にしてきた想い
-OK project=1 video_id=AwNB-obsT6I title=【宝塚記念・金曜気配】コスモキュランダは金曜輸送で万全の態勢　加藤士調教師「雰囲
-OK project=1 video_id=IGvGGXbOt7g title=【netkeibaTV】馬券圏内確率クロワデュノール超え AIが宝塚記念で注目し
+OK project=1 video_id=xoZI8XPafug title=【園田競馬】塩津璃菜騎手がまたもウォルラスとのコンビでメインジャック　5馬身差圧
+OK project=1 video_id=jn1v3ICYyNE title=重賞3勝のカラテが誘導馬を引退　SNS惜別「第三の馬生をのんびり過ごせるとええな
+OK project=1 video_id=SEKcQKnoXZ4 title=【netkeibaTV】キャプテン渡辺＆じゃいが宝塚記念を展望 クロワデュノール
