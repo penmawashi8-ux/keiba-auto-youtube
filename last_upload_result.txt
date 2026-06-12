@@ -1,10 +1,10 @@
-date: 2026-06-12T07:27:31.008386Z
+date: 2026-06-12T09:00:26.410332Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=P75aw5VTAmQ title=古川吉と函館競馬場がコラボした「フルキチの心揺さぶるザンギBOX」が発売
-OK project=1 video_id=4hs1cs6Fvck title=横須賀市ワイハート地区が川崎競馬トレセン移転候補地
-OK project=1 video_id=jYqZ7n4hVU4 title=【地方競馬】川崎競馬が新トレセン候補地に横須賀を選定し協議開始
+OK project=1 video_id=C1V7_8AjHCI title=「フルキチの心揺さぶるザンギBOX」を函館競馬場で明日から発売　古川吉洋騎手は宝
+OK project=1 video_id=DPzvW3XAX9E title=【宝塚記念・金曜気配】栗東で“ミニキャンプ”を張るミクニインスパイア　陣営「オン
+OK project=1 video_id=giaPuGEUHQ8 title=福士蒼汰×宝塚歌劇団×シロニイ...豪華メンバー宝塚記念は“ゲスト陣”も華やか!
