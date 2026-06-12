@@ -274,10 +274,12 @@ def main() -> None:
         sys.exit(1)
 
     # 動画の先頭フレーム（名馬列伝デザインのサムネイルフレーム）を抽出
+    # Shorts用の縦動画(1080x1920)はそのままの解像度・縦横比で抽出する
+    # （横長にリサイズすると潰れたサムネイルが設定されてしまう）
     print("  サムネイル抽出中...")
     result = subprocess.run([
         "ffmpeg", "-y", "-ss", "0.5", "-i", video_path,
-        "-vframes", "1", "-s", "1280x720", thumb_path,
+        "-vframes", "1", "-q:v", "2", thumb_path,
     ], capture_output=True, text=True)
     if result.returncode == 0:
         size_kb = Path(thumb_path).stat().st_size // 1024
