@@ -175,11 +175,16 @@ def load_all_credentials() -> tuple[list[Credentials], list[str]]:
 
 
 def generate_thumbnail(video_path: str, idx: int) -> str:
-    """動画の先頭フレームをffmpegで抽出してサムネイル(1280x720)を保存する。"""
+    """動画の先頭フレームをffmpegで抽出してサムネイルを保存する。
+
+    Shorts用の縦動画(1080x1920)をそのままの解像度・縦横比で抽出する。
+    リサイズして横長(16:9)にすると、Shortsのカスタムサムネイルとして
+    潰れた画像が表示されてしまうため、-s 指定は行わないこと。
+    """
     thumb_path = f"{OUTPUT_DIR}/thumbnail_{idx}.jpg"
     result = subprocess.run([
         "ffmpeg", "-y", "-ss", "0.5", "-i", video_path,
-        "-vframes", "1", "-s", "1280x720", thumb_path,
+        "-vframes", "1", "-q:v", "2", thumb_path,
     ], capture_output=True, text=True)
     if result.returncode == 0:
         size_kb = Path(thumb_path).stat().st_size // 1024
