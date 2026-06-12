@@ -1,10 +1,10 @@
-date: 2026-06-12T09:00:26.410332Z
+date: 2026-06-12T11:05:02.154871Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=C1V7_8AjHCI title=「フルキチの心揺さぶるザンギBOX」を函館競馬場で明日から発売　古川吉洋騎手は宝
-OK project=1 video_id=DPzvW3XAX9E title=【宝塚記念・金曜気配】栗東で“ミニキャンプ”を張るミクニインスパイア　陣営「オン
-OK project=1 video_id=giaPuGEUHQ8 title=福士蒼汰×宝塚歌劇団×シロニイ...豪華メンバー宝塚記念は“ゲスト陣”も華やか!
+OK project=1 video_id=YBCc0HY3uLM title=古賀大生調教師が7月21日の開業へ向け思いを語る　「萩原先生の大切にしてきた想い
+OK project=1 video_id=AwNB-obsT6I title=【宝塚記念・金曜気配】コスモキュランダは金曜輸送で万全の態勢　加藤士調教師「雰囲
+OK project=1 video_id=IGvGGXbOt7g title=【netkeibaTV】馬券圏内確率クロワデュノール超え AIが宝塚記念で注目し
