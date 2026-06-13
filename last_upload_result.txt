@@ -1,10 +1,10 @@
-date: 2026-06-13T05:30:20.616482Z
+date: 2026-06-13T07:04:54.194786Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=K1yh33fVmug title=【東京6R・2歳新馬】「ポテンシャルがある」デミアンをダミアンがV導く　伝説の名
-OK project=1 video_id=rFRFHj0zIE0 title=【東京6R・新馬戦】フライトライン産駒デミアンが初陣V　ダミアン・レーン「非常に
-OK project=1 video_id=fcy3ry6xEMQ title=【函館5R・2歳新馬】函館新馬の一番乗りはダイメイビッグボス　横山武史騎手「実戦
+OK project=1 video_id=NNCjqSoxm5Y title=【函館スプリントS速報】ピューロマジックが優勝!
+OK project=1 video_id=eizIbSr4suI title=【ジューンS結果】紅一点カネラフィーナがV ルメール騎手はJRA通算2200勝達
+OK project=1 video_id=9O_MQfb_yAI title=【三宮S結果】グランドプラージュが断然人気に応えて3馬身差V
