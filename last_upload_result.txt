@@ -1,10 +1,10 @@
-date: 2026-06-13T08:23:25.378778Z
+date: 2026-06-13T09:59:35.488927Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Yzio-DomLaw title=【阪神11R・三宮S】グランドプラージュ快勝　賞金加算成功に川田将雅騎手「今日は
-OK project=1 video_id=x1O4q9bzfg0 title=【メイクデビュー東京6Rレース後コメント】デミアン D.レーン騎手ら
-OK project=1 video_id=aQBwaGDW-lA title=【メイクデビュー阪神6Rレース後コメント】クロリス西村淳也騎手ら
+OK project=1 video_id=FQXKlR4-jcc title=6月13日の出来事一覧/函館・東京・阪神
+OK project=1 video_id=f09j0V5wjus title=【奥尻特別レース後コメント】ウェイクフィールド横山和生騎手ら
+OK project=1 video_id=5md0i0jkcFI title=【日野特別レース後コメント】インペリアルライン木幡巧也騎手ら
