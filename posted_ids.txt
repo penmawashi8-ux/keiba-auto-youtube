@@ -1506,6 +1506,7 @@ https://news.netkeiba.com/?pid=news_view&no=333696
 https://news.netkeiba.com/?pid=news_view&no=333697
 https://news.netkeiba.com/?pid=news_view&no=333698
 https://news.netkeiba.com/?pid=news_view&no=333699
+https://news.netkeiba.com/?pid=news_view&no=333701
 https://news.netkeiba.com/?pid=news_view&no=333730
 https://news.netkeiba.com/?pid=news_view&no=333736
 https://news.netkeiba.com/?pid=news_view&no=333737
@@ -1522,6 +1523,7 @@ https://news.netkeiba.com/?pid=news_view&no=333799
 https://news.netkeiba.com/?pid=news_view&no=333826
 https://news.netkeiba.com/?pid=news_view&no=333827
 https://news.netkeiba.com/?pid=news_view&no=333828
+https://news.netkeiba.com/?pid=news_view&no=333832
 https://news.netkeiba.com/?pid=news_view&no=333842
 https://news.netkeiba.com/?pid=news_view&no=333843
 https://news.netkeiba.com/?pid=news_view&no=333844
@@ -1551,6 +1553,7 @@ https://news.netkeiba.com/?pid=news_view&no=334047
 https://news.netkeiba.com/?pid=news_view&no=334048
 https://news.netkeiba.com/?pid=news_view&no=334049
 https://news.netkeiba.com/?pid=news_view&no=334050
+https://news.netkeiba.com/?pid=news_view&no=334057
 https://news.netkeiba.com/?pid=news_view&no=334059
 https://news.netkeiba.com/?pid=news_view&no=334062
 https://news.netkeiba.com/?pid=news_view&no=334063

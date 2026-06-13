@@ -1,10 +1,9 @@
-date: 2026-06-13T09:59:35.488927Z
+date: 2026-06-13T11:25:09.807398Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FQXKlR4-jcc title=6月13日の出来事一覧/函館・東京・阪神
-OK project=1 video_id=f09j0V5wjus title=【奥尻特別レース後コメント】ウェイクフィールド横山和生騎手ら
-OK project=1 video_id=5md0i0jkcFI title=【日野特別レース後コメント】インペリアルライン木幡巧也騎手ら
+OK project=1 video_id=-Alksoh1rek title=全兄はエフフォーリア エヴィーヴァが距離短縮で初勝利なるか
+OK project=1 video_id=kVwMR6n43x4 title=【宝塚記念過去10回傾向】直線の短い阪神芝2200m 逃げ・先行馬が有利なコース
