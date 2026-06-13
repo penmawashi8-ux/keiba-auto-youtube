@@ -107,7 +107,7 @@ async def synthesize_all(quiz: dict):
         tasks.append(synthesize_one(
             f"名馬当てクイズ、スタートです！"
             f"重賞勝利歴のヒントから名馬を当ててください。"
-            f"全{total_q}問、3つのパートに分かれています。制限時間は各15秒！さあ、挑戦してみましょう！",
+            f"全{total_q}問、3つのパートに分かれています。制限時間は各{THINK_DURATION}秒！さあ、挑戦してみましょう！",
             TTS_VOICE, title_audio, sem
         ))
         paths.append(("title", title_audio))
@@ -119,7 +119,7 @@ async def synthesize_all(quiz: dict):
 
             part_audio = AUDIO_DIR / f"p{pn:02d}_00_intro.mp3"
             tasks.append(synthesize_one(
-                f"第{pn}パート、{pt}です！全{len(questions)}問、制限時間は15秒！",
+                f"第{pn}パート、{pt}です！全{len(questions)}問、制限時間は{THINK_DURATION}秒！",
                 TTS_VOICE, part_audio, sem
             ))
             paths.append((f"p{pn}_intro", part_audio))
@@ -135,7 +135,7 @@ async def synthesize_all(quiz: dict):
         tasks.append(synthesize_one(
             f"名馬当てクイズ、スタートです！"
             f"G1の勝利歴ヒントから名馬を当ててください。"
-            f"全{total_q}問、制限時間は15秒！さあ、挑戦してみましょう！",
+            f"全{total_q}問、制限時間は{THINK_DURATION}秒！さあ、挑戦してみましょう！",
             TTS_VOICE, title_audio, sem
         ))
         paths.append(("title", title_audio))
@@ -330,6 +330,11 @@ def main():
 
     with open("quiz.json", encoding="utf-8") as f:
         quiz = json.load(f)
+
+    # シンキングタイムは quiz.json の "think_duration" で上書き可能（未指定なら既定値）
+    global THINK_DURATION
+    THINK_DURATION = int(quiz.get("think_duration", THINK_DURATION))
+    print(f"シンキングタイム: {THINK_DURATION}秒")
 
     # --- 音声生成 ---
     print("① 音声生成中 (edge-tts)...")

@@ -24,7 +24,7 @@ on:
 jobs:
   generate-quiz-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 90  # 長尺クイズ（約1時間）のレンダリングに対応
 
     steps:
       - name: リポジトリをチェックアウト
