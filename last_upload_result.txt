@@ -1,10 +1,10 @@
-date: 2026-06-13T00:31:05.633536Z
+date: 2026-06-13T05:30:20.616482Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RWubd_plwEc title=宝塚記念配当ランキング 1位は15年の52万8510円
-OK project=1 video_id=BZPr9YEwtu4 title=3歳馬の活躍目立つ函館SS 距離短縮組にも注目だ
-OK project=1 video_id=G27XQakioOc title=【東京JS予想】平地力も問われる障害重賞 難コースに実力馬集う
+OK project=1 video_id=K1yh33fVmug title=【東京6R・2歳新馬】「ポテンシャルがある」デミアンをダミアンがV導く　伝説の名
+OK project=1 video_id=rFRFHj0zIE0 title=【東京6R・新馬戦】フライトライン産駒デミアンが初陣V　ダミアン・レーン「非常に
+OK project=1 video_id=fcy3ry6xEMQ title=【函館5R・2歳新馬】函館新馬の一番乗りはダイメイビッグボス　横山武史騎手「実戦
