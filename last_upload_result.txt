@@ -1,9 +1,10 @@
-date: 2026-06-13T11:25:09.807398Z
+date: 2026-06-13T12:35:30.990455Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-Alksoh1rek title=全兄はエフフォーリア エヴィーヴァが距離短縮で初勝利なるか
-OK project=1 video_id=kVwMR6n43x4 title=【宝塚記念過去10回傾向】直線の短い阪神芝2200m 逃げ・先行馬が有利なコース
+OK project=1 video_id=lwCuUMGU6pI title=母は豪G1勝ち馬 モンローウォークが約10カ月ぶり復帰戦だ
+OK project=1 video_id=rx6XCE8blsI title=【佐賀競馬】飛田愛斗騎手が通算800勝　山田徹調教師は通算700勝
+OK project=1 video_id=5xuduNkal1g title=母は桜花賞馬のレジネッタ メモリアデルレがルメール騎手で新馬勝ちなるか
