@@ -1,10 +1,10 @@
-date: 2026-06-14T05:35:14.632512Z
+date: 2026-06-14T07:32:45.959798Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JDHb-4gDHdI title=エフフォーリア産駒が早くも3勝目　今週は東西で勝ち上がり　ファン「走りすぎ」「種
-OK project=1 video_id=gS7weUrOLRA title=【川崎スパーキングスプリント枠順】南関東最短距離重賞 ダ900mの電撃戦に9頭
-OK project=1 video_id=8MzNekS4Gi4 title=【川崎・関東オークス枠順】“砂のオークス”に14頭 タマモフリージアは5枠8番
+OK project=1 video_id=EYv-QqptJGc title=【宝塚記念】6番人気のマイユニバースが競走中止　3角過ぎから失速し横山典弘騎手が
+OK project=1 video_id=DPvPhi0mIX4 title=【宝塚記念】武豊「胸を張ってフランスに…」　2週連続G1制覇!ファン興奮「別格だ
+OK project=1 video_id=Kq9imi29HUc title=【宝塚記念】24年有馬記念馬で5番人気レガレイラは7着　グランプリ2勝目はならず
