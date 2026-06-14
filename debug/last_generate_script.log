@@ -1,44 +1,73 @@
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: エフフォーリア産駒が早くも3勝目　今週は東西で勝ち上がり　ファン「走りすぎ」「種付け料上がりそう」 ---
-[0] Gemini入力本文 400文字: '新種牡馬エフフォーリア産駒が絶好調だ。先週7日の東京芝1800メートルを快勝したジョドレルバンク(牡＝武井)に続き、14日の東京5R(芝1600メートル)でベルウッドディープ(牡＝室井)が、阪神5R(芝1800メートル)でインカルナータ(牡'
+--- 記事[0]: 【宝塚記念】6番人気のマイユニバースが競走中止　3角過ぎから失速し横山典弘騎手が4角で下馬 ---
+[0] Gemini入力本文 353文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル、重)\n\t\t\t\t\u3000上半期G1を締めくくるグランプリが18頭で争われ、横山典弘騎手騎乗で6番人気のマイユニバース(牡4歳、栗東・武幸四郎厩舎、父レイデオロ)は3コーナー過ぎで'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【川崎スパーキングスプリント枠順】南関東最短距離重賞 ダ900mの電撃戦に9頭 ---
-[1] Gemini入力本文 524文字: '6月16日(火)に川崎競馬場で行われる川崎スパーキングスプリント(4歳上・SIII・ダ900m)の枠順が確定した。\n\u3000昨年覇者のエンテレケイアは5枠5番、トライアルを制したハーフブルーは8枠9番に入った。\n\u3000発走予定日時は16日(火)の20'
+--- 記事[1]: 【宝塚記念】武豊「胸を張ってフランスに…」　2週連続G1制覇!ファン興奮「別格だな!」「さすが」 ---
+[1] Gemini入力本文 342文字: '◇第67回宝塚記念\u3000芝2200メートル(2026年6月14日\u3000阪神競馬場)\n\u3000G1馬5頭が名を連ね、ドリームレースにふさわしいメンバーが覇を競った「宝塚記念」はメイショウタバルが制した。昨年に続く連覇で、史上3頭目の快挙。鞍上の武豊は、先週'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【川崎・関東オークス枠順】“砂のオークス”に14頭 タマモフリージアは5枠8番 ---
-[2] Gemini入力本文 517文字: '6月17日(水)に川崎競馬場で行われる関東オークス(3歳牝・JpnII・ダ2100m)の枠順が確定した。\n\u3000前年暮れの全日本2歳優駿で2着のタマモフリージアは5枠8番、ダートでは4戦4連対のペンダントは3枠4番に入った。\n\u3000そのほかにも、重'
+--- 記事[2]: 【宝塚記念】24年有馬記念馬で5番人気レガレイラは7着　グランプリ2勝目はならず　今回が5か月半ぶりの復帰戦 ---
+[2] Gemini入力本文 353文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル、重)\n\t\t\t\t\u3000上半期G1を締めくくるグランプリが18頭で争われ、クリストフ・ルメール騎手騎乗で5番人気のレガレイラ(牝5歳、美浦・木村哲也厩舎、父スワーヴリチャード)は'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 251文字]: '重要な競馬ニュースをお伝えします。新種牡馬エフフォーリア産駒が絶好調で、早くも3勝目を挙げました。先週7日の東京芝1800メートルではジョドレルバンクが快勝。さらに14日には、東京5Rの芝1600メートルでベルウッドディープが、阪神5Rの芝1800メートルでインカルナータがそれぞれ勝ち上がりました。これにより、2週連続の勝利に加え、この日は東西での勝ち上がりとなりました。SNSでは「エフフォーリア走りすぎ」「3頭勝ち上がりですか、優秀」「親父のいいところに似てい...」といった声が上がっています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (248文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。新種牡馬エフフォーリア産駒が絶好調で、早くも3勝目を挙げました。先週7日の東京芝1800メートルではジョドレルバンクが快勝。さ...
+[0]  [Gemini生出力 235文字]: '競馬ファン注目の情報です。第67回宝塚記念・G1が6月14日、阪神競馬場・芝2200メートル、重馬場で行われました。上半期G1を締めくくるグランプリは18頭で争われ、横山典弘騎手騎乗で6番人気のマイユニバースが競走中止となりました。マイユニバースは3コーナー過ぎから失速し、4コーナー付近で横山典弘騎手が下馬しました。前走の日経賞では大外から差し切り重賞初制覇を飾っており、このレースではG1馬5頭に次ぐ人気を集めていました。勝ったのは2番人気のメイショウタ...です。'
   HTTP 200
-[1]  [Gemini生出力 172文字]: 'レース関連の最新情報です。\n6月16日火曜日に川崎競馬場で行われる川崎スパーキングスプリントの枠順が確定しました。このレースは4歳以上、SIIIクラスのダート900m、南関東最短距離重賞で、9頭が出走します。昨年覇者のエンテレケイアは5枠5番、トライアルを制したハーフブルーは8枠9番に入りました。発走予定日時は16日火曜日の20時10分です。'
-[1]  [重複除去] 172文字 → 171文字
+[1]  [Gemini生出力 251文字]: '本日の競馬ニュースです。\n第67回宝塚記念が2026年6月14日に阪神競馬場の芝2200メートルで開催されました。G1馬5頭が名を連ね、ドリームレースにふさわしいメンバーが覇を競ったこのレースは、メイショウタバルが制しました。メイショウタバルは昨年に続く連覇を果たし、史上3頭目の快挙を達成しました。\n\n鞍上の武豊騎手は、先週の安田記念に続く2週連続G1制覇を飾りました。レース後には凱旋門賞への参戦を表明しています。レース直前にはゲリラ豪雨が降り、馬場状態が「良」から「重」に変わるという状況でした。'
+[1]  [重複除去] 251文字 → 248文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (232文字)
+[0]  プレビュー: 競馬ファン注目の情報です。第67回宝塚記念・G1が6月14日、阪神競馬場・芝2200メートル、重馬場で行われました。上半期G1を締めくくるグランプリは18頭で争...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (248文字)
+[1]  プレビュー: 本日の競馬ニュースです。第67回宝塚記念が2026年6月14日に阪神競馬場の芝2200メートルで開催されました。G1馬5頭が名を連ね、ドリームレースにふさわしい...
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 214文字]: '競馬速報です。6月17日(水)に川崎競馬場で行われる関東オークス(3歳牝・JpnII・ダ2100m)の枠順が確定し、14頭が出走を予定しています。前年暮れの全日本2歳優駿で2着のタマモフリージアは5枠8番に入りました。ダートでは4戦4連対のペンダントは3枠4番です。そのほかにも、重賞4勝のアンジュルナ、佐賀で7つのタイトルを獲得しているサキドリトッケンなどが出走を予定しています。発走予定日時は17日(水)の20時10分です。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (171文字)
-[1]  プレビュー: レース関連の最新情報です。6月16日火曜日に川崎競馬場で行われる川崎スパーキングスプリントの枠順が確定しました。このレースは4歳以上、SIIIクラスのダート90...
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (214文字)
-[2]  プレビュー: 競馬速報です。6月17日(水)に川崎競馬場で行われる関東オークス(3歳牝・JpnII・ダ2100m)の枠順が確定し、14頭が出走を予定しています。前年暮れの全日...
+[2]  [Gemini生出力 254文字]: '今週の競馬注目情報をお伝えします。第67回宝塚記念・G1が6月14日、阪神競馬場・芝2200メートル、重馬場で開催されました。上半期G1を締めくくるグランプリには18頭が出走し、クリストフ・ルメール騎手騎乗で5番人気のレガレイラは7着に終わりました。勝ち馬からは1秒6離されています。24年有馬記念馬であるレガレイラは、今回が5か月半ぶりの復帰戦でしたが、グランプリ2勝目はなりませんでした。クリストフ・ルメール騎手も、21年クロノジェネシス、23年イクイノックスに続く当レース3勝目はお預けとなっています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (254文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。第67回宝塚記念・G1が6月14日、阪神競馬場・芝2200メートル、重馬場で開催されました。上半期G1を締めくくるグランプリに...
 
 3 件の脚本を生成しました。
