@@ -1,42 +1,103 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 [2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【八雲特別レース後コメント】モンローウォーク横山和生騎手ら ---
-[0] Gemini入力本文 349文字: '函館9Rの八雲特別(3歳以上1勝クラス・芝1800m)は1番人気モンローウォーク(横山和生騎手)が勝利した。勝ちタイムは1分47秒8(良)。2馬身差の2着に2番人気ドッグウッド、さらにアタマ差の3着に4番人気ナムラヒナギクが入った。\n\u3000モン'
+--- 記事[0]: 【帯広・北斗賞結果】4番人気ツガルノヒロイモノが重賞初制覇 ---
+[0] Gemini入力本文 536文字: '14日、帯広競馬場で行われた第34回北斗賞(重賞・ダ200m・1着賞金250万円)は、第2障害を3番手で下って一気に突き抜けた鈴木恵介騎手騎乗の4番人気ツガルノヒロイモノ(牡7、ばんえい・長部幸光厩舎、積載重量770kg)が、3番人気コマサ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【宝塚記念】武豊「いい練習になったわ、フランスの」悲願凱旋門賞へ珍しく?雄叫び ---
-[1] Gemini入力本文 356文字: '◇第67回宝塚記念\u3000芝2200メートル(2026年6月14日\u3000阪神競馬場)\n\u3000G1馬5頭が名を連ね、ドリームレースにふさわしいメンバーが覇を競った「宝塚記念」はメイショウタバルが制した。昨年に続く連覇で、ゴールドシップ(2013、2014年'
+--- 記事[1]: 【花のみちSレース後コメント】ミナデオロ C.ルメール騎手ら ---
+[1] Gemini入力本文 355文字: '阪神10Rの花のみちステークス(3歳以上3勝クラス・芝1600m)は2番人気ミナデオロ(C.ルメール騎手)が勝利した。勝ちタイムは1分32秒2(良)。クビ差の2着に1番人気アウフヘーベン、さらに1馬身1/4差の3着に12番人気コルレオニスが'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【高知競馬　高知優駿】カツテナイオイシサが黒潮皐月賞に続いて2冠制覇 ---
-[2] Gemini入力本文 355文字: '高知競馬「第54回高知優駿」(ダート1900メートル、12頭立て、1着賞金1600万円)は14日に6Rで実施され、カツテナイオイシサ(牡3＝雑賀正光)が黒潮皐月賞に続いて制し、高知2冠を達成した。重馬場で勝ちタイムは2分9秒1。2着は同じ雑'
+--- 記事[2]: 【宝塚記念】6万1857人のユタカコール　開門前倒し　1週間前から徹夜組のフィーバー　コロナ禍以降では最多 ---
+[2] Gemini入力本文 352文字: '◆第67回宝塚記念・G1(6月14日、阪神競馬場・芝2200メートル、重)\n\t\t\t\t\u3000今年の上半期G1を締めくくる第67回宝塚記念が6月14日、阪神競馬場の芝2200メートルで18頭で争われ、武豊騎手騎乗で2番人気のメイショウタバル(牡5歳'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 225文字]: '本日の競馬ニュースです。\n2026年6月14日に阪神競馬場芝2200メートルで行われた第67回宝塚記念は、G1馬5頭が名を連ねるドリームレースとなりました。このレースを制したのはメイショウタバルです。メイショウタバルは昨年に続く連覇を達成し、ゴールドシップ、クロノジェネシスに続く史上3頭目の快挙となりました。レース後にはJRAのYouTubeチャンネルで武豊のジョッキーカメラが公開され、ゴール後の第一声は「やっぱ走るな、これ」と伝えられています。'
-[1]  [重複除去] 225文字 → 224文字
+[2]  [Gemini生出力 260文字]: '注目の競馬情報をお届けします。\n今年の上半期G1を締めくくる第67回宝塚記念が6月14日、阪神競馬場の芝2200メートルで18頭により争われました。武豊騎手騎乗で2番人気のメイショウタバルが勝利を収めています。直前のゲリラ豪雨により馬場が「良」から一気に「重」へと変化しましたが、恵みの雨も味方につけ、昨年に続く連覇を達成しました。この日、阪神競馬場にはコロナ禍以降では最多となる6万1857人が来場し、開門が前倒しされるほどの熱気で、1週間前から徹夜組のフィーバーが見られました。仁川にはユタカコールが鳴り響きました。'
+[2]  [redirectフィルター] 260文字 → 244文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (244文字)
+[2]  プレビュー: 今年の上半期G1を締めくくる第67回宝塚記念が6月14日、阪神競馬場の芝2200メートルで18頭により争われました。武豊騎手騎乗で2番人気のメイショウタバルが勝...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 217文字]: '本日の競馬ニュースです。函館9Rの八雲特別、3歳以上1勝クラス・芝1800mは、1番人気のモンローウォークが横山和生騎手で勝利しました。勝ちタイムは1分47秒8の良馬場でした。2馬身差の2着には2番人気のドッグウッドが入り、さらにアタマ差の3着には4番人気のナムラヒナギクが入線しています。勝利したモンローウォークは、栗東の上村洋行厩舎に所属する3歳牝馬で、父はキズナ、母はアンフィトリテ2です。これで通算成績は2戦2勝となりました。'
+[0]  [Gemini生出力 232文字]: '競馬ファン注目の情報です。14日、帯広競馬場で行われた第34回北斗賞は、重賞・ダート200メートル、1着賞金250万円で争われました。このレースでは、鈴木恵介騎手が騎乗した4番人気のツガルノヒロイモノが重賞初制覇を飾りました。ツガルノヒロイモノは第2障害を3番手で下り、一気に突き抜けて優勝。3番人気のコマサンエースに7.2秒差をつけました。勝ちタイムは1分58秒8、馬場水分は0.9％でした。さらに0.8秒差の3着には、2番人気のクリスタルコルドが入っています。'
   HTTP 200
-[2]  [Gemini生出力 252文字]: '最新のレース情報が入ってきました。高知競馬の「第54回高知優駿」が14日に6Rで実施されました。ダート1900メートル、12頭立て、1着賞金1600万円で行われたこのレースは、雑賀正光調教師のカツテナイオイシサが黒潮皐月賞に続いて制し、高知2冠を達成しました。重馬場での勝ちタイムは2分9秒1でした。2着には同じ雑賀厩舎に所属するクスダマが1馬身半差で続き、そこから4馬身差の3着には工藤真司調教師のトサノシュジンコウが入着しました。単勝＜7＞は110円、そして3連単＜7＞＜3＞＜9＞は650円でした。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (224文字)
-[1]  プレビュー: 本日の競馬ニュースです。2026年6月14日に阪神競馬場芝2200メートルで行われた第67回宝塚記念は、G1馬5頭が名を連ねるドリームレースとなりました。このレ...
+[1]  [Gemini生出力 246文字]: '本日の競馬ニュースです。阪神10Rの花のみちステークス、3歳以上3勝クラス・芝1600mは、2番人気のミナデオロがC.ルメール騎手とのコンビで勝利しました。勝ちタイムは良馬場で1分32秒2でした。クビ差の2着には1番人気のアウフヘーベンが入り、さらに1馬身1/4差の3着には12番人気のコルレオニスが入着しています。勝利したミナデオロは、栗東の藤原英昭厩舎に所属する5歳牡馬です。父はレイデオロ、母はゴールデンドックエー、母の父はUnusual Heatで、通算成績は16戦3勝となりました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (217文字)
-[0]  プレビュー: 本日の競馬ニュースです。函館9Rの八雲特別、3歳以上1勝クラス・芝1800mは、1番人気のモンローウォークが横山和生騎手で勝利しました。勝ちタイムは1分47秒8...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (252文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。高知競馬の「第54回高知優駿」が14日に6Rで実施されました。ダート1900メートル、12頭立て、1着賞金1600万円で行われ...
+[0]  → output/script_0.txt 保存 (232文字)
+[0]  プレビュー: 競馬ファン注目の情報です。14日、帯広競馬場で行われた第34回北斗賞は、重賞・ダート200メートル、1着賞金250万円で争われました。このレースでは、鈴木恵介騎...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (246文字)
+[1]  プレビュー: 本日の競馬ニュースです。阪神10Rの花のみちステークス、3歳以上3勝クラス・芝1600mは、2番人気のミナデオロがC.ルメール騎手とのコンビで勝利しました。勝ち...
 
 3 件の脚本を生成しました。
