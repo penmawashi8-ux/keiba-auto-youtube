@@ -1,10 +1,10 @@
-date: 2026-06-14T11:44:32.154687Z
+date: 2026-06-14T13:12:35.314082Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CmB4JTiFCSA title=【帯広・北斗賞結果】4番人気ツガルノヒロイモノが重賞初制覇
-OK project=1 video_id=ID5B4RT8fig title=【花のみちSレース後コメント】ミナデオロ C.ルメール騎手ら
-OK project=1 video_id=1-VrZedW3AE title=【宝塚記念】6万1857人のユタカコール　開門前倒し　1週間前から徹夜組のフィー
+OK project=1 video_id=Uibh0yhYDo0 title=【ばんえい競馬】島津新が通算1500勝達成　史上21人目　「積み重ねの結果だと感
+OK project=1 video_id=o-yRWzXSP0Q title=【リボン賞レース後コメント】ノボリショウリュウ高杉吏麒騎手ら
+OK project=1 video_id=AxJ1VMJfzeQ title=【府中牝馬S展望】初タイトル狙うヴァルキリーバースに実績馬ニシノティアモ、コガネ
