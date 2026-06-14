@@ -1,10 +1,10 @@
-date: 2026-06-14T08:44:37.216431Z
+date: 2026-06-14T11:44:32.154687Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gJE2NGDGubk title=宝塚記念3連単6040円は過去最低払い戻し金額
-OK project=1 video_id=xXqrk7HueCI title=【阪神アーバン競馬プレーバック】塩津璃菜がウォルラスで初のナイターメーン競走勝利
-OK project=1 video_id=w3vO3xNUTZI title=宝塚記念は売り上げアップ　雨中の決戦でも豪華メンバー集結で大盛況
+OK project=1 video_id=CmB4JTiFCSA title=【帯広・北斗賞結果】4番人気ツガルノヒロイモノが重賞初制覇
+OK project=1 video_id=ID5B4RT8fig title=【花のみちSレース後コメント】ミナデオロ C.ルメール騎手ら
+OK project=1 video_id=1-VrZedW3AE title=【宝塚記念】6万1857人のユタカコール　開門前倒し　1週間前から徹夜組のフィー
