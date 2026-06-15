@@ -1,43 +1,132 @@
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【府中牝馬S】東京1800メートルはお任せ!充実一途のルージュソリテールが重賞初制覇へ　陣営「ここでも楽しみ」 ---
-[0] Gemini入力本文 348文字: '◆第74回府中牝馬S・G3(6月21日、東京競馬場・芝1800メートル)\n\t\t\t\t\u3000充実一途のルージュソリテール(牝4歳、栗東・藤原英昭厩舎、父ロードカナロア)が重賞初制覇を狙う。昨年は秋華賞にも出走(8着)したが、今年に入って自己条件から'
+--- 記事[0]: 【川崎競馬】山崎誠士調教師が初陣　初日に初勝利ならず「難しさも感じました」 ---
+[0] Gemini入力本文 445文字: '6月16日の川崎競馬2R(3歳五組)で、5月1日付で厩舎を開業した山崎誠士調教師(41)が、初陣を迎えた。プラカーシャで臨んだ初出走は6着。また、11Rにはポッドベッロをが出走させ、3着だった。\n\t\t\t\t\u3000山崎誠調教師は「勝つように仕上げて'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【AI予想・府中牝馬S】人工知能は波乱の結果を示唆!? 実績から配当妙味たっぷりな本命候補 ---
-[1] Gemini入力本文 483文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は日曜日に府中牝馬ステークス(GIII)としらさぎS(GIII)が行われます。その中から東京競馬場で行われる府中牝馬'
+--- 記事[1]: 【しらさぎS】セレクト5.1億円のショウナンアデイブ 史上最高額のJRA重賞勝ち馬となるか ---
+[1] Gemini入力本文 355文字: 'セレクトセールで超高額取引されたショウナンアデイブ(牡7、栗東・高野友和厩舎)が、しらさぎステークス(3歳上・GIII・芝1600m)で重賞初制覇を狙う。\n\u3000ショウナンアデイブは父ディープインパクト、母シーヴ、母の父Mineshaftの血統'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【府中牝馬S】前走Vに田中博師も驚くヴァルキリーバース　シックスペンス、フィンガーでG1制覇の勢いに乗る ---
-[2] Gemini入力本文 352文字: '◆第74回府中牝馬S・G3(6月21日、東京競馬場・芝1800メートル)\n\t\t\t\t\u3000ヴァルキリーバース(牝4歳、美浦・田中博康厩舎、父エピファネイア)は、約10か月半の休養明けだった東風Sを首差V。「前走は驚きましたね。マイルは忙しいと思っ'
+--- 記事[2]: ＪＲＡが定例会見　英国ダービーでの『ノンランナー』にも言及 ---
+[2] Gemini入力本文 631文字: 'ＪＲＡ関西定例記者会見が１５日、大阪市内で行われた。吉田正義理事長は会見の冒頭で宝塚記念（１４日・阪神）について「馬場入場時からゲリラ豪雨ということで、すぶぬれになりながら声援を送っていただき、ありがたいなと頭が下がる思いでした。息子さんの'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 503
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 252文字]: '今週の競馬注目情報をお伝えします。\n第74回府中牝馬S・G3が6月21日に東京競馬場・芝1800メートルで行われます。このレースにはヴァルキリーバースが出走を予定しています。ヴァルキリーバースは、約10か月半の休養明けだった東風Sを首差で勝利しました。田中博調教師は前走について「驚きましたね。マイルは忙しいと思っていたので、能力が高いと感じさせました」とコメントしています。2歳未勝利の勝利から、2走前のフローラS2着まで3戦連続で2000メートルを走り、早い時期から陣営は適性を中距離と見ていました。'
-[2]  [重複除去] 252文字 → 251文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (251文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。第74回府中牝馬S・G3が6月21日に東京競馬場・芝1800メートルで行われます。このレースにはヴァルキリーバースが出走を予定...
-  HTTP 200
-[0]  [Gemini生出力 289文字]: 'レース関連の最新情報です。第74回府中牝馬ステークス・G3が6月21日に東京競馬場・芝1800メートルで開催されます。このレースでは、充実一途のルージュソリテールが重賞初制覇を狙います。ルージュソリテールは4歳で、栗東の藤原英昭厩舎に所属しています。昨年は秋華賞に8着で出走しましたが、今年に入って自己条件から再出発しました。ひと叩きされた2走前のマレーシアカップを好位から余裕たっぷりに抜け出して快勝し、オープン入りを決めています。前走の阪神牝馬ステークスでは、G1馬のエンブロイダリー、カムニャックに食い下がり3着となりました。陣営は「ここでも楽しみ」とコメントしています。'
-  HTTP 200
-[1]  [Gemini生出力 284文字]: '今日の競馬情報です。今週の重賞競走は日曜日に府中牝馬ステークス(GIII)としらさぎS(GIII)が行われます。その中から東京競馬場で行われる府中牝馬Sについて、netkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。府中牝馬Sは昨年から6月の東京に舞台が移っており、現在の施行条件でのデータは昨年のレースしかありません。また、25年からは夏のGIIIハンデ戦になる予定です。府中牝馬Sの想定騎手は、ヴァルキリーバースがC.ルメール騎手、コガネノソラは菊沢一樹騎手とされています。ルージュソリテールの名前も記事に登場しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (289文字)
-[0]  プレビュー: レース関連の最新情報です。第74回府中牝馬ステークス・G3が6月21日に東京競馬場・芝1800メートルで開催されます。このレースでは、充実一途のルージュソリテー...
+[1]  [Gemini生出力 224文字]: '最新のレース情報が入ってきました。セレクトセールで超高額取引されたショウナンアデイブが、しらさぎステークスで重賞初制覇を狙います。ショウナンアデイブは、20年のセレクトセール1歳において、同年の最高価格となる5億1000万円で取引されました。父ディープインパクト、母シーヴ、母の父Mineshaftの血統を持ち、半姉のキャスリンソフィアは2016年ケンタッキーオークスの覇者です。このしらさぎステークスは3歳上・GIII・芝1600mで行われます。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (284文字)
-[1]  プレビュー: 今日の競馬情報です。今週の重賞競走は日曜日に府中牝馬ステークス(GIII)としらさぎS(GIII)が行われます。その中から東京競馬場で行われる府中牝馬Sについて...
+[1]  → output/script_1.txt 保存 (224文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。セレクトセールで超高額取引されたショウナンアデイブが、しらさぎステークスで重賞初制覇を狙います。ショウナンアデイブは、20年の...
+  HTTP 200
+[2]  [Gemini生出力 291文字]: 'レース関連の最新情報です。JRA関西定例記者会見が15日、大阪市内で行われました。吉田正義理事長は会見冒頭で宝塚記念について、馬場入場時からゲリラ豪雨の中、すぶぬれになりながら声援を送ってくれたことに感謝を述べました。また、息子さんの松本好隆さんにオーナーが変わっての連覇に触れ、競馬の継承を強く感じたと、競馬のロマンやドラマ性について語っています。英国ダービーで話題となった「ノンランナー制」については、馬券発売対象レースとしているJRAが今後の導入の是非を検討すると説明しました。中央競馬全レース中継の無料ライブ配信は、ダービー当日で最大同時接続数56.3万人を記録しています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (291文字)
+[2]  プレビュー: レース関連の最新情報です。JRA関西定例記者会見が15日、大阪市内で行われました。吉田正義理事長は会見冒頭で宝塚記念について、馬場入場時からゲリラ豪雨の中、すぶ...
+  HTTP 200
+[0]  [Gemini生出力 230文字]: '最新情報をお届けします。\n6月16日の川崎競馬2R、3歳五組で、5月1日付で厩舎を開業した山崎誠士調教師41歳が初陣を迎えました。初出走となったプラカーシャは6着でした。また、11Rにはポッドベッロを出走させ、3着という結果でした。山崎誠調教師は「勝つように仕上げてきましたが、初日に初勝利はかなわず、難しさも感じました。これから試行錯誤しながら経験を積んでいきたい」と語っています。山崎調教師は騎手時代、ヒカリオーソで2019年の東京ダービーを制しています。'
+[0]  [redirectフィルター] 230文字 → 217文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (217文字)
+[0]  プレビュー: 6月16日の川崎競馬2R、3歳五組で、5月1日付で厩舎を開業した山崎誠士調教師41歳が初陣を迎えました。初出走となったプラカーシャは6着でした。また、11Rには...
 
 3 件の脚本を生成しました。
