@@ -1,5 +1,5 @@
   [GNews] 取得失敗 ('JRA 重賞 競走馬'): 429 Client Error: Too Many Requests for url: https://gnews.io/api/v4/search?q=JRA%20%E9%87%8D%E8%B3%9E%20%E7%AB%B6%E8%B5%B0%E9%A6%AC&lang=ja&country=jp&max=10&apikey=bfafaf17044691c41268e7da2d1792ba
-  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7f8f5d6fead0>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
+  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7f1bf5077510>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
 === 競馬ニュース取得開始 ===
 投稿済みID数: 1615
 === GNews API ===
@@ -32,29 +32,29 @@
   有効エントリー: 30 件
 フィード取得中: https://www.keiba.jp/rss/
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 133705 bytes
-  有効エントリー: 111 件
+  [HTTP] 200 127445 bytes
+  有効エントリー: 107 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 115631 bytes
+  [HTTP] 200 118042 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
-  [HTTP] 200 116596 bytes
+  [HTTP] 200 117073 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
   [HTTP] 200 113393 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
-  [HTTP] 200 115193 bytes
+  [HTTP] 200 115570 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
-  [HTTP] 200 123004 bytes
+  [HTTP] 200 121984 bytes
   有効エントリー: 100 件
 JRA公式ニュースをスクレイピング中...
   [HTTP] 200 80781 bytes
   [JRA] 1 件スクレイプ
-未投稿エントリー: 584 件
-競馬関連フィルタ後: 584 件
-フィルタ「24時間以内」: 直接ニュース 13件 / 直接コラム 7件 / GoogleNews 133件 → 候補プール 30件
+未投稿エントリー: 579 件
+競馬関連フィルタ後: 579 件
+フィルタ「24時間以内」: 直接ニュース 13件 / 直接コラム 7件 / GoogleNews 115件 → 候補プール 30件
   [HTTP] 200 69146 bytes (attempt 1)
   [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=334448
   [DEBUG] HTML長: 62546文字
@@ -64,9 +64,9 @@ JRA公式ニュースをスクレイピング中...
 開幕2週目の新馬戦で特筆すべきは、2頭の新種牡馬産駒の活躍だろう。13日の東京でデビュー戦を飾ったデミアン(牡2歳、美浦・斎藤誠厩舎)の父は22年BCクラシックなどG1・4勝を挙げ、無敗のまま引退した米国産馬フライトライン。6戦という短いキャリアで合計71馬身差をつけた、伝説のダート馬だ。同産駒はこれが世界初勝利。日本初出走でいきなり結果を出しただけではなく、芝での白星という点に価値がある。可能性が大きく開け... 開幕2週目の新馬戦で特筆すべきは、2頭の新種牡馬産駒の活躍だろう。13日の東京でデビュー戦を飾ったデミアン(牡2歳、美浦・斎藤誠厩舎)の父は22年BCクラシックなどG1・4勝を挙げ、無敗のまま引退し… No.1競馬情報サイト「netkeiba」の競馬ニュース。 先週の新馬戦勝ち馬 スポーツ報知 -->
   [DEBUG] ---END---
   取得: 【POGマニア】新種牡馬産駒の活躍止まらず　伝説の名馬フライトラインの子は芝で勝利&エフフォーリア産駒は早くも3勝目 [2026-06-15T20:00:00]
-  [HTTP] 200 76185 bytes (attempt 1)
+  [HTTP] 200 76221 bytes (attempt 1)
   [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=334435
-  [DEBUG] HTML長: 67761文字
+  [DEBUG] HTML長: 67797文字
   [DEBUG] RSS元サマリー(211文字): '3回東京開催の2週目は当欄で取り上げた4頭のうち、シャンデヴァーグとデミアンが勝ち上がった。最終週も土日で計4鞍のメイクデビューが組まれており、各厩舎の血統馬がスタンバイ。どの馬が勝ち上がるのか注目だ'
   [DEBUG] 抽出方法: <p>タグ / og:desc(130文字)
   [DEBUG] 最終本文全文(544文字):
