@@ -1,82 +1,96 @@
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名「アド
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 一日7レース制など来年の暑熱対策「開催日割は9月下旬に発表」「その時に改めて」JRA関西定例会見 ---
-[0] Gemini入力本文 337文字: 'JRAは15日、大阪市のアクア堂島NBFタワーで関西定例会見を開き、既に報道されている一日7レース制の検討、北海道開催の増加や時期の変更など来年の暑熱対策について関西競馬記者クラブが質問し、競走担当の清水靖博理事が回答した。\n\u3000暑熱対策につ'
+--- 記事[0]: 中京、新潟の「競走時間帯の拡大」は全6週で実施　7レース制や北海道開催増加については9月下旬に発表予定 ---
+[0] Gemini入力本文 366文字: 'JRAは6月15日、大阪市内で関西定例記者会見を行った。\n\t\t\t\t\u3000今年は暑熱対策の一環として、昨夏に中京、新潟開催で1〜4週目までに行った「競走時間帯の拡大」の対象期間が、7月25日から8月30日の全6週間に広がる。期間中は7Rがメインと'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 中央競馬全レース中継の無料ライブ配信　最大同時接続数はダービー当日で56・3万人! ---
-[1] Gemini入力本文 416文字: 'JRAが15日、定例会見を開いた。3月14日から始まったグリーンチャンネルの中央競馬全レース中継の無料ライブ配信。YouTubeのJRA公式チャンネル、グリーンチャンネルWEB、JRA公式アプリで配信されており、3つのプラットフォームの最大'
+--- 記事[1]: 【川崎・川崎スパーキングスプリント】南関東最短距離重賞に最速自慢が集結し激戦必須！ ---
+[1] Gemini入力本文 347文字: '第6回川崎スパーキングスプリント(4歳上・SIII・ダート900m)が6月16日に行われる。2021年から重賞に格上げされたレースで、南関東では最短距離の重賞。今年は9頭立ての少頭数だが、南関東のスピード自慢がそろった。ここへのトライアル上'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: レース後に出走取消が発生した英ダービーのノンランナー制度「今後、導入の是非を検討」JRA関西定例会見 ---
-[2] Gemini入力本文 454文字: 'JRAは15日、大阪市のアクア堂島NBFタワーで関西定例会見を開き、レース後に出走取り消しが発生した6日の英ダービー(G1、エプソム芝2410メートル)について関西競馬記者クラブが質問し、審判担当の松窪隆一理事が回答した。\n\u3000この件はA・オ'
+--- 記事[2]: 杉山師「誰が見てもいい馬」 良血馬レイデアルマス/関西馬メイクデビュー情報 ---
+[2] Gemini入力本文 553文字: '3回東京開催の1週目、2週目の芝レースはすべて美浦所属馬が勝利。そもそも、栗東所属の遠征が少なかったというのはあるが、東京最終週となる今週は楽しみな馬がスタンバイ。下記で紹介しているので、その中身を確かめていただきたい。\n【6月20日(土)'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 258文字]: '競馬ファン注目の情報です。JRAが15日、定例会見を開きました。3月14日から始まったグリーンチャンネルの中央競馬全レース中継の無料ライブ配信は、YouTubeのJRA公式チャンネル、グリーンチャンネルWEB、JRA公式アプリの3つのプラットフォームで配信されています。これらの最大同時接続数は一日平均で33.3万人、ダービー当日は56.3万人を記録しました。一方で、グリーンチャンネルの加入件数は、無料ライブ配信が開始される前の2月末時点で35万1258名だったのに対し、4月末では31万8270名となっています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (258文字)
-[1]  プレビュー: 競馬ファン注目の情報です。JRAが15日、定例会見を開きました。3月14日から始まったグリーンチャンネルの中央競馬全レース中継の無料ライブ配信は、YouTube...
-  HTTP 429
+[1]  [Gemini生出力 253文字]: '注目の競馬情報をお届けします。第6回川崎スパーキングスプリントが、6月16日に行われます。このレースは4歳以上、SIIIクラスのダート900mで行われる南関東最短距離の重賞で、2021年から重賞に格上げされました。今年は9頭立ての少頭数ながら、南関東のスピード自慢が集結し、激戦が予想されています。トライアル上位入線馬に加え、このコースでの実績馬も参戦します。このレースの勝ち馬には、夏の超短距離戦の頂点である習志野きらっとスプリント（3歳以上・SII・船橋ダート1000m）への優先出走権が与えられます。'
+[1]  [redirectフィルター] 253文字 → 238文字
   HTTP 200
-[2]  [Gemini生出力 301文字]: '今日の競馬情報です。JRAは15日、大阪市のアクア堂島NBFタワーで関西定例会見を開きました。この会見で、関西競馬記者クラブは、レース後に出走取り消しが発生した6日の英ダービーについて質問し、審判担当の松窪隆一理事が回答しました。6日の英ダービーはG1、エプソム芝2410メートルで行われました。A・オブライエン厩舎の最有力候補とみられたベンヴェヌートチェッリーニは、発馬機内で左トモが挟まり、公正なスタートを切れなかったと裁決委員が判断されました。ベンヴェヌートチェッリーニは10位入線しましたが、レース後に出走取り消しとなりました。JRAは今後、このノンランナー制度の導入の是非を検討する方針です。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (301文字)
-[2]  プレビュー: 今日の競馬情報です。JRAは15日、大阪市のアクア堂島NBFタワーで関西定例会見を開きました。この会見で、関西競馬記者クラブは、レース後に出走取り消しが発生した...
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
+[2]  [Gemini生出力 260文字]: '競馬速報です。3回東京開催の1週目、2週目の芝レースはすべて美浦所属馬が勝利しました。栗東所属の遠征が少なかったという背景がありますが、東京最終週となる今週は楽しみな馬がスタンバイしています。\n\n6月20日土曜日の阪神芝1400mには、ブラックミューズが出走予定です。ブラックミューズは牝馬で、父はミスターメロディ、母はアドマイヤアロー、栗東の松永幹夫厩舎に所属しています。\n\nまた、阪神5R新馬戦の結果では、インカルナータが逃げ切りで勝利しました。これにより、エフフォーリア産駒は早くも3頭目の勝ち上がりとなりました。'
+[2]  [重複除去] 260文字 → 256文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (238文字)
+[1]  プレビュー: 第6回川崎スパーキングスプリントが、6月16日に行われます。このレースは4歳以上、SIIIクラスのダート900mで行われる南関東最短距離の重賞で、2021年から...
+  HTTP 200
+[0]  [Gemini生出力 263文字]: 'レース関連の最新情報です。JRAは6月15日、大阪市内で関西定例記者会見を行いました。今年の暑熱対策の一環として、昨夏に中京、新潟開催で1〜4週目まで行った「競走時間帯の拡大」の対象期間が、7月25日から8月30日の全6週間に広がります。期間中は7Rがメインとして行われる予定ですが、新潟最終週のみメインは8Rとなることになりました。8月30日に行われる重賞の新潟記念・G3(芝2000メートル)と、29日のBSN賞・L(ダート1800メートル)が対象です。また、7レース制や北海道開催増加については、9月下旬に発表予定です。'
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 253文字]: '今日の競馬情報です。\nJRAは15日、大阪市のアクア堂島NBFタワーで関西定例会見を開きました。この会見では、関西競馬記者クラブから来年の暑熱対策について質問があり、競走担当の清水靖博理事が回答しました。既に報道されている一日7レース制の検討に加え、北海道開催の増加や時期の変更などが来年の暑熱対策として挙げられています。清水理事は、暑熱対策を「JRAだけにとどまらない喫緊の課題」と認識していることを示しました。開催日割は9月下旬に発表される予定で、その際に改めて暑熱対策についても発表される見通しです。'
-[0]  [重複除去] 253文字 → 252文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (252文字)
-[0]  プレビュー: 今日の競馬情報です。JRAは15日、大阪市のアクア堂島NBFタワーで関西定例会見を開きました。この会見では、関西競馬記者クラブから来年の暑熱対策について質問があ...
+[0]  → output/script_0.txt 保存 (263文字)
+[0]  プレビュー: レース関連の最新情報です。JRAは6月15日、大阪市内で関西定例記者会見を行いました。今年の暑熱対策の一環として、昨夏に中京、新潟開催で1〜4週目まで行った「競...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 267文字]: '競馬速報です。3回東京開催の1週目と2週目の芝レースでは、すべて美浦所属馬が勝利を収めました。これは、そもそも栗東所属馬の遠征が少なかったことが背景にあります。しかし、東京開催の最終週となる今週は、楽しみな馬がスタンバイしています。その中の一頭として、6月20日(土)の阪神芝1400mに出走予定のブラックミューズが紹介されています。ブラックミューズは牝馬で、父はミスターメロディ、母はアドマイヤアロー、栗東の松永幹夫厩舎に所属しています。母系には2008年と2009年に中山金杯を連覇したアドマイヤフ...という血統背景を持ちます。'
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 223文字]: '競馬速報です。3回東京開催の1週目と2週目の芝レースは、すべて美浦所属馬が勝利しました。これは、栗東所属の遠征が少なかったという背景があります。しかし、東京最終週となる今週は楽しみな馬がスタンバイしています。6月20日土曜日の阪神芝1400mには、ブラックミューズが出走予定です。この牝馬は、父がミスターメロディ、母がアドマイヤアローで、栗東の松永幹夫厩舎に所属しています。母系には2008年と2009年に中山金杯を連覇したアドマイヤフがいます。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (223文字)
+[2]  プレビュー: 競馬速報です。3回東京開催の1週目と2週目の芝レースは、すべて美浦所属馬が勝利しました。これは、栗東所属の遠征が少なかったという背景があります。しかし、東京最終...
 
 3 件の脚本を生成しました。
