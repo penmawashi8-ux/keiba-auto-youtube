@@ -1,10 +1,10 @@
-date: 2026-06-15T10:57:49.361595Z
+date: 2026-06-15T13:11:40.144197Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OQwScWpNnWc title=【府中牝馬S】東京1800メートルはお任せ!充実一途のルージュソリテールが重賞初
-OK project=1 video_id=1nXlimmVHOI title=【AI予想・府中牝馬S】人工知能は波乱の結果を示唆!? 実績から配当妙味たっぷり
-OK project=1 video_id=xwHv-csG_tE title=【府中牝馬S】前走Vに田中博師も驚くヴァルキリーバース　シックスペンス、フィンガ
+OK project=1 video_id=h4dRq5IC-ec title=【川崎競馬】山崎誠士調教師が初陣　初日に初勝利ならず「難しさも感じました」
+OK project=1 video_id=CFYIhPiuzIg title=【しらさぎS】セレクト5.1億円のショウナンアデイブ 史上最高額のJRA重賞勝ち
+OK project=1 video_id=BF_d-dgQ1vg title=ＪＲＡが定例会見　英国ダービーでの『ノンランナー』にも言及
