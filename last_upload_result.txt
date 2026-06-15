@@ -1,10 +1,10 @@
-date: 2026-06-15T06:32:33.598759Z
+date: 2026-06-15T09:35:23.480453Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PK75zDhrnl8 title=一日7レース制など来年の暑熱対策「開催日割は9月下旬に発表」「その時に改めて」J
-OK project=1 video_id=pjwZ20FtpLw title=中央競馬全レース中継の無料ライブ配信　最大同時接続数はダービー当日で56・3万人
-OK project=1 video_id=2icZG4mZObY title=レース後に出走取消が発生した英ダービーのノンランナー制度「今後、導入の是非を検討
+OK project=1 video_id=jJDYAuK0wRk title=中京、新潟の「競走時間帯の拡大」は全6週で実施　7レース制や北海道開催増加につい
+OK project=1 video_id=9GloqU35Uac title=【川崎・川崎スパーキングスプリント】南関東最短距離重賞に最速自慢が集結し激戦必須
+OK project=1 video_id=URzxxgRzeOM title=杉山師「誰が見てもいい馬」 良血馬レイデアルマス/関西馬メイクデビュー情報
