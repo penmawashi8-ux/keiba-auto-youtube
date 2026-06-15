@@ -1,10 +1,10 @@
-date: 2026-06-14T13:12:35.314082Z
+date: 2026-06-15T06:32:33.598759Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Uibh0yhYDo0 title=【ばんえい競馬】島津新が通算1500勝達成　史上21人目　「積み重ねの結果だと感
-OK project=1 video_id=o-yRWzXSP0Q title=【リボン賞レース後コメント】ノボリショウリュウ高杉吏麒騎手ら
-OK project=1 video_id=AxJ1VMJfzeQ title=【府中牝馬S展望】初タイトル狙うヴァルキリーバースに実績馬ニシノティアモ、コガネ
+OK project=1 video_id=PK75zDhrnl8 title=一日7レース制など来年の暑熱対策「開催日割は9月下旬に発表」「その時に改めて」J
+OK project=1 video_id=pjwZ20FtpLw title=中央競馬全レース中継の無料ライブ配信　最大同時接続数はダービー当日で56・3万人
+OK project=1 video_id=2icZG4mZObY title=レース後に出走取消が発生した英ダービーのノンランナー制度「今後、導入の是非を検討
