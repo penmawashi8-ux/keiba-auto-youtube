@@ -1,10 +1,10 @@
-date: 2026-06-15T13:11:40.144197Z
+date: 2026-06-15T16:31:26.940159Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=h4dRq5IC-ec title=【川崎競馬】山崎誠士調教師が初陣　初日に初勝利ならず「難しさも感じました」
-OK project=1 video_id=CFYIhPiuzIg title=【しらさぎS】セレクト5.1億円のショウナンアデイブ 史上最高額のJRA重賞勝ち
-OK project=1 video_id=BF_d-dgQ1vg title=ＪＲＡが定例会見　英国ダービーでの『ノンランナー』にも言及
+OK project=1 video_id=oNM1lKlzZ1k title=【POGマニア】新種牡馬産駒の活躍止まらず　伝説の名馬フライトラインの子は芝で勝
+OK project=1 video_id=FNsoWAtWaQg title=コナパームスが日曜東京で初陣 半姉は桜花賞2着馬コナコースト/関東馬メイクデビュ
+OK project=1 video_id=yHd15-SFePw title=【しらさぎS】「競馬場の雰囲気に…」と陣営が前走を振り返るエコロアルバ　唯一の3
