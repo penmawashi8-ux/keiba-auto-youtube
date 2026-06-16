@@ -1,10 +1,10 @@
-date: 2026-06-16T01:57:19.428801Z
+date: 2026-06-16T06:36:39.901128Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5Vd0_MNxgSQ title=【しらさぎS】田口貫太騎手がJRA重賞初制覇なるか 京都金杯覇者のブエナオンダで
-OK project=1 video_id=dtJY_3y7i48 title=蛯名正義元騎手が史上8人目の殿堂入り　G1・26勝の名手「夢を追いかけて、これか
-OK project=1 video_id=5Gxe7S-sc6I title=【注目馬動向】オークス制覇のジュウリョクピエロは凱旋門賞を見送り　今村聖奈騎手と
+OK project=1 video_id=x78XHC8_P0I title=ジュウリョクピエロは今秋の凱旋門賞挑戦を見送り国内専念　引き続き今村聖奈で秋華賞
+OK project=1 video_id=S9zDc5N5l8s title=ウアジェトの2024など、先週の入厩情報/栗東トレセンニュース
+OK project=1 video_id=LjTVohqR7tc title=プリュスの2024(ヒアカムズザサン)など、先週のゲート試験/栗東トレセンニュー
