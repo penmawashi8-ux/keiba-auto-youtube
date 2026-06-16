@@ -1,10 +1,10 @@
-date: 2026-06-16T13:41:18.462561Z
+date: 2026-06-16T15:59:25.692500Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SVwgxghTvH8 title=【地方競馬】ハーフブルーが川崎スパーキングスプリント快勝　逃げ切りで重賞Ｖ２　御
-OK project=1 video_id=UP9sH_SPjkg title=【府中牝馬S】ゲート再審査クリアのミアネーロは再び芝へ　状態も林師が「今回はかな
-OK project=1 video_id=dh3-Eas0zec title=ディープ産駒が17年連続のJRA重賞制覇なるか しらさぎSに良血3頭が出陣！
+OK project=1 video_id=MCUkuGGwAR4 title=英ロイヤルアスコット開幕!クイーンアンSは伏兵テンボブトニーが強襲V「本当に大き
+OK project=1 video_id=TzYK2bgEOvs title=【川崎競馬】単勝1・6倍のハーフブルーが川崎SS逃げ切りV　御神本騎手「短いとこ
+OK project=1 video_id=th26G3Yg9IQ title=【川崎競馬　スパーキングスプリント】ハーフブルーが逃げ切り　御神本も豊かなスピー
