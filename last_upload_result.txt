@@ -1,10 +1,10 @@
-date: 2026-06-16T10:09:27.186494Z
+date: 2026-06-16T12:21:54.529006Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hc1Nu98I-RY title=【府中牝馬S予想オッズ】ヴァルキリーバースが予想1番人気
-OK project=1 video_id=sEYYczbCUuQ title=【しらさぎS予想オッズ】ベラジオボンドが予想1番人気
-OK project=1 video_id=a-oB3ePQQnc title=【POG】21日東京でデビュー予定のダノンコレクトに森一調教師は期待大　「切れる
+OK project=1 video_id=z7NyPTYHsYQ title=【川崎・川崎スパーキングスプリント結果】ハーフブルーが逃げ切って重賞2勝目を挙げ
+OK project=1 video_id=N48fjNUuIy8 title=【府中牝馬S】「ヒヤヒヤする展開」と陣営　前走はゴール直前まで追えずも鮮やかに差
+OK project=1 video_id=uxyzYh6FTYg title=【しらさぎS】除外対象のテリオスララは2走前に逃走Vの武豊騎手が…　府中牝馬との
