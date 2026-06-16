@@ -1,10 +1,10 @@
-date: 2026-06-16T12:21:54.529006Z
+date: 2026-06-16T13:41:18.462561Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=z7NyPTYHsYQ title=【川崎・川崎スパーキングスプリント結果】ハーフブルーが逃げ切って重賞2勝目を挙げ
-OK project=1 video_id=N48fjNUuIy8 title=【府中牝馬S】「ヒヤヒヤする展開」と陣営　前走はゴール直前まで追えずも鮮やかに差
-OK project=1 video_id=uxyzYh6FTYg title=【しらさぎS】除外対象のテリオスララは2走前に逃走Vの武豊騎手が…　府中牝馬との
+OK project=1 video_id=SVwgxghTvH8 title=【地方競馬】ハーフブルーが川崎スパーキングスプリント快勝　逃げ切りで重賞Ｖ２　御
+OK project=1 video_id=UP9sH_SPjkg title=【府中牝馬S】ゲート再審査クリアのミアネーロは再び芝へ　状態も林師が「今回はかな
+OK project=1 video_id=dh3-Eas0zec title=ディープ産駒が17年連続のJRA重賞制覇なるか しらさぎSに良血3頭が出陣！
