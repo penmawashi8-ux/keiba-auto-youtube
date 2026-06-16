@@ -1,7 +1,50 @@
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[2]  [ファクトチェックNG] NG: 元記事に存在しない武豊騎手
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 第74回府中牝馬S・G3に、美浦・高柳瑞樹厩舎のエストゥペンダが出走します。エストゥペンダはこれまで重賞に4回挑み、3着
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
@@ -9,42 +52,111 @@ Gemini APIキー: 3 件ロード
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【府中牝馬S予想オッズ】ヴァルキリーバースが予想1番人気 ---
-[0] Gemini入力本文 491文字: '6月21日に東京競馬場で行われる、第74回府中牝馬ステークス(3歳上・牝・GIII・芝1800m)に19頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは16日時点で以下のようになっている。\n\u30001年近'
+--- 記事[0]: 【川崎・川崎スパーキングスプリント結果】ハーフブルーが逃げ切って重賞2勝目を挙げる ---
+[0] Gemini入力本文 351文字: '16日、川崎競馬場で行われた第6回川崎スパーキングスプリント(4歳上・重賞・ダ900m・1着賞金1200万円)は、押してハナを切った御神本訓史騎手騎乗の1番人気ハーフブルー(牝4、大井・鈴木啓之厩舎)が、2番手から脚を伸ばした4番人気フリー'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【しらさぎS予想オッズ】ベラジオボンドが予想1番人気 ---
-[1] Gemini入力本文 494文字: '6月21日に阪神競馬場で行われる、第2回しらさぎステークス(3歳上・GIII・芝1600m)に20頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは16日時点で以下のようになっている。\n\u3000前走のマイラ'
+--- 記事[1]: 【府中牝馬S】「ヒヤヒヤする展開」と陣営　前走はゴール直前まで追えずも鮮やかに差し切ったエストゥペンダ ---
+[1] Gemini入力本文 510文字: '◆第74回府中牝馬S・G3(6月21日、東京競馬場・芝1800メートル)＝6月16日、美浦トレセン\n\t\t\t\t\u3000第74回府中牝馬S・G3(21日、東京)に出走するエストゥペンダ(牝4歳、美浦・高柳瑞樹厩舎、父サートゥルナーリア)は、これまで重'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【POG】21日東京でデビュー予定のダノンコレクトに森一調教師は期待大　「切れるイメージ。初戦から好勝負」 ---
-[2] Gemini入力本文 347文字: '6月21日の東京・芝1800メートルでデビュー予定のダノンコレクト(牡2歳、美浦・森一誠厩舎、父ダノンスマッシュ)は、2つ上の半兄ダノンエンブレムが東京で全3勝を挙げており、血統背景からも舞台適性は高そうだ。\n\t\t\t\t\u300011日の1週前追い切'
+--- 記事[2]: 【しらさぎS】除外対象のテリオスララは2走前に逃走Vの武豊騎手が…　府中牝馬との両にらみで巻き返しへ ---
+[2] Gemini入力本文 357文字: '◆第2回しらさぎS・G3(6月21日、阪神競馬場・芝1600メートル)＝6月16日、美浦トレセン\n\t\t\t\t\u3000テリオスララ(牝4歳、美浦・田島俊明厩舎、父シスキン)は、しらさぎSで阪神JF3着以来のミルコ・デムーロ騎手との再コンビが本線も、現'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 236文字]: '最新のレース情報が入ってきました。6月21日に東京競馬場で行われる第74回府中牝馬ステークス、3歳以上牝馬のGIII、芝1800mのレースには19頭が登録しています。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズが16日時点で発表されています。この予想オッズでは、1年近くの休み明けだった前走・東風Sを勝ったヴァルキリーバースが単勝3.8倍で1番人気に推されています。また、前走のヴィクトリアマイルで6着だったニシノティアモが続いています。'
+[2]  [Gemini生出力 193文字]: '最新のレース情報が入ってきました。\n第2回しらさぎS・G3に出走を予定しているテリオスララは、現在、除外対象となっています。フルゲート18頭に対し19番目という状況です。しらさぎSでは、阪神JF3着以来となるミルコ・デムーロ騎手との再コンビが本線とされています。もししらさぎSに出走できなかった場合は、同日に東京競馬場で行われる府中牝馬S・G3に切り替える予定で調整が進められています。'
+[2]  [重複除去] 193文字 → 192文字
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[0]  [Gemini生出力 208文字]: '注目の競馬情報をお届けします。\n16日、川崎競馬場で行われた第6回川崎スパーキングスプリントは、4歳上・重賞・ダート900mで、1着賞金は1200万円でした。押してハナを切った御神本訓史騎手騎乗の1番人気ハーフブルーが、2番手から脚を伸ばした4番人気フリーダムに1/2馬身差をつけ優勝し、重賞2勝目を挙げました。勝ちタイムは稍重で53秒1でした。さらに3/4馬身差の3着には、6番人気ティアラフォーカスが入りました。'
+[0]  [redirectフィルター] 208文字 → 192文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (236文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。6月21日に東京競馬場で行われる第74回府中牝馬ステークス、3歳以上牝馬のGIII、芝1800mのレースには19頭が登録してい...
+[0]  → output/script_0.txt 保存 (192文字)
+[0]  プレビュー: 16日、川崎競馬場で行われた第6回川崎スパーキングスプリントは、4歳上・重賞・ダート900mで、1着賞金は1200万円でした。押してハナを切った御神本訓史騎手騎...
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 503
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 271文字]: '競馬ファン注目の情報です。6月21日に阪神競馬場で行われる、第2回しらさぎステークスに20頭が登録しています。3歳以上、GIII、芝1600mのこのレースについて、競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズが16日時点で発表されました。前走のマイラーズカップで3着に入ったベラジオボンドが、単勝3.8倍で1番人気に推されています。ベラジオボンドは栗東の上村洋行厩舎所属です。また、サウジアラビアRC勝ちの実績がある美浦の田村康仁厩舎のエコロアルバや、阪神で重賞勝ち実績のある馬も上位人気に名を連ねています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (271文字)
-[1]  プレビュー: 競馬ファン注目の情報です。6月21日に阪神競馬場で行われる、第2回しらさぎステークスに20頭が登録しています。3歳以上、GIII、芝1600mのこのレースについ...
+[1]  [Gemini生出力 219文字]: '最新情報をお届けします。\n第74回府中牝馬S・G3に、美浦・高柳瑞樹厩舎のエストゥペンダが出走します。エストゥペンダはこれまで重賞に4回挑み、3着2回と全てで掲示板を確保しており、威力のある末脚は、いずれ重賞を取れると思わせるものでした。悲願の初タイトルへ舞台は申し分なく、全4勝が左回りで、そのうち2勝は今回と同コースです。陣営は前走について「ヒヤヒヤする展開」と語っており、ゴール直前まで追えずも鮮やかに差し切ったと報じられています。'
+[1]  [redirectフィルター] 219文字 → 206文字
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 429
   HTTP 200
-[2]  [Gemini生出力 256文字]: '今週の競馬注目情報をお伝えします。\n6月21日の東京・芝1800メートルでデビュー予定のダノンコレクトについて、森一調教師は「切れるイメージ。初戦から好勝負」と期待を寄せています。このダノンコレクトは、2つ上の半兄ダノンエンブレムが東京で全3勝を挙げており、血統背景からも舞台適性は高そうです。11日の1週前追い切りでは、荻野極騎手が美浦・Wコースで騎乗し、5ハロン66秒4―11秒3の好時計をマークしました。プロミスラインを3馬身追走し、直線では鞍上の指示にしっかりと反応して鋭く伸び、併入と脚いろ優勢でした。'
-[2]  [重複除去] 256文字 → 255文字
+[2]  [Gemini生出力 257文字]: '最新のレース情報が入ってきました。第2回しらさぎS・G3の出走を予定しているテリオスララは、阪神JF3着以来となるミルコ・デムーロ騎手との再コンビが本線とされています。しかし、現状はフルゲート18頭に対し19番目の除外対象となっています。テリオスララは美浦の田島俊明厩舎所属です。もししらさぎSに出走できなかった場合、同日開催の府中牝馬S・G3に切り替える予定で調整が進められています。しらさぎSは6月21日に阪神競馬場・芝1600メートルで行われ、府中牝馬Sも同日に東京競馬場・芝1800メートルで開催されます。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (255文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。6月21日の東京・芝1800メートルでデビュー予定のダノンコレクトについて、森一調教師は「切れるイメージ。初戦から好勝負」と期...
+[2]  → output/script_2.txt 保存 (257文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第2回しらさぎS・G3の出走を予定しているテリオスララは、阪神JF3着以来となるミルコ・デムーロ騎手との再コンビが本線とされて...
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 173文字]: '最新情報をお届けします。\n第74回府中牝馬S・G3に、美浦・高柳瑞樹厩舎のエストゥペンダが出走します。エストゥペンダはこれまで重賞に4回挑み、3着が2回。全てで掲示板を確保しており、その威力のある末脚は、いずれ重賞を取れると思わせるものです。悲願の初タイトルへ、舞台は申し分ないとされています。全4勝が左回りで、そのうち2勝は今回と同じ条件です。'
+[1]  [redirectフィルター] 173文字 → 160文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (160文字)
+[1]  プレビュー: 第74回府中牝馬S・G3に、美浦・高柳瑞樹厩舎のエストゥペンダが出走します。エストゥペンダはこれまで重賞に4回挑み、3着が2回。全てで掲示板を確保しており、その...
 
 3 件の脚本を生成しました。
