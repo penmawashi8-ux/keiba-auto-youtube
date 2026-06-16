@@ -1,10 +1,10 @@
-date: 2026-06-16T08:50:35.184920Z
+date: 2026-06-16T10:09:27.186494Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=T7AZ2vCPWQU title=【しらさぎS】高杉吏麒騎手が今度こそ重賞初制覇なるか テン乗りのファーヴェントで
-OK project=1 video_id=nM6g7isScqw title=帝王賞選定馬が発表 カゼノランナーやディクテオンなど16頭
-OK project=1 video_id=0aFUPZ2W_xE title=国枝栄氏が調教師13人目の顕彰者に「心より感謝」　アパパネ、アーモンドアイを牝馬
+OK project=1 video_id=hc1Nu98I-RY title=【府中牝馬S予想オッズ】ヴァルキリーバースが予想1番人気
+OK project=1 video_id=sEYYczbCUuQ title=【しらさぎS予想オッズ】ベラジオボンドが予想1番人気
+OK project=1 video_id=a-oB3ePQQnc title=【POG】21日東京でデビュー予定のダノンコレクトに森一調教師は期待大　「切れる
