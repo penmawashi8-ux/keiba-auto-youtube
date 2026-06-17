@@ -1,0 +1,69 @@
+name: 名馬クイズ1時間動画レンダリング(一時)
+
+# 一時的な自動実行用ワークフロー。
+# API経由のworkflow_dispatchが権限不足で叩けないため、
+# このブランチへのpushで検証済みクイズ(quiz_alltime_normal.json)を動画化する。
+# 公開はせず Artifact 出力のみ。完了後に削除予定。
+
+on:
+  push:
+    branches: [claude/horse-racing-youtube-ideas-s232ke]
+    paths:
+      - '.github/workflows/render_alltime_quiz.yml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: システム依存関係インストール (ffmpeg / フォント)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk libfontconfig1
+
+      - name: Python パッケージインストール
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements-quiz.txt
+
+      - name: 検証済みクイズファイルを配置
+        run: cp quizzes/quiz_alltime_normal.json quiz.json
+
+      - name: 馬の写真ダウンロード (Wikipedia)
+        run: python scripts/download_horse_images.py || echo "馬の写真ダウンロード失敗（写真なしで継続）"
+
+      - name: Step 2 スライド生成
+        run: python scripts/quiz_step2_slides.py
+
+      - name: BGM ダウンロード (archive.org CC0)
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py || echo "BGMダウンロード失敗（BGMなしで継続）"
+
+      - name: Step 3 動画生成
+        run: python scripts/quiz_step3_video.py
+
+      - name: 生成結果の確認
+        if: always()
+        run: |
+          [ -f quiz_video.mp4 ] && echo "✓ quiz_video.mp4 ($(du -sh quiz_video.mp4 | cut -f1))" || echo "✗ quiz_video.mp4 が生成されていません"
+
+      - name: 動画ファイルをアップロード (Artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quiz-video-alltime
+          path: quiz_video.mp4
+          retention-days: 7
+          if-no-files-found: warn
