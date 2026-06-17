@@ -1,10 +1,10 @@
-date: 2026-06-17T06:20:17.210241Z
+date: 2026-06-17T08:34:17.820393Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qFs-FDNjXOo title=オーストラリアで活躍するジェイソン・コレット騎手がJRA短期免許取得へ　来週から
-OK project=1 video_id=E1bQDrx1hVg title=【注目馬動向】宝塚記念で武豊騎手と史上初の父子連覇を達成したメイショウタバルは1
-OK project=1 video_id=2KXVZ4xm4Wk title=ローベルクランツ、ラジオNIKKEI賞1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=2VtQxZSDSOU title=【POG】新馬戦快勝のロンドンガーズは函館2歳Sへ/馬三郎のつぶやき
+OK project=1 video_id=17dtR5vjwBs title=【週末情報】ブエナオンダ状態上向き/馬三郎のつぶやき
+OK project=1 video_id=J4nOcuE5yZA title=【有力馬動向】デビットバローズ 全身を大きく使ったパワフルな走り/馬三郎のつぶや
