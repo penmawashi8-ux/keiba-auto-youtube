@@ -1,10 +1,10 @@
-date: 2026-06-17T09:34:09.181513Z
+date: 2026-06-17T11:47:57.977177Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Oti6-elU2-w title=ベラジオボンドがしらさぎS回避　左前脚の繋靱帯を痛めたため
-OK project=1 video_id=Huwrivf-11A title=【注目馬動向】しらさぎSに出走予定のベラジオボンドは左前脚のじん帯を痛めたため出
-OK project=1 video_id=AHt17Qe9Rgs title=【しらさぎS】坂路で鋭く伸びたファーヴェント　ラスト1ハロン11秒9　陣営「何と
+OK project=1 video_id=Fq8Jt2qBzkc title=平取町軽種馬生産振興会主催の第53回1歳馬品評会 オートキュイジーヌ2025が最
+OK project=1 video_id=doYYG0OiLh8 title=【関東オークス】岩田父子の壮絶叩き合い　勝ったのは息子・望来のペンダント　3歳牝
+OK project=1 video_id=LKTI_GIDxIQ title=【しらさぎS】ミニトランザット脚取り軽快　杉山佳調教師「超回復を見せている」初の
