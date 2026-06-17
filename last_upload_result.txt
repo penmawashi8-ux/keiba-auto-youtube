@@ -1,10 +1,10 @@
-date: 2026-06-17T11:47:57.977177Z
+date: 2026-06-17T12:59:17.505352Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Fq8Jt2qBzkc title=平取町軽種馬生産振興会主催の第53回1歳馬品評会 オートキュイジーヌ2025が最
-OK project=1 video_id=doYYG0OiLh8 title=【関東オークス】岩田父子の壮絶叩き合い　勝ったのは息子・望来のペンダント　3歳牝
-OK project=1 video_id=LKTI_GIDxIQ title=【しらさぎS】ミニトランザット脚取り軽快　杉山佳調教師「超回復を見せている」初の
+OK project=1 video_id=tuNNlm5V304 title=【地方競馬】岩田望来騎乗のペンダントが川崎・関東オークスＶ　父・康誠騎乗のジュワ
+OK project=1 video_id=e5dVhIx_iA8 title=【川崎競馬　Jpn2関東オークス】ペンダントが重賞初V　岩田望が父・康誠を追いか
+OK project=1 video_id=L6ieBY6DZz8 title=【関東オークス】1番人気のタマモフリージアは4着　2年ぶりVならずも田口貫太騎手
