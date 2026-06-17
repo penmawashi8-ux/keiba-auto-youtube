@@ -1,10 +1,10 @@
-date: 2026-06-16T15:59:25.692500Z
+date: 2026-06-17T00:36:05.379905Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MCUkuGGwAR4 title=英ロイヤルアスコット開幕!クイーンアンSは伏兵テンボブトニーが強襲V「本当に大き
-OK project=1 video_id=TzYK2bgEOvs title=【川崎競馬】単勝1・6倍のハーフブルーが川崎SS逃げ切りV　御神本騎手「短いとこ
-OK project=1 video_id=th26G3Yg9IQ title=【川崎競馬　スパーキングスプリント】ハーフブルーが逃げ切り　御神本も豊かなスピー
+OK project=1 video_id=50Vy4zZa7_Q title=【府中牝馬S】セキトバイーストが史上3頭目の連覇に挑戦
+OK project=1 video_id=XSDTcWLo4gs title=今村聖奈オークス制覇　武豊「ようやくピークが来ました」上半期のG1レースを振り返
+OK project=1 video_id=ODlN-Uz9xPU title=ソダシ、マルガなど“華麗なる白毛一族”アイドルホース候補スノーウィスパー20日函
