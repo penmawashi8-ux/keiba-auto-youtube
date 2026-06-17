@@ -1,10 +1,10 @@
-date: 2026-06-17T08:34:17.820393Z
+date: 2026-06-17T09:34:09.181513Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2VtQxZSDSOU title=【POG】新馬戦快勝のロンドンガーズは函館2歳Sへ/馬三郎のつぶやき
-OK project=1 video_id=17dtR5vjwBs title=【週末情報】ブエナオンダ状態上向き/馬三郎のつぶやき
-OK project=1 video_id=J4nOcuE5yZA title=【有力馬動向】デビットバローズ 全身を大きく使ったパワフルな走り/馬三郎のつぶや
+OK project=1 video_id=Oti6-elU2-w title=ベラジオボンドがしらさぎS回避　左前脚の繋靱帯を痛めたため
+OK project=1 video_id=Huwrivf-11A title=【注目馬動向】しらさぎSに出走予定のベラジオボンドは左前脚のじん帯を痛めたため出
+OK project=1 video_id=AHt17Qe9Rgs title=【しらさぎS】坂路で鋭く伸びたファーヴェント　ラスト1ハロン11秒9　陣営「何と
