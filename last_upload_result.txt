@@ -1,10 +1,10 @@
-date: 2026-06-18T09:16:28.219848Z
+date: 2026-06-18T11:13:04.973976Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1huP9JL3Vcs title=【地方競馬】フクノユリディズが園田ＦＣスプリントを制し重賞２勝目
-OK project=1 video_id=o34xsVAVy04 title=【POG】ソダシ半妹、白毛のスノーウィスパーが20日函館5R・2歳新馬戦に出走確
-OK project=1 video_id=So4Vbrv6lS8 title=【府中牝馬S】ニシノティアモは単走でパワフルな脚さばき　上原佑調教師「できれば稍
+OK project=1 video_id=ocSplE6XmKs title=馬主は「ウマ娘」藤田晋氏 ブレイクガールがデビュー勝ち狙う
+OK project=1 video_id=1BZdXjRcUIM title=「4口当選したぞー」「外れると思ってた!」夢いっぱいの吉報にファンは歓喜の声　良
+OK project=1 video_id=wt-aVf6jqtM title=【府中牝馬S】セントメモリーズで平地重賞初出走の松尾卓哉厩舎　馬券圏内の平均人気
