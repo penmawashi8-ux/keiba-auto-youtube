@@ -1,10 +1,10 @@
-date: 2026-06-18T05:59:15.760623Z
+date: 2026-06-18T08:12:15.098972Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Voj1a6eTzRk title=25年阪急杯、セントウルS勝ち馬カンチェンジュンガ　右前浅屈腱炎で全治9カ月以上
-OK project=1 video_id=5o0O2l3IPIk title=“香港最強馬”が引退後に日本移住→素顔は「可愛い甘えん坊」で大人気!ゴールデンシ
-OK project=1 video_id=ZgX4Dz04ai0 title=プロレスラー内藤哲也が岩手競馬をPR　マーキュリーC当日にはトークショーも
+OK project=1 video_id=tniisPUwCN4 title=【園田・園田FCスプリント結果】フクノユリディズが逃げ切って重賞2勝目を挙げる
+OK project=1 video_id=9kUUqp0QKnM title=【注目馬動向】葵S勝ちのデアヴェローチェは北九州記念へ　大物候補モンローウォーク
+OK project=1 video_id=JgPushedVdY title=【POG】6・20東京デビューのルークウォームはいかにも初戦向き　手塚久調教師「
