@@ -10,6 +10,8 @@ on:
     branches: [claude/horse-racing-youtube-ideas-s232ke]
     paths:
       - '.github/workflows/render_alltime_quiz.yml'
+      - 'scripts/quiz_step3_video.py'
+      - 'quizzes/quiz_alltime_normal.json'
   workflow_dispatch:
 
 jobs:

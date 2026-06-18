@@ -4,6 +4,7 @@
 import asyncio
 import glob
 import json
+import math
 import os
 import random
 import re
@@ -158,45 +159,72 @@ async def synthesize_all(quiz: dict):
     return paths
 
 
+# 全クリップ共通の映像正規化（解像度・SAR・フレームレート・ピクセル形式を統一）。
+# concat フィルタでの結合にはこれらが全入力で一致している必要がある。
+_SCALE_VF = (
+    f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
+    f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a,"
+    f"setsar=1,fps={FPS},format=yuv420p"
+)
+
+
+def _probe_duration(path: Path) -> float:
+    """音声/動画ファイルの尺（秒）を返す。失敗時は 0.0。"""
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=nokey=1:noprint_wrappers=1", str(path)],
+        capture_output=True, text=True,
+    )
+    try:
+        return float(r.stdout.strip())
+    except (ValueError, AttributeError):
+        return 0.0
+
+
+def _quantize_to_frame(seconds: float) -> float:
+    """秒数をフレーム境界（1/FPS の倍数）に切り上げる。
+    これにより映像（フレーム単位）と音声（44100Hz）の尺を厳密一致でき、
+    結合時の累積音ズレを根絶する（FPS=30 のとき 44100 はフレーム長で割り切れる）。
+    """
+    nframes = max(1, math.ceil(seconds * FPS))
+    return nframes / FPS
+
+
 def make_clip(slide_path: Path, audio_path: Path | None, extra_secs: float, out_path: Path):
     """スライド画像 + 音声から動画クリップを生成。
 
-    -shortest で音声終端にスライドを自動同期。duration 計算不要。
-    apad=pad_dur で末尾に extra_secs 秒の余韻無音を追加する。
-    -ar 44100 でシンキングタイムクリップ（44100Hz）と統一し concat での音ずれを防ぐ。
+    音声尺と映像尺を「フレーム境界に量子化した同一の長さ」で厳密に切り揃える
+    （-t を全ストリームに適用）。音声は apad で必要長まで無音パディングする。
+    全クリップを CFR {FPS}fps / 44100Hz ステレオ AAC に統一し、
+    concat フィルタでの再エンコード結合時に音ズレ・結合ノイズが出ないようにする。
     """
-    cmd = [
-        "ffmpeg", "-y",
-        "-loop", "1",
-        "-i", str(slide_path),
-    ]
-
-    scale_vf = (
-        f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
-        f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a"
-    )
-
     if audio_path and audio_path.exists():
-        cmd += ["-i", str(audio_path)]
-        cmd += [
+        target = _quantize_to_frame(_probe_duration(audio_path) + float(extra_secs))
+        cmd = [
+            "ffmpeg", "-y",
+            "-loop", "1", "-i", str(slide_path),
+            "-i", str(audio_path),
             "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
-            "-pix_fmt", "yuv420p",
-            "-vf", scale_vf,
-            "-c:a", "aac", "-b:a", "128k",
-            "-ar", "44100",
-            "-af", f"apad=pad_dur={extra_secs}",
-            "-shortest",
+            "-r", str(FPS),
+            "-vf", _SCALE_VF,
+            "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "2",
+            "-af", "apad",
+            "-t", f"{target:.6f}",
+            str(out_path),
         ]
     else:
-        cmd += [
+        target = _quantize_to_frame(float(extra_secs))
+        cmd = [
+            "ffmpeg", "-y",
+            "-loop", "1", "-i", str(slide_path),
+            "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
             "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
-            "-pix_fmt", "yuv420p",
-            "-vf", scale_vf,
-            "-an",
-            "-t", str(extra_secs),
+            "-r", str(FPS),
+            "-vf", _SCALE_VF,
+            "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "2",
+            "-t", f"{target:.6f}",
+            str(out_path),
         ]
-
-    cmd.append(str(out_path))
 
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
@@ -212,7 +240,8 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
 
     scale_f = (
         f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
-        f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a"
+        f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:color=#0d1b2a,"
+        f"setsar=1,fps={FPS},format=yuv420p"
     )
     # カウントダウン: choice下段底辺(918px from top)より下に配置
     countdown_f = (
@@ -239,16 +268,18 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         label_file = None
         vf = f"{scale_f},{countdown_f}"
 
+    target = _quantize_to_frame(float(duration))
     cmd = [
         "ffmpeg", "-y",
         "-loop", "1",
         "-i", str(slide_path),
         "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
+        "-r", str(FPS),
         "-pix_fmt", "yuv420p",
         "-vf", vf,
-        "-c:a", "aac", "-b:a", "128k",
-        "-t", str(duration),
+        "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "2",
+        "-t", f"{target:.6f}",
         str(out_path),
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -260,26 +291,59 @@ def make_question_silence_clip(slide_path: Path, out_path: Path, duration: float
         raise RuntimeError(f"ffmpeg failed: {result.stderr[-500:]}")
 
 
-def concat_clips(clip_paths: list[Path], out_path: Path):
-    """クリップを結合して最終動画を生成"""
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False, encoding="utf-8") as f:
-        for p in clip_paths:
-            f.write(f"file '{p.resolve()}'\n")
-        list_file = f.name
+def _concat_filter(clip_paths: list[Path], out_path: Path, crf: str = "23"):
+    """concat フィルタで結合（各入力をデコードし1本の連続タイムラインに再エンコード）。
 
+    -c copy のデムューサ結合と違い、各クリップの音声を一旦デコードするため
+    AAC エンコーダ遅延（priming）由来の無音/ノイズが結合点に残らず、
+    かつ全クリップで音声尺=映像尺が厳密一致しているため累積音ズレも発生しない。
+    """
+    cmd = ["ffmpeg", "-y"]
+    for p in clip_paths:
+        cmd += ["-i", str(p)]
+    n = len(clip_paths)
+    graph = "".join(f"[{i}:v:0][{i}:a:0]" for i in range(n)) + f"concat=n={n}:v=1:a=1[v][a]"
+    cmd += [
+        "-filter_complex", graph,
+        "-map", "[v]", "-map", "[a]",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", crf,
+        "-pix_fmt", "yuv420p", "-r", str(FPS),
+        "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
+        "-movflags", "+faststart",
+        str(out_path),
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg concat failed: {result.stderr[-800:]}")
+
+
+def concat_clips(clip_paths: list[Path], out_path: Path, batch_size: int = 50):
+    """クリップを結合して最終動画を生成。
+
+    入力本数が多い場合は concat フィルタの入力数・開いるファイル数の上限を避けるため
+    バッチ単位で中間ファイルに結合してから、その中間ファイル同士を再結合する
+    （中間ファイルは連続した1本のクリップなので再結合でも音ズレ・ノイズは出ない）。
+    """
+    clip_paths = list(clip_paths)
+    if len(clip_paths) <= batch_size:
+        _concat_filter(clip_paths, out_path)
+        return
+
+    tmp_dir = Path(tempfile.mkdtemp(prefix="concat_"))
     try:
-        cmd = [
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0",
-            "-i", list_file,
-            "-c", "copy",
-            str(out_path),
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            raise RuntimeError(f"ffmpeg concat failed: {result.stderr[-500:]}")
+        intermediates: list[Path] = []
+        for i in range(0, len(clip_paths), batch_size):
+            batch = clip_paths[i:i + batch_size]
+            inter = tmp_dir / f"part_{i // batch_size:03d}.mp4"
+            # 中間段は再エンコード回数を抑えるため軽め(crf 23)で十分
+            _concat_filter(batch, inter, crf="23")
+            intermediates.append(inter)
+        # 中間ファイル同士を最終結合
+        _concat_filter(intermediates, out_path, crf="23")
     finally:
-        os.unlink(list_file)
+        for f in tmp_dir.glob("*.mp4"):
+            f.unlink()
+        tmp_dir.rmdir()
 
 
 def add_bgm(video_path: Path, out_path: Path) -> bool:
