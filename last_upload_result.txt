@@ -1,10 +1,10 @@
-date: 2026-06-18T08:12:15.098972Z
+date: 2026-06-18T09:16:28.219848Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tniisPUwCN4 title=【園田・園田FCスプリント結果】フクノユリディズが逃げ切って重賞2勝目を挙げる
-OK project=1 video_id=9kUUqp0QKnM title=【注目馬動向】葵S勝ちのデアヴェローチェは北九州記念へ　大物候補モンローウォーク
-OK project=1 video_id=JgPushedVdY title=【POG】6・20東京デビューのルークウォームはいかにも初戦向き　手塚久調教師「
+OK project=1 video_id=1huP9JL3Vcs title=【地方競馬】フクノユリディズが園田ＦＣスプリントを制し重賞２勝目
+OK project=1 video_id=o34xsVAVy04 title=【POG】ソダシ半妹、白毛のスノーウィスパーが20日函館5R・2歳新馬戦に出走確
+OK project=1 video_id=So4Vbrv6lS8 title=【府中牝馬S】ニシノティアモは単走でパワフルな脚さばき　上原佑調教師「できれば稍
