@@ -1,10 +1,10 @@
-date: 2026-06-18T11:13:04.973976Z
+date: 2026-06-18T12:38:34.835011Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ocSplE6XmKs title=馬主は「ウマ娘」藤田晋氏 ブレイクガールがデビュー勝ち狙う
-OK project=1 video_id=1BZdXjRcUIM title=「4口当選したぞー」「外れると思ってた!」夢いっぱいの吉報にファンは歓喜の声　良
-OK project=1 video_id=wt-aVf6jqtM title=【府中牝馬S】セントメモリーズで平地重賞初出走の松尾卓哉厩舎　馬券圏内の平均人気
+OK project=1 video_id=N_bG7yhoFBY title=単勝1.0倍!道営の絶対王者が3連覇達成　ベルピットが赤レンガ記念で重賞17勝目
+OK project=1 video_id=bodURPNkhuE title=【門別・赤レンガ記念結果】ベルピットが単勝1.0倍の支持に応え3連覇達成
+OK project=1 video_id=cC0MCQ1Cq8A title=【POG】「勝ち負け」と黒岩調教師は期待　2週連続の好時計のゴールデンハニビーは
