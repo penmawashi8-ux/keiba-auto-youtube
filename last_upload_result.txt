@@ -1,10 +1,10 @@
-date: 2026-06-17T12:59:17.505352Z
+date: 2026-06-18T00:29:52.018183Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tuNNlm5V304 title=【地方競馬】岩田望来騎乗のペンダントが川崎・関東オークスＶ　父・康誠騎乗のジュワ
-OK project=1 video_id=e5dVhIx_iA8 title=【川崎競馬　Jpn2関東オークス】ペンダントが重賞初V　岩田望が父・康誠を追いか
-OK project=1 video_id=L6ieBY6DZz8 title=【関東オークス】1番人気のタマモフリージアは4着　2年ぶりVならずも田口貫太騎手
+OK project=1 video_id=E_OcF8awT64 title=20日函館でのデビュー戦白星へ　ソダシの半妹・スノーウィスパーが好感触の最終追い
+OK project=1 video_id=W7zSDys76es title=【府中牝馬S】「へぐったらジョッキーに怒られるので緊張した(笑)」父子重賞Vへ菊
+OK project=1 video_id=HpxA8i2oaqk title=【しらさぎＳ】キープカルム　昨夏王者が貫禄示す　１年ぶりＶでシリーズ連覇へ中竹師
