@@ -1,42 +1,74 @@
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 数々の歴史的瞬間がこの一冊に 『ファンファーレが鳴るとき―ラジオ競馬放送秘話』が発売 ---
-[0] Gemini入力本文 617文字: '全国放送のラジオNIKKEIは、秋に競馬放送70年の節目を迎える。メモリアルイヤーの今年は、競馬川柳の募集企画や公開収録など、競馬関連コンテンツの放送・配信、記念行事を多数実施予定。そのプロジェクトの一環で、記念書籍『ファンファーレが鳴ると'
+--- 記事[0]: 今村聖奈騎手の偉業達成の裏にあった判断「絶対に早いと思って...」　福永調教師は「尋常じゃない」と絶賛　NHKでインタビ ---
+[0] Gemini入力本文 349文字: 'NHK大阪放送局で19日放送された地域情報番組「かんさい熱視線」(金曜・後7時30分)で、5月24日のオークスでジュウリョクピエロ(牝3歳、栗東・寺島良厩舎、父オルフェーヴル)に騎乗し、JRA女性騎手初のG1制覇を達成した今村聖奈騎手のイン'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 母と祖母は豪G1馬 3歳のブリリアンブルームが待望デビュー戦だ ---
-[1] Gemini入力本文 350文字: '母も祖母も豪G1馬のブリリアンブルーム(牝3、栗東・西村真幸厩舎)が、日曜函館1Rの3歳未勝利(牝・芝1200m)で待望のデビュー戦を迎える。\n\u3000ブリリアンブルームは父サトノダイヤモンド、母マイアミバウンド、母の父Reliable Manの'
+--- 記事[1]: 「ウマい馬券」10周年記念イベントに50人超 予想家が346万馬券的中で大歓声 ---
+[1] Gemini入力本文 559文字: 'netkeibaの人気コンテンツ「ウマい馬券」のサービス開始10周年を記念したイベントが7日都内で行われ、応募総数900人超の中から抽選で選ばれた約50人のファンが詰めかけた。\n\u3000来場者にはnetkeibaオリジナルタオル、ウマい馬券10周'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 23年若駒Sの勝ち馬マイネルラウレア引退　今後は乗馬に ---
-[2] Gemini入力本文 349文字: 'デビュー2連勝で23年若駒Sを制したマイネルラウレア(牡6＝宮、父ゴールドシップ)が引退するとラフィアンターフマンクラブが発表した。\n\u300023年12月10日のオリオンSでレース中に左第3中手骨を骨折して競走を中止、長期休養を余儀なくされた。2'
+--- 記事[2]: 血統ファン必読の大人気書籍が5年ぶりの第二弾 『亀谷敬正の競馬血統辞典2』が19日発売 ---
+[2] Gemini入力本文 600文字: '血統ファン必読の大人気書籍が5年ぶりの第二弾。『亀谷敬正の競馬血統辞典2』が19日、オーパーツ・パブリッシングから発売された。\n\u3000ここ数年で大きく塗り替えられた種牡馬の勢力図。知って得する“主要種牡馬の特徴”をわかりやすく整理し、激動の時代'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 255文字]: '注目の競馬情報をお届けします。全国放送のラジオNIKKEIは、秋に競馬放送70年の節目を迎えます。メモリアルイヤーの今年は、競馬川柳の募集企画や公開収録など、競馬関連コンテンツの放送・配信、記念行事を多数実施予定です。そのプロジェクトの一環として、記念書籍『ファンファーレが鳴るとき―ラジオ競馬放送秘話』が5月1日に発刊されました。この書籍は長岡一也氏が著し、ラジオNIKKEIが編纂したものです。1956年に始まった旧・日本短波放送、現ラジオNIKKEIの「中央競馬実況中継」の草創期について記されています。'
-[0]  [redirectフィルター] 255文字 → 240文字
+[1]  [Gemini生出力 234文字]: '注目の競馬情報をお届けします。netkeibaの人気コンテンツ「ウマい馬券」のサービス開始10周年を記念したイベントが7日都内で行われました。応募総数900人超の中から抽選で選ばれた約50人のファンが詰めかけ、イベントでは予想家が346万馬券を的中させ、会場は大歓声に包まれました。来場者にはnetkeibaオリジナルタオルやウマい馬券10周年記念オリジナルTシャツがプレゼントされ、クイズ大会の優勝者には出演者全員のサイン入りTシャツとメシ馬サイン本が贈られました。'
+[1]  [redirectフィルター] 234文字 → 219文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (219文字)
+[1]  プレビュー: netkeibaの人気コンテンツ「ウマい馬券」のサービス開始10周年を記念したイベントが7日都内で行われました。応募総数900人超の中から抽選で選ばれた約50人...
   HTTP 200
-[1]  [Gemini生出力 253文字]: '競馬ファン注目の情報です。母も祖母も豪G1馬のブリリアンブルームが、日曜函館1Rの3歳未勝利、牝馬限定の芝1200mで待望のデビュー戦を迎えます。ブリリアンブルームは牝3で、栗東の西村真幸厩舎に所属しています。父はサトノダイヤモンド、母はマイアミバウンド、母の父はReliable Manという血統です。母マイアミバウンドは2019年のVRCオークス勝ち馬であり、祖母も2007年のVRCオークスを制しており、豪州の名牝系出身と言えるでしょう。馬名の意味由来は「輝かしい、素晴らしい＋真盛り、花盛り」です。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (240文字)
-[0]  プレビュー: 全国放送のラジオNIKKEIは、秋に競馬放送70年の節目を迎えます。メモリアルイヤーの今年は、競馬川柳の募集企画や公開収録など、競馬関連コンテンツの放送・配信、...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (253文字)
-[1]  プレビュー: 競馬ファン注目の情報です。母も祖母も豪G1馬のブリリアンブルームが、日曜函館1Rの3歳未勝利、牝馬限定の芝1200mで待望のデビュー戦を迎えます。ブリリアンブル...
+[0]  [Gemini生出力 254文字]: '本日の競馬ニュースです。NHK大阪放送局で19日放送された地域情報番組「かんさい熱視線」で、今村聖奈騎手のインタビュー映像が放映されました。この番組では、5月24日のオークスでジュウリョクピエロに騎乗し、JRA女性騎手初のG1制覇を達成した今村聖奈騎手の偉業の裏にあった判断「絶対に早いと思って...」が紹介されています。福永調教師は今村聖奈騎手を「尋常じゃない」と絶賛しました。番組は、JRAが公開し400万回以上再生されるなど話題となった今村聖奈騎手のジョッキーカメラをもとに、レースを振り返る形でした。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (251文字)
+[0]  プレビュー: 本日の競馬ニュースです。NHK大阪放送局で19日放送された地域情報番組「かんさい熱視線」で、今村聖奈騎手のインタビュー映像が放映されました。この番組では、5月2...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 245文字]: '今週の競馬注目情報をお伝えします。デビュー2連勝で23年若駒Sを制したマイネルラウレアが引退するとラフィアンターフマンクラブが発表しました。今後は乗馬となります。マイネルラウレアは23年12月10日のオリオンSでレース中に左第3中手骨を骨折し、競走を中止しました。これにより長期休養を余儀なくされ、2年以上の休養を経て1月10日の迎春Sで7着、2月14日の飛鳥Sで13着と復帰を果たしていました。しかし、飛鳥Sの後、左後肢の繋の骨に亀裂が見つかり、栗東トレセン診療所で手術を受けていました。'
+[2]  [Gemini生出力 208文字]: '競馬速報です。血統ファン必読の大人気書籍の第二弾、『亀谷敬正の競馬血統辞典2』が5年ぶりに19日、オーパーツ・パブリッシングから発売されました。ここ数年で大きく塗り替えられた種牡馬の勢力図において、知って得する主要種牡馬の特徴をわかりやすく整理し、激動の時代を勝ち抜くために必要なデータがこの一冊に凝縮されています。今作では、それぞれの種牡馬ページに買いポイントと消しポイントが明記され、さらに使いやすくなりました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (245文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。デビュー2連勝で23年若駒Sを制したマイネルラウレアが引退するとラフィアンターフマンクラブが発表しました。今後は乗馬となります...
+[2]  → output/script_2.txt 保存 (208文字)
+[2]  プレビュー: 競馬速報です。血統ファン必読の大人気書籍の第二弾、『亀谷敬正の競馬血統辞典2』が5年ぶりに19日、オーパーツ・パブリッシングから発売されました。ここ数年で大きく...
 
 3 件の脚本を生成しました。
