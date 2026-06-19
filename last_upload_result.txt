@@ -1,10 +1,10 @@
-date: 2026-06-19T08:36:20.142564Z
+date: 2026-06-19T11:21:21.566509Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=l28uDpk_ByY title=日曜阪神は“姫路デー”？ 姫路SとしらさぎSをつなぐ共通点とは
-OK project=1 video_id=VWsjduPOgys title=【ラジオNIKKEI賞想定馬・騎手】ローベルクランツ、サウンドムーブなど20頭
-OK project=1 video_id=fssRCNZC1R0 title=【函館記念想定馬・騎手】ファウストラーゼン、デビットバローズなど15頭
+OK project=1 video_id=cNRowVP3kW8 title=数々の歴史的瞬間がこの一冊に 『ファンファーレが鳴るとき―ラジオ競馬放送秘話』が
+OK project=1 video_id=sCBGUuvlXUE title=母と祖母は豪G1馬 3歳のブリリアンブルームが待望デビュー戦だ
+OK project=1 video_id=qUXyZbmFRIA title=23年若駒Sの勝ち馬マイネルラウレア引退　今後は乗馬に
