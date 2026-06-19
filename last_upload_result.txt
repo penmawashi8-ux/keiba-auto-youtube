@@ -1,10 +1,10 @@
-date: 2026-06-19T06:19:15.128283Z
+date: 2026-06-19T08:36:20.142564Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ej8xVc1rj3w title=【天保山S・金曜気配】決め手が武器のノーブルロジャー　吉岡調教師「今回も自分のス
-OK project=1 video_id=GBjPsUkQSnQ title=【天保山S・金曜気配】復帰2戦目のケイアイアニラは活気十分　吉岡調教師「非常に状
-OK project=1 video_id=LooEirSfK84 title=【府中牝馬S・金曜気配】コガネノソラは活気十分にWコースで調整　菊沢調教師は手応
+OK project=1 video_id=l28uDpk_ByY title=日曜阪神は“姫路デー”？ 姫路SとしらさぎSをつなぐ共通点とは
+OK project=1 video_id=VWsjduPOgys title=【ラジオNIKKEI賞想定馬・騎手】ローベルクランツ、サウンドムーブなど20頭
+OK project=1 video_id=fssRCNZC1R0 title=【函館記念想定馬・騎手】ファウストラーゼン、デビットバローズなど15頭
