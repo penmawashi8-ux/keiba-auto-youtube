@@ -1,10 +1,10 @@
-date: 2026-06-18T14:16:38.492602Z
+date: 2026-06-19T06:19:15.128283Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tSxrtnP5kEg title=【POG】北村友一騎手がブリンカー着用を進言　近親にエピファネイアなどいる良血イ
-OK project=1 video_id=KJafLlX0EwE title=【POG】ゴドルフィンの大物候補コックニーが21日デビュー　横山武史騎手「特に癖
-OK project=1 video_id=f-zInUudY1I title=函館開幕週は3勝と絶好調の小沢大仁騎手　今週は土日で20鞍に騎乗　「今週も気を引
+OK project=1 video_id=Ej8xVc1rj3w title=【天保山S・金曜気配】決め手が武器のノーブルロジャー　吉岡調教師「今回も自分のス
+OK project=1 video_id=GBjPsUkQSnQ title=【天保山S・金曜気配】復帰2戦目のケイアイアニラは活気十分　吉岡調教師「非常に状
+OK project=1 video_id=LooEirSfK84 title=【府中牝馬S・金曜気配】コガネノソラは活気十分にWコースで調整　菊沢調教師は手応
