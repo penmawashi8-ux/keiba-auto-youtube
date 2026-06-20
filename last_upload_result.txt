@@ -1,10 +1,10 @@
-date: 2026-06-19T13:02:16.668426Z
+date: 2026-06-20T00:29:13.701371Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CG3jgVDYkpE title=今村聖奈騎手の偉業達成の裏にあった判断「絶対に早いと思って...」　福永調教師は
-OK project=1 video_id=ly7-whIpw_o title=「ウマい馬券」10周年記念イベントに50人超 予想家が346万馬券的中で大歓声
-OK project=1 video_id=tbJs0t5BsWM title=血統ファン必読の大人気書籍が5年ぶりの第二弾 『亀谷敬正の競馬血統辞典2』が19
+OK project=1 video_id=wsSV-_Irhc8 title=スレイプニルSは中波乱傾向の一戦 5歳馬の活躍に注目だ
+OK project=1 video_id=z0EwzV2nlfc title=全兄はGI・4勝のクロワデュノール チャリングクロスが町田特別で連勝狙う
+OK project=1 video_id=1EyYOhgz_o0 title=【20日の注目・東京9R】クロワデュノール全弟が日本ダービーと同舞台で古馬撃破に
