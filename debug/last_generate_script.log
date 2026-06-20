@@ -1,55 +1,99 @@
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [ファクトチェックNG] NG: 3連単では、エコロ
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 6月20日の出来事一覧/函館・東京・阪神 ---
-[0] Gemini入力本文 439文字: '6月20日の開催(函館・東京・阪神)で発生した競走中の疾病、競走中止などの事象は下記の通り。\n■阪神1R 3歳上障害オープン\nタマモエース(牡7、栗東・宮地貴稔厩舎)\n9号障害飛越着地後に、転倒した9番タイセイジャスパーに触れて転倒したため'
+--- 記事[0]: 【AI予想・府中牝馬S】強敵相手に善戦した前走が価値ある走り！ 今の馬場にもマッチしそうな人工知能の本命馬 ---
+[0] Gemini入力本文 440文字: '今週日曜日は、東京競馬場で府中牝馬ステークス(GIII)が行われます。\n\u3000昨年から6月の東京で開催されている府中牝馬S。現在の施行条件で行われた府中牝馬Sは昨年のみとデータが不足していますので、ここでは過去10年の6月の東京芝1800mで開'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 佐賀競馬で謎のマイナス体重続出に「この減り具合は異常」「絶対壊れとる」　4Rの出走馬はすべて2桁の馬体減 ---
-[1] Gemini入力本文 362文字: '佐賀競馬の異変にSNSがざわついている。20日に行われた佐賀競馬の出走馬がなぜかマイナス体重、しかも大半が2ケタのマイナス体重で出走している珍しい事態が起きている。\n\t\t\t\t\u30001レースは9頭立てで、全馬がマイナス体重を計測。すべて4〜16キ'
+--- 記事[1]: 【しらさぎS】エコロアルバが単勝3・0倍で1番人気　重馬場での朝日杯FS4着馬が3連単でも33番人気タイまで登場 ---
+[1] Gemini入力本文 362文字: '◆第2回しらさぎS・G3(6月21日、阪神競馬場・芝1600メートル)\n\t\t\t\t\u3000前日オッズが6月20日、JRAから発表された。\n\t\t\t\t\u3000前走NHKマイルC9着で斤量53キロの＜11＞エコロアルバ(美浦・田村康仁厩舎、父モズアスコット)が'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 鈴木孝志調教師がJRA通算300勝達成！ 「命かけて走ってくれる馬に感謝」 ---
-[2] Gemini入力本文 348文字: '20日、阪神競馬場3Rで行われた3歳未勝利(3歳・牝・未勝利・ダ1800m)で、田口貫太騎手騎乗の6番人気マクノス(牝3)が第1着となり、鈴木孝志調教師(栗東)はJRA通算300勝を達成した。\n\u3000鈴木孝志調教師は1971年生まれ。23年の中'
+--- 記事[2]: 野中賢二調教師がJRA通算400勝達成！ 「これからも厩舎一丸となって...」 ---
+[2] Gemini入力本文 349文字: '20日、函館競馬場4Rで行われた3歳未勝利(3歳・未勝利・ダ1700m)で、河原田菜々騎手騎乗の8番人気ミリオンアップ(牝3)が第1着となり、野中賢二調教師(栗東)はJRA通算400勝を達成した。\n\u3000野中賢二調教師は1965年生まれ。19年'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 200
+[2]  [Gemini生出力 200文字]: '競馬速報です。\n20日、野中賢二調教師がJRA通算400勝を達成しました。この記録は、函館競馬場4Rで行われた3歳未勝利ダート1700mで、河原田菜々騎手が騎乗した8番人気のミリオンアップが第1着となったことで達成されました。野中賢二調教師は1965年生まれで、19年のフェブラリーステークスを制したインティなどを管理しています。これまでに重賞22勝、そのうち中央で13勝、地方で9勝を挙げています。'
+[2]  [重複除去] 200文字 → 199文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (199文字)
+[2]  プレビュー: 競馬速報です。20日、野中賢二調教師がJRA通算400勝を達成しました。この記録は、函館競馬場4Rで行われた3歳未勝利ダート1700mで、河原田菜々騎手が騎乗し...
+  HTTP 200
+[1]  [Gemini生出力 249文字]: 'レース関連の最新情報です。\n第2回しらさぎS・G3は6月21日、阪神競馬場・芝1600メートルで行われます。6月20日、JRAから前日オッズが発表されました。単勝3.0倍で1番人気に推されているのは、前走NHKマイルC9着で斤量53キロの＜11＞エコロアルバです。エコロアルバは2走前に重馬場の朝日杯FSで4着の実績があり、この馬場適性も人気に拍車をかけたようです。2番人気にはダービー卿CT4着の＜14＞ミニトランザットが続いています。3連単では、エコロアルバが33番人気タイまで登場しています。'
+[1]  [重複除去] 249文字 → 248文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[1]  [Gemini生出力 257文字]: '最新のレース情報が入ってきました。20日に行われた佐賀競馬で、出走馬の馬体重に異変が起きています。なぜかマイナス体重の馬が続出し、大半が2桁のマイナス体重で出走するという珍しい事態が発生しました。1レースは9頭立てで、全馬が4〜16キロの馬体減を計測。続く2レースは10頭立てで、プラス体重は1頭のみで、ほかは4〜27キロの馬体減でした。3レースに至っては全馬が8〜20キロ以内のマイナス体重を記録。さらに4Rの出走馬はすべて2桁の馬体減となり、SNSでは「この減り具合は異常」「絶対壊れとる」とざわついています。'
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 440文字）
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[1]  [Gemini生出力 237文字]: 'レース関連の最新情報です。第2回しらさぎS・G3の阪神競馬場・芝1600メートルにおける前日オッズが、6月20日にJRAから発表されました。前走NHKマイルC9着で斤量53キロの＜11＞エコロアルバが、単勝3.0倍で1番人気に推されています。このエコロアルバは、2走前の重馬場での朝日杯FSで4着の実績があり、その馬場適性が人気に拍車をかけたようです。また、3連単でも33番人気タイまで登場しています。2番人気にはダービー卿CT4着の＜14＞ミニトランザットが続いています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (257文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。20日に行われた佐賀競馬で、出走馬の馬体重に異変が起きています。なぜかマイナス体重の馬が続出し、大半が2桁のマイナス体重で出走...
+[1]  → output/script_1.txt 保存 (237文字)
+[1]  プレビュー: レース関連の最新情報です。第2回しらさぎS・G3の阪神競馬場・芝1600メートルにおける前日オッズが、6月20日にJRAから発表されました。前走NHKマイルC9...
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 213文字]: '重要な競馬ニュースをお伝えします。\n鈴木孝志調教師がJRA通算300勝を達成しました。これは20日、阪神競馬場3Rの3歳未勝利、ダート1800mで、田口貫太騎手騎乗の6番人気マクノスが第1着となったことで記録されました。鈴木孝志調教師は1971年生まれで、23年の中京記念を制したセルバーグなどを管理し、重賞3勝を挙げています。調教師は「馬主さんを始め、関わる全ての人、そして命かけて走ってくれる馬に感謝」とコメントしました。'
-[2]  [重複除去] 213文字 → 212文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (212文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。鈴木孝志調教師がJRA通算300勝を達成しました。これは20日、阪神競馬場3Rの3歳未勝利、ダート1800mで、田口貫太騎手騎...
-  HTTP 200
-[0]  [Gemini生出力 240文字]: '最新情報をお届けします。\n6月20日の函館、東京、阪神開催で発生した競走中の疾病や競走中止などの事象についてです。阪神1Rの3歳上障害オープンでは、タマモエースが9号障害飛越着地後に、転倒した9番タイセイジャスパーに触れて転倒し、競走を中止しました。タマモエースの馬は異状ありませんでしたが、水沼元輝騎手は左足を負傷しています。また、タイセイジャスパーは9号障害飛越着地時に転倒し、競走を中止しました。タイセイジャスパーの馬も異状はありませんでしたが、上野翔騎手も負傷しています。'
-[0]  [redirectフィルター] 240文字 → 227文字
+[0]  [Gemini生出力 253文字]: '競馬速報です。今週日曜日は、東京競馬場で府中牝馬ステークス(GIII)が行われます。このレースは昨年から6月の東京で開催されており、現在の施行条件で行われた府中牝馬Sは昨年のみとデータが不足しています。そのため、過去10年の6月の東京芝1800mで開催された重賞、計10レースから傾向を紐解いています。データ対象の10レースでは、前走で先行経験のある馬が高期待値をマークしました。人工知能の本命馬はルージュソリテールで、強敵相手に善戦した前走が価値ある走りであり、今の馬場にもマッチしそうだとされています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (227文字)
-[0]  プレビュー: 6月20日の函館、東京、阪神開催で発生した競走中の疾病や競走中止などの事象についてです。阪神1Rの3歳上障害オープンでは、タマモエースが9号障害飛越着地後に、転...
+[0]  → output/script_0.txt 保存 (253文字)
+[0]  プレビュー: 競馬速報です。今週日曜日は、東京競馬場で府中牝馬ステークス(GIII)が行われます。このレースは昨年から6月の東京で開催されており、現在の施行条件で行われた府中...
 
 3 件の脚本を生成しました。
