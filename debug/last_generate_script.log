@@ -1,43 +1,112 @@
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [ファクトチェックNG] NG: 元記事に存在しないレース結果
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に存在しないレース結果「
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【スレイプニルS結果】9番人気リアレストが突き抜けオープン初勝利 ---
-[0] Gemini入力本文 350文字: '20日、東京競馬場で行われたスレイプニルステークス(3歳上・オープン・ダ2100m)は、中団の前につけて、直線で外から突き抜けた荻野極騎手騎乗の9番人気リアレスト(牡5、美浦・尾関知人厩舎)が、好位から脚を伸ばした3番人気クールミラボー(牡'
+--- 記事[0]: 【天保山Sレース後コメント】ベルジュロネット西村淳也騎手ら ---
+[0] Gemini入力本文 345文字: '阪神11Rの天保山ステークス(3歳以上オープン・ダート1400m)は1番人気ベルジュロネット(西村淳也騎手)が勝利した。勝ちタイムは1分23秒5(重)。3馬身半差の2着に10番人気アッチャゴーラ、さらに半馬身差の3着に4番人気ラファルが入っ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【町田特別レース後コメント】チャリングクロス戸崎圭太騎手ら ---
-[1] Gemini入力本文 1044文字: '東京9Rの町田特別(3歳以上2勝クラス・芝2400m)は2番人気チャリングクロス(戸崎圭太騎手)が勝利した。勝ちタイムは2分26秒9(稍重)。1馬身3/4差の2着に3番人気レーヴドロペラ、さらに1馬身1/4差の3着に8番人気オウケンボルトが'
+--- 記事[1]: 「とてもお綺麗」「女性騎手もレベル上がってる」6年目でメイン初勝利の古川奈穂騎手にネット大喜び ---
+[1] Gemini入力本文 349文字: '25歳女性騎手の記念すべき1勝に、SNS上では歓喜の声が上がっている。6月20日の函館11R・STV杯(3歳上2勝クラス、芝1200メートル＝16頭立て)は、古川奈穂騎手＝栗東・矢作芳人厩舎＝騎乗のアンジュプロミス(牝3歳、栗東・矢作芳人厩'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【下北半島特別レース後コメント】スミッコディスコ横山和生騎手ら ---
-[2] Gemini入力本文 353文字: '函館9Rの下北半島特別(3歳以上1勝クラス・芝1200m)は3番人気スミッコディスコ(横山和生騎手)が勝利した。勝ちタイムは1分08秒7(良)。1馬身3/4差の2着に1番人気デルマリシリ、さらに3/4馬身差の3着に4番人気メイショウハッケイ'
+--- 記事[2]: 【佐賀競馬】ファンの夢を乗せ11頭が争う吉野ヶ里記念 “競馬好きアニソンシンガー”亜咲花さんの注目馬は ---
+[2] Gemini入力本文 519文字: '6月21日、佐賀競馬場では『スポニチ杯 第28回吉野ヶ里記念』が行われる。サマーチャンピオン(本年は9月3日)のトライアルレースとして歴史を重ねてきた当レースだが転機は昨年。佐賀競馬初のファン投票による出走馬を選定するレースとして進化を遂げ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 223文字]: '最新情報をお届けします。20日に東京競馬場で行われたスレイプニルステークスは、3歳上・オープン・ダート2100mの条件で争われました。荻野極騎手騎乗の9番人気リアレストが、中団の前につけ、直線で外から突き抜け優勝しました。リアレストは好位から脚を伸ばした3番人気クールミラボーに2.1/2馬身差をつけ、オープン初勝利を飾っています。勝ちタイムは2分08秒2の不良馬場でした。さらに3/4馬身差の3着には、11番人気ロードプレジールが入っています。'
-[0]  [redirectフィルター] 223文字 → 211文字
+[0]  [Gemini生出力 238文字]: '競馬速報です。阪神11Rの天保山ステークスは、3歳以上オープン、ダート1400mで行われました。1番人気のベルジュロネットが西村淳也騎手で勝利を収め、勝ちタイムは1分23秒5、馬場は重でした。3馬身半差の2着には10番人気のアッチャゴーラが入り、さらに半馬身差の3着には4番人気のラファルが入着しました。勝利したベルジュロネットは、栗東の大久保龍志厩舎に所属する4歳牡馬で、父はロードカナロア、母はベルカント、母の父はサクラバクシンオーです。通算成績は11戦5勝となりました。'
   HTTP 200
-[1]  [Gemini生出力 290文字]: '重要な競馬ニュースをお伝えします。\n東京9Rの町田特別、3歳以上2勝クラス・芝2400mは、2番人気チャリングクロスが戸崎圭太騎手とのコンビで勝利しました。勝ちタイムは稍重の2分26秒9です。1馬身3/4差の2着には3番人気レーヴドロペラが入り、さらに1馬身1/4差の3着には8番人気オウケンボルトが入線しました。チャリングクロスは美浦・奥村武厩舎の3歳牡馬で、父キタサンブラック、母ライジングクロス。通算成績は6戦3勝となります。レース後、1着のチャリングクロスに騎乗した戸崎圭太騎手は、「乗りやすくいい馬ですし、力通り走ってくれました。これから楽しみです」とコメントしました。'
-[1]  [重複除去] 290文字 → 289文字
+[1]  [Gemini生出力 189文字]: '重要な競馬ニュースをお伝えします。25歳女性騎手の古川奈穂騎手が、6年目でうれしいメインレース初勝利を飾りました。6月20日の函館11R、STV杯3歳上2勝クラス、芝1200メートル、16頭立てのレースにおいて、古川奈穂騎手騎乗のアンジュプロミスが勝利しました。アンジュプロミスは栗東の矢作芳人厩舎所属の牝3歳馬です。この記念すべき1勝に、SNS上では歓喜の声が上がっています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (211文字)
-[0]  プレビュー: 20日に東京競馬場で行われたスレイプニルステークスは、3歳上・オープン・ダート2100mの条件で争われました。荻野極騎手騎乗の9番人気リアレストが、中団の前につ...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (289文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。東京9Rの町田特別、3歳以上2勝クラス・芝2400mは、2番人気チャリングクロスが戸崎圭太騎手とのコンビで勝利しました。勝ちタ...
+[0]  → output/script_0.txt 保存 (238文字)
+[0]  プレビュー: 競馬速報です。阪神11Rの天保山ステークスは、3歳以上オープン、ダート1400mで行われました。1番人気のベルジュロネットが西村淳也騎手で勝利を収め、勝ちタイム...
   HTTP 200
-[2]  [Gemini生出力 217文字]: '最新情報をお届けします。\n函館9R下北半島特別、3歳以上1勝クラス・芝1200mは、3番人気スミッコディスコが横山和生騎手で勝利しました。勝ちタイムは良馬場で1分08秒7です。2着は1馬身3/4差で1番人気デルマリシリ、3着はさらに3/4馬身差で4番人気メイショウハッケイでした。スミッコディスコは美浦・鈴木慎太郎厩舎の3歳牡馬。父ダノンプレミアム、母エレクトロワールド、母の父Into Mischiefです。通算成績は9戦2勝です。'
-[2]  [redirectフィルター] 217文字 → 204文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (204文字)
-[2]  プレビュー: 函館9R下北半島特別、3歳以上1勝クラス・芝1200mは、3番人気スミッコディスコが横山和生騎手で勝利しました。勝ちタイムは良馬場で1分08秒7です。2着は1馬...
-
-3 件の脚本を生成しました。
+[2]  [Gemini生出力 274文字]: '今週の競馬注目情報をお伝えします。6月21日、佐賀競馬場では『スポニチ杯 第28回吉野ヶ里記念』が11頭により行われます。このレースはサマーチャンピオン（本年は9月3日）のトライアルレースとして歴史を重ねてきましたが、昨年、佐賀競馬初のファン投票による出走馬を選定するレースへと進化を遂げました。また、名古屋競馬場で行われたトリトン争覇では、ベントが逃げ切って重賞初制覇を飾りました。帝王賞の選定馬も発表され、カゼノランナーやディクテオンなど16頭が名を連ねています。大井競馬場で行われた東京ダービーでは、フィンガーが逃げ切って二冠を達成しました。'
+[2]  [ナビ文言除去] 274文字 → 230文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (189文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。25歳女性騎手の古川奈穂騎手が、6年目でうれしいメインレース初勝利を飾りました。6月20日の函館11R、STV杯3歳上2勝クラ...
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 4文字]: 'SKIP'
+[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 519文字）
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 298文字]: '今週の競馬注目情報をお伝えします。\n6月21日には、佐賀競馬場で『スポニチ杯 第28回吉野ヶ里記念』が11頭により争われます。このレースはサマーチャンピオン（本年は9月3日）のトライアルレースとして歴史を重ねてきましたが、昨年から佐賀競馬初のファン投票による出走馬を選定するレースへと進化を遂げました。\nまた、名古屋のトリトン争覇ではベントが逃げ切って重賞初制覇を飾りました。帝王賞の選定馬も発表され、カゼノランナーやディクテオンなど16頭が選ばれています。さらに、川崎競馬は新トレセン候補地に横須賀を選定し、協議を開始しました。大井の東京ダービーではフィンガーが逃げ切って二冠を達成しています。'
+[2]  [ナビ文言除去] 298文字 → 252文字
+[2]  [重複除去] 252文字 → 251文字
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
