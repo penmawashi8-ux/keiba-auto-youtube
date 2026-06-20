@@ -1,10 +1,10 @@
-date: 2026-06-20T05:16:31.370633Z
+date: 2026-06-20T07:06:19.553922Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=G9C-qyrDyeE title=【阪神アーバン競馬プレーバック】好メンバーそろった3歳戦はテーオーハリスンが通算
-OK project=1 video_id=Ze5MKXqTygo title=【函館5R・2歳新馬】須貝調教師「やっぱりダートかな」　“白毛一族”スノーウィス
-OK project=1 video_id=HglUiSbRFjE title=【函館6R・新馬戦】4番人気ノリヤンモーニンが5馬身差V　浜中「心臓が強い」
+OK project=1 video_id=G0uvTaaaB6s title=【スレイプニルS結果】9番人気リアレストが突き抜けオープン初勝利
+OK project=1 video_id=x5Dk8Cf48VQ title=【町田特別レース後コメント】チャリングクロス戸崎圭太騎手ら
+OK project=1 video_id=SfGT28gIVko title=【下北半島特別レース後コメント】スミッコディスコ横山和生騎手ら
