@@ -1,10 +1,10 @@
-date: 2026-06-20T07:06:19.553922Z
+date: 2026-06-20T10:07:10.724738Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=G0uvTaaaB6s title=【スレイプニルS結果】9番人気リアレストが突き抜けオープン初勝利
-OK project=1 video_id=x5Dk8Cf48VQ title=【町田特別レース後コメント】チャリングクロス戸崎圭太騎手ら
-OK project=1 video_id=SfGT28gIVko title=【下北半島特別レース後コメント】スミッコディスコ横山和生騎手ら
+OK project=1 video_id=DTl0ASeD2JA title=6月20日の出来事一覧/函館・東京・阪神
+OK project=1 video_id=21Gf-y0GehE title=佐賀競馬で謎のマイナス体重続出に「この減り具合は異常」「絶対壊れとる」　4Rの出
+OK project=1 video_id=h48bqzwMOUk title=鈴木孝志調教師がJRA通算300勝達成！ 「命かけて走ってくれる馬に感謝」
