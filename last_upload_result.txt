@@ -1,10 +1,10 @@
-date: 2026-06-21T11:59:21.158518Z
+date: 2026-06-21T13:11:43.026300Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=J6YRy1pNtTg title=【佐賀競馬　スポニチ杯吉野ケ里記念】ツークフォーゲル　最速上がりタイムで差し切っ
-OK project=1 video_id=9kdUxey-3Yo title=【姫路Sレース後コメント】ペイシャモノノフ池添謙一騎手ら
-OK project=1 video_id=tFd4EgyVWyc title=【水沢競馬】リケアカプチーノがレコードでみちのく大賞典連覇　昨年の東北優駿馬
+OK project=1 video_id=MZc7UBoLntM title=【函館記念展望】2つ目の重賞勝利を狙うマジックサンズやデビットバローズなど混戦模
+OK project=1 video_id=-NDksX39Mtk title=【函館記念展望】デビットバローズが重賞２勝目を狙う
+OK project=1 video_id=rUtzyzm_e4Y title=【ラジオＮＩＫＫＥＩ賞展望】ローベルクランツ、サウンドムーブらが重賞初Ｖを目指す
