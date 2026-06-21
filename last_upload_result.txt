@@ -1,10 +1,10 @@
-date: 2026-06-21T06:09:33.345300Z
+date: 2026-06-21T09:00:58.866498Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SRfPNuVnrLE title=【メイクデビュー阪神5Rレース後コメント】トップチェッカー北村友一騎手ら
-OK project=1 video_id=SXBbiBmXfQk title=【しらさぎS・馬体重】エコロアルバは476kg(-4)、ファーヴェントは512k
-OK project=1 video_id=8qaQUBaEQXo title=【東京6R】“4億円馬”ダノンアスコルティが4戦目で待望の初勝利　ルメール騎手「
+OK project=1 video_id=YoIAjkdYqqA title=喜び一瞬、悔しいファン続出!?「サッカーの裏で...」「日本代表みたいにはいかな
+OK project=1 video_id=M_cfW4SXb70 title=【府中牝馬Sレース後コメント】セキトバイースト浜中俊騎手ら
+OK project=1 video_id=4fPawtBTf-0 title=【多摩川Sレース後コメント】ラーンザロープス津村明秀騎手ら
