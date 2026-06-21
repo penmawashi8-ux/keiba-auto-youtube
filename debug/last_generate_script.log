@@ -1,43 +1,71 @@
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 今秋のフォーエバーヤングは米ジョッキークラブGCからBCクラシックのローテに決定　凱旋門賞など欧州芝路線は見送り ---
-[0] Gemini入力本文 355文字: '矢作厩舎は6月21日、サウジC連覇などG14勝、Jpn1を2勝のフォーエバーヤング(牡5歳、栗東・矢作厩舎、父リアルスティール)の今秋のローテーションについて、公式Xで発表した。\n\t\t\t\t\u3000アメリカのジョッキークラブゴールドカップ・G1(9'
+--- 記事[0]: 【佐賀競馬　スポニチ杯吉野ケ里記念】ツークフォーゲル　最速上がりタイムで差し切って重賞2V ---
+[0] Gemini入力本文 349文字: '佐賀競馬の重賞「スポニチ杯第28回吉野ケ里記念」(ダート1400メートル、11頭立て)が21日の6Rで行われ、1番人気のツークフォーゲル(牡6＝鮫島、父ドレフォン)が差し切って重賞2勝目を飾った。2着にメイショウアイク、3着はラウダーティオ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【佐賀競馬】ツークフォーゲルが吉野ヶ里記念制覇　伯父はダート王トランセンド ---
-[1] Gemini入力本文 815文字: '第28回吉野ヶ里記念は6月21日、佐賀競馬場でファン投票上位馬を中心とした11頭が1400メートルを争った。1番人気に推されたツークフォーゲル(牡6歳、鮫島克也厩舎)が直線で抜け出し、粘るメイショウアイクに1馬身差をつけて優勝。4月の佐賀が'
+--- 記事[1]: 【姫路Sレース後コメント】ペイシャモノノフ池添謙一騎手ら ---
+[1] Gemini入力本文 346文字: '阪神10Rの姫路ステークス(3歳以上3勝クラス・ダート1800m)は13番人気ペイシャモノノフ(池添謙一騎手)が勝利した。勝ちタイムは1分50秒7(重)。1馬身差の2着に4番人気パシアンジャン、さらに2馬身差の3着に9番人気タマモキャリコが'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: フォーエバーヤングが今秋米国を転戦し、ＢＣクラシック連覇を目指す　矢作厩舎の公式Ｘで発表　凱旋門賞には向かわず ---
-[2] Gemini入力本文 331文字: '昨年ＢＣクラシックを制し、年度代表馬にも輝いたフォーエバーヤング（牡５歳、栗東・矢作）の今後の予定が２１日、矢作厩舎の公式Ｘで発表された。\n\u3000「藤田晋オーナーと馬の状態を見据えながら協議を重ねた結果」とつづられ、ジョッキークラブゴールドカッ'
+--- 記事[2]: 【水沢競馬】リケアカプチーノがレコードでみちのく大賞典連覇　昨年の東北優駿馬 ---
+[2] Gemini入力本文 827文字: '第54回一條記念みちのく大賞典は6月21日、水沢競馬場で古馬の強豪10頭が2000メートルを争った。3番人気のリケアカプチーノ(セン4歳、水沢・菅原勲厩舎)が直線で抜け出し、ライアンに2馬身半差をつけて優勝。昨年に続く連覇を果たした。勝ちタ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 261文字]: '最新情報をお届けします。\n昨年BCクラシックを制し、年度代表馬にも輝いたフォーエバーヤングの今後の予定が21日、矢作厩舎の公式Xで発表されました。藤田晋オーナーと馬の状態を見据えながら協議を重ねた結果、「ジョッキークラブゴールドカップ・G1（9月18日・米ベルモントパーク、ダート2000メートル）から、BCクラシック・G1（10月31日・米キーンランド、ダート2000メートル）に向かう」とつづられています。フォーエバーヤングは今秋米国を転戦し、BCクラシック連覇を目指すことになります。凱旋門賞には向かわない方針です。'
-[2]  [redirectフィルター] 261文字 → 248文字
-  HTTP 200
-[1]  [Gemini生出力 322文字]: '今日の競馬情報です。第28回吉野ヶ里記念は6月21日、佐賀競馬場でファン投票上位馬を中心とした11頭が1400メートルを争いました。1番人気に推されたツークフォーゲルが直線で抜け出し、粘るメイショウアイクに1馬身差をつけて優勝しました。鞍上はホッカイドウ競馬所属の石川倭騎手です。ツークフォーゲルは鮫島克也厩舎所属の牡6歳馬で、4月の佐賀がばいスプリントに続く重賞2勝目を挙げました。JRAでデビューし3勝を挙げたのち、今年3月に佐賀へ移籍し、移籍後4戦3勝としています。ドレフォン産駒で、伯父にはJCダート連覇などG1級4勝を挙げ、2011年ドバイ・ワールドCで2着に入ったトランセンドがいます。通算24戦6勝、総獲得賞金は5199万円です。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (322文字)
-[1]  プレビュー: 今日の競馬情報です。第28回吉野ヶ里記念は6月21日、佐賀競馬場でファン投票上位馬を中心とした11頭が1400メートルを争いました。1番人気に推されたツークフォ...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (248文字)
-[2]  プレビュー: 昨年BCクラシックを制し、年度代表馬にも輝いたフォーエバーヤングの今後の予定が21日、矢作厩舎の公式Xで発表されました。藤田晋オーナーと馬の状態を見据えながら協...
-  HTTP 200
-[0]  [Gemini生出力 230文字]: '重要な競馬ニュースをお伝えします。\n矢作厩舎は6月21日、サウジC連覇などG14勝、Jpn1を2勝のフォーエバーヤングの今秋のローテーションを公式Xで発表しました。アメリカのジョッキークラブゴールドカップ・G1、9月18日のベルモントパーク競馬場・ダート2000メートルで始動し、昨年制したブリーダーズCクラシック・G1、10月31日のキーンランド競馬場・ダート2000メートルに向かうことが決まっています。凱旋門賞など欧州芝路線は見送られることになりました。'
-[0]  [重複除去] 230文字 → 229文字
+[0]  [Gemini生出力 257文字]: '今週の競馬注目情報をお伝えします。佐賀競馬の重賞「スポニチ杯第28回吉野ケ里記念」が21日の6Rで行われました。ダート1400メートル、11頭立てのレースで、1番人気のツークフォーゲルが鮮やかに差し切り、重賞2勝目を飾っています。ツークフォーゲルは4角で前を射程圏に入れると、直線で抜け出しました。2着にはメイショウアイク、3着にはラウダーティオが入着。この結果、上位2頭のツークフォーゲルとメイショウアイクは、9月3日に開催されるサマーチャンピオン（Jpn3、ダート1400メートル）の優先出走権を獲得しました。'
+[0]  [ナビ文言除去] 257文字 → 218文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (229文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。矢作厩舎は6月21日、サウジC連覇などG14勝、Jpn1を2勝のフォーエバーヤングの今秋のローテーションを公式Xで発表しました...
+[0]  → output/script_0.txt 保存 (218文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。ダート1400メートル、11頭立てのレースで、1番人気のツークフォーゲルが鮮やかに差し切り、重賞2勝目を飾っています。ツークフ...
+  HTTP 200
+[2]  [Gemini生出力 281文字]: 'レース関連の最新情報です。第54回一條記念みちのく大賞典が6月21日、水沢競馬場で古馬の強豪10頭により2000メートルで争われました。3番人気のリケアカプチーノが直線で抜け出し、ライアンに2馬身半差をつけて優勝し、昨年に続く連覇を果たしました。勝ちタイム2分4秒2は、2019年6月にハドソンホーネットが記録した2分4秒7を0秒5上回るコースレコードです。鞍上は金沢競馬所属の吉原寛人騎手でした。1番人気の重賞14勝馬ラッキードリームは9着に敗れています。リケアカプチーノは高知競馬でデビュー後岩手競馬へ移籍し、昨年のこのレースや東北優駿などを制覇しています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (281文字)
+[2]  プレビュー: レース関連の最新情報です。第54回一條記念みちのく大賞典が6月21日、水沢競馬場で古馬の強豪10頭により2000メートルで争われました。3番人気のリケアカプチー...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 230文字]: 'レース関連の最新情報です。阪神10Rの姫路ステークス、3歳以上3勝クラス・ダート1800mは、13番人気のペイシャモノノフが池添謙一騎手で勝利しました。勝ちタイムは重馬場で1分50秒7でした。1馬身差の2着には4番人気のパシアンジャンが入り、さらに2馬身差の3着には9番人気のタマモキャリコが入っています。勝利したペイシャモノノフは、栗東の畑端省吾厩舎に所属する6歳牡馬です。父はニシケンモノノフ、母はペイシャオブワキアで、通算成績は26戦4勝となっています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (230文字)
+[1]  プレビュー: レース関連の最新情報です。阪神10Rの姫路ステークス、3歳以上3勝クラス・ダート1800mは、13番人気のペイシャモノノフが池添謙一騎手で勝利しました。勝ちタイ...
 
 3 件の脚本を生成しました。
