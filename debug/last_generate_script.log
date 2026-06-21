@@ -1,74 +1,75 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 半姉は三冠牝馬のリバティアイランド コニーアイランドが2勝目なるか ---
-[0] Gemini入力本文 352文字: '23年の牝馬三冠を制したリバティアイランドの半妹となるコニーアイランド(牝3、栗東・中内田充正厩舎)が、日曜阪神8Rの3歳上1勝クラス(牝・芝2000m)で2勝目を狙う。\n\u3000コニーアイランドは父コントレイル、母ヤンキーローズ、母の父All '
+--- 記事[0]: 【メイクデビュー阪神5Rレース後コメント】トップチェッカー北村友一騎手ら ---
+[0] Gemini入力本文 515文字: '阪神5Rのメイクデビュー阪神(芝1600m)は1番人気トップチェッカー(北村友一騎手)が勝利した。勝ちタイムは1分37秒1(稍重)。1馬身差の2着に6番人気マーゴットマシェリ、さらにハナ差の3着に3番人気ヴィヴェローネが入った。\n\u3000トップチ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【府中牝馬S予想】4歳勢中心で今年もいける？ 過去データから探るGIII府中牝馬S ---
-[1] Gemini入力本文 441文字: '今週は引き続き「東京・阪神・函館」の3場開催。\n\u3000前半のGIシリーズが終わり、本格的な夏競馬モードの一歩前という週だ。\n\u3000重賞はふたつ。芝マイルのGIIIしらさぎS(阪神・芝1600m)。そして昨年から、開催時期が10月から6月に、そしてレ'
+--- 記事[1]: 【しらさぎS・馬体重】エコロアルバは476kg(-4)、ファーヴェントは512kg(-2) ---
+[1] Gemini入力本文 485文字: '6月21日に阪神競馬場で行われる第2回しらさぎステークス(3歳上・GIII・芝1600m)の馬体重が発表された。\n\u3000サウジアラビアRC勝ちの実績があるエコロアルバ(牡3、美浦・田村康仁厩舎)は476kg(-4)。3走前の京都金杯で2着・2走'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 牝馬限定のハンデ重賞府中牝馬S 逃げ馬に要注意 ---
-[2] Gemini入力本文 529文字: '日曜東京メインは府中牝馬ステークス(3歳上牝・GIII・芝1800m)。ここでは22年以降に同舞台で行われた古馬の重賞＆オープン＆リステッド・全19鞍の人気別、脚質別、枠順別、ジョッキー別、血統別の成績から、レース傾向を探りたい。\n\u3000まずは'
+--- 記事[2]: 【東京6R】“4億円馬”ダノンアスコルティが4戦目で待望の初勝利　ルメール騎手「キタサンブラックの子供だから…」 ---
+[2] Gemini入力本文 352文字: '6月21日の東京6R・3歳未勝利(芝1600メートル、16頭立て)は、1番人気のダノンアスコルティ(牝3歳、美浦・大竹正博厩舎、父キタサンブラック)が、後続を寄せ付けず2馬身半差の完勝。24年のセレクトセールで4億円で落札された期待馬が4戦'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 259文字]: '今週の競馬注目情報をお伝えします。\n日曜東京メインは牝馬限定のハンデ重賞、府中牝馬ステークスです。ここでは2022年以降に同舞台で行われた古馬の重賞、オープン、リステッドの全19鞍の人気別、脚質別、枠順別、ジョッキー別、血統別の成績から、レース傾向を探ります。まず人気別では、1番人気が【7-3-3-6】の勝率37%、複勝率68%と合格点といえる数字です。一方、2番人気から3番人気は【3-3-6-26】と微妙な成績に留まっています。むしろ4番人気から5番人気の方が【6-6-5-21】と頑張っている傾向が見られます。'
-[2]  [重複除去] 259文字 → 258文字
+[1]  [Gemini生出力 239文字]: '本日の競馬ニュースです。6月21日に阪神競馬場で行われる第2回しらさぎステークス、3歳以上GIII、芝1600mの馬体重が発表されました。サウジアラビアRC勝ちの実績があるエコロアルバは476kgで、前走から4kgのマイナスです。また、3走前の京都金杯で2着、2走前のダービー卿CTで3着のファーヴェントは512kgで、前走から2kgのマイナスとなりました。スマートワイスは482kgで2kgのマイナス、ファインラインは486kgで増減なしです。発走予定時刻は15時30分です。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (239文字)
+[1]  プレビュー: 本日の競馬ニュースです。6月21日に阪神競馬場で行われる第2回しらさぎステークス、3歳以上GIII、芝1600mの馬体重が発表されました。サウジアラビアRC勝ち...
+  HTTP 200
+[2]  [Gemini生出力 224文字]: '注目の競馬情報をお届けします。\n6月21日の東京6R・3歳未勝利、芝1600メートル、16頭立てでは、1番人気のダノンアスコルティが4戦目で待望の初勝利を挙げました。24年のセレクトセールで4億円で落札された期待馬が、後続を寄せ付けず2馬身半差の完勝を見せました。勝ちタイムは1分35秒1(稍重)です。8番枠から好スタートを決め、そのまま先手を奪い、最初の1000メートルを59秒8のマイペースで刻みました。最後の直線でも脚いろは衰えませんでした。'
+[2]  [redirectフィルター] 224文字 → 208文字
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (258文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。日曜東京メインは牝馬限定のハンデ重賞、府中牝馬ステークスです。ここでは2022年以降に同舞台で行われた古馬の重賞、オープン、リ...
-  HTTP 200
-[0]  [Gemini生出力 262文字]: '本日の競馬ニュースです。23年の牝馬三冠を制したリバティアイランドの半妹となるコニーアイランド、栗東・中内田充正厩舎の馬が、日曜阪神8Rの3歳上1勝クラス、牝・芝2000mで2勝目を狙います。コニーアイランドは父コントレイル、母ヤンキーローズ、母の父All Americanの血統です。父コントレイルは20年に牡馬三冠を制するなど、GIを5勝した名馬。一方、母ヤンキーローズは豪G1を2勝しています。そして半姉のリバティアイランドは22年に阪神JF、さらに23年には桜花賞、オークス、秋...と続き、牝馬三冠を制しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (259文字)
-[0]  プレビュー: 本日の競馬ニュースです。23年の牝馬三冠を制したリバティアイランドの半妹となるコニーアイランド、栗東・中内田充正厩舎の馬が、日曜阪神8Rの3歳上1勝クラス、牝・...
+[2]  → output/script_2.txt 保存 (208文字)
+[2]  プレビュー: 6月21日の東京6R・3歳未勝利、芝1600メートル、16頭立てでは、1番人気のダノンアスコルティが4戦目で待望の初勝利を挙げました。24年のセレクトセールで4...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[1]  [Gemini生出力 4文字]: 'SKIP'
-[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 441文字）
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 287文字]: 'レース関連の最新情報です。\n今週は引き続き、東京、阪神、函館の3場開催となります。前半のGIシリーズが終わり、本格的な夏競馬モードの一歩手前という週です。重賞は二つ開催され、一つは阪神の芝1600mで行われる芝マイルのGIIIしらさぎSです。もう一つは東京の芝1800mで開催される府中牝馬Sです。府中牝馬Sは昨年から開催時期が10月から6月に変更され、レース格と名前もGIIアイルランドT府中牝馬SからGIIIのハンデ戦へと変わりました。府中牝馬Sの予想では、4歳勢が中心で今年もいけるのかという点が注目されています。記事ではヴァルキリーバースという馬名も示されています。'
-[1]  [重複除去] 287文字 → 286文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (286文字)
-[1]  プレビュー: レース関連の最新情報です。今週は引き続き、東京、阪神、函館の3場開催となります。前半のGIシリーズが終わり、本格的な夏競馬モードの一歩手前という週です。重賞は二...
+[0]  [Gemini生出力 234文字]: '今週の競馬注目情報をお伝えします。\n阪神5Rのメイクデビュー阪神、芝1600mのレースでは、1番人気のトップチェッカーが北村友一騎手とともに勝利を飾りました。勝ちタイムは稍重の馬場で1分37秒1でした。2着には1馬身差で6番人気のマーゴットマシェリが入り、さらにハナ差の3着には3番人気のヴィヴェローネが入線しています。勝利したトップチェッカーは、栗東の武英智厩舎に所属する2歳牡馬です。父はインディチャンプ、母はミッキーオリーブ、その母の父はクロフネという血統です。'
+[0]  [重複除去] 234文字 → 233文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (233文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。阪神5Rのメイクデビュー阪神、芝1600mのレースでは、1番人気のトップチェッカーが北村友一騎手とともに勝利を飾りました。勝ち...
 
 3 件の脚本を生成しました。
