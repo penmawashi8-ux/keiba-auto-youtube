@@ -1,71 +1,48 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【佐賀競馬　スポニチ杯吉野ケ里記念】ツークフォーゲル　最速上がりタイムで差し切って重賞2V ---
-[0] Gemini入力本文 349文字: '佐賀競馬の重賞「スポニチ杯第28回吉野ケ里記念」(ダート1400メートル、11頭立て)が21日の6Rで行われ、1番人気のツークフォーゲル(牡6＝鮫島、父ドレフォン)が差し切って重賞2勝目を飾った。2着にメイショウアイク、3着はラウダーティオ'
+--- 記事[0]: 【函館記念展望】2つ目の重賞勝利を狙うマジックサンズやデビットバローズなど混戦模様　サマー2000シリーズ第1戦 ---
+[0] Gemini入力本文 358文字: 'サマー2000シリーズ第1戦、第62回函館記念・G3は6月28日、函館競馬場の芝2000メートルで行われる。\n\t\t\t\t\u3000マジックサンズ(牡4歳、栗東・須貝尚介厩舎、父キズナ)は2歳時に函館で新馬戦を勝ち、続く札幌2歳ステークスで重賞初勝利を'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【姫路Sレース後コメント】ペイシャモノノフ池添謙一騎手ら ---
-[1] Gemini入力本文 346文字: '阪神10Rの姫路ステークス(3歳以上3勝クラス・ダート1800m)は13番人気ペイシャモノノフ(池添謙一騎手)が勝利した。勝ちタイムは1分50秒7(重)。1馬身差の2着に4番人気パシアンジャン、さらに2馬身差の3着に9番人気タマモキャリコが'
+--- 記事[1]: 【函館記念展望】デビットバローズが重賞２勝目を狙う ---
+[1] Gemini入力本文 331文字: '「函館記念・Ｇ３」（２８日、函館）\n\u3000サマー２０００シリーズの開幕戦は、名物の荒れるハンデ重賞。今年も混戦ムードが漂うなかで、中心になるのがデビットバローズだ。２走前に鳴尾記念を制して重賞初制覇を達成。その内容はレースラップ前半５Ｆが５７秒'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【水沢競馬】リケアカプチーノがレコードでみちのく大賞典連覇　昨年の東北優駿馬 ---
-[2] Gemini入力本文 827文字: '第54回一條記念みちのく大賞典は6月21日、水沢競馬場で古馬の強豪10頭が2000メートルを争った。3番人気のリケアカプチーノ(セン4歳、水沢・菅原勲厩舎)が直線で抜け出し、ライアンに2馬身半差をつけて優勝。昨年に続く連覇を果たした。勝ちタ'
+--- 記事[2]: 【ラジオＮＩＫＫＥＩ賞展望】ローベルクランツ、サウンドムーブらが重賞初Ｖを目指す ---
+[2] Gemini入力本文 331文字: '「ラジオＮＩＫＫＥＩ賞・Ｇ３」（２８日、福島）\n\u3000夏の福島開幕重賞でタイトル奪取を狙うローベルクランツ。前走のＮＨＫマイルＣはＶ争いには加われなかったものの、中団からしぶとく脚を伸ばして４着と見せ場を作った。２走前の毎日杯では２番手から粘り'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 257文字]: '今週の競馬注目情報をお伝えします。佐賀競馬の重賞「スポニチ杯第28回吉野ケ里記念」が21日の6Rで行われました。ダート1400メートル、11頭立てのレースで、1番人気のツークフォーゲルが鮮やかに差し切り、重賞2勝目を飾っています。ツークフォーゲルは4角で前を射程圏に入れると、直線で抜け出しました。2着にはメイショウアイク、3着にはラウダーティオが入着。この結果、上位2頭のツークフォーゲルとメイショウアイクは、9月3日に開催されるサマーチャンピオン（Jpn3、ダート1400メートル）の優先出走権を獲得しました。'
-[0]  [ナビ文言除去] 257文字 → 218文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (218文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。ダート1400メートル、11頭立てのレースで、1番人気のツークフォーゲルが鮮やかに差し切り、重賞2勝目を飾っています。ツークフ...
+[0]  [Gemini生出力 241文字]: '最新のレース情報が入ってきました。\nサマー2000シリーズ第1戦、第62回函館記念・G3は6月28日、函館競馬場の芝2000メートルで行われます。マジックサンズは2歳時に函館で新馬戦を勝ち、続く札幌2歳ステークスで重賞初勝利を飾るなど、洋芝適性が証明済みです。3歳秋以降は苦戦が続きましたが、前走のエプソムカップで勝ち馬から0秒2差の4着と、復調の兆しを見せました。デビュー戦以来、2年ぶりの函館で完全復活を告げるか注目されます。デビットバローズなども含め、混戦模様となっています。'
+[0]  [重複除去] 241文字 → 240文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (240文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。サマー2000シリーズ第1戦、第62回函館記念・G3は6月28日、函館競馬場の芝2000メートルで行われます。マジックサンズは...
   HTTP 200
-[2]  [Gemini生出力 281文字]: 'レース関連の最新情報です。第54回一條記念みちのく大賞典が6月21日、水沢競馬場で古馬の強豪10頭により2000メートルで争われました。3番人気のリケアカプチーノが直線で抜け出し、ライアンに2馬身半差をつけて優勝し、昨年に続く連覇を果たしました。勝ちタイム2分4秒2は、2019年6月にハドソンホーネットが記録した2分4秒7を0秒5上回るコースレコードです。鞍上は金沢競馬所属の吉原寛人騎手でした。1番人気の重賞14勝馬ラッキードリームは9着に敗れています。リケアカプチーノは高知競馬でデビュー後岩手競馬へ移籍し、昨年のこのレースや東北優駿などを制覇しています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (281文字)
-[2]  プレビュー: レース関連の最新情報です。第54回一條記念みちのく大賞典が6月21日、水沢競馬場で古馬の強豪10頭により2000メートルで争われました。3番人気のリケアカプチー...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 237文字]: '本日の競馬ニュースです。ラジオNIKKEI賞・G3が28日に福島で開催されます。夏の福島開幕重賞では、ローベルクランツがタイトル奪取を狙います。前走のNHKマイルCでは、V争いには加われなかったものの、中団からしぶとく脚を伸ばして4着と見せ場を作りました。さらに、2走前の毎日杯では2番手から粘り込み、2着と好走しています。栗東CWの1週前追い切りの動きも軽快で、出来に不安はないとのことです。ローベルクランツは、今度こそ重賞ウイナーの仲間入りを果たすことを目指しています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (237文字)
+[2]  プレビュー: 本日の競馬ニュースです。ラジオNIKKEI賞・G3が28日に福島で開催されます。夏の福島開幕重賞では、ローベルクランツがタイトル奪取を狙います。前走のNHKマイ...
   HTTP 200
-[1]  [Gemini生出力 230文字]: 'レース関連の最新情報です。阪神10Rの姫路ステークス、3歳以上3勝クラス・ダート1800mは、13番人気のペイシャモノノフが池添謙一騎手で勝利しました。勝ちタイムは重馬場で1分50秒7でした。1馬身差の2着には4番人気のパシアンジャンが入り、さらに2馬身差の3着には9番人気のタマモキャリコが入っています。勝利したペイシャモノノフは、栗東の畑端省吾厩舎に所属する6歳牡馬です。父はニシケンモノノフ、母はペイシャオブワキアで、通算成績は26戦4勝となっています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (230文字)
-[1]  プレビュー: レース関連の最新情報です。阪神10Rの姫路ステークス、3歳以上3勝クラス・ダート1800mは、13番人気のペイシャモノノフが池添謙一騎手で勝利しました。勝ちタイ...
+[1]  [Gemini生出力 246文字]: '最新情報をお届けします。函館記念・G3が28日に函館で開催されます。サマー2000シリーズの開幕戦となるこのレースは、名物の荒れるハンデ重賞として知られ、今年も混戦ムードが漂っています。その中で中心となるのがデビットバローズです。デビットバローズは2走前の鳴尾記念を制し、重賞初制覇を達成しました。鳴尾記念では、レースラップ前半5Fが57秒1という速い流れを好位で進み、直線で後続に2馬身差をつけて抜け出す強い内容でした。大阪杯では8着に敗れたものの、G3であれば地力は上位と見られています。'
+[1]  [redirectフィルター] 246文字 → 234文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (234文字)
+[1]  プレビュー: 函館記念・G3が28日に函館で開催されます。サマー2000シリーズの開幕戦となるこのレースは、名物の荒れるハンデ重賞として知られ、今年も混戦ムードが漂っています...
 
 3 件の脚本を生成しました。
