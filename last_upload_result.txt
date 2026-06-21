@@ -1,10 +1,10 @@
-date: 2026-06-20T10:07:10.724738Z
+date: 2026-06-21T00:29:32.118563Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DTl0ASeD2JA title=6月20日の出来事一覧/函館・東京・阪神
-OK project=1 video_id=21Gf-y0GehE title=佐賀競馬で謎のマイナス体重続出に「この減り具合は異常」「絶対壊れとる」　4Rの出
-OK project=1 video_id=h48bqzwMOUk title=鈴木孝志調教師がJRA通算300勝達成！ 「命かけて走ってくれる馬に感謝」
+OK project=1 video_id=7qNgj8Y5ydU title=半姉は三冠牝馬のリバティアイランド コニーアイランドが2勝目なるか
+OK project=1 video_id=dkqppKDyoGc title=【府中牝馬S予想】4歳勢中心で今年もいける？ 過去データから探るGIII府中牝馬
+OK project=1 video_id=qRY7q1Ol5lc title=牝馬限定のハンデ重賞府中牝馬S 逃げ馬に要注意
