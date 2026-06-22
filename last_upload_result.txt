@@ -1,10 +1,10 @@
-date: 2026-06-22T12:50:57.511164Z
+date: 2026-06-22T14:49:53.193718Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AZPV9NvXxqk title=【ラジオNIKKEI賞】実績上位のバドリナート　リステッド勝ちの距離で初タイトル
-OK project=1 video_id=eKlYtZzS6ww title=【函館記念】7歳ディープインパクト産駒ケイアイセナは函館・芝のレコードホルダー　
-OK project=1 video_id=P7wtR3XimGA title=【名古屋競馬】今津博之師が地方競馬通算1500勝　1番人気ポッドシャンクで節目達
+OK project=1 video_id=UNWHAXew_64 title=【ラジオNIKKEI賞】重賞ウイナーの戴冠なら34年ぶり！ 札幌2歳S覇者のショ
+OK project=1 video_id=0h5Vuwjf-Lo title=【名古屋競馬】今津博之調教師が地方通算1500勝　5Rのポッドシャンクで決めた
+OK project=1 video_id=E2fEb6E6Oaw title=【POGマニア】先週は新種牡馬サリオス産駒が初勝利　2年目インディチャンプ産駒も
