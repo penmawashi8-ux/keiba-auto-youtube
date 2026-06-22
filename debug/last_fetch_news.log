@@ -1,101 +1,97 @@
   [GNews] 取得失敗 ('JRA 重賞 競走馬'): 429 Client Error: Too Many Requests for url: https://gnews.io/api/v4/search?q=JRA%20%E9%87%8D%E8%B3%9E%20%E7%AB%B6%E8%B5%B0%E9%A6%AC&lang=ja&country=jp&max=10&apikey=bfafaf17044691c41268e7da2d1792ba
-  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7ff267df2810>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
+  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7f10ee223250>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
 === 競馬ニュース取得開始 ===
-投稿済みID数: 1726
+投稿済みID数: 1729
 === GNews API ===
   [GNews] query='競馬 レース 騎手' status=200
   [GNews] query='JRA 重賞 競走馬' status=429
   [GNews] 計 0 件取得
 === RSS フィード ===
 フィード取得中: https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba
-  [HTTP] 200 30546 bytes
-  [RSS#1] raw_link='https://news.netkeiba.com/?pid=news_view&no=335046'
-  [RSS#1] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037771" /><br />\u3000園田、姫路競馬を主催する兵庫県競馬組合は6月22日、公式XでJRA所属の女性ジョッキーとして初のGI制覇を成し遂げた今村聖奈騎手＝栗東・寺島良厩舎＝が8月13日に阪神アーバン競馬・園田競馬場でスペシャルトークショーを開催すると発表した。\n\n\t\t\t\t\u3000ジュウリョクピエロでオークスを制覇し、注目を集めている今村騎手。詳細は後日発表され、同組合は「ぜひ、ご期待ください」とコメントしている。'
-  [RSS#2] raw_link='https://news.netkeiba.com/?pid=news_view&no=335043'
-  [RSS#2] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037753" /><br />\u3000春のG1シリーズが終わり、いよいよ今週から夏の小倉開催がスタートする。6月27日から7月19日までの4週にわたって、熱い戦いが繰り広げられる。\n\n\t\t\t\t\u3000今開催の重賞は2つ。サマースプリントシリーズ第2戦の北九州記念・G3(7月5日、芝1200メートル)には葵S勝ちのデアヴェローチェ(牝3歳、栗東・上村洋行厩舎、父マテラスカイ)、前走の鞍馬Sをコースレコードで制したフリッカージャブ(牡4歳、栗東・西園翔太厩舎、父サートゥル?..'
-  [RSS#3] raw_link='https://news.netkeiba.com/?pid=news_view&no=335042'
-  [RSS#3] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037750" /><br />\u3000バーレーンターフクラブは6月21日、バーレーンインターナショナルトロフィー(11月13日、サヒール競馬場・芝2000メートル)がG1に昇格することを発表した。\n\n\t\t\t\t\u30002019年に創設された同レースは、バーレーンのパート1国昇格により2021年に国際G3に格付けされ、2023年にG2に。過去には2020年ディアドラ(8着)、2024年ヤマニンサンパ(6着)、キラーアビリティ(8着)と3頭の日本調教馬が参戦している。\n\n\t\t\t\t\u3000昨年は日本から出走し?..'
-  [RSS#4] raw_link='https://news.netkeiba.com/?pid=news_view&no=335040'
-  [RSS#4] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037744" /><br />◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\n\t\t\t\t\u3000ジーネキング(牡3歳、美浦・斎藤誠厩舎、父コントレイル)は1週前追い切りの18日、美浦・Wコースで初コンビの菊沢一樹騎手を背に、ラスト1ハロン11秒2(6ハロン81秒7)を馬なりでマーク。併せたグランアルト(3歳1勝クラス)を2馬身ちぎって、改めて能力の高さを示した。鞍上も「折り合いや雰囲気を確認して、我慢が利いていたし冷静に走れれば1800メートル...'
-  [RSS#5] raw_link='https://news.netkeiba.com/?pid=news_view&no=335038'
-  [RSS#5] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037738" /><br />◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\n\t\t\t\t\u3000サノノグレーター(牡3歳、美浦・尾形和幸厩舎、父グレーターロンドン)に勝負気配が漂っている。\n\n\t\t\t\t\u30001週前追い切りの17日に美浦・Wコースで6ハロン81秒5―11秒0の猛時計。伸びの力強さは際立ち、今までで一番の出来と言ってもいい。尾形調教師も「すごくいいと思います。レースを使うと分からないですが、ソエ(骨膜炎)がだいぶ改善されてきました。...'
-  [RSS#6] raw_link='https://news.netkeiba.com/?pid=news_view&no=335039'
-  [RSS#6] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037759" /><br />◆スティーブンフォスターステークス・G1(日本時間6月28日朝、チャーチルダウンズ競馬場・ダート1800メートル)＝ゲート順確定\n\n\t\t\t\t\u3000米国ダート古馬戦線の注目レースの出走馬と、ゲート順が確定した。\n\n\t\t\t\t\u30007頭立てながら、米国ダートの最高峰のメンバーがそろった。ドバイ・ワールドCでフォーエバーヤングに勝ったマグニチュード(牡4歳、米・Sアスムッセン厩舎、父ノットディスタイム)は5番ゲートに決まった。\n\n\t\t\t\t\u3000昨年?..'
-  [RSS#7] raw_link='https://news.netkeiba.com/?pid=news_view&no=335037'
-  [RSS#7] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037735" /><br />◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\n\t\t\t\t\u3000スペルーチェ(牡3歳、美浦・宮田敬介厩舎、父レイデオロ)は、前走の橘Sで3着。初の1400メートルで序盤は追走に苦労したが、3コーナー過ぎから上がっていくとしぶとく脚を伸ばした。宮田調教師は「ジョッキー(ミルコ・デムーロ)からも1400メートルだと少し忙しいかなというフィードバックをもらって、そのなかで昇級でいいレースはできたと思います」と...'
-  [RSS#8] raw_link='https://news.netkeiba.com/?pid=news_view&no=335024'
-  [RSS#8] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037727" /><br />\u30006月28日に福島競馬場で行われる、第75回ラジオNIKKEI賞(3歳・GIII・芝1800m)の登録馬・想定騎手は以下の通り。\n\n\u3000NHKマイルCで4着に入ったローベルクランツ(牡3、栗東・小林真也厩舎)は松山弘平騎手、皐月賞6着のサウンドムーブ(牡3、栗東・斉藤崇史厩舎)は団野大成騎手。\n\n\u3000※敬称略、○○は騎手未定もしくは回避予定\n\u3000※情報は主に先週までの取材によるもので、変更の可能性がございます。\n\nガリレア\u3000○○\nキン...'
-  [RSS#9] raw_link='https://news.netkeiba.com/?pid=news_view&no=335021'
-  [RSS#9] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037721" /><br />\u30006月28日に函館競馬場で行われる、第62回農林水産省賞典函館記念(3歳上・GIII・芝2000m)の登録馬・想定騎手は以下の通り。\n\n\u3000大阪杯15着からの巻き返しを期すエコロディノス(牡4、栗東・大久保龍志厩舎)は池添謙一騎手、札幌2歳S勝ちの実績があるマジックサンズ(牡4、栗東・須貝尚介厩舎)は横山和生騎手。\n\n\u3000※敬称略、○○は騎手未定もしくは回避予定\n\u3000※情報は主に先週までの取材によるもので、変更の可能性がござい...'
-  [RSS#10] raw_link='https://news.netkeiba.com/?pid=news_view&no=335035'
-  [RSS#10] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037723" /><br />\u3000矢作厩舎は6月21日、サウジC連覇などG1・4勝、Jpn1を2勝のフォーエバーヤング(牡5歳、栗東・矢作芳人厩舎、父リアルスティール)の今秋、米国に遠征するローテーションを公式Xで発表した。米国の競馬メディアをはじめ、全米が歓喜に沸いている。\n\n\t\t\t\t\u3000アメリカのジョッキークラブゴールドカップ・G1(9月18日、ベルモントパーク競馬場・ダート2000メートル)で始動し、昨年制したブリーダーズCクラシック・G1(10月31日、キーン...'
+  [HTTP] 200 30951 bytes
+  [RSS#1] raw_link='https://news.netkeiba.com/?pid=news_view&no=334738'
+  [RSS#1] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1036470" /><br />\u300016年の日本ダービーを制したマカヒキの半弟となるクカイリモク(牡3、美浦・堀宣行厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で重賞初制覇を狙う。\n\n\u3000クカイリモクは父サートゥルナーリア、母ウィキウィキ、母の父フレンチデピュティの血統。半兄のマカヒキは16年の日本ダービー馬。21年の京都大賞典では5年1カ月ぶりの勝利を手にして話題となった。また、半姉のウリウリは14年の京都牝馬Sと15年のCBC賞、甥のダイヤモン...'
+  [RSS#2] raw_link='https://news.netkeiba.com/?pid=news_view&no=335041'
+  [RSS#2] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037748" /><br />\u3000本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\n\u3000今週の重賞競走は日曜日にラジオNIKKEI賞(GIII)と函館記念(GIII)が行われます。その中から函館競馬場で行われる函館記念を取り上げます。まずは過去の傾向から。\n\n\u3000過去10年の函館記念は関東馬が[6-2-2-60]。関西馬が[4-8-8-67]となっています。勝率は関東馬が優勢ですが、連対率や複勝率は関西馬の方が高くなって...'
+  [RSS#3] raw_link='https://news.netkeiba.com/?pid=news_view&no=335053'
+  [RSS#3] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037825" /><br />◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)\n\n\t\t\t\t\u3000デビュー4年目の小林美駒騎手(21)＝美浦・鈴木伸尋厩舎＝が、函館の地で日々腕を磨いている。26年は第1回の福島競馬で7勝を挙げ、開催リーディングを初めて獲得するなど、成長が著しい。21日の函館3R(コウユーネロガ)で勝利し、今年の20勝目。関東リーディング(21日時点)は10位、キャリアハイの37勝(25年)を上回るペースで勝ち星を積み重ねている。活躍の要?..'
+  [RSS#4] raw_link='https://news.netkeiba.com/?pid=news_view&no=335044'
+  [RSS#4] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037757" /><br />\u3000今週から本格的な夏競馬に突入し、関東圏の開催は東京から福島に場を移す。開幕週のメイクデビューは土日で計4鞍。関西馬も含め、メンバー的には日曜日の芝1800mに注目が集まる。\n\n【6月27日(土)\u3000福島芝1200m】\n\n◆エーアイクワイ(牡、父ビッグアーサー、母ヴェルジェーズ、美浦・相沢郁厩舎)\n\n\u3000母は園田で12勝した。一族からは2006年のGI・NHKマイルCを制したロジックが出ている。「調教も動くし、いいスピードがあ?..'
+  [RSS#5] raw_link='https://news.netkeiba.com/?pid=news_view&no=335051'
+  [RSS#5] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037783" /><br />\u30006月22日の金沢競馬7Rで中島龍也騎手(30)＝金沢・加藤和宏厩舎所属＝が、ダイバーシティに騎乗して1着。2014年4月の金沢競馬での初騎乗以来、7656戦目で地方競馬通算1200勝を達成した。\n\n\t\t\t\t\u30002019年(ロンギングルック)、21年(アイバンホー)の石川ダービーなど重賞20勝を挙げている。\n\n\t\t\t\t\u3000 中島龍也 騎手「1200勝を達成できて良かったです。これからも1500勝、2000勝目指して頑張ります」'
+  [RSS#6] raw_link='https://news.netkeiba.com/?pid=column_view&cid=59094'
+  [RSS#6] desc='<img src="https://cdn.netkeiba.com/img.news/style/netkeiba.ja/image/column/varietybox/260622_1.jpg" alt="馬ラエティBOX" style="width:100%">▲常務取締役・吉田博子さんにお話をうかがいました(c)netkeiba\n「福島競馬場に来たら福島路ビール」。そんな楽しみを求めて、多くのファンが内馬場へ足を運びます。これから始まる夏の福島開催にあわせて、netkeibaでは福島路ビールとのコラボキャンペーンも実施中！\n\n福島競馬場で長く愛され続ける理由と、その歴史やこだわりについて、福島路ビールの常務取締役・吉田博子さんと醸造担当の阿部拓弥さんにお話をうかがいま...'
+  [RSS#7] raw_link='https://news.netkeiba.com/?pid=news_view&no=334962'
+  [RSS#7] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037763" /><br />\u3000コントレイル産駒のルージュボヤージュ(牝3、美浦・木村哲也厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で重賞初制覇を狙う。\n\n\u3000ルージュボヤージュは父コントレイル、母クイーンズアドヴァイス、母の父Orpenの血統。母、祖母、曾祖母はいずれもアルゼンチンの重賞ウイナー。半兄のレッドランメルトとオクタヴィアヌスはともにオープンまで出世している。\n\n\u3000ここまで3戦2勝。25年7月にデビュー勝ちを収めた。その後は...'
+  [RSS#8] raw_link='https://news.netkeiba.com/?pid=news_view&no=335052'
+  [RSS#8] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037795" /><br />◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\n\t\t\t\t\u3000今週から夏の福島開催がスタートする。開幕週を飾るのは3歳のハンデ重賞のラジオNIKKEI賞・G3(28日)。実力馬が集まり、芝1800メートルで熱戦が期待できそうだ。\n\n\t\t\t\t\u3000小回りの開幕週となれば、どうしても先行有利。前に行ける馬は多いが、中でもディールメーカー(牡3歳、美浦・大和田成厩舎、父イスラボニータ)が面白い。昨年7月の新馬戦こそ後に重?..'
+  [RSS#9] raw_link='https://news.netkeiba.com/?pid=news_view&no=335036'
+  [RSS#9] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1037820" /><br />\u3000今週から福島、小倉の開催が始まり、いよいよ本格的な夏競馬に突入ということになる。新馬戦に関しては距離のバラエティーが減ってしまうが、各番組、それなりの頭数が集まることになりそう。\n\n\u3000小倉ではこの時期ならでは「九州産限定戦」が土曜日、日曜日に1レースずつ。ここに照準を合わせた九州産馬が多く、土曜日か日曜日、どちらを使うかは各陣営の動向も見ながらという厩舎が多い。\n\n【6月27日(土)\u3000小倉芝1200m(?..'
+  [RSS#10] raw_link='https://news.netkeiba.com/?pid=column_view&cid=59089'
+  [RSS#10] desc='<img src="https://cdn.netkeiba.com/img.news/style/netkeiba.ja/image/column/HorseBody/260622SanonoGreater.jpg" alt="サノノグレーター" style="width:100%">競馬専門紙「馬サブロー」が誇るパドックの達人・加藤剛史トラックマンにラジオNIKKEI賞出走予定馬の中から5頭の馬体診断を行っていただきました。\n\n(デイリースポーツ 馬サブロー・加藤剛史)\n\nサノノグレーター\n美浦・尾形和幸\u3000牡3\n▲6月17日撮影(c)netkeiba\n\u30001週前追いは跳びの大きさを感じさせない手先の軽い走りで、ゴール前は負荷をかけて上々の伸び脚。春先は数字以上に華奢に見えたが、今回は前腕の厚みが増し?..'
   有効エントリー: 30 件
 フィード取得中: https://www.keiba.jp/rss/
-フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 133247 bytes
-  有効エントリー: 106 件
+フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja  [警告] HTTP取得失敗 (https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=j): 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
+  [警告] HTTP取得失敗 (https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%): 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9&hl=ja&gl=JP&ceid=JP:ja
+  [警告] HTTP取得失敗 (https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%): 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8B%9D%E5%88%A9&hl=ja&gl=JP&ceid=JP:ja
+  [警告] HTTP取得失敗 (https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%): 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C&hl=ja&gl=JP&ceid=JP:ja
+  [警告] HTTP取得失敗 (https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+): 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&hl=ja&gl=JP&ceid=JP:ja
+  [警告] HTTP取得失敗 (https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news): 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&gl=JP&ceid=JP:ja
+
+  [HTTP] 503 1103 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 118643 bytes
-  有効エントリー: 100 件
+  [HTTP] 503 1103 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
-  [HTTP] 200 118493 bytes
-  有効エントリー: 100 件
+  [HTTP] 503 1103 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 111738 bytes
-  有効エントリー: 100 件
+  [HTTP] 503 1103 bytes
 フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
-  [HTTP] 200 115982 bytes
-  有効エントリー: 100 件
+  [HTTP] 503 1103 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
-  [HTTP] 200 119643 bytes
-  有効エントリー: 99 件
+  [HTTP] 503 1103 bytes
 JRA公式ニュースをスクレイピング中...
   [HTTP] 200 84917 bytes
   [JRA] 1 件スクレイプ
-未投稿エントリー: 575 件
-競馬関連フィルタ後: 574 件
-フィルタ「24時間以内」: 直接ニュース 26件 / 直接コラム 0件 / GoogleNews 107件 → 候補プール 30件
-  [HTTP] 200 71101 bytes (attempt 1)
-  [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=335046
-  [DEBUG] HTML長: 64307文字
-  [DEBUG] RSS元サマリー(193文字): '園田、姫路競馬を主催する兵庫県競馬組合は6月22日、公式XでJRA所属の女性ジョッキーとして初のGI制覇を成し遂げた今村聖奈騎手＝栗東・寺島良厩舎＝が8月13日に阪神アーバン競馬・園田競馬場でスペシャ'
+未投稿エントリー: 25 件
+競馬関連フィルタ後: 25 件
+フィルタ「24時間以内」: 直接ニュース 17件 / 直接コラム 7件 / GoogleNews 0件 → 候補プール 24件
+  [HTTP] 200 72408 bytes (attempt 1)
+  [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=334738
+  [DEBUG] HTML長: 65426文字
+  [DEBUG] RSS元サマリー(219文字): '16年の日本ダービーを制したマカヒキの半弟となるクカイリモク(牡3、美浦・堀宣行厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で重賞初制覇を狙う。\n\n\u3000クカイリモクは父サートゥルナーリ'
   [DEBUG] 抽出方法: <p>タグ / og:desc(130文字)
-  [DEBUG] 最終本文全文(572文字):
-園田、姫路競馬を主催する兵庫県競馬組合は6月22日、公式XでJRA所属の女性ジョッキーとして初のGI制覇を成し遂げた今村聖奈騎手＝栗東・寺島良厩舎＝が8月13日に阪神アーバン競馬・園田競馬場でスペシャルトークショーを開催すると発表した。
+  [DEBUG] 最終本文全文(544文字):
+16年の日本ダービーを制したマカヒキの半弟となるクカイリモク(牡3、美浦・堀宣行厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で重賞初制覇を狙う。
 
-				　ジュウリョクピエロでオークスを制覇し、注目を集めている今村騎手。詳細は後日発表され、同組合は「ぜひ、ご期待ください」とコメントしている。 園田、姫路競馬を主催する兵庫県競馬組合は6月22日、公式XでJRA所属の女性ジョッキーとして初のGI制覇を成し遂げた今村聖奈騎手＝栗東・寺島良厩舎＝が8月13日に阪神アーバン競馬・園田競馬場でスペシ… No.1競馬情報サイト「netkeiba」の競馬ニュース。 今村聖奈騎手 スポーツ報知 今村聖奈の全成績 今村聖奈騎手の偉業達成の裏にあった判断「絶対に早いと思って...」 福永調教師は「尋常じゃない」と絶賛 NHKでインタビュー放映 今村聖奈騎手のプライベート姿!「競馬界のスーパースター」食事会 岩田康誠騎手の親子も…遭遇したタレントが公開 【POG】今村聖奈騎手が高評価!スターリーデーが20日の東京・芝千四でデビュー 姉に桜花賞、オークス3着のライトバック 今村聖奈騎手が名古屋競馬のJRA交流競走で勝利 オークスのジュウリョクピエロ以来 -->
+　クカイリモクは父サートゥルナーリア、母ウィキウィキ、母の父フレンチデピュティの血統。半兄のマカヒキは16年の日本ダービー馬。21年の京都大賞典では5年1カ月ぶりの勝利を手にして話題となった。また、半姉のウリウリは14年の京都牝馬Sと15年のCBC賞、甥のダイヤモン... 16年の日本ダービーを制したマカヒキの半弟となるクカイリモク(牡3、美浦・堀宣行厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で重賞初制覇を狙う。　クカイリモクは父サートゥルナーリア… No.1競馬情報サイト「netkeiba」の競馬ニュース。 ラジオNIKKEI賞2026に出走予定のクカイリモク(今年4月撮影、ユーザー提供：たろさん) ラジオＮＩＫＫＥＩ賞 ラジオＮＩＫＫＥＩ賞の人気をチェック！ クカイリモクの全成績と掲示板 【ラジオNIKKEI賞】尾形調教師「すごくいいと思います」ソエから回復したサノノグレーターが決める 【ラジオNIKKEI賞】宮田調教師「自分との戦い」 スペルーチェは初の1800メートルがカギ -->
   [DEBUG] ---END---
-  取得: 【園田競馬】今村聖奈騎手のスペシャルトークショーを8月13日に開催 [2026-06-22T17:32:00]
-  [HTTP] 200 71549 bytes (attempt 1)
-  [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=335038
-  [DEBUG] HTML長: 64753文字
-  [DEBUG] RSS元サマリー(225文字): '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\n\t\t\t\t\u3000サノノグレーター(牡3歳、美浦・尾形和幸厩舎、父グレーターロンドン)に勝負気配が漂っている。\n\n\t\t\t\t'
+  取得: 【ラジオNIKKEI賞】半兄は日本ダービー馬マカヒキ クカイリモクが意欲の参戦だ [2026-06-22T19:00:00]
+  [HTTP] 200 78958 bytes (attempt 1)
+  [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=335041
+  [DEBUG] HTML長: 68842文字
+  [DEBUG] RSS元サマリー(226文字): '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\n\u3000今週の重賞競走は日曜日にラジオNIKKEI賞(GIII)と函館記念(GIII)が行われま'
+  [DEBUG] 抽出方法: <p>タグ / og:desc(130文字)
+  [DEBUG] 最終本文全文(485文字):
+本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。
+
+　今週の重賞競走は日曜日にラジオNIKKEI賞(GIII)と函館記念(GIII)が行われます。その中から函館競馬場で行われる函館記念を取り上げます。まずは過去の傾向から。
+
+　過去10年の函館記念は関東馬が[6-2-2-60]。関西馬が[4-8-8-67]となっています。勝率は関東馬が優勢ですが、連対率や複勝率は関西馬の方が高くなって... 本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。　今週の重賞競走は日曜日にラジオNIKKEI賞(GIII)と函館記念(GIII)が行われます… No.1競馬情報サイト「netkeiba」の競馬ニュース。 ケリフレッドアスク(撮影：下野雄規) 函館記念 函館記念の人気をチェック！ 函館記念を完全攻略！ 波乱のハンデ戦、トップハンデ不振 ロベルトの血を引く人気薄は要マーク 【函館記念想定騎手】エコロディノスは池添謙一騎手、マジックサンズは横山和生騎手 -->
+  [DEBUG] ---END---
+  取得: 【AI予想・函館記念】人工知能は配当妙味十分な3頭に高評価！ 近走の内容も光る本命候補たち [2026-06-22T19:00:00]
+  [HTTP] 200 75313 bytes (attempt 1)
+  [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=335053
+  [DEBUG] HTML長: 66821文字
+  [DEBUG] RSS元サマリー(225文字): '◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)\n\n\t\t\t\t\u3000デビュー4年目の小林美駒騎手(21)＝美浦・鈴木伸尋厩舎＝が、函館の地で日々腕を磨いている。26年は第1回の福島競馬'
   [DEBUG] 抽出方法: <p>タグ / og:desc(131文字)
-  [DEBUG] 最終本文全文(486文字):
-◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)
+  [DEBUG] 最終本文全文(430文字):
+◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)
 
-				　サノノグレーター(牡3歳、美浦・尾形和幸厩舎、父グレーターロンドン)に勝負気配が漂っている。
-
-				　1週前追い切りの17日に美浦・Wコースで6ハロン81秒5―11秒0の猛時計。伸びの力強さは際立ち、今までで一番の出来と言ってもいい。尾形調教師も「すごくいいと思います。レースを使うと分からないですが、ソエ(骨膜炎)がだいぶ改善されてきました。... ◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)				　サノノグレーター(牡3歳、美浦・尾形和幸厩舎、父グレーターロンドン)に勝負気配が漂っている。				　1週前… No.1競馬情報サイト「netkeiba」の競馬ニュース。 サノノグレーター スポーツ報知 ラジオＮＩＫＫＥＩ賞 ラジオＮＩＫＫＥＩ賞の人気をチェック！ サノノグレーターの全成績と掲示板 尾形和幸の全成績 【ラジオNIKKEI賞展望】センスの高さ光るサウンドムーブ 坂が緩くなる小回りでパフォーマンスが上がる -->
+				　デビュー4年目の小林美駒騎手(21)＝美浦・鈴木伸尋厩舎＝が、函館の地で日々腕を磨いている。26年は第1回の福島競馬で7勝を挙げ、開催リーディングを初めて獲得するなど、成長が著しい。21日の函館3R(コウユーネロガ)で勝利し、今年の20勝目。関東リーディング(21日時点)は10位、キャリアハイの37勝(25年)を上回るペースで勝ち星を積み重ねている。活躍の要?.. ◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)				　デビュー4年目の小林美駒騎手(21)＝美浦・鈴木伸尋厩舎＝が、函館の地で日々腕を磨いている。26年は第1回の福島競馬で7… No.1競馬情報サイト「netkeiba」の競馬ニュース。 小林美駒騎手 スポーツ報知 函館記念 函館記念の人気をチェック！ ファウストラーゼンの全成績と掲示板 今村聖奈の全成績 小林美駒の全成績 -->
   [DEBUG] ---END---
-  取得: 【ラジオNIKKEI賞】尾形調教師「すごくいいと思います」ソエから回復したサノノグレーターが決める [2026-06-22T13:35:00]
-  [HTTP] 200 76987 bytes (attempt 1)
-  [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=335039
-  [DEBUG] HTML長: 68179文字
-  [DEBUG] RSS元サマリー(219文字): '◆スティーブンフォスターステークス・G1(日本時間6月28日朝、チャーチルダウンズ競馬場・ダート1800メートル)＝ゲート順確定\n\n\t\t\t\t\u3000米国ダート古馬戦線の注目レースの出走馬と、ゲート順が確定し'
-  [DEBUG] 抽出方法: <p>タグ / og:desc(131文字)
-  [DEBUG] 最終本文全文(602文字):
-◆スティーブンフォスターステークス・G1(日本時間6月28日朝、チャーチルダウンズ競馬場・ダート1800メートル)＝ゲート順確定
-
-				　米国ダート古馬戦線の注目レースの出走馬と、ゲート順が確定した。
-
-				　7頭立てながら、米国ダートの最高峰のメンバーがそろった。ドバイ・ワールドCでフォーエバーヤングに勝ったマグニチュード(牡4歳、米・Sアスムッセン厩舎、父ノットディスタイム)は5番ゲートに決まった。
-
-				　昨年?.. ◆スティーブンフォスターステークス・G1(日本時間6月28日朝、チャーチルダウンズ競馬場・ダート1800メートル)＝ゲート順確定				　米国ダート古馬戦線の注目レースの出走馬と、ゲート順が確定した。… No.1競馬情報サイト「netkeiba」の競馬ニュース。 ソヴリンティ（左）とマグニチュード（右） スポーツ報知 フォーエバーヤングの全成績と掲示板 フォーエバーヤングが今秋米国を転戦し、ＢＣクラシック連覇を目指す 矢作厩舎の公式Ｘで発表 凱旋門賞には向かわず 【20日の注目・東京8R】フォーエバーヤング妹とマスカレードボール弟が激突! セレクト1・6億円の大物候補も参戦 メイショウタバルのレーティングは123ポンド フォーエバーヤングと並ぶ日本調教馬トップタイ 【府中牝馬S】半兄はフォーエバーヤング ブラウンラチェットが復活の重賞2勝目なるか -->
-  [DEBUG] ---END---
-  取得: 【スティーブンフォスターS】フォーエバーヤングのライバルが28日朝激突　ドバイWC覇者のマグニチュードVS年度代表馬ソヴ [2026-06-22T13:31:00]
+  取得: 【函館記念】小林美駒騎手がファウストラーゼンで4度目の重賞挑戦「感謝の気持ちでいっぱい」オークスVの今村聖奈騎手に続く [2026-06-22T19:00:00]
 
 3 件のニュースを news.json に保存しました。
-  - 【園田競馬】今村聖奈騎手のスペシャルトークショーを8月13日に開催 [画像: あり] [2026-06-22T17:32:00]
-  - 【ラジオNIKKEI賞】尾形調教師「すごくいいと思います」ソエから回復したサノノグレーターが決める [画像: あり] [2026-06-22T13:35:00]
-  - 【スティーブンフォスターS】フォーエバーヤングのライバルが28日朝激突　ドバイWC覇者のマグニチュー [画像: あり] [2026-06-22T13:31:00]
+  - 【ラジオNIKKEI賞】半兄は日本ダービー馬マカヒキ クカイリモクが意欲の参戦だ [画像: あり] [2026-06-22T19:00:00]
+  - 【AI予想・函館記念】人工知能は配当妙味十分な3頭に高評価！ 近走の内容も光る本命候補たち [画像: あり] [2026-06-22T19:00:00]
+  - 【函館記念】小林美駒騎手がファウストラーゼンで4度目の重賞挑戦「感謝の気持ちでいっぱい」オークスVの [画像: あり] [2026-06-22T19:00:00]
