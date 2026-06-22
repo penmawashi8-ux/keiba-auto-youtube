@@ -1,10 +1,10 @@
-date: 2026-06-21T13:11:43.026300Z
+date: 2026-06-22T00:26:40.538163Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MZc7UBoLntM title=【函館記念展望】2つ目の重賞勝利を狙うマジックサンズやデビットバローズなど混戦模
-OK project=1 video_id=-NDksX39Mtk title=【函館記念展望】デビットバローズが重賞２勝目を狙う
-OK project=1 video_id=rUtzyzm_e4Y title=【ラジオＮＩＫＫＥＩ賞展望】ローベルクランツ、サウンドムーブらが重賞初Ｖを目指す
+OK project=1 video_id=MXT3KdtaROQ title=【しらさぎS・レースメモ】杉山晴紀調教師、管理馬初出走で初勝利　松若風馬騎手は2
+OK project=1 video_id=UHwPJO7MFlE title=函館記念とラジオNIKKEI賞の2重賞/今週の競馬界の見どころ
+OK project=1 video_id=QF4ixYDRRTE title=【府中牝馬Ｓ】セキトバイースト　逃げ切り連覇　荒れ馬場味方に３馬身差完勝　四位師
