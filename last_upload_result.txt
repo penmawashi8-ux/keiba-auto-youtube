@@ -1,10 +1,10 @@
-date: 2026-06-22T06:42:51.511404Z
+date: 2026-06-22T09:01:51.599219Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TAIkvco20l8 title=4週にわたる“夏コク”が今週開幕　北九州記念、小倉記念の2重賞　九州産馬限定の新
-OK project=1 video_id=q4W92N4F8dY title=バーレーン国際トロフィーがG1昇格　札幌記念の勝ち馬は自動招待　ディアドラなど過
-OK project=1 video_id=u8c_a--Airw title=【ラジオNIKKEI賞】斎藤誠調教師「控える競馬をしたい」　ジーネキングが重賞初
+OK project=1 video_id=_VRjQPXJsEA title=【園田競馬】今村聖奈騎手のスペシャルトークショーを8月13日に開催
+OK project=1 video_id=3MukI02IY34 title=【ラジオNIKKEI賞】尾形調教師「すごくいいと思います」ソエから回復したサノノ
+OK project=1 video_id=EdnbKV06PXM title=【スティーブンフォスターS】フォーエバーヤングのライバルが28日朝激突　ドバイW
