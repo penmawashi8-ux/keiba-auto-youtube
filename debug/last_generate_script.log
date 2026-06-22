@@ -1,45 +1,102 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【ラジオNIKKEI賞】重賞ウイナーの戴冠なら34年ぶり！ 札幌2歳S覇者のショウナンガルフが復活なるか ---
-[0] Gemini入力本文 350文字: '札幌2歳S覇者のショウナンガルフ(牡3、栗東・須貝尚介厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で2つ目のタイトル獲得を狙う。\n\u3000ショウナンガルフは父ハービンジャー、母ミカリーニョ、母の父ハーツクライの血統。母はJRAで'
+--- 記事[0]: 【ラジオNIKKEI賞】NHKマイルC4着馬ローベルクランツが重賞初制覇へ絶好　松山弘平騎手「距離延ばすのは…」 ---
+[0] Gemini入力本文 357文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\t\t\t\t\u3000NHKマイルC4着でトップハンデタイの57キロに決まったローベルクランツ(牡3歳、栗東・小林真也厩舎、父サトノダイヤモンド)が重賞初制覇へ絶好機だ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【名古屋競馬】今津博之調教師が地方通算1500勝　5Rのポッドシャンクで決めた ---
-[1] Gemini入力本文 277文字: '6月22日の名古屋競馬5Rで今津博之調教師(56)が、管理するポッドシャンクを出走させ1着。2003年1月の初出走以来、9052戦目で地方競馬通算1500勝を達成した。\n\t\t\t\t\u3000今津調教師は2025年ライデンリーダー記念(SP1)をミモザ'
+--- 記事[1]: 【函館記念】25年報知杯弥生賞の覇者ファウストラーゼンが復活へ　須貝調教師「能力はある馬。どこかで絶対走る」 ---
+[1] Gemini入力本文 355文字: '◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)\n\t\t\t\t\u3000重賞ウィナーが復活を目指す。ファウストラーゼン(牡4歳、栗東・須貝尚介調教師、父モズアスコット)は14日に栗東・CWコースで調整し、17日に函館に入厩。19日'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【POGマニア】先週は新種牡馬サリオス産駒が初勝利　2年目インディチャンプ産駒も活躍 ---
-[2] Gemini入力本文 355文字: '土日に3場で9つの新馬戦が行われ、楽しみな勝ち馬が誕生した。まずは21日の東京4R・芝1400メートルを勝ったタクティシアン(牡、美浦・森一誠厩舎、父サリオス)。スピード能力と好位につけるレースセンスを見せつけて快勝。ルメール騎手はノーステ'
+--- 記事[2]: 【ラジオNIKKEI賞】半兄は日本ダービー馬マカヒキ クカイリモクが意欲の参戦だ ---
+[2] Gemini入力本文 349文字: '16年の日本ダービーを制したマカヒキの半弟となるクカイリモク(牡3、美浦・堀宣行厩舎)が、ラジオNIKKEI賞(3歳・GIII・芝1800m)で重賞初制覇を狙う。\n\u3000クカイリモクは父サートゥルナーリア、母ウィキウィキ、母の父フレンチデピュテ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 287文字]: '重要な競馬ニュースをお伝えします。札幌2歳S覇者のショウナンガルフが、ラジオNIKKEI賞(3歳・GIII・芝1800m)で2つ目のタイトル獲得を狙います。重賞ウイナーがこのレースで戴冠すれば34年ぶりとなります。ショウナンガルフは父ハービンジャー、母ミカリーニョ、母の父ハーツクライの血統です。母はJRAで2勝を挙げています。祖母のミスエーニョは2009年のデビュターントSの勝ち馬です。母のきょうだいには、2016年のファンタジーSを制したミスエルテ、2024年のフラワーCを制したミアネーロ、そして2025年のフィリーズレビューを制したショウナンザナドゥなどがいます。'
+[0]  [Gemini生出力 262文字]: '競馬速報です。第75回ラジオNIKKEI賞・G3、6月28日に福島競馬場・芝1800メートルで行われるレースのニュースです。NHKマイルCで4着だったローベルクランツが、重賞初制覇へ絶好機を迎えています。ローベルクランツはトップハンデタイの57キロに決まりました。中間は2週前と1週前に松山弘平騎手が騎乗し、6月17日には栗東・CWコースで6ハロン81秒2―11秒5を馬なりで計測しています。ラストの鋭い伸び脚から好調ぶりが伝わる状況です。松山弘平騎手は「今週も良かったです。とにかく、落ち着い...」とコメントしています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (287文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。札幌2歳S覇者のショウナンガルフが、ラジオNIKKEI賞(3歳・GIII・芝1800m)で2つ目のタイトル獲得を狙います。重賞...
+[0]  → output/script_0.txt 保存 (259文字)
+[0]  プレビュー: 競馬速報です。第75回ラジオNIKKEI賞・G3、6月28日に福島競馬場・芝1800メートルで行われるレースのニュースです。NHKマイルCで4着だったローベルク...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 165文字]: '本日の競馬ニュースです。\n6月22日の名古屋競馬5Rで、今津博之調教師が管理するポッドシャンクを出走させ1着となり、地方競馬通算1500勝を達成しました。\nこれは2003年1月の初出走以来、9052戦目での記録となります。\n今津調教師は、2025年ライデンリーダー記念をミモザノキセツで勝利するなど、重賞通算15勝を挙げています。'
-[1]  [重複除去] 165文字 → 162文字
+[1]  [Gemini生出力 288文字]: '本日の競馬ニュースです。\n第62回函館記念・G3は6月28日に函館競馬場・芝2000メートルで開催されます。このレースで、重賞ウィナーのファウストラーゼンが復活を目指します。ファウストラーゼンは牡4歳で、25年の報知杯弥生賞ディープインパクト記念を1着で制しました。しかし、それ以降は5戦連続で2ケタ着順が続いています。ファウストラーゼンは14日に栗東・CWコースで調整され、17日に函館へ入厩しました。その後、19日と21日には函館・Wコースで時計を出すなど、順調な調整が進んでいます。須貝尚介調教師は、この馬について「能力はある馬。どこかで絶対走る」とコメントしています。'
+[1]  [重複除去] 288文字 → 287文字
   HTTP 200
-[2]  [Gemini生出力 241文字]: '最新のレース情報が入ってきました。土日に3場で9つの新馬戦が行われ、楽しみな勝ち馬が誕生しました。まず、21日の東京4R・芝1400メートルを、美浦・森一誠厩舎のタクティシアンが勝利しました。タクティシアンはスピード能力と好位につけるレースセンスを見せつけて快勝し、ルメール騎手はノーステッキで、1馬身という着差以上の強さでした。このタクティシアンの父は新種牡馬のサリオスです。そのサリオスに、20日の函館5R・芝1200メートルで産駒初勝利をプレゼントしたのはイモージェンでした。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (241文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。土日に3場で9つの新馬戦が行われ、楽しみな勝ち馬が誕生しました。まず、21日の東京4R・芝1400メートルを、美浦・森一誠厩舎...
+[2]  [Gemini生出力 221文字]: 'レース関連の最新情報です。16年の日本ダービーを制したマカヒキの半弟となるクカイリモクが、ラジオNIKKEI賞の3歳・GIII・芝1800mで重賞初制覇を狙います。クカイリモクは父サートゥルナーリア、母ウィキウィキ、母の父フレンチデピュティの血統です。半兄のマカヒキは16年の日本ダービー馬であり、21年の京都大賞典では5年1カ月ぶりの勝利を手にして話題となりました。また、半姉のウリウリは14年の京都牝馬Sと15年のCBC賞を制しています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (162文字)
-[1]  プレビュー: 本日の競馬ニュースです。6月22日の名古屋競馬5Rで、今津博之調教師が管理するポッドシャンクを出走させ1着となり、地方競馬通算1500勝を達成しました。これは2...
+[1]  → output/script_1.txt 保存 (287文字)
+[1]  プレビュー: 本日の競馬ニュースです。第62回函館記念・G3は6月28日に函館競馬場・芝2000メートルで開催されます。このレースで、重賞ウィナーのファウストラーゼンが復活を...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (221文字)
+[2]  プレビュー: レース関連の最新情報です。16年の日本ダービーを制したマカヒキの半弟となるクカイリモクが、ラジオNIKKEI賞の3歳・GIII・芝1800mで重賞初制覇を狙いま...
 
 3 件の脚本を生成しました。
