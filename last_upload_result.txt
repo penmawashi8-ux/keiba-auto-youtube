@@ -1,10 +1,10 @@
-date: 2026-06-22T14:49:53.193718Z
+date: 2026-06-22T16:03:44.600268Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UNWHAXew_64 title=【ラジオNIKKEI賞】重賞ウイナーの戴冠なら34年ぶり！ 札幌2歳S覇者のショ
-OK project=1 video_id=0h5Vuwjf-Lo title=【名古屋競馬】今津博之調教師が地方通算1500勝　5Rのポッドシャンクで決めた
-OK project=1 video_id=E2fEb6E6Oaw title=【POGマニア】先週は新種牡馬サリオス産駒が初勝利　2年目インディチャンプ産駒も
+OK project=1 video_id=Q9H3t-LPXWI title=【ラジオNIKKEI賞】NHKマイルC4着馬ローベルクランツが重賞初制覇へ絶好　
+OK project=1 video_id=fgkeepfmRz8 title=【函館記念】25年報知杯弥生賞の覇者ファウストラーゼンが復活へ　須貝調教師「能力
+OK project=1 video_id=XvJCOfEu7ww title=【ラジオNIKKEI賞】半兄は日本ダービー馬マカヒキ クカイリモクが意欲の参戦だ
