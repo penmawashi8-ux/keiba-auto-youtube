@@ -1,101 +1,143 @@
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[2]  [ファクトチェックNG] NG: 元記事に書かれていないレース
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  → 間接表現（記事の存在説明）を検出。次のキー/モデルへ切り替えます: 今日の競馬情報です。
+第75回ラジオNIKKEI賞・G3について、サノノグレーターの調整状況と尾形和幸調教師のコメントが
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 元記事に書かれていないレース
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 坂井瑠星騎手が「一日店長」　名刺手渡しに2ショットチェキ撮影会…イベント当選のファン大喜び ---
-[0] Gemini入力本文 350文字: '坂井瑠星騎手＝栗東・矢作芳人厩舎＝が、6月23日に阪急うめだ本店にて行われた、寝具を展開するメーカー「TENTIAL」の掛け布団専門POPUPストアの一日店長を務めるイベントに出席した。この日会場につめかけた9割以上は女性ファン。丁寧な対応'
+--- 記事[0]: 【ラジオNIKKEI賞】尾形調教師「タイムが速くなっても…」2歳レコードホルダーのサノノグレーターが開幕週で全開 ---
+[0] Gemini入力本文 357文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)＝6月23日、美浦トレセン\n\t\t\t\t\u3000サノノグレーター(牡3歳、美浦・尾形和幸厩舎、父グレーターロンドン)は、坂路を69秒2―16秒4で調整。皐月賞9着からの'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【注目馬動向】佐藤悠厩舎の新馬V　ノリヤンモーニンは函館2歳Sへ　ビスケットサンドは状態次第で中京2歳Sを目標 ---
-[1] Gemini入力本文 353文字: '6月20日の函館で新馬勝ちしたノリヤンモーニン(牡2歳、栗東・佐藤悠太厩舎、父モーニン)は函館2歳S(7月19日、函館)に向かう。7日の阪神でデビューVを飾った同厩舎のビスケットサンドは状態が整えば、中京2歳S(8月30日、中京)を目標にす'
+--- 記事[1]: 【函館記念予想オッズ】マジックサンズが予想1番人気 ---
+[1] Gemini入力本文 353文字: '6月28日に函館競馬場で行われる、第62回農林水産省賞典函館記念(3歳上・GIII・芝2000m)に16頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは23日時点で以下のようになっている。\n\u3000札幌2'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 「早く完治しますように」「またレースで姿を見られることを…」骨片除去手術を受けた「ロイヤルファミリー」にエール ---
-[2] Gemini入力本文 364文字: '昨年放送されたTBS系日曜劇場「ザ・ロイヤルファミリー」でロイヤルファミリー役を務めたブレイヴソルジャー(牡3歳、美浦・新開幸一厩舎、父ファインニードル)が6月12日に右前膝の骨片除去手術を受けたことが分かった。北海道浦河町の育成牧場「ディ'
+--- 記事[2]: 【函館記念】デビットバローズが重賞2勝目を狙う　陣営「函館も2回目だし良さそう」2年前16着の雪辱へ ---
+[2] Gemini入力本文 349文字: '◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)＝6月23日、函館競馬場\n\t\t\t\t\u30002年前のリベンジだ。デビットバローズ(セン7歳、栗東・上村洋行厩舎、父ロードカナロア)は、栗東で乗り込みを重ねて先週末に函館入り。上村'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 238文字]: '重要な競馬ニュースをお伝えします。坂井瑠星騎手が、6月23日に阪急うめだ本店にて行われた、寝具を展開するメーカー「TENTIAL」の掛け布団専門POPUPストアの一日店長を務めるイベントに出席しました。この日会場につめかけた9割以上は女性ファンで、坂井騎手は丁寧な対応と甘いマスクで来場者を魅了しました。坂井騎手は昨年からTENTIALとコンディショニングサポート契約を結んでおり、イベントに当選した100名に限定名刺を手渡しました。坂井騎手の肩書はTENTIAL阪急でした。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (238文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。坂井瑠星騎手が、6月23日に阪急うめだ本店にて行われた、寝具を展開するメーカー「TENTIAL」の掛け布団専門POPUPストア...
+[1]  [Gemini生出力 237文字]: '今日の競馬情報です。\n6月28日に函館競馬場で行われる第62回農林水産省賞典函館記念は、3歳上・GIII・芝2000mの条件で16頭が登録しています。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる23日時点の予想オッズでは、マジックサンズが単勝4.6倍で1番人気に推されています。マジックサンズは札幌2歳S勝ちの実績を持つ、栗東の須貝尚介厩舎所属の馬です。また、大阪杯15着からの巻き返しを期すエコロディノスが、マジックサンズに続く人気となっています。'
+[1]  [重複除去] 237文字 → 236文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (236文字)
+[1]  プレビュー: 今日の競馬情報です。6月28日に函館競馬場で行われる第62回農林水産省賞典函館記念は、3歳上・GIII・芝2000mの条件で16頭が登録しています。競馬ファンの...
+  HTTP 503
   HTTP 200
-[2]  [Gemini生出力 238文字]: '競馬速報です。昨年放送されたTBS系日曜劇場「ザ・ロイヤルファミリー」でロイヤルファミリー役を務めたブレイヴソルジャーが、6月12日に右前膝の骨片除去手術を受けたことが分かりました。ブレイヴソルジャーは牡3歳、美浦の新開幸一厩舎所属で、父はファインニードルです。この手術の情報は、北海道浦河町の育成牧場「ディアレストクラブ」が6月22日に公式インスタグラムで発表しました。同馬はデビュー2戦目まで芝で使われ、初めてダートに投入された3戦目の4月25日福島4R・3歳未勝利で初。'
+[0]  [Gemini生出力 264文字]: '今日の競馬情報です。\n第75回ラジオNIKKEI賞・G3について、サノノグレーターの調整状況と尾形和幸調教師のコメントが報じられました。6月23日に美浦トレセンで調整されたサノノグレーターは、坂路を69秒2―16秒4で消化しました。皐月賞9着からの臨戦となる同馬について、尾形和幸調教師は「前走もよく頑張ってくれました。舞台も問題ないので」と巻き返しに手応えを口にしています。サノノグレーターは葉牡丹賞をJRA2歳レコードの1分58秒2で制しており、6月28日に福島競馬場で開催される開幕週の時計が速い馬場は歓迎とされています。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 192文字]: '注目の競馬情報をお届けします。\n6月20日の函館で新馬勝ちしたノリヤンモーニンは、7月19日函館の函館2歳Sへ向かいます。7日の阪神でデビュー勝利を飾った同厩舎のビスケットサンドは、状態が整えば8月30日中京の中京2歳Sを目標にします。しらさぎS6着のミニトランザットは、放牧を挟み8月16日の中京記念へ。ダービー卿CT7着のゾンニッヒは、7月11日福島の安達太良Sを予定しています。'
-[1]  [redirectフィルター] 192文字 → 176文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (176文字)
-[1]  プレビュー: 6月20日の函館で新馬勝ちしたノリヤンモーニンは、7月19日函館の函館2歳Sへ向かいます。7日の阪神でデビュー勝利を飾った同厩舎のビスケットサンドは、状態が整え...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[2]  [Gemini生出力 212文字]: '競馬速報です。\n昨年放送されたTBS系日曜劇場「ザ・ロイヤルファミリー」でロイヤルファミリー役を務めたブレイヴソルジャーが、6月12日に右前膝の骨片除去手術を受けました。この手術は、北海道浦河町の育成牧場「ディアレストクラブ」が6月22日、公式インスタグラムで発表したものです。ブレイヴソルジャーはデビュー2戦目まで芝で使われましたが、初めてダートに投入された3戦目の4月25日福島4R・3歳未勝利で初勝利を挙げていました。'
-[2]  [重複除去] 212文字 → 211文字
-[2] 使用: key=***189Y model=gemini-2.0-flash
+[2]  [Gemini生出力 195文字]: '本日の競馬ニュースです。\n第62回函館記念・G3が6月28日に函館競馬場・芝2000メートルで行われます。デビットバローズが重賞2勝目を狙い、2年前の函館記念で16着だった雪辱を期します。デビットバローズは栗東で乗り込みを重ね、先週末に函館入りしました。上村厩務員は「函館も2回目だし、良さそうですよ」とうなずいています。前走の大阪杯では強力メンバーを相手に、0秒7差の8着と健闘しました。'
+[2]  [重複除去] 195文字 → 194文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (194文字)
+[2]  プレビュー: 本日の競馬ニュースです。第62回函館記念・G3が6月28日に函館競馬場・芝2000メートルで行われます。デビットバローズが重賞2勝目を狙い、2年前の函館記念で1...
+  HTTP 503
+[0] 使用: key=***189Y model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
+[0] 使用: key=***l-ME model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 174文字]: '競馬速報です。昨年放送されたTBS系日曜劇場「ザ・ロイヤルファミリー」でロイヤルファミリー役を務めたブレイヴソルジャーが、6月12日に右前膝の骨片除去手術を受けました。この手術は、北海道浦河町の育成牧場「ディアレストクラブ」が6月22日に公式インスタグラムで発表したものです。ブレイヴソルジャーはデビューから2戦目まで芝のレースを使われていました。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (174文字)
-[2]  プレビュー: 競馬速報です。昨年放送されたTBS系日曜劇場「ザ・ロイヤルファミリー」でロイヤルファミリー役を務めたブレイヴソルジャーが、6月12日に右前膝の骨片除去手術を受け...
+[0]  [Gemini生出力 215文字]: '今日の競馬情報です。\n第75回ラジオNIKKEI賞・G3に出走予定のサノノグレーターは、6月23日に美浦トレセンで調整を行いました。坂路を69秒2―16秒4で調整しています。尾形調教師は、皐月賞9着からの臨戦について「前走もよく頑張ってくれました。舞台も問題ないので」と巻き返しに手応えを口にしました。サノノグレーターは葉牡丹賞をJRA2歳レコードの1分58秒2で制しており、開幕週の時計が速い馬場は歓迎であると伝えられています。'
+[0]  [重複除去] 215文字 → 214文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (214文字)
+[0]  プレビュー: 今日の競馬情報です。第75回ラジオNIKKEI賞・G3に出走予定のサノノグレーターは、6月23日に美浦トレセンで調整を行いました。坂路を69秒2―16秒4で調整...
 
 3 件の脚本を生成しました。
