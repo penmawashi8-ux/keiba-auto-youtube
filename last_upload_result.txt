@@ -1,10 +1,10 @@
-date: 2026-06-23T07:03:41.217025Z
+date: 2026-06-23T08:38:09.124221Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JYMMP9FF1-E title=ポーレンの2024(ブロッサムスピア)など、先週のゲート試験/栗東トレセンニュー
-OK project=1 video_id=vl3sSIWcA5E title=エルドボルグなど、先週の入厩情報/栗東トレセンニュース
-OK project=1 video_id=C5c8SMhaYjs title=【ラジオNIKKEI賞】クカイリモク騎乗の“ゴンちゃん”がラストウィークで「あと
+OK project=1 video_id=ep8verHpxZU title=坂井瑠星騎手が「一日店長」　名刺手渡しに2ショットチェキ撮影会…イベント当選のフ
+OK project=1 video_id=DRgoz32vt4w title=【注目馬動向】佐藤悠厩舎の新馬V　ノリヤンモーニンは函館2歳Sへ　ビスケットサン
+OK project=1 video_id=YyeqbhUgCYE title=「早く完治しますように」「またレースで姿を見られることを…」骨片除去手術を受けた
