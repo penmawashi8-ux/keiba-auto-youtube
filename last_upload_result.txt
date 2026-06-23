@@ -1,10 +1,10 @@
-date: 2026-06-23T00:28:58.676949Z
+date: 2026-06-23T07:03:41.217025Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jl6PcKrcji0 title=【函館記念展望】好走データを全て満たす4歳馬エコロディノスに注目
-OK project=1 video_id=iz355lOgMIQ title=【函館記念】ジュタ　２４年ホープフルＳ４着の素質馬が開花だ　Ｖデータ唯一の減点１
-OK project=1 video_id=FLpCwWFjwJ4 title=今週末がＪＲＡ騎乗ラストウイーク　南米屈指の豪腕「ゴンちゃん」の熱烈日本愛
+OK project=1 video_id=JYMMP9FF1-E title=ポーレンの2024(ブロッサムスピア)など、先週のゲート試験/栗東トレセンニュー
+OK project=1 video_id=vl3sSIWcA5E title=エルドボルグなど、先週の入厩情報/栗東トレセンニュース
+OK project=1 video_id=C5c8SMhaYjs title=【ラジオNIKKEI賞】クカイリモク騎乗の“ゴンちゃん”がラストウィークで「あと
