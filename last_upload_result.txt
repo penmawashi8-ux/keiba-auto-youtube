@@ -1,10 +1,10 @@
-date: 2026-06-22T16:03:44.600268Z
+date: 2026-06-23T00:28:58.676949Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Q9H3t-LPXWI title=【ラジオNIKKEI賞】NHKマイルC4着馬ローベルクランツが重賞初制覇へ絶好　
-OK project=1 video_id=fgkeepfmRz8 title=【函館記念】25年報知杯弥生賞の覇者ファウストラーゼンが復活へ　須貝調教師「能力
-OK project=1 video_id=XvJCOfEu7ww title=【ラジオNIKKEI賞】半兄は日本ダービー馬マカヒキ クカイリモクが意欲の参戦だ
+OK project=1 video_id=jl6PcKrcji0 title=【函館記念展望】好走データを全て満たす4歳馬エコロディノスに注目
+OK project=1 video_id=iz355lOgMIQ title=【函館記念】ジュタ　２４年ホープフルＳ４着の素質馬が開花だ　Ｖデータ唯一の減点１
+OK project=1 video_id=FLpCwWFjwJ4 title=今週末がＪＲＡ騎乗ラストウイーク　南米屈指の豪腕「ゴンちゃん」の熱烈日本愛
