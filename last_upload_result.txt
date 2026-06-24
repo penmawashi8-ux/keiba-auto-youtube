@@ -1,10 +1,10 @@
-date: 2026-06-24T00:21:35.923942Z
+date: 2026-06-24T05:11:55.896238Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4CDJlbuQdRs title=【ラジオNIKKEI賞】今週末で短期免許ラストのゴンサルベス、クカイリモクと重賞
-OK project=1 video_id=uKLG-m7yga4 title=母はG1・4勝ラッキーライラック、日曜・福島でデビューのラッキースパークルは「全
-OK project=1 video_id=wAg3Tl6Nq04 title=【ラジオNIKKEI賞展望】データが示す距離短縮と先行力で波乱を狙う
+OK project=1 video_id=tTWNGOxZkLI title=【注目馬動向】昨年の皐月賞&有馬記念勝ち馬ミュージアムマイル　骨膜が出た右膝のク
+OK project=1 video_id=HzLcZUXDrmE title=デアヴェローチェ、追い切り速報/栗東トレセンニュース
+OK project=1 video_id=hoZEq8dixD8 title=カゼノランナー、帝王賞追い切り速報/栗東トレセンニュース
