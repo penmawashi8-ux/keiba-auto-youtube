@@ -1,10 +1,10 @@
-date: 2026-06-23T13:49:53.103734Z
+date: 2026-06-24T00:21:35.923942Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AicF65Kmv14 title=【POG】2歳新馬戦で絶好調の北村友一騎手が期待　好馬体ブラッグスが7月12日の
-OK project=1 video_id=QUKDcPJ12qY title=【函館記念】重賞初挑戦のイガッチ　早めの函館入りで順調な調整　陣営「ここでどんな
-OK project=1 video_id=pX-o4xfFDTg title=【函館記念】55キロで挑むバルナバは立ち回り次第でチャンスあり　陣営「長く脚を使
+OK project=1 video_id=4CDJlbuQdRs title=【ラジオNIKKEI賞】今週末で短期免許ラストのゴンサルベス、クカイリモクと重賞
+OK project=1 video_id=uKLG-m7yga4 title=母はG1・4勝ラッキーライラック、日曜・福島でデビューのラッキースパークルは「全
+OK project=1 video_id=wAg3Tl6Nq04 title=【ラジオNIKKEI賞展望】データが示す距離短縮と先行力で波乱を狙う
