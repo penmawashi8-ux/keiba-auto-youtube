@@ -1,80 +1,71 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【ラジオNIKKEI賞】今週末で短期免許ラストのゴンサルベス、クカイリモクと重賞初制覇だ ---
-[0] Gemini入力本文 361文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\t\t\t\t\u3000第75回ラジオNIKKEI賞・G3(28日、福島)で、抽選対象であるクカイリモクと初コンビ予定のフランシスコ・ゴンサルベス騎手(36)＝ブラジル出'
+--- 記事[0]: 【注目馬動向】昨年の皐月賞&有馬記念勝ち馬ミュージアムマイル　骨膜が出た右膝のクリーニング処置で夏場は休養 ---
+[0] Gemini入力本文 337文字: '昨年の有馬記念と皐月賞を制したミュージアムマイル(牡4歳、栗東・高柳大輔厩舎、父リオンディーズ)は夏場に右前脚の膝部分のクリーニング処置を行うことになった。馬主のサンデーサラブレッドクラブが6月24日、発表した。\n\t\t\t\t\u3000同馬はレース後の'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 母はG1・4勝ラッキーライラック、日曜・福島でデビューのラッキースパークルは「全身バネ」 ---
-[1] Gemini入力本文 340文字: '大器が夏のみちのくでベールを脱ぐ。28日の福島・芝1800メートルで初陣を迎えるラッキースパークル(牡2歳、栗東・松永幹厩舎)は、19、20年のエリザベス女王杯連覇などG1・4勝を挙げた名牝ラッキーライラックの子。母も管理した松永幹調教師は'
+--- 記事[1]: デアヴェローチェ、追い切り速報/栗東トレセンニュース ---
+[1] Gemini入力本文 342文字: '前走で3歳重賞の葵Sを勝ったデアヴェローチェ(栗東・上村洋行厩舎)。前走後はリフレッシュ放牧に出ていて、6月17日にノーザンファームしがらきから帰厩。次走は7月5日に小倉競馬場、芝1200mで行われる北九州記念に出走予定。今朝24日はそのレ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【ラジオNIKKEI賞展望】データが示す距離短縮と先行力で波乱を狙う ---
-[2] Gemini入力本文 345文字: '夏の福島競馬で行われる3歳限定の重賞、ラジオNIKKEI賞。小回りコースで行われる芝の1800m戦ということもあり、毎年難解なレースとなることが多い。過去のデータからは、ローテーションや前走の走りに明確な傾向が表れており、これらを紐解くこと'
+--- 記事[2]: カゼノランナー、帝王賞追い切り速報/栗東トレセンニュース ---
+[2] Gemini入力本文 340文字: '現在、佐賀記念と川崎記念を含めて、3連勝中と波に乗るカゼノランナー(栗東・松永幹夫厩舎)。次走は7月1日(水)、大井競馬場、ダート2000mで行われる帝王賞を予定しており、今朝24日はレースに向けた追い切りを行っている。\n\u3000CWコースで3歳'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 217文字]: '注目の競馬情報をお届けします。28日の福島・芝1800メートルで初陣を迎えるのは、ラッキースパークルです。ラッキースパークルは、19年と20年のエリザベス女王杯連覇などG1・4勝を挙げた名牝ラッキーライラックの仔です。母も管理した松永幹調教師は「スイッチが入った時の瞬発力とかは似ているね。すごく能力を感じるので、楽しみ」と期待を寄せています。また、ラッキーライラックを手がけていた丸内助手が、このラッキースパークルも担当しています。'
-[1]  [redirectフィルター] 217文字 → 202文字
+[1]  [Gemini生出力 216文字]: '本日の競馬ニュースです。前走で3歳重賞の葵Sを勝ったデアヴェローチェは、前走後にリフレッシュ放牧に出ており、6月17日にノーザンファームしがらきから帰厩しました。次走は7月5日に小倉競馬場、芝1200mで行われる北九州記念に出走予定です。今朝24日はそのレースに向けて1週前追い切りが行われました。朝一番のCWコースで岩田望来騎手が騎乗し、3歳未勝利を追走。6F標識で3馬身ほどの差がありましたが、3コーナーに入る時には少しだけそ…'
+  HTTP 200
+[2]  [Gemini生出力 231文字]: 'レース関連の最新情報です。現在、佐賀記念と川崎記念を含めて3連勝中と波に乗るカゼノランナー。栗東の松永幹夫厩舎に所属しています。次走は7月1日水曜日に、大井競馬場のダート2000mで行われる帝王賞を予定しており、今朝24日にレースに向けた追い切りを行いました。CWコースで3歳未勝利のカパルアを追走し、2馬身ほど追いかけていましたが、3コーナー手前あたりではその差がもう少しひらいていくような感じでした。道中のペースは決して速くなく、徐々にラップを速めています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (231文字)
+[2]  プレビュー: レース関連の最新情報です。現在、佐賀記念と川崎記念を含めて3連勝中と波に乗るカゼノランナー。栗東の松永幹夫厩舎に所属しています。次走は7月1日水曜日に、大井競馬...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (202文字)
-[1]  プレビュー: 28日の福島・芝1800メートルで初陣を迎えるのは、ラッキースパークルです。ラッキースパークルは、19年と20年のエリザベス女王杯連覇などG1・4勝を挙げた名牝...
+[1]  → output/script_1.txt 保存 (179文字)
+[1]  プレビュー: 本日の競馬ニュースです。前走で3歳重賞の葵Sを勝ったデアヴェローチェは、前走後にリフレッシュ放牧に出ており、6月17日にノーザンファームしがらきから帰厩しました...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 200
-[0]  [Gemini生出力 217文字]: 'レース関連の最新情報です。第75回ラジオNIKKEI賞・G3は6月28日に福島競馬場・芝1800メートルで開催されます。このレースで、抽選対象であるクカイリモクと初コンビ予定のフランシスコ・ゴンサルベス騎手は、今週末が短期免許のラストウィークとなります。ゴンサルベス騎手は先週まで13勝を挙げており、「20勝に届かなそうなので、あと2勝はしたい」と意欲を見せています。今後は7月にスペインで騎乗後、8月2日の船橋から騎乗する予定です。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (217文字)
-[0]  プレビュー: レース関連の最新情報です。第75回ラジオNIKKEI賞・G3は6月28日に福島競馬場・芝1800メートルで開催されます。このレースで、抽選対象であるクカイリモク...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 218文字]: '注目の競馬情報をお届けします。\n夏の福島競馬で行われる3歳限定の重賞、ラジオNIKKEI賞は、小回りコースの芝1800m戦ということもあり、毎年難解なレースとなることが多いです。過去のデータからは、ローテーションや前走の走りに明確な傾向が表れており、これらを紐解くことで波乱の使者を見つけ出したいとしています。特に、前走から距離短縮となるローテーションで臨む馬は、過去10年で5勝、2着7回、3着6回、着外44回と好成績を残しています。'
-[2]  [redirectフィルター] 218文字 → 202文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (202文字)
-[2]  プレビュー: 夏の福島競馬で行われる3歳限定の重賞、ラジオNIKKEI賞は、小回りコースの芝1800m戦ということもあり、毎年難解なレースとなることが多いです。過去のデータか...
+[0]  [Gemini生出力 220文字]: '今週の競馬注目情報をお伝えします。昨年の有馬記念と皐月賞を制したミュージアムマイルは、夏場に右前脚の膝部分のクリーニング処置を行うことになりました。馬主のサンデーサラブレッドクラブが6月24日に発表したものです。同馬はレース後のレントゲン検査でトウ骨遠位端に骨膜が出ていることが確認されました。歩様に大きな変化は見られなかったものの、夏場を治療に充てる方針が決定しています。ミュージアムマイルは23日発でノーザンファーム天栄へ移動しました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (220文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。昨年の有馬記念と皐月賞を制したミュージアムマイルは、夏場に右前脚の膝部分のクリーニング処置を行うことになりました。馬主のサンデ...
 
 3 件の脚本を生成しました。
