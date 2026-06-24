@@ -1,10 +1,10 @@
-date: 2026-06-24T05:11:55.896238Z
+date: 2026-06-24T06:58:35.787598Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tTWNGOxZkLI title=【注目馬動向】昨年の皐月賞&有馬記念勝ち馬ミュージアムマイル　骨膜が出た右膝のク
-OK project=1 video_id=HzLcZUXDrmE title=デアヴェローチェ、追い切り速報/栗東トレセンニュース
-OK project=1 video_id=hoZEq8dixD8 title=カゼノランナー、帝王賞追い切り速報/栗東トレセンニュース
+OK project=1 video_id=dfF7zTRUzxc title=今村聖奈騎手とオークス制覇ジュウリョクピエロの全きょうだいが来春に誕生へ　母がオ
+OK project=1 video_id=5w_I-D6DchU title=昨年皐月賞&有馬記念覇者ミュージアムマイルは夏場に右前膝のクリーニング処置へ　宝
+OK project=1 video_id=Vf6DOvs21kY title=「今アメリカだよね…?」「大丈夫か?来れるのか?」函館競馬の芸能人ゲスト来場が話
