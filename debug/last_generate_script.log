@@ -1,73 +1,40 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 今村聖奈騎手とオークス制覇ジュウリョクピエロの全きょうだいが来春に誕生へ　母がオルフェーヴル産駒を受胎 ---
-[0] Gemini入力本文 337文字: '今村聖奈騎手にJRA女性騎手初のG1タイトルをもたらしたことで大きな注目を集めているオークス馬ジュウリョクピエロ(牝3歳、栗東・寺島良厩舎、父オルフェーヴル)に来春、同じ血統のきょうだいが誕生する予定であることが分かった。\n\t\t\t\t\u3000オーク'
+--- 記事[0]: 【帝王賞】大一番へ順調!ナチュラルライズが力強く併入　巻き返しへ伊藤圭調教師「逃げにはこだわらない」 ---
+[0] Gemini入力本文 349文字: '◆帝王賞・Jpn1(7月1日、大井競馬場・ダート2000メートル)追い切り＝6月24日、美浦トレセン\n\t\t\t\t\u3000昨年のダート2冠馬ナチュラルライズ(牡4歳、美浦・伊藤圭三厩舎、父キズナ)が、1週間後の大一番へ向け横山武史騎手を背にWコースで'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 昨年皐月賞&有馬記念覇者ミュージアムマイルは夏場に右前膝のクリーニング処置へ　宝塚記念9着後は放牧中 ---
-[1] Gemini入力本文 336文字: '昨年皐月賞、有馬記念を制し、今年初戦の宝塚記念9着後、放牧に出ているミュージアムマイル(牡4＝高柳大、父リオンディーズ)はX線検査で右前脚の膝の状態を確認したところ、橈骨(とうこつ)遠位端に骨膜が出ているなど全体的にすっきりしないため、夏休'
+--- 記事[1]: 【よもやま話】下半期の活躍誓う水沼騎手＆上里騎手と食事会/馬三郎のつぶやき ---
+[1] Gemini入力本文 726文字: '◆水沼元輝騎手、上里直汰騎手(24日・玉川)\n\u3000今年上半期の中央競馬が終了した区切りでもあり、23日の夜は水沼、上里と食事へ。半年間の反省と、下半期への意気込みを二人とも大いに語っていた。ちなみに、福島開幕週でそれぞれ注目したい一頭は…水沼'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 「今アメリカだよね…?」「大丈夫か?来れるのか?」函館競馬の芸能人ゲスト来場が話題「竹内涼真本当に忙しいな」 ---
-[2] Gemini入力本文 366文字: '第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)の当日に来場する芸能人ゲストに注目が集まっている。\n\t\t\t\t\u3000函館競馬場の公式Xでも「今年はJRA年間プロモーションキャラクターの竹内涼真さんが来場！トークショーのMCは、'
+--- 記事[2]: 【有力馬動向】メリークリスマス躍動へ オープン特別で確実に賞金加算を/馬三郎のつぶやき ---
+[2] Gemini入力本文 346文字: '◆デアヴェローチェ(24日・城谷)\n\u30001勝クラス-葵Sを連勝中のデアヴェローチェ(牝3歳、栗東・上村)は次週の北九州記念(7月5日・小倉、芝1200m)を予定。この日はコンビ再結成となる岩田望を背に栗東CWで併せ馬を消化した。6Fで1秒近く'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 232文字]: '本日の競馬ニュースです。\n今村聖奈騎手にJRA女性騎手初のG1タイトルをもたらしたオークス馬ジュウリョクピエロに、来春、同じ血統のきょうだいが誕生する予定であることが分かりました。ジュウリョクピエロは牝3歳、栗東・寺島良厩舎所属で、父はオルフェーヴルです。飛野牧場の飛野正昭代表は、オークス制覇後に母ハッピーヴァリューにオルフェーヴルを種付けしたことを明かしていました。飛野代表は「無事に受胎していることを確認しているので、来年が楽しみです」とコメントしています。'
-[0]  [重複除去] 232文字 → 231文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (231文字)
-[0]  プレビュー: 本日の競馬ニュースです。今村聖奈騎手にJRA女性騎手初のG1タイトルをもたらしたオークス馬ジュウリョクピエロに、来春、同じ血統のきょうだいが誕生する予定であるこ...
+[2]  [Gemini生出力 228文字]: '競馬ファン注目の情報です。1勝クラスと葵Sを連勝中のデアヴェローチェは、次週の北九州記念に出走を予定しています。このレースは7月5日に小倉の芝1200mで行われます。24日には、コンビ再結成となる岩田望を背に栗東CWで併せ馬を消化しました。6Fで1秒近く先行する僚馬アルディメントとの距離を一定に保ち、折り合いをつけました。直線では鞍上がゴーサインを出すまでもなく、自らハミを取ってグイグイ加速し、一瞬のうちに僚馬をとらえ、あとは独走の動きを見せています。'
   HTTP 200
-[2]  [Gemini生出力 303文字]: '今週の競馬注目情報をお伝えします。第62回函館記念・G3が開催される6月28日、函館競馬場・芝2000メートルでは、当日に来場する芸能人ゲストに注目が集まっています。函館競馬場の公式Xでは、JRA年間プロモーションキャラクターの竹内涼真さんの来場が告知されました。トークショーのMCは2025 M-1王者のたくろうさんが務めます。公式ホームページによると、竹内涼真さんは11R後に表彰式プレゼンターとして登場し、中央競馬全レース終了後の16時35分頃にも来場する予定です。この来場について、ネット上では「今アメリカだよね…?」「大丈夫か?来れるのか?」「竹内涼真本当に忙しいな」といった声が上がっています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (302文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。第62回函館記念・G3が開催される6月28日、函館競馬場・芝2000メートルでは、当日に来場する芸能人ゲストに注目が集まってい...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[1]  [Gemini生出力 211文字]: '競馬速報です。今年上半期の中央競馬が終了した区切りとして、23日の夜に水沼元輝騎手と上里直汰騎手が食事へ向かいました。二人は半年間の反省と、下半期への意気込みを大いに語っていたとのことです。また、福島開幕週でそれぞれが注目する一頭も挙げられました。水沼騎手は日曜1R・3歳上障害未勝利の芝2750mへ出走予定のフォルガイルを、上里騎手は土曜7R・3歳未勝利の芝1800mを予定しているウッケンに注目しているということです。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (228文字)
+[2]  プレビュー: 競馬ファン注目の情報です。1勝クラスと葵Sを連勝中のデアヴェローチェは、次週の北九州記念に出走を予定しています。このレースは7月5日に小倉の芝1200mで行われ...
   HTTP 200
-[1]  [Gemini生出力 184文字]: '競馬ファン注目の情報です。昨年、皐月賞と有馬記念を制したミュージアムマイルは、今年初戦の宝塚記念で9着となった後、放牧に出ています。X線検査で右前脚の膝の状態を確認したところ、橈骨遠位端に骨膜が出るなど全体的にすっきりしないため、夏休みの間に社台ホースクリニックでクリーニング処置を受けることが決まりました。この情報は24日にサンデーサラブレッドクラブが発表しました。'
+[0]  [Gemini生出力 222文字]: '今日の競馬情報です。7月1日に大井競馬場ダート2000メートルで行われる帝王賞・Jpn1に向け、昨年のダート2冠馬ナチュラルライズが6月24日に美浦トレセンで追い切りを行いました。横山武史騎手を背にWコースで併せ馬を行い、谷原柚希騎手が騎乗したタイセイミッションを離れた後ろに置き、直線入り口で引きつけそのまま併入しました。やや手応えは見劣ったものの、力強いフットワークを見せています。伊藤圭調教師は「逃げにはこだわらない」とコメントしました。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (184文字)
-[1]  プレビュー: 競馬ファン注目の情報です。昨年、皐月賞と有馬記念を制したミュージアムマイルは、今年初戦の宝塚記念で9着となった後、放牧に出ています。X線検査で右前脚の膝の状態を...
+[1]  → output/script_1.txt 保存 (211文字)
+[1]  プレビュー: 競馬速報です。今年上半期の中央競馬が終了した区切りとして、23日の夜に水沼元輝騎手と上里直汰騎手が食事へ向かいました。二人は半年間の反省と、下半期への意気込みを...
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (222文字)
+[0]  プレビュー: 今日の競馬情報です。7月1日に大井競馬場ダート2000メートルで行われる帝王賞・Jpn1に向け、昨年のダート2冠馬ナチュラルライズが6月24日に美浦トレセンで追...
 
 3 件の脚本を生成しました。
