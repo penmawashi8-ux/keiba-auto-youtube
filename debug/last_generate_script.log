@@ -1,40 +1,114 @@
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【帝王賞】大一番へ順調!ナチュラルライズが力強く併入　巻き返しへ伊藤圭調教師「逃げにはこだわらない」 ---
-[0] Gemini入力本文 349文字: '◆帝王賞・Jpn1(7月1日、大井競馬場・ダート2000メートル)追い切り＝6月24日、美浦トレセン\n\t\t\t\t\u3000昨年のダート2冠馬ナチュラルライズ(牡4歳、美浦・伊藤圭三厩舎、父キズナ)が、1週間後の大一番へ向け横山武史騎手を背にWコースで'
+--- 記事[0]: 【さきたま杯】ロードフォンスが3番手から抜け出して重賞3勝目　2着はウィルソンテソーロ ---
+[0] Gemini入力本文 286文字: 'Jpn1「第30回さきたま杯」(ダート1400メートル)が浦和競馬場で行われ、横山和生騎乗のロードフォンス(牡6＝安田翔、父ロードカナロア)が3番手追走から抜け出し、昨年のかきつばた記念、今年の根岸Sに次いで、重賞3勝目を挙げた。\n\u3000勝ちタ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【よもやま話】下半期の活躍誓う水沼騎手＆上里騎手と食事会/馬三郎のつぶやき ---
-[1] Gemini入力本文 726文字: '◆水沼元輝騎手、上里直汰騎手(24日・玉川)\n\u3000今年上半期の中央競馬が終了した区切りでもあり、23日の夜は水沼、上里と食事へ。半年間の反省と、下半期への意気込みを二人とも大いに語っていた。ちなみに、福島開幕週でそれぞれ注目したい一頭は…水沼'
+--- 記事[1]: 【さきたま杯】ロードフォンスが得意の1400メートルで初のJpn1タイトルをゲット ---
+[1] Gemini入力本文 356文字: '◆第30回さきたま杯・Jpn1(6月24日、浦和競馬場・ダート1400メートル、稍重)\n\t\t\t\t\u3000上半期の古馬短距離王決定戦は12頭(JRA5頭、南関東5頭、他地区2頭)によって争われ、横山和生騎手が騎乗した2番人気でJRAのロードフォンス'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【有力馬動向】メリークリスマス躍動へ オープン特別で確実に賞金加算を/馬三郎のつぶやき ---
-[2] Gemini入力本文 346文字: '◆デアヴェローチェ(24日・城谷)\n\u30001勝クラス-葵Sを連勝中のデアヴェローチェ(牝3歳、栗東・上村)は次週の北九州記念(7月5日・小倉、芝1200m)を予定。この日はコンビ再結成となる岩田望を背に栗東CWで併せ馬を消化した。6Fで1秒近く'
+--- 記事[2]: 【函館記念】デビットバローズは芝で軽快な走り　陣営はしんがり負けの「2年前とは全然違います」ときっぱり ---
+[2] Gemini入力本文 352文字: '◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)追い切り＝6月24日、函館競馬場\n\t\t\t\t\u3000鳴尾記念に続いて2つ目の重賞タイトルを狙うデビットバローズ(セン7歳、栗東・上村洋行厩舎、父ロードカナロア)は芝コースを単走。'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  HTTP 503
   HTTP 200
-[2]  [Gemini生出力 228文字]: '競馬ファン注目の情報です。1勝クラスと葵Sを連勝中のデアヴェローチェは、次週の北九州記念に出走を予定しています。このレースは7月5日に小倉の芝1200mで行われます。24日には、コンビ再結成となる岩田望を背に栗東CWで併せ馬を消化しました。6Fで1秒近く先行する僚馬アルディメントとの距離を一定に保ち、折り合いをつけました。直線では鞍上がゴーサインを出すまでもなく、自らハミを取ってグイグイ加速し、一瞬のうちに僚馬をとらえ、あとは独走の動きを見せています。'
+[2]  [Gemini生出力 243文字]: 'レース関連の最新情報です。第62回函館記念・G3の追い切りが6月24日、函館競馬場で行われました。鳴尾記念に続いて2つ目の重賞タイトルを狙うデビットバローズは、芝コースを単走で追い切られています。5ハロン71秒6―12秒9と馬なりで軽めの追い切りでしたが、軽快なフットワークを見せました。上村助手は「向こうで仕上げてきているので、負担をかけないように芝で軽くという感じです」とコメントしています。また、しんがり負けだった2年前と比較し、「2年前とは全然違います」ときっぱり述べています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (243文字)
+[2]  プレビュー: レース関連の最新情報です。第62回函館記念・G3の追い切りが6月24日、函館競馬場で行われました。鳴尾記念に続いて2つ目の重賞タイトルを狙うデビットバローズは、...
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 211文字]: '競馬速報です。今年上半期の中央競馬が終了した区切りとして、23日の夜に水沼元輝騎手と上里直汰騎手が食事へ向かいました。二人は半年間の反省と、下半期への意気込みを大いに語っていたとのことです。また、福島開幕週でそれぞれが注目する一頭も挙げられました。水沼騎手は日曜1R・3歳上障害未勝利の芝2750mへ出走予定のフォルガイルを、上里騎手は土曜7R・3歳未勝利の芝1800mを予定しているウッケンに注目しているということです。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (228文字)
-[2]  プレビュー: 競馬ファン注目の情報です。1勝クラスと葵Sを連勝中のデアヴェローチェは、次週の北九州記念に出走を予定しています。このレースは7月5日に小倉の芝1200mで行われ...
+[0]  [Gemini生出力 183文字]: '最新情報をお届けします。\nJpn1「第30回さきたま杯」が浦和競馬場のダート1400メートルで行われました。横山和生騎手騎乗のロードフォンスが、3番手追走から抜け出して重賞3勝目を挙げています。ロードフォンスは、昨年のかきつばた記念、そして今年の根岸Sに次ぐ勝利となりました。勝ちタイムは1分25秒3です。2着にはウィルソンテソーロ、3着にはイグザルトが入りました。'
+[0]  [redirectフィルター] 183文字 → 170文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (170文字)
+[0]  プレビュー: Jpn1「第30回さきたま杯」が浦和競馬場のダート1400メートルで行われました。横山和生騎手騎乗のロードフォンスが、3番手追走から抜け出して重賞3勝目を挙げて...
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 222文字]: '今日の競馬情報です。7月1日に大井競馬場ダート2000メートルで行われる帝王賞・Jpn1に向け、昨年のダート2冠馬ナチュラルライズが6月24日に美浦トレセンで追い切りを行いました。横山武史騎手を背にWコースで併せ馬を行い、谷原柚希騎手が騎乗したタイセイミッションを離れた後ろに置き、直線入り口で引きつけそのまま併入しました。やや手応えは見劣ったものの、力強いフットワークを見せています。伊藤圭調教師は「逃げにはこだわらない」とコメントしました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (211文字)
-[1]  プレビュー: 競馬速報です。今年上半期の中央競馬が終了した区切りとして、23日の夜に水沼元輝騎手と上里直汰騎手が食事へ向かいました。二人は半年間の反省と、下半期への意気込みを...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (222文字)
-[0]  プレビュー: 今日の競馬情報です。7月1日に大井競馬場ダート2000メートルで行われる帝王賞・Jpn1に向け、昨年のダート2冠馬ナチュラルライズが6月24日に美浦トレセンで追...
+[1]  [Gemini生出力 273文字]: '最新のレース情報が入ってきました。第30回さきたま杯・Jpn1が6月24日、浦和競馬場のダート1400メートル、稍重馬場で行われました。上半期の古馬短距離王決定戦は、JRA5頭、南関東5頭、他地区2頭の計12頭によって争われました。横山和生騎手が騎乗した2番人気のロードフォンスが、最後の直線で早めに抜け出し勝利しています。勝ちタイムは1分25秒3でした。栗東・安田翔伍厩舎所属のロードフォンスは、得意の1400メートルで初のJpn1タイトルをゲットしました。同馬は芝のデビュー戦で8着でしたが、ダートに矛先を変えた2戦目で初勝利を挙げています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (273文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。第30回さきたま杯・Jpn1が6月24日、浦和競馬場のダート1400メートル、稍重馬場で行われました。上半期の古馬短距離王決定...
 
 3 件の脚本を生成しました。
