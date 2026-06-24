@@ -1,10 +1,10 @@
-date: 2026-06-24T08:24:37.650016Z
+date: 2026-06-24T10:28:14.090134Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-oihRkyqwCk title=【帝王賞】大一番へ順調!ナチュラルライズが力強く併入　巻き返しへ伊藤圭調教師「逃
-OK project=1 video_id=9UFmzpTnT5A title=【よもやま話】下半期の活躍誓う水沼騎手＆上里騎手と食事会/馬三郎のつぶやき
-OK project=1 video_id=RXIppOF2hew title=【有力馬動向】メリークリスマス躍動へ オープン特別で確実に賞金加算を/馬三郎のつ
+OK project=1 video_id=iUb9pcN71Zc title=【さきたま杯】ロードフォンスが3番手から抜け出して重賞3勝目　2着はウィルソンテ
+OK project=1 video_id=5a8ynpzcusg title=【さきたま杯】ロードフォンスが得意の1400メートルで初のJpn1タイトルをゲッ
+OK project=1 video_id=HetcnuBOFA0 title=【函館記念】デビットバローズは芝で軽快な走り　陣営はしんがり負けの「2年前とは全
