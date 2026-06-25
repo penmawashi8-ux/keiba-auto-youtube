@@ -2,8 +2,8 @@ name: 名馬クイズ1時間動画レンダリング(一時)
 
 # 一時的な自動実行用ワークフロー。
 # API経由のworkflow_dispatchが権限不足で叩けないため、
-# このブランチへのpushで検証済みクイズ(quiz_alltime_normal.json)を動画化する。
-# 公開はせず Artifact 出力のみ。完了後に削除予定。
+# このブランチへのpushで検証済みクイズ(第2弾 quiz_alltime_set2.json)を動画化し、
+# YouTubeへ公開投稿(quiz_upload.py)する。完了後に削除予定。
 
 on:
   push:
@@ -11,13 +11,14 @@ on:
     paths:
       - '.github/workflows/render_alltime_quiz.yml'
       - 'scripts/quiz_step3_video.py'
-      - 'quizzes/quiz_alltime_normal.json'
+      - 'scripts/quiz_upload.py'
+      - 'quizzes/quiz_alltime_set2.json'
   workflow_dispatch:
 
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 110
 
     steps:
       - name: リポジトリをチェックアウト
@@ -39,8 +40,8 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements-quiz.txt
 
-      - name: 検証済みクイズファイルを配置
-        run: cp quizzes/quiz_alltime_normal.json quiz.json
+      - name: 検証済みクイズファイル(第2弾)を配置
+        run: cp quizzes/quiz_alltime_set2.json quiz.json
 
       - name: 馬の写真ダウンロード (Wikipedia)
         run: python scripts/download_horse_images.py || echo "馬の写真ダウンロード失敗（写真なしで継続）"
@@ -57,15 +58,22 @@ jobs:
         run: python scripts/quiz_step3_video.py
 
       - name: 生成結果の確認
-        if: always()
         run: |
-          [ -f quiz_video.mp4 ] && echo "✓ quiz_video.mp4 ($(du -sh quiz_video.mp4 | cut -f1))" || echo "✗ quiz_video.mp4 が生成されていません"
+          [ -f quiz_video.mp4 ] && echo "✓ quiz_video.mp4 ($(du -sh quiz_video.mp4 | cut -f1))" || (echo "✗ quiz_video.mp4 が生成されていません" && exit 1)
 
       - name: 動画ファイルをアップロード (Artifact)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: quiz-video-alltime
+          name: quiz-video-alltime-set2
           path: quiz_video.mp4
           retention-days: 7
           if-no-files-found: warn
+
+      - name: YouTube へ公開投稿
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          PYTHONUNBUFFERED: '1'
+        run: python scripts/quiz_upload.py

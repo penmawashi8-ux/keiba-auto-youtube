@@ -70,7 +70,7 @@ def get_youtube_client():
 
 def build_metadata(quiz_data: dict) -> tuple[str, str, list[str]]:
     import random
-    title = random.choice(TITLE_OPTIONS)
+    title = quiz_data.get("youtube_title") or random.choice(TITLE_OPTIONS)
 
     # 正解馬名をタグ・説明に使う
     horse_names: list[str] = []
@@ -84,12 +84,11 @@ def build_metadata(quiz_data: dict) -> tuple[str, str, list[str]]:
     tags = list(dict.fromkeys(BASE_TAGS + horse_tags))[:30]
 
     horse_list = "　".join(horse_names) if horse_names else "名馬たち"
-    description = (
+    description = quiz_data.get("youtube_description") or (
         f"{quiz_data.get('title', '名馬当てクイズ')}\n\n"
-        "ヒントだけで名馬を当てるクイズです。\n"
-        "初級・中級・上級の全15問に挑戦してみてください！\n\n"
+        "ヒントだけで名馬を当てるクイズです。\n\n"
         f"登場する馬: {horse_list}\n\n"
-        "#競馬 #競馬クイズ #名馬 #90年代競馬 #keiba"
+        "#競馬 #競馬クイズ #名馬 #keiba"
     )
 
     return title, description, tags
