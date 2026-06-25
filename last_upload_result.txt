@@ -1,10 +1,10 @@
-date: 2026-06-25T00:31:54.089747Z
+date: 2026-06-25T05:13:01.184347Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zLOdRB4xV3I title=３歳ダート２冠馬フィンガーが米国遠征へ　田中博師「結果を踏まえ、ＢＣクラシックに
-OK project=1 video_id=hNBiy4beTk4 title=【さきたま杯】早めに抜け出しロードフォンスJpn1初制覇　秋は海外のBCなども選
-OK project=1 video_id=wVoQbP-k83E title=【ラジオＮＩＫＫＥＩ賞】ローベルクランツ　好調維持　小林師「いい意味で前回と同じ
+OK project=1 video_id=mzSOE4xZPxM title=【POG】福永厩舎の良血馬2頭　2・4億円馬のベルコートと2・6億円馬のドラゴン
+OK project=1 video_id=3k5MPncWty8 title=「スッキリしました」武豊騎手の“難解”だった地方、海外の勝利数が判明　「ヨシ!5
+OK project=1 video_id=GJLyCrC5aUc title=【注目馬動向】日本ダービー5着のマテンロウゲイルはセントライト記念から始動
