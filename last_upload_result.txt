@@ -1,10 +1,10 @@
-date: 2026-06-25T05:13:01.184347Z
+date: 2026-06-25T06:53:22.315975Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mzSOE4xZPxM title=【POG】福永厩舎の良血馬2頭　2・4億円馬のベルコートと2・6億円馬のドラゴン
-OK project=1 video_id=3k5MPncWty8 title=「スッキリしました」武豊騎手の“難解”だった地方、海外の勝利数が判明　「ヨシ!5
-OK project=1 video_id=GJLyCrC5aUc title=【注目馬動向】日本ダービー5着のマテンロウゲイルはセントライト記念から始動
+OK project=1 video_id=M1Q-KNkO99g title=【ラジオNIKKEI賞出走馬・騎手確定】ローベルクランツ＆松山弘平騎手、サノノグ
+OK project=1 video_id=62UV7TfDd8Q title=【週末情報】抜群のゲートセンス！ ハイソリアは遅れてきた快速馬か!?/馬三郎のつ
+OK project=1 video_id=U-fuhfUzFxE title=【有力馬動向】マスカレードボールが帰厩後初時計、併走馬に見劣るも問題なし！/馬三
