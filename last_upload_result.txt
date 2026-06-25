@@ -1,10 +1,10 @@
-date: 2026-06-24T10:28:14.090134Z
+date: 2026-06-25T00:31:54.089747Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=iUb9pcN71Zc title=【さきたま杯】ロードフォンスが3番手から抜け出して重賞3勝目　2着はウィルソンテ
-OK project=1 video_id=5a8ynpzcusg title=【さきたま杯】ロードフォンスが得意の1400メートルで初のJpn1タイトルをゲッ
-OK project=1 video_id=HetcnuBOFA0 title=【函館記念】デビットバローズは芝で軽快な走り　陣営はしんがり負けの「2年前とは全
+OK project=1 video_id=zLOdRB4xV3I title=３歳ダート２冠馬フィンガーが米国遠征へ　田中博師「結果を踏まえ、ＢＣクラシックに
+OK project=1 video_id=hNBiy4beTk4 title=【さきたま杯】早めに抜け出しロードフォンスJpn1初制覇　秋は海外のBCなども選
+OK project=1 video_id=wVoQbP-k83E title=【ラジオＮＩＫＫＥＩ賞】ローベルクランツ　好調維持　小林師「いい意味で前回と同じ
