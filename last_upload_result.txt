@@ -1,10 +1,10 @@
-date: 2026-06-25T11:47:36.114678Z
+date: 2026-06-25T13:25:49.391060Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DaeGKMULG64 title=【POG】乗り込み十分のウメヒナタが函館デビュー　橋田調教師「性格は素直で扱いや
-OK project=1 video_id=tnzG9X3k2rk title=【POG】エフフォーリア産駒のアゴルディーノが27日の函館・芝1200メートルで
-OK project=1 video_id=5rhvlxLrEBg title=【POG】好調・前川厩舎のミハテヌユメが27日に函館でデビュー　スピードがあり初
+OK project=1 video_id=rNljhYKQJcY title=「全力で買う。マジで」「一生話の種にできる」3億円で募集されたイクイノックス×ア
+OK project=1 video_id=iTIEI418viw title=【門別・フロイラインC結果】ウィルラウスが差し切って重賞初制覇
+OK project=1 video_id=gp7FwkEtYjE title=開設130周年の函館競馬場 知るとより楽しめる6つの豆知識
