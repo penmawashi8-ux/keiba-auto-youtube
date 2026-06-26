@@ -1,75 +1,44 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 半姉はナムラクレア ナムラクララが復活Vなるか ---
-[0] Gemini入力本文 354文字: '重賞5勝を挙げたナムラクレアの半妹となるナムラクララ(牝4、栗東・長谷川浩大厩舎)が、土曜函館11Rの青函ステークス(3歳上・オープン・芝1200m)で約1年ぶりの勝利を狙う。\n\u3000ナムラクララは父アドマイヤマーズ、母サンクイーンII、母の父'
+--- 記事[0]: 【注目馬動向】ワンダーディーンはジャパンダートクラシック・Jpn1での復帰を視野　テーオーパスワードはエルムSへ ---
+[0] Gemini入力本文 347文字: '今年のUAEダービーを勝ち、ケンタッキーダービーでは8着だったワンダーディーン(牡3歳、栗東・高柳大輔厩舎、父ディーマジェスティ)が、ジャパンダートクラシック・Jpn1(10月7日、大井競馬場・ダート2000メートル)での復帰を視野に調整さ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【POG】小倉の開幕週は薩摩の風が吹く!?“鹿児島の偉人”にちなんだ九州産馬が2頭デビュー ---
-[1] Gemini入力本文 361文字: '開幕週に維新の風が吹く。夏の小倉開催、通称「夏コク」名物の九州産馬による2歳新馬は、今週の芝1200メートルの2鞍のみ。そのなかで目を引くのが土曜5Rのタカモリ(牡、栗東・牧田厩舎)と日曜6Rのトシミチ(牡、栗東・谷厩舎)だ。その響きに明治'
+--- 記事[1]: 【ラジオNIKKEI賞】NHKマイルC4着から重賞初V狙うローベルクランツは6枠12番　枠順決定 ---
+[1] Gemini入力本文 356文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)＝枠順決定\n\t\t\t\t\u3000枠順が6月26日、決定した。この距離で行われた毎日杯2着馬で、前走のNHKマイルCでも4着と健闘したローベルクランツ(牡3歳、栗東・小林'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 田辺裕信　地元・福島で復帰へ「ブランク取り戻す！」　ラジオＮＩＫＫＥＩ賞で騎乗するサノノグレーターと追い切り「軽やかに走 ---
-[2] Gemini入力本文 331文字: '５月３１日の騎乗を最後に戦列を離れていた田辺裕信騎手（４２）＝美浦・フリー＝が、今週の福島で復帰する。昨年９月に左かかとを粉砕骨折した際、患部を固定するために入れていたプレートを除去する手術を６月上旬に受けた。４日ほど入院したが「手術が終わ'
+--- 記事[2]: 【函館記念】武豊騎手とコンビのケイアイセナは5枠8番　ディープインパクト産駒の17年連続重賞Vなるか　枠順決定 ---
+[2] Gemini入力本文 354文字: '◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル)＝枠順決定\n\t\t\t\t\u3000枠順が6月26日、決定した。武豊騎手と8戦ぶりにコンビを組むケイアイセナ(牡7歳、栗東・平田修厩舎、父ディープインパクト)は5枠8番に決まった。ディ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 226文字]: '最新情報をお届けします。\n重賞5勝を挙げたナムラクレアの半妹となるナムラクララが、土曜函館11Rの青函ステークスで約1年ぶりの勝利を狙います。牝4のナムラクララは栗東・長谷川浩大厩舎に所属し、3歳上・オープン・芝1200mのこのレースに挑みます。半姉のナムラクレアは、21年の小倉2歳S、22年の函館スプリントS、23年のシルクロードSとキーンランドC、24年の阪神Cと重賞を5勝しています。また、GIでは2着3回、3着4回と堅実な走りを見せています。'
-[0]  [redirectフィルター] 226文字 → 213文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (213文字)
-[0]  プレビュー: 重賞5勝を挙げたナムラクレアの半妹となるナムラクララが、土曜函館11Rの青函ステークスで約1年ぶりの勝利を狙います。牝4のナムラクララは栗東・長谷川浩大厩舎に所...
-  HTTP 200
-[2]  [Gemini生出力 266文字]: '最新のレース情報が入ってきました。\n5月31日の騎乗を最後に戦列を離れていた田辺裕信騎手が、今週の福島で復帰します。昨年9月に左かかとを粉砕骨折し、患部を固定するために入れていたプレートを除去する手術を6月上旬に受けました。4日ほど入院しましたが、「手術が終わって次の日には動かせたので、体がこわばることもなかった」と順調な回復ぶりを伝えています。今週火曜から調教騎乗も再開し、ラジオNIKKEI賞で騎乗するサノノグレーターと追い切りを行い、「軽やかに走っていた」とコメントしました。「ブランク取り戻す！」と意気込みを語っています。'
-[2]  [重複除去] 266文字 → 265文字
+[2]  [Gemini生出力 190文字]: '競馬ファン注目の情報です。第62回函館記念・G3の枠順が6月26日に決定しました。6月28日に函館競馬場・芝2000メートルで行われるこのレースで、武豊騎手と8戦ぶりにコンビを組むケイアイセナは5枠8番に決まりました。ケイアイセナはディープインパクト産駒の17年連続JRA重賞制覇を狙います。また、2、3勝クラスを連勝し一気の重賞取りを狙うフィーリウスは8枠14番に決まりました。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (265文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。5月31日の騎乗を最後に戦列を離れていた田辺裕信騎手が、今週の福島で復帰します。昨年9月に左かかとを粉砕骨折し、患部を固定する...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[2]  → output/script_2.txt 保存 (190文字)
+[2]  プレビュー: 競馬ファン注目の情報です。第62回函館記念・G3の枠順が6月26日に決定しました。6月28日に函館競馬場・芝2000メートルで行われるこのレースで、武豊騎手と8...
   HTTP 200
-[1]  [Gemini生出力 234文字]: '今日の競馬情報です。夏の小倉開催、通称「夏コク」名物の九州産馬による2歳新馬は、今週の芝1200メートルの2鞍のみです。その中で注目されるのは、土曜5Rにデビュー予定のタカモリと、日曜6Rにデビュー予定のトシミチです。これらの馬名は、明治維新の三傑である鹿児島出身の西郷隆盛と大久保利通にちなんでいます。話題性だけではありません。タカモリはG1馬アカイイトの甥にあたり、1週前のCWコースで6ハロン79秒3をマークしています。血統や調教内容からも注目が集まる2頭です。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (234文字)
-[1]  プレビュー: 今日の競馬情報です。夏の小倉開催、通称「夏コク」名物の九州産馬による2歳新馬は、今週の芝1200メートルの2鞍のみです。その中で注目されるのは、土曜5Rにデビュ...
+[0]  [Gemini生出力 228文字]: 'レース関連の最新情報です。今年のUAEダービーを勝ち、ケンタッキーダービーでは8着だったワンダーディーンが、ジャパンダートクラシック・Jpn1での復帰を視野に調整されることが6月26日に分かりました。ジャパンダートクラシックは10月7日に大井競馬場・ダート2000メートルで行われます。高柳大調教師は「疲れは取れています。久々でも仕上がるタイプですから」と説明しました。また、アハルテケSで4馬身差の圧勝を演じたテーオーパスワードは、エルムSへ向かいます。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (228文字)
+[0]  プレビュー: レース関連の最新情報です。今年のUAEダービーを勝ち、ケンタッキーダービーでは8着だったワンダーディーンが、ジャパンダートクラシック・Jpn1での復帰を視野に調...
+  HTTP 200
+[1]  [Gemini生出力 277文字]: '注目の競馬情報をお届けします。\n第75回ラジオNIKKEI賞・G3の枠順が6月26日に決定しました。このレースは6月28日に福島競馬場・芝1800メートルで行われます。この距離で行われた毎日杯で2着、前走のNHKマイルCでも4着と健闘したローベルクランツは、6枠12番から重賞初制覇に挑みます。ローベルクランツは牡3歳、栗東の小林真也厩舎所属で、父はサトノダイヤモンドです。また、4走前の葉牡丹賞を2歳コースレコードで制し、その後も決め脚を武器に重賞戦線で堅実に駆けるサノノグレーターも出走します。サノノグレーターは牡3歳、美浦の尾形?..厩舎所属です。'
+[1]  [redirectフィルター] 277文字 → 261文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (259文字)
+[1]  プレビュー: 第75回ラジオNIKKEI賞・G3の枠順が6月26日に決定しました。このレースは6月28日に福島競馬場・芝1800メートルで行われます。この距離で行われた毎日杯...
 
 3 件の脚本を生成しました。
