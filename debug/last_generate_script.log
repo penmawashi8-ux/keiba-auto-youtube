@@ -1,106 +1,43 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【北九州記念想定馬・騎手】デアヴェローチェ、ヤマニンアルリフラなど12頭 ---
-[0] Gemini入力本文 345文字: '7月5日(日)に小倉競馬場で行われる北九州記念(3歳上・GIII・芝1200m)。\n\u3000葵Sから重賞連勝を狙うデアヴェローチェ、東京スプリントで3着に入ったヤマニンアルリフラ、鞍馬Sを快勝したフリッカージャブなど12頭が登録を予定している。\n'
+--- 記事[0]: 【ラジオNIKKEI賞】スカイスプレンダーは骨折明けでも「動きは良化しています」タイトルへの最大のカギは… ---
+[0] Gemini入力本文 352文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)＝6月26日、栗東トレセン\n\t\t\t\t\u3000骨折明けになるスカイスプレンダー(牡3歳、栗東・池江泰寿厩舎、父サートゥルナーリア)は、朝一番の坂路をキャンターで駆け上'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 新種牡馬ジャンダルムの産駒が初勝利なるか リエーヴェに注目だ ---
-[1] Gemini入力本文 346文字: '新種牡馬のジャンダルムの産駒となるリエーヴェ(牡2、栗東・松下武士厩舎)が、土曜小倉5Rの2歳新馬(九州産・芝1200m)でデビューする。\n\u3000リエーヴェは父ジャンダルム、母ハナオウギ、母の父Super Saverの血統。宮崎県の吉野政敏氏の'
+--- 記事[1]: 15年米3冠馬アメリカンファラオの供用1年延長が決定　日本での代表産駒にカフェファラオ、ジューンブレアなど ---
+[1] Gemini入力本文 348文字: '日本軽種馬協会は、26年に静内種馬場で供用したアメリカンファラオ(牡14歳、父パイオニアオブザナイル)を、27年も引き続き1シーズン供用することを決定した。\n\t\t\t\t\u3000アメリカンファラオは現役時代に15年にケンタッキーダービー、プリークネス'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 米3冠馬アメリカンファラオの供用1年延長が決定!「生産者の皆さまの要望を受けて」今年218頭に種付け ---
-[2] Gemini入力本文 398文字: '日本軽種馬協会は26日、静内種馬場(北海道新ひだか町)で今年供用した15年米3冠馬アメリカンファラオ(牡14、父パイオニアオブザナイル)を来年も引き続き1シーズン供用することが決まったと発表した。\n\u300016年から米国で供用され、日本国内では初'
+--- 記事[2]: 今村聖奈騎手、印象激変の華やか洋服姿に反響「超可愛い」「どこのタレントさんかと」ピンクのシャツ&ショートパンツ ---
+[2] Gemini入力本文 342文字: 'オークス(5月24日、東京)でジュウリョクピエロに騎乗しJRA女性騎手史上初のG1制覇を果たした今村聖奈騎手(22)＝栗東・寺島厩舎＝が、よしもと道頓堀シアターで行われたイベントに登場した様子が反響を呼んでいる。\n\t\t\t\t\u3000今村は25日に自'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 196文字]: 'レース関連の最新情報です。7月5日(日)に小倉競馬場で行われる北九州記念は、3歳上・GIII・芝1200mの条件で開催されます。このレースには、葵Sから重賞連勝を狙うデアヴェローチェ、東京スプリントで3着に入ったヤマニンアルリフラ、そして鞍馬Sを快勝したフリッカージャブなど、12頭が登録を予定しています。フルゲートは18頭です。なお、各馬とも出走予定の段階であり、変更の可能性がございます。'
+[0]  [Gemini生出力 269文字]: '今週の競馬注目情報をお伝えします。\n第75回ラジオNIKKEI賞・G3は、6月28日に福島競馬場・芝1800メートルで開催されます。このレースに出走を予定しているスカイスプレンダーは、骨折明けで、6月26日には栗東トレセンで朝一番の坂路をキャンターで駆け上がりました。スカイスプレンダーはこれまで3戦2勝の成績で、ゆりかもめ賞を1馬身半差で快勝し、クラシック戦線で注目を集めた矢先に骨折のアクシデントに見舞われています。しかし、この中間は先週までCWコースで負荷をかけたメニューをこなしており、「動きは良化しています」と伝えられています。'
+[0]  [重複除去] 269文字 → 268文字
+  HTTP 200
+[2]  [Gemini生出力 228文字]: '最新情報をお届けします。\nオークスでジュウリョクピエロに騎乗しJRA女性騎手史上初のG1制覇を果たした今村聖奈騎手が、よしもと道頓堀シアターで行われたイベントに登場した様子が反響を呼んでいます。今村騎手は25日に自身のXで、ビタミンSお兄ちゃんとギャロップ林さんと「競馬バカ」に出演することを告知していました。その際、ピンク系の半袖シャツとショートパンツ姿で登場し、その華やかな洋服姿に「超可愛い」「どこのタレントさんかと」といった反響が寄せられています。'
+[2]  [redirectフィルター] 228文字 → 215文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (196文字)
-[0]  プレビュー: レース関連の最新情報です。7月5日(日)に小倉競馬場で行われる北九州記念は、3歳上・GIII・芝1200mの条件で開催されます。このレースには、葵Sから重賞連勝...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 215文字]: '今日の競馬情報です。\n新種牡馬ジャンダルムの産駒となるリエーヴェが、土曜小倉5Rの2歳新馬、九州産・芝1200mでデビューします。リエーヴェは、父ジャンダルム、母ハナオウギ、母の父Super Saverの血統で、宮崎県の吉野政敏氏の生産馬です。父ジャンダルムは22年のスプリンターズSの覇者で、現2歳がファーストクロップとなります。ジャンダルムは25年2月にこの世を去りましたが、それだけに尚更、残された産駒の活躍が期待されます。'
-[1]  [重複除去] 215文字 → 214文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (214文字)
-[1]  プレビュー: 今日の競馬情報です。新種牡馬ジャンダルムの産駒となるリエーヴェが、土曜小倉5Rの2歳新馬、九州産・芝1200mでデビューします。リエーヴェは、父ジャンダルム、母...
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[2]  [Gemini生出力 267文字]: '最新情報をお届けします。日本軽種馬協会は26日、静内種馬場で今年供用した15年米3冠馬アメリカンファラオを、来年も引き続き1シーズン供用することが決まったと発表しました。アメリカンファラオは今年218頭に種付けを行っています。16年から米国で供用され、ビクター・エスピノーザとのコンビで15年BCクラシックを制した実績を持ちます。日本国内では、初年度産駒で持ち込みのダノンファラオが20年ジャパンダートダービーを制覇。また、17年生まれの米国産カフェファラオは、21年と22年のフェブラリーSを連覇し、22年には南部杯も制しています。'
-[2]  [redirectフィルター] 267文字 → 255文字
+[0]  → output/script_0.txt 保存 (268文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。第75回ラジオNIKKEI賞・G3は、6月28日に福島競馬場・芝1800メートルで開催されます。このレースに出走を予定している...
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (255文字)
-[2]  プレビュー: 日本軽種馬協会は26日、静内種馬場で今年供用した15年米3冠馬アメリカンファラオを、来年も引き続き1シーズン供用することが決まったと発表しました。アメリカンファ...
+[2]  → output/script_2.txt 保存 (215文字)
+[2]  プレビュー: オークスでジュウリョクピエロに騎乗しJRA女性騎手史上初のG1制覇を果たした今村聖奈騎手が、よしもと道頓堀シアターで行われたイベントに登場した様子が反響を呼んで...
+  HTTP 200
+[1]  [Gemini生出力 210文字]: '重要な競馬ニュースをお伝えします。日本軽種馬協会は、26年に静内種馬場で供用したアメリカンファラオを、27年も引き続き1シーズン供用することを決定しました。アメリカンファラオは現役時代に15年にケンタッキーダービー、プリークネスS、ベルモントSを制し、37年ぶりに米3冠を達成しました。計G1・8勝を挙げました。日本での代表産駒は、21年と22年にフェブラリーSを連覇したカフェファラオや、20年のジャパンダートダービ。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (210文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。日本軽種馬協会は、26年に静内種馬場で供用したアメリカンファラオを、27年も引き続き1シーズン供用することを決定しました。アメ...
 
 3 件の脚本を生成しました。
