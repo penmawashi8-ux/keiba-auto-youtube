@@ -1,10 +1,10 @@
-date: 2026-06-26T10:23:41.781794Z
+date: 2026-06-26T11:52:04.602257Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Zq-FSrbg-lg title=2冠牝馬エンブロイダリーは登録済みの仏ジャックルマロワ賞を見送って秋に備える　ヴ
-OK project=1 video_id=sFiwj71kaPY title=【青函S・金曜気配】「さすが世界のステージです」1年半ぶり芝1200メートル参戦
-OK project=1 video_id=v3OSYvXlrUY title=【函館記念】武豊騎手とコンビのケイアイセナは7歳でもいまがピーク!　陣営は「行っ
+OK project=1 video_id=zzoNVz_sFBI title=ローカル開催ならでは 各競馬場でジョッキーイベント実施
+OK project=1 video_id=40FtVD7K5Ws title=日本ダービー2着後に右前膝を骨折したパントルナイーフが退院…手術を受けて経過良好
+OK project=1 video_id=aew-r9sF-QI title=【青函S・金曜気配】24年ファンタジーS勝ち馬ダンツエラン　滞在競馬で一変あるか
