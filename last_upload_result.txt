@@ -1,10 +1,10 @@
-date: 2026-06-26T00:29:51.084896Z
+date: 2026-06-26T05:12:06.059919Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Hg_l4elr2Vo title=半姉はナムラクレア ナムラクララが復活Vなるか
-OK project=1 video_id=AXd1D8nJi9g title=【POG】小倉の開幕週は薩摩の風が吹く!?“鹿児島の偉人”にちなんだ九州産馬が2
-OK project=1 video_id=FUIN3zyBpE0 title=田辺裕信　地元・福島で復帰へ「ブランク取り戻す！」　ラジオＮＩＫＫＥＩ賞で騎乗す
+OK project=1 video_id=dbmaFPDOhGc title=【注目馬動向】ワンダーディーンはジャパンダートクラシック・Jpn1での復帰を視野
+OK project=1 video_id=Rkyp32ikZWY title=【ラジオNIKKEI賞】NHKマイルC4着から重賞初V狙うローベルクランツは6枠
+OK project=1 video_id=6VjHNTyvcQI title=【函館記念】武豊騎手とコンビのケイアイセナは5枠8番　ディープインパクト産駒の1
