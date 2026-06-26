@@ -1,41 +1,72 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: ローカル開催ならでは 各競馬場でジョッキーイベント実施 ---
-[0] Gemini入力本文 562文字: '開催中の函館、小倉、福島競馬では、ジョッキー関連のイベントが予定されている。ハイタッチ会やトークショー、写真撮影会など、人馬とファンの距離が近いローカル開催ならではの催しが各競馬場で実施される。\n\u3000函館競馬場では6月27日(土)、7月11日'
+--- 記事[0]: Ｇ１・３勝馬エンブロイダリーは仏Ｇ１ジャックルマロワ賞を見送って秋に備える　前走ヴィクトリアＭ制覇 ---
+[0] Gemini入力本文 331文字: 'ヴィクトリアＭでＧ１・３勝目を飾った昨年度の最優秀３歳牝馬エンブロイダリー（牝４歳、美浦・森一）が、登録してたジャックルマロワ賞・Ｇ１（８月１６日・仏ドーヴィル）を見送って秋に備えることが明らかになった。シルク・ホースクラブが２６日、ホーム'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 日本ダービー2着後に右前膝を骨折したパントルナイーフが退院…手術を受けて経過良好　全治12カ月以上 ---
-[1] Gemini入力本文 330文字: '5月31日の日本ダービー2着後、右前膝の骨折が判明し、6月4日に固定手術を受けたパントルナイーフ(牡3＝木村、父キズナ)は術後の経過が安定していることから26日、美浦トレセン診療所を退院した。\n\u3000この日、キャロットクラブが発表。その後、福島'
+--- 記事[1]: 【注目馬動向】日本ダービー2着後に骨折判明のパントルナイーフは復帰に1年以上の診断　キャロットクラブ発表 ---
+[1] Gemini入力本文 339文字: '日本ダービー2着だったパントルナイーフ(牡3歳、美浦・木村哲也厩舎、父キズナ)は復帰までに全治1年以上とみられていることが判明した。キャロットクラブがホームページで6月26日、発表した。\n\t\t\t\t\u3000同馬はダービーのレース後に、美浦トレセンに'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【青函S・金曜気配】24年ファンタジーS勝ち馬ダンツエラン　滞在競馬で一変あるか!?陣営「今年のなかでは一番いい」 ---
-[2] Gemini入力本文 348文字: '◆青函S(6月27日、函館競馬場・芝1200メートル)＝6月26日、函館競馬場\n\t\t\t\t\u300024年ファンタジーSで重賞制覇後は、不振が続いているダンツエラン(牝4歳、栗東・本田優厩舎、父ロードカナロア)は角馬場で宜運動を行った。橋本助手は「今'
+--- 記事[2]: 【ラジオNIKKEI賞・金曜気配】ディールメーカーは最終調整でも活気十分　大和田調教師「あとは気持ちの面」 ---
+[2] Gemini入力本文 355文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル)\n\t\t\t\t\u3000前走のニュージーランドT4着から巻き返しを狙うディールメーカー(牡3歳、美浦・大和田成厩舎、父イスラボニータ)は6月26日、美浦・坂路を66秒4―'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 220文字]: 'レース関連の最新情報です。青函Sは6月27日に函館競馬場・芝1200メートルで行われます。6月26日、函館競馬場では、24年ファンタジーSで重賞制覇後は不振が続いているダンツエランが角馬場で宜運動を行いました。本田優厩舎の橋本助手は「今年のなかでは一番いいです。トモの左右のバランスが良くなりました。調教でも違う感覚があります」と笑顔でコメントしています。ダンツエランは今年は賞金が足りずに予定していたレースに使えないことが多くありました。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (220文字)
-[2]  プレビュー: レース関連の最新情報です。青函Sは6月27日に函館競馬場・芝1200メートルで行われます。6月26日、函館競馬場では、24年ファンタジーSで重賞制覇後は不振が続...
+[1]  [Gemini生出力 219文字]: '今日の競馬情報です。日本ダービーで2着だったパントルナイーフは、復帰までに全治1年以上とみられていることが判明しました。これはキャロットクラブが6月26日、ホームページで発表したものです。パントルナイーフはダービーのレース後に美浦トレセンへ帰厩後、6月1日に右前膝の骨折が判明していました。手術後の経過を見ていましたが、発表によると、骨折の程度は軽いものではなく、現時点での診断として復帰までに全治12か月以上の期間を要するとのことです。'
   HTTP 200
-[0]  [Gemini生出力 230文字]: '競馬ファン注目の情報です。開催中の函館、小倉、福島競馬では、ジョッキー関連のイベントが予定されています。ハイタッチ会やトークショー、写真撮影会など、人馬とファンの距離が近いローカル開催ならではの催しが各競馬場で実施されます。函館競馬場では、6月27日と7月11日の土曜日にジョッキーハイタッチ会とパドックツアーが開催されます。ハイタッチ会は各日100名まで参加可能です。また、7月4日の土曜日にはジョッキー写真撮影会が開催され、こちらは20組まで参加できます。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (230文字)
-[0]  プレビュー: 競馬ファン注目の情報です。開催中の函館、小倉、福島競馬では、ジョッキー関連のイベントが予定されています。ハイタッチ会やトークショー、写真撮影会など、人馬とファン...
-  HTTP 200
-[1]  [Gemini生出力 197文字]: '重要な競馬ニュースをお伝えします。5月31日の日本ダービー2着後、右前膝の骨折が判明し、6月4日に固定手術を受けたパントルナイーフは、術後の経過が安定していることから26日、美浦トレセン診療所を退院しました。この日、キャロットクラブが発表し、福島県のノーザンファーム天栄へ放牧に出されました。今後の回復状況によって変わる可能性もありますが、現時点での診断は全治12カ月以上を要すというものです。'
+[0]  [Gemini生出力 268文字]: 'レース関連の最新情報です。G1・3勝馬エンブロイダリーが、登録していたジャックルマロワ賞・G1を見送って秋に備えることが明らかになりました。ヴィクトリアMでG1・3勝目を飾った昨年度の最優秀3歳牝馬エンブロイダリーは、牝4歳で美浦の森一厩舎に所属しています。ジャックルマロワ賞・G1は8月16日に仏ドーヴィルで行われる予定でした。同馬は放牧先の福島県ノーザンファーム天栄で調整中でしたが、日程的に良い状態で出走させるのが厳しいと判断されたため、見送りが決定しました。この件は、シルク・ホースクラブが26日にホームページで発表しています。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (268文字)
+[0]  プレビュー: レース関連の最新情報です。G1・3勝馬エンブロイダリーが、登録していたジャックルマロワ賞・G1を見送って秋に備えることが明らかになりました。ヴィクトリアMでG1...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (197文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。5月31日の日本ダービー2着後、右前膝の骨折が判明し、6月4日に固定手術を受けたパントルナイーフは、術後の経過が安定しているこ...
+[1]  → output/script_1.txt 保存 (219文字)
+[1]  プレビュー: 今日の競馬情報です。日本ダービーで2着だったパントルナイーフは、復帰までに全治1年以上とみられていることが判明しました。これはキャロットクラブが6月26日、ホー...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 255文字]: '最新のレース情報が入ってきました。\n第75回ラジオNIKKEI賞・G3が、6月28日に福島競馬場・芝1800メートルで開催される予定です。前走のニュージーランドTで4着だったディールメーカーは、巻き返しを狙っています。6月26日には美浦・坂路を66秒4―15秒5で駆け上がり、最終調整を済ませました。馬場入りを渋る面は見せたものの、馬自身は活気十分な様子です。大和田調教師は「相変わらず馬場入りのゴネがひどいですね...」とコメントしています。ディールメーカーは27日に福島競馬場へ移動する予定となっています。'
+[2]  [重複除去] 252文字 → 251文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (251文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第75回ラジオNIKKEI賞・G3が、6月28日に福島競馬場・芝1800メートルで開催される予定です。前走のニュージーランドT...
 
 3 件の脚本を生成しました。
