@@ -1,10 +1,10 @@
-date: 2026-06-26T11:52:04.602257Z
+date: 2026-06-26T13:22:54.500679Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zzoNVz_sFBI title=ローカル開催ならでは 各競馬場でジョッキーイベント実施
-OK project=1 video_id=40FtVD7K5Ws title=日本ダービー2着後に右前膝を骨折したパントルナイーフが退院…手術を受けて経過良好
-OK project=1 video_id=aew-r9sF-QI title=【青函S・金曜気配】24年ファンタジーS勝ち馬ダンツエラン　滞在競馬で一変あるか
+OK project=1 video_id=-2dfw_hCKwQ title=Ｇ１・３勝馬エンブロイダリーは仏Ｇ１ジャックルマロワ賞を見送って秋に備える　前走
+OK project=1 video_id=sgzGL_V4PFk title=【注目馬動向】日本ダービー2着後に骨折判明のパントルナイーフは復帰に1年以上の診
+OK project=1 video_id=rVAKpP_g67Y title=【ラジオNIKKEI賞・金曜気配】ディールメーカーは最終調整でも活気十分　大和田
