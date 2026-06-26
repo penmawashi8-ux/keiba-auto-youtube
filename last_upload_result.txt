@@ -1,10 +1,10 @@
-date: 2026-06-26T07:06:37.429988Z
+date: 2026-06-26T08:32:07.564870Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=p2AYvr9NNxw title=【北九州記念想定馬・騎手】デアヴェローチェ、ヤマニンアルリフラなど12頭
-OK project=1 video_id=_oSyaMufals title=新種牡馬ジャンダルムの産駒が初勝利なるか リエーヴェに注目だ
-OK project=1 video_id=IPKDtBvVMOg title=米3冠馬アメリカンファラオの供用1年延長が決定!「生産者の皆さまの要望を受けて」
+OK project=1 video_id=fHJ1TXKBCQw title=【ラジオNIKKEI賞】スカイスプレンダーは骨折明けでも「動きは良化しています」
+OK project=1 video_id=exEvlZoSs2U title=15年米3冠馬アメリカンファラオの供用1年延長が決定　日本での代表産駒にカフェフ
+OK project=1 video_id=cVLH1LHSS0I title=今村聖奈騎手、印象激変の華やか洋服姿に反響「超可愛い」「どこのタレントさんかと」
