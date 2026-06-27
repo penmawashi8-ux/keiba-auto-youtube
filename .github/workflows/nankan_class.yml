@@ -1,0 +1,85 @@
+name: Nankan Class - 南関東格付け解説を投稿
+
+on:
+  workflow_dispatch:
+    inputs:
+      privacy:
+        description: "公開設定"
+        required: true
+        default: "public"
+        type: choice
+        options:
+          - public
+          - unlisted
+          - private
+      post_short:
+        description: "ショート(縦)を投稿"
+        required: false
+        default: true
+        type: boolean
+      post_full:
+        description: "本編(横フル)を投稿"
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+
+    env:
+      GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+      GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+      GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+      GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+      PRIVACY: ${{ inputs.privacy }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-oauthlib
+
+      - name: Upload 本編(横フル)
+        if: ${{ inputs.post_full }}
+        run: |
+          python scripts/upload_custom_youtube.py \
+            --file dist/nankan/nankan_class_full.mp4 \
+            --thumbnail dist/nankan/full_thumb.jpg \
+            --privacy "$PRIVACY" \
+            --url-out /tmp/full_url.txt \
+            --tags "競馬,地方競馬,南関東競馬,大井競馬,川崎競馬,船橋競馬,浦和競馬,競馬予想,格付け,クラス分け,昇級,降級" \
+            --title "南関東競馬の格付け完全まとめ｜昇級・降級の仕組みと狙い目【保存版】" \
+            --description "$(cat dist/nankan/full_desc.txt)"
+
+      - name: Upload ショート(縦) ※本編へ誘導リンク付き
+        if: ${{ inputs.post_short }}
+        run: |
+          FULL_URL=""
+          [ -f /tmp/full_url.txt ] && FULL_URL=$(cat /tmp/full_url.txt)
+          if [ -n "$FULL_URL" ]; then
+            DESC=$(sed "s#{{FULL_URL}}#▶ 詳しい本編はこちら: $FULL_URL#" dist/nankan/short_desc.txt)
+          else
+            DESC=$(sed "/{{FULL_URL}}/d" dist/nankan/short_desc.txt)
+          fi
+          python scripts/upload_custom_youtube.py \
+            --file dist/nankan/nankan_class_short.mp4 \
+            --thumbnail dist/nankan/short_thumb.jpg \
+            --privacy "$PRIVACY" \
+            --tags "競馬,地方競馬,南関東競馬,大井競馬,川崎競馬,船橋競馬,浦和競馬,競馬予想,格付け,Shorts" \
+            --title "南関東競馬の格付けを完全解説｜昇級・降級と狙い目 #Shorts" \
+            --description "$DESC"
