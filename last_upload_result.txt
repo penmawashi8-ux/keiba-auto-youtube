@@ -1,10 +1,10 @@
-date: 2026-06-27T06:40:06.448813Z
+date: 2026-06-27T07:54:28.639301Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=m1KSUtlmemA title=【メイクデビュー福島6Rレース後コメント】エランヴィータ三浦皇成騎手ら
-OK project=1 video_id=CMN5-sAwyhQ title=【阪神アーバン競馬プレーバック】ここから反攻だ　ジーニアスレノンが3戦ぶり勝利
-OK project=1 video_id=3jxW4_-B-7E title=【メイクデビュー小倉5Rレース後コメント】カエリールークス松山弘平騎手ら
+OK project=1 video_id=k2cyVqxydt8 title=【青函S】3歳牝馬ブラックチャリスが得意の函館で鼻差の勝利　吉田隼人騎手「馬に助
+OK project=1 video_id=gBNOjZRaLnU title=福島競馬開幕初日は異例の高速馬場!芝、ダート、障害の3条件でレコード誕生
+OK project=1 video_id=uQXLh9nbH-g title=【函館記念予想】重い斤量を背負った馬には鬼門とも言える一戦!? 距離延長や小回り
