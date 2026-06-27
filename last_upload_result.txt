@@ -1,10 +1,10 @@
-date: 2026-06-27T05:00:14.815711Z
+date: 2026-06-27T06:40:06.448813Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=QwTLIF0iLpo title=【函館7R】武豊が通算4995勝目　5000勝までマジック「5」!
-OK project=1 video_id=yICofPY8p5c title=また勝った!新種牡馬の高い勝ち上がり率に「勢いヤバすぎ」「単勝買い続けたら…」エ
-OK project=1 video_id=u00EK9JzLlw title=【福島6R新馬戦結果】シャンハイボビー産駒エランヴィータが人気2頭の争いを制す
+OK project=1 video_id=m1KSUtlmemA title=【メイクデビュー福島6Rレース後コメント】エランヴィータ三浦皇成騎手ら
+OK project=1 video_id=CMN5-sAwyhQ title=【阪神アーバン競馬プレーバック】ここから反攻だ　ジーニアスレノンが3戦ぶり勝利
+OK project=1 video_id=3jxW4_-B-7E title=【メイクデビュー小倉5Rレース後コメント】カエリールークス松山弘平騎手ら
