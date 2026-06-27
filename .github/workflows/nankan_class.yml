@@ -22,9 +22,11 @@ on:
         required: false
         default: true
         type: boolean
-  # post-nankan* タグの push でも起動（API dispatch 不可の環境向け）。
+  # 専用ブランチ run-nankan-upload への push でも起動（API dispatch 不可の環境向け）。
   # その場合は public で本編・ショート両方を投稿する。
   push:
+    branches:
+      - "run-nankan-upload"
     tags:
       - "post-nankan*"
 
