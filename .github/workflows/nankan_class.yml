@@ -22,6 +22,11 @@ on:
         required: false
         default: true
         type: boolean
+  # post-nankan* タグの push でも起動（API dispatch 不可の環境向け）。
+  # その場合は public で本編・ショート両方を投稿する。
+  push:
+    tags:
+      - "post-nankan*"
 
 jobs:
   upload:
@@ -40,7 +45,7 @@ jobs:
       GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
       GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
       GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
-      PRIVACY: ${{ inputs.privacy }}
+      PRIVACY: ${{ github.event.inputs.privacy || 'public' }}
 
     steps:
       - uses: actions/checkout@v4
@@ -55,7 +60,7 @@ jobs:
           pip install google-api-python-client google-auth google-auth-oauthlib
 
       - name: Upload 本編(横フル)
-        if: ${{ inputs.post_full }}
+        if: ${{ github.event_name == 'push' || inputs.post_full }}
         run: |
           python scripts/upload_custom_youtube.py \
             --file dist/nankan/nankan_class_full.mp4 \
@@ -67,7 +72,7 @@ jobs:
             --description "$(cat dist/nankan/full_desc.txt)"
 
       - name: Upload ショート(縦) ※本編へ誘導リンク付き
-        if: ${{ inputs.post_short }}
+        if: ${{ github.event_name == 'push' || inputs.post_short }}
         run: |
           FULL_URL=""
           [ -f /tmp/full_url.txt ] && FULL_URL=$(cat /tmp/full_url.txt)
