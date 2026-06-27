@@ -413,37 +413,52 @@ def build_scene(scene, geom, tmp_dir, idx, font_path):
     elif scene == "ladder_down":
         ladder("down")
 
-    # ----- 格付ポイント加算（points） -----
+    # ----- 格付ポイント制の仕組み（points） -----
+    # 着順=ポイント獲得 と 合計→昇級ライン到達 を①②で分け、
+    # 昇級ラインは着順チップの下ではなく「合計バーの右端のゴール」に置く。
     elif scene == "points":
         sz = 40 if port else 38
-        row_y = 360 if port else 280
-        step  = 150 if port else 230
+        # ① 着順に応じてポイント獲得
+        h1_y = 280 if port else 175
+        parts.append(_chip(wf("ph1", "① 着順に応じてポイント獲得"), cx, h1_y,
+                           int(sz * 0.72), C_WHITE, C_DARK, border=12, fp=fp))
+        row_y = h1_y + (78 if port else 70)
+        step  = 150 if port else 220
+        # 1着ほど高ポイント＝大きく金、下位ほど小さく
         for k in range(5):
             cxk = cx + (k - 2) * step
-            parts.append(_chip(wf(f"p{k}", f"{k+1}着"), cxk, row_y, sz,
-                               C_DARK, C_GOLD if k == 0 else C_BLUE,
-                               border=12, fp=fp))
-        # 「→ 合計ポイントで昇級」見出し
-        parts.append(_chip(wf("ptitle", "1〜5着でポイント加算"), cx,
-                           row_y - (90 if port else 80), int(sz*0.8),
-                           C_WHITE, C_DARK, border=12, fp=fp))
-        # ●が順に灯る進捗バー
-        dots_y = row_y + (170 if port else 150)
-        n = 10
-        dstep = 78 if port else 110
-        base_x = cx - (n - 1) * dstep // 2
+            parts.append(_chip(wf(f"p{k}", f"{k+1}着"), cxk, row_y,
+                               sz + (10 - 2 * k), C_DARK,
+                               C_GOLD if k == 0 else C_BLUE, border=12, fp=fp))
+        # ② 合計が昇級ラインを超えたら昇級
+        h2_y = row_y + (150 if port else 130)
+        parts.append(_chip(wf("ph2", "② 合計ポイントが昇級ラインを超えたら昇級"), cx,
+                           h2_y, int(sz * 0.66), C_WHITE, C_DARK, border=12, fp=fp))
+        # 合計ポイントの進捗バー（左から灯る）＋右端に昇級ラインのゴール
+        track_y = h2_y + (95 if port else 82)
+        n = 8
+        dstep = 74 if port else 104
+        base_x = cx - n * dstep // 2          # ゴール分を右に空ける
+        parts.append(_text(wf("sumlbl", "合計pt"), base_x - (120 if port else 150),
+                           track_y - int(sz * 0.2), int(sz * 0.6), C_WHITE, fp))
         for k in range(n):
             x = base_x + k * dstep
-            enable = f"gte(t\\,{0.2 + k*0.22})"
+            enable = f"gte(t\\,{0.3 + k*0.28})"
             parts.append(
-                f"drawtext=text='●':fontfile='{fp}':fontsize={int(sz*1.1)}:"
-                f"fontcolor=0x333333:x={x}-text_w/2:y={dots_y}")
+                f"drawtext=text='●':fontfile='{fp}':fontsize={int(sz*1.0)}:"
+                f"fontcolor=0x355135:x={x}-text_w/2:y={track_y}")
             parts.append(
-                f"drawtext=text='●':fontfile='{fp}':fontsize={int(sz*1.1)}:"
-                f"fontcolor=0x{C_GOLD}:x={x}-text_w/2:y={dots_y}:enable='{enable}'")
-        parts.append(_chip(wf("line", "▲ 昇級ライン"), cx,
-                           dots_y + (90 if port else 80), int(sz*0.8),
-                           C_GOLD, C_DARK, border=10, alpha=PULSE, fp=fp))
+                f"drawtext=text='●':fontfile='{fp}':fontsize={int(sz*1.0)}:"
+                f"fontcolor=0x{C_GOLD}:x={x}-text_w/2:y={track_y}:enable='{enable}'")
+        # 右端ゴール＝昇級ライン（縦バー＋ラベル、点滅）
+        goal_x = base_x + n * dstep
+        parts.append(
+            f"drawtext=text='┃':fontfile='{fp}':fontsize={int(sz*1.7)}:"
+            f"fontcolor=0x{C_GOLD}:x={goal_x}-text_w/2:y={track_y - int(sz*0.35)}:"
+            f"alpha='{PULSE}'")
+        parts.append(_chip(wf("line", "昇級\nライン"), goal_x + (44 if port else 52),
+                           track_y - int(sz * 0.35), int(sz * 0.6),
+                           C_GOLD, C_DARK, border=8, alpha=PULSE, ls=4, fp=fp))
 
     # ----- 編成替えカレンダー（calendar） -----
     elif scene == "calendar":
