@@ -1,111 +1,80 @@
-[2]  [ファクトチェックNG] NG: 元記事に存在しない馬
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2] のスクリプト生成失敗。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【2歳未勝利小倉1Rレース後コメント】シスキンブルーム団野大成騎手ら ---
-[0] Gemini入力本文 345文字: '小倉1Rの2歳未勝利(芝1200m)は1番人気シスキンブルーム(団野大成騎手)が勝利した。勝ちタイムは1分09秒0(重)。3馬身半差の2着に3番人気スマートメモリー、さらに1馬身差の3着に2番人気クリコキアナが入った。\n\u3000シスキンブルームは'
+--- 記事[0]: 新種牡馬ステルヴィオの産駒がJRA初勝利なるか ピリナカピリナに注目だ ---
+[0] Gemini入力本文 341文字: '新種牡馬のステルヴィオの産駒となるピリナカピリナ(牝2、美浦・水野貴広厩舎)が、日曜福島4Rの2歳新馬(牝・芝1200m)でデビュー勝ちを狙う。\n\u3000ピリナカピリナは父ステルヴィオ、母オールプリュネル、母の父ステイゴールドの血統。父は18年の'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 6月27日の出来事一覧/函館・福島・小倉 ---
-[1] Gemini入力本文 439文字: '6月27日の開催(函館・福島・小倉)で発生した競走中の疾病、競走中止などの事象は下記の通り。\n■福島1R 3歳上障害未勝利\nアスクアットバット(セ4、栗東・加藤公太厩舎)\n1周目1号障害飛越着地時につまずいて騎手が落馬したため競走を中止。馬'
+--- 記事[1]: 【AI予想・函館記念】近2走はハイレベルなメンバーが相手で参考外！ 高配当の使者として人工知能が重い印を打った古豪とは ---
+[1] Gemini入力本文 439文字: '今週の日曜日は、函館競馬場で函館記念(GIII)が行われます。\n\u3000函館記念はハンデ戦であることに加え、小回りの函館が舞台。さらに函館競馬場は洋芝のみが使用されているので、主要な競走が行われる中央4場などとは異なる適性が求められる。\n\u3000そのた'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 「ダブルでおめでとう」「手が付けられんw」今村聖奈騎手が師匠の誕生日にきっちりV　ネットでは称賛の声続出 ---
-[2] Gemini入力本文 350文字: 'オークス以来となる“メモリアル”な勝利を上げた今村聖奈騎手に、SNS上で称賛の声が上がっている。6月27日の小倉12R・3歳上1勝クラス(芝1200メートル＝8頭立て)で、今村聖奈騎手＝栗東・寺島良厩舎＝が勝利。ジュウリョクピエロで、JRA'
+--- 記事[2]: ルメール騎手のカフェでフォーエバーヤングの特別展示　BCクラシックの優勝レイ、坂井瑠星騎手の勝負服など ---
+[2] Gemini入力本文 345文字: '京都市内でクリストフ・ルメール騎手＝栗東・フリー＝が展開するカフェ「CL\u3000Fashion＆Cafe」のインスタグラムが、6月27日に更新された。昨秋にブリーダーズCクラシックで優勝したフォーエバーヤングの特別展示の様子が掲載されている。\n\t'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 221文字]: '競馬速報です。\n6月27日の開催、函館・福島・小倉で発生した競走中の疾病や競走中止などの事象についてお伝えします。福島1Rの3歳上障害未勝利において、アスクアットバットが1周目1号障害飛越着地時につまずき、騎手が落馬したため競走を中止しました。この馬と田村太雅騎手ともに異状はありません。また、同じレースでトラマンダーレが2号障害飛越時に、先に競走を中止したアスクアットバットの影響で騎手がバランスをくずし落馬したため、競走を中止しています。'
-[1]  [重複除去] 221文字 → 220文字
+[0]  [Gemini生出力 212文字]: '本日の競馬ニュースです。\n新種牡馬のステルヴィオの産駒となるピリナカピリナが、日曜福島4Rの2歳新馬でデビュー勝ちを狙います。ピリナカピリナは父ステルヴィオ、母オールプリュネル、母の父ステイゴールドの血統です。父ステルヴィオは18年のマイルチャンピオンシップの覇者で、現2歳がファーストクロップとなります。母オールプリュネルは未勝利ですが、伯父のナカヤマフェスタは10年に宝塚記念を制し、凱旋門賞でも2着に健闘した名馬です。'
+[0]  [重複除去] 212文字 → 211文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (211文字)
+[0]  プレビュー: 本日の競馬ニュースです。新種牡馬のステルヴィオの産駒となるピリナカピリナが、日曜福島4Rの2歳新馬でデビュー勝ちを狙います。ピリナカピリナは父ステルヴィオ、母オ...
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[2]  [Gemini生出力 266文字]: '今週の競馬注目情報をお伝えします。\n今村聖奈騎手が6月27日の小倉12R・3歳上1勝クラス、芝1200メートル、8頭立てで勝利を収めました。この勝利は、JRA女性騎手として史上初めてG1勝利を挙げた5月24日のオークス以来のJRA勝利となります。オークスではジュウリョクピエロに騎乗し、歴史的な勝利を飾っていました。今回の小倉12Rでは、自厩舎のタナスーペルノーバに騎乗し、1番人気に推された中で勝利。師匠の誕生日にきっちり勝利を挙げたことで、SNS上では「ダブルでおめでとう」「手が付けられんw」といった称賛の声が続出しています。'
-[2]  [重複除去] 266文字 → 265文字
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 439文字）
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 225文字]: '本日の競馬ニュースです。京都市内でクリストフ・ルメール騎手が展開するカフェ「CL Fashion＆Cafe」のインスタグラムが、6月27日に更新されました。そこには、昨秋にブリーダーズCクラシックで優勝したフォーエバーヤングの特別展示の様子が掲載されています。展示されているのは、昨年のBCクラシックを制したときのゼッケン、優勝レイ、矢作調教師の帽子、そして坂井瑠星騎手が着用した勝負服と騎手ズボンです。この特別展示は、7月17日までとなっています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (225文字)
+[2]  プレビュー: 本日の競馬ニュースです。京都市内でクリストフ・ルメール騎手が展開するカフェ「CL Fashion＆Cafe」のインスタグラムが、6月27日に更新されました。そこ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 320文字]: '重要な競馬ニュースをお伝えします。今週の日曜日には、函館競馬場で函館記念(GIII)が行われます。函館記念はハンデ戦であり、小回りの函館が舞台です。函館競馬場は洋芝のみが使用されているため、主要な競走が行われる中央4場などとは異なる適性が求められます。このため、函館記念は波乱になることも珍しくありません。過去10年の函館記念では、6番人気以下が[3-7-6-91]の成績を残し、単勝回収率101％、複勝回収率130％と活躍しています。10番人気以下に限っても[2-4-4-...]というデータがあります。AI予想では、近2走がハイレベルなメンバー相手で参考外と判断され、高配当の使者として人工知能が重い印を打った古豪がいるとされています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (220文字)
-[1]  プレビュー: 競馬速報です。6月27日の開催、函館・福島・小倉で発生した競走中の疾病や競走中止などの事象についてお伝えします。福島1Rの3歳上障害未勝利において、アスクアット...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 215文字]: '最新のレース情報が入ってきました。小倉1Rの2歳未勝利戦は、1番人気のシスキンブルームが団野大成騎手とともに勝利を収めました。勝ちタイムは重馬場で1分09秒0でした。シスキンブルームは栗東の斉藤崇史厩舎に所属する2歳牝馬で、父はシスキン、母はボンジュールココロです。これで通算成績は2戦1勝となりました。レースでは3馬身半差の2着に3番人気のスマートメモリーが入り、さらに1馬身差の3着には2番人気のクリコキアナが入着しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (215文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。小倉1Rの2歳未勝利戦は、1番人気のシスキンブルームが団野大成騎手とともに勝利を収めました。勝ちタイムは重馬場で1分09秒0で...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 237文字]: '今週の競馬注目情報をお伝えします。6月27日、小倉12Rの3歳上1勝クラス、芝1200メートル、8頭立てのレースで、今村聖奈騎手が勝利を収めました。栗東・寺島良厩舎所属の今村聖奈騎手は、師匠の誕生日にきっちりVを飾りました。ジュウリョクピエロに騎乗しての勝利で、JRA女性騎手として史上初めてG1勝利を挙げた5月24日のオークス以来となるJRA勝利です。この“メモリアル”な勝利に対し、SNS上では「ダブルでおめでとう」「手が付けられんw」といった称賛の声が続出しています。'
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 4文字]: 'SKIP'
-[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 350文字）
-[2] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[1]  → output/script_1.txt 保存 (317文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。今週の日曜日には、函館競馬場で函館記念(GIII)が行われます。函館記念はハンデ戦であり、小回りの函館が舞台です。函館競馬場は...
+
+3 件の脚本を生成しました。
