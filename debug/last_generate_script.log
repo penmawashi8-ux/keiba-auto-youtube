@@ -1,75 +1,80 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
 [2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【函館7R】武豊が通算4995勝目　5000勝までマジック「5」! ---
-[0] Gemini入力本文 697文字: '27日の函館7R・3歳以上1勝クラス(芝2000メートル)はドウアドバンテージ(牡5＝四位、父ハーツクライ)がV。騎乗した武豊(57)は通算4995勝目をマーク。5000勝まで、あと5勝とした。\n\u3000鞍上は「前半はあまり進んでいかなかったので'
+--- 記事[0]: 【メイクデビュー福島6Rレース後コメント】エランヴィータ三浦皇成騎手ら ---
+[0] Gemini入力本文 343文字: '福島6Rのメイクデビュー福島(ダート1150m)は2番人気エランヴィータ(三浦皇成騎手)が勝利した。勝ちタイムは1分09秒0(稍重)。1馬身半差の2着に1番人気ムーンベリル、さらに7馬身差の3着に3番人気エコロメジャーが入った。\n\u3000エランヴ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: また勝った!新種牡馬の高い勝ち上がり率に「勢いヤバすぎ」「単勝買い続けたら…」エフフォーリア産駒が函館で4勝目 ---
-[1] Gemini入力本文 382文字: '今週も勝ち上がりを見せた新種牡馬にSNSも驚きの反応が広がっている。27日の函館5R・2歳新馬(芝1200メートル)でエフフォーリア産駒のアゴルディーノ(牡2歳、美浦・田村康仁厩舎)が勝利を飾り、同産駒4頭目の勝ち上がりとなった。Xでも「エ'
+--- 記事[1]: 【阪神アーバン競馬プレーバック】ここから反攻だ　ジーニアスレノンが3戦ぶり勝利 ---
+[1] Gemini入力本文 346文字: '24日のメーン11R「夏至特別」(A2B1、ダート1400メートル)は広瀬航騎乗の2番人気ジーニアスレノン(牡4＝保利平、父カリフォルニアクローム)が3馬身差の快勝。3戦ぶりの勝利を手にした。\n\u3000同馬と1番人気のラピドフィオーレ(牡4＝田中'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【福島6R新馬戦結果】シャンハイボビー産駒エランヴィータが人気2頭の争いを制す ---
-[2] Gemini入力本文 349文字: '27日、福島競馬場6Rで行われた新馬戦(2歳・ダ1150m・10頭)は、好位追走から直線で前を捕らえた三浦皇成騎手騎乗の2番人気エランヴィータ(牡2、美浦・柄崎将寿厩舎)が、逃げ粘った1番人気ムーンベリル(牝2、栗東・西村真幸厩舎)に1.1'
+--- 記事[2]: 【メイクデビュー小倉5Rレース後コメント】カエリールークス松山弘平騎手ら ---
+[2] Gemini入力本文 514文字: '小倉5Rのメイクデビュー小倉(九州産馬・芝1200m)は1番人気カエリールークス(松山弘平騎手)が勝利した。勝ちタイムは1分10秒1(稍重)。1馬身1/4差の2着に2番人気リエーヴェ、さらに2馬身半差の3着に8番人気ヘキレキが入った。\n\u3000カ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 283文字]: '重要な競馬ニュースをお伝えします。新種牡馬の勝ち上がり率にSNSも驚きの反応が広がっています。27日の函館5R・2歳新馬、芝1200メートルで、エフフォーリア産駒のアゴルディーノが勝利を飾りました。アゴルディーノは美浦の田村康仁厩舎所属の牡2歳です。これにより、エフフォーリア産駒は函館で4勝目、同産駒4頭目の勝ち上がりとなりました。Xでも「エフフォーリア産駒」がトレンド上位に入るなど、その勢いが注目を集めています。2番人気に推されたアゴルディーノは横山和生騎手を背にスタートし、少し出負け気味でしたが、すぐに行き脚が付き、ゴール前で狭い間を割って突き抜けました。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (283文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。新種牡馬の勝ち上がり率にSNSも驚きの反応が広がっています。27日の函館5R・2歳新馬、芝1200メートルで、エフフォーリア産...
-  HTTP 200
-[0]  [Gemini生出力 286文字]: '競馬速報です。27日の函館7R、3歳以上1勝クラス芝2000メートルで、ドウアドバンテージが勝利しました。このレースに騎乗した武豊は通算4995勝目をマークし、5000勝まであと5勝としました。武豊はレース後、「前半はあまり進んでいかなかったので、そのまま進めて。3、4角もそんなに手応えが良くなかったので、あまり大外を回さないようにした。直線に向いて外へ出れてからは良い脚だった」とドウアドバンテージを称えました。また、武豊は24日、自身のブログを更新し、通算勝利数がJRA 4663勝、地方212勝、海外119勝（いずれも24日時点）と判明したことを明かしていました。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (286文字)
-[0]  プレビュー: 競馬速報です。27日の函館7R、3歳以上1勝クラス芝2000メートルで、ドウアドバンテージが勝利しました。このレースに騎乗した武豊は通算4995勝目をマークし、...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 211文字]: '今週の競馬注目情報をお伝えします。\n27日、福島競馬場6Rで行われた2歳ダート1150mの新馬戦は、10頭立てで争われました。三浦皇成騎手騎乗の2番人気エランヴィータが好位追走から直線で前を捕らえ、逃げ粘った1番人気ムーンベリルに1.1/2馬身差をつけ優勝しました。勝ちタイムは稍重で1分09秒0でした。さらに7馬身差の3着には、3番人気のエコロメジャーが入っています。優勝したエランヴィータは、シャンハイボビー産駒です。'
-[2]  [重複除去] 211文字 → 210文字
+[2]  [Gemini生出力 219文字]: '今日の競馬情報です。\n小倉5Rのメイクデビュー小倉、九州産馬・芝1200mのレースは、1番人気カエリールークスが松山弘平騎手とのコンビで勝利しました。勝ちタイムは稍重の馬場で1分10秒1でした。2着には2番人気リエーヴェが1馬身1/4差で入り、さらに2馬身半差の3着には8番人気ヘキレキが入着しました。勝利したカエリールークスは、栗東・佐藤悠太厩舎所属の2歳牝馬で、父はシスキン、母はファッチョイオ(母の父Bated Breath)です。'
+[2]  [重複除去] 219文字 → 218文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (210文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。27日、福島競馬場6Rで行われた2歳ダート1150mの新馬戦は、10頭立てで争われました。三浦皇成騎手騎乗の2番人気エランヴィ...
+[2]  → output/script_2.txt 保存 (218文字)
+[2]  プレビュー: 今日の競馬情報です。小倉5Rのメイクデビュー小倉、九州産馬・芝1200mのレースは、1番人気カエリールークスが松山弘平騎手とのコンビで勝利しました。勝ちタイムは...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 200
+[0]  [Gemini生出力 263文字]: '今日の競馬情報です。福島6Rのメイクデビュー福島、ダート1150mは、2番人気のエランヴィータが三浦皇成騎手で勝利しました。勝ちタイムは1分09秒0、馬場は稍重でした。1馬身半差の2着には1番人気のムーンベリルが入り、さらに7馬身差の3着には3番人気のエコロメジャーが入っています。勝利したエランヴィータは、美浦の柄崎将寿厩舎に所属する2歳牡馬です。父はシャンハイボビー、母はアップトゥユー、母の父はサウスヴィグラスです。レース後、1着となったエランヴィータの三浦皇成騎手からは「一週前追い切?..」とのコメントがありました。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (261文字)
+[0]  プレビュー: 今日の競馬情報です。福島6Rのメイクデビュー福島、ダート1150mは、2番人気のエランヴィータが三浦皇成騎手で勝利しました。勝ちタイムは1分09秒0、馬場は稍重...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 224文字]: '本日の競馬ニュースです。24日のメーン11R「夏至特別」は、広瀬航騎乗の2番人気ジーニアスレノンが3馬身差の快勝を収め、3戦ぶりの勝利を手に入れました。このレースは、A2B1、ダート1400メートルで行われました。ジーニアスレノンと同馬と1番人気のラピドフィオーレのみ単勝オッズが1桁台で、戦前の予想通り一騎打ちとなりました。両馬は仲良く3、4番手を追走し、3コーナーからはマッチレースの展開でしたが、ジーニアスレノンは余力を十分に残していました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (224文字)
+[1]  プレビュー: 本日の競馬ニュースです。24日のメーン11R「夏至特別」は、広瀬航騎乗の2番人気ジーニアスレノンが3馬身差の快勝を収め、3戦ぶりの勝利を手に入れました。このレー...
 
 3 件の脚本を生成しました。
