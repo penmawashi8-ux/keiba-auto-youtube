@@ -44,8 +44,11 @@ VOLUME = "+0%"
 FPS          = 30
 BGM_VOLUME   = 0.12
 ENDING_DUR   = 3.5
+ENDING_DUR_CTA = 4.2           # 本編誘導カードは読めるよう少し長め（等速）
 GAP          = 0.35            # 行間の無音（読みやすさ）
 SERIES_LABEL = "南関東 格付け講座"
+CTA_BADGE    = "▶本編で詳しく"   # ショートに常時表示する本編誘導バッジ
+CTA_ENDING   = "詳しくは本編で！\n▶ 概要欄・コメントから"
 
 # 競馬場のターフをイメージしたディープグリーン基調のグラデーション
 GRAD_TOP    = "0x0d3b1e"
@@ -527,28 +530,36 @@ def build_scene(scene, geom, tmp_dir, idx, font_path):
 
 
 def make_clip(idx, text, audio_path, duration, font_path, tmp_dir, geom,
-              is_ending=False, scene="plain") -> str:
-    """背景(グラデ)+図解シーン+字幕+音声を持つ1クリップを生成。"""
+              is_ending=False, scene="plain", cta=False) -> str:
+    """背景(グラデ)+図解シーン+字幕+音声を持つ1クリップを生成。
+    cta=True のときは本編誘導バッジ／誘導エンディングを表示（ショート用）。"""
     W, H = geom["w"], geom["h"]
     clip_path  = f"{tmp_dir}/clip_{idx:04d}.mp4"
     label_file = f"{tmp_dir}/label.txt"
     text_file  = f"{tmp_dir}/text_{idx:04d}.txt"
+    badge_file = f"{tmp_dir}/badge.txt"
     duration   = max(duration, 0.6)
 
     Path(label_file).write_text(SERIES_LABEL, encoding="utf-8")
-    Path(text_file).write_text(
-        "チャンネル登録お願いします\nまた次の競馬でお会いしましょう" if is_ending
-        else wrap_text(text, geom["sub_chars"]),
-        encoding="utf-8",
-    )
+    if is_ending:
+        end_text = CTA_ENDING if cta else \
+            "チャンネル登録お願いします\nまた次の競馬でお会いしましょう"
+        Path(text_file).write_text(end_text, encoding="utf-8")
+    else:
+        Path(text_file).write_text(wrap_text(text, geom["sub_chars"]),
+                                   encoding="utf-8")
+    Path(badge_file).write_text(CTA_BADGE, encoding="utf-8")
 
+    # d は gradients ソースの総尺。clip長より十分長く取らないと映像が途中で
+    # 打ち切られA/Vがズレるため、duration+余裕を確保する。
     src = (f"gradients=s={W}x{H}:c0={GRAD_TOP}:c1={GRAD_BOTTOM}:"
-           f"x0=0:y0=0:x1=0:y1={H}:type=linear:d=1:r={FPS}")
+           f"x0=0:y0=0:x1=0:y1={H}:type=linear:d={duration + 2:.2f}:r={FPS}")
     chain = "[0:v]vignette=PI/4.2,format=yuv420p"
 
     fp = font_path.replace("'", "\\'")
     lf = label_file.replace("'", "\\'")
     tf = text_file.replace("'", "\\'")
+    bf = badge_file.replace("'", "\\'")
 
     # 図解シーン（字幕より下のレイヤー）
     if not is_ending:
@@ -559,6 +570,14 @@ def make_clip(idx, text, audio_path, duration, font_path, tmp_dir, geom,
               f"x=(w-text_w)/2:y={geom['label_y']}:"
               f"box=1:boxcolor=0x000000@0.55:boxborderw=16:"
               f"borderw=2:bordercolor=0x06251a")
+
+    # 本編誘導バッジ（ショートの本編クリップに常時・右上）
+    if cta and not is_ending:
+        chain += (f",drawtext=textfile='{bf}':fontfile='{fp}':"
+                  f"fontsize=34:fontcolor=0x000000:"
+                  f"x=w-text_w-28:y={geom['label_y']+4}:"
+                  f"box=1:boxcolor=0xFFD24A@0.92:boxborderw=12:"
+                  f"borderw=1:bordercolor=0x06251a")
 
     if is_ending:
         chain += (f",drawtext=textfile='{tf}':fontfile='{fp}':"
@@ -573,12 +592,15 @@ def make_clip(idx, text, audio_path, duration, font_path, tmp_dir, geom,
                   f"borderw=2:bordercolor=0x000000")
     chain += "[vout]"
 
+    # 音声は映像長(duration)に合わせて無音パディング（A/V長を厳密一致させる）
+    chain += ";[1:a]aresample=44100,apad[aout]"
+
     cmd = ["ffmpeg", "-y", "-f", "lavfi", "-i", src]
     if audio_path:
         cmd += ["-i", audio_path]
     else:
         cmd += ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
-    cmd += ["-filter_complex", chain, "-map", "[vout]", "-map", "1:a",
+    cmd += ["-filter_complex", chain, "-map", "[vout]", "-map", "[aout]",
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
             "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
             "-t", f"{duration}", clip_path]
@@ -595,7 +617,19 @@ def make_clip(idx, text, audio_path, duration, font_path, tmp_dir, geom,
     return clip_path
 
 
-def build_video(script_path, orientation, out_path, font_path, bgm_path, engine):
+def _concat(clips, out, tmp_dir, tag):
+    lst = f"{tmp_dir}/concat_{tag}.txt"
+    with open(lst, "w") as f:
+        for p in clips:
+            f.write(f"file '{p}'\n")
+    subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst,
+                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2", out],
+                   check=True, capture_output=True)
+
+
+def build_video(script_path, orientation, out_path, font_path, bgm_path, engine,
+                speed=1.0, cta=False):
     geom = geometry(orientation)
     Path("output").mkdir(exist_ok=True)
     tmp_dir = f"/tmp/nankan_{orientation}"
@@ -604,29 +638,38 @@ def build_video(script_path, orientation, out_path, font_path, bgm_path, engine)
 
     lines = load_narration(script_path)
     print(f"\n=== {orientation} ({geom['w']}x{geom['h']}) 生成開始 ===")
-    print(f"  原稿: {script_path}  ({len(lines)}行) / エンジン: {engine}")
+    print(f"  原稿: {script_path} ({len(lines)}行) / エンジン: {engine} / "
+          f"速度: {speed}x / CTA: {cta}")
 
-    clip_paths = []
+    narration_clips = []
     for i, line in enumerate(lines):
         audio, dur = synth_line(engine, line, tmp_dir, i)
         scene = pick_scene(line)
-        clip_paths.append(
-            make_clip(i, line, audio, dur + GAP, font_path, tmp_dir, geom, scene=scene))
+        narration_clips.append(
+            make_clip(i, line, audio, dur + GAP, font_path, tmp_dir, geom,
+                      scene=scene, cta=cta))
         print(f"  [{i+1}/{len(lines)}] {dur+GAP:.2f}s [{scene}] 「{line[:22]}」")
 
-    clip_paths.append(
-        make_clip(len(lines), "", None, ENDING_DUR, font_path, tmp_dir, geom,
-                  is_ending=True))
+    # ナレーション本編を連結 → 必要なら倍速（映像setpts + 音声atempo）
+    body = f"{tmp_dir}/body.mp4"
+    _concat(narration_clips, body, tmp_dir, "body")
+    if abs(speed - 1.0) > 1e-3:
+        fast = f"{tmp_dir}/body_fast.mp4"
+        subprocess.run(
+            ["ffmpeg", "-y", "-i", body, "-filter_complex",
+             f"[0:v]setpts=PTS/{speed}[v];[0:a]atempo={speed}[a]",
+             "-map", "[v]", "-map", "[a]",
+             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
+             "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2", fast],
+            check=True, capture_output=True)
+        body = fast
 
-    concat_path = f"{tmp_dir}/concat.txt"
-    with open(concat_path, "w") as f:
-        for p in clip_paths:
-            f.write(f"file '{p}'\n")
-
+    # エンディング（誘導カードは等速・読める尺）を後ろに連結
+    ending = make_clip(len(lines), "", None,
+                       ENDING_DUR_CTA if cta else ENDING_DUR,
+                       font_path, tmp_dir, geom, is_ending=True, cta=cta)
     base = f"{tmp_dir}/base.mp4"
-    subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_path,
-                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "fast",
-                    "-c:a", "aac", "-b:a", "192k", base], check=True, capture_output=True)
+    _concat([body, ending], base, tmp_dir, "final")
 
     if bgm_path:
         subprocess.run(
@@ -703,6 +746,8 @@ def main():
     ap.add_argument("--script")
     ap.add_argument("--orientation", choices=["portrait", "landscape"])
     ap.add_argument("--out")
+    ap.add_argument("--speed", type=float)
+    ap.add_argument("--cta", action="store_true")
     ap.add_argument("--preview-scenes", action="store_true")
     args = ap.parse_args()
 
@@ -718,15 +763,20 @@ def main():
     bgm_path = find_bgm()
     engine = choose_engine()
 
+    # (script, orientation, out, speed, cta)
     if args.script and args.orientation and args.out:
-        jobs = [(args.script, args.orientation, args.out)]
+        spd = args.speed if args.speed else 1.0
+        jobs = [(args.script, args.orientation, args.out, spd, args.cta)]
     else:
         jobs = [
-            ("data/nankan_class_short.txt", "portrait",  "output/nankan_class_short.mp4"),
-            ("data/nankan_class_full.txt",  "landscape", "output/nankan_class_full.mp4"),
+            # ショート: 2倍速 + 本編誘導CTA
+            ("data/nankan_class_short.txt", "portrait",  "output/nankan_class_short.mp4", 2.0, True),
+            # 本編(フル): 1.4倍速
+            ("data/nankan_class_full.txt",  "landscape", "output/nankan_class_full.mp4", 1.4, False),
         ]
-    for script, orientation, out in jobs:
-        build_video(script, orientation, out, font_path, bgm_path, engine)
+    for script, orientation, out, speed, cta in jobs:
+        build_video(script, orientation, out, font_path, bgm_path, engine,
+                    speed=speed, cta=cta)
 
     print("\n=== すべて完了 ===")
 
