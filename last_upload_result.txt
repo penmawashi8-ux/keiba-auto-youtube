@@ -1,10 +1,10 @@
-date: 2026-06-26T13:22:54.500679Z
+date: 2026-06-27T00:24:14.835115Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-2dfw_hCKwQ title=Ｇ１・３勝馬エンブロイダリーは仏Ｇ１ジャックルマロワ賞を見送って秋に備える　前走
-OK project=1 video_id=sgzGL_V4PFk title=【注目馬動向】日本ダービー2着後に骨折判明のパントルナイーフは復帰に1年以上の診
-OK project=1 video_id=rVAKpP_g67Y title=【ラジオNIKKEI賞・金曜気配】ディールメーカーは最終調整でも活気十分　大和田
+OK project=1 video_id=VZvCyATWNkQ title=フェアリーS覇者のブラックチャリス 距離短縮で巻き返しだ
+OK project=1 video_id=3ApaTQosTKA title=バーデンバーデンCは中波乱傾向 8番人気以下の伏兵にも警戒
+OK project=1 video_id=d8dQI6deRrA title=【27日の注目・小倉9R八代特別】伯父は日本ダービー馬マカヒキ　秋の飛躍へサヴォ
