@@ -27,9 +27,14 @@
 import argparse
 import asyncio
 import glob
+import os
 import shutil
+import ssl
 import subprocess
 import sys
+import time
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 VOICE  = "ja-JP-NanamiNeural"   # 解説向け女性ナレーター（edge-tts）
@@ -173,11 +178,65 @@ def oj_synth(text: str, out_wav: str) -> bool:
         return False
 
 
+_G_CTX = ssl.create_default_context()
+for _ca in ("/root/.ccr/ca-bundle.crt", os.environ.get("SSL_CERT_FILE"),
+            os.environ.get("REQUESTS_CA_BUNDLE")):
+    if _ca and Path(_ca).exists():
+        try:
+            _G_CTX.load_verify_locations(cafile=_ca)
+        except Exception:
+            pass
+
+
+def _split_for_tts(text: str, maxlen: int = 160) -> list[str]:
+    """translate_tts の長さ制限対策。句読点で maxlen 以下に分割。"""
+    if len(text) <= maxlen:
+        return [text]
+    out, cur = [], ""
+    for ch in text:
+        cur += ch
+        if ch in "、。！？" and len(cur) >= maxlen * 0.6:
+            out.append(cur)
+            cur = ""
+    if cur:
+        out.append(cur)
+    return out or [text]
+
+
+def google_synth(text: str, out_mp3: str) -> bool:
+    """Google 翻訳の TTS（translate.googleapis.com）で自然な日本語音声を合成。
+    ニューラル系の edge-tts が使えない環境向けの自然声フォールバック。"""
+    data = b""
+    for chunk in _split_for_tts(text):
+        q = urllib.parse.quote(chunk)
+        url = ("https://translate.googleapis.com/translate_tts"
+               f"?ie=UTF-8&client=gtx&tl=ja&q={q}")
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        ok = False
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=20, context=_G_CTX) as r:
+                    data += r.read()
+                ok = True
+                break
+            except Exception:
+                time.sleep(1.2 * (attempt + 1))
+        if not ok:
+            return False
+    if len(data) < 400:
+        return False
+    Path(out_mp3).write_bytes(data)
+    return True
+
+
 def choose_engine() -> str:
     _trust_proxy_ca()
     if edge_synth("テスト", "/tmp/_engine_probe.mp3"):
         return "edge"
-    print("  [情報] edge-tts が使用不可のため pyopenjtalk(オフライン) に切替", file=sys.stderr)
+    if google_synth("テスト", "/tmp/_engine_probe_g.mp3"):
+        print("  [情報] edge-tts不可 → Google音声(自然声)を使用", file=sys.stderr)
+        return "google"
+    print("  [情報] ネットTTS不可 → pyopenjtalk(オフライン機械音声)に切替", file=sys.stderr)
     return "oj"
 
 
@@ -186,7 +245,12 @@ def synth_line(engine: str, text: str, tmp_dir: str, idx: int) -> tuple[str, flo
         out = f"{tmp_dir}/a_{idx:04d}.mp3"
         if edge_synth(text, out):
             return out, probe_duration(out)
-        engine = "oj"  # 途中で失敗したら以降フォールバック
+        engine = "google"
+    if engine == "google":
+        out = f"{tmp_dir}/a_{idx:04d}.mp3"
+        if google_synth(text, out):
+            return out, probe_duration(out)
+        engine = "oj"
     out = f"{tmp_dir}/a_{idx:04d}.wav"
     if oj_synth(text, out):
         return out, probe_duration(out)
@@ -230,24 +294,37 @@ def wrap_text(text: str, max_chars: int) -> str:
 #   テキストは textfile= でファイル経由（エスケープ回避）。
 # ---------------------------------------------------------------------------
 def pick_scene(line: str) -> str:
-    """ナレーション1行の内容から表示する図解シーンを選ぶ。"""
+    """ナレーション1行の内容から表示する図解シーンを選ぶ。
+    ※ ナレーションと図がズレないよう、判定の優先順位が重要。
+       「上のクラスへ昇級」のような文は『ポイント』の語が含まれても
+       まず昇級アニメ(ladder_up)を出す。"""
     s = line
     def has(*ws): return any(w in s for w in ws)
+
+    # 1) イントロ（4競馬場）
     if has("大井", "4つの競馬場", "4競馬場"):
         return "intro"
-    if has("昇級初戦", "取りこぼし"):
+    # 2) 昇級初戦の注意（最優先で拾う）
+    if has("昇級初戦", "取りこぼし", "慎重"):
         return "caution"
-    if has("狙い目", "妙味", "配当", "リセット"):
+    # 3) 狙い目チャート（「狙い目」「力量差リセット」など）
+    if has("狙い目", "妙味", "配当", "力量差", "実力馬", "格下相手"):
         return "target"
-    if has("年末年始", "馬齢", "上半期", "下半期", "編成替え", "年に2回", "年2回"):
-        return "calendar"
-    if has("ポイント", "1着から5着", "1着から", "5着", "賞金"):
-        return "points"
-    if has("降級", "落ちて", "下のクラス"):
-        return "ladder_down"
-    if has("昇級", "上のクラス", "積み", "リセットされ"):
+    # 4) 昇級（上方向アニメ）— 「ポイント」より先に判定
+    if has("昇級", "上のクラス", "積み直し", "最低ポイント", "ポイントにリセット"):
         return "ladder_up"
-    if has("A1", "8つ", "8段階", "C3", "クラスは", "B1、B2", "別の編成"):
+    # 5) 編成替えカレンダー（馬齢降級もここ）
+    if has("年末年始", "馬齢", "上半期", "下半期", "編成替え", "年に2回", "年2回",
+           "2か月", "2ヶ月", "顔ぶれ", "組み直"):
+        return "calendar"
+    # 6) 降級（下方向アニメ）
+    if has("降級", "落ちて", "1つ下", "下のクラス", "近3走", "近走成績", "振るわない"):
+        return "ladder_down"
+    # 7) 格付ポイント制の仕組み
+    if has("ポイント", "1着から5着", "着ポイント", "賞金", "加算", "合計"):
+        return "points"
+    # 8) クラス階層図
+    if has("A1", "8つ", "8段階", "C3", "クラスは", "クラスに", "B1", "別の編成", "格付け"):
         return "ladder"
     return "plain"
 
