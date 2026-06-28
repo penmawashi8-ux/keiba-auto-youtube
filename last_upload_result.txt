@@ -1,10 +1,10 @@
-date: 2026-06-28T10:01:35.633277Z
+date: 2026-06-28T11:16:18.076145Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ArtC2qyhVdc title=【盛岡・サファイア賞結果】セイクリスティーナが断然人気に応えて重賞7勝目
-OK project=1 video_id=ooAQMErFBOI title=【ラジオNIKKEI賞レース後コメント】サノノグレーター田辺裕信騎手ら
-OK project=1 video_id=9I3LNyxrvPM title=【函館記念】重賞初制覇の小林美駒は開催4日間の騎乗停止　ゴール前斜行で被害馬陣営
+OK project=1 video_id=DpLrGPrgtOE title=【金沢競馬】白毛一族出身でも鹿毛　シンリミテスが金沢サマーC制覇　祖母はユキチャ
+OK project=1 video_id=TcO5jIpvWRw title=【盛岡競馬】セイクリスティーナがサファイア賞で重賞7勝目　芝は負けなしの3戦全勝
+OK project=1 video_id=pCvDzlqRxrg title=【POG】オジュウチョウサンの初年度産駒がついにデビュー　タクミオジュウは7月1
