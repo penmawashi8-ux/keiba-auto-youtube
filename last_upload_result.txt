@@ -1,10 +1,10 @@
-date: 2026-06-28T08:22:49.253000Z
+date: 2026-06-28T10:01:35.633277Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZPT6564b6pg title=【メイクデビュー福島4Rレース後コメント】ジーティーマイカ松山弘平騎手ら
-OK project=1 video_id=X5ZZWTliLGI title=【ラジオNIKKEI賞】2番人気の重賞初挑戦リッツパーティーは3着　横山武史騎手
-OK project=1 video_id=aICDDCZY_-U title=【ラジオNIKKEI賞】出遅れ響いたローベルクランツはまさかの11着　松山弘平騎
+OK project=1 video_id=ArtC2qyhVdc title=【盛岡・サファイア賞結果】セイクリスティーナが断然人気に応えて重賞7勝目
+OK project=1 video_id=ooAQMErFBOI title=【ラジオNIKKEI賞レース後コメント】サノノグレーター田辺裕信騎手ら
+OK project=1 video_id=9I3LNyxrvPM title=【函館記念】重賞初制覇の小林美駒は開催4日間の騎乗停止　ゴール前斜行で被害馬陣営
