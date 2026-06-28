@@ -1,47 +1,75 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【金沢競馬】白毛一族出身でも鹿毛　シンリミテスが金沢サマーC制覇　祖母はユキチャン ---
-[0] Gemini入力本文 688文字: '第1回金沢サマーCは6月28日、金沢競馬場で古馬6頭がダート1700メートルを争った。先手を奪った1番人気のシンリミテスが直線で後続を突き放し、ダイヤモンドラインに7馬身差をつけて優勝。重賞2勝目を飾った。鞍上は加藤翔馬騎手。\n\t\t\t\t\u3000同'
+--- 記事[0]: 【帯広・柏林賞結果】スターイチバンが断然人気に応えて圧勝 ---
+[0] Gemini入力本文 536文字: '28日、帯広競馬場で行われた第20回柏林賞(4歳・重賞・200m・1着賞金250万円)は、第2障害を先頭で下って後続を突き放した阿部優哉騎手騎乗の1番人気スターイチバン(牡4、ばんえい・坂本東一厩舎、積載重量720kg)が、4番人気キョウエ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【盛岡競馬】セイクリスティーナがサファイア賞で重賞7勝目　芝は負けなしの3戦全勝 ---
-[1] Gemini入力本文 719文字: '第19回サファイア賞は6月28日、盛岡競馬場で芝巧者の3歳馬12頭が芝1700メートルを争った。単勝1・3倍の断然人気に推されたセイクリスティーナが直線で抜け出し、ソラーロに3馬身差をつけて優勝。鞍上は山本聡哉騎手。\n\t\t\t\t\u3000同馬は若鮎賞'
+--- 記事[1]: 【ばんえい競馬】スターイチバンが柏林賞を制覇　昨年のばんえい大賞典馬 ---
+[1] Gemini入力本文 688文字: 'ばんえい競馬の第20回柏林賞は6月28日、帯広競馬場で4歳馬10頭が200メートルを争った。単勝1・3倍の1番人気に推されたスターイチバンがキョウエイエースに10秒8差をつけて優勝した。鞍上は昨年12月デビューの阿部優哉騎手。\n\t\t\t\t\u3000同'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【POG】オジュウチョウサンの初年度産駒がついにデビュー　タクミオジュウは7月12日の福島・芝1800メートル戦を目指す ---
-[2] Gemini入力本文 349文字: 'JG1を9勝し、26年度の顕彰馬に選定された“障害界の絶対王者”オジュウチョウサン。24年に誕生した初年度産駒が、いよいよデビューを迎える。\n\t\t\t\t\u3000タクミオジュウ(牡2歳、美浦・小島茂之厩舎、父オジュウチョウサン)は、7月12日の福島5'
+--- 記事[2]: 【北九州記念展望】新星フリッカージャブが1年ぶりの小倉で重賞初タイトルだ ---
+[2] Gemini入力本文 340文字: '夏コク2週目のメインはサマースプリントシリーズ第2戦「第61回北九州記念」(7月5日、小倉)。ハンデ戦に多士済々のメンバーがそろい、馬券的な魅力もたっぷりだ。\n\u3000注目は速さで勝る新星フリッカージャブ。昨夏の小倉で2連勝し、素質が開花。1勝ク'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 234文字]: '今週の競馬注目情報をお伝えします。\nJG1を9勝し、26年度の顕彰馬に選定された“障害界の絶対王者”オジュウチョウサンの初年度産駒が、いよいよデビューを迎えます。\n24年に誕生した産駒のうち、タクミオジュウは7月12日の福島5R・2歳新馬の芝1800メートル戦を本線としていることが分かりました。\n管理する小島調教師が28日、函館競馬場で取材に応じ、これを明かしています。\nタクミオジュウはすでに美浦トレセンに入厩済みで、24日には坂路で52秒4―12を記録しました。'
-[2]  [重複除去] 234文字 → 230文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (230文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。JG1を9勝し、26年度の顕彰馬に選定された“障害界の絶対王者”オジュウチョウサンの初年度産駒が、いよいよデビューを迎えます。...
+[2]  [Gemini生出力 291文字]: '今週の競馬注目情報をお伝えします。\n7月5日に小倉で開催されるサマースプリントシリーズ第2戦、第61回北九州記念は、夏コク2週目のメインレースです。このハンデ戦には多士済々のメンバーがそろい、馬券的な魅力もたっぷりあります。中でも注目されるのは、速さで勝る新星フリッカージャブです。フリッカージャブは昨夏の小倉で2連勝を飾り、その素質を開花させました。1勝クラスでの勝ち時計1分7秒5は、翌日の北九州記念の時計よりも0秒3速いものでした。秋には新潟でオープン入りを果たしています。今年初戦で重賞初挑戦となったオーシャンSでは6着に甘んじましたが、前走の鞍馬Sでは本領を発揮しました。'
+[2]  [重複除去] 291文字 → 290文字
   HTTP 200
-[1]  [Gemini生出力 230文字]: '注目の競馬情報をお届けします。第19回サファイア賞は6月28日、盛岡競馬場で芝1700メートルを争い、単勝1.3倍の断然人気に推されたセイクリスティーナが優勝しました。直線で抜け出し、ソラーロに3馬身差をつけての勝利で、鞍上は山本聡哉騎手です。セイクリスティーナは若鮎賞、ジュニアGPに続く芝重賞3勝目を飾り、芝コースでは3戦全勝と負けなしです。ダートでも重賞4勝を挙げており、早くも重賞7勝目となりました。通算成績は12戦8勝、総獲得賞金は3920万円です。'
-[1]  [redirectフィルター] 230文字 → 215文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (215文字)
-[1]  プレビュー: 第19回サファイア賞は6月28日、盛岡競馬場で芝1700メートルを争い、単勝1.3倍の断然人気に推されたセイクリスティーナが優勝しました。直線で抜け出し、ソラー...
-  HTTP 200
-[0]  [Gemini生出力 251文字]: 'レース関連の最新情報です。第1回金沢サマーCが6月28日、金沢競馬場で古馬6頭によりダート1700メートルで争われました。1番人気のシンリミテスが先手を奪い、直線で後続を突き放し、ダイヤモンドラインに7馬身差をつけて優勝し、重賞2勝目を飾りました。鞍上は加藤翔馬騎手です。シンリミテスは祖母が関東オークス勝ちのユキチャンという白毛一族の出身ですが、母ポリアフが鹿毛で白毛の遺伝子を引いておらず、鹿毛で生まれました。金沢の加藤和義厩舎所属の牡7歳で、通算42戦6勝、総獲得賞金は3731万8000円です。'
+[0]  [Gemini生出力 214文字]: '今日の競馬情報です。\n28日、帯広競馬場で行われた第20回柏林賞は、4歳・重賞・200mで、1着賞金250万円、積載重量720kgのレースでした。阿部優哉騎手騎乗の1番人気スターイチバンが、第2障害を先頭で下って後続を突き放し、優勝しました。スターイチバンは、4番人気キョウエイエースに10.8秒差をつけ圧勝し、勝ちタイムは1分31秒8、馬場水分は3.9％でした。さらに2.5秒差の3着には7番人気ラポピージュニアが入りました。'
+[0]  [重複除去] 214文字 → 213文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (251文字)
-[0]  プレビュー: レース関連の最新情報です。第1回金沢サマーCが6月28日、金沢競馬場で古馬6頭によりダート1700メートルで争われました。1番人気のシンリミテスが先手を奪い、直...
+[0]  → output/script_0.txt 保存 (213文字)
+[0]  プレビュー: 今日の競馬情報です。28日、帯広競馬場で行われた第20回柏林賞は、4歳・重賞・200mで、1着賞金250万円、積載重量720kgのレースでした。阿部優哉騎手騎乗...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (290文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。7月5日に小倉で開催されるサマースプリントシリーズ第2戦、第61回北九州記念は、夏コク2週目のメインレースです。このハンデ戦に...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 272文字]: '注目の競馬情報をお届けします。ばんえい競馬の第20回柏林賞は6月28日、帯広競馬場で4歳馬10頭が200メートルを争いました。単勝1.3倍の1番人気に推されたスターイチバンが、キョウエイエースに10秒8差をつけて優勝しました。鞍上は昨年12月デビューの阿部優哉騎手です。スターイチバンは前2戦でばんえいの絶対王者メムロボブサップを相手に3着、2着と惜しい競馬を続けていましたが、同世代を相手に重賞4勝目を挙げました。父インフィニティー、母コトブキダイヤの牡4歳で、坂本東一厩舎所属です。通算31戦15勝、総獲得賞金は2119万円となっています。'
+[1]  [redirectフィルター] 272文字 → 257文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (257文字)
+[1]  プレビュー: ばんえい競馬の第20回柏林賞は6月28日、帯広競馬場で4歳馬10頭が200メートルを争いました。単勝1.3倍の1番人気に推されたスターイチバンが、キョウエイエー...
 
 3 件の脚本を生成しました。
