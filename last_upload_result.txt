@@ -1,10 +1,10 @@
-date: 2026-06-27T12:15:03.619632Z
+date: 2026-06-28T05:29:38.456799Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lWerFhxYRSk title=【函館記念】大混戦のハンデ戦は5頭が10倍以下のオッズ　1番人気は3勝クラス突破
-OK project=1 video_id=uUb22VuJCPY title=【佐賀競馬】東真市調教師が通算1900勝　重賞90勝の名伯楽
-OK project=1 video_id=XU1h0mgvsNU title=母はGI・4勝のラッキーライラック ラッキースパークルがデビュー勝ちなるか
+OK project=1 video_id=ST16XFmmqXU title=【小倉6R・2歳新馬】九州産馬限定戦はトシミチが逃げ切り快勝　幸英明騎手「使って
+OK project=1 video_id=6XqR_7n3Uqk title=【大井・優駿スプリント枠順】兵庫CSで3着好走のゼーロスは5枠9番
+OK project=1 video_id=p_o_lD1fEkU title=【福島5R・2歳新馬】ウインワーグナーが競り合いを頭差制す　菊沢一樹騎手「負けた
