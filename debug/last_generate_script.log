@@ -1,76 +1,43 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[1]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【先週のJRA抹消馬】短距離重賞2勝のカンチェンジュンガ、ダートで活躍したサクセスローレルなど ---
-[0] Gemini入力本文 343文字: '6月22日から28日の期間では、短距離重賞2勝のカンチェンジュンガ(牡6、栗東・庄野靖志厩舎)、ダートで4勝を挙げたサクセスローレル(牡7、栗東・北出成人厩舎)、障害オープンで3着2回のテイエムエメラルド(牝8、栗東・小椋研介厩舎)などがJ'
+--- 記事[0]: デットーリ元騎手　9月に英国ドンカスター開催「レジャー・レジェンドレース」で限定復帰 ---
+[0] Gemini入力本文 363文字: '今年2月に現役を引退したランフランコ・デットーリ元騎手(55)が、9月に英国のドンカスターで開催される「レジャー・レジェンドレース」で限定復帰することが分かった。28日、欧州メディアが報じた。\n\u3000デットーリ氏はキャリア終盤を米国で騎乗し、今'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【ジュライS・イシゴーの特注馬】2年ぶりの小回り1700メートルでニシキギミッチーの一発魅力 ---
-[1] Gemini入力本文 345文字: '◆ジュライS・3歳以上オープン(7月5日、福島競馬場・ダート1700メートル)\n\t\t\t\t\u3000約2年ぶりの福島小回り1700メートル戦でニシキギミッチー(牡6歳、美浦・鈴木伸尋厩舎、父ヘニーヒューズ)の一発が魅力に映る。ここまでの主戦場である7'
+--- 記事[1]: 【帝王賞】地方馬が16年ぶりの戴冠なるか 東京大賞典覇者のディクテオンが大将格だ ---
+[1] Gemini入力本文 347文字: '25年の東京大賞典覇者のディクテオン(セ8、大井・荒山勝徳厩舎)が、帝王賞(4歳上・JpnI・ダ2000m)で地方所属馬として16年ぶりの戴冠を狙う。\n\u3000ディクテオンは父キングカメハメハ、母メーデイア、母の父キングヘイローの血統。母は13年'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【帝王賞】前年王者のミッキーファイト、いまだ馬券圏外なしも田中博調教師「競馬の形を変えていく必要がある」 ---
-[2] Gemini入力本文 350文字: '◆第49回帝王賞・Jpn1(7月1日、大井競馬場・ダート2000メートル)\n\t\t\t\t\u3000前年王者のミッキーファイト(牡5歳、美浦・田中博康厩舎、父ドレフォン)は、今年のダート王道路線を席巻するかもしれない。昨年の東京大賞典では首差の2着に敗れ'
+--- 記事[2]: 【北九州記念想定騎手】フリッカージャブは松山弘平騎手、ヤマニンアルリフラは団野大成騎手 ---
+[2] Gemini入力本文 341文字: '7月5日に小倉競馬場で行われる、第61回北九州記念(3歳上・GIII・芝1200m)の登録馬・想定騎手は以下の通り。\n\u3000近5戦で4勝しているフリッカージャブ(牡4、栗東・西園翔太厩舎)は松山弘平騎手、昨年の覇者ヤマニンアルリフラ(牡5、栗東'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 228文字]: '最新情報をお届けします。\n第49回帝王賞・Jpn1が7月1日に大井競馬場ダート2000メートルで開催されます。前年王者のミッキーファイトは、今年のダート王道路線を席巻するかもしれません。昨年の東京大賞典では首差の2着に敗れましたが、JBCクラシックで2つ目のG1級タイトルを獲得し、中距離路線では現役屈指の存在となりました。デビューから12戦を消化し、とにかく崩れない安定感が魅力です。田中博調教師は「競馬の形を変えていく必要がある」とコメントしています。'
-[2]  [redirectフィルター] 228文字 → 215文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (215文字)
-[2]  プレビュー: 第49回帝王賞・Jpn1が7月1日に大井競馬場ダート2000メートルで開催されます。前年王者のミッキーファイトは、今年のダート王道路線を席巻するかもしれません。...
+[0]  [Gemini生出力 235文字]: '本日の競馬ニュースです。今年2月に現役を引退したランフランコ・デットーリ元騎手が、9月に英国のドンカスターで開催される「レジャー・レジェンドレース」で限定復帰することが分かりました。欧州メディアが28日に報じています。デットーリ元騎手はキャリア終盤を米国で騎乗し、今年2月にブラジル・リオデジャネイロのガベア競馬場で引退していました。「レジャー・レジェンドレース」は2010年から開催されており、マイケル・キネーンやトニー・マッコイら伝説の名手が優勝しているレースです。'
   HTTP 200
-[0]  [Gemini生出力 224文字]: '最新のレース情報が入ってきました。\n6月22日から28日の期間において、JRAの競走馬登録を抹消された馬が発表されました。短距離重賞で2勝を挙げたカンチェンジュンガ、ダートで4勝を挙げたサクセスローレル、そして障害オープンで3着が2回あったテイエムエメラルドなどが登録を抹消されています。この期間には、収得賞金400万円以上の抹消馬として、6月23日にドレアンティア、6月24日にはアースインハマー、エムフォー、オーシンハーフなどが含まれています。'
-[0]  [重複除去] 224文字 → 223文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (223文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。6月22日から28日の期間において、JRAの競走馬登録を抹消された馬が発表されました。短距離重賞で2勝を挙げたカンチェンジュン...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 207文字]: '本日の競馬ニュースです。\n7月5日に小倉競馬場で行われる第61回北九州記念、3歳上・GIII・芝1200mの登録馬と想定騎手が発表されました。近5戦で4勝しているフリッカージャブには松山弘平騎手が想定されています。また、昨年の覇者であるヤマニンアルリフラには団野大成騎手が想定されています。アブキールベイには西村淳也騎手が想定されています。なお、これらの情報は先週までの取材によるもので、変更の可能性がございます。'
+[2]  [重複除去] 207文字 → 206文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (235文字)
+[0]  プレビュー: 本日の競馬ニュースです。今年2月に現役を引退したランフランコ・デットーリ元騎手が、9月に英国のドンカスターで開催される「レジャー・レジェンドレース」で限定復帰す...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (206文字)
+[2]  プレビュー: 本日の競馬ニュースです。7月5日に小倉競馬場で行われる第61回北九州記念、3歳上・GIII・芝1200mの登録馬と想定騎手が発表されました。近5戦で4勝している...
   HTTP 200
-[1]  [Gemini生出力 222文字]: '今週の競馬注目情報をお伝えします。\nジュライステークス、3歳以上オープンは7月5日に福島競馬場ダート1700メートルで開催されます。このレースでは、約2年ぶりの福島小回り1700メートル戦となるニシキギミッチーに一発の魅力が映ります。ニシキギミッチーは美浦の鈴木伸尋厩舎に所属しています。ここまでの主戦場である7ハロン戦はメンバーが粒ぞろいで層が厚いですが、ローカルであれば一線級のメンバーとはならず、“敷居”がだいぶ低くなる点が注目されます。'
-[1]  [重複除去] 222文字 → 221文字
+[1]  [Gemini生出力 242文字]: 'レース関連の最新情報です。25年の東京大賞典覇者であるディクテオンが、帝王賞で地方所属馬として16年ぶりの戴冠を狙います。帝王賞は4歳以上、JpnI、ダート2000mのレースです。ディクテオンの血統は、父がキングカメハメハ、母がメーデイア、母の父がキングヘイローです。母メーデイアは13年のJBCレディスクラシックを含む重賞6勝の名牝です。伯母のロフティーエイムは06年の福島牝馬Sを制しており、イトコのサングレーザーは17年のスワンS、18年のマイラーズCと札幌記念を制しています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (221文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。ジュライステークス、3歳以上オープンは7月5日に福島競馬場ダート1700メートルで開催されます。このレースでは、約2年ぶりの福...
+[1]  → output/script_1.txt 保存 (242文字)
+[1]  プレビュー: レース関連の最新情報です。25年の東京大賞典覇者であるディクテオンが、帝王賞で地方所属馬として16年ぶりの戴冠を狙います。帝王賞は4歳以上、JpnI、ダート20...
 
 3 件の脚本を生成しました。
