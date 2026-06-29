@@ -1,43 +1,132 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[1]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
+[1]  [ファクトチェックNG] NG: 元記事に存在しないレース結果・着
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名「タ
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない「
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: デットーリ元騎手　9月に英国ドンカスター開催「レジャー・レジェンドレース」で限定復帰 ---
-[0] Gemini入力本文 363文字: '今年2月に現役を引退したランフランコ・デットーリ元騎手(55)が、9月に英国のドンカスターで開催される「レジャー・レジェンドレース」で限定復帰することが分かった。28日、欧州メディアが報じた。\n\u3000デットーリ氏はキャリア終盤を米国で騎乗し、今'
+--- 記事[0]: 「馬券には必ず入れておきたいですね」 梅澤真理子さんの帝王賞注目馬とは？ ---
+[0] Gemini入力本文 334文字: 'いよいよ明後日の水曜日。ダート中距離路線の上半期クライマックス、帝王賞が20時05分に発走する。そこで今回は、グリーンチャンネル『中央競馬全レース中継』の土曜後半を担当している梅澤真理子さんに、同レースの注目馬について話をうかがった。\n\u3000そ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【帝王賞】地方馬が16年ぶりの戴冠なるか 東京大賞典覇者のディクテオンが大将格だ ---
-[1] Gemini入力本文 347文字: '25年の東京大賞典覇者のディクテオン(セ8、大井・荒山勝徳厩舎)が、帝王賞(4歳上・JpnI・ダ2000m)で地方所属馬として16年ぶりの戴冠を狙う。\n\u3000ディクテオンは父キングカメハメハ、母メーデイア、母の父キングヘイローの血統。母は13年'
+--- 記事[1]: 一族にハヤヤッコやソダシ 良血馬ウィモウェは小倉芝1800mで初陣/関西馬メイクデビュー情報 ---
+[1] Gemini入力本文 535文字: '先週から始まった小倉開催。昨年の2回小倉では「ダート1000m」の新馬戦があったのだが、それが「ダート1700m」に変更されている。新馬戦取材を行っていると、関係者から「馬主さんも調教師も最初からダート1000mを使おうとは思わないよ」とい'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【北九州記念想定騎手】フリッカージャブは松山弘平騎手、ヤマニンアルリフラは団野大成騎手 ---
-[2] Gemini入力本文 341文字: '7月5日に小倉競馬場で行われる、第61回北九州記念(3歳上・GIII・芝1200m)の登録馬・想定騎手は以下の通り。\n\u3000近5戦で4勝しているフリッカージャブ(牡4、栗東・西園翔太厩舎)は松山弘平騎手、昨年の覇者ヤマニンアルリフラ(牡5、栗東'
+--- 記事[2]: 【北九州記念・ヤマタケが見た】忘れられない衝撃のラスト1ハロン10秒2!　快速馬フリッカージャブが初タイトルへ突っ走る ---
+[2] Gemini入力本文 353文字: '◆第61回北九州記念・G3(7月5日、小倉競馬場・芝1200メートル)\n\t\t\t\t\u3000サマースプリントシリーズ第2戦の第61回北九州記念・G3は7月5日、芝1200メートルのハンデ戦で行われる。前走の鞍馬Sをコースレコードで制したフリッカージャ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 235文字]: '本日の競馬ニュースです。今年2月に現役を引退したランフランコ・デットーリ元騎手が、9月に英国のドンカスターで開催される「レジャー・レジェンドレース」で限定復帰することが分かりました。欧州メディアが28日に報じています。デットーリ元騎手はキャリア終盤を米国で騎乗し、今年2月にブラジル・リオデジャネイロのガベア競馬場で引退していました。「レジャー・レジェンドレース」は2010年から開催されており、マイケル・キネーンやトニー・マッコイら伝説の名手が優勝しているレースです。'
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 334文字）
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 207文字]: '本日の競馬ニュースです。\n7月5日に小倉競馬場で行われる第61回北九州記念、3歳上・GIII・芝1200mの登録馬と想定騎手が発表されました。近5戦で4勝しているフリッカージャブには松山弘平騎手が想定されています。また、昨年の覇者であるヤマニンアルリフラには団野大成騎手が想定されています。アブキールベイには西村淳也騎手が想定されています。なお、これらの情報は先週までの取材によるもので、変更の可能性がございます。'
-[2]  [重複除去] 207文字 → 206文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (235文字)
-[0]  プレビュー: 本日の競馬ニュースです。今年2月に現役を引退したランフランコ・デットーリ元騎手が、9月に英国のドンカスターで開催される「レジャー・レジェンドレース」で限定復帰す...
+[2]  [Gemini生出力 276文字]: '今週の競馬注目情報をお伝えします。第61回北九州記念・G3は7月5日、小倉競馬場・芝1200メートルのハンデ戦で行われます。サマースプリントシリーズ第2戦となるこのレースでは、快速馬フリッカージャブが注目されています。4歳馬のフリッカージャブは、前走の鞍馬Sをコースレコードで制し、調教でも類いまれなスピードを発揮しています。小倉6ハロン戦では2戦2勝の実績を持ち、陣営が1年前から当レースを意識していたと報じられています。ヤマタケ記者は、忘れられない衝撃のラスト1ハロン10秒2と見ており、フリッカージャブが初タイトルへ突っ走ると期待を寄せています。'
+  HTTP 200
+[1]  [Gemini生出力 230文字]: '最新のレース情報が入ってきました。一族にハヤヤッコやソダシを持つ良血馬ウィモウェが、小倉芝1800mで初陣を迎えます。先週から始まった小倉開催では、新馬戦の番組に変更がありました。昨年の2回小倉ではダート1000mだった新馬戦が、ダート1700mに変更されています。この変更は、新馬戦取材で関係者から「馬主さんも調教師も最初からダート1000mを使おうとは思わないよ」といった意見が多く聞かれた結果です。小倉ダート1700mには、タケルレジェンドなどがいます。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (206文字)
-[2]  プレビュー: 本日の競馬ニュースです。7月5日に小倉競馬場で行われる第61回北九州記念、3歳上・GIII・芝1200mの登録馬と想定騎手が発表されました。近5戦で4勝している...
+[2]  → output/script_2.txt 保存 (276文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。第61回北九州記念・G3は7月5日、小倉競馬場・芝1200メートルのハンデ戦で行われます。サマースプリントシリーズ第2戦となる...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 242文字]: 'レース関連の最新情報です。25年の東京大賞典覇者であるディクテオンが、帝王賞で地方所属馬として16年ぶりの戴冠を狙います。帝王賞は4歳以上、JpnI、ダート2000mのレースです。ディクテオンの血統は、父がキングカメハメハ、母がメーデイア、母の父がキングヘイローです。母メーデイアは13年のJBCレディスクラシックを含む重賞6勝の名牝です。伯母のロフティーエイムは06年の福島牝馬Sを制しており、イトコのサングレーザーは17年のスワンS、18年のマイラーズCと札幌記念を制しています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (242文字)
-[1]  プレビュー: レース関連の最新情報です。25年の東京大賞典覇者であるディクテオンが、帝王賞で地方所属馬として16年ぶりの戴冠を狙います。帝王賞は4歳以上、JpnI、ダート20...
-
-3 件の脚本を生成しました。
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → 再試行後もSKIPのためスキップ（動画生成しない）
+  HTTP 200
+[1]  [Gemini生出力 247文字]: '最新のレース情報が入ってきました。先週から始まった小倉開催では、昨年の2回小倉におけるダート1000mの新馬戦が、ダート1700mに変更されています。これは、新馬戦取材で関係者から「馬主さんも調教師も最初からダート1000mを使おうとは思わないよ」といった意見が多く聞かれ、それを各所に伝えた結果、番組が変更されたものです。良血馬ウィモウェは小倉芝1800mで初陣を迎える予定です。ウィモウェの一族にはハヤヤッコやソダシがいます。小倉ダート1700mにはタケルレジェンドも出走を予定しています。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 246文字]: '最新のレース情報が入ってきました。先週から始まった小倉開催では、昨年の2回小倉で実施されていたダート1000mの新馬戦が、ダート1700mに変更されています。この変更は、新馬戦取材で関係者から「馬主さんも調教師も最初からダート1000mを使おうとは思わない」という意見が多く聞かれたことを各所に伝えた結果とされています。また、一族にハヤヤッコやソダシがいる良血馬ウィモウェが、小倉芝1800mで初陣を迎えます。小倉ダート1700mの新馬戦には、タケルレジェンドなどの馬も出走を予定しています。'
+[1] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
