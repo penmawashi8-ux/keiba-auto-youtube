@@ -1,10 +1,10 @@
-date: 2026-06-29T07:34:20.151775Z
+date: 2026-06-29T12:03:08.442708Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fZzQY7rWblk title=デットーリ元騎手　9月に英国ドンカスター開催「レジャー・レジェンドレース」で限定
-OK project=1 video_id=Ga-glwYrrmw title=【帝王賞】地方馬が16年ぶりの戴冠なるか 東京大賞典覇者のディクテオンが大将格だ
-OK project=1 video_id=ebK9wPVkP-g title=【北九州記念想定騎手】フリッカージャブは松山弘平騎手、ヤマニンアルリフラは団野大
+OK project=1 video_id=A_67g-AjTGg title=「洋芝」を知れば馬券予想に効果的!?　議論を呼ぶ謎の高速決着など函館競馬場の馬場
+OK project=1 video_id=0ilalgNf8kg title=【北九州記念】連覇がかかるヤマニンアルリフラは好気配　斉藤崇調教師「休み明けです
+OK project=1 video_id=iQCPCTLNnrg title=【船橋競馬】高橋利幸騎手が4日間の騎乗停止　6月28日の船橋競馬で不適切騎乗
