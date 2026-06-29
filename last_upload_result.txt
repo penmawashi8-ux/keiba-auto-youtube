@@ -1,10 +1,10 @@
-date: 2026-06-29T05:42:11.052496Z
+date: 2026-06-29T07:34:20.151775Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ByTj3nyrlrw title=【先週のJRA抹消馬】短距離重賞2勝のカンチェンジュンガ、ダートで活躍したサクセ
-OK project=1 video_id=9dYJyNTEbmk title=【ジュライS・イシゴーの特注馬】2年ぶりの小回り1700メートルでニシキギミッチ
-OK project=1 video_id=MD6jNfXYoQY title=【帝王賞】前年王者のミッキーファイト、いまだ馬券圏外なしも田中博調教師「競馬の形
+OK project=1 video_id=fZzQY7rWblk title=デットーリ元騎手　9月に英国ドンカスター開催「レジャー・レジェンドレース」で限定
+OK project=1 video_id=Ga-glwYrrmw title=【帝王賞】地方馬が16年ぶりの戴冠なるか 東京大賞典覇者のディクテオンが大将格だ
+OK project=1 video_id=ebK9wPVkP-g title=【北九州記念想定騎手】フリッカージャブは松山弘平騎手、ヤマニンアルリフラは団野大
