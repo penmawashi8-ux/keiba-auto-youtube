@@ -1,10 +1,10 @@
-date: 2026-06-29T12:03:08.442708Z
+date: 2026-06-29T13:20:18.163481Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A_67g-AjTGg title=「洋芝」を知れば馬券予想に効果的!?　議論を呼ぶ謎の高速決着など函館競馬場の馬場
-OK project=1 video_id=0ilalgNf8kg title=【北九州記念】連覇がかかるヤマニンアルリフラは好気配　斉藤崇調教師「休み明けです
-OK project=1 video_id=iQCPCTLNnrg title=【船橋競馬】高橋利幸騎手が4日間の騎乗停止　6月28日の船橋競馬で不適切騎乗
+OK project=1 video_id=z5dSfFu8sws title=【ばんえい競馬】槻舘重人調教師が通算1700勝　ばんえい記念4連覇など重賞70勝
+OK project=1 video_id=grJd-tJjvWQ title=【AI予想・北九州記念】ハンデ戦で難解な短距離重賞！ 人工知能は近況好調馬に高評
+OK project=1 video_id=cIkL1MbRrsE title=【北九州記念】葵S勝ち馬のデアヴェローチェが重賞連勝へ　上村調教師「斤量差と勢い
