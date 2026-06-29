@@ -1,6 +1,5 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
@@ -12,43 +11,64 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない調教師名
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない馬名・騎
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【帯広・柏林賞結果】スターイチバンが断然人気に応えて圧勝 ---
-[0] Gemini入力本文 536文字: '28日、帯広競馬場で行われた第20回柏林賞(4歳・重賞・200m・1着賞金250万円)は、第2障害を先頭で下って後続を突き放した阿部優哉騎手騎乗の1番人気スターイチバン(牡4、ばんえい・坂本東一厩舎、積載重量720kg)が、4番人気キョウエ'
+--- 記事[0]: 【競走伝】幸英明騎手が涙した理由とは?　ヨカヨカが熊本産馬初のJRA重賞制覇の快挙達成　21年北九州記念 ---
+[0] Gemini入力本文 336文字: '馬トク報知で過去の名勝負を当時の記事から振り返る【競走伝】。今回はヨカヨカが勝った2021年の北九州記念を取り上げる。熊本産馬が初のJRA重賞制覇。その馬名からも人気が高かった牝馬だ。\n\t\t\t\t\u3000レース直前から土砂降りになった空模様が運命を'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【ばんえい競馬】スターイチバンが柏林賞を制覇　昨年のばんえい大賞典馬 ---
-[1] Gemini入力本文 688文字: 'ばんえい競馬の第20回柏林賞は6月28日、帯広競馬場で4歳馬10頭が200メートルを争った。単勝1・3倍の1番人気に推されたスターイチバンがキョウエイエースに10秒8差をつけて優勝した。鞍上は昨年12月デビューの阿部優哉騎手。\n\t\t\t\t\u3000同'
+--- 記事[1]: 【函館記念・レースメモ】須貝尚介調教師　25年のヴェローチェエラに続く2年連続勝利 ---
+[1] Gemini入力本文 358文字: '◆第62回函館記念・G3(6月28日、函館競馬場・芝2000メートル、良)\n\t\t\t\t\u3000サマー2000シリーズ第1戦、第62回函館記念・G3は28日、函館競馬場で行われ、10番人気のファウストラーゼンが重賞2勝目を飾った。4年目で初タイトルの'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【北九州記念展望】新星フリッカージャブが1年ぶりの小倉で重賞初タイトルだ ---
-[2] Gemini入力本文 340文字: '夏コク2週目のメインはサマースプリントシリーズ第2戦「第61回北九州記念」(7月5日、小倉)。ハンデ戦に多士済々のメンバーがそろい、馬券的な魅力もたっぷりだ。\n\u3000注目は速さで勝る新星フリッカージャブ。昨夏の小倉で2連勝し、素質が開花。1勝ク'
+--- 記事[2]: 【ラジオNIKKEI賞・レースメモ】田辺裕信騎手が復帰ウィーク飾った　地元福島で14年連続の重賞制覇 ---
+[2] Gemini入力本文 364文字: '◆第75回ラジオNIKKEI賞・G3(6月28日、福島競馬場・芝1800メートル、良)\n\t\t\t\t\u3000福島競馬場で行われた第75回ラジオNIKKEI賞・G3はサノノグレーターが重賞初V。田辺裕信騎手(42)＝美浦・フリー＝は地元の福島で、復帰ウ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 291文字]: '今週の競馬注目情報をお伝えします。\n7月5日に小倉で開催されるサマースプリントシリーズ第2戦、第61回北九州記念は、夏コク2週目のメインレースです。このハンデ戦には多士済々のメンバーがそろい、馬券的な魅力もたっぷりあります。中でも注目されるのは、速さで勝る新星フリッカージャブです。フリッカージャブは昨夏の小倉で2連勝を飾り、その素質を開花させました。1勝クラスでの勝ち時計1分7秒5は、翌日の北九州記念の時計よりも0秒3速いものでした。秋には新潟でオープン入りを果たしています。今年初戦で重賞初挑戦となったオーシャンSでは6着に甘んじましたが、前走の鞍馬Sでは本領を発揮しました。'
-[2]  [重複除去] 291文字 → 290文字
+[0]  [Gemini生出力 240文字]: '本日の競馬ニュースです。馬トク報知の【競走伝】が、ヨカヨカが勝った2021年の北九州記念を当時の記事から振り返っています。このレースでヨカヨカは、熊本産馬初のJRA重賞制覇という快挙を達成しました。その馬名からも人気が高かった牝馬です。レース直前から土砂降りになった空模様が運命を変え、外枠に入ったヨカヨカと幸英明騎手は好位から終始、傷みが少ない外を選択しました。最後の直線では、内ラチ沿いでモズスーパーフレアが粘り込みを図る中、かなり離れた外めからヨカヨカが徐々に加速しました。'
   HTTP 200
-[0]  [Gemini生出力 214文字]: '今日の競馬情報です。\n28日、帯広競馬場で行われた第20回柏林賞は、4歳・重賞・200mで、1着賞金250万円、積載重量720kgのレースでした。阿部優哉騎手騎乗の1番人気スターイチバンが、第2障害を先頭で下って後続を突き放し、優勝しました。スターイチバンは、4番人気キョウエイエースに10.8秒差をつけ圧勝し、勝ちタイムは1分31秒8、馬場水分は3.9％でした。さらに2.5秒差の3着には7番人気ラポピージュニアが入りました。'
-[0]  [重複除去] 214文字 → 213文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (213文字)
-[0]  プレビュー: 今日の競馬情報です。28日、帯広競馬場で行われた第20回柏林賞は、4歳・重賞・200mで、1着賞金250万円、積載重量720kgのレースでした。阿部優哉騎手騎乗...
+[2]  [Gemini生出力 162文字]: '競馬ファン注目の情報です。\n福島競馬場で行われた第75回ラジオNIKKEI賞・G3は、サノノグレーターが重賞初Vを飾りました。田辺裕信騎手は地元の福島で復帰ウィークを飾り、ラジオNIKKEI賞では24年以来の3勝目を挙げました。重賞は昨年の福島牝馬S以来となる通算47勝目で、2013年から14年連続の重賞勝利となりました。'
+[2]  [重複除去] 162文字 → 161文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (240文字)
+[0]  プレビュー: 本日の競馬ニュースです。馬トク報知の【競走伝】が、ヨカヨカが勝った2021年の北九州記念を当時の記事から振り返っています。このレースでヨカヨカは、熊本産馬初のJ...
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (290文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。7月5日に小倉で開催されるサマースプリントシリーズ第2戦、第61回北九州記念は、夏コク2週目のメインレースです。このハンデ戦に...
+[2]  → output/script_2.txt 保存 (161文字)
+[2]  プレビュー: 競馬ファン注目の情報です。福島競馬場で行われた第75回ラジオNIKKEI賞・G3は、サノノグレーターが重賞初Vを飾りました。田辺裕信騎手は地元の福島で復帰ウィー...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
@@ -66,10 +86,32 @@ Gemini APIキー: 3 件ロード
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 272文字]: '注目の競馬情報をお届けします。ばんえい競馬の第20回柏林賞は6月28日、帯広競馬場で4歳馬10頭が200メートルを争いました。単勝1.3倍の1番人気に推されたスターイチバンが、キョウエイエースに10秒8差をつけて優勝しました。鞍上は昨年12月デビューの阿部優哉騎手です。スターイチバンは前2戦でばんえいの絶対王者メムロボブサップを相手に3着、2着と惜しい競馬を続けていましたが、同世代を相手に重賞4勝目を挙げました。父インフィニティー、母コトブキダイヤの牡4歳で、坂本東一厩舎所属です。通算31戦15勝、総獲得賞金は2119万円となっています。'
-[1]  [redirectフィルター] 272文字 → 257文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (257文字)
-[1]  プレビュー: ばんえい競馬の第20回柏林賞は6月28日、帯広競馬場で4歳馬10頭が200メートルを争いました。単勝1.3倍の1番人気に推されたスターイチバンが、キョウエイエー...
-
-3 件の脚本を生成しました。
+[1]  [Gemini生出力 229文字]: '今週の競馬注目情報をお伝えします。第62回函館記念・G3が6月28日、函館競馬場・芝2000メートルで行われました。サマー2000シリーズ第1戦のこのレースでは、10番人気のファウストラーゼンが重賞2勝目を飾っています。勝利した小林美駒騎手は4年目で初タイトルを獲得し、JRA所属の女性ジョッキーとして4人目の重賞勝利となりました。しかし、小林美駒騎手は斜行により開催4日間の騎乗停止処分を受けています。彼女は初騎乗で初勝利を挙げ、重賞は4回目の騎乗でした。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 231文字]: '今週の競馬注目情報をお伝えします。\n6月28日の第62回函館記念・G3は、函館競馬場・芝2000メートル、良馬場で行われました。サマー2000シリーズ第1戦では、10番人気のファウストラーゼンが重賞2勝目を飾っています。4年目で初タイトルを獲得した小林美駒騎手は、JRA女性ジョッキーとして4人目の重賞勝利を達成しました。しかし、斜行により開催4日間の騎乗停止処分を受けています。一方、須貝尚介調教師は、25年のヴェローチェエラに続く2年連続の勝利となりました。'
+[1]  [重複除去] 231文字 → 230文字
+[1] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
