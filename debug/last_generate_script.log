@@ -1,68 +1,72 @@
-[1]  [ファクトチェックNG] NG: 元記事に存在しない「休み明けですが
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 「洋芝」を知れば馬券予想に効果的!?　議論を呼ぶ謎の高速決着など函館競馬場の馬場担当課長に聞いてみた ---
-[0] Gemini入力本文 369文字: '今年1月に競馬記者になり、函館競馬の開幕から先週まで3週間滞在した三戸達也記者が、洋芝とは何かを探ってきた。\n\t\t\t\t\u3000「洋芝」と聞いて思い浮かべるのは「函館、札幌の2場の馬場」と「時計がかかる」というイメージ。しかし、野芝との具体的な違い'
+--- 記事[0]: 【ばんえい競馬】槻舘重人調教師が通算1700勝　ばんえい記念4連覇など重賞70勝 ---
+[0] Gemini入力本文 442文字: 'ばんえい競馬所属の槻舘重人調教師(65)は6月29日、帯広競馬8Rに管理するクリスタルケルビムを出走させ1着。1999年4月の初出走以来、1万2259戦目で地方競馬通算1700勝を達成した。重賞は、ばんえい記念4連覇(オレノココロで2017'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【北九州記念】連覇がかかるヤマニンアルリフラは好気配　斉藤崇調教師「休み明けですが具合はよさそう」 ---
-[1] Gemini入力本文 348文字: '◆第61回北九州記念・G3(7月5日、小倉競馬場・芝1200メートル)\n\t\t\t\t\u3000連覇がかかるヤマニンアルリフラ(牡5歳、栗東・斉藤崇史厩舎、父イスラボニータ)が好気配だ。前走の東京スプリントではダート重賞に初挑戦。雨が降るなか、直線で脚を'
+--- 記事[1]: 【AI予想・北九州記念】ハンデ戦で難解な短距離重賞！ 人工知能は近況好調馬に高評価 ---
+[1] Gemini入力本文 480文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は日曜日の小倉競馬場で行われる北九州記念(GIII)のみとなります。まずは北九州記念の過去の傾向を探っていきます。\n'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【船橋競馬】高橋利幸騎手が4日間の騎乗停止　6月28日の船橋競馬で不適切騎乗 ---
-[2] Gemini入力本文 449文字: '◇騎乗停止\u3000千葉県競馬組合は、船橋競馬所属の高橋利幸騎手(41)＝新井清重厩舎＝を6月30日から7月3日まで4日間の騎乗停止とすることを発表した。同騎手は6月28日の船橋競馬7Rでエントジアスタに騎乗した際、騎乗法について適切を欠き(ゴール'
+--- 記事[2]: 【北九州記念】葵S勝ち馬のデアヴェローチェが重賞連勝へ　上村調教師「斤量差と勢いで何とかいい競馬をしてほしいね」 ---
+[2] Gemini入力本文 347文字: '◆第61回北九州記念・G3(7月5日、小倉競馬場・芝1200メートル)\n\t\t\t\t\u3000唯一の3歳馬、デアヴェローチェ(牝3歳、栗東・上村洋行厩舎、父マテラスカイ)が初の古馬重賞へ挑む。前走の葵Sはロスなく立ち回り、最後に1頭分、外へ持ち出され、'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 231文字]: '最新情報をお届けします。今年1月に競馬記者となった三戸達也記者が、函館競馬の開幕から先週まで3週間滞在し、「洋芝」とは何かを探ってきました。「洋芝」と聞いて思い浮かべるのは「函館、札幌の2場の馬場」と「時計がかかる」というイメージです。しかし、野芝との具体的な違いや、なぜ馬場が重いと言われるのか、その理由までは深く考えられていませんでした。今後の馬券予想につながるヒントも隠されているのではないかと考え、JRAの函館競馬場・馬場担当課に話を聞いたとのことです。'
-[0]  [redirectフィルター] 231文字 → 219文字
+[1]  [Gemini生出力 231文字]: '競馬速報です。今週の重賞競走は日曜日の小倉競馬場で行われる北九州記念(GIII)です。netkeibaオリジナルAIは、このハンデ戦で難解な短距離重賞において、近況好調馬に高評価を与え、本命候補3頭を推奨しています。過去10年の北九州記念では、前走でGIII以上に出走していた馬が[6-6-7-75]と多くの好走馬が出ています。小倉芝1200mのハンデ戦である北九州記念では、フリッカージャブに松山弘平騎手、ヤマニンアルリフラには団野大成騎手が想定されています。'
   HTTP 200
-[2]  [Gemini生出力 175文字]: '本日の競馬ニュースです。千葉県競馬組合は、船橋競馬所属の高橋利幸騎手が4日間の騎乗停止となることを発表しました。騎乗停止期間は6月30日から7月3日までです。高橋利幸騎手は、6月28日の船橋競馬7Rでエントジアスタに騎乗した際、騎乗法について適切を欠き、ゴール前の追い止めが早く、誤解を受ける行為により競馬の公正を害したため、今回の処分となりました。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: 今年1月に競馬記者となった三戸達也記者が、函館競馬の開幕から先週まで3週間滞在し、「洋芝」とは何かを探ってきました。「洋芝」と聞いて思い浮かべるのは「函館、札幌...
-  HTTP 200
-[1]  [Gemini生出力 245文字]: '注目の競馬情報をお届けします。\n7月5日に小倉競馬場・芝1200メートルで開催される第61回北九州記念・G3では、連覇がかかるヤマニンアルリフラが好気配です。ヤマニンアルリフラは、前走の東京スプリントでダート重賞に初挑戦し、雨が降るなか直線で脚を伸ばして3着と好走しました。斉藤崇調教師は、前走でダート適性を見せてくれたとし、「芝、ダートを問わず、G3ならいい勝負になるのかなと思います」とその地力を評価しています。また、斉藤崇調教師は「休み明けですが具合はよさそう」とコメントしています。'
-[1]  [redirectフィルター] 245文字 → 229文字
+[2]  [Gemini生出力 226文字]: '最新のレース情報が入ってきました。第61回北九州記念・G3が7月5日に小倉競馬場・芝1200メートルで開催されます。唯一の3歳馬、デアヴェローチェが初の古馬重賞へ挑みます。デアヴェローチェは前走の葵Sを勝利しました。上村調教師は前走について「前回はいいポジションで進めてくれて、最後はいい脚を使ってくれた」と冷静に振り返っています。前走後は2週間ほど短期放牧で英気を養いました。上村調教師は「斤量差と勢いで何とかいい競馬をしてほしいね」と話しています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (175文字)
-[2]  プレビュー: 本日の競馬ニュースです。千葉県競馬組合は、船橋競馬所属の高橋利幸騎手が4日間の騎乗停止となることを発表しました。騎乗停止期間は6月30日から7月3日までです。高...
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 218文字]: '注目の競馬情報をお届けします。\n第61回北九州記念・G3が7月5日に小倉競馬場・芝1200メートルで開催されます。このレースで連覇がかかるヤマニンアルリフラが好気配を見せています。前走の東京スプリントでは、ダート重賞に初挑戦し、雨が降るなか直線で脚を伸ばして3着と好走しました。斉藤崇調教師は「前走は適性を見せてくれましたね。芝、ダートを問わず、G3ならいい勝負になるのかなと思います」と、ヤマニンアルリフラの地力を高く評価しています。'
-[1]  [redirectフィルター] 218文字 → 202文字
+[2]  → output/script_2.txt 保存 (226文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第61回北九州記念・G3が7月5日に小倉競馬場・芝1200メートルで開催されます。唯一の3歳馬、デアヴェローチェが初の古馬重賞...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (202文字)
-[1]  プレビュー: 第61回北九州記念・G3が7月5日に小倉競馬場・芝1200メートルで開催されます。このレースで連覇がかかるヤマニンアルリフラが好気配を見せています。前走の東京ス...
+[1]  → output/script_1.txt 保存 (231文字)
+[1]  プレビュー: 競馬速報です。今週の重賞競走は日曜日の小倉競馬場で行われる北九州記念(GIII)です。netkeibaオリジナルAIは、このハンデ戦で難解な短距離重賞において、...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 229文字]: '重要な競馬ニュースをお伝えします。ばんえい競馬所属の槻舘重人調教師が、地方競馬通算1700勝を達成しました。6月29日、帯広競馬8Rに管理するクリスタルケルビムが出走し1着となったことで、この記録に到達しました。槻舘調教師は1999年4月の初出走以来、1万2259戦目での達成となります。重賞では、ばんえい記念4連覇を含む70勝を挙げています。ばんえい記念では、オレノココロで2017年、2018年、2020年に、センゴクエースで2019年に勝利しています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (229文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。ばんえい競馬所属の槻舘重人調教師が、地方競馬通算1700勝を達成しました。6月29日、帯広競馬8Rに管理するクリスタルケルビム...
 
 3 件の脚本を生成しました。
