@@ -1,10 +1,10 @@
-date: 2026-06-30T07:01:23.221639Z
+date: 2026-06-30T08:30:50.901351Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=w7e2TY4MQsQ title=【阪神アーバン競馬プレーバック】26年上半期終了　田野豊三ら活躍騎手をピックアッ
-OK project=1 video_id=S7vr7Dp60Zk title=【阪神アーバン競馬プレーバック】24〜26日の佐々木世麗&塩津璃菜　先々週とは逆
-OK project=1 video_id=Hjw7vr7PVDY title=【阪神アーバン競馬プレーバック】ルーキー高橋洸佑騎手が自身初の連勝　26日は“最
+OK project=1 video_id=eLoSsMhENyM title=函館記念の降着申し立てを棄却された藤原英昭調教師が不服申し立て　近日中に審理も払
+OK project=1 video_id=GMQQ2JYTibI title=田村康仁調教師の死去に伴いエコロアルバなど管理馬全頭が中舘英二厩舎に転厩
+OK project=1 video_id=N-1ihbKaPB0 title=香港遠征明けのシュトラウスはモレイラとコンビ継続で仏ジャックルマロワ賞へ　NF天
