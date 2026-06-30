@@ -1,10 +1,10 @@
-date: 2026-06-29T13:20:18.163481Z
+date: 2026-06-30T00:25:51.005425Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=z5dSfFu8sws title=【ばんえい競馬】槻舘重人調教師が通算1700勝　ばんえい記念4連覇など重賞70勝
-OK project=1 video_id=grJd-tJjvWQ title=【AI予想・北九州記念】ハンデ戦で難解な短距離重賞！ 人工知能は近況好調馬に高評
-OK project=1 video_id=cIkL1MbRrsE title=【北九州記念】葵S勝ち馬のデアヴェローチェが重賞連勝へ　上村調教師「斤量差と勢い
+OK project=1 video_id=JXFWz4Ofnc8 title=【POG】タイレコードで7馬身差圧勝のジーティーマイカはさまざまな可能性秘めたシ
+OK project=1 video_id=G4BKSkbEfTA title=【北九州記念】西園調教師「速いラップを刻んでも止まらない」前走コースレコードのフ
+OK project=1 video_id=kr-10uS8vOY title=【北九州記念展望】勢いのあるフリッカージャブが重賞初制覇へ
