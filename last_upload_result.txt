@@ -1,10 +1,10 @@
-date: 2026-06-30T00:25:51.005425Z
+date: 2026-06-30T05:16:29.244459Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JXFWz4Ofnc8 title=【POG】タイレコードで7馬身差圧勝のジーティーマイカはさまざまな可能性秘めたシ
-OK project=1 video_id=G4BKSkbEfTA title=【北九州記念】西園調教師「速いラップを刻んでも止まらない」前走コースレコードのフ
-OK project=1 video_id=kr-10uS8vOY title=【北九州記念展望】勢いのあるフリッカージャブが重賞初制覇へ
+OK project=1 video_id=_aowQjPwcc8 title=アリアニコなど、先週のゲート試験/栗東トレセンニュース
+OK project=1 video_id=iM3c8PwwhWI title=ジョバンニなど、先週の入厩情報/栗東トレセンニュース
+OK project=1 video_id=sTyv7LsI2Go title=「次は気持ち良く勝ってほしいね」函館記念で重賞初制覇を飾った小林美駒騎手　師匠の
