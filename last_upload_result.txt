@@ -1,10 +1,10 @@
-date: 2026-06-30T05:16:29.244459Z
+date: 2026-06-30T07:01:23.221639Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_aowQjPwcc8 title=アリアニコなど、先週のゲート試験/栗東トレセンニュース
-OK project=1 video_id=iM3c8PwwhWI title=ジョバンニなど、先週の入厩情報/栗東トレセンニュース
-OK project=1 video_id=sTyv7LsI2Go title=「次は気持ち良く勝ってほしいね」函館記念で重賞初制覇を飾った小林美駒騎手　師匠の
+OK project=1 video_id=w7e2TY4MQsQ title=【阪神アーバン競馬プレーバック】26年上半期終了　田野豊三ら活躍騎手をピックアッ
+OK project=1 video_id=S7vr7Dp60Zk title=【阪神アーバン競馬プレーバック】24〜26日の佐々木世麗&塩津璃菜　先々週とは逆
+OK project=1 video_id=Hjw7vr7PVDY title=【阪神アーバン競馬プレーバック】ルーキー高橋洸佑騎手が自身初の連勝　26日は“最
