@@ -1,10 +1,10 @@
-date: 2026-06-30T08:30:50.901351Z
+date: 2026-06-30T10:34:51.470811Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=eLoSsMhENyM title=函館記念の降着申し立てを棄却された藤原英昭調教師が不服申し立て　近日中に審理も払
-OK project=1 video_id=GMQQ2JYTibI title=田村康仁調教師の死去に伴いエコロアルバなど管理馬全頭が中舘英二厩舎に転厩
-OK project=1 video_id=N-1ihbKaPB0 title=香港遠征明けのシュトラウスはモレイラとコンビ継続で仏ジャックルマロワ賞へ　NF天
+OK project=1 video_id=v0JYhjAdkJ0 title=【北九州記念】36歳の西園翔太調教師 フリッカージャブで重賞初制覇狙う
+OK project=1 video_id=UryK5krdbgQ title=【北九州記念予想オッズ】フリッカージャブが予想1番人気
+OK project=1 video_id=XILCqeuPmxE title=【今週のトク注新馬】いとこにはマイルG1・3勝のソングライン　鹿戸厩舎の大物候補
