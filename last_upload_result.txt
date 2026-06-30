@@ -1,10 +1,10 @@
-date: 2026-06-30T10:34:51.470811Z
+date: 2026-06-30T11:55:55.216880Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=v0JYhjAdkJ0 title=【北九州記念】36歳の西園翔太調教師 フリッカージャブで重賞初制覇狙う
-OK project=1 video_id=UryK5krdbgQ title=【北九州記念予想オッズ】フリッカージャブが予想1番人気
-OK project=1 video_id=XILCqeuPmxE title=【今週のトク注新馬】いとこにはマイルG1・3勝のソングライン　鹿戸厩舎の大物候補
+OK project=1 video_id=T0Kqye5HO-Q title=【大井・優駿スプリント結果】ゼーロスが4馬身差圧勝で重賞2勝目を挙げる
+OK project=1 video_id=X1YL1bh086Q title=【北九州記念】ハンデ51キロ!格上挑戦のアメリカンビキニは長欠明けでも怖い　斉藤
+OK project=1 video_id=TZQTSRgYDPc title=北九州記念は前走1着馬が3連覇中！ 今年の該当馬は？
