@@ -1,68 +1,75 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[2]  [ファクトチェックNG] NG: 24年のピューロマジック
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【大井・優駿スプリント結果】ゼーロスが4馬身差圧勝で重賞2勝目を挙げる ---
-[0] Gemini入力本文 352文字: '30日、大井競馬場で行われた第16回優駿スプリント(3歳・重賞・ダ1200m・1着賞金2600万円)は、好位から脚を伸ばした笹川翼騎手騎乗の1番人気ゼーロス(牡3、大井・荒山勝徳厩舎)が、中団から脚を伸ばした7番人気リスティアワン(牡3、大'
+--- 記事[0]: 【地方競馬】優駿スプリント　ゼーロスが４馬身差の圧勝で南関３歳スプリントの頂点へ ---
+[0] Gemini入力本文 331文字: '「優駿スプリント・Ｓ２」（３０日、大井）\n\u3000１番人気のゼーロスが圧巻の強さで南関３歳スプリントの頂点に立った。４馬身差の２着に７番人気のリスティアワンが入り、上位２頭に「第３３回アフター５スター賞・Ｓ３」（９月２日・大井）への優先出走権が与'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【北九州記念】ハンデ51キロ!格上挑戦のアメリカンビキニは長欠明けでも怖い　斉藤崇調教師「やれてもいいと思います」 ---
-[1] Gemini入力本文 350文字: '◆第61回北九州記念・G3(7月5日、小倉競馬場・芝1200メートル)＝6月30日、栗東トレセン\n\t\t\t\t\u3000格上挑戦のアメリカンビキニ(牝4歳、栗東・斉藤崇史厩舎、父アメリカンファラオ)は、昨年10月の円山特別(2勝クラス)以来、9か月ぶり'
+--- 記事[1]: 【門別競馬】田中淳司調教師が通算2100勝 ---
+[1] Gemini入力本文 421文字: '◇2100勝\u3000ホッカイドウ競馬所属の田中淳司調教師(54)は6月30日、門別競馬12Rに管理するシシャモフレンドを出走させ1着。2007年4月の初出走以来、1万127戦目で地方競馬通算2100勝を達成した。重賞は2013年全日本2歳優駿(ハ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 北九州記念は前走1着馬が3連覇中！ 今年の該当馬は？ ---
-[2] Gemini入力本文 348文字: '夏競馬の格言通り、北九州記念(3歳上・GIII・芝1200m)は勢いがモノを言うレースだ。施行時期こそ何度か変更されてきたが、その傾向は変わらない。近10年の前走着順別成績を見ると、勝って挑んだ馬が【5-7-3-22】の勝率14%、単勝回収'
+--- 記事[2]: 【ホッカイドウ競馬】石川倭　門別11Rで通算1500勝達成　現役5人目 ---
+[2] Gemini入力本文 366文字: '30日の門別11R「北海道野菜王国にったん特別」(ダート1700メートル、9頭立て)で単勝1.1倍と圧倒的な1番人気に支持されたアヴェルス(牡3＝小国、父デクラレーションオブウォー)が1着。鞍上の石川倭(31)は2013年4月24日の初騎乗'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 224文字]: '競馬速報です。夏競馬の格言通り、北九州記念は勢いがモノを言うレースです。施行時期は何度か変更されてきましたが、その傾向は変わっていません。近10年の前走着順別成績を見ると、勝って挑んだ馬が【5-7-3-22】の勝率14%、単勝回収率109％と優秀な成績を収めています。特に近3年に限ると、23年のジャスパークローネ、24年のピューロマジック、25年のヤマニンアルリフラが3連覇を達成しています。まさに勢いが結果に直結しているレースと言えるでしょう。'
-  HTTP 200
-[0]  [Gemini生出力 215文字]: '注目の競馬情報をお届けします。\n30日、大井競馬場で行われた第16回優駿スプリントは、1番人気のゼーロスが4馬身差の圧勝で重賞2勝目を挙げました。笹川翼騎手騎乗のゼーロスは、好位から脚を伸ばし、中団から脚を伸ばした7番人気リスティアワンに4馬身差をつけ優勝しました。勝ちタイムは1分11秒0、馬場状態は重でした。さらに2.1/2馬身差の3着には、3番人気のデンテブリランテが入っています。このレースの1着賞金は2600万円でした。'
-[0]  [redirectフィルター] 215文字 → 199文字
-  HTTP 200
-[1]  [Gemini生出力 221文字]: '今日の競馬情報です。第61回北九州記念・G3は7月5日に小倉競馬場・芝1200メートルで発走予定です。このレースに格上挑戦で出走するアメリカンビキニは、ハンデ51キロで臨みます。アメリカンビキニは昨年10月の円山特別以来、9か月ぶりの出走となりますが、中間は栗東・DPコースで入念に乗り込まれています。斉藤崇調教師は「長期休み明けですけど、追い切りの感じは悪くないですよ」と手応えを掴んでおり、「やれてもいいと思います」とコメントしています。'
+[0]  [Gemini生出力 164文字]: 'レース関連の最新情報です。30日大井の優駿スプリント・S2では、1番人気のゼーロスが4馬身差の圧勝で南関3歳スプリントの頂点に立ちました。2着には7番人気のリスティアワンが入り、上位2頭には9月2日大井の第33回アフター5スター賞・S3への優先出走権が与えられました。3着には後方から3番人気のデンテブリランテが追い込みました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (199文字)
-[0]  プレビュー: 30日、大井競馬場で行われた第16回優駿スプリントは、1番人気のゼーロスが4馬身差の圧勝で重賞2勝目を挙げました。笹川翼騎手騎乗のゼーロスは、好位から脚を伸ばし...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (221文字)
-[1]  プレビュー: 今日の競馬情報です。第61回北九州記念・G3は7月5日に小倉競馬場・芝1200メートルで発走予定です。このレースに格上挑戦で出走するアメリカンビキニは、ハンデ5...
+[0]  → output/script_0.txt 保存 (164文字)
+[0]  プレビュー: レース関連の最新情報です。30日大井の優駿スプリント・S2では、1番人気のゼーロスが4馬身差の圧勝で南関3歳スプリントの頂点に立ちました。2着には7番人気のリス...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 223文字]: '競馬速報です。夏競馬の格言通り、北九州記念は勢いがモノを言うレースです。施行時期は何度か変更されてきましたが、その傾向は変わっていません。近10年の前走着順別成績を見ると、勝って挑んだ馬が【5-7-3-22】の勝率14%、単勝回収率109％と優秀な成績を残しています。特に近3年に限ると、23年のジャスパークローネ、24年のピューロマジック、25年のヤマニンアルリフラと、前走1着馬が3連覇中です。まさに勢いが結果に直結していると言えるでしょう。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (223文字)
-[2]  プレビュー: 競馬速報です。夏競馬の格言通り、北九州記念は勢いがモノを言うレースです。施行時期は何度か変更されてきましたが、その傾向は変わっていません。近10年の前走着順別成...
+[2]  [Gemini生出力 252文字]: '競馬ファン注目の情報です。30日の門別11R「北海道野菜王国にったん特別」で、単勝1.1倍の1番人気に支持されたアヴェルスが1着となりました。この勝利により、鞍上の石川倭騎手は2013年4月24日の初騎乗から8995戦目で、JRAを含む通算1500勝を達成しました。これはホッカイドウ競馬の現役騎手では5人目の快挙です。通算1500勝のうち、重賞は65勝を数え、その中には2020年のJpn3JBC2歳優駿をラッキードリームで、2022年のJpn3JBC2歳優駿をゴライコウで制した記録が含まれています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (252文字)
+[2]  プレビュー: 競馬ファン注目の情報です。30日の門別11R「北海道野菜王国にったん特別」で、単勝1.1倍の1番人気に支持されたアヴェルスが1着となりました。この勝利により、鞍...
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 169文字]: '競馬ファン注目の情報です。ホッカイドウ競馬所属の田中淳司調教師が、地方競馬通算2100勝を達成しました。6月30日、門別競馬12Rに管理するシシャモフレンドを出走させ1着となり、この記録を達成。2007年4月の初出走以来、1万127戦目での快挙です。重賞は2013年全日本2歳優駿をハッピースプリントで制するなど、113勝を挙げています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (169文字)
+[1]  プレビュー: 競馬ファン注目の情報です。ホッカイドウ競馬所属の田中淳司調教師が、地方競馬通算2100勝を達成しました。6月30日、門別競馬12Rに管理するシシャモフレンドを出...
 
 3 件の脚本を生成しました。
