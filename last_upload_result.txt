@@ -1,10 +1,10 @@
-date: 2026-07-01T07:14:42.254304Z
+date: 2026-07-01T10:45:54.618698Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fA1gw_rBRx8 title=かしわ記念連覇などJpn1で3勝　シャマル登録抹消　地方に移籍予定
-OK project=1 video_id=X4-q5E0qcU8 title=ムルソー、マーキュリーC追い切り速報/栗東トレセンニュース
-OK project=1 video_id=_fyIMf-sxa8 title=ルメール騎手が田村調教師を追悼「大きな損失であり、忘れられない思い出」　メジャー
+OK project=1 video_id=UIyUniQqOgc title=武豊騎手と柳田悠岐外野手が初対談　2人の現役へのこだわり、モチベーションとは「G
+OK project=1 video_id=EM9I0tMJug4 title=【POG】武井師「今日で希望の光が…」スーパーユタカは父エフフォーリアの主戦・横
+OK project=1 video_id=jEHk8LeGruY title=「全然練習通りに...」今村聖奈騎手ノーバンで右打者直撃!　偉業達成の背番号「1
