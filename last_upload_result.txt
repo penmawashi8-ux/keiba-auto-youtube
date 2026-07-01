@@ -1,10 +1,10 @@
-date: 2026-07-01T05:31:08.815535Z
+date: 2026-07-01T07:14:42.254304Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LTEw-X68J4c title=【七夕賞想定】カラマティアノス、ピコチャンブラックなど16頭
-OK project=1 video_id=m1fN3-lRkWE title=ジーティーアダマン、小倉記念2週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=_FHc70qTX6Y title=【園田競馬】「吉村智騎手より勝つようにしたい」浦和の福原杏騎手が期間限定騎乗スタ
+OK project=1 video_id=fA1gw_rBRx8 title=かしわ記念連覇などJpn1で3勝　シャマル登録抹消　地方に移籍予定
+OK project=1 video_id=X4-q5E0qcU8 title=ムルソー、マーキュリーC追い切り速報/栗東トレセンニュース
+OK project=1 video_id=_fyIMf-sxa8 title=ルメール騎手が田村調教師を追悼「大きな損失であり、忘れられない思い出」　メジャー
