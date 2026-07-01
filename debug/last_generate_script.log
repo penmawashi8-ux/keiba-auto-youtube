@@ -1,113 +1,44 @@
-[1]  [ファクトチェックNG] NG: 「田辺裕信騎手
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 「人生を全うしていたと思います」
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 「田村先生は人生を全う
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 「上のレベルを経験させていただいた」田村康仁調教師を所属の江田勇亮騎手が追悼　コンビで14年に重賞制覇 ---
-[0] Gemini入力本文 474文字: '6月29日に病気のため死去した田村康仁調教師(享年63)の訃報を受け、所属の江田勇亮騎手が1日、故人をしのんだ。\n\t\t\t\t\u3000「ケイアイドウソジンで重賞を勝たせていただいて(14年阪神スプリングジャンプ)、上のレベルを経験させていただきました'
+--- 記事[0]: 武豊騎手と柳田悠岐外野手が初対談　2人の現役へのこだわり、モチベーションとは「G1に出ている限りは」「若い選手に…」 ---
+[0] Gemini入力本文 341文字: '6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手＝栗東・フリー＝とソフトバンクの柳田悠岐外野手が初対談。30日に特別動画版が公開された。そのなかで2人が自身の現役へのこだわりについて語った。\n\t\t\t\t\u3000今春は安田記念をシックスペン'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 22年の菊花賞をアスクビクターモアでVの田辺裕信騎手が田村康仁調教師を追悼　「人生を全うしていたと思います」 ---
-[1] Gemini入力本文 343文字: '6月29日に病気のため亡くなった田村康仁調教師(享年63)をしのんで、同厩舎のアスクビクターモアで22年の菊花賞を制した田辺裕信騎手(42)＝美浦・フリー＝が7月1日、生前の思い出と感謝を語った。同馬のデビュー4戦目からコンビを組み、1勝ク'
+--- 記事[1]: 【POG】武井師「今日で希望の光が…」スーパーユタカは父エフフォーリアの主戦・横山武史騎手で5日函館デビュー ---
+[1] Gemini入力本文 342文字: '7月5日の函館5R・芝1800メートルでデビューする予定のスーパーユタカ(牡2歳、美浦・武井亮厩舎)は、ここまでデビューした9頭のうち4頭が勝ち上がった新種牡馬のエフフォーリア産駒。1日の追い切りは、父の主戦を務めた横山武史騎手が先週の美浦'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 「自分の厩舎の基準になっている。恩人でした」　田村康仁調教師の管理馬を引き継いだ中舘調教師が故人をしのぶ ---
-[2] Gemini入力本文 341文字: '6月29日に病気のため死去した田村康仁調教師(享年63)の訃報を受け、管理馬63頭の転厩先となった中舘英二調教師＝美浦＝が1日、故人をしのんだ。\n\t\t\t\t\u3000「田村先生には本当にお世話になりました。(騎手時代に)フリーになるときに先生の後ろ盾'
+--- 記事[2]: 「全然練習通りに...」今村聖奈騎手ノーバンで右打者直撃!　偉業達成の背番号「16」で始球式に登場 ---
+[2] Gemini入力本文 343文字: '5月のオークスでJRA女性騎手として史上初めてG1制覇を飾った今村聖奈騎手(22)＝栗東・寺島良厩舎＝が1日、みずほPayPayドーム福岡で行われたソフトバンク―西武戦の始球式を初めて務めた。\n\t\t\t\t\u3000今村はオークスをジュウリョクピエロで'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 212文字]: '本日の競馬ニュースです。\n6月29日に病気のため死去した田村康仁調教師、享年63の訃報を受け、管理馬63頭の転厩先となった中舘英二調教師が1日、故人をしのびました。中舘調教師は「田村先生には本当にお世話になりました」と述べ、騎手時代にフリーになるときに先生の後ろ盾があったと振り返っています。体調が悪いとは聞いていたものの、良くなったとも聞いていたため、昨日30日の朝にスタンドで亡くなったと聞いて本当に驚いたと語りました。'
-[2]  [重複除去] 212文字 → 211文字
-  HTTP 200
-[1]  [Gemini生出力 271文字]: '競馬ファン注目の情報です。\n6月29日に病気のため亡くなった田村康仁調教師をしのんで、同厩舎のアスクビクターモアで2022年の菊花賞を制した田辺裕信騎手が7月1日、生前の思い出と感謝を語りました。田村康仁調教師は享年63でした。田辺裕信騎手はアスクビクターモアのデビュー4戦目からコンビを組み、1勝クラス、報知杯弥生賞ディープインパクト記念を連勝しました。皐月賞では5着、日本ダービーでは3着に好走し、クラシック戦線で活躍しました。田辺裕信騎手は「すごいお世話になりました。田村先生は...人生を全うしていたと思います」とコメントしています。'
-[1]  [重複除去] 268文字 → 267文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (211文字)
-[2]  プレビュー: 本日の競馬ニュースです。6月29日に病気のため死去した田村康仁調教師、享年63の訃報を受け、管理馬63頭の転厩先となった中舘英二調教師が1日、故人をしのびました...
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 316文字]: '最新のレース情報が入ってきました。6月29日に病気のため享年63で死去した田村康仁調教師の訃報を受け、所属の江田勇亮騎手が1日、故人をしのびました。江田騎手は「ケイアイドウソジンで重賞を勝たせていただいて、上のレベルを経験させていただきました。本当にお世話になりました」とコメント。2014年の阪神スプリングジャンプでの重賞制覇を振り返り、「五十嵐雄祐騎手とジョッキーを2人抱えて大変だったと思うけどしっかり信頼してもらえたし、いい環境でやらせてもらえました。本当にありがたかったです...恩人でした」と感謝を述べました。田村康仁調教師は2015年の阪神ジュベナイルフィリーズをメジャーエンブレムで制し、G1初勝利を挙げていました。'
+[1]  [Gemini生出力 220文字]: '競馬ファン注目の情報です。7月5日の函館5R、芝1800メートルでデビューする予定のスーパーユタカは、新種牡馬エフフォーリア産駒です。ここまでデビューした9頭のうち4頭が勝ち上がっています。1日の追い切りでは、父エフフォーリアの主戦を務めた横山武史騎手が先週の美浦に続いて手綱を執り、芝コースでジオと最後まで併せて併入しました。武井調教師は「先週まで悪くないと思っていて、勝ち負けいけるかなと思っていた。美浦で乗った」とコメントしています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (220文字)
+[1]  プレビュー: 競馬ファン注目の情報です。7月5日の函館5R、芝1800メートルでデビューする予定のスーパーユタカは、新種牡馬エフフォーリア産駒です。ここまでデビューした9頭の...
+  HTTP 200
+[0]  [Gemini生出力 230文字]: '今週の競馬注目情報をお伝えします。6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手とソフトバンクの柳田悠岐外野手が初対談しました。この対談の特別動画版が30日に公開され、2人が自身の現役へのこだわりについて語っています。武豊騎手は今春、安田記念をシックスペンスで、宝塚記念をメイショウタバルで制し、57歳3か月の史上最年長G1勝利を達成したレジェンドです。野球界の立浪和義さんと同じ1969年生まれの武豊騎手は、「現役がいいですよね。」と話しました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (313文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。6月29日に病気のため享年63で死去した田村康仁調教師の訃報を受け、所属の江田勇亮騎手が1日、故人をしのびました。江田騎手は「...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[0]  → output/script_0.txt 保存 (230文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手とソフトバンクの柳田悠岐外野手が初対談しました。この対談の特別動画版...
   HTTP 200
-[1]  [Gemini生出力 257文字]: '競馬ファン注目の情報です。6月29日に病気のため亡くなった田村康仁調教師をしのんで、同厩舎のアスクビクターモアで22年の菊花賞を制した田辺裕信騎手が7月1日、生前の思い出と感謝を語りました。田辺裕信騎手は、アスクビクターモアのデビュー4戦目からコンビを組み、1勝クラスと報知杯弥生賞ディープインパクト記念を連勝しています。また、皐月賞は5着、日本ダービーでは3着に好走し、クラシック戦線で活躍しました。田辺裕信騎手は「すごいお世話になりました。田村先生は... 人生を全うしていたと思います」とコメントしています。'
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 259文字]: '競馬ファン注目の情報です。\n6月29日に病気のため享年63で亡くなった田村康仁調教師をしのび、田辺裕信騎手が7月1日に生前の思い出と感謝を語りました。田辺騎手は、田村調教師の厩舎のアスクビクターモアで22年の菊花賞を制しています。同馬とはデビュー4戦目からコンビを組み、1勝クラスと報知杯弥生賞ディープインパクト記念を連勝しました。さらに、皐月賞は5着、日本ダービーでは3着に好走し、クラシック戦線で活躍を見せました。田辺騎手は「すごいお世話になりました。田村先生は人生を全うしていたと思います」とコメントしています。'
-[1]  [重複除去] 259文字 → 258文字
-[1] 使用: key=***l-ME model=gemini-2.0-flash  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [1] のスクリプト生成失敗。
+[2]  [Gemini生出力 246文字]: 'レース関連の最新情報です。5月のオークスでJRA女性騎手として史上初めてG1制覇を飾った今村聖奈騎手が、1日にみずほPayPayドーム福岡で行われたソフトバンク―西武戦の始球式を初めて務めました。今村騎手はオークスをジュウリョクピエロで制した時の馬番と同じ「16」の背番号をつけてマウンドに登場。スタンドの4方向に頭を下げると、すぐに投球体勢に入り、左利きである今村騎手から投じられたボールは山なりの軌道を描きました。そして、ノーバンで右打者を直撃し、「全然練習通りに...」と語っています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (243文字)
+[2]  プレビュー: レース関連の最新情報です。5月のオークスでJRA女性騎手として史上初めてG1制覇を飾った今村聖奈騎手が、1日にみずほPayPayドーム福岡で行われたソフトバンク...
 
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+3 件の脚本を生成しました。
