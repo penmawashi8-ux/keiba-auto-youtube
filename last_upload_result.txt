@@ -1,10 +1,10 @@
-date: 2026-06-30T13:20:30.585589Z
+date: 2026-07-01T00:22:50.038931Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=McJ3Mfd026w title=【地方競馬】優駿スプリント　ゼーロスが４馬身差の圧勝で南関３歳スプリントの頂点へ
-OK project=1 video_id=AZiujW1gOQE title=【門別競馬】田中淳司調教師が通算2100勝
-OK project=1 video_id=YpDvdC-zo7Y title=【ホッカイドウ競馬】石川倭　門別11Rで通算1500勝達成　現役5人目
+OK project=1 video_id=U-IM1f4m3G0 title=【帝王賞】史上2頭目の連覇へ ミッキーファイトがJpnI・3勝目狙う
+OK project=1 video_id=EAFbC_jyuQk title=【博多S】半姉は名牝リスグラシュー ネブラディスクがオープン昇級狙う
+OK project=1 video_id=etB9YG7dv28 title=帝王賞を前に振り返る上半期ダート戦線 二冠馬誕生から地方馬の活躍まで
