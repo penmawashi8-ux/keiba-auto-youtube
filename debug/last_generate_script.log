@@ -1,40 +1,113 @@
+[1]  [ファクトチェックNG] NG: 「田辺裕信騎手
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 「人生を全うしていたと思います」
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 「田村先生は人生を全う
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: かしわ記念連覇などJpn1で3勝　シャマル登録抹消　地方に移籍予定 ---
-[0] Gemini入力本文 253文字: '2024、25年のかしわ記念連覇や昨年のさきたま杯とJpn1での3勝を含む重賞9勝を挙げたシャマル(牡8＝松下、父スマートファルコン)が6月30日付でJRA競走馬登録を抹消した。通算34戦13勝。\n\u3000今後は地方に移籍する予定だが、移籍先は未'
+--- 記事[0]: 「上のレベルを経験させていただいた」田村康仁調教師を所属の江田勇亮騎手が追悼　コンビで14年に重賞制覇 ---
+[0] Gemini入力本文 474文字: '6月29日に病気のため死去した田村康仁調教師(享年63)の訃報を受け、所属の江田勇亮騎手が1日、故人をしのんだ。\n\t\t\t\t\u3000「ケイアイドウソジンで重賞を勝たせていただいて(14年阪神スプリングジャンプ)、上のレベルを経験させていただきました'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: ムルソー、マーキュリーC追い切り速報/栗東トレセンニュース ---
-[1] Gemini入力本文 339文字: '7月20日(月・祝)に盛岡競馬場、ダート2000mで行われるマーキュリーカップ。ここへ出走を予定しているのが、前走アンタレスSで重賞初制覇を果たしたムルソー(栗東・池江泰寿厩舎)。今朝1日はレースに向けた追い切りを行っている。\n\u30002回目のハ'
+--- 記事[1]: 22年の菊花賞をアスクビクターモアでVの田辺裕信騎手が田村康仁調教師を追悼　「人生を全うしていたと思います」 ---
+[1] Gemini入力本文 343文字: '6月29日に病気のため亡くなった田村康仁調教師(享年63)をしのんで、同厩舎のアスクビクターモアで22年の菊花賞を制した田辺裕信騎手(42)＝美浦・フリー＝が7月1日、生前の思い出と感謝を語った。同馬のデビュー4戦目からコンビを組み、1勝ク'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: ルメール騎手が田村調教師を追悼「大きな損失であり、忘れられない思い出」　メジャーエンブレムで2度のG1勝利 ---
-[2] Gemini入力本文 450文字: 'クリストフ・ルメール騎手が7月1日、自身のXを更新し、6月29日に死去した田村康仁調教師＝美浦＝に追悼のメッセージを投稿した。\n\t\t\t\t\u3000「田村先生のご逝去に際し、ご家族の皆様に心よりお悔やみ申し上げます。日本のスポーツ界にとって大きな損失'
+--- 記事[2]: 「自分の厩舎の基準になっている。恩人でした」　田村康仁調教師の管理馬を引き継いだ中舘調教師が故人をしのぶ ---
+[2] Gemini入力本文 341文字: '6月29日に病気のため死去した田村康仁調教師(享年63)の訃報を受け、管理馬63頭の転厩先となった中舘英二調教師＝美浦＝が1日、故人をしのんだ。\n\t\t\t\t\u3000「田村先生には本当にお世話になりました。(騎手時代に)フリーになるときに先生の後ろ盾'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 243文字]: '今週の競馬注目情報をお伝えします。クリストフ・ルメール騎手が7月1日、自身のXを更新し、6月29日に死去した田村康仁調教師に追悼のメッセージを投稿しました。ルメール騎手は「田村先生のご逝去に際し、ご家族の皆様に心よりお悔やみ申し上げます。日本のスポーツ界にとって大きな損失であり、忘れられない思い出となるでしょう」とつづっています。ルメール騎手は田村調教師の管理馬で35勝を挙げており、メジャーエンブレムでは2015年の阪神JF、2016年のNHKマイルCで2度のG1勝利を飾りました。'
+[2]  [Gemini生出力 212文字]: '本日の競馬ニュースです。\n6月29日に病気のため死去した田村康仁調教師、享年63の訃報を受け、管理馬63頭の転厩先となった中舘英二調教師が1日、故人をしのびました。中舘調教師は「田村先生には本当にお世話になりました」と述べ、騎手時代にフリーになるときに先生の後ろ盾があったと振り返っています。体調が悪いとは聞いていたものの、良くなったとも聞いていたため、昨日30日の朝にスタンドで亡くなったと聞いて本当に驚いたと語りました。'
+[2]  [重複除去] 212文字 → 211文字
   HTTP 200
-[1]  [Gemini生出力 250文字]: '最新のレース情報が入ってきました。7月20日(月・祝)に盛岡競馬場、ダート2000mで行われるマーキュリーカップ。ここへ出走を予定しているのが、前走アンタレスSで重賞初制覇を果たしたムルソーです。ムルソーは栗東の池江泰寿厩舎に所属しています。今朝1日には、レースに向けた追い切りが行われました。2回目のハローが終了した時間帯のCWコースでゾンニッヒとの併せ馬を実施。馬場入りしてからゆっくりペースでキャンターを行い、向正面でのスピード乗りもじわりと上がりました。ゾンニッヒに4馬身ほど先行しています。'
+[1]  [Gemini生出力 271文字]: '競馬ファン注目の情報です。\n6月29日に病気のため亡くなった田村康仁調教師をしのんで、同厩舎のアスクビクターモアで2022年の菊花賞を制した田辺裕信騎手が7月1日、生前の思い出と感謝を語りました。田村康仁調教師は享年63でした。田辺裕信騎手はアスクビクターモアのデビュー4戦目からコンビを組み、1勝クラス、報知杯弥生賞ディープインパクト記念を連勝しました。皐月賞では5着、日本ダービーでは3着に好走し、クラシック戦線で活躍しました。田辺裕信騎手は「すごいお世話になりました。田村先生は...人生を全うしていたと思います」とコメントしています。'
+[1]  [重複除去] 268文字 → 267文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (243文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。クリストフ・ルメール騎手が7月1日、自身のXを更新し、6月29日に死去した田村康仁調教師に追悼のメッセージを投稿しました。ルメ...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (250文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。7月20日(月・祝)に盛岡競馬場、ダート2000mで行われるマーキュリーカップ。ここへ出走を予定しているのが、前走アンタレスS...
+[2]  → output/script_2.txt 保存 (211文字)
+[2]  プレビュー: 本日の競馬ニュースです。6月29日に病気のため死去した田村康仁調教師、享年63の訃報を受け、管理馬63頭の転厩先となった中舘英二調教師が1日、故人をしのびました...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 140文字]: '重要な競馬ニュースをお伝えします。2024、25年のかしわ記念連覇や昨年のさきたま杯とJpn1での3勝を含む重賞9勝を挙げたシャマルが、6月30日付でJRA競走馬登録を抹消しました。シャマルの通算成績は34戦13勝です。今後は地方に移籍する予定ですが、移籍先は未定となっています。'
+[0]  [Gemini生出力 316文字]: '最新のレース情報が入ってきました。6月29日に病気のため享年63で死去した田村康仁調教師の訃報を受け、所属の江田勇亮騎手が1日、故人をしのびました。江田騎手は「ケイアイドウソジンで重賞を勝たせていただいて、上のレベルを経験させていただきました。本当にお世話になりました」とコメント。2014年の阪神スプリングジャンプでの重賞制覇を振り返り、「五十嵐雄祐騎手とジョッキーを2人抱えて大変だったと思うけどしっかり信頼してもらえたし、いい環境でやらせてもらえました。本当にありがたかったです...恩人でした」と感謝を述べました。田村康仁調教師は2015年の阪神ジュベナイルフィリーズをメジャーエンブレムで制し、G1初勝利を挙げていました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (140文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。2024、25年のかしわ記念連覇や昨年のさきたま杯とJpn1での3勝を含む重賞9勝を挙げたシャマルが、6月30日付でJRA競走...
+[0]  → output/script_0.txt 保存 (313文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。6月29日に病気のため享年63で死去した田村康仁調教師の訃報を受け、所属の江田勇亮騎手が1日、故人をしのびました。江田騎手は「...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 257文字]: '競馬ファン注目の情報です。6月29日に病気のため亡くなった田村康仁調教師をしのんで、同厩舎のアスクビクターモアで22年の菊花賞を制した田辺裕信騎手が7月1日、生前の思い出と感謝を語りました。田辺裕信騎手は、アスクビクターモアのデビュー4戦目からコンビを組み、1勝クラスと報知杯弥生賞ディープインパクト記念を連勝しています。また、皐月賞は5着、日本ダービーでは3着に好走し、クラシック戦線で活躍しました。田辺裕信騎手は「すごいお世話になりました。田村先生は... 人生を全うしていたと思います」とコメントしています。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 259文字]: '競馬ファン注目の情報です。\n6月29日に病気のため享年63で亡くなった田村康仁調教師をしのび、田辺裕信騎手が7月1日に生前の思い出と感謝を語りました。田辺騎手は、田村調教師の厩舎のアスクビクターモアで22年の菊花賞を制しています。同馬とはデビュー4戦目からコンビを組み、1勝クラスと報知杯弥生賞ディープインパクト記念を連勝しました。さらに、皐月賞は5着、日本ダービーでは3着に好走し、クラシック戦線で活躍を見せました。田辺騎手は「すごいお世話になりました。田村先生は人生を全うしていたと思います」とコメントしています。'
+[1]  [重複除去] 259文字 → 258文字
+[1] 使用: key=***l-ME model=gemini-2.0-flash  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 
-3 件の脚本を生成しました。
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
