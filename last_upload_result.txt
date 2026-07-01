@@ -1,10 +1,10 @@
-date: 2026-07-01T10:45:54.618698Z
+date: 2026-07-01T12:16:45.172967Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UIyUniQqOgc title=武豊騎手と柳田悠岐外野手が初対談　2人の現役へのこだわり、モチベーションとは「G
-OK project=1 video_id=EM9I0tMJug4 title=【POG】武井師「今日で希望の光が…」スーパーユタカは父エフフォーリアの主戦・横
-OK project=1 video_id=jEHk8LeGruY title=「全然練習通りに...」今村聖奈騎手ノーバンで右打者直撃!　偉業達成の背番号「1
+OK project=1 video_id=gqloOj8VNsU title=【帝王賞】東京大賞典Vのディクテオンは3着　川崎記念5着から巻き返した　矢野貴之
+OK project=1 video_id=riN7ablLyMo title=【七夕賞・1週前】ヤマニンブークリエがCWコースで6ハロン78秒6の好時計　松永
+OK project=1 video_id=Pr6_AGVzTzE title=【注目馬動向】カラマティアノスは七夕賞で岩田康誠騎手と初コンビ　主戦の津村明秀騎
