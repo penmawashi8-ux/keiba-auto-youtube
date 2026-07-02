@@ -1,10 +1,10 @@
-date: 2026-07-01T13:45:14.400074Z
+date: 2026-07-02T00:24:58.545799Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RpKvTvdxjrE title=【地方競馬】帝王賞　ディクテオンはコリアＣ視野へ　荒山師「韓国の連覇を狙いに行く
-OK project=1 video_id=uo6guYypkQg title=【地方競馬】帝王賞　ミッキーファイトが横綱相撲の完勝劇　連覇を達成して戸崎圭は「
-OK project=1 video_id=Sy4cNk3MSdI title=【POG】3・1億円馬ダノンダックスがデビューに向けてWコースで初時計　田中博調
+OK project=1 video_id=PhQNtlSgEng title=柳田悠岐外野手が武豊騎手に騎乗依頼「一緒に勝ちたいですよね。ぜひゴーイントゥスカ
+OK project=1 video_id=-D8vhj4KG0g title=【ジュライＳ】メリークリスマス　余力十分　小手川師「予定通り」　１週前自己ベスト
+OK project=1 video_id=WVJH8AuQ5jI title=コレットが栗東トレセンで初調教騎乗「たくさんレースに勝ちたい」　通算１３００勝、
