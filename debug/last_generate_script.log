@@ -1,41 +1,136 @@
+[2]  [ファクトチェックNG] NG: セレクトセールで2.1
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [ファクトチェックNG] NG: 父母は2018
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: セレクトセールで2.
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 今週決める!不滅の大記録　武豊騎手が通算5000勝へM4「よくここまで来たなという感じ。達成したいね」 ---
-[0] Gemini入力本文 380文字: '不滅の大記録へ。6月24日、自身のオフィシャルサイトで地方・海外を含む勝利数が4994勝と判明したと報告した武豊騎手＝栗東・フリー＝。先週2勝し、JRA通算4665勝、地方212勝、海外119勝と合わせて、通算5000勝へのマジックを“4”'
+--- 記事[0]: 【POG】父母は18年スプリンターズS1、2着　ディーエスシンが4日小倉でデビュー　橋口調教師「スピードがあります」 ---
+[0] Gemini入力本文 368文字: 'ディーエスシン(牡、栗東・橋口慎介厩舎、父ファインニードル)が7月4日の小倉5R・2歳新馬(芝1200メートル)でデビューする。\n\t\t\t\t\u30001日の最終追い切りはレースで手綱を執る松山弘平騎手を背に、栗東・坂路でリメンバーシドニー(3歳未勝利'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: YJS地方所属出場騎手が決定　東日本14人、西日本11人が若手騎手NO1を目指す ---
-[1] Gemini入力本文 750文字: 'NAR地方競馬全国協会は7月2日、「2026ヤングジョッキーズシリーズ」に出場する地方競馬所属騎手を以下の通り発表した。トライアルラウンドは東日本、西日本ともに6ラウンド行われ、ポイント上位が出場するファイナルラウンドは12月17日に川崎で'
+--- 記事[1]: 【門別競馬】石川倭騎手が通算1500勝　昨年の道営リーディング首位 ---
+[1] Gemini入力本文 481文字: 'ホッカイドウ競馬所属の石川倭騎手(31)＝米川昇厩舎＝は7月2日、門別競馬10Rでトゥレアレンシスに騎乗して1着。2013年4月の初騎乗以来、8924戦目で地方競馬通算1500勝を達成した。重賞は2025年北海道スプリントC・Jpn3(ヤマ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【POG】G1馬パンジャタワーの半弟　パイロ産駒のタケルレジェンドがデビュー　高柳大調教師「やっぱり走りからするとダート ---
-[2] Gemini入力本文 348文字: '7月5日の小倉6R(ダート1700メートル)で、昨年のNHKマイルC覇者パンジャタワーの半弟のタケルレジェンド(牡2歳、栗東・高柳大輔厩舎、父パイロ)が初陣を迎える。高柳大調教師は「上は芝だったけど、やっぱり走りからするとダートかな。血統的'
+--- 記事[2]: セレクト2.1億円のフライトライン産駒 ショウナンガレオンがデビュー勝ち狙う ---
+[2] Gemini入力本文 360文字: '名馬フライトライン(Flightline)の初年度産駒となるショウナンガレオン(牡2、美浦・加藤士津八厩舎)が、日曜函館5Rの2歳新馬(芝1800m)でデビューする。\n\u3000ショウナンガレオンは父Flightline、母タングリトナ、母の父Fu'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 237文字]: '重要な競馬ニュースをお伝えします。武豊騎手が、不滅の大記録となる通算5000勝へマジック4としました。6月24日、自身のオフィシャルサイトで地方・海外を含む勝利数が4994勝と判明したと報告しています。先週2勝を挙げ、JRA通算4665勝、地方212勝、海外119勝と合わせて、通算5000勝へのマジックを4としました。武豊騎手は「積み重ねの数字だから、よくここまで来たなという感じです。できれば今週、達成したいね」とコメントし、開催の折り返しを迎えた函館で決める構えです。'
+[2]  [Gemini生出力 261文字]: '競馬ファン注目の情報です。名馬フライトラインの初年度産駒となるショウナンガレオンが、日曜函館5Rの2歳新馬、芝1800mでデビューします。ショウナンガレオンは父Flightline、母タングリトナ、母の父Full Mastの血統です。父フライトラインは現役時代、G1を4勝し、6戦6勝の成績を収めました。2022年の米年度代表馬であり、ワールド・ベスト・レースホース・ランキングのダート部門で史上初めてレーティング140に到達した馬です。セレクトセールで2.1億円の値が付いたショウナンガレオンが、デビュー勝ちを狙います。'
   HTTP 200
-[2]  [Gemini生出力 248文字]: '競馬ファン注目の情報です。昨年のNHKマイルC覇者パンジャタワーの半弟、タケルレジェンドがデビューします。7月5日の小倉6R、ダート1700メートルで初陣を迎えるのは、牡2歳、栗東・高柳大輔厩舎所属、父パイロのタケルレジェンドです。高柳大調教師は「上は芝だったけど、やっぱり走りからするとダートかな。血統的なこともあります」と半兄とは異なる適性を見込んでいます。1週前追い切りでは川田将雅騎手が騎乗し、栗東・CWコースで84秒3―11秒4をマークしました。エナジーイッセイを2馬身追走しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (237文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。武豊騎手が、不滅の大記録となる通算5000勝へマジック4としました。6月24日、自身のオフィシャルサイトで地方・海外を含む勝利...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (248文字)
-[2]  プレビュー: 競馬ファン注目の情報です。昨年のNHKマイルC覇者パンジャタワーの半弟、タケルレジェンドがデビューします。7月5日の小倉6R、ダート1700メートルで初陣を迎え...
+[1]  [Gemini生出力 187文字]: '今日の競馬情報です。ホッカイドウ競馬所属の石川倭騎手は7月2日、門別競馬10Rでトゥレアレンシスに騎乗し1着となり、地方競馬通算1500勝を達成しました。これは2013年4月の初騎乗以来、8924戦目での記録です。石川騎手は重賞を2025年北海道スプリントC・Jpn3のヤマニンチェルキなど65勝挙げています。昨年は門別で167勝を挙げ、道営リーディング首位を獲得しました。'
   HTTP 200
-[1]  [Gemini生出力 331文字]: '重要な競馬ニュースをお伝えします。\nNAR地方競馬全国協会は7月2日、「2026ヤングジョッキーズシリーズ」に出場する地方競馬所属騎手を発表しました。東日本からは14人、西日本からは11人が若手騎手ナンバーワンを目指します。トライアルラウンドは東日本、西日本ともに6ラウンド行われ、ポイント上位が出場するファイナルラウンドは12月17日に川崎で、同19日にJRA中京で行われます。東日本出場騎手は阿岸潤一朗、藤田凌駕、渡辺準己、坂井瑛音、中山遥人、椿聡太、所蛍、山本大翔、小野俊斗、杉山海波、高橋優、谷内貫太、加藤雄真、佐野遥久です。西日本出場騎手は松本一心、小笠原羚、小谷哲平、塩津璃菜、新庄海誠、阿部基嗣、近藤翔月、城野慈尚、青海大樹、長谷川蓮、林悠翔です。'
-[1]  [重複除去] 331文字 → 330文字
+[0]  [Gemini生出力 297文字]: '今日の競馬情報です。\nディーエスシンが7月4日の小倉5R、2歳新馬の芝1200メートルでデビューします。この馬の父母は、2018年のスプリンターズステークスで1着と2着を飾っています。1日に行われた最終追い切りでは、レースで手綱を執る松山弘平騎手を背に、栗東の坂路でリメンバーシドニーを半馬身先行させ、51秒5―12秒2の好時計をマークし、2馬身半先着しました。抜群の手応えで突き放したと報じられています。橋口調教師は「スピードがあります」とコメント。さらに、「良かったですね。しまいも12秒2、12秒2で動いていますからね。なかなか、デビュー前から最後の2ハロン...」と期待を寄せています。'
+[0]  [重複除去] 294文字 → 293文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (330文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。NAR地方競馬全国協会は7月2日、「2026ヤングジョッキーズシリーズ」に出場する地方競馬所属騎手を発表しました。東日本からは...
+[1]  → output/script_1.txt 保存 (187文字)
+[1]  プレビュー: 今日の競馬情報です。ホッカイドウ競馬所属の石川倭騎手は7月2日、門別競馬10Rでトゥレアレンシスに騎乗し1着となり、地方競馬通算1500勝を達成しました。これは...
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 253文字]: '競馬ファン注目の情報です。セレクトセールで2.1億円の値が付いた名馬フライトラインの初年度産駒、ショウナンガレオンがデビューします。ショウナンガレオンは日曜函館5Rの2歳新馬、芝1800mでデビューを迎える予定です。父はFlightline、母はタングリトナ、母の父はFull Mastという血統です。父Flightlineは現役時代にG1を4勝し、6戦6勝の成績を誇ります。22年の米年度代表馬であり、ワールド・ベスト・レースホース・ランキングのダート部門で史上初めてレーティング140に到達した馬です。'
+  HTTP 200
+[0]  [Gemini生出力 248文字]: '今日の競馬情報です。\nディーエスシンが7月4日の小倉5R・2歳新馬、芝1200メートルでデビューすることが発表されました。1日に行われた最終追い切りでは、レースで手綱を執る松山弘平騎手を背に、栗東・坂路でリメンバーシドニーに半馬身先行。51秒5―12秒2の好時計をマークし、2馬身半先着しました。橋口慎介調教師は「スピードがあります」とコメント。松山弘平騎手も「良かったですね。しまいも12秒2、12秒2で動いていますからね。なかなか、デビュー前から最後の2ハロン...」と手応えを語っています。'
+[0]  [重複除去] 245文字 → 244文字
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (244文字)
+[0]  プレビュー: 今日の競馬情報です。ディーエスシンが7月4日の小倉5R・2歳新馬、芝1200メートルでデビューすることが発表されました。1日に行われた最終追い切りでは、レースで...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 264文字]: '競馬ファン注目の情報です。名馬フライトラインの初年度産駒であるショウナンガレオンが、日曜函館5Rの2歳新馬、芝1800mでデビューします。ショウナンガレオンはセレクトセールで2.1億円の値がついており、父フライトライン、母タングリトナ、母の父フルマストの血統です。父フライトラインはTapit産駒で、現役時代はG1・4勝を含む6戦6勝の成績を収めました。22年の米年度代表馬にも選ばれ、史上初めてワールド・ベスト・レースホース・ランキングのダート部門でレーティングが140に到達した馬です。この注目馬が、いよいよ初陣を迎えます。'[2]  [ファクトチェックNG] NG: セレクトセールで2.1
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 
-3 件の脚本を生成しました。
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
