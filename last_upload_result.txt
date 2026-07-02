@@ -1,10 +1,10 @@
-date: 2026-07-02T00:24:58.545799Z
+date: 2026-07-02T06:51:39.026949Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PhQNtlSgEng title=柳田悠岐外野手が武豊騎手に騎乗依頼「一緒に勝ちたいですよね。ぜひゴーイントゥスカ
-OK project=1 video_id=-D8vhj4KG0g title=【ジュライＳ】メリークリスマス　余力十分　小手川師「予定通り」　１週前自己ベスト
-OK project=1 video_id=WVJH8AuQ5jI title=コレットが栗東トレセンで初調教騎乗「たくさんレースに勝ちたい」　通算１３００勝、
+OK project=1 video_id=XeDD5gHQRkk title=【2026ヤングジョッキーズシリーズ】日程およびJRA&地方所属騎手の騎乗競馬場
+OK project=1 video_id=pQLi2wGbX-4 title=田村康仁調教師の死去にともない所属の五十嵐雄祐騎手と江田勇亮騎手がフリーに
+OK project=1 video_id=lKNkplR1p9E title=【netkeibaTV】「ドウデュースの子供も乗らないと」 デビュー40周年の武
