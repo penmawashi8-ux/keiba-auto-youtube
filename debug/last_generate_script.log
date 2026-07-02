@@ -1,53 +1,115 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない「ドウ
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 柳田悠岐外野手が武豊騎手に騎乗依頼「一緒に勝ちたいですよね。ぜひゴーイントゥスカイの下で」　レジェンド2人が初対談 ---
-[0] Gemini入力本文 338文字: '6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手＝栗東・フリー＝とソフトバンクの柳田悠岐外野手が初対談。30日に特別動画版が公開された。馬主でもある柳田外野手が武豊騎手に騎乗依頼する場面があった。\n\t\t\t\t\u3000今年の日本ダービーでゴ'
+--- 記事[0]: 田村康仁調教師の死去にともない所属の五十嵐雄祐騎手と江田勇亮騎手がフリーに ---
+[0] Gemini入力本文 224文字: 'JRAは7月2日、病気のため6月29日に63歳で亡くなった田村康仁調教師＝美浦＝の厩舎に所属の五十嵐雄祐騎手(42)と江田勇亮騎手(47)が、6月30日からフリーに所属変更となったことを発表した。… No.1競馬情報サイト「netkeiba'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【ジュライＳ】メリークリスマス　余力十分　小手川師「予定通り」　１週前自己ベスト＆ハンデも追い風に ---
-[1] Gemini入力本文 333文字: '「ジュライＳ」(５日、福島)\n\u3000メリークリスマスは１日、美浦Ｗでフォーワンセルフ（７歳２勝クラス）と併せ馬。直線は余力を残したまま脚を伸ばし、６Ｆ８４秒４-３８秒３-１２秒０の時計で併入した。小手川師は「輸送もあるので余裕残しの内容。予定通'
+--- 記事[1]: 【netkeibaTV】「ドウデュースの子供も乗らないと」 デビュー40周年の武豊騎手が語る生涯現役への想い ---
+[1] Gemini入力本文 332文字: '武豊騎手が4月30日、滋賀県大津市で開催された「サラブレッドホースショー ザ・セカンドキャリア」のトークショーに出演。これまでの騎手人生や引退競走馬への思い、今後の目標について語った。\n\u3000今年でデビュー40周年を迎えた“レジェンド”は、「騎'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: コレットが栗東トレセンで初調教騎乗「たくさんレースに勝ちたい」　通算１３００勝、昨年リーディング２位獲得 ---
-[2] Gemini入力本文 645文字: '短期免許で来日したジェイソン・コレット騎手（３５）＝豪州＝が１日、栗東トレセンを初訪問した。身元引受人である杉山晴厩舎のティグリス、オーロラエックスの２頭にまたがり、坂路とＣＷで騎乗して「すばらしい施設ですね」と興奮気味に語った。\n\u3000ニュー'
+--- 記事[2]: 武豊騎手のジャックルマロワ賞騎乗を妻の佐野量子さんも喜ぶ訳　「のんびり街歩きだけでも楽しいのに…」　日記で明かす ---
+[2] Gemini入力本文 341文字: '武豊騎手＝栗東・フリー＝が1日、オフィシャルサイト内の「日記」を更新し、自らが騎乗し安田記念を勝ったシックスペンス(牡5歳、美浦・田中博康厩舎、父キズナ)で挑むジャックルマロワ賞・仏G1(8月16日、ドーヴィル競馬場・芝直線1600メートル'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 283文字]: '注目の競馬情報をお届けします。\n6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手とソフトバンクの柳田悠岐外野手が初対談し、30日には特別動画版が公開されました。馬主でもある柳田外野手は、この対談の中で武豊騎手に騎乗依頼をする場面がありました。柳田外野手は「一緒に勝ちたいですよね。ぜひゴーイントゥスカイの下で」と語り、依頼しました。武豊騎手は今年の日本ダービーでゴーイントゥスカイに騎乗し、4着でした。柳田外野手は、ゴーイントゥスカイの1個下の妹である今年2歳のゴーイントゥノヴァについて、「楽しみになってきました。武さんのおかげで」と期待を寄せています。'
-[0]  [redirectフィルター] 283文字 → 267文字
+[0]  [Gemini生出力 166文字]: '最新のレース情報が入ってきました。JRAは7月2日、病気のため6月29日に63歳で亡くなった田村康仁調教師の厩舎に所属していた騎手の所属変更を発表しました。美浦所属だった田村康仁調教師の死去に伴い、五十嵐雄祐騎手、そして江田勇亮騎手が、6月30日からフリーに所属変更となっています。五十嵐雄祐騎手は42歳、江田勇亮騎手は47歳です。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (267文字)
-[0]  プレビュー: 6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手とソフトバンクの柳田悠岐外野手が初対談し、30日には特別動画版が公開されました。馬主でもある柳田外野手...
+[0]  → output/script_0.txt 保存 (166文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。JRAは7月2日、病気のため6月29日に63歳で亡くなった田村康仁調教師の厩舎に所属していた騎手の所属変更を発表しました。美浦...
   HTTP 200
-[1]  [Gemini生出力 194文字]: '今日の競馬情報です。\nジュライSに出走するメリークリスマスは1日、美浦Wでフォーワンセルフと併せ馬を行いました。直線では余力を残したまま脚を伸ばし、6ハロン84秒4-38秒3-12秒0の時計で併入しています。小手川師は「輸送もあるので余裕残しの内容。予定通りです」とコメントしました。メリークリスマスは今春に2連勝でオープン入りし、昇級戦の平安Sでは重賞初挑戦ながら4着と健闘しています。'
-[1]  [重複除去] 194文字 → 193文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (193文字)
-[1]  プレビュー: 今日の競馬情報です。ジュライSに出走するメリークリスマスは1日、美浦Wでフォーワンセルフと併せ馬を行いました。直線では余力を残したまま脚を伸ばし、6ハロン84秒...
+[2]  [Gemini生出力 216文字]: '競馬速報です。武豊騎手が1日、オフィシャルサイト内の「日記」を更新しました。自らが騎乗し安田記念を勝ったシックスペンスで挑むジャックルマロワ賞・仏G1への意気込みなどをつづっています。このジャックルマロワ賞は8月16日にドーヴィル競馬場・芝直線1600メートルで行われます。その日記の中で武豊騎手は、開催地ドーヴィルが妻の佐野量子さんとのリゾート地であることを明かしました。コロナ禍以前は毎年のように訪れていた場所だということです。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (216文字)
+[2]  プレビュー: 競馬速報です。武豊騎手が1日、オフィシャルサイト内の「日記」を更新しました。自らが騎乗し安田記念を勝ったシックスペンスで挑むジャックルマロワ賞・仏G1への意気込...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 201文字]: '今週の競馬注目情報をお伝えします。\n短期免許で来日したジェイソン・コレット騎手が、1日に栗東トレセンを初訪問しました。身元引受人である杉山晴厩舎のティグリスとオーロラエックスの2頭にまたがり、坂路とCWで初調教騎乗を行い、「すばらしい施設ですね」と興奮気味に語っています。コレット騎手は通算1300勝を超え、昨年はリーディング2位を獲得した実績を持ち、「たくさんレースに勝ちたい」と抱負を述べています。'
-[2]  [重複除去] 201文字 → 200文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (200文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。短期免許で来日したジェイソン・コレット騎手が、1日に栗東トレセンを初訪問しました。身元引受人である杉山晴厩舎のティグリスとオー...
-
-3 件の脚本を生成しました。
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 332文字）
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 260文字]: 'レース関連の最新情報です。武豊騎手が4月30日、滋賀県大津市で開催された「サラブレッドホースショー ザ・セカンドキャリア」のトークショーに出演しました。トークショーでは、これまでの騎手人生や引退競走馬への思い、今後の目標について語られました。今年でデビュー40周年を迎えた武豊騎手は、「騎手という仕事をやっていると、次から次へと人や馬との出会いがあって、ただただ夢中になってレースを重ねていると、あっという間でした」とこれまでを振り返りました。また、生涯現役への想いとして「ドウデュースの子供も乗らないと」と語りました。'
+[1] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
