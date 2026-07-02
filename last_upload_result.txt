@@ -1,10 +1,10 @@
-date: 2026-07-02T10:01:46.735300Z
+date: 2026-07-02T13:03:46.730744Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Hytnibm6eM8 title=今週決める!不滅の大記録　武豊騎手が通算5000勝へM4「よくここまで来たなとい
-OK project=1 video_id=u4HRrGqJTXE title=YJS地方所属出場騎手が決定　東日本14人、西日本11人が若手騎手NO1を目指す
-OK project=1 video_id=ryXdFGr5OUs title=【POG】G1馬パンジャタワーの半弟　パイロ産駒のタケルレジェンドがデビュー　高
+OK project=1 video_id=rrfgfJLDegs title=【大井競馬】矢野貴之騎手が通算3200勝　2年連続大井リーディングの名手　ディク
+OK project=1 video_id=zfSMR5gLyTc title=【POG】世界が注目するフライトライン産駒の良駒が5日の函館でデビュー　ショウナ
+OK project=1 video_id=dEWiphVhU7g title=【POG】父母は18年スプリンターズS1、2着　ディーエスシンが4日小倉でデビュ
