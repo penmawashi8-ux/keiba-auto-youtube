@@ -1,116 +1,41 @@
-[1]  [ファクトチェックNG] NG: ラホーヤアイズの
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: ラホーヤアイズの
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【POG】一族に活躍馬が目立つグルドロッティンは今週福島デビュー　矢嶋調教師は評価「真面目でいい子」 ---
-[0] Gemini入力本文 351文字: '7月4日の福島5R・2歳新馬(芝1800メートル)で初陣を迎えるグルドロッティン(牡2歳、美浦・矢嶋大樹厩舎、父ルーラーシップ)は、調教で余裕のある動きを見せて好気配だ。\n\t\t\t\t\u300022年の福島牝馬Sを制したアナザーリリックを叔母に持ち、一'
+--- 記事[0]: 今週決める!不滅の大記録　武豊騎手が通算5000勝へM4「よくここまで来たなという感じ。達成したいね」 ---
+[0] Gemini入力本文 380文字: '不滅の大記録へ。6月24日、自身のオフィシャルサイトで地方・海外を含む勝利数が4994勝と判明したと報告した武豊騎手＝栗東・フリー＝。先週2勝し、JRA通算4665勝、地方212勝、海外119勝と合わせて、通算5000勝へのマジックを“4”'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【POG】ひと際目立ったアルデシンザン、デビュー戦は大注目！/馬三郎のつぶやき ---
-[1] Gemini入力本文 1661文字: '◆リヴィエラヴィル(2日・浜口)\n『線状降水帯』の発生により、豪雨の中での馬場開門となったこの日の栗東トレセン。その影響で普段よりも追い切りが少なめに。時計の出方から馬場もかなり重そうだったが、そんな悪条件の中でも坂路で力強い動きを見せたの'
+--- 記事[1]: YJS地方所属出場騎手が決定　東日本14人、西日本11人が若手騎手NO1を目指す ---
+[1] Gemini入力本文 750文字: 'NAR地方競馬全国協会は7月2日、「2026ヤングジョッキーズシリーズ」に出場する地方競馬所属騎手を以下の通り発表した。トライアルラウンドは東日本、西日本ともに6ラウンド行われ、ポイント上位が出場するファイナルラウンドは12月17日に川崎で'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【有力馬動向】オールナットが七夕賞で巻き返しへ…高野師「これからさらに良くなる」/馬三郎のつぶやき ---
-[2] Gemini入力本文 341文字: '◆オールナット(2日・安里)\n\u3000日経新春杯13着から巻き返しを図るオールナット(牡5歳、栗東・高野)が、七夕賞(12日・福島、芝2000m)に向けてスタンバイ。「前走は鼻出血を発症。その点を注意しながら牧場とも連係して進めてきました。いった'
+--- 記事[2]: 【POG】G1馬パンジャタワーの半弟　パイロ産駒のタケルレジェンドがデビュー　高柳大調教師「やっぱり走りからするとダート ---
+[2] Gemini入力本文 348文字: '7月5日の小倉6R(ダート1700メートル)で、昨年のNHKマイルC覇者パンジャタワーの半弟のタケルレジェンド(牡2歳、栗東・高柳大輔厩舎、父パイロ)が初陣を迎える。高柳大調教師は「上は芝だったけど、やっぱり走りからするとダートかな。血統的'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 265文字]: 'レース関連の最新情報です。\n日経新春杯で13着だったオールナットが、七夕賞に向けてスタンバイしています。オールナットは牡5歳で、高野師が管理しており、七夕賞は12日に福島競馬場の芝2000mで行われる予定です。高野師によると、前走では鼻出血を発症しており、その点を注意しながら牧場とも連携して進めてきたとのことです。いったんは完全に緩ませたため、1週前にはジョッキーにしっかりと動いてもらったことで、これからさらに良くなってくるだろうと話しています。もともと重賞を勝っている馬であり、鼻出血の影響さえ出なけれと期待を寄せています。'
-[2]  [重複除去] 265文字 → 264文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (264文字)
-[2]  プレビュー: レース関連の最新情報です。日経新春杯で13着だったオールナットが、七夕賞に向けてスタンバイしています。オールナットは牡5歳で、高野師が管理しており、七夕賞は12...
+[0]  [Gemini生出力 237文字]: '重要な競馬ニュースをお伝えします。武豊騎手が、不滅の大記録となる通算5000勝へマジック4としました。6月24日、自身のオフィシャルサイトで地方・海外を含む勝利数が4994勝と判明したと報告しています。先週2勝を挙げ、JRA通算4665勝、地方212勝、海外119勝と合わせて、通算5000勝へのマジックを4としました。武豊騎手は「積み重ねの数字だから、よくここまで来たなという感じです。できれば今週、達成したいね」とコメントし、開催の折り返しを迎えた函館で決める構えです。'
   HTTP 200
-[0]  [Gemini生出力 262文字]: '今週の競馬注目情報をお伝えします。\n7月4日の福島5R・2歳新馬、芝1800メートルで、グルドロッティンが初陣を迎えます。グルドロッティンは美浦の矢嶋大樹厩舎所属で、父はルーラーシップです。調教では余裕のある動きを見せており、矢嶋調教師は「真面目でいい子」と評価し、好気配です。一族には22年の福島牝馬Sを制した叔母のアナザーリリックや、06年、07年の目黒記念を連覇しG1戦線で活躍したポップロックがいます。美浦・Wコースでの最終追い切りでは、古馬相手に先行して5ハロン68秒7―11秒6をマークし、約半馬身先着しました。'
-[0]  [重複除去] 262文字 → 261文字
+[2]  [Gemini生出力 248文字]: '競馬ファン注目の情報です。昨年のNHKマイルC覇者パンジャタワーの半弟、タケルレジェンドがデビューします。7月5日の小倉6R、ダート1700メートルで初陣を迎えるのは、牡2歳、栗東・高柳大輔厩舎所属、父パイロのタケルレジェンドです。高柳大調教師は「上は芝だったけど、やっぱり走りからするとダートかな。血統的なこともあります」と半兄とは異なる適性を見込んでいます。1週前追い切りでは川田将雅騎手が騎乗し、栗東・CWコースで84秒3―11秒4をマークしました。エナジーイッセイを2馬身追走しています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (261文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。7月4日の福島5R・2歳新馬、芝1800メートルで、グルドロッティンが初陣を迎えます。グルドロッティンは美浦の矢嶋大樹厩舎所属...
+[0]  → output/script_0.txt 保存 (237文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。武豊騎手が、不滅の大記録となる通算5000勝へマジック4としました。6月24日、自身のオフィシャルサイトで地方・海外を含む勝利...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (248文字)
+[2]  プレビュー: 競馬ファン注目の情報です。昨年のNHKマイルC覇者パンジャタワーの半弟、タケルレジェンドがデビューします。7月5日の小倉6R、ダート1700メートルで初陣を迎え...
   HTTP 200
-[1]  [Gemini生出力 279文字]: '最新情報をお届けします。\n函館の調教では、アルデシンザンがひと際目立つ力強い動きを見せました。ウッドで5F66秒6-52秒1-38秒9-12秒5を強めでマーク。予定されている12日函館芝1800mでのデビュー戦は大注目です。\n栗東トレセンでは、豪雨の中、リヴィエラヴィルが坂路で力強い動きを披露し、4F57秒7-13秒5を馬なりで記録。レニュアージュは栗東CWで軽快な脚さばきを見せ、父コントレイルに変わったことで注目されます。ラホーヤアイズも気配が上向き、今週のCWで6F83秒8-37秒6-11秒6を馬なりで計時し、デビューへ向け態勢は十分に整いました。'
-[1]  [redirectフィルター] 279文字 → 266文字
-[1]  [重複除去] 266文字 → 265文字
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 318文字]: '最新情報をお届けします。\n栗東トレセンでは豪雨の中、リヴィエラヴィルが坂路で力強い動きを見せ、4F57秒7-13秒5（馬なり）を記録しました。レニュアージュは栗東CWで単走、馬なりの軽快な脚さばきを見せ、父コントレイルで注目されます。函館の調教では、アルデシンザンがひと際目立つ力強い動きを見せました。ウッドで5F66秒6-52秒1-38秒9-12秒5（強め）をマークし、予定されているデビュー戦12日・函館、芝1800mは大注目です。ラホーヤアイズは気配が上向き、今週のCWで3頭併せの真ん中でリズムを刻み、6F83秒8-37秒6-11秒6（馬なり）を記録しました。フォンテキアーラは入厩し、美浦坂路を軽めのキャンターで登坂しました。'
-[1]  [redirectフィルター] 318文字 → 305文字
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 412文字]: '最新情報をお届けします。\n豪雨の中での栗東トレセンでは、リヴィエラヴィルが坂路で4F57秒7-13秒5を馬なりでマークし、力強い動きを見せました。手綱は引っ張り切りで、数字以上に勢いを感じる内容でした。レニュアージュは栗東CWで単走、馬なりの追い切りを行い、軽快な脚さばきでラストまで集中して走れていました。本数を重ねるごとに素軽さがアップしています。\n函館の調教では、アルデシンザンがひと際目立つ力強い動きを見せ、ウッドで5F66秒6-52秒1-38秒9-12秒5を強めでマークしました。美浦での調整も順調で、予定されている12日函館芝1800mのデビュー戦は大注目です。ラホーヤアイズは栗東に入厩し、今週のCWで3頭併せの真ん中でリズムを刻み、ゴール前で馬なりのまま加速。6F83秒8-37秒6-11秒6をマークし、デビューへ態勢は十分に整っています。フォンテキアーラは入厩し、美浦坂路を軽めのキャンターで登坂しました。'[1]  [ファクトチェックNG] NG: ラホーヤアイズの「今
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [1] のスクリプト生成失敗。
+[1]  [Gemini生出力 331文字]: '重要な競馬ニュースをお伝えします。\nNAR地方競馬全国協会は7月2日、「2026ヤングジョッキーズシリーズ」に出場する地方競馬所属騎手を発表しました。東日本からは14人、西日本からは11人が若手騎手ナンバーワンを目指します。トライアルラウンドは東日本、西日本ともに6ラウンド行われ、ポイント上位が出場するファイナルラウンドは12月17日に川崎で、同19日にJRA中京で行われます。東日本出場騎手は阿岸潤一朗、藤田凌駕、渡辺準己、坂井瑛音、中山遥人、椿聡太、所蛍、山本大翔、小野俊斗、杉山海波、高橋優、谷内貫太、加藤雄真、佐野遥久です。西日本出場騎手は松本一心、小笠原羚、小谷哲平、塩津璃菜、新庄海誠、阿部基嗣、近藤翔月、城野慈尚、青海大樹、長谷川蓮、林悠翔です。'
+[1]  [重複除去] 331文字 → 330文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (330文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。NAR地方競馬全国協会は7月2日、「2026ヤングジョッキーズシリーズ」に出場する地方競馬所属騎手を発表しました。東日本からは...
 
-[1]  [redirectフィルター] 412文字 → 399文字
-[1]  [重複除去] 399文字 → 398文字
-[1] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+3 件の脚本を生成しました。
