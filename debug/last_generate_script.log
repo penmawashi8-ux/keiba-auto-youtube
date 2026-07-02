@@ -1,74 +1,53 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【地方競馬】帝王賞　ディクテオンはコリアＣ視野へ　荒山師「韓国の連覇を狙いに行くのが濃厚になってきた」 ---
-[0] Gemini入力本文 331文字: '「帝王賞・Ｊｐｎ１」（１日、大井）\n\u3000帝王賞３着となったディクテオンは、昨年制覇したコリアＣ（９月６日、ソウル競馬場）を視野に調整することを荒山勝師が発表した。\n\u3000連覇を目指して、王者がまた韓国へ渡る。レース後に取材に応じた荒山勝師は、「い'
+--- 記事[0]: 柳田悠岐外野手が武豊騎手に騎乗依頼「一緒に勝ちたいですよね。ぜひゴーイントゥスカイの下で」　レジェンド2人が初対談 ---
+[0] Gemini入力本文 338文字: '6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手＝栗東・フリー＝とソフトバンクの柳田悠岐外野手が初対談。30日に特別動画版が公開された。馬主でもある柳田外野手が武豊騎手に騎乗依頼する場面があった。\n\t\t\t\t\u3000今年の日本ダービーでゴ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【地方競馬】帝王賞　ミッキーファイトが横綱相撲の完勝劇　連覇を達成して戸崎圭は「勝つことができてうれしい」と満面の笑み ---
-[1] Gemini入力本文 331文字: '「帝王賞・Ｊｐｎ１」（１日、大井）\n\u3000惜敗続きにピリオドだ。単勝１・７倍の断トツ支持を受けたミッキーファイトが好位から早めに抜け出し、メイショウハリオ（２２、２３年）に続く史上２頭目の連覇を決めた。３番人気のアウトレンジが２着、３着に６番人'
+--- 記事[1]: 【ジュライＳ】メリークリスマス　余力十分　小手川師「予定通り」　１週前自己ベスト＆ハンデも追い風に ---
+[1] Gemini入力本文 333文字: '「ジュライＳ」(５日、福島)\n\u3000メリークリスマスは１日、美浦Ｗでフォーワンセルフ（７歳２勝クラス）と併せ馬。直線は余力を残したまま脚を伸ばし、６Ｆ８４秒４-３８秒３-１２秒０の時計で併入した。小手川師は「輸送もあるので余裕残しの内容。予定通'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【POG】3・1億円馬ダノンダックスがデビューに向けてWコースで初時計　田中博調教師「踏み込みがすごい」 ---
-[2] Gemini入力本文 371文字: '25年のセレクトセール1歳部門で3億1000万円の超高額で落札された良血馬ダノンダックス(牡2歳、美浦・田中博康厩舎、父サートゥルナーリア)が7月1日、デビューに向けて美浦・Wコースで初時計をマークした。7月26日の新潟2R・2歳新馬(芝1'
+--- 記事[2]: コレットが栗東トレセンで初調教騎乗「たくさんレースに勝ちたい」　通算１３００勝、昨年リーディング２位獲得 ---
+[2] Gemini入力本文 645文字: '短期免許で来日したジェイソン・コレット騎手（３５）＝豪州＝が１日、栗東トレセンを初訪問した。身元引受人である杉山晴厩舎のティグリス、オーロラエックスの２頭にまたがり、坂路とＣＷで騎乗して「すばらしい施設ですね」と興奮気味に語った。\n\u3000ニュー'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 243文字]: '競馬速報です。帝王賞・Jpn1が大井で1日に行われました。単勝1.7倍の断トツ支持を受けたミッキーファイトが、好位から早めに抜け出し、惜敗続きにピリオドを打ちました。ミッキーファイトはメイショウハリオに続く史上2頭目の連覇を達成し、戸崎圭騎手は「勝つことができてうれしい」と満面の笑みを見せています。3番人気のアウトレンジが2着、6番人気の地元・大井のディクテオンが3着に入りました。ミッキーファイトは昨年のVタイムを0秒3更新する自己ベストで、ライバルたちを圧倒する走りを見せました。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (243文字)
-[1]  プレビュー: 競馬速報です。帝王賞・Jpn1が大井で1日に行われました。単勝1.7倍の断トツ支持を受けたミッキーファイトが、好位から早めに抜け出し、惜敗続きにピリオドを打ちま...
-  HTTP 200
-[0]  [Gemini生出力 225文字]: '本日の競馬ニュースです。\n帝王賞で3着となったディクテオンは、昨年制覇したコリアCを視野に調整することが荒山勝師により発表されました。9月6日にソウル競馬場で開催されるコリアCでの連覇を目指し、王者が再び韓国へ渡る計画です。レース後に取材に応じた荒山勝師は、「いろいろと選択肢はあったけれど、最終的に韓国の連覇を狙いに行くのがレースが終わって濃厚になってきたかな」と語りました。コリアCから11月3日に金沢で開催されるJBCへの展望も示されています。'
-[0]  [重複除去] 225文字 → 224文字
+[0]  [Gemini生出力 283文字]: '注目の競馬情報をお届けします。\n6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手とソフトバンクの柳田悠岐外野手が初対談し、30日には特別動画版が公開されました。馬主でもある柳田外野手は、この対談の中で武豊騎手に騎乗依頼をする場面がありました。柳田外野手は「一緒に勝ちたいですよね。ぜひゴーイントゥスカイの下で」と語り、依頼しました。武豊騎手は今年の日本ダービーでゴーイントゥスカイに騎乗し、4着でした。柳田外野手は、ゴーイントゥスカイの1個下の妹である今年2歳のゴーイントゥノヴァについて、「楽しみになってきました。武さんのおかげで」と期待を寄せています。'
+[0]  [redirectフィルター] 283文字 → 267文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (224文字)
-[0]  プレビュー: 本日の競馬ニュースです。帝王賞で3着となったディクテオンは、昨年制覇したコリアCを視野に調整することが荒山勝師により発表されました。9月6日にソウル競馬場で開催...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[0]  → output/script_0.txt 保存 (267文字)
+[0]  プレビュー: 6月27日放送のテレビ西日本「勝負師のことば」で、武豊騎手とソフトバンクの柳田悠岐外野手が初対談し、30日には特別動画版が公開されました。馬主でもある柳田外野手...
   HTTP 200
-[2]  [Gemini生出力 245文字]: '今週の競馬注目情報をお伝えします。\n25年のセレクトセール1歳部門で3億1000万円の超高額で落札されたダノンダックスが、7月1日、デビューに向けて美浦・Wコースで初時計をマークしました。田中博調教師は「踏み込みがすごい」とコメントしています。同馬は半姉に2023年の牝馬三冠を達成したリバティアイランドがいる良血馬です。この日は美浦・Wコースで6ハロン87秒2―12秒4を記録しました。7月26日の新潟2R・2歳新馬の芝1600メートルを目指しており、鞍上は戸崎圭太騎手を予定しています。'
-[2]  [重複除去] 245文字 → 244文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (244文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。25年のセレクトセール1歳部門で3億1000万円の超高額で落札されたダノンダックスが、7月1日、デビューに向けて美浦・Wコース...
+[1]  [Gemini生出力 194文字]: '今日の競馬情報です。\nジュライSに出走するメリークリスマスは1日、美浦Wでフォーワンセルフと併せ馬を行いました。直線では余力を残したまま脚を伸ばし、6ハロン84秒4-38秒3-12秒0の時計で併入しています。小手川師は「輸送もあるので余裕残しの内容。予定通りです」とコメントしました。メリークリスマスは今春に2連勝でオープン入りし、昇級戦の平安Sでは重賞初挑戦ながら4着と健闘しています。'
+[1]  [重複除去] 194文字 → 193文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (193文字)
+[1]  プレビュー: 今日の競馬情報です。ジュライSに出走するメリークリスマスは1日、美浦Wでフォーワンセルフと併せ馬を行いました。直線では余力を残したまま脚を伸ばし、6ハロン84秒...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[2]  [Gemini生出力 201文字]: '今週の競馬注目情報をお伝えします。\n短期免許で来日したジェイソン・コレット騎手が、1日に栗東トレセンを初訪問しました。身元引受人である杉山晴厩舎のティグリスとオーロラエックスの2頭にまたがり、坂路とCWで初調教騎乗を行い、「すばらしい施設ですね」と興奮気味に語っています。コレット騎手は通算1300勝を超え、昨年はリーディング2位を獲得した実績を持ち、「たくさんレースに勝ちたい」と抱負を述べています。'
+[2]  [重複除去] 201文字 → 200文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (200文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。短期免許で来日したジェイソン・コレット騎手が、1日に栗東トレセンを初訪問しました。身元引受人である杉山晴厩舎のティグリスとオー...
 
 3 件の脚本を生成しました。
