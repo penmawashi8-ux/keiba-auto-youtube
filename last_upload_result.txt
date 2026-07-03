@@ -1,10 +1,10 @@
-date: 2026-07-03T04:50:18.864248Z
+date: 2026-07-03T06:36:23.208888Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nEDf81FbJcM title=【POG】静内農業高生の思いを乗せて走る!ロゼハイスクール　古川奈穂騎手も「手が
-OK project=1 video_id=1M7u0klklgQ title=【万哲の函館競馬場探訪】函館競馬場130周年記念クイズ 　ちょっと難問です!!
-OK project=1 video_id=TyM8fgwnQoc title=鮫島駿　7日間の騎乗停止　先月20日の英G1で馬に反応の時間を与えずにムチを使用
+OK project=1 video_id=vbnDKvO2q1M title=戸崎圭太騎手、意外なサッカー選手とレアな2ショ披露「まさかの…」「サッカー界のロ
+OK project=1 video_id=Eln0kz3w9DU title=【北九州記念】前走レコードVのフリッカージャブは12番枠　外枠もデータ的には追い
+OK project=1 video_id=Esw1_ySqFXw title=【北九州記念枠順確定】デアヴェローチェは5枠7番、フリッカージャブは8枠12番
