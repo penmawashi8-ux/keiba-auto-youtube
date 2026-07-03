@@ -1,10 +1,10 @@
-date: 2026-07-03T11:43:55.866832Z
+date: 2026-07-03T13:01:37.159926Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rPQkVkL5Dvo title=【TVh杯・金曜気配】古川奈穂騎手にメイン初勝利贈ったアンジュプロミス　滞在効果
-OK project=1 video_id=I3gIc2RjNig title=武豊　英国の国際騎手招待競走シャーガーCに世界選抜で出場　金沢のトークショーで明
-OK project=1 video_id=Ynnxqt9r8aU title=半兄は菊花賞馬 セレクト2.5億円のユマハムが初勝利狙う
+OK project=1 video_id=9sJg9gxFOLY title=武豊「引退したら何をされるんですか?とか聞かれますけど…」自身の今後をトークショ
+OK project=1 video_id=Cn6C74uH2qs title=武豊　最近のマイブームは…「フリー素材」　トークショーで後輩とのやり取り明かす
+OK project=1 video_id=Fi7T-ZsaLKo title=【小倉＆福島の危険な人気馬】ネブラディスク　小倉１１Ｒ・博多Ｓ
