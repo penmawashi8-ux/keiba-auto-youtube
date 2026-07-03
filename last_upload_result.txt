@@ -1,10 +1,10 @@
-date: 2026-07-03T09:59:23.146659Z
+date: 2026-07-03T11:43:55.866832Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nI8OD-9l6XY title=武豊　金沢でトークショー　5000勝まであと4「今週達成したい。おじさん、頑張り
-OK project=1 video_id=r9kCZC-PgPg title=【北九州記念・金曜気配】8歳ヨシノイースターが“3度目の正直”へ　中尾調教師「い
-OK project=1 video_id=BrakoNL2Lnw title=「おじいちゃんが...」武豊騎手が柳田悠岐外野手に若手からの驚きの発言明かす　テ
+OK project=1 video_id=rPQkVkL5Dvo title=【TVh杯・金曜気配】古川奈穂騎手にメイン初勝利贈ったアンジュプロミス　滞在効果
+OK project=1 video_id=I3gIc2RjNig title=武豊　英国の国際騎手招待競走シャーガーCに世界選抜で出場　金沢のトークショーで明
+OK project=1 video_id=Ynnxqt9r8aU title=半兄は菊花賞馬 セレクト2.5億円のユマハムが初勝利狙う
