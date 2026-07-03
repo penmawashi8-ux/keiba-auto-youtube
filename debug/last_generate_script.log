@@ -1,44 +1,123 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない「杉山
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない杉山晴師
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【大井競馬】矢野貴之騎手が通算3200勝　2年連続大井リーディングの名手　ディクテオンの主戦 ---
-[0] Gemini入力本文 461文字: '大井競馬所属の矢野貴之騎手(41)＝東京都騎手会＝は7月2日、大井競馬12Rでトクシーティグレに騎乗して1着。2002年4月の初騎乗以来、2万927戦目で地方競馬通算3200勝を達成した。重賞はディクテオンで挙げた昨年の東京大賞典・G1など'
+--- 記事[0]: 2億円超フライトライン産駒が5日函館5Rデビュー　ショウナンガレオンに注目 ---
+[0] Gemini入力本文 354文字: '5日の函館5R・2歳新馬(芝1800メートル)でデビューするショウナンガレオン(牡2歳、美浦・加藤士厩舎)は、世界中のセリで高評価されているフライトライン産駒。24年のセレクトセール当歳で2億1000万円の高値を付けた。\n\t\t\t\t\u3000先月24'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【POG】世界が注目するフライトライン産駒の良駒が5日の函館でデビュー　ショウナンガレオンは追い切りで圧巻の動き ---
-[1] Gemini入力本文 347文字: '7月5日の函館5R・芝1800メートルでデビューするショウナンガレオン(牡2歳、美浦・加藤士津八厩舎)は、世界中のセリで高評価されているフライトライン産駒。24年のセレクトセール当歳で2億1000万円で落札されており、日本では6月13日にデ'
+--- 記事[1]: ジャスティンミラノの半弟「仕上がっている」ジャンゴッド5日小倉5Rデビュー ---
+[1] Gemini入力本文 345文字: '5日の小倉5R・2歳新馬(芝1800メートル)で、春牡馬2冠を制した名門厩舎から期待の良血馬がデビューする。ジャンゴッド(牡、栗東・杉山晴厩舎、父キタサンブラック)は、24年皐月賞を制し、日本ダービー2着のジャスティンミラノの半弟。24年の'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【POG】父母は18年スプリンターズS1、2着　ディーエスシンが4日小倉でデビュー　橋口調教師「スピードがあります」 ---
-[2] Gemini入力本文 368文字: 'ディーエスシン(牡、栗東・橋口慎介厩舎、父ファインニードル)が7月4日の小倉5R・2歳新馬(芝1200メートル)でデビューする。\n\t\t\t\t\u30001日の最終追い切りはレースで手綱を執る松山弘平騎手を背に、栗東・坂路でリメンバーシドニー(3歳未勝利'
+--- 記事[2]: 【新馬戦】ジャンゴッド　怪物候補のお披露目だ　兄は皐月賞馬・ジャスティンミラノ　杉山晴師「前向きで気がいい」 ---
+[2] Gemini入力本文 331文字: '「新馬戦」（５日、小倉）\n\u3000怪物候補がベールを脱ぐ。２４年のノーザンファームミックスセール当歳部門で２億９０００万円（税抜き）の値がついたジャンゴッド（牡２歳、父キタサンブラック、栗東・杉山晴）が、日曜小倉５Ｒ（芝１８００メートル）に鞍上・'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 185文字]: '最新情報をお届けします。大井競馬所属の矢野貴之騎手は7月2日、大井競馬12Rでトクシーティグレに騎乗して1着となり、地方競馬通算3200勝を達成しました。これは2002年4月の初騎乗以来、2万927戦目での記録となります。矢野貴之騎手は、ディクテオンで挙げた昨年の東京大賞典・G1など重賞73勝を誇り、2024年、25年と2年連続で大井リーディング首位を獲得しています。'
-[0]  [redirectフィルター] 185文字 → 173文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (173文字)
-[0]  プレビュー: 大井競馬所属の矢野貴之騎手は7月2日、大井競馬12Rでトクシーティグレに騎乗して1着となり、地方競馬通算3200勝を達成しました。これは2002年4月の初騎乗以...
+[0]  [Gemini生出力 248文字]: 'レース関連の最新情報です。5日の函館5R・2歳新馬、芝1800メートルでショウナンガレオンがデビューします。ショウナンガレオンは世界中のセリで高評価されているフライトライン産駒で、24年のセレクトセール当歳では2億1000万円の高値を付けました。先月24日に函館・芝コースで行われた1週前追い切りでは、5ハロン64秒1―11秒8を記録。3頭併せの最後方から併せた2頭をあっという間に突き放す圧巻の走りを見せています。1日にはWコースで5ハロン71秒9―13秒3と整える程度の追い切りを行いました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (248文字)
+[0]  プレビュー: レース関連の最新情報です。5日の函館5R・2歳新馬、芝1800メートルでショウナンガレオンがデビューします。ショウナンガレオンは世界中のセリで高評価されているフ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 200
-[1]  [Gemini生出力 247文字]: '今日の競馬情報です。7月5日の函館5R・芝1800メートルでデビューするショウナンガレオンは、美浦の加藤士津八厩舎に所属しています。この馬は世界中のセリで高評価されているフライトライン産駒で、24年のセレクトセール当歳では2億1000万円で落札されました。日本では6月13日にデミアンがフライトライン産駒初勝利を決めています。6月24日に函館・芝コースで行われた1週前追い切りでは、3頭併せの最後方を追走しながら直線で大外に持ち出すと、併せた2頭をあっという間に突き放す圧巻の動きを見せました。'
+[1]  [Gemini生出力 244文字]: '今週の競馬注目情報をお伝えします。5日の小倉5R・2歳新馬、芝1800メートルで、春牡馬2冠を制した名門厩舎から期待の良血馬がデビューします。この馬はジャンゴッドで、父はキタサンブラックです。ジャンゴッドは、24年皐月賞を制し、日本ダービーで2着となったジャスティンミラノの半弟にあたります。24年のミックスセールでは、藤田晋オーナーが2億9000万円で落札しました。山本助手は「追い切るたびに動きは良くなっている。バランスは整ってきたかな。新馬としては仕上がっているよ」と話しています。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (247文字)
-[1]  プレビュー: 今日の競馬情報です。7月5日の函館5R・芝1800メートルでデビューするショウナンガレオンは、美浦の加藤士津八厩舎に所属しています。この馬は世界中のセリで高評価...
+[1]  → output/script_1.txt 保存 (244文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。5日の小倉5R・2歳新馬、芝1800メートルで、春牡馬2冠を制した名門厩舎から期待の良血馬がデビューします。この馬はジャンゴッ...
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 291文字]: '重要な競馬ニュースをお伝えします。ディーエスシンが7月4日の小倉5R・2歳新馬（芝1200メートル）でデビューします。ディーエスシンは牡馬で、栗東の橋口慎介厩舎所属、父はファインニードルです。1日の最終追い切りでは、レースで手綱を執る松山弘平騎手を背に、栗東・坂路で3歳未勝利のリメンバーシドニーを半馬身先行し、51秒5―12秒2の好時計で2馬身半先着しました。橋口慎介調教師は「スピードがあります」とコメントしています。また、追い切りについては「良かったですね。しまいも12秒2、12秒2で動いていますからね。なかなか、デビュー前から最後の2ハロン...」と手応えを語っています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (288文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。ディーエスシンが7月4日の小倉5R・2歳新馬（芝1200メートル）でデビューします。ディーエスシンは牡馬で、栗東の橋口慎介厩舎...
-
-3 件の脚本を生成しました。
+[2]  [Gemini生出力 294文字]: '最新情報をお届けします。\n5日に小倉で行われる新馬戦で、怪物候補と目されるジャンゴッドがベールを脱ぎます。このジャンゴッドは、24年のノーザンファームミックスセール当歳部門で2億9000万円の値がついた牡2歳馬です。父はキタサンブラックで、栗東の杉山晴師が管理しています。半兄には無敗で24年皐月賞を制したジャスティンミラノがおり、血統的なスケールは十分です。ジャンゴッドは日曜小倉5レースの芝1800メートルに、鞍上・川田でスタンバイしています。杉山晴師はジャンゴッドについて「前向きで気がいい」とコメントしています。川田がまたがった1週前には、栗東CWで6ハロン83秒を記録しました。'
+[2]  [redirectフィルター] 294文字 → 281文字
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 241文字]: '最新情報をお届けします。\n新馬戦が5日に小倉で開催され、怪物候補ジャンゴッドがベールを脱ぎます。ジャンゴッドは24年のノーザンファームミックスセール当歳部門で2億9000万円の値がついた馬です。日曜小倉5Rの芝1800メートルに鞍上・川田でスタンバイします。半兄には無敗で24年皐月賞を制したジャスティンミラノがおり、血統的なスケールは十分です。杉山晴師はジャンゴッドについて「前向きで気がいい」とコメントしています。川田がまたがった1週前には、栗東CWで6F83秒を記録しました。'
+[2]  [redirectフィルター] 241文字 → 228文字
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
