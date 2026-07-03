@@ -1,95 +1,46 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【POG】静内農業高生の思いを乗せて走る!ロゼハイスクール　古川奈穂騎手も「手がかけられているなと」と期待 ---
-[0] Gemini入力本文 343文字: '7月4日の函館5R(ダート1000メートル)でデビューするロゼハイスクール(牝2歳、栗東・小崎憲厩舎、父ミスチヴィアスアレックス)は、北海道静内農業高等学校の生産馬。高校生の手で育てられ、25年の北海道セプテンバーセールで320万円で取り引'
+--- 記事[0]: 戸崎圭太騎手、意外なサッカー選手とレアな2ショ披露「まさかの…」「サッカー界のロードカナロア」 ---
+[0] Gemini入力本文 341文字: 'Youtube「戸崎圭太のベリベリチャンネル」の公式インスタグラムが2日、戸崎圭太騎手が旧知のサッカー選手と撮影した貴重な2ショットを投稿した。\n\t\t\t\t\u3000同インスタグラムは「動画予告」と題し、「先日行われた『さきたま杯(Jpn1)』当日、'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【万哲の函館競馬場探訪】函館競馬場130周年記念クイズ 　ちょっと難問です!! ---
-[1] Gemini入力本文 393文字: 'こんにちは。中央競馬担当の万哲です。今夏も函館競馬場に出張しています。\n\u3000今週は天気にも恵まれて、朝晩は長袖が必需の心地良い日が続いています。\n\u3000ご存じの通り、日本で最古の歴史を誇る函館競馬場は今年130周年を迎えました。1875年(明治8'
+--- 記事[1]: 【北九州記念】前走レコードVのフリッカージャブは12番枠　外枠もデータ的には追い風!　枠順決定 ---
+[1] Gemini入力本文 356文字: '◆第61回北九州記念・G3(7月5日、小倉競馬場・芝1200メートル)\n\t\t\t\t\u3000出走馬13頭の枠順が7月3日、決定した。\n\t\t\t\t\u30006〜7月の開催前半の施行となったのは2024年からだが、過去2年はすべて5枠から外の馬が連対。サンプルが少'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 鮫島駿　7日間の騎乗停止　先月20日の英G1で馬に反応の時間を与えずにムチを使用したため　JRA発表 ---
-[2] Gemini入力本文 624文字: 'JRAは3日、鮫島克駿騎手(29)の騎乗停止を発表した。現地時間6月20日に英国のアスコット競馬場で行われたクイーンエリザベス2世ジュビリーステークスにおいて、ルガル(牡6＝杉山晴)に騎乗したところ、馬に反応の時間を与えずにムチを使用したこ'
+--- 記事[2]: 【北九州記念枠順確定】デアヴェローチェは5枠7番、フリッカージャブは8枠12番 ---
+[2] Gemini入力本文 354文字: '7月5日に小倉競馬場で行われる、第61回北九州記念(3歳上・GIII・芝1200m)の枠順が3日確定した。\n\u3000葵Sを制したデアヴェローチェ(牝3、栗東・上村洋行厩舎)は5枠7番、近5戦で4勝しているフリッカージャブ(牡4、栗東・西園翔太厩舎'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 4文字]: 'SKIP'
-[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 393文字）
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[2]  [Gemini生出力 146文字]: '競馬速報です。7月5日に小倉競馬場で行われる、第61回北九州記念の枠順が3日に確定しました。3歳上・GIII・芝1200mで行われるこのレースの発走は15時45分です。葵Sを制したデアヴェローチェは5枠7番に入りました。また、近5戦で4勝しているフリッカージャブは8枠12番に決定しています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (146文字)
+[2]  プレビュー: 競馬速報です。7月5日に小倉競馬場で行われる、第61回北九州記念の枠順が3日に確定しました。3歳上・GIII・芝1200mで行われるこのレースの発走は15時45...
   HTTP 200
-[0]  [Gemini生出力 234文字]: '今日の競馬情報です。7月4日の函館5R、ダート1000メートルでデビューするロゼハイスクールは、栗東の小崎憲厩舎に所属する2歳牝馬です。この馬は北海道静内農業高等学校の生産馬で、高校生の手で育てられました。25年の北海道セプテンバーセールでは320万円で取り引きされています。函館入厩後は、デビュー戦でコンビを組む古川奈穂騎手が3週連続で追い切りに騎乗しました。古川奈穂騎手は「最初は時計が出なかったですが、徐々に動けるようになってきまし...」とコメントしています。'
+[1]  [Gemini生出力 236文字]: '競馬速報です。第61回北九州記念・G3の枠順が7月3日に決定しました。7月5日に小倉競馬場・芝1200メートルで行われるこのレースには、出走馬13頭が登録しています。前走の鞍馬Sを1分6秒4のレコードで圧勝したフリッカージャブは、8枠12番に入りました。北九州記念は2024年から6〜7月の開催前半の施行となりましたが、過去2年はすべて5枠から外の馬が連対しており、近年は外枠が結果を出しています。フリッカージャブの入った外枠は、データ的には追い風となる可能性があります。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (236文字)
+[1]  プレビュー: 競馬速報です。第61回北九州記念・G3の枠順が7月3日に決定しました。7月5日に小倉競馬場・芝1200メートルで行われるこのレースには、出走馬13頭が登録してい...
+  HTTP 200
+[0]  [Gemini生出力 225文字]: '重要な競馬ニュースをお伝えします。戸崎圭太騎手のYouTube「戸崎圭太のベリベリチャンネル」公式インスタグラムが2日、戸崎圭太騎手が旧知のサッカー選手と撮影した貴重な2ショットを投稿しました。同インスタグラムは「動画予告」と題し、先日行われた「さきたま杯(Jpn1)」当日に浦和競馬場で特別ロケを行ったと報告しています。ゲストには、戸崎圭太騎手と旧知の仲である横浜F・マリノスの宮市亮選手が初出演し、競馬との意外な縁についても語られたとのことです。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (231文字)
-[0]  プレビュー: 今日の競馬情報です。7月4日の函館5R、ダート1000メートルでデビューするロゼハイスクールは、栗東の小崎憲厩舎に所属する2歳牝馬です。この馬は北海道静内農業高...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 178文字]: 'レース関連の最新情報です。日本で最古の歴史を誇る函館競馬場は、今年130周年を迎えました。その起源は1875年、明治8年に函館招魂社、現在の函館護国神社での祭典競馬が現在の宝来町で行われていたこととされています。これが函館競馬の起源と言われています。その後、1882年、明治15年には海岸町に1周440間、およそ800メートル規模の競馬場が設けられました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (178文字)
-[1]  プレビュー: レース関連の最新情報です。日本で最古の歴史を誇る函館競馬場は、今年130周年を迎えました。その起源は1875年、明治8年に函館招魂社、現在の函館護国神社での祭典...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 282文字]: '競馬ファン注目の情報です。JRAは3日、鮫島克駿騎手の騎乗停止を発表しました。鮫島騎手は現地時間6月20日に英国のアスコット競馬場で行われたクイーンエリザベス2世ジュビリーステークスにおいて、ルガルに騎乗した際、馬に反応の時間を与えずにムチを使用したため、英国競馬統括機構鞭審査委員会から7日間の騎乗停止処分を受けていました。この処分は7月10日、11日、そして13日から17日まで適用されます。日本中央競馬会競馬施行規程第147条第18号の規定に基づき、裁定委員会の議定により、英国競馬統括機構鞭審査委員会による処分と同一期間の騎乗が停止されることになりました。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (282文字)
-[2]  プレビュー: 競馬ファン注目の情報です。JRAは3日、鮫島克駿騎手の騎乗停止を発表しました。鮫島騎手は現地時間6月20日に英国のアスコット競馬場で行われたクイーンエリザベス2...
+[0]  → output/script_0.txt 保存 (225文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。戸崎圭太騎手のYouTube「戸崎圭太のベリベリチャンネル」公式インスタグラムが2日、戸崎圭太騎手が旧知のサッカー選手と撮影し...
 
 3 件の脚本を生成しました。
