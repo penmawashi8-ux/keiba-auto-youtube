@@ -1,10 +1,10 @@
-date: 2026-07-02T13:03:46.730744Z
+date: 2026-07-03T04:50:18.864248Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rrfgfJLDegs title=【大井競馬】矢野貴之騎手が通算3200勝　2年連続大井リーディングの名手　ディク
-OK project=1 video_id=zfSMR5gLyTc title=【POG】世界が注目するフライトライン産駒の良駒が5日の函館でデビュー　ショウナ
-OK project=1 video_id=dEWiphVhU7g title=【POG】父母は18年スプリンターズS1、2着　ディーエスシンが4日小倉でデビュ
+OK project=1 video_id=nEDf81FbJcM title=【POG】静内農業高生の思いを乗せて走る!ロゼハイスクール　古川奈穂騎手も「手が
+OK project=1 video_id=1M7u0klklgQ title=【万哲の函館競馬場探訪】函館競馬場130周年記念クイズ 　ちょっと難問です!!
+OK project=1 video_id=TyM8fgwnQoc title=鮫島駿　7日間の騎乗停止　先月20日の英G1で馬に反応の時間を与えずにムチを使用
