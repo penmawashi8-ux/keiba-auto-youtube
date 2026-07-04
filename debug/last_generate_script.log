@@ -1,7 +1,44 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: セレクトセールで3.9億円という
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: ダノンヒストリーは
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -10,36 +47,103 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 武豊「引退したら何をされるんですか?とか聞かれますけど…」自身の今後をトークショーで熱弁 ---
-[0] Gemini入力本文 403文字: '武豊(57)は3日、石川・金沢市内の香林坊大和で開催中(14日まで)の特別展「武豊デビュー40年〜前人未到の記録〜」のトークショーに出席した。\n\u3000長らく競馬界を引っ張ってきたレジェンド。今後については「いや、本当によく聞かれるんですよ。いつ'
+--- 記事[0]: セレクト3.9億円のダノンヒストリー 復帰戦で勝利なるか ---
+[0] Gemini入力本文 346文字: 'セレクトセールで超高額取引となったダノンヒストリー(牡3、美浦・堀宣行厩舎)が、土曜函館8Rの3歳上1勝クラス(芝2600m)で約8カ月ぶりの実戦を迎える。\n\u3000ダノンヒストリーは父エピファネイア、母コーステッド、母の父Tizwayの血統。母'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 武豊　最近のマイブームは…「フリー素材」　トークショーで後輩とのやり取り明かす ---
-[1] Gemini入力本文 431文字: '武豊(57)は3日、石川・金沢市内の香林坊大和で開催中(14日まで)の特別展「武豊デビュー40年〜前人未到の記録〜」のトークショーに出席した。\n\u3000「趣味はない」という武豊。最近のマイブームについて聞かれると、「今函館に滞在していて、宿舎でジ'
+--- 記事[1]: 博多Sは波乱傾向か 4歳馬の活躍に注目だ ---
+[1] Gemini入力本文 534文字: '土曜小倉メインは博多ステークス(3歳上・3勝クラス・芝1800m)。ここでは21年以降の夏開催に同舞台で行われた3勝クラス・全5鞍の人気別、脚質別、枠順別、年齢別、血統別の成績から、レース傾向を探りたい。\n\u3000まずは人気別だが、1番人気は【2'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【小倉＆福島の危険な人気馬】ネブラディスク　小倉１１Ｒ・博多Ｓ ---
-[2] Gemini入力本文 331文字: '【小倉１１Ｒ・ネブラディスク】土曜は朝から雨予報。３歳時から重賞戦線で上位争いを繰り広げ、昇級戦の前走は０秒１差の２着とメドの立つ走りを見せたが、道悪は凶と出るようにしか思えない。これまでのキャリア８戦のうち良馬場が７戦。唯一稍重だった昨年'
+--- 記事[2]: 【4日の注目・小倉7R】3・8億馬バックドラフトが初勝利に向けて出走　友道調教師「改めて期待」 ---
+[2] Gemini入力本文 350文字: '7月4日の小倉7R・3歳未勝利(芝1800メートル＝16頭立て)にバックドラフト(牡3歳、栗東・友道康夫厩舎、父キタサンブラック)が出走する。\n\t\t\t\t\u300023年のセレクト当歳セールで3億8000万円の値が付いた素質馬。3歳4月でのデビュー戦'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 283文字]: '最新情報をお届けします。武豊騎手(57)は3日、石川・金沢市内の香林坊大和で開催中の特別展「武豊デビュー40年〜前人未到の記録〜」のトークショーに出席しました。この特別展は14日まで開催されています。長らく競馬界を引っ張ってきたレジェンドである武豊騎手は、自身の今後について「いつまでジョッキーをやられるんですか？とか、ジョッキー引退したら何をされるんですか？とかよく聞かれます」と明かしました。しかし、先のことについては「本当に何も考えてないというか」と述べ、いつまでというのも決めていないと語りました。その上で、「おじさん、頑張りますよ」と意気込みを見せました。'
-[0]  [redirectフィルター] 283文字 → 271文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (271文字)
-[0]  プレビュー: 武豊騎手(57)は3日、石川・金沢市内の香林坊大和で開催中の特別展「武豊デビュー40年〜前人未到の記録〜」のトークショーに出席しました。この特別展は14日まで開...
-  HTTP 200
-[1]  [Gemini生出力 312文字]: '重要な競馬ニュースをお伝えします。武豊騎手は3日、石川・金沢市内の香林坊大和で開催中の特別展「武豊デビュー40年〜前人未到の記録〜」のトークショーに出席しました。この特別展は14日まで開催されています。武豊騎手は「趣味はない」としながらも、最近のマイブームについて「フリー素材」と明かしました。函館に滞在中の宿舎で、10代、20代のジョッキーたちと生活を共にし、お風呂や食事も一緒に楽しんでいると語っています。また、若手からの「おじいちゃんが...」という驚きの発言があったことも明かしました。テレビ西日本で柳田悠岐外野手との対談も行われました。今週、武豊騎手は16鞍に騎乗予定で、通算5000勝まであと4勝に迫っています。'
+[1]  [Gemini生出力 368文字]: '本日の競馬ニュースです。土曜小倉メインの博多ステークスは、3歳上・3勝クラス・芝1800mで行われます。2021年以降の夏開催に同舞台で行われた3勝クラス全5鞍の成績からレース傾向を探ると、1番人気は【2-1-0-2】とまずまず信頼できる成績です。しかし、2桁人気も1勝、3着1回を記録しており、軽視は禁物です。3連単は5回中4回が3万円以上と、波乱傾向のレースと言えます。脚質別では先行有利の傾向が見られます。4歳馬の活躍に注目が集まっており、半姉に名牝リスグラシューを持つネブラディスクがオープン昇級を狙います。唯一の3歳馬サウンドムーブはラジオNIKKEI賞を回避し、博多ステークスで賞金加算を目指します。斉藤崇調教師は「ここでなんとかという気持ちですね」とコメントしています。昨年のマレーシアCはグランアルティスタが制しました。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (309文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。武豊騎手は3日、石川・金沢市内の香林坊大和で開催中の特別展「武豊デビュー40年〜前人未到の記録〜」のトークショーに出席しました...
+[1]  → output/script_1.txt 保存 (368文字)
+[1]  プレビュー: 本日の競馬ニュースです。土曜小倉メインの博多ステークスは、3歳上・3勝クラス・芝1800mで行われます。2021年以降の夏開催に同舞台で行われた3勝クラス全5鞍...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 266文字]: '競馬ファン注目の情報です。小倉11R博多Sに出走するネブラディスクは、土曜朝からの雨予報が懸念されます。3歳時から重賞戦線で上位争いを繰り広げ、昇級戦の前走では0秒1差の2着とメドの立つ走りを見せました。しかし、道悪は凶と出るようにしか思えません。これまでのキャリア8戦のうち、良馬場が7戦を占めています。唯一稍重だった昨年の京都新聞杯では、好位から伸び切れず5着に敗れており、馬場は要チェックです。また、福島11Rに出走するイリフィは、7月から8月にかけて過去2戦で12着、16着という結果でした。これらはともに芝のレースでした。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (266文字)
-[2]  プレビュー: 競馬ファン注目の情報です。小倉11R博多Sに出走するネブラディスクは、土曜朝からの雨予報が懸念されます。3歳時から重賞戦線で上位争いを繰り広げ、昇級戦の前走では...
+[0]  [Gemini生出力 301文字]: '最新情報をお届けします。セレクトセールで超高額取引となったダノンヒストリーが、土曜函館8Rの3歳上1勝クラス、芝2600mで約8カ月ぶりの実戦を迎えます。ダノンヒストリーはセレクトセールで3.9億円という超高額で取引されました。父はエピファネイア、母はコーステッド、母の父はTizwayの血統です。母は2016年のBCジュベナイルフィリーズターフで2着となった実績を持ちます。また、半兄のダノンベルーガは2022年の共同通信杯の覇者であり、2023年のドバイターフで2着になるなど、芝中距離戦線で活躍しました。美浦の堀宣行厩舎に所属するダノンヒストリーが、復帰戦でどのような走りを見せるか注目されます。'
+[0]  [redirectフィルター] 301文字 → 289文字
+  HTTP 200
+[2]  [Gemini生出力 283文字]: '最新のレース情報が入ってきました。7月4日の小倉7R、芝1800メートルの3歳未勝利戦には、16頭立てでバックドラフトが出走します。このバックドラフトは、23年のセレクト当歳セールで3億8000万円の値が付いた素質馬です。父はキタサンブラックで、栗東の友道康夫厩舎に所属する牡3歳馬です。3歳4月のデビュー戦では出遅れながらも5着に入線し、前走4月の未勝利戦では1番人気に支持されましたが、ゲートから行き脚が付かず7着に敗れています。今回は少し間隔を空けての復帰戦となり、友道康夫調教師は「改めて期待」とコメントしています。バックドラフトは初勝利に向けて出走します。'
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (283文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。7月4日の小倉7R、芝1800メートルの3歳未勝利戦には、16頭立てでバックドラフトが出走します。このバックドラフトは、23年...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 253文字]: '最新情報をお届けします。\nセレクトセールで超高額取引となったダノンヒストリーが、土曜函館8Rの3歳上1勝クラス芝2600mで約8カ月ぶりの実戦を迎えます。ダノンヒストリーはセレクトセールで3.9億円で取引された馬です。父はエピファネイア、母はコーステッド、母の父はTizwayという血統です。母コーステッドは2016年のBCジュベナイルフィリーズターフで2着の実績があります。また、半兄のダノンベルーガは2022年の共同通信杯の覇者で、2023年のドバイターフで2着になるなど、芝中距離戦線で活躍しました。'
+[0]  [redirectフィルター] 253文字 → 240文字
+[0] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
 
-3 件の脚本を生成しました。
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
