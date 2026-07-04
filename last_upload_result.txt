@@ -1,10 +1,10 @@
-date: 2026-07-04T09:26:26.636893Z
+date: 2026-07-04T11:01:20.580573Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NodfxCBZ5fE title=【小郡特別レース後コメント】グッドピース西村淳也騎手ら
-OK project=1 video_id=sdYQG3yz8ao title=「最強卍」「ばか強いじゃん」「強すぎワロタ」大差勝ちで鮮やかな復活を遂げた3・9
-OK project=1 video_id=DM5pJdupm-w title=【伊達特別レース後コメント】ムーンストラック菊沢一樹騎手ら
+OK project=1 video_id=EQWw7fIk5ac title=ユタカ節全開!シャーガーCに世界選抜で出場する武豊騎手　欧州選抜で出場ルメール騎
+OK project=1 video_id=-ihl-vla5iw title=【TUF杯レース後コメント】ゲイルライダー戸崎圭太騎手ら
+OK project=1 video_id=CqLdo36NgG0 title=【博多Sレース後コメント】ネブラディスク川田将雅騎手ら
