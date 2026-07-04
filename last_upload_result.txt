@@ -1,10 +1,10 @@
-date: 2026-07-04T07:46:07.416343Z
+date: 2026-07-04T09:26:26.636893Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UtYmo7RUnAA title=【福島11R・TUF杯】1番人気ゲイルライダーが快勝でオープン入り　戸崎「スムー
-OK project=1 video_id=KShsV-k61wY title=【北九州記念予想】父ミスプロ系やナスルーラ系が高期待値！ 父ノーザンダンサー系の
-OK project=1 video_id=WZiT_QKMsRw title=【2歳未勝利福島1Rレース後コメント】コスモハナミズキ木幡巧也騎手ら
+OK project=1 video_id=NodfxCBZ5fE title=【小郡特別レース後コメント】グッドピース西村淳也騎手ら
+OK project=1 video_id=sdYQG3yz8ao title=「最強卍」「ばか強いじゃん」「強すぎワロタ」大差勝ちで鮮やかな復活を遂げた3・9
+OK project=1 video_id=DM5pJdupm-w title=【伊達特別レース後コメント】ムーンストラック菊沢一樹騎手ら
