@@ -1,10 +1,10 @@
-date: 2026-07-04T06:23:11.825370Z
+date: 2026-07-04T07:46:07.416343Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tWhg3asMBrY title=【阪神アーバン競馬プレーバック】大偉業!下原理騎手が地方通算4000勝を達成
-OK project=1 video_id=IxQ_u1Y8aUM title=【小倉7R】ソフトバンク柳田悠岐外野手の所有馬ベンティガオルサV　団野「よく勝ち
-OK project=1 video_id=CJNCsdmPkSo title=【函館8R】1番人気ダノンヒストリーが衝撃の大差勝ち!浜中「着差通り。ここでは力
+OK project=1 video_id=UtYmo7RUnAA title=【福島11R・TUF杯】1番人気ゲイルライダーが快勝でオープン入り　戸崎「スムー
+OK project=1 video_id=KShsV-k61wY title=【北九州記念予想】父ミスプロ系やナスルーラ系が高期待値！ 父ノーザンダンサー系の
+OK project=1 video_id=WZiT_QKMsRw title=【2歳未勝利福島1Rレース後コメント】コスモハナミズキ木幡巧也騎手ら
