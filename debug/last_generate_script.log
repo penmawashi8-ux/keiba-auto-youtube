@@ -1,43 +1,64 @@
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: ユタカ節全開!シャーガーCに世界選抜で出場する武豊騎手　欧州選抜で出場ルメール騎手は「僕にとってはいい...」 ---
-[0] Gemini入力本文 342文字: '国際騎手招待競走のシャーガーC(8月8日、アスコット競馬場)に世界選抜として出場する武豊騎手は「久しぶりに招待されてうれしいです」と2018年以来となる出場を素直に喜んだ。\n\t\t\t\t\u3000同レースには、クリストフ・ルメール騎手も、欧州選抜として'
+--- 記事[0]: 母はGI・2勝のメジャーエンブレム セレクト1億円超えのスターバーナーがデビュー勝ちなるか ---
+[0] Gemini入力本文 349文字: 'GI・2勝のメジャーエンブレムの7番仔となるスターバーナー(牝2、栗東・武幸四郎厩舎)が、日曜福島6Rの2歳新馬(芝1200m)でデビュー勝ちを狙う。\n\u3000スターバーナーは父エピファネイア、母メジャーエンブレム、母の父ダイワメジャーの血統。母'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【TUF杯レース後コメント】ゲイルライダー戸崎圭太騎手ら ---
-[1] Gemini入力本文 347文字: '福島11RのTUF杯(3歳以上3勝クラス・ダート1150m)は1番人気ゲイルライダー(戸崎圭太騎手)が勝利した。勝ちタイムは1分7秒1(稍重)。2馬身半差の2着に2番人気イリフィ、さらに2馬身半差の3着に7番人気ラストシャリナが入った。\n\u3000'
+--- 記事[1]: 【AI予想・北九州記念】近5走で4勝と充実一途！ 人工知能は秋GIでの活躍見据える逸材に◎ ---
+[1] Gemini入力本文 425文字: '今週の日曜日は、小倉競馬場で北九州記念(GIII)が行われます。\n\u3000過去10年の北九州記念はハンデ戦ということもあり、人気薄が激走することも珍しくはありません。人気薄になっているのは、戦歴に目立った点がなかったり近走や前走の成績が悪い馬であ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【博多Sレース後コメント】ネブラディスク川田将雅騎手ら ---
-[2] Gemini入力本文 352文字: '小倉11Rの博多ステークス(3歳以上3勝クラス・芝1800m)は2番人気ネブラディスク(川田将雅騎手)が勝利した。勝ちタイムは1分46秒6(稍重)。3馬身差の2着に1番人気サウンドムーブ、さらにハナ差の3着に10番人気ハギノアルデバランが入'
+--- 記事[2]: 【船橋競馬】アンヴァンクが7馬身差でデビュー勝ち　ステルスハンター、フェアウェルベルも好素材 ---
+[2] Gemini入力本文 348文字: '7月4日の船橋競馬で2歳新馬戦が3鞍(2、3Rが1000メートル、4Rは1200メートル)行われた。2Rは1番人気に支持されたヴァンゴッホ産駒のアンヴァンク(牡)が4コーナーで先団に並びかけると、直線はほぼ持ったままで7馬身差をつけて圧勝。'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 235文字]: '本日の競馬ニュースです。\n福島11RのTUF杯、3歳以上3勝クラス・ダート1150mは、1番人気ゲイルライダーが戸崎圭太騎手とのコンビで勝利しました。勝ちタイムは稍重の馬場で1分7秒1でした。2馬身半差の2着には2番人気イリフィが入り、さらに2馬身半差の3着には7番人気ラストシャリナが入着しています。勝利したゲイルライダーは栗東の牧浦充徳厩舎に所属する4歳牡馬で、父はドレフォン、母はプライムチョイス、母の父はロードカナロアです。通算成績はこれで9戦4勝となりました。'
-[1]  [重複除去] 235文字 → 234文字
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 425文字）
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 213文字]: '重要な競馬ニュースをお伝えします。小倉11Rの博多ステークスは、2番人気のネブラディスクが川田将雅騎手とのコンビで勝利しました。勝ちタイムは稍重の馬場で1分46秒6でした。3馬身差の2着には1番人気のサウンドムーブが入り、さらにハナ差の3着には10番人気のハギノアルデバランが入着しました。勝利したネブラディスクは、栗東の福永祐一厩舎に所属する4歳牡馬です。父はドゥラメンテ、母はリリサイドで、通算成績は9戦4勝となりました。'
+[0]  [Gemini生出力 269文字]: '競馬ファン注目の情報です。GI・2勝のメジャーエンブレムの7番仔となるスターバーナーが、日曜福島6Rの2歳新馬、芝1200mでデビュー勝ちを狙います。スターバーナーは牝2で、栗東の武幸四郎厩舎に所属しています。この馬は父エピファネイア、母メジャーエンブレム、母の父ダイワメジャーの血統です。母メジャーエンブレムは、2015年の阪神ジュベナイルフィリーズと2016年のNHKマイルカップの覇者です。馬名の意味由来は「星＋エンジンの加速装置」とされています。2025年のセレクトセール1歳においては、1億1500万円（税抜）で取引されました。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (269文字)
+[0]  プレビュー: 競馬ファン注目の情報です。GI・2勝のメジャーエンブレムの7番仔となるスターバーナーが、日曜福島6Rの2歳新馬、芝1200mでデビュー勝ちを狙います。スターバー...
   HTTP 200
-[0]  [Gemini生出力 234文字]: '最新情報をお届けします。\n国際騎手招待競走のシャーガーCに世界選抜として出場する武豊騎手は、8月8日にアスコット競馬場で行われる同レースへの出場を「久しぶりに招待されてうれしいです」と素直に喜びました。これは2018年以来の出場となります。同レースには、クリストフ・ルメール騎手も欧州選抜として出場します。武豊騎手はクリストフ・ルメール騎手について、「クリストフはいっぱい枠があるからね。僕にとってはいい通訳がいて助かりますよ」とコメントし、報道陣の笑いを誘いました。'
-[0]  [redirectフィルター] 234文字 → 221文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (234文字)
-[1]  プレビュー: 本日の競馬ニュースです。福島11RのTUF杯、3歳以上3勝クラス・ダート1150mは、1番人気ゲイルライダーが戸崎圭太騎手とのコンビで勝利しました。勝ちタイムは...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (213文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。小倉11Rの博多ステークスは、2番人気のネブラディスクが川田将雅騎手とのコンビで勝利しました。勝ちタイムは稍重の馬場で1分46...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (221文字)
-[0]  プレビュー: 国際騎手招待競走のシャーガーCに世界選抜として出場する武豊騎手は、8月8日にアスコット競馬場で行われる同レースへの出場を「久しぶりに招待されてうれしいです」と素...
+[2]  [Gemini生出力 248文字]: '競馬ファン注目の情報です。7月4日の船橋競馬では、2歳新馬戦が3鞍行われました。2Rと3Rは1000メートル、4Rは1200メートルで実施されています。特に2Rでは、1番人気に支持されたヴァンゴッホ産駒のアンヴァンクが、4コーナーで先団に並びかけると、直線ではほぼ持ったままで7馬身差をつけて圧勝しました。仲野光馬騎手は、アンヴァンクの能力を高く評価し、「能力は高いし、いい瞬発力を持っています。4角で外に張ったり課題はあるけど、そのぶん伸びしろがある。これから楽しみです」とコメントしています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (248文字)
+[2]  プレビュー: 競馬ファン注目の情報です。7月4日の船橋競馬では、2歳新馬戦が3鞍行われました。2Rと3Rは1000メートル、4Rは1200メートルで実施されています。特に2R...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → 再試行後もSKIPのためスキップ（動画生成しない）
 
-3 件の脚本を生成しました。
+2 件の脚本を生成しました。
