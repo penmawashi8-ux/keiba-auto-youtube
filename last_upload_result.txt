@@ -1,10 +1,10 @@
-date: 2026-07-03T13:01:37.159926Z
+date: 2026-07-04T04:42:16.990008Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9sJg9gxFOLY title=武豊「引退したら何をされるんですか?とか聞かれますけど…」自身の今後をトークショ
-OK project=1 video_id=Cn6C74uH2qs title=武豊　最近のマイブームは…「フリー素材」　トークショーで後輩とのやり取り明かす
-OK project=1 video_id=Fi7T-ZsaLKo title=【小倉＆福島の危険な人気馬】ネブラディスク　小倉１１Ｒ・博多Ｓ
+OK project=1 video_id=rgq3y0d0goc title=【福島5R・2歳新馬】またまたエフフォーリア産駒がV!　坂井瑠星騎手とスタースポ
+OK project=1 video_id=hGc8jf1VEIc title=河原田菜々騎手が函館６ＲをＶ　今年のＪＲＡ５勝目＆通算２９勝目「切れる脚がないの
+OK project=1 video_id=1VeLr9Yp1Dg title=【福島6R新馬戦結果】ルヴァンスレーヴ産駒コンテミュールが逃げ切り勝ち
