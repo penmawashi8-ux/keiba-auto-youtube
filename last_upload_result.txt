@@ -1,10 +1,9 @@
-date: 2026-07-04T11:01:20.580573Z
+date: 2026-07-04T12:16:09.097122Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=EQWw7fIk5ac title=ユタカ節全開!シャーガーCに世界選抜で出場する武豊騎手　欧州選抜で出場ルメール騎
-OK project=1 video_id=-ihl-vla5iw title=【TUF杯レース後コメント】ゲイルライダー戸崎圭太騎手ら
-OK project=1 video_id=CqLdo36NgG0 title=【博多Sレース後コメント】ネブラディスク川田将雅騎手ら
+OK project=1 video_id=JaHm2_-1Zmw title=母はGI・2勝のメジャーエンブレム セレクト1億円超えのスターバーナーがデビュー
+OK project=1 video_id=hSqyMF5QYNo title=【船橋競馬】アンヴァンクが7馬身差でデビュー勝ち　ステルスハンター、フェアウェル
