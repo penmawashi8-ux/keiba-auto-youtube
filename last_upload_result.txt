@@ -1,10 +1,10 @@
-date: 2026-07-04T04:42:16.990008Z
+date: 2026-07-04T06:23:11.825370Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rgq3y0d0goc title=【福島5R・2歳新馬】またまたエフフォーリア産駒がV!　坂井瑠星騎手とスタースポ
-OK project=1 video_id=hGc8jf1VEIc title=河原田菜々騎手が函館６ＲをＶ　今年のＪＲＡ５勝目＆通算２９勝目「切れる脚がないの
-OK project=1 video_id=1VeLr9Yp1Dg title=【福島6R新馬戦結果】ルヴァンスレーヴ産駒コンテミュールが逃げ切り勝ち
+OK project=1 video_id=tWhg3asMBrY title=【阪神アーバン競馬プレーバック】大偉業!下原理騎手が地方通算4000勝を達成
+OK project=1 video_id=IxQ_u1Y8aUM title=【小倉7R】ソフトバンク柳田悠岐外野手の所有馬ベンティガオルサV　団野「よく勝ち
+OK project=1 video_id=CJNCsdmPkSo title=【函館8R】1番人気ダノンヒストリーが衝撃の大差勝ち!浜中「着差通り。ここでは力
