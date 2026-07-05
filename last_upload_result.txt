@@ -1,10 +1,10 @@
-date: 2026-07-05T05:01:42.953008Z
+date: 2026-07-05T06:50:08.577193Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=J3JByxpzS0c title=【小倉5R・2歳新馬】ファレノプシスの孫ポルトブルー完勝Vに西村淳也騎手「もっと
-OK project=1 video_id=DsviyIqOHuw title=【福島6R・新馬戦】6番人気ピクニックマーチがV　鞍上・木幡初が“兄弟対決”制す
-OK project=1 video_id=jgAEjeQ662A title=大物誕生の予感！新種牡馬フライトライン産駒ショウナンガレオンが衝撃のレコードＶ
+OK project=1 video_id=A_fIBBLxy2Q title=【大沼S結果】4番人気ワイドブリザードが4馬身差で快勝
+OK project=1 video_id=nuGvI9-3qBw title=【メイクデビュー函館5Rレース後コメント】ショウナンガレオン鮫島克駿騎手ら
+OK project=1 video_id=KruMbTgEL4I title=【メイクデビュー福島5Rレース後コメント】エスクアドラ坂井瑠星騎手ら
