@@ -1,9 +1,10 @@
-date: 2026-07-04T12:16:09.097122Z
+date: 2026-07-05T00:20:09.340095Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JaHm2_-1Zmw title=母はGI・2勝のメジャーエンブレム セレクト1億円超えのスターバーナーがデビュー
-OK project=1 video_id=hSqyMF5QYNo title=【船橋競馬】アンヴァンクが7馬身差でデビュー勝ち　ステルスハンター、フェアウェル
+OK project=1 video_id=pBEzvwlERYY title=【川崎競馬・スパーキングレディーC(8日)】絶好調の亜咲花・フリージアで上半期的
+OK project=1 video_id=khIifR1cU7E title=【英エクリプスS】仏ダービー馬コンスティテューションリバー快勝!ムーア絶賛「非の
+OK project=1 video_id=FhmePAIueds title=【北九州記念予想】荒れるハンデ戦も指針あり!? 過去データから探るGIII北九州
