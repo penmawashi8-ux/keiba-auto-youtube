@@ -1,100 +1,56 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【川崎競馬・スパーキングレディーC(8日)】絶好調の亜咲花・フリージアで上半期的中締めよ ---
-[0] Gemini入力本文 342文字: '第30回スパーキングレディーC・Jpn3が8日、川崎競馬場の1600メートルで行われる。春の川崎は川崎記念、エンプレス杯と的中させ、絶好調の亜咲花。今回も会心のヒットで、上半期ダートグレード戦予想を締めくくれるか！\n\t\t\t\t\u3000上半期ダートグ'
+--- 記事[0]: 【小倉5R・2歳新馬】ファレノプシスの孫ポルトブルー完勝Vに西村淳也騎手「もっと上を...」　1番人気ジャンゴッドは8着 ---
+[0] Gemini入力本文 349文字: '7月5日の小倉5R・2歳新馬(芝1800メートル、12頭立て)は単勝6番人気のポルトブルー(牡、栗東・浜田多実雄厩舎、父エピファネイア)が鮮やかに逃げ切った。単勝1・7倍と圧倒的な支持を受けた皐月賞馬ジャスティンミラノの弟、ジャンゴッド(牡'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【英エクリプスS】仏ダービー馬コンスティテューションリバー快勝!ムーア絶賛「非の打ちどころがない」 ---
-[1] Gemini入力本文 581文字: '英国伝統の夏の中距離決戦「第129回エクリプスS」(G1、芝1990メートル、1着賞金56万200ポンド＝約1億2044万円)は4日、首都ロンドン近郊のサンダウン競馬場で7頭で争われ、ライアン・ムーア(42)騎乗で1番人気の仏ダービー馬コン'
+--- 記事[1]: 【福島6R・新馬戦】6番人気ピクニックマーチがV　鞍上・木幡初が“兄弟対決”制す ---
+[1] Gemini入力本文 518文字: '5日の福島6R・2歳新馬戦(芝1200メートル)は木幡初騎乗の6番人気ピクニックマーチ(牝＝竹内、父シスキン)がデビュー勝ち。道中は先団外でリズムよく運ぶと、勝負どころで積極的な仕掛け。ゴール前では弟・巧也が騎乗するシュネーバレンの追い上げ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【北九州記念予想】荒れるハンデ戦も指針あり!? 過去データから探るGIII北九州記念 ---
-[2] Gemini入力本文 420文字: '今週も引き続き「福島・小倉・函館」の3場開催。\n\u3000まだ本格的な暑さ到来という感じではないが、一気に気温上昇となってもおかしくない季節。馬の体調も馬券要素に関わってくる夏競馬となってくる。\n\u3000重賞は日曜日にひとつ。小倉競馬場でハンデGIII・'
+--- 記事[2]: 大物誕生の予感！新種牡馬フライトライン産駒ショウナンガレオンが衝撃のレコードＶ ---
+[2] Gemini入力本文 331文字: '５日の函館５Ｒ芝１８００メートルで１番人気に支持されたショウナンガレオン（牡２歳、美浦・加藤士）が衝撃のレコードＶを飾った。勝ち時計１分４７秒６は昨年７月１２日にマルガが新馬戦で記録したタイムを０秒５も更新する破格の時計だ。\n\u3000道中は離して'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 4文字]: 'SKIP'
-[2]  → SKIPが返されました。強調プロンプトで再試行します（入力: 420文字）
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[0]  [Gemini生出力 227文字]: '本日の競馬ニュースです。\n第30回スパーキングレディーC・Jpn3が8日、川崎競馬場の1600メートルで行われます。春の川崎で川崎記念、エンプレス杯を的中させ絶好調の亜咲花は、今回も会心のヒットで上半期ダートグレード戦予想を締めくくりたいとしています。上半期ダートグレードの最後となるこのレースで、亜咲花は前走の関東オークスで本命にしたタマモフリージアを今回も推しています。関東オークスでは、〇に勝ったペンダント、★に2着のジュワネングという結果でした。'
-[0]  [重複除去] 227文字 → 226文字
+[0]  [Gemini生出力 220文字]: 'レース関連の最新情報です。7月5日の小倉5R・2歳新馬、芝1800メートル、12頭立てのレースは、単勝6番人気のポルトブルーが鮮やかに逃げ切って勝利しました。勝ち時計は1分52秒0で、馬場は重でした。最内枠から楽に先手を奪い、最初の5ハロンを1分3秒3と緩やかな流れに落としています。単勝1・7倍と圧倒的な支持を受けた1番人気ジャンゴッドは8着に終わりました。勝利したポルトブルーに騎乗した西村淳也騎手は「もっと上を」とコメントしています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (226文字)
-[0]  プレビュー: 本日の競馬ニュースです。第30回スパーキングレディーC・Jpn3が8日、川崎競馬場の1600メートルで行われます。春の川崎で川崎記念、エンプレス杯を的中させ絶好...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[0]  → output/script_0.txt 保存 (220文字)
+[0]  プレビュー: レース関連の最新情報です。7月5日の小倉5R・2歳新馬、芝1800メートル、12頭立てのレースは、単勝6番人気のポルトブルーが鮮やかに逃げ切って勝利しました。勝...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 238文字]: '競馬ファン注目の情報です。今週も引き続き福島、小倉、函館の3場開催となります。まだ本格的な暑さ到来という感じではないものの、一気に気温上昇となってもおかしくない季節であり、馬の体調も馬券要素に関わってくる夏競馬となるでしょう。重賞は日曜日に一つ、小倉競馬場でハンデGIIIの北九州記念が小倉の芝1200メートルで行われます。この一戦は、かつては8月中旬から後半の開催でしたが、2年前からこの時期に変わりました。過去10年データを使って、レース傾向を探る予想が提供されています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (238文字)
-[2]  プレビュー: 競馬ファン注目の情報です。今週も引き続き福島、小倉、函館の3場開催となります。まだ本格的な暑さ到来という感じではないものの、一気に気温上昇となってもおかしくない...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 279文字]: '今日の競馬情報です。英国伝統の夏の中距離決戦、第129回エクリプスSは4日、首都ロンドン近郊のサンダウン競馬場で7頭により争われました。G1、芝1990メートルで行われたこのレースは、1着賞金が56万200ポンド、日本円にして約1億2044万円です。ライアン・ムーア騎手が騎乗した1番人気の仏ダービー馬、コンスティテューションリバーが快勝しました。道中4、5番手から直線で外に出し、見事に差し切り勝利を収めています。良馬場での勝ち時計は2分4秒43でした。鞍上のライアン・ムーア騎手は、コンスティテューションリバーを「非の打ちどころがない」と絶賛しています。'
+[1]  [Gemini生出力 204文字]: '注目の競馬情報をお届けします。5日の福島6R、2歳新馬戦の芝1200メートルでは、木幡初騎乗の6番人気ピクニックマーチがデビュー勝ちを収めました。道中は先団外でリズムよく運び、勝負どころでは積極的な仕掛けを見せました。ゴール前では、弟の巧也が騎乗するシュネーバレンの追い上げを鼻差しのいでいます。木幡初騎手は「初戦から動けていましたね。前をつかまえて、残し切る内容で次につながる競馬だった」と振り返りました。'
+[1]  [redirectフィルター] 204文字 → 189文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (279文字)
-[1]  プレビュー: 今日の競馬情報です。英国伝統の夏の中距離決戦、第129回エクリプスSは4日、首都ロンドン近郊のサンダウン競馬場で7頭により争われました。G1、芝1990メートル...
+[1]  → output/script_1.txt 保存 (189文字)
+[1]  プレビュー: 5日の福島6R、2歳新馬戦の芝1200メートルでは、木幡初騎乗の6番人気ピクニックマーチがデビュー勝ちを収めました。道中は先団外でリズムよく運び、勝負どころでは...
+  HTTP 200
+[2]  [Gemini生出力 245文字]: '今日の競馬情報です。5日の函館5R芝1800メートルで、1番人気に支持されたショウナンガレオンが衝撃のレコードVを飾りました。美浦の加藤士厩舎に所属するショウナンガレオンは、勝ち時計1分47秒6を記録しました。このタイムは、昨年7月12日にマルガが新馬戦で記録したタイムを0秒5も更新する破格の時計です。道中は離して逃げた馬が軽快に飛ばし、5F60秒4とまずまずのペースでした。ショウナンガレオンは3番手でしっかり折り合い、3角手前から徐々に進出しました。4角で肩ムチが入り追いつきました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (245文字)
+[2]  プレビュー: 今日の競馬情報です。5日の函館5R芝1800メートルで、1番人気に支持されたショウナンガレオンが衝撃のレコードVを飾りました。美浦の加藤士厩舎に所属するショウナ...
 
 3 件の脚本を生成しました。
