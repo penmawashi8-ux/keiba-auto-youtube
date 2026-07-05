@@ -1,9 +1,18 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 [2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
@@ -13,44 +22,54 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【小倉5R・2歳新馬】ファレノプシスの孫ポルトブルー完勝Vに西村淳也騎手「もっと上を...」　1番人気ジャンゴッドは8着 ---
-[0] Gemini入力本文 349文字: '7月5日の小倉5R・2歳新馬(芝1800メートル、12頭立て)は単勝6番人気のポルトブルー(牡、栗東・浜田多実雄厩舎、父エピファネイア)が鮮やかに逃げ切った。単勝1・7倍と圧倒的な支持を受けた皐月賞馬ジャスティンミラノの弟、ジャンゴッド(牡'
+--- 記事[0]: 【大沼S結果】4番人気ワイドブリザードが4馬身差で快勝 ---
+[0] Gemini入力本文 348文字: '5日、函館競馬場で行われた大沼ステークス(3歳上・オープン・ダ1700m)は、ハナに立って4コーナーで後続を突き放した浜中俊騎手騎乗の4番人気ワイドブリザード(セ5、栗東・佐藤悠太厩舎)が、7番人気レヴォントゥレット(牡5、栗東・矢作芳人厩'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【福島6R・新馬戦】6番人気ピクニックマーチがV　鞍上・木幡初が“兄弟対決”制す ---
-[1] Gemini入力本文 518文字: '5日の福島6R・2歳新馬戦(芝1200メートル)は木幡初騎乗の6番人気ピクニックマーチ(牝＝竹内、父シスキン)がデビュー勝ち。道中は先団外でリズムよく運ぶと、勝負どころで積極的な仕掛け。ゴール前では弟・巧也が騎乗するシュネーバレンの追い上げ'
+--- 記事[1]: 【メイクデビュー函館5Rレース後コメント】ショウナンガレオン鮫島克駿騎手ら ---
+[1] Gemini入力本文 490文字: '函館5Rのメイクデビュー函館(芝1800m)は1番人気ショウナンガレオン(鮫島克駿騎手)が勝利した。勝ちタイムは1分47秒6(良)。2馬身半差の2着に2番人気ダノンキューブ、さらに4馬身差の3着に3番人気スーパーユタカが入った。\n\u3000ショウナ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 大物誕生の予感！新種牡馬フライトライン産駒ショウナンガレオンが衝撃のレコードＶ ---
-[2] Gemini入力本文 331文字: '５日の函館５Ｒ芝１８００メートルで１番人気に支持されたショウナンガレオン（牡２歳、美浦・加藤士）が衝撃のレコードＶを飾った。勝ち時計１分４７秒６は昨年７月１２日にマルガが新馬戦で記録したタイムを０秒５も更新する破格の時計だ。\n\u3000道中は離して'
+--- 記事[2]: 【メイクデビュー福島5Rレース後コメント】エスクアドラ坂井瑠星騎手ら ---
+[2] Gemini入力本文 506文字: '福島5Rのメイクデビュー福島(芝2000m)は2番人気エスクアドラ(坂井瑠星騎手)が勝利した。勝ちタイムは2分03秒2(良)。1馬身差の2着に10番人気プリンキパトゥス、さらにアタマ差の3着に6番人気ビートルが入った。\n\u3000エスクアドラは美浦'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 199文字]: 'レース関連の最新情報です。5日、函館競馬場で行われた大沼ステークスは、浜中俊騎手騎乗の4番人気ワイドブリザードが優勝しました。3歳上・オープン・ダート1700mのこのレースで、ワイドブリザードはハナに立って4コーナーで後続を突き放し、7番人気レヴォントゥレットに4馬身差をつけ快勝しました。勝ちタイムは1分43秒4の良馬場でした。さらに1/2馬身差の3着には5番人気ヒルノハンブルクが入っています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (199文字)
+[0]  プレビュー: レース関連の最新情報です。5日、函館競馬場で行われた大沼ステークスは、浜中俊騎手騎乗の4番人気ワイドブリザードが優勝しました。3歳上・オープン・ダート1700m...
+  HTTP 200
+[1]  [Gemini生出力 221文字]: '今週の競馬注目情報をお伝えします。函館5Rのメイクデビュー函館、芝1800mでは1番人気のショウナンガレオンが鮫島克駿騎手と共に勝利しました。勝ちタイムは良馬場で1分47秒6でした。2馬身半差の2着には2番人気ダノンキューブが入り、さらに4馬身差の3着には3番人気スーパーユタカが入着しました。ショウナンガレオンは美浦の加藤士津八厩舎に所属する2歳牡馬で、父はFlightline、母はタングリトナ、母の父はFull Mastという血統です。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (221文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。函館5Rのメイクデビュー函館、芝1800mでは1番人気のショウナンガレオンが鮫島克駿騎手と共に勝利しました。勝ちタイムは良馬場...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 220文字]: 'レース関連の最新情報です。7月5日の小倉5R・2歳新馬、芝1800メートル、12頭立てのレースは、単勝6番人気のポルトブルーが鮮やかに逃げ切って勝利しました。勝ち時計は1分52秒0で、馬場は重でした。最内枠から楽に先手を奪い、最初の5ハロンを1分3秒3と緩やかな流れに落としています。単勝1・7倍と圧倒的な支持を受けた1番人気ジャンゴッドは8着に終わりました。勝利したポルトブルーに騎乗した西村淳也騎手は「もっと上を」とコメントしています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (220文字)
-[0]  プレビュー: レース関連の最新情報です。7月5日の小倉5R・2歳新馬、芝1800メートル、12頭立てのレースは、単勝6番人気のポルトブルーが鮮やかに逃げ切って勝利しました。勝...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 204文字]: '注目の競馬情報をお届けします。5日の福島6R、2歳新馬戦の芝1200メートルでは、木幡初騎乗の6番人気ピクニックマーチがデビュー勝ちを収めました。道中は先団外でリズムよく運び、勝負どころでは積極的な仕掛けを見せました。ゴール前では、弟の巧也が騎乗するシュネーバレンの追い上げを鼻差しのいでいます。木幡初騎手は「初戦から動けていましたね。前をつかまえて、残し切る内容で次につながる競馬だった」と振り返りました。'
-[1]  [redirectフィルター] 204文字 → 189文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (189文字)
-[1]  プレビュー: 5日の福島6R、2歳新馬戦の芝1200メートルでは、木幡初騎乗の6番人気ピクニックマーチがデビュー勝ちを収めました。道中は先団外でリズムよく運び、勝負どころでは...
-  HTTP 200
-[2]  [Gemini生出力 245文字]: '今日の競馬情報です。5日の函館5R芝1800メートルで、1番人気に支持されたショウナンガレオンが衝撃のレコードVを飾りました。美浦の加藤士厩舎に所属するショウナンガレオンは、勝ち時計1分47秒6を記録しました。このタイムは、昨年7月12日にマルガが新馬戦で記録したタイムを0秒5も更新する破格の時計です。道中は離して逃げた馬が軽快に飛ばし、5F60秒4とまずまずのペースでした。ショウナンガレオンは3番手でしっかり折り合い、3角手前から徐々に進出しました。4角で肩ムチが入り追いつきました。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (245文字)
-[2]  プレビュー: 今日の競馬情報です。5日の函館5R芝1800メートルで、1番人気に支持されたショウナンガレオンが衝撃のレコードVを飾りました。美浦の加藤士厩舎に所属するショウナ...
+[2]  [Gemini生出力 197文字]: '最新情報をお届けします。福島5Rのメイクデビュー福島、芝2000mは2番人気のエスクアドラが坂井瑠星騎手と共に勝利しました。勝ちタイムは良馬場で2分03秒2でした。1馬身差の2着には10番人気のプリンキパトゥスが入り、さらにアタマ差で6番人気のビートルが3着となりました。勝利したエスクアドラは美浦の鹿戸雄一厩舎に所属する2歳牡馬で、父はレイデオロ、母はジューヌエコール、母の父はクロフネです。'
+[2]  [redirectフィルター] 197文字 → 185文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (185文字)
+[2]  プレビュー: 福島5Rのメイクデビュー福島、芝2000mは2番人気のエスクアドラが坂井瑠星騎手と共に勝利しました。勝ちタイムは良馬場で2分03秒2でした。1馬身差の2着には1...
 
 3 件の脚本を生成しました。
