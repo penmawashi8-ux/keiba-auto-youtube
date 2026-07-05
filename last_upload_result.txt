@@ -1,10 +1,10 @@
-date: 2026-07-05T09:43:24.914664Z
+date: 2026-07-05T11:15:40.696941Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=h-9CgZ4G3WU title=ジェイソン・コレット騎手がJRA初勝利 「夢が実現してとても嬉しい」
-OK project=1 video_id=_5U8VxhN1jA title=【佐賀ユーススプリント結果】ハクアイドゥマンが押し切り重賞2勝目
-OK project=1 video_id=c884F2yX_oQ title=西村淳也騎手がJRA通算500勝達成 「素直にうれしい」
+OK project=1 video_id=7QF-2hg9T3E title=「来週午前中とか」「もう国民栄誉賞で…」大台達成まであと2勝とした武豊騎手　Xデ
+OK project=1 video_id=1oJ9-noDQ2k title=7月5日の出来事一覧/函館・福島・小倉
+OK project=1 video_id=E7gRJSr_AKk title=報知新聞杯せきれい賞はコスモフロイデが優勝　地方初勝利が重賞　フェノーメノのおい
