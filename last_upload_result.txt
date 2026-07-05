@@ -1,10 +1,10 @@
-date: 2026-07-05T08:02:28.563309Z
+date: 2026-07-05T09:43:24.914664Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BtRlKqHQF_4 title=【横津岳特別レース後コメント】アルマデオロ武豊騎手ら
-OK project=1 video_id=Xj0PT45m6LE title=【北九州記念】痛恨の出遅れ...川田将雅騎手のデアヴェローチェは10着　「いい競
-OK project=1 video_id=C3u79e1SzbY title=【北九州記念】トップハンデに泣いた!?58キロのヨシノイースターは3着　田辺裕信
+OK project=1 video_id=h-9CgZ4G3WU title=ジェイソン・コレット騎手がJRA初勝利 「夢が実現してとても嬉しい」
+OK project=1 video_id=_5U8VxhN1jA title=【佐賀ユーススプリント結果】ハクアイドゥマンが押し切り重賞2勝目
+OK project=1 video_id=c884F2yX_oQ title=西村淳也騎手がJRA通算500勝達成 「素直にうれしい」
