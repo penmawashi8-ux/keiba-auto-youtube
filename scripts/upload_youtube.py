@@ -98,10 +98,11 @@ _TITLE_TEMPLATES = [
 ]
 
 # YouTube説明文テンプレート（動画ごとにローテーション）
+# 検索対策: 「競馬」「ニュース」の両方の語を必ず含めること
 _DESC_INTRO_TEMPLATES = [
     "競馬の最新ニュースをお届けします。",
-    "注目の競馬情報をまとめました。",
-    "競馬ファン必見の速報情報です。",
+    "注目の競馬ニュース・競馬情報をまとめました。",
+    "競馬ファン必見のニュース速報です。",
 ]
 
 YOUTUBE_SCOPES = [
@@ -109,7 +110,7 @@ YOUTUBE_SCOPES = [
     "https://www.googleapis.com/auth/youtube.force-ssl",  # サムネイルアップロードに必要
 ]
 CATEGORY_ID = "17"  # スポーツ
-TAGS = ["競馬", "競馬ニュース", "keiba", "Shorts", "競馬速報"]
+TAGS = ["競馬", "競馬ニュース", "ニュース", "競馬 ニュース", "競馬 最新", "JRA", "keiba", "Shorts", "競馬速報"]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
 # GCPプロジェクト切り替えで解決できるAPIクォータ超過
@@ -432,7 +433,7 @@ def extract_seo_keywords(title: str, script: str) -> list[str]:
 
 def build_description(script: str, seo_keywords: list[str] | None = None) -> str:
     intro = random.choice(_DESC_INTRO_TEMPLATES)
-    base_tags = "#競馬 #競馬ニュース #keiba #Shorts #競馬速報"
+    base_tags = "#競馬 #競馬ニュース #ニュース #JRA #keiba #Shorts #競馬速報"
     if seo_keywords:
         kw_hashtags = " ".join(f"#{k}" for k in seo_keywords[:15])
         hashtags = f"\n\n{base_tags} {kw_hashtags}"
