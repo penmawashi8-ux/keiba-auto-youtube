@@ -15,6 +15,7 @@ from pathlib import Path
 # fetch_news.py の共通ユーティリティを再利用
 sys.path.insert(0, str(Path(__file__).parent))
 from fetch_news import (  # noqa: E402
+    fix_distance_typo,
     http_get,
     http_get_article,
     parse_feed,
@@ -284,6 +285,10 @@ def main() -> None:
         print("対象記事なし。空の news.json を出力します。")
         Path(NEWS_JSON).write_text("[]", encoding="utf-8")
         return
+    # 元記事の誤植による桁違いの距離表記（ダート17000メートル等）を補正
+    for item in items:
+        item["title"] = fix_distance_typo(item["title"])
+        item["summary"] = fix_distance_typo(item["summary"])
     Path(NEWS_JSON).write_text(
         json.dumps(items, ensure_ascii=False, indent=2, default=str),
         encoding="utf-8",

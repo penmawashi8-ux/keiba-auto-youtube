@@ -11,6 +11,7 @@ import html as _html_lib
 import json
 import re
 import sys
+import unicodedata
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import os
@@ -870,6 +871,29 @@ def extract_og_image(url: str, html: str) -> str:
     return ""
 
 
+# 距離表記の誤植補正パターン: 数字5〜6桁 + 距離単位（m/メートル）
+# 例: 元記事の誤植「ダート１７０００メートル」→「ダート1700メートル」(2026年7月4日 netkeiba配信記事で発生)
+_DISTANCE_TYPO_PATTERN = re.compile(
+    r'([0-9０-９]{5,6})(?=\s*(?:メートル|[mｍMＭ](?![A-Za-z])))'
+)
+
+
+def fix_distance_typo(text: str) -> str:
+    """元記事の誤植による桁違いの距離表記を補正する。
+    日本の競馬の距離は最長でも約4300m（中山グランドジャンプ4250m）のため、
+    5桁以上の距離は末尾の0を落として800〜4300mに収まる場合のみ補正する。"""
+    def _repl(m: "re.Match[str]") -> str:
+        orig = int(unicodedata.normalize("NFKC", m.group(1)))
+        num = orig
+        while num > 4300 and num % 10 == 0:
+            num //= 10
+        if num != orig and 800 <= num <= 4300:
+            print(f"  [距離補正] {m.group(1)}m → {num}m（元記事の誤植を補正）")
+            return str(num)
+        return m.group(1)
+    return _DISTANCE_TYPO_PATTERN.sub(_repl, text)
+
+
 # ---------------------------------------------------------------------------
 # メイン取得ロジック
 # ---------------------------------------------------------------------------
@@ -1229,6 +1253,11 @@ def main() -> None:
         print("新着ニュースなし。処理を終了します。")
         Path(NEWS_JSON).write_text("[]", encoding="utf-8")
         sys.exit(0)
+
+    # 元記事の誤植による桁違いの距離表記（ダート17000メートル等）を補正
+    for item in news_items:
+        item["title"] = fix_distance_typo(item["title"])
+        item["summary"] = fix_distance_typo(item["summary"])
 
     Path(NEWS_JSON).write_text(
         json.dumps(news_items, ensure_ascii=False, indent=2),
