@@ -1,136 +1,44 @@
-[1]  [ファクトチェックNG] NG: 元記事に「高野友和調
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [ファクトチェックNG] NG: 母の父としてはタイトルホルダーやメ
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 母の父としてはタイトルホルダーやメ
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【地方競馬】８日の川崎に要潤が来場　「川崎競馬公式アンバサダー就任報告会」、表彰式ではプレゼンターで登場 ---
-[0] Gemini入力本文 395文字: '俳優・要潤の「川崎競馬公式アンバサダー就任報告会」が８日の９Ｒ（１８時５５分発走）終了後にウイナーズサークルで行われる。\n\u3000また、同日の１１Ｒ「第３０回スパーキングレディーカップ・Ｊｐｎ３」（２０時１０分発走）では表彰式のプレゼンターとして'
+--- 記事[0]: 【杉山晴調教師インタビュー前編】2冠馬ロブチェンの強さ語る　「とにかく、いい状態で」3冠への始動戦は神戸新聞杯を視野 ---
+[0] Gemini入力本文 343文字: '今年、皐月賞と日本ダービーの2冠に輝いたロブチェンの杉山晴紀調教師(44)＝栗東＝が、スポーツ報知の単独インタビューに応じた。\n\t\t\t\t―ロブチェンで2冠を制し、16年10月の開業から10年目でダービートレーナーになった。\n\t\t\t\t\u3000「皆さ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【七夕賞】地元・福島での重賞初Vを狙う高野調教師「目標のひとつではあります」重賞馬オールナットで ---
-[1] Gemini入力本文 351文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000オールナット(牡5歳、栗東・高野友和厩舎、父サトノダイヤモンド)は、1日の栗東・坂路での1週前追い切りで53秒2―12秒0をマークしている。高野調教師は「まだ緩'
+--- 記事[1]: 【注目馬動向】サトノレーヴはルメール騎手とのコンビでジュライC・英G1へ ---
+[1] Gemini入力本文 295文字: '前走のクイーンエリザベス2世ジュビリーSで2年連続2着となったサトノレーヴ(牡7歳、美浦・堀宣行厩舎、父ロードカナロア)は、ジュライC・英G1(7月11日、ニューマーケット競馬場・芝1200メートル)に向かう。\n\t\t\t\t\u3000鞍上はクリストフ・'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 「エプソムの英雄」24歳のモティヴェイターが心臓発作で死す　母の父としてタイトルホルダー、メロディーレーンなど ---
-[2] Gemini入力本文 339文字: '2005年の英ダービーの優勝馬で、種牡馬としては凱旋門賞を連覇したトレヴの父であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かった。24歳だった。複数の海外メディアが報じており、繋養(けいよう)されていたフランスのハラス・'
+--- 記事[2]: 【七夕賞】3戦3勝と福島大好き!悲願の重賞初Vあるぞ　中竹調教師が「ここも楽しみ」と意欲見せるサヴォーナ ---
+[2] Gemini入力本文 431文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000サヴォーナ(牡6歳、栗東・中竹和也厩舎、父キズナ)は、脚部不安の影響で1年5か月ぶりとなった福島民報杯を完勝した。中竹調教師は「ひと叩きのつもりで使ったんだけど'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 240文字]: '今日の競馬情報です。俳優の要潤が川崎競馬公式アンバサダーに就任しました。8日には、9Rの18時55分発走終了後にウイナーズサークルで「川崎競馬公式アンバサダー就任報告会」が行われます。また、同日の11R「第30回スパーキングレディーカップ・Jpn3」では、20時10分発走のレース後、表彰式でプレゼンターとして登場し、レースを盛り上げます。要潤が出演する新CM「SCOOP！スパーキングレディーカップ篇」は、川崎競馬公式YouTubeで公開されており、地上波テレビでも放映中です。'
-  HTTP 200
-[1]  [Gemini生出力 260文字]: '最新情報をお届けします。第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで開催されます。このレースに出走予定のオールナットは、1日の栗東・坂路での1週前追い切りで53秒2―12秒0をマークしました。高野友和調教師は、追い切りについて「まだ緩いところはありますが、西村淳也ジョッキーに乗ってもらって締めてもらいました。これで良くなるんじゃないかと思います」とジャッジしています。高野友和調教師は、地元・福島での重賞初勝利を目標の一つとしています。オールナットは昨年のチャレンジCで重賞初勝利を挙げています。'
-[1]  [redirectフィルター] 260文字 → 248文字
-  HTTP 200
-[2]  [Gemini生出力 231文字]: '重要な競馬ニュースをお伝えします。2005年の英ダービー優勝馬で、種牡馬としては凱旋門賞を連覇したトレヴの父であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かりました。24歳でした。複数の海外メディアが報じており、繋養されていたフランスのハラス・デュ・オグネ牧場で息を引き取ったとのことです。同馬は凱旋門賞馬モンジューの産駒で、種牡馬生活20シーズン目を終えたばかりでした。母の父としてはタイトルホルダーやメロディーレーンなどを輩出しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (240文字)
-[0]  プレビュー: 今日の競馬情報です。俳優の要潤が川崎競馬公式アンバサダーに就任しました。8日には、9Rの18時55分発走終了後にウイナーズサークルで「川崎競馬公式アンバサダー就...
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 232文字]: '重要な競馬ニュースをお伝えします。2005年の英ダービー優勝馬で、種牡馬としては凱旋門賞を連覇したトレヴの父であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かりました。24歳でした。複数の海外メディアが報じており、繋養されていたフランスのハラス・デュ・オグネ牧場で息を引き取ったということです。同馬は凱旋門賞馬モンジューの産駒で、種牡馬生活20シーズン目を終えたばかりでした。母の父としてはタイトルホルダーやメロディーレーンなどを輩出しています。'
-  HTTP 200
-[1]  [Gemini生出力 266文字]: '最新情報をお届けします。\n第62回七夕賞・G3に出走を予定しているオールナットは、7月12日に福島競馬場・芝2000メートルで行われます。オールナットは1日の栗東・坂路での1週前追い切りで、53秒2―12秒0をマークしました。高野友和調教師は「まだ緩いところはありますが、西村淳也ジョッキーに乗ってもらって締めてもらいました。これで良くなるんじゃないかと思います」とジャッジしています。昨年のチャレンジCで重賞初勝利を挙げたオールナットで、地元・福島での重賞初Vを狙う高野友和調教師は「目標のひとつではあります」とコメントしました。'
-[1]  [redirectフィルター] 266文字 → 253文字
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[1]  [Gemini生出力 174文字]: '重要な競馬ニュースをお伝えします。\n前走のクイーンエリザベス2世ジュビリーSで2年連続2着となったサトノレーヴは、ジュライC・英G1に向かいます。このレースは7月11日にニューマーケット競馬場の芝1200メートルで行われる予定です。鞍上はクリストフ・ルメール騎手を予定しており、連覇を果たした今年の高松宮記念以来、3戦ぶりのコンビとなる見込みです。'
+[1]  [重複除去] 174文字 → 173文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (253文字)
-[1]  プレビュー: 第62回七夕賞・G3に出走を予定しているオールナットは、7月12日に福島競馬場・芝2000メートルで行われます。オールナットは1日の栗東・坂路での1週前追い切り...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash[2]  [ファクトチェックNG] NG: 母の父としてはタイトルホルダーやメロ
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2] のスクリプト生成失敗。
-
+[1]  → output/script_1.txt 保存 (173文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。前走のクイーンエリザベス2世ジュビリーSで2年連続2着となったサトノレーヴは、ジュライC・英G1に向かいます。このレースは7月...
   HTTP 200
-[2]  [Gemini生出力 233文字]: '重要な競馬ニュースをお伝えします。2005年の英ダービー優勝馬であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かりました。24歳でした。複数の海外メディアが報じており、繋養されていたフランスのハラス・デュ・オグネ牧場で息を引き取ったとのことです。同馬は凱旋門賞馬モンジューの産駒で、種牡馬生活20シーズン目を終えたばかりでした。種牡馬としては凱旋門賞を連覇したトレヴの父であり、母の父としてはタイトルホルダーやメロディーレーンなどを輩出しています。'
-[2] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[0]  [Gemini生出力 260文字]: '注目の競馬情報をお届けします。今年、皐月賞と日本ダービーの2冠に輝いたロブチェンの杉山晴紀調教師が、スポーツ報知の単独インタビューに応じました。杉山晴紀調教師は16年10月の開業から10年目でダービートレーナーとなり、「皆さんの協力があって勝てたレースなので、この場を借りて感謝申し上げたいです。おめでとうという声をすごくかけていただいたので、特別なレースだなという実感はありますね」と語っています。2冠馬ロブチェンの強さについて「とにかく、いい状態で」と語り、3冠への始動戦は神戸新聞杯を視野に入れているとのことです。'
+[0]  [redirectフィルター] 260文字 → 245文字
+[0]  [ナビ文言除去] 245文字 → 188文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (188文字)
+[0]  プレビュー: 杉山晴紀調教師は16年10月の開業から10年目でダービートレーナーとなり、「皆さんの協力があって勝てたレースなので、この場を借りて感謝申し上げたいです。おめでと...
+  HTTP 200
+[2]  [Gemini生出力 210文字]: 'レース関連の最新情報です。\n第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで行われます。サヴォーナは脚部不安の影響で1年5か月ぶりとなった福島民報杯を完勝しました。中竹調教師は「ひと叩きのつもりで使ったんだけど、本当にびっくりした」と目を丸くしています。23年の菊花賞で5着だった能力は一枚上だったということでしょう。1日の1週前追い切りでは、栗東・坂路で51秒2―12秒5をいっぱいでマークしました。'
+[2]  [重複除去] 210文字 → 209文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (209文字)
+[2]  プレビュー: レース関連の最新情報です。第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで行われます。サヴォーナは脚部不安の影響で1年5か月ぶりとなった福島民...
+
+3 件の脚本を生成しました。
