@@ -1,10 +1,10 @@
-date: 2026-07-06T13:02:04.046196Z
+date: 2026-07-06T14:35:05.519645Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=s4hbnNMDbM0 title=【七夕賞】ブリンカー効果で変身あるぞ!　陣営も「勝負どころの反応が変わってこない
-OK project=1 video_id=bU-Z8se6Y0A title=【七夕賞】斉藤崇調教師「もう少しやれる」福島コース歓迎のセンツブラッド　ラジオN
-OK project=1 video_id=xM7YPNsMa-Q title=【七夕賞】陣営「光が見えた」復活のXデーは近い!　リーディング首位を快走する杉山
+OK project=1 video_id=NkLJ1ihqwJY title=英ジュライC第2回登録馬発表　日本調教馬はサトノレーヴがエントリー　直線競馬6F
+OK project=1 video_id=g29hFtLyMWY title=【POGマニア】度肝抜かれた馬なりでの加速ラップ　来年5月の話題集めそうなフライ
+OK project=1 video_id=xPnA28MDygo title=【杉山晴調教師インタビュー後編】デアリングタクトから始まった躍進　「ずっと後を追
