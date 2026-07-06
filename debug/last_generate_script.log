@@ -1,21 +1,15 @@
+[1]  [ファクトチェックNG] NG: 元記事に「高野友和調
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  → 未来レース記事にレース結果の創作を検出。次のキー/モデルへ切り替えます: 今週の競馬注目情報をお伝えします。
-フランス伝統の一戦、第118回サンクルー大賞G1、芝2400メートルは5日、首都パリ
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [ファクトチェックNG] NG: 母の父としてはタイトルホルダーやメ
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
@@ -23,61 +17,54 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[0]  [ファクトチェックNG] NG: 元記事に存在しない騎
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 母の父としてはタイトルホルダーやメ
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【七夕賞・角田の特注馬】前崩れの前走は度外視可能　アスクナイスショーが先行有利の重賞で浮上する ---
-[0] Gemini入力本文 351文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000過去10年の結果を見ると4角3番手以内の馬が5勝。やはり小回りコースらしく、先行有利の決着が多い。今回注目したいのはアスクナイスショー(牡5歳、美浦・中舘英二厩'
+--- 記事[0]: 【地方競馬】８日の川崎に要潤が来場　「川崎競馬公式アンバサダー就任報告会」、表彰式ではプレゼンターで登場 ---
+[0] Gemini入力本文 395文字: '俳優・要潤の「川崎競馬公式アンバサダー就任報告会」が８日の９Ｒ（１８時５５分発走）終了後にウイナーズサークルで行われる。\n\u3000また、同日の１１Ｒ「第３０回スパーキングレディーカップ・Ｊｐｎ３」（２０時１０分発走）では表彰式のプレゼンターとして'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【仏サンクルー大賞】カランダガンが本領発揮!史上6頭目の連覇達成　バルザローナ「本当に素晴らしい馬」 ---
-[1] Gemini入力本文 354文字: 'フランス伝統の一戦、第118回サンクルー大賞(G1、芝2400メートル)は5日、首都パリ近郊のサンクルー競馬場で8頭で争われ、ミカエル・バルザローナ(34)騎乗の1番人気カランダガン(セン5＝仏F・グラファール、父グレンイーグルス)が道中、'
+--- 記事[1]: 【七夕賞】地元・福島での重賞初Vを狙う高野調教師「目標のひとつではあります」重賞馬オールナットで ---
+[1] Gemini入力本文 351文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000オールナット(牡5歳、栗東・高野友和厩舎、父サトノダイヤモンド)は、1日の栗東・坂路での1週前追い切りで53秒2―12秒0をマークしている。高野調教師は「まだ緩'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【七夕賞】3年ぶり参戦のバトルボーンが完全復活へ　林調教師「舞台にネガティブなイメージはないです」 ---
-[2] Gemini入力本文 350文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000右前脚の骨折による長期休養明けを2度叩いたバトルボーン(牡7歳、美浦・林徹厩舎、父シルバーステート)が、完全復活の白星を狙う。復帰初戦だった今年2月の小倉日経賞'
+--- 記事[2]: 「エプソムの英雄」24歳のモティヴェイターが心臓発作で死す　母の父としてタイトルホルダー、メロディーレーンなど ---
+[2] Gemini入力本文 339文字: '2005年の英ダービーの優勝馬で、種牡馬としては凱旋門賞を連覇したトレヴの父であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かった。24歳だった。複数の海外メディアが報じており、繋養(けいよう)されていたフランスのハラス・'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 241文字]: '今週の競馬注目情報をお伝えします。第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われます。右前脚の骨折による長期休養明けを2度叩いたバトルボーンが、完全復活の白星を狙います。復帰初戦だった今年2月の小倉日経賞、続くメトロポリタンSで3着に連続好走しており、林調教師は「使うごとに良くなってきています」と手応えをつかんでいます。七夕賞には23年に参戦しており、1番人気で逃げて0秒3差4着でした。林調教師は「舞台にネガティブなイメージはないです」と話しています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (241文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われます。右前脚の骨折による長期休養明けを2度叩いたバトル...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[0]  [Gemini生出力 240文字]: '今日の競馬情報です。俳優の要潤が川崎競馬公式アンバサダーに就任しました。8日には、9Rの18時55分発走終了後にウイナーズサークルで「川崎競馬公式アンバサダー就任報告会」が行われます。また、同日の11R「第30回スパーキングレディーカップ・Jpn3」では、20時10分発走のレース後、表彰式でプレゼンターとして登場し、レースを盛り上げます。要潤が出演する新CM「SCOOP！スパーキングレディーカップ篇」は、川崎競馬公式YouTubeで公開されており、地上波テレビでも放映中です。'
   HTTP 200
-[1]  [Gemini生出力 304文字]: '今週の競馬注目情報をお伝えします。\nフランス伝統の一戦、第118回サンクルー大賞G1、芝2400メートルは5日、首都パリ近郊のサンクルー競馬場で8頭で争われました。ミカエル・バルザローナ騎手騎乗の1番人気カランダガンが勝利しました。カランダガンは道中、最後方から末脚を繰り出し、2着クアリフィカーに首差で差し切り、見事な連覇を達成しました。この連覇は、26＆27年のニーノ、57＆58年のタネルコ、72＆73年のラインゴールド、96＆97年のエリシオ、02＆03年のアンジュガブリエル以来、23年ぶりとなる史上6頭目の快挙です。ミカエル・バルザローナ騎手はカランダガンを「本当に素晴らしい馬」と称賛しました。'
+[1]  [Gemini生出力 260文字]: '最新情報をお届けします。第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで開催されます。このレースに出走予定のオールナットは、1日の栗東・坂路での1週前追い切りで53秒2―12秒0をマークしました。高野友和調教師は、追い切りについて「まだ緩いところはありますが、西村淳也ジョッキーに乗ってもらって締めてもらいました。これで良くなるんじゃないかと思います」とジャッジしています。高野友和調教師は、地元・福島での重賞初勝利を目標の一つとしています。オールナットは昨年のチャレンジCで重賞初勝利を挙げています。'
+[1]  [redirectフィルター] 260文字 → 248文字
+  HTTP 200
+[2]  [Gemini生出力 231文字]: '重要な競馬ニュースをお伝えします。2005年の英ダービー優勝馬で、種牡馬としては凱旋門賞を連覇したトレヴの父であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かりました。24歳でした。複数の海外メディアが報じており、繋養されていたフランスのハラス・デュ・オグネ牧場で息を引き取ったとのことです。同馬は凱旋門賞馬モンジューの産駒で、種牡馬生活20シーズン目を終えたばかりでした。母の父としてはタイトルホルダーやメロディーレーンなどを輩出しています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (240文字)
+[0]  プレビュー: 今日の競馬情報です。俳優の要潤が川崎競馬公式アンバサダーに就任しました。8日には、9Rの18時55分発走終了後にウイナーズサークルで「川崎競馬公式アンバサダー就...
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -89,7 +76,7 @@ Gemini APIキー: 3 件ロード
 [1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -99,35 +86,51 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 279文字]: '今週の競馬注目情報をお伝えします。フランス伝統の一戦、第118回サンクルー大賞G1、芝2400メートルは5日、首都パリ近郊のサンクルー競馬場で8頭で争われました。ミカエル・バルザローナ騎乗の1番人気カランダガンが、道中最後方から末脚を繰り出し、2着クアリフィカーに首差で差し切りVを飾りました。カランダガンは史上6頭目となる連覇を達成し、26＆27年ニーノ、57＆58年タネルコ、72＆73年ラインゴールド、96＆97年エリシオ、02＆03年アンジュガブリエル以来、23年ぶりの快挙となりました。バルザローナ騎手は「本当に素晴らしい馬」とコメントしています。'
+[2]  [Gemini生出力 232文字]: '重要な競馬ニュースをお伝えします。2005年の英ダービー優勝馬で、種牡馬としては凱旋門賞を連覇したトレヴの父であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かりました。24歳でした。複数の海外メディアが報じており、繋養されていたフランスのハラス・デュ・オグネ牧場で息を引き取ったということです。同馬は凱旋門賞馬モンジューの産駒で、種牡馬生活20シーズン目を終えたばかりでした。母の父としてはタイトルホルダーやメロディーレーンなどを輩出しています。'
+  HTTP 200
+[1]  [Gemini生出力 266文字]: '最新情報をお届けします。\n第62回七夕賞・G3に出走を予定しているオールナットは、7月12日に福島競馬場・芝2000メートルで行われます。オールナットは1日の栗東・坂路での1週前追い切りで、53秒2―12秒0をマークしました。高野友和調教師は「まだ緩いところはありますが、西村淳也ジョッキーに乗ってもらって締めてもらいました。これで良くなるんじゃないかと思います」とジャッジしています。昨年のチャレンジCで重賞初勝利を挙げたオールナットで、地元・福島での重賞初Vを狙う高野友和調教師は「目標のひとつではあります」とコメントしました。'
+[1]  [redirectフィルター] 266文字 → 253文字
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (279文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。フランス伝統の一戦、第118回サンクルー大賞G1、芝2400メートルは5日、首都パリ近郊のサンクルー競馬場で8頭で争われました...
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 243文字]: '注目の競馬情報をお届けします。\n第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで開催されます。過去10年の結果を見ると、4コーナー3番手以内の馬が5勝しており、小回りコースらしく先行有利の決着が多い傾向にあります。今回、角田が注目するのはアスクナイスショーです。アスクナイスショーは4勝中3勝が逃げ切りという実績を持ちます。また、5走前にはこの舞台で先行し、のちに重賞で2着が2回あるアンゴラブラックと鼻差の接戦を繰り広げており、舞台適性の高さは疑いようがありません。'
-[0]  [redirectフィルター] 243文字 → 227文字
-[0] 使用: key=***189Y model=gemini-2.0-flash
+[1]  → output/script_1.txt 保存 (253文字)
+[1]  プレビュー: 第62回七夕賞・G3に出走を予定しているオールナットは、7月12日に福島競馬場・芝2000メートルで行われます。オールナットは1日の栗東・坂路での1週前追い切り...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+[2] 使用: key=***l-ME model=gemini-2.5-flash[2]  [ファクトチェックNG] NG: 母の父としてはタイトルホルダーやメロ
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
+
+  HTTP 200
+[2]  [Gemini生出力 233文字]: '重要な競馬ニュースをお伝えします。2005年の英ダービー優勝馬であるモティヴェイターが、7月3日に心臓発作の疑いで死んだことが分かりました。24歳でした。複数の海外メディアが報じており、繋養されていたフランスのハラス・デュ・オグネ牧場で息を引き取ったとのことです。同馬は凱旋門賞馬モンジューの産駒で、種牡馬生活20シーズン目を終えたばかりでした。種牡馬としては凱旋門賞を連覇したトレヴの父であり、母の父としてはタイトルホルダーやメロディーレーンなどを輩出しています。'
+[2] 使用: key=***l-ME model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 252文字]: '注目の競馬情報をお届けします。第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われます。過去10年の結果を見ると、4角3番手以内の馬が5勝しており、小回りコースらしく先行有利の決着が多いです。今回注目したいのはアスクナイスショーです。アスクナイスショーは牡5歳、美浦・中舘英二厩舎の馬で、父はシルバーステートです。この馬は4勝中3勝が逃げ切りです。5走前にはこの舞台で先行し、のちに重賞2着が2回あるアンゴラブラックと鼻差の接戦を繰り広げました。舞台適性の高さは疑いようがありません。'  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜です」が3文以上連続
-
-[0]  [redirectフィルター] 252文字 → 237文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (237文字)
-[0]  プレビュー: 第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われます。過去10年の結果を見ると、4角3番手以内の馬が5勝しており、小回りコースらしく先行...
-
-3 件の脚本を生成しました。
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
