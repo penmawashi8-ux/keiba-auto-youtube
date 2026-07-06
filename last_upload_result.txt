@@ -1,10 +1,10 @@
-date: 2026-07-06T05:23:59.858802Z
+date: 2026-07-06T09:01:58.294984Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xSeqeHzESM4 title=【七夕賞・角田の特注馬】前崩れの前走は度外視可能　アスクナイスショーが先行有利の
-OK project=1 video_id=dt_AIKhbJZk title=【仏サンクルー大賞】カランダガンが本領発揮!史上6頭目の連覇達成　バルザローナ「
-OK project=1 video_id=UNVSa8GCVn0 title=【七夕賞】3年ぶり参戦のバトルボーンが完全復活へ　林調教師「舞台にネガティブなイ
+OK project=1 video_id=HpmTCLRYnKE title=【杉山晴調教師インタビュー前編】2冠馬ロブチェンの強さ語る　「とにかく、いい状態
+OK project=1 video_id=gnkzEWdK6jk title=【注目馬動向】サトノレーヴはルメール騎手とのコンビでジュライC・英G1へ
+OK project=1 video_id=nxlH2kbeFng title=【七夕賞】3戦3勝と福島大好き!悲願の重賞初Vあるぞ　中竹調教師が「ここも楽しみ
