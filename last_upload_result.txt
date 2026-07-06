@@ -1,10 +1,10 @@
-date: 2026-07-06T09:01:58.294984Z
+date: 2026-07-06T11:35:01.420461Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HpmTCLRYnKE title=【杉山晴調教師インタビュー前編】2冠馬ロブチェンの強さ語る　「とにかく、いい状態
-OK project=1 video_id=gnkzEWdK6jk title=【注目馬動向】サトノレーヴはルメール騎手とのコンビでジュライC・英G1へ
-OK project=1 video_id=nxlH2kbeFng title=【七夕賞】3戦3勝と福島大好き!悲願の重賞初Vあるぞ　中竹調教師が「ここも楽しみ
+OK project=1 video_id=ll6ysmDZ4ZQ title=【七夕賞】心身ともに成長著しいカラマティアノスに託す“願い”は…　重賞2勝目へ舞
+OK project=1 video_id=iYGNPaX7eI8 title=英シャーガーC出場騎手発表　チーム香港が初参戦　武豊、ルメールら名手が集結　8月
+OK project=1 video_id=e49uWAngopU title=【AI予想・七夕賞】今年の七夕賞は上位勢が強力!? 平穏な決着を示唆する人工知能
