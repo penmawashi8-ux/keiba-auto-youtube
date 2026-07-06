@@ -1,10 +1,10 @@
-date: 2026-07-05T12:26:52.719381Z
+date: 2026-07-06T05:23:59.858802Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=M0pzJCwMEYU title=【七夕賞展望】重賞Vの実績が光るカラマティアノスが主役候補　福島で連勝を狙うサヴ
-OK project=1 video_id=t7pT7HC66bE title=【七夕賞展望】ハイレベルの４歳世代カラマティアノスが重賞２勝目に挑む
-OK project=1 video_id=Yiz_u8AYeos title=【佐賀競馬】リアライズシリウスのいとこが重賞2勝目　佐賀ユーススプリントをハクア
+OK project=1 video_id=xSeqeHzESM4 title=【七夕賞・角田の特注馬】前崩れの前走は度外視可能　アスクナイスショーが先行有利の
+OK project=1 video_id=dt_AIKhbJZk title=【仏サンクルー大賞】カランダガンが本領発揮!史上6頭目の連覇達成　バルザローナ「
+OK project=1 video_id=UNVSa8GCVn0 title=【七夕賞】3年ぶり参戦のバトルボーンが完全復活へ　林調教師「舞台にネガティブなイ
