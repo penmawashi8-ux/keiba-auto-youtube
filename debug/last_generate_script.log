@@ -1,73 +1,75 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【七夕賞】ブリンカー効果で変身あるぞ!　陣営も「勝負どころの反応が変わってこないか」と期待するリカンカブール ---
-[0] Gemini入力本文 547文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000リカンカブール(セン7歳、栗東・田中克典厩舎、父シルバーステート)は、24年の中山金杯を最後に10戦して勝ち星はないが、前走の小倉大賞典(6着)も好位で運んで見'
+--- 記事[0]: 英ジュライC第2回登録馬発表　日本調教馬はサトノレーヴがエントリー　直線競馬6F決戦13頭が火花! ---
+[0] Gemini入力本文 350文字: '英国南東部ケンブリッジ近郊のニューマーケット競馬場で11日に開催されるジュライC(G1、芝直線1200メートル)の第2回登録(登録料2100ポンド＝約44万円)が6日、正午(日本時間午後8時)に締め切られ、英ジョッキークラブが登録馬13頭を'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【七夕賞】斉藤崇調教師「もう少しやれる」福島コース歓迎のセンツブラッド　ラジオNIKKEI賞2着から成長見せる ---
-[1] Gemini入力本文 355文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u30001年前より成長した姿を見せる。センツブラッド(牡4歳、栗東・斉藤崇史厩舎、父ルーラーシップ)は、1日に亀田温心騎手(レースは原優介騎手)を背に、栗東・CWコース'
+--- 記事[1]: 【POGマニア】度肝抜かれた馬なりでの加速ラップ　来年5月の話題集めそうなフライトライン産駒 ---
+[1] Gemini入力本文 351文字: '今年は早期デビューの牡馬に例年のような大物候補が見当たらなかったが、函館から怪物誕生といったところだ。ショウナンガレオンは、2歳コースレコードを0秒5も上回る1分47秒6をマークして快勝。直線入り口で軽く仕掛けられただけで、馬なりのまま11'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【七夕賞】陣営「光が見えた」復活のXデーは近い!　リーディング首位を快走する杉山晴厩舎の期待馬オーロラエックス ---
-[2] Gemini入力本文 353文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000オーロラエックス(牝5歳、栗東・杉山晴紀厩舎、父サトノダイヤモンド)は、1日の1週前追い切りでジェイソン・コレット騎手(レースは坂井瑠星騎手)が乗り、栗東・CW'
+--- 記事[2]: 【杉山晴調教師インタビュー後編】デアリングタクトから始まった躍進　「ずっと後を追っている」盟友との不思議な縁 ---
+[2] Gemini入力本文 343文字: '今年、皐月賞と日本ダービーの2冠に輝いたロブチェンの杉山晴紀調教師(44)＝栗東＝が、スポーツ報知の単独インタビューに応じた。\n\t\t\t\t―16年10月の開業から10年目。昨年は2度目の全国リーディングを取り、2位に9勝差で今年も首位を快走し'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 253文字]: 'レース関連の最新情報です。第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで開催されます。この七夕賞に出走を予定しているオーロラエックスは、1日の1週前追い切りでジェイソン・コレット騎手が騎乗し、栗東・CWコースで7ハロン97秒7から11秒8を馬なりでマークしました。併せた3歳1勝クラスのゲタリアには0秒3先着しています。レースでは坂井瑠星騎手が騎乗する予定です。野坂助手は「動けていますね。ここまで順調。暑くなってきましたが体重も増えて、しっかりカイバも食...」とコメントしています。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (250文字)
-[2]  プレビュー: レース関連の最新情報です。第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで開催されます。この七夕賞に出走を予定しているオーロラエックスは、1日...
+[2]  [Gemini生出力 218文字]: '最新情報をお届けします。\n今年、皐月賞と日本ダービーの2冠に輝いたロブチェンの杉山晴紀調教師が、スポーツ報知の単独インタビューに応じました。16年10月の開業から10年目となる杉山晴紀調教師は、昨年2度目の全国リーディングを獲得し、2位に9勝差をつけて今年も首位を快走しています。杉山晴紀調教師は、自身の成績について「完全に出来すぎです。すべてにおいて。でも、やっぱり特にオーナーですね、僕は。馬主さんに恵まれています」と語っています。'
+[2]  [redirectフィルター] 218文字 → 205文字
+[2]  [ナビ文言除去] 205文字 → 148文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (148文字)
+[2]  プレビュー: 16年10月の開業から10年目となる杉山晴紀調教師は、昨年2度目の全国リーディングを獲得し、2位に9勝差をつけて今年も首位を快走しています。杉山晴紀調教師は、自...
   HTTP 200
-[1]  [Gemini生出力 255文字]: '最新情報をお届けします。\n第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで行われます。出走を予定しているセンツブラッドは、1日に亀田温心騎手（レースは原優介騎手）を背に、栗東・CWコースで5ハロン69秒4―10秒9を計測しました。斉藤崇調教師は「(全体は)少し遅くなりましたけど、順調にやれています」とうなずいています。センツブラッドは1年前より成長した姿を見せており、ラジオNIKKEI賞2着から成長を見せています。前走のエプソムCでは2番手で流れに乗りましたが、伸びを欠いて10着でした。'
-[1]  [redirectフィルター] 255文字 → 242文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (242文字)
-[1]  プレビュー: 第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで行われます。出走を予定しているセンツブラッドは、1日に亀田温心騎手（レースは原優介騎手）を背に...
+[0]  [Gemini生出力 249文字]: '今日の競馬情報です。\n英国南東部ケンブリッジ近郊のニューマーケット競馬場で11日に開催されるジュライC(G1、芝直線1200メートル)の第2回登録が6日に締め切られ、英ジョッキークラブが登録馬13頭を発表しました。登録料は2100ポンド、日本円で約44万円です。日本調教馬からはサトノレーヴが名を連ねています。サトノレーヴは堀調教師の管理馬で、6月20日の前走クイーンエリザベス2世ジュビリーSで2年連続2着となっています。同馬は滞在で続戦する予定です。ジュライCの出馬登録は9日に締め切られます。'
+[0]  [重複除去] 249文字 → 248文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (248文字)
+[0]  プレビュー: 今日の競馬情報です。英国南東部ケンブリッジ近郊のニューマーケット競馬場で11日に開催されるジュライC(G1、芝直線1200メートル)の第2回登録が6日に締め切ら...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 253文字]: '今週の競馬注目情報をお伝えします。第62回七夕賞・G3は、7月12日に福島競馬場・芝2000メートルで行われます。このレースにはリカンカブールが出走を予定しています。リカンカブールはセン7歳で、栗東の田中克典厩舎所属、父はシルバーステートです。24年の中山金杯を最後に10戦して勝ち星はありませんが、前走の小倉大賞典では6着と、好位で運んで見せ場はつくりました。和田助手は「去年の冬に去勢して、なかなか体がふっくらしてこなかったけど、今回はこの馬らしい迫力のある体をしている」と、状態の良さを伝えています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (253文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。第62回七夕賞・G3は、7月12日に福島競馬場・芝2000メートルで行われます。このレースにはリカンカブールが出走を予定してい...
+[1]  [Gemini生出力 235文字]: '本日の競馬ニュースです。今年は早期デビューの牡馬に例年のような大物候補が見当たらなかった中、函館から怪物誕生といったニュースです。ショウナンガレオンは、2歳コースレコードを0秒5も上回る1分47秒6をマークして快勝しました。直線入り口で軽く仕掛けられただけで、馬なりのまま11秒6―11秒4の加速ラップを刻む圧巻のレースぶりには度肝を抜かれました。鮫島駿騎手は「スターになる素材がある」とコメントしており、その言葉に疑いの余地はありません。同馬の父はフライトラインです。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (235文字)
+[1]  プレビュー: 本日の競馬ニュースです。今年は早期デビューの牡馬に例年のような大物候補が見当たらなかった中、函館から怪物誕生といったニュースです。ショウナンガレオンは、2歳コー...
 
 3 件の脚本を生成しました。
