@@ -1,10 +1,10 @@
-date: 2026-07-07T10:26:42.876388Z
+date: 2026-07-07T11:59:01.240488Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=arXEMXWggBA title=藤原英昭調教師の不服申し立ては棄却　函館記念の降着申し立て棄却の取り消しを求める
-OK project=1 video_id=5Jm8JFfimMw title=【七夕賞予想オッズ】サヴォーナが予想1番人気
-OK project=1 video_id=gU0Xg4awKjc title=【岡田牧雄氏インタビュー前編】母デアリングタクトの当歳牡馬をセレクトセールに上場
+OK project=1 video_id=dN8a9ZmE-m0 title=【川崎競馬】今野忠成調教師デビュー3戦目で初勝利　騎手では地方通算2751勝も「
+OK project=1 video_id=cnM1wSOxttY title=【地方競馬】今野忠師が川崎９Ｒで初勝利　初出走から３戦目「勝つのはしみじみ大変だ
+OK project=1 video_id=HVFuAzMKehs title=【岡田牧雄氏インタビュー後編】「3億円でも買いますよ」セレクトセールに自信の上場
