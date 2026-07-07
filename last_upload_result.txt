@@ -1,10 +1,10 @@
-date: 2026-07-06T14:35:05.519645Z
+date: 2026-07-07T00:29:45.377410Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NkLJ1ihqwJY title=英ジュライC第2回登録馬発表　日本調教馬はサトノレーヴがエントリー　直線競馬6F
-OK project=1 video_id=g29hFtLyMWY title=【POGマニア】度肝抜かれた馬なりでの加速ラップ　来年5月の話題集めそうなフライ
-OK project=1 video_id=xPnA28MDygo title=【杉山晴調教師インタビュー後編】デアリングタクトから始まった躍進　「ずっと後を追
+OK project=1 video_id=Ad0uHrWJyIE title=菊勝てば史上初W3冠、杉山晴紀調教師が見据えるロブチェンとの“歴史的な秋”
+OK project=1 video_id=LIzfbXWeV8U title=【七夕賞】心身とも本格化カラマティアノス2つ目重賞手応え
+OK project=1 video_id=QFgoGCyJg4Q title=【競走伝】「26連敗」に終止符　「ジンクスは壊すためにある」今は亡き後藤浩輝騎手
