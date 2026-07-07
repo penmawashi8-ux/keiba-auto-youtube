@@ -1,10 +1,10 @@
-date: 2026-07-07T11:59:01.240488Z
+date: 2026-07-07T13:24:11.532078Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dN8a9ZmE-m0 title=【川崎競馬】今野忠成調教師デビュー3戦目で初勝利　騎手では地方通算2751勝も「
-OK project=1 video_id=cnM1wSOxttY title=【地方競馬】今野忠師が川崎９Ｒで初勝利　初出走から３戦目「勝つのはしみじみ大変だ
-OK project=1 video_id=HVFuAzMKehs title=【岡田牧雄氏インタビュー後編】「3億円でも買いますよ」セレクトセールに自信の上場
+OK project=1 video_id=QaiANOoW7ec title=藤原英昭調教師の不服申し立ては棄却　函館記念の降着申し立て棄却の裁決取り消し求め
+OK project=1 video_id=lfj9Ui0TnoM title=藤原英昭調教師の不服申し立てを棄却　函館記念の降着申し立て棄却の取り消しを求める
+OK project=1 video_id=OZn3lm553Sg title=【盛岡・岩鷲賞結果】ルコルセールが重賞4連勝を飾る
