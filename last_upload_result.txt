@@ -1,10 +1,10 @@
-date: 2026-07-07T00:29:45.377410Z
+date: 2026-07-07T04:58:32.838948Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ad0uHrWJyIE title=菊勝てば史上初W3冠、杉山晴紀調教師が見据えるロブチェンとの“歴史的な秋”
-OK project=1 video_id=LIzfbXWeV8U title=【七夕賞】心身とも本格化カラマティアノス2つ目重賞手応え
-OK project=1 video_id=QFgoGCyJg4Q title=【競走伝】「26連敗」に終止符　「ジンクスは壊すためにある」今は亡き後藤浩輝騎手
+OK project=1 video_id=j9hdkzNz8Pc title=ＧＬＡＹのＴＥＲＵが名付け親テルヒコウに武豊騎乗決定　夢のタッグ実現に矢作師「Ｔ
+OK project=1 video_id=nVE5-PjMF8o title=【注目馬動向】矢作厩舎の次走が続々と発表　障害馬のホウオウプロサンゲ、3歳ダート
+OK project=1 video_id=gAGqBiu4UHU title=テルヒコウ函館凱旋  名付け親のTERU&武豊の2ショットが実現!?「ユタカに乗
