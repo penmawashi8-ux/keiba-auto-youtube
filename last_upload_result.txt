@@ -1,10 +1,10 @@
-date: 2026-07-07T08:22:00.814619Z
+date: 2026-07-07T10:26:42.876388Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=IDW6yhIB_0I title=【七夕賞】先週の動きが良かったセンツブラッド　斉藤崇調教師「やるごとにしっかりし
-OK project=1 video_id=ExQvOAsXNrE title=【POG】サンライズジパングの弟サンライズジャポネが札幌1週目の芝で初陣　前川調
-OK project=1 video_id=x7a837yoHsk title=【七夕賞】好気配のマイネルモーントはスタートが勝利へのカギ　高木調教師「中団か前
+OK project=1 video_id=arXEMXWggBA title=藤原英昭調教師の不服申し立ては棄却　函館記念の降着申し立て棄却の取り消しを求める
+OK project=1 video_id=5Jm8JFfimMw title=【七夕賞予想オッズ】サヴォーナが予想1番人気
+OK project=1 video_id=gU0Xg4awKjc title=【岡田牧雄氏インタビュー前編】母デアリングタクトの当歳牡馬をセレクトセールに上場
