@@ -1,10 +1,10 @@
-date: 2026-07-07T06:49:07.199215Z
+date: 2026-07-07T08:22:00.814619Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KsrfAruHPoM title=オーストラリア武者修行中の菅原明良騎手に4鞍の騎乗依頼　9日セール競馬場
-OK project=1 video_id=5aWJyvAixMY title=「僕も駆けつけます!!!」GLAY・TERUが12日函館競馬場への“参戦”を宣言
-OK project=1 video_id=BkoE2EJhfAw title=クロノジェネシスの2024(ノイエルング)など、先週の入厩情報/栗東トレセンニュ
+OK project=1 video_id=IDW6yhIB_0I title=【七夕賞】先週の動きが良かったセンツブラッド　斉藤崇調教師「やるごとにしっかりし
+OK project=1 video_id=ExQvOAsXNrE title=【POG】サンライズジパングの弟サンライズジャポネが札幌1週目の芝で初陣　前川調
+OK project=1 video_id=x7a837yoHsk title=【七夕賞】好気配のマイネルモーントはスタートが勝利へのカギ　高木調教師「中団か前
