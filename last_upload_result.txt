@@ -1,10 +1,10 @@
-date: 2026-07-07T04:58:32.838948Z
+date: 2026-07-07T06:49:07.199215Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=j9hdkzNz8Pc title=ＧＬＡＹのＴＥＲＵが名付け親テルヒコウに武豊騎乗決定　夢のタッグ実現に矢作師「Ｔ
-OK project=1 video_id=nVE5-PjMF8o title=【注目馬動向】矢作厩舎の次走が続々と発表　障害馬のホウオウプロサンゲ、3歳ダート
-OK project=1 video_id=gAGqBiu4UHU title=テルヒコウ函館凱旋  名付け親のTERU&武豊の2ショットが実現!?「ユタカに乗
+OK project=1 video_id=KsrfAruHPoM title=オーストラリア武者修行中の菅原明良騎手に4鞍の騎乗依頼　9日セール競馬場
+OK project=1 video_id=5aWJyvAixMY title=「僕も駆けつけます!!!」GLAY・TERUが12日函館競馬場への“参戦”を宣言
+OK project=1 video_id=BkoE2EJhfAw title=クロノジェネシスの2024(ノイエルング)など、先週の入厩情報/栗東トレセンニュ
