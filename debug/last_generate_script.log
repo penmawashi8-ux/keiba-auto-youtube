@@ -1,74 +1,56 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 菊勝てば史上初W3冠、杉山晴紀調教師が見据えるロブチェンとの“歴史的な秋” ---
-[0] Gemini入力本文 340文字: '今年、皐月賞と日本ダービーの2冠に輝いたロブチェンの杉山晴紀調教師(44)＝栗東＝が、スポーツ報知の単独インタビューに応じた。20年にはデアリングタクトで無敗牝馬3冠を達成。史上9頭目の3冠馬を目指す菊花賞(10月25日、京都)では、史上初'
+--- 記事[0]: ＧＬＡＹのＴＥＲＵが名付け親テルヒコウに武豊騎乗決定　夢のタッグ実現に矢作師「ＴＥＲＵもユタカに乗って欲しいと話していた ---
+[0] Gemini入力本文 331文字: '人気ロックバンドＧＬＡＹのボーカルであるＴＥＲＵが名付け親として知られるテルヒコウ（牡３歳、栗東・矢作）が今週日曜の函館競馬９Ｒ北海ハンデキャップ（芝１８００メートル）に武豊との初タッグで挑む。管理する矢作師は「ＴＥＲＵもユタカに乗って欲し'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【七夕賞】心身とも本格化カラマティアノス2つ目重賞手応え ---
-[1] Gemini入力本文 349文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u3000サマー2000シリーズ第2戦の七夕賞・G3(12日、福島)に参戦するカラマティアノスが、1月に制した中山金杯以来となる重賞2勝目を狙う。3歳時は共同通信杯で2着'
+--- 記事[1]: 【注目馬動向】矢作厩舎の次走が続々と発表　障害馬のホウオウプロサンゲ、3歳ダート路線リアライズグリントなど ---
+[1] Gemini入力本文 357文字: '矢作芳人調教師が7日、函館競馬場で所属馬の予定を明かした。\n\t\t\t\t\u3000障害転向初戦で2着に3秒差をつけ、続く三木ホースランドパークJSも2着に10馬身差の圧勝だったホウオウプロサンゲ(牡5歳、父キズナ)は、中山グランドJ・JG1で4着後は休'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【競走伝】「26連敗」に終止符　「ジンクスは壊すためにある」今は亡き後藤浩輝騎手が届けた恩返しV　05年七夕賞 ---
-[2] Gemini入力本文 333文字: '馬トク報知で過去の名勝負を当時の記事から振り返る【競走伝】。今回はダイワレイダースが勝った2005年の七夕賞を取り上げる。実はこの年まで単勝1番人気がJRA最長の26連敗中。荒れ続けてきた伝統のハンデ戦で珍しく順当に決まった一戦だ。\n\t\t\t'
+--- 記事[2]: テルヒコウ函館凱旋  名付け親のTERU&武豊の2ショットが実現!?「ユタカに乗ってほしいと希望が」 ---
+[2] Gemini入力本文 347文字: '国民的ロックバンドのGLAYのTERUが馬名の名付け親で話題を集めているテルヒコウ(牡3＝矢作、父コントレイル)が今週12日の函館9R・北海ハンデキャップ(2勝クラス、芝1800メートル)で日本競馬界のレジェンド武豊(57)と初コンビを組む'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 245文字]: '今日の競馬情報です。\n馬トク報知の【競走伝】が、過去の名勝負を当時の記事から振り返る企画として、2005年の七夕賞を取り上げました。この七夕賞ではダイワレイダースが勝利を収めました。実はこの年まで、七夕賞の単勝1番人気はJRA最長の26連敗中でした。荒れ続けてきた伝統のハンデ戦で、珍しく順当に決まった一戦です。レースでは、ラスト1ハロンでダイワレイダースが先頭に躍り出ました。後藤浩輝騎手が懸命に手綱を押すと、最後の力を振り絞り、食い下がるトーセンダンディ、グラスボン?..を退けました。'
-[2]  [重複除去] 243文字 → 242文字
+[2]  [Gemini生出力 236文字]: '今日の競馬情報です。国民的ロックバンドGLAYのTERUが馬名の名付け親で話題を集めているテルヒコウが、今週12日の函館9R・北海ハンデキャップで日本競馬界のレジェンド武豊と初コンビを組むことになりました。このレースは2勝クラスの芝1800メートルで行われます。7日、矢作師は「TERUもユタカに乗ってほしいという希望がありました」と、武豊騎手、57歳とのコンビ結成の経緯を語りました。テルヒコウは小田吉男オーナーの所有馬で、矢作師が管理した3冠馬コントレイルの産駒です。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (242文字)
-[2]  プレビュー: 今日の競馬情報です。馬トク報知の【競走伝】が、過去の名勝負を当時の記事から振り返る企画として、2005年の七夕賞を取り上げました。この七夕賞ではダイワレイダース...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[2]  → output/script_2.txt 保存 (236文字)
+[2]  プレビュー: 今日の競馬情報です。国民的ロックバンドGLAYのTERUが馬名の名付け親で話題を集めているテルヒコウが、今週12日の函館9R・北海ハンデキャップで日本競馬界のレ...
+  HTTP 200
+[1]  [Gemini生出力 266文字]: '今週の競馬注目情報をお伝えします。矢作芳人調教師が7日、函館競馬場で所属馬の予定を明かしました。障害転向初戦で2着に3秒差をつけ、続く三木ホースランドパークJSも2着に10馬身差の圧勝だったホウオウプロサンゲは、中山グランドJ・JG1で4着後は休養に入っています。このホウオウプロサンゲは、状態次第で8月15日に新潟競馬場で行われる3250メートルの新潟ジャンプS・JG3か、9月19日に阪神競馬場で行われる3140メートルの阪神ジャンプS・JG3を目指す予定です。また、羽田盃4着、東京ダービー3着の馬についても言及がありました。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (266文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。矢作芳人調教師が7日、函館競馬場で所属馬の予定を明かしました。障害転向初戦で2着に3秒差をつけ、続く三木ホースランドパークJS...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -78,27 +60,13 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 275文字]: 'レース関連の最新情報です。今年、皐月賞と日本ダービーの2冠に輝いたロブチェンの杉山晴紀調教師が、スポーツ報知の単独インタビューに応じました。杉山晴紀調教師は20年にはデアリングタクトで無敗牝馬3冠を達成しています。ロブチェンは史上9頭目の3冠馬を目指し、10月25日に京都で行われる菊花賞に出走予定です。もしロブチェンが菊花賞を制すれば、杉山晴紀調教師には史上初めてクラシック3冠と牝馬3冠をそれぞれ同一馬で達成する大記録がかかります。インタビューでは、指揮官から見たロブチェンのすごさや、競馬界に入るきっかけとなった菊への思いなどが明かされました。'
-[0]  [ナビ文言除去] 275文字 → 218文字
+[0]  [Gemini生出力 217文字]: '競馬速報です。人気ロックバンドGLAYのボーカルであるTERUが名付け親として知られるテルヒコウが、今週日曜の函館競馬9R北海ハンデキャップ、芝1800メートルに武豊との初タッグで挑む。管理する矢作師は、「TERUもユタカに乗って欲しいという話をしていた」と夢のコンビの実現を説明した。矢作師は「来場するかもしれません」とも話している。テルヒコウは前走のG2青葉賞で再び重賞の壁の高さに阻まれる形となったが、自己条件ならいまだに無敗。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (218文字)
-[0]  プレビュー: レース関連の最新情報です。杉山晴紀調教師は20年にはデアリングタクトで無敗牝馬3冠を達成しています。ロブチェンは史上9頭目の3冠馬を目指し、10月25日に京都で...
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 253文字]: '最新のレース情報が入ってきました。第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで開催されます。サマー2000シリーズ第2戦となるこの七夕賞には、カラマティアノスが参戦し、1月に制した中山金杯以来となる重賞2勝目を狙います。カラマティアノスは3歳時に共同通信杯で2着に好走するなど、早くから素質を期待されてきましたが、いよいよ心身ともに本格化してきた印象です。奥村武調教師は、「自信が出てきて、慌てなくてもいいことを分かってきた感じがする。だから前みたいにイレ込…」とコメントしています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (252文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。第62回七夕賞・G3が7月12日に福島競馬場・芝2000メートルで開催されます。サマー2000シリーズ第2戦となるこの七夕賞に...
+[0]  → output/script_0.txt 保存 (217文字)
+[0]  プレビュー: 競馬速報です。人気ロックバンドGLAYのボーカルであるTERUが名付け親として知られるテルヒコウが、今週日曜の函館競馬9R北海ハンデキャップ、芝1800メートル...
 
 3 件の脚本を生成しました。
