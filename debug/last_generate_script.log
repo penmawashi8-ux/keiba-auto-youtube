@@ -1,17 +1,6 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -20,53 +9,35 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: ＧＬＡＹのＴＥＲＵが名付け親テルヒコウに武豊騎乗決定　夢のタッグ実現に矢作師「ＴＥＲＵもユタカに乗って欲しいと話していた ---
-[0] Gemini入力本文 331文字: '人気ロックバンドＧＬＡＹのボーカルであるＴＥＲＵが名付け親として知られるテルヒコウ（牡３歳、栗東・矢作）が今週日曜の函館競馬９Ｒ北海ハンデキャップ（芝１８００メートル）に武豊との初タッグで挑む。管理する矢作師は「ＴＥＲＵもユタカに乗って欲し'
+--- 記事[0]: オーストラリア武者修行中の菅原明良騎手に4鞍の騎乗依頼　9日セール競馬場 ---
+[0] Gemini入力本文 355文字: '6月7日に東京で騎乗を終えた後、海外武者修行に出た菅原明良(25)は9日にオーストラリア南東部セール近郊のセール競馬場で4鞍に騎乗することが7日、決まった。\n\u30002R(芝1013メートル)のディバインベリーニ(牝3)、4R(芝1746メートル'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【注目馬動向】矢作厩舎の次走が続々と発表　障害馬のホウオウプロサンゲ、3歳ダート路線リアライズグリントなど ---
-[1] Gemini入力本文 357文字: '矢作芳人調教師が7日、函館競馬場で所属馬の予定を明かした。\n\t\t\t\t\u3000障害転向初戦で2着に3秒差をつけ、続く三木ホースランドパークJSも2着に10馬身差の圧勝だったホウオウプロサンゲ(牡5歳、父キズナ)は、中山グランドJ・JG1で4着後は休'
+--- 記事[1]: 「僕も駆けつけます!!!」GLAY・TERUが12日函館競馬場への“参戦”を宣言　愛馬が武豊騎手と初タッグ ---
+[1] Gemini入力本文 479文字: 'GLAYのTERUが7日、自身のXで、7月12日に函館競馬場に駆けつけることを明かした。名付け親で話題のテルヒコウ(牡3歳、栗東・矢作芳人厩舎、父コントレイル)が、当日に行われる北海ハンデキャップ(3歳上2勝クラス、芝1800メートル)に武'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: テルヒコウ函館凱旋  名付け親のTERU&武豊の2ショットが実現!?「ユタカに乗ってほしいと希望が」 ---
-[2] Gemini入力本文 347文字: '国民的ロックバンドのGLAYのTERUが馬名の名付け親で話題を集めているテルヒコウ(牡3＝矢作、父コントレイル)が今週12日の函館9R・北海ハンデキャップ(2勝クラス、芝1800メートル)で日本競馬界のレジェンド武豊(57)と初コンビを組む'
+--- 記事[2]: クロノジェネシスの2024(ノイエルング)など、先週の入厩情報/栗東トレセンニュース ---
+[2] Gemini入力本文 565文字: '斉藤崇史厩舎は今週、小倉芝2000mでキタサンブラック産駒のエルドボルグがデビュー戦を迎える。POGでも大注目の1頭だが、同じくPOGで注目を集めているであろうクロノジェネシスの2024(ノイエルング)とシンハライトの2024(ラトナジャー'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 236文字]: '今日の競馬情報です。国民的ロックバンドGLAYのTERUが馬名の名付け親で話題を集めているテルヒコウが、今週12日の函館9R・北海ハンデキャップで日本競馬界のレジェンド武豊と初コンビを組むことになりました。このレースは2勝クラスの芝1800メートルで行われます。7日、矢作師は「TERUもユタカに乗ってほしいという希望がありました」と、武豊騎手、57歳とのコンビ結成の経緯を語りました。テルヒコウは小田吉男オーナーの所有馬で、矢作師が管理した3冠馬コントレイルの産駒です。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (236文字)
-[2]  プレビュー: 今日の競馬情報です。国民的ロックバンドGLAYのTERUが馬名の名付け親で話題を集めているテルヒコウが、今週12日の函館9R・北海ハンデキャップで日本競馬界のレ...
+[0]  [Gemini生出力 211文字]: '競馬速報です。海外武者修行に出た菅原明良騎手は、6月9日にオーストラリア南東部セール近郊のセール競馬場で4鞍に騎乗することが7日、決まりました。2R芝1013メートルのディバインベリーニ、4R芝1746メートルのエンジェルズギャザリング、7R芝1213メートルのミートミーハーフウェイに騎乗します。これら3頭はベン、ウィル＆JD・ヘイズ厩舎の管理馬です。厩舎を共同運営しているベン、ウィル、JD3兄弟の父デヴィッド・...'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (177文字)
+[0]  プレビュー: 競馬速報です。海外武者修行に出た菅原明良騎手は、6月9日にオーストラリア南東部セール近郊のセール競馬場で4鞍に騎乗することが7日、決まりました。2R芝1013メ...
   HTTP 200
-[1]  [Gemini生出力 266文字]: '今週の競馬注目情報をお伝えします。矢作芳人調教師が7日、函館競馬場で所属馬の予定を明かしました。障害転向初戦で2着に3秒差をつけ、続く三木ホースランドパークJSも2着に10馬身差の圧勝だったホウオウプロサンゲは、中山グランドJ・JG1で4着後は休養に入っています。このホウオウプロサンゲは、状態次第で8月15日に新潟競馬場で行われる3250メートルの新潟ジャンプS・JG3か、9月19日に阪神競馬場で行われる3140メートルの阪神ジャンプS・JG3を目指す予定です。また、羽田盃4着、東京ダービー3着の馬についても言及がありました。'
+[1]  [Gemini生出力 245文字]: 'レース関連の最新情報です。GLAYのTERUが7日、自身のXで、7月12日に函館競馬場に駆けつけることを明かしました。TERUが名付け親であるテルヒコウが、同日に行われる北海ハンデキャップに出走します。テルヒコウは武豊騎手と初タッグを組み、3歳上2勝クラスの芝1800メートル戦に挑みます。前走の青葉賞で14着だったテルヒコウは現在、札幌競馬場で調整中です。管理する矢作調教師は「函館が合うのは間違いない。当日はTERUが来場するかもしれないし、頑張ってもらいたいね」とコメントしています。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (266文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。矢作芳人調教師が7日、函館競馬場で所属馬の予定を明かしました。障害転向初戦で2着に3秒差をつけ、続く三木ホースランドパークJS...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[1]  → output/script_1.txt 保存 (245文字)
+[1]  プレビュー: レース関連の最新情報です。GLAYのTERUが7日、自身のXで、7月12日に函館競馬場に駆けつけることを明かしました。TERUが名付け親であるテルヒコウが、同日...
   HTTP 200
-[0]  [Gemini生出力 217文字]: '競馬速報です。人気ロックバンドGLAYのボーカルであるTERUが名付け親として知られるテルヒコウが、今週日曜の函館競馬9R北海ハンデキャップ、芝1800メートルに武豊との初タッグで挑む。管理する矢作師は、「TERUもユタカに乗って欲しいという話をしていた」と夢のコンビの実現を説明した。矢作師は「来場するかもしれません」とも話している。テルヒコウは前走のG2青葉賞で再び重賞の壁の高さに阻まれる形となったが、自己条件ならいまだに無敗。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (217文字)
-[0]  プレビュー: 競馬速報です。人気ロックバンドGLAYのボーカルであるTERUが名付け親として知られるテルヒコウが、今週日曜の函館競馬9R北海ハンデキャップ、芝1800メートル...
+[2]  [Gemini生出力 206文字]: '競馬速報です。斉藤崇史厩舎では今週、小倉芝2000mでキタサンブラック産駒のエルドボルグがデビュー戦を迎えます。エルドボルグはPOGでも大注目の1頭です。同じくPOGで注目を集めているであろうクロノジェネシスの2024(ノイエルング)とシンハライトの2024(ラトナジャーラ)が、7月4日にノーザンファームしがらきから栗東へ入厩しました。クロノジェネシスの2024(ノイエルング)はベレシートの半妹にあたります。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (206文字)
+[2]  プレビュー: 競馬速報です。斉藤崇史厩舎では今週、小倉芝2000mでキタサンブラック産駒のエルドボルグがデビュー戦を迎えます。エルドボルグはPOGでも大注目の1頭です。同じく...
 
 3 件の脚本を生成しました。
