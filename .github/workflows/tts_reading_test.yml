@@ -1,0 +1,101 @@
+name: TTS読み上げテスト
+
+# 手動実行専用。data/tts_reading_test.txt を音声合成し、
+# 読み変換の検証結果をログに、生成音声をアーティファクトに出力する。
+on:
+  workflow_dispatch:
+
+jobs:
+  tts-reading-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+
+      - name: Install Python dependencies
+        run: pip install edge-tts
+
+      - name: テスト原稿を配置
+        run: |
+          mkdir -p output
+          cp data/tts_reading_test.txt output/script_0.txt
+
+      - name: 読み変換の検証
+        run: |
+          python - <<'PYEOF'
+          import sys
+          sys.path.insert(0, "scripts")
+          from reading_utils import apply_readings
+
+          src = open("output/script_0.txt", encoding="utf-8").read()
+          converted = apply_readings(src)
+          print("=== 変換後（TTSに渡るテキスト） ===")
+          print(converted)
+
+          # 変換されるべき読み
+          expected = [
+              "たけゆたか騎手", "さめしまかつま騎手", "よこやまたけし騎手",
+              "すがわらあきら騎手", "みゆきひであき騎手", "もりかずま騎手",
+              "さかいりゅうせい騎手", "いわたみらい騎手",
+              "さめしまかつまが鋭く",   # 鮫島駿
+              "よこやまたけしが粘って", # 横山武
+              "よこやまのりひろは二着", # 横山典
+              "いわたみらいが三着",     # 岩田望
+              "さかいりゅうせいは四着", # 坂井瑠
+              "すがわらあきらは五着",   # 菅原明
+              "とざきが先頭",           # 姓のみ
+              "さめしまが続き",
+              "いがらしとむとうも",
+              "かわだは出遅れ",
+              "たけ騎手が戦列に復帰",   # 1文字姓+騎手
+              "みゆき騎手は重賞を制覇",
+              "もり騎手とはやし騎手、はら騎手",
+              "たけさんの記録",
+              "よこやまたけし騎手とたけゆたか騎手",
+              "むとうみやび騎手とたけ騎手",
+              "あんじょうたけゆたかでしんば戦",
+              "りっとうはんろで好時計",
+          ]
+          # 変換されてはいけない語（誤爆チェック）
+          forbidden_conversions = [
+              "武器", "武蔵", "幸せ", "森の中", "原っぱ", "石川県", "松山競馬場",
+          ]
+          ng = 0
+          for s in expected:
+              if s not in converted:
+                  print(f"[NG] 変換されていない: {s}")
+                  ng += 1
+          for s in forbidden_conversions:
+              if s not in converted:
+                  print(f"[NG] 誤って置換された: {s}")
+                  ng += 1
+          if ng:
+              print(f"{ng} 件の読み変換エラー")
+              sys.exit(1)
+          print(f"読み変換チェック OK（期待 {len(expected)} 件 + 保護 {len(forbidden_conversions)} 件）")
+          PYEOF
+
+      - name: Generate audio
+        env:
+          TTS_VOICE: ja-JP-KeitaNeural
+          TTS_RATE: "+10%"
+        run: python scripts/generate_audio.py
+
+      - name: Upload audio artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tts-reading-test
+          path: |
+            output/audio_0.mp3
+            output/subtitles_0.ass
+          retention-days: 7
