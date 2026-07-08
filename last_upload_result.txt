@@ -1,10 +1,10 @@
-date: 2026-07-08T11:17:27.109769Z
+date: 2026-07-08T12:26:06.891911Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ALP1oGuhiPU title=要潤が川崎競馬場に登場　公式アンバサダーに就任　「みなさんとともに川崎競馬を盛り
-OK project=1 video_id=dEadGDVKvwI title=ファン大喜び!川崎競馬公式アンバサダー要潤が来場「盛り上げていきたい」　スパーキ
-OK project=1 video_id=sgs3borXxgM title=【七夕賞】福島大好き!3戦全勝サヴォーナは前走よりも上昇　中竹調教師「状態自体は
+OK project=1 video_id=oS0HK5ODZQY title=【スパーキングLC】秋はJBCが目標　断然人気のタガノミストが重賞初V　渡辺調教
+OK project=1 video_id=T9osuBu5skk title=【スパーキングLC】2年2か月ぶりにダート挑戦のカピリナは9着　戸崎圭太騎手は4
+OK project=1 video_id=cBisDaXJwU8 title=【巴賞】すごい!楽々と引き離した!!出来の良さは一目瞭然　陣営も「今までで一番い
