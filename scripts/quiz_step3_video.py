@@ -12,6 +12,9 @@ import sys
 import tempfile
 from pathlib import Path
 
+# 読み補正（騎手名の省略表記・姓のみ表記にも対応）は共通モジュールに集約
+from reading_utils import apply_readings as _apply_name_readings
+
 SLIDES_DIR = Path("slides")
 AUDIO_DIR = Path("audio")
 OUTPUT_VIDEO = Path("quiz_video.mp4")
@@ -44,18 +47,8 @@ _RACING_TERM_RE = [
     (re.compile(r'G1'), 'ジーワン'),
 ]
 
-_readings_cache: dict | None = None
-
-
 def _apply_readings(text: str) -> str:
-    global _readings_cache
-    if _readings_cache is None:
-        p = Path("data/readings.json")
-        _readings_cache = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
-    for kanji in sorted(_readings_cache, key=len, reverse=True):
-        reading = _readings_cache[kanji]
-        if isinstance(reading, str) and kanji in text:
-            text = text.replace(kanji, reading)
+    text = _apply_name_readings(text)
     for pattern, repl in _RACING_TERM_RE:
         text = pattern.sub(repl, text)
     return text
