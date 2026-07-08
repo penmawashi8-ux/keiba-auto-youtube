@@ -1,9 +1,19 @@
 name: TTS読み上げテスト
 
-# 手動実行専用。data/tts_reading_test.txt を音声合成し、
-# 読み変換の検証結果をログに、生成音声をアーティファクトに出力する。
+# data/tts_reading_test.txt を音声合成し、読み変換の検証結果をログに、
+# 生成音声をアーティファクトに出力する。手動実行のほか、読み辞書や
+# 置換ロジックが変更されたときにも回帰テストとして自動実行される。
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - data/tts_reading_test.txt
+      - data/jockeys.json
+      - data/readings.json
+      - scripts/reading_utils.py
+      - .github/workflows/tts_reading_test.yml
 
 jobs:
   tts-reading-test:
