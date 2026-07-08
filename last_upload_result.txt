@@ -1,10 +1,10 @@
-date: 2026-07-08T07:31:03.794868Z
+date: 2026-07-08T09:32:06.582500Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JLaMU9zGU8s title=橋木太希騎手の第１回裁定委員会が開催　重大な非行で３月から騎乗停止中　最終処分は
-OK project=1 video_id=ug3Ue6-lcZs title=ロンドンガーズ、函館2歳S1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=M3UQrODp-Z8 title=七夕賞の気になるデータ 今年1番人気になる馬は
+OK project=1 video_id=orgAJQnl-jY title=【五稜郭S】25年凱旋門賞参戦のアロヒアリイ 約1年3カ月ぶりの国内戦だ
+OK project=1 video_id=1AOtQBdkHkY title=レーティングは世界53位の119!海外重賞を圧勝...それでも巴賞で除外対象のア
+OK project=1 video_id=yrRZx_BDQ5g title=【POG】「クラシックを狙っていきたい」斉藤崇調教師の期待大きいエルドボルグ　首
