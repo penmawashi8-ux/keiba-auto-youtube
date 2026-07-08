@@ -1,10 +1,10 @@
-date: 2026-07-08T00:13:21.293630Z
+date: 2026-07-08T04:23:31.364391Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZkufREirNeM title=【園田競馬　8日発走　京都畜産特別】オールパルフェに一発期待
-OK project=1 video_id=Rrqzox15jno title=ゴールドシップが過ごす牧場が土日祝日の一般見学を無期限休止…改めて牧場見学とは何
-OK project=1 video_id=Lu0cQKsAEFw title=GLAYのTERUが武豊騎乗に感謝「こんなにも早く実現していただけるとは!」名付
+OK project=1 video_id=kuueBl2SY5E title=5000勝へM2&TERUと共演…今夏も主役の武豊騎手「一つでも多くの勝利で恩返
+OK project=1 video_id=HN6OF8B9rOE title=【七夕賞】ヤマニンブークリエは周回時間の短いパドックも味方　松永幹調教師「前回よ
+OK project=1 video_id=MqRxusAgN6s title=【注目馬動向】北九州記念VのフリッカージャブはセントウルSへ　西園調教師「セント
