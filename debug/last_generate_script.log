@@ -1,123 +1,41 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [ファクトチェックNG] NG: 元記事に存在しない賞金額・配
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [ファクトチェックNG] NG: 元記事に存在しない賞
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 七夕賞はキングマンボ系を狙え 今年の該当馬は？ ---
-[0] Gemini入力本文 354文字: '近年の七夕賞(3歳上・GIII・芝2000m)ではキングマンボ系が大活躍している。20年以降に限ると、延べ31頭が出走して【2-6-5-18】の勝率7%、複勝率42％。毎年少なくとも1頭が馬券に絡んでおり、21年と22年にはワンツースリーフ'
+--- 記事[0]: 橋木太希騎手の第１回裁定委員会が開催　重大な非行で３月から騎乗停止中　最終処分は第２回裁定委員会後に発表 ---
+[0] Gemini入力本文 331文字: 'ＪＲＡは８日午後１時から、重大な非行が判明したため今年の３月２１日から騎乗停止になっていた橋木太希騎手（２０）＝栗東・フリー＝に対する第１回裁定委員会を開催したと発表した。\n\u3000今後の手続きは、行政手続き法に基づき同騎手に弁明の機会を付与した'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: ジーティーアダマンなど、小倉記念1週前追い切り速報/栗東トレセンニュース ---
-[1] Gemini入力本文 342文字: '2026年のサマーシリーズの競走馬部門「サマー2000シリーズ」として、7月19(日)に小倉競馬場2000mで行われる小倉記念。ここへ出走を予定している各馬が今朝8日、レースに向けた1週前追い切りを行っている。\n\u3000朝一番のCWコースで追い切'
+--- 記事[1]: ロンドンガーズ、函館2歳S1週前追い切り速報/栗東トレセンニュース ---
+[1] Gemini入力本文 343文字: '阪神芝1200mの新馬戦を2着に3馬身差つける完勝だったロンドンガーズ(栗東・前川恭子厩舎)。次走は函館2歳S(7月19日・函館芝1200m)への出走を予定しており、今朝8日はレースに向けた1週前追い切りを行っている。\n\u30002回目のハローが終'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 爆荒れ3連単432万円超の独ダービー　ドイツもこいつも人気馬総崩れ　ワグネリアンVの18年日本ダービー上回る ---
-[2] Gemini入力本文 353文字: '◆第157回ドイチェスダービー・G1(日本時間7月5日、ドイツ・ハンブルク競馬場・芝2400メートル、稍重)\n\t\t\t\t\u300018頭立てで行われ、単勝84・8倍の15番人気のダルダノス(牡3歳、ドイツ・アンドレアス・ヴェーラー厩舎、父ソルジャーホ'
+--- 記事[2]: 七夕賞の気になるデータ 今年1番人気になる馬は ---
+[2] Gemini入力本文 345文字: '夏の福島を彩る七夕賞 (3歳上・GIII・芝2000m)は「1番人気泣かせ」として知られる一戦でもある。過去61回で1番人気は僅かに8勝のみ。79年から04年にかけては実に26連敗を喫したこともある。近年もその傾向は変わらず、直近の1番人気'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 244文字]: '今日の競馬情報です。近年の七夕賞、3歳上・GIII・芝2000mではキングマンボ系が活躍しています。20年以降に限ると、延べ31頭が出走し、成績は2-6-5-18で勝率は7%、複勝率は42％です。毎年少なくとも1頭が馬券に絡んでおり、21年と22年にはワンツースリーフィニッシュを決めています。伏兵の活躍も目立ち、23年には9番人気のククナが2着、13番人気のホウオウエミーズが3着に入りました。さらに25年には11番人気のオニャンコポンが3着となるなど、人気にかかわらず軽視は禁物です。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (244文字)
-[0]  プレビュー: 今日の競馬情報です。近年の七夕賞、3歳上・GIII・芝2000mではキングマンボ系が活躍しています。20年以降に限ると、延べ31頭が出走し、成績は2-6-5-1...
+[0]  [Gemini生出力 213文字]: '競馬ファン注目の情報です。JRAは、重大な非行が判明し今年の3月21日から騎乗停止になっていた橋木太希騎手に対し、8日午後1時から第1回裁定委員会を開催したと発表しました。20歳の橋木太希騎手は栗東・フリーに所属しています。今後の手続きでは、行政手続き法に基づき同騎手に弁明の機会が付与されます。最終的な処分は第2回裁定委員会によって決定される予定です。処分の内容などは、第2回裁定委員会終了後に発表されることになっています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (213文字)
+[0]  プレビュー: 競馬ファン注目の情報です。JRAは、重大な非行が判明し今年の3月21日から騎乗停止になっていた橋木太希騎手に対し、8日午後1時から第1回裁定委員会を開催したと発...
   HTTP 200
-[2]  [Gemini生出力 263文字]: '重要な競馬ニュースをお伝えします。第157回ドイチェスダービー・G1が日本時間7月5日、ドイツ・ハンブルク競馬場の芝2400メートル、稍重で行われました。18頭立てで行われたこのレースでは、単勝84.8倍の15番人気だったダルダノスが、早め先頭から押し切って勝利しました。ウラジミール・パノフ騎手は初制覇となり、勝ちタイムは2分39秒79でした。前走のリステッド競走、ダービートライアルで2着だったダルダノスは、G1初挑戦で完勝を飾りました。このレースは爆荒れとなり、3連単は432万円超を記録し、人気馬が総崩れとなりました。'
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 191文字]: '本日の競馬ニュースです。\n夏の福島を彩る七夕賞は、「1番人気泣かせ」として知られる一戦です。過去61回で1番人気は僅かに8勝のみというデータがあります。特に1979年から2004年にかけては、実に26連敗を喫したこともあります。近年もその傾向は変わらず、直近の1番人気の勝利は2017年のゼーヴィントです。その後の8回では2着が3回あるものの、あと一歩のところで勝利を逃しています。'
+[2]  [重複除去] 191文字 → 190文字
   HTTP 200
-[2]  [Gemini生出力 233文字]: '重要な競馬ニュースをお伝えします。\n日本時間7月5日にドイツ・ハンブルク競馬場の芝2400メートル、稍重で行われた第157回ドイチェスダービー・G1は、爆荒れの結果となりました。3連単は432万円超となり、人気馬が総崩れとなりました。18頭立てのレースを制したのは、単勝84.8倍の15番人気だったダルダノスです。ダルダノスは早め先頭から押し切ってVを飾り、G1初挑戦で完勝しました。ウラジミール・パノフ騎手は初制覇を飾っています。勝ちタイムは2分39秒79でした。'
-[2]  [重複除去] 233文字 → 232文字
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 429
-  HTTP 200
-[1]  [Gemini生出力 244文字]: '本日の競馬ニュースです。2026年のサマーシリーズ競走馬部門「サマー2000シリーズ」として、7月19日に小倉競馬場2000mで行われる小倉記念の1週前追い切りが今朝8日に行われました。ここへ出走を予定している各馬がレースに向けた調整を進めています。朝一番のCWコースで追い切ったのは、栗東の上村洋行厩舎所属のジーティーアダマンです。先週と同様に上村洋行調教師が跨り、レクスノヴァを追走しました。正面から馬場へ入った時から前向きな姿勢を見せていましたが、折り合いはしっかりついていました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (244文字)
-[1]  プレビュー: 本日の競馬ニュースです。2026年のサマーシリーズ競走馬部門「サマー2000シリーズ」として、7月19日に小倉競馬場2000mで行われる小倉記念の1週前追い切り...
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 252文字]: '重要な競馬ニュースをお伝えします。\n第157回ドイチェスダービー・G1が日本時間7月5日、ドイツ・ハンブルク競馬場・芝2400メートルで稍重の条件下、18頭立てで行われました。このレースでは、単勝84.8倍の15番人気だったダルダノスが早め先頭から押し切って勝利しました。ダルダノスは、ドイツのアンドレアス・ヴェーラー厩舎所属の馬です。前走のリステッド競走ダービートライアルで2着でしたが、G1初挑戦での完勝となりました。ウラジミール・パノフ騎手は本レース初制覇を飾り、勝ちタイムは2分39秒79でした。'
-[2]  [重複除去] 252文字 → 251文字
+[1]  [Gemini生出力 233文字]: '競馬速報です。阪神芝1200mの新馬戦を2着に3馬身差つける完勝だったロンドンガーズが、次走の函館2歳Sに向けた1週前追い切りを今朝8日に行いました。栗東の前川恭子厩舎に所属するロンドンガーズは、7月19日に函館芝1200mで行われる函館2歳Sへの出走を予定しています。追い切りは2回目のハローが終了した時間帯の坂路馬場で、ペアスターロードとの併せ馬で実施されました。3馬身弱追走する形でスタートし、2F目の標識の手前では1馬身ちょっとのところまで差を詰めています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (251文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。第157回ドイチェスダービー・G1が日本時間7月5日、ドイツ・ハンブルク競馬場・芝2400メートルで稍重の条件下、18頭立てで...
+[2]  → output/script_2.txt 保存 (190文字)
+[2]  プレビュー: 本日の競馬ニュースです。夏の福島を彩る七夕賞は、「1番人気泣かせ」として知られる一戦です。過去61回で1番人気は僅かに8勝のみというデータがあります。特に197...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (233文字)
+[1]  プレビュー: 競馬速報です。阪神芝1200mの新馬戦を2着に3馬身差つける完勝だったロンドンガーズが、次走の函館2歳Sに向けた1週前追い切りを今朝8日に行いました。栗東の前川...
 
 3 件の脚本を生成しました。
