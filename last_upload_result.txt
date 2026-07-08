@@ -1,10 +1,10 @@
-date: 2026-07-08T04:23:31.364391Z
+date: 2026-07-08T06:02:32.540624Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kuueBl2SY5E title=5000勝へM2&TERUと共演…今夏も主役の武豊騎手「一つでも多くの勝利で恩返
-OK project=1 video_id=HN6OF8B9rOE title=【七夕賞】ヤマニンブークリエは周回時間の短いパドックも味方　松永幹調教師「前回よ
-OK project=1 video_id=MqRxusAgN6s title=【注目馬動向】北九州記念VのフリッカージャブはセントウルSへ　西園調教師「セント
+OK project=1 video_id=P8KK9gy4o1E title=七夕賞はキングマンボ系を狙え 今年の該当馬は？
+OK project=1 video_id=Bc1l-xNvmCI title=ジーティーアダマンなど、小倉記念1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=WxTm7HLn1IM title=爆荒れ3連単432万円超の独ダービー　ドイツもこいつも人気馬総崩れ　ワグネリアン
