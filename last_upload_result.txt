@@ -1,10 +1,10 @@
-date: 2026-07-08T06:02:32.540624Z
+date: 2026-07-08T07:31:03.794868Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=P8KK9gy4o1E title=七夕賞はキングマンボ系を狙え 今年の該当馬は？
-OK project=1 video_id=Bc1l-xNvmCI title=ジーティーアダマンなど、小倉記念1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=WxTm7HLn1IM title=爆荒れ3連単432万円超の独ダービー　ドイツもこいつも人気馬総崩れ　ワグネリアン
+OK project=1 video_id=JLaMU9zGU8s title=橋木太希騎手の第１回裁定委員会が開催　重大な非行で３月から騎乗停止中　最終処分は
+OK project=1 video_id=ug3Ue6-lcZs title=ロンドンガーズ、函館2歳S1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=M3UQrODp-Z8 title=七夕賞の気になるデータ 今年1番人気になる馬は
