@@ -109,3 +109,14 @@ jobs:
             output/audio_0.mp3
             output/subtitles_0.ass
           retention-days: 7
+
+      # アーティファクトをブラウザ外から取得できるよう、専用ブランチにも保存する
+      # （毎回force pushするので履歴は増えない）
+      - name: 音声を tts-test-output ブランチに保存
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch --orphan tts-test-output
+          git add -f output/audio_0.mp3 output/subtitles_0.ass
+          git commit -m "TTS読み上げテスト出力 (run ${GITHUB_RUN_ID}) [skip ci]"
+          git push -f origin tts-test-output
