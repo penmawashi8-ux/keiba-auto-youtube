@@ -1,16 +1,8 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名「サ
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -19,53 +11,38 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【ジュライC】悲願の海外G1制覇へサトノレーヴは順調な調整　堀調教師「前走と同様、好状態で臨めると見ています」 ---
-[0] Gemini入力本文 355文字: '◆ジュライC・英G1(7月11日、ニューマーケット競馬場・芝1200メートル)\n\t\t\t\t\u3000クイーンエリザベス2世ジュビリーSで2年連続2着と惜敗したサトノレーヴ(牡7歳、美浦・堀宣行厩舎、父ロードカナロア)は、8日にニューマーケット調教場の'
+--- 記事[0]: ムルソー、マーキュリーC1週前追い切り速報/栗東トレセンニュース ---
+[0] Gemini入力本文 340文字: '7月20日(祝・月)に盛岡競馬場、ダート2000mで行われるマーキュリーC。その選定馬となっているムルソー(栗東・池江泰寿厩舎)が今朝9日、レースに向けた1週前追い切りを行っている。\n\u3000朝一番のCWコースで坂井瑠星騎手が跨り、フランキーバロ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 今村聖奈騎手の激レアな“騎手目線の調教動画”が反響…馬にかける優しい言葉も!「すごい臨場感」「お馬さんの後ろ姿も可愛い〜 ---
-[1] Gemini入力本文 407文字: 'オークス(5月24日、東京)でジュウリョクピエロに騎乗しJRA女性騎手史上初のG1制覇を果たした今村聖奈騎手(22)＝栗東・寺島厩舎＝が、自身のXで調教騎乗時の動画を公開し反響を呼んでいる。\n\t\t\t\t\u3000今村騎手は「是非臨場感味わってみてくだ'
+--- 記事[1]: 武豊　公式サイトで通算5000勝に言及 　「早く決着してしまいたいのですが…全力を尽くすのみです」 ---
+[1] Gemini入力本文 344文字: '海外、地方を合わせて通算5000勝に「あと2勝」と迫っている日本競馬界のレジェンド・武豊(57＝)が9日、公式サイトを更新。大台到達の思いをサイト内の日記でつづった。\n\u30005000勝まで「あと4勝」だった先週は土曜、日曜1勝ずつ挙げ、M2と着'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【七夕賞】負担重量58キロ以上は大苦戦　トップハンデを背負うカラマティアノスとサヴォ―ナには大きな壁 ---
-[2] Gemini入力本文 350文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル、ハンデ)\n\t\t\t\t\u3000七夕賞はトップハンデの見極めが馬券の成否を握る大きなファクターになるかもしれない。過去10年でトップハンデで勝ったのは2頭いるが、58キロ以上を背負った'
+--- 記事[2]: テルヒコウ初騎乗の武豊「ざわついてますね…」TERUと「一緒に口取り写真を」5000勝も同時達成? ---
+[2] Gemini入力本文 352文字: '海外、地方を合わせて通算5000勝の偉業まで「あと2勝」と迫っている日本競馬界のレジェンド武豊(57＝フリー)が9日、函館競馬場で意気込みを語った。最大の話題は日曜9R・北海ハンデキャップで初コンビを組むテルヒコウ(牡3＝矢作)だ。函館出身'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 238文字]: '今日の競馬情報です。\nジュライC・英G1は7月11日にニューマーケット競馬場の芝1200メートルで行われます。クイーンエリザベス2世ジュビリーSで2年連続2着と惜敗したサトノレーヴは、順調な調整が進んでいます。8日にはニューマーケット調教場のアルバハスリのポリトラックコースで追い切りを行い、単走で4ハロン50秒4―11秒3をGPS計測でマークしました。4日にも同様にアルバハスリで追い切られています。堀調教師は「前走と同様、好状態で臨めると見ています」とコメントしています。'
-[0]  [重複除去] 238文字 → 237文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (237文字)
-[0]  プレビュー: 今日の競馬情報です。ジュライC・英G1は7月11日にニューマーケット競馬場の芝1200メートルで行われます。クイーンエリザベス2世ジュビリーSで2年連続2着と惜...
-  HTTP 200
-[2]  [Gemini生出力 253文字]: '競馬速報です。\n第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われるハンデ戦です。この七夕賞では、トップハンデの見極めが馬券の成否を握る大きなファクターとなるかもしれません。過去10年でトップハンデで勝利したのは2頭のみで、特に58キロ以上を背負った場合は連対するのもひと苦労というデータが出ています。今年のトップハンデは58キロに設定されており、カラマティアノスとサヴォーナの2頭がこの厳しいデータに立ち向かうことになります。カラマティアノスは4歳になって充実ぶりが目立っています。'
-[2]  [重複除去] 253文字 → 252文字
-  HTTP 200
-[1]  [Gemini生出力 231文字]: '本日の競馬ニュースです。オークスでジュウリョクピエロに騎乗し、JRA女性騎手史上初のG1制覇を果たした今村聖奈騎手が、自身のXで調教騎乗時の動画を公開し反響を呼んでいます。今村騎手は「是非臨場感味わってみてください\u3000＃ツーハーツ」「＃来週小倉デビュー」などと記し、ツーハーツの調教に騎乗した際の自身の目線あたりにあるカメラで撮影した動画を公開しました。この動画には、馬にかける優しい言葉も含まれています。ツーハーツは2歳牡馬で、来週小倉デビューを予定しています。'
+[1]  [Gemini生出力 275文字]: '最新情報をお届けします。日本競馬界のレジェンド・武豊が9日、公式サイトを更新し、海外、地方を合わせて通算5000勝に「あと2勝」と迫る現状について言及しました。大台到達への思いをサイト内の日記でつづっています。5000勝まで「あと4勝」だった先週は、土曜と日曜に1勝ずつを挙げ、偉業達成へ着実に近づきました。武豊は「ひょんなことから注目されるようになった、ボクの通算5000勝。地方競馬のエキストラ騎乗や海外の競馬の勝利まで、全部まとめての数字なので、JRAとしては... 早く決着してしまいたいのですが…全力を尽くすのみです」とコメントしています。'
+[1]  [redirectフィルター] 275文字 → 263文字
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (231文字)
-[1]  プレビュー: 本日の競馬ニュースです。オークスでジュウリョクピエロに騎乗し、JRA女性騎手史上初のG1制覇を果たした今村聖奈騎手が、自身のXで調教騎乗時の動画を公開し反響を呼...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[1]  → output/script_1.txt 保存 (259文字)
+[1]  プレビュー: 日本競馬界のレジェンド・武豊が9日、公式サイトを更新し、海外、地方を合わせて通算5000勝に「あと2勝」と迫る現状について言及しました。大台到達への思いをサイト...
   HTTP 200
-[2]  [Gemini生出力 239文字]: '競馬速報です。\n第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われるハンデ戦です。七夕賞ではトップハンデの見極めが馬券の成否を握る大きなファクターになるかもしれません。過去10年でトップハンデで勝ったのは2頭ですが、58キロ以上を背負った場合は連対するのもひと苦労というデータがあります。今年のトップハンデは58キロで、カラマティアノスとサヴォーナの2頭がこの厳しいデータに立ち向かうことになります。カラマティアノスは4歳になって充実ぶりが目立っています。'
-[2]  [重複除去] 239文字 → 238文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (238文字)
-[2]  プレビュー: 競馬速報です。第62回七夕賞・G3は7月12日に福島競馬場・芝2000メートルで行われるハンデ戦です。七夕賞ではトップハンデの見極めが馬券の成否を握る大きなファ...
+[0]  [Gemini生出力 196文字]: '今日の競馬情報です。7月20日に盛岡競馬場、ダート2000mで行われるマーキュリーCの選定馬、ムルソーが今朝9日、レースに向けた1週前追い切りを行いました。池江泰寿厩舎所属のムルソーは、朝一番のCWコースで坂井瑠星騎手が跨り、フランキーバローズを追走しました。3馬身ほど追いかける形でしたが、3コーナー手前でラップが速くなると、即座に加速する姿勢に入り、速度の変化に対応する動きを見せました。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (196文字)
+[0]  プレビュー: 今日の競馬情報です。7月20日に盛岡競馬場、ダート2000mで行われるマーキュリーCの選定馬、ムルソーが今朝9日、レースに向けた1週前追い切りを行いました。池江...
+  HTTP 200
+[2]  [Gemini生出力 209文字]: '競馬速報です。海外、地方を合わせて通算5000勝の偉業まであと2勝と迫っている日本競馬界のレジェンド武豊が、9日、函館競馬場で意気込みを語りました。最大の話題は日曜9R・北海ハンデキャップで初コンビを組むテルヒコウです。テルヒコウは函館出身のGLAYのTERUが名付け親で、「お膝元」の函館では初出走となります。武豊は「話題になってますね。ざわついていますね…」とコメントし、豪華コラボの夢の口取りに思いをはせました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (208文字)
+[2]  プレビュー: 競馬速報です。海外、地方を合わせて通算5000勝の偉業まであと2勝と迫っている日本競馬界のレジェンド武豊が、9日、函館競馬場で意気込みを語りました。最大の話題は...
 
 3 件の脚本を生成しました。
