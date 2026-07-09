@@ -1,10 +1,10 @@
-date: 2026-07-09T10:31:36.900680Z
+date: 2026-07-09T12:16:29.280711Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DX5YcbutD2A title=【注目馬動向】北九州記念5着のアブキールベイはCBC賞へ　3着ヨシノイースターは
-OK project=1 video_id=xX8ysH9oW6g title=【POG】母はオークス4着馬アトランタが好仕上がり　12日小倉の初陣へ高柳大調教
-OK project=1 video_id=F7EBhguQDSo title=先輩クロワに続け！ キタサン×斉藤崇史厩舎のエルドボルグが初陣だ
+OK project=1 video_id=vim6dpyUaeg title=【七夕賞】「46歳もいい年になるように」誕生日後、最初の重賞でバトルボーンと挑む
+OK project=1 video_id=jbFXc1ne-Mw title=【門別・星雲賞結果】トリップスが逃げ切って重賞3勝目を飾る
+OK project=1 video_id=eCnH9ptmbQo title=【POG】ヴァンセンヌ産駒のクラウントリオンフ　12日の福島での初陣へ上里直汰騎
