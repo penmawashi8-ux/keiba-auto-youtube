@@ -1,3 +1,17 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
@@ -6,37 +20,53 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【七夕賞】「46歳もいい年になるように」誕生日後、最初の重賞でバトルボーンと挑む戸崎圭太騎手　歴代最多の5勝目へ ---
-[0] Gemini入力本文 346文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル)\n\t\t\t\t\u30008日に46歳の誕生日を迎えた戸崎圭太騎手＝美浦・田島俊明厩舎＝。「この年になると特に変わりはないですが、46歳もいい年になるように頑張りたいと思います」と意気込'
+--- 記事[0]: プリンスオブウェールズS覇者オンブズマンがレーティング131ポンドでカーインライジングと並んで首位へ ---
+[0] Gemini入力本文 350文字: 'IFHA(国際競馬統括機関連盟)は9日、今年のロンジンワールドベストレースホースランキング第5回中間発表を行った。\n\u30001月1日から7月5日までの主要レースが対象でプリンスオブウェールズS覇者オンブズマン(牡5＝英国)が131ポンドで首位タイ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【門別・星雲賞結果】トリップスが逃げ切って重賞3勝目を飾る ---
-[1] Gemini入力本文 350文字: '9日、門別競馬場で行われた第23回星雲賞(3歳・重賞・ダ1200m・1着賞金500万円)は、ダッシュ良くハナを切った小野楓馬騎手騎乗の2番人気トリップス(牝3、北海道・小野望厩舎)が、2番手から脚を伸ばした1番人気スペシャルチャンス(牡3、'
+--- 記事[1]: 【小倉記念・1週前】今期充実のウエストナウが重賞初勝利へ　寺島調教師「馬も成長してくれています」 ---
+[1] Gemini入力本文 352文字: '◆第62回小倉記念・G3(7月19日、小倉競馬場・芝2000メートル)1週前追い切り＝7月9日、栗東トレセン\n\t\t\t\t\u3000ウエストナウ(牡5歳、栗東・寺島良厩舎、父キズナ)は、高杉吏麒騎手が騎乗してCWコースでゴールドアクセス(3歳1勝クラス'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【POG】ヴァンセンヌ産駒のクラウントリオンフ　12日の福島での初陣へ上里直汰騎手が好感触「やる気がある」 ---
-[2] Gemini入力本文 353文字: 'クラウントリオンフ(牡2歳、美浦・本間忍厩舎、父ヴァンセンヌ)は、上里直汰騎手で12日の福島5R・2歳新馬(芝1800メートル)にスタンバイ。2週前追い切りの24日には、美浦・Wコースで6ハロン81秒0―12秒1をマークし、併せた1勝クラス'
+--- 記事[2]: 【ジュライC】11頭立てでサトノレーヴは8番ゲート　ルメールと3走ぶりのコンビ ---
+[2] Gemini入力本文 350文字: 'サトノレーヴ(牡7＝堀、父ロードカナロア)が出走する英G1・ジュライC(11日、ニューマーケット)の出走馬と騎手が9日、決まった。\n\u3000出走馬は11頭で、前々走の高松宮記念(1着)以来、3走ぶりにルメールが騎乗する。直線芝1200メートルの一'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 215文字]: '競馬速報です。9日、門別競馬場で行われた第23回星雲賞の結果をお伝えします。3歳・重賞・ダ1200m、1着賞金500万円のこのレースは、小野楓馬騎手騎乗の2番人気トリップスが優勝しました。トリップスはダッシュ良くハナを切り、逃げ切って重賞3勝目を飾っています。勝ちタイムは1分13秒9、馬場は稍重でした。2番手から脚を伸ばした1番人気スペシャルチャンスに3/4馬身差をつけ、さらに4馬身差の3着には5番人気マナアリイが入りました。'
+[1]  [Gemini生出力 250文字]: '重要な競馬ニュースをお伝えします。第62回小倉記念・G3の1週前追い切りが7月9日に栗東トレセンで行われました。7月19日に小倉競馬場・芝2000メートルで発走予定のこのレースに向け、ウエストナウは高杉吏麒騎手が騎乗し、CWコースでゴールドアクセスを3馬身追走しました。いっぱいに追われ、5ハロン66秒8―11秒2をマークし、1馬身先着しています。追ってからの伸びもシャープで状態は良いとのことです。寺島調教師は「外を回って負荷をかけて、予定通りです。馬も成長してくれています」とコメントしています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (250文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。第62回小倉記念・G3の1週前追い切りが7月9日に栗東トレセンで行われました。7月19日に小倉競馬場・芝2000メートルで発走...
   HTTP 200
-[2]  [Gemini生出力 265文字]: '競馬ファン注目の情報です。\nヴァンセンヌ産駒のクラウントリオンフが、上里直汰騎手で12日の福島5R・2歳新馬（芝1800メートル）にスタンバイしています。美浦の本間忍厩舎に所属する牡2歳馬です。2週前追い切りの24日には、美浦・Wコースで6ハロン81秒0―12秒1をマークし、併せた1勝クラスの僚馬に1馬身先着しました。8日の追い切りでも、Wコースで5ハロン68秒2の終い11秒9を出すなど、順調な仕上がりぶりを見せています。追い切りに3回連続で跨った上里直汰騎手は「いいですね。動くし...やる気がある」と好感触を伝えています。'
-[2]  [重複除去] 262文字 → 261文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (215文字)
-[1]  プレビュー: 競馬速報です。9日、門別競馬場で行われた第23回星雲賞の結果をお伝えします。3歳・重賞・ダ1200m、1着賞金500万円のこのレースは、小野楓馬騎手騎乗の2番人...
+[2]  [Gemini生出力 234文字]: '今日の競馬情報です。サトノレーヴが出走する英G1・ジュライC（11日、ニューマーケット）の出走馬と騎手が9日に決まりました。出走馬は11頭で、サトノレーヴは8番ゲートに決定しています。前々走の高松宮記念を1着で制して以来、3走ぶりにルメールが騎乗します。レースはニューマーケットの直線芝1200メートルで行われます。現地時間8日には、ニューマーケット調教場のアルバハスリ（ポリトラック）を単走で追い切り、GPS計測で4F50秒4から1F11秒3のタイムを記録しました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (261文字)
-[2]  プレビュー: 競馬ファン注目の情報です。ヴァンセンヌ産駒のクラウントリオンフが、上里直汰騎手で12日の福島5R・2歳新馬（芝1800メートル）にスタンバイしています。美浦の本...
+[2]  → output/script_2.txt 保存 (234文字)
+[2]  プレビュー: 今日の競馬情報です。サトノレーヴが出走する英G1・ジュライC（11日、ニューマーケット）の出走馬と騎手が9日に決まりました。出走馬は11頭で、サトノレーヴは8番...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 205文字]: '重要な競馬ニュースをお伝えします。\n第62回七夕賞・G3は7月12日、福島競馬場・芝2000メートルで行われます。8日に46歳の誕生日を迎えた戸崎圭太騎手は、「46歳もいい年になるように頑張りたいと思います」と意気込みを語りました。戸崎圭太騎手は、誕生日の前後に行われる七夕賞と相性が良く、岡部幸雄氏と並ぶ歴代最多タイの4勝を誇ります。今年のパートナーは初コンビのバトルボーンで、歴代最多の5勝目を目指します。'
-[0]  [重複除去] 205文字 → 204文字
+[0]  [Gemini生出力 286文字]: '重要な競馬ニュースをお伝えします。IFHA(国際競馬統括連盟)は9日、今年のロンジンワールドベストレースホースランキング第5回中間発表を行いました。この発表は1月1日から7月5日までの主要レースを対象としています。プリンスオブウェールズS覇者オンブズマンが131ポンドを獲得し、首位タイに浮上しました。オンブズマンは2走前のブリガディアジェラードSを1着で制した際は125ポンドで、先月の発表では5位タイでした。チェアマンズスプリントプライズ覇者カーインライジングも、先月までの130ポンドから131ポンドにレーティングを上げ、オンブズマンと並んで首位タイとなっています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (204文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。第62回七夕賞・G3は7月12日、福島競馬場・芝2000メートルで行われます。8日に46歳の誕生日を迎えた戸崎圭太騎手は、「4...
+[0]  → output/script_0.txt 保存 (286文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。IFHA(国際競馬統括連盟)は9日、今年のロンジンワールドベストレースホースランキング第5回中間発表を行いました。この発表は1...
 
 3 件の脚本を生成しました。
