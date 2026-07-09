@@ -1,10 +1,10 @@
-date: 2026-07-09T05:03:06.998144Z
+date: 2026-07-09T06:47:39.095750Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FlMYolvDFWc title=【ジュライC】悲願の海外G1制覇へサトノレーヴは順調な調整　堀調教師「前走と同様
-OK project=1 video_id=UH4zcVk8044 title=今村聖奈騎手の激レアな“騎手目線の調教動画”が反響…馬にかける優しい言葉も!「す
-OK project=1 video_id=2vNWBFIIssI title=【七夕賞】負担重量58キロ以上は大苦戦　トップハンデを背負うカラマティアノスとサ
+OK project=1 video_id=bRGku8BzLjg title=ムルソー、マーキュリーC1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=iWeUmHAEJME title=武豊　公式サイトで通算5000勝に言及 　「早く決着してしまいたいのですが…全力
+OK project=1 video_id=VHB-E_ygZDw title=テルヒコウ初騎乗の武豊「ざわついてますね…」TERUと「一緒に口取り写真を」50
