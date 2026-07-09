@@ -103,6 +103,26 @@ jobs:
           TTS_RATE: "+10%"
         run: python scripts/generate_audio.py
 
+      # 生成音声をWhisperで文字起こしし、実際の発音を耳の代わりに確認する。
+      # 認識結果は揺れる（同音の別漢字になる等）ため参考情報としてログに出す。
+      - name: Whisperで発音を確認
+        run: |
+          pip install -q faster-whisper
+          python - <<'PYEOF'
+          from faster_whisper import WhisperModel
+
+          model = WhisperModel("small", device="cpu", compute_type="int8")
+          segments, _ = model.transcribe("output/audio_0.mp3", language="ja")
+          lines = []
+          print("=== Whisper文字起こし（発音の確認用） ===")
+          for seg in segments:
+              line = f"[{seg.start:6.1f}s] {seg.text}"
+              print(line, flush=True)
+              lines.append(line)
+          with open("output/transcript.txt", "w", encoding="utf-8") as f:
+              f.write("\n".join(lines) + "\n")
+          PYEOF
+
       - name: Upload audio artifact
         uses: actions/upload-artifact@v4
         with:
@@ -110,6 +130,7 @@ jobs:
           path: |
             output/audio_0.mp3
             output/subtitles_0.ass
+            output/transcript.txt
           retention-days: 7
 
       # アーティファクトをブラウザ外から取得できるよう、専用ブランチにも保存する
@@ -119,6 +140,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git switch --orphan tts-test-output
-          git add -f output/audio_0.mp3 output/subtitles_0.ass
+          git add -f output/audio_0.mp3 output/subtitles_0.ass output/transcript.txt
           git commit -m "TTS読み上げテスト出力 (run ${GITHUB_RUN_ID}) [skip ci]"
           git push -f origin tts-test-output
