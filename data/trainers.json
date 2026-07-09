@@ -1,0 +1,548 @@
+[
+  {
+    "surname": "矢作",
+    "surname_kana": "やはぎ",
+    "given": "芳人",
+    "given_kana": "よしと"
+  },
+  {
+    "surname": "友道",
+    "surname_kana": "ともみち",
+    "given": "康夫",
+    "given_kana": "やすお"
+  },
+  {
+    "surname": "中内田",
+    "surname_kana": "なかうちだ",
+    "given": "充正",
+    "given_kana": "みつまさ"
+  },
+  {
+    "surname": "堀",
+    "surname_kana": "ほり",
+    "given": "宣行",
+    "given_kana": "のりゆき"
+  },
+  {
+    "surname": "木村",
+    "surname_kana": "きむら",
+    "given": "哲也",
+    "given_kana": "てつや"
+  },
+  {
+    "surname": "国枝",
+    "surname_kana": "くにえだ",
+    "given": "栄",
+    "given_kana": "さかえ"
+  },
+  {
+    "surname": "音無",
+    "surname_kana": "おとなし",
+    "given": "秀孝",
+    "given_kana": "ひでたか"
+  },
+  {
+    "surname": "池江",
+    "surname_kana": "いけえ",
+    "given": "泰寿",
+    "given_kana": "やすとし"
+  },
+  {
+    "surname": "杉山",
+    "surname_kana": "すぎやま",
+    "given": "晴紀",
+    "given_kana": "はるき"
+  },
+  {
+    "surname": "杉山",
+    "surname_kana": "すぎやま",
+    "given": "佳明",
+    "given_kana": "よしあき"
+  },
+  {
+    "surname": "須貝",
+    "surname_kana": "すがい",
+    "given": "尚介",
+    "given_kana": "なおすけ"
+  },
+  {
+    "surname": "安田",
+    "surname_kana": "やすだ",
+    "given": "翔伍",
+    "given_kana": "しょうご"
+  },
+  {
+    "surname": "安田",
+    "surname_kana": "やすだ",
+    "given": "隆行",
+    "given_kana": "たかゆき"
+  },
+  {
+    "surname": "高柳",
+    "surname_kana": "たかやなぎ",
+    "given": "瑞樹",
+    "given_kana": "みずき"
+  },
+  {
+    "surname": "高柳",
+    "surname_kana": "たかやなぎ",
+    "given": "大輔",
+    "given_kana": "だいすけ"
+  },
+  {
+    "surname": "田中",
+    "surname_kana": "たなか",
+    "given": "博康",
+    "given_kana": "ひろやす"
+  },
+  {
+    "surname": "鹿戸",
+    "surname_kana": "しかと",
+    "given": "雄一",
+    "given_kana": "ゆういち"
+  },
+  {
+    "surname": "手塚",
+    "surname_kana": "てづか",
+    "given": "貴久",
+    "given_kana": "たかひさ"
+  },
+  {
+    "surname": "斉藤",
+    "surname_kana": "さいとう",
+    "given": "崇史",
+    "given_kana": "たかし"
+  },
+  {
+    "surname": "斎藤",
+    "surname_kana": "さいとう",
+    "given": "誠",
+    "given_kana": "まこと"
+  },
+  {
+    "surname": "清水",
+    "surname_kana": "しみず",
+    "given": "久詞",
+    "given_kana": "ひさし"
+  },
+  {
+    "surname": "武",
+    "surname_kana": "たけ",
+    "given": "幸四郎",
+    "given_kana": "こうしろう"
+  },
+  {
+    "surname": "武",
+    "surname_kana": "たけ",
+    "given": "英智",
+    "given_kana": "ひでとも"
+  },
+  {
+    "surname": "昆",
+    "surname_kana": "こん",
+    "given": "貢",
+    "given_kana": "みつぐ"
+  },
+  {
+    "surname": "松永",
+    "surname_kana": "まつなが",
+    "given": "幹夫",
+    "given_kana": "みきお"
+  },
+  {
+    "surname": "西園",
+    "surname_kana": "にしぞの",
+    "given": "正都",
+    "given_kana": "まさと"
+  },
+  {
+    "surname": "橋口",
+    "surname_kana": "はしぐち",
+    "given": "慎介",
+    "given_kana": "しんすけ"
+  },
+  {
+    "surname": "池添",
+    "surname_kana": "いけぞえ",
+    "given": "学",
+    "given_kana": "まなぶ"
+  },
+  {
+    "surname": "寺島",
+    "surname_kana": "てらしま",
+    "given": "良",
+    "given_kana": "りょう"
+  },
+  {
+    "surname": "高野",
+    "surname_kana": "たかの",
+    "given": "友和",
+    "given_kana": "ともかず"
+  },
+  {
+    "surname": "千田",
+    "surname_kana": "ちだ",
+    "given": "輝彦",
+    "given_kana": "てるひこ"
+  },
+  {
+    "surname": "辻野",
+    "surname_kana": "つじの",
+    "given": "泰之",
+    "given_kana": "やすゆき"
+  },
+  {
+    "surname": "森",
+    "surname_kana": "もり",
+    "given": "秀行",
+    "given_kana": "ひでゆき"
+  },
+  {
+    "surname": "大久保",
+    "surname_kana": "おおくぼ",
+    "given": "龍志",
+    "given_kana": "りゅうじ"
+  },
+  {
+    "surname": "佐々木",
+    "surname_kana": "ささき",
+    "given": "晶三",
+    "given_kana": "しょうぞう"
+  },
+  {
+    "surname": "尾関",
+    "surname_kana": "おぜき",
+    "given": "知人",
+    "given_kana": "ともひと"
+  },
+  {
+    "surname": "加藤",
+    "surname_kana": "かとう",
+    "given": "征弘",
+    "given_kana": "まさひろ"
+  },
+  {
+    "surname": "田村",
+    "surname_kana": "たむら",
+    "given": "康仁",
+    "given_kana": "やすひと"
+  },
+  {
+    "surname": "相沢",
+    "surname_kana": "あいざわ",
+    "given": "郁",
+    "given_kana": "いく"
+  },
+  {
+    "surname": "黒岩",
+    "surname_kana": "くろいわ",
+    "given": "陽一",
+    "given_kana": "よういち"
+  },
+  {
+    "surname": "林",
+    "surname_kana": "はやし",
+    "given": "徹",
+    "given_kana": "とおる"
+  },
+  {
+    "surname": "宮田",
+    "surname_kana": "みやた",
+    "given": "敬介",
+    "given_kana": "けいすけ"
+  },
+  {
+    "surname": "上村",
+    "surname_kana": "うえむら",
+    "given": "洋行",
+    "given_kana": "ひろゆき"
+  },
+  {
+    "surname": "荒川",
+    "surname_kana": "あらかわ",
+    "given": "義之",
+    "given_kana": "よしゆき"
+  },
+  {
+    "surname": "中竹",
+    "surname_kana": "なかたけ",
+    "given": "和也",
+    "given_kana": "かずや"
+  },
+  {
+    "surname": "平田",
+    "surname_kana": "ひらた",
+    "given": "修",
+    "given_kana": "おさむ"
+  },
+  {
+    "surname": "庄野",
+    "surname_kana": "しょうの",
+    "given": "靖志",
+    "given_kana": "やすし"
+  },
+  {
+    "surname": "藤原",
+    "surname_kana": "ふじわら",
+    "given": "英昭",
+    "given_kana": "ひであき"
+  },
+  {
+    "surname": "中舘",
+    "surname_kana": "なかだて",
+    "given": "英二",
+    "given_kana": "えいじ"
+  },
+  {
+    "surname": "伊藤",
+    "surname_kana": "いとう",
+    "given": "圭三",
+    "given_kana": "けいぞう"
+  },
+  {
+    "surname": "伊藤",
+    "surname_kana": "いとう",
+    "given": "大士",
+    "given_kana": "ひろし"
+  },
+  {
+    "surname": "萩原",
+    "surname_kana": "はぎわら",
+    "given": "清",
+    "given_kana": "きよし"
+  },
+  {
+    "surname": "金成",
+    "surname_kana": "かねなり",
+    "given": "貴史",
+    "given_kana": "たかふみ"
+  },
+  {
+    "surname": "奥村",
+    "surname_kana": "おくむら",
+    "given": "武",
+    "given_kana": "たけし"
+  },
+  {
+    "surname": "奥村",
+    "surname_kana": "おくむら",
+    "given": "豊",
+    "given_kana": "ゆたか"
+  },
+  {
+    "surname": "竹内",
+    "surname_kana": "たけうち",
+    "given": "正洋",
+    "given_kana": "まさひろ"
+  },
+  {
+    "surname": "堀内",
+    "surname_kana": "ほりうち",
+    "given": "岳志",
+    "given_kana": "たけし"
+  },
+  {
+    "surname": "松下",
+    "surname_kana": "まつした",
+    "given": "武士",
+    "given_kana": "たけし"
+  },
+  {
+    "surname": "安達",
+    "surname_kana": "あだち",
+    "given": "昭夫",
+    "given_kana": "あきお"
+  },
+  {
+    "surname": "矢野",
+    "surname_kana": "やの",
+    "given": "英一",
+    "given_kana": "えいいち"
+  },
+  {
+    "surname": "小島",
+    "surname_kana": "こじま",
+    "given": "茂之",
+    "given_kana": "しげゆき"
+  },
+  {
+    "surname": "戸田",
+    "surname_kana": "とだ",
+    "given": "博文",
+    "given_kana": "ひろふみ"
+  },
+  {
+    "surname": "大和田",
+    "surname_kana": "おおわだ",
+    "given": "成",
+    "given_kana": "しげる"
+  },
+  {
+    "surname": "高橋",
+    "surname_kana": "たかはし",
+    "given": "義忠",
+    "given_kana": "よしただ"
+  },
+  {
+    "surname": "高橋",
+    "surname_kana": "たかはし",
+    "given": "康之",
+    "given_kana": "やすゆき"
+  },
+  {
+    "surname": "藤岡",
+    "surname_kana": "ふじおか",
+    "given": "健一",
+    "given_kana": "けんいち"
+  },
+  {
+    "surname": "梅田",
+    "surname_kana": "うめだ",
+    "given": "智之",
+    "given_kana": "ともゆき"
+  },
+  {
+    "surname": "杉浦",
+    "surname_kana": "すぎうら",
+    "given": "宏昭",
+    "given_kana": "ひろあき"
+  },
+  {
+    "surname": "菊沢",
+    "surname_kana": "きくざわ",
+    "given": "隆徳",
+    "given_kana": "たかのり"
+  },
+  {
+    "surname": "久保田",
+    "surname_kana": "くぼた",
+    "given": "貴士",
+    "given_kana": "たかし"
+  },
+  {
+    "surname": "和田",
+    "surname_kana": "わだ",
+    "given": "正一郎",
+    "given_kana": "しょういちろう"
+  },
+  {
+    "surname": "藤沢",
+    "surname_kana": "ふじさわ",
+    "given": "和雄",
+    "given_kana": "かずお"
+  },
+  {
+    "surname": "角居",
+    "surname_kana": "すみい",
+    "given": "勝彦",
+    "given_kana": "かつひこ"
+  },
+  {
+    "surname": "池江",
+    "surname_kana": "いけえ",
+    "given": "泰郎",
+    "given_kana": "やすお"
+  },
+  {
+    "surname": "松田",
+    "surname_kana": "まつだ",
+    "given": "国英",
+    "given_kana": "くにひで"
+  },
+  {
+    "surname": "松田",
+    "surname_kana": "まつだ",
+    "given": "博資",
+    "given_kana": "ひろよし"
+  },
+  {
+    "surname": "橋口",
+    "surname_kana": "はしぐち",
+    "given": "弘次郎",
+    "given_kana": "こうじろう"
+  },
+  {
+    "surname": "戸山",
+    "surname_kana": "とやま",
+    "given": "為夫",
+    "given_kana": "ためお"
+  },
+  {
+    "surname": "伊藤",
+    "surname_kana": "いとう",
+    "given": "雄二",
+    "given_kana": "ゆうじ"
+  },
+  {
+    "surname": "伊藤",
+    "surname_kana": "いとう",
+    "given": "修司",
+    "given_kana": "しゅうじ"
+  },
+  {
+    "surname": "尾形",
+    "surname_kana": "おがた",
+    "given": "藤吉",
+    "given_kana": "とうきち"
+  },
+  {
+    "surname": "野平",
+    "surname_kana": "のひら",
+    "given": "祐二",
+    "given_kana": "ゆうじ"
+  },
+  {
+    "surname": "境",
+    "surname_kana": "さかい",
+    "given": "勝太郎",
+    "given_kana": "かつたろう"
+  },
+  {
+    "surname": "大久保",
+    "surname_kana": "おおくぼ",
+    "given": "正陽",
+    "given_kana": "まさあき"
+  },
+  {
+    "surname": "武田",
+    "surname_kana": "たけだ",
+    "given": "文吾",
+    "given_kana": "ぶんご"
+  },
+  {
+    "surname": "瀬戸口",
+    "surname_kana": "せとぐち",
+    "given": "勉",
+    "given_kana": "つとむ"
+  },
+  {
+    "surname": "鶴留",
+    "surname_kana": "つるどめ",
+    "given": "明雄",
+    "given_kana": "あきお"
+  },
+  {
+    "surname": "長浜",
+    "surname_kana": "ながはま",
+    "given": "博之",
+    "given_kana": "ひろゆき"
+  },
+  {
+    "surname": "松山",
+    "surname_kana": "まつやま",
+    "given": "康久",
+    "given_kana": "やすひさ"
+  },
+  {
+    "surname": "白井",
+    "surname_kana": "しらい",
+    "given": "寿昭",
+    "given_kana": "ひさあき"
+  },
+  {
+    "surname": "石坂",
+    "surname_kana": "いしざか",
+    "given": "正",
+    "given_kana": "ただし"
+  }
+]

@@ -20,6 +20,14 @@
 - 名馬列伝シリーズ: `ja-JP-NanamiNeural`（女性）
 - `ja-JP-NaokiNeural` は存在しないため使用禁止
 
+### TTS の読み辞書（人名の誤読対策）
+- 置換ロジックは `scripts/reading_utils.py` に集約されている（generate_audio.py / quiz_step3_video.py が使用）
+- **騎手は `data/jockeys.json`、調教師は `data/trainers.json`** に姓名分割形式で登録する:
+  `{"surname": "鮫島", "surname_kana": "さめしま", "given": "克駿", "given_kana": "かつま"}`
+- フルネーム・省略表記（鮫島駿）・姓のみ（鮫島）・1文字姓+後続語（武騎手・堀師）は自動展開されるので、バリエーションを手で追加しない
+- `data/readings.json` は競馬用語など人名以外の単純置換専用
+- 上記ファイルを変更すると `.github/workflows/tts_reading_test.yml` が自動実行され、読み変換チェックとWhisperによる発音確認が走る（結果は `tts-test-output` ブランチ）
+
 ## YouTubeサムネイル設定について
 
 このチャンネルは **YouTube Shorts（縦1080×1920）** を投稿している。

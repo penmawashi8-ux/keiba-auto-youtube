@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """TTS誤読補正の共通ロジック。
 
-data/readings.json（一般用語のカナ読み辞書）と data/jockeys.json（騎手名を
-姓・名に分割したデータ）から置換パターンを構築し、TTSに渡す前のテキストに
-適用する。generate_audio.py と quiz_step3_video.py の両方から使う。
+data/readings.json（一般用語のカナ読み辞書）と、人名を姓・名に分割した
+data/jockeys.json（騎手）・data/trainers.json（調教師）から置換パターンを
+構築し、TTSに渡す前のテキストに適用する。
+generate_audio.py と quiz_step3_video.py の両方から使う。
 
-騎手名は1人につき以下のバリエーションを自動展開する:
+人名は1人につき以下のバリエーションを自動展開する:
 
   1. フルネーム            鮫島克駿   → さめしまかつま
   2. 姓+名の1文字(省略表記) 鮫島駿     → さめしまかつま
@@ -34,8 +35,8 @@ from pathlib import Path
 _DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 _KANJI = "一-鿿々"
-# 人名の直後に続いても人名の区切りとみなす語
-_NAME_SUFFIX = "騎手|ジョッキー|君|氏|さん"
+# 人名の直後に続いても人名の区切りとみなす語（調教師表記の「師」「厩舎」を含む）
+_NAME_SUFFIX = "騎手|ジョッキー|調教師|厩舎|師|君|氏|さん"
 
 _rules_cache: tuple[list, list] | None = None
 
@@ -53,18 +54,18 @@ def _load_json(name: str, default):
 def _build_rules() -> tuple[list, list]:
     """(単純置換リスト, 正規表現置換リスト) を構築する。どちらも適用順。"""
     readings: dict = _load_json("readings.json", {})
-    jockeys: list = _load_json("jockeys.json", [])
+    persons: list = _load_json("jockeys.json", []) + _load_json("trainers.json", [])
 
     # --- 単純置換: 一般用語 + フルネーム（従来と同じ挙動） ---
     literal = {k: v for k, v in readings.items() if isinstance(v, str)}
-    for j in jockeys:
+    for j in persons:
         full = j["surname"] + j["given"]
         literal[full] = j["surname_kana"] + j["given_kana"]
 
     # --- 省略表記: 姓+名の1文字 → フルネームの読み ---
     abbrevs: dict[str, str] = {}
     ambiguous: set[str] = set()
-    for j in jockeys:
+    for j in persons:
         given = j["given"]
         if len(given) < 2:
             continue  # 名が1文字なら省略表記はフルネームと同じ
@@ -84,7 +85,7 @@ def _build_rules() -> tuple[list, list]:
 
     # --- 姓のみ ---
     surname_kanas: dict[str, set[str]] = {}
-    for j in jockeys:
+    for j in persons:
         surname_kanas.setdefault(j["surname"], set()).add(j["surname_kana"])
 
     regex_rules: list[tuple[re.Pattern, str]] = []
