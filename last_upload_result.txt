@@ -1,10 +1,10 @@
-date: 2026-07-09T06:47:39.095750Z
+date: 2026-07-09T10:31:36.900680Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bRGku8BzLjg title=ムルソー、マーキュリーC1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=iWeUmHAEJME title=武豊　公式サイトで通算5000勝に言及 　「早く決着してしまいたいのですが…全力
-OK project=1 video_id=VHB-E_ygZDw title=テルヒコウ初騎乗の武豊「ざわついてますね…」TERUと「一緒に口取り写真を」50
+OK project=1 video_id=DX5YcbutD2A title=【注目馬動向】北九州記念5着のアブキールベイはCBC賞へ　3着ヨシノイースターは
+OK project=1 video_id=xX8ysH9oW6g title=【POG】母はオークス4着馬アトランタが好仕上がり　12日小倉の初陣へ高柳大調教
+OK project=1 video_id=F7EBhguQDSo title=先輩クロワに続け！ キタサン×斉藤崇史厩舎のエルドボルグが初陣だ
