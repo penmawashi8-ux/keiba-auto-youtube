@@ -1,10 +1,10 @@
-date: 2026-07-09T12:16:29.280711Z
+date: 2026-07-09T14:00:12.536998Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vim6dpyUaeg title=【七夕賞】「46歳もいい年になるように」誕生日後、最初の重賞でバトルボーンと挑む
-OK project=1 video_id=jbFXc1ne-Mw title=【門別・星雲賞結果】トリップスが逃げ切って重賞3勝目を飾る
-OK project=1 video_id=eCnH9ptmbQo title=【POG】ヴァンセンヌ産駒のクラウントリオンフ　12日の福島での初陣へ上里直汰騎
+OK project=1 video_id=gWnxAQ31Ph0 title=プリンスオブウェールズS覇者オンブズマンがレーティング131ポンドでカーインライ
+OK project=1 video_id=j0XecyOeyxQ title=【小倉記念・1週前】今期充実のウエストナウが重賞初勝利へ　寺島調教師「馬も成長し
+OK project=1 video_id=MZhP-Qo7Oec title=【ジュライC】11頭立てでサトノレーヴは8番ゲート　ルメールと3走ぶりのコンビ
