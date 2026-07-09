@@ -1,10 +1,10 @@
-date: 2026-07-09T00:26:44.868810Z
+date: 2026-07-09T05:03:06.998144Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qKfr32T9MdU title=【七夕賞】カラマティアノスが重賞2勝目へ絶好の動き　「本当に具合がいい」奥村武調
-OK project=1 video_id=_dSgSmeGpuw title=【七夕賞】カラマティアノス　乱れず加速　奥村武師「グンと沈んで走れた」岩田康との
-OK project=1 video_id=5cuG9Mb4VMw title=【キングジョージ６世＆クイーンエリザベスＳ】マスカレードボール　体調面に手塚久師
+OK project=1 video_id=FlMYolvDFWc title=【ジュライC】悲願の海外G1制覇へサトノレーヴは順調な調整　堀調教師「前走と同様
+OK project=1 video_id=UH4zcVk8044 title=今村聖奈騎手の激レアな“騎手目線の調教動画”が反響…馬にかける優しい言葉も!「す
+OK project=1 video_id=2vNWBFIIssI title=【七夕賞】負担重量58キロ以上は大苦戦　トップハンデを背負うカラマティアノスとサ
