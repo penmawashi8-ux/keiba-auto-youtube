@@ -1,10 +1,10 @@
-date: 2026-07-08T12:26:06.891911Z
+date: 2026-07-09T00:26:44.868810Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=oS0HK5ODZQY title=【スパーキングLC】秋はJBCが目標　断然人気のタガノミストが重賞初V　渡辺調教
-OK project=1 video_id=T9osuBu5skk title=【スパーキングLC】2年2か月ぶりにダート挑戦のカピリナは9着　戸崎圭太騎手は4
-OK project=1 video_id=cBisDaXJwU8 title=【巴賞】すごい!楽々と引き離した!!出来の良さは一目瞭然　陣営も「今までで一番い
+OK project=1 video_id=qKfr32T9MdU title=【七夕賞】カラマティアノスが重賞2勝目へ絶好の動き　「本当に具合がいい」奥村武調
+OK project=1 video_id=_dSgSmeGpuw title=【七夕賞】カラマティアノス　乱れず加速　奥村武師「グンと沈んで走れた」岩田康との
+OK project=1 video_id=5cuG9Mb4VMw title=【キングジョージ６世＆クイーンエリザベスＳ】マスカレードボール　体調面に手塚久師
