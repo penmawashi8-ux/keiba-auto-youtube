@@ -11,6 +11,7 @@ on:
     paths:
       - data/tts_reading_test.txt
       - data/jockeys.json
+      - data/trainers.json
       - data/readings.json
       - scripts/reading_utils.py
       - .github/workflows/tts_reading_test.yml
@@ -73,6 +74,15 @@ jobs:
               "みゆき騎手は重賞を制覇",
               "もり騎手とはやし騎手、はら騎手",
               "たけさんの記録",
+              "やはぎよしと調教師",       # 調教師フルネーム
+              "ともみちやすお調教師",
+              "なかうちだ厩舎",           # 姓+厩舎
+              "ほり厩舎",                 # 1文字姓+厩舎
+              "やはぎ師",                 # 姓+師
+              "たけこうしろう師",         # フルネーム+師
+              "いけえ師",                 # 姓+師（池江）
+              "すみいかつひこ調教師",
+              "ふじさわかずお調教師",
               "よこやまたけし騎手とたけゆたか騎手",
               "むとうみやび騎手とたけ騎手",
               "あんじょうたけゆたかでしんば戦",
