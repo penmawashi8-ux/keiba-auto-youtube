@@ -1,10 +1,10 @@
-date: 2026-07-09T14:00:12.536998Z
+date: 2026-07-10T00:26:12.873569Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gWnxAQ31Ph0 title=プリンスオブウェールズS覇者オンブズマンがレーティング131ポンドでカーインライ
-OK project=1 video_id=j0XecyOeyxQ title=【小倉記念・1週前】今期充実のウエストナウが重賞初勝利へ　寺島調教師「馬も成長し
-OK project=1 video_id=MZhP-Qo7Oec title=【ジュライC】11頭立てでサトノレーヴは8番ゲート　ルメールと3走ぶりのコンビ
+OK project=1 video_id=CsbAjP2Bjlk title=【七夕賞】中舘師　アスクナイスショーで魅せる　９３年ツインターボと伝説の逃走劇、
+OK project=1 video_id=htmVpnGsEkA title=【新馬戦】フランソワーズ　エフフォーリア産駒牝馬Ｖ「第一号を」前川師が期待
+OK project=1 video_id=qxcDDSjSoRo title=【新馬戦】超良血一族　リサナウトが満を持し初陣　黒岩師「体力、能力、スピードと全
