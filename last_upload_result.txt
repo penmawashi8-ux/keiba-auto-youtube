@@ -1,10 +1,10 @@
-date: 2026-07-10T00:26:12.873569Z
+date: 2026-07-10T04:57:56.087819Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CsbAjP2Bjlk title=【七夕賞】中舘師　アスクナイスショーで魅せる　９３年ツインターボと伝説の逃走劇、
-OK project=1 video_id=htmVpnGsEkA title=【新馬戦】フランソワーズ　エフフォーリア産駒牝馬Ｖ「第一号を」前川師が期待
-OK project=1 video_id=qxcDDSjSoRo title=【新馬戦】超良血一族　リサナウトが満を持し初陣　黒岩師「体力、能力、スピードと全
+OK project=1 video_id=7zgJeKKvQ6o title=メイショウタバルがフォーエバーヤングと並んでトップに　上半期JPNサラブレッドラ
+OK project=1 video_id=ZUEb9QvlFDY title=「花を用意してくれているみたいですし…」5000勝へM2の武豊騎手　公式サイトで
+OK project=1 video_id=mKIvSEP2ASw title=カーインライジングが1ポンドの上方修正で世界ランク1位を守る　英G1で4馬身差圧
