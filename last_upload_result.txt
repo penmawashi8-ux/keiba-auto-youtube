@@ -1,10 +1,10 @@
-date: 2026-07-10T06:48:41.115762Z
+date: 2026-07-10T08:22:44.153943Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KUQMb__X9RA title=【ジュライC】サトノレーヴは8番ゲートから海外G1初V狙う　堀調教師「しっかりと
-OK project=1 video_id=BdI59t0hcKk title=武豊騎手で宝塚記念連覇のメイショウタバルが日本馬最上位タイに急浮上　フォーエバー
-OK project=1 video_id=QqHnqicIVK4 title=【巴賞】厩舎期待のレディネス　昆調教師「札幌記念を目指している馬」重賞へ弾みつけ
+OK project=1 video_id=khRDkXIr7Gg title=【小倉記念想定馬・騎手】ジョバンニ、ガイアメンテなど19頭
+OK project=1 video_id=_Zq9KkA0qVA title=【函館2歳S想定馬・騎手】シグレ、ダマスクなど13頭
+OK project=1 video_id=f64O8aYjeO0 title=【週末情報】七夕賞へ気合乗るボーンディスウェイ/馬三郎のつぶやき
