@@ -1,10 +1,10 @@
-date: 2026-07-10T08:22:44.153943Z
+date: 2026-07-10T10:23:06.106679Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=khRDkXIr7Gg title=【小倉記念想定馬・騎手】ジョバンニ、ガイアメンテなど19頭
-OK project=1 video_id=_Zq9KkA0qVA title=【函館2歳S想定馬・騎手】シグレ、ダマスクなど13頭
-OK project=1 video_id=f64O8aYjeO0 title=【週末情報】七夕賞へ気合乗るボーンディスウェイ/馬三郎のつぶやき
+OK project=1 video_id=PY4YVQd5z6Y title=リヤンドファミユ産駒がJRAで約2年ぶり勝利なるか エアフォースワンが1年半ぶり
+OK project=1 video_id=W1Zn1XEi81c title=「めっちゃ可愛い」“世界最強馬”カランダガンのぬいぐるみ発売が反響!「日本からで
+OK project=1 video_id=QUX19mssIW0 title=早すぎる天国への旅立ち...「辛い」「あかんかったか」安楽死となった3歳馬にネッ
