@@ -1,10 +1,10 @@
-date: 2026-07-10T04:57:56.087819Z
+date: 2026-07-10T06:48:41.115762Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7zgJeKKvQ6o title=メイショウタバルがフォーエバーヤングと並んでトップに　上半期JPNサラブレッドラ
-OK project=1 video_id=ZUEb9QvlFDY title=「花を用意してくれているみたいですし…」5000勝へM2の武豊騎手　公式サイトで
-OK project=1 video_id=mKIvSEP2ASw title=カーインライジングが1ポンドの上方修正で世界ランク1位を守る　英G1で4馬身差圧
+OK project=1 video_id=KUQMb__X9RA title=【ジュライC】サトノレーヴは8番ゲートから海外G1初V狙う　堀調教師「しっかりと
+OK project=1 video_id=BdI59t0hcKk title=武豊騎手で宝塚記念連覇のメイショウタバルが日本馬最上位タイに急浮上　フォーエバー
+OK project=1 video_id=QqHnqicIVK4 title=【巴賞】厩舎期待のレディネス　昆調教師「札幌記念を目指している馬」重賞へ弾みつけ
