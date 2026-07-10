@@ -1,10 +1,10 @@
-date: 2026-07-10T12:03:20.139625Z
+date: 2026-07-10T13:24:25.609646Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qzmVsMxOn3Y title=【園田・兵庫サマークイーン賞結果】ケテンドリームが接戦制し重賞初制覇
-OK project=1 video_id=rM8ox4iHzHA title=半姉は桜花賞馬のステレンボッシュ クランズクラウンが待望の初勝利なるか
-OK project=1 video_id=18qtNc5iBVo title=昨年の最高値は5・8億円!イクイノックス、ドウデュースにキタサンブラック産駒..
+OK project=1 video_id=m-QN5QHTDwA title=【地方競馬】兵庫サマークイーン賞　大井のケテンドリームが重賞初制覇
+OK project=1 video_id=NGztCH5sZns title=5000勝にM2　ファンの期待背負う武豊騎手は函館で騎乗　土曜5鞍、日曜7鞍の騎
+OK project=1 video_id=MmykPhwzs2g title=神尾香澄騎手が胸椎圧迫骨折から復帰後初V「自厩舎の馬に乗せてもらい勝てたことがう
