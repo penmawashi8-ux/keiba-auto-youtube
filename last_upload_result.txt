@@ -1,10 +1,10 @@
-date: 2026-07-11T07:14:12.351810Z
+date: 2026-07-11T08:49:05.878759Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3FJ0_7Qfjyc title=【阪神アーバン競馬プレーバック】期間限定騎乗の福原杏が9日のメーンで園田初勝利!
-OK project=1 video_id=VIukohtmW54 title=【JRA・WIN5】本日のWIN5は的中929票、配当36万3060円
-OK project=1 video_id=BHRStKKqJOM title=【安達太良S結果】マサノカナリアが接戦を制してオープン初勝利
+OK project=1 video_id=BdBIH8mwKWU title=【七夕賞前日オッズ】カラマティアノスが4.7倍で1番人気
+OK project=1 video_id=cdGieWMDdsY title=【安達太良Sレース後コメント】マサノカナリア石川裕紀人騎手ら
+OK project=1 video_id=mjfJ8UvhYeQ title=【釜山Sレース後コメント】ベルギューン菱田裕二騎手ら
