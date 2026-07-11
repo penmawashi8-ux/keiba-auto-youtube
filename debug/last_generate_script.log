@@ -1,74 +1,116 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に存在しない馬名・騎
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: 元記事に書かれていないレース結果・
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [2] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【地方競馬】兵庫サマークイーン賞　大井のケテンドリームが重賞初制覇 ---
-[0] Gemini入力本文 331文字: '「第１９回兵庫サマークイーン賞」（１０日、園田）\n\u3000１番人気で大井のケテンドリームが２番手から４角先頭で押し切って重賞初制覇を成し遂げた。２着は２番人気で高知のサノノエスポが３番手から猛追して頭差まで迫り、３着には３番人気で愛知のコパノエミ'
+--- 記事[0]: 安達太良Sは5歳馬が優勢か ディープインパクト系に要注意 ---
+[0] Gemini入力本文 528文字: '土曜福島メインは安達太良ステークス(3歳上・オープン・芝1200m)。ここでは16年以降の夏開催に同舞台で行われた古馬オープン・全10鞍の人気別、脚質別、枠順別、年齢別、血統別の成績から、レース傾向を探りたい。\n\u3000まずは人気別だが、1番人気'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 5000勝にM2　ファンの期待背負う武豊騎手は函館で騎乗　土曜5鞍、日曜7鞍の騎乗馬一覧 ---
-[1] Gemini入力本文 352文字: '地方・海外を含む勝利数が大台の通算5000勝に迫る武豊騎手(57)＝栗東・フリー＝は、先週の函館で自身とのコンビでG1・6勝のキタサンブラックの半弟アルマデオロで横津岳特別を制すなど2勝を挙げ、4998勝。残り2勝で挑む今週は函館で土曜5鞍'
+--- 記事[1]: 【今日の注目ポイント】福島でOP特別の安達太良S ---
+[1] Gemini入力本文 450文字: '7月11日(土)は福島・小倉・函館の3場開催。10日正午の馬場状態は、福島と小倉が芝ダートともに良、函館が芝稍重・ダート重となっている。\n■安達太良SでレッドアヴァンティがOP初制覇へ\n\u3000福島11Rは芝1200mの安達太良S(OP)。レッド'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 神尾香澄騎手が胸椎圧迫骨折から復帰後初V「自厩舎の馬に乗せてもらい勝てたことがうれしい」川崎6R・アウフタクト ---
-[2] Gemini入力本文 339文字: '胸椎圧迫骨折で約3か月半、休養していた神尾香澄騎手＝川崎・山田質厩舎＝が、10日の川崎競馬6Rで9頭立ての9番人気だったアウフタクト(牝3歳、川崎・山田質厩舎、父タニノフランケル)に騎乗し、内から鮮やかに差し切って復帰後初勝利を飾った。\n\t'
+--- 記事[2]: 日本馬はフォーエバーヤング＆メイショウタバルが１２位タイで最上位　ワールドベストレースホースランキング ---
+[2] Gemini入力本文 331文字: 'ＩＦＨＡ（国際競馬統括機関連盟）が１０日、今年の１月１日〜７月５日に行われた世界の主要レースを対象としたワールドベストレースホースランキングを発表した。\n\u3000ランキングトップは２頭。第１回発表から首位を守ってきたカーインライジング（騸５歳・香'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 207文字]: '今日の競馬情報です。胸椎圧迫骨折で約3か月半休養していた神尾香澄騎手が、復帰後初勝利を飾りました。10日の川崎競馬6Rで、9頭立ての9番人気だったアウフタクトに騎乗し、内から鮮やかに差し切って勝利を収めています。神尾騎手は「勝てるかなという脚はあったのですが、外に出せなかったので、伸びろ伸びろという気持ちでした」とコメント。さらに「久しぶりに、しかも自厩舎の馬に乗せてもらえて勝てたことがうれしい」と語りました。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (207文字)
-[2]  プレビュー: 今日の競馬情報です。胸椎圧迫骨折で約3か月半休養していた神尾香澄騎手が、復帰後初勝利を飾りました。10日の川崎競馬6Rで、9頭立ての9番人気だったアウフタクトに...
+[1]  [Gemini生出力 245文字]: '本日の競馬ニュースです。7月11日(土)は福島、小倉、函館の3場開催となります。10日正午時点の馬場状態は、福島と小倉が芝ダートともに良、函館が芝稍重、ダート重です。福島11Rでは芝1200mのオープン特別、安達太良Sが行われます。このレースではレッドアヴァンティがオープンクラスでの初制覇を目指します。レッドアヴァンティは2走前の北九州短距離Sで4着となり、前走のモルガナイトSでは2着に好走しました。前走と同じ芝1200mの舞台で、オープンクラス初勝利に向けて視界は良好とされています。'
   HTTP 200
-[0]  [Gemini生出力 217文字]: '注目の競馬情報をお届けします。\n第19回兵庫サマークイーン賞が10日に園田で開催されました。1番人気で大井のケテンドリームが、2番手からレースを進め、4コーナーで先頭に立つとそのまま押し切り、重賞初制覇を成し遂げました。ケテンドリームは初めての遠征競馬で最高の結果を出しました。2着には2番人気で高知のサノノエスポが3番手から猛追し、頭差まで迫りました。そして、3着には3番人気で愛知のコパノエミリアが5番手から鋭く伸びて続きました。'
-[0]  [redirectフィルター] 217文字 → 201文字
+[0]  [Gemini生出力 263文字]: 'レース関連の最新情報です。土曜福島メインの安達太良ステークスは、5歳馬が優勢と見られており、ディープインパクト系に要注意とされています。これは、2016年以降の夏開催に同舞台で行われた古馬オープン全10鞍の人気別、脚質別、枠順別、年齢別、血統別の成績からレース傾向を探った結果です。人気別では、1番人気が【2-3-0-5】、2番人気が【1-2-1-6】と、ともに信頼度はイマイチです。また、2桁人気も2着2回、3着1回と激走例はありますが、積極的には狙いづらい傾向にあります。馬券的には5〜6番人気あたりが注目されるでしょう。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (201文字)
-[0]  プレビュー: 第19回兵庫サマークイーン賞が10日に園田で開催されました。1番人気で大井のケテンドリームが、2番手からレースを進め、4コーナーで先頭に立つとそのまま押し切り、...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 256文字]: '本日の競馬ニュースです。地方・海外を含む勝利数が大台の通算5000勝に迫る武豊騎手は、先週の函館で2勝を挙げ、現在4998勝としています。自身とのコンビでG1・6勝のキタサンブラックの半弟アルマデオロで横津岳特別を制したことも含まれます。残り2勝で5000勝に挑む今週は、函館で土曜5鞍、日曜7鞍に騎乗する予定です。特に12日の函館9R・北海ハンデキャップでは、GLAYのTERUが名付け親のテルヒコウと初コンビを組みます。坂井瑠星騎手と話した際、「洋芝の馬場は合うんじゃないか」という見解があったとのことです。'
+[0]  → output/script_0.txt 保存 (263文字)
+[0]  プレビュー: レース関連の最新情報です。土曜福島メインの安達太良ステークスは、5歳馬が優勢と見られており、ディープインパクト系に要注意とされています。これは、2016年以降の...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (256文字)
-[1]  プレビュー: 本日の競馬ニュースです。地方・海外を含む勝利数が大台の通算5000勝に迫る武豊騎手は、先週の函館で2勝を挙げ、現在4998勝としています。自身とのコンビでG1・...
-
-3 件の脚本を生成しました。
+[1]  → output/script_1.txt 保存 (245文字)
+[1]  プレビュー: 本日の競馬ニュースです。7月11日(土)は福島、小倉、函館の3場開催となります。10日正午時点の馬場状態は、福島と小倉が芝ダートともに良、函館が芝稍重、ダート重...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 253文字]: '重要な競馬ニュースをお伝えします。IFHA（国際競馬統括機関連盟）が10日、今年の1月1日から7月5日に行われた世界の主要レースを対象としたワールドベストレースホースランキングを発表しました。日本馬ではフォーエバーヤングとメイショウタバルが12位タイで最上位となりました。ランキングトップは2頭で、第1回発表から首位を守ってきたカーインライジングと、プリンスオブウェールズSを楽勝したオンブズマンが131ポンドで並んでいます。3位には、英2000ギニーとセントジェームズパレスSを連勝した馬が続いています。'
+[2] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 255文字]: '重要な競馬ニュースをお伝えします。\nIFHA（国際競馬統括機関連盟）が10日、今年の1月1日から7月5日に行われた世界の主要レースを対象としたワールドベストレースホースランキングを発表しました。日本馬では、フォーエバーヤングとメイショウタバルが12位タイで最上位となりました。ランキングトップは2頭で、第1回発表から首位を守ってきたカーインライジングに、プリンスオブウェールズSを楽勝したオンブズマンが131ポンドで並んでいます。3位には、英2000ギニーとセントジェームズパレスSを連勝した馬が続いています。'
+[2]  [重複除去] 255文字 → 254文字
+[2] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
