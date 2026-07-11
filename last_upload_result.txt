@@ -1,10 +1,10 @@
-date: 2026-07-11T08:49:05.878759Z
+date: 2026-07-11T10:23:32.887720Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BdBIH8mwKWU title=【七夕賞前日オッズ】カラマティアノスが4.7倍で1番人気
-OK project=1 video_id=cdGieWMDdsY title=【安達太良Sレース後コメント】マサノカナリア石川裕紀人騎手ら
-OK project=1 video_id=mjfJ8UvhYeQ title=【釜山Sレース後コメント】ベルギューン菱田裕二騎手ら
+OK project=1 video_id=5Dejklw51H0 title=【七夕賞】“七夕馬券”枠連7―7は8番人気の20・2倍と人気集める　単勝1番人気
+OK project=1 video_id=WJfBGR1HbOg title=7月11日の出来事一覧/函館・福島・小倉
+OK project=1 video_id=duam_BxyFNQ title=快進撃止まらないエフフォーリア産駒は1歳10頭、当歳5頭が上場　リザーブ価格は手
