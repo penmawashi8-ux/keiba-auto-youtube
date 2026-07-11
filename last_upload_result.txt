@@ -1,10 +1,10 @@
-date: 2026-07-10T13:24:25.609646Z
+date: 2026-07-11T04:15:22.887747Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=m-QN5QHTDwA title=【地方競馬】兵庫サマークイーン賞　大井のケテンドリームが重賞初制覇
-OK project=1 video_id=NGztCH5sZns title=5000勝にM2　ファンの期待背負う武豊騎手は函館で騎乗　土曜5鞍、日曜7鞍の騎
-OK project=1 video_id=MmykPhwzs2g title=神尾香澄騎手が胸椎圧迫骨折から復帰後初V「自厩舎の馬に乗せてもらい勝てたことがう
+OK project=1 video_id=ZLSF3nJgCms title=【函館5R・2歳新馬】スピードけた違い　フレイコンが衝撃の8馬身差Vに横山武史騎
+OK project=1 video_id=XrdVV-Va58A title=【函館5R・2歳新馬戦】1番人気フレイコン、8馬身差圧勝　横山武「誰もついて来れ
+OK project=1 video_id=spH7X70MS2Q title=【福島5R新馬戦結果】ダノンスマッシュ産駒ニシノイサリビが逃げ切り勝ち
