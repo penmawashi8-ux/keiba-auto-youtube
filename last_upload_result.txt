@@ -1,10 +1,10 @@
-date: 2026-07-11T05:43:39.727072Z
+date: 2026-07-11T07:14:12.351810Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jFVwjqX0mk4 title=【函館8R】地元で快進撃　丹内祐次騎手が自身初の一日5勝に「よかった」5番人気ア
-OK project=1 video_id=Jhv8SDBl5lQ title=丹内騎手が自身初の一日５勝　「良かったです」　函館リーディング争いでも１１勝で再
-OK project=1 video_id=Ykb0S4uHEoY title=【阪神アーバン競馬プレーバック】自己最長更新!佐々木世麗が開催日7日連続勝利
+OK project=1 video_id=3FJ0_7Qfjyc title=【阪神アーバン競馬プレーバック】期間限定騎乗の福原杏が9日のメーンで園田初勝利!
+OK project=1 video_id=VIukohtmW54 title=【JRA・WIN5】本日のWIN5は的中929票、配当36万3060円
+OK project=1 video_id=BHRStKKqJOM title=【安達太良S結果】マサノカナリアが接戦を制してオープン初勝利
