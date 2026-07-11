@@ -538,10 +538,12 @@ def main() -> None:
             print(f"[警告] サムネイル処理失敗: {e}", file=sys.stderr)
 
         # Playwright サムネイル設定用にアップロード結果を記録
+        # video_file は daily_top_video.py（1日の人気No.1動画の横型再投稿）が参照する
         upload_results_data.append({
             "video_id": video_id,
             "thumbnail": thumb_path,
             "title": title,
+            "video_file": new_video_path.name,
         })
 
         upload_log.append(f"OK project={cred_idx+1} video_id={video_id} title={title[:40]}")
