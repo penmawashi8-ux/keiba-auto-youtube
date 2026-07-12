@@ -1,45 +1,96 @@
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [ファクトチェックNG] NG: 中舘英二調教師は、騎
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [ファクトチェックNG] NG: 元記事に「アスクナイスショー
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 惜しすぎる2着にTERU「人生で推しの馬ができるなんて…」　武豊騎手と初コンビのテルヒコウは逃げ切れず ---
-[0] Gemini入力本文 344文字: '4人組ロックバンド「GLAY」のボーカル、TERUが12日に自身のX(旧ツイッター)を更新し、自身が名付け親となったテルヒコウ(牡3歳、栗東・矢作芳人厩舎、父コントレイル)の結果について報告した。\n\t\t\t\t\u3000TERUは「テルヒコウ、頑張りま'
+--- 記事[0]: 【七夕賞】２番人気のアスクナイスショーが重賞初勝利　３着に１５番人気のオニャンコポンが入り３連単２２万超えの大波乱 ---
+[0] Gemini入力本文 331文字: '「七夕賞・Ｇ３」（１２日、福島）\n\u3000２番人気のアスクナイスショーが重賞初勝利を飾った。２着には６番人気のマイネルモーント、３着には１５番人気のオニャンコポンが入り、３連単は２２万３０５０円の大波乱となった。\n\u3000ショウナンマグマの大逃げでレー'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【メイクデビュー小倉5Rレース後コメント】エルドボルグ団野大成騎手ら ---
-[1] Gemini入力本文 504文字: '小倉5Rのメイクデビュー小倉(芝2000m)は1番人気エルドボルグ(団野大成騎手)が勝利した。勝ちタイムは2分02秒7(良)。アタマ差の2着に2番人気シックパラソル、さらに半馬身差の3着に4番人気サイモンレガシーが入った。\n\u3000エルドボルグは'
+--- 記事[1]: 【七夕賞】騎手時代ツインターボで制覇の中舘調教師がアスクナイスショーで初V　福島出身の田辺裕信騎手はまた地元でタイトル ---
+[1] Gemini入力本文 360文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル、稍重)\n\t\t\t\t\u3000サマー2000シリーズ第2戦が16頭で争われ、ハンデ55キロで2番人気のアスクナイスショー(牡5歳、美浦・中舘英二厩舎、父シルバーステート)が直線抜け出し'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【小倉6R・2歳新馬】3番人気のマルモリムソウが押し切って快勝　泉谷楓真騎手「体がしっかりすればもっと…」 ---
-[2] Gemini入力本文 351文字: '7月12日の小倉6R・2歳新馬(芝1200メートル＝9頭立て)は、泉谷楓真騎手が乗った単勝3番人気のマルモリムソウ(牡2歳、栗東・大橋勇樹厩舎、父ビッグアーサー)が逃げ切ってデビュー勝ちを飾った。1馬身3／4差の2着に1番人気のアームズラム'
+--- 記事[2]: 【阪神アーバン競馬プレーバック】今週の佐々木世麗&塩津璃菜　佐々木は絶好調も塩津は今月未勝利 ---
+[2] Gemini入力本文 351文字: '先週、兵庫に限定すると自己最長タイの6日連続勝利を挙げていた佐々木世麗は、8日に自身初となる準メーン(10R)、メーン(11R)を連勝(11日に詳細記事を配信済み)。最終12R(ダート820メートル、11頭立て)でもプロメトル(牝4＝木村、'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 207文字]: 'レース関連の最新情報です。\n7月12日の小倉6R・2歳新馬は、芝1200メートル、9頭立てで行われました。泉谷楓真騎手が乗った単勝3番人気のマルモリムソウが逃げ切ってデビュー勝ちを飾りました。勝ちタイムは1分9秒4の良馬場でした。1馬身3／4差の2着には1番人気のアームズラムレイが入り、さらに1馬身半差の3着には5番人気のビバームスが続きました。泉谷楓真騎手は「体がしっかりすればもっと…」とコメントしています。'
-[2]  [重複除去] 206文字 → 205文字
+[0]  [Gemini生出力 225文字]: '競馬速報です。七夕賞・G3が12日に福島で開催され、2番人気のアスクナイスショーが重賞初勝利を飾りました。2着には6番人気のマイネルモーント、3着には15番人気のオニャンコポンが入り、3連単は22万3050円の大波乱となりました。レースはショウナンマグマの大逃げによりハイペースで展開。3コーナー付近で後方集団が一気に進出する中、離れた2番手から追走していたアスクナイスショーも内ラチ沿いから早めのスパートを見せ、あっという間に後続を引き離しました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (225文字)
+[0]  プレビュー: 競馬速報です。七夕賞・G3が12日に福島で開催され、2番人気のアスクナイスショーが重賞初勝利を飾りました。2着には6番人気のマイネルモーント、3着には15番人気...
+  HTTP 200
+[2]  [Gemini生出力 222文字]: '注目の競馬情報をお届けします。先週、兵庫に限定すると自己最長タイの6日連続勝利を挙げていた佐々木世麗は、8日に自身初となる準メーンの10R、メーンの11Rを連勝しました。最終12Rのダート820メートル、11頭立てではプロメトルで2着に食い込み、終盤の猛烈な追い込みで自己最長を更新する7日連続勝利を挙げました。9日の勝ち鞍はなく記録はストップしましたが、10日には節目の今年50勝目を達成しています。一方、塩津璃菜は今月未勝利となっています。'
+[2]  [redirectフィルター] 222文字 → 207文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (205文字)
-[2]  プレビュー: レース関連の最新情報です。7月12日の小倉6R・2歳新馬は、芝1200メートル、9頭立てで行われました。泉谷楓真騎手が乗った単勝3番人気のマルモリムソウが逃げ切...
+[2]  → output/script_2.txt 保存 (207文字)
+[2]  プレビュー: 先週、兵庫に限定すると自己最長タイの6日連続勝利を挙げていた佐々木世麗は、8日に自身初となる準メーンの10R、メーンの11Rを連勝しました。最終12Rのダート8...
   HTTP 200
-[0]  [Gemini生出力 248文字]: '競馬ファン注目の情報です。4人組ロックバンド「GLAY」のボーカル、TERUさんが12日に自身のXを更新し、自身が名付け親となったテルヒコウの結果について報告しました。武豊騎手と初コンビを組んだテルヒコウは、惜しくも2着に逃げ切れませんでした。TERUさんは「テルヒコウ、頑張りました！2着でしたが、函館競馬場が湧きました！」と現地の様子をつづっています。また、「人生で推しの馬ができるなんて思ってもみませんでしたが、今後の活躍にも期待してます。武さん、ありがとうございまし」とコメントしました。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (248文字)
-[0]  プレビュー: 競馬ファン注目の情報です。4人組ロックバンド「GLAY」のボーカル、TERUさんが12日に自身のXを更新し、自身が名付け親となったテルヒコウの結果について報告し...
+[1]  [Gemini生出力 199文字]: '本日の競馬ニュースです。\n7月12日、福島競馬場で行われた第62回七夕賞・G3は16頭で争われました。ハンデ55キロで2番人気のアスクナイスショーが直線抜け出し、勝ちタイム1分57秒9で重賞初勝利を飾りました。中舘英二調教師は、騎手時代ツインターボで七夕賞を制覇しており、調教師として初の勝利です。福島出身の田辺裕信騎手は、地元でタイトルを獲得し、七夕賞は2014年メイショウナルト以来2勝目です。'
+[1]  [重複除去] 199文字 → 198文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 216文字]: '今週の競馬注目情報をお伝えします。\n小倉5Rのメイクデビュー小倉、芝2000mでは、1番人気のエルドボルグが団野大成騎手を背に勝利しました。勝ちタイムは2分02秒7の良馬場でした。アタマ差の2着には2番人気のシックパラソルが入り、さらに半馬身差の3着には4番人気のサイモンレガシーが入線しています。勝利したエルドボルグは、栗東・斉藤崇史厩舎に所属する2歳牡馬で、父はキタサンブラック、母はコンサートホール、母の父はDubawiです。'
-[1]  [重複除去] 216文字 → 215文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (215文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。小倉5Rのメイクデビュー小倉、芝2000mでは、1番人気のエルドボルグが団野大成騎手を背に勝利しました。勝ちタイムは2分02秒...
+[1]  [Gemini生出力 283文字]: '本日の競馬ニュースです。第62回七夕賞・G3が7月12日、福島競馬場・芝2000メートル、稍重で行われました。サマー2000シリーズ第2戦として16頭で争われたこのレースは、ハンデ55キロで2番人気のアスクナイスショーが直線抜け出し、重賞初勝利を飾りました。勝ちタイムは1分57秒9です。アスクナイスショーを管理する中舘英二調教師は、騎手時代にツインターボで七夕賞を制覇しており、調教師としては初の七夕賞勝利となりました。また、福島出身の田辺裕信騎手は、6月28日のラジオNIKKEI賞以来の重賞勝利を挙げ、七夕賞は2014年メイショウナルト以来2勝目となりました。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 252文字]: '本日の競馬ニュースです。第62回七夕賞・G3が7月12日、福島競馬場・芝2000メートル、稍重で行われました。サマー2000シリーズ第2戦は16頭で争われ、ハンデ55キロで2番人気のアスクナイスショーが直線抜け出し、重賞初勝利を飾りました。勝ちタイムは1分57秒9でした。アスクナイスショーを管理する美浦・中舘英二厩舎は、この七夕賞で初勝利となりました。また、福島出身の田辺裕信騎手は、6月28日のラジオNIKKEI賞以来となる重賞勝利を挙げ、七夕賞では2014年メイショウナルト以来2勝目となりました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (252文字)
+[1]  プレビュー: 本日の競馬ニュースです。第62回七夕賞・G3が7月12日、福島競馬場・芝2000メートル、稍重で行われました。サマー2000シリーズ第2戦は16頭で争われ、ハン...
 
 3 件の脚本を生成しました。
