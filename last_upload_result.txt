@@ -1,10 +1,10 @@
-date: 2026-07-12T00:13:08.629352Z
+date: 2026-07-12T04:34:46.504845Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lWQWocKDefE title=【七夕賞予想】荒れる一戦も激走タイプに共通点あり!? 過去データから探るGIII
-OK project=1 video_id=ZryuphF_G-o title=七夕賞はハンデ戦らしく波乱傾向 キングマンボ系に注目だ
-OK project=1 video_id=ZYVN69hv2NM title=「GLAY」のTERUが名付け親 テルヒコウが武豊騎手と初タッグだ
+OK project=1 video_id=RV44kstsj-I title=河原田菜々騎手が今年のＪＲＡ６勝目＆通算３０勝目
+OK project=1 video_id=ID2QXybS3r4 title=57歳武豊　通算5000勝達成!　初勝利から39年4カ月で金字塔　函館7Rで決め
+OK project=1 video_id=p6InrZSHaSs title=【函館5R】5000勝目前の武豊騎手はイッペイで首差2着　「調教の動きより良かっ
