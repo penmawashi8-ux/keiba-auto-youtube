@@ -1,10 +1,10 @@
-date: 2026-07-12T04:34:46.504845Z
+date: 2026-07-12T06:01:35.298212Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RV44kstsj-I title=河原田菜々騎手が今年のＪＲＡ６勝目＆通算３０勝目
-OK project=1 video_id=ID2QXybS3r4 title=57歳武豊　通算5000勝達成!　初勝利から39年4カ月で金字塔　函館7Rで決め
-OK project=1 video_id=p6InrZSHaSs title=【函館5R】5000勝目前の武豊騎手はイッペイで首差2着　「調教の動きより良かっ
+OK project=1 video_id=wC6aLbloFXA title=惜しすぎる2着にTERU「人生で推しの馬ができるなんて…」　武豊騎手と初コンビの
+OK project=1 video_id=NF5FaWcbEPo title=【メイクデビュー小倉5Rレース後コメント】エルドボルグ団野大成騎手ら
+OK project=1 video_id=C42Aw4tMA6c title=【小倉6R・2歳新馬】3番人気のマルモリムソウが押し切って快勝　泉谷楓真騎手「体
