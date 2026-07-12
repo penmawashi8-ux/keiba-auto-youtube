@@ -1,10 +1,10 @@
-date: 2026-07-12T09:06:17.930813Z
+date: 2026-07-12T12:04:10.053828Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=uwocZ6hpJoE title=「急に色っぽく」「かなり大人な装い」元日向坂46・富田鈴花、ドレス姿も七夕賞の本
-OK project=1 video_id=z3fQt0ZTDpw title=【函館2歳S】シグレ、ダマスクなどが登録
-OK project=1 video_id=Y-4BE3tnjsw title=【小倉記念】ジョバンニ、ガイアメンテなどが登録
+OK project=1 video_id=oOylMS6X4yw title=注目のイクイノックス産駒 今年のセレクトセール上場馬は
+OK project=1 video_id=L0biBEBRu_E title=【ばんえい競馬】2023年のばんえいダービー馬が重賞9勝目　タカラキングダムが旭
+OK project=1 video_id=YHvKL0T2aKE title=【坂本が武豊騎手を見た】50代での未踏の地サウジアラビアにワクワク　異国でも変わ
