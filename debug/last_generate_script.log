@@ -1,96 +1,44 @@
-[1]  [ファクトチェックNG] NG: 中舘英二調教師は、騎
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 503 サービス一時停止。リトライします。
-[1]  [ファクトチェックNG] NG: 元記事に「アスクナイスショー
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【七夕賞】２番人気のアスクナイスショーが重賞初勝利　３着に１５番人気のオニャンコポンが入り３連単２２万超えの大波乱 ---
-[0] Gemini入力本文 331文字: '「七夕賞・Ｇ３」（１２日、福島）\n\u3000２番人気のアスクナイスショーが重賞初勝利を飾った。２着には６番人気のマイネルモーント、３着には１５番人気のオニャンコポンが入り、３連単は２２万３０５０円の大波乱となった。\n\u3000ショウナンマグマの大逃げでレー'
+--- 記事[0]: 「急に色っぽく」「かなり大人な装い」元日向坂46・富田鈴花、ドレス姿も七夕賞の本命馬披露もSNS興奮 ---
+[0] Gemini入力本文 338文字: '福島競馬場に登場した元日向坂46の富田鈴花にネットが沸いている。12日に福島競馬場で行われた七夕賞のプレゼンターを務め、トークショーでも集まったファンを沸かせ、競馬ファンを虜にした。\n\t\t\t\t\u3000富田はシックな黒いドレス姿でプレゼンターとして'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【七夕賞】騎手時代ツインターボで制覇の中舘調教師がアスクナイスショーで初V　福島出身の田辺裕信騎手はまた地元でタイトル ---
-[1] Gemini入力本文 360文字: '◆第62回七夕賞・G3(7月12日、福島競馬場・芝2000メートル、稍重)\n\t\t\t\t\u3000サマー2000シリーズ第2戦が16頭で争われ、ハンデ55キロで2番人気のアスクナイスショー(牡5歳、美浦・中舘英二厩舎、父シルバーステート)が直線抜け出し'
+--- 記事[1]: 【函館2歳S】シグレ、ダマスクなどが登録 ---
+[1] Gemini入力本文 363文字: '7月19日(日)に函館競馬場で行われる函館2歳ステークス(GIII・芝1200m)の登録馬は以下の通り。\nアイルドフルール\u300055.0\nアルテクィーン\u300055.0\nイモージェン\u300055.0\nウンスイ\u300055.0\nクロリス\u300055.0\nシグレ\u300055.0'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【阪神アーバン競馬プレーバック】今週の佐々木世麗&塩津璃菜　佐々木は絶好調も塩津は今月未勝利 ---
-[2] Gemini入力本文 351文字: '先週、兵庫に限定すると自己最長タイの6日連続勝利を挙げていた佐々木世麗は、8日に自身初となる準メーン(10R)、メーン(11R)を連勝(11日に詳細記事を配信済み)。最終12R(ダート820メートル、11頭立て)でもプロメトル(牝4＝木村、'
+--- 記事[2]: 【小倉記念】ジョバンニ、ガイアメンテなどが登録 ---
+[2] Gemini入力本文 263文字: '7月19日(日)に小倉競馬場で行われる小倉記念(GIII・芝2000m)の登録馬は以下の通り。\nウエストナウ\nエヒト\nガイアメンテ\nカエルム\nカネフラ\nコパノサントス\nサフィラ\nジョバンニ\nジーティーアダマン\nゼンダンハヤブサ\nタガノアビー'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 225文字]: '競馬速報です。七夕賞・G3が12日に福島で開催され、2番人気のアスクナイスショーが重賞初勝利を飾りました。2着には6番人気のマイネルモーント、3着には15番人気のオニャンコポンが入り、3連単は22万3050円の大波乱となりました。レースはショウナンマグマの大逃げによりハイペースで展開。3コーナー付近で後方集団が一気に進出する中、離れた2番手から追走していたアスクナイスショーも内ラチ沿いから早めのスパートを見せ、あっという間に後続を引き離しました。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (225文字)
-[0]  プレビュー: 競馬速報です。七夕賞・G3が12日に福島で開催され、2番人気のアスクナイスショーが重賞初勝利を飾りました。2着には6番人気のマイネルモーント、3着には15番人気...
-  HTTP 200
-[2]  [Gemini生出力 222文字]: '注目の競馬情報をお届けします。先週、兵庫に限定すると自己最長タイの6日連続勝利を挙げていた佐々木世麗は、8日に自身初となる準メーンの10R、メーンの11Rを連勝しました。最終12Rのダート820メートル、11頭立てではプロメトルで2着に食い込み、終盤の猛烈な追い込みで自己最長を更新する7日連続勝利を挙げました。9日の勝ち鞍はなく記録はストップしましたが、10日には節目の今年50勝目を達成しています。一方、塩津璃菜は今月未勝利となっています。'
-[2]  [redirectフィルター] 222文字 → 207文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (207文字)
-[2]  プレビュー: 先週、兵庫に限定すると自己最長タイの6日連続勝利を挙げていた佐々木世麗は、8日に自身初となる準メーンの10R、メーンの11Rを連勝しました。最終12Rのダート8...
-  HTTP 200
-[1]  [Gemini生出力 199文字]: '本日の競馬ニュースです。\n7月12日、福島競馬場で行われた第62回七夕賞・G3は16頭で争われました。ハンデ55キロで2番人気のアスクナイスショーが直線抜け出し、勝ちタイム1分57秒9で重賞初勝利を飾りました。中舘英二調教師は、騎手時代ツインターボで七夕賞を制覇しており、調教師として初の勝利です。福島出身の田辺裕信騎手は、地元でタイトルを獲得し、七夕賞は2014年メイショウナルト以来2勝目です。'
-[1]  [重複除去] 199文字 → 198文字
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 215文字]: '注目の競馬情報をお届けします。7月19日日曜日、小倉競馬場で行われる小倉記念、GIII芝2000mの登録馬が発表されました。登録馬は、ウエストナウ、エヒト、ガイアメンテ、カエルム、カネフラ、コパノサントス、サフィラ、ジョバンニ、ジーティーアダマン、ゼンダンハヤブサ、タガノアビー、テーオーソラネル、トータルクラリティ、ナヴォーナ、ナムラエイハブ、ノーランサンライズ、マイネルメモリー、レーゼドラマ、そして地方馬のケイズレーヴです。'
+[2]  [redirectフィルター] 215文字 → 200文字
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 283文字]: '本日の競馬ニュースです。第62回七夕賞・G3が7月12日、福島競馬場・芝2000メートル、稍重で行われました。サマー2000シリーズ第2戦として16頭で争われたこのレースは、ハンデ55キロで2番人気のアスクナイスショーが直線抜け出し、重賞初勝利を飾りました。勝ちタイムは1分57秒9です。アスクナイスショーを管理する中舘英二調教師は、騎手時代にツインターボで七夕賞を制覇しており、調教師としては初の七夕賞勝利となりました。また、福島出身の田辺裕信騎手は、6月28日のラジオNIKKEI賞以来の重賞勝利を挙げ、七夕賞は2014年メイショウナルト以来2勝目となりました。'
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 252文字]: '本日の競馬ニュースです。第62回七夕賞・G3が7月12日、福島競馬場・芝2000メートル、稍重で行われました。サマー2000シリーズ第2戦は16頭で争われ、ハンデ55キロで2番人気のアスクナイスショーが直線抜け出し、重賞初勝利を飾りました。勝ちタイムは1分57秒9でした。アスクナイスショーを管理する美浦・中舘英二厩舎は、この七夕賞で初勝利となりました。また、福島出身の田辺裕信騎手は、6月28日のラジオNIKKEI賞以来となる重賞勝利を挙げ、七夕賞では2014年メイショウナルト以来2勝目となりました。'
+[1]  [Gemini生出力 214文字]: '競馬速報です。7月19日(日)に函館競馬場で行われる函館2歳ステークス、GIII・芝1200mの登録馬が発表されました。登録馬には、シグレ、ダマスクなどが名を連ねています。その他、アイルドフルール、アルテクィーン、イモージェン、ウンスイ、クロリス、ショウナンカノア、セタキト、ダイシンドラゴン、ダイメイビッグボス、ノリヤンモーニン、フェリチタ、フレイコン、ロンドンガーズが登録しており、全馬が斤量55.0で出走を予定しています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (200文字)
+[2]  プレビュー: 7月19日日曜日、小倉競馬場で行われる小倉記念、GIII芝2000mの登録馬が発表されました。登録馬は、ウエストナウ、エヒト、ガイアメンテ、カエルム、カネフラ、...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (252文字)
-[1]  プレビュー: 本日の競馬ニュースです。第62回七夕賞・G3が7月12日、福島競馬場・芝2000メートル、稍重で行われました。サマー2000シリーズ第2戦は16頭で争われ、ハン...
+[1]  → output/script_1.txt 保存 (214文字)
+[1]  プレビュー: 競馬速報です。7月19日(日)に函館競馬場で行われる函館2歳ステークス、GIII・芝1200mの登録馬が発表されました。登録馬には、シグレ、ダマスクなどが名を連...
+  HTTP 200
+[0]  [Gemini生出力 238文字]: 'レース関連の最新情報です。元日向坂46の富田鈴花が福島競馬場に登場し、ネットが沸いています。12日に福島競馬場で行われた七夕賞のプレゼンターを務め、トークショーでも集まったファンを沸かせ、競馬ファンを虜にしました。富田はシックな黒いドレス姿でプレゼンターとして登場し、その大人びたシルエットにも称賛の声が止まりませんでした。競馬ファンを驚かせたのは馬券のセンスかもしれないと報じられています。JRA福島競馬場が12日に更新したXでも、夏の福島競馬に関する情報が発信されました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (238文字)
+[0]  プレビュー: レース関連の最新情報です。元日向坂46の富田鈴花が福島競馬場に登場し、ネットが沸いています。12日に福島競馬場で行われた七夕賞のプレゼンターを務め、トークショー...
 
 3 件の脚本を生成しました。
