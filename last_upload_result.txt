@@ -1,10 +1,10 @@
-date: 2026-07-12T06:01:35.298212Z
+date: 2026-07-12T07:39:57.443691Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wC6aLbloFXA title=惜しすぎる2着にTERU「人生で推しの馬ができるなんて…」　武豊騎手と初コンビの
-OK project=1 video_id=NF5FaWcbEPo title=【メイクデビュー小倉5Rレース後コメント】エルドボルグ団野大成騎手ら
-OK project=1 video_id=C42Aw4tMA6c title=【小倉6R・2歳新馬】3番人気のマルモリムソウが押し切って快勝　泉谷楓真騎手「体
+OK project=1 video_id=Bf33eZTWL2c title=【七夕賞】２番人気のアスクナイスショーが重賞初勝利　３着に１５番人気のオニャンコ
+OK project=1 video_id=j4pWAVl5jZE title=【七夕賞】騎手時代ツインターボで制覇の中舘調教師がアスクナイスショーで初V　福島
+OK project=1 video_id=fburle0cCN8 title=【阪神アーバン競馬プレーバック】今週の佐々木世麗&塩津璃菜　佐々木は絶好調も塩津
