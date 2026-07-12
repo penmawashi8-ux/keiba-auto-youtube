@@ -1,44 +1,115 @@
-  [警告] 503 サービス一時停止。リトライします。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[1]  [ファクトチェックNG] NG: 元記事に存在しない「函
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しないレース結果・着
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 「急に色っぽく」「かなり大人な装い」元日向坂46・富田鈴花、ドレス姿も七夕賞の本命馬披露もSNS興奮 ---
-[0] Gemini入力本文 338文字: '福島競馬場に登場した元日向坂46の富田鈴花にネットが沸いている。12日に福島競馬場で行われた七夕賞のプレゼンターを務め、トークショーでも集まったファンを沸かせ、競馬ファンを虜にした。\n\t\t\t\t\u3000富田はシックな黒いドレス姿でプレゼンターとして'
+--- 記事[0]: 【ヤマタケが武豊騎手を見た】レジェンドの矜持に触れた瞬間　JRA3500勝で盛り上がるファンの大歓声が「意外でしたね」 ---
+[0] Gemini入力本文 486文字: '武豊騎手＝栗東・フリー＝が7月12日、函館7R・3歳上1勝クラス(ダート1700メートル)のヒミノエトワール(牝4歳、栗東・宮地貴稔厩舎、父パイロ)で、国内外での通算5000勝を達成した。JRA4669勝、地方212勝、海外119勝での偉業'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【函館2歳S】シグレ、ダマスクなどが登録 ---
-[1] Gemini入力本文 363文字: '7月19日(日)に函館競馬場で行われる函館2歳ステークス(GIII・芝1200m)の登録馬は以下の通り。\nアイルドフルール\u300055.0\nアルテクィーン\u300055.0\nイモージェン\u300055.0\nウンスイ\u300055.0\nクロリス\u300055.0\nシグレ\u300055.0'
+--- 記事[1]: 矢作師、武豊の5000勝を祝福「あの人はすべてにおいて別格です」 ---
+[1] Gemini入力本文 440文字: '武豊(57)の通算5000勝達成を受けて、矢作芳人師(65)が祝福した。\n\u3000「俺は散々(記録を)成し遂げてきたけど、あの人はすべてにおいて別格です。あういう記録を調べてやってきたというのは値打ちがある。どんな1勝でも、1勝は1勝。(残り32'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【小倉記念】ジョバンニ、ガイアメンテなどが登録 ---
-[2] Gemini入力本文 263文字: '7月19日(日)に小倉競馬場で行われる小倉記念(GIII・芝2000m)の登録馬は以下の通り。\nウエストナウ\nエヒト\nガイアメンテ\nカエルム\nカネフラ\nコパノサントス\nサフィラ\nジョバンニ\nジーティーアダマン\nゼンダンハヤブサ\nタガノアビー'
+--- 記事[2]: 【金沢競馬】加賀友禅賞はルージュミラージュ　圧倒的な人気に応えて重賞初制覇 ---
+[2] Gemini入力本文 676文字: '第13回加賀友禅賞は7月12日、金沢競馬場で牝馬8頭(キャンドルベリーは出走取消)がダート1500メートルを争った。1番人気のルージュミラージュ(栗原大河騎手騎乗)が悠々と逃げ切りファイントパーズに4馬身差をつけて優勝。単勝1．1倍の圧倒的'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 215文字]: '注目の競馬情報をお届けします。7月19日日曜日、小倉競馬場で行われる小倉記念、GIII芝2000mの登録馬が発表されました。登録馬は、ウエストナウ、エヒト、ガイアメンテ、カエルム、カネフラ、コパノサントス、サフィラ、ジョバンニ、ジーティーアダマン、ゼンダンハヤブサ、タガノアビー、テーオーソラネル、トータルクラリティ、ナヴォーナ、ナムラエイハブ、ノーランサンライズ、マイネルメモリー、レーゼドラマ、そして地方馬のケイズレーヴです。'
-[2]  [redirectフィルター] 215文字 → 200文字
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 214文字]: '競馬速報です。7月19日(日)に函館競馬場で行われる函館2歳ステークス、GIII・芝1200mの登録馬が発表されました。登録馬には、シグレ、ダマスクなどが名を連ねています。その他、アイルドフルール、アルテクィーン、イモージェン、ウンスイ、クロリス、ショウナンカノア、セタキト、ダイシンドラゴン、ダイメイビッグボス、ノリヤンモーニン、フェリチタ、フレイコン、ロンドンガーズが登録しており、全馬が斤量55.0で出走を予定しています。'
+[2]  [Gemini生出力 274文字]: 'レース関連の最新情報です。\n第13回加賀友禅賞は7月12日、金沢競馬場で牝馬8頭が出走し、ダート1500メートルを争いました。キャンドルベリーは出走取消でした。1番人気のルージュミラージュが栗原大河騎手騎乗で悠々と逃げ切り、ファイントパーズに4馬身差をつけて優勝しました。単勝1.1倍の圧倒的支持に応え、重賞初制覇を飾っています。ルージュミラージュはJRA3勝クラスから今年春に金沢へ移籍し、2戦2勝としました。父はリアルスティール、母はレッドディオーサで、金沢の佐藤茂厩舎所属の牝4歳です。通算14戦5勝、総獲得賞金は3552万円となっています。'
+[2]  [重複除去] 274文字 → 273文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (200文字)
-[2]  プレビュー: 7月19日日曜日、小倉競馬場で行われる小倉記念、GIII芝2000mの登録馬が発表されました。登録馬は、ウエストナウ、エヒト、ガイアメンテ、カエルム、カネフラ、...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (214文字)
-[1]  プレビュー: 競馬速報です。7月19日(日)に函館競馬場で行われる函館2歳ステークス、GIII・芝1200mの登録馬が発表されました。登録馬には、シグレ、ダマスクなどが名を連...
+[2]  → output/script_2.txt 保存 (273文字)
+[2]  プレビュー: レース関連の最新情報です。第13回加賀友禅賞は7月12日、金沢競馬場で牝馬8頭が出走し、ダート1500メートルを争いました。キャンドルベリーは出走取消でした。1...
   HTTP 200
-[0]  [Gemini生出力 238文字]: 'レース関連の最新情報です。元日向坂46の富田鈴花が福島競馬場に登場し、ネットが沸いています。12日に福島競馬場で行われた七夕賞のプレゼンターを務め、トークショーでも集まったファンを沸かせ、競馬ファンを虜にしました。富田はシックな黒いドレス姿でプレゼンターとして登場し、その大人びたシルエットにも称賛の声が止まりませんでした。競馬ファンを驚かせたのは馬券のセンスかもしれないと報じられています。JRA福島競馬場が12日に更新したXでも、夏の福島競馬に関する情報が発信されました。'
+[0]  [Gemini生出力 285文字]: '重要な競馬ニュースをお伝えします。武豊騎手＝栗東・フリー＝が7月12日、函館7R・3歳上1勝クラス、ダート1700メートルのヒミノエトワールで、国内外での通算5000勝を達成しました。この偉業は、JRA4669勝、地方212勝、海外119勝という内訳で達成されたものです。中央、地方、海外でレジェンドを取材してきた歴代担当記者が、コラム「見た」でその歩みを振り返っています。第一人者の矜持を肌で感じた瞬間は今でも忘れられないとあり、13年1月13日の出来事にも触れられています。池添謙一騎手も武豊騎手の国内外5000勝を絶賛しており、小倉競馬場でも関係者が祝福しました。'
+  HTTP 200
+[1]  [Gemini生出力 362文字]: '注目の競馬情報をお届けします。武豊の通算5000勝達成を受けて、矢作芳人師が祝福しました。矢作師は「俺は散々記録を成し遂げてきたけど、あの人はすべてにおいて別格です」とコメントしました。また、「あういう記録を調べてやってきたというのは値打ちがある。どんな1勝でも、1勝は1勝」と語っています。残り32勝とJRA1000勝に迫る矢作師は、自身の記録について「フォーエバーヤングの海外の勝利は入らない。そういった意味でも海外や地方も含めたそういう記録は大事にしてほしい」と祝福しました。さらに、GLAYのTERUが名付け親であるテルヒコウに武豊の騎乗が決定し、夢のタッグ実現に矢作師は「TERUもユタカに乗って欲しいと話していた。来場するかもしれません」と話しています。今週日曜には函館９Ｒ北海ハンデキャップが予定されています。'
+[1]  [redirectフィルター] 362文字 → 347文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (238文字)
-[0]  プレビュー: レース関連の最新情報です。元日向坂46の富田鈴花が福島競馬場に登場し、ネットが沸いています。12日に福島競馬場で行われた七夕賞のプレゼンターを務め、トークショー...
+[0]  → output/script_0.txt 保存 (285文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。武豊騎手＝栗東・フリー＝が7月12日、函館7R・3歳上1勝クラス、ダート1700メートルのヒミノエトワールで、国内外での通算5...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 321文字]: '注目の競馬情報をお届けします。武豊の通算5000勝達成を受けて、矢作芳人師が祝福しました。矢作師は「俺は散々成し遂げてきたけど、あの人はすべてにおいて別格です。あういう記録を調べてやってきたというのは値打ちがある。どんな1勝でも、1勝は1勝。」とコメントしました。残り32勝と迫る矢作師自身のJRA1000勝について、フォーエバーヤングの海外の勝利は入らないとし、海外や地方も含めた記録は大事にしてほしいと祝福しています。また、GLAYのTERUが名付け親のテルヒコウに武豊の騎乗が決定しました。矢作師は「TERUもユタカに乗って欲しいと話していた。来場するかもしれません」と話しています。このレースは今週日曜函館9R北海ハンデキャップです。'
+[1]  [redirectフィルター] 321文字 → 306文字
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 334文字]: '注目の競馬情報をお届けします。\n武豊の通算5000勝達成を受け、矢作芳人師が祝福しました。矢作師は「俺は散々記録を成し遂げてきたけど、あの人はすべてにおいて別格です」と述べ、このような記録を調べてやってきたのは値打ちがあると評価しました。どんな1勝でも1勝は1勝であり、残り32勝と迫る自身のJRA1000勝ではフォーエバーヤングの海外の勝利は入らないことに触れ、海外や地方も含めた記録を大事にしてほしいと語りました。\n\nまた、ＧＬＡＹのＴＥＲＵが名付け親のテルヒコウに武豊が騎乗することが決定しました。矢作師は「ＴＥＲＵもユタカに乗って欲しいと話していた。来場するかもしれません」とコメントしています。この騎乗は今週日曜函館9R北海ハンデキャップで予定されています。'[1]  [ファクトチェックNG] NG: 元記事に存在しないレース結果・
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 
-3 件の脚本を生成しました。
+[1]  [redirectフィルター] 334文字 → 318文字
+[1]  [重複除去] 318文字 → 316文字
+[1] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
