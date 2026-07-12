@@ -1,10 +1,10 @@
-date: 2026-07-12T07:39:57.443691Z
+date: 2026-07-12T09:06:17.930813Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Bf33eZTWL2c title=【七夕賞】２番人気のアスクナイスショーが重賞初勝利　３着に１５番人気のオニャンコ
-OK project=1 video_id=j4pWAVl5jZE title=【七夕賞】騎手時代ツインターボで制覇の中舘調教師がアスクナイスショーで初V　福島
-OK project=1 video_id=fburle0cCN8 title=【阪神アーバン競馬プレーバック】今週の佐々木世麗&塩津璃菜　佐々木は絶好調も塩津
+OK project=1 video_id=uwocZ6hpJoE title=「急に色っぽく」「かなり大人な装い」元日向坂46・富田鈴花、ドレス姿も七夕賞の本
+OK project=1 video_id=z3fQt0ZTDpw title=【函館2歳S】シグレ、ダマスクなどが登録
+OK project=1 video_id=Y-4BE3tnjsw title=【小倉記念】ジョバンニ、ガイアメンテなどが登録
