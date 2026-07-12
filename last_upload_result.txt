@@ -1,10 +1,10 @@
-date: 2026-07-11T11:57:46.114657Z
+date: 2026-07-12T00:13:08.629352Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jDdojudEmAk title=【AI予想・七夕賞】勝負気配が伝わる意欲的な調整内容！ 人工知能は7歳馬の重賞初
-OK project=1 video_id=AL0iirT9J-k title=「武豊の5000勝目はイッペイ」「テルヒコウで飾れたら最高のメモリアル」通算50
-OK project=1 video_id=IXCs0FGYflg title=今週もエフフォーリア産駒に注目！ 重賞ウイナーの半弟イッペイが初陣
+OK project=1 video_id=lWQWocKDefE title=【七夕賞予想】荒れる一戦も激走タイプに共通点あり!? 過去データから探るGIII
+OK project=1 video_id=ZryuphF_G-o title=七夕賞はハンデ戦らしく波乱傾向 キングマンボ系に注目だ
+OK project=1 video_id=ZYVN69hv2NM title=「GLAY」のTERUが名付け親 テルヒコウが武豊騎手と初タッグだ
