@@ -14,39 +14,43 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Probe data sources
+      - name: Dump page structures
         run: |
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-          mkdir -p probe
-          probe_url() {
-            local name="$1" url="$2"
-            code=$(curl -sS -o "probe/${name}.html" -w "%{http_code}" \
-              -A "$UA" \
-              -H "Accept: text/html,application/xhtml+xml" \
-              -H "Accept-Language: ja,en-US;q=0.9" \
-              -L --max-time 30 "$url" 2>/dev/null || echo "ERR")
-            size=$(wc -c < "probe/${name}.html" 2>/dev/null || echo 0)
-            # 落札価格らしき文字列が含まれるか（億・万円・落札）
-            hits=$(grep -c -E "億|万円|落札" "probe/${name}.html" 2>/dev/null || echo 0)
-            echo "=== ${name}: HTTP ${code}, ${size} bytes, price-pattern hits: ${hits}"
-            echo "    ${url}"
-          }
-          probe_url jrha_result      "https://www.jrha.or.jp/selectsale/result"
-          probe_url jrha_sp_list     "https://www.jrha.or.jp/sp/selectsale/result_list"
-          probe_url netkeiba_matome  "https://dir.netkeiba.com/keibamatome/detail.html?no=5754"
-          probe_url jravan_select    "https://jra-van.jp/tb-sale/2026select/"
+          pip -q install requests beautifulsoup4
+          python3 - <<'PYEOF'
+          import requests
+          from bs4 import BeautifulSoup
 
-      - name: Show JRHA result page structure
-        run: |
-          for f in probe/jrha_result.html probe/jrha_sp_list.html; do
-            echo "===== $f: リンク・テーブル構造の抜粋 ====="
-            grep -o -E '<a[^>]*href="[^"]*"[^>]*>[^<]{0,40}' "$f" 2>/dev/null | grep -i -E "result|2026|セール" | head -30 || true
-            grep -c "<table" "$f" 2>/dev/null || true
-          done
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+                "Accept-Language": "ja,en-US;q=0.9"}
 
-      - name: Upload probe results
-        uses: actions/upload-artifact@v4
-        with:
-          name: select-sale-probe
-          path: probe/
-          retention-days: 1
+          def get(url):
+              r = requests.get(url, headers=UA, timeout=30)
+              r.encoding = r.apparent_encoding
+              print(f"\n########## {url} -> HTTP {r.status_code}, {len(r.text)} chars ##########")
+              return r.text
+
+          def dump_tables(html, max_rows=45):
+              soup = BeautifulSoup(html, "html.parser")
+              for ti, t in enumerate(soup.find_all("table")):
+                  rows = t.find_all("tr")
+                  print(f"--- table[{ti}] rows={len(rows)} ---")
+                  for r in rows[:max_rows]:
+                      cells = [c.get_text(" ", strip=True)[:25] for c in r.find_all(["td", "th"])]
+                      print(" | ".join(cells))
+
+          # JRHA SP版 結果一覧
+          html = get("https://www.jrha.or.jp/sp/selectsale/result_list")
+          dump_tables(html, max_rows=20)
+
+          # JRHA 上場馬個別ページ（110 = 最高額のはず）
+          html = get("https://www.jrha.or.jp/select/2026/110.html")
+          soup = BeautifulSoup(html, "html.parser")
+          lines = [l.strip() for l in soup.get_text("\n").splitlines() if l.strip()]
+          print("\n".join(lines[:80]))
+          dump_tables(html, max_rows=25)
+
+          # netkeiba まとめ
+          html = get("https://dir.netkeiba.com/keibamatome/detail.html?no=5754")
+          dump_tables(html, max_rows=30)
+          PYEOF
