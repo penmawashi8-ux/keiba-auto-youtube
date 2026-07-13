@@ -14,10 +14,11 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Dump page structures
+      - name: Dump result_detail structures
         run: |
           pip -q install requests beautifulsoup4
           python3 - <<'PYEOF'
+          import re
           import requests
           from bs4 import BeautifulSoup
 
@@ -30,27 +31,40 @@ jobs:
               print(f"\n########## {url} -> HTTP {r.status_code}, {len(r.text)} chars ##########")
               return r.text
 
-          def dump_tables(html, max_rows=45):
+          def dump(html, max_rows=15):
               soup = BeautifulSoup(html, "html.parser")
+              # 見出しをすべて表示（どの年・どのセッションのページか判定用）
+              for h in soup.find_all(["h1", "h2", "h3", "h4"]):
+                  t = h.get_text(" ", strip=True)
+                  if t:
+                      print(f"[{h.name}] {t[:60]}")
               for ti, t in enumerate(soup.find_all("table")):
                   rows = t.find_all("tr")
                   print(f"--- table[{ti}] rows={len(rows)} ---")
                   for r in rows[:max_rows]:
-                      cells = [c.get_text(" ", strip=True)[:25] for c in r.find_all(["td", "th"])]
+                      cells = [c.get_text(" ", strip=True)[:24] for c in r.find_all(["td", "th"])]
                       print(" | ".join(cells))
 
-          # JRHA SP版 結果一覧
-          html = get("https://www.jrha.or.jp/sp/selectsale/result_list")
-          dump_tables(html, max_rows=20)
+          # 昨日確認した result_detail 系リンクの実体を確認
+          for path in ["/sp/selectsale/result_detail/1/9/1",
+                       "/sp/selectsale/result_detail/0/9/1",
+                       "/sp/selectsale/result_detail/1/9/2"]:
+              try:
+                  dump(get("https://www.jrha.or.jp" + path))
+              except Exception as e:
+                  print(f"ERROR {path}: {e}")
 
-          # JRHA 上場馬個別ページ（110 = 最高額のはず）
-          html = get("https://www.jrha.or.jp/select/2026/110.html")
+          # デスクトップ版セール結果ページの全result系リンクと見出し
+          html = get("https://www.jrha.or.jp/selectsale/result")
           soup = BeautifulSoup(html, "html.parser")
-          lines = [l.strip() for l in soup.get_text("\n").splitlines() if l.strip()]
-          print("\n".join(lines[:80]))
-          dump_tables(html, max_rows=25)
-
-          # netkeiba まとめ
-          html = get("https://dir.netkeiba.com/keibamatome/detail.html?no=5754")
-          dump_tables(html, max_rows=30)
+          for h in soup.find_all(["h1", "h2", "h3", "h4"]):
+              t = h.get_text(" ", strip=True)
+              if t:
+                  print(f"[{h.name}] {t[:60]}")
+          seen = set()
+          for a in soup.find_all("a", href=True):
+              href = a["href"]
+              if ("result" in href or "select" in href) and href not in seen:
+                  seen.add(href)
+                  print(f"LINK {href}  TEXT={a.get_text(' ', strip=True)[:40]}")
           PYEOF
