@@ -1,10 +1,10 @@
-date: 2026-07-13T08:15:58.258430Z
+date: 2026-07-13T10:34:25.171076Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UqeWqkkn-VU title=【セレクトセール】キタサンブラック&イクイノックス高騰　父子で落札総額42億超え
-OK project=1 video_id=t_01a_zbAsE title=サイバーエージェント藤田晋会長が年度代表馬フォーエバーヤングのローテに言及
-OK project=1 video_id=-kjBP_oCodM title=【セレクトセール】キタサンブラック産駒2億1000万円「ロマンスシーの2025」
+OK project=1 video_id=CGjint2yv_I title=【セレクトセール】「ダノン」1日総額14億9000万円“爆買い”　この日最高額4
+OK project=1 video_id=0dnpZ3mKjzM title=注目のドウデュース産駒 今年のセレクトセール上場馬は
+OK project=1 video_id=xMBonG2a994 title=【AI予想・小倉記念】ハンデ戦で波乱傾向の強い一戦！ 大穴の一発にも警戒を強める
