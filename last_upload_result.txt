@@ -1,10 +1,10 @@
-date: 2026-07-12T12:04:10.053828Z
+date: 2026-07-13T00:09:03.419083Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=oOylMS6X4yw title=注目のイクイノックス産駒 今年のセレクトセール上場馬は
-OK project=1 video_id=L0biBEBRu_E title=【ばんえい競馬】2023年のばんえいダービー馬が重賞9勝目　タカラキングダムが旭
-OK project=1 video_id=YHvKL0T2aKE title=【坂本が武豊騎手を見た】50代での未踏の地サウジアラビアにワクワク　異国でも変わ
+OK project=1 video_id=Xb-_piKyVx0 title=今年の上場馬は2頭のみ セレクトセールで芦毛よりも少ない毛色とは
+OK project=1 video_id=FxU6JqFye4o title=【田中博調教師が語る武豊騎手　後編】2人で初めてプライベートで食事したドーヴィル
+OK project=1 video_id=zr1CNmomF3E title=【小倉5R・2歳新馬】大物感漂うエルドボルグがデビュー戦V　「キタサンブラック産
