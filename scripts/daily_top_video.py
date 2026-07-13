@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""その日投稿したニュースShortsのうち最も再生された動画を横向きに再編集して投稿する。
+"""その日投稿したニュースShortsのうち最も再生された動画を横向きに再生成して投稿する。
 
 処理の流れ:
 1. 当日(JST)の keiba_news ワークフロー実行の Artifact（news-videos-*）を収集し、
-   upload_results.json から video_id と動画ファイルの対応を得る
+   upload_results.json から video_id と素材（idx / news_item）の対応を得る
 2. YouTube Data API で各動画の再生数を取得し、最多再生の1本を選ぶ
-3. ffmpeg で縦動画(1080x1920)を横型(1920x1080)に再編集する
-   （ぼかし背景 + 中央に元動画 + 上部にタイトル帯。drawbox は使わず drawtext の box= で実現）
+3. Artifact に保存された脚本・音声・ASS字幕を使い、landscape_video.py の
+   パイプラインでネイティブな横型動画を再生成する
+   （縦動画の縮小合成ではないため、字幕は横画面に最適なサイズで表示される）
 4. 通常動画（#Shortsなし）としてアップロードし、posted_daily_top_ids.txt に記録する
 """
 
@@ -14,6 +15,7 @@ import datetime
 import io
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -23,8 +25,8 @@ import zipfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import landscape_video  # 横型動画のネイティブ生成パイプラインを再利用
 import upload_landscape_youtube as uploader  # 認証・アップロード・サムネイル処理を再利用
-from landscape_video import find_font, wrap_text, _esc
 
 from googleapiclient.discovery import build
 
@@ -32,12 +34,14 @@ JST = datetime.timezone(datetime.timedelta(hours=9))
 OUTPUT_DIR = "output"
 POSTED_FILE = "posted_daily_top_ids.txt"
 RESULT_FILE = "last_daily_top_result.txt"
-W, H = 1920, 1080
-FG_H = 930  # 中央に置く元動画の高さ（上部にタイトル帯ぶんの余白を残す）
 
 NEWS_WORKFLOW = "keiba_news.yml"
 ARTIFACT_PREFIX = "news-videos-"
 GH_API = "https://api.github.com"
+
+# 横型再生成に必要な素材ファイル（idx ごと）
+SOURCE_FILES = ["script_{idx}.txt", "audio_{idx}.mp3", "subtitles_{idx}.ass"]
+REQUIRED_FILES = ["script_{idx}.txt", "audio_{idx}.mp3"]  # ASS字幕は無くても生成可
 
 
 # ---------------------------------------------------------------------------
@@ -84,7 +88,7 @@ def _download_artifact_zip(url: str) -> bytes:
 
 
 def collect_today_candidates(work_dir: str) -> list[dict]:
-    """当日(JST)のニュース投稿の {video_id, title, video_path} リストを返す。"""
+    """当日(JST)のニュース投稿の {video_id, title, idx, news_item, extract_dir} リストを返す。"""
     repo = os.environ["GITHUB_REPOSITORY"]
     day_start = datetime.datetime.now(JST).replace(hour=0, minute=0, second=0, microsecond=0)
 
@@ -125,14 +129,21 @@ def collect_today_candidates(work_dir: str) -> list[dict]:
                 continue
             for entry in results:
                 video_id = entry.get("video_id", "")
-                video_file = entry.get("video_file", "")
-                video_path = extract_dir / video_file if video_file else None
-                if video_id and video_path and video_path.exists():
-                    candidates.append({
-                        "video_id": video_id,
-                        "title": entry.get("title", ""),
-                        "video_path": str(video_path),
-                    })
+                idx = entry.get("idx")
+                if not video_id or idx is None:
+                    continue
+                missing = [t.format(idx=idx) for t in REQUIRED_FILES
+                           if not (extract_dir / t.format(idx=idx)).exists()]
+                if missing:
+                    print(f"  [警告] {video_id} の素材不足: {missing}", file=sys.stderr)
+                    continue
+                candidates.append({
+                    "video_id": video_id,
+                    "title": entry.get("title", ""),
+                    "idx": idx,
+                    "news_item": entry.get("news_item") or {},
+                    "extract_dir": str(extract_dir),
+                })
 
     # 同一video_idの重複を除去
     seen: set[str] = set()
@@ -171,59 +182,36 @@ def append_posted_id(video_id: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# 横型への再編集
+# 横型動画のネイティブ再生成
 # ---------------------------------------------------------------------------
 
-def convert_to_landscape(src: str, title: str, out_path: str) -> None:
-    """縦動画をぼかし背景つきの横型(1920x1080)に再編集する。"""
-    font = find_font()
-    tmp_dir = tempfile.mkdtemp(prefix="daily_top_")
+def generate_landscape(top: dict) -> tuple[str, str]:
+    """素材から横型動画を再生成して (動画パス, サムネイルパス) を返す。"""
+    idx = top["idx"]
+    Path(OUTPUT_DIR).mkdir(exist_ok=True)
 
-    fc_parts = [
-        "[0:v]split=2[bg][fg]",
-        f"[bg]scale={W}:{H}:force_original_aspect_ratio=increase,"
-        f"crop={W}:{H},boxblur=20:2,eq=brightness=-0.12[bgb]",
-        f"[fg]scale=-2:{FG_H}[fgs]",
-        f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2+40[base]",
-    ]
+    for tpl in SOURCE_FILES:
+        name = tpl.format(idx=idx)
+        src = Path(top["extract_dir"]) / name
+        if src.exists():
+            shutil.copy(src, Path(OUTPUT_DIR) / name)
 
-    last = "[base]"
-    if font and title:
-        tf = f"{tmp_dir}/title.txt"
-        # 最大2行（24文字×2）に収めて動画本体への被りを最小限にする
-        short = title if len(title) <= 48 else title[:47] + "…"
-        Path(tf).write_text(wrap_text(short, 24), encoding="utf-8")
-        fc_parts.append(
-            f"{last}drawtext=textfile='{_esc(tf)}':fontfile='{_esc(font)}'"
-            f":fontsize=52:fontcolor=0xFFD700"
-            f":x=(w-text_w)/2:y=24"
-            f":box=1:boxcolor=0x000000@0.72:boxborderw=18"
-            f":borderw=2:bordercolor=0x000000[vout]"
-        )
-        last = "[vout]"
-    else:
-        fc_parts[-1] = fc_parts[-1].replace("[base]", "[vout]")
-        last = "[vout]"
+    # リポジトリにコミット済みの古い縦型サムネイルが残っていると
+    # landscape_video.generate_video が生成をスキップしてしまうため先に消す
+    thumb_path = Path(OUTPUT_DIR) / f"thumbnail_{idx}.jpg"
+    thumb_path.unlink(missing_ok=True)
 
-    cmd = [
-        "ffmpeg", "-y", "-i", src,
-        "-filter_complex", ";".join(fc_parts),
-        "-map", last, "-map", "0:a?",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "veryfast",
-        "-c:a", "aac", "-b:a", "192k",
-        out_path,
-    ]
-    print("  横型再編集中...")
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
-    if result.returncode != 0:
-        print(f"[エラー] ffmpeg失敗:\n{result.stderr[-800:]}", file=sys.stderr)
-        raise RuntimeError("横型変換に失敗しました")
-    size_mb = Path(out_path).stat().st_size / (1024 * 1024)
-    print(f"✅ {out_path} ({size_mb:.1f} MB)")
+    meta = dict(top["news_item"])
+    meta.setdefault("title", top["title"])
+
+    font = landscape_video.find_font()
+    bg_imgs = landscape_video.fetch_images(4, horse_names=meta.get("horses"))
+    video_path = landscape_video.generate_video(idx, meta, font, bg_imgs)
+    return video_path, str(thumb_path)
 
 
-def generate_thumbnail(video_path: str) -> str:
-    """横型動画の先頭フレームを抽出してサムネイルにする（リサイズ禁止）。"""
+def extract_frame_thumbnail(video_path: str) -> str:
+    """フォールバック: 横型動画の先頭フレームを抽出してサムネイルにする（リサイズ禁止）。"""
     Path(OUTPUT_DIR).mkdir(exist_ok=True)
     thumb_path = f"{OUTPUT_DIR}/thumbnail_daily_top.jpg"
     result = subprocess.run([
@@ -294,8 +282,7 @@ def main() -> None:
 
         title = build_title(top["title"])
         description = build_description(top["title"], top["video_id"])
-        landscape_path = f"{OUTPUT_DIR}/daily_top_landscape.mp4"
-        convert_to_landscape(top["video_path"], top["title"], landscape_path)
+        landscape_path, gen_thumb = generate_landscape(top)
 
         extra_tags = ["競馬ニュース", "JRA", "競馬速報", "ニュース"]
         video_id = None
@@ -318,7 +305,8 @@ def main() -> None:
                 video_id = result
 
         try:
-            uploader.upload_thumbnail(youtube, video_id, generate_thumbnail(landscape_path))
+            thumb = gen_thumb if Path(gen_thumb).exists() else extract_frame_thumbnail(landscape_path)
+            uploader.upload_thumbnail(youtube, video_id, thumb)
         except Exception as e:
             print(f"  [警告] サムネイル処理失敗: {e}", file=sys.stderr)
 

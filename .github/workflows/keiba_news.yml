@@ -273,15 +273,19 @@ jobs:
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
         run: python scripts/upload_youtube.py
 
-      # 1日の人気No.1動画の横型再投稿（daily_top_video.yml）が動画ファイルを参照する
-      - name: Upload videos as artifact for daily top repost
+      # 1日の人気No.1動画の横型再投稿（daily_top_video.yml）が素材を参照する。
+      # 横型動画は縮小合成ではなく landscape_video.py でネイティブ再生成するため、
+      # 動画本体ではなく脚本・音声・ASS字幕を保存する
+      - name: Upload video sources as artifact for daily top repost
         if: always() && steps.check_scripts.outputs.has_scripts == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: news-videos-${{ github.run_id }}
           path: |
-            output/*.mp4
             output/upload_results.json
+            output/script_*.txt
+            output/audio_*.mp3
+            output/subtitles_*.ass
           retention-days: 2
           if-no-files-found: ignore
 
