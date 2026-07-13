@@ -14,11 +14,10 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Dump result_detail structures
+      - name: Identify 2026 result source
         run: |
           pip -q install requests beautifulsoup4
           python3 - <<'PYEOF'
-          import re
           import requests
           from bs4 import BeautifulSoup
 
@@ -28,43 +27,45 @@ jobs:
           def get(url):
               r = requests.get(url, headers=UA, timeout=30)
               r.encoding = r.apparent_encoding
-              print(f"\n########## {url} -> HTTP {r.status_code}, {len(r.text)} chars ##########")
+              print(f"\n### {url} -> HTTP {r.status_code}, {len(r.text)} chars, "
+                    f"の2025:{r.text.count('の2025')} の2024:{r.text.count('の2024')} の2026:{r.text.count('の2026')}")
               return r.text
 
-          def dump(html, max_rows=15):
+          # JRHA: セールIDの当たりを探す（9=2025?, 10=2026?）
+          for sid in (9, 10, 11):
+              for sess in (0, 1):
+                  try:
+                      html = get(f"https://www.jrha.or.jp/sp/selectsale/result_detail/{sess}/{sid}/7")
+                      soup = BeautifulSoup(html, "html.parser")
+                      tables = soup.find_all("table")
+                      # 価格順の先頭数テーブルだけ表示
+                      for t in tables[2:5]:
+                          cells = [c.get_text(" ", strip=True)[:22] for c in t.find_all(["td", "th"])]
+                          print("  " + " | ".join(cells[:14]))
+                  except Exception as e:
+                      print(f"ERROR {sess}/{sid}: {e}")
+
+          # RBN 結果速報
+          try:
+              html = get("https://racing-book.net/other/news/12406")
               soup = BeautifulSoup(html, "html.parser")
-              # 見出しをすべて表示（どの年・どのセッションのページか判定用）
-              for h in soup.find_all(["h1", "h2", "h3", "h4"]):
-                  t = h.get_text(" ", strip=True)
-                  if t:
-                      print(f"[{h.name}] {t[:60]}")
-              for ti, t in enumerate(soup.find_all("table")):
-                  rows = t.find_all("tr")
-                  print(f"--- table[{ti}] rows={len(rows)} ---")
-                  for r in rows[:max_rows]:
-                      cells = [c.get_text(" ", strip=True)[:24] for c in r.find_all(["td", "th"])]
+              for ti, t in enumerate(soup.find_all("table")[:3]):
+                  print(f"--- RBN table[{ti}] ---")
+                  for r in t.find_all("tr")[:12]:
+                      cells = [c.get_text(" ", strip=True)[:22] for c in r.find_all(["td", "th"])]
                       print(" | ".join(cells))
+          except Exception as e:
+              print(f"ERROR RBN: {e}")
 
-          # 昨日確認した result_detail 系リンクの実体を確認
-          for path in ["/sp/selectsale/result_detail/1/9/1",
-                       "/sp/selectsale/result_detail/0/9/1",
-                       "/sp/selectsale/result_detail/1/9/2"]:
-              try:
-                  dump(get("https://www.jrha.or.jp" + path))
-              except Exception as e:
-                  print(f"ERROR {path}: {e}")
-
-          # デスクトップ版セール結果ページの全result系リンクと見出し
-          html = get("https://www.jrha.or.jp/selectsale/result")
-          soup = BeautifulSoup(html, "html.parser")
-          for h in soup.find_all(["h1", "h2", "h3", "h4"]):
-              t = h.get_text(" ", strip=True)
-              if t:
-                  print(f"[{h.name}] {t[:60]}")
-          seen = set()
-          for a in soup.find_all("a", href=True):
-              href = a["href"]
-              if ("result" in href or "select" in href) and href not in seen:
-                  seen.add(href)
-                  print(f"LINK {href}  TEXT={a.get_text(' ', strip=True)[:40]}")
+          # netkeiba まとめ: テーブル以外の構造を確認
+          try:
+              html = get("https://dir.netkeiba.com/keibamatome/detail.html?no=5754")
+              soup = BeautifulSoup(html, "html.parser")
+              hits = soup.find_all(string=lambda s: s and "の2025" in s)
+              print(f"netkeiba の2025 テキストノード: {len(hits)}")
+              for h in hits[:8]:
+                  parent = h.parent
+                  print(f"  <{parent.name} class={parent.get('class')}> {h.strip()[:60]}")
+          except Exception as e:
+              print(f"ERROR netkeiba: {e}")
           PYEOF
