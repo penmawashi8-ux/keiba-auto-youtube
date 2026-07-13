@@ -2,6 +2,12 @@ name: Test Popular News Feasibility
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - claude/popular-news-filtering-0031uk
+    paths:
+      - scripts/test_popular_news.py
+      - .github/workflows/test_popular_news.yml
 
 jobs:
   test-popular-news:
