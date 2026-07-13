@@ -1,0 +1,27 @@
+name: Test Popular News Feasibility
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-popular-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install requests
+
+      - name: Run popular news feasibility test
+        run: python scripts/test_popular_news.py
