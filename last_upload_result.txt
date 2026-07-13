@@ -1,10 +1,10 @@
-date: 2026-07-13T04:37:20.527066Z
+date: 2026-07-13T06:22:03.927938Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OMH-jqfMx6c title=【セレクトセール】ソールオリエンス全弟に3億3000万円!キタサンブラック産駒「
-OK project=1 video_id=JI4phjHa9eM title=【セレクトセール】今年も“爆買い”?藤田晋会長　キラーアビリティ半弟を2億100
-OK project=1 video_id=ad22Y9vmZUs title=ミシェル騎手「日本のレースの雰囲気が恋しい」　盗難被害にG1初制覇…起伏に富んだ
+OK project=1 video_id=0v82_wJwM6c title=【セレクトセール】藤田晋会長がキタサンブラック産駒に3億円!「ランドオーバーシー
+OK project=1 video_id=cfpRwE-sNXQ title=【セレクトセール２０２６】サイバーエージェント藤田晋会長が今年も総額１０億円突破
+OK project=1 video_id=1wLpVZEmc-k title=【セレクトセール2026】フォーエバーヤングの藤田晋オーナーが3億円で落札　キタ
