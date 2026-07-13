@@ -1,10 +1,10 @@
-date: 2026-07-13T06:22:03.927938Z
+date: 2026-07-13T08:15:58.258430Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0v82_wJwM6c title=【セレクトセール】藤田晋会長がキタサンブラック産駒に3億円!「ランドオーバーシー
-OK project=1 video_id=cfpRwE-sNXQ title=【セレクトセール２０２６】サイバーエージェント藤田晋会長が今年も総額１０億円突破
-OK project=1 video_id=1wLpVZEmc-k title=【セレクトセール2026】フォーエバーヤングの藤田晋オーナーが3億円で落札　キタ
+OK project=1 video_id=UqeWqkkn-VU title=【セレクトセール】キタサンブラック&イクイノックス高騰　父子で落札総額42億超え
+OK project=1 video_id=t_01a_zbAsE title=サイバーエージェント藤田晋会長が年度代表馬フォーエバーヤングのローテに言及
+OK project=1 video_id=-kjBP_oCodM title=【セレクトセール】キタサンブラック産駒2億1000万円「ロマンスシーの2025」
