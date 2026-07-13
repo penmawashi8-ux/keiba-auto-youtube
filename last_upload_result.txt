@@ -1,10 +1,10 @@
-date: 2026-07-13T12:14:58.420309Z
+date: 2026-07-13T13:27:58.818701Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fBIEfiTVB-A title=【小倉記念】レース史上最高齢Vなるか 9歳エヒトが3年ぶりの戴冠狙う
-OK project=1 video_id=hXF0uXQUGVc title=「頭がバグって…」「消費税もすごい」売り上げ176億円超にネット騒然!　レコード
-OK project=1 video_id=C9RlyVuphVk title=【函館2歳S】2年連続でマル地馬の戴冠なるか ホッカイドウ競馬出身のウンスイが参
+OK project=1 video_id=0R_GZBqDyd8 title=【注目馬動向】青葉賞馬ゴーイントゥスカイは新潟記念の予定を変更しセントライト記念
+OK project=1 video_id=UaU9wHBz9No title=【セレクトセール2026】1歳セッションは売上176億6000万円で歴代最高額 
+OK project=1 video_id=yZOka41pr54 title=【函館2歳S】シーザリオ一族初の牝馬の重賞制覇なるか イモージェンに要注目だ
