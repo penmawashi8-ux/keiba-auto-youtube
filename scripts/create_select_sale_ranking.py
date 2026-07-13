@@ -186,7 +186,7 @@ def extract_summary_stats(text: str) -> dict:
     m = re.search(r"落札総額[^\d]{0,10}(\d+)億(\d+)?万?", text.replace(",", ""))
     if m:
         stats["total"] = f"{m.group(1)}億{m.group(2) or ''}万円" if m.group(2) else f"{m.group(1)}億円"
-    m = re.search(r"平均[^\d]{0,15}(\d+)万", text.replace(",", ""))
+    m = re.search(r"平均落札価格[^\d]{0,10}(\d+)万", text.replace(",", ""))
     if m:
         stats["average"] = f"{int(m.group(1))}万円"
     m = re.search(r"落札率[^\d]{0,10}([\d.]+)[%％]", text)
