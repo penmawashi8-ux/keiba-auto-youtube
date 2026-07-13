@@ -1,0 +1,129 @@
+name: セレクトセール 高額落札ランキング動画（横型）生成・投稿
+
+on:
+  workflow_dispatch:
+    inputs:
+      session:
+        description: "セッション（1歳 / 当歳）"
+        required: false
+        default: "1歳"
+        type: string
+      rbn_url:
+        description: "racing-book.net 結果速報URL（フォールバック用）"
+        required: false
+        default: "https://racing-book.net/other/news/12406"
+        type: string
+      dry_run:
+        description: "テストモード（YouTubeにアップせずArtifactのみ）"
+        required: false
+        default: false
+        type: boolean
+  push:
+    branches:
+      - claude/daily-top-video-autopost-g0r6el
+    paths:
+      - ".github/workflows/select_sale_video.yml"
+      - "scripts/create_select_sale_ranking.py"
+
+jobs:
+  post-select-sale-ranking:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt beautifulsoup4
+
+      - name: ランキングコンテンツを生成（news.json + script_0.txt）
+        env:
+          SALE_SESSION: ${{ inputs.session || '1歳' }}
+          RBN_URL: ${{ inputs.rbn_url || 'https://racing-book.net/other/news/12406' }}
+        run: python scripts/create_select_sale_ranking.py
+
+      - name: Generate audio（音声 + ASS字幕）
+        env:
+          TTS_VOICE: "ja-JP-KeitaNeural"
+          TTS_RATE: "+10%"
+        run: python scripts/generate_audio.py
+
+      - name: BGMをダウンロード (CC0 public domain only)
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py
+
+      - name: フォントをダウンロード
+        continue-on-error: true
+        run: |
+          mkdir -p assets/fonts
+          python scripts/download_fonts.py
+
+      - name: 古いコミット済みサムネイルを削除（生成スキップ防止）
+        run: rm -f output/thumbnail_0.jpg
+
+      - name: Generate landscape video（横型 1280×720）
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python scripts/landscape_video.py
+
+      - name: Upload video as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: select-sale-ranking-video
+          path: |
+            output/landscape_video_0.mp4
+            output/thumbnail_0.jpg
+            output/script_0.txt
+            news.json
+          retention-days: 7
+
+      - name: Upload to YouTube
+        if: ${{ !(github.event_name == 'push' && contains(github.event.head_commit.message, '[dry-run]')) && inputs.dry_run != true }}
+        env:
+          GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: python scripts/upload_landscape_youtube.py
+
+      - name: Commit and push posted ids
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_landscape_ids.txt last_upload_result.txt 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: セレクトセールランキング動画投稿完了 [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
