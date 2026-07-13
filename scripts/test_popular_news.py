@@ -53,57 +53,33 @@ def extract_ranking_items(html: str) -> list[tuple[str, str]]:
 
 def test_netkeiba_ranking() -> None:
     print("=" * 70)
-    print("テスト1: netkeiba アクセスランキング（AJAXエンドポイント特定）")
+    print("テスト1: netkeiba ランキング一覧ページ (news_backnumber)")
     print("=" * 70)
-    # 第1回テストの結果: トップページに id="NewAccessRankList" の空divがあり
-    # JavaScript で中身が読み込まれる。読み込み元エンドポイントを特定する。
-    url = "https://news.netkeiba.com/"
-    print(f"\n--- URL: {url}")
-    raw = http_get(url)
-    if not raw:
-        print("  [結果] 取得失敗")
-        return
-    html = raw.decode("utf-8", errors="replace")
-
-    # 1. AccessRankList / RankList に言及する箇所の前後を表示（AJAX URL 特定用）
-    for kw in ["NewAccessRankList", "AccessRank", "news_rank", "ranking"]:
-        for m in re.finditer(re.escape(kw), html):
-            s, e = max(0, m.start() - 300), min(len(html), m.end() + 300)
-            ctx = re.sub(r"\s+", " ", html[s:e])
-            print(f"\n  [context:{kw}] ...{ctx}...")
-            break  # 各キーワード最初の1箇所だけ
-
-    # 2. 外部スクリプト URL 一覧
-    print("\n  [scriptタグ一覧]")
-    for m in re.finditer(r'<script[^>]+src=["\']([^"\']+)["\']', html):
-        print(f"    {m.group(1)[:120]}")
-
-    # 3. inline JS 内の URL らしき文字列（api/ajax/rank を含むもの）
-    print("\n  [JS内のURL候補 (api/ajax/rank/list)]")
-    for m in re.finditer(r'["\']([^"\']*(?:api|ajax|rank|List)[^"\']*)["\']', html, re.IGNORECASE):
-        v = m.group(1)
-        if ("/" in v or "pid" in v) and len(v) < 150 and not v.endswith((".css", ".png", ".jpg", ".gif")):
-            print(f"    {v[:140]}")
-
-    # 4. よくある AJAX エンドポイント候補を直接叩いてみる
-    print("\n  [AJAXエンドポイント候補の直接テスト]")
-    candidates = [
-        "https://news.netkeiba.com/?pid=news_access_ranking",
-        "https://news.netkeiba.com/?pid=news_ranking_list",
-        "https://news.netkeiba.com/?pid=api_access_rank",
-        "https://news.netkeiba.com/api/?pid=news_rank",
-        "https://news.sp.netkeiba.com/?pid=news_ranking",
-    ]
-    for c in candidates:
-        raw2 = http_get(c)
-        if raw2 and len(raw2) > 100:
-            body = raw2.decode("utf-8", errors="replace")
-            items = extract_ranking_items(body)
-            print(f"    {c} → {len(raw2)}bytes / news_viewリンク {len(items)}件")
-            for no, title in items[:10]:
-                print(f"      no={no}  {title[:60]}")
-        else:
-            print(f"    {c} → 空/失敗")
+    # 第2回テストの結果: トップページの「もっと見る」リンクが
+    # ?pid=news_backnumber&rank_type=2 (アクセスランキング) /
+    # ?pid=news_backnumber&rank_type=3 (注目度ランキング) を指していた。
+    for label, url in [
+        ("アクセスランキング", "https://news.netkeiba.com/?pid=news_backnumber&rank_type=2"),
+        ("注目度ランキング", "https://news.netkeiba.com/?pid=news_backnumber&rank_type=3"),
+    ]:
+        print(f"\n--- {label}: {url}")
+        raw = http_get(url)
+        if not raw or len(raw) < 100:
+            print("  [結果] 取得失敗/空")
+            continue
+        html = raw.decode("utf-8", errors="replace")
+        items = extract_ranking_items(html)
+        print(f"  [結果] news_view リンク {len(items)} 件抽出（上位20件を表示）")
+        for i, (no, title) in enumerate(items[:20], 1):
+            print(f"    {i:2d}. no={no}  {title[:60]}")
+        if not items:
+            # 構造確認用: news_view 出現箇所の前後を表示
+            m = re.search(r"news_view", html)
+            if m:
+                s = max(0, m.start() - 300)
+                print("  [構造サンプル] " + re.sub(r"\s+", " ", html[s:m.end() + 300]))
+            else:
+                print(f"  [情報] news_view が存在しない。HTML先頭: {html[:300]!r}")
 
 
 # ---------------------------------------------------------------------------
@@ -242,22 +218,32 @@ def test_cross_source_clustering() -> None:
         norm = _normalize_title(e.get("title", ""))
         if len(norm) < 4:
             continue
+        # ソース判定: Google News 経由はドメインが news.google.com になるため、
+        # タイトル末尾の媒体名（" - スポニチ" 等）をソースとして使う
         domain = urlparse(e.get("link", "")).netloc
+        src_m = re.search(r"[-–|｜]\s*([^-–|｜]{2,25})\s*$", unicodedata.normalize("NFKC", e.get("title", "")))
+        source = src_m.group(1).strip() if src_m else domain
+        # 同一媒体の表記ゆれ（"スポニチ競馬Web" / "スポニチ Sponichi Annex"）を先頭4文字で吸収
+        source_key = re.sub(r"\s", "", source).lower()[:4]
         for c in clusters:
             if _similarity(norm, c["norm"]) >= THRESHOLD:
                 c["titles"].append(e["title"])
                 c["domains"].add(domain)
+                c["sources"].add(source_key)
                 break
         else:
-            clusters.append({"norm": norm, "titles": [e["title"]], "domains": {domain}})
+            clusters.append({
+                "norm": norm, "titles": [e["title"]],
+                "domains": {domain}, "sources": {source_key},
+            })
 
-    # ドメイン数（=何社が報じたか）を主キーに順位付け
-    clusters.sort(key=lambda c: (len(c["domains"]), len(c["titles"])), reverse=True)
+    # 媒体数（=何社が報じたか）を主キーに順位付け
+    clusters.sort(key=lambda c: (len(c["sources"]), len(c["titles"])), reverse=True)
     print(f"  クラスタ数: {len(clusters)}")
-    print("\n  --- 掲載ドメイン数トップ20の話題 ---")
+    print("\n  --- 掲載媒体数トップ20の話題 ---")
     for c in clusters[:20]:
-        print(f"  [{len(c['domains'])}ドメイン / {len(c['titles'])}記事] {c['titles'][0][:60]}")
-        print(f"      domains: {sorted(c['domains'])}")
+        print(f"  [{len(c['sources'])}媒体 / {len(c['titles'])}記事] {c['titles'][0][:60]}")
+        print(f"      sources: {sorted(c['sources'])}")
         for t in c["titles"][1:3]:
             print(f"      ├ {t[:60]}")
 
