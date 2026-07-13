@@ -2,8 +2,7 @@ name: Keiba News YouTube Auto Post
 
 on:
   schedule:
-    # 8:00〜20:00 JST を3時間おきに5回実行（JST = UTC+9）
-    - cron: "0 23 * * *"  #  8:00 JST
+    # 11:00〜20:00 JST を3時間おきに4回実行（JST = UTC+9）
     - cron: "0 2 * * *"   # 11:00 JST
     - cron: "0 5 * * *"   # 14:00 JST
     - cron: "0 8 * * *"   # 17:00 JST
