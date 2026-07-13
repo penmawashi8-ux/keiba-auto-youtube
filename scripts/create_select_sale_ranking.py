@@ -80,13 +80,27 @@ def clean_buyer(name: str) -> str:
 # ソース1: JRHA公式 result_detail
 # ---------------------------------------------------------------------------
 
-def fetch_jrha(target_suffix: str) -> list[dict]:
+def fetch_jrha(target_suffix: str, sale_year: int) -> list[dict]:
     """JRHA公式の価格順結果ページから落札リストを取得する。
 
     URL形式: /sp/selectsale/result_detail/{session}/{sale_id}/7 （7=価格順）
     session・sale_id は年により変わるため、対象世代の馬名サフィックス
     （例「の2025」）が多数含まれるページを探索して特定する。
+
+    注意: 前年セールの当歳と当年セールの1歳は同じサフィックスになるため、
+    結果トップページの「セール結果(YYYY)」見出しで掲載年を必ず確認する。
     """
+    try:
+        top_html = _get(f"{JRHA_BASE}/selectsale/result")
+        m = re.search(r"セール結果[（(](\d{4})[）)]", top_html)
+        published_year = int(m.group(1)) if m else None
+    except Exception as e:
+        print(f"  [警告] JRHA結果ページ取得失敗: {e}", file=sys.stderr)
+        return []
+    if published_year != sale_year:
+        print(f"  JRHA公式の掲載は{published_year}年分（{sale_year}年分は未掲載）。スキップします。")
+        return []
+
     for sale_id in range(9, 13):
         for session in (0, 1):
             url = f"{JRHA_BASE}/sp/selectsale/result_detail/{session}/{sale_id}/7"
@@ -258,7 +272,7 @@ def main() -> None:
 
     print(f"=== セレクトセール{year} {session}セール ランキング生成 (対象: 〜{target_suffix}) ===")
 
-    lots = fetch_jrha(target_suffix)
+    lots = fetch_jrha(target_suffix, year)
     source = "JRHA公式"
     stats: dict = {}
     if not lots:
@@ -274,6 +288,15 @@ def main() -> None:
             stats = extract_summary_stats(soup_text)
             lots = fetch_rbn(rbn_url, target_suffix)
             source = "racing-book.net"
+
+    # 同一馬の重複を除去（JRHAはレスポンシブ用にテーブルが2重に存在する）
+    seen: set[str] = set()
+    unique_lots = []
+    for lot in lots:
+        if lot["name"] not in seen:
+            seen.add(lot["name"])
+            unique_lots.append(lot)
+    lots = unique_lots
 
     if len(lots) < TOP_N:
         print(f"[エラー] 落札データが{len(lots)}頭しか取得できませんでした（{TOP_N}頭必要）。", file=sys.stderr)
