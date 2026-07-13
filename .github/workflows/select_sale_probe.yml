@@ -1,0 +1,47 @@
+name: Select Sale Source Probe (debug)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Probe data sources
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+          mkdir -p probe
+          probe_url() {
+            local name="$1" url="$2"
+            code=$(curl -sS -o "probe/${name}.html" -w "%{http_code}" \
+              -A "$UA" \
+              -H "Accept: text/html,application/xhtml+xml" \
+              -H "Accept-Language: ja,en-US;q=0.9" \
+              -L --max-time 30 "$url" 2>/dev/null || echo "ERR")
+            size=$(wc -c < "probe/${name}.html" 2>/dev/null || echo 0)
+            # 落札価格らしき文字列が含まれるか（億・万円・落札）
+            hits=$(grep -c -E "億|万円|落札" "probe/${name}.html" 2>/dev/null || echo 0)
+            echo "=== ${name}: HTTP ${code}, ${size} bytes, price-pattern hits: ${hits}"
+            echo "    ${url}"
+          }
+          probe_url jrha_result      "https://www.jrha.or.jp/selectsale/result"
+          probe_url jrha_sp_list     "https://www.jrha.or.jp/sp/selectsale/result_list"
+          probe_url netkeiba_matome  "https://dir.netkeiba.com/keibamatome/detail.html?no=5754"
+          probe_url jravan_select    "https://jra-van.jp/tb-sale/2026select/"
+
+      - name: Show JRHA result page structure
+        run: |
+          for f in probe/jrha_result.html probe/jrha_sp_list.html; do
+            echo "===== $f: リンク・テーブル構造の抜粋 ====="
+            grep -o -E '<a[^>]*href="[^"]*"[^>]*>[^<]{0,40}' "$f" 2>/dev/null | grep -i -E "result|2026|セール" | head -30 || true
+            grep -c "<table" "$f" 2>/dev/null || true
+          done
+
+      - name: Upload probe results
+        uses: actions/upload-artifact@v4
+        with:
+          name: select-sale-probe
+          path: probe/
+          retention-days: 1
