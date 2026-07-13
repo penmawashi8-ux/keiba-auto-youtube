@@ -51,6 +51,58 @@ def extract_ranking_items(html: str) -> list[tuple[str, str]]:
     return items
 
 
+def test_netkeiba_api_get_news_rank() -> None:
+    print("=" * 70)
+    print("テスト1b: _contents_action_api_url の特定と api_get_news_rank 呼び出し")
+    print("=" * 70)
+    # 第4回テストの結果: showNewsRanking は
+    #   GET {_contents_action_api_url}?pid=api_get_news_rank&rank_type=N&... (jsonp)
+    # を呼ぶ。_contents_action_api_url の定義を探す。
+    api_url = ""
+    for src_url in [
+        "https://news.netkeiba.com/",
+        "https://cdnv2.netkeiba.com/img.news/common/js/contents.action.js?2017101702",
+        "https://snews.netkeiba.com/common/js/officialnews.action.js?2015081401",
+    ]:
+        raw = http_get(src_url)
+        if not raw:
+            continue
+        text = raw.decode("utf-8", errors="replace")
+        m = re.search(r'_contents_action_api_url\s*=\s*["\']([^"\']+)["\']', text)
+        if m:
+            api_url = m.group(1)
+            print(f"  [発見] _contents_action_api_url = {api_url!r} (in {src_url[:60]})")
+            break
+        else:
+            print(f"  {src_url[:70]} : 定義なし")
+    if not api_url:
+        print("  [結果] _contents_action_api_url が見つからず")
+        return
+
+    # api_get_news_rank を呼ぶ（jsonp と json の両方を試す）
+    for rank_type, label in [(2, "アクセスランキング"), (3, "注目度ランキング")]:
+        for output in ["jsonp", "json", ""]:
+            url = (
+                f"{api_url}?pid=api_get_news_rank&rank_type={rank_type}"
+                f"&category_id=3&subcategory_id=&limit=10&page=1&input=UTF-8"
+            )
+            if output:
+                url += f"&output={output}&callback=cb"
+            raw = http_get(url)
+            if not raw or len(raw) < 50:
+                print(f"  [{label}/{output or 'なし'}] 空/失敗")
+                continue
+            body = raw.decode("utf-8", errors="replace")
+            items = extract_ranking_items(body.replace("\\/", "/").replace('\\"', '"'))
+            print(f"  [{label}/{output or 'なし'}] {len(raw)}bytes / news_view {len(items)}件")
+            if items:
+                for i, (no, title) in enumerate(items[:10], 1):
+                    print(f"    {i:2d}. no={no}  {title[:55]}")
+                break
+            else:
+                print(f"    レスポンス先頭: {body[:300]!r}")
+
+
 def test_netkeiba_ranking() -> None:
     print("=" * 70)
     print("テスト1: netkeiba showNewsRanking() のAJAX URL特定")
@@ -287,9 +339,9 @@ def test_cross_source_clustering() -> None:
 
 
 def main() -> None:
-    # Yahoo（JSレンダリングで取得不可と判明）とクラスタリング（検証済み）は
-    # 今回スキップし、netkeiba AJAX URL特定に絞る
-    test_netkeiba_ranking()
+    # Yahoo（JSレンダリングで取得不可と判明）とクラスタリング（検証済み）はスキップ。
+    # api_get_news_rank の実呼び出しに絞る
+    test_netkeiba_api_get_news_rank()
     print("\n=== テスト完了 ===")
 
 
