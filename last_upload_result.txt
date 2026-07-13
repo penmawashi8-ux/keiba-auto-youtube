@@ -1,10 +1,10 @@
-date: 2026-07-13T00:09:03.419083Z
+date: 2026-07-13T04:37:20.527066Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Xb-_piKyVx0 title=今年の上場馬は2頭のみ セレクトセールで芦毛よりも少ない毛色とは
-OK project=1 video_id=FxU6JqFye4o title=【田中博調教師が語る武豊騎手　後編】2人で初めてプライベートで食事したドーヴィル
-OK project=1 video_id=zr1CNmomF3E title=【小倉5R・2歳新馬】大物感漂うエルドボルグがデビュー戦V　「キタサンブラック産
+OK project=1 video_id=OMH-jqfMx6c title=【セレクトセール】ソールオリエンス全弟に3億3000万円!キタサンブラック産駒「
+OK project=1 video_id=JI4phjHa9eM title=【セレクトセール】今年も“爆買い”?藤田晋会長　キラーアビリティ半弟を2億100
+OK project=1 video_id=ad22Y9vmZUs title=ミシェル騎手「日本のレースの雰囲気が恋しい」　盗難被害にG1初制覇…起伏に富んだ
