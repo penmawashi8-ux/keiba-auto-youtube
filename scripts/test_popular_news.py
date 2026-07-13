@@ -53,33 +53,71 @@ def extract_ranking_items(html: str) -> list[tuple[str, str]]:
 
 def test_netkeiba_ranking() -> None:
     print("=" * 70)
-    print("テスト1: netkeiba ランキング一覧ページ (news_backnumber)")
+    print("テスト1: netkeiba showNewsRanking() のAJAX URL特定")
     print("=" * 70)
-    # 第2回テストの結果: トップページの「もっと見る」リンクが
-    # ?pid=news_backnumber&rank_type=2 (アクセスランキング) /
-    # ?pid=news_backnumber&rank_type=3 (注目度ランキング) を指していた。
-    for label, url in [
-        ("アクセスランキング", "https://news.netkeiba.com/?pid=news_backnumber&rank_type=2"),
-        ("注目度ランキング", "https://news.netkeiba.com/?pid=news_backnumber&rank_type=3"),
-    ]:
-        print(f"\n--- {label}: {url}")
-        raw = http_get(url)
-        if not raw or len(raw) < 100:
-            print("  [結果] 取得失敗/空")
+    # 第3回テストの結果: news_backnumber ページもガワのみ（JSで一覧を読み込む）。
+    # showNewsRanking() の定義を外部JSから取得してAJAXエンドポイントを特定する。
+    js_urls = [
+        "https://snews.netkeiba.com/common/js/officialnews.action.js?2015081401",
+        "https://cdnv2.netkeiba.com/img.newsapi/common/js/newsapi.action.js?2015081401",
+        "https://cdnv2.netkeiba.com/img.news/common/js/contents.action.js?2017101702",
+        "https://cdnv2.netkeiba.com/img.news/common/js/ajaxtabs.js?2015081401",
+    ]
+    func_body = ""
+    for js_url in js_urls:
+        raw = http_get(js_url)
+        if not raw:
             continue
-        html = raw.decode("utf-8", errors="replace")
-        items = extract_ranking_items(html)
-        print(f"  [結果] news_view リンク {len(items)} 件抽出（上位20件を表示）")
-        for i, (no, title) in enumerate(items[:20], 1):
-            print(f"    {i:2d}. no={no}  {title[:60]}")
-        if not items:
-            # 構造確認用: news_view 出現箇所の前後を表示
-            m = re.search(r"news_view", html)
-            if m:
-                s = max(0, m.start() - 300)
-                print("  [構造サンプル] " + re.sub(r"\s+", " ", html[s:m.end() + 300]))
+        js = raw.decode("utf-8", errors="replace")
+        hits = [f for f in ["showNewsRanking", "NewsRanking"] if f in js]
+        print(f"  {js_url.split('/')[-1].split('?')[0]}: {len(raw)}bytes / 言及: {hits}")
+        m = re.search(r"function\s+showNewsRanking\s*\([^)]*\)\s*\{", js)
+        if m:
+            # 関数本体をブレース対応で抽出（最大3000文字）
+            start = m.start()
+            depth, i = 0, js.index("{", m.start())
+            for i in range(js.index("{", m.start()), min(len(js), start + 3000)):
+                if js[i] == "{":
+                    depth += 1
+                elif js[i] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        break
+            func_body = js[start:i + 1]
+            print(f"\n  [showNewsRanking 定義発見] {js_url.split('/')[-1]}")
+            print("  " + "-" * 60)
+            print(func_body[:2500])
+            print("  " + "-" * 60)
+            break
+    if not func_body:
+        print("  [結果] showNewsRanking の定義が見つからず")
+        return
+
+    # 関数本体から URL / pid 候補を抽出して実際に叩いてみる
+    print("\n  [関数内のURL/pid候補と直接テスト]")
+    candidates: list[str] = []
+    for m in re.finditer(r'["\']([^"\']*(?:pid|http)[^"\']*)["\']', func_body):
+        v = m.group(1)
+        if v not in candidates:
+            candidates.append(v)
+            print(f"    候補文字列: {v[:120]}")
+    for base in candidates:
+        if not (base.startswith("http") or "pid" in base):
+            continue
+        url = base if base.startswith("http") else f"https://news.netkeiba.com/{base.lstrip('/')}"
+        for extra in ["", "&rank_type=2", "&rank_type=2&limit=10", "?rank_type=2"]:
+            test_url = url + extra
+            raw2 = http_get(test_url)
+            if raw2 and len(raw2) > 200:
+                body = raw2.decode("utf-8", errors="replace")
+                items = extract_ranking_items(body)
+                print(f"    {test_url[:100]} → {len(raw2)}bytes / news_view {len(items)}件")
+                for i, (no, title) in enumerate(items[:10], 1):
+                    print(f"      {i:2d}. no={no}  {title[:55]}")
+                if items:
+                    return
             else:
-                print(f"  [情報] news_view が存在しない。HTML先頭: {html[:300]!r}")
+                print(f"    {test_url[:100]} → 空/失敗")
 
 
 # ---------------------------------------------------------------------------
@@ -249,9 +287,9 @@ def test_cross_source_clustering() -> None:
 
 
 def main() -> None:
+    # Yahoo（JSレンダリングで取得不可と判明）とクラスタリング（検証済み）は
+    # 今回スキップし、netkeiba AJAX URL特定に絞る
     test_netkeiba_ranking()
-    test_yahoo_ranking()
-    test_cross_source_clustering()
     print("\n=== テスト完了 ===")
 
 
