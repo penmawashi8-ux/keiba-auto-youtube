@@ -2,6 +2,11 @@ name: Select Sale Source Probe (debug)
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - claude/daily-top-video-autopost-g0r6el
+    paths:
+      - ".github/workflows/select_sale_probe.yml"
 
 jobs:
   probe:
