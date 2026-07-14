@@ -324,12 +324,31 @@ def build_news_item(
     }
 
 
+NETKEIBA_RSS = "https://rss.netkeiba.com/?pid=rss_netkeiba&site=netkeiba"
+
+
+def _load_netkeiba_rss_summaries() -> dict[str, str]:
+    """netkeiba RSS の記事ID→本文抜粋マップ。記事ページより長いリード文が取れる。"""
+    summaries: dict[str, str] = {}
+    raw = http_get(NETKEIBA_RSS)
+    if not raw:
+        return summaries
+    for e in parse_feed(raw):
+        text = re.sub(r"<[^>]+>", " ", e.get("summary", ""))
+        text = re.sub(r"\s+", " ", _html_lib.unescape(text)).strip()
+        if text:
+            summaries[e["id"]] = text
+    print(f"[Ranking] netkeiba RSSサマリー {len(summaries)}件を突き合わせ用に取得")
+    return summaries
+
+
 def fetch_popular_via_ranking(posted_ids: set) -> list[dict]:
     api_url = discover_api_url()
     ranking = fetch_ranking(api_url, rank_type=2)
     if not ranking:
         return []
 
+    rss_summaries = _load_netkeiba_rss_summaries()
     news_items: list[dict] = []
     for it in ranking:
         if len(news_items) >= MAX_NEWS:
@@ -343,7 +362,10 @@ def fetch_popular_via_ranking(posted_ids: set) -> list[dict]:
             continue
         if not is_keiba_related({"title": it["title"], "summary": ""}):
             continue
-        item = build_news_item(url, url, it["title"], it["views"])
+        item = build_news_item(
+            url, url, it["title"], it["views"],
+            rss_summary=rss_summaries.get(url, ""),
+        )
         if item:
             news_items.append(item)
     return news_items
