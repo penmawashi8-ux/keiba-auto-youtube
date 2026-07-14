@@ -249,7 +249,15 @@ def build_news_item(entry_id: str, url: str, title: str, views: int) -> dict | N
     image_url = ""
     pub_str = ""
     if raw_html:
-        html = raw_html.decode("utf-8", errors="replace")
+        # エンコーディングを meta charset から検出（EUC-JP等に対応）
+        enc = "utf-8"
+        m = re.search(rb'<meta[^>]+charset=["\']?\s*([a-zA-Z0-9_-]+)', raw_html[:2000], re.IGNORECASE)
+        if m:
+            enc = m.group(1).decode("ascii", errors="replace").strip()
+        try:
+            html = raw_html.decode(enc, errors="replace")
+        except (LookupError, UnicodeDecodeError):
+            html = raw_html.decode("utf-8", errors="replace")
         published = _extract_published(html)
         if published:
             age = datetime.now(timezone.utc) - published.astimezone(timezone.utc)
