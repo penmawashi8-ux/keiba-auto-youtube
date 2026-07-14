@@ -1,10 +1,10 @@
-date: 2026-07-14T04:11:09.687321Z
+date: 2026-07-14T05:39:20.168397Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=k9v46K7EUiw title=【セレクトセール2026】「目指せ1億円だった」岡田牧雄代表も驚き!　イクイノッ
-OK project=1 video_id=BLi05Hj7F3k title=【セレクトセール２０２６】イクイノックス×デアリングタクトの超良血馬は３億３００
-OK project=1 video_id=nen1SgFxpkI title=【セレクトセール】藤田晋会長“爆買い”2日で20億超え!イクイノックス牝馬に2億
+OK project=1 video_id=chhkDGDPOXc title=【セレクトセール２０２６】当歳初の４億円超えは３冠牝馬リバティアイランドの半弟　
+OK project=1 video_id=GOhAUBO9cFM title=【セレクトセール2026】やっぱり高い!　3冠牝馬の“お嬢さん”リバティアイラン
+OK project=1 video_id=IUHCt8Bbdkg title=【セレクトセール】牝馬3冠リバティアイランド半弟に4億1000万円!父はキタサン
