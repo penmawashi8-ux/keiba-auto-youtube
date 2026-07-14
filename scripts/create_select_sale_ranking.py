@@ -304,6 +304,16 @@ def main() -> None:
             lots = fetch_rbn(rbn_url, target_suffix)
             source = "racing-book.net"
 
+    # 最終フォールバック: 手動データファイル（外部ソース全滅時・再実行用）
+    if not lots:
+        manual_path = Path(f"data/select_sale_{year}_{session}.json")
+        if manual_path.exists():
+            print(f"  外部ソース全滅。手動データ {manual_path} を使用します。")
+            manual = json.loads(manual_path.read_text(encoding="utf-8"))
+            lots = manual.get("lots", [])
+            stats = manual.get("stats", {})
+            source = f"手動データ ({manual_path})"
+
     # 同一馬の重複を除去（JRHAはレスポンシブ用にテーブルが2重に存在する）
     seen: set[str] = set()
     unique_lots = []
