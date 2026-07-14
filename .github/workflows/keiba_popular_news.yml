@@ -1,0 +1,250 @@
+name: Keiba Popular News YouTube Auto Post
+
+# 既存の keiba_news.yml とは別系統で、netkeibaアクセスランキング上位（閲覧数の多い）
+# 記事を1本投稿する。投稿済み管理は posted_ids.txt を共有して重複投稿を防ぐ。
+on:
+  schedule:
+    # 既存ニュース（10/12/16/18/20時 JST）と重ならない時間帯に2回実行
+    - cron: "0 23 * * *"  # 08:00 JST（前日のアクセスランキング）
+    - cron: "0 12 * * *"  # 21:00 JST（当日のアクセスランキング）
+  workflow_dispatch:
+
+jobs:
+  post-popular-keiba-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            fonts-noto-cjk \
+            libfontconfig1 \
+            espeak-ng
+          echo "ffmpeg version: $(ffmpeg -version 2>&1 | head -1)"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch popular horse racing news
+        run: python scripts/fetch_popular_news.py 2>&1 | tee /tmp/fetch_news.log; exit ${PIPESTATUS[0]}
+
+      - name: Post fetch_popular_news debug log to Issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = "/tmp/fetch_news.log"
+          try:
+              with open(log_path) as f:
+                  lines = f.readlines()
+          except Exception:
+              lines = ["(ログなし)"]
+          keep = [l for l in lines if any(k in l for k in ["[Ranking]","[Cluster]","[DEBUG]","[警告]","取得:","除外","投稿済み","対象ニュース","保存しました"])]
+          log = "".join(keep[:120])
+          if not log.strip():
+              log = "".join(lines[:60])
+          title = "[DEBUG] fetch_popular_news ログ " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Debug Issue作成: {data.get('html_url')}")
+          PYEOF
+
+      - name: Check if news exists
+        id: check_news
+        run: |
+          if python -c 'import json,sys; d=json.load(open("news.json")); sys.exit(0 if d else 1)' 2>/dev/null; then
+            echo "has_news=true" >> "$GITHUB_OUTPUT"
+            echo "人気ニュースあり"
+          else
+            echo "has_news=false" >> "$GITHUB_OUTPUT"
+            echo "人気ニュースなし。後続ステップをスキップします。"
+          fi
+
+      - name: Generate narration script
+        if: steps.check_news.outputs.has_news == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: |
+          python scripts/generate_script.py 2>&1 | tee /tmp/gemini.log
+          STATUS=${PIPESTATUS[0]}
+          if [ $STATUS -ne 0 ]; then
+            echo "::error::Gemini失敗: $(tail -5 /tmp/gemini.log | tr '\n' ' ')"
+            exit $STATUS
+          fi
+
+      - name: AI画像を生成
+        id: ai_images
+        if: steps.check_news.outputs.has_news == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
+          HF_TOKEN_3: ${{ secrets.HF_TOKEN_3 }}
+        run: |
+          python -u scripts/generate_images.py 2>&1 | tee "$GITHUB_WORKSPACE/ai_images_log.txt"
+          exit ${PIPESTATUS[0]}
+
+      - name: AI画像ログをIssueに投稿（失敗時のみ）
+        if: failure() && steps.ai_images.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, datetime
+          log_path = os.environ.get("GITHUB_WORKSPACE", "") + "/ai_images_log.txt"
+          try:
+              with open(log_path) as f:
+                  log = "".join(f.readlines()[:80])
+          except Exception:
+              log = "(ログなし)"
+          title = "[DEBUG] AI画像生成ログ(人気ニュース) " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+          body = "```\n" + log + "\n```"
+          payload = json.dumps({"title": title, "body": body}).encode()
+          repo = os.environ["GH_REPO"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/issues",
+              data=payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as resp:
+              data = json.loads(resp.read())
+              print(f"Issue作成: {data.get('html_url')}")
+          PYEOF
+
+      - name: Check if scripts exist
+        id: check_scripts
+        if: steps.check_news.outputs.has_news == 'true'
+        run: |
+          if ls output/script_*.txt 2>/dev/null | grep -q .; then
+            echo "has_scripts=true" >> "$GITHUB_OUTPUT"
+            echo "脚本ファイルあり"
+          else
+            echo "has_scripts=false" >> "$GITHUB_OUTPUT"
+            echo "脚本ファイルなし（全記事スキップ）。後続ステップをスキップします。"
+          fi
+
+      - name: Generate audio
+        id: generate_audio
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        env:
+          TTS_RATE: "+20%"
+        run: python scripts/generate_audio.py 2>&1 | tee /tmp/generate_audio.log; exit ${PIPESTATUS[0]}
+
+      - name: BGMをダウンロード (CC0 public domain only)
+        id: download_bgm
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        continue-on-error: true
+        run: |
+          mkdir -p assets/bgm
+          python scripts/download_bgm.py 2>&1 | tee /tmp/download_bgm.log
+
+      - name: フォントをダウンロード (太ゴシック・デザイン系)
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        continue-on-error: true
+        run: |
+          mkdir -p assets/fonts
+          python scripts/download_fonts.py
+
+      - name: Generate video
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        run: python scripts/generate_video.py
+
+      - name: Upload to YouTube
+        if: steps.check_scripts.outputs.has_scripts == 'true'
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: python scripts/upload_youtube.py
+
+      - name: Upload video sources as artifact
+        if: always() && steps.check_scripts.outputs.has_scripts == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: popular-news-videos-${{ github.run_id }}
+          path: |
+            output/upload_results.json
+            output/script_*.txt
+            output/audio_*.mp3
+            output/subtitles_*.ass
+          retention-days: 2
+          if-no-files-found: ignore
+
+      - name: Commit and push posted_ids.txt
+        if: always() && steps.check_news.outputs.has_news == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_ids.txt last_upload_result.txt output/thumbnail_*.jpg 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: update posted_ids.txt (popular news) [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: Save logs to repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p debug
+          cp /tmp/fetch_news.log debug/last_fetch_popular_news.log 2>/dev/null || echo "(ログなし)" > debug/last_fetch_popular_news.log
+          cp /tmp/gemini.log debug/last_generate_script_popular.log 2>/dev/null || echo "(ログなし)" > debug/last_generate_script_popular.log
+          for f in debug/last_fetch_popular_news.log debug/last_generate_script_popular.log; do
+            sed -i 's/key=AIzaSy[A-Za-z0-9_-]*/key=***/g' "$f" 2>/dev/null || true
+          done
+          git add debug/last_fetch_popular_news.log debug/last_generate_script_popular.log
+          if git diff --staged --quiet; then
+            echo "ログ変更なし。"
+          else
+            git commit -m "chore: save fetch_popular_news log [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
