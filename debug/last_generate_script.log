@@ -1,104 +1,100 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【セレクトセール2026】「目指せ1億円だった」岡田牧雄代表も驚き!　イクイノックス×デアリングタクト牡馬が3・3億円 ---
-[0] Gemini入力本文 348文字: '日本最大の競走馬のセリであるセレクトセール2026(主催・一般社団法人日本競走馬協会)が7月14日、北海道苫小牧市のノーザンホースパークで2日目を迎えた。2日目は今年生まれた当歳馬が上場された。\n\t\t\t\t\u3000注目馬を集めていた上場番号372番'
+--- 記事[0]: 【セレクトセール２０２６】当歳初の４億円超えは３冠牝馬リバティアイランドの半弟　４億１０００万円で落札　購買者はスティン ---
+[0] Gemini入力本文 331文字: '「セレクトセール２０２６」（１４日、ノーザンホースパーク）\n\u3000当歳馬のセリが行われ、上場番号４０１番の「ヤンキーローズ２６」（牡、父キタサンブラック）が４億１０００万円（税抜き）で落札された。当歳初の４億円超えとなった。購買者はスティンガー'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【セレクトセール２０２６】イクイノックス×デアリングタクトの超良血馬は３億３０００万円　岡田牧雄代表「目指せ１億だった。 ---
-[1] Gemini入力本文 331文字: '「セレクトセール２０２６」（１４日、ノーザンホースパーク）\n\u3000当歳馬のセリが行われ、上場番号３７２番の「デアリングタクト２６」（牡、父イクイノックス）が３億３０００万円（税抜き）で落札された。落札者はＡＮＩＭＡレーシング。\n\u3000無敗での牝馬３'
+--- 記事[1]: 【セレクトセール2026】やっぱり高い!　3冠牝馬の“お嬢さん”リバティアイランドの半弟が4億1000万円 ---
+[1] Gemini入力本文 346文字: '日本最大の競走馬のセリであるセレクトセール2026(主催・一般社団法人日本競走馬協会)が7月14日、北海道苫小牧市のノーザンホースパークで2日目を迎えた。この日は今年生まれた当歳馬が上場されている。\u3000\n\t\t\t\t\u3000上場番号401番の「ヤンキー'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【セレクトセール】藤田晋会長“爆買い”2日で20億超え!イクイノックス牝馬に2億5000万円 ---
-[2] Gemini入力本文 349文字: '日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われた。(金額は税抜き)\n\u3000サイバーエージェント・藤田晋会長がイクイノックスの牝馬「アーモニーズエンジェルの2026」を2'
+--- 記事[2]: 【セレクトセール】牝馬3冠リバティアイランド半弟に4億1000万円!父はキタサンブラック ---
+[2] Gemini入力本文 343文字: '日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われた。(金額は税抜き)\n\u3000この日もっとも注目を集めたのは、牝馬3冠リバティアイランド(父ドゥラメンテ)を半姉に持つ「ヤン'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 220文字]: '最新情報をお届けします。日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われました。サイバーエージェント・藤田晋会長はイクイノックスの牝馬「アーモニーズエンジェルの2026」を2億5000万円で落札しています。この日の購入は5頭目となり、合計金額は10億7000万円となりました。前日の1歳部門では6頭に10億200万円を投じており、2日合計で20億超えとなっています。'
-[2]  [redirectフィルター] 220文字 → 208文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (208文字)
-[2]  プレビュー: 日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われました。サイバーエージェント・藤田晋会...
+[2]  [Gemini生出力 211文字]: 'レース関連の最新情報です。日本最大級の競走馬セール「セレクトセール2026」が14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門を開催しました。この日最も注目を集めたのは、牝馬3冠リバティアイランドを半姉に持つ「ヤンキーローズの2026」です。父はキタサンブラック。リザーブ価格1億円からスタートすると、次々と声が上がり、価格は一気に上昇しました。最終的に4億1000万円で競り落とされ、この金額は税抜きです。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (211文字)
+[2]  プレビュー: レース関連の最新情報です。日本最大級の競走馬セール「セレクトセール2026」が14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門を開催しました。この...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[1]  [Gemini生出力 199文字]: '今週の競馬注目情報をお伝えします。\n１４日にノーザンホースパークで行われたセレクトセール２０２６の当歳馬セリで、上場番号３７２番の「デアリングタクト２６」が３億３０００万円（税抜き）でＡＮＩＭＡレーシングに落札されました。無敗での牝馬３冠を達成した母と、Ｇ１を６勝した年度代表馬の父イクイノックスという夢のカップリングです。岡田牧雄代表は「目指せ１億だった。本当に驚きました」とコメントしています。'
-[1]  [重複除去] 199文字 → 198文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (198文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。１４日にノーザンホースパークで行われたセレクトセール２０２６の当歳馬セリで、上場番号３７２番の「デアリングタクト２６」が３億３...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-[0] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***l-ME model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 223文字]: '本日の競馬ニュースです。日本最大の競走馬のセリであるセレクトセール2026が、7月14日に北海道苫小牧市のノーザンホースパークで2日目を迎えました。この日は今年生まれた当歳馬が上場されています。特に注目を集めた上場番号372番の「デアリングタクトの2026」は、リザーブ価格6000万円からスタートし、瞬く間に1億円を超えました。激しい声の掛け合いが続いた結果、3億3000万円で落札され、岡田牧雄代表も「目指せ1億円だった」と驚きを示しました。'
+[0]  [Gemini生出力 236文字]: 'レース関連の最新情報です。セレクトセール２０２６が１４日にノーザンホースパークで開催され、当歳馬のセリが行われました。上場番号４０１番の「ヤンキーローズ２６」が４億１０００万円（税抜き）で落札され、当歳馬としては初の４億円超えとなりました。この「ヤンキーローズ２６」は、父がキタサンブラックで、半姉には３冠牝馬リバティアイランドがいる超良血馬です。リザーブ価格１億円からスタートしました。購買者は、スティンガーグラスやハーパーなどの馬主として知られるエムズレーシングです。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (223文字)
-[0]  プレビュー: 本日の競馬ニュースです。日本最大の競走馬のセリであるセレクトセール2026が、7月14日に北海道苫小牧市のノーザンホースパークで2日目を迎えました。この日は今年...
+[0]  → output/script_0.txt 保存 (236文字)
+[0]  プレビュー: レース関連の最新情報です。セレクトセール２０２６が１４日にノーザンホースパークで開催され、当歳馬のセリが行われました。上場番号４０１番の「ヤンキーローズ２６」が...
+  HTTP 200
+[1]  [Gemini生出力 229文字]: 'レース関連の最新情報です。日本最大の競走馬のセリであるセレクトセール2026が、7月14日に北海道苫小牧市のノーザンホースパークで2日目を迎えました。この日は今年生まれた当歳馬が上場されています。上場番号401番の「ヤンキーローズの2026」は、3冠牝馬リバティアイランドの半弟にあたります。父がキタサンブラックのこの牡馬は、リザーブ価格1億円でスタートし、2億円を過ぎても声が止まらず価格が上昇。この日現時点で最高額となる4億1000万円で落札されました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (229文字)
+[1]  プレビュー: レース関連の最新情報です。日本最大の競走馬のセリであるセレクトセール2026が、7月14日に北海道苫小牧市のノーザンホースパークで2日目を迎えました。この日は今...
 
 3 件の脚本を生成しました。
