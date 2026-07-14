@@ -105,51 +105,6 @@ jobs:
             exit $STATUS
           fi
 
-      - name: AI画像を生成
-        id: ai_images
-        if: steps.check_news.outputs.has_news == 'true'
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
-          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
-          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
-          HF_TOKEN_3: ${{ secrets.HF_TOKEN_3 }}
-        run: |
-          python -u scripts/generate_images.py 2>&1 | tee "$GITHUB_WORKSPACE/ai_images_log.txt"
-          exit ${PIPESTATUS[0]}
-
-      - name: AI画像ログをIssueに投稿（失敗時のみ）
-        if: failure() && steps.ai_images.conclusion == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          python3 - <<'PYEOF'
-          import os, json, urllib.request, datetime
-          log_path = os.environ.get("GITHUB_WORKSPACE", "") + "/ai_images_log.txt"
-          try:
-              with open(log_path) as f:
-                  log = "".join(f.readlines()[:80])
-          except Exception:
-              log = "(ログなし)"
-          title = "[DEBUG] AI画像生成ログ(人気ニュース) " + datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
-          body = "```\n" + log + "\n```"
-          payload = json.dumps({"title": title, "body": body}).encode()
-          repo = os.environ["GH_REPO"]
-          token = os.environ["GH_TOKEN"]
-          req = urllib.request.Request(
-              f"https://api.github.com/repos/{repo}/issues",
-              data=payload,
-              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-              method="POST",
-          )
-          with urllib.request.urlopen(req) as resp:
-              data = json.loads(resp.read())
-              print(f"Issue作成: {data.get('html_url')}")
-          PYEOF
-
       - name: Check if scripts exist
         id: check_scripts
         if: steps.check_news.outputs.has_news == 'true'
@@ -177,18 +132,8 @@ jobs:
           mkdir -p assets/bgm
           python scripts/download_bgm.py 2>&1 | tee /tmp/download_bgm.log
 
-      - name: フォントをダウンロード (太ゴシック・デザイン系)
-        if: steps.check_scripts.outputs.has_scripts == 'true'
-        continue-on-error: true
-        run: |
-          mkdir -p assets/fonts
-          python scripts/download_fonts.py
-
-      - name: Generate video
-        if: steps.check_scripts.outputs.has_scripts == 'true'
-        run: python scripts/generate_video.py
-
-      - name: Upload to YouTube
+      # 人気ニュースは横型（1280×720）の通常動画として生成・投稿する
+      - name: Generate and upload landscape video
         if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
@@ -200,7 +145,7 @@ jobs:
           GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
           GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
           GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
-        run: python scripts/upload_youtube.py
+        run: python scripts/popular_landscape_post.py
 
       - name: Upload video sources as artifact
         if: always() && steps.check_scripts.outputs.has_scripts == 'true'
@@ -208,7 +153,7 @@ jobs:
         with:
           name: popular-news-videos-${{ github.run_id }}
           path: |
-            output/upload_results.json
+            last_upload_result.txt
             output/script_*.txt
             output/audio_*.mp3
             output/subtitles_*.ass
