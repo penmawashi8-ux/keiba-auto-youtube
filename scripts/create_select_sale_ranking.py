@@ -312,6 +312,10 @@ def main() -> None:
             manual = json.loads(manual_path.read_text(encoding="utf-8"))
             lots = manual.get("lots", [])
             stats = manual.get("stats", {})
+            # 手動データに開催日があれば実行日ではなくそちらを使う
+            if manual.get("date_str") and not os.environ.get("SALE_DATE"):
+                date_str = manual["date_str"]
+                print(f"  開催日を手動データから取得: {date_str}")
             source = f"手動データ ({manual_path})"
 
     # 同一馬の重複を除去（JRHAはレスポンシブ用にテーブルが2重に存在する）
