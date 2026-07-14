@@ -1,0 +1,83 @@
+name: Select Sale Source Probe (debug)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/daily-top-video-autopost-g0r6el
+    paths:
+      - ".github/workflows/select_sale_probe.yml"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Probe 当歳セール data sources
+        run: |
+          pip -q install requests beautifulsoup4
+          python3 - <<'PYEOF'
+          import re
+          import requests
+          from bs4 import BeautifulSoup
+
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+                "Accept-Language": "ja,en-US;q=0.9"}
+
+          def get(url, timeout=25):
+              r = requests.get(url, headers=UA, timeout=timeout)
+              r.encoding = r.apparent_encoding
+              print(f"\n#### {url} -> HTTP {r.status_code}, {len(r.text)} chars")
+              return r.text
+
+          # 1) JRHA: 今年分が掲載されたか
+          try:
+              top = get("https://www.jrha.or.jp/selectsale/result")
+              m = re.search(r"セール結果[（(](\d{4})[）)]", top)
+              print(f"JRHA掲載年: {m.group(1) if m else '不明'}")
+          except Exception as e:
+              print(f"JRHA top ERROR: {e}")
+
+          # 2) JRHA: 価格順ページから「の2026」（当歳）を探す
+          for s in (0, 1):
+              for sid in (9, 10):
+                  url = f"https://www.jrha.or.jp/sp/selectsale/result_detail/{s}/{sid}/7"
+                  try:
+                      html = get(url)
+                  except Exception as e:
+                      print(f"  ERROR: {e}")
+                      continue
+                  soup = BeautifulSoup(html, "html.parser")
+                  hit = 0
+                  for t in soup.find_all("table"):
+                      rows = t.find_all("tr")
+                      texts = [" | ".join(c.get_text(' ', strip=True)[:20] for c in r.find_all(["td","th"])) for r in rows[:14]]
+                      joined = "\n".join(texts)
+                      if "の2026" in joined:
+                          hit += 1
+                          print(f"  ---- の2026 テーブル (rows={len(rows)}) ----")
+                          print(joined)
+                          break
+                  if not hit:
+                      print("  の2026 テーブルなし")
+
+          # 3) RBN: 復旧確認 + 当歳記事の探索
+          try:
+              idx = get("https://racing-book.net/other/news", timeout=20)
+              for m in re.finditer(r'href="(/other/news/\d+)"[^>]*>([^<]{0,60})', idx):
+                  if "セレクト" in m.group(2):
+                      print(f"RBN記事: {m.group(1)}  {m.group(2)}")
+          except Exception as e:
+              print(f"RBN index ERROR: {e}")
+
+          # 4) netkeiba まとめ2日目: 構造確認（table以外の可能性）
+          try:
+              html = get("https://dir.netkeiba.com/keibamatome/detail.html?no=5755")
+              text = BeautifulSoup(html, "html.parser").get_text("\n", strip=True)
+              lines = [l for l in text.splitlines() if "の2026" in l or "万円" in l]
+              print(f"netkeiba の2026/万円 行数: {len(lines)}")
+              print("\n".join(lines[:40]))
+          except Exception as e:
+              print(f"netkeiba ERROR: {e}")
+          PYEOF

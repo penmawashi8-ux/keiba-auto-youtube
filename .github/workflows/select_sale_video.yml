@@ -60,7 +60,8 @@ jobs:
 
       - name: ランキングコンテンツを生成（news.json + script_0.txt）
         env:
-          SALE_SESSION: ${{ inputs.session || '1歳' }}
+          # push実行時はコミットメッセージの [session:当歳] マーカーで切替可能
+          SALE_SESSION: ${{ inputs.session || (contains(github.event.head_commit.message, '[session:当歳]') && '当歳') || '1歳' }}
           RBN_URL: ${{ inputs.rbn_url || 'https://racing-book.net/other/news/12406' }}
         run: python scripts/create_select_sale_ranking.py
 
