@@ -24,6 +24,7 @@ on:
     paths:
       - ".github/workflows/select_sale_video.yml"
       - "scripts/create_select_sale_ranking.py"
+      - "scripts/select_sale_ranking_video.py"
 
 jobs:
   post-select-sale-ranking:
