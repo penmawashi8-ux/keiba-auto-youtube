@@ -1,42 +1,104 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【注目馬動向】青葉賞馬ゴーイントゥスカイは新潟記念の予定を変更しセントライト記念へ　鞍上は引き続き武豊騎手の予定 ---
-[0] Gemini入力本文 295文字: '今年の青葉賞馬を制したゴーイントゥスカイ(牡3歳、美浦・上原佑紀厩舎、父コントレイル)は、次走に当初予定していた新潟記念から変更しセントライト記念・G2(9月13日、中山競馬場・芝2200メートル)へ向かう。13日、上原佑調教師が発表した。'
+--- 記事[0]: 【セレクトセール2026】「目指せ1億円だった」岡田牧雄代表も驚き!　イクイノックス×デアリングタクト牡馬が3・3億円 ---
+[0] Gemini入力本文 348文字: '日本最大の競走馬のセリであるセレクトセール2026(主催・一般社団法人日本競走馬協会)が7月14日、北海道苫小牧市のノーザンホースパークで2日目を迎えた。2日目は今年生まれた当歳馬が上場された。\n\t\t\t\t\u3000注目馬を集めていた上場番号372番'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【セレクトセール2026】1歳セッションは売上176億6000万円で歴代最高額 「ヤングスターの2025」が4億2000 ---
-[1] Gemini入力本文 600文字: '2日間にわたって開催される「セレクトセール2026」が13日、北海道苫小牧市のノーザンホースパークで開幕した。\n\u3000初日は1歳馬セッションが行われ、270頭の登録馬から欠場した8頭を除く262頭が上場され、250頭が落札。落札率は95.4％だ'
+--- 記事[1]: 【セレクトセール２０２６】イクイノックス×デアリングタクトの超良血馬は３億３０００万円　岡田牧雄代表「目指せ１億だった。 ---
+[1] Gemini入力本文 331文字: '「セレクトセール２０２６」（１４日、ノーザンホースパーク）\n\u3000当歳馬のセリが行われ、上場番号３７２番の「デアリングタクト２６」（牡、父イクイノックス）が３億３０００万円（税抜き）で落札された。落札者はＡＮＩＭＡレーシング。\n\u3000無敗での牝馬３'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【函館2歳S】シーザリオ一族初の牝馬の重賞制覇なるか イモージェンに要注目だ ---
-[2] Gemini入力本文 346文字: '一族初の牝馬の重賞制覇となるか。GI・2勝のシーザリオの孫となるイモージェン(牝2、栗東・池添学厩舎)が、函館2歳ステークス(2歳・GIII・芝1200m)で無敗戴冠を狙う。\n\u3000イモージェンは父サリオス、母シーリア、母の父キングカメハメハの'
+--- 記事[2]: 【セレクトセール】藤田晋会長“爆買い”2日で20億超え!イクイノックス牝馬に2億5000万円 ---
+[2] Gemini入力本文 349文字: '日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われた。(金額は税抜き)\n\u3000サイバーエージェント・藤田晋会長がイクイノックスの牝馬「アーモニーズエンジェルの2026」を2'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 186文字]: '競馬ファン注目の情報です。今年の青葉賞馬ゴーイントゥスカイは、次走に当初予定していた新潟記念から変更し、セントライト記念・G2へ向かうことが発表されました。セントライト記念は9月13日、中山競馬場・芝2200メートルで開催されます。この発表は13日、上原佑調教師によって行われました。鞍上には、12日に通算5000勝を達成したレジェンド武豊騎手が引き続き予定されています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (186文字)
-[0]  プレビュー: 競馬ファン注目の情報です。今年の青葉賞馬ゴーイントゥスカイは、次走に当初予定していた新潟記念から変更し、セントライト記念・G2へ向かうことが発表されました。セン...
-  HTTP 200
-[1]  [Gemini生出力 347文字]: 'レース関連の最新情報です。セレクトセール2026が13日に北海道苫小牧市のノーザンホースパークで開幕し、初日は1歳馬セッションが行われました。270頭の登録馬から欠場した8頭を除く262頭が上場され、250頭が落札、落札率は95.4％でした。総売上は176億6000万円で、前年の155億4600万円から約13.6％増加し、1歳馬セッションの歴代最高売上を6年連続で更新しています。このセッションでは「ヤングスターの2025」が4億2000万円で落札されました。また、セレクトセールにはドウデュース初年度産駒が9頭上場され、イクイノックスが父の「デアリングタクトの2026」も注目を集めています。モーリスやパンサラッサなど南半球シャトル種牡馬4頭が出国検疫施設へ移動したことも伝えられています。'
-  HTTP 200
-[2]  [Gemini生出力 242文字]: '最新のレース情報が入ってきました。函館2歳ステークス、2歳・GIII・芝1200mにおいて、GI・2勝のシーザリオの孫となるイモージェンが無敗戴冠を狙います。イモージェンは一族初の牝馬の重賞制覇となるかに注目が集まっています。血統は父が19年の朝日杯FSを制したサリオス、母がJRAで2勝のシーリア、母の父がキングカメハメハです。祖母のシーザリオは05年のオークスとアメリカンオークスを制した名牝で、母のきょうだいにはGI馬が並んでいます。この血統背景を持つイモージェンに要注目です。'
+[2]  [Gemini生出力 220文字]: '最新情報をお届けします。日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われました。サイバーエージェント・藤田晋会長はイクイノックスの牝馬「アーモニーズエンジェルの2026」を2億5000万円で落札しています。この日の購入は5頭目となり、合計金額は10億7000万円となりました。前日の1歳部門では6頭に10億200万円を投じており、2日合計で20億超えとなっています。'
+[2]  [redirectフィルター] 220文字 → 208文字
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (242文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。函館2歳ステークス、2歳・GIII・芝1200mにおいて、GI・2勝のシーザリオの孫となるイモージェンが無敗戴冠を狙います。イ...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (347文字)
-[1]  プレビュー: レース関連の最新情報です。セレクトセール2026が13日に北海道苫小牧市のノーザンホースパークで開幕し、初日は1歳馬セッションが行われました。270頭の登録馬か...
+[2]  → output/script_2.txt 保存 (208文字)
+[2]  プレビュー: 日本最大級の競走馬セール「セレクトセール2026」は14日、北海道苫小牧市のノーザンホースパークで2日目の当歳部門が行われました。サイバーエージェント・藤田晋会...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[1]  [Gemini生出力 199文字]: '今週の競馬注目情報をお伝えします。\n１４日にノーザンホースパークで行われたセレクトセール２０２６の当歳馬セリで、上場番号３７２番の「デアリングタクト２６」が３億３０００万円（税抜き）でＡＮＩＭＡレーシングに落札されました。無敗での牝馬３冠を達成した母と、Ｇ１を６勝した年度代表馬の父イクイノックスという夢のカップリングです。岡田牧雄代表は「目指せ１億だった。本当に驚きました」とコメントしています。'
+[1]  [重複除去] 199文字 → 198文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (198文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。１４日にノーザンホースパークで行われたセレクトセール２０２６の当歳馬セリで、上場番号３７２番の「デアリングタクト２６」が３億３...
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 223文字]: '本日の競馬ニュースです。日本最大の競走馬のセリであるセレクトセール2026が、7月14日に北海道苫小牧市のノーザンホースパークで2日目を迎えました。この日は今年生まれた当歳馬が上場されています。特に注目を集めた上場番号372番の「デアリングタクトの2026」は、リザーブ価格6000万円からスタートし、瞬く間に1億円を超えました。激しい声の掛け合いが続いた結果、3億3000万円で落札され、岡田牧雄代表も「目指せ1億円だった」と驚きを示しました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (223文字)
+[0]  プレビュー: 本日の競馬ニュースです。日本最大の競走馬のセリであるセレクトセール2026が、7月14日に北海道苫小牧市のノーザンホースパークで2日目を迎えました。この日は今年...
 
 3 件の脚本を生成しました。
