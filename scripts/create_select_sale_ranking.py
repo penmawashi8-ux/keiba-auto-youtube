@@ -41,11 +41,23 @@ JRHA_BASE = "https://www.jrha.or.jp"
 DEFAULT_RBN_URL = "https://racing-book.net/other/news/12406"
 
 
-def _get(url: str) -> str:
-    r = requests.get(url, headers=UA_HEADERS, timeout=30)
-    r.raise_for_status()
-    r.encoding = r.apparent_encoding
-    return r.text
+def _get(url: str, attempts: int = 3) -> str:
+    last_err: Exception | None = None
+    for i in range(attempts):
+        try:
+            r = requests.get(url, headers=UA_HEADERS, timeout=45)
+            r.raise_for_status()
+            r.encoding = r.apparent_encoding
+            return r.text
+        except Exception as e:
+            last_err = e
+            if i < attempts - 1:
+                wait = 10 * (i + 1)
+                print(f"  [警告] {url} 取得失敗 ({e.__class__.__name__})。{wait}秒後にリトライ...",
+                      file=sys.stderr)
+                import time
+                time.sleep(wait)
+    raise last_err  # type: ignore[misc]
 
 
 def parse_price_man(text: str) -> int | None:
