@@ -231,7 +231,11 @@ def _extract_body(html: str) -> str:
         body = " ".join(re.sub(r"<[^>]+>", "", p) for p in paras)
 
     text = re.sub(r"\s+", " ", _html_lib.unescape(body)).strip()
-    # フッター・UIノイズを除去
+    return _cut_footer(text)
+
+
+def _cut_footer(text: str) -> str:
+    """フッター・UIノイズ・関連リンク以降を除去する。"""
     cut = len(text)
     for marker in _FOOTER_MARKERS:
         i = text.find(marker)
@@ -300,7 +304,8 @@ def build_news_item(
             body = (og_desc + " " + body).strip()
         if rss_summary and rss_summary not in body:
             body = (rss_summary + " " + body).strip()
-        summary = body[:2000]
+        # og:description にもサイト定型文が含まれるため、結合後にもう一度カット
+        summary = _cut_footer(body)[:2000]
     if len(title) < 4:
         print(f"  [除外] タイトル取得失敗: no={entry_id}", file=sys.stderr)
         return None
