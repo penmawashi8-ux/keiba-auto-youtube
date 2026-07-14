@@ -13,6 +13,11 @@ on:
         required: false
         default: "https://racing-book.net/other/news/12406"
         type: string
+      sale_date:
+        description: "セール開催日の表記（例: 7月13日）。空なら実行日から自動"
+        required: false
+        default: ""
+        type: string
       dry_run:
         description: "テストモード（YouTubeにアップせずArtifactのみ）"
         required: false
@@ -58,18 +63,40 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt beautifulsoup4
 
+      # 実行パラメータの解決:
+      # - workflow_dispatch: inputs を使用
+      # - push: コミットメッセージの [session:当歳] / [date:7月13日] マーカーを使用
+      - name: 実行パラメータを解決
+        env:
+          MSG: ${{ github.event_name == 'push' && github.event.head_commit.message || '' }}
+          IN_SESSION: ${{ inputs.session || '' }}
+          IN_DATE: ${{ inputs.sale_date || '' }}
+        run: |
+          session="$IN_SESSION"
+          sale_date="$IN_DATE"
+          if [ -z "$session" ]; then
+            session=$(printf '%s' "$MSG" | grep -oP '(?<=\[session:)[^\]]+' | head -1 || true)
+          fi
+          if [ -z "$sale_date" ]; then
+            sale_date=$(printf '%s' "$MSG" | grep -oP '(?<=\[date:)[^\]]+' | head -1 || true)
+          fi
+          echo "SALE_SESSION=${session:-1歳}" >> "$GITHUB_ENV"
+          if [ -n "$sale_date" ]; then
+            echo "SALE_DATE=$sale_date" >> "$GITHUB_ENV"
+          fi
+          echo "session=${session:-1歳} date=${sale_date:-（実行日から自動）}"
+
       - name: ランキングコンテンツを生成（news.json + script_0.txt）
         env:
-          # push実行時はコミットメッセージの [session:当歳] マーカーで切替可能
-          SALE_SESSION: ${{ inputs.session || (contains(github.event.head_commit.message, '[session:当歳]') && '当歳') || '1歳' }}
           RBN_URL: ${{ inputs.rbn_url || 'https://racing-book.net/other/news/12406' }}
         run: python scripts/create_select_sale_ranking.py
 
-      - name: Generate audio（音声 + ASS字幕）
+      # 文単位TTS（字幕・カード時刻がクリップ境界に完全一致し、ズレが起きない）
+      - name: Generate audio（文単位TTS + ASS字幕 + カード時刻）
         env:
           TTS_VOICE: "ja-JP-KeitaNeural"
           TTS_RATE: "+10%"
-        run: python scripts/generate_audio.py
+        run: python scripts/select_sale_audio.py
 
       - name: BGMをダウンロード (CC0 public domain only)
         continue-on-error: true

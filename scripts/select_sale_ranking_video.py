@@ -273,7 +273,19 @@ def main() -> None:
 
     total_dur = audio_duration(audio_path)
     dialogues = parse_ass_dialogues(ass_path) if Path(ass_path).exists() else []
-    times = compute_card_times(dialogues, [r["rank"] for r in ranking], total_dur)
+
+    # select_sale_audio.py が出力する正確なカード時刻を最優先で使う
+    # （文単位TTSのクリップ境界なのでナレーションと構造的にズレない）
+    ct_path = Path(f"{OUTPUT_DIR}/card_times_0.json")
+    if ct_path.exists():
+        card = json.loads(ct_path.read_text(encoding="utf-8"))
+        times = {
+            "rank_start": {int(k): float(v) for k, v in card["rank_start"].items()},
+            "outro_start": float(card["outro_start"]),
+        }
+        print("  カード時刻: card_times_0.json（実測クリップ境界）を使用")
+    else:
+        times = compute_card_times(dialogues, [r["rank"] for r in ranking], total_dur)
     print(f"  カード時刻: intro→{min(times['rank_start'].values()):.1f}s, "
           f"まとめ {times['outro_start']:.1f}s〜 (全体 {total_dur:.1f}s)")
 
