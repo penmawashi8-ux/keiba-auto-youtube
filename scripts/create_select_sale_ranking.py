@@ -93,59 +93,66 @@ def clean_buyer(name: str) -> str:
 # ---------------------------------------------------------------------------
 
 def fetch_jrha(target_suffix: str, sale_year: int) -> list[dict]:
-    """JRHA公式の価格順結果ページから落札リストを取得する。
+    """JRHA公式の結果リスト（www4・落札価格順）から落札リストを取得する。
 
-    URL形式: /sp/selectsale/result_detail/{session}/{sale_id}/7 （7=価格順）
-    session・sale_id は年により変わるため、対象世代の馬名サフィックス
-    （例「の2025」）が多数含まれるページを探索して特定する。
-
-    注意: 前年セールの当歳と当年セールの1歳は同じサフィックスになるため、
-    結果トップページの「セール結果(YYYY)」見出しで掲載年を必ず確認する。
+    https://www4.jrha.or.jp/jpn/{年}_list2.html は開催当日から掲載され、
+    1歳・当歳の両セクションを含む。列: NO | 上場馬名 | 性 | 毛色 | 父 |
+    母 | 販売者 | 落札価格（万円） | 購買者
+    馬名サフィックス（例「の2025」=1歳 /「の2026」=当歳）でセッションを
+    絞り込む。URLが年で分かれているため掲載年の誤認は起きない。
     """
+    url = f"https://www4.jrha.or.jp/jpn/{sale_year}_list2.html"
     try:
-        top_html = _get(f"{JRHA_BASE}/selectsale/result")
-        m = re.search(r"セール結果[（(](\d{4})[）)]", top_html)
-        published_year = int(m.group(1)) if m else None
+        html = _get(url)
     except Exception as e:
-        print(f"  [警告] JRHA結果ページ取得失敗: {e}", file=sys.stderr)
-        return []
-    if published_year != sale_year:
-        print(f"  JRHA公式の掲載は{published_year}年分（{sale_year}年分は未掲載）。スキップします。")
+        print(f"  [警告] JRHA公式リスト取得失敗 ({url}): {e}", file=sys.stderr)
         return []
 
-    for sale_id in range(9, 13):
-        for session in (0, 1):
-            url = f"{JRHA_BASE}/sp/selectsale/result_detail/{session}/{sale_id}/7"
-            try:
-                html = _get(url)
-            except Exception:
+    soup = BeautifulSoup(html, "html.parser")
+    lots: list[dict] = []
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+        if not rows:
+            continue
+        header = [c.get_text(" ", strip=True) for c in rows[0].find_all(["th", "td"])]
+        col: dict[str, int] = {}
+        for i, h in enumerate(header):
+            if "上場馬名" in h:
+                col["name"] = i
+            elif h == "性":
+                col["sex"] = i
+            elif h == "父":
+                col["sire"] = i
+            elif "落札価格" in h:
+                col["price"] = i
+            elif "購買者" in h:
+                col["buyer"] = i
+        if "name" not in col or "price" not in col:
+            continue
+        for row in rows[1:]:
+            cells = [c.get_text(" ", strip=True) for c in row.find_all("td")]
+            if len(cells) <= max(col.values()):
                 continue
-            if html.count(target_suffix) < 20:
+            name = cells[col["name"]]
+            if not name.endswith(target_suffix):
                 continue
-
-            gen_year = target_suffix.replace("の", "")
-            soup = BeautifulSoup(html, "html.parser")
-            lots: list[dict] = []
-            for table in soup.find_all("table"):
-                fields: dict[str, str] = {}
-                for row in table.find_all("tr"):
-                    cells = [c.get_text(" ", strip=True) for c in row.find_all(["th", "td"])]
-                    for i in range(0, len(cells) - 1, 2):
-                        fields[cells[i]] = cells[i + 1]
-                price = parse_price_man(fields.get("価格", ""))
-                dam = fields.get("母", "")
-                if not price or not dam:
-                    continue
-                lots.append({
-                    "name": f"{dam}の{gen_year}",
-                    "sire": fields.get("父", ""),
-                    "sex": "",
-                    "buyer": fields.get("購買者", ""),
-                    "price_man": price,
-                })
-            if len(lots) >= TOP_N:
-                print(f"  JRHA公式から {len(lots)} 頭取得: {url}")
-                return lots
+            # 価格列は万円単位の裸数字（例「42,000」）。単位付き表記にも対応
+            raw = cells[col["price"]].replace(",", "").replace("，", "").strip()
+            price = int(raw) if raw.isdigit() else parse_price_man(cells[col["price"]])
+            if not price:  # 主取・価格なしは除外
+                continue
+            lots.append({
+                "name": name,
+                "sire": cells[col["sire"]] if "sire" in col else "",
+                "sex": cells[col["sex"]] if "sex" in col else "",
+                "buyer": cells[col["buyer"]] if "buyer" in col else "",
+                "price_man": price,
+            })
+    if len(lots) >= TOP_N:
+        print(f"  JRHA公式から {len(lots)} 頭取得: {url}")
+        return lots
+    if lots:
+        print(f"  [警告] JRHA公式リストの{target_suffix}該当が{len(lots)}頭のみ。スキップします。")
     return []
 
 
