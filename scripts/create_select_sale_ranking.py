@@ -245,6 +245,9 @@ def build_script(year: int, session: str, top: list[dict], stats: dict, date_str
         blocks.append(f"【第{rank}位】\n" + "".join(sentences))
 
     outro = ["【まとめ】"]
+    # 冒頭文は select_sale_ranking_video.py がまとめカードの表示開始時刻を
+    # ASS字幕から特定するためのマーカーを兼ねる。「以上、」で始めること。
+    outro.append("以上、高額落札ランキングトップ10だった。")
     sire_counts: dict[str, int] = {}
     for lot in top:
         if lot["sire"]:
@@ -353,6 +356,23 @@ def main() -> None:
     script_path = Path(OUTPUT_DIR) / "script_0.txt"
     script_path.write_text(script, encoding="utf-8")
     print(f"{script_path} を生成しました（{len(script)}文字）。")
+
+    # select_sale_ranking_video.py（専用レンダラー）用のランキングデータ
+    ranking_meta = {
+        "year": year,
+        "session": session,
+        "date_str": date_str,
+        "stats": stats,
+        "ranking": [
+            {"rank": i + 1, "name": lot["name"], "sire": lot["sire"],
+             "sex": lot.get("sex", ""), "buyer": clean_buyer(lot.get("buyer", "")),
+             "price_man": lot["price_man"]}
+            for i, lot in enumerate(top)
+        ],
+    }
+    meta_path = Path(OUTPUT_DIR) / "ranking_meta_0.json"
+    meta_path.write_text(json.dumps(ranking_meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"{meta_path} を生成しました。")
     print("---- 脚本 ----")
     print(script)
 

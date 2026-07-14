@@ -84,10 +84,10 @@ jobs:
       - name: 古いコミット済みサムネイルを削除（生成スキップ防止）
         run: rm -f output/thumbnail_0.jpg
 
-      - name: Generate landscape video（横型 1280×720）
+      - name: Generate ranking video（横型 1280×720・専用レンダラー）
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-        run: python scripts/landscape_video.py
+        run: python scripts/select_sale_ranking_video.py
 
       - name: Upload video as artifact
         uses: actions/upload-artifact@v4
