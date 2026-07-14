@@ -1,0 +1,68 @@
+name: Test Fetch Popular News
+
+# fetch_popular_news.py の実動検証用（YouTube投稿はしない）。
+# このブランチの対象ファイル変更時と手動起動のみで動くため本番には無影響。
+on:
+  push:
+    branches:
+      - claude/session-continuation-y5ydbb
+    paths:
+      - scripts/fetch_popular_news.py
+      - .github/workflows/test_fetch_popular_news.yml
+  workflow_dispatch:
+
+jobs:
+  test-fetch-popular-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install requests
+
+      - name: Run fetch_popular_news
+        run: python scripts/fetch_popular_news.py
+
+      - name: Show news.json
+        run: |
+          echo "===== news.json ====="
+          python - <<'PYEOF'
+          import json
+          items = json.load(open("news.json"))
+          print(f"{len(items)} 件")
+          for it in items:
+              print("-" * 60)
+              print("id        :", it["id"])
+              print("title     :", it["title"])
+              print("url       :", it["url"])
+              print("views     :", it.get("views"))
+              print("published :", it["published_date"])
+              print("image_url :", it["image_url"][:100])
+              print(f"summary({len(it['summary'])}字):", it["summary"][:300])
+          PYEOF
+
+      - name: Test clustering fallback path
+        run: |
+          echo "===== フォールバック（クラスタリング）強制テスト ====="
+          python - <<'PYEOF'
+          import sys
+          sys.path.insert(0, "scripts")
+          import fetch_popular_news as fpn
+          from fetch_news import load_posted_ids
+          items = fpn.fetch_popular_via_clustering(load_posted_ids())
+          print(f"フォールバック結果: {len(items)} 件")
+          for it in items:
+              print("-", it["title"][:70])
+              print("  url:", it["url"])
+              print(f"  summary({len(it['summary'])}字):", it["summary"][:200])
+          PYEOF
