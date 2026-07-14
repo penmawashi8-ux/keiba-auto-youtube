@@ -1,10 +1,6 @@
-date: 2026-07-14T12:15:17.423879Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-14T23:55:24.570150Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NOb0Y4uuat8 title=【函館2歳S】武豊騎手が29年ぶり2勝目へ 圧巻デビューVのシグレで挑む
-OK project=1 video_id=rKSPKEUT13A title=【今週のトク注新馬】Wコースでラスト10秒9!美浦トレセンで話題のアドマイヤマー
-OK project=1 video_id=pfCTjBsOZ2g title=【函館2歳S】ゼルトザームの再現なるか!? 「初芝×ヘニーヒューズ産駒」のクロリ
+OK project=1 video_id=8Cixo6MW0J0 views=47044 title=【話題】7月15日 【セレクトセール２０２６】ドウデュース初年度産駒１頭目は９６００万円　購買者は“アドマイヤ”の近藤旬
