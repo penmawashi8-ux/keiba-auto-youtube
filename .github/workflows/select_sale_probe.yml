@@ -14,64 +14,36 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Find RBN day-2 article and dump top rows
+      - name: Dump JRHA www4 official result lists
         run: |
           pip -q install requests beautifulsoup4
           python3 - <<'PYEOF'
-          import re
-          import time
           import requests
           from bs4 import BeautifulSoup
 
           UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
                 "Accept-Language": "ja,en-US;q=0.9"}
 
-          # ニュース一覧からセレクトセール記事のリンクとタイトルを抽出
-          idx = requests.get("https://racing-book.net/other/news", headers=UA, timeout=25)
-          idx.encoding = idx.apparent_encoding
-          soup = BeautifulSoup(idx.text, "html.parser")
-          candidates = []
-          for a in soup.find_all("a", href=True):
-              href = a["href"]
-              if re.search(r"/other/news/\d+", href):
-                  title = a.get_text(" ", strip=True)
-                  if "セレクト" in title:
-                      print(f"LINK {href}  {title[:70]}")
-                      if ("当歳" in title or "2日" in title) and "2026" in title:
-                          candidates.append(href)
-
-          # 見つからなければ 12407-12440 を総当たり
-          if not candidates:
-              print("一覧から未発見。IDを総当たりします...")
-              for nid in range(12407, 12441):
-                  url = f"https://racing-book.net/other/news/{nid}"
-                  try:
-                      r = requests.get(url, headers=UA, timeout=15)
-                  except Exception:
-                      continue
-                  if r.status_code != 200:
-                      continue
-                  r.encoding = r.apparent_encoding
-                  m = re.search(r"<title>([^<]*)</title>", r.text)
-                  t = m.group(1) if m else ""
-                  if "セレクト" in t:
-                      print(f"HIT {url}  {t[:70]}")
-                      if "当歳" in t or "2日" in t:
-                          candidates.append(url)
-                          break
-                  time.sleep(0.4)
-
-          # 当歳記事の上位テーブルをダンプ
-          for url in candidates[:1]:
-              if url.startswith("/"):
-                  url = "https://racing-book.net" + url
-              r = requests.get(url, headers=UA, timeout=25)
+          for path in ("2026_list1.html", "2026_list2.html", "2026_list.html"):
+              url = f"https://www4.jrha.or.jp/jpn/{path}"
+              try:
+                  r = requests.get(url, headers=UA, timeout=25)
+              except Exception as e:
+                  print(f"\n#### {url} ERROR: {e}")
+                  continue
               r.encoding = r.apparent_encoding
-              print(f"\n#### {url} -> {r.status_code}, {len(r.text)} chars")
+              print(f"\n#### {url} -> HTTP {r.status_code}, {len(r.text)} chars")
+              if r.status_code != 200:
+                  continue
               soup = BeautifulSoup(r.text, "html.parser")
+              title = soup.find("title")
+              print("TITLE:", title.get_text(strip=True) if title else "?")
               for ti, tbl in enumerate(soup.find_all("table")):
                   rows = tbl.find_all("tr")
                   print(f"--- table[{ti}] rows={len(rows)} ---")
-                  for row in rows[:14]:
+                  for row in rows[:12]:
                       print(" | ".join(c.get_text(" ", strip=True)[:22] for c in row.find_all(["td", "th"])))
+                  if ti >= 2:
+                      print("  (以降のテーブルは省略)")
+                      break
           PYEOF
