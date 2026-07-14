@@ -147,6 +147,7 @@ def fetch_ranking(api_url: str, rank_type: int = 2) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 _FOOTER_MARKERS = [
+    "の全成績と掲示板",  # 記事下の関連リンク（「〇〇の全成績と掲示板」）以降はサイドバー
     "No.1競馬情報サイト「netkeiba」",
     "No.1競馬サイト「netkeiba",
     "フィルタON",
@@ -239,7 +240,25 @@ def _extract_body(html: str) -> str:
     return text[:cut].strip()
 
 
-def build_news_item(entry_id: str, url: str, title: str, views: int) -> dict | None:
+def _clean_ranking_title(title: str) -> str:
+    """ランキングHTML由来のタイトル末尾ゴミ（"22時間前 37 123" 等）を除去する。"""
+    return re.sub(r"\s*\d+(?:分|時間|日)前(?:\s+[\d,]+)*\s*$", "", title).strip()
+
+
+def _extract_og_meta(html: str, prop: str) -> str:
+    for pat in [
+        rf'<meta[^>]+property=["\']og:{prop}["\'][^>]+content=["\']([^"\']+)["\']',
+        rf'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:{prop}["\']',
+    ]:
+        m = re.search(pat, html, re.IGNORECASE)
+        if m:
+            return _html_lib.unescape(m.group(1)).strip()
+    return ""
+
+
+def build_news_item(
+    entry_id: str, url: str, title: str, views: int, rss_summary: str = ""
+) -> dict | None:
     """記事ページを取得して news.json 契約のアイテムを構築する。
 
     公開日時が判明して MAX_AGE_HOURS より古い場合は None（除外）。
@@ -248,6 +267,7 @@ def build_news_item(entry_id: str, url: str, title: str, views: int) -> dict | N
     summary = ""
     image_url = ""
     pub_str = ""
+    title = _clean_ranking_title(title)
     if raw_html:
         # エンコーディングを meta charset から検出（EUC-JP等に対応）
         enc = "utf-8"
@@ -265,16 +285,22 @@ def build_news_item(entry_id: str, url: str, title: str, views: int) -> dict | N
             if age > timedelta(hours=MAX_AGE_HOURS):
                 print(f"  [除外] {age.days}日前の記事のためスキップ: {title[:50]}")
                 return None
-        # タイトルがランキングから正しく取れていなければ og:title で補完
-        if len(title) < 4:
-            m = re.search(
-                r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)["\']',
-                html, re.IGNORECASE,
-            )
-            if m:
-                title = _html_lib.unescape(m.group(1)).strip()
+        # og:title があれば正としてタイトルを差し替える（ランキングHTML由来の
+        # 切れ・ゴミ混入を避ける）。サイト名サフィックスは除去。
+        og_title = _extract_og_meta(html, "title")
+        og_title = re.sub(r"\s*[|｜-]\s*(?:競馬)?ニュース?\s*[-|｜]?\s*netkeiba.*$", "", og_title).strip()
+        if len(og_title) >= 8:
+            title = og_title
         image_url = extract_og_image(url, html) or ""
-        summary = _extract_body(html)[:2000]
+        body = _extract_body(html)
+        # og:description は記事のリード文。本文抽出がサイドバー等のノイズを
+        # 拾った場合の保険として先頭に付与する（既存 fetch_news.py と同じ方針）
+        og_desc = _extract_og_meta(html, "description")
+        if og_desc and og_desc not in body:
+            body = (og_desc + " " + body).strip()
+        if rss_summary and rss_summary not in body:
+            body = (rss_summary + " " + body).strip()
+        summary = body[:2000]
     if len(title) < 4:
         print(f"  [除外] タイトル取得失敗: no={entry_id}", file=sys.stderr)
         return None
@@ -416,7 +442,9 @@ def fetch_popular_via_clustering(posted_ids: set) -> list[dict]:
         if rep is None:
             continue
         print(f"[Cluster] [{len(c['sources'])}媒体/{len(c['entries'])}記事] {rep['title'][:55]}")
-        item = build_news_item(rep["id"], rep["link"], rep["title"], 0)
+        rss_summary = re.sub(r"<[^>]+>", " ", rep.get("summary", ""))
+        rss_summary = re.sub(r"\s+", " ", _html_lib.unescape(rss_summary)).strip()
+        item = build_news_item(rep["id"], rep["link"], rep["title"], 0, rss_summary=rss_summary)
         if item:
             news_items.append(item)
     return news_items
