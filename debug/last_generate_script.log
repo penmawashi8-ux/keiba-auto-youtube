@@ -1,145 +1,70 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  → 間接表現（記事の存在説明）を検出。次のキー/モデルへ切り替えます: 本日の競馬ニュースです。
-浦和競馬場は「通年はくぼ開催」を始めて4年目を迎えています。今年は「ハロー，ウラワールド！ ト
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  → 間接表現（記事の存在説明）を検出。次のキー/モデルへ切り替えます: 本日の競馬ニュースです。浦和競馬場は「通年はくぼ開催」を始めて4年目となります。今年は「ハロー，ウラワールド！ トワイラ
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [1] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: エルトンバローズ、関屋記念1週前追い切り速報/栗東トレセンニュース ---
-[0] Gemini入力本文 344文字: '前走しらさぎSで2023年毎日王冠以来の重賞勝利を手にしたエルトンバローズ(栗東・杉山晴紀厩舎)。次走は関屋記念(7月26日・新潟芝1600m)への出走を予定しており、今朝15日はレースに向けた1週前追い切りを行っている。\n\u30001回目のハロー'
+--- 記事[0]: 場外馬券発売所のエクセル田無が有馬記念当日の12月27日で営業終了へ　JRAが発表 ---
+[0] Gemini入力本文 562文字: 'JRAは7月15日、会員制(全席有料指定席)の場外馬券発売所「エクセル田無」(東京都西東京市田無町)の営業を、有馬記念当日の26年12月27日をもって終了すると発表した。\n\t\t\t\t\u3000エクセル田無は1995年に開設。25年2月からはJRA―U'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 夕暮れの競馬場に広がる「トワイライトマジック！」 通年はくぼ開催で魅力増す浦和競馬 ---
-[1] Gemini入力本文 537文字: '浦和競馬場は「通年はくぼ開催」を始めて4年目。今年は「ハロー，ウラワールド！ トワイライトマジック！」をテーマに定め、さらなる認知度アップと魅力発信に取り組んでいる。印象的なコンセプトワードに込められた思いや、通年はくぼ開催を導入した経緯を'
+--- 記事[1]: 【函館2歳S】北の大地を揺らす“ビックボス”　ダイメイビッグボスが重賞でも主役へ　武井調教師「実戦タイプ」 ---
+[1] Gemini入力本文 351文字: '◆函館2歳S・G3(7月19日、函館競馬場・芝1200メートル)追い切り＝7月15日、函館競馬場\n\t\t\t\t\u30006月13日の新馬戦を快勝し、今年の函館で一番星に輝いたダイメイビッグボス(牡2歳、美浦・武井亮厩舎、父サートゥルナーリア)が、最終週'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 小倉記念の歴代最速タイムは TOP5を振り返る ---
-[2] Gemini入力本文 494文字: '7月19日(日)に小倉競馬場で行われる小倉記念(3歳上・GIII・芝2000m)。夏の小倉開催を飾る重賞レースには、ジョバンニ、ガイアメンテなど19頭がエントリーしている。本項では同レースの開催にあたり、歴代勝ち時計をランキング形式で紹介す'
+--- 記事[2]: エクセル田無が有馬記念当日12月27日で営業終了　JRA発表 ---
+[2] Gemini入力本文 634文字: 'JRAは15日、エクセル田無(東京都西東京市田無町2−1−1\u3000ASTAビル内リヴィン田無店6階)の営業を有馬記念当日12月27日で終了すると発表した。\n\u3000エクセル田無は1995年に開設した会員制(全席有料指定席)の場外馬券発売所。2025年'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 238文字]: '競馬ファン注目の情報です。7月19日(日)に小倉競馬場で行われる小倉記念は、3歳上・GIII・芝2000mの重賞レースです。夏の小倉開催を飾るこのレースには、ジョバンニ、ガイアメンテなど19頭がエントリーしています。本項では、小倉芝2000mでの開催に限った同レースの歴代勝ち時計ランキングが紹介されています。歴代5位は2022年のマリアエレーナで、タイムは1分57秒4でした。マリアエレーナは同年の愛知杯、マーメイドSで2着と、初タイトルまであと一歩の競馬が続いていました。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (238文字)
-[2]  プレビュー: 競馬ファン注目の情報です。7月19日(日)に小倉競馬場で行われる小倉記念は、3歳上・GIII・芝2000mの重賞レースです。夏の小倉開催を飾るこのレースには、ジ...
+[1]  [Gemini生出力 276文字]: '今日の競馬情報です。函館2歳S・G3の追い切りが7月15日に函館競馬場で行われました。このレースは7月19日に函館競馬場・芝1200メートルで開催されます。6月13日の新馬戦を快勝し、今年の函館で一番星に輝いたダイメイビッグボスが、最終週の重賞を勝ってフィナーレも飾ろうとしています。ダイメイビッグボスは8日に美浦で1週前追い切りを済ませ、翌日に函館へ移動しました。この日の追い切りでは、芝コースで舟山瑠泉騎手がシークレットシティに騎乗しています。武井調教師はダイメイビッグボスを「実戦タイプ」と評価しており、重賞でも主役となることが期待されています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (276文字)
+[1]  プレビュー: 今日の競馬情報です。函館2歳S・G3の追い切りが7月15日に函館競馬場で行われました。このレースは7月19日に函館競馬場・芝1200メートルで開催されます。6月...
   HTTP 200
-[1]  [Gemini生出力 205文字]: '本日の競馬ニュースです。\n浦和競馬場は「通年はくぼ開催」を始めて4年目を迎えています。今年は「ハロー，ウラワールド！ トワイライトマジック！」をテーマに定め、さらなる認知度アップと魅力発信に取り組んでいるとのことです。陽が西に傾くと、浦和競馬場は幻想的な空気に包まれると伝えられています。この印象的なコンセプトワードに込められた思いや、通年はくぼ開催を導入した経緯を浦和競馬の担当者に聞いたと報じられています。'
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+[2]  [Gemini生出力 217文字]: '競馬速報です。JRAは15日、エクセル田無の営業を、有馬記念当日である12月27日で終了すると発表しました。エクセル田無は1995年に開設された会員制の場外馬券発売所で、全席が有料指定席でした。2025年2月にはJRA−UMACA専用の場外馬券発売所となっています。館内には座席数664席が設けられており、内訳はS指定席32席、その他632席です。また、UMACA発売機が25台、入出金機が4台、UMAポートが6台設置されていました。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (217文字)
+[2]  プレビュー: 競馬速報です。JRAは15日、エクセル田無の営業を、有馬記念当日である12月27日で終了すると発表しました。エクセル田無は1995年に開設された会員制の場外馬券...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
   HTTP 429
 [0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 195文字]: '本日の競馬ニュースです。浦和競馬場は「通年はくぼ開催」を始めて4年目となります。今年は「ハロー，ウラワールド！ トワイライトマジック！」をテーマに定め、さらなる認知度アップと魅力発信に取り組んでいます。陽が西に傾くと、浦和競馬場は幻想的な空気に包まれるということです。この印象的なコンセプトワードに込められた思いや、通年はくぼ開催を導入した経緯を浦和競馬の担当者に聞いたと報じられています。'
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 254文字]: 'レース関連の最新情報です。前走しらさぎSで2023年毎日王冠以来の重賞勝利を手にしたエルトンバローズは、次走、関屋記念への出走を予定しています。関屋記念は7月26日に新潟芝1600mで行われます。栗東の杉山晴紀厩舎に所属するエルトンバローズは、今朝15日、レースに向けた1週前追い切りを実施しました。1回目のハロー終了直後のCWコースで3頭併せを行い、ミュージシャンが先行し、サヴォアフェールが続き、一番後ろからJ.コレット騎手が騎乗したエルトンバローズが追走しました。6F標識からある程度流れた内容でした。'
+[0]  [Gemini生出力 170文字]: '本日の競馬ニュースです。JRAは7月15日、会員制で全席有料指定席の場外馬券発売所「エクセル田無」の営業を、2026年12月27日をもって終了すると発表しました。この終了日は有馬記念当日となります。東京都西東京市田無町に位置するエクセル田無は1995年に開設され、2025年2月からはJRA-UMACA専用の場外馬券発売所となっていました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (254文字)
-[0]  プレビュー: レース関連の最新情報です。前走しらさぎSで2023年毎日王冠以来の重賞勝利を手にしたエルトンバローズは、次走、関屋記念への出走を予定しています。関屋記念は7月2...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 4文字]: 'SKIP'
-[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 537文字）
-[1] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[0]  → output/script_0.txt 保存 (170文字)
+[0]  プレビュー: 本日の競馬ニュースです。JRAは7月15日、会員制で全席有料指定席の場外馬券発売所「エクセル田無」の営業を、2026年12月27日をもって終了すると発表しました...
+
+3 件の脚本を生成しました。
