@@ -1,8 +1,8 @@
-date: 2026-07-14T14:45:56.385417Z
+date: 2026-07-15T14:46:06.808785Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SlBT5NR6S1U
-source_short=BLi05Hj7F3k views=1169
-title=【本日の人気No.1】7月14日 【セレクトセール２０２６】イクイノックス×デアリングタクトの超良血馬は３億３０００万円
+OK project=1 video_id=OPnWsVHw5nk
+source_short=cbj9trQFwBU views=815
+title=【本日の人気No.1】7月15日 【函館2歳S】北の大地を揺らす“ビックボス”　ダイメイビッグボスが重賞でも主役へ　武井
