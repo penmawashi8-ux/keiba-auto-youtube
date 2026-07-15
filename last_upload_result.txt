@@ -1,10 +1,10 @@
-date: 2026-07-15T05:40:11.627092Z
+date: 2026-07-15T09:12:15.235948Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_8Ptg_0s1u8 title=場外馬券発売所のエクセル田無が有馬記念当日の12月27日で営業終了へ　JRAが発
-OK project=1 video_id=cbj9trQFwBU title=【函館2歳S】北の大地を揺らす“ビックボス”　ダイメイビッグボスが重賞でも主役へ
-OK project=1 video_id=rOLn2jVZRDA title=エクセル田無が有馬記念当日12月27日で営業終了　JRA発表
+OK project=1 video_id=WQc0w6b5ZgQ title=【函館2歳S】前川恭子調教師が重賞初制覇なるか デビュー戦圧勝のロンドンガーズで
+OK project=1 video_id=gMKH6xhvVlc title=しまむらの競走馬グッズが即日完売 広報担当者に反響を聞いた
+OK project=1 video_id=bTpvlksA-z0 title=【小倉記念】タガノアビーが初コンビの幸英明騎手と“幸せ”つかむ　千田調教師が納得
