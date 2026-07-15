@@ -1,10 +1,6 @@
-date: 2026-07-15T12:19:47.352798Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-15T13:32:12.001079Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-aGAMUgdm-Q title=【小倉記念】クラシックでも善戦の実力馬 ジョバンニが悲願の初タイトル狙う
-OK project=1 video_id=6mIzNom24Rs title=【POG】リバティアイランドの半弟ダノンダックスが猛時計　戸崎圭太騎手「まだ動き
-OK project=1 video_id=rj4aiE_gETM title=武豊騎手が函館2歳Sでアグネスワールド以来29年ぶりV狙う　同一重賞で最長ブラン
+OK project=1 video_id=niKdz6qO-GY views=83413 title=【話題】7月15日 鷲頭虎太騎手が引退　デビュー5年目　同期に今村聖奈、佐々木大輔ら　福永祐一厩舎で調教助手に
