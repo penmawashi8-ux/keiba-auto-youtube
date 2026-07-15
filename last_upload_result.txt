@@ -1,6 +1,10 @@
-date: 2026-07-14T23:55:24.570150Z
-type: popular_news_landscape
+date: 2026-07-15T05:40:11.627092Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8Cixo6MW0J0 views=47044 title=【話題】7月15日 【セレクトセール２０２６】ドウデュース初年度産駒１頭目は９６００万円　購買者は“アドマイヤ”の近藤旬
+OK project=1 video_id=_8Ptg_0s1u8 title=場外馬券発売所のエクセル田無が有馬記念当日の12月27日で営業終了へ　JRAが発
+OK project=1 video_id=cbj9trQFwBU title=【函館2歳S】北の大地を揺らす“ビックボス”　ダイメイビッグボスが重賞でも主役へ
+OK project=1 video_id=rOLn2jVZRDA title=エクセル田無が有馬記念当日12月27日で営業終了　JRA発表
