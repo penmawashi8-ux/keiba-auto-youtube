@@ -1,0 +1,46 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Noto Sans CJK JP,58,&H00FFFFFF,&H000000FF,&H00000000,&HA0000000,1,0,0,0,100,100,0,0,1,4,1,2,20,20,80,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:03.50,Default,,0,0,0,,競馬ニュース、読み上げテスト原稿です。
+Dialogue: 0,0:00:03.50,0:00:06.08,Default,,0,0,0,,まずはフルネームの確認です。
+Dialogue: 0,0:00:06.08,0:00:11.24,Default,,0,0,0,,武豊騎手、鮫島克駿騎手、横山武史騎手、菅原明良騎手、幸英
+Dialogue: 0,0:00:11.24,0:00:16.40,Default,,0,0,0,,明騎手、森一馬騎手、坂井瑠星騎手、岩田望来騎手が騎乗しま
+Dialogue: 0,0:00:16.40,0:00:16.76,Default,,0,0,0,,す。
+Dialogue: 0,0:00:16.76,0:00:20.08,Default,,0,0,0,,次に、姓と名前一文字の省略表記です。
+Dialogue: 0,0:00:20.08,0:00:25.24,Default,,0,0,0,,直線では鮫島駿が鋭く追い込み、横山武が粘って逃げ切りまし
+Dialogue: 0,0:00:25.24,0:00:25.61,Default,,0,0,0,,た。
+Dialogue: 0,0:00:25.61,0:00:30.77,Default,,0,0,0,,横山典は二着、岩田望が三着、坂井瑠は四着、菅原明は五着で
+Dialogue: 0,0:00:30.77,0:00:31.32,Default,,0,0,0,,した。
+Dialogue: 0,0:00:31.32,0:00:33.72,Default,,0,0,0,,続いて、姓だけの表記です。
+Dialogue: 0,0:00:33.72,0:00:37.22,Default,,0,0,0,,戸崎が先頭で抜け出し、鮫島が続きます。
+Dialogue: 0,0:00:37.22,0:00:42.19,Default,,0,0,0,,五十嵐と武藤も好位につけましたが、川田は出遅れました。
+Dialogue: 0,0:00:42.19,0:00:44.22,Default,,0,0,0,,一文字の姓の確認です。
+Dialogue: 0,0:00:44.22,0:00:48.83,Default,,0,0,0,,武騎手が戦列に復帰し、幸騎手は重賞を制覇しました。
+Dialogue: 0,0:00:48.83,0:00:53.62,Default,,0,0,0,,森騎手と林騎手、原騎手も同じレースに騎乗しています。
+Dialogue: 0,0:00:53.62,0:00:56.94,Default,,0,0,0,,武さんの記録は今も破られていません。
+Dialogue: 0,0:00:56.94,0:01:01.17,Default,,0,0,0,,ここからは、誤って置き換えないことの確認です。
+Dialogue: 0,0:01:01.17,0:01:04.86,Default,,0,0,0,,武器や武蔵という言葉はそのまま読みます。
+Dialogue: 0,0:01:04.86,0:01:06.52,Default,,0,0,0,,幸せな結果でした。
+Dialogue: 0,0:01:06.52,0:01:09.83,Default,,0,0,0,,森の中や原っぱも人名ではありません。
+Dialogue: 0,0:01:09.83,0:01:14.26,Default,,0,0,0,,石川県の牧場や、松山競馬場の話題も変化しません。
+Dialogue: 0,0:01:14.26,0:01:16.65,Default,,0,0,0,,続いて、調教師の確認です。
+Dialogue: 0,0:01:16.65,0:01:21.81,Default,,0,0,0,,矢作芳人調教師と友道康夫調教師がコメントし、中内田厩舎と
+Dialogue: 0,0:01:21.81,0:01:24.21,Default,,0,0,0,,堀厩舎の管理馬も好調です。
+Dialogue: 0,0:01:24.21,0:01:29.37,Default,,0,0,0,,矢作師のもとでは、武幸四郎師と池江師の教え子たちも学びま
+Dialogue: 0,0:01:29.37,0:01:29.92,Default,,0,0,0,,した。
+Dialogue: 0,0:01:29.92,0:01:35.08,Default,,0,0,0,,角居勝彦調教師や藤沢和雄調教師は歴史に名を残しています。
+Dialogue: 0,0:01:35.08,0:01:37.84,Default,,0,0,0,,最後に、組み合わせの確認です。
+Dialogue: 0,0:01:37.84,0:01:43.00,Default,,0,0,0,,横山武騎手と武豊騎手が馬体を併せて対決し、武藤雅騎手と武
+Dialogue: 0,0:01:43.00,0:01:45.21,Default,,0,0,0,,騎手がそれに続きました。
+Dialogue: 0,0:01:45.21,0:01:50.37,Default,,0,0,0,,鞍上武豊で新馬戦に挑み、栗東坂路で好時計をマークしていま
+Dialogue: 0,0:01:50.37,0:01:50.74,Default,,0,0,0,,す。
+Dialogue: 0,0:01:50.74,0:01:53.87,Default,,0,0,0,,以上で読み上げテストを終わります。
