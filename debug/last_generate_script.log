@@ -1,70 +1,41 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 場外馬券発売所のエクセル田無が有馬記念当日の12月27日で営業終了へ　JRAが発表 ---
-[0] Gemini入力本文 562文字: 'JRAは7月15日、会員制(全席有料指定席)の場外馬券発売所「エクセル田無」(東京都西東京市田無町)の営業を、有馬記念当日の26年12月27日をもって終了すると発表した。\n\t\t\t\t\u3000エクセル田無は1995年に開設。25年2月からはJRA―U'
+--- 記事[0]: 【函館2歳S】前川恭子調教師が重賞初制覇なるか デビュー戦圧勝のロンドンガーズで挑む ---
+[0] Gemini入力本文 352文字: 'JRA所属で唯一の女性トレーナーの前川恭子調教師が、函館2歳ステークス(2歳・GIII・芝1200m)のロンドンガーズ(牡2)で重賞初制覇を狙う。\n\u3000前川調教師は77年4月9日生まれ、千葉県出身の49歳。JRA通算388戦17勝。03年に崎'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【函館2歳S】北の大地を揺らす“ビックボス”　ダイメイビッグボスが重賞でも主役へ　武井調教師「実戦タイプ」 ---
-[1] Gemini入力本文 351文字: '◆函館2歳S・G3(7月19日、函館競馬場・芝1200メートル)追い切り＝7月15日、函館競馬場\n\t\t\t\t\u30006月13日の新馬戦を快勝し、今年の函館で一番星に輝いたダイメイビッグボス(牡2歳、美浦・武井亮厩舎、父サートゥルナーリア)が、最終週'
+--- 記事[1]: しまむらの競走馬グッズが即日完売 広報担当者に反響を聞いた ---
+[1] Gemini入力本文 583文字: '競馬ファンに親しまれる競走馬たちと、身近な衣料品チェーン「しまむら」がタッグを組んだ。株式会社しまむらは先月、競走馬をデザインしたTシャツや雑貨などを発売。オンラインストアでの販売分が即日完売となるなど、大きな反響を呼んだ(取材・文：net'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: エクセル田無が有馬記念当日12月27日で営業終了　JRA発表 ---
-[2] Gemini入力本文 634文字: 'JRAは15日、エクセル田無(東京都西東京市田無町2−1−1\u3000ASTAビル内リヴィン田無店6階)の営業を有馬記念当日12月27日で終了すると発表した。\n\u3000エクセル田無は1995年に開設した会員制(全席有料指定席)の場外馬券発売所。2025年'
+--- 記事[2]: 【小倉記念】タガノアビーが初コンビの幸英明騎手と“幸せ”つかむ　千田調教師が納得の動き「もうひとつ上でもやれる」 ---
+[2] Gemini入力本文 351文字: '◆第62回小倉記念・G3(7月19日、小倉競馬場・芝2000メートル)追い切り＝7月15日、栗東トレセン\n\t\t\t\t\u3000タガノアビー(牝4歳、栗東・千田輝彦厩舎、父アニマルキングダム)は、CWコースで単走追い。大外を回り、5ハロン71秒9―12'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 276文字]: '今日の競馬情報です。函館2歳S・G3の追い切りが7月15日に函館競馬場で行われました。このレースは7月19日に函館競馬場・芝1200メートルで開催されます。6月13日の新馬戦を快勝し、今年の函館で一番星に輝いたダイメイビッグボスが、最終週の重賞を勝ってフィナーレも飾ろうとしています。ダイメイビッグボスは8日に美浦で1週前追い切りを済ませ、翌日に函館へ移動しました。この日の追い切りでは、芝コースで舟山瑠泉騎手がシークレットシティに騎乗しています。武井調教師はダイメイビッグボスを「実戦タイプ」と評価しており、重賞でも主役となることが期待されています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (276文字)
-[1]  プレビュー: 今日の競馬情報です。函館2歳S・G3の追い切りが7月15日に函館競馬場で行われました。このレースは7月19日に函館競馬場・芝1200メートルで開催されます。6月...
+[0]  [Gemini生出力 241文字]: '最新のレース情報が入ってきました。JRA所属で唯一の女性トレーナーである前川恭子調教師が、函館2歳ステークス、2歳・GIII・芝1200mにおいて、ロンドンガーズで重賞初制覇を狙います。前川調教師は77年4月9日生まれ、千葉県出身の49歳です。JRA通算388戦17勝の実績を持ち、03年には崎山博樹厩舎の厩務員となり、08年の京阪杯をウエスタンダンサーで制覇しました。そして23年の調教師試験に合格し、JRAでは史上初、国内では地方を合わせると史上9人目の女性調教師となりました。'
   HTTP 200
-[2]  [Gemini生出力 217文字]: '競馬速報です。JRAは15日、エクセル田無の営業を、有馬記念当日である12月27日で終了すると発表しました。エクセル田無は1995年に開設された会員制の場外馬券発売所で、全席が有料指定席でした。2025年2月にはJRA−UMACA専用の場外馬券発売所となっています。館内には座席数664席が設けられており、内訳はS指定席32席、その他632席です。また、UMACA発売機が25台、入出金機が4台、UMAポートが6台設置されていました。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (217文字)
-[2]  プレビュー: 競馬速報です。JRAは15日、エクセル田無の営業を、有馬記念当日である12月27日で終了すると発表しました。エクセル田無は1995年に開設された会員制の場外馬券...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 170文字]: '本日の競馬ニュースです。JRAは7月15日、会員制で全席有料指定席の場外馬券発売所「エクセル田無」の営業を、2026年12月27日をもって終了すると発表しました。この終了日は有馬記念当日となります。東京都西東京市田無町に位置するエクセル田無は1995年に開設され、2025年2月からはJRA-UMACA専用の場外馬券発売所となっていました。'
+[2]  [Gemini生出力 198文字]: '最新のレース情報が入ってきました。第62回小倉記念・G3の追い切りが7月15日に栗東トレセンで行われました。タガノアビーはCWコースで単走追いを実施し、大外を回り、5ハロン71秒9―12秒0をマークしています。やや頭の高い走法ながらも、力強さは十分と評価されています。輸送があるため、この時計でも全く問題はないとされています。千田調教師は「いつも通り。いい感じです」と納得の表情を見せていました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (170文字)
-[0]  プレビュー: 本日の競馬ニュースです。JRAは7月15日、会員制で全席有料指定席の場外馬券発売所「エクセル田無」の営業を、2026年12月27日をもって終了すると発表しました...
+[0]  → output/script_0.txt 保存 (241文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。JRA所属で唯一の女性トレーナーである前川恭子調教師が、函館2歳ステークス、2歳・GIII・芝1200mにおいて、ロンドンガー...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (198文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第62回小倉記念・G3の追い切りが7月15日に栗東トレセンで行われました。タガノアビーはCWコースで単走追いを実施し、大外を回...
+  HTTP 200
+[1]  [Gemini生出力 214文字]: '今週の競馬注目情報をお伝えします。身近な衣料品チェーン「しまむら」が、競馬ファンに親しまれる競走馬たちとタッグを組みました。株式会社しまむらは先月、競走馬をデザインしたTシャツや雑貨などを発売し、オンラインストアでの販売分が即日完売となるなど、大きな反響を呼んでいます。競馬グッズは専門店などで販売されることが多い中、大手衣料チェーンによる展開は注目を集め、商品ラインナップを紹介した公式Xの投稿は1.8万いいねを獲得しました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (214文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。身近な衣料品チェーン「しまむら」が、競馬ファンに親しまれる競走馬たちとタッグを組みました。株式会社しまむらは先月、競走馬をデザ...
 
 3 件の脚本を生成しました。
