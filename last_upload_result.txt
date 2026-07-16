@@ -1,10 +1,10 @@
-date: 2026-07-16T09:15:48.275969Z
+date: 2026-07-16T11:16:23.448178Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0AfQrsHBRhw title=かもめ島特別のかもめ島はどんな場所？ 希少な“ひらがなレース名”の土地を深掘り
-OK project=1 video_id=LNuDh7jbNpM title=【注目馬動向】シックスペンスが秋の大目標をマイルCSに　次走は武豊騎手とジャック
-OK project=1 video_id=6EKnMo-UiaM title=【佐賀・霧島賞結果】6番人気のアイタカが重賞初制覇を飾る
+OK project=1 video_id=bvDUmpkF3uU title=【マリーンS】田中博康厩舎の大物候補 ウェイワードアクトが待望の復帰戦だ
+OK project=1 video_id=nKsyb0wvXg0 title=安田記念覇者シックスペンスはマイルCSが秋の目標に　次走は予定通り鞍上・武豊で仏
+OK project=1 video_id=QfVLpEom3B4 title=引退馬牧場「ノーザンレイク」がチャリティー専門ブランドとコラボ 愛らしいデザイン
