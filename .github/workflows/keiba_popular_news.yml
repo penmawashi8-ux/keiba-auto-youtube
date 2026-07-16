@@ -122,6 +122,10 @@ jobs:
         if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
           TTS_RATE: "+20%"
+          # ニュースシリーズの標準ボイス（CLAUDE.md参照）。
+          # edge-tts に固定することで WordBoundary が取得でき、
+          # 字幕タイミングが推定ではなく実測になる
+          TTS_VOICE: "ja-JP-KeitaNeural"
         run: python scripts/generate_audio.py 2>&1 | tee /tmp/generate_audio.log; exit ${PIPESTATUS[0]}
 
       - name: BGMをダウンロード (CC0 public domain only)

@@ -301,6 +301,12 @@ def ass_to_drawtext_filters(ass_path: str, font: str | None, tmp_dir: str) -> li
         text = parts[9].replace("\\N", "\n").strip()
         if not text:
             continue
+        # drawtext は自動折り返ししないため、長い字幕は語境界を尊重した
+        # 均等な2行に折り返す
+        text = re.sub(r"\s*\n\s*", " ", text)
+        if len(text) > 22:
+            l1, l2 = split_balanced(text)
+            text = l1 + "\n" + l2
         try:
             t1 = _ass_time_to_s(parts[1])
             t2 = _ass_time_to_s(parts[2])
@@ -350,20 +356,39 @@ def wrap_text(text: str, max_chars: int) -> str:
     return "\n".join(lines)
 
 
+def _find_cut(rest: str, max_chars: int) -> int:
+    """max_chars 以内で最も自然な折り返し位置を返す。
+
+    優先順: 句読点・スペースの直後 > 語境界（文字種の変わり目）。
+    数字の並び・数字+助数詞や、行頭に来ると不自然な文字の直前では切らない。
+    """
+    limit = min(max_chars, len(rest) - 1)
+    # 1) 句読点・スペースの直後
+    for i in range(limit, max(2, int(max_chars * 0.25)), -1):
+        if rest[i - 1] in "、。！？…」』）)]　 ":
+            return i
+    # 2) 語境界（文字種の変わり目）
+    for i in range(limit, max(2, int(max_chars * 0.4)), -1):
+        a, b = rest[i - 1], rest[i]
+        if a.isdigit() or b.isdigit() or a in "「『（(" or b in "ー々ッん":
+            continue
+        ca, cb = _char_class(a), _char_class(b)
+        if (ca == "h" and cb != "h") or ca != cb:
+            return i
+    # 3) 最終手段: max_chars 位置（数字の分断だけは避ける）
+    cut = max_chars
+    while cut > 1 and rest[cut - 1].isdigit() and rest[cut].isdigit():
+        cut -= 1
+    return cut
+
+
 def wrap_text_smart(text: str, max_chars: int) -> str:
-    """句読点・括弧の直後を優先して折り返す（行頭に読点が来る事故を防ぐ）。"""
+    """句読点・語境界を優先して折り返す（語や数字の泣き別れを防ぐ）。"""
     lines: list[str] = []
     rest = text.strip()
     while len(rest) > max_chars:
-        window = rest[: max_chars + 1]
-        cut = -1
-        for i in range(len(window) - 1, max(2, max_chars - 6), -1):
-            if window[i - 1] in "、。！？…」』）)]":
-                cut = i
-                break
-        if cut <= 0:
-            cut = max_chars
-        lines.append(rest[:cut])
+        cut = _find_cut(rest, max_chars)
+        lines.append(rest[:cut].rstrip("　 "))
         rest = rest[cut:].lstrip("、。 　")
     if rest:
         lines.append(rest)
@@ -388,11 +413,26 @@ def headline_style(text: str) -> tuple[int, str]:
     return fs, wrap_text_smart(text, wrap)
 
 
+def _char_class(c: str) -> str:
+    """語境界判定用の文字クラス（カタカナ/漢字/英数/ひらがな/その他）。"""
+    if "ァ" <= c <= "ヶ" or c == "ー":
+        return "k"
+    if "一" <= c <= "鿿" or c == "々":
+        return "j"
+    if c.isascii() and c.isalnum():
+        return "a"
+    if "ぁ" <= c <= "ん":
+        return "h"
+    return "x"
+
+
 def extract_hook(title: str) -> str:
     """タイトルからサムネイル用の短いフック（16文字以内目安）を抽出する。
 
     サムネイルの文字は「少なく・大きく」が原則（縮小表示でも読めること）。
-    カギ括弧内の発言 → 最初の文節 の順で切り出す。
+    カギ括弧内の発言 → 先頭文節 → 文節の結び（日本語見出しはニュース価値が
+    文節の末尾に来ることが多い）の順で切り出す。カタカナ語や数字の途中では
+    絶対に切らない。
     """
     t = re.sub(r"\s+", " ", title).strip()
     # 「【速報】」などの接頭辞は赤タグと役割が重複するので外す
@@ -404,10 +444,67 @@ def extract_hook(title: str) -> str:
     # 先頭の短すぎない文節をフックにする
     parts = [p.strip() for p in re.split(r"[…。！!？?｜|\s]|\s[-‐−–—]\s", t) if p.strip()]
     cand = next((p for p in parts if len(p) >= 5), parts[0] if parts else t)
-    if len(cand) > 16:
-        head = re.split(r"[、,]", cand)[0].strip()
-        cand = head if 4 <= len(head) <= 16 else cand[:15]
-    return cand
+    if len(cand) <= 16:
+        return cand
+
+    head = re.split(r"[、,]", cand)[0].strip()
+    if 4 <= len(head) <= 16:
+        return head
+
+    # 文節の末尾15文字を取り、切り口を語境界まで送る
+    tail = cand[-15:]
+    prev = cand[-16]
+    i = 0
+    while i < len(tail):
+        before = prev if i == 0 else tail[i - 1]
+        if _char_class(tail[i]) == _char_class(before) and _char_class(tail[i]) in "kja":
+            i += 1
+        else:
+            break
+    tail = tail[i:]
+    # 行頭の助詞と、カタカナ語の枕になっている短い漢字連は落とす
+    tail = re.sub(r"^[のでにはがをともへや]+", "", tail)
+    m2 = re.match(r"^[一-鿿々]{1,3}(?=[ァ-ヶ])", tail)
+    if m2 and len(tail) - m2.end() >= 8:
+        tail = tail[m2.end():]
+    return tail if len(tail) >= 6 else cand[:15]
+
+
+def split_balanced(text: str, min_side: int = 3) -> tuple[str, str]:
+    """テキストを語境界を尊重しつつ、なるべく均等な2行に分割する。
+
+    候補は「読点等の直後 > 助詞の直後 > 文字種の変わり目」。数字の並びの
+    途中では切らず、行頭に助詞・伸ばし棒が来る位置はペナルティを付ける。
+    """
+    n = len(text)
+    best, best_cost = None, None
+    for i in range(min_side, n - min_side + 1):
+        a, b = text[i - 1], text[i]
+        if a in "、。！？　 ":
+            score = 0.0
+        elif _char_class(a) == "h" and _char_class(b) != "h":
+            score = 1.0  # 助詞・活用語尾の直後
+        elif _char_class(a) != _char_class(b):
+            score = 2.0
+        else:
+            continue
+        if a in "「『（(":
+            continue
+        # 数値表記（11秒1・2.4倍・1番人気）はどこでも分断しない
+        if a.isdigit() or (b.isdigit() and a not in "、。！？　 "):
+            continue
+        if b in "ー々ッん":
+            continue
+        if _char_class(b) == "h" and b in "のにではがをとへもや":
+            score += 2.0  # 行頭の助詞は避けたいが、バランスが良ければ許容
+        cost = abs(i - n / 2) + score
+        if best_cost is None or cost < best_cost:
+            best_cost, best = cost, i
+    if best is None:
+        best = (n + 1) // 2
+        while best > 1 and text[best - 1].isdigit() and text[best].isdigit():
+            best -= 1
+    return text[:best].rstrip("、 　"), text[best:].lstrip("、 　")
 
 
 def format_views(views: int) -> str:
@@ -554,16 +651,20 @@ def generate_news_thumbnail(meta: dict, font: str | None, bg_img: str | None,
                 f":x=w-text_w-36:y=40:box=1:boxcolor=0xFFD700@0.96:boxborderw=14"
             )
 
-        # 中央: フック（縮小表示でも読めるよう最大サイズ・最大2行）
-        n = len(hook)
-        if n <= 8:
-            hook_fs, hook_wrap = 108, 8
-        elif n <= 12:
-            hook_fs, hook_wrap = 92, 10
+        # 中央: フック（縮小表示でも読めるよう最大サイズ・最大2行、語境界で折る）
+        if len(hook) <= 8:
+            hook_text, max_line = hook, len(hook)
         else:
-            hook_fs, hook_wrap = 76, 11
+            l1, l2 = split_balanced(hook)
+            hook_text, max_line = l1 + "\n" + l2, max(len(l1), len(l2))
+        if max_line <= 8:
+            hook_fs = 104
+        elif max_line <= 10:
+            hook_fs = 92
+        else:
+            hook_fs = 78
         hf = f"{tmp_dir}/nt_hook.txt"
-        Path(hf).write_text(wrap_text_smart(hook, hook_wrap), encoding="utf-8")
+        Path(hf).write_text(hook_text, encoding="utf-8")
         filters.append(
             f"drawtext=textfile='{_esc(hf)}':fontfile='{fb}':fontsize={hook_fs}:fontcolor=0xFFE600"
             f":x=(w-text_w)/2:y=(h-text_h)/2+16"
