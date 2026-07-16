@@ -205,7 +205,15 @@ def generate_landscape(top: dict) -> tuple[str, str]:
     meta.setdefault("title", top["title"])
 
     font = landscape_video.find_font()
-    bg_imgs = landscape_video.fetch_images(4, horse_names=meta.get("horses"))
+    # 記事自身のog:imageを最優先の背景・サムネイル素材にする（関連性が段違い）
+    article_img = landscape_video.fetch_article_image(
+        meta.get("image_url", ""),
+        f"{landscape_video.ASSETS_DIR}/article_{idx}.jpg",
+    )
+    bg_imgs = landscape_video.fetch_images(
+        3 if article_img else 4, horse_names=meta.get("horses"))
+    if article_img:
+        bg_imgs = [article_img] + bg_imgs
     video_path = landscape_video.generate_video(idx, meta, font, bg_imgs)
     return video_path, str(thumb_path)
 
