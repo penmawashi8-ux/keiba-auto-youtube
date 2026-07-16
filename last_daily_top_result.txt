@@ -1,8 +1,8 @@
-date: 2026-07-15T14:46:06.808785Z
+date: 2026-07-16T14:57:24.425713Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OPnWsVHw5nk
-source_short=cbj9trQFwBU views=815
-title=【本日の人気No.1】7月15日 【函館2歳S】北の大地を揺らす“ビックボス”　ダイメイビッグボスが重賞でも主役へ　武井
+OK project=1 video_id=NiQNklrcPc0
+source_short=vZH3I7V-DSQ views=1038
+title=【本日の人気No.1】7月16日 【東海S・1週前】「調教は目立つ時計の出ない馬」が坂路51秒5!　ダノンフィーゴが重賞
