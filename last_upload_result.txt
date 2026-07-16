@@ -1,10 +1,6 @@
-date: 2026-07-16T12:26:16.257559Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-16T13:45:42.033035Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LkEgbS0Ej18 title=【門別・ノースクイーンC結果】チャチャハツゴウが逃げ切って重賞初制覇
-OK project=1 video_id=GJLhpggV1pk title=【有力馬動向】長期休養中のサトノシャイニングが帰厩後初時計/馬三郎のつぶやき
-OK project=1 video_id=R_3o0sRBXZs title=【POG】新馬戦快勝のニシノイサリビはダリア賞へ/馬三郎のつぶやき
+OK project=1 video_id=8ZNgm2F5tWA views=23806 title=【話題】7月16日 アーモンドアイの初子アロンズロッドに覚醒ムード　ラスト11秒1でうなるような伸び　戸崎圭太騎手「力は
