@@ -56,11 +56,15 @@ def _build_rules() -> tuple[list, list]:
     readings: dict = _load_json("readings.json", {})
     persons: list = _load_json("jockeys.json", []) + _load_json("trainers.json", [])
 
-    # --- 単純置換: 一般用語 + フルネーム（従来と同じ挙動） ---
+    # --- 単純置換: 一般用語 + フルネーム ---
+    # readings.json の明示エントリを最優先にする（setdefault）。
+    # 以前は人名の自動展開が readings.json を上書きしていたため、
+    # jockeys.json の読みが間違っていると readings.json で直しても
+    # 効かないという罠があった（戸崎圭太で実際に発生）。
     literal = {k: v for k, v in readings.items() if isinstance(v, str)}
     for j in persons:
         full = j["surname"] + j["given"]
-        literal[full] = j["surname_kana"] + j["given_kana"]
+        literal.setdefault(full, j["surname_kana"] + j["given_kana"])
 
     # --- 省略表記: 姓+名の1文字 → フルネームの読み ---
     abbrevs: dict[str, str] = {}
@@ -111,8 +115,12 @@ def _build_rules() -> tuple[list, list]:
     return literal_rules, regex_rules
 
 
-def apply_readings(text: str) -> str:
-    """辞書を使ってTTSの誤読を補正する。長いパターンを優先して適用する。"""
+def apply_readings(text: str, track: list | None = None) -> str:
+    """辞書を使ってTTSの誤読を補正する。長いパターンを優先して適用する。
+
+    track にリストを渡すと、実際に適用された置換を (かな, 元表記) の
+    タプルで追記する。字幕側で元の漢字表記に戻すために使う。
+    """
     global _rules_cache
     if _rules_cache is None:
         _rules_cache = _build_rules()
@@ -120,6 +128,14 @@ def apply_readings(text: str) -> str:
     for kanji, kana in literal_rules:
         if kanji in text:
             text = text.replace(kanji, kana)
+            if track is not None:
+                track.append((kana, kanji))
     for pat, kana in regex_rules:
-        text = pat.sub(kana, text)
+        if track is not None:
+            def _sub(m, _kana=kana):
+                track.append((_kana, m.group(0)))
+                return _kana
+            text = pat.sub(_sub, text)
+        else:
+            text = pat.sub(kana, text)
     return text

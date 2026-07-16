@@ -43,10 +43,19 @@ _RACING_TERM_REPLACEMENTS = [
 ]
 
 
-def normalize_racing_terms(text: str) -> str:
-    """GI/GII/GIII・数字Rなど競馬用語の読み上げを正規化する。"""
+def normalize_racing_terms(text: str, track: list | None = None) -> str:
+    """GI/GII/GIII・数字Rなど競馬用語の読み上げを正規化する。
+
+    track にリストを渡すと (かな, 元表記) を追記する（字幕の漢字復元用）。
+    """
     for pattern, repl in _RACING_TERM_REPLACEMENTS:
-        text = pattern.sub(repl, text)
+        if track is not None and "\\" not in repl:
+            def _sub(m, _repl=repl):
+                track.append((_repl, m.group(0)))
+                return _repl
+            text = pattern.sub(_sub, text)
+        else:
+            text = pattern.sub(repl, text)
     return text
 
 # edge-tts フォールバック用ボイスプール（確認済み有効ボイスのみ）
@@ -163,33 +172,72 @@ def ticks_to_ass_time(ticks: int) -> str:
     return f"{h}:{m:02d}:{s:02d}.{cs:02d}"
 
 
+# この文字の直後なら字幕を区切ってよい（読点・スペース・閉じ括弧）
+_SOFT_BREAK_CHARS = "、。！？」』）　 "
+
+
 def words_to_segments(words: list[dict], max_chars: int = 22) -> list[dict]:
-    """ワード境界リスト → 字幕セグメントリスト"""
+    """ワード境界リスト → 字幕セグメントリスト。
+
+    文末（。！？）で必ず区切り、長すぎる場合は読点・スペースの直後まで
+    さかのぼって区切る。区切り位置が見つからない場合も数字の並びの
+    途中（「ラスト1|1秒」など）では絶対に切らない。
+    """
     segments: list[dict] = []
     current: list[dict] = []
+
+    def flush(upto: int | None = None) -> None:
+        nonlocal current
+        take = current if upto is None else current[:upto]
+        rest = [] if upto is None else current[upto:]
+        # 行頭に読点・句点が来ると不自然なので取り除く
+        text = "".join(w["text"] for w in take).strip().lstrip("、。")
+        if take and text:
+            segments.append({
+                "start": take[0]["offset"],
+                "end": take[-1]["offset"] + take[-1]["duration"],
+                "text": text,
+            })
+        current = rest
 
     for word in words:
         current.append(word)
         text_so_far = "".join(w["text"] for w in current)
-        ends = bool(re.search(r"[。！？\n]$", word["text"]))
-        if ends or len(text_so_far) >= max_chars:
-            text = "".join(w["text"] for w in current).strip()
-            if text:
-                segments.append({
-                    "start": current[0]["offset"],
-                    "end": current[-1]["offset"] + current[-1]["duration"],
-                    "text": text,
-                })
-            current = []
+        if re.search(r"[。！？\n]\s*$", word["text"]):
+            flush()
+            continue
+        if len(text_so_far) < max_chars:
+            continue
 
-    if current:
-        text = "".join(w["text"] for w in current).strip()
-        if text:
-            segments.append({
-                "start": current[0]["offset"],
-                "end": current[-1]["offset"] + current[-1]["duration"],
-                "text": text,
-            })
+        # ちょうど読点・スペースで終わっている場合はそのまま区切る
+        if word["text"].rstrip()[-1:] in _SOFT_BREAK_CHARS:
+            flush()
+            continue
+
+        # 読点・スペース直後で切れる最後の位置（セグメントが短くなりすぎない範囲）
+        best = None
+        acc = 0
+        for i, w in enumerate(current[:-1]):
+            acc += len(w["text"])
+            if w["text"].rstrip()[-1:] in _SOFT_BREAK_CHARS and acc >= max_chars * 0.4:
+                best = i + 1
+        if best is None:
+            # 数字同士の境界（金額・タイム表記の途中）と開き括弧の直後を避けて
+            # 後ろから探す
+            for i in range(len(current) - 1, 0, -1):
+                prev, nxt = current[i - 1]["text"], current[i]["text"]
+                if not prev or not nxt:
+                    continue
+                if prev[-1].isdigit() and nxt[0].isdigit():
+                    continue
+                if prev[-1] in "「『（(":
+                    continue
+                best = i
+                break
+        if best:
+            flush(best)
+
+    flush()
     return segments
 
 
@@ -206,40 +254,58 @@ def _audio_duration_s(audio_path: str) -> float:
         return 60.0
 
 
-def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int = 28) -> list[dict]:
+def _split_long_line(part: str, max_chars: int) -> list[str]:
+    """長い文を読点・スペース優先で max_chars 以下のチャンクに分割する。
+
+    区切り候補がない場合も数字の並びの途中（「ラスト1|1秒」など）では切らない。
+    """
+    chunks: list[str] = []
+    while len(part) > max_chars:
+        window = part[: max_chars + 1]
+        cut = -1
+        for i in range(len(window) - 1, int(max_chars * 0.4), -1):
+            if window[i - 1] in _SOFT_BREAK_CHARS:
+                cut = i
+                break
+        if cut <= 0:
+            cut = max_chars
+            while cut > 1 and (
+                (part[cut - 1].isdigit() and part[cut].isdigit())
+                or part[cut - 1] in "「『（("
+            ):
+                cut -= 1
+        chunks.append(part[:cut].strip())
+        part = part[cut:].strip()
+    if part:
+        chunks.append(part)
+    return chunks
+
+
+def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int = 26) -> list[dict]:
     """テキストと音声長から字幕セグメントを近似生成する。
-    句点（。！？\n）のみで区切り、読点（、）では区切らない。
+
+    句点（。！？\n）で文に分け、長い文は読点・スペース優先で分割する
+    （機械的な文字数ぶつ切りで語や数字が泣き別れになるのを防ぐ）。
     """
     parts = [p.strip() for p in re.split(r"(?<=[。！？\n])", text) if p.strip()]
     if not parts:
         return []
 
-    total_chars = max(sum(len(p) for p in parts), 1)
+    chunks: list[str] = []
+    for part in parts:
+        chunks.extend(_split_long_line(part, max_chars))
+
+    total_chars = max(sum(len(c) for c in chunks), 1)
     segments: list[dict] = []
     current_t = 0.0
-
-    for part in parts:
-        part_dur = (len(part) / total_chars) * total_duration
-        remaining_dur = part_dur
-        while len(part) > max_chars:
-            chunk = part[:max_chars]
-            chunk_dur = part_dur * (max_chars / len(part))
-            segments.append({
-                "start": int(current_t * 10_000_000),
-                "end": int((current_t + chunk_dur) * 10_000_000),
-                "text": chunk,
-            })
-            current_t += chunk_dur
-            remaining_dur -= chunk_dur
-            part_dur = remaining_dur
-            part = part[max_chars:]
-        if part:
-            segments.append({
-                "start": int(current_t * 10_000_000),
-                "end": int((current_t + remaining_dur) * 10_000_000),
-                "text": part,
-            })
-        current_t += remaining_dur if part else 0
+    for chunk in chunks:
+        chunk_dur = (len(chunk) / total_chars) * total_duration
+        segments.append({
+            "start": int(current_t * 10_000_000),
+            "end": int((current_t + chunk_dur) * 10_000_000),
+            "text": chunk,
+        })
+        current_t += chunk_dur
 
     return segments
 
@@ -450,9 +516,11 @@ def main() -> None:
         title = news_items[idx_int].get("title", "") if idx_int < len(news_items) else ""
         # subtitle_text: 原文テキスト（字幕表示用 — 人名は漢字のまま）
         subtitle_text = (title + "。" + script) if title else script
-        # narration_text: 読み仮名置換済み（TTS用）
-        narration_text = normalize_racing_terms(subtitle_text)
-        narration_text = apply_readings(narration_text)
+        # narration_text: 読み仮名置換済み（TTS用）。
+        # 適用された置換を記録し、字幕側で元の漢字表記に復元する
+        reading_track: list[tuple[str, str]] = []
+        narration_text = normalize_racing_terms(subtitle_text, track=reading_track)
+        narration_text = apply_readings(narration_text, track=reading_track)
         if title:
             print(f"  [{idx}] タイトル読み上げ追加: 「{title[:40]}」")
 
@@ -489,8 +557,18 @@ def main() -> None:
         apply_audio_variation(audio_path, pitch_factor, volume_db)
         aud_dur = _audio_duration_s(audio_path)
         if words:
-            # WordBoundary イベントから正確なタイミングで字幕を生成（1行最大30文字で折り返し）
-            segs = words_to_segments(words, max_chars=30)
+            # WordBoundary イベントから正確なタイミングで字幕を生成
+            segs = words_to_segments(words, max_chars=26)
+            # WordBoundary はかな置換後のテキストなので、字幕表示用に
+            # 元の漢字表記へ復元する（短いかなは誤置換しやすいので3文字以上のみ）
+            restore = {}
+            for kana, orig in reading_track:
+                if len(kana) >= 3:
+                    restore[kana] = orig
+            for seg in segs:
+                for kana in sorted(restore, key=len, reverse=True):
+                    if kana in seg["text"]:
+                        seg["text"] = seg["text"].replace(kana, restore[kana])
             # POGメタが存在する場合、WordBoundaryからチャプター開始時刻を計算して保存
             _save_chapter_timings(idx, words)
         else:

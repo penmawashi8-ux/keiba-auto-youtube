@@ -205,7 +205,25 @@ def generate_landscape(top: dict) -> tuple[str, str]:
     meta.setdefault("title", top["title"])
 
     font = landscape_video.find_font()
-    bg_imgs = landscape_video.fetch_images(4, horse_names=meta.get("horses"))
+    # 記事自身のog:imageを最優先の背景・サムネイル素材にする（関連性が段違い）
+    article_img = landscape_video.fetch_article_image(
+        meta.get("image_url", ""),
+        f"{landscape_video.ASSETS_DIR}/article_{idx}.jpg",
+    )
+    # タイトル・本文から馬名を推定してWikipediaの馬写真も狙う
+    horses = meta.get("horses") or landscape_video.extract_horse_names(
+        f"{meta.get('title', '')} {meta.get('summary', '')[:300]}"
+    )
+    bg_imgs = landscape_video.fetch_images(
+        3 if article_img else 4, horse_names=horses,
+        strict_horses=not meta.get("horses"),
+        fill_fallback=not article_img,
+    )
+    if article_img:
+        bg_imgs = [article_img] + bg_imgs
+        while len(bg_imgs) < 3:
+            # 素材不足時は記事画像を再利用（セグメントごとにパン方向が変わる）
+            bg_imgs.append(article_img)
     video_path = landscape_video.generate_video(idx, meta, font, bg_imgs)
     return video_path, str(thumb_path)
 

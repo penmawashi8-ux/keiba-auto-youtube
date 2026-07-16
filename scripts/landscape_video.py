@@ -5,6 +5,7 @@ generate_audio.py が生成した ASS 字幕ファイル（output/subtitles_N.as
 ffmpeg の ass フィルターで適用することで音声と字幕を正確に同期させる。
 単一の ffmpeg プロセスで完結させることで生成を高速化する。
 """
+import datetime
 import glob
 import json
 import os
@@ -27,7 +28,12 @@ W, H       = 1280, 720
 FPS        = 30
 OPEN_DUR   = 3.0   # オープニングカード表示秒数
 CARD_DUR   = 2.5   # チャプタータイトルカード表示秒数
+END_DUR    = 2.8   # ニュースモードのエンドカード表示秒数
 BGM_VOL    = 0.12
+JST        = datetime.timezone(datetime.timedelta(hours=9))
+
+# ニュースモードの配色（ニューステロップ定番: 白文字+黒ブロック+赤タグ）
+NEWS_RED   = "0xC1121F"
 
 
 def find_font() -> str | None:
@@ -39,6 +45,19 @@ def find_font() -> str | None:
         if Path(p).exists():
             return p
     hits = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
+    return hits[0] if hits else None
+
+
+def find_bold_font() -> str | None:
+    """見出し・サムネイル用の太字CJKフォント（無ければNone→通常フォントで代用）。"""
+    for p in [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc",
+    ]:
+        if Path(p).exists():
+            return p
+    hits = glob.glob("/usr/share/fonts/**/*CJK*Bold*.ttc", recursive=True)
     return hits[0] if hits else None
 
 
@@ -59,8 +78,14 @@ _WP_UA   = "keiba-auto-youtube/1.0"
 _WP_SKIP = {".svg", ".ogv", ".ogg", ".webm", ".gif"}
 
 
-def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
-    """Wikipedia(ja→en)から馬の画像を取得してJPEGに変換する。"""
+def _fetch_wikipedia_image(horse_name: str, out_path: str,
+                           require_horse: bool = False) -> bool:
+    """Wikipedia(ja→en)から馬の画像を取得してJPEGに変換する。
+
+    require_horse=True の場合、ページ概要に「競走馬」(ja)/"racehorse"(en) が
+    含まれるページのみ採用する（タイトルから自動抽出したカタカナ語が
+    馬名以外だった場合に無関係な画像を拾う事故を防ぐ）。
+    """
     for lang in ("ja", "en"):
         encoded = urllib.parse.quote(horse_name)
         api_url = f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{encoded}"
@@ -72,6 +97,10 @@ def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
                 data = json.loads(r.read())
         except Exception:
             continue
+        if require_horse:
+            desc = (data.get("description") or "") + (data.get("extract") or "")[:120]
+            if "競走馬" not in desc and "racehorse" not in desc.lower():
+                continue
         src = (data.get("originalimage") or data.get("thumbnail") or {}).get("source", "")
         if not src or Path(src.split("?")[0]).suffix.lower() in _WP_SKIP:
             continue
@@ -94,9 +123,42 @@ def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
     return False
 
 
-def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[str]:
+# タイトルから馬名を推定する際に除外する一般カタカナ語
+_KATAKANA_STOPWORDS = {
+    "ニュース", "ランキング", "スポーツ", "ジョッキー", "トレーナー", "レース",
+    "ダービー", "オークス", "チャンネル", "コメント", "カメラ", "メンバー",
+    "パドック", "トレセン", "デビュー", "クラシック", "シーズン", "タイトル",
+    "リーディング", "プレゼント", "キャンペーン", "インタビュー", "エントリー",
+    "ステークス", "スプリント", "サンスポ", "スポニチ", "デイリー", "メディア",
+    "サラブレッド", "ローテーション", "グランプリ", "レコード", "ファンファーレ",
+}
+
+
+def extract_horse_names(text: str, limit: int = 3) -> list[str]:
+    """テキストから馬名らしきカタカナ連続語を抽出する。
+
+    競走馬名は2〜9文字だが、短い語は一般語との衝突が多いため5文字以上に限定。
+    Wikipedia側の「競走馬ページかどうか」チェック（require_horse）と併用する。
+    """
+    names: list[str] = []
+    for m in re.finditer(r"[ァ-ヴー]{5,9}", text):
+        w = m.group(0)
+        if w in _KATAKANA_STOPWORDS or w in names or w.startswith("ー"):
+            continue
+        names.append(w)
+        if len(names) >= limit:
+            break
+    return names
+
+
+def fetch_images(count: int = 4, horse_names: list[str] | None = None,
+                 strict_horses: bool = False, fill_fallback: bool = True) -> list[str]:
     """馬名が指定されればWikipedia、次いでPixabayから競馬写真を取得。
-    失敗時は geq グラデーションフォールバック。"""
+
+    strict_horses=True: horse_names が自動抽出なので競走馬ページのみ採用。
+    fill_fallback=False: 写真が取れなかった分をフォールバック背景で埋めず、
+    取れた分だけ返す（呼び出し側に記事画像などの代替がある場合用）。
+    """
     Path(ASSETS_DIR).mkdir(exist_ok=True)
     paths: list[str] = []
 
@@ -104,7 +166,7 @@ def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[s
     if horse_names:
         for i, name in enumerate(horse_names[:count]):
             out = f"{ASSETS_DIR}/landscape_{i}.jpg"
-            if _fetch_wikipedia_image(name, out):
+            if _fetch_wikipedia_image(name, out, require_horse=strict_horses):
                 paths.append(out)
                 print(f"  Wikipedia画像: {name}")
         if len(paths) >= count:
@@ -145,23 +207,71 @@ def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[s
             except Exception as e:
                 print(f"  [警告] Pixabay失敗: {e}", file=sys.stderr)
 
-        # geq グラデーションフォールバック
-        colors = [
-            ("clip(8+148*pow(Y/H,1.6),8,156)", "clip(4*pow(Y/H,2),0,4)",   "clip(4*pow(Y/H,2),0,4)"),
-            ("clip(4*pow(1-Y/H,2),0,4)",        "clip(4*pow(1-Y/H,2),0,4)", "clip(10+105*pow(1-Y/H,1.5),10,115)"),
-            ("clip(8+100*pow(1-Y/H,1.4),8,108)","clip(6+68*pow(1-Y/H,1.6),6,74)", "clip(2,0,2)"),
-            ("clip(5*pow(Y/H,2),0,5)",           "clip(8+80*pow(Y/H,1.5),8,88)",   "clip(8+90*pow(1-Y/H,1.5),8,98)"),
-        ]
-        r_e, g_e, b_e = colors[i % len(colors)]
-        subprocess.run([
-            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}:r=1",
-            "-vf", f"geq=r='{r_e}':g='{g_e}':b='{b_e}'",
+        if not fill_fallback:
+            continue
+
+        # 最終フォールバック: 虹色グラデーションは廃止。
+        # 単色ダーク+ビネット+微ノイズの「スタジオ背景」風で悪目立ちさせない。
+        studio = ["#0B1626", "#1C1013", "#0D1A14", "#151021"]
+        base = studio[i % len(studio)]
+        res = subprocess.run([
+            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c={base}:s={W}x{H}:r=1",
+            "-vf", "noise=alls=6:allf=t,vignette=PI/4.5,eq=brightness=0.02",
             "-frames:v", "1", "-q:v", "3", out,
         ], capture_output=True)
+        if res.returncode != 0:
+            subprocess.run([
+                "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c={base}:s={W}x{H}:r=1",
+                "-frames:v", "1", "-q:v", "3", out,
+            ], capture_output=True)
         if Path(out).exists():
             paths.append(out)
 
     return paths
+
+
+def fetch_article_image(image_url: str, out_path: str) -> str | None:
+    """記事のog:imageをダウンロードしてJPEG化する。
+
+    記事本人の写真は汎用ストック写真より圧倒的に関連性が高いため、
+    ニュース動画の背景・サムネイルの最優先素材として使う。
+    ロゴ等の小さすぎる画像は使わない。成功時はパスを返す。
+    """
+    if not image_url or not image_url.startswith("http"):
+        return None
+    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
+    try:
+        req = urllib.request.Request(image_url, headers={"User-Agent": _WP_UA})
+        with urllib.request.urlopen(req, timeout=30, context=_SSL_CTX) as r:
+            raw = r.read()
+    except Exception as e:
+        print(f"  [警告] 記事画像取得失敗: {e}", file=sys.stderr)
+        return None
+    if len(raw) < 3000:
+        return None
+    tmp = out_path + ".raw"
+    Path(tmp).write_bytes(raw)
+    res = subprocess.run(
+        ["ffmpeg", "-y", "-i", tmp, "-frames:v", "1", "-q:v", "2", out_path],
+        capture_output=True,
+    )
+    Path(tmp).unlink(missing_ok=True)
+    if res.returncode != 0 or not Path(out_path).exists():
+        return None
+    pr = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=width,height", "-of", "csv=p=0", out_path],
+        capture_output=True, text=True,
+    )
+    try:
+        w, h = (int(x) for x in pr.stdout.strip().split(","))
+    except Exception:
+        return None
+    if w < 480 or h < 250:
+        print(f"  [情報] 記事画像が小さいため不使用 ({w}x{h})")
+        return None
+    print(f"  記事画像を使用: {w}x{h}")
+    return out_path
 
 
 def _ass_time_to_s(t: str) -> float:
@@ -191,6 +301,12 @@ def ass_to_drawtext_filters(ass_path: str, font: str | None, tmp_dir: str) -> li
         text = parts[9].replace("\\N", "\n").strip()
         if not text:
             continue
+        # drawtext は自動折り返ししないため、長い字幕は語境界を尊重した
+        # 均等な2行に折り返す
+        text = re.sub(r"\s*\n\s*", " ", text)
+        if len(text) > 22:
+            l1, l2 = split_balanced(text)
+            text = l1 + "\n" + l2
         try:
             t1 = _ass_time_to_s(parts[1])
             t2 = _ass_time_to_s(parts[2])
@@ -238,6 +354,188 @@ def wrap_text(text: str, max_chars: int) -> str:
     if para:
         lines.append(para)
     return "\n".join(lines)
+
+
+def _find_cut(rest: str, max_chars: int) -> int:
+    """max_chars 以内で最も自然な折り返し位置を返す。
+
+    優先順: 句読点・スペースの直後 > 語境界（文字種の変わり目）。
+    数字の並び・数字+助数詞や、行頭に来ると不自然な文字の直前では切らない。
+    """
+    limit = min(max_chars, len(rest) - 1)
+    # 1) 句読点・スペースの直後
+    for i in range(limit, max(2, int(max_chars * 0.25)), -1):
+        if rest[i - 1] in "、。！？…」』）)]　 ":
+            return i
+    # 2) 語境界（文字種の変わり目）
+    for i in range(limit, max(2, int(max_chars * 0.4)), -1):
+        a, b = rest[i - 1], rest[i]
+        if a.isdigit() or b.isdigit() or a in "「『（(" or b in "ー々ッん":
+            continue
+        ca, cb = _char_class(a), _char_class(b)
+        if (ca == "h" and cb != "h") or ca != cb:
+            return i
+    # 3) 最終手段: max_chars 位置（数字の分断だけは避ける）
+    cut = max_chars
+    while cut > 1 and rest[cut - 1].isdigit() and rest[cut].isdigit():
+        cut -= 1
+    return cut
+
+
+def wrap_text_smart(text: str, max_chars: int) -> str:
+    """句読点・語境界を優先して折り返す（語や数字の泣き別れを防ぐ）。"""
+    lines: list[str] = []
+    rest = text.strip()
+    while len(rest) > max_chars:
+        cut = _find_cut(rest, max_chars)
+        lines.append(rest[:cut].rstrip("　 "))
+        rest = rest[cut:].lstrip("、。 　")
+    if rest:
+        lines.append(rest)
+    return "\n".join(lines)
+
+
+def headline_style(text: str) -> tuple[int, str]:
+    """見出しの長さに応じた(フォントサイズ, 折り返し済みテキスト)を返す。
+
+    長いニュースタイトルを固定80pxで12文字折りすると5行超の壁になるため、
+    長さに応じて縮小し、最大でも3〜4行に収める。
+    """
+    n = len(text)
+    if n <= 14:
+        fs, wrap = 66, 14
+    elif n <= 28:
+        fs, wrap = 56, 15
+    elif n <= 45:
+        fs, wrap = 48, 16
+    else:
+        fs, wrap = 42, 18
+    return fs, wrap_text_smart(text, wrap)
+
+
+def _char_class(c: str) -> str:
+    """語境界判定用の文字クラス（カタカナ/漢字/英数/ひらがな/その他）。"""
+    if "ァ" <= c <= "ヶ" or c == "ー":
+        return "k"
+    if "一" <= c <= "鿿" or c == "々":
+        return "j"
+    if c.isascii() and c.isalnum():
+        return "a"
+    if "ぁ" <= c <= "ん":
+        return "h"
+    return "x"
+
+
+def extract_hook(title: str) -> str:
+    """タイトルからサムネイル用の短いフック（16文字以内目安）を抽出する。
+
+    サムネイルの文字は「少なく・大きく」が原則（縮小表示でも読めること）。
+    カギ括弧内の発言 → 先頭文節 → 文節の結び（日本語見出しはニュース価値が
+    文節の末尾に来ることが多い）の順で切り出す。カタカナ語や数字の途中では
+    絶対に切らない。
+    """
+    t = re.sub(r"\s+", " ", title).strip()
+    # 「【速報】」などの接頭辞は赤タグと役割が重複するので外す
+    t = re.sub(r"^【[^】]{1,8}】\s*", "", t) or t
+    m = re.search(r"「([^」]{4,16})」", t)
+    if m:
+        return m.group(1)
+    # スペース（ニュース見出しの主題区切り）や記号で文節に分割し、
+    # 先頭の短すぎない文節をフックにする
+    parts = [p.strip() for p in re.split(r"[…。！!？?｜|\s]|\s[-‐−–—]\s", t) if p.strip()]
+    cand = next((p for p in parts if len(p) >= 5), parts[0] if parts else t)
+    if len(cand) <= 16:
+        return cand
+
+    head = re.split(r"[、,]", cand)[0].strip()
+    if 4 <= len(head) <= 16:
+        return head
+
+    # 文節の末尾15文字を取り、切り口を語境界まで送る
+    tail = cand[-15:]
+    prev = cand[-16]
+    i = 0
+    while i < len(tail):
+        before = prev if i == 0 else tail[i - 1]
+        if _char_class(tail[i]) == _char_class(before) and _char_class(tail[i]) in "kja":
+            i += 1
+        else:
+            break
+    tail = tail[i:]
+    # 行頭の助詞と、カタカナ語の枕になっている短い漢字連は落とす
+    tail = re.sub(r"^[のでにはがをともへや]+", "", tail)
+    m2 = re.match(r"^[一-鿿々]{1,3}(?=[ァ-ヶ])", tail)
+    if m2 and len(tail) - m2.end() >= 8:
+        tail = tail[m2.end():]
+    return tail if len(tail) >= 6 else cand[:15]
+
+
+def split_balanced(text: str, min_side: int = 3) -> tuple[str, str]:
+    """テキストを語境界を尊重しつつ、なるべく均等な2行に分割する。
+
+    候補は「読点等の直後 > 助詞の直後 > 文字種の変わり目」。数字の並びの
+    途中では切らず、行頭に助詞・伸ばし棒が来る位置はペナルティを付ける。
+    """
+    n = len(text)
+    best, best_cost = None, None
+    for i in range(min_side, n - min_side + 1):
+        a, b = text[i - 1], text[i]
+        if a in "、。！？　 ":
+            score = 0.0
+        elif _char_class(a) == "h" and _char_class(b) != "h":
+            score = 1.0  # 助詞・活用語尾の直後
+        elif _char_class(a) != _char_class(b):
+            score = 2.0
+        else:
+            continue
+        if a in "「『（(":
+            continue
+        # 数値表記（11秒1・2.4倍・1番人気）はどこでも分断しない
+        if a.isdigit() or (b.isdigit() and a not in "、。！？　 "):
+            continue
+        if b in "ー々ッん":
+            continue
+        if _char_class(b) == "h" and b in "のにではがをとへもや":
+            score += 2.0  # 行頭の助詞は避けたいが、バランスが良ければ許容
+        cost = abs(i - n / 2) + score
+        if best_cost is None or cost < best_cost:
+            best_cost, best = cost, i
+    if best is None:
+        best = (n + 1) // 2
+        while best > 1 and text[best - 1].isdigit() and text[best].isdigit():
+            best -= 1
+    return text[:best].rstrip("、 　"), text[best:].lstrip("、 　")
+
+
+def format_views(views: int) -> str:
+    """閲覧数をサムネイル・テロップ用の短い表記にする。"""
+    if views >= 10000:
+        man = views / 10000
+        return f"{man:.1f}万回閲覧" if man < 10 else f"{man:.0f}万回閲覧"
+    if views >= 1000:
+        return f"{views:,}回閲覧"
+    return ""
+
+
+def _ellipsis(text: str, max_chars: int) -> str:
+    return text if len(text) <= max_chars else text[: max_chars - 1] + "…"
+
+
+def _news_date_str(meta: dict) -> str:
+    """記事の公開日（無ければ今日・JST）を「7月16日」形式で返す。"""
+    pub = meta.get("published_date") or ""
+    try:
+        dt = datetime.datetime.fromisoformat(pub).astimezone(JST)
+    except (ValueError, TypeError):
+        dt = datetime.datetime.now(JST)
+    return f"{dt.month}月{dt.day}日"
+
+
+def is_news_meta(meta: dict) -> bool:
+    """レース予想系メタ（race_name あり）ではないニュース記事メタかを判定する。"""
+    if meta.get("video_style") == "news":
+        return True
+    return bool(meta.get("title")) and not meta.get("race_name")
 
 
 def _esc(path: str) -> str:
@@ -308,6 +606,120 @@ def generate_thumbnail(meta: dict, font: str | None, bg_img: str | None,
         print(f"  [警告] サムネイル生成失敗:\n{result.stderr[-300:]}", file=sys.stderr)
 
 
+def generate_news_thumbnail(meta: dict, font: str | None, bg_img: str | None,
+                            thumb_path: str, tmp_dir: str) -> None:
+    """ニュース記事用サムネイルを生成する。
+
+    設計方針（サムネイルCTRの定石）:
+    - 文字は短く大きく: フルタイトルではなく抽出した短いフックを最大サイズで
+    - 高コントラスト: 黄文字+黒ブロック、白文字+赤ブロックのみ使用
+    - 右下はYouTubeの再生時間バッジと被るため空けておく
+    - 背景は記事本人の画像（bg_img に記事og:imageが来る前提）
+    """
+    title = meta.get("title", "")
+    views = int(meta.get("views") or 0)
+    hook  = extract_hook(title)
+    bold  = find_bold_font() or font
+    fb    = _esc(bold or "")
+
+    if bg_img and Path(bg_img).exists():
+        inputs = ["-loop", "1", "-i", bg_img]
+        v_init = [f"scale={W}:{H}:force_original_aspect_ratio=increase", f"crop={W}:{H}"]
+    else:
+        inputs = ["-f", "lavfi", "-i", f"color=c=#0D1B2A:s={W}x{H}:r=1"]
+        v_init = []
+
+    # 背景は軽く暗く+彩度を上げてテキストを立たせる（黒ブロックがコントラストを保証）
+    filters: list[str] = v_init + ["eq=brightness=-0.18:contrast=1.08:saturation=1.2"]
+
+    if bold:
+        # 左上: 赤タグ（チャンネルの定型 → シリーズの一貫性）
+        tagf = f"{tmp_dir}/nt_tag.txt"
+        Path(tagf).write_text("話題のニュース", encoding="utf-8")
+        filters.append(
+            f"drawtext=textfile='{_esc(tagf)}':fontfile='{fb}':fontsize=42:fontcolor=0xFFFFFF"
+            f":x=36:y=36:box=1:boxcolor={NEWS_RED}@0.96:boxborderw=16"
+        )
+
+        # 右上: 閲覧数バッジ（数字は強い訴求。右下は再生時間と被るので右上に置く）
+        views_str = format_views(views)
+        if views_str:
+            vf = f"{tmp_dir}/nt_views.txt"
+            Path(vf).write_text(views_str, encoding="utf-8")
+            filters.append(
+                f"drawtext=textfile='{_esc(vf)}':fontfile='{fb}':fontsize=38:fontcolor=0x111111"
+                f":x=w-text_w-36:y=40:box=1:boxcolor=0xFFD700@0.96:boxborderw=14"
+            )
+
+        # 中央: フック（縮小表示でも読めるよう最大サイズ・最大2行、語境界で折る）
+        if len(hook) <= 8:
+            hook_text, max_line = hook, len(hook)
+        else:
+            l1, l2 = split_balanced(hook)
+            hook_text, max_line = l1 + "\n" + l2, max(len(l1), len(l2))
+        if max_line <= 8:
+            hook_fs = 104
+        elif max_line <= 10:
+            hook_fs = 92
+        else:
+            hook_fs = 78
+        hf = f"{tmp_dir}/nt_hook.txt"
+        Path(hf).write_text(hook_text, encoding="utf-8")
+        filters.append(
+            f"drawtext=textfile='{_esc(hf)}':fontfile='{fb}':fontsize={hook_fs}:fontcolor=0xFFE600"
+            f":x=(w-text_w)/2:y=(h-text_h)/2+16"
+            f":box=1:boxcolor=0x000000@0.78:boxborderw=28"
+            f":borderw=4:bordercolor=0x000000"
+        )
+
+        # 下部: フルタイトル（文脈の補足。1行に収まる分だけ）
+        sub = _ellipsis(title, 26)
+        if sub and sub != hook:
+            sf = f"{tmp_dir}/nt_sub.txt"
+            Path(sf).write_text(sub, encoding="utf-8")
+            filters.append(
+                f"drawtext=textfile='{_esc(sf)}':fontfile='{fb}':fontsize=36:fontcolor=0xFFFFFF"
+                f":x=(w-text_w)/2:y=h-text_h-44"
+                f":box=1:boxcolor=0x000000@0.72:boxborderw=14"
+            )
+
+    fc = "[0:v]" + ",".join(filters) + "[vout]"
+    cmd = ["ffmpeg", "-y"] + inputs + [
+        "-filter_complex", fc, "-map", "[vout]",
+        "-frames:v", "1", "-q:v", "2", thumb_path,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode == 0:
+        size_kb = Path(thumb_path).stat().st_size // 1024
+        print(f"  ニュースサムネイル: {thumb_path} ({size_kb} KB, hook={hook!r})")
+    else:
+        print(f"  [警告] ニュースサムネイル生成失敗:\n{result.stderr[-300:]}", file=sys.stderr)
+
+
+def _pan_filter(i: int, dur: float) -> str:
+    """静止画にゆっくりしたパン（Ken Burns風）を付けるフィルター列を返す。
+
+    各入力は -t dur で切られておりフィルター内の t は 0..dur を動くため、
+    進行度は t/dur で表せる（min() 不要 = フィルター引数のカンマ問題を回避）。
+    drawbox 同様に GitHub Actions で不安定な zoompan は使わず scale+crop で実現。
+    """
+    sw, sh = int(W * 1.14), int(H * 1.14)
+    p = f"(t/{dur:.3f})"
+    d = i % 4
+    if d == 0:
+        x, y = f"(iw-{W})*{p}", f"(ih-{H})/2"
+    elif d == 1:
+        x, y = f"(iw-{W})*(1-{p})", f"(ih-{H})/2"
+    elif d == 2:
+        x, y = f"(iw-{W})/2", f"(ih-{H})*{p}"
+    else:
+        x, y = f"(iw-{W})/2", f"(ih-{H})*(1-{p})"
+    return (
+        f"scale={sw}:{sh}:force_original_aspect_ratio=increase,"
+        f"crop={W}:{H}:x='{x}':y='{y}',eq=brightness=-0.06,setsar=1"
+    )
+
+
 def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -> str:
     """1本分の動画を生成して出力パスを返す。"""
     race_meta = {
@@ -332,7 +744,9 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
 
     script      = script_path.read_text(encoding="utf-8").strip()
     aud_dur     = audio_duration(audio_path)
-    total_dur   = aud_dur
+    is_news     = is_news_meta(meta)
+    # ニュースモードはナレーション後にエンドカード（BGM継続）を付ける
+    total_dur   = aud_dur + (END_DUR if is_news else 0)
     chapters    = parse_chapters(script)
 
     # generate_audio.py は news.json のタイトルを冒頭に読み上げるため、
@@ -356,22 +770,31 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
             # 複数画像をconcatしてシーンチェンジ
             seg_dur = total_dur / N
             bg_inputs = []
+            seg_durs: list[float] = []
             for i, img in enumerate(valid_imgs[:N]):
                 dur = seg_dur if i < N - 1 else (total_dur - (N - 1) * seg_dur + 1.0)
+                seg_durs.append(dur)
                 bg_inputs += ["-r", str(FPS), "-loop", "1", "-t", f"{dur:.3f}", "-i", img]
-            pre_filters = [f"[{i}:v]{img_scale}[vi{i}]" for i in range(N)]
+            if is_news:
+                # ニュースは静止画に動き（パン）を付けて画面の単調さを消す
+                pre_filters = [f"[{i}:v]{_pan_filter(i, seg_durs[i])}[vi{i}]" for i in range(N)]
+            else:
+                pre_filters = [f"[{i}:v]{img_scale}[vi{i}]" for i in range(N)]
             concat_in = "".join(f"[vi{i}]" for i in range(N))
             pre_filters.append(f"{concat_in}concat=n={N}:v=1:a=0[bgout]")
             vid_start = "[bgout]"
             vid_init  = []
             audio_idx = N
-            print(f"  背景: {N}枚concat ({seg_dur:.1f}s×{N})")
+            print(f"  背景: {N}枚concat ({seg_dur:.1f}s×{N}, パン={'あり' if is_news else 'なし'})")
         elif N == 1:
-            bg_inputs = ["-loop", "1", "-i", valid_imgs[0]]
+            bg_inputs = ["-loop", "1", "-t", f"{total_dur + 1.0:.3f}", "-i", valid_imgs[0]]
             pre_filters = []
             vid_start = "[0:v]"
-            vid_init  = [f"scale={W}:{H}:force_original_aspect_ratio=increase",
-                         f"crop={W}:{H}", "eq=brightness=-0.06"]
+            if is_news:
+                vid_init = [_pan_filter(0, total_dur + 1.0)]
+            else:
+                vid_init = [f"scale={W}:{H}:force_original_aspect_ratio=increase",
+                            f"crop={W}:{H}", "eq=brightness=-0.06"]
             audio_idx = 1
         else:
             bg_inputs = ["-f", "lavfi", "-i", f"color=c=#0D1B2A:s={W}x{H}:r={FPS}"]
@@ -382,7 +805,84 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
 
         video_filters: list[str] = list(vid_init)
 
-        if font:
+        if font and is_news:
+            # =========================================================
+            # ニュースモードの画面構成:
+            #   0〜3秒   オープニング（赤タグ+日付+見出し = 何のニュースかを即提示）
+            #   3秒〜末尾 常時ヘッドラインテロップ（途中から見ても内容が分かる）
+            #   末尾2.8秒 エンドカード（登録CTA）+ フェードアウト
+            # =========================================================
+            title_text = meta.get("title", "")
+            date_str   = _news_date_str(meta)
+            views_str  = format_views(int(meta.get("views") or 0))
+            fbold      = _esc(find_bold_font() or font)
+
+            # --- オープニング: 赤タグ ---
+            tf = f"{tmp_dir}/nv_tag.txt"
+            Path(tf).write_text("競馬ニュース", encoding="utf-8")
+            video_filters.append(
+                f"drawtext=textfile='{_esc(tf)}':fontfile='{fbold}':fontsize=40:fontcolor=0xFFFFFF"
+                f":x=40:y=40:box=1:boxcolor={NEWS_RED}@0.96:boxborderw=14"
+                f":enable='between(t,0,{OPEN_DUR})'"
+            )
+            # --- オープニング: 日付+閲覧数 ---
+            info = date_str + (f"　netkeibaで{views_str}" if views_str else "")
+            inf = f"{tmp_dir}/nv_info.txt"
+            Path(inf).write_text(info, encoding="utf-8")
+            video_filters.append(
+                f"drawtext=textfile='{_esc(inf)}':fontfile='{fp}':fontsize=30:fontcolor=0xFFFFFF"
+                f":x=40:y=118:box=1:boxcolor=0x000000@0.6:boxborderw=10"
+                f":enable='between(t,0,{OPEN_DUR})'"
+            )
+            # --- オープニング: 見出し（長さに応じて自動縮小・句読点折り返し） ---
+            if title_text:
+                head_fs, head_wrapped = headline_style(title_text)
+                hf = f"{tmp_dir}/nv_head.txt"
+                Path(hf).write_text(head_wrapped, encoding="utf-8")
+                video_filters.append(
+                    f"drawtext=textfile='{_esc(hf)}':fontfile='{fbold}':fontsize={head_fs}"
+                    f":fontcolor=0xFFFFFF:line_spacing=14"
+                    f":x=(w-text_w)/2:y=(h-text_h)/2+16"
+                    f":box=1:boxcolor=0x000000@0.82:boxborderw=28"
+                    f":enable='between(t,0,{OPEN_DUR})'"
+                )
+
+            # --- 本編: 常時ヘッドラインテロップ（上端） ---
+            st = f"{tmp_dir}/nv_stag.txt"
+            Path(st).write_text("競馬ニュース", encoding="utf-8")
+            video_filters.append(
+                f"drawtext=textfile='{_esc(st)}':fontfile='{fbold}':fontsize=26:fontcolor=0xFFFFFF"
+                f":x=24:y=26:box=1:boxcolor={NEWS_RED}@0.92:boxborderw=10"
+                f":enable='between(t,{OPEN_DUR},{aud_dur:.2f})'"
+            )
+            strip = _ellipsis(title_text, 30)
+            sf = f"{tmp_dir}/nv_strip.txt"
+            Path(sf).write_text(strip, encoding="utf-8")
+            video_filters.append(
+                f"drawtext=textfile='{_esc(sf)}':fontfile='{fp}':fontsize=26:fontcolor=0xFFFFFF"
+                f":x=224:y=26:box=1:boxcolor=0x000000@0.6:boxborderw=10"
+                f":enable='between(t,{OPEN_DUR},{aud_dur:.2f})'"
+            )
+
+            # --- エンドカード ---
+            e1 = f"{tmp_dir}/nv_end1.txt"
+            Path(e1).write_text("ご視聴ありがとうございました", encoding="utf-8")
+            video_filters.append(
+                f"drawtext=textfile='{_esc(e1)}':fontfile='{fbold}':fontsize=50:fontcolor=0xFFFFFF"
+                f":x=(w-text_w)/2:y=h/2-text_h-16"
+                f":box=1:boxcolor=0x000000@0.85:boxborderw=26"
+                f":enable='between(t,{aud_dur:.2f},{total_dur + 1:.2f})'"
+            )
+            e2 = f"{tmp_dir}/nv_end2.txt"
+            Path(e2).write_text("チャンネル登録・高評価で応援お願いします", encoding="utf-8")
+            video_filters.append(
+                f"drawtext=textfile='{_esc(e2)}':fontfile='{fp}':fontsize=34:fontcolor=0xFFD700"
+                f":x=(w-text_w)/2:y=h/2+34"
+                f":box=1:boxcolor=0x000000@0.85:boxborderw=18"
+                f":enable='between(t,{aud_dur:.2f},{total_dur + 1:.2f})'"
+            )
+
+        elif font:
             # --- Opening card (t=0 to OPEN_DUR) ---
             grade    = race_meta["grade"]
             rn_text  = race_meta["race_name"]
@@ -444,6 +944,11 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         else:
             print("  [警告] ASS字幕ファイルなし。字幕なしで生成します。", file=sys.stderr)
 
+        if is_news:
+            # フェードイン/アウトで開始・終了を滑らかに
+            video_filters.append("fade=t=in:st=0:d=0.5")
+            video_filters.append(f"fade=t=out:st={max(total_dur - 0.9, 0):.2f}:d=0.9")
+
         if not video_filters:
             video_filters.append(f"scale={W}:{H}")
 
@@ -454,11 +959,12 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_file  = random.choice(bgm_files) if bgm_files else None
 
+        afade = f",afade=t=out:st={max(total_dur - 1.2, 0):.3f}:d=1.2" if is_news else ""
         if bgm_file:
             print(f"  BGM: {Path(bgm_file).name}")
             audio_chain = (
                 f"[{audio_idx}:a]apad=whole_dur={total_dur:.3f}[narr];"
-                f"[narr][{audio_idx+1}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}[aout]"
+                f"[narr][{audio_idx+1}:a]amix=inputs=2:duration=first:weights=1 {BGM_VOL}{afade}[aout]"
             )
             fc = ";".join(fc_video_parts) + ";" + audio_chain
             cmd = (["ffmpeg", "-y"] + bg_inputs +
@@ -466,7 +972,7 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
                     "-filter_complex", fc,
                     "-map", "[vout]", "-map", "[aout]"])
         else:
-            audio_chain = f"[{audio_idx}:a]apad=whole_dur={total_dur:.3f}[aout]"
+            audio_chain = f"[{audio_idx}:a]apad=whole_dur={total_dur:.3f}{afade}[aout]"
             fc = ";".join(fc_video_parts) + ";" + audio_chain
             cmd = (["ffmpeg", "-y"] + bg_inputs +
                    ["-i", audio_path,
@@ -474,7 +980,7 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
                     "-map", "[vout]", "-map", "[aout]"])
 
         cmd += [
-            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "ultrafast",
+            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "veryfast", "-crf", "21",
             "-c:a", "aac", "-b:a", "192k",
             "-t", str(total_dur + 0.5),
             output_path,
@@ -492,6 +998,8 @@ def generate_video(idx: int, meta: dict, font: str | None, bg_imgs: list[str]) -
         bg_img = valid_imgs[0] if valid_imgs else None
         if Path(thumb_path).exists():
             print(f"  サムネイル既存のためスキップ: {thumb_path}")
+        elif is_news:
+            generate_news_thumbnail(meta, font, bg_img, thumb_path, tmp_dir)
         else:
             generate_thumbnail(race_meta, font, bg_img, thumb_path, tmp_dir)
         return output_path
