@@ -5,7 +5,7 @@ name: Keiba Popular News YouTube Auto Post
 on:
   schedule:
     # 既存ニュース（10/12/16/18/20時 JST）と重ならない時間帯に1日1回実行
-    - cron: "0 12 * * *"  # 21:00 JST（当日のアクセスランキング）
+    - cron: "30 11 * * *"  # 20:30 JST（当日のアクセスランキング）
   workflow_dispatch:
 
 jobs:
