@@ -1,6 +1,6 @@
-date: 2026-07-15T13:32:12.001079Z
+date: 2026-07-16T00:01:15.267406Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=niKdz6qO-GY views=83413 title=【話題】7月15日 鷲頭虎太騎手が引退　デビュー5年目　同期に今村聖奈、佐々木大輔ら　福永祐一厩舎で調教助手に
+OK project=1 video_id=y5Ng235XAog views=86567 title=【話題】7月16日 鷲頭虎太騎手が引退　デビュー5年目　同期に今村聖奈、佐々木大輔ら　福永祐一厩舎で調教助手に
