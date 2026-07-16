@@ -1,91 +1,43 @@
-[1]  [ファクトチェックNG] NG: 元記事に存在しない「シックス
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 元記事に存在しない固
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【マリーンS】田中博康厩舎の大物候補 ウェイワードアクトが待望の復帰戦だ ---
-[0] Gemini入力本文 359文字: "「砂の名門」田中博康厩舎の大物候補となるウェイワードアクト(牡6)が、土曜函館11Rのマリーンステークス(3歳上・オープン・ダ1700m)で待望の復帰戦を迎える。\n\u3000ウェイワードアクトは父Maclean's Music、母Warrior K"
+--- 記事[0]: 【門別・ノースクイーンC結果】チャチャハツゴウが逃げ切って重賞初制覇 ---
+[0] Gemini入力本文 350文字: '16日、門別競馬場で行われた第25回ノースクイーンC(3歳上・牝・重賞・ダ1800m・1着賞金600万円)は、逃げた石川倭騎手騎乗の5番人気チャチャハツゴウ(牝4、川崎・林隆之厩舎)が、2番手から脚を伸ばした1番人気ゼロアワー(牝4、北海道'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 安田記念覇者シックスペンスはマイルCSが秋の目標に　次走は予定通り鞍上・武豊で仏ジャックルマロワ賞へ ---
-[1] Gemini入力本文 352文字: '6月7日の安田記念でG1初制覇を飾ったシックスペンス(牡5＝田中博、父キズナ)は秋の目標がマイルCS(11月22日、京都芝1600メートル)に決まった。\n\u300016日、キャロットクラブが発表した。\n\u3000同一年の安田記念＆マイルCS制覇は85年ニホ'
+--- 記事[1]: 【有力馬動向】長期休養中のサトノシャイニングが帰厩後初時計/馬三郎のつぶやき ---
+[1] Gemini入力本文 342文字: '◆サトノシャイニング(16日・浜口)\n\u3000昨年の日本ダービーで4着。その後の毎日王冠でも古馬相手に3着と奮闘したサトノシャイニング(牡4歳、栗東・杉山晴)が久々に栗東坂路に姿を見せた。長期休養から帰厩後、初時計となったこの日は単走で4F56秒'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 引退馬牧場「ノーザンレイク」がチャリティー専門ブランドとコラボ 愛らしいデザインのTシャツなど販売中 ---
-[2] Gemini入力本文 576文字: '引退馬牧場の「ノーザンレイク」と、京都発のチャリティー専門ファッションブランド「JAMMIN(ジャミン)」は13日、コラボオリジナルアイテムを限定販売すると発表した。\n\u3000制作したアイテムは「街で着られる」がコンセプト。馬と猫が見つめ合う姿を'
+--- 記事[2]: 【POG】新馬戦快勝のニシノイサリビはダリア賞へ/馬三郎のつぶやき ---
+[2] Gemini入力本文 345文字: '◆スクワミッシュ(16日・堀尾)\n\u300025日の新潟2R(ダート1200m)でデビュー予定のスクワミッシュ(牝2歳、栗東・梅田、父ルヴァンスレーヴ、母エルフィンコーブ)。「牝馬らしいピリッとした気性でゲートが速い。1週前のコース追いでラストまで'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 207文字]: '今日の競馬情報です。引退馬牧場のノーザンレイクと、京都発のチャリティー専門ファッションブランドJAMMINは13日、コラボオリジナルアイテムを限定販売すると発表しました。制作したアイテムは「街で着られる」をコンセプトとし、馬と猫が見つめ合う姿を描き、引退馬に寄り添い、温かく見守る牧場に流れるやさしい時間を表現しています。販売期間は19日24時までで、アイテム購入ごとに最大700円がノーザンレイクに寄付されます。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (207文字)
-[2]  プレビュー: 今日の競馬情報です。引退馬牧場のノーザンレイクと、京都発のチャリティー専門ファッションブランドJAMMINは13日、コラボオリジナルアイテムを限定販売すると発表...
+[0]  [Gemini生出力 207文字]: 'レース関連の最新情報です。\n16日、門別競馬場で行われた第25回ノースクイーンCは、3歳上・牝の重賞で、ダート1800m、1着賞金600万円でした。このレースでは、石川倭騎手騎乗の5番人気チャチャハツゴウが逃げ切り、重賞初制覇を飾りました。勝ちタイムは1分56秒5(重)です。2番手から脚を伸ばした1番人気ゼロアワーに1/2馬身差をつけ優勝しました。さらに3馬身差の3着には、3番人気ラブラブパイロが入っています。'
+[0]  [重複除去] 207文字 → 206文字
   HTTP 200
-[0]  [Gemini生出力 265文字]: "競馬ファン注目の情報です。「砂の名門」田中博康厩舎の大物候補、ウェイワードアクトが待望の復帰戦を迎えます。土曜函館11Rのマリーンステークス、3歳上・オープン・ダート1700mに出走予定です。ウェイワードアクトは父Maclean's Music、母Warrior Kat、母の父マジェスティックウォリアーの血統です。馬名の意味由来は「わがままな態度」で、20年には米国の当歳セリで19万ドルで取引されました。これまでの戦績は13戦6勝を挙げており、デビューから一貫してダート1400メートルから1600メートルを使われてきました。"
+[1]  [Gemini生出力 211文字]: '注目の競馬情報をお届けします。\n昨年の日本ダービーで4着、その後の毎日王冠でも古馬相手に3着と奮闘したサトノシャイニングが、久々に栗東坂路に姿を見せました。長期休養から帰厩後、初時計となったこの日は、単走で4F56秒5-12秒4(馬なり)を記録しています。もちろん脚慣らし程度の調整ではありましたが、力強いアクションで無理なく加速できていました。以前のような力む面も見られず、いい雰囲気になって戻ってきているとのことです。'
+[1]  [redirectフィルター] 211文字 → 195文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (265文字)
-[0]  プレビュー: 競馬ファン注目の情報です。「砂の名門」田中博康厩舎の大物候補、ウェイワードアクトが待望の復帰戦を迎えます。土曜函館11Rのマリーンステークス、3歳上・オープン・...
+[0]  → output/script_0.txt 保存 (206文字)
+[0]  プレビュー: レース関連の最新情報です。16日、門別競馬場で行われた第25回ノースクイーンCは、3歳上・牝の重賞で、ダート1800m、1着賞金600万円でした。このレースでは...
   HTTP 200
-[1]  [Gemini生出力 281文字]: 'レース関連の最新情報です。\n6月7日の安田記念でG1初制覇を飾ったシックスペンスは、秋の目標が11月22日に京都芝1600メートルで行われるマイルCSに決まりました。この発表は16日、キャロットクラブからありました。また、シックスペンスの次走は予定通り、鞍上・武豊で仏ジャックルマロワ賞に出走します。同一年の安田記念とマイルCSを制覇した馬には、過去に85年ニホンピロウイナー、94年ノースフライト、98年タイキシャトル、99年エアジハード、07年ダイワメジャー、15年モーリス、19年インディチャンプ、20年グランアレグリア、25年ジャンタルマンタルがいます。'
-[1]  [重複除去] 281文字 → 280文字
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 312文字]: 'レース関連の最新情報です。6月7日の安田記念でG1初制覇を飾ったシックスペンスは、秋の目標がマイルチャンピオンシップに決まりました。マイルチャンピオンシップは11月22日に京都芝1600メートルで開催される予定です。この件は16日にキャロットクラブが発表しました。次走は予定通り、鞍上の武豊でフランスのジャックルマロワ賞へ向かいます。同一年の安田記念とマイルチャンピオンシップ制覇は、85年のニホンピロウイナーや94年のノースフライト、98年のタイキシャトル、99年のエアジハード、07年のダイワメジャー、15年のモーリス、19年のインディチャンプ、20年のグランアレグリア、25年のジャンタルマンタルと過去に例があります。'
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 297文字]: 'レース関連の最新情報です。6月7日の安田記念でG1初制覇を飾ったシックスペンスの秋の目標が、マイルCSに決まりました。マイルCSは11月22日に京都芝1600メートルで開催されます。この発表は16日、キャロットクラブが行いました。シックスペンスは田中博調教師の管理馬です。次走は予定通り、鞍上・武豊で仏ジャックルマロワ賞へ向かいます。同一年の安田記念とマイルCS制覇は、過去に85年ニホンピロウイナー、94年ノースフライト、98年タイキシャトル、99年エアジハード、07年ダイワメジャー、15年モーリス、19年インディチャンプ、20年グランアレグリア、25年ジャンタルマンタルが達成しています。'
+[2]  [Gemini生出力 201文字]: '最新情報をお届けします。\nスクワミッシュは、25日の新潟2Rダート1200mでデビューを予定しています。梅田調教師は、この馬について「牝馬らしいピリッとした気性でゲートが速い」とコメントしています。さらに「1週前のコース追いでラストまでしっかり動けたし、ムチを入れても問題なかった」と調教の感触を語りました。「気性や血統から、まずは1200mへ」と述べ、勝ち負けを意識できる素材だろうと評価しています。'
+[2]  [redirectフィルター] 201文字 → 188文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (297文字)
-[1]  プレビュー: レース関連の最新情報です。6月7日の安田記念でG1初制覇を飾ったシックスペンスの秋の目標が、マイルCSに決まりました。マイルCSは11月22日に京都芝1600メ...
+[1]  → output/script_1.txt 保存 (195文字)
+[1]  プレビュー: 昨年の日本ダービーで4着、その後の毎日王冠でも古馬相手に3着と奮闘したサトノシャイニングが、久々に栗東坂路に姿を見せました。長期休養から帰厩後、初時計となったこ...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (188文字)
+[2]  プレビュー: スクワミッシュは、25日の新潟2Rダート1200mでデビューを予定しています。梅田調教師は、この馬について「牝馬らしいピリッとした気性でゲートが速い」とコメント...
 
 3 件の脚本を生成しました。
