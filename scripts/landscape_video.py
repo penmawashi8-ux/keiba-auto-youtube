@@ -78,8 +78,14 @@ _WP_UA   = "keiba-auto-youtube/1.0"
 _WP_SKIP = {".svg", ".ogv", ".ogg", ".webm", ".gif"}
 
 
-def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
-    """Wikipedia(ja→en)から馬の画像を取得してJPEGに変換する。"""
+def _fetch_wikipedia_image(horse_name: str, out_path: str,
+                           require_horse: bool = False) -> bool:
+    """Wikipedia(ja→en)から馬の画像を取得してJPEGに変換する。
+
+    require_horse=True の場合、ページ概要に「競走馬」(ja)/"racehorse"(en) が
+    含まれるページのみ採用する（タイトルから自動抽出したカタカナ語が
+    馬名以外だった場合に無関係な画像を拾う事故を防ぐ）。
+    """
     for lang in ("ja", "en"):
         encoded = urllib.parse.quote(horse_name)
         api_url = f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{encoded}"
@@ -91,6 +97,10 @@ def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
                 data = json.loads(r.read())
         except Exception:
             continue
+        if require_horse:
+            desc = (data.get("description") or "") + (data.get("extract") or "")[:120]
+            if "競走馬" not in desc and "racehorse" not in desc.lower():
+                continue
         src = (data.get("originalimage") or data.get("thumbnail") or {}).get("source", "")
         if not src or Path(src.split("?")[0]).suffix.lower() in _WP_SKIP:
             continue
@@ -113,9 +123,42 @@ def _fetch_wikipedia_image(horse_name: str, out_path: str) -> bool:
     return False
 
 
-def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[str]:
+# タイトルから馬名を推定する際に除外する一般カタカナ語
+_KATAKANA_STOPWORDS = {
+    "ニュース", "ランキング", "スポーツ", "ジョッキー", "トレーナー", "レース",
+    "ダービー", "オークス", "チャンネル", "コメント", "カメラ", "メンバー",
+    "パドック", "トレセン", "デビュー", "クラシック", "シーズン", "タイトル",
+    "リーディング", "プレゼント", "キャンペーン", "インタビュー", "エントリー",
+    "ステークス", "スプリント", "サンスポ", "スポニチ", "デイリー", "メディア",
+    "サラブレッド", "ローテーション", "グランプリ", "レコード", "ファンファーレ",
+}
+
+
+def extract_horse_names(text: str, limit: int = 3) -> list[str]:
+    """テキストから馬名らしきカタカナ連続語を抽出する。
+
+    競走馬名は2〜9文字だが、短い語は一般語との衝突が多いため5文字以上に限定。
+    Wikipedia側の「競走馬ページかどうか」チェック（require_horse）と併用する。
+    """
+    names: list[str] = []
+    for m in re.finditer(r"[ァ-ヴー]{5,9}", text):
+        w = m.group(0)
+        if w in _KATAKANA_STOPWORDS or w in names or w.startswith("ー"):
+            continue
+        names.append(w)
+        if len(names) >= limit:
+            break
+    return names
+
+
+def fetch_images(count: int = 4, horse_names: list[str] | None = None,
+                 strict_horses: bool = False, fill_fallback: bool = True) -> list[str]:
     """馬名が指定されればWikipedia、次いでPixabayから競馬写真を取得。
-    失敗時は geq グラデーションフォールバック。"""
+
+    strict_horses=True: horse_names が自動抽出なので競走馬ページのみ採用。
+    fill_fallback=False: 写真が取れなかった分をフォールバック背景で埋めず、
+    取れた分だけ返す（呼び出し側に記事画像などの代替がある場合用）。
+    """
     Path(ASSETS_DIR).mkdir(exist_ok=True)
     paths: list[str] = []
 
@@ -123,7 +166,7 @@ def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[s
     if horse_names:
         for i, name in enumerate(horse_names[:count]):
             out = f"{ASSETS_DIR}/landscape_{i}.jpg"
-            if _fetch_wikipedia_image(name, out):
+            if _fetch_wikipedia_image(name, out, require_horse=strict_horses):
                 paths.append(out)
                 print(f"  Wikipedia画像: {name}")
         if len(paths) >= count:
@@ -164,19 +207,23 @@ def fetch_images(count: int = 4, horse_names: list[str] | None = None) -> list[s
             except Exception as e:
                 print(f"  [警告] Pixabay失敗: {e}", file=sys.stderr)
 
-        # geq グラデーションフォールバック
-        colors = [
-            ("clip(8+148*pow(Y/H,1.6),8,156)", "clip(4*pow(Y/H,2),0,4)",   "clip(4*pow(Y/H,2),0,4)"),
-            ("clip(4*pow(1-Y/H,2),0,4)",        "clip(4*pow(1-Y/H,2),0,4)", "clip(10+105*pow(1-Y/H,1.5),10,115)"),
-            ("clip(8+100*pow(1-Y/H,1.4),8,108)","clip(6+68*pow(1-Y/H,1.6),6,74)", "clip(2,0,2)"),
-            ("clip(5*pow(Y/H,2),0,5)",           "clip(8+80*pow(Y/H,1.5),8,88)",   "clip(8+90*pow(1-Y/H,1.5),8,98)"),
-        ]
-        r_e, g_e, b_e = colors[i % len(colors)]
-        subprocess.run([
-            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=black:s={W}x{H}:r=1",
-            "-vf", f"geq=r='{r_e}':g='{g_e}':b='{b_e}'",
+        if not fill_fallback:
+            continue
+
+        # 最終フォールバック: 虹色グラデーションは廃止。
+        # 単色ダーク+ビネット+微ノイズの「スタジオ背景」風で悪目立ちさせない。
+        studio = ["#0B1626", "#1C1013", "#0D1A14", "#151021"]
+        base = studio[i % len(studio)]
+        res = subprocess.run([
+            "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c={base}:s={W}x{H}:r=1",
+            "-vf", "noise=alls=6:allf=t,vignette=PI/4.5,eq=brightness=0.02",
             "-frames:v", "1", "-q:v", "3", out,
         ], capture_output=True)
+        if res.returncode != 0:
+            subprocess.run([
+                "ffmpeg", "-y", "-f", "lavfi", "-i", f"color=c={base}:s={W}x{H}:r=1",
+                "-frames:v", "1", "-q:v", "3", out,
+            ], capture_output=True)
         if Path(out).exists():
             paths.append(out)
 

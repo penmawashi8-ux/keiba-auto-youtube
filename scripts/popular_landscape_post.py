@@ -39,19 +39,31 @@ def append_posted_id(entry_id: str) -> None:
 
 
 def build_title(item: dict) -> str:
-    now = datetime.datetime.now(JST)
-    date_str = f"{now.month}月{now.day}日"
-    return f"【話題】{date_str} {item['title']}"[:100]
+    """記事見出しを先頭に置き、末尾にシリーズタグを付ける。
+
+    旧形式「【話題】7月16日 〜」は先頭12文字が毎回同じで、フィードの
+    省略表示では肝心の見出しが読めなかった。検索キーワードにもなる
+    見出し本文を前方に置き、日付は概要欄へ移す。
+    """
+    base = item["title"].strip()
+    views_str = landscape_video.format_views(int(item.get("views") or 0))
+    tag = f"【{views_str}・話題の競馬ニュース】" if views_str else "【話題の競馬ニュース】"
+    limit = 100 - len(tag)
+    if len(base) > limit:
+        base = base[: limit - 1] + "…"
+    return base + tag
 
 
 def build_description(item: dict) -> str:
     views = item.get("views", 0)
+    now = datetime.datetime.now(JST)
     lead = "いま最も読まれている競馬ニュースをお届けします。"
     if views:
-        lead = f"いま最も読まれている競馬ニュースをお届けします（netkeibaアクセスランキングより）。"
+        lead = "いま最も読まれている競馬ニュースをお届けします（netkeibaアクセスランキングより）。"
     return (
         f"{lead}\n"
-        f"{item['title']}\n\n"
+        f"{item['title']}\n"
+        f"配信日: {now.year}年{now.month}月{now.day}日\n\n"
         f"#競馬 #競馬ニュース #JRA #keiba #競馬速報"
     )
 
@@ -108,10 +120,23 @@ def main() -> None:
             item.get("image_url", ""),
             f"{landscape_video.ASSETS_DIR}/article_{idx}.jpg",
         )
+        # タイトル・本文から馬名を推定してWikipediaの馬写真も狙う
+        # （strict=True なので競走馬ページ以外は採用されない）
+        horses = item.get("horses") or landscape_video.extract_horse_names(
+            f"{item['title']} {item.get('summary', '')[:300]}"
+        )
         stock_count = 3 if article_img else 4
-        bg_imgs = landscape_video.fetch_images(stock_count, horse_names=item.get("horses"))
+        bg_imgs = landscape_video.fetch_images(
+            stock_count, horse_names=horses,
+            strict_horses=not item.get("horses"),
+            # 記事画像がある場合はダーク背景で埋めず、記事画像の再利用を優先
+            fill_fallback=not article_img,
+        )
         if article_img:
             bg_imgs = [article_img] + bg_imgs
+            while len(bg_imgs) < 3:
+                # 素材不足時は記事画像を再利用（セグメントごとにパン方向が変わる）
+                bg_imgs.append(article_img)
         video_path = landscape_video.generate_video(idx, item, font, bg_imgs)
 
         title = build_title(item)

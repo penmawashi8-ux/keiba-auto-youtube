@@ -136,6 +136,8 @@ jobs:
       - name: Generate and upload landscape video
         if: steps.check_scripts.outputs.has_scripts == 'true'
         env:
+          # 背景ストック写真の取得に必須（未設定だとフォールバック背景ばかりになる）
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
