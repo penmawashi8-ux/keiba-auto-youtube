@@ -1,10 +1,10 @@
-date: 2026-07-16T04:10:46.651358Z
+date: 2026-07-16T05:43:36.891547Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vZH3I7V-DSQ title=【東海S・1週前】「調教は目立つ時計の出ない馬」が坂路51秒5!　ダノンフィーゴ
-OK project=1 video_id=qvb3FlfmwMI title=兵庫で初の女性調教師誕生　高知の1400勝超え騎手も合格　地方競馬令和8年度第1
-OK project=1 video_id=QM_Af9uHeHw title=【注目馬動向】函館記念で不利に泣いた2着のケリフレッドアスクはクイーンSで巻き返
+OK project=1 video_id=6R8ycKzTR88 title=【函館2歳S】高橋一哉調教師が重賞初制覇なるか 伏兵2頭出しで一発狙う
+OK project=1 video_id=ImVH-Y64k4E title=兵庫で初の女性調教師となる小薗史歩調教師補佐「長く活躍できる馬を育てたい」
+OK project=1 video_id=hz8GZIpW43g title=ジャスティンパレスが過ごす牧場が見学解禁…牧場見学ルールは?傘や自撮り棒などは厳
