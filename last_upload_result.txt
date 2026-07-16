@@ -1,6 +1,10 @@
-date: 2026-07-16T00:01:15.267406Z
-type: popular_news_landscape
+date: 2026-07-16T04:10:46.651358Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=y5Ng235XAog views=86567 title=【話題】7月16日 鷲頭虎太騎手が引退　デビュー5年目　同期に今村聖奈、佐々木大輔ら　福永祐一厩舎で調教助手に
+OK project=1 video_id=vZH3I7V-DSQ title=【東海S・1週前】「調教は目立つ時計の出ない馬」が坂路51秒5!　ダノンフィーゴ
+OK project=1 video_id=qvb3FlfmwMI title=兵庫で初の女性調教師誕生　高知の1400勝超え騎手も合格　地方競馬令和8年度第1
+OK project=1 video_id=QM_Af9uHeHw title=【注目馬動向】函館記念で不利に泣いた2着のケリフレッドアスクはクイーンSで巻き返
