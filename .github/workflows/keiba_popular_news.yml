@@ -4,8 +4,7 @@ name: Keiba Popular News YouTube Auto Post
 # 記事を1本投稿する。投稿済み管理は posted_ids.txt を共有して重複投稿を防ぐ。
 on:
   schedule:
-    # 既存ニュース（10/12/16/18/20時 JST）と重ならない時間帯に2回実行
-    - cron: "0 23 * * *"  # 08:00 JST（前日のアクセスランキング）
+    # 既存ニュース（10/12/16/18/20時 JST）と重ならない時間帯に1日1回実行
     - cron: "0 12 * * *"  # 21:00 JST（当日のアクセスランキング）
   workflow_dispatch:
 
