@@ -1,6 +1,6 @@
-date: 2026-07-17T13:23:42.459726Z
+date: 2026-07-17T23:54:02.367976Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1afsR7sjv6s views=41993 title=砂の怪物ヤマニンウルスが引退…種牡馬入り　武豊とのコンビで重賞2勝　斉藤崇師「いい子を出してほしい」【4.2万回閲覧・話
+OK project=1 video_id=4f9aEBUx1nM views=44057 title=砂の怪物ヤマニンウルスが引退…種牡馬入り　武豊とのコンビで重賞2勝　斉藤崇師「いい子を出してほしい」【4.4万回閲覧・話
