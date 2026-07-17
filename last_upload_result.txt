@@ -1,10 +1,10 @@
-date: 2026-07-17T05:45:37.937772Z
+date: 2026-07-17T09:10:17.710087Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8Hl64hE98ms title=【盛岡・マーキュリーC枠順】メイセイオペラの背中を追う14頭集結 大井所属のドゥ
-OK project=1 video_id=Ri0bZ0a8SrU title=【マリーンS・金曜気配】武豊騎手も評価するヒルノハンブルク　函館2歳Sは僚馬シグ
-OK project=1 video_id=dEqua4OvVI0 title=【注目馬動向】阿蘇S8着のモックモックは日本テレビ盃とシリウスSの両にらみ　スト
+OK project=1 video_id=DURH0Q-DW3k title=今週の武豊騎手は12鞍 シグレで函館2歳Sの29年ぶり2勝目なるか
+OK project=1 video_id=jHM6PPlAS1I title=「あなたの最も印象に残っている武豊騎手の勝利は？」 5000勝で集まったさまざま
+OK project=1 video_id=a8OfS-heuII title=【POG】藤田晋オーナーの2・8億円馬アトミックリーチが8・8新潟デビューへ順調
