@@ -1,8 +1,8 @@
-date: 2026-07-16T14:57:24.425713Z
+date: 2026-07-17T14:29:38.932303Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NiQNklrcPc0
-source_short=vZH3I7V-DSQ views=1038
-title=【本日の人気No.1】7月16日 【東海S・1週前】「調教は目立つ時計の出ない馬」が坂路51秒5!　ダノンフィーゴが重賞
+OK project=1 video_id=lCRPRQWjvfs
+source_short=jHM6PPlAS1I views=553
+title=【本日の人気No.1】7月17日 「あなたの最も印象に残っている武豊騎手の勝利は？」 5000勝で集まったさまざまな声
