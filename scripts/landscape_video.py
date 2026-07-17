@@ -426,30 +426,53 @@ def _char_class(c: str) -> str:
     return "x"
 
 
+def _clean_hook(s: str) -> str:
+    """フックの端に残った括弧・記号を取り除く（「」」混入事故の最終防衛線）。"""
+    s = s.strip("、。・！？…｜|　 「」『』【】()（）")
+    # 対になっていない括弧が中に残っていたら除去
+    for op, cl in (("「", "」"), ("『", "』"), ("（", "）"), ("(", ")")):
+        if op in s and cl not in s:
+            s = s.replace(op, "")
+        if cl in s and op not in s:
+            s = s.replace(cl, "")
+    return s.strip()
+
+
 def extract_hook(title: str) -> str:
     """タイトルからサムネイル用の短いフック（16文字以内目安）を抽出する。
 
     サムネイルの文字は「少なく・大きく」が原則（縮小表示でも読めること）。
-    カギ括弧内の発言 → 先頭文節 → 文節の結び（日本語見出しはニュース価値が
-    文節の末尾に来ることが多い）の順で切り出す。カタカナ語や数字の途中では
-    絶対に切らない。
+    カギ括弧内の短い発言 → 先頭文節 → 後続の短い文節（見出しの結論部）→
+    先頭文節の結び の順で切り出す。長い引用は括弧ごと区切りとして扱い、
+    括弧の破片がフックに混入しないようにする。
     """
     t = re.sub(r"\s+", " ", title).strip()
     # 「【速報】」などの接頭辞は赤タグと役割が重複するので外す
     t = re.sub(r"^【[^】]{1,8}】\s*", "", t) or t
     m = re.search(r"「([^」]{4,16})」", t)
     if m:
-        return m.group(1)
-    # スペース（ニュース見出しの主題区切り）や記号で文節に分割し、
-    # 先頭の短すぎない文節をフックにする
-    parts = [p.strip() for p in re.split(r"[…。！!？?｜|\s]|\s[-‐−–—]\s", t) if p.strip()]
-    cand = next((p for p in parts if len(p) >= 5), parts[0] if parts else t)
+        return _clean_hook(m.group(1))
+    # スペース（ニュース見出しの主題区切り）・記号・括弧で文節に分割する。
+    # 17文字以上の長い引用「…」はここで括弧ごと分解される
+    parts = [p.strip() for p in re.split(r"[…。！!？?｜|\s「」『』【】（）()]", t) if p.strip()]
+    if not parts:
+        return _clean_hook(t[:15])
+    cand = next((p for p in parts if len(p) >= 5), parts[0])
     if len(cand) <= 16:
-        return cand
+        return _clean_hook(cand)
 
     head = re.split(r"[、,]", cand)[0].strip()
     if 4 <= len(head) <= 16:
-        return head
+        return _clean_hook(head)
+
+    # 先頭文節が長すぎる場合、後続の手頃な文節（見出しの結論部）を優先する
+    # 例:「引退発表の◯◯騎手が…語る「長い引用」福永厩舎で調教助手に転身」
+    #     → 「福永厩舎で調教助手に転身」
+    ci = parts.index(cand)
+    for p in parts[ci + 1:]:
+        # 英数字だけの破片（作品名の一部など）はフックにしない
+        if 6 <= len(p) <= 16 and re.search(r"[^\x00-\x7F]", p):
+            return _clean_hook(p)
 
     # 文節の末尾15文字を取り、切り口を語境界まで送る
     tail = cand[-15:]
@@ -467,7 +490,7 @@ def extract_hook(title: str) -> str:
     m2 = re.match(r"^[一-鿿々]{1,3}(?=[ァ-ヶ])", tail)
     if m2 and len(tail) - m2.end() >= 8:
         tail = tail[m2.end():]
-    return tail if len(tail) >= 6 else cand[:15]
+    return _clean_hook(tail if len(tail) >= 6 else cand[:15])
 
 
 def split_balanced(text: str, min_side: int = 3) -> tuple[str, str]:
