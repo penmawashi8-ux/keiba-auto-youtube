@@ -1,6 +1,10 @@
-date: 2026-07-17T00:01:10.131583Z
-type: popular_news_landscape
+date: 2026-07-17T04:03:50.778369Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=C9u9rehQQVw views=25831 title=引退発表の鷲頭虎太騎手が決断の経緯や今後の目標語る「G1の舞台で活躍できる馬に乗れる助手に」福永厩舎で調教助手に転身【2
+OK project=1 video_id=Y--tYqJo7TU title=【注目馬動向】ビッグシーザーはクラスターCでダート初挑戦　ルガルは2度目のVかか
+OK project=1 video_id=bB12ATh3RsE title=【キングジョージ1週前】マスカレードボールは「美浦にいるときと変わらない状態」ヴ
+OK project=1 video_id=rcPAVGPU9uc title=【函館2歳S・金曜気配】武英師「オーナーのためにも…」シグレは馬主の地元で重賞V
