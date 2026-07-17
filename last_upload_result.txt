@@ -1,10 +1,10 @@
-date: 2026-07-17T09:10:17.710087Z
+date: 2026-07-17T10:55:21.328282Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DURH0Q-DW3k title=今週の武豊騎手は12鞍 シグレで函館2歳Sの29年ぶり2勝目なるか
-OK project=1 video_id=jHM6PPlAS1I title=「あなたの最も印象に残っている武豊騎手の勝利は？」 5000勝で集まったさまざま
-OK project=1 video_id=a8OfS-heuII title=【POG】藤田晋オーナーの2・8億円馬アトミックリーチが8・8新潟デビューへ順調
+OK project=1 video_id=hToEONps6nI title=【POG】福島開催で除外のラインホルトは8・2新潟デビュー目指す　伯母にダート重
+OK project=1 video_id=FZD1Tn-uboc title=【小倉記念・金曜気配】寺島調教師「体力勝負の方がいい」重賞初制覇狙うウエストナウ
+OK project=1 video_id=iJUJmjUnmmw title=セレクト2.6億円のダノンアクション ガラリ一変で初勝利なるか
