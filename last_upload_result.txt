@@ -1,10 +1,10 @@
-date: 2026-07-18T05:28:30.910348Z
+date: 2026-07-18T08:50:56.164243Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NCGper3Zdt4 title=【阪神アーバン競馬プレーバック】モーモーインパクトがデビュー2連勝　距離不安なん
-OK project=1 video_id=mkeR5XBvQNQ title=【福島5R・2歳新馬】坂井瑠星騎手は今日3勝目!「非常に優等生」シルクドマルスが
-OK project=1 video_id=axOh1XujiaM title=ヨカヨカの「あの声援は今でも忘れないです」と谷調教師　「九州競馬記者クラブ小倉タ
+OK project=1 video_id=n080XnwQFPM title=【函館2歳S前日オッズ】シグレが2.2倍で1番人気
+OK project=1 video_id=tMui7NeifBw title=【小倉記念前日オッズ】ジョバンニが3.2倍で1番人気
+OK project=1 video_id=OQ727uotALw title=【メイクデビュー福島5Rレース後コメント】シルクドマルス坂井瑠星騎手ら
