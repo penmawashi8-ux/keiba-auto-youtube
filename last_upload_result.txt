@@ -1,6 +1,10 @@
-date: 2026-07-17T23:54:02.367976Z
-type: popular_news_landscape
+date: 2026-07-18T03:59:43.561236Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4f9aEBUx1nM views=44057 title=砂の怪物ヤマニンウルスが引退…種牡馬入り　武豊とのコンビで重賞2勝　斉藤崇師「いい子を出してほしい」【4.4万回閲覧・話
+OK project=1 video_id=gATTJDDvBeg title=【福島5R新馬戦結果】アドマイヤマーズ産駒シルクドマルスが初陣飾る
+OK project=1 video_id=hXnx-myeYoY title=【小倉5R新馬戦結果】ビッグアーサー産駒ウインガラハッドが断然人気に応え逃げ切り
+OK project=1 video_id=j7Id6ljxIFo title=【ソレイユJS結果】シンガリ人気ヴァレッタカズマが約2年2か月ぶりのV
