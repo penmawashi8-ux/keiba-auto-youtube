@@ -1,10 +1,10 @@
-date: 2026-07-18T10:25:41.437701Z
+date: 2026-07-18T12:00:53.329753Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=H0omEO6HGgc title=【熊本城特別レース後コメント】ワイドクリーガー団野大成騎手ら
-OK project=1 video_id=GBf9xB2OLkI title=【潮騒特別レース後コメント】アパッシメント佐々木大輔騎手ら
-OK project=1 video_id=COAP3aqIUGk title=【開成山特別レース後コメント】リュクスパトロール丸田恭介騎手ら
+OK project=1 video_id=-MqmAFReLh4 title=【阿武隈Sレース後コメント】ミラビリスマジック戸崎圭太騎手ら
+OK project=1 video_id=2LRzQkGLWmw title=【テレQ杯レース後コメント】コウセキ松山弘平騎手ら
+OK project=1 video_id=MEiNfuvEYVI title=【AI予想・小倉記念】相手弱化と外枠で勝機到来！ 人工知能は世界の強豪相手にも通
