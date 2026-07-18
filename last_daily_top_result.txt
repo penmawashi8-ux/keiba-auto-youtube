@@ -1,8 +1,8 @@
-date: 2026-07-17T14:29:38.932303Z
+date: 2026-07-18T14:20:06.272479Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lCRPRQWjvfs
-source_short=jHM6PPlAS1I views=553
-title=【本日の人気No.1】7月17日 「あなたの最も印象に残っている武豊騎手の勝利は？」 5000勝で集まったさまざまな声
+OK project=1 video_id=52Ot1jcY2I4
+source_short=gATTJDDvBeg views=671
+title=【本日の人気No.1】7月18日 【福島5R新馬戦結果】アドマイヤマーズ産駒シルクドマルスが初陣飾る
