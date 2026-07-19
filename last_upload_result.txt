@@ -1,6 +1,10 @@
-date: 2026-07-18T13:11:02.086505Z
-type: popular_news_landscape
+date: 2026-07-19T04:28:38.550633Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gKqtkcV4p4g views=47484 title=【キングジョージ】出走予定馬は14頭　日本勢2頭に昨年ジャパンC覇者カランダガンや凱旋門賞2着ミニーホークも【4.7万回
+OK project=1 video_id=9cCjaIjhcB0 title=オークスV今村聖奈　父は元騎手なのに「全然なりたいと思えなかった」　その理由とは
+OK project=1 video_id=m_PVKnT5PME title=【小倉5R・2歳新馬】3番人気のユーダブルワンが制す　今週5勝目の松山弘平騎手「
+OK project=1 video_id=gIQuLfZ1vKE title=【福島6R新馬戦結果】サートゥルナーリア産駒チャランダマルツが快勝
