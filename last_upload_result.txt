@@ -1,10 +1,10 @@
-date: 2026-07-19T04:28:38.550633Z
+date: 2026-07-19T05:58:06.228733Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9cCjaIjhcB0 title=オークスV今村聖奈　父は元騎手なのに「全然なりたいと思えなかった」　その理由とは
-OK project=1 video_id=m_PVKnT5PME title=【小倉5R・2歳新馬】3番人気のユーダブルワンが制す　今週5勝目の松山弘平騎手「
-OK project=1 video_id=gIQuLfZ1vKE title=【福島6R新馬戦結果】サートゥルナーリア産駒チャランダマルツが快勝
+OK project=1 video_id=ypBD0dU7OeE title=【2歳未勝利函館1Rレース後コメント】ステラトップガン鮫島克駿騎手ら
+OK project=1 video_id=lFt44CRKCJw title=【福島6R・2歳新馬戦】1番人気チャランダマルツが2番手から快勝　坂井「追ってか
+OK project=1 video_id=i67hsEhfIUY title=長期休養明けから復帰した皐月賞馬の全弟12着惨敗でも「少しずつ」「ゆっくり進んで
