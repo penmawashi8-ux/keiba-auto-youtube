@@ -1,10 +1,10 @@
-date: 2026-07-19T05:58:06.228733Z
+date: 2026-07-19T09:13:25.510262Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ypBD0dU7OeE title=【2歳未勝利函館1Rレース後コメント】ステラトップガン鮫島克駿騎手ら
-OK project=1 video_id=lFt44CRKCJw title=【福島6R・2歳新馬戦】1番人気チャランダマルツが2番手から快勝　坂井「追ってか
-OK project=1 video_id=i67hsEhfIUY title=長期休養明けから復帰した皐月賞馬の全弟12着惨敗でも「少しずつ」「ゆっくり進んで
+OK project=1 video_id=_DhWuU47WSA title=「『もう来るな』と関東のジョッキーに言われそう…」坂井瑠星騎手が初めて本格参戦し
+OK project=1 video_id=ztJzTIqcx9I title=【函館2歳Sレース後コメント】フェリチタ横山和生騎手ら
+OK project=1 video_id=Tt3BKwH7vnE title=大物牝馬が無傷3連勝で秋華賞参戦へ!「令和のファインモーション」「モノが違う」フ
