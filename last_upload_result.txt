@@ -1,10 +1,10 @@
-date: 2026-07-19T09:13:25.510262Z
+date: 2026-07-19T10:42:39.378045Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_DhWuU47WSA title=「『もう来るな』と関東のジョッキーに言われそう…」坂井瑠星騎手が初めて本格参戦し
-OK project=1 video_id=ztJzTIqcx9I title=【函館2歳Sレース後コメント】フェリチタ横山和生騎手ら
-OK project=1 video_id=Tt3BKwH7vnE title=大物牝馬が無傷3連勝で秋華賞参戦へ!「令和のファインモーション」「モノが違う」フ
+OK project=1 video_id=2awNt-1GiCA title=【筑紫特別レース後コメント】ミッキージャンプ高杉吏麒騎手ら
+OK project=1 video_id=YFOwGLnW7qg title=26年函館競馬リーディングジョッキーは丹内祐次騎手！
+OK project=1 video_id=SJsJQ99jDqY title=【福島テレビ賞レース後コメント】ジョーローリット武藤雅騎手ら
