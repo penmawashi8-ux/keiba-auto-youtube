@@ -1,10 +1,6 @@
-date: 2026-07-19T12:02:25.359350Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-19T13:13:50.079022Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=c-M-miWvPsw title=【帯広・ばんえい大賞典結果】ヤマトテンショウが逃げ切り重賞初制覇
-OK project=1 video_id=bwHMR2Wc3z8 title=「弟子にして下さい」「Xで競馬予想を…」「眼力は見事」難解レース的中した元櫻坂4
-OK project=1 video_id=TXc-A4m5Nik title=【盛岡競馬　いしがきマイラーズ】モズマーヴェリック転入初戦で重賞初V　関係者“想
+OK project=1 video_id=4iOo0mRE8JM views=32778 title=【小倉記念結果】格上挑戦の10番人気ゼンダンハヤブサがV ジョバンニは2着【3.3万回閲覧・話題の競馬ニュース】
