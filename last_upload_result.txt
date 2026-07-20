@@ -1,10 +1,6 @@
-date: 2026-07-20T13:10:32.855824Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-20T14:02:27.756334Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=j8zyK-qSEMM title=【東海S】悲願の重賞初制覇へバトルクライの高木調教師「相性の良い原騎手で頑張って
-OK project=1 video_id=XsfBfmke7yE title=【関屋記念】重賞初挑戦V狙うアンパドゥ　新コンビの岩田望来騎手が好感触「乗りやす
-OK project=1 video_id=amAyWRPgOUo title=【東海S】ドンインザムードが前走7馬身差圧勝の再現を　今野調教師「左回りはいいし
+OK project=1 video_id=LUiKBH89Y8o views=46766 title=【盛岡・マーキュリーC速報】サンデーファンデーが逃げ切って優勝!【4.7万回閲覧・話題の競馬ニュース】
