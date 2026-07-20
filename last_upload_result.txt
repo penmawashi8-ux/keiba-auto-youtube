@@ -1,6 +1,10 @@
-date: 2026-07-19T13:13:50.079022Z
-type: popular_news_landscape
+date: 2026-07-20T04:40:21.808802Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4iOo0mRE8JM views=32778 title=【小倉記念結果】格上挑戦の10番人気ゼンダンハヤブサがV ジョバンニは2着【3.3万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=tKqgqRdPoGY title=【先週のJRA抹消馬】23年ニュージーランドT覇者エエヤン、ダート重賞2勝のヤマ
+OK project=1 video_id=A0OJDujjkV8 title=【東海S・理貴の特注馬】ダノンフィーゴがJRA重賞初制覇へ　中京は1勝、2着1回
+OK project=1 video_id=xq3HQX3t4jE title=【東海S想定騎手】ドンインザムードは荻野極騎手、ダノンフィーゴは川田将雅騎手
