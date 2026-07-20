@@ -1,10 +1,10 @@
-date: 2026-07-20T06:27:10.527257Z
+date: 2026-07-20T11:58:15.505787Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vYnxscMbWsY title=【札幌日経賞・松ケ下の特注馬】良血ミラージュナイトの成長力に期待　高い洋芝適性も
-OK project=1 video_id=kXg5tMn0tU0 title=【関屋記念想定騎手】ダノンセンチュリーは戸崎圭太騎手、アンパドゥは岩田望来騎手
-OK project=1 video_id=Q8pP1oBUpko title=【関屋記念・角田の特注馬】舞台設定はベストのシリウスコルト　週末に雨が降れば重賞
+OK project=1 video_id=M62K9RuQov0 title=【関屋記念】エルトンバローズが夏のマイル王者へ　しらさぎSに続く重賞連勝、4勝目
+OK project=1 video_id=FemYNI240bo title=セレクションセール初日は売上総額29億円超 最高価格は「メジェルダの2025」で
+OK project=1 video_id=8fTguslqAmI title=【関屋記念】セレクト3.2億円のジュタ 史上最高額のJRA重賞勝ち馬になるか
