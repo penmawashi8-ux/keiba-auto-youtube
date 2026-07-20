@@ -1,8 +1,3 @@
-date: 2026-07-19T14:25:31.322766Z
+date: 2026-07-20T15:05:56.690684Z
 type: daily_top_landscape
-p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
-p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
-p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SflDwcyaEB8
-source_short=9cCjaIjhcB0 views=769
-title=【本日の人気No.1】7月19日 オークスV今村聖奈　父は元騎手なのに「全然なりたいと思えなかった」　その理由とは
+result: no_candidates
