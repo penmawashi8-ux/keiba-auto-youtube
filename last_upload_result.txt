@@ -1,10 +1,10 @@
-date: 2026-07-21T09:29:55.921508Z
+date: 2026-07-21T11:25:22.113858Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=v_kBrm5k-cY title=【注目馬動向】帝王賞連覇のミッキーファイトは日本テレビ盃で始動　戸崎圭太騎手と引
-OK project=1 video_id=87ZWq1EEHyw title=【注目馬動向】砂2冠馬のフィンガーは戸崎圭太騎手とのコンビでパシフィッククラシッ
-OK project=1 video_id=FCyHAI2ZqSw title=ヴェルテンベルクを管理する宮本師ゆかりの名馬 キョウトシチーの復活劇を振り返る
+OK project=1 video_id=e_fsZtaap-w title=【東海S】ダノンフィーゴは思わぬアクシデントもあった前走が成長の証し　友道調教師
+OK project=1 video_id=t_NRqVaDaIE title=【関屋記念】7歳牝馬ドロップオブライトが重賞3勝目へ　福永調教師「夏場はいいんや
+OK project=1 video_id=SCPgCqk28h4 title=【関屋記念】新潟重賞は好相性のシリウスコルト　田中勝調教師「スムーズに流れに乗れ
