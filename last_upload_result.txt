@@ -1,6 +1,10 @@
-date: 2026-07-20T14:02:27.756334Z
-type: popular_news_landscape
+date: 2026-07-21T04:25:05.179539Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LUiKBH89Y8o views=46766 title=【盛岡・マーキュリーC速報】サンデーファンデーが逃げ切って優勝!【4.7万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=lkun6oeqIJM title=今村聖奈騎手のオークスジョッキーカメラ映像が体験できる!エスコンFにJRAブース
+OK project=1 video_id=Y1kaL0cLYVQ title=今村聖奈騎手が今夏も美浦トレセンに滞在「来たからにはしっかり頑張りたい」初日から
+OK project=1 video_id=6UtZkjK8mvs title=ショウヘイなど、先週の入厩情報/栗東トレセンニュース
