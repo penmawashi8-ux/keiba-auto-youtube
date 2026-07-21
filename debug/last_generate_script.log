@@ -1,93 +1,44 @@
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[2]  [ファクトチェックNG] NG: 元記事に存在しない田中勝春
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 元記事に存在しない「田中勝
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 【東海S】ダノンフィーゴは思わぬアクシデントもあった前走が成長の証し　友道調教師「コーナー4つでも頑張っていた」 ---
-[0] Gemini入力本文 350文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)＝7月21日、栗東トレセン\n\t\t\t\t\u3000JRAでの重賞初制覇を目指すダノンフィーゴ(牡4歳、栗東・友道康夫厩舎、父イントゥミスチーフ)は全休日明けのこの日、坂路を64秒3'
+--- 記事[0]: 【東海S】初の重賞挑戦にも「試金石の一戦」と福永調教師　勢い乗るメイショウハチローに期待 ---
+[0] Gemini入力本文 350文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)＝7月21日、栗東トレセン\n\t\t\t\t\u3000前走3勝クラスを突破したメイショウハチロー(牡4歳、栗東・福永祐一厩舎、父シニスターミニスター)が初挑戦でのタイトル獲得に挑む。\n'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【関屋記念】7歳牝馬ドロップオブライトが重賞3勝目へ　福永調教師「夏場はいいんやろな」 ---
-[1] Gemini入力本文 352文字: '◆第61回関屋記念・G3(7月26日、新潟競馬場・芝1600メートル)＝7月21日、栗東トレセン\n\t\t\t\t\u3000ドロップオブライト(牝7歳、栗東・福永祐一厩舎、父トーセンラー)は、ヴィクトリアマイル18着から巻き返しを図る。\n\t\t\t\t\u300024年の'
+--- 記事[1]: 【東海S】「モノが違うな」遅咲きの花を咲かせつつあるベルジュロネット　母は2年連続夏のスプリント女王 ---
+[1] Gemini入力本文 351文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)＝7月21日、栗東トレセン\n\t\t\t\t\u3000照りつける太陽が偉大なDNAを呼び起こす。ベルジュロネット(牡4歳、栗東・大久保龍志厩舎、父ロードカナロア)の母はベルカント。15'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【関屋記念】新潟重賞は好相性のシリウスコルト　田中勝調教師「スムーズに流れに乗れれば」 ---
-[2] Gemini入力本文 351文字: '◆第61回関屋記念・G3(7月26日、新潟競馬場・芝1600メートル)＝7月21日、美浦トレセン\n\t\t\t\t\u3000シリウスコルト(牡5歳、美浦・田中勝春厩舎、父マクフィ)は2歳時の新潟2歳Sが5着。昨年の新潟大賞典では重賞初制覇と相性がいい。2走'
+--- 記事[2]: 【東海S】昨年2着のインユアパレスは得意の左回りで初タイトルへ　陣営「先週一杯にやったことで上がってくれれば」 ---
+[2] Gemini入力本文 357文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)＝7月21日、栗東トレセン\n\t\t\t\t\u3000インユアパレス(牡5歳、栗東・須貝尚介厩舎、父パレスマリス)は昨年の2着馬。その後も5戦で2勝、3着2回と堅実に走っている。唯一の'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 239文字]: '注目の競馬情報をお届けします。第43回東海S・G3が7月26日に中京競馬場ダート1400メートルで開催されます。JRAでの重賞初制覇を目指すダノンフィーゴは、7月21日の全休日明けに栗東トレセンの坂路を64秒3でゆったりとしたキャンターで駆け上がりました。前走の黒船賞では、発走前に軽い接触でゲートの前扉が開き、枠入りをやり直すというアクシデントがありました。しかし、道中は手綱を動かされながら、最後は競り合い、友道調教師は「コーナー4つでも頑張っていた」とコメントしています。'
-[0]  [redirectフィルター] 239文字 → 224文字
+[0]  [Gemini生出力 260文字]: '最新情報をお届けします。\n第43回東海S・G3が7月26日に中京競馬場のダート1400メートルで開催されます。このレースに、前走で3勝クラスを突破したメイショウハチローが初の重賞挑戦でタイトル獲得に挑みます。福永祐一調教師は、この一戦を「試金石の一戦」と位置づけ、勢いに乗るメイショウハチローに期待を寄せています。メイショウハチローは昨年8月から1勝クラス、2勝クラスを連勝し、その後3勝クラスで連続2着と惜敗が続いていました。しかし前走では、先団追走から直線で早めに先頭に立ち、その後一時は後続の馬に差されるも残..。'
+[0]  [redirectフィルター] 260文字 → 247文字
   HTTP 200
-[1]  [Gemini生出力 260文字]: '本日の競馬ニュースです。第61回関屋記念・G3は、7月26日に新潟競馬場・芝1600メートルで行われます。7月21日の栗東トレセンからの情報として、7歳牝馬のドロップオブライトが重賞3勝目を目指します。ドロップオブライトはヴィクトリアマイル18着からの巻き返しを図ります。この馬は24年のCBC賞の勝利や昨年の京成杯AH2着など、暑い時期に良績を残しています。福永調教師は「夏場はいいんやろな」と手応えをつかんでおり、中西助手も「カイ食いも余計にいいと感じる」と、この暑さでも体調に一切の不安がないことを示唆しています。'
+[1]  [Gemini生出力 254文字]: '本日の競馬ニュースです。\n第43回東海S・G3が7月26日に中京競馬場のダート1400メートルで開催されます。このレースにはベルジュロネットが出走を予定しており、7月21日には栗東トレセンで調整が行われました。ベルジュロネットの母はベルカントで、2015年と2016年のサマースプリントシリーズを2年連続で制した夏女です。坂田助手は「夏負けのないように。カイバ食いが落ちることはないですね」とコメントしています。1月下旬から在厩が続くベルジュロネットですが、活気あふれる愛馬の姿が頼もしいと伝えられています。'
+[1]  [重複除去] 254文字 → 253文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (224文字)
-[0]  プレビュー: 第43回東海S・G3が7月26日に中京競馬場ダート1400メートルで開催されます。JRAでの重賞初制覇を目指すダノンフィーゴは、7月21日の全休日明けに栗東トレ...
-  HTTP 200
-[2]  [Gemini生出力 253文字]: '重要な競馬ニュースをお伝えします。第61回関屋記念・G3は7月26日に新潟競馬場、芝1600メートルで行われます。シリウスコルトは2歳時の新潟2歳Sで5着、昨年の新潟大賞典では重賞初制覇を飾るなど、新潟重賞と相性が良いとされています。2走前にコンビを組んだ田辺裕信騎手が3週続けて追い切りに騎乗し、田中勝春調教師は「順調にきています」と、イメージ通りに調整が進められていると話しました。全休日明けの21日にはダートコースで体を動かしており、田中勝春調教師は「スムーズに流れに乗れれば」とコメントしています。'
+[0]  → output/script_0.txt 保存 (245文字)
+[0]  プレビュー: 第43回東海S・G3が7月26日に中京競馬場のダート1400メートルで開催されます。このレースに、前走で3勝クラスを突破したメイショウハチローが初の重賞挑戦でタ...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (260文字)
-[1]  プレビュー: 本日の競馬ニュースです。第61回関屋記念・G3は、7月26日に新潟競馬場・芝1600メートルで行われます。7月21日の栗東トレセンからの情報として、7歳牝馬のド...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[1]  → output/script_1.txt 保存 (253文字)
+[1]  プレビュー: 本日の競馬ニュースです。第43回東海S・G3が7月26日に中京競馬場のダート1400メートルで開催されます。このレースにはベルジュロネットが出走を予定しており、...
   HTTP 200
-[2]  [Gemini生出力 266文字]: '重要な競馬ニュースをお伝えします。第61回関屋記念・G3が7月26日に新潟競馬場・芝1600メートルで行われます。このレースに、シリウスコルトが出走を予定しています。シリウスコルトは2歳時の新潟2歳Sで5着に入り、昨年の新潟大賞典では重賞初制覇を飾るなど、新潟競馬場と相性が良いとされています。2走前にコンビを組んだ田辺裕信騎手が3週続けて追い切りに騎乗し、田中勝春調教師のイメージ通りに調整が進められています。全休日明けの21日にはダートコースで体を動かしており、田中勝春調教師は「スムーズに流れに乗れれば」とコメントしています。'
-[2] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 221文字]: '重要な競馬ニュースをお伝えします。\n第61回関屋記念・G3に7月26日出走予定のシリウスコルトは、新潟競馬場での重賞に好相性を見せています。2歳時の新潟2歳Sでは5着に入り、昨年の新潟大賞典では重賞初制覇を飾りました。2走前にコンビを組んだ田辺裕信騎手が3週続けて追い切りに騎乗し、田中勝春調教師は「順調にきています」とコメントしています。調教師のイメージ通りに調整が進められており、7月21日の全休日明けにはダートコースで体を動かしました。'
-[2]  [重複除去] 221文字 → 220文字
+[2]  [Gemini生出力 284文字]: '今週の競馬注目情報をお伝えします。第43回東海S・G3は7月26日に中京競馬場ダート1400メートルで開催されます。このレースには、昨年の2着馬であるインユアパレスが出走を予定しています。インユアパレスはその後も5戦で2勝、3着2回と堅実に走っています。唯一の着外だった根岸Sの9着については、平田助手から「落鉄していたから」と敗因が説明されました。この敗因が明確な一戦を除けば、左回りでは＜2・3・0・0＞と抜群の実績を誇ります。今回は2か月ぶりの一戦ですが、陣営は「先週一杯にやったことで上がってくれれば」と期待を寄せており、得意の左回りで初タイトルを目指します。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (220文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。第61回関屋記念・G3に7月26日出走予定のシリウスコルトは、新潟競馬場での重賞に好相性を見せています。2歳時の新潟2歳Sでは...
+[2]  → output/script_2.txt 保存 (284文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。第43回東海S・G3は7月26日に中京競馬場ダート1400メートルで開催されます。このレースには、昨年の2着馬であるインユアパ...
 
 3 件の脚本を生成しました。
