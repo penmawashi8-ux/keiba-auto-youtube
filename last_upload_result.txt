@@ -1,10 +1,10 @@
-date: 2026-07-21T05:54:42.941155Z
+date: 2026-07-21T09:29:55.921508Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=GYZs0TBsqC0 title=エトワールの2024(サトノステラ)など、先週のゲート試験/栗東トレセンニュース
-OK project=1 video_id=S1keDYPed6M title=【東海S】福永祐一調教師が史上初の騎手＆調教師ダブル制覇へ 上がり馬のメイショウ
-OK project=1 video_id=gp8rxSsi6NA title=エスコンフィールドにJRAブースが登場!今村聖奈らのジョッキーカメラ映像を体験で
+OK project=1 video_id=v_kBrm5k-cY title=【注目馬動向】帝王賞連覇のミッキーファイトは日本テレビ盃で始動　戸崎圭太騎手と引
+OK project=1 video_id=87ZWq1EEHyw title=【注目馬動向】砂2冠馬のフィンガーは戸崎圭太騎手とのコンビでパシフィッククラシッ
+OK project=1 video_id=FCyHAI2ZqSw title=ヴェルテンベルクを管理する宮本師ゆかりの名馬 キョウトシチーの復活劇を振り返る
