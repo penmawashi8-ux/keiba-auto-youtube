@@ -1,10 +1,10 @@
-date: 2026-07-21T04:25:05.179539Z
+date: 2026-07-21T05:54:42.941155Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lkun6oeqIJM title=今村聖奈騎手のオークスジョッキーカメラ映像が体験できる!エスコンFにJRAブース
-OK project=1 video_id=Y1kaL0cLYVQ title=今村聖奈騎手が今夏も美浦トレセンに滞在「来たからにはしっかり頑張りたい」初日から
-OK project=1 video_id=6UtZkjK8mvs title=ショウヘイなど、先週の入厩情報/栗東トレセンニュース
+OK project=1 video_id=GYZs0TBsqC0 title=エトワールの2024(サトノステラ)など、先週のゲート試験/栗東トレセンニュース
+OK project=1 video_id=S1keDYPed6M title=【東海S】福永祐一調教師が史上初の騎手＆調教師ダブル制覇へ 上がり馬のメイショウ
+OK project=1 video_id=gp8rxSsi6NA title=エスコンフィールドにJRAブースが登場!今村聖奈らのジョッキーカメラ映像を体験で
