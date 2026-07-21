@@ -1,10 +1,6 @@
-date: 2026-07-21T11:25:22.113858Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-21T13:43:55.651634Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=e_fsZtaap-w title=【東海S】ダノンフィーゴは思わぬアクシデントもあった前走が成長の証し　友道調教師
-OK project=1 video_id=t_NRqVaDaIE title=【関屋記念】7歳牝馬ドロップオブライトが重賞3勝目へ　福永調教師「夏場はいいんや
-OK project=1 video_id=SCPgCqk28h4 title=【関屋記念】新潟重賞は好相性のシリウスコルト　田中勝調教師「スムーズに流れに乗れ
+OK project=1 video_id=ghlvrWzWN_w views=30681 title=【注目馬動向】5・9億円ホースのエムズビギンは武豊騎手との新コンビで神戸新聞杯に参戦へ【3.1万回閲覧・話題の競馬ニュー
