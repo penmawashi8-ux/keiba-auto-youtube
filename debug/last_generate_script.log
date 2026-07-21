@@ -1,43 +1,76 @@
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【東海S】悲願の重賞初制覇へバトルクライの高木調教師「相性の良い原騎手で頑張ってくれれば」 ---
-[0] Gemini入力本文 352文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)\n\t\t\t\t\u3000バトルクライ(牡7歳、美浦・高木登厩舎、父イスラボニータ)はオープンとリステッドを3勝。重賞は3走前の根岸S・G3の2着が最高だが、7歳になっても衰えはなく'
+--- 記事[0]: 今村聖奈騎手のオークスジョッキーカメラ映像が体験できる!エスコンFにJRAブース出展　AI武豊も登場　25日から ---
+[0] Gemini入力本文 355文字: 'JRAは7月21日、同25日から7週間行われる札幌競馬のPRをするべく、北海道日本ハムファイターズの本拠地、エスコンフィールドHOKKAIDO(北海道北広島市)に7月25日から8月16日までの期間限定の特設ブースを出展すると発表した。\n\t\t'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【関屋記念】重賞初挑戦V狙うアンパドゥ　新コンビの岩田望来騎手が好感触「乗りやすかったし反応も良かった」 ---
-[1] Gemini入力本文 354文字: '◆第61回関屋記念・G3(7月26日、新潟競馬場・芝1600メートル)\n\t\t\t\t\u3000アンパドゥ(牡5歳、美浦・木村哲也厩舎、父イフラージ)は6戦4勝、2着1回。連対を外したのは2走前(7着)一度だけで、まだ底を見せないまま重賞に初挑戦する。\n'
+--- 記事[1]: 今村聖奈騎手が今夏も美浦トレセンに滞在「来たからにはしっかり頑張りたい」初日から精力的に活動 ---
+[1] Gemini入力本文 338文字: '今村聖奈騎手＝栗東・寺島良厩舎＝が7月21日から夏の期間、茨城県・美浦トレーニングセンターを中心に調教に騎乗する。\n\t\t\t\t\u3000全休日明けの21日から美浦で精力的に汗を流した今村聖奈騎手。25年4月に福島、新潟開催に騎乗するため美浦トレセンに'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: 【東海S】ドンインザムードが前走7馬身差圧勝の再現を　今野調教師「左回りはいいし、中京は問題ない」 ---
-[2] Gemini入力本文 350文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)\n\t\t\t\t\u3000連勝中のドンインザムード(牡4歳、栗東・今野貞一厩舎、父アジアエクスプレス)が、昨年のレパードS以来2度目の重賞制覇を狙う。\n\t\t\t\t\u3000前走の欅Sでは、メン'
+--- 記事[2]: ショウヘイなど、先週の入厩情報/栗東トレセンニュース ---
+[2] Gemini入力本文 339文字: '大阪杯10着の後、休養していたショウヘイ(栗東・友道康夫厩舎)が7月15日にノーザンファームしがらき(滋賀県)から栗東へ帰厩。次走は札幌記念(8月16日・札幌芝2000m)への出走を予定している。\n\u3000ちなみに同レースには同厩舎のアドマイヤテ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 207文字]: '重要な競馬ニュースをお伝えします。第43回東海S・G3は7月26日に中京競馬場のダート1400メートルで開催されます。連勝中のドンインザムードが、昨年のレパードS以来2度目の重賞制覇を狙います。前走の欅Sでは、メンバー最重量の斤量59キロを背負い、道中は3番手で競馬を進めました。直線では早めに逃げ馬を捕らえ、2着に7馬身差をつけて完勝しています。今野調教師は、左回りはいいし、中京は問題ないとコメントしています。'
-  HTTP 200
-[1]  [Gemini生出力 249文字]: '今日の競馬情報です。第61回関屋記念・G3が7月26日、新潟競馬場芝1600メートルで行われます。重賞初挑戦となるアンパドゥは、6戦4勝、2着1回の成績で、連対を外したのは2走前の7着一度だけで、まだ底を見せていません。全4勝をルメール騎手で挙げたアンパドゥですが、今回は岩田望来騎手との新コンビで重賞初挑戦Vを狙います。岩田望来騎手は1週前追い切りに騎乗し、美浦・Wコースで6ハロン81秒7―11秒4の好時計を馬なりでマークしました。鞍上は「乗りやすかったし反応も良かった」と好感触を得ています。'
+[2]  [Gemini生出力 193文字]: 'レース関連の最新情報です。大阪杯10着の後、休養していたショウヘイが7月15日にノーザンファームしがらきから栗東へ帰厩しました。次走は8月16日札幌芝2000mの札幌記念への出走を予定しています。友道康夫厩舎のショウヘイと同厩舎のアドマイヤテラも同レースに参戦予定です。アドマイヤテラは現在北海道で放牧中で、栗東へは戻らず函館競馬場へ入厩し、レースに向けた調整を進めていくとのことです。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (207文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。第43回東海S・G3は7月26日に中京競馬場のダート1400メートルで開催されます。連勝中のドンインザムードが、昨年のレパード...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (249文字)
-[1]  プレビュー: 今日の競馬情報です。第61回関屋記念・G3が7月26日、新潟競馬場芝1600メートルで行われます。重賞初挑戦となるアンパドゥは、6戦4勝、2着1回の成績で、連対...
+[2]  → output/script_2.txt 保存 (193文字)
+[2]  プレビュー: レース関連の最新情報です。大阪杯10着の後、休養していたショウヘイが7月15日にノーザンファームしがらきから栗東へ帰厩しました。次走は8月16日札幌芝2000m...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 237文字]: '注目の競馬情報をお届けします。\n7月26日に中京競馬場ダート1400メートルで開催される第43回東海S・G3に、バトルクライが出走を予定しています。\nバトルクライはオープンとリステッドを3勝。重賞では3走前の根岸S・G3で2着が最高成績ですが、7歳になっても衰えはなく、立ち回りひとつでチャンスがありそうです。\n高木調教師は、調整が変わりなく順調であること、コース的には中京1400メートルの舞台が良いこと、そして相性の良い原優介騎手で頑張ってくれればと期待を語っています。'
-[0]  [redirectフィルター] 237文字 → 221文字
-[0]  [重複除去] 221文字 → 219文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: 7月26日に中京競馬場ダート1400メートルで開催される第43回東海S・G3に、バトルクライが出走を予定しています。バトルクライはオープンとリステッドを3勝。重...
+[0]  [Gemini生出力 257文字]: '競馬速報です。\nJRAは7月21日、同25日から7週間行われる札幌競馬のPRのため、北海道日本ハムファイターズの本拠地であるエスコンフィールドHOKKAIDO、北海道北広島市に特設ブースを出展すると発表しました。このブースは7月25日から8月16日までの期間限定で、1階ライト側コンコースファミリーエリアに設けられます。ブースでは、JRA公式YouTubeチャンネルでの再生回数が430万回を超え、上半期のG1で大きな話題を呼んだ今村聖奈騎手のジョッキーカメラ映像が体験できます。また、AI武豊も登場する予定です。'
+[0]  [重複除去] 257文字 → 256文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (256文字)
+[0]  プレビュー: 競馬速報です。JRAは7月21日、同25日から7週間行われる札幌競馬のPRのため、北海道日本ハムファイターズの本拠地であるエスコンフィールドHOKKAIDO、北...
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 267文字]: '本日の競馬ニュースです。\n今村聖奈騎手、栗東・寺島良厩舎は、7月21日から夏の期間、茨城県の美浦トレーニングセンターを中心に調教に騎乗します。全休日明けの21日から美浦で精力的に汗を流しました。今村聖奈騎手は、2025年4月に福島、新潟開催に騎乗するため美浦トレセンに7週間ほど滞在したのが始まりで、その後も美浦に姿を見せるようになった経緯があります。本人は「そこが転機になったというか、流れが良くなった」と振り返っており、「来たからにはしっかり頑張りたい」とコメントしています。今年はジュウリョクピエロなどの調教に騎乗する予定です。'
+[1]  [重複除去] 267文字 → 266文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (266文字)
+[1]  プレビュー: 本日の競馬ニュースです。今村聖奈騎手、栗東・寺島良厩舎は、7月21日から夏の期間、茨城県の美浦トレーニングセンターを中心に調教に騎乗します。全休日明けの21日か...
 
 3 件の脚本を生成しました。
