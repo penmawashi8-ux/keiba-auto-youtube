@@ -1,10 +1,10 @@
-date: 2026-07-22T09:32:18.479564Z
+date: 2026-07-22T11:22:20.091783Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OG82O3UNuM0 title=【キングジョージ】アスコットは降水量0ミリでパンパンの良馬場濃厚　日本勢向きの馬
-OK project=1 video_id=AthtvtBWtRQ title=“派手顔”が「可愛い」「イケメン」と人気のカンチェンジュンガが引退→第2の馬生…
-OK project=1 video_id=PglIUUO4ntE title=【関屋記念】力強い動き見せたエルトンバローズに杉山晴調教師も手応え　「夏のマイル
+OK project=1 video_id=Vm4UFFLkNC4 title=【東海S】坂路で鋭伸のドンインザムードは心身両面での成長目立つ　今野調教師「ちょ
+OK project=1 video_id=wyQy9PBK4y0 title=矢作師がフォーエバーヤングの出国日程に言及　8.7函館へ、9.7出国　大井競馬ト
+OK project=1 video_id=y9R4tMJ2R2U title=【関屋記念】シンザン記念覇者のサンダーストラックは集中力十分　陣営「状態自体は先
