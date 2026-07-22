@@ -1,10 +1,10 @@
-date: 2026-07-22T04:25:39.050669Z
+date: 2026-07-22T05:58:28.294961Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4KjONtlacJ8 title=エリカエクスプレス、クイーンS1週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=esdLKyHP2js title=ディアナザール、CBC賞2週前追い切り速報/栗東トレセンニュース
-OK project=1 video_id=j8zvve9jB3I title=【注目馬動向】3歳牝馬の新星モンローウォークは秋華賞直行かトライアルを挟むかを検
+OK project=1 video_id=7zcd-2ql4LA title=フォーエバーヤングがBCクラシックの前売り1番人気　フィンガーは12番人気タイ　
+OK project=1 video_id=x1-NOLaNHHI title=アルしゃん3位からの逆転狙う!予選突破したファイナリスト8頭が発表　今日から本選
+OK project=1 video_id=qh1xDlYANp8 title=【POG】福永厩舎で今週デビュー予定のベルコートは来週の中京・芝マイルに変更　半
