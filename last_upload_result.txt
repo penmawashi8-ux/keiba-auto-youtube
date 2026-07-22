@@ -1,10 +1,10 @@
-date: 2026-07-22T05:58:28.294961Z
+date: 2026-07-22T09:32:18.479564Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7zcd-2ql4LA title=フォーエバーヤングがBCクラシックの前売り1番人気　フィンガーは12番人気タイ　
-OK project=1 video_id=x1-NOLaNHHI title=アルしゃん3位からの逆転狙う!予選突破したファイナリスト8頭が発表　今日から本選
-OK project=1 video_id=qh1xDlYANp8 title=【POG】福永厩舎で今週デビュー予定のベルコートは来週の中京・芝マイルに変更　半
+OK project=1 video_id=OG82O3UNuM0 title=【キングジョージ】アスコットは降水量0ミリでパンパンの良馬場濃厚　日本勢向きの馬
+OK project=1 video_id=AthtvtBWtRQ title=“派手顔”が「可愛い」「イケメン」と人気のカンチェンジュンガが引退→第2の馬生…
+OK project=1 video_id=PglIUUO4ntE title=【関屋記念】力強い動き見せたエルトンバローズに杉山晴調教師も手応え　「夏のマイル
