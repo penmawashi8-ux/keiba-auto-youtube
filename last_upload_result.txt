@@ -1,6 +1,10 @@
-date: 2026-07-21T13:43:55.651634Z
-type: popular_news_landscape
+date: 2026-07-22T04:25:39.050669Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ghlvrWzWN_w views=30681 title=【注目馬動向】5・9億円ホースのエムズビギンは武豊騎手との新コンビで神戸新聞杯に参戦へ【3.1万回閲覧・話題の競馬ニュー
+OK project=1 video_id=4KjONtlacJ8 title=エリカエクスプレス、クイーンS1週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=esdLKyHP2js title=ディアナザール、CBC賞2週前追い切り速報/栗東トレセンニュース
+OK project=1 video_id=j8zvve9jB3I title=【注目馬動向】3歳牝馬の新星モンローウォークは秋華賞直行かトライアルを挟むかを検
