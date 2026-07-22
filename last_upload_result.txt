@@ -1,10 +1,6 @@
-date: 2026-07-22T12:30:57.157985Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-22T13:46:21.515710Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Hs5qxUMg8s0 title=リコースパローがサンタアニタT優勝　矢野貴之騎手「まだまだ大きいところで頑張って
-OK project=1 video_id=7RZKlvgKKcw title=【門別・リリーC結果】セルアウトクラウドが逃げ切りV！ 無傷2連勝で重賞初制覇
-OK project=1 video_id=76E4Atl1wCI title=【関屋記念】新潟得意のファーヴェントが坂路で好気配　陣営は「もっと大きいところで
+OK project=1 video_id=_WtGkiRiLtA views=32740 title=【アイビスSD想定】エコロレジーナ、ピューロマジックなど12頭【3.3万回閲覧・話題の競馬ニュース】
