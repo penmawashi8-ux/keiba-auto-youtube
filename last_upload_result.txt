@@ -1,10 +1,6 @@
-date: 2026-07-23T12:29:30.890293Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-23T13:52:08.558476Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=J8mEm3UU9OE title=ばんえいPR馬のミルキー号が23歳で死す　SNSで追悼メッセージ続々「盛り上げて
-OK project=1 video_id=4XnXpUT2z5s title=【門別・王冠賞結果】マロンソレイユが差し切って重賞初制覇
-OK project=1 video_id=FugJ6UrB9Jo title=【ホッカイドウ競馬】門別11Rが濃霧で取りやめ　12R王冠賞は予定通り実施
+OK project=1 video_id=pPPsfEHcOTY views=56957 title=橋木太希騎手は1年間の騎乗停止　来年3月20日まで　重大な非行があり既に騎乗停止中　JRA発表【5.7万回閲覧・話題の競
