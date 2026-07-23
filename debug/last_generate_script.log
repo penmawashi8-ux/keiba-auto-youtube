@@ -1,144 +1,74 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [ファクトチェックNG] NG: 武豊騎手は選
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [ファクトチェックNG] NG: 武豊騎手は選
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 武豊騎手は選考
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 今村聖奈騎手が8・13園田競馬メインレースのプレゼンター　トークショーも開催 ---
-[0] Gemini入力本文 461文字: '兵庫県競馬組合は7月22日、オークスのジュウリョクピエロでJRA女性騎手で初のG1制覇を達成した今村聖奈騎手＝栗東・寺島良厩舎＝が、8月13日に阪神アーバン競馬・園田競馬場のメインレース「第2回よさこいスプリント(高知交流)」の表彰プレゼン'
+--- 記事[0]: 【ばんえい競馬】PR馬ミルキー号死す　23歳　全国各地を巡りファンに愛された ---
+[0] Gemini入力本文 373文字: 'ばんえい十勝は23日、PR馬ミルキー号(セン、父ウィニング)が病気療養の中、22日午前中に死亡したと発表した。23歳。\n\u3000ミルキー号は2003年4月10日阿寒郡鶴居村生まれ。現役時代はイッシンブレイブ号として05年7月25日に岩見沢でデビュ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 2026ワールドオールスタージョッキーズの出場騎手8人が決定　武豊騎手は選考委員会選出で出場 ---
-[1] Gemini入力本文 360文字: 'JRAは7月23日、8月22日と23日に行われる「2026ワールドオールスタージョッキーズ(WASJ)」に騎乗するJRA騎手代表7名、地方競馬所属騎手1名を発表した。なお、外国騎手については、決まり次第発表される。\n\t\t\t\t\u3000なお、2025'
+--- 記事[1]: 【兵庫アーバン競馬】今村聖奈が8月13日に園田競馬でトークショー実施 ---
+[1] Gemini入力本文 420文字: '兵庫アーバン競馬は23日、8月12〜14日の園田競馬(阪神アーバン競馬)でステージやグルメなどを楽しめる夏季イベント「HUK夏フェス\u3000第2弾」を開催すると発表した。\n\u300013日には今年5月のオークスをジュウリョクピエロで制し、JRA女性騎手と'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 「ウマ娘」にルーラーシップ新登場!まさかの「出遅れ」スキルが大反響…「前代未聞すぎる」「ビジュアルがかっこよすぎ」 ---
-[2] Gemini入力本文 397文字: '株式会社Cygamesが展開するPC、スマホ向けのゲーム「ウマ娘\u3000プリティーダービー」で21日、「新育成ウマ娘」としてルーラーシップが登場し反響を呼んでいる。\n\t\t\t\t\u3000「ウマ娘プロジェクト」のX公式アカウントで20日、「【新育成ウマ娘紹介'
+--- 記事[2]: 香港馬ファストネットワークがセントウルSに予備登録　昨年香港スプリント3着　前走チェアマンズSP4着 ---
+[2] Gemini入力本文 324文字: 'JRAは23日、香港調教馬ファストネットワーク(セン6＝C・イプ、父ロート)がセントウルS(9月6日、阪神芝1200メートル)に予備登録したと発表した。\n\u3000昨年ナショナルデーCで重賞(G3)初制覇を飾り、ジョッキークラブスプリント2着から香'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 203文字]: '最新のレース情報が入ってきました。\nJRAは7月23日、8月22日と23日に行われる「2026ワールドオールスタージョッキーズ(WASJ)」に騎乗するJRA騎手代表7名、地方競馬所属騎手1名を発表しました。武豊騎手は選考委員会選出で出場します。2025年度のJRA賞の騎手部門における「MVJ」を受賞した戸崎圭太騎手は、海外での騎乗予定のため出場を辞退しました。外国騎手については、決まり次第発表されます。'
-[1]  [重複除去] 203文字 → 202文字
+[2]  [Gemini生出力 259文字]: '競馬速報です。JRAは23日、香港調教馬ファストネットワークがセントウルSに予備登録したと発表しました。このファストネットワークはセン6で、C・イプ調教師が管理し、父はロートです。セントウルSは9月6日に阪神芝1200メートルで開催される予定です。ファストネットワークは昨年ナショナルデーCで重賞G3初制覇を飾り、ジョッキークラブスプリント2着から香港スプリント3着に入りました。今年初戦のセンテナリースプリントCでは3着、前走のチェアマンズスプリントプライズでは4着と、地元香港のスプリント重賞戦線で好走しています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (259文字)
+[2]  プレビュー: 競馬速報です。JRAは23日、香港調教馬ファストネットワークがセントウルSに予備登録したと発表しました。このファストネットワークはセン6で、C・イプ調教師が管理...
   HTTP 200
-[0]  [Gemini生出力 170文字]: '競馬速報です。\n兵庫県競馬組合は7月22日、オークスのジュウリョクピエロでJRA女性騎手で初のG1制覇を達成した今村聖奈騎手が、8月13日に阪神アーバン競馬・園田競馬場のメインレース「第2回よさこいスプリント(高知交流)」の表彰プレゼンターを行うことを発表しました。この日、今村聖奈騎手によるトークショーも開催されることが発表されています。'
-[0]  [重複除去] 170文字 → 169文字
+[0]  [Gemini生出力 240文字]: '最新のレース情報が入ってきました。ばんえい十勝は23日、PR馬ミルキー号が病気療養の中、22日午前中に死亡したと発表しました。23歳でした。ミルキー号は2003年4月10日に阿寒郡鶴居村で生まれ、父はウィニングです。現役時代はイッシンブレイブ号として、2005年7月25日に岩見沢でデビューしました。2008年3月22日の帯広で現役を引退するまでの成績は69戦8勝です。引退後はミルキー号と名を改め、ばんえい十勝PR馬として全国各地を巡り、たくさんの方々とのふれあいがありました。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (169文字)
-[0]  プレビュー: 競馬速報です。兵庫県競馬組合は7月22日、オークスのジュウリョクピエロでJRA女性騎手で初のG1制覇を達成した今村聖奈騎手が、8月13日に阪神アーバン競馬・園田...
+[0]  → output/script_0.txt 保存 (240文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。ばんえい十勝は23日、PR馬ミルキー号が病気療養の中、22日午前中に死亡したと発表しました。23歳でした。ミルキー号は2003...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
 [1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
 [1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
 [1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 209文字]: '最新のレース情報が入ってきました。JRAは7月23日、8月22日と23日に行われる2026ワールドオールスタージョッキーズの出場騎手を発表しました。JRA騎手代表7名と地方競馬所属騎手1名が決定しています。なお、外国騎手については、決まり次第発表されるとのことです。2025年度のJRA賞の騎手部門におけるMVJを受賞した戸崎圭太騎手は、海外での騎乗予定のため出場を辞退しました。武豊騎手は選考委員会選出で出場します。'
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 325文字]: '今日の競馬情報です。株式会社Cygamesが展開するPC、スマホ向けのゲーム「ウマ娘 プリティーダービー」で21日、「新育成ウマ娘」としてルーラーシップが登場し反響を呼んでいます。「ウマ娘プロジェクト」のX公式アカウントでは20日、「【新育成ウマ娘紹介】新たに登場する★3［Monochrome GM］ルーラーシップの情報を一部ご紹介！詳細は、7／21から開催するガチャ画面右上の［育成ウマ娘詳細］をご確認ください！」と告知されました。特に「出遅れ」スキルが大きな反響を呼び、「前代未聞すぎる」「ビジュアルがかっこよすぎ」といった声が上がっています。ルーラーシップは2012年の第57回有馬記念・G1でスタートで大きく出遅れたことでも知られています。'
-[2]  [redirectフィルター] 325文字 → 197文字
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (197文字)
-[2]  プレビュー: 今日の競馬情報です。株式会社Cygamesが展開するPC、スマホ向けのゲーム「ウマ娘 プリティーダービー」で21日、「新育成ウマ娘」としてルーラーシップが登場し...
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 222文字]: '最新のレース情報が入ってきました。JRAは7月23日、2026ワールドオールスタージョッキーズの出場騎手を発表しました。8月22日と23日に行われるこのWASJには、JRA騎手代表7名と地方競馬所属騎手1名が騎乗します。武豊騎手は選考委員会選出で出場することが決定しました。また、2025年度のJRA賞騎手部門でMVJを受賞した戸崎圭太騎手は、海外での騎乗予定のため出場を辞退しています。なお、外国騎手については、決まり次第発表される予定です。'
-[1] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [1] のスクリプト生成失敗。
+[1]  [Gemini生出力 258文字]: '今日の競馬情報です。兵庫アーバン競馬は23日、8月12日から14日に園田競馬で開催される夏季イベント「HUK夏フェス 第2弾」を発表しました。このイベントではステージやグルメなどが楽しめます。中でも8月13日には、今年5月のオークスをジュウリョクピエロで制し、JRA女性騎手として史上初のG1制覇を成し遂げた22歳の今村聖奈のトークショーが実施されます。トークショーではG1勝利の話から自身のプライベートな話を聞くことができるとされています。当日はメイン11R「第2回夜さ恋サマースプリント(高知交流)」の表彰...'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (221文字)
+[1]  プレビュー: 今日の競馬情報です。兵庫アーバン競馬は23日、8月12日から14日に園田競馬で開催される夏季イベント「HUK夏フェス 第2弾」を発表しました。このイベントではス...
 
-  HTTP 429
+3 件の脚本を生成しました。
