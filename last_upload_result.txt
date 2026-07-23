@@ -1,10 +1,10 @@
-date: 2026-07-23T11:17:45.157681Z
+date: 2026-07-23T12:29:30.890293Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qkaQ8McUxoY title=ドウデュース、イクイノックス世代のダービー1番人気　ダノンベルーガは誘導馬として
-OK project=1 video_id=wi2Xqbfgf3o title=【アイビスSD・1週前】千直3度目の正直!バグラダスが81秒8の好時計　嘉藤調教
-OK project=1 video_id=m0hpw2O1eU4 title=【アイビスサマーダッシュ・1週前】テイエムスパーダは馬場入りをごねる　小椋調教師
+OK project=1 video_id=J8mEm3UU9OE title=ばんえいPR馬のミルキー号が23歳で死す　SNSで追悼メッセージ続々「盛り上げて
+OK project=1 video_id=4XnXpUT2z5s title=【門別・王冠賞結果】マロンソレイユが差し切って重賞初制覇
+OK project=1 video_id=FugJ6UrB9Jo title=【ホッカイドウ競馬】門別11Rが濃霧で取りやめ　12R王冠賞は予定通り実施
