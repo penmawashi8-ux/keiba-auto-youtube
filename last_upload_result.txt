@@ -1,10 +1,10 @@
-date: 2026-07-23T06:03:39.860592Z
+date: 2026-07-23T09:26:24.988130Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=c0YLhA5pZ2k title=【ばんえい競馬】PR馬ミルキー号死す　23歳　全国各地を巡りファンに愛された
-OK project=1 video_id=-a_RXGrOGo8 title=【兵庫アーバン競馬】今村聖奈が8月13日に園田競馬でトークショー実施
-OK project=1 video_id=trBSsGu7SHk title=香港馬ファストネットワークがセントウルSに予備登録　昨年香港スプリント3着　前走
+OK project=1 video_id=yZzPCXI11i0 title=昨年の香港スプリント3着馬ファストネットワークがセントウルSに予備登録　スプリン
+OK project=1 video_id=i2N38tvk2CU title=田中博康厩舎ゆかりの良血 ホウオウシュウがデビュー勝ち狙う
+OK project=1 video_id=THXx_Yu6-b0 title=デビュー即Vも狙えるラインアップ!土曜にいよいよ初陣の古賀大生調教師　「感謝の気
