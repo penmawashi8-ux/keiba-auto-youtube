@@ -1,10 +1,10 @@
-date: 2026-07-24T11:10:47.125093Z
+date: 2026-07-24T12:23:53.908074Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jrbrdoOyMmg title=欧州古馬中距離路線の最高峰 キングジョージVI世＆クイーンエリザベスSに日本馬2
-OK project=1 video_id=QgZTNp9PZxI title=【園田7R】福原杏騎手が地方通算400勝　7月から園田で期間限定騎乗
-OK project=1 video_id=4iZp2Tr8KAs title=ジャンタルマンタルが競走馬登録を抹消　種牡馬となる予定の社台スタリオンステーショ
+OK project=1 video_id=XAl_P9drfNc title=伯母は名牝ジェンティルドンナ ルージュアイラが激変初勝利なるか
+OK project=1 video_id=u-C9-0b49ig title=「臨機応変にいきたい」「普段の延長線上という感じ」25日から暑熱対策スタート　宮
+OK project=1 video_id=_bmm185u7I0 title=【注目馬動向】フェブラリーS連覇のコスタノヴァが左前脚球節のクリーニング手術へ
