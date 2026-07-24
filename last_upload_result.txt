@@ -1,10 +1,10 @@
-date: 2026-07-24T09:22:35.896534Z
+date: 2026-07-24T11:10:47.125093Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZpZNeKHPsds title=【キングジョージ】昨年のリベンジへ「間違いなくパワーアップ」　マスカレードボール
-OK project=1 video_id=VhhBqDj4jhc title=【ＰＯＧ】フォーエバーヤングの半弟ヤングリッチがゲート試験合格　坂井瑠星騎手「当
-OK project=1 video_id=ZU3wrPsiYqM title=今週末から「競走時間帯の拡大」 中京・新潟は5R終了後に“昼休み”
+OK project=1 video_id=jrbrdoOyMmg title=欧州古馬中距離路線の最高峰 キングジョージVI世＆クイーンエリザベスSに日本馬2
+OK project=1 video_id=QgZTNp9PZxI title=【園田7R】福原杏騎手が地方通算400勝　7月から園田で期間限定騎乗
+OK project=1 video_id=4iZp2Tr8KAs title=ジャンタルマンタルが競走馬登録を抹消　種牡馬となる予定の社台スタリオンステーショ
