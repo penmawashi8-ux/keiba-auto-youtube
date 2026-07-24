@@ -1,10 +1,10 @@
-date: 2026-07-24T06:00:27.665100Z
+date: 2026-07-24T09:22:35.896534Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jEqMvvn3Pjc title=【ばんえい競馬】メムロボブサップが6年連続首位　6連覇目指す　ばんえいグランプリ
-OK project=1 video_id=iUMzOU_MTWc title=今週の中京競馬場は最高気温38〜40度予想　東海S出走のノーブルロジャーは「わざ
-OK project=1 video_id=Lt1cRKpZ5QA title=【キングジョージ】宮本調教師「マスカレードボールが隣ということで良かった」ヴェル
+OK project=1 video_id=ZpZNeKHPsds title=【キングジョージ】昨年のリベンジへ「間違いなくパワーアップ」　マスカレードボール
+OK project=1 video_id=VhhBqDj4jhc title=【ＰＯＧ】フォーエバーヤングの半弟ヤングリッチがゲート試験合格　坂井瑠星騎手「当
+OK project=1 video_id=ZU3wrPsiYqM title=今週末から「競走時間帯の拡大」 中京・新潟は5R終了後に“昼休み”
