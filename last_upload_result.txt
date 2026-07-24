@@ -1,10 +1,6 @@
-date: 2026-07-24T12:23:53.908074Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-24T13:33:33.919340Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XAl_P9drfNc title=伯母は名牝ジェンティルドンナ ルージュアイラが激変初勝利なるか
-OK project=1 video_id=u-C9-0b49ig title=「臨機応変にいきたい」「普段の延長線上という感じ」25日から暑熱対策スタート　宮
-OK project=1 video_id=_bmm185u7I0 title=【注目馬動向】フェブラリーS連覇のコスタノヴァが左前脚球節のクリーニング手術へ
+OK project=1 video_id=qOEMWz_7oEE views=23305 title=英キングジョージ枠順確定!マスカレードボール4番枠　カランダガン7番枠　ベイシティローラー回避【2.3万回閲覧・話題の競
