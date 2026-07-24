@@ -1,3 +1,8 @@
-date: 2026-07-23T15:13:19.632393Z
+date: 2026-07-24T14:50:49.002229Z
 type: daily_top_landscape
-result: no_candidates
+p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
+p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
+p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
+OK project=1 video_id=kKeVLfuNNss
+source_short=SD-7ugh44K4 views=1003
+title=【本日の人気No.1】7月24日 【キングジョージ】アスコットはパンパンの良馬場濃厚　日本馬得意のスピード馬場で世界最強
