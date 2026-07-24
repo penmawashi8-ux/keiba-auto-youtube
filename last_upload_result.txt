@@ -1,10 +1,10 @@
-date: 2026-07-24T04:25:54.701712Z
+date: 2026-07-24T06:00:27.665100Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4KrBBMNcN5w title=ソダシやハヤヤッコのいとこ白毛馬アマンテビアンコがノーザンホースパークで第二の馬
-OK project=1 video_id=SD-7ugh44K4 title=【キングジョージ】アスコットはパンパンの良馬場濃厚　日本馬得意のスピード馬場で世
-OK project=1 video_id=YOSr6DV_ksM title=リバティアイランドの半弟 ダノンダックスが必勝期す初陣だ
+OK project=1 video_id=jEqMvvn3Pjc title=【ばんえい競馬】メムロボブサップが6年連続首位　6連覇目指す　ばんえいグランプリ
+OK project=1 video_id=iUMzOU_MTWc title=今週の中京競馬場は最高気温38〜40度予想　東海S出走のノーブルロジャーは「わざ
+OK project=1 video_id=Lt1cRKpZ5QA title=【キングジョージ】宮本調教師「マスカレードボールが隣ということで良かった」ヴェル
