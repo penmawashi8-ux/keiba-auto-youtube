@@ -1,79 +1,42 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【阪神アーバン競馬プレーバック】塩津璃菜が7月初勝利で節目の年間20勝　次の目標は… ---
-[0] Gemini入力本文 342文字: '待望の1勝だ。22日の6R(C3、ダート820メートル、12頭立て)でウエルカムキリシマ(牝5＝高馬、父ヴァンセンヌ)が勝ち、騎乗した塩津璃菜が7月初勝利。年間20勝目を手にした。\n\u3000スーパースプリント戦でこれ以上ない抜群のスタートを切った'
+--- 記事[0]: 【桑園特別レース後コメント】セボンサデッセ武豊騎手ら ---
+[0] Gemini入力本文 345文字: '札幌12Rの桑園特別(3歳以上2勝クラス・ダート1700m)は2番人気セボンサデッセ(武豊騎手)が勝利した。勝ちタイムは1分45秒4(良)。アタマ差の2着に4番人気ライフゲート、さらにアタマ差の3着に1番人気べラジオワールドが入った。\n\u3000セ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【札幌5R・2歳新馬】レガメデルヴェントが大差での衝撃デビューV　横山和生騎手「何でも出来そうだと思っていた」 ---
-[1] Gemini入力本文 345文字: '7月25日の札幌5R・2歳新馬(ダート1700メートル＝6頭立て)は、最内枠からレガメデルヴェント(牡、美浦・伊坂重信厩舎、父ルヴァンスレーヴ)が4角から楽々と抜け出して勝利した。勝ち時計は1分45秒1(良)。\n\t\t\t\t\u3000最内枠から道中は先'
+--- 記事[1]: 古賀大生調教師が新潟9Rのスコラーリ、ダノンロッキーで初出走　「支持していただいたのに、結果が伴わず申し訳ない」 ---
+[1] Gemini入力本文 348文字: '7月21日に開業した古賀大生調教師(35)＝美浦＝は、新潟9R・障害3歳上オープン(芝2850メートル)で管理馬2頭が初出走。スコラーリ(牡7歳、父トゥザワールド)が2番人気で5着、ダノンロッキー(牡5歳、父キズナ)は1番人気に推されたが競'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 遅れてきた良血牝馬の未勝利戦圧勝にSNS「他馬とはスピードの違いで…」　ファルカータが中京で初勝利 ---
-[2] Gemini入力本文 350文字: 'デビューが大幅に遅れたG1馬の妹が2戦目を圧勝した。7月25日に行われた中京5R・3歳未勝利(芝1600メートル＝16頭立て)は、ダノンスマッシュの半妹にあたる単勝1番人気に推されたファルカータ(牝3歳、栗東・友道康夫厩舎、父エピファネイア'
+--- 記事[2]: 【東海S・土曜気配】重賞連勝狙うマテンロウコマンドは酷暑OK　長谷川調教師「暑さにやられている感じは一切ない」 ---
+[2] Gemini入力本文 349文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)＝7月25日、栗東トレセン\n\t\t\t\t\u3000黒船賞からの連勝を狙うマテンロウコマンド(牡4歳、栗東・長谷川浩大厩舎、父ドレフォン)は、坂路で最終調整。活気ある身のこなしで駆け'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 228文字]: '競馬ファン注目の情報です。22日の6R、C3、ダート820メートル、12頭立てのレースで、ウエルカムキリシマが勝利しました。この勝利により、騎乗した塩津璃菜騎手は7月初勝利を飾り、節目の年間20勝目を手に入れました。スーパースプリント戦でこれ以上ない抜群のスタートを切ったウエルカムキリシマは、道中も先頭を譲らず、最終直線でもほとんど追わずに6馬身差の圧勝でした。鞍上の塩津璃菜騎手は「勝てるとは思っていなかった。驚きました」と目を丸くする激走ぶりでした。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (228文字)
-[0]  プレビュー: 競馬ファン注目の情報です。22日の6R、C3、ダート820メートル、12頭立てのレースで、ウエルカムキリシマが勝利しました。この勝利により、騎乗した塩津璃菜騎手...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[1]  [Gemini生出力 195文字]: '最新のレース情報が入ってきました。7月21日に開業した美浦所属の古賀大生調教師が、新潟9R・障害3歳上オープン、芝2850メートルで管理馬2頭を初出走させました。スコラーリは2番人気で5着となり、ダノンロッキーは1番人気に推されたものの競走中止となりました。古賀大生調教師は「支持していただいたのに、結果が伴わず申し訳ないです。暑い中、頑張ってくれた馬には感謝したい」とコメントしています。'
   HTTP 200
-[2]  [Gemini生出力 199文字]: '競馬ファン注目の情報です。デビューが大幅に遅れたG1馬ダノンスマッシュの半妹にあたるファルカータが、2戦目にして初白星を挙げました。7月25日に行われた中京5R・3歳未勝利、芝1600メートル、16頭立てのレースで、単勝1番人気に推されたファルカータは3馬身差で圧勝しました。初コンビとなった坂井瑠星騎手を背に12番枠から好スタートを切り、無理せずにハナへ誘導。勝ち時計は1分32秒5（良）でした。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (199文字)
-[2]  プレビュー: 競馬ファン注目の情報です。デビューが大幅に遅れたG1馬ダノンスマッシュの半妹にあたるファルカータが、2戦目にして初白星を挙げました。7月25日に行われた中京5R...
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 208文字]: 'レース関連の最新情報です。7月25日の札幌5R・2歳新馬、ダート1700メートル、6頭立ては、レガメデルヴェントが勝利しました。最内枠から道中は先行馬を見る形で追走し、4コーナー手前で外から楽に並びかけると、そのまま抜き去り直線は一人旅となりました。鞍上の軽いアクションに応えるように、後続を引き離して大差でV。勝ち時計は1分45秒1(良)でした。横山和生騎手は「何でも出来そうだと思っていた」とコメントしています。'
+[2]  [Gemini生出力 196文字]: '最新情報をお届けします。第43回東海S・G3が7月26日に中京競馬場ダート1400メートルで行われます。黒船賞からの連勝を狙うマテンロウコマンドは、7月25日に栗東トレセンで最終調整を行いました。活気ある身のこなしで坂路を駆け上がっています。長谷川調教師は「言うことないですね。コンディションはすごくいいです。大きくて黒い馬ですが、暑さにやられている感じは一切ないですね」と胸を張っています。'
+[2]  [redirectフィルター] 196文字 → 184文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (208文字)
-[1]  プレビュー: レース関連の最新情報です。7月25日の札幌5R・2歳新馬、ダート1700メートル、6頭立ては、レガメデルヴェントが勝利しました。最内枠から道中は先行馬を見る形で...
+[1]  → output/script_1.txt 保存 (195文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。7月21日に開業した美浦所属の古賀大生調教師が、新潟9R・障害3歳上オープン、芝2850メートルで管理馬2頭を初出走させました...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (184文字)
+[2]  プレビュー: 第43回東海S・G3が7月26日に中京競馬場ダート1400メートルで行われます。黒船賞からの連勝を狙うマテンロウコマンドは、7月25日に栗東トレセンで最終調整を...
+  HTTP 200
+[0]  [Gemini生出力 217文字]: '重要な競馬ニュースをお伝えします。札幌12Rの桑園特別、3歳以上2勝クラス・ダート1700mは、2番人気のセボンサデッセが武豊騎手で勝利しました。勝ちタイムは1分45秒4、良馬場です。アタマ差の2着には4番人気のライフゲート、さらにアタマ差の3着には1番人気のべラジオワールドが入りました。勝利したセボンサデッセは、栗東・橋口慎介厩舎所属の4歳牡馬で、父ルヴァンスレーヴ、母チャームクォーク、母の父クロフネ。通算成績は11戦3勝です。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (217文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。札幌12Rの桑園特別、3歳以上2勝クラス・ダート1700mは、2番人気のセボンサデッセが武豊騎手で勝利しました。勝ちタイムは1...
 
 3 件の脚本を生成しました。
