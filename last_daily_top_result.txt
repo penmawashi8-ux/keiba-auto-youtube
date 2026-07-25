@@ -1,8 +1,8 @@
-date: 2026-07-24T14:50:49.002229Z
+date: 2026-07-25T14:30:44.206079Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kKeVLfuNNss
-source_short=SD-7ugh44K4 views=1003
-title=【本日の人気No.1】7月24日 【キングジョージ】アスコットはパンパンの良馬場濃厚　日本馬得意のスピード馬場で世界最強
+OK project=1 video_id=KF8PBcZkup8
+source_short=Uzn6ATJJXAg views=287
+title=【本日の人気No.1】7月25日 【札幌5R・新馬戦】レガメデルヴェントが圧巻の大差勝ち!　2着に2秒1差　伊坂師「楽し
