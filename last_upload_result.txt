@@ -1,10 +1,6 @@
-date: 2026-07-25T12:16:59.553233Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-25T13:20:58.915626Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=da6PPzq2pAw title=7月25日の出来事一覧/札幌・新潟・中京
-OK project=1 video_id=a1ktoTuxFs0 title=【関屋記念】混戦必至!前日最終オッズの単勝1番人気はダノンセンチュリーで4・1倍
-OK project=1 video_id=Leyf2SgfeXc title=嶋田純次騎手に開催日4日間の騎乗停止処分　新潟11Rで外側に斜行し他馬の進路が狭
+OK project=1 video_id=vyZaUTir9JI views=31919 title=全姉は三冠牝馬のデアリングタクト リアライズアリスが待望の初勝利狙う【3.2万回閲覧・話題の競馬ニュース】
