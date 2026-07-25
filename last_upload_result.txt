@@ -1,10 +1,10 @@
-date: 2026-07-25T09:02:48.881651Z
+date: 2026-07-25T12:16:59.553233Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DgLhWn_Y2N4 title=【桑園特別レース後コメント】セボンサデッセ武豊騎手ら
-OK project=1 video_id=MRw-d8IseUQ title=古賀大生調教師が新潟9Rのスコラーリ、ダノンロッキーで初出走　「支持していただい
-OK project=1 video_id=RJM7JXX-VzA title=【東海S・土曜気配】重賞連勝狙うマテンロウコマンドは酷暑OK　長谷川調教師「暑さ
+OK project=1 video_id=da6PPzq2pAw title=7月25日の出来事一覧/札幌・新潟・中京
+OK project=1 video_id=a1ktoTuxFs0 title=【関屋記念】混戦必至!前日最終オッズの単勝1番人気はダノンセンチュリーで4・1倍
+OK project=1 video_id=Leyf2SgfeXc title=嶋田純次騎手に開催日4日間の騎乗停止処分　新潟11Rで外側に斜行し他馬の進路が狭
