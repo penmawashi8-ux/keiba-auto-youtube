@@ -1,110 +1,94 @@
-[1]  [ファクトチェックNG] NG: 13番人気で3
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[0]  [ファクトチェックNG] NG: 鮫島克駿騎手が
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 13番人気で3着
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 元記事に存在しない処分内容
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 13番人気で
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [1] のスクリプト生成失敗。
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【東海S・土曜気配】藤原調教師「やってみないと分からん」と冷静も　4連勝中ドラゴンテイラーは状態万全 ---
-[0] Gemini入力本文 348文字: '◆第43回東海S・G3(7月26日、中京競馬場・ダート1400メートル)＝7月25日、栗東トレセン\n\t\t\t\t\u30004連勝中で重賞に初挑戦するドラゴンテイラー(牡4歳、栗東・藤原英昭厩舎、父リアムズマップ)は、坂路をゆったりとした脚さばきで、レー'
+--- 記事[0]: 7月25日の出来事一覧/札幌・新潟・中京 ---
+[0] Gemini入力本文 447文字: '7月25日の開催(札幌・新潟・中京)で発生した競走中の疾病、競走中止などの事象は下記の通り。\n■札幌7R 3歳上1勝クラス\nシュークリーム(牝5、栗東・西村真幸厩舎)\n最後の直線コースで外側に斜行したため、5番ランプローグ(佐々木大輔騎手)'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 大波乱の新潟名物は珍しい内枠決着!「やっぱ千直天才」「なんで内枠の馬で」13番人気で3着激走の鞍上に称賛の嵐 ---
-[1] Gemini入力本文 390文字: '珍しい内枠よりの馬で決着した新潟名物″千直”の波乱にSNSは騒然としている。25日の新潟11R・3歳未勝利(新潟・直線芝1000メートル＝18頭立て)は、4番人気のリオクリスハーレー(牝3歳、美浦・矢野英一厩舎、父タニノフランケル)が勝利を'
+--- 記事[1]: 【関屋記念】混戦必至!前日最終オッズの単勝1番人気はダノンセンチュリーで4・1倍も3連単は人気が割れ模様 ---
+[1] Gemini入力本文 349文字: 'サマーマイルシリーズ第2戦、第61回関屋記念・G3(7月26日、新潟競馬場・芝1600メートル)の前日最終オッズが7月25日、発表された。\n\t\t\t\t\u3000単勝1番人気は萩原清調教師の死去に伴い、宮田厩舎へ転厩して初戦を迎えるダノンセンチュリー('
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【新潟日報賞レース後コメント】ピコローズ田辺裕信騎手ら ---
-[2] Gemini入力本文 345文字: '新潟7Rの新潟日報賞(3歳以上3勝クラス・芝1400m)は3番人気ピコローズ(田辺裕信騎手)が勝利した。勝ちタイムは1分19秒4(良)。アタマ差の2着に4番人気ポッドロワール、さらに半馬身差の3着に5番人気エマヌエーレが入った。\n\u3000ピコロー'
+--- 記事[2]: 嶋田純次騎手に開催日4日間の騎乗停止処分　新潟11Rで外側に斜行し他馬の進路が狭くなったため ---
+[2] Gemini入力本文 307文字: 'JRAは7月25日、嶋田純次騎手(33)＝美浦・手塚貴久厩舎＝に対し、8月8日から16日まで9日間(開催日4日間)の騎乗停止とした。\n\t\t\t\t\u3000新潟11R・3歳未勝利(直線芝1000メートル)でルディドゥゲンジ(牝3歳、美浦・蛯名利弘厩舎、'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 251文字]: '競馬ファン注目の情報です。第43回東海S・G3が7月26日、中京競馬場・ダート1400メートルで行われます。このレースに、4連勝中で重賞に初挑戦するドラゴンテイラーが出走を予定しています。7月25日には栗東トレセンで、坂路をゆったりとした脚さばきで、レースに向けての態勢を整えました。藤原調教師は「予定通りにきたよ。状態はいい」と手応えを示しています。また、藤原調教師は「初重賞で、メンバ?..」ともコメントしました。ドラゴンテイラーはデビュー3戦目で短距離路線に転向してから、ここまで負け知らずです。'
+[1]  [Gemini生出力 241文字]: '競馬速報です。\nサマーマイルシリーズ第2戦、第61回関屋記念・G3の前日最終オッズが7月25日に発表されました。7月26日に新潟競馬場・芝1600メートルで行われるこのレースで、単勝1番人気はダノンセンチュリーで4・1倍となりました。ダノンセンチュリーは、萩原清調教師の死去に伴い宮田厩舎へ転厩して初戦を迎えます。前走の京王杯スプリングCでは9着に敗れましたが、戸崎圭太騎手との3戦ぶりのコンビで重賞初タイトルを狙います。レースは混戦必至と見られており、3連単は人気が割れ模様です。'
+[1]  [重複除去] 241文字 → 240文字
   HTTP 200
-[2]  [Gemini生出力 220文字]: 'レース関連の最新情報です。\n新潟7Rの新潟日報賞、3歳以上3勝クラス・芝1400mは、3番人気のピコローズが田辺裕信騎手とのコンビで勝利しました。勝ちタイムは1分19秒4の良馬場でした。アタマ差の2着には4番人気のポッドロワールが入り、さらに半馬身差の3着には5番人気のエマヌエーレが入着しています。勝利したピコローズは美浦・伊藤大士厩舎所属の4歳牝馬で、父はサトノダイヤモンド、母はルージュノアールです。通算成績は15戦4勝となりました。'
-[2]  [重複除去] 220文字 → 219文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (249文字)
-[0]  プレビュー: 競馬ファン注目の情報です。第43回東海S・G3が7月26日、中京競馬場・ダート1400メートルで行われます。このレースに、4連勝中で重賞に初挑戦するドラゴンテイ...
+[0]  [Gemini生出力 217文字]: '今日の競馬情報です。\n7月25日の開催では、札幌、新潟、中京で競走中の疾病や競走中止などの事象が発生しました。特に札幌7Rの3歳上1勝クラスでは、シュークリームが最後の直線コースで外側に斜行し、5番ランプローグの佐々木大輔騎手、9番カイショーの横山武史騎手、6番セガンティーニの舟山瑠泉騎手、そして12番ジーティーエスピの丹内祐次騎手の進路が狭くなりました。この件について、鮫島克駿騎手は8月8日土曜日から8...の処分を受けました。'
+[0]  [重複除去] 214文字 → 213文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (240文字)
+[1]  プレビュー: 競馬速報です。サマーマイルシリーズ第2戦、第61回関屋記念・G3の前日最終オッズが7月25日に発表されました。7月26日に新潟競馬場・芝1600メートルで行われ...
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[2]  [Gemini生出力 181文字]: '競馬ファン注目の情報です。JRAは7月25日、嶋田純次騎手に対し、8月8日から16日まで9日間、開催日4日間の騎乗停止としました。これは、新潟11Rの3歳未勝利戦、直線芝1000メートルでの出来事によるものです。嶋田純次騎手がルディドゥゲンジに騎乗した際、レース後半で外側に斜行しました。この斜行により、ケイツーキップ(水沼元輝騎手)の進路が狭くなったためです。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (219文字)
-[2]  プレビュー: レース関連の最新情報です。新潟7Rの新潟日報賞、3歳以上3勝クラス・芝1400mは、3番人気のピコローズが田辺裕信騎手とのコンビで勝利しました。勝ちタイムは1分...
+[2]  → output/script_2.txt 保存 (181文字)
+[2]  プレビュー: 競馬ファン注目の情報です。JRAは7月25日、嶋田純次騎手に対し、8月8日から16日まで9日間、開催日4日間の騎乗停止としました。これは、新潟11Rの3歳未勝利...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 234文字]: 'レース関連の最新情報です。25日に行われた新潟11R・3歳未勝利戦、新潟・直線芝1000メートル、18頭立てのレースで大波乱がありました。新潟名物″千直”では珍しい内枠よりの馬で決着し、SNSは騒然としています。このレースでは、4番人気のリオクリスハーレーが勝利を飾り、3連単の配当は206万140円という大波乱となりました。また、13番人気で3着激走した鞍上には称賛の嵐が巻き起こっています。荻野極騎手が騎乗したリオクリスハーレーは4番枠から好スタートを切りました。'
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
+[0]  [Gemini生出力 227文字]: '今日の競馬情報です。7月25日の開催、札幌・新潟・中京で発生した競走中の疾病や競走中止などの事象が発表されました。札幌7Rの3歳上1勝クラスでは、シュークリームが最後の直線コースで外側に斜行しました。これにより、5番ランプローグの佐々木大輔騎手、9番カイショーの横山武史騎手、6番セガンティーニの舟山瑠泉騎手、そして12番ジーティーエスピの丹内祐次騎手の進路が狭くなっています。この件について、鮫島克駿騎手は8月8日(土)から8...の処分を受けました。'
+[0] 使用: key=***189Y model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
+[0] 使用: key=***l-ME model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 207文字]: 'レース関連の最新情報です。珍しい内枠よりの馬で決着した新潟名物″千直”の波乱にSNSは騒然としています。25日の新潟11R・3歳未勝利、直線芝1000メートル、18頭立てでは、4番人気のリオクリスハーレーが勝利を飾りました。荻野極騎手が騎乗したリオクリスハーレーは4番枠から好スタートを切っています。このレースでは3連単の配当が206万140円の大波乱となり、13番人気で3着激走の鞍上には称賛の嵐が送られました。'
-[1] 使用: key=***189Y model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 223文字]: 'レース関連の最新情報です。25日の新潟11R・3歳未勝利戦、新潟名物「千直」で大波乱が発生しました。この直線芝1000メートル、18頭立てのレースは、珍しい内枠よりの馬で決着し、SNSは騒然としています。4番人気のリオクリスハーレーが勝利を飾り、3連単の配当は206万140円という大波乱となりました。荻野極騎手が騎乗したリオクリスハーレーは4番枠から好スタートを切っています。また、13番人気で3着に激走した鞍上には、称賛の嵐が送られています。'
-[1] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+[0]  [Gemini生出力 260文字]: '今日の競馬情報です。\n7月25日の開催、札幌・新潟・中京で発生した競走中の疾病や競走中止などの事象が発表されました。\n札幌7Rの3歳上1勝クラスでは、シュークリームが最後の直線コースで外側に斜行しました。\nこの斜行により、5番ランプローグに騎乗していた佐々木大輔騎手、9番カイショーに騎乗していた横山武史騎手、6番セガンティーニに騎乗していた舟山瑠泉騎手、そして12番ジーティーエスピに騎乗していた丹内祐次騎手の進路が狭くなりました。\nこの件について、シュークリームに騎乗した鮫島克駿騎手は、8月8日土曜日から8...。'
+[0]  [重複除去] 257文字 → 253文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (253文字)
+[0]  プレビュー: 今日の競馬情報です。7月25日の開催、札幌・新潟・中京で発生した競走中の疾病や競走中止などの事象が発表されました。札幌7Rの3歳上1勝クラスでは、シュークリーム...
+
+3 件の脚本を生成しました。
