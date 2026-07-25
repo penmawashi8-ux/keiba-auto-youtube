@@ -1,10 +1,10 @@
-date: 2026-07-25T04:11:41.893160Z
+date: 2026-07-25T05:52:58.461386Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Uzn6ATJJXAg title=【札幌5R・新馬戦】レガメデルヴェントが圧巻の大差勝ち!　2着に2秒1差　伊坂師
-OK project=1 video_id=P21fWccuNPQ title=「ミストで涼ませ隊」から「クールミストゲート」に　暑い暑い、中京競馬場の暑熱対策
-OK project=1 video_id=O4NHhuMqKZ0 title=【札幌5R新馬戦結果】ルヴァンスレーヴ産駒レガメデルヴェントが大差勝ち
+OK project=1 video_id=ms3ZPGod28I title=【阪神アーバン競馬プレーバック】塩津璃菜が7月初勝利で節目の年間20勝　次の目標
+OK project=1 video_id=dEwntN2R8NE title=【札幌5R・2歳新馬】レガメデルヴェントが大差での衝撃デビューV　横山和生騎手「
+OK project=1 video_id=LQKnyikMp1k title=遅れてきた良血牝馬の未勝利戦圧勝にSNS「他馬とはスピードの違いで…」　ファルカ
