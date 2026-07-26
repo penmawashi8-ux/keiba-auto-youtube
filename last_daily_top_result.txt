@@ -1,8 +1,8 @@
-date: 2026-07-25T14:30:44.206079Z
+date: 2026-07-26T14:28:39.175836Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KF8PBcZkup8
-source_short=Uzn6ATJJXAg views=287
-title=【本日の人気No.1】7月25日 【札幌5R・新馬戦】レガメデルヴェントが圧巻の大差勝ち!　2着に2秒1差　伊坂師「楽し
+OK project=1 video_id=xcryw196c3w
+source_short=1AN8UJ7NLGM views=601
+title=7月26日 勢い止まらん!「ガチでバグってる」「一大勢力に」7勝目を挙げたエフフォーリア産駒の活躍にSNS驚がく
