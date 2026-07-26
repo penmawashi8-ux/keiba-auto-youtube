@@ -1,10 +1,10 @@
-date: 2026-07-26T06:11:50.227792Z
+date: 2026-07-26T09:14:19.132619Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=oscGMAqZlNI title=暮れの中山大障害は「オジュウチョウサン顕彰馬選定記念競走」として実施　26年秋季
-OK project=1 video_id=ElbHrQ2l6Rk title=【メイクデビュー中京2Rレース後コメント】ルナパッショーネ坂井瑠星騎手ら
-OK project=1 video_id=QH0_MBXLprU title=ダートはまるで田んぼ、内馬場は水没...関屋記念が行われる新潟競馬場は激しい雨風
+OK project=1 video_id=Xiin7-nqs7E title=中京7R東海S　3番人気ドラゴンテイラーは14着　坂井「暑さのせいか全く進みませ
+OK project=1 video_id=LTA9j6jozWQ title=中京7R東海S　2番人気ダノンフィーゴが10着　川田「明らかに熱中症です」
+OK project=1 video_id=DyR1VyXF1Yk title=中京7R東海S　6番人気メイショウハチローが2着　団野「押し切れるような雰囲気」
