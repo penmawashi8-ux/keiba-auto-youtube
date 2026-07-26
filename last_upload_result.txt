@@ -1,6 +1,10 @@
-date: 2026-07-25T13:20:58.915626Z
-type: popular_news_landscape
+date: 2026-07-26T04:34:37.850932Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vyZaUTir9JI views=31919 title=全姉は三冠牝馬のデアリングタクト リアライズアリスが待望の初勝利狙う【3.2万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=1AN8UJ7NLGM title=勢い止まらん!「ガチでバグってる」「一大勢力に」7勝目を挙げたエフフォーリア産駒
+OK project=1 video_id=RCSoPHvz3rU title=【札幌5R・新馬戦】エフフォーリア産駒ノヴァヴェローチェが3馬身半差V!　次走は
+OK project=1 video_id=h9C-Ah_jhms title=【札幌5R新馬戦結果】エフフォーリア産駒ノヴァヴェローチェが3馬身半差で完勝
