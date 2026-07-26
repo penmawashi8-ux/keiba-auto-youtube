@@ -1,10 +1,10 @@
-date: 2026-07-26T04:34:37.850932Z
+date: 2026-07-26T06:11:50.227792Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1AN8UJ7NLGM title=勢い止まらん!「ガチでバグってる」「一大勢力に」7勝目を挙げたエフフォーリア産駒
-OK project=1 video_id=RCSoPHvz3rU title=【札幌5R・新馬戦】エフフォーリア産駒ノヴァヴェローチェが3馬身半差V!　次走は
-OK project=1 video_id=h9C-Ah_jhms title=【札幌5R新馬戦結果】エフフォーリア産駒ノヴァヴェローチェが3馬身半差で完勝
+OK project=1 video_id=oscGMAqZlNI title=暮れの中山大障害は「オジュウチョウサン顕彰馬選定記念競走」として実施　26年秋季
+OK project=1 video_id=ElbHrQ2l6Rk title=【メイクデビュー中京2Rレース後コメント】ルナパッショーネ坂井瑠星騎手ら
+OK project=1 video_id=QH0_MBXLprU title=ダートはまるで田んぼ、内馬場は水没...関屋記念が行われる新潟競馬場は激しい雨風
