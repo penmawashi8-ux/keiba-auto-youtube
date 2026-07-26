@@ -1,10 +1,10 @@
-date: 2026-07-26T10:52:05.195887Z
+date: 2026-07-26T12:07:54.456914Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WqUEBhQBR88 title=【金沢・百万石かがやきナイター賞結果】ハクサンパイオニアが逃げ切り重賞3勝目
-OK project=1 video_id=wLf46Nziel0 title=【アイビスSD】ピューロマジック、エコロレジーナなどが登録
-OK project=1 video_id=En_3Dd4fP68 title=マカヒキが今年の新種牡馬で重賞一番乗り　芝マイル戦の盛岡・若鮎賞でセイカールトン
+OK project=1 video_id=_wPvZDdkjTs title=7月26日の出来事一覧/札幌・新潟・中京
+OK project=1 video_id=Zuqv_DiEgmU title=【金沢競馬】ハクサンパイオニアが重賞3勝目　百万石かがやきナイター賞
+OK project=1 video_id=UGEWD7THAaM title=【クイーンS】ボンドガール、ヴーレヴーなどが登録
