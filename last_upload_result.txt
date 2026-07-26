@@ -1,10 +1,6 @@
-date: 2026-07-26T12:07:54.456914Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-26T13:15:59.329048Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_wPvZDdkjTs title=7月26日の出来事一覧/札幌・新潟・中京
-OK project=1 video_id=Zuqv_DiEgmU title=【金沢競馬】ハクサンパイオニアが重賞3勝目　百万石かがやきナイター賞
-OK project=1 video_id=UGEWD7THAaM title=【クイーンS】ボンドガール、ヴーレヴーなどが登録
+OK project=1 video_id=x6-GE603yEA views=101691 title=【英・キングジョージ結果】カルパナが昨年の雪辱果たす カランダガン連覇ならず2着 日本勢は着外【10万回閲覧・話題の競馬
