@@ -1,10 +1,10 @@
-date: 2026-07-26T09:14:19.132619Z
+date: 2026-07-26T10:52:05.195887Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Xiin7-nqs7E title=中京7R東海S　3番人気ドラゴンテイラーは14着　坂井「暑さのせいか全く進みませ
-OK project=1 video_id=LTA9j6jozWQ title=中京7R東海S　2番人気ダノンフィーゴが10着　川田「明らかに熱中症です」
-OK project=1 video_id=DyR1VyXF1Yk title=中京7R東海S　6番人気メイショウハチローが2着　団野「押し切れるような雰囲気」
+OK project=1 video_id=WqUEBhQBR88 title=【金沢・百万石かがやきナイター賞結果】ハクサンパイオニアが逃げ切り重賞3勝目
+OK project=1 video_id=wLf46Nziel0 title=【アイビスSD】ピューロマジック、エコロレジーナなどが登録
+OK project=1 video_id=En_3Dd4fP68 title=マカヒキが今年の新種牡馬で重賞一番乗り　芝マイル戦の盛岡・若鮎賞でセイカールトン
