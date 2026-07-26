@@ -1,15 +1,24 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
@@ -21,38 +30,48 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: 勢い止まらん!「ガチでバグってる」「一大勢力に」7勝目を挙げたエフフォーリア産駒の活躍にSNS驚がく ---
-[0] Gemini入力本文 379文字: '勢いが止まらない。毎週のように勝ち馬を送り出している今年デビューの新種牡馬にSNSは騒然となっている。26日に行われた札幌5R・2歳新馬(芝1800メートル)で3番人気のノヴァヴェローチェ(牡2歳、栗東・上村洋行厩舎、父エフフォーリア)が勝'
+--- 記事[0]: 暮れの中山大障害は「オジュウチョウサン顕彰馬選定記念競走」として実施　26年秋季競馬番組の概要をJRAが発表 ---
+[0] Gemini入力本文 629文字: 'JRAは7月26日、26年秋季競馬番組の概要を発表した。\n\t\t\t\t\u3000史上最多となるJG1・9勝を挙げ、22年の中山大障害・JG1(6着)を最後に現役を退いた“障害界の絶対王者”オジュウチョウサンが顕彰馬に選定されたことを記念して、12月26'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 【札幌5R・新馬戦】エフフォーリア産駒ノヴァヴェローチェが3馬身半差V!　次走は札幌2歳Sを視野 ---
-[1] Gemini入力本文 341文字: '26日の札幌5R・新馬戦(芝1800メートル)は3番人気ノヴァヴェローチェ(牡＝上村、父エフフォーリア)が制した。4角で早めに先頭に立つと、余力十分に後続を3馬身半突き放した。良馬場で勝ちタイムは1分48秒2。\n\u3000鞍上の北村友は「ポテンシャ'
+--- 記事[1]: 【メイクデビュー中京2Rレース後コメント】ルナパッショーネ坂井瑠星騎手ら ---
+[1] Gemini入力本文 513文字: '中京2Rのメイクデビュー中京(芝2000m)は2番人気ルナパッショーネ(坂井瑠星騎手)が勝利した。勝ちタイムは2分01秒2(良)。7馬身差の2着に6番人気テーオーカメリア、さらに1馬身1/4差の3着に5番人気レッドタイラントが入った。\n\u3000ル'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【札幌5R新馬戦結果】エフフォーリア産駒ノヴァヴェローチェが3馬身半差で完勝 ---
-[2] Gemini入力本文 349文字: '26日、札幌競馬場5Rで行われた新馬戦(2歳・芝1800m・10頭)は、2番手から先頭に立って後続を突き放した北村友一騎手騎乗の3番人気ノヴァヴェローチェ(牡2、栗東・上村洋行厩舎)が、1番人気サトノフルーク(牡2、美浦・堀宣行厩舎)に3.'
+--- 記事[2]: ダートはまるで田んぼ、内馬場は水没...関屋記念が行われる新潟競馬場は激しい雨風　暑熱対策の休止時間帯に状況が一変 ---
+[2] Gemini入力本文 520文字: '関屋記念が行われる7月26日の新潟競馬場は、暑熱対策として休止時間に入った12時半ごろから激しい雨風に見舞われ、競馬場内は一気に水が浮かぶ状況になった。\n\t\t\t\t\u3000普段は芝生に覆われているコース内側部分には、池のような大きな水たまりが至ると'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 257文字]: '重要な競馬ニュースをお伝えします。26日の札幌5R新馬戦、芝1800メートルで3番人気のノヴァヴェローチェが制しました。ノヴァヴェローチェは4コーナーで早めに先頭に立つと、余力十分に後続を3馬身半突き放しました。良馬場での勝ちタイムは1分48秒2でした。鞍上の北村友騎手は、ポテンシャルの高さをずっと感じていたとコメントしています。追い切りではフワフワしたところがあって真面目に走らないところが気がかりだったものの、レースではいい意味で抜くところを作れたと話しました。次走は札幌2歳ステークスを視野に入れています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (257文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。26日の札幌5R新馬戦、芝1800メートルで3番人気のノヴァヴェローチェが制しました。ノヴァヴェローチェは4コーナーで早めに先...
-  HTTP 200
-[0]  [Gemini生出力 226文字]: '最新情報をお届けします。\n勢いが止まらない今年デビューの新種牡馬にSNSが騒然となっています。26日に行われた札幌5R・2歳新馬、芝1800メートルで3番人気のノヴァヴェローチェが勝利しました。栗東の上村洋行厩舎所属のノヴァヴェローチェは、父がエフフォーリアです。この勝利で、エフフォーリア産駒は7頭目の勝ち馬を送り出し、競馬ファンも驚きを隠せないようです。ノヴァヴェローチェは9番枠から北村友一騎手を背に好スタートを切り、序盤は2番手を追走しました。'
-[0]  [redirectフィルター] 226文字 → 213文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (213文字)
-[0]  プレビュー: 勢いが止まらない今年デビューの新種牡馬にSNSが騒然となっています。26日に行われた札幌5R・2歳新馬、芝1800メートルで3番人気のノヴァヴェローチェが勝利し...
+[1]  [Gemini生出力 200文字]: '今日の競馬情報です。中京2Rのメイクデビュー中京、芝2000mは、2番人気のルナパッショーネが坂井瑠星騎手の手綱で勝利を飾りました。勝ちタイムは2分01秒2の良馬場でした。2着には7馬身差で6番人気のテーオーカメリアが入り、さらに1馬身1/4差の3着には5番人気のレッドタイラントが入着しています。ルナパッショーネは栗東の斉藤崇史厩舎に所属する2歳牝馬で、父はサートゥルナーリア、母はヴァシリカです。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (200文字)
+[1]  プレビュー: 今日の競馬情報です。中京2Rのメイクデビュー中京、芝2000mは、2番人気のルナパッショーネが坂井瑠星騎手の手綱で勝利を飾りました。勝ちタイムは2分01秒2の良...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
@@ -62,13 +81,21 @@ Gemini APIキー: 3 件ロード
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
+  HTTP 429
   60秒待機後にリトライ... (attempt 3)
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 231文字]: '最新情報をお届けします。JRAは7月26日、26年秋季競馬番組の概要を発表しました。史上最多となるJG1・9勝を挙げ、22年の中山大障害・JG1(6着)を最後に現役を退いた“障害界の絶対王者”オジュウチョウサンが顕彰馬に選定されたことを記念し、12月26日に行われる中山大障害・JG1はオジュウチョウサン顕彰馬選定記念競走として実施されます。これはオジュウチョウサンメモリアルとして行われるものです。また、国枝栄元調教師、蛯名正義元騎手も顕彰者に選定されました。'
+[0]  [redirectフィルター] 231文字 → 219文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (219文字)
+[0]  プレビュー: JRAは7月26日、26年秋季競馬番組の概要を発表しました。史上最多となるJG1・9勝を挙げ、22年の中山大障害・JG1(6着)を最後に現役を退いた“障害界の絶...
   HTTP 429
 [2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 205文字]: '競馬ファン注目の情報です。26日、札幌競馬場5Rで行われた2歳芝1800mの新馬戦は、北村友一騎手騎乗の3番人気ノヴァヴェローチェが優勝しました。ノヴァヴェローチェは2番手から先頭に立って後続を突き放し、1番人気サトノフルークに3馬身半差をつけ完勝しています。勝ちタイムは1分48秒2の良馬場でした。さらにハナ差の3着には2番人気レゾンフォルテが入っています。勝ったノヴァヴェローチェは父がエフフォーリアです。'
+[2]  [Gemini生出力 230文字]: '本日の競馬ニュースです。関屋記念が行われる7月26日の新潟競馬場は、暑熱対策として休止時間に入った12時半ごろから激しい雨風に見舞われ、競馬場内は一気に水が浮かぶ状況となりました。普段は芝生に覆われているコース内側部分には、池のような大きな水たまりが至るところに出現し、水没したようにも見えます。ダートコースは田んぼのような馬場状態となりました。休止時間前の5R・3歳上1勝クラスのダート1200メートルは重で行われています。これは14時20分現在の状況です。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (205文字)
-[2]  プレビュー: 競馬ファン注目の情報です。26日、札幌競馬場5Rで行われた2歳芝1800mの新馬戦は、北村友一騎手騎乗の3番人気ノヴァヴェローチェが優勝しました。ノヴァヴェロー...
+[2]  → output/script_2.txt 保存 (230文字)
+[2]  プレビュー: 本日の競馬ニュースです。関屋記念が行われる7月26日の新潟競馬場は、暑熱対策として休止時間に入った12時半ごろから激しい雨風に見舞われ、競馬場内は一気に水が浮か...
 
 3 件の脚本を生成しました。
