@@ -1,101 +1,40 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 暮れの中山大障害は「オジュウチョウサン顕彰馬選定記念競走」として実施　26年秋季競馬番組の概要をJRAが発表 ---
-[0] Gemini入力本文 629文字: 'JRAは7月26日、26年秋季競馬番組の概要を発表した。\n\t\t\t\t\u3000史上最多となるJG1・9勝を挙げ、22年の中山大障害・JG1(6着)を最後に現役を退いた“障害界の絶対王者”オジュウチョウサンが顕彰馬に選定されたことを記念して、12月26'
+--- 記事[0]: 中京7R東海S　3番人気ドラゴンテイラーは14着　坂井「暑さのせいか全く進みませんでした」 ---
+[0] Gemini入力本文 486文字: '26日の中京7R・東海S(ダート1400メートル、良馬場)は7番人気のマテンロウコマンド(牡4＝長谷川、父ドレフォン)が前走黒船賞に続き、重賞3勝目を飾った。勝ち時計は1分22秒8。3番人気ドラゴンテイラー(牡4＝藤原、父リアムズマップ)は'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【メイクデビュー中京2Rレース後コメント】ルナパッショーネ坂井瑠星騎手ら ---
-[1] Gemini入力本文 513文字: '中京2Rのメイクデビュー中京(芝2000m)は2番人気ルナパッショーネ(坂井瑠星騎手)が勝利した。勝ちタイムは2分01秒2(良)。7馬身差の2着に6番人気テーオーカメリア、さらに1馬身1/4差の3着に5番人気レッドタイラントが入った。\n\u3000ル'
+--- 記事[1]: 中京7R東海S　2番人気ダノンフィーゴが10着　川田「明らかに熱中症です」 ---
+[1] Gemini入力本文 294文字: '26日の中京7R・東海S(ダート1400メートル、良馬場)は7番人気のマテンロウコマンド(牡4＝長谷川、父ドレフォン)が前走黒船賞に続き、重賞3勝目を飾った。勝ち時計は1分22秒8。2番人気ダノンフィーゴ(牡4＝友道、父イントゥミスチーフ)'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: ダートはまるで田んぼ、内馬場は水没...関屋記念が行われる新潟競馬場は激しい雨風　暑熱対策の休止時間帯に状況が一変 ---
-[2] Gemini入力本文 520文字: '関屋記念が行われる7月26日の新潟競馬場は、暑熱対策として休止時間に入った12時半ごろから激しい雨風に見舞われ、競馬場内は一気に水が浮かぶ状況になった。\n\t\t\t\t\u3000普段は芝生に覆われているコース内側部分には、池のような大きな水たまりが至ると'
+--- 記事[2]: 中京7R東海S　6番人気メイショウハチローが2着　団野「押し切れるような雰囲気」 ---
+[2] Gemini入力本文 552文字: '26日の中京7R・東海S(ダート1400メートル、良馬場)は7番人気のマテンロウコマンド(牡4＝長谷川、父ドレフォン)が前走黒船賞に続き、重賞3勝目を飾った。勝ち時計は1分22秒8。6番人気メイショウハチローは3/4馬身差の2着だった\u3000\n\u3000'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 200文字]: '今日の競馬情報です。中京2Rのメイクデビュー中京、芝2000mは、2番人気のルナパッショーネが坂井瑠星騎手の手綱で勝利を飾りました。勝ちタイムは2分01秒2の良馬場でした。2着には7馬身差で6番人気のテーオーカメリアが入り、さらに1馬身1/4差の3着には5番人気のレッドタイラントが入着しています。ルナパッショーネは栗東の斉藤崇史厩舎に所属する2歳牝馬で、父はサートゥルナーリア、母はヴァシリカです。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (200文字)
-[1]  プレビュー: 今日の競馬情報です。中京2Rのメイクデビュー中京、芝2000mは、2番人気のルナパッショーネが坂井瑠星騎手の手綱で勝利を飾りました。勝ちタイムは2分01秒2の良...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 227文字]: '重要な競馬ニュースをお伝えします。26日の中京7R・東海S、ダート1400メートル、良馬場で行われたレースは、7番人気のマテンロウコマンドが前走の黒船賞に続き、重賞3勝目を飾りました。勝ち時計は1分22秒8です。6番人気のメイショウハチローは3/4馬身差の2着となりました。メイショウハチローに騎乗した団野騎手は、「以前乗った時よりも前向きでしたし今日は具合も良くて、テンの進みにつながったと思います。直線も押し切れるような雰囲気でした」と話しています。'
   HTTP 200
-[0]  [Gemini生出力 231文字]: '最新情報をお届けします。JRAは7月26日、26年秋季競馬番組の概要を発表しました。史上最多となるJG1・9勝を挙げ、22年の中山大障害・JG1(6着)を最後に現役を退いた“障害界の絶対王者”オジュウチョウサンが顕彰馬に選定されたことを記念し、12月26日に行われる中山大障害・JG1はオジュウチョウサン顕彰馬選定記念競走として実施されます。これはオジュウチョウサンメモリアルとして行われるものです。また、国枝栄元調教師、蛯名正義元騎手も顕彰者に選定されました。'
-[0]  [redirectフィルター] 231文字 → 219文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: JRAは7月26日、26年秋季競馬番組の概要を発表しました。史上最多となるJG1・9勝を挙げ、22年の中山大障害・JG1(6着)を最後に現役を退いた“障害界の絶...
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 230文字]: '本日の競馬ニュースです。関屋記念が行われる7月26日の新潟競馬場は、暑熱対策として休止時間に入った12時半ごろから激しい雨風に見舞われ、競馬場内は一気に水が浮かぶ状況となりました。普段は芝生に覆われているコース内側部分には、池のような大きな水たまりが至るところに出現し、水没したようにも見えます。ダートコースは田んぼのような馬場状態となりました。休止時間前の5R・3歳上1勝クラスのダート1200メートルは重で行われています。これは14時20分現在の状況です。'
+[1]  [Gemini生出力 203文字]: '競馬ファン注目の情報です。26日に中京競馬場で行われた、ダート1400メートルの東海Sは、良馬場での開催となりました。このレースでは、7番人気のマテンロウコマンドが前走の黒船賞に続き、重賞3勝目を飾っています。勝ち時計は1分22秒8でした。また、2番人気に推されていたダノンフィーゴは10着に敗れる結果となりました。ダノンフィーゴに騎乗した川田騎手は、レース後に「明らかに熱中症です」とコメントしています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (230文字)
-[2]  プレビュー: 本日の競馬ニュースです。関屋記念が行われる7月26日の新潟競馬場は、暑熱対策として休止時間に入った12時半ごろから激しい雨風に見舞われ、競馬場内は一気に水が浮か...
+[2]  → output/script_2.txt 保存 (227文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。26日の中京7R・東海S、ダート1400メートル、良馬場で行われたレースは、7番人気のマテンロウコマンドが前走の黒船賞に続き、...
+  HTTP 200
+[0]  [Gemini生出力 216文字]: 'レース関連の最新情報です。26日の中京7R・東海S、ダート1400メートル、良馬場でのレース結果をお伝えします。この一戦では、7番人気のマテンロウコマンドが前走の黒船賞に続いて重賞3勝目を飾りました。マテンロウコマンドの勝ち時計は1分22秒8でした。また、3番人気に支持されていたドラゴンテイラーは14着という結果に終わっています。ドラゴンテイラーに騎乗した坂井騎手は、敗因について「暑さの影響か全く進みませんでした」と話しました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (203文字)
+[1]  プレビュー: 競馬ファン注目の情報です。26日に中京競馬場で行われた、ダート1400メートルの東海Sは、良馬場での開催となりました。このレースでは、7番人気のマテンロウコマン...
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (216文字)
+[0]  プレビュー: レース関連の最新情報です。26日の中京7R・東海S、ダート1400メートル、良馬場でのレース結果をお伝えします。この一戦では、7番人気のマテンロウコマンドが前走...
 
 3 件の脚本を生成しました。
