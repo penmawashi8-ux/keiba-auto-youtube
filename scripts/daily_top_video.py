@@ -248,7 +248,7 @@ def extract_frame_thumbnail(video_path: str) -> str:
 def build_title(article_title: str) -> str:
     now = datetime.datetime.now(JST)
     date_str = f"{now.month}月{now.day}日"
-    return f"【本日の人気No.1】{date_str} {article_title}"[:100]
+    return f"{date_str} {article_title}"[:100]
 
 
 def build_description(article_title: str, short_video_id: str) -> str:
