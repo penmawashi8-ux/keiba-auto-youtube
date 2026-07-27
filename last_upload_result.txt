@@ -1,10 +1,10 @@
-date: 2026-07-27T10:40:39.980491Z
+date: 2026-07-27T12:31:16.049576Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=oUCbFHnh8pY title=【クイーンS】史上初の隔年制覇なるか 9F巧者のコガネノソラが差し切り狙う
-OK project=1 video_id=bWsfWKrrmfs title=【AI予想・アイビスSD】今年は大波乱の可能性あり!? 人気薄の大駆けに警戒する
-OK project=1 video_id=J98DIH-_CbA title=【アイビスSD】昨年レコードタイVのピューロマジックが連覇&重賞連勝狙う　安田調
+OK project=1 video_id=jsN_wnaJQ4A title=【クイーンS】函館記念で不利もケリフレッドアスクはタフな馬　陣営「あんまりへこた
+OK project=1 video_id=sBD_SWJLey0 title=【クイーンS】ミュージアムマイルの半妹が再始動　札幌滞在のフェスティバルヒルに陣
+OK project=1 video_id=E64qTvhFIVg title=【アイビスSD】9歳の古豪ウイングレイテストは使った上積みで巻き返しへ　畠山調教
