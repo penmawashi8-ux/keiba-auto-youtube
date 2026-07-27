@@ -1,96 +1,41 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [ファクトチェックNG] NG: 武豊騎手騎乗のエ
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【アイビスSD・浅子の特注馬】千直巧者のクムシラコに穴の匂い　前走は最低人気で激走　元気いっぱいの8歳馬 ---
-[0] Gemini入力本文 347文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)\n\t\t\t\t\u3000前走の安達太良Sで久々の馬券圏内に好走したクムシラコ(牡8歳、美浦・千葉直人厩舎、父ディスクリートキャット)が得意の千直で一発を狙っている。\n'
+--- 記事[0]: 【クイーンS】史上初の隔年制覇なるか 9F巧者のコガネノソラが差し切り狙う ---
+[0] Gemini入力本文 352文字: '芝1800mでJRA現役最多タイの5勝を挙げるコガネノソラ(牝5、美浦・菊沢隆徳厩舎)が、クイーンステークス(3歳上牝・GIII・芝1800m)で史上初の隔年制覇を狙う。\n\u3000コガネノソラは父ゴールドシップ、母マイネヒメル、母の父ロージズイン'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【クイーンS展望】“北海道巧者”ココナッツブラウンの重賞初タイトルが有力　武豊騎手騎乗のエリカエクスプレスも好勝負 ---
-[1] Gemini入力本文 370文字: '◆第74回クイーンS・G3(8月2日、札幌競馬場・芝1800メートル)\n\t\t\t\t\u3000第74回クイーンステークス・G3は8月2日、札幌競馬場の芝1800メートルで行われる。\n\t\t\t\t\u3000昨年2着のココナッツブラウン(牝6歳、栗東・上村洋行厩舎、父'
+--- 記事[1]: 【AI予想・アイビスSD】今年は大波乱の可能性あり!? 人気薄の大駆けに警戒する人工知能の本命候補 ---
+[1] Gemini入力本文 487文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は日曜日にアイビスサマーダッシュ(GIII)とクイーンS(GIII)が行われます。その中から新潟競馬場で行われるアイ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【アイビスSD・イシゴーの特注馬】千直3勝エコロレジーナの舞台適性の高さは揺るがない　6歳牝馬がチャンス十分 ---
-[2] Gemini入力本文 346文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線・芝1000メートル)\n\t\t\t\t\u3000前走の韋駄天Sで千直3勝目を手にしたエコロレジーナ(牝6歳、美浦・菊沢隆徳厩舎、父アメリカンペイトリオット)の舞台適性の高さは揺るがない。\n'
+--- 記事[2]: 【アイビスSD】昨年レコードタイVのピューロマジックが連覇&重賞連勝狙う　安田調教師「ムキにならずに走れれば」 ---
+[2] Gemini入力本文 352文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)\n\t\t\t\t\u3000快足娘ピューロマジック(牝5歳、栗東・安田翔伍厩舎、父アジアエクスプレス)が連覇と重賞連勝を狙う。昨年は、カルストンライトオが02年にこのレー'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 179文字]: 'レース関連の最新情報です。第74回クイーンステークス・G3は8月2日、札幌競馬場の芝1800メートルで実施されます。昨年2着のココナッツブラウンには重賞初タイトルのチャンスが巡ってきました。ココナッツブラウンは夏の北海道シリーズで5戦2勝2着3回と好相性です。昨年はアルジーヌに頭差の惜敗でした。また、武豊騎手騎乗のエリカエクスプレスも好勝負が期待されます。'
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[0]  [Gemini生出力 218文字]: 'レース関連の最新情報です。第26回アイビスサマーダッシュ・G3が8月2日に新潟競馬場・直線芝1000メートルで開催されます。このレースで、美浦・千葉直人厩舎の8歳馬クムシラコが得意の千直で一発を狙っています。クムシラコは前走の安達太良Sで久々の馬券圏内に好走しました。前走では初めてブリンカーを着用し、外枠からスムーズな競馬ができたこともあり、直線では早めに先頭に立ちました。ゴール前は首の上げ下げで鼻差2着と、勝ちに等しい内容でした。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (218文字)
-[0]  プレビュー: レース関連の最新情報です。第26回アイビスサマーダッシュ・G3が8月2日に新潟競馬場・直線芝1000メートルで開催されます。このレースで、美浦・千葉直人厩舎の8...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 180文字]: 'レース関連の最新情報です。第74回クイーンステークス・G3は8月2日、札幌競馬場の芝1800メートルで行われます。昨年2着のココナッツブラウンには重賞初タイトルのチャンスが巡ってきました。夏の北海道シリーズでは5戦で2勝2着3回と好相性です。昨年は伸びる外をうまく立ち回ったアルジーヌに頭差の惜敗でした。武豊騎手騎乗のエリカエクスプレスも好勝負が期待されます。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (180文字)
-[1]  プレビュー: レース関連の最新情報です。第74回クイーンステークス・G3は8月2日、札幌競馬場の芝1800メートルで行われます。昨年2着のココナッツブラウンには重賞初タイトル...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 246文字]: '最新のレース情報が入ってきました。第26回アイビスサマーダッシュ・G3が8月2日に新潟競馬場・直線・芝1000メートルで開催されます。このレースで特注馬として挙げられているのがエコロレジーナです。エコロレジーナは前走の韋駄天Sで千直3勝目を手にしており、その舞台適性の高さは揺るがないとされています。芝6ハロンやダートでも結果を出しているように、短距離ではコンスタントに結果を残すタイプです。以前は右へのもたれがきつく、菊沢一樹騎手が「右回りだと内ラチから離れられなかった」と話していました。'
+[2]  [Gemini生出力 211文字]: '重要な競馬ニュースをお伝えします。第26回アイビスサマーダッシュ・G3において、快足娘ピューロマジックが連覇と重賞連勝を狙います。昨年は、カルストンライトオが2002年に記録したコースレコードと同タイムの53秒7で勝利しました。さらに、JRA史上最速の上がり3ハロン31秒3もマークしています。前走の函館スプリントSで重賞4勝目を挙げたピューロマジックについて、安田調教師は「ムキにならずに走れれば」とコメントしています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (246文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。第26回アイビスサマーダッシュ・G3が8月2日に新潟競馬場・直線・芝1000メートルで開催されます。このレースで特注馬として挙...
+[2]  → output/script_2.txt 保存 (211文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。第26回アイビスサマーダッシュ・G3において、快足娘ピューロマジックが連覇と重賞連勝を狙います。昨年は、カルストンライトオが2...
+  HTTP 200
+[1]  [Gemini生出力 273文字]: '競馬ファン注目の情報です。今週の日曜日には重賞競走としてアイビスサマーダッシュGIIIとクイーンS GIIIが行われます。このうち新潟競馬場で行われるアイビスサマーダッシュについて、netkeibaオリジナルAIが推奨する本命候補3頭と特筆すべき過去の傾向が紹介されています。過去10年のアイビスサマーダッシュにおける性別成績を見ると、牡馬とセン馬が[2-4-4-69]であるのに対し、牝馬は[8-6-6-71]と圧倒的な成績を残しています。この傾向から、今年は大波乱の可能性があり、人気薄の大駆けに警戒する人工知能の本命候補に注目が集まります。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (273文字)
+[1]  プレビュー: 競馬ファン注目の情報です。今週の日曜日には重賞競走としてアイビスサマーダッシュGIIIとクイーンS GIIIが行われます。このうち新潟競馬場で行われるアイビスサ...
+  HTTP 200
+[0]  [Gemini生出力 247文字]: '競馬ファン注目の情報です。芝1800mでJRA現役最多タイの5勝を挙げるコガネノソラが、菊沢隆徳厩舎からクイーンステークスで史上初の隔年制覇を狙います。コガネノソラは父ゴールドシップ、母マイネヒメル、母の父ロージズインメイの血統です。母はJRAで4勝を挙げています。また、叔母のウインマリリンは22年の香港ヴァーズなど重賞を4勝、叔父のウインマーレライは14年のラジオNIKKEI賞を制覇しました。さらに、姪のコラソンビートは23年の京王杯2歳Sを制しており、コガネノソラは差し切りを狙います。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (247文字)
+[0]  プレビュー: 競馬ファン注目の情報です。芝1800mでJRA現役最多タイの5勝を挙げるコガネノソラが、菊沢隆徳厩舎からクイーンステークスで史上初の隔年制覇を狙います。コガネノ...
 
 3 件の脚本を生成しました。
