@@ -1,10 +1,6 @@
-date: 2026-07-27T13:43:26.297440Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-27T14:28:51.193523Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tHcARgmY7eI title=JRAからの“朗報”にネット歓喜「きたああああ」「マジかよ!」「熱熱すぎなニュー
-OK project=1 video_id=zDkME5CaFko title=【POGマニア】勢い止まらん!新種牡馬エフフォーリアが早くも産駒7勝目　多くの関
-OK project=1 video_id=JizJYU2rXMQ title=【クイーンS】6歳牝馬のココナッツブラウンは札幌の滞在効果大　陣営「こっちではず
+OK project=1 video_id=Fq1zSTAjzXA views=69934 title=10・4凱旋門賞の馬券発売が決定　日本調教馬はメイショウタバル、アドマイヤテラが出走予定　JRA発表【7.0万回閲覧・話
