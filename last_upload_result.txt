@@ -1,10 +1,10 @@
-date: 2026-07-27T12:31:16.049576Z
+date: 2026-07-27T13:43:26.297440Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jsN_wnaJQ4A title=【クイーンS】函館記念で不利もケリフレッドアスクはタフな馬　陣営「あんまりへこた
-OK project=1 video_id=sBD_SWJLey0 title=【クイーンS】ミュージアムマイルの半妹が再始動　札幌滞在のフェスティバルヒルに陣
-OK project=1 video_id=E64qTvhFIVg title=【アイビスSD】9歳の古豪ウイングレイテストは使った上積みで巻き返しへ　畠山調教
+OK project=1 video_id=tHcARgmY7eI title=JRAからの“朗報”にネット歓喜「きたああああ」「マジかよ!」「熱熱すぎなニュー
+OK project=1 video_id=zDkME5CaFko title=【POGマニア】勢い止まらん!新種牡馬エフフォーリアが早くも産駒7勝目　多くの関
+OK project=1 video_id=JizJYU2rXMQ title=【クイーンS】6歳牝馬のココナッツブラウンは札幌の滞在効果大　陣営「こっちではず
