@@ -1,10 +1,10 @@
-date: 2026-07-27T06:38:53.120653Z
+date: 2026-07-27T10:40:39.980491Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YXkat_RHv80 title=【アイビスSD・浅子の特注馬】千直巧者のクムシラコに穴の匂い　前走は最低人気で激
-OK project=1 video_id=rEbd0Iv_9W8 title=【クイーンS展望】“北海道巧者”ココナッツブラウンの重賞初タイトルが有力　武豊騎
-OK project=1 video_id=Mng49CgylVE title=【アイビスSD・イシゴーの特注馬】千直3勝エコロレジーナの舞台適性の高さは揺るが
+OK project=1 video_id=oUCbFHnh8pY title=【クイーンS】史上初の隔年制覇なるか 9F巧者のコガネノソラが差し切り狙う
+OK project=1 video_id=bWsfWKrrmfs title=【AI予想・アイビスSD】今年は大波乱の可能性あり!? 人気薄の大駆けに警戒する
+OK project=1 video_id=J98DIH-_CbA title=【アイビスSD】昨年レコードタイVのピューロマジックが連覇&重賞連勝狙う　安田調
