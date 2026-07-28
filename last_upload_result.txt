@@ -1,10 +1,10 @@
-date: 2026-07-28T05:50:16.712029Z
+date: 2026-07-28T09:38:14.327914Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fJGyc0aURRc title=【注目馬動向】東海S勝利のマテンロウコマンドは佐賀のサマーチャンピオンへ　長谷川
-OK project=1 video_id=9knm3QORBSw title=【クイーンS】昨年2着ココナッツブラウンが重賞初V目指す　ゲート練習でスタート改
-OK project=1 video_id=jjxpXv-CUao title=【クイーンS展望】実績馬エリカエクスプレスが久々の重賞制覇へ
+OK project=1 video_id=k3RS1GjP1y4 title=【クイーンS】武豊騎手が16年ぶり2勝目へ エリカエクスプレスで参戦だ
+OK project=1 video_id=W6KQ1DBBMiY title=【クイーンS】ひとまわり大きくなったフェスティバルヒルは初の札幌も不安なし　陣営
+OK project=1 video_id=3XOIxvjUEfc title=屈腱炎再発で引退…キングズソードはアロースタッドで種牡馬入り　23年JBCクラシ
