@@ -1,10 +1,6 @@
-date: 2026-07-28T12:59:12.955293Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-28T14:03:17.468142Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hwFAwvm0Y3w title=【アイビスSD】韋駄天Sで鮮やかに逃げ切り!千直巧者エコロレジーナに菊沢調教師が
-OK project=1 video_id=XbFn4r3qZNQ title=【アイビスSD】前走はまさかの大敗...昨年5着の7歳馬デュガは精神面がカギ　陣
-OK project=1 video_id=aBOBXFgXpoo title=【アイビスSD】千直は14戦目とおてのもの!前走で進境見せたクムシラコ　千葉調教
+OK project=1 video_id=o1138MUM6ws views=15731 title=日本ダービー3着馬の半妹 ピュアレストにジョッキーも好感触/関東馬メイクデビュー情報【1.6万回閲覧・話題の競馬ニュース
