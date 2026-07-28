@@ -1,6 +1,10 @@
-date: 2026-07-27T14:28:51.193523Z
-type: popular_news_landscape
+date: 2026-07-28T04:04:44.838349Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Fq1zSTAjzXA views=69934 title=10・4凱旋門賞の馬券発売が決定　日本調教馬はメイショウタバル、アドマイヤテラが出走予定　JRA発表【7.0万回閲覧・話
+OK project=1 video_id=94vNQqULUEM title=凱旋門賞馬券発売にフランスギャロ「例年より1カ月早く発表されました」昨年JRA売
+OK project=1 video_id=J0g8HD-pWNk title=レース2週前に世界的良血へ!? エアザイオンが制した99年クイーンSを振り返る
+OK project=1 video_id=WtXoqc43BZ8 title=【競走伝】「やっと騎手っぽくなってきた」落馬骨折した武豊騎手が4か月以上の休養乗
