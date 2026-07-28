@@ -1,10 +1,10 @@
-date: 2026-07-28T11:26:02.867991Z
+date: 2026-07-28T12:59:12.955293Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vckh16lyI4w title=【クイーンS】16戦連続で重賞挑戦中!ボンドガールが一昨年2着の舞台で今度こそ　
-OK project=1 video_id=DRug_BBiLQI title=競馬場にスタイル抜群の美女が降臨!馬券の腕も「天才」「お見事」と話題の神部美咲
-OK project=1 video_id=YU0JOx35QE0 title=【クイーンS】前走は大きな不利...ケリフレッドアスクは強いメンタルが魅力　陣営
+OK project=1 video_id=hwFAwvm0Y3w title=【アイビスSD】韋駄天Sで鮮やかに逃げ切り!千直巧者エコロレジーナに菊沢調教師が
+OK project=1 video_id=XbFn4r3qZNQ title=【アイビスSD】前走はまさかの大敗...昨年5着の7歳馬デュガは精神面がカギ　陣
+OK project=1 video_id=aBOBXFgXpoo title=【アイビスSD】千直は14戦目とおてのもの!前走で進境見せたクムシラコ　千葉調教
