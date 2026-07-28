@@ -1,10 +1,10 @@
-date: 2026-07-28T09:38:14.327914Z
+date: 2026-07-28T11:26:02.867991Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=k3RS1GjP1y4 title=【クイーンS】武豊騎手が16年ぶり2勝目へ エリカエクスプレスで参戦だ
-OK project=1 video_id=W6KQ1DBBMiY title=【クイーンS】ひとまわり大きくなったフェスティバルヒルは初の札幌も不安なし　陣営
-OK project=1 video_id=3XOIxvjUEfc title=屈腱炎再発で引退…キングズソードはアロースタッドで種牡馬入り　23年JBCクラシ
+OK project=1 video_id=vckh16lyI4w title=【クイーンS】16戦連続で重賞挑戦中!ボンドガールが一昨年2着の舞台で今度こそ　
+OK project=1 video_id=DRug_BBiLQI title=競馬場にスタイル抜群の美女が降臨!馬券の腕も「天才」「お見事」と話題の神部美咲
+OK project=1 video_id=YU0JOx35QE0 title=【クイーンS】前走は大きな不利...ケリフレッドアスクは強いメンタルが魅力　陣営
