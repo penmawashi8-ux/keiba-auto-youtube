@@ -1,10 +1,10 @@
-date: 2026-07-29T11:33:43.986678Z
+date: 2026-07-29T13:10:30.019722Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kRb76M2xBLk title=【アイビスSD】ビッグシーザーは重の坂路で51秒8マーク　杉山晴師「ブリンカーを
-OK project=1 video_id=6TUvotwcbN0 title=【アイビスSD】カウスリップは余力を持って併入　中舘調教師「1000メートルのス
-OK project=1 video_id=FbQ9dcFv7NI title=【アイビスSD】国際派&二刀流のアメリカンステージは坂路で迫力十分　陣営「よく食
+OK project=1 video_id=xvVVHTyjoOw title=【レパードS・1週前】ダート転向後2戦圧勝のショウナンバンライは余力十分　松下調
+OK project=1 video_id=GIT6BONUi2g title=【門別・旭岳賞結果】ベルピットが4連勝で重賞18勝目を飾る
+OK project=1 video_id=nNcpLIrlcrY title=【アイビスSD】連覇狙うピューロマジックは我慢利き軽快　安田調教師「人の支配下の
