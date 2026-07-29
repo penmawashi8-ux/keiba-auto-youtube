@@ -1,10 +1,10 @@
-date: 2026-07-29T04:19:59.991705Z
+date: 2026-07-29T06:00:56.633124Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Wms1ziSShM8 title=【英国・グッドウッドC】カラ馬の度重なる妨害に「我々が望んでいた再戦は盛り上がら
-OK project=1 video_id=8AbTiCfCGV4 title=ドバイ・ワールドCでフォーエバーヤングに勝った米国のスターホース　クールモアで種
-OK project=1 video_id=GyZ_jCXTXlU title=来月から日本で騎乗予定のミシェル騎手、「人生最高の決断の一つでした」南アフリカ最
+OK project=1 video_id=DUquR2u636o title=JBCクラシックと帝王賞を制したキングズソードが競走馬登録抹消　今後はアロースタ
+OK project=1 video_id=e8ALeHNtsz0 title=【CBC賞想定】レイピア、ジェニファーなど16頭
+OK project=1 video_id=8FhZT83wT8w title=【クイーンS】エリカエクスプレスはリズム重視の微調整で十分　猛時計の先週もソフト
