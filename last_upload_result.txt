@@ -1,10 +1,10 @@
-date: 2026-07-29T06:00:56.633124Z
+date: 2026-07-29T09:47:07.487082Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DUquR2u636o title=JBCクラシックと帝王賞を制したキングズソードが競走馬登録抹消　今後はアロースタ
-OK project=1 video_id=e8ALeHNtsz0 title=【CBC賞想定】レイピア、ジェニファーなど16頭
-OK project=1 video_id=8FhZT83wT8w title=【クイーンS】エリカエクスプレスはリズム重視の微調整で十分　猛時計の先週もソフト
+OK project=1 video_id=QDSQj-D9844 title=【アイビスSD】マル外初の戴冠なるか アメリカンステージなど外国産馬3頭が参戦
+OK project=1 video_id=sh3RYtHaV34 title=【エルムS・1週前】前走4馬身差圧勝のテーオーパスワード　高柳大調教師「エルムS
+OK project=1 video_id=aqVifQpjljc title=【CBC賞・1週前】桜花賞7着から巻き返しを期すサンアントワーヌが絶好の気配　鹿
