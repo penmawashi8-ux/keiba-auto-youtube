@@ -1,10 +1,6 @@
-date: 2026-07-29T13:10:30.019722Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-07-29T14:09:54.184886Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xvVVHTyjoOw title=【レパードS・1週前】ダート転向後2戦圧勝のショウナンバンライは余力十分　松下調
-OK project=1 video_id=GIT6BONUi2g title=【門別・旭岳賞結果】ベルピットが4連勝で重賞18勝目を飾る
-OK project=1 video_id=nNcpLIrlcrY title=【アイビスSD】連覇狙うピューロマジックは我慢利き軽快　安田調教師「人の支配下の
+OK project=1 video_id=pT7dggm_TEk views=40349 title=橋木太希騎手が調教に復帰「反省しています。信頼を取り戻せるように、イチから頑張りたい」　重大な非行判明で来年３月２０日ま
