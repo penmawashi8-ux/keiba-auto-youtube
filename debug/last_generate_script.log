@@ -1,74 +1,93 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[1]  [ファクトチェックNG] NG: 元記事に存在しない「エル
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事に存在しない「エルムS
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[0]: JBCクラシックと帝王賞を制したキングズソードが競走馬登録抹消　今後はアロースタッドで種牡馬に ---
-[0] Gemini入力本文 352文字: 'JRAは7月29日、Jpn1・2勝を挙げたキングズソード(牡7歳、栗東・寺島良厩舎、父シニスターミニスター)の競走馬登録を同日付で抹消したことを発表した。今後は北海道新ひだか町のアロースタッドで種牡馬となる予定。\n\t\t\t\t\u3000同馬は22年1月'
+--- 記事[0]: 【アイビスSD】マル外初の戴冠なるか アメリカンステージなど外国産馬3頭が参戦 ---
+[0] Gemini入力本文 344文字: 'レース史に新たな1ページを刻むか。アメリカンステージ(牡4、栗東・矢作芳人厩舎)、デュガ(セ7、栗東・森秀行厩舎)、フロムダスク(牡6、栗東・森秀行厩舎)の3頭が、レース史上初となるアイビスサマーダッシュ(3歳上・GIII・芝1000m)の'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【CBC賞想定】レイピア、ジェニファーなど16頭 ---
-[1] Gemini入力本文 346文字: '8月9日(日)に中京競馬場で行われるCBC賞(3歳上・GIII・芝1200m)。\n\u300028日時点では、函館スプリントSで3着のレイピア、北九州記念で軽斤量を生かして2着のジェニファー、愛知杯で見せ場をつくったソルトクィーンなど、16頭が登録を'
+--- 記事[1]: 【エルムS・1週前】前走4馬身差圧勝のテーオーパスワード　高柳大調教師「エルムSの走りを見て、今後を絞っていきたい」 ---
+[1] Gemini入力本文 351文字: '◆第31回エルムS・G3(8月8日、札幌競馬場・ダート1700メートル)1週前追い切り＝7月29日、栗東トレセン\n\t\t\t\t\u3000テーオーパスワード(牡5歳、栗東・高柳大輔厩舎、父コパノリッキー)は栗東・CWコースで松山弘平騎手＝栗東・フリー＝を'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【クイーンS】エリカエクスプレスはリズム重視の微調整で十分　猛時計の先週もソフトな今週も課題の折り合いスムーズ ---
-[2] Gemini入力本文 349文字: '◆第74回クイーンS・G3(8月2日、札幌競馬場・芝1800メートル)追い切り＝7月29日、函館競馬場\n\t\t\t\t\u3000約1年半ぶりの勝利を狙うエリカエクスプレス(牝4歳、栗東・杉山晴紀厩舎、父エピファネイア)は泉谷楓真騎手＝栗東・杉山晴紀厩舎＝'
+--- 記事[2]: 【CBC賞・1週前】桜花賞7着から巻き返しを期すサンアントワーヌが絶好の気配　鹿戸調教師「めちゃいい動き」 ---
+[2] Gemini入力本文 355文字: '◆第62回CBC賞・G3(8月9日、中京競馬場・芝1200メートル)1週前追い切り＝7月29日、美浦トレセン\n\t\t\t\t\u3000前走の桜花賞7着から巻き返しを狙うサンアントワーヌ(牝3歳、美浦・鹿戸雄一厩舎、父ドレフォン)が、切れのある動きで仕上が'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 217文字]: '重要な競馬ニュースをお伝えします。JRAは7月29日、Jpn1・2勝を挙げたキングズソードの競走馬登録を同日付で抹消したことを発表しました。今後は北海道新ひだか町のアロースタッドで種牡馬となる予定です。キングズソードは22年1月にデビューし、23年JBCクラシックを3連勝で制すると、翌24年には帝王賞も勝利し、Jpn1・2勝をマークしました。昨年末の東京大賞典4着がラストランとなり、通算成績は20戦8勝（うち地方7戦2勝）でした。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (217文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。JRAは7月29日、Jpn1・2勝を挙げたキングズソードの競走馬登録を同日付で抹消したことを発表しました。今後は北海道新ひだか...
+[2]  [Gemini生出力 238文字]: '注目の競馬情報をお届けします。\n第62回CBC賞・G3の1週前追い切りが7月29日に美浦トレセンで行われました。8月9日に中京競馬場・芝1200メートルで開催されるこのレースで、前走の桜花賞7着から巻き返しを期すサンアントワーヌが絶好の気配を見せています。美浦・Wコースで外サトノラポールを追走する形から、6ハロン83秒3―11秒5を馬なりでマークし、併入に持ち込みました。鹿戸調教師は「めちゃいい動き」とコメントしており、切れのある動きで仕上がりの良さをアピールしています。'
+[2]  [redirectフィルター] 238文字 → 222文字
   HTTP 200
-[1]  [Gemini生出力 203文字]: '最新のレース情報が入ってきました。8月9日(日)に中京競馬場で行われるCBC賞、3歳上・GIII・芝1200mの最新情報です。28日時点では、16頭が登録を予定しています。フルゲート18頭に対し、函館スプリントSで3着のレイピア、北九州記念で軽斤量を生かして2着のジェニファー、愛知杯で見せ場をつくったソルトクィーンなどが想定馬として挙げられています。これらは出走予定の段階であり、変更の可能性があります。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (203文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。8月9日(日)に中京競馬場で行われるCBC賞、3歳上・GIII・芝1200mの最新情報です。28日時点では、16頭が登録を予定...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[0]  [Gemini生出力 219文字]: '最新情報をお届けします。\nアイビスサマーダッシュにおいて、外国産馬がレース史上初となる戴冠を狙っています。アメリカンステージ、デュガ、フロムダスクの3頭が参戦し、レース史に新たな1ページを刻むか注目されます。アメリカンステージは矢作芳人厩舎、デュガとフロムダスクは森秀行厩舎に所属しています。今年で26回目を迎えるアイビスサマーダッシュですが、これまでに多くの快足馬が制する一方で、短距離重賞としては珍しく外国産馬は未勝利となっています。'
+[0]  [redirectフィルター] 219文字 → 206文字
   HTTP 200
-[2]  [Gemini生出力 178文字]: '競馬速報です。\n第74回クイーンS・G3に出走を予定しているエリカエクスプレスの追い切りが、7月29日に函館競馬場で行われました。約1年半ぶりの勝利を狙うエリカエクスプレスは、泉谷楓真騎手が騎乗してWコースを単走。序盤からゆったりとしたペースで、人馬のバランスが乱れることなく、最後まで楽な感じでフィニッシュしました。レースでは武豊騎手が騎乗する予定です。'
-[2]  [重複除去] 178文字 → 177文字
+[1]  [Gemini生出力 256文字]: 'レース関連の最新情報です。第31回エルムS・G3の1週前追い切りが7月29日、栗東トレセンで行われました。8月8日に札幌競馬場・ダート1700メートルで予定されているこのレースに向け、テーオーパスワードは松山弘平騎手を背に栗東・CWコースで単走。ラストに促されると力強く伸び、6ハロン79秒4―11秒1の好時計をマークしました。高柳大調教師は「動きも時計もいいです。調教は動くので、いつも通りですね」と順調ぶりをアピールしています。さらに調教師は「エルムSの走りを見て、今後を絞っていきたい」とコメントしました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (177文字)
-[2]  プレビュー: 競馬速報です。第74回クイーンS・G3に出走を予定しているエリカエクスプレスの追い切りが、7月29日に函館競馬場で行われました。約1年半ぶりの勝利を狙うエリカエ...
+[2]  → output/script_2.txt 保存 (222文字)
+[2]  プレビュー: 第62回CBC賞・G3の1週前追い切りが7月29日に美浦トレセンで行われました。8月9日に中京競馬場・芝1200メートルで開催されるこのレースで、前走の桜花賞7...
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (206文字)
+[0]  プレビュー: アイビスサマーダッシュにおいて、外国産馬がレース史上初となる戴冠を狙っています。アメリカンステージ、デュガ、フロムダスクの3頭が参戦し、レース史に新たな1ページ...
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 264文字]: 'レース関連の最新情報です。第31回エルムS・G3の1週前追い切りに関する情報です。8月8日に札幌競馬場・ダート1700メートルで行われるこのレースに向けて、7月29日に栗東トレセンでテーオーパスワードが追い切りを行いました。松山弘平騎手を背に栗東のCWコースを単走で、ラストに促されると力強く伸び、6ハロン79秒4―11秒1の好時計をマークしています。高柳大調教師は「動きも時計もいいです。調教は動くので、いつも通りですね」と順調ぶりをアピールしました。また、「エルムSの走りを見て、今後を絞っていきたい」とコメントしています。'
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 276文字]: 'レース関連の最新情報です。第31回エルムS・G3の1週前追い切りが7月29日に栗東トレセンで行われました。8月8日に札幌競馬場ダート1700メートルで発走予定のこのレースに向け、前走4馬身差圧勝のテーオーパスワードは、栗東のCWコースで松山弘平騎手を背に単走で追い切られました。ラストに促されると力強く伸び、6ハロン79秒4―11秒1の好時計をマークしています。高柳大調教師は「動きも時計もいいです。調教は動くので、いつも通りですね」と順調ぶりをアピールしました。さらに高柳大調教師は「エルムSの走りを見て、今後を絞っていきたい」とコメントしています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (276文字)
+[1]  プレビュー: レース関連の最新情報です。第31回エルムS・G3の1週前追い切りが7月29日に栗東トレセンで行われました。8月8日に札幌競馬場ダート1700メートルで発走予定の...
 
 3 件の脚本を生成しました。
