@@ -1,21 +1,43 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[0]  [ファクトチェックNG] NG: 元記事にない「反省しています
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 日本ダービー3着馬の半妹 ピュアレストにジョッキーも好感触/関東馬メイクデビュー情報 ---
-[0] Gemini入力本文 100文字: '夏の新潟開催2週目。メイクデビューは土日で計4鞍が組まれており、各厩舎の素質馬がスタンバイしている。昨年の芝1600mではアーモンドアイの2番仔として注目を集めていたプロメサアルムンドがデビュー勝ち…'
+--- 記事[0]: 橋木太希騎手が調教に復帰「反省しています。信頼を取り戻せるように、イチから頑張りたい」　重大な非行判明で来年３月２０日ま ---
+[0] Gemini入力本文 100文字: '重大な非行が判明し、今年の３月２１日から２７年３月２０日まで騎乗停止になっている橋木太希騎手（２０）＝栗東・フリー＝が栗東トレセンで調教に復帰した。\u3000橋木は「詳細は差し控えさせてもらいます。色々なと…'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 161文字]: '注目の競馬情報をお届けします。\n夏の新潟開催は現在2週目を迎えています。\nこの開催では、メイクデビューが土日で計4鞍組まれており、各厩舎の素質馬たちがデビューに向けてスタンバイしています。\n昨年の芝1600mのメイクデビューでは、アーモンドアイの2番仔として注目を集めていたプロメサアルムンドがデビュー勝ちを収めています。'
-[0]  [redirectフィルター] 161文字 → 145文字
-[0]  [重複除去] 145文字 → 143文字
+[0]  [Gemini生出力 156文字]: '本日の競馬ニュースです。重大な非行が判明し、今年の3月21日から27年3月20日まで1年間の騎乗停止となっている橋木太希騎手が、栗東トレセンで調教に復帰しました。橋木騎手は「反省しています。信頼を取り戻せるように、イチから頑張りたい」とコメントしました。また、「詳細は差し控えさせてもらいます」とも述べています。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 167文字]: '本日の競馬ニュースです。重大な非行が判明し、今年の３月２１日から２７年３月２０日まで１年間の騎乗停止になっている橋木太希騎手が、栗東トレセンで調教に復帰しました。２０歳の橋木太希騎手は「反省しています。信頼を取り戻せるように、イチから頑張りたい」とコメントしました。また、橋木騎手は「詳細は差し控えさせてもらいます」とも述べています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (143文字)
-[0]  プレビュー: 夏の新潟開催は現在2週目を迎えています。この開催では、メイクデビューが土日で計4鞍組まれており、各厩舎の素質馬たちがデビューに向けてスタンバイしています。昨年の...
+[0]  → output/script_0.txt 保存 (167文字)
+[0]  プレビュー: 本日の競馬ニュースです。重大な非行が判明し、今年の３月２１日から２７年３月２０日まで１年間の騎乗停止になっている橋木太希騎手が、栗東トレセンで調教に復帰しました...
 
 1 件の脚本を生成しました。
