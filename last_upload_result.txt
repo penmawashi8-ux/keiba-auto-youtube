@@ -1,6 +1,10 @@
-date: 2026-07-28T14:03:17.468142Z
-type: popular_news_landscape
+date: 2026-07-29T04:19:59.991705Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=o1138MUM6ws views=15731 title=日本ダービー3着馬の半妹 ピュアレストにジョッキーも好感触/関東馬メイクデビュー情報【1.6万回閲覧・話題の競馬ニュース
+OK project=1 video_id=Wms1ziSShM8 title=【英国・グッドウッドC】カラ馬の度重なる妨害に「我々が望んでいた再戦は盛り上がら
+OK project=1 video_id=8AbTiCfCGV4 title=ドバイ・ワールドCでフォーエバーヤングに勝った米国のスターホース　クールモアで種
+OK project=1 video_id=GyZ_jCXTXlU title=来月から日本で騎乗予定のミシェル騎手、「人生最高の決断の一つでした」南アフリカ最
