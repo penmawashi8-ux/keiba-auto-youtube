@@ -1,10 +1,10 @@
-date: 2026-07-30T05:43:40.073917Z
+date: 2026-07-30T09:32:36.997800Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=47RGtuhOjyc title=フランスでアメリカで日本馬と激突へ　衝撃の差し切りで無傷6連勝の3歳馬ボウエコー
-OK project=1 video_id=Xsy_VoZ_mOc title=【英国・サセックスS】3歳ボウエコーが絶望的な位置から差し切りV　フランケル以来
-OK project=1 video_id=kkEdEUM6tOY title=【兵庫競馬】7月末で勇退する保利良次調教師「いい馬、いい人に恵まれました」騎手と
+OK project=1 video_id=Ajj7vGQKExE title=ウインズ八代が今週末の営業取りやめ　令和８年熊本地震の影響で　ＪＲＡが発表
+OK project=1 video_id=Fq9XRDHr1dU title=ウインズ八代　8月1、2日は営業取りやめ　熊本地震の影響で
+OK project=1 video_id=qPzxvNFWd0U title=ウインズ八代が今週の営業中止に　「令和8年熊本地震」の影響のため
