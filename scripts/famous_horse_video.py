@@ -27,7 +27,7 @@ VIDEO_WIDTH    = 1080
 VIDEO_HEIGHT   = 1920
 FPS            = 30
 FONT_SIZE      = 64
-BGM_VOLUME     = 0.15
+BGM_VOLUME     = 0.24
 ENDING_DUR     = 4.0
 LINE_MAX_CHARS = 13   # fontsize=64 × 13chars = 832px + border60 = 892px < 1080px
 LABEL_TEXT     = "名馬列伝"

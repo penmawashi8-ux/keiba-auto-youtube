@@ -46,7 +46,7 @@ FPS = 30
 FONT_SIZE = 64
 ENDING_DURATION = 2.0    # エンディングカード表示秒数
 THUMBNAIL_DURATION = 1.0  # 先頭サムネイルフレーム最低表示秒数
-BGM_VOLUME = 0.12        # BGM音量（ナレーションに対する比率）
+BGM_VOLUME = 0.20        # BGM音量（ナレーションに対する比率）
 MIN_CUT_DURATION = 1.0
 LINE_MAX_CHARS = 13       # 字幕1行最大文字数
 
@@ -1122,7 +1122,7 @@ def build_video(
 
         # 名馬列伝シリーズはドラマチックBGMを少し大きめにミックス
         is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
-        bgm_vol = 0.22 if is_famous else BGM_VOLUME
+        bgm_vol = 0.30 if is_famous else BGM_VOLUME
 
         cmd = ["ffmpeg", "-y", "-i", silent_mp4, "-i", audio_path]
         if bgm_path:

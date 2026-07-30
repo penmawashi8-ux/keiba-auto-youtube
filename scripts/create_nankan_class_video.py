@@ -42,7 +42,7 @@ RATE   = "-2%"
 VOLUME = "+0%"
 
 FPS          = 30
-BGM_VOLUME   = 0.12
+BGM_VOLUME   = 0.20
 ENDING_DUR   = 3.5
 ENDING_DUR_CTA = 4.2           # 本編誘導カードは読めるよう少し長め（等速）
 GAP          = 0.35            # 行間の無音（読みやすさ）
