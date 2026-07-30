@@ -1,10 +1,10 @@
-date: 2026-07-30T09:32:36.997800Z
+date: 2026-07-30T11:19:38.423090Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ajj7vGQKExE title=ウインズ八代が今週末の営業取りやめ　令和８年熊本地震の影響で　ＪＲＡが発表
-OK project=1 video_id=Fq9XRDHr1dU title=ウインズ八代　8月1、2日は営業取りやめ　熊本地震の影響で
-OK project=1 video_id=qPzxvNFWd0U title=ウインズ八代が今週の営業中止に　「令和8年熊本地震」の影響のため
+OK project=1 video_id=9Vx9MU6uDZg title=半兄はナチュラルライズ 3歳のアトラップモアが待ちに待ったデビュー戦だ
+OK project=1 video_id=JpBtN1Skkh8 title=【アイビスSD】バグラダスで参戦の杉原誠人騎手はJRA通算200勝へM1　初勝利
+OK project=1 video_id=NhZ44KKeQRA title=「ウマ娘」藤田晋オーナーのマル外 リーチツモドライチがデビュー勝ち狙う
