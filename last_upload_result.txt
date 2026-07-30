@@ -1,10 +1,10 @@
-date: 2026-07-30T11:19:38.423090Z
+date: 2026-07-30T12:34:56.185181Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9Vx9MU6uDZg title=半兄はナチュラルライズ 3歳のアトラップモアが待ちに待ったデビュー戦だ
-OK project=1 video_id=JpBtN1Skkh8 title=【アイビスSD】バグラダスで参戦の杉原誠人騎手はJRA通算200勝へM1　初勝利
-OK project=1 video_id=NhZ44KKeQRA title=「ウマ娘」藤田晋オーナーのマル外 リーチツモドライチがデビュー勝ち狙う
+OK project=1 video_id=gR-wXkdrWOA title=友道厩舎×ホウオウ軍団の初タッグ ミックス2億円のホウオウモノポリーが新馬勝ち狙
+OK project=1 video_id=jQvsK8moGn4 title=【クイーンS・データ埋蔵金】前走G1参戦の3歳&4歳馬に注目　G1組は過去10年
+OK project=1 video_id=ekTtOHiqlx8 title=【佐渡S・1週前】日本ダービー8着のライヒスアドラーが3頭併せで最先着　佐々木大
