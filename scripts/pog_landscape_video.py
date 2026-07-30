@@ -26,7 +26,7 @@ W, H          = 1280, 720
 FPS           = 30
 OPEN_DUR      = 3.5
 PEDIGREE_DUR  = 5.0
-BGM_VOL       = 0.12
+BGM_VOL       = 0.20
 
 # ── Pixabay クエリ（馬ごと）: category=animals と組み合わせて使用 ────
 PIXABAY_QUERIES: dict[str, list[str]] = {

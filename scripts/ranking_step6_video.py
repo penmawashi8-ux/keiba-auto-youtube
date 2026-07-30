@@ -15,7 +15,7 @@ from pathlib import Path
 EDGE_TTS_VOICE = os.environ.get("EDGE_TTS_VOICE", "ja-JP-KeitaNeural")
 VIDEO_WIDTH = 1920
 VIDEO_HEIGHT = 1080
-BGM_VOLUME = 0.3
+BGM_VOLUME = 0.40
 ENABLE_ZOOMPAN = os.environ.get("ENABLE_ZOOMPAN", "0") == "1"
 BGM_PATH = os.environ.get("BGM_PATH", "bgm.mp3")
 GRAPHS_DIR = Path("graphs")

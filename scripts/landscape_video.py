@@ -29,7 +29,7 @@ FPS        = 30
 OPEN_DUR   = 3.0   # オープニングカード表示秒数
 CARD_DUR   = 2.5   # チャプタータイトルカード表示秒数
 END_DUR    = 2.8   # ニュースモードのエンドカード表示秒数
-BGM_VOL    = 0.12
+BGM_VOL    = 0.20
 JST        = datetime.timezone(datetime.timedelta(hours=9))
 
 # ニュースモードの配色（ニューステロップ定番: 白文字+黒ブロック+赤タグ）

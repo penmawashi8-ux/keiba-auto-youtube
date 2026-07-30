@@ -30,7 +30,7 @@ ANSWER_EXTRA = 1      # 回答読み上げ後の余韻
 RESULT_DURATION = 5
 
 # BGM 設定
-BGM_VOL = 0.12
+BGM_VOL = 0.20
 
 # 動画設定
 FPS = 30
