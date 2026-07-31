@@ -1,43 +1,114 @@
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[1]  [ファクトチェックNG] NG: 元記事に存在しない「
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 「今回は「なんとか力で勝
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 元記事の本文に存在しない
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [1] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 今週の武豊騎手は10鞍 エリカエクスプレスでクイーンSの16年ぶり2勝目なるか ---
-[0] Gemini入力本文 348文字: '今週の武豊騎手は土日ともに札幌で、土曜6鞍、日曜4鞍の計10鞍に騎乗する。\n\u3000日曜札幌11Rのクイーンステークス(3歳上牝・GIII・芝1800m)ではエリカエクスプレス(牝4、栗東・杉山晴紀厩舎)とコンビを組む。25年のフェアリーSの覇者'
+--- 記事[0]: 【アイビスSD・金曜気配】“千直巧者”のシュラフは坂路で最終仕上げ　「うまくいきました」猛暑での調整に佐藤吉勝調教師 ---
+[0] Gemini入力本文 351文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)＝7月31日、美浦トレセン\n\t\t\t\t\u3000現役屈指の韋駄天、シュラフ(牝4歳、美浦・佐藤吉勝厩舎、父フォーウィールドライブ)は重賞初挑戦に向けて順調な調整が進'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[1]: 【名古屋競馬】初騎乗から844日　望月洵輝騎手が史上最速で通算500勝 ---
-[1] Gemini入力本文 541文字: '名古屋競馬所属の望月洵輝騎手(19)＝井上哲厩舎＝は7月31日、名古屋競馬5Rでゴールドレターに騎乗して1着。2024年4月9日の初騎乗以来、3229戦目で地方競馬通算500勝を達成した。初騎乗から844日での500勝達成は、記録がコンピュ'
+--- 記事[1]: 【名鉄杯・金曜気配】実績上位のタイトニットが賞金加算へ　今野調教師「なんとか力で勝ってもらいたい」 ---
+[1] Gemini入力本文 345文字: '◆名鉄杯・リステッド(8月2日、中京競馬場・ダート1800メートル)＝7月31日、栗東トレセン\n\t\t\t\t\u3000平安S3着のタイトニット(牡6歳、栗東・今野貞一厩舎、父キズナ)は坂路をゆったりと駆け上がった。今野調教師は「暑いわりには体調が良くて'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【注目馬動向】サンデーファンデーがコリアカップの招待を受諾　初の海外遠征へ ---
-[2] Gemini入力本文 354文字: 'マーキュリーCを制したサンデーファンデー(牡6歳、栗東・東田明士厩舎、父スズカコーズウェイ)が、コリアカップ・G2(9月6日、ソウル競馬場・ダート1800メートル)の招待を受諾したことが7月31日、分かった。\n\t\t\t\t\u3000同馬は前走で2025'
+--- 記事[2]: 開成高校出身の矢作調教師が母校で講演会　厩舎システムやフォーエバーヤングを熱く語る　「とても有意義な時間でした」 ---
+[2] Gemini入力本文 339文字: '矢作芳人調教師＝栗東＝が7月31日、母校である東京都荒川区の開成高校で講演会「世界で戦う矢作厩舎の組織マネジメント」を行った。\n\t\t\t\t\u3000会は同校OBや現役生など100人以上が参加。厩舎システムやフォーエバーヤング、日本競馬の将来や今後の目'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 269文字]: '今週の競馬注目情報をお伝えします。マーキュリーCを制したサンデーファンデーが、コリアカップ・G2の招待を受諾したことが7月31日に分かりました。サンデーファンデーは牡6歳で、栗東の東田明士厩舎に所属しています。このコリアカップは9月6日にソウル競馬場のダート1800メートルで行われます。同馬は前走でマーキュリーCを制し、2025年プロキオンS、今年のマーチSに続く重賞3勝目を挙げています。初の海外遠征で、新たなタイトルを狙うことになります。コリアカップは今年から国際G2に昇格し、総賞金は16億ウォン、日本円で約1億6000万円です。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (269文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。マーキュリーCを制したサンデーファンデーが、コリアカップ・G2の招待を受諾したことが7月31日に分かりました。サンデーファンデ...
-  HTTP 200
-[0]  [Gemini生出力 263文字]: '重要な競馬ニュースをお伝えします。今週の武豊騎手は土日ともに札幌で騎乗し、土曜6鞍、日曜4鞍の計10鞍に騎乗します。日曜札幌11Rのクイーンステークス、3歳上牝・GIII・芝1800mでは、エリカエクスプレスとコンビを組みます。エリカエクスプレスは25年のフェアリーSの覇者です。武豊騎手は4走前の秋華賞でエリカエクスプレスと初コンビを組み2着に健闘しました。続くエリザベス女王杯は12着でしたが、今年は中山牝馬Sとヴィクトリアマイルでともに4着と善戦しています。記事には「牝馬同士のGIIIなら好勝...」と記されています。'
+[0]  [Gemini生出力 222文字]: 'レース関連の最新情報です。第26回アイビスサマーダッシュ・G3に向けて、シュラフの調整状況が伝えられました。佐藤吉勝調教師は猛暑での調整について「うまくいきました」とコメントしています。7月31日に美浦トレセンで、新潟競馬場への移動を翌日に控えたシュラフは、坂路を1本67秒0―15秒9で流しました。これまで千直のレースは9戦し、全3勝を挙げており、掲示板を外さず“千直巧者”の地位を確立しています。重賞初挑戦に向けて順調な調整が進んでいます。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (260文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。今週の武豊騎手は土日ともに札幌で騎乗し、土曜6鞍、日曜4鞍の計10鞍に騎乗します。日曜札幌11Rのクイーンステークス、3歳上牝...
+[0]  → output/script_0.txt 保存 (222文字)
+[0]  プレビュー: レース関連の最新情報です。第26回アイビスサマーダッシュ・G3に向けて、シュラフの調整状況が伝えられました。佐藤吉勝調教師は猛暑での調整について「うまくいきまし...
   HTTP 200
-[1]  [Gemini生出力 225文字]: '最新情報をお届けします。名古屋競馬所属の望月洵輝騎手が、7月31日の名古屋競馬5Rでゴールドレターに騎乗し1着となり、地方競馬通算500勝を達成しました。これは2024年4月9日の初騎乗以来、3229戦目での到達です。初騎乗から844日での500勝達成は、記録がコンピューター管理されている1973年4月以降では地方競馬最速記録となります。望月騎手はほかにJRAで1勝を挙げており、重賞は2025年東海優駿のサンヨウテイオウなど10勝を飾っています。'
-[1]  [redirectフィルター] 225文字 → 213文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (213文字)
-[1]  プレビュー: 名古屋競馬所属の望月洵輝騎手が、7月31日の名古屋競馬5Rでゴールドレターに騎乗し1着となり、地方競馬通算500勝を達成しました。これは2024年4月9日の初騎...
-
-3 件の脚本を生成しました。
+[1]  [Gemini生出力 201文字]: '最新情報をお届けします。\n8月2日に中京競馬場ダート1800メートルで行われる名鉄杯・リステッドについて、7月31日に栗東トレセンで平安S3着のタイトニットが坂路をゆったりと駆け上がりました。今野調教師は、暑いわりには体調が良く、動きもいいと評価しています。毛づや、見た目なども良く、力を出せる状態にあると仕上がりに合格点を与えました。今野調教師は「なんとか力で勝ってもらいたい」とコメントしています。'
+[1]  [redirectフィルター] 201文字 → 188文字
+  HTTP 200
+[2]  [Gemini生出力 235文字]: '最新情報をお届けします。矢作芳人調教師が7月31日、母校である東京都荒川区の開成高校で講演会「世界で戦う矢作厩舎の組織マネジメント」を行いました。この会には同校OBや現役生など100人以上が参加しました。講演では、厩舎システムやフォーエバーヤング、日本競馬の将来や今後の目標レースなど、話は多岐にわたり、聴衆は熱心に耳を傾けていました。開成高校は全国トップクラスの進学校であり、同校出身の矢作芳人調教師は以前に「開成調教師」「開成調教師の仕事」という著書も出しています。'
+[2]  [redirectフィルター] 235文字 → 223文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (223文字)
+[2]  プレビュー: 矢作芳人調教師が7月31日、母校である東京都荒川区の開成高校で講演会「世界で戦う矢作厩舎の組織マネジメント」を行いました。この会には同校OBや現役生など100人...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 292文字]: '最新情報をお届けします。\n8月2日に中京競馬場のダート1800メートルで行われる名鉄杯・リステッドについてです。平安Sで3着だったタイトニットは、7月31日に栗東トレセンで坂路をゆったりと駆け上がりました。今野調教師は、タイトニットの仕上がりに合格点を与え、「暑いわりには体調が良くて、動きもいいですね」とコメントしています。さらに、「毛づや、見た目なんかもいいですよ。力を出せる状態にはあると思います」と、現在の良好な状態を強調しました。前走は落鉄の影響もあり、テンの行きっぷりが普段のレー...と話しており、今回は「なんとか力で勝ってもらいたい」と賞金加算への期待を寄せています。'
+[1]  [redirectフィルター] 292文字 → 279文字
+[1] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 212文字]: '最新情報をお届けします。名鉄杯・リステッドは8月2日に中京競馬場ダート1800メートルで行われます。7月31日、栗東トレセンでの気配として、平安S3着のタイトニットは坂路をゆったりと駆け上がりました。今野調教師は「暑いわりには体調が良くて、動きもいいですね。毛づや、見た目なんかもいいですよ。力を出せる状態にはあると思います」と仕上がりに合格点を与えています。今野調教師は「なんとか力で勝ってもらいたい」とコメントしました。'
+[1]  [redirectフィルター] 212文字 → 200文字
+[1] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
