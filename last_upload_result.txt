@@ -1,10 +1,10 @@
-date: 2026-07-31T04:31:57.517467Z
+date: 2026-07-31T06:17:48.784573Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BcVuJYc4aGw title=【クイーンS・金曜気配】武豊騎手騎乗のエリカエクスプレスは9番枠　陣営「追い切り
-OK project=1 video_id=504fNXr8ZAM title=【POG談義】好時計連発の大物候補が中京で満を持してデビュー!　「今週の狙いは?
-OK project=1 video_id=695TP_ae2xQ title=【POG】父は産駒が好調の新種牡馬フライトライン　ヴァイスクレストがゲート合格　
+OK project=1 video_id=uSeL8r9GzpQ title=【クイーンS・枠順確定】武豊騎手と重賞2勝目狙うエリカエクスプレスが6枠9番　重
+OK project=1 video_id=M_SKaY3xo-Q title=無敗牝馬が凱旋門賞3番人気タイに浮上!　ナッソーSを勝ったダイヤモンドネックレス
+OK project=1 video_id=cE-6Ph7go2o title=【アイビスSD・枠順確定】吉兆!?ピューロマジックは2年連続の3枠6番から連覇目
