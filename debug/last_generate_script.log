@@ -1,74 +1,50 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【クイーンS・金曜気配】武豊騎手騎乗のエリカエクスプレスは9番枠　陣営「追い切り後も落ち着いています」 ---
-[0] Gemini入力本文 347文字: '◆第74回クイーンS・G3(8月2日、札幌競馬場・芝1800メートル)＝7月31日、函館競馬場\n\t\t\t\t\u3000エリカエクスプレス(牝4歳、栗東・杉山晴紀厩舎、父エピファネイア)は厩舎周りの引き運動を行った後、札幌競馬場へ出発した。\n\t\t\t\t\u3000「'
+--- 記事[0]: 【クイーンS・枠順確定】武豊騎手と重賞2勝目狙うエリカエクスプレスが6枠9番　重賞初Vへココナッツブラウンは5枠7番 ---
+[0] Gemini入力本文 353文字: '◆第74回クイーンS・G3(8月2日、札幌競馬場・芝1800メートル)\n\t\t\t\t\u3000牝馬同士で争われる重賞のクイーンSの枠順が7月31日、確定した。\n\t\t\t\t\u3000前走のヴィクトリアマイルで4着に好走して、引き続き武豊騎手とのコンビで重賞2勝目を'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【POG談義】好時計連発の大物候補が中京で満を持してデビュー!　「今週の狙いは?」現場記者が推し馬をジャッジ ---
-[1] Gemini入力本文 358文字: 'デスク\u3000先週、勝ち上がった馬で目立ったのは、ノヴァヴェローチェとルナパッショーネかな。ノヴァヴェローチェは旋風を起こしているエフフォーリア産駒だ\n\t\t\t\t栗東記者\u3000今年の2歳世代で7頭目の勝ち上がりです。栗東では集中力が課題と言われていまし'
+--- 記事[1]: 無敗牝馬が凱旋門賞3番人気タイに浮上!　ナッソーSを勝ったダイヤモンドネックレスが日本馬の強力ライバルに ---
+[1] Gemini入力本文 616文字: '◆ナッソーステークス・G1(現地時間7月30日、英国・グッドウッド競馬場・芝1980メートル、良)\n\t\t\t\t\u3000英国伝統の夏の中距離女王決定戦が、昨年に続き5頭立てで行われた。ライアン・ムーア騎手が騎乗した単勝1・67倍で断然1番人気のダイヤ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【POG】父は産駒が好調の新種牡馬フライトライン　ヴァイスクレストがゲート合格　陣営「スピードがかなりありそう」 ---
-[2] Gemini入力本文 344文字: 'ヴァイスクレスト(牝2歳、栗東・藤原英昭厩舎、父フライトライン)が今週の函館競馬場でのゲート試験で合格した。\n\t\t\t\t\u3000父はアメリカで2022年BCクラシックなど6戦6勝、すべて圧勝だったフライトライン。現2歳が新種牡馬だが、すでに芝の新馬'
+--- 記事[2]: 【アイビスSD・枠順確定】吉兆!?ピューロマジックは2年連続の3枠6番から連覇目指す　エコロレジーナは5枠10番 ---
+[2] Gemini入力本文 350文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)＝7月31日、枠順確定\n\t\t\t\t\u3000昨年の覇者ピューロマジック(牝5歳、栗東・安田翔伍厩舎、父アジアエクスプレス)は、2年連続で3枠6番。騎乗予定だった松山'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 232文字]: '注目の競馬情報をお届けします。先週、勝ち上がった馬の中では、ノヴァヴェローチェとルナパッショーネが目立ちました。ノヴァヴェローチェは旋風を起こしているエフフォーリア産駒です。今年の2歳世代で7頭目の勝ち上がりとなり、栗東では集中力が課題と言われていましたが、レースでは全く心配ありませんでした。2番手追走から抜け出し、3馬身半差をつける強い内容を見せました。この馬は、春先のノーザンファーム空港でのPOG取材でも、厩舎長の鼻息が荒かった馬として注目されていました。'
-[1]  [redirectフィルター] 232文字 → 217文字
+[0]  [Gemini生出力 191文字]: '競馬速報です。\n第74回クイーンS・G3の枠順が7月31日に確定しました。このレースは8月2日に札幌競馬場・芝1800メートルで行われる牝馬同士の重賞です。前走のヴィクトリアマイルで4着に好走し、引き続き武豊騎手とのコンビで重賞2勝目を狙うエリカエクスプレスは、6枠9番に決定しました。昨年の2着馬で、北村友一騎手と待望の重賞初制覇を狙うココナッツブラウンは、5枠7番となりました。'
+[0]  [重複除去] 191文字 → 190文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (190文字)
+[0]  プレビュー: 競馬速報です。第74回クイーンS・G3の枠順が7月31日に確定しました。このレースは8月2日に札幌競馬場・芝1800メートルで行われる牝馬同士の重賞です。前走の...
   HTTP 200
-[0]  [Gemini生出力 240文字]: '今週の競馬注目情報をお伝えします。第74回クイーンS・G3は8月2日に札幌競馬場・芝1800メートルで行われます。武豊騎手騎乗のエリカエクスプレスは9番枠に入りました。エリカエクスプレスは7月31日に函館競馬場で厩舎周りの引き運動を行った後、札幌競馬場へ出発しました。植山厩務員は「順調です。追い切り後も落ち着いています。初めての滞在、競馬場での調整で力むかなと思いましたけどね」とコメントしています。函館での最終追い切りも非常にソフトながら、しっかり折り合っていたとのことです。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (217文字)
-[1]  プレビュー: 先週、勝ち上がった馬の中では、ノヴァヴェローチェとルナパッショーネが目立ちました。ノヴァヴェローチェは旋風を起こしているエフフォーリア産駒です。今年の2歳世代で...
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (240文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。第74回クイーンS・G3は8月2日に札幌競馬場・芝1800メートルで行われます。武豊騎手騎乗のエリカエクスプレスは9番枠に入り...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 220文字]: '最新情報をお届けします。\nヴァイスクレストが今週の函館競馬場でのゲート試験に合格しました。ヴァイスクレストの父は、アメリカで2022年のBCクラシックなど6戦6勝、すべて圧勝だったフライトラインです。現2歳が新種牡馬ですが、すでに芝の新馬を2勝するなど存在感を示しています。母は愛国産のスターリングクレストで、重賞勝ちこそありませんが、米G3で2着が2回あります。中森助手は「スピードがかなりありそう。気もいいですね」とコメントしています。'
-[2]  [redirectフィルター] 220文字 → 207文字
-[2]  ファクトチェック: OK
+[2]  [Gemini生出力 207文字]: '今週の競馬注目情報をお伝えします。第26回アイビスサマーダッシュ・G3の枠順が7月31日に確定しました。新潟競馬場・直線芝1000メートルで行われるこのレースで、昨年の覇者ピューロマジックは2年連続となる3枠6番に入りました。騎乗予定だった松山弘平騎手が右足負傷のため、田辺裕信騎手とのコンビで連覇を目指します。また、エコロレジーナは5枠10番に入り、“千直マスター”の菊沢一樹騎手と25回目のコンビで出走します。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
 [2]  → output/script_2.txt 保存 (207文字)
-[2]  プレビュー: ヴァイスクレストが今週の函館競馬場でのゲート試験に合格しました。ヴァイスクレストの父は、アメリカで2022年のBCクラシックなど6戦6勝、すべて圧勝だったフライ...
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。第26回アイビスサマーダッシュ・G3の枠順が7月31日に確定しました。新潟競馬場・直線芝1000メートルで行われるこのレースで...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[1]  [Gemini生出力 279文字]: '本日の競馬ニュースです。現地時間7月30日、英国グッドウッド競馬場の芝1980メートル、良馬場で行われたナッソーステークス・G1では、英国伝統の夏の中距離女王決定戦が昨年に続き5頭立てで行われました。ライアン・ムーア騎手が騎乗した単勝1.67倍で断然1番人気のダイヤモンドネックレスが、2馬身3／4差をつけて無傷の6連勝を飾りました。このダイヤモンドネックレスは牝3歳、愛国のエイダン・オブライエン厩舎所属で、父はセントマークスバシリカです。この結果を受け、無敗のダイヤモンドネックレスは凱旋門賞の3番人気タイに浮上し、日本馬の強力なライバルとなるでしょう。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (279文字)
+[1]  プレビュー: 本日の競馬ニュースです。現地時間7月30日、英国グッドウッド競馬場の芝1980メートル、良馬場で行われたナッソーステークス・G1では、英国伝統の夏の中距離女王決...
 
 3 件の脚本を生成しました。
