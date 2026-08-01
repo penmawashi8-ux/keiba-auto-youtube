@@ -1,10 +1,10 @@
-date: 2026-08-01T09:07:26.073846Z
+date: 2026-08-01T10:48:57.741408Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mWCPheWZCro title=武豊　ディープ命日に思い寄せ「旅立ってから7年。騎手人生の中でもかけがえのない宝
-OK project=1 video_id=jSNzVN8HSug title=異常な勝ち上がり率の地味な種牡馬にネット騒然「世間にバレてきたか」「2強時代やん
-OK project=1 video_id=pGfCdvebaDs title=【メイクデビュー新潟3Rレース後コメント】ボーデコール津村明秀騎手ら
+OK project=1 video_id=4cohwee_Xuc title=【アイビスSD前日オッズ】ピューロマジックが2.7倍で1番人気
+OK project=1 video_id=ULzm18rUzRA title=【クイーンS前日オッズ】エリカエクスプレスが2.8倍で1番人気
+OK project=1 video_id=XQXGkeTWLuQ title=中京最終で衝撃!1勝クラスでメインよりも速い1分31秒台の決着に「驚きの逃げ切り
