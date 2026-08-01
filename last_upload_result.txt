@@ -1,10 +1,10 @@
-date: 2026-07-31T09:44:21.818723Z
+date: 2026-08-01T04:30:07.089541Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=92gKpvux4gw title=今週の武豊騎手は10鞍 エリカエクスプレスでクイーンSの16年ぶり2勝目なるか
-OK project=1 video_id=yo6vheBipR8 title=【名古屋競馬】初騎乗から844日　望月洵輝騎手が史上最速で通算500勝
-OK project=1 video_id=h9yKoakWtks title=【注目馬動向】サンデーファンデーがコリアカップの招待を受諾　初の海外遠征へ
+OK project=1 video_id=a2cJlg4L0uo title=【札幌5R・新馬戦】ブルージェイが2馬身半差の圧逃!　鮫島駿「今日は跨がっている
+OK project=1 video_id=onnDv9UXWvA title=【札幌5R・2歳新馬】シスキン産駒でワンツー!　ブルージェイが2馬身半差で逃げ切
+OK project=1 video_id=Esvm6Ni3yag title=【札幌5R新馬戦結果】シスキン産駒ブルージェイが逃げ切りV
