@@ -1,139 +1,73 @@
-[1]  [ファクトチェックNG] NG: 元記事に存在しない騎手
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[2]  [ファクトチェックNG] NG: 室井調教師は初の重賞
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: 室井調教師は初の重賞
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【アイビスSD】「僕たちもびっくり」千葉調教師も目を丸くしたクムシラコの一変理由　今回はさらに工夫も ---
-[0] Gemini入力本文 346文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)＝7月31日、美浦トレセン\n\t\t\t\t\u3000キャリア50戦目を迎えるクムシラコ(牡8歳、美浦・千葉直人厩舎、父ディスクリートキャット)は、前走の安達太良Sで鼻差'
+--- 記事[0]: 【札幌5R・新馬戦】ブルージェイが2馬身半差の圧逃!　鮫島駿「今日は跨がっているだけでしたね」 ---
+[0] Gemini入力本文 600文字: '1日の札幌5R・新馬戦(芝1500メートル)は1番人気ブルージェイ(牡＝加藤征、父シスキン)が2馬身半差で逃げ切った。好スタートから楽に先手を奪うと、直線では余力十分に後続を突き放した。やや重の馬場で勝ちタイムは1分30秒4。\n\u3000鞍上の鮫島'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【アイビスSD・金曜気配】千直は三度目の正直!バグラダスは坂路で調整　嘉藤調教師「(杉原)ジョッキーも具合は良いと」 ---
-[1] Gemini入力本文 354文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)＝7月31日、美浦トレセン\n\t\t\t\t\u3000千直重賞に初めて挑むバグラダス(牡6歳、美浦・嘉藤貴行厩舎、父マジェスティックウォリアー)は、美浦・坂路を63秒5―'
+--- 記事[1]: 【札幌5R・2歳新馬】シスキン産駒でワンツー!　ブルージェイが2馬身半差で逃げ切り　鮫島克駿騎手「素晴らしい馬」 ---
+[1] Gemini入力本文 348文字: '8月1日の札幌5R・2歳新馬(芝1500メートル、13頭立て)は鮫島克駿騎手＝栗東・フリー＝騎乗で単勝1番人気だったブルージェイ(牡2歳、栗東・加藤征弘厩舎、父シスキン)が鮮やかに逃げ切った。2着にも同じシスキンを父に持つティアラード(牝2'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【アイビスSD・金曜気配】舞台一変のミカッテヨンデイイは角馬場で調整　室井師は初の重賞挑戦「思い切って距離を...」 ---
-[2] Gemini入力本文 349文字: '◆第26回アイビスサマーダッシュ・G3(8月2日、新潟競馬場・直線芝1000メートル)＝7月31日、美浦トレセン\n\t\t\t\t\u3000近走はマイル、中距離を使ってきたミカッテヨンデイイ(牝6歳、美浦・室井潔厩舎、父イスラボニータ)は、舞台を一変して初'
+--- 記事[2]: 【札幌5R新馬戦結果】シスキン産駒ブルージェイが逃げ切りV ---
+[2] Gemini入力本文 430文字: '1日、札幌競馬場5Rで行われた新馬戦(2歳・芝1500m・13頭)は、好スタートからハナに立って逃げ切った鮫島克駿騎手騎乗の1番人気ブルージェイ(牡2、美浦・加藤征弘厩舎)が、2番人気ティアラード(牝2、栗東・小栗実厩舎)に2.1/2馬身差'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 220文字]: '今日の競馬情報です。\n第26回アイビスサマーダッシュ・G3は、8月2日に新潟競馬場・直線芝1000メートルで行われます。千直重賞に初めて挑むバグラダスは、7月31日に美浦・坂路を63秒5―15秒5で軽快に駆け上がりました。25年10月のルミエールオータムダッシュでは9着、2走前の韋駄天Sでは7着と、過去2戦は能力を発揮しきれずに敗れています。嘉藤調教師は「杉原ジョッキーも具合は良いと」とコメントしており、三度目の正直に期待がかかります。'
-[1]  [重複除去] 220文字 → 219文字
-  HTTP 200
-[0]  [Gemini生出力 229文字]: '重要な競馬ニュースをお伝えします。第26回アイビスサマーダッシュ・G3に出走を予定しているクムシラコは、キャリア50戦目を迎えます。前走の安達太良Sでは鼻差の2着と激走し、完全復活を果たしました。この激走のきっかけはブリンカーの着用で、千葉調教師は「気持ちも前向きになって、馬自身がポジションを上げていってくれました。僕たちもびっくりしました」と想像以上の変化に目を丸くしました。8月2日に新潟競馬場で行われるこのレースでは、さらに工夫も凝らされる予定です。'
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 269文字]: '今日の競馬情報です。第26回アイビスサマーダッシュ・G3は8月2日に新潟競馬場の直線芝1000メートルで開催されます。7月31日、美浦トレセンでは、近走マイルや中距離を使ってきたミカッテヨンデイイが、舞台を一変して初の千直へ投入されることが報じられました。ミカッテヨンデイイは牝6歳、美浦の室井潔厩舎所属です。2歳時には1200メートルで勝ち星を挙げるなど、たしかなスプリント能力を持ち合わせています。輸送当日となるこの日は、角馬場で軽めの運動を行いました。室井調教師は初の重賞挑戦について「思い切って距離を...」とコメントしています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (229文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。第26回アイビスサマーダッシュ・G3に出走を予定しているクムシラコは、キャリア50戦目を迎えます。前走の安達太良Sでは鼻差の2...
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 209文字]: '重要な競馬ニュースをお伝えします。\n1日、札幌競馬場5Rで行われた新馬戦は、2歳、芝1500m、13頭立てで争われました。好スタートからハナに立って逃げ切った鮫島克駿騎手騎乗の1番人気ブルージェイが優勝しました。ブルージェイは2番人気ティアラードに2.1/2馬身差をつけ、勝ちタイムは稍重の馬場で1分30秒4でした。さらに1馬身差の3着には3番人気ギャルズマインドが入っています。勝ったブルージェイの父はシスキンです。'
+[2]  [重複除去] 209文字 → 208文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (208文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。1日、札幌競馬場5Rで行われた新馬戦は、2歳、芝1500m、13頭立てで争われました。好スタートからハナに立って逃げ切った鮫島...
   HTTP 200
-[1]  [Gemini生出力 253文字]: '今日の競馬情報です。第26回アイビスサマーダッシュ・G3に出走を予定しているバグラダスは、7月31日に美浦トレセンで調整を行いました。美浦・坂路を63秒5―15秒5で軽快に駆け上がっています。バグラダスは千直重賞に初めて挑みます。過去には25年10月のルミエールオータムダッシュで9着、2走前の韋駄天Sで7着と、千直への参戦は今回が三度目です。過去2戦は前が詰まるなど能力を発揮しきれずに敗れており、「三度目の正直」が期待されています。嘉藤貴行調教師は「杉原ジョッキーも具合は良いと」とコメントしています。'
+[1]  [Gemini生出力 268文字]: '今週の競馬注目情報をお伝えします。8月1日に行われた札幌5R・2歳新馬、芝1500メートル、13頭立てのレースでは、鮫島克駿騎手騎乗の単勝1番人気ブルージェイが鮮やかに逃げ切りました。ブルージェイは父シスキンで、勝ち時計は1分30秒4の良馬場でした。2着には同じく父シスキンのティアラードが入り、シスキン産駒がワンツーフィニッシュを飾っています。鮫島克駿騎手はブルージェイを「素晴らしい馬」と評価しました。レースでは発馬で楽に先手を奪い、道中は引きつけるような逃げを見せ、3、4コーナーで外から併せられても慌てず騒がず対応していました。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (253文字)
-[1]  プレビュー: 今日の競馬情報です。第26回アイビスサマーダッシュ・G3に出走を予定しているバグラダスは、7月31日に美浦トレセンで調整を行いました。美浦・坂路を63秒5―15...
-  HTTP 200
-[2]  [Gemini生出力 261文字]: '今日の競馬情報です。第26回アイビスサマーダッシュ・G3は8月2日に新潟競馬場の直線芝1000メートルで行われます。7月31日、美浦トレセンでの調整状況が伝えられました。近走はマイルや中距離を使ってきたミカッテヨンデイイは、舞台を一変して初の千直へ投入される予定です。この馬は2歳時には1200メートルで勝ち星を挙げるなど、たしかなスプリント能力を持ち合わせています。輸送当日となるこの日は、角馬場で軽めの運動を行いました。室井調教師は初の重賞挑戦となる今回のレースについて「思い切って距離を...」とコメントしています。'
-[2] 使用: key=***189Y model=gemini-2.0-flash
+[1]  → output/script_1.txt 保存 (268文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。8月1日に行われた札幌5R・2歳新馬、芝1500メートル、13頭立てのレースでは、鮫島克駿騎手騎乗の単勝1番人気ブルージェイが...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***189Y model=gemini-2.0-flash-lite
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 257文字]: '今日の競馬情報です。第26回アイビスサマーダッシュ・G3に関する情報です。8月2日に新潟競馬場・直線芝1000メートルで行われるこのレースに、ミカッテヨンデイイが出走を予定しています。牝6歳のミカッテヨンデイイは、近走マイルや中距離を使っていましたが、舞台を一変し初の千直に投入されます。2歳時には1200メートルで勝ち星を挙げるなど、たしかなスプリント能力を持ち合わせています。7月31日の美浦トレセンでは、輸送当日となるこの日、角馬場で軽めの運動を行いました。室井調教師は、このレースが初の重賞挑戦となります。'[2]  [ファクトチェックNG] NG: 室井調教師は、この
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2] [エラー] 全キー・全モデルでクォータ超過。
-[エラー] 記事 [2] のスクリプト生成失敗。
+[0]  [Gemini生出力 253文字]: '本日の競馬ニュースです。\n1日の札幌5R新馬戦、芝1500メートルでは、1番人気のブルージェイが2馬身半差で逃げ切りました。好スタートから楽に先手を奪い、直線では余力十分に後続を突き放し、やや重の馬場で勝ちタイムは1分30秒4でした。鞍上の鮫島駿騎手は「素晴らしい仕上がりで、素晴らしい馬だった。今日は跨がっているだけでしたね。1、2歩目から全然違いましたし、乗せて頂いたことに感謝です」と絶賛しました。加藤征師は「調教の良さがそのままレースに出た。距離はそんなに長くなさそうかな」と今後を見据えています。'
+[0]  [重複除去] 253文字 → 252文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (252文字)
+[0]  プレビュー: 本日の競馬ニュースです。1日の札幌5R新馬戦、芝1500メートルでは、1番人気のブルージェイが2馬身半差で逃げ切りました。好スタートから楽に先手を奪い、直線では...
 
-[2] 使用: key=***l-ME model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***l-ME model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+3 件の脚本を生成しました。
