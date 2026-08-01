@@ -1,10 +1,10 @@
-date: 2026-08-01T04:30:07.089541Z
+date: 2026-08-01T06:04:23.822128Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=a2cJlg4L0uo title=【札幌5R・新馬戦】ブルージェイが2馬身半差の圧逃!　鮫島駿「今日は跨がっている
-OK project=1 video_id=onnDv9UXWvA title=【札幌5R・2歳新馬】シスキン産駒でワンツー!　ブルージェイが2馬身半差で逃げ切
-OK project=1 video_id=Esvm6Ni3yag title=【札幌5R新馬戦結果】シスキン産駒ブルージェイが逃げ切りV
+OK project=1 video_id=V-SQLrDXjsc title=【阪神アーバン競馬プレーバック】田村彰啓調教師が通算400勝を達成「初心を忘れず
+OK project=1 video_id=ablEomYLco4 title=高柳大調教師が中京4RでJRA通算200勝達成　「馬主の皆様とファンの皆様のおか
+OK project=1 video_id=6atrCpAKIqw title=JRAが令和8年熊本地震の被災地支援　8月16日まで全ての発売施設で募金箱設置
