@@ -1,10 +1,10 @@
-date: 2026-08-01T10:48:57.741408Z
+date: 2026-08-01T12:07:13.908639Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4cohwee_Xuc title=【アイビスSD前日オッズ】ピューロマジックが2.7倍で1番人気
-OK project=1 video_id=ULzm18rUzRA title=【クイーンS前日オッズ】エリカエクスプレスが2.8倍で1番人気
-OK project=1 video_id=XQXGkeTWLuQ title=中京最終で衝撃!1勝クラスでメインよりも速い1分31秒台の決着に「驚きの逃げ切り
+OK project=1 video_id=gJa_cTCn4uc title=【日進特別レース後コメント】ビービークローサー坂井瑠星騎手ら
+OK project=1 video_id=yQxZ863WjSA title=【燕特別レース後コメント】スイートオレンジ荻野極騎手ら
+OK project=1 video_id=i8ghksxk13o title=【大倉山特別レース後コメント】キャットテイル横山武史騎手ら
