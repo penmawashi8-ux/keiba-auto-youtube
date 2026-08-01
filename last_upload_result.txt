@@ -1,10 +1,6 @@
-date: 2026-08-01T12:07:13.908639Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-01T13:14:08.317367Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gJa_cTCn4uc title=【日進特別レース後コメント】ビービークローサー坂井瑠星騎手ら
-OK project=1 video_id=yQxZ863WjSA title=【燕特別レース後コメント】スイートオレンジ荻野極騎手ら
-OK project=1 video_id=i8ghksxk13o title=【大倉山特別レース後コメント】キャットテイル横山武史騎手ら
+OK project=1 video_id=jQrIYo_FiUc views=23226 title=フォーエバーヤングは8月8日に函館入厩が決定　矢作調教師が「今年の函館に入れるのは値打ちがある」と言い切る理由は?【2.
