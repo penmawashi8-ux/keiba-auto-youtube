@@ -1,10 +1,10 @@
-date: 2026-08-02T09:13:41.757809Z
+date: 2026-08-02T10:47:46.829590Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=C940vgGo-FI title=【浜松特別レース後コメント】サンマルノヴェル田口貫太騎手ら
-OK project=1 video_id=MKshMlU72U0 title=【五頭連峰特別レース後コメント】ファストフォワード小崎綾也騎手ら
-OK project=1 video_id=k-N4AgzaGqo title=【苫小牧特別レース後コメント】マテンロウサン横山典弘騎手ら
+OK project=1 video_id=gAqeIHum-D0 title=【高知・黒潮菊花賞結果】カツテナイオイシサが史上6頭目の高知三冠達成！
+OK project=1 video_id=XVsx6sPr7Uo title=【レパードS】パイロマンサー、メルカントゥールなどが登録
+OK project=1 video_id=jF_gX69LUGk title=【CBC賞】インビンシブルパパ、レイピアなどが登録
