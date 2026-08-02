@@ -1,6 +1,10 @@
-date: 2026-08-01T13:14:08.317367Z
-type: popular_news_landscape
+date: 2026-08-02T04:33:40.923775Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jQrIYo_FiUc views=23226 title=フォーエバーヤングは8月8日に函館入厩が決定　矢作調教師が「今年の函館に入れるのは値打ちがある」と言い切る理由は?【2.
+OK project=1 video_id=Qm88IMujHRQ title=【札幌5R・2歳新馬】藤田晋オーナーの2・5億円馬スワッグウォークは直線伸びず4
+OK project=1 video_id=8BEWRh-gcE8 title=【札幌5R・新馬戦】陣営ゆかりの血統の1番人気ホウオウプレマが快勝
+OK project=1 video_id=ClKDnSJ6b9I title=美人過ぎると話題!マリー・ヴェロン騎手らが来日　「2026ワールドオールスタージ
