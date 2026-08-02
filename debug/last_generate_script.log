@@ -1,74 +1,43 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【メイクデビュー札幌5Rレース後コメント】ホウオウプレマ池添謙一騎手ら ---
-[0] Gemini入力本文 519文字: '札幌5Rのメイクデビュー札幌(芝1800m)は1番人気ホウオウプレマ(池添謙一騎手)が勝利した。勝ちタイムは1分50秒8(良)。3/4馬身差の2着に4番人気ロゼプレミア、さらに1馬身3/4差の3着に3番人気オンザボーが入った。\n\u3000ホウオウプ'
+--- 記事[0]: 【浜松特別レース後コメント】サンマルノヴェル田口貫太騎手ら ---
+[0] Gemini入力本文 346文字: '中京8Rの浜松特別(3歳以上2勝クラス・ダート1200m)は1番人気サンマルノヴェル(田口貫太騎手)が勝利した。勝ちタイムは1分11秒8(良)。半馬身差の2着に4番人気シルフズミスチーフ、さらに1馬身3/4差の3着に2番人気ルクスレイモンド'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: シンボリルドルフ産駒ツルマルツヨシ死す　31歳、老衰のため ---
-[1] Gemini入力本文 350文字: '現役時代に重賞2勝を挙げたツルマルツヨシ(牡、父シンボリルドルフ)が2日朝、老衰のため死んだ。けい養先の宮崎県・吉野牧場が明かした。31歳だった。\n\u3000同馬は二分久男厩舎から98年5月にデビュー。翌99年の朝日チャレンジCで重賞初制覇。続く京'
+--- 記事[1]: 【五頭連峰特別レース後コメント】ファストフォワード小崎綾也騎手ら ---
+[1] Gemini入力本文 1140文字: '新潟8Rの五頭連峰特別(3歳以上1勝クラス・牝・芝1800m)は9番人気ファストフォワード(小崎綾也騎手)が勝利した。勝ちタイムは1分45秒7(良)。半馬身差の2着に6番人気キアラメンテ、さらにクビ差の3着に2番人気リポサンテが入った。\n\u3000'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: “キングジョージ”に挑戦したマスカレードボールとヴェルテンベルクが帰国 ---
-[2] Gemini入力本文 339文字: 'JRAは8月2日、7月25日に行われたキングジョージ6世＆クイーンエリザベスS・英G1に出走した遠征馬2頭が帰国したことを発表した。\n\t\t\t\t\u3000同レースで7着に終わったマスカレードボール(牡4歳、美浦・手塚貴久厩舎、父ドゥラメンテ)と、同9'
+--- 記事[2]: 【苫小牧特別レース後コメント】マテンロウサン横山典弘騎手ら ---
+[2] Gemini入力本文 364文字: '札幌12Rの苫小牧特別(3歳以上2勝クラス・芝1200m)は2番人気マテンロウサン(横山典弘騎手)が勝利した。勝ちタイムは1分09秒3(良)。半馬身差の2着に1番人気デンプシー、さらにクビ差の3着に13番人気バシレウスシチーが入った。\n\u3000マ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 183文字]: '最新のレース情報が入ってきました。\nJRAは8月2日、7月25日に行われたキングジョージ6世＆クイーンエリザベスS・英G1に出走した遠征馬2頭が帰国したことを発表しました。同レースで7着に終わったマスカレードボールと、9着のヴェルテンベルクは、この日の8時9分に成田国際空港に到着しました。両馬はそのまま輸入検疫のため、千葉・白井市のJRA競馬学校に入厩しています。'
-[2]  [重複除去] 183文字 → 182文字
-  HTTP 200
-[1]  [Gemini生出力 238文字]: '本日の競馬ニュースです。シンボリルドルフ産駒のツルマルツヨシが2日朝、老衰のため死んだことが、けい養先の宮崎県・吉野牧場により明かされました。31歳でした。ツルマルツヨシは現役時代に重賞2勝を挙げました。二分久男厩舎から98年5月にデビューし、翌99年には朝日チャレンジCで重賞初制覇を飾っています。さらに、続く京都大賞典ではメジロブライト、テイエムオペラオー、ステイゴールド、スペシャルウィークといった強豪を下し、二つ目のタイトルを獲得しました。通算成績は11戦5勝でした。'
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (182文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。JRAは8月2日、7月25日に行われたキングジョージ6世＆クイーンエリザベスS・英G1に出走した遠征馬2頭が帰国したことを発表...
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (238文字)
-[1]  プレビュー: 本日の競馬ニュースです。シンボリルドルフ産駒のツルマルツヨシが2日朝、老衰のため死んだことが、けい養先の宮崎県・吉野牧場により明かされました。31歳でした。ツル...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 260文字]: '最新のレース情報が入ってきました。札幌5Rのメイクデビュー札幌、芝1800mは、1番人気ホウオウプレマが池添謙一騎手と共に勝利しました。勝ちタイムは1分50秒8の良馬場でした。3/4馬身差の2着には4番人気ロゼプレミアが入り、さらに1馬身3/4差の3着には3番人気オンザボーが入りました。ホウオウプレマは美浦の大竹正博厩舎に所属する2歳牝馬で、父はキタサンブラック、母はホウオウピースフル、母の父はオルフェーヴルです。レース後、1着となったホウオウプレマの池添謙一騎手は「母がテンションが高...」とコメントしています。'
+[0]  [Gemini生出力 238文字]: '競馬ファン注目の情報です。\n中京8Rの浜松特別、3歳以上2勝クラス・ダート1200mは、1番人気のサンマルノヴェルが田口貫太騎手で勝利しました。勝ちタイムは良馬場で1分11秒8です。半馬身差の2着には4番人気のシルフズミスチーフが入り、さらに1馬身3/4差の3着には2番人気のルクスレイモンドが入線しました。勝利したサンマルノヴェルは、栗東・大橋勇樹厩舎の4歳牡馬です。父はノヴェリスト、母はサンマルアリュールで、母の父はゴールドアリュール。通算成績は14戦3勝となりました。'
+[0]  [重複除去] 238文字 → 237文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (257文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。札幌5Rのメイクデビュー札幌、芝1800mは、1番人気ホウオウプレマが池添謙一騎手と共に勝利しました。勝ちタイムは1分50秒8...
+[0]  → output/script_0.txt 保存 (237文字)
+[0]  プレビュー: 競馬ファン注目の情報です。中京8Rの浜松特別、3歳以上2勝クラス・ダート1200mは、1番人気のサンマルノヴェルが田口貫太騎手で勝利しました。勝ちタイムは良馬場...
+  HTTP 200
+[2]  [Gemini生出力 250文字]: '注目の競馬情報をお届けします。\n札幌12Rの苫小牧特別、3歳以上2勝クラス・芝1200mは、2番人気マテンロウサンが横山典弘騎手とのコンビで勝利しました。勝ちタイムは1分09秒3の良馬場でした。半馬身差の2着には1番人気デンプシーが入り、さらにクビ差の3着には13番人気のバシレウスシチーが入着しています。勝利したマテンロウサンは、栗東・昆貢厩舎所属の4歳牡馬です。父はInto Mischief、母はMiss Panthereで、母の父はDaiwa Majorです。通算成績は8戦3勝となりました。'
+[2]  [redirectフィルター] 250文字 → 234文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (234文字)
+[2]  プレビュー: 札幌12Rの苫小牧特別、3歳以上2勝クラス・芝1200mは、2番人気マテンロウサンが横山典弘騎手とのコンビで勝利しました。勝ちタイムは1分09秒3の良馬場でした...
+  HTTP 200
+[1]  [Gemini生出力 335文字]: '競馬速報です。\n新潟8Rの五頭連峰特別、3歳以上1勝クラス・牝・芝1800mは、9番人気のファストフォワードが小崎綾也騎手とのコンビで勝利しました。勝ちタイムは1分45秒7の良馬場です。半馬身差の2着には6番人気のキアラメンテ、さらにクビ差の3着には2番人気のリポサンテが入りました。\n勝利したファストフォワードは栗東の小林真也厩舎所属の3歳牝馬で、父ハービンジャー、母ゴーノニゴー。通算成績は7戦2勝です。\nレース後、1着ファストフォワードの小崎綾也騎手は「状態良く成長を感じる雰囲気でした。ゲートで遅れましたが、内枠の分リカバーでき、あとはリズム重視でした。最後に進路が開いたのはラッキーでしたが、それに応えてくれた状態だったのも何よりでした」とコメントしています。'
+[1]  [重複除去] 335文字 → 332文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (332文字)
+[1]  プレビュー: 競馬速報です。新潟8Rの五頭連峰特別、3歳以上1勝クラス・牝・芝1800mは、9番人気のファストフォワードが小崎綾也騎手とのコンビで勝利しました。勝ちタイムは1...
 
 3 件の脚本を生成しました。
