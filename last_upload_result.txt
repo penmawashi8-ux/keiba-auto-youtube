@@ -1,10 +1,10 @@
-date: 2026-08-02T06:06:29.044204Z
+date: 2026-08-02T09:13:41.757809Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RxCG85X09wk title=【メイクデビュー札幌5Rレース後コメント】ホウオウプレマ池添謙一騎手ら
-OK project=1 video_id=q8Xv_ZuczT4 title=シンボリルドルフ産駒ツルマルツヨシ死す　31歳、老衰のため
-OK project=1 video_id=_WT1zu9MWVM title=“キングジョージ”に挑戦したマスカレードボールとヴェルテンベルクが帰国
+OK project=1 video_id=C940vgGo-FI title=【浜松特別レース後コメント】サンマルノヴェル田口貫太騎手ら
+OK project=1 video_id=MKshMlU72U0 title=【五頭連峰特別レース後コメント】ファストフォワード小崎綾也騎手ら
+OK project=1 video_id=k-N4AgzaGqo title=【苫小牧特別レース後コメント】マテンロウサン横山典弘騎手ら
