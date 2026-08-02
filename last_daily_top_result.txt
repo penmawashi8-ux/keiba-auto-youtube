@@ -1,8 +1,8 @@
-date: 2026-08-01T14:26:05.955851Z
+date: 2026-08-02T14:29:19.339566Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gbwJcdZSIPY
-source_short=6atrCpAKIqw views=605
-title=8月1日 JRAが令和8年熊本地震の被災地支援　8月16日まで全ての発売施設で募金箱設置
+OK project=1 video_id=tXnUXSFLML0
+source_short=ClKDnSJ6b9I views=1114
+title=8月2日 美人過ぎると話題!マリー・ヴェロン騎手らが来日　「2026ワールドオールスタージョッキーズ」出場の海外6騎手が
