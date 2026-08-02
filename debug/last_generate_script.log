@@ -1,80 +1,74 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 [0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【札幌5R・2歳新馬】藤田晋オーナーの2・5億円馬スワッグウォークは直線伸びず4着　武豊騎手「まだ仕上がり途上」 ---
-[0] Gemini入力本文 348文字: '8月2日の札幌5R・2歳新馬(芝1800メートル＝10頭立て)で武豊騎手が騎乗したスワッグウォーク(牡、栗東・武幸四郎厩舎、父コントレイル)は4着だった。道中は中団を追走。4コーナー付近から前をとらえに動いたが、直線は思ったほど伸びず3着馬'
+--- 記事[0]: 【メイクデビュー札幌5Rレース後コメント】ホウオウプレマ池添謙一騎手ら ---
+[0] Gemini入力本文 519文字: '札幌5Rのメイクデビュー札幌(芝1800m)は1番人気ホウオウプレマ(池添謙一騎手)が勝利した。勝ちタイムは1分50秒8(良)。3/4馬身差の2着に4番人気ロゼプレミア、さらに1馬身3/4差の3着に3番人気オンザボーが入った。\n\u3000ホウオウプ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【札幌5R・新馬戦】陣営ゆかりの血統の1番人気ホウオウプレマが快勝 ---
-[1] Gemini入力本文 641文字: '2日の札幌競馬場で行われた2歳新馬戦(芝1800メートル)は、1番人気ホウオウプレマ(牝＝大竹、父キタサンブラック)が勝利。道中は好位インで脚を温存し、勝負どころから長くいい脚を使った。\n\u3000母ホウオウピースフルは同じ大竹厩舎で管理されたゆか'
+--- 記事[1]: シンボリルドルフ産駒ツルマルツヨシ死す　31歳、老衰のため ---
+[1] Gemini入力本文 350文字: '現役時代に重賞2勝を挙げたツルマルツヨシ(牡、父シンボリルドルフ)が2日朝、老衰のため死んだ。けい養先の宮崎県・吉野牧場が明かした。31歳だった。\n\u3000同馬は二分久男厩舎から98年5月にデビュー。翌99年の朝日チャレンジCで重賞初制覇。続く京'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 美人過ぎると話題!マリー・ヴェロン騎手らが来日　「2026ワールドオールスタージョッキーズ」出場の海外6騎手が決定 ---
-[2] Gemini入力本文 353文字: 'JRAは8月2日、同22日と23日に札幌競馬場で行われる「2026ワールドオールスタージョッキーズ(WASJ)」に出場する外国騎手6人を発表した。\n\t\t\t\t\u3000注目は唯一の女性騎手として参戦するマリー・ヴェロン騎手だ。22年のロワイヤルオーク'
+--- 記事[2]: “キングジョージ”に挑戦したマスカレードボールとヴェルテンベルクが帰国 ---
+[2] Gemini入力本文 339文字: 'JRAは8月2日、7月25日に行われたキングジョージ6世＆クイーンエリザベスS・英G1に出走した遠征馬2頭が帰国したことを発表した。\n\t\t\t\t\u3000同レースで7着に終わったマスカレードボール(牡4歳、美浦・手塚貴久厩舎、父ドゥラメンテ)と、同9'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 261文字]: '最新情報をお届けします。8月2日の札幌5R・2歳新馬、芝1800メートル10頭立てのレースで、武豊騎手が騎乗したスワッグウォークは4着でした。栗東・武幸四郎厩舎所属で父コントレイルの同馬は、道中を中団で追走し、4コーナー付近から前をとらえに動きましたが、直線は思ったほど伸びず、3着馬から4馬身離されてしまいました。24年のセレクトセール1歳セッションで2億5000万円がついた期待馬で、レースでは単勝3.5倍の2番人気に支持されましたが、ほろ苦いデビューとなりました。武豊騎手は「まだ仕上がり途上」とコメントしています。'
-[0]  [redirectフィルター] 261文字 → 249文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (249文字)
-[0]  プレビュー: 8月2日の札幌5R・2歳新馬、芝1800メートル10頭立てのレースで、武豊騎手が騎乗したスワッグウォークは4着でした。栗東・武幸四郎厩舎所属で父コントレイルの同...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+[2]  [Gemini生出力 183文字]: '最新のレース情報が入ってきました。\nJRAは8月2日、7月25日に行われたキングジョージ6世＆クイーンエリザベスS・英G1に出走した遠征馬2頭が帰国したことを発表しました。同レースで7着に終わったマスカレードボールと、9着のヴェルテンベルクは、この日の8時9分に成田国際空港に到着しました。両馬はそのまま輸入検疫のため、千葉・白井市のJRA競馬学校に入厩しています。'
+[2]  [重複除去] 183文字 → 182文字
   HTTP 200
-[1]  [Gemini生出力 307文字]: '競馬ファン注目の情報です。\n2日の札幌競馬場で行われた2歳新馬戦、芝1800メートルで、1番人気ホウオウプレマが勝利しました。ホウオウプレマは好位インで脚を温存し、勝負どころから長くいい脚を使って快勝しました。\n母ホウオウピースフルは同じ大竹厩舎で管理されたゆかりの血統です。叔父のブラストワンピースで18年有馬記念を優勝した池添は「落ち着いてレースに臨めたし、エンジンがかかってからは速かった」と納得の表情でした。\n大竹師は「自分のところで預かった馬が繁殖入りして勝つというのはやっぱりいいもんですね。母は気性が難しかったけどこの子は手がかからない。体もお母さんよりも大きい」とうれしそうでした。次走は未定です。'
-[1]  [重複除去] 307文字 → 304文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (304文字)
-[1]  プレビュー: 競馬ファン注目の情報です。2日の札幌競馬場で行われた2歳新馬戦、芝1800メートルで、1番人気ホウオウプレマが勝利しました。ホウオウプレマは好位インで脚を温存し...
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 237文字]: '最新情報をお届けします。\nJRAは8月2日、8月22日と23日に札幌競馬場で行われる「2026ワールドオールスタージョッキーズ(WASJ)」に出場する外国騎手6人を発表しました。\n注目は唯一の女性騎手として参戦するマリー・ヴェロン騎手です。\n彼女は2022年のロワイヤルオーク賞・G1で、フランス人女性騎手としては初となる仏G1制覇を達成しました。\n2023年にはWASJで日本で初騎乗し、第3戦でJRA初勝利を挙げ、総合4位でした。\n同年のジャパンCでも再来日しています。'
-[2]  [redirectフィルター] 237文字 → 224文字
-[2]  [重複除去] 224文字 → 220文字
+[1]  [Gemini生出力 238文字]: '本日の競馬ニュースです。シンボリルドルフ産駒のツルマルツヨシが2日朝、老衰のため死んだことが、けい養先の宮崎県・吉野牧場により明かされました。31歳でした。ツルマルツヨシは現役時代に重賞2勝を挙げました。二分久男厩舎から98年5月にデビューし、翌99年には朝日チャレンジCで重賞初制覇を飾っています。さらに、続く京都大賞典ではメジロブライト、テイエムオペラオー、ステイゴールド、スペシャルウィークといった強豪を下し、二つ目のタイトルを獲得しました。通算成績は11戦5勝でした。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (220文字)
-[2]  プレビュー: JRAは8月2日、8月22日と23日に札幌競馬場で行われる「2026ワールドオールスタージョッキーズ(WASJ)」に出場する外国騎手6人を発表しました。注目は唯...
+[2]  → output/script_2.txt 保存 (182文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。JRAは8月2日、7月25日に行われたキングジョージ6世＆クイーンエリザベスS・英G1に出走した遠征馬2頭が帰国したことを発表...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (238文字)
+[1]  プレビュー: 本日の競馬ニュースです。シンボリルドルフ産駒のツルマルツヨシが2日朝、老衰のため死んだことが、けい養先の宮崎県・吉野牧場により明かされました。31歳でした。ツル...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 260文字]: '最新のレース情報が入ってきました。札幌5Rのメイクデビュー札幌、芝1800mは、1番人気ホウオウプレマが池添謙一騎手と共に勝利しました。勝ちタイムは1分50秒8の良馬場でした。3/4馬身差の2着には4番人気ロゼプレミアが入り、さらに1馬身3/4差の3着には3番人気オンザボーが入りました。ホウオウプレマは美浦の大竹正博厩舎に所属する2歳牝馬で、父はキタサンブラック、母はホウオウピースフル、母の父はオルフェーヴルです。レース後、1着となったホウオウプレマの池添謙一騎手は「母がテンションが高...」とコメントしています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (257文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。札幌5Rのメイクデビュー札幌、芝1800mは、1番人気ホウオウプレマが池添謙一騎手と共に勝利しました。勝ちタイムは1分50秒8...
 
 3 件の脚本を生成しました。
