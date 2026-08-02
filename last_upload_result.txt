@@ -1,10 +1,6 @@
-date: 2026-08-02T10:47:46.829590Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-02T13:16:39.430357Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gAqeIHum-D0 title=【高知・黒潮菊花賞結果】カツテナイオイシサが史上6頭目の高知三冠達成！
-OK project=1 video_id=XVsx6sPr7Uo title=【レパードS】パイロマンサー、メルカントゥールなどが登録
-OK project=1 video_id=jF_gX69LUGk title=【CBC賞】インビンシブルパパ、レイピアなどが登録
+OK project=1 video_id=2-SFhfxme14 views=55498 title=ワールドオールスタージョッキーズ出場外国人騎手6人決定　フーリー、ロイド、ナレドゥら【5.5万回閲覧・話題の競馬ニュース
