@@ -1,105 +1,65 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【アイビスSD】ピューロマジックV　アンカツさん総評「速すぎた故のヒモ荒れ」「田辺ナイス代打」 ---
-[0] Gemini入力本文 352文字: '2日、サマースプリントシリーズ第3戦「第26回アイビスSD」(新潟芝直線1000メートル)は田辺裕信(42)騎乗の1番人気ピューロマジック(牝5＝安田、父アジアエクスプレス)が逃げ切って連覇を達成。前走の函館スプリントSに続く連勝で、重賞5'
+--- 記事[0]: 【CBC賞】永島まなみ騎手が2年ぶりの重賞2勝目へ ジェニファーで参戦だ ---
+[0] Gemini入力本文 352文字: 'デビュー6年目の永島まなみ騎手が、CBC賞(3歳上・GIII・芝1200m)のジェニファー(牝5、栗東・浜田多実雄厩舎)でJRA重賞2勝目を狙う。\n\u3000永島騎手は02年10月27日生まれ、兵庫県出身の23歳。父は地方・兵庫で元騎手の永島太郎調'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【韓国・KRAカップクラシック】コリアカップの前哨戦はレースレコードでカンプンマが勝利 ---
-[1] Gemini入力本文 589文字: '7月26日(日)に韓国・ソウル競馬場にて、9月6日に実施される第9回コリアカップの前哨戦、第41回KRAカップクラシック(3歳以上・韓国G2・ダート2000m・1着賞金3億8500万ウォン＝約4370万円)が行われた(晴・やや重・含水率9％'
+--- 記事[1]: 【AI予想・CBC賞】前走の内容から重賞でも十分通用！ 波乱も予感させる人工知能の本命候補とは ---
+[1] Gemini入力本文 451文字: '本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。\n\u3000今週の重賞競走は土曜日にエルムS(GIII)、日曜日にレパードS(GIII)とCBC賞(GIII)が行われます。その中から中京競馬'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: テイエムオオアラシ死す…33歳　97年カブトヤマ記念、福島記念、98年小倉記念V ---
-[2] Gemini入力本文 342文字: 'ジャパンスタッドブックインターナショナルは3日、97年カブトヤマ記念、福島記念、98年小倉記念と重賞を3勝したテイエムオオアラシ(牡、父セクレファスター)が2日に息を引き取ったと発表した。33歳だった。\n\u300095年12月2日に栗東・二分久男厩'
+--- 記事[2]: 【レパードS】メルカントゥールは追うごとに上昇　杉山晴調教師「2週前よりまたひとつ、芯が入った動き」 ---
+[2] Gemini入力本文 350文字: '◆第18回レパードS・G3(8月9日、新潟競馬場・ダート1800メートル)\n\t\t\t\t\u3000ユニコーンS2着のメルカントゥール(牡3歳、栗東・杉山晴紀厩舎、父ルヴァンスレーヴ)が重賞初制覇へ上昇ムードだ。1週前追い切りは坂井瑠星騎手を背に、栗東・'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 451文字）
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 278文字]: '今週の競馬注目情報をお伝えします。\n7月26日、韓国・ソウル競馬場にて、9月6日に実施される第9回コリアカップの前哨戦、第41回KRAカップクラシックが行われました。この3歳以上・韓国G2、ダート2000mのレースは、晴れのやや重馬場、含水率9％の条件下で行われ、カンプンマがレースレコードを記録して勝利しました。1着賞金は3億8500万ウォン、日本円でおよそ4370万円です。単勝1番人気は2.7倍のグローバルヒットで、2年前のコリアカップでクラウンプライド、ウィルソンテソーロに続く3着に入った実績があります。2番人気には2.8倍の馬が支持されました。'
-[1]  [重複除去] 278文字 → 277文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (277文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。7月26日、韓国・ソウル競馬場にて、9月6日に実施される第9回コリアカップの前哨戦、第41回KRAカップクラシックが行われまし...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[2]  [Gemini生出力 245文字]: '最新のレース情報が入ってきました。\nジャパンスタッドブックインターナショナルは3日、1997年カブトヤマ記念、福島記念、1998年小倉記念と重賞を3勝したテイエムオオアラシが2日に息を引き取ったと発表しました。33歳でした。テイエムオオアラシは1995年12月2日に二分久男厩舎所属でデビューしました。条件戦を勝ち上がり、1997年秋にオープン入りを決めると、昇級戦のカブトヤマ記念、福島記念と連勝しました。暮れの有馬記念にも出走し、シルクジャスティスが差し切ったレースで6着となりました。'
-[2]  [重複除去] 245文字 → 244文字
-  HTTP 200
-[0]  [Gemini生出力 273文字]: '最新のレース情報が入ってきました。\n2日、サマースプリントシリーズ第3戦の第26回アイビスSDが新潟芝直線1000メートルで行われ、田辺裕信騎乗の1番人気ピューロマジックが逃げ切って連覇を達成しました。ピューロマジックは前走の函館スプリントSに続く連勝で、重賞5勝目を飾っています。勝ち時計は53秒5を記録し、カルストンライトオが02年当レースで打ち立てた芝1000メートルの日本レコードを0秒2塗り替えました。中央と地方で通算4464勝の元ジョッキーである安藤勝己氏は、今回のレースを「速すぎた故のヒモ荒れ」「田辺ナイス代打」と総評しています。'
-[0]  [重複除去] 273文字 → 272文字
+[2]  [Gemini生出力 203文字]: '本日の競馬ニュースです。第18回レパードS・G3に出走予定のメルカントゥールが重賞初制覇へ上昇ムードです。ユニコーンS2着のメルカントゥールは、1週前追い切りで坂井瑠星騎手を背に栗東・CWコースで長めから追われました。直線では鞍上の手綱が激しく動き、3頭併せの内から最先着し、7ハロン97秒4―11秒2を計時しています。杉山晴調教師は「2週前よりまたひとつ、芯が入った動きができていま」とコメントしました。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (244文字)
-[2]  プレビュー: 最新のレース情報が入ってきました。ジャパンスタッドブックインターナショナルは3日、1997年カブトヤマ記念、福島記念、1998年小倉記念と重賞を3勝したテイエム...
+[2]  → output/script_2.txt 保存 (203文字)
+[2]  プレビュー: 本日の競馬ニュースです。第18回レパードS・G3に出走予定のメルカントゥールが重賞初制覇へ上昇ムードです。ユニコーンS2着のメルカントゥールは、1週前追い切りで...
+  HTTP 200
+[0]  [Gemini生出力 230文字]: '本日の競馬ニュースです。デビュー6年目の永島まなみ騎手が、CBC賞のジェニファーでJRA重賞2勝目を狙います。永島騎手は2年ぶりの重賞2勝目を目指します。02年10月27日生まれの23歳、兵庫県出身で、父は地方・兵庫で元騎手の永島太郎調教師です。21年に栗東・高橋康之厩舎からデビューし、現役の同期には小沢大仁騎手、角田大和騎手、古川奈穂騎手、松本大輝騎手、横山琉人騎手がいます。JRA通算2668戦133勝を挙げており、ルーキーイヤーは7勝にとどまりました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (272文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。2日、サマースプリントシリーズ第3戦の第26回アイビスSDが新潟芝直線1000メートルで行われ、田辺裕信騎乗の1番人気ピューロ...
+[0]  → output/script_0.txt 保存 (230文字)
+[0]  プレビュー: 本日の競馬ニュースです。デビュー6年目の永島まなみ騎手が、CBC賞のジェニファーでJRA重賞2勝目を狙います。永島騎手は2年ぶりの重賞2勝目を目指します。02年...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 250文字]: '今週の競馬注目情報をお伝えします。今週の重賞競走は、土曜日にエルムSのGIII、日曜日にレパードSのGIIIとCBC賞のGIIIが行われます。その中から中京競馬場で行われるCBC賞を取り上げます。本記事ではnetkeibaオリジナルAIが推奨する本命候補3頭を特筆すべき過去の傾向とともにご紹介します。過去10年のCBC賞での前走クラス別成績を見ると、前走でGIII以上に出走していた馬が[2-5-6-45]という成績です。CBC賞の見どころとしては、ディアナザールの重賞初制覇なるかが注目されます。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (250文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。今週の重賞競走は、土曜日にエルムSのGIII、日曜日にレパードSのGIIIとCBC賞のGIIIが行われます。その中から中京競馬...
 
 3 件の脚本を生成しました。
