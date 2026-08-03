@@ -1,10 +1,10 @@
-date: 2026-08-03T04:32:53.548505Z
+date: 2026-08-03T06:31:56.999447Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8J7fBi3rhfQ title=【船橋・習志野きらっとスプリント枠順】JpnI馬ファーンヒルは1枠1番 ダ100
-OK project=1 video_id=IOKmmI8ftws title=ジャックルマロワ賞の海外馬券発売決定　武豊騎手の手綱で挑むシックスペンスとシュト
-OK project=1 video_id=9iImqd9r7wA title=【エルムS】鋭い末脚とコーナリングを武器にヴァルツァーシャルが重賞2勝目を狙う　
+OK project=1 video_id=a9PNwNKRHoo title=【アイビスSD】ピューロマジックV　アンカツさん総評「速すぎた故のヒモ荒れ」「田
+OK project=1 video_id=KsZx7h4-cfk title=【韓国・KRAカップクラシック】コリアカップの前哨戦はレースレコードでカンプンマ
+OK project=1 video_id=liEoF56WJdI title=テイエムオオアラシ死す…33歳　97年カブトヤマ記念、福島記念、98年小倉記念V
