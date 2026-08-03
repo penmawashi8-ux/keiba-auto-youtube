@@ -1,10 +1,10 @@
-date: 2026-08-03T06:31:56.999447Z
+date: 2026-08-03T10:45:31.819442Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=a9PNwNKRHoo title=【アイビスSD】ピューロマジックV　アンカツさん総評「速すぎた故のヒモ荒れ」「田
-OK project=1 video_id=KsZx7h4-cfk title=【韓国・KRAカップクラシック】コリアカップの前哨戦はレースレコードでカンプンマ
-OK project=1 video_id=liEoF56WJdI title=テイエムオオアラシ死す…33歳　97年カブトヤマ記念、福島記念、98年小倉記念V
+OK project=1 video_id=sf2PyFzO0GA title=【CBC賞】永島まなみ騎手が2年ぶりの重賞2勝目へ ジェニファーで参戦だ
+OK project=1 video_id=h018984jctw title=【AI予想・CBC賞】前走の内容から重賞でも十分通用！ 波乱も予感させる人工知能
+OK project=1 video_id=pBMSu4jnCHw title=【レパードS】メルカントゥールは追うごとに上昇　杉山晴調教師「2週前よりまたひと
