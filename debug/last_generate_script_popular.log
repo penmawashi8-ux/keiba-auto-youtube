@@ -1,18 +1,86 @@
+[0]  [ファクトチェックNG] NG: 元記事に「武豊シ
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 元記事に存在しない馬名・
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: ワールドオールスタージョッキーズ出場外国人騎手6人決定　フーリー、ロイド、ナレドゥら ---
-[0] Gemini入力本文 100文字: 'JRAは2日、22日および23日に札幌競馬場で行われる「2026ワールドオールスタージョッキーズ」に出場する外国人騎手(国は主な騎乗国・所属)を発表した。\u3000リチャード・フーリー(40＝南アフリカ)、…'
+--- 記事[0]: 仏ジャックルマロワ賞の馬券発売が決定　武豊シックスペンス、モレイラ騎乗シュトラウスが参戦　JRA発表 ---
+[0] Gemini入力本文 100文字: 'JRAは3日、仏G1ジャックルマロワ賞(16日、ドーヴィル芝直線1600メートル、日本時間22時50分発走予定＝現地時間15時50分)の馬券を発売すると発表した。\u3000日本調教馬は武豊との初コンビで安田…'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 157文字]: '本日の競馬ニュースです。JRAは2日、2026ワールドオールスタージョッキーズに出場する外国人騎手6人を発表しました。このイベントは、22日および23日に札幌競馬場で行われる予定です。出場が決定した外国人騎手の中には、南アフリカを主な騎乗国とするリチャード・フーリー騎手が含まれています。フーリー騎手は40歳です。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (157文字)
-[0]  プレビュー: 本日の競馬ニュースです。JRAは2日、2026ワールドオールスタージョッキーズに出場する外国人騎手6人を発表しました。このイベントは、22日および23日に札幌競...
-
-1 件の脚本を生成しました。
+[0]  [Gemini生出力 185文字]: '今週の競馬注目情報をお伝えします。JRAは、仏G1ジャックルマロワ賞の馬券を発売すると発表しました。このレースは16日、ドーヴィル芝直線1600メートルで行われ、日本時間22時50分発走予定です。現地時間は15時50分となります。日本調教馬からは、武豊騎手との初コンビとなるシックスペンスが参戦します。また、モレイラ騎手騎乗のシュトラウスもこのレースに参戦する予定です。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 4文字]: 'SKIP'
+[0]  → SKIPが返されました。強調プロンプトで再試行します（入力: 100文字）
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 176文字]: '今週の競馬注目情報をお伝えします。JRAは3日、フランスのG1ジャックルマロワ賞の馬券を発売すると発表しました。このレースは16日にドーヴィル芝直線1600メートルで行われ、日本時間では22時50分発走予定、現地時間では15時50分に発走予定です。日本調教馬からは、武豊が初コンビを組むシックスペンス、そしてモレイラが騎乗するシュトラウスが参戦します。'
+[0] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
