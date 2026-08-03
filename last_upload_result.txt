@@ -1,10 +1,10 @@
-date: 2026-08-03T10:45:31.819442Z
+date: 2026-08-03T12:34:06.985549Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=sf2PyFzO0GA title=【CBC賞】永島まなみ騎手が2年ぶりの重賞2勝目へ ジェニファーで参戦だ
-OK project=1 video_id=h018984jctw title=【AI予想・CBC賞】前走の内容から重賞でも十分通用！ 波乱も予感させる人工知能
-OK project=1 video_id=pBMSu4jnCHw title=【レパードS】メルカントゥールは追うごとに上昇　杉山晴調教師「2週前よりまたひと
+OK project=1 video_id=0HRgvmwrR20 title=【エルムS】デビュー2年目の舟山瑠泉騎手がウェイワードアクトと目指す「恩返し」　
+OK project=1 video_id=QTRF4KYJRlg title=【CBC賞】3歳牝馬が軽ハンデを味方に激走へ　サンアントワーヌに鹿戸調教師は「斤
+OK project=1 video_id=NBLIds5vCnU title=「残念でならない...」「好きだったなぁ」「1990年代の脇役」33歳で天国への
