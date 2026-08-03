@@ -1,6 +1,10 @@
-date: 2026-08-02T13:16:39.430357Z
-type: popular_news_landscape
+date: 2026-08-03T04:32:53.548505Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2-SFhfxme14 views=55498 title=ワールドオールスタージョッキーズ出場外国人騎手6人決定　フーリー、ロイド、ナレドゥら【5.5万回閲覧・話題の競馬ニュース
+OK project=1 video_id=8J7fBi3rhfQ title=【船橋・習志野きらっとスプリント枠順】JpnI馬ファーンヒルは1枠1番 ダ100
+OK project=1 video_id=IOKmmI8ftws title=ジャックルマロワ賞の海外馬券発売決定　武豊騎手の手綱で挑むシックスペンスとシュト
+OK project=1 video_id=9iImqd9r7wA title=【エルムS】鋭い末脚とコーナリングを武器にヴァルツァーシャルが重賞2勝目を狙う　
