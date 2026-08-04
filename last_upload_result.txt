@@ -1,10 +1,10 @@
-date: 2026-08-04T04:16:00.728662Z
+date: 2026-08-04T05:51:11.652904Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ge28g_igpL0 title=フォーエバーヤングのライバルがまた電撃引退!サウジCで死闘演じたナイソス　「検査
-OK project=1 video_id=kkXgPwgoUG8 title=ハートレイク産駒唯一のJRA重賞勝ち馬 プレシャスカフェが制した04年CBC賞を
-OK project=1 video_id=yu1yhTjLPdo title=【CBC賞】小崎綾也騎手が8年ぶりJRA重賞制覇へ クラスペディアで一発狙う
+OK project=1 video_id=FU4NH31sG-E title=「どこでもドア」「おそるべし!!」「もしかして双子?」武豊騎手の約300キロ“瞬
+OK project=1 video_id=3Qyvxu_0D44 title=重賞2勝テイエムスパーダが引退…繁殖入り「応援ありがとうございました」芝6Fの日
+OK project=1 video_id=PcMEsyLQ0EY title=今村聖奈騎手と1分5秒8の日本レコードV飾ったテイエムスパーダが現役引退　小椋研
