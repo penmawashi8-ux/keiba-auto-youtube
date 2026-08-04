@@ -1,10 +1,10 @@
-date: 2026-08-04T09:41:43.057706Z
+date: 2026-08-04T11:32:22.625932Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Vu7vZOnnsSE title=【CBC賞】史上3頭目の連覇へ インビンシブルパパが復活期す一戦だ
-OK project=1 video_id=st46ueL8G3w title=【エルムS】先週末移動のテーオーパスワードは函館で調整開始　陣営「少し力んだぐら
-OK project=1 video_id=yjDYWcZ6G0Q title=米国競馬メディアがマスターフェンサー産駒の初勝利を特集　19年のケンタッキーダー
+OK project=1 video_id=RSm4FXbs12I title=「本当に衝撃」「夢をありがとう」記憶にも記録にも名を残した「主役も張れる名脇役」
+OK project=1 video_id=FnyYqrciw7o title=岩手競馬の山本政聡騎手が地方通算2200勝を達成　3兄弟が並んで兄の節目の勝利を
+OK project=1 video_id=heo34fy1-CY title=【エルムS予想オッズ】テーオーパスワードが予想1番人気
