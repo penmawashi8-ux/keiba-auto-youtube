@@ -2382,6 +2382,7 @@ https://news.netkeiba.com/?pid=news_view&no=338602
 https://news.netkeiba.com/?pid=news_view&no=338605
 https://news.netkeiba.com/?pid=news_view&no=338607
 https://news.netkeiba.com/?pid=news_view&no=338618
+https://news.netkeiba.com/?pid=news_view&no=338628
 https://news.netkeiba.com/?pid=news_view&no=338629
 https://news.netkeiba.com/?pid=news_view&no=338630
 https://news.netkeiba.com/?pid=news_view&no=338691
@@ -2401,6 +2402,8 @@ https://news.netkeiba.com/?pid=news_view&no=338736
 https://news.netkeiba.com/?pid=news_view&no=338737
 https://news.netkeiba.com/?pid=news_view&no=338739
 https://news.netkeiba.com/?pid=news_view&no=338740
+https://news.netkeiba.com/?pid=news_view&no=338754
+https://news.netkeiba.com/?pid=news_view&no=338755
 nhk_mile_2026_post_prediction
 nhk_mile_2026_prediction
 oaks_2026_post_prediction

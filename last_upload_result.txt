@@ -1,10 +1,10 @@
-date: 2026-08-04T05:51:11.652904Z
+date: 2026-08-04T09:41:43.057706Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FU4NH31sG-E title=「どこでもドア」「おそるべし!!」「もしかして双子?」武豊騎手の約300キロ“瞬
-OK project=1 video_id=3Qyvxu_0D44 title=重賞2勝テイエムスパーダが引退…繁殖入り「応援ありがとうございました」芝6Fの日
-OK project=1 video_id=PcMEsyLQ0EY title=今村聖奈騎手と1分5秒8の日本レコードV飾ったテイエムスパーダが現役引退　小椋研
+OK project=1 video_id=Vu7vZOnnsSE title=【CBC賞】史上3頭目の連覇へ インビンシブルパパが復活期す一戦だ
+OK project=1 video_id=st46ueL8G3w title=【エルムS】先週末移動のテーオーパスワードは函館で調整開始　陣営「少し力んだぐら
+OK project=1 video_id=yjDYWcZ6G0Q title=米国競馬メディアがマスターフェンサー産駒の初勝利を特集　19年のケンタッキーダー
