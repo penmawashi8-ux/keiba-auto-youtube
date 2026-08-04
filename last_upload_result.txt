@@ -1,10 +1,10 @@
-date: 2026-08-04T11:32:22.625932Z
+date: 2026-08-04T13:08:13.488380Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=RSm4FXbs12I title=「本当に衝撃」「夢をありがとう」記憶にも記録にも名を残した「主役も張れる名脇役」
-OK project=1 video_id=FnyYqrciw7o title=岩手競馬の山本政聡騎手が地方通算2200勝を達成　3兄弟が並んで兄の節目の勝利を
-OK project=1 video_id=heo34fy1-CY title=【エルムS予想オッズ】テーオーパスワードが予想1番人気
+OK project=1 video_id=UIA_xN6Z0x4 title=【エルムS】重賞で2勝2着1回!今年の「北海道男」北村友一騎手とのコンビ　レヴォ
+OK project=1 video_id=unmlfWmOQxU title=【エルムS】昨年のダート2冠ナチュラルライズは調整過程を変えて気配が上昇　陣営「
+OK project=1 video_id=Np1cQvy8_OI title=【今週のトク注新馬】 「今まで乗ったコントレイル産駒の中では一番...」2・6億
