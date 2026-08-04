@@ -1,10 +1,6 @@
-date: 2026-08-04T13:08:13.488380Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-04T14:07:15.001934Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UIA_xN6Z0x4 title=【エルムS】重賞で2勝2着1回!今年の「北海道男」北村友一騎手とのコンビ　レヴォ
-OK project=1 video_id=unmlfWmOQxU title=【エルムS】昨年のダート2冠ナチュラルライズは調整過程を変えて気配が上昇　陣営「
-OK project=1 video_id=Np1cQvy8_OI title=【今週のトク注新馬】 「今まで乗ったコントレイル産駒の中では一番...」2・6億
+OK project=1 video_id=nJ0qQuZNnG4 views=28505 title=米競馬界に激震、全6戦の新3歳王者決定シリーズ創設　プリークネスS排除で伝統の3冠が事実上の解体へ【2.9万回閲覧・話題
