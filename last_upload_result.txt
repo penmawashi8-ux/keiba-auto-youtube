@@ -1,10 +1,10 @@
-date: 2026-08-03T13:47:32.602768Z
+date: 2026-08-04T04:16:00.728662Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zkdbPT-oufM title=【レパードS】「一緒に行けるのならG1でも行きたい」田山旺佑騎手がほれこむショウ
-OK project=1 video_id=M0vSDPAM58Q title=コントレイル産駒のアトミックリーチ 宮田師「いいモノを持っていると思う」/関東馬
-OK project=1 video_id=YmqiMjIFFss title=「ニヤリとさせてくれるわね」「字面が強すぎる」「おめでたい」高知からの“かつてな
+OK project=1 video_id=Ge28g_igpL0 title=フォーエバーヤングのライバルがまた電撃引退!サウジCで死闘演じたナイソス　「検査
+OK project=1 video_id=kkXgPwgoUG8 title=ハートレイク産駒唯一のJRA重賞勝ち馬 プレシャスカフェが制した04年CBC賞を
+OK project=1 video_id=yu1yhTjLPdo title=【CBC賞】小崎綾也騎手が8年ぶりJRA重賞制覇へ クラスペディアで一発狙う
