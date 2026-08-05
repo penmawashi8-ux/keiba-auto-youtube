@@ -1,10 +1,10 @@
-date: 2026-08-05T11:29:38.585049Z
+date: 2026-08-05T12:56:56.543243Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HmJwTBKf73Q title=【ジャックルマロワ賞】シュトラウスが国内最終追い切りで好気配　武井調教師「すごく
-OK project=1 video_id=wioYeopCL5I title=【レパードS】ドンエレクトスは3頭併せでスムーズに反応　荻野極騎手が好感触「動き
-OK project=1 video_id=puk6j7rZ77w title=【中京記念・1週前】久々のマイル戦に挑むカネラフィーナは単走で好タイム　石川裕紀
+OK project=1 video_id=oUXJ-74FEvQ title=【エルムS】ヴァルツァーシャルは好相性の斎藤新騎手を背に力強いフットワーク　「舞
+OK project=1 video_id=8BGFYUHZtWk title=【CBC賞】3歳牝馬のサンアントワーヌが余裕たっぷりの動き　鹿戸調教師は合格点「
+OK project=1 video_id=4KtPVxxKgU8 title=【中京記念・1週前】実績上位のラヴァンダは重賞2勝目へ　コースでしっかり　中村調
