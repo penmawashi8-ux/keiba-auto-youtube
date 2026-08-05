@@ -1,10 +1,10 @@
-date: 2026-08-05T05:50:04.833371Z
+date: 2026-08-05T09:42:56.729970Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=uZPgFUGcJvI title=【兵庫競馬】8月5日から9月11日まで「令和8年熊本地震被災地支援シリーズ」　3
-OK project=1 video_id=TE-2M9a0kys title=【兵庫アーバン競馬】今日から「令和8年熊本地震被災地支援シリーズ」実施
-OK project=1 video_id=3acxv66rIzo title=【アイドルホースオーディション2026】ぬいぐるみ化を勝ち取ったのは…　シリシリ
+OK project=1 video_id=cZSyZVQELa0 title=「競走馬の求められる場所が増えれば」 吉田俊介氏が語る競馬と馬術の“将来”
+OK project=1 video_id=Jw-hE330bbM title=【レパードS】セレクト2億円のショウナンバンライ 史上最高額のJRAダート重賞勝
+OK project=1 video_id=rJZt467I24g title=【エルムS】ペリエールは連覇へ向け楽々と追走併入　陣営「昨年より左右のバランスが
