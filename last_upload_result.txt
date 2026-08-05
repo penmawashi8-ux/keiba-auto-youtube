@@ -1,6 +1,10 @@
-date: 2026-08-04T14:07:15.001934Z
-type: popular_news_landscape
+date: 2026-08-05T04:03:46.287892Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nJ0qQuZNnG4 views=28505 title=米競馬界に激震、全6戦の新3歳王者決定シリーズ創設　プリークネスS排除で伝統の3冠が事実上の解体へ【2.9万回閲覧・話題
+OK project=1 video_id=z1Qbf8nZcbI title=病を乗り越え上村洋行騎手が9年8カ月ぶり重賞制覇 08年CBC賞を振り返る
+OK project=1 video_id=-a1xSFPRS9s title=【レパードS】再び連勝街道へ!　パイロマンサーが坂路でパワフルな動き　吉村調教師
+OK project=1 video_id=8hq7p2qJe-M title=【レパードS】デビュー2年目の田山旺佑騎手 ショウナンバンライで重賞初制覇なるか
