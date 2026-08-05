@@ -1,10 +1,10 @@
-date: 2026-08-05T09:42:56.729970Z
+date: 2026-08-05T11:29:38.585049Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cZSyZVQELa0 title=「競走馬の求められる場所が増えれば」 吉田俊介氏が語る競馬と馬術の“将来”
-OK project=1 video_id=Jw-hE330bbM title=【レパードS】セレクト2億円のショウナンバンライ 史上最高額のJRAダート重賞勝
-OK project=1 video_id=rJZt467I24g title=【エルムS】ペリエールは連覇へ向け楽々と追走併入　陣営「昨年より左右のバランスが
+OK project=1 video_id=HmJwTBKf73Q title=【ジャックルマロワ賞】シュトラウスが国内最終追い切りで好気配　武井調教師「すごく
+OK project=1 video_id=wioYeopCL5I title=【レパードS】ドンエレクトスは3頭併せでスムーズに反応　荻野極騎手が好感触「動き
+OK project=1 video_id=puk6j7rZ77w title=【中京記念・1週前】久々のマイル戦に挑むカネラフィーナは単走で好タイム　石川裕紀
