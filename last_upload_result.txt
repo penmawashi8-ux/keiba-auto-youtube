@@ -1,10 +1,10 @@
-date: 2026-08-05T04:03:46.287892Z
+date: 2026-08-05T05:50:04.833371Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=z1Qbf8nZcbI title=病を乗り越え上村洋行騎手が9年8カ月ぶり重賞制覇 08年CBC賞を振り返る
-OK project=1 video_id=-a1xSFPRS9s title=【レパードS】再び連勝街道へ!　パイロマンサーが坂路でパワフルな動き　吉村調教師
-OK project=1 video_id=8hq7p2qJe-M title=【レパードS】デビュー2年目の田山旺佑騎手 ショウナンバンライで重賞初制覇なるか
+OK project=1 video_id=uZPgFUGcJvI title=【兵庫競馬】8月5日から9月11日まで「令和8年熊本地震被災地支援シリーズ」　3
+OK project=1 video_id=TE-2M9a0kys title=【兵庫アーバン競馬】今日から「令和8年熊本地震被災地支援シリーズ」実施
+OK project=1 video_id=3acxv66rIzo title=【アイドルホースオーディション2026】ぬいぐるみ化を勝ち取ったのは…　シリシリ
