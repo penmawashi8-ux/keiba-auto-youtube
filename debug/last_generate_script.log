@@ -1,46 +1,92 @@
+[2]  [ファクトチェックNG] NG: 元記事に存在しない「
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [ファクトチェックNG] NG: 史上最高額のJRAダ
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[0]: 【兵庫競馬】8月5日から9月11日まで「令和8年熊本地震被災地支援シリーズ」　300万円を義援金として被災地へ ---
-[0] Gemini入力本文 361文字: '園田、姫路競馬を主催する兵庫県競馬組合は8月5日、同日から9月11日まで行われる園田競馬令和8年度11回から13回開催(計18日間)を「令和8年熊本地震被災地支援シリーズ」と題して実施し、同競馬組合の取り組みとして、売得金から各開催ごとに1'
+--- 記事[0]: 「競走馬の求められる場所が増えれば」 吉田俊介氏が語る競馬と馬術の“将来” ---
+[0] Gemini入力本文 575文字: '大盛況のうちに幕を閉じた初開催の馬術大会ノーザンマスターズ・ホースショー。大会を盛り上げた多くの人馬のなかには、今年4月にノーザンホースパーク新社長に就任した吉田俊介氏の姿もあった。サンデーレーシング代表として競馬界を牽引する一方、新たに乗'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【兵庫アーバン競馬】今日から「令和8年熊本地震被災地支援シリーズ」実施 ---
-[1] Gemini入力本文 338文字: '兵庫アーバン競馬(兵庫県競馬組合)は5日、本日から園田競馬場で実施中の園田競馬第11回〜13回開催については「令和8年熊本地震被災地支援シリーズ」とし、兵庫県競馬組合の取り組みとして、売得金から各回100万円、合計300万円を被災地への義援'
+--- 記事[1]: 【レパードS】セレクト2億円のショウナンバンライ 史上最高額のJRAダート重賞勝ち馬になるか ---
+[1] Gemini入力本文 346文字: 'セレクトセールで高額取引されたショウナンバンライ(牡3、栗東・松下武士厩舎)が、レパードステークス(3歳・GIII・ダ1800m)で重賞初制覇を狙う。\n\u3000ショウナンバンライは父オルフェーヴル、母シュガーショック、母の父Candy Rideの'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【アイドルホースオーディション2026】ぬいぐるみ化を勝ち取ったのは…　シリシリ、アルしゃん、はるおの3頭 ---
-[2] Gemini入力本文 366文字: '8月5日、「アイドルホースオーディション2026」の最終発表が特設サイトで発表された。\n\t\t\t\t\u3000アイドルホースオーディションは、まだぬいぐるみ化されていない馬を、ファン投票によりぬいぐるみ化する企画。21年から毎年実施され、「推し活」が流'
+--- 記事[2]: 【エルムS】ペリエールは連覇へ向け楽々と追走併入　陣営「昨年より左右のバランスが改善した」 ---
+[2] Gemini入力本文 349文字: '◆第31回エルムS・G3(8月8日、札幌競馬場・ダート1700メートル)追い切り＝8月4日、札幌競馬場\n\t\t\t\t\u3000昨年の覇者ペリエール(牡6歳、美浦・黒岩陽一厩舎、父へニーヒューズ)は、ダートコースで併せ馬を実施。ローズマイスター(4歳1勝'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 239文字]: '競馬ファン注目の情報です。第31回エルムS・G3は8月8日に札幌競馬場・ダート1700メートルで行われます。このレースに向けた追い切りが8月4日、札幌競馬場で実施されました。昨年の覇者であるペリエールは、ダートコースで併せ馬を行いました。ローズマイスターを1馬身余り追走し、直線では内に進路を取り、馬なりのまま脚色優勢で併入を果たしています。その動きは軽快そのもので、態勢は整ったと言っていいでしょう。騎乗した松原助手は「昨年より左右のバランスが改善した」とコメントしています。'
+  HTTP 200
+[1]  [Gemini生出力 276文字]: '競馬速報です。セレクトセールで高額取引されたショウナンバンライが、レパードステークスで重賞初制覇を狙います。3歳・GIII・ダート1800mのこのレースで、ショウナンバンライは史上最高額のJRAダート重賞勝ち馬になるか注目されます。ショウナンバンライは父オルフェーヴル、母シュガーショック、母の父Candy Rideの血統です。母は米のG3勝ち馬であり、全兄のラーゴムは21年のきさらぎ賞を、半兄のエコロブルームは24年のニュージーランドTを制しています。馬主は国本哲秀氏、生産者は北海道安平町のノーザンファームで、栗東の松下武士厩舎に所属しています。'
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 228文字]: '競馬速報です。園田、姫路競馬を主催する兵庫県競馬組合は8月5日、同日から9月11日まで行われる園田競馬令和8年度11回から13回開催、計18日間を「令和8年熊本地震被災地支援シリーズ」として実施すると発表しました。この取り組みとして、同競馬組合は売得金から各開催ごとに100万円、合計300万円を被災地への義援金として寄贈します。組合は、このたびの甚大な被害に対し、少しでもお役に立ちたいという兵庫県競馬組合関係者の思いから、今回の支援を行うとしています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (228文字)
-[0]  プレビュー: 競馬速報です。園田、姫路競馬を主催する兵庫県競馬組合は8月5日、同日から9月11日まで行われる園田競馬令和8年度11回から13回開催、計18日間を「令和8年熊本...
+[0]  [Gemini生出力 361文字]: 'レース関連の最新情報です。初開催の馬術大会ノーザンマスターズ・ホースショーが大盛況のうちに幕を閉じました。ノーザンホースパーク新社長の吉田俊介氏も大会に参加し、競馬と馬術の将来について語っています。吉田氏はサンデーレーシング代表として競馬界を牽引しつつ、乗馬や馬文化を広げる役割も担うことになりました。武豊騎手は馬術イベントのトークショーで「引退競走馬は他人事ではない」と発言しました。RRC滋賀大会にはJRA重賞勝ち馬2頭と現役ジョッキー4名が登場しました。4月29日、30日には滋賀県で「サラブレッドホースショー ザ・セカンドキャリア」が開催され、武豊騎手ら多くの現役騎手も登場予定です。20日、21日には三木ホースランドパークで総合馬術イベントが行われ、ウマ娘ブラストワンピースのコラボカード配布も予定されています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (361文字)
+[0]  プレビュー: レース関連の最新情報です。初開催の馬術大会ノーザンマスターズ・ホースショーが大盛況のうちに幕を閉じました。ノーザンホースパーク新社長の吉田俊介氏も大会に参加し、...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 204文字]: '最新のレース情報が入ってきました。\n兵庫アーバン競馬は本日5日、園田競馬場で実施中の園田競馬第11回から第13回開催を「令和8年熊本地震被災地支援シリーズ」として実施すると発表しました。兵庫県競馬組合の取り組みとして、売得金から各回100万円、合計300万円を被災地への義援金として寄贈するということです。これは、甚大な被害に対し少しでもお役に立ちたいという兵庫県競馬組合関係者の思いから開催されるものです。'
-[1]  [重複除去] 204文字 → 203文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (203文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。兵庫アーバン競馬は本日5日、園田競馬場で実施中の園田競馬第11回から第13回開催を「令和8年熊本地震被災地支援シリーズ」として...
-  HTTP 200
-[2]  [Gemini生出力 229文字]: 'レース関連の最新情報です。アイドルホースオーディション2026の最終発表が8月5日に特設サイトで発表されました。この企画は、まだぬいぐるみ化されていない馬をファン投票によりぬいぐるみ化するもので、2021年から毎年実施され、「推し活」が流行する競馬ファンの間で大注目のイベントです。7月22日にファイナリスト8頭が選出されていましたが、ぬいぐるみの権利を得られるのは上位3頭でした。今回、ぬいぐるみ化を勝ち取ったのは、シリシリ、アルしゃん、はるおの3頭です。'
+[2]  [Gemini生出力 262文字]: '競馬ファン注目の情報です。第31回エルムS・G3は8月8日、札幌競馬場ダート1700メートルで開催されます。このレースに向けた追い切りが8月4日に札幌競馬場で行われました。昨年の覇者ペリエールは、ダートコースで併せ馬を実施。ローズマイスターを1馬身余り追走すると、直線では内に進路を取り馬なりのまま脚色優勢で併入を果たしました。動きは軽快そのもので、態勢は整ったと言っていいでしょう。騎乗した松原助手は「しまいまで持った...」とコメントしています。陣営からは「昨年より左右のバランスが改善した」との情報も伝えられています。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (229文字)
-[2]  プレビュー: レース関連の最新情報です。アイドルホースオーディション2026の最終発表が8月5日に特設サイトで発表されました。この企画は、まだぬいぐるみ化されていない馬をファ...
+[2]  → output/script_2.txt 保存 (259文字)
+[2]  プレビュー: 競馬ファン注目の情報です。第31回エルムS・G3は8月8日、札幌競馬場ダート1700メートルで開催されます。このレースに向けた追い切りが8月4日に札幌競馬場で行...
+  HTTP 200
+[1]  [Gemini生出力 271文字]: '競馬速報です。セレクトセールで高額取引されたショウナンバンライが、レパードステークスで重賞初制覇を狙います。この牡3は栗東の松下武士厩舎に所属し、3歳・GIII・ダート1800mのレパードステークスに出走予定です。\n\nショウナンバンライの血統は、父がオルフェーヴル、母がシュガーショック、母の父がCandy Rideです。母シュガーショックはアメリカのG3勝ち馬で、全兄ラーゴムは2021年のきさらぎ賞を、半兄エコロブルームは2024年のニュージーランドトロフィーを制しています。馬主は国本哲秀氏、生産者は北海道安平町のノーザンファームです。'
+[1]  [重複除去] 271文字 → 269文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (269文字)
+[1]  プレビュー: 競馬速報です。セレクトセールで高額取引されたショウナンバンライが、レパードステークスで重賞初制覇を狙います。この牡3は栗東の松下武士厩舎に所属し、3歳・GIII...
 
 3 件の脚本を生成しました。
