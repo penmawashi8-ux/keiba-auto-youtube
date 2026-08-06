@@ -1,10 +1,6 @@
-date: 2026-08-06T13:01:11.069691Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-06T14:02:43.379760Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=L0rmJkDGW5Y title=【地方競馬】習志野きらっとスプリント　波乱決着！１１番人気のメンコイボクチャンが
-OK project=1 video_id=g0lC6y85w-8 title=【船橋競馬　スポニチ賞習志野きらっとスプリント】伏兵メンコイボクチャンがV　41
-OK project=1 video_id=b-0iHlF8G24 title=かわいすぎる珍名馬が船橋で大激走　11番人気メンコイボクチャンがV　3連単38万
+OK project=1 video_id=D3WQwfV37cY views=45969 title=高杉吏麒騎手が栗東・藤岡健一厩舎から栗東・フリーへ所属変更【4.6万回閲覧・話題の競馬ニュース】
