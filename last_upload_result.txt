@@ -1,10 +1,10 @@
-date: 2026-08-06T11:30:25.329696Z
+date: 2026-08-06T13:01:11.069691Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yxl89XniXRw title=【注目馬動向】府中牝馬S14着のヴァルキリーバースは京成杯AHで巻き返しへ　サン
-OK project=1 video_id=Mb4LB-EeIlU title=「令和のファインモーションになれるか!」「ここは通過点で」「どこまで行けるかは…
-OK project=1 video_id=FhMDoICbqmI title=【注目馬動向】アイビスSD6着エコロレジーナは10月のルミエールADへ　菊沢調教
+OK project=1 video_id=L0rmJkDGW5Y title=【地方競馬】習志野きらっとスプリント　波乱決着！１１番人気のメンコイボクチャンが
+OK project=1 video_id=g0lC6y85w-8 title=【船橋競馬　スポニチ賞習志野きらっとスプリント】伏兵メンコイボクチャンがV　41
+OK project=1 video_id=b-0iHlF8G24 title=かわいすぎる珍名馬が船橋で大激走　11番人気メンコイボクチャンがV　3連単38万
