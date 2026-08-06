@@ -1,10 +1,10 @@
-date: 2026-08-06T09:43:31.959818Z
+date: 2026-08-06T11:30:25.329696Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kCLvu_J2Ikw title=【札幌記念・1週前】マジックサンズは横山和生騎手騎乗でシャープな伸び　陣営「明ら
-OK project=1 video_id=2ts1bORGFL0 title=【兵庫アーバン競馬】令和8年熊本地震の被災者支援のため8月7日に兵庫県所属騎手が
-OK project=1 video_id=PDFNAhUyaEc title=快足ピューロマジックの半妹 メジェグレイスがデビュー勝ち狙う
+OK project=1 video_id=yxl89XniXRw title=【注目馬動向】府中牝馬S14着のヴァルキリーバースは京成杯AHで巻き返しへ　サン
+OK project=1 video_id=Mb4LB-EeIlU title=「令和のファインモーションになれるか!」「ここは通過点で」「どこまで行けるかは…
+OK project=1 video_id=FhMDoICbqmI title=【注目馬動向】アイビスSD6着エコロレジーナは10月のルミエールADへ　菊沢調教
