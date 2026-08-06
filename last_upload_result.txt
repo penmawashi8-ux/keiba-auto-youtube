@@ -1,6 +1,10 @@
-date: 2026-08-05T14:04:07.786153Z
-type: popular_news_landscape
+date: 2026-08-06T04:14:42.765952Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=c9PyWn5oIc8 views=66028 title=【札幌記念想定】アドマイヤテラ、グランディアなど15頭【6.6万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=2IVv9DRL1Uw title=シリーズ戦から除外された米2冠目のプリークネスSが日程変更　それでも米3冠は中2
+OK project=1 video_id=oaG0KupcfZg title=高杉吏麒騎手が6日からフリーに転向　デビュー3年目の今年は7月19日まで38勝マ
+OK project=1 video_id=7U0nohu-7kU title=【札幌記念・1週前】北の大地で初コンタクト　坂井瑠星騎手がアドマイヤテラに騎乗「
