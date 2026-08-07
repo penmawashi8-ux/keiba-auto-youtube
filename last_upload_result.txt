@@ -1,10 +1,10 @@
-date: 2026-08-07T10:10:40.394464Z
+date: 2026-08-07T11:49:28.414540Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=axEbHNxrZfg title=マカヒキ産駒のJRA初陣 リリーギャラクシーに要注目だ
-OK project=1 video_id=7QFPqY9iw3o title=【阪神アーバン競馬】兵庫県騎手会の小谷周平会長ら騎手16人が「令和8年熊本地震」
-OK project=1 video_id=v2mZJS-F0EY title=【POG】藤田晋オーナーの1・9億円フライトライン産駒オールシティキングは秋の中
+OK project=1 video_id=8WiRbs1iXE0 title=【ジャックルマロワ賞】日本馬は1998年にタイキシャトルが初制覇　今年はシックス
+OK project=1 video_id=h4T-daEo4zE title=【札幌＆新潟＆中京の危険な人気馬】テーオーパスワード　札幌11Ｒ・エルムＳ
+OK project=1 video_id=Aaq2f6jplJY title=【POG】ツキミはお月見前のデビューが濃厚も好気配　陣営「初戦からやれそうな感じ
