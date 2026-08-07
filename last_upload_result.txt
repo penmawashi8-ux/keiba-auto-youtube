@@ -1,10 +1,10 @@
-date: 2026-08-07T05:03:59.459620Z
+date: 2026-08-07T08:18:37.707131Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tteKoKDgrjA title=【シャーガーC】武豊騎手とルメール騎手の騎乗馬が決定!　各チームの出場騎手も　J
-OK project=1 video_id=Um4xdu0uIVY title=【レパードS・金曜気配】重賞初制覇へマクリール陣営のトーンが急上昇　手塚久調教師
-OK project=1 video_id=VsvwTTUQA8w title=【エルムS・金曜気配】ウェイワードアクトは輸送直前もコースで入念　舟山瑠泉騎手「
+OK project=1 video_id=6_YnKbmVi_U title=08年の東海Sで衝撃の単勝万馬券V　3連単513万円超を演出した記憶に残る二刀流
+OK project=1 video_id=uKqBO18iZvU title=【注目馬動向】佐賀で重賞7勝のサキドリトッケンはスポーツ報知杯ロータスクラウン賞
+OK project=1 video_id=cOhCBTkIbKk title=3厩舎で活躍したテイエムスパーダが競走馬登録抹消　今後は繁殖入りの予定
