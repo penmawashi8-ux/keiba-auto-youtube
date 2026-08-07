@@ -1,6 +1,10 @@
-date: 2026-08-06T14:02:43.379760Z
-type: popular_news_landscape
+date: 2026-08-07T03:52:41.883448Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=D3WQwfV37cY views=45969 title=高杉吏麒騎手が栗東・藤岡健一厩舎から栗東・フリーへ所属変更【4.6万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=HK-zShhSCuk title=【レパードS・金曜気配】タガノアバンドーネが一発あるぞ　角田調教師「強いメンバー
+OK project=1 video_id=BRJjY2PMGMc title=【エルムS・金曜気配】テーオーパスワードは今週復帰の松山弘平騎手が最終調整に騎乗
+OK project=1 video_id=hqr1LzLuLXU title=【CBC賞・金曜気配】サンアントワーヌが軽快に絶好の最終調整　鹿戸調教師「気持ち
