@@ -1,10 +1,10 @@
-date: 2026-08-07T08:18:37.707131Z
+date: 2026-08-07T10:10:40.394464Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6_YnKbmVi_U title=08年の東海Sで衝撃の単勝万馬券V　3連単513万円超を演出した記憶に残る二刀流
-OK project=1 video_id=uKqBO18iZvU title=【注目馬動向】佐賀で重賞7勝のサキドリトッケンはスポーツ報知杯ロータスクラウン賞
-OK project=1 video_id=cOhCBTkIbKk title=3厩舎で活躍したテイエムスパーダが競走馬登録抹消　今後は繁殖入りの予定
+OK project=1 video_id=axEbHNxrZfg title=マカヒキ産駒のJRA初陣 リリーギャラクシーに要注目だ
+OK project=1 video_id=7QFPqY9iw3o title=【阪神アーバン競馬】兵庫県騎手会の小谷周平会長ら騎手16人が「令和8年熊本地震」
+OK project=1 video_id=v2mZJS-F0EY title=【POG】藤田晋オーナーの1・9億円フライトライン産駒オールシティキングは秋の中
