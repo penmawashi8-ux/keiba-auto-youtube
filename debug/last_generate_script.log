@@ -1,45 +1,108 @@
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[0]: 【レパードS・金曜気配】タガノアバンドーネが一発あるぞ　角田調教師「強いメンバーとやってきているから」 ---
-[0] Gemini入力本文 348文字: '◆第18回レパードS・G3(8月9日、新潟競馬場・ダート1800メートル)＝8月7日、栗東トレセン\n\t\t\t\t\u3000タガノアバンドーネ(牡3歳、栗東・角田晃一厩舎、父モズアスコット)は、坂路をゆっくりと上がった。落ち着いた様子で、体の張りもいい。'
+--- 記事[0]: 【シャーガーC】武豊騎手とルメール騎手の騎乗馬が決定!　各チームの出場騎手も　JRA発表 ---
+[0] Gemini入力本文 341文字: 'JRAは8月7日、世界の名手12人が集う国際騎手招待競走「ドバイデューティフリーシャーガーカップ」(8月8日、イギリス・アスコット競馬場)の出場予定騎手ならびにJRA所属の武豊騎手＝栗東・フリー＝、クリストフ・ルメール騎手＝栗東・フリー＝の'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 【エルムS・金曜気配】テーオーパスワードは今週復帰の松山弘平騎手が最終調整に騎乗　「足はもう問題ありません」 ---
-[1] Gemini入力本文 346文字: '◆第31回エルムS・G3(8月8日、札幌競馬場・ダート1700メートル)＝8月7日、札幌競馬場\n\t\t\t\t\u3000前走のアハルテケSが4馬身差の快勝だったテーオーパスワード(牡5歳、栗東・高柳大輔厩舎、父コパノリッキー)は、滞在先の函館から6日に現'
+--- 記事[1]: 【レパードS・金曜気配】重賞初制覇へマクリール陣営のトーンが急上昇　手塚久調教師「体調はすごくいいですね」 ---
+[1] Gemini入力本文 350文字: '◆第18回レパードS・G3(8月9日、新潟競馬場・ダート1800メートル)＝8月7日、美浦トレセン\n\t\t\t\t\u3000初めて古馬相手の対決だった前走の小金井特別で勝利して勢いづくマクリール(牡3歳、美浦・手塚貴久厩舎、父ロードカナロア)は8月7日、'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[2]: 【CBC賞・金曜気配】サンアントワーヌが軽快に絶好の最終調整　鹿戸調教師「気持ち良く走っていたね」 ---
-[2] Gemini入力本文 352文字: '◆第62回CBC賞・G3(8月9日、中京競馬場・芝1200メートル)＝8月7日、美浦トレセン\n\t\t\t\t\u3000サマースプリントシリーズ第4戦となるハンデ重賞で、唯一の3歳牝馬として参戦するサンアントワーヌ(牝3歳、美浦・鹿戸雄一厩舎、父ドレフォン'
+--- 記事[2]: 【エルムS・金曜気配】ウェイワードアクトは輸送直前もコースで入念　舟山瑠泉騎手「当日に落ち着いたテンションで臨めれば」 ---
+[2] Gemini入力本文 347文字: '◆第31回エルムS・G3(8月8日、札幌競馬場・ダート1700メートル)＝8月7日、函館競馬場\n\t\t\t\t\u3000前走のマリーンSを3馬身半差で圧勝し、勢いに乗るウェイワードアクト(牡6歳、美浦・田中博康厩舎、父マクレーンズミュージック)は札幌への'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
   HTTP 200
-[0]  [Gemini生出力 226文字]: '今日の競馬情報です。第18回レパードS・G3は8月9日に新潟競馬場ダート1800メートルで行われます。8月7日、栗東トレセンでタガノアバンドーネが坂路をゆっくりと上がりました。落ち着いた様子で、体の張りも良い状態です。角田晃一調教師は「在厩調整で順調に来ています。暑さもこの馬は大丈夫ですよ」とコメントしました。タガノアバンドーネは骨折明けの鳳雛Sでは5着に敗れましたが、前走の2勝クラスでは古馬を相手に完勝しており、能力は十分にあると見られています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (226文字)
-[0]  プレビュー: 今日の競馬情報です。第18回レパードS・G3は8月9日に新潟競馬場ダート1800メートルで行われます。8月7日、栗東トレセンでタガノアバンドーネが坂路をゆっくり...
-  HTTP 200
-[2]  [Gemini生出力 189文字]: 'レース関連の最新情報です。\nサマースプリントシリーズ第4戦となるハンデ重賞、第62回CBC賞・G3についてです。唯一の3歳牝馬として参戦するサンアントワーヌが、8月7日に美浦トレセンで最終調整を済ませました。輸送を翌日に控えたこの日、美浦・坂路を60秒3―13秒9で素軽く駆け上がり、仕上がりの良さをアピールしています。鹿戸調教師は「気持ち良く走っていたね」とコメントしました。'
-[2]  [重複除去] 189文字 → 188文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (188文字)
-[2]  プレビュー: レース関連の最新情報です。サマースプリントシリーズ第4戦となるハンデ重賞、第62回CBC賞・G3についてです。唯一の3歳牝馬として参戦するサンアントワーヌが、8...
-  HTTP 200
-[1]  [Gemini生出力 264文字]: '最新情報をお届けします。第31回エルムS・G3は8月8日に札幌競馬場のダート1700メートルで発走します。前走のアハルテケSを4馬身差で快勝したテーオーパスワードは、牡5歳で栗東の高柳大輔厩舎に所属しています。この馬は滞在先の函館から6日に現地入りし、8月7日には松山弘平騎手が最終確認のため騎乗しました。松山騎手は「輸送から、すぐ馬場入りしたので競馬と勘違いして少しイレ込みましたが、長く乗って最後は落ち着いてくれました。いい有酸素運動が…」とコメントしています。また、松山弘平騎手は「足はもう問題ありません」と話しています。'
-[1]  [redirectフィルター] 264文字 → 252文字
+[1]  [Gemini生出力 236文字]: '最新のレース情報が入ってきました。第18回レパードS・G3は8月9日に新潟競馬場ダート1800メートルで行われます。重賞初制覇を目指すマクリールは、初めて古馬相手の対決だった前走の小金井特別で勝利し、勢いづいています。8月7日には美浦トレセンで最終調整を済ませ、追い切り後の出来の良さが目を引きました。輸送を翌日に控えたこの日、朝一番に美浦・坂路を69秒3―16秒8で駆け上がり、元気いっぱいの雰囲気でした。手塚貴久調教師は「体調はすごくいいですね」とコメントしています。'
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (251文字)
-[1]  プレビュー: 第31回エルムS・G3は8月8日に札幌競馬場のダート1700メートルで発走します。前走のアハルテケSを4馬身差で快勝したテーオーパスワードは、牡5歳で栗東の高柳...
+[1]  → output/script_1.txt 保存 (236文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。第18回レパードS・G3は8月9日に新潟競馬場ダート1800メートルで行われます。重賞初制覇を目指すマクリールは、初めて古馬相...
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 210文字]: '注目の競馬情報をお届けします。第31回エルムS・G3は8月8日に札幌競馬場ダート1700メートルで発走します。レース前日の8月7日、函館競馬場では、前走のマリーンSを3馬身半差で圧勝し勢いに乗るウェイワードアクトが、札幌への輸送を控え朝一番のダートコースで最終調整を行いました。この日も手綱を執った舟山瑠泉騎手は「バランスだけを整えるような感じです」と述べ、「当日に落ち着いたテンションで臨めれば」とコメントしています。'
+[2]  [redirectフィルター] 210文字 → 195文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (195文字)
+[2]  プレビュー: 第31回エルムS・G3は8月8日に札幌競馬場ダート1700メートルで発走します。レース前日の8月7日、函館競馬場では、前走のマリーンSを3馬身半差で圧勝し勢いに...
+  HTTP 200
+[0]  [Gemini生出力 224文字]: '重要な競馬ニュースをお伝えします。JRAは8月7日、世界の名手12人が集う国際騎手招待競走「ドバイデューティフリーシャーガーカップ」の出場予定騎手と、JRA所属の武豊騎手、クリストフ・ルメール騎手の騎乗馬を発表しました。この競走は8月8日にイギリスのアスコット競馬場で開催される予定です。各チームの出場予定騎手も公開され、ヨーロッパ選抜にはクリストフ・ルメール騎手がキャプテンとして、マリー・ヴェロン騎手、フリーダ・ヴァレス騎手が出場する予定です。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (224文字)
+[0]  プレビュー: 重要な競馬ニュースをお伝えします。JRAは8月7日、世界の名手12人が集う国際騎手招待競走「ドバイデューティフリーシャーガーカップ」の出場予定騎手と、JRA所属...
 
 3 件の脚本を生成しました。
