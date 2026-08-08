@@ -1,8 +1,8 @@
-date: 2026-08-07T14:09:29.361838Z
+date: 2026-08-08T13:42:24.790647Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JtqlMwqZstk
-source_short=VsvwTTUQA8w views=949
-title=8月7日 【エルムS・金曜気配】ウェイワードアクトは輸送直前もコースで入念　舟山瑠泉騎手「当日に落ち着いたテンションで臨
+OK project=1 video_id=8FUNT0eQBD8
+source_short=_lrIKveEc5Y views=1075
+title=8月8日 今村聖奈が負傷　新潟9R以降の4鞍で乗り代わり　札幌6Rでは同期・佐々木も
