@@ -1,93 +1,43 @@
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [ファクトチェックNG] NG: 9月7日に米遠
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[0]: 【2歳未勝利札幌2Rレース後コメント】チカバリエンテ小林美駒騎手ら ---
-[0] Gemini入力本文 345文字: '札幌2Rの2歳未勝利(芝1500m)は1番人気チカバリエンテ(小林美駒騎手)が勝利した。勝ちタイムは1分30秒1(稍重)。ハナ差の2着に9番人気ジャストワナフライ、さらにクビ差の3着に8番人気ルギッドドランジュが入った。\n\u3000チカバリエンテは'
+--- 記事[0]: 【藻岩山特別レース後コメント】ビーオンザカバー横山武史騎手ら ---
+[0] Gemini入力本文 345文字: '札幌10Rの藻岩山特別(3歳以上2勝クラス・芝2000m)は1番人気ビーオンザカバー(横山武史騎手)が勝利した。勝ちタイムは2分0秒8(稍重)。半馬身差の2着に5番人気バルティカ、さらに2馬身半差の3着に7番人気エボルヴィングが入った。\nビ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【レパードS予想】豊富なレース経験よりもフレッシュさが重要!? 人気でも様々な不安要素を抱えている軽視すべき一頭とは ---
-[1] Gemini入力本文 443文字: '今週の日曜日は、新潟競馬場でレパードステークス(GIII・ダート1800m)が行われます。\n\u3000まだまだキャリアの浅い3歳同士による一戦は、豊富なレース経験というのが大きな武器になることがあります。しかし、レパードSはレース経験よりもフレッシ'
+--- 記事[1]: 【エルムSレース後コメント】ルクソールカフェ岩田望来騎手ら ---
+[1] Gemini入力本文 371文字: '札幌11Rの第31回エルムステークス(3歳以上GIII・ダート1700m)は3番人気ルクソールカフェ(岩田望来騎手)が勝利した。勝ちタイムは1分43秒8(稍重)。1馬身半差の2着に4番人気ペリエール、さらに3/4馬身差の3着に2番人気テーオ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[2]: ラストシーズンのフォーエバーヤングが函館に帰厩　9月7日に米遠征へ出国　矢作調教師「もう一段、いい体になりました」 ---
-[2] Gemini入力本文 345文字: '9月の米遠征からラストシーズンを迎えるフォーエバーヤング(牡5歳、栗東・矢作芳人厩舎、父リアルスティール)が8月8日、函館競馬場へ入厩した。\n\t\t\t\t\u3000今秋はまずジョッキークラブゴールドC・G1(9月18日、ベルモントパーク競馬場)からブリ'
+--- 記事[2]: 秋華賞戦線にまたも有力候補誕生にネット反応「幻のオークス馬」「楽しみ過ぎる」　ラベルセーヌが3勝目をゲット ---
+[2] Gemini入力本文 352文字: '秋の3歳牝馬路線にまたまた有望な新星が現れた。8月8日に行われた新潟6R・三面川特別(3歳上2勝クラス、芝1800メートル＝10頭立て)は、キャリア3戦で1番人気に推されたラベルセーヌ(牝3歳、美浦・鹿戸雄一厩舎、父キズナ)が古馬相手に2馬'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 232文字]: '最新のレース情報が入ってきました。\n札幌2Rの2歳未勝利、芝1500mは1番人気のチカバリエンテが小林美駒騎手と共に勝利しました。勝ちタイムは稍重の馬場で1分30秒1でした。ハナ差の2着には9番人気のジャストワナフライが入り、さらにクビ差の3着には8番人気のルギッドドランジュが入着しています。勝利したチカバリエンテは栗東の藤野健太厩舎に所属する2歳牝馬です。父はシルバーステート、母はスペクターで、母の父はエンパイアメーカーです。通算成績は4戦1勝となりました。'
-[0]  [重複除去] 232文字 → 231文字
-  HTTP 200
-[2]  [Gemini生出力 266文字]: '重要な競馬ニュースをお伝えします。ラストシーズンを迎えるフォーエバーヤングが、8月8日に函館競馬場へ入厩しました。この牡5歳のフォーエバーヤングは、9月7日に米遠征へ出国する予定です。今秋はまず、9月18日にベルモントパーク競馬場で行われるジョッキークラブゴールドC・G1から、10月31日にキーンランド競馬場で行われるブリーダーズCクラシックへの転戦を予定しています。3月のドバイワールドCで3着となった後は、北海道のノーザンファーム早来へ放牧に出されていました。矢作調教師は「もう一段、いい体になりました」とコメントしています。'
+[0]  [Gemini生出力 213文字]: '競馬速報です。札幌10Rの藻岩山特別は、1番人気のビーオンザカバーが横山武史騎手で勝利しました。勝ちタイムは稍重の2分0秒8でした。半馬身差の2着には5番人気のバルティカが入り、さらに2馬身半差の3着には7番人気のエボルヴィングが入着しています。勝利したビーオンザカバーは、美浦の伊藤圭三厩舎に所属する4歳牡馬です。父はハービンジャー、母はセレブリティモデルで、母の父はキングカメハメハです。通算成績は15戦3勝となりました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (231文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。札幌2Rの2歳未勝利、芝1500mは1番人気のチカバリエンテが小林美駒騎手と共に勝利しました。勝ちタイムは稍重の馬場で1分30...
+[0]  → output/script_0.txt 保存 (213文字)
+[0]  プレビュー: 競馬速報です。札幌10Rの藻岩山特別は、1番人気のビーオンザカバーが横山武史騎手で勝利しました。勝ちタイムは稍重の2分0秒8でした。半馬身差の2着には5番人気の...
   HTTP 200
-[1]  [Gemini生出力 4文字]: 'SKIP'
-[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 443文字）
-[1] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
-[2] 使用: key=***189Y model=gemini-2.5-flash
+[2]  [Gemini生出力 262文字]: 'レース関連の最新情報です。秋の3歳牝馬路線に有望な新星が現れました。8月8日に行われた新潟6R・三面川特別は、キャリア3戦で1番人気に推されたラベルセーヌが古馬相手に2馬身差で快勝しました。芝1800メートル、10頭立てで行われたこのレースで、荻野極騎手を背に8番枠から五分のスタートを切ったラベルセーヌは、秋華賞・G1への道をこじ開けたニュースターとしてSNS上での注目度が上がっています。ネット上では「幻のオークス馬」「楽しみ過ぎる」といった反応が見られます。秋華賞は10月18日に京都・芝2000メートルで行われます。'
   HTTP 200
-[2]  [Gemini生出力 277文字]: '重要な競馬ニュースをお伝えします。\nラストシーズンを迎えるフォーエバーヤングが、9月の米遠征を前に8月8日に函館競馬場へ入厩しました。フォーエバーヤングは9月7日に米遠征へ出国する予定です。今秋はまず、9月18日にベルモントパーク競馬場で行われるジョッキークラブゴールドC・G1から、10月31日にキーンランド競馬場で行われるブリーダーズCクラシックへの転戦が予定されています。3月のドバイワールドCで3着となった後は、北海道のノーザンファーム早来へ放牧に出されていました。前日に牧場を訪れた矢作調教師は、「もう一段、いい体になりました」と話しています。'
-[2]  [重複除去] 277文字 → 276文字
+[1]  [Gemini生出力 271文字]: "注目の競馬情報をお届けします。\n札幌11Rの第31回エルムステークスは、3歳以上GIII・ダート1700mで行われました。このレースでは、3番人気のルクソールカフェが岩田望来騎手と共に勝利を飾りました。勝ちタイムは稍重の馬場で1分43秒8でした。2着には1馬身半差で4番人気のペリエールが入り、さらに3/4馬身差の3着には2番人気のテーオーパスワードが入着しました。勝利したルクソールカフェは、美浦の堀宣行厩舎に所属する4歳牡馬です。父はAmerican Pharoah、母はMary's Folliesで、通算成績は13戦6勝となりました。"
+[1]  [redirectフィルター] 271文字 → 255文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (276文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。ラストシーズンを迎えるフォーエバーヤングが、9月の米遠征を前に8月8日に函館競馬場へ入厩しました。フォーエバーヤングは9月7日...
-  HTTP 200
-[1]  [Gemini生出力 190文字]: '本日の競馬ニュースです。今週の日曜日は、新潟競馬場でレパードステークス(GIII・ダート1800m)が行われます。キャリアの浅い3歳同士による一戦は、豊富なレース経験が大きな武器になることもありますが、レパードステークスはレース経験よりもフレッシュさが重要な一戦と言えます。過去10年のレパードステークスで3着以内に入った30頭のうち、27頭がキャリア8戦以内の馬となっています。'
+[2]  → output/script_2.txt 保存 (262文字)
+[2]  プレビュー: レース関連の最新情報です。秋の3歳牝馬路線に有望な新星が現れました。8月8日に行われた新潟6R・三面川特別は、キャリア3戦で1番人気に推されたラベルセーヌが古馬...
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (190文字)
-[1]  プレビュー: 本日の競馬ニュースです。今週の日曜日は、新潟競馬場でレパードステークス(GIII・ダート1800m)が行われます。キャリアの浅い3歳同士による一戦は、豊富なレー...
+[1]  → output/script_1.txt 保存 (255文字)
+[1]  プレビュー: 札幌11Rの第31回エルムステークスは、3歳以上GIII・ダート1700mで行われました。このレースでは、3番人気のルクソールカフェが岩田望来騎手と共に勝利を飾...
 
 3 件の脚本を生成しました。
