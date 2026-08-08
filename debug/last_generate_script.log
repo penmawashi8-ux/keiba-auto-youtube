@@ -1,45 +1,93 @@
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [ファクトチェックNG] NG: 9月7日に米遠
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 今村聖奈が負傷　新潟9R以降の4鞍で乗り代わり　札幌6Rでは同期・佐々木も ---
-[0] Gemini入力本文 346文字: '今村聖奈(22＝寺島)が8日、負傷のため新潟9R以降に騎乗予定だった4鞍で乗り代わりとなることが発表された。\n\u30004R馬場入場の際に、騎乗していたセイウンヤオヨロズが放馬、競走除外となっていた。続く5Rでは2番人気キタノドンカルロに騎乗してい'
+--- 記事[0]: 【2歳未勝利札幌2Rレース後コメント】チカバリエンテ小林美駒騎手ら ---
+[0] Gemini入力本文 345文字: '札幌2Rの2歳未勝利(芝1500m)は1番人気チカバリエンテ(小林美駒騎手)が勝利した。勝ちタイムは1分30秒1(稍重)。ハナ差の2着に9番人気ジャストワナフライ、さらにクビ差の3着に8番人気ルギッドドランジュが入った。\n\u3000チカバリエンテは'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【札幌5R・新馬戦】キタサンブラック産駒の牝馬シルバーウィルが逃げ切る ---
-[1] Gemini入力本文 476文字: '8日に行われた札幌5R新馬戦(芝1800メートル)は3番人気シルバーウィル(牝＝松永幹、父キタサンブラック)がV。好発からハナを突き進むと、最後まで勢い十分に粘り切った。\n\u3000吉田隼は「ハナまでは考えてなかったけどスタートの感じで行きました。'
+--- 記事[1]: 【レパードS予想】豊富なレース経験よりもフレッシュさが重要!? 人気でも様々な不安要素を抱えている軽視すべき一頭とは ---
+[1] Gemini入力本文 443文字: '今週の日曜日は、新潟競馬場でレパードステークス(GIII・ダート1800m)が行われます。\n\u3000まだまだキャリアの浅い3歳同士による一戦は、豊富なレース経験というのが大きな武器になることがあります。しかし、レパードSはレース経験よりもフレッシ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 今村聖奈が負傷により乗り代わり　土曜新潟９Ｒ以降の４鞍で騎乗不可能に ---
-[2] Gemini入力本文 330文字: '８日の新潟４Ｒ（ダート１２００メートル）の返し馬で放馬したセイウンヤオヨロズ（牡３歳、美浦・上原博）に騎乗していた今村聖奈騎手（２２）＝栗東・寺島＝は、着地した際に足を負傷したため、騎乗予定だった新潟９、１０、１１、１２Ｒは乗り代わりとなっ'
+--- 記事[2]: ラストシーズンのフォーエバーヤングが函館に帰厩　9月7日に米遠征へ出国　矢作調教師「もう一段、いい体になりました」 ---
+[2] Gemini入力本文 345文字: '9月の米遠征からラストシーズンを迎えるフォーエバーヤング(牡5歳、栗東・矢作芳人厩舎、父リアルスティール)が8月8日、函館競馬場へ入厩した。\n\t\t\t\t\u3000今秋はまずジョッキークラブゴールドC・G1(9月18日、ベルモントパーク競馬場)からブリ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 218文字]: '競馬ファン注目の情報です。8日に行われた札幌5R新馬戦、芝1800メートルでは、3番人気のシルバーウィルが勝利しました。松永幹厩舎所属、父キタサンブラックの牝馬であるシルバーウィルは、好発からハナを突き進み、最後まで勢い十分に粘り切る競馬を見せました。騎乗した吉田隼騎手は、「ハナまでは考えてなかったけどスタートの感じで行きました。馬込みも悪くないと思うので、これからいろいろな競馬を覚えていければ」と、さらなる進化に期待を寄せました。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (218文字)
-[1]  プレビュー: 競馬ファン注目の情報です。8日に行われた札幌5R新馬戦、芝1800メートルでは、3番人気のシルバーウィルが勝利しました。松永幹厩舎所属、父キタサンブラックの牝馬...
+[0]  [Gemini生出力 232文字]: '最新のレース情報が入ってきました。\n札幌2Rの2歳未勝利、芝1500mは1番人気のチカバリエンテが小林美駒騎手と共に勝利しました。勝ちタイムは稍重の馬場で1分30秒1でした。ハナ差の2着には9番人気のジャストワナフライが入り、さらにクビ差の3着には8番人気のルギッドドランジュが入着しています。勝利したチカバリエンテは栗東の藤野健太厩舎に所属する2歳牝馬です。父はシルバーステート、母はスペクターで、母の父はエンパイアメーカーです。通算成績は4戦1勝となりました。'
+[0]  [重複除去] 232文字 → 231文字
   HTTP 200
-[0]  [Gemini生出力 238文字]: '今日の競馬情報です。\n今村聖奈騎手が8日、負傷のため新潟9R以降に騎乗予定だった4鞍で乗り代わりとなることが発表されました。今村騎手は4Rの馬場入場の際に、騎乗していたセイウンヤオヨロズが放馬し、競走除外となっていました。続く5Rでは2番人気キタノドンカルロに騎乗しましたが、14着に終わっています。その後、9R、10R、11R、12Rの4鞍について乗り代わりが発表されました。また、今村騎手と同期の佐々木大輔騎手も札幌6Rのパドックで負傷し、急きょ北村に乗り代わっています。'
-[0]  [重複除去] 238文字 → 237文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (237文字)
-[0]  プレビュー: 今日の競馬情報です。今村聖奈騎手が8日、負傷のため新潟9R以降に騎乗予定だった4鞍で乗り代わりとなることが発表されました。今村騎手は4Rの馬場入場の際に、騎乗し...
+[2]  [Gemini生出力 266文字]: '重要な競馬ニュースをお伝えします。ラストシーズンを迎えるフォーエバーヤングが、8月8日に函館競馬場へ入厩しました。この牡5歳のフォーエバーヤングは、9月7日に米遠征へ出国する予定です。今秋はまず、9月18日にベルモントパーク競馬場で行われるジョッキークラブゴールドC・G1から、10月31日にキーンランド競馬場で行われるブリーダーズCクラシックへの転戦を予定しています。3月のドバイワールドCで3着となった後は、北海道のノーザンファーム早来へ放牧に出されていました。矢作調教師は「もう一段、いい体になりました」とコメントしています。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (231文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。札幌2Rの2歳未勝利、芝1500mは1番人気のチカバリエンテが小林美駒騎手と共に勝利しました。勝ちタイムは稍重の馬場で1分30...
   HTTP 200
-[2]  [Gemini生出力 227文字]: 'レース関連の最新情報です。今村聖奈騎手が負傷により、土曜新潟9R以降の4鞍で騎乗不可能となりました。8日の新潟4R、ダート1200メートルの返し馬で、セイウンヤオヨロズに騎乗していた今村聖奈騎手は、放馬し着地した際に足を負傷しました。これにより、騎乗予定だった新潟9、10、11、12Rは乗り代わりとなっています。8日12時50分現在で、9Rのライヴスプーンは今村聖奈騎手54キロから丸田恭介騎手56キロに、10Rのハナコト..も乗り代わりとなりました。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (225文字)
-[2]  プレビュー: レース関連の最新情報です。今村聖奈騎手が負傷により、土曜新潟9R以降の4鞍で騎乗不可能となりました。8日の新潟4R、ダート1200メートルの返し馬で、セイウンヤ...
+[1]  [Gemini生出力 4文字]: 'SKIP'
+[1]  → SKIPが返されました。強調プロンプトで再試行します（入力: 443文字）
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 277文字]: '重要な競馬ニュースをお伝えします。\nラストシーズンを迎えるフォーエバーヤングが、9月の米遠征を前に8月8日に函館競馬場へ入厩しました。フォーエバーヤングは9月7日に米遠征へ出国する予定です。今秋はまず、9月18日にベルモントパーク競馬場で行われるジョッキークラブゴールドC・G1から、10月31日にキーンランド競馬場で行われるブリーダーズCクラシックへの転戦が予定されています。3月のドバイワールドCで3着となった後は、北海道のノーザンファーム早来へ放牧に出されていました。前日に牧場を訪れた矢作調教師は、「もう一段、いい体になりました」と話しています。'
+[2]  [重複除去] 277文字 → 276文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (276文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。ラストシーズンを迎えるフォーエバーヤングが、9月の米遠征を前に8月8日に函館競馬場へ入厩しました。フォーエバーヤングは9月7日...
+  HTTP 200
+[1]  [Gemini生出力 190文字]: '本日の競馬ニュースです。今週の日曜日は、新潟競馬場でレパードステークス(GIII・ダート1800m)が行われます。キャリアの浅い3歳同士による一戦は、豊富なレース経験が大きな武器になることもありますが、レパードステークスはレース経験よりもフレッシュさが重要な一戦と言えます。過去10年のレパードステークスで3着以内に入った30頭のうち、27頭がキャリア8戦以内の馬となっています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (190文字)
+[1]  プレビュー: 本日の競馬ニュースです。今週の日曜日は、新潟競馬場でレパードステークス(GIII・ダート1800m)が行われます。キャリアの浅い3歳同士による一戦は、豊富なレー...
 
 3 件の脚本を生成しました。
