@@ -1,18 +1,87 @@
+[0]  [ファクトチェックNG] NG: 新潟9R以降の4鞍と
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 新潟9R以降の4
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***189Y / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [ファクトチェックNG] NG: 新潟9R以降の4鞍
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルでクォータ超過。
+[エラー] 記事 [0] のスクリプト生成失敗。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 3年目の高杉吏麒騎手が栗東・藤岡健一厩舎から栗東・フリーへ所属変更 ---
-[0] Gemini入力本文 100文字: 'JRAは8月6日、高杉吏麒騎手＝栗東・藤岡健一厩舎＝の所属を栗東・フリーに同日から変更したと発表した。\t\t\t\t\u3000なお、同騎手は7月25、26日と8月1、2日の2週間に開催された競馬では騎乗していなか…'
+--- 記事[0]: 今村聖奈騎手が両足を負傷　4Rの馬場入場後に落馬した際に　新潟9R以降の4鞍と日曜7鞍もすべて乗り替わり ---
+[0] Gemini入力本文 100文字: '今村聖奈騎手＝栗東・寺島良厩舎＝の乗り替わりが8日、JRAから発表された。4R・3歳未勝利で騎乗予定だったセイウンヤオヨロズで馬場入場後に落馬した際に、今村騎手は両足を負傷したため。\t\t\t\t\u3000続く5…'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 154文字]: '今週の競馬注目情報をお伝えします。JRAは8月6日、高杉吏麒騎手の所属が変更となったことを発表しました。具体的には、高杉吏麒騎手は同日から、栗東・藤岡健一厩舎から栗東・フリーへと所属を変更しています。なお、高杉吏麒騎手は、7月25日、26日と8月1日、2日の2週間に開催された競馬では騎乗していませんでした。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (154文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。JRAは8月6日、高杉吏麒騎手の所属が変更となったことを発表しました。具体的には、高杉吏麒騎手は同日から、栗東・藤岡健一厩舎か...
-
-1 件の脚本を生成しました。
+[0]  [Gemini生出力 157文字]: '最新のレース情報が入ってきました。今村聖奈騎手の乗り替わりが8日、JRAから発表されました。今村聖奈騎手は、4R・3歳未勝利で騎乗予定だったセイウンヤオヨロズに騎乗する際、馬場入場後に落馬し、両足を負傷しました。この負傷が原因で、新潟9R以降の4鞍と、さらに日曜日の7鞍もすべて乗り替わりとなることが決定しました。'
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 166文字]: '最新のレース情報が入ってきました。今村聖奈騎手の乗り替わりが8日、JRAから発表されました。今村騎手は栗東の寺島良厩舎に所属しています。この乗り替わりは、4Rの3歳未勝利で騎乗予定だったセイウンヤオヨロズで馬場入場後に落馬した際に、両足を負傷したためです。この負傷により、新潟9R以降の4鞍と日曜の7鞍もすべて乗り替わりとなります。'
+[0] 使用: key=***189Y model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 172文字]: '最新のレース情報が入ってきました。今村聖奈騎手の乗り替わりが8日、JRAから発表されました。栗東・寺島良厩舎所属の今村聖奈騎手は、4Rの3歳未勝利で騎乗予定だったセイウンヤオヨロズで馬場入場後に落馬した際に、両足を負傷しました。この負傷により、新潟9R以降の4鞍と、日曜に予定されていた7鞍についても、すべて乗り替わりとなることが決定しました。'
+[0] 使用: key=***l-ME model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***l-ME model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
