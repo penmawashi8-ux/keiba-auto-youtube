@@ -1,10 +1,10 @@
-date: 2026-08-08T04:15:48.796400Z
+date: 2026-08-08T07:52:05.962213Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_lrIKveEc5Y title=今村聖奈が負傷　新潟9R以降の4鞍で乗り代わり　札幌6Rでは同期・佐々木も
-OK project=1 video_id=YSuiHloZq5U title=【札幌5R・新馬戦】キタサンブラック産駒の牝馬シルバーウィルが逃げ切る
-OK project=1 video_id=EIboE3l3UDk title=今村聖奈が負傷により乗り代わり　土曜新潟９Ｒ以降の４鞍で騎乗不可能に
+OK project=1 video_id=Uz4lyF_mSy8 title=【2歳未勝利札幌2Rレース後コメント】チカバリエンテ小林美駒騎手ら
+OK project=1 video_id=wlfY9rkt60w title=【レパードS予想】豊富なレース経験よりもフレッシュさが重要!? 人気でも様々な不
+OK project=1 video_id=Ab-LANSHEMQ title=ラストシーズンのフォーエバーヤングが函館に帰厩　9月7日に米遠征へ出国　矢作調教
