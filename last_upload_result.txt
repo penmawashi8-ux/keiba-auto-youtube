@@ -1,10 +1,10 @@
-date: 2026-08-08T11:31:55.511549Z
+date: 2026-08-09T03:06:57.775536Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Kyzb411jx3E title=【ダリア賞レース後コメント】ルークウォーム津村明秀騎手ら
-OK project=1 video_id=Z3zLQlNe3_4 title=【摩周湖特別レース後コメント】ブラックジェダイト佐々木大輔騎手ら
-OK project=1 video_id=QJlsY9NO0Zw title=【注目馬動向】ジッピーチューンは紫苑Sで復帰　桜花賞3着後に右前肢の剥離骨折で休
+OK project=1 video_id=LDwgH2lLaLM title=超高額馬の白星デビューにネット歓喜「まだまだ余裕」「マジ本物だな」　2・6億円馬
+OK project=1 video_id=FxSxyOtF_Tw title=福永厩舎2億6000万円コントレイル産駒がデビューV　単勝1.5倍に応えネット「
+OK project=1 video_id=0LhDcA74dXQ title=【中京2R・2歳新馬】コントレイル産駒のレニュアージュが逃げ切り　松山弘平騎手「
