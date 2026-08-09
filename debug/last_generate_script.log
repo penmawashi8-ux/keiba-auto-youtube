@@ -1,75 +1,40 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【札幌5R・2歳新馬】1番人気のウィエダンドが逃げ切り　次戦はクローバー賞を視野　横山和生騎手「気のよさはこの血統ですね ---
-[0] Gemini入力本文 348文字: '8月9日の札幌5R・2歳新馬(芝1500メートル＝13頭立て)は単勝1番人気のウィエダンド(牝2歳、栗東・小栗実厩舎、父シルバーステート)が鮮やかに逃げ切り、デビューVを飾った。勝ち時計は1分29秒2(良)。\n\t\t\t\t\u3000発馬直後に軽く促した'
+--- 記事[0]: 【CBC賞】一時は最後方に…1番人気ディアナザールは猛追及ばず9着　重賞初制覇ならず ---
+[0] Gemini入力本文 354文字: '◆第62回CBC賞・G3(8月9日、中京競馬場・芝1200メートル、良)\n\t\t\t\t\u3000サマースプリントシリーズ第4戦が18頭で争われ、1番人気でハンデ56キロのディアナザール(牡4歳、栗東・斉藤崇史厩舎、父ロードカナロア)は17番手から脚を伸'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 河原田菜々が２週連続Ｖ　札幌４Ｒで１番人気に応える好騎乗「道中いい感じで脚をためることができました」 ---
-[1] Gemini入力本文 471文字: '９日の札幌４Ｒを１番人気のバンダムソレール（牡３歳、栗東・小栗）で制し、河原田菜々騎手（２１）＝栗東・渡辺＝が２週連続Ｖを決めた。今年のＪＲＡ８勝目、同通算３２勝目。\n\u3000道中は好位をじっくり進み、４角で進出開始。早めに先頭に躍り出ると、その'
+--- 記事[1]: 【CBC賞】2番人気レイピアは重賞3度目の2着　またまたタイトル獲得ならず ---
+[1] Gemini入力本文 355文字: '◆第62回CBC賞・G3(8月9日、中京競馬場・芝1200メートル、良)\n\t\t\t\t\u3000サマースプリントシリーズ第4戦が18頭で争われ、2番人気でハンデ57・5キロのレイピア(牡4歳、栗東・中竹和也厩舎、父タワーオブロンドン)は勝ち馬から2馬身'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【中京3R・2歳新馬】ショウナンパンドラの息子ショウナンバトレニは母同様に2着発進　松山弘平騎手「今日は枠の差が…」 ---
-[2] Gemini入力本文 368文字: '8月9日の中京3R・2歳新馬(芝2000メートル＝8頭立て)は単勝1番人気のドラゴンバルドが勝利した。母に14年の秋華賞、15年のジャパンCを制したショウナンパンドラを持つ2番人気のショウナンバトレニ(牡、栗東・高野友和厩舎、父エピファネイ'
+--- 記事[2]: 【メイクデビュー新潟2Rレース後コメント】イスクメル田山旺佑騎手ら ---
+[2] Gemini入力本文 507文字: '新潟2Rのメイクデビュー新潟(芝1200m)は1番人気イスクメル(田山旺佑騎手)が勝利した。勝ちタイムは1分9秒5(良)。1馬身差の2着に5番人気メジェグレイス、さらに1馬身差の3着に2番人気エスシークザンが入った。\n\u3000イスクメルは美浦・矢'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 241文字]: '今週の競馬注目情報をお伝えします。8月9日の中京3R・2歳新馬、芝2000メートル、8頭立てでは、単勝1番人気のドラゴンバルドが勝利しました。母に2014年の秋華賞、2015年のジャパンCを制したショウナンパンドラを持つ2番人気のショウナンバトレニは2着に敗れています。ショウナンバトレニは2番枠から発馬を決め、道中はインで4番手を追走しました。4コーナーの手応えも良く、ラスト上がり3ハロンは勝ち馬と同じ脚を使っていました。松山弘平騎手は「今日は枠の差が…」とコメントしています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (240文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。8月9日の中京3R・2歳新馬、芝2000メートル、8頭立てでは、単勝1番人気のドラゴンバルドが勝利しました。母に2014年の秋...
+[1]  [Gemini生出力 240文字]: '本日の競馬ニュースです。第62回CBC賞・G3が8月9日、中京競馬場・芝1200メートル、良馬場で行われました。サマースプリントシリーズ第4戦として18頭で争われ、2番人気でハンデ57.5キロのレイピアは、勝ち馬から2馬身差離された2着となりました。レイピアは重賞初制覇とはならず、重賞3度目の2着です。同馬はこれまで8度の重賞挑戦で7度が掲示板内に入っており、2走前の高松宮記念では5着、前走の函館スプリントSでは3着、さらにシルクロードSとオーシャンSでも2着に入っています。'
   HTTP 200
-[1]  [Gemini生出力 244文字]: '今日の競馬情報です。\n9日の札幌4Rで、河原田菜々騎手が1番人気のバンダムソレールに騎乗し、2週連続の勝利を飾りました。これにより、今年のJRA8勝目、同通算32勝目を記録しています。レースでは、道中好位をじっくり進み、4角で進出を開始。早めに先頭に躍り出ると、そのまま力強く伸びて勝利しました。河原田菜々騎手は「道中いい感じで脚をためることができましたし、ホウオウファラオが上がっていったタイミングで動きにいきました。早めに行った分粘り込?.. この馬も強かった」とコメントしています。'
-[1]  [重複除去] 242文字 → 241文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (241文字)
-[1]  プレビュー: 今日の競馬情報です。9日の札幌4Rで、河原田菜々騎手が1番人気のバンダムソレールに騎乗し、2週連続の勝利を飾りました。これにより、今年のJRA8勝目、同通算32...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+[0]  [Gemini生出力 267文字]: '競馬ファン注目の情報です。第62回CBC賞・G3が8月9日、中京競馬場・芝1200メートル、良馬場で行われました。サマースプリントシリーズ第4戦として18頭で争われたこのレースでは、1番人気でハンデ56キロのディアナザールが9着に敗れ、重賞初制覇はなりませんでした。ディアナザールは17番手から脚を伸ばしましたが、9着に終わっています。騎乗した川田将雅騎手は、2011年のダッシャーゴーゴー、2018年のアレスバローズに続く当レース3勝目を逃しました。ディアナザールは前走の鞍馬Sでスプリント戦に初挑戦し、果敢にハナを切っていました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (240文字)
+[1]  プレビュー: 本日の競馬ニュースです。第62回CBC賞・G3が8月9日、中京競馬場・芝1200メートル、良馬場で行われました。サマースプリントシリーズ第4戦として18頭で争わ...
   HTTP 200
-[0]  [Gemini生出力 242文字]: '今日の競馬情報です。\n8月9日の札幌5R・2歳新馬（芝1500メートル、13頭立て）では、単勝1番人気のウィエダンドが鮮やかに逃げ切り、デビューVを飾りました。勝ち時計は1分29秒2（良）でした。発馬直後に軽く促した程度で先手を奪うと、道中もリズムの良い走りを見せました。直線で促されると軽快な加速でしっかり応え、後続に2馬身差をつける全く危なげない完勝でした。騎乗した横山和生騎手は「気のよさはこの血統ですね」とコメントしています。次戦はクローバー賞を視野に入れているとのことです。'
-[0]  [重複除去] 242文字 → 241文字
+[2]  [Gemini生出力 269文字]: '今週の競馬注目情報をお伝えします。新潟2Rのメイクデビュー新潟、芝1200mのレースでは、1番人気のイスクメルが田山旺佑騎手の手綱で勝利を収めました。勝ちタイムは1分9秒5の良馬場でした。2着には1馬身差で5番人気のメジェグレイスが入り、さらに1馬身差の3着には2番人気のエスシークザンが入着しています。イスクメルは美浦の矢野英一厩舎に所属する2歳牡馬で、父はアルアイン、母はエルビッシュ、母の父はキングカメハメハという血統です。レース後、イスクメルの田山旺佑騎手は「まだ手探りな部分があります。今日、勝ってく...」とコメントしました。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (241文字)
-[0]  プレビュー: 今日の競馬情報です。8月9日の札幌5R・2歳新馬（芝1500メートル、13頭立て）では、単勝1番人気のウィエダンドが鮮やかに逃げ切り、デビューVを飾りました。勝...
+[0]  → output/script_0.txt 保存 (267文字)
+[0]  プレビュー: 競馬ファン注目の情報です。第62回CBC賞・G3が8月9日、中京競馬場・芝1200メートル、良馬場で行われました。サマースプリントシリーズ第4戦として18頭で争...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (266文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。新潟2Rのメイクデビュー新潟、芝1200mのレースでは、1番人気のイスクメルが田山旺佑騎手の手綱で勝利を収めました。勝ちタイム...
 
 3 件の脚本を生成しました。
