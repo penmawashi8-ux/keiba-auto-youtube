@@ -1,10 +1,10 @@
-date: 2026-08-09T09:48:19.942518Z
+date: 2026-08-09T11:32:46.889757Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0liBaocpNHc title=【レパードSレース後コメント】チェリヴェント吉村誠之助騎手ら
-OK project=1 video_id=bDmEESPsrI4 title=【メイクデビュー札幌5Rレース後コメント】ウィエダンド横山和生騎手ら
-OK project=1 video_id=-h73lZIFZ-4 title=荻野極騎手が左足の負傷で乗り替わり　3R入場時に落馬　騎乗再開も7R後に状態が悪
+OK project=1 video_id=DDKRuuEjEaw title=伊藤圭三師がJRA通算600勝達成　現役13人目
+OK project=1 video_id=BCBEXlc-7DQ title=【石狩特別レース後コメント】グレーヌドジョワ荻野琢真騎手ら
+OK project=1 video_id=56VIpZOJbHk title=【驀進特別レース後コメント】クールベイビー岩田望来騎手ら
