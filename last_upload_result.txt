@@ -1,10 +1,10 @@
-date: 2026-08-09T03:06:57.775536Z
+date: 2026-08-09T04:28:52.550315Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LDwgH2lLaLM title=超高額馬の白星デビューにネット歓喜「まだまだ余裕」「マジ本物だな」　2・6億円馬
-OK project=1 video_id=FxSxyOtF_Tw title=福永厩舎2億6000万円コントレイル産駒がデビューV　単勝1.5倍に応えネット「
-OK project=1 video_id=0LhDcA74dXQ title=【中京2R・2歳新馬】コントレイル産駒のレニュアージュが逃げ切り　松山弘平騎手「
+OK project=1 video_id=WZUgkYf-mNI title=【札幌5R・2歳新馬】1番人気のウィエダンドが逃げ切り　次戦はクローバー賞を視野
+OK project=1 video_id=K_PbhlMe3BI title=河原田菜々が２週連続Ｖ　札幌４Ｒで１番人気に応える好騎乗「道中いい感じで脚をため
+OK project=1 video_id=iT4vUvwvfFQ title=【中京3R・2歳新馬】ショウナンパンドラの息子ショウナンバトレニは母同様に2着発
