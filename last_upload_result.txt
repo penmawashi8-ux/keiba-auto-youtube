@@ -1,10 +1,10 @@
-date: 2026-08-09T07:53:15.611174Z
+date: 2026-08-09T09:48:19.942518Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ERbFDV1E4DA title=【CBC賞】一時は最後方に…1番人気ディアナザールは猛追及ばず9着　重賞初制覇な
-OK project=1 video_id=phHaqsYctEI title=【CBC賞】2番人気レイピアは重賞3度目の2着　またまたタイトル獲得ならず
-OK project=1 video_id=ZUNYEykh9N0 title=【メイクデビュー新潟2Rレース後コメント】イスクメル田山旺佑騎手ら
+OK project=1 video_id=0liBaocpNHc title=【レパードSレース後コメント】チェリヴェント吉村誠之助騎手ら
+OK project=1 video_id=bDmEESPsrI4 title=【メイクデビュー札幌5Rレース後コメント】ウィエダンド横山和生騎手ら
+OK project=1 video_id=-h73lZIFZ-4 title=荻野極騎手が左足の負傷で乗り替わり　3R入場時に落馬　騎乗再開も7R後に状態が悪
