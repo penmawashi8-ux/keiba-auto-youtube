@@ -1,51 +1,75 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 [0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[1]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 超高額馬の白星デビューにネット歓喜「まだまだ余裕」「マジ本物だな」　2・6億円馬ドラゴンバルドが中京で初陣V ---
-[0] Gemini入力本文 349文字: '前評判通りにデビュー戦を飾った超高額馬にSNSは沸いている。8月9日の中京3R・2歳新馬(芝2000メートル＝8頭立て)は単勝オッズ1・5倍の1番人気に推されたドラゴンバルド(牡2歳、栗東・福永祐一厩舎、父コントレイル)が2着に1馬身1／4'
+--- 記事[0]: 【札幌5R・2歳新馬】1番人気のウィエダンドが逃げ切り　次戦はクローバー賞を視野　横山和生騎手「気のよさはこの血統ですね ---
+[0] Gemini入力本文 348文字: '8月9日の札幌5R・2歳新馬(芝1500メートル＝13頭立て)は単勝1番人気のウィエダンド(牝2歳、栗東・小栗実厩舎、父シルバーステート)が鮮やかに逃げ切り、デビューVを飾った。勝ち時計は1分29秒2(良)。\n\t\t\t\t\u3000発馬直後に軽く促した'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[1]: 福永厩舎2億6000万円コントレイル産駒がデビューV　単勝1.5倍に応えネット「余力たっぷり」 ---
-[1] Gemini入力本文 367文字: '中京3R・新馬戦(芝2000メートル)は、昨年のセレクトセール1歳部門で2億6000万円(税抜き)で落札されたドラゴンバルド(牡＝福永、父コントレイル)がデビューVを飾った。\n\u3000道中は好位外目を追走。直線で川田がGOサインを出すと、楽々と抜'
+--- 記事[1]: 河原田菜々が２週連続Ｖ　札幌４Ｒで１番人気に応える好騎乗「道中いい感じで脚をためることができました」 ---
+[1] Gemini入力本文 471文字: '９日の札幌４Ｒを１番人気のバンダムソレール（牡３歳、栗東・小栗）で制し、河原田菜々騎手（２１）＝栗東・渡辺＝が２週連続Ｖを決めた。今年のＪＲＡ８勝目、同通算３２勝目。\n\u3000道中は好位をじっくり進み、４角で進出開始。早めに先頭に躍り出ると、その'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【中京2R・2歳新馬】コントレイル産駒のレニュアージュが逃げ切り　松山弘平騎手「よく踏ん張ってくれました」 ---
-[2] Gemini入力本文 421文字: '8月9日の中京2R・2歳新馬(牝馬限定、芝1600メートル＝9頭立て)は、レニュアージュ(栗東・藤原英昭厩舎、父コントレイル)が勝利した。勝ち時計は1分34秒8(良)。\n\t\t\t\t\u3000スタートを決めると、促してハナへ。道中で息を入れつつ、余力を'
+--- 記事[2]: 【中京3R・2歳新馬】ショウナンパンドラの息子ショウナンバトレニは母同様に2着発進　松山弘平騎手「今日は枠の差が…」 ---
+[2] Gemini入力本文 368文字: '8月9日の中京3R・2歳新馬(芝2000メートル＝8頭立て)は単勝1番人気のドラゴンバルドが勝利した。母に14年の秋華賞、15年のジャパンCを制したショウナンパンドラを持つ2番人気のショウナンバトレニ(牡、栗東・高野友和厩舎、父エピファネイ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 245文字]: '注目の競馬情報をお届けします。\n8月9日の中京2R、2歳新馬は、コントレイル産駒のレニュアージュが勝利しました。牝馬限定の芝1600メートル、9頭立てで行われたこのレースで、レニュアージュは勝ち時計1分34秒8(良)を記録しました。スタートを決めると、促してハナを奪い、道中で息を入れつつ余力を残して直線へ。坂を登っても脚いろは衰えず、内の先行勢を突き放すと、中団から勢いよく伸びてきたリアンフィニを半馬身差で封じ込めました。松山弘平騎手は「よく踏ん張ってくれました」とコメントしています。'
-[2]  [redirectフィルター] 245文字 → 229文字
+[2]  [Gemini生出力 241文字]: '今週の競馬注目情報をお伝えします。8月9日の中京3R・2歳新馬、芝2000メートル、8頭立てでは、単勝1番人気のドラゴンバルドが勝利しました。母に2014年の秋華賞、2015年のジャパンCを制したショウナンパンドラを持つ2番人気のショウナンバトレニは2着に敗れています。ショウナンバトレニは2番枠から発馬を決め、道中はインで4番手を追走しました。4コーナーの手応えも良く、ラスト上がり3ハロンは勝ち馬と同じ脚を使っていました。松山弘平騎手は「今日は枠の差が…」とコメントしています。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (229文字)
-[2]  プレビュー: 8月9日の中京2R、2歳新馬は、コントレイル産駒のレニュアージュが勝利しました。牝馬限定の芝1600メートル、9頭立てで行われたこのレースで、レニュアージュは勝...
+[2]  → output/script_2.txt 保存 (240文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。8月9日の中京3R・2歳新馬、芝2000メートル、8頭立てでは、単勝1番人気のドラゴンバルドが勝利しました。母に2014年の秋...
   HTTP 200
-[0]  [Gemini生出力 263文字]: '重要な競馬ニュースをお伝えします。\n8月9日の中京3R・2歳新馬で、超高額馬ドラゴンバルドがデビュー戦を白星で飾りました。芝2000メートル、8頭立てで行われたこのレースで、ドラゴンバルドは単勝オッズ1・5倍の1番人気に推されました。\n川田将雅騎手とコンビを組んだドラゴンバルドは、スタート直後に他馬に寄られるハプニングがあったものの、2着に1馬身1／4差をつけて勝利しました。1000メートル通過が64秒2の超スローペースの中、前評判通りの初陣Vを飾り、SNSでは「まだまだ余裕」「マジ本物だな」と歓喜の声が上がっています。'
-[0]  [重複除去] 263文字 → 261文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (261文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。8月9日の中京3R・2歳新馬で、超高額馬ドラゴンバルドがデビュー戦を白星で飾りました。芝2000メートル、8頭立てで行われたこ...
-  HTTP 200
-[1]  [Gemini生出力 271文字]: '注目の競馬情報をお届けします。中京3Rの新馬戦、芝2000メートルでは、昨年のセレクトセール1歳部門で2億6000万円（税抜き）で落札されたドラゴンバルドがデビューVを飾りました。福永厩舎のコントレイル産駒であるドラゴンバルドは、単勝1.5倍の支持に応えました。道中は好位外目を追走し、直線で川田がGOサインを出すと楽々と抜け出し、2着のショウナンバトレニに1馬身1/4差をつけました。父コントレイルは福永師が騎手時代に主戦を務め、2020年に無敗で3冠を制するなどG1で5勝を挙げています。ネットでは「余力たっぷり」との声も上がっています。'
-[1]  [redirectフィルター] 271文字 → 256文字
+[1]  [Gemini生出力 244文字]: '今日の競馬情報です。\n9日の札幌4Rで、河原田菜々騎手が1番人気のバンダムソレールに騎乗し、2週連続の勝利を飾りました。これにより、今年のJRA8勝目、同通算32勝目を記録しています。レースでは、道中好位をじっくり進み、4角で進出を開始。早めに先頭に躍り出ると、そのまま力強く伸びて勝利しました。河原田菜々騎手は「道中いい感じで脚をためることができましたし、ホウオウファラオが上がっていったタイミングで動きにいきました。早めに行った分粘り込?.. この馬も強かった」とコメントしています。'
+[1]  [重複除去] 242文字 → 241文字
 [1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (256文字)
-[1]  プレビュー: 中京3Rの新馬戦、芝2000メートルでは、昨年のセレクトセール1歳部門で2億6000万円（税抜き）で落札されたドラゴンバルドがデビューVを飾りました。福永厩舎の...
+[1]  → output/script_1.txt 保存 (241文字)
+[1]  プレビュー: 今日の競馬情報です。9日の札幌4Rで、河原田菜々騎手が1番人気のバンダムソレールに騎乗し、2週連続の勝利を飾りました。これにより、今年のJRA8勝目、同通算32...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[0]  [Gemini生出力 242文字]: '今日の競馬情報です。\n8月9日の札幌5R・2歳新馬（芝1500メートル、13頭立て）では、単勝1番人気のウィエダンドが鮮やかに逃げ切り、デビューVを飾りました。勝ち時計は1分29秒2（良）でした。発馬直後に軽く促した程度で先手を奪うと、道中もリズムの良い走りを見せました。直線で促されると軽快な加速でしっかり応え、後続に2馬身差をつける全く危なげない完勝でした。騎乗した横山和生騎手は「気のよさはこの血統ですね」とコメントしています。次戦はクローバー賞を視野に入れているとのことです。'
+[0]  [重複除去] 242文字 → 241文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (241文字)
+[0]  プレビュー: 今日の競馬情報です。8月9日の札幌5R・2歳新馬（芝1500メートル、13頭立て）では、単勝1番人気のウィエダンドが鮮やかに逃げ切り、デビューVを飾りました。勝...
 
 3 件の脚本を生成しました。
