@@ -1,10 +1,10 @@
-date: 2026-08-10T04:39:03.517281Z
+date: 2026-08-10T08:32:20.635297Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yV4QuMisjZg title=【大井・黒潮盃枠順】夏の名物重賞に多士済々な3歳馬15頭 前走重賞Vのララメテオ
-OK project=1 video_id=3pLO-Z6yiwE title=【長久手特別・松ケ下の特注馬】新馬戦で注目馬トミーバローズを撃破　3歳牝馬アーリ
-OK project=1 video_id=OMBEEuHFSBU title=愛2000ギニー覇者グシュタードは仏ジャックルマロワ賞を回避　後肢外傷で感染症　
+OK project=1 video_id=xW8Yz0XBoSA title=【浦和競馬】「追ったぶんだけ伸びる感じ」トレブルクレフが初陣を快勝　イロドリノコ
+OK project=1 video_id=7l6o3xflehQ title=【ジャックルマロワ賞】武豊騎手騎乗シックスペンスのライバルが回避　愛2000ギニ
+OK project=1 video_id=5vuKUGdyNcM title=【先週のJRA抹消馬】芝短距離重賞2勝のテイエムスパーダ、重賞2着7回ボンドガー
