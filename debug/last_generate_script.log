@@ -1,74 +1,66 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [ファクトチェックNG] NG: 回避理由は感染症.と伝え
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[1]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
 試行組み合わせ数: 9 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【大井・黒潮盃枠順】夏の名物重賞に多士済々な3歳馬15頭 前走重賞Vのララメテオは8枠14番 ---
-[0] Gemini入力本文 347文字: '8月13日(木)に大井競馬場で行われる黒潮盃(3歳・SIII・ダ1800m)の枠順が確定した。\n\u3000東京湾Cで重賞初制覇を飾ったララメテオは8枠14番、3連勝中のノットボーダーは3枠4番に入った。\n\u3000そのほかにも、前走でB2条件を快勝したアス'
+--- 記事[0]: 【浦和競馬】「追ったぶんだけ伸びる感じ」トレブルクレフが初陣を快勝　イロドリノココロは差し切り「新馬とは思えないぐらいど ---
+[0] Gemini入力本文 347文字: '8月10日の浦和競馬で2歳新馬戦が2鞍(3R1400メートル、4R800メートル)行われた。3Rは好スタートからハナに立ったレッドファルクス産駒のトレブルクレフ(牡)が、外から迫ったロイヤルフレンドを直線で振り切り、2馬身差をつけて勝利。室'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
---- 記事[1]: 【長久手特別・松ケ下の特注馬】新馬戦で注目馬トミーバローズを撃破　3歳牝馬アーリーハーベストに期待 ---
-[1] Gemini入力本文 351文字: '◆長久手特別(8月16日、中京競馬場・芝2000メートル)\n\t\t\t\t\u3000前走の阪神で行われた1勝クラス(芝2000メートル)で勝ち上がりを決めたアーリーハーベスト(牝3歳、栗東・小林真也厩舎、父アドマイヤマーズ)に期待する。\n\t\t\t\t\u3000本レー'
+--- 記事[1]: 【ジャックルマロワ賞】武豊騎手騎乗シックスペンスのライバルが回避　愛2000ギニー勝ちグシュタードが感染症.... ---
+[1] Gemini入力本文 352文字: '◆ジャックルマロワ賞・仏G1(日本時間8月16日22時50分発走予定、ドーヴィル競馬場・直線芝1600メートル)\n\t\t\t\t\u3000JRA海外馬券発売対象の仏G1ジャックルマロワ賞に参戦予定だった、今年の愛2000ギニー覇者グシュタード(牡3歳、愛'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 愛2000ギニー覇者グシュタードは仏ジャックルマロワ賞を回避　後肢外傷で感染症　当日JRAが馬券発売 ---
-[2] Gemini入力本文 629文字: '昨年BCジュベナイルターフ、今年2戦目の愛2000ギニーとG1を2勝し、2走前のセントジェームズパレスS、7月29日の前走サセックスSと続けて2着に入ったグシュタード(牡3＝愛A・オブライエン師、父スタースパングルドバナー)は次走に予定して'
+--- 記事[2]: 【先週のJRA抹消馬】芝短距離重賞2勝のテイエムスパーダ、重賞2着7回ボンドガールなど ---
+[2] Gemini入力本文 341文字: '8月3日から9日の期間では、芝短距離重賞で2勝を挙げたテイエムスパーダ(牝7、栗東・小椋研介厩舎)、重賞で2着7回と幾度となく見せ場をつくったボンドガール(牝5、美浦・手塚貴久厩舎)、ダート短距離で活躍のエートラックス(牡5、栗東・宮本博厩'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 230文字]: '競馬ファン注目の情報です。長久手特別、8月16日に中京競馬場・芝2000メートルで行われるレースで、松ケ下の特注馬として3歳牝馬アーリーハーベストに期待が寄せられています。アーリーハーベストは、新馬戦で注目馬トミーバローズを撃破し、前走の阪神1勝クラス芝2000メートルで勝ち上がりを決めた馬です。本レースは現時点で登録7頭と少頭数が予想され、3歳馬は本馬1頭のみで、斤量53キロも魅力とされています。テンが速いため、楽にハナや2番手あたりは確保できそうです。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (230文字)
-[1]  プレビュー: 競馬ファン注目の情報です。長久手特別、8月16日に中京競馬場・芝2000メートルで行われるレースで、松ケ下の特注馬として3歳牝馬アーリーハーベストに期待が寄せら...
+[0]  [Gemini生出力 269文字]: '今週の競馬注目情報をお伝えします。8月10日の浦和競馬で2歳新馬戦が2鞍、3Rの1400メートルと4Rの800メートルで行われました。3Rでは、レッドファルクス産駒のトレブルクレフが好スタートからハナに立ち、外から迫ったロイヤルフレンドを直線で振り切り、2馬身差をつけて勝利しました。室陽一朗騎手は「乗りやすくて操作性がいいです。外から迫られても余力はあったし、追ったぶんだけ伸びる感じでした」とトレブルクレフをたたえました。4Rでは、ロジャーバローズ産駒のイロドリノココロが差し切り、「新馬とは思えないぐらいどっしり」と評価されました。'
   HTTP 200
-[2]  [Gemini生出力 276文字]: '最新情報をお届けします。昨年BCジュベナイルターフ、今年2戦目の愛2000ギニーとG1を2勝したグシュタードが、次走に予定していたジャックルマロワ賞を回避します。グシュタードは2走前のセントジェームズパレスS、そして7月29日の前走サセックスSと続けて2着に入っていました。愛A・オブライエン師が管理するグシュタードは、後肢外傷による感染症のため、16日に仏ドーヴィル芝直線1600メートルで行われる同レースへの出走を見送ります。この情報は9日、レーシングポスト紙やアットザレージズなど英メディアが報じています。当日JRAが馬券発売を予定していました。'
-[2]  [redirectフィルター] 276文字 → 264文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (264文字)
-[2]  プレビュー: 昨年BCジュベナイルターフ、今年2戦目の愛2000ギニーとG1を2勝したグシュタードが、次走に予定していたジャックルマロワ賞を回避します。グシュタードは2走前の...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 195文字]: '競馬速報です。\n8月13日木曜日に大井競馬場で行われる黒潮盃、3歳、SIII、ダート1800メートルの枠順が確定しました。東京湾カップで重賞初制覇を飾ったララメテオは8枠14番、3連勝中のノットボーダーは3枠4番に入っています。そのほかにも、前走でB2条件を快勝したアスコットミヤギ、兵庫から参戦するミルトイブニングなどが出走を予定しています。発走予定日時は13日木曜日の20時10分です。'
-[0]  [重複除去] 195文字 → 194文字
+[2]  [Gemini生出力 203文字]: '競馬ファン注目の情報です。8月3日から9日の期間では、JRAの競走馬登録が抹消された馬が複数います。芝短距離重賞で2勝を挙げたテイエムスパーダ、重賞で2着7回と幾度となく見せ場をつくったボンドガール、ダート短距離で活躍したエートラックスなどが登録を抹消されました。収得賞金400万円以上の抹消馬として、8月4日にはゲンパチムサシが、8月5日にはアレ、エコログロウ、エゾダイモンなどが登録を抹消されています。'
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (194文字)
-[0]  プレビュー: 競馬速報です。8月13日木曜日に大井競馬場で行われる黒潮盃、3歳、SIII、ダート1800メートルの枠順が確定しました。東京湾カップで重賞初制覇を飾ったララメテ...
+[0]  → output/script_0.txt 保存 (269文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。8月10日の浦和競馬で2歳新馬戦が2鞍、3Rの1400メートルと4Rの800メートルで行われました。3Rでは、レッドファルクス...
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (203文字)
+[2]  プレビュー: 競馬ファン注目の情報です。8月3日から9日の期間では、JRAの競走馬登録が抹消された馬が複数います。芝短距離重賞で2勝を挙げたテイエムスパーダ、重賞で2着7回と...
+  HTTP 200
+[1]  [Gemini生出力 237文字]: 'レース関連の最新情報です。\nJRA海外馬券発売対象の仏G1ジャックルマロワ賞に参戦予定だった、今年の愛2000ギニー覇者グシュタードが、同レースを回避することになりました。グシュタードは牡3歳、愛国・エイダン・オブライエン厩舎所属の馬です。現地時間9日、英国の競馬専門メディア「レーシングポスト」などが報じました。回避理由は感染症....と伝えられています。ジャックルマロワ賞は日本時間8月16日22時50分発走予定で、ドーヴィル競馬場・直線芝1600メートルで行われます。'
+[1]  [重複除去] 234文字 → 233文字
+[1] 使用: key=***zGG0 model=gemini-2.0-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-2.0-flash-lite
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 215文字]: 'レース関連の最新情報です。JRA海外馬券発売対象の仏G1ジャックルマロワ賞は、日本時間8月16日22時50分にドーヴィル競馬場の直線芝1600メートルで発走予定です。このレースに参戦予定だった今年の愛2000ギニー覇者グシュタードが、同レースを回避することになりました。グシュタードは3歳牡馬で、愛国・エイダン・オブライエン厩舎に所属しています。この情報は現地時間9日、英国の競馬専門メディア「レーシングポスト」などが報じました。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (215文字)
+[1]  プレビュー: レース関連の最新情報です。JRA海外馬券発売対象の仏G1ジャックルマロワ賞は、日本時間8月16日22時50分にドーヴィル競馬場の直線芝1600メートルで発走予定...
 
 3 件の脚本を生成しました。
