@@ -1,43 +1,29 @@
-[0]  [ファクトチェックNG] NG: 元記事に存在しない「
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.0-flash-lite] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
-利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash', 'gemini-2.0-flash-001', 'gemini-2.0-flash-lite-001', 'gemini-2.0-flash-lite', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it']
-使用候補モデル: ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
-試行組み合わせ数: 9 (キー×モデル)
+利用可能モデル (36個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
+使用候補モデル: ['gemini-2.5-flash']
+試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【シャーガーC】武豊騎手は2着が最高成績も英国競馬でも抜群の存在感示す　現地実況は「57歳」に仰天 ---
-[0] Gemini入力本文 100文字: '日本のレジェンドが英国の聖地アスコットでも存在感を示した。日本時間8月8日夜に世界の名手12人が集う国際騎手招待競走「ドバイデューティフリーシャーガーカップ」がイギリス・アスコット競馬場で行われ、J…'
+--- 記事[0]: 西塚洸二騎手が8月22日から騎乗停止　最低16番人気の1着馬から「クビ」「クビ」「クビ」「クビ」差の2着も　中京10R ---
+[0] Gemini入力本文 100文字: 'JRAは8月9日、西塚洸二騎手＝栗東・フリー＝を8月22日から30日まで9日間(開催日4日間を含む)の騎乗停止とすることを発表した。\t\t\t\t\u30009日の中京10R(3歳上1勝クラス・ダート1200メート…'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[0]  [Gemini生出力 171文字]: 'レース関連の最新情報です。日本時間8月8日夜、イギリス・アスコット競馬場で行われた世界の名手12人が集う国際騎手招待競走、ドバイデューティフリーシャーガーカップに日本のレジェンド武豊騎手が出場しました。武豊騎手は2着が最高成績でしたが、英国競馬でも抜群の存在感を示しました。現地実況は武豊騎手の「57歳」という年齢に仰天する場面もありました。'
-[0] 使用: key=***zGG0 model=gemini-2.0-flash
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-2.0-flash-lite
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
+  HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 191文字]: 'レース関連の最新情報です。日本のレジェンドである武豊騎手が、英国の聖地アスコット競馬場でも存在感を示しました。日本時間8月8日夜には、世界の名手12人が集う国際騎手招待競走「ドバイデューティフリーシャーガーカップ」がイギリス・アスコット競馬場で開催されました。このレースで武豊騎手は2着が最高成績でしたが、現地実況は武豊騎手の年齢が「57歳」であることに仰天したと伝えられています。'
+[0]  [Gemini生出力 180文字]: '今週の競馬注目情報をお伝えします。\nJRAは8月9日、西塚洸二騎手＝栗東・フリー＝を8月22日から30日まで9日間、開催日4日間を含む騎乗停止とすることを発表しました。\nこれは9日の中京10R、3歳上1勝クラス・ダート1200メートルでの出来事に関連しています。\n西塚洸二騎手は、最低16番人気の1着馬から「クビ」「クビ」「クビ」「クビ」差の2着となりました。'
+[0]  [重複除去] 180文字 → 177文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (191文字)
-[0]  プレビュー: レース関連の最新情報です。日本のレジェンドである武豊騎手が、英国の聖地アスコット競馬場でも存在感を示しました。日本時間8月8日夜には、世界の名手12人が集う国際...
+[0]  → output/script_0.txt 保存 (177文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。JRAは8月9日、西塚洸二騎手＝栗東・フリー＝を8月22日から30日まで9日間、開催日4日間を含む騎乗停止とすることを発表しま...
 
 1 件の脚本を生成しました。
