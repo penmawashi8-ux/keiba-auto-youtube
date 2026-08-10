@@ -1,10 +1,10 @@
-date: 2026-08-10T03:21:23.991272Z
+date: 2026-08-10T04:39:03.517281Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vHc9D1rYZGw title=「アーモンドアイの母」が復活の逃げ切り！ 07年札幌記念をプレイバック
-OK project=1 video_id=PQEDjCfbwR4 title=【札幌記念】凱旋門賞に挑戦するアドマイヤテラは復帰戦へ好仕上がり　友道調教師「い
-OK project=1 video_id=Y0CtgNX2lR8 title=【中京記念展望】大混戦のマイル重賞は牝馬が主役　カネラフィーナの素質に期待
+OK project=1 video_id=yV4QuMisjZg title=【大井・黒潮盃枠順】夏の名物重賞に多士済々な3歳馬15頭 前走重賞Vのララメテオ
+OK project=1 video_id=3pLO-Z6yiwE title=【長久手特別・松ケ下の特注馬】新馬戦で注目馬トミーバローズを撃破　3歳牝馬アーリ
+OK project=1 video_id=OMBEEuHFSBU title=愛2000ギニー覇者グシュタードは仏ジャックルマロワ賞を回避　後肢外傷で感染症　
