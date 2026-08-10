@@ -1,10 +1,6 @@
-date: 2026-08-10T11:52:13.497602Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-10T13:04:36.948874Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WxDqOccQXUg title=【中京記念】1週前好時計のラヴァンダが2つ目の重賞タイトル取りへ　中村調教師「へ
-OK project=1 video_id=tbfuB6lyUU0 title=【中京記念】杉山晴調教師「気持ちはマイルドになっていますね」サトノシャイニングは
-OK project=1 video_id=TU7BfoHzFLA title=【POGマニア】9日中京でコントレイル産駒が現2歳世代初勝利から連勝　大物誕生に
+OK project=1 video_id=xRafCvNUgeQ views=82686 title=西塚洸二騎手が8月22日から騎乗停止　最低16番人気の1着馬から「クビ」「クビ」「クビ」「クビ」差の2着も　中京10R【
