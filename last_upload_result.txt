@@ -1,10 +1,6 @@
-date: 2026-08-11T11:49:42.206448Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-11T13:00:13.606595Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XfhnhkCUFTc title=【札幌記念・ヤマタケが見た】凱旋門賞への最適な始動戦!　アドマイヤテラが体現する
-OK project=1 video_id=EA6yijBZ_cM title=【金沢・読売レディス杯結果】スカンジナビア逃げ切って重賞初制覇
-OK project=1 video_id=crMLyHYiqjM title=ウノキボンバイエが1、2、3逃げ切りダー!!2連勝で重賞初V　SNS興奮「スタッ
+OK project=1 video_id=3c9JkP_B7Qw views=24150 title=【ジャックルマロワ賞】武豊騎手「日本馬で挑戦できる。本当に楽しみ」　安田記念馬シックスペンスで18年ぶり参戦【2.4万回
