@@ -1,10 +1,10 @@
-date: 2026-08-11T04:25:58.105889Z
+date: 2026-08-11T08:12:11.960946Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Y-PYeeGGNs8 title=ディアドラの2024(ミシナフ)など、先週のゲート試験/栗東トレセンニュース
-OK project=1 video_id=8magr5CZq4U title=メイショウタバルなど、先週の入厩情報/栗東トレセンニュース
-OK project=1 video_id=yhy_StvHKAA title=【注目馬動向】フォーエバーヤング参戦予定の米G1レースに米国年度代表馬も出走へ　
+OK project=1 video_id=rhCwu4XsplI title=武豊「最後まで乗れなかったのが心残り」名馬サイレンススズカに思いをはせる
+OK project=1 video_id=EGPWudoF628 title=武豊「飛び回れるのはうれしいよね」中1日渡欧の過密スケジュールにも喜び
+OK project=1 video_id=ZkjxfeeRSoQ title=中内田調教師が3億円のノットディスタイム産駒など億超え2頭を落札　米国ファシグテ
