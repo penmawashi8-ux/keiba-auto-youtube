@@ -1,10 +1,10 @@
-date: 2026-08-11T08:12:11.960946Z
+date: 2026-08-11T10:08:12.767097Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rhCwu4XsplI title=武豊「最後まで乗れなかったのが心残り」名馬サイレンススズカに思いをはせる
-OK project=1 video_id=EGPWudoF628 title=武豊「飛び回れるのはうれしいよね」中1日渡欧の過密スケジュールにも喜び
-OK project=1 video_id=ZkjxfeeRSoQ title=中内田調教師が3億円のノットディスタイム産駒など億超え2頭を落札　米国ファシグテ
+OK project=1 video_id=GxdtcVPywr0 title=【札幌記念予想オッズ】アドマイヤテラが予想1番人気
+OK project=1 video_id=0N1yfe7b_ig title=【新潟JS予想オッズ】プラチナドリームが予想1番人気
+OK project=1 video_id=REmLHoSAJKg title=【中京記念予想オッズ】サトノシャイニングが予想1番人気
