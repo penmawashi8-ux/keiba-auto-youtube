@@ -1,6 +1,10 @@
-date: 2026-08-11T13:00:13.606595Z
-type: popular_news_landscape
+date: 2026-08-12T03:29:58.085027Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3c9JkP_B7Qw views=24150 title=【ジャックルマロワ賞】武豊騎手「日本馬で挑戦できる。本当に楽しみ」　安田記念馬シックスペンスで18年ぶり参戦【2.4万回
+OK project=1 video_id=Pr1N9RBiAIE title=500万下から連闘で重賞初制覇 メジロパーマーの91年札幌記念をプレイバック
+OK project=1 video_id=9TAD5P3iHAs title=【札幌記念】レース史上初のセン馬Vなるか グランディア＆オニャンコポンが参戦だ
+OK project=1 video_id=ZfaZhxNUQOQ title=池添謙一騎手が『netkeibaショップ POPUPストア＠札幌』に来場 変わら
