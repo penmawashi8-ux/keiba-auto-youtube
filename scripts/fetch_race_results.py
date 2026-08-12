@@ -24,6 +24,8 @@ from fetch_news import (  # noqa: E402
     _extract_next_data_body,
     _DENY_KEYWORDS,
     _DENY_TITLE_PREFIXES,
+    retrospective_match,
+    record_exclusion,
 )
 
 # ---------------------------------------------------------------------------
@@ -127,15 +129,24 @@ def is_result_article(entry: dict) -> bool:
     """結果記事かどうかを判定する。予想・登録記事は除外。"""
     title = entry.get("title", "")
     # 動画タイトル・否定キーワードを除外
-    if any(title.lower().startswith(p.lower()) for p in _DENY_TITLE_PREFIXES):
-        return False
+    for p in _DENY_TITLE_PREFIXES:
+        if title.lower().startswith(p.lower()):
+            record_exclusion(entry, "video_title", p)
+            return False
     text = (title + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
         if kw in text:
+            record_exclusion(entry, "deny_keyword", kw)
             return False
     # 予想・登録記事を除外
-    if _DENY_RESULT_PATTERN.search(title):
-        print(f"  [除外] 予想/登録記事のためスキップ: {title[:60]}")
+    m = _DENY_RESULT_PATTERN.search(title)
+    if m:
+        record_exclusion(entry, "not_result", m.group(0))
+        return False
+    # 過去レースを振り返るプレイバック記事を除外（当日の結果記事ではない）
+    matched = retrospective_match(title)
+    if matched:
+        record_exclusion(entry, "retrospective", matched)
         return False
     # 結果キーワードが含まれていることを確認（緩め: タイトルになくても通す）
     return True

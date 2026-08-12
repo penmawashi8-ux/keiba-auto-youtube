@@ -192,6 +192,7 @@ jobs:
             sed -i 's/key=AIzaSy[A-Za-z0-9_-]*/key=***/g' "$f" 2>/dev/null || true
           done
           git add debug/last_fetch_popular_news.log debug/last_generate_script_popular.log
+          git add debug/excluded_news.jsonl 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "ログ変更なし。"
           else
