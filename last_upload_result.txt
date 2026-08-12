@@ -1,10 +1,10 @@
-date: 2026-08-12T03:29:58.085027Z
+date: 2026-08-12T04:52:58.666859Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Pr1N9RBiAIE title=500万下から連闘で重賞初制覇 メジロパーマーの91年札幌記念をプレイバック
-OK project=1 video_id=9TAD5P3iHAs title=【札幌記念】レース史上初のセン馬Vなるか グランディア＆オニャンコポンが参戦だ
-OK project=1 video_id=ZfaZhxNUQOQ title=池添謙一騎手が『netkeibaショップ POPUPストア＠札幌』に来場 変わら
+OK project=1 video_id=ofDZ5f8ASdA title=【注目馬動向】骨折から復帰戦となる日本海Sはルメール騎手と4戦ぶりコンビ　青葉賞
+OK project=1 video_id=PhirGwwmRMU title=CBC賞で重賞初勝利　15年目の中井裕二騎手が喜んだ理由とは　「タイミングが良か
+OK project=1 video_id=ZKqVaNpXk18 title=国枝栄厩務員が函館遠征でワクワク　「調教師の時は競馬だけ。２週間の滞在っていうの
