@@ -88,26 +88,77 @@ _DENY_RETROSPECTIVE_PATTERN = re.compile(
 )
 
 
+def retrospective_match(title: str) -> str:
+    """プレイバック判定に一致した語を返す（不一致なら空文字）。"""
+    normalized = unicodedata.normalize("NFKC", title)
+    m = _DENY_RETROSPECTIVE_PATTERN.search(normalized)
+    return m.group(0) if m else ""
+
+
 def is_retrospective(title: str) -> bool:
     """過去のレースを振り返る懐古（プレイバック）記事かどうか。"""
-    normalized = unicodedata.normalize("NFKC", title)
-    return bool(_DENY_RETROSPECTIVE_PATTERN.search(normalized))
+    return bool(retrospective_match(title))
+
+
+# ---------------------------------------------------------------------------
+# 除外ログ（あとから「これは除外すべきでなかった」を振り返るための記録）
+# ---------------------------------------------------------------------------
+
+EXCLUSION_LOG_FILE = "debug/excluded_news.jsonl"
+# 肥大化防止。古い行から捨てる。
+EXCLUSION_LOG_MAX_LINES = 2000
+
+# どのスクリプトからの除外かを記録する。各スクリプトが起動時に上書きしてよい。
+_argv0 = Path(sys.argv[0]).stem if sys.argv and sys.argv[0] else ""
+EXCLUSION_SOURCE = _argv0 if _argv0 and not _argv0.startswith("-") else "unknown"
+
+
+def record_exclusion(entry: dict, reason: str, pattern: str = "") -> None:
+    """除外した記事を JSONL に追記する。失敗しても本処理は止めない。
+
+    reason は後で絞り込めるよう固定の識別子を使う:
+      retrospective / video_title / deny_keyword / generic_title / not_result
+    """
+    title = entry.get("title", "")
+    print(f"  [除外:{reason}] {('（' + pattern + '）') if pattern else ''}{title[:60]}")
+    record = {
+        "ts": datetime.now(timezone(timedelta(hours=9))).isoformat(timespec="seconds"),
+        "source": EXCLUSION_SOURCE,
+        "reason": reason,
+        "pattern": pattern,
+        "title": title,
+        "url": entry.get("link") or entry.get("url") or "",
+        "id": entry.get("id", ""),
+    }
+    try:
+        path = Path(EXCLUSION_LOG_FILE)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
+        lines.append(json.dumps(record, ensure_ascii=False))
+        if len(lines) > EXCLUSION_LOG_MAX_LINES:
+            lines = lines[-EXCLUSION_LOG_MAX_LINES:]
+        path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    except Exception as e:  # ログ失敗で記事取得を落とさない
+        print(f"  [警告] 除外ログの書き込み失敗: {e}", file=sys.stderr)
 
 
 def is_keiba_related(entry: dict) -> bool:
     """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
     title = entry.get("title", "")
     # 動画説明タイトルを除外
-    if any(title.lower().startswith(p.lower()) for p in _DENY_TITLE_PREFIXES):
-        print(f"  [除外] 動画タイトルのためスキップ: {title[:60]}")
-        return False
+    for p in _DENY_TITLE_PREFIXES:
+        if title.lower().startswith(p.lower()):
+            record_exclusion(entry, "video_title", p)
+            return False
     # プレイバック系の懐古記事を除外
-    if is_retrospective(title):
-        print(f"  [除外] プレイバック（懐古）記事のためスキップ: {title[:60]}")
+    matched = retrospective_match(title)
+    if matched:
+        record_exclusion(entry, "retrospective", matched)
         return False
     text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
         if kw in text:
+            record_exclusion(entry, "deny_keyword", kw)
             return False
     for kw in _ALLOW_KEYWORDS:
         if kw in text:

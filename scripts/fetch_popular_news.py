@@ -33,6 +33,7 @@ from fetch_news import (  # noqa: E402
     is_keiba_related,
     load_posted_ids,
     parse_feed,
+    record_exclusion,
 )
 
 NEWS_JSON = "news.json"
@@ -357,10 +358,11 @@ def fetch_popular_via_ranking(posted_ids: set) -> list[dict]:
         if url in posted_ids or it["no"] in posted_ids:
             print(f"  [投稿済み] no={it['no']} {it['title'][:40]}")
             continue
+        entry = {"title": it["title"], "summary": "", "url": url, "id": it["no"]}
         if _is_generic_title(it["title"]):
-            print(f"  [除外] 定型タイトル: {it['title'][:50]}")
+            record_exclusion(entry, "generic_title")
             continue
-        if not is_keiba_related({"title": it["title"], "summary": ""}):
+        if not is_keiba_related(entry):
             continue
         item = build_news_item(
             url, url, it["title"], it["views"],
@@ -425,12 +427,16 @@ def fetch_popular_via_clustering(posted_ids: set) -> list[dict]:
             seen_ids.add(e["id"])
             unique.append(e)
 
-    candidates = [
-        e for e in unique
-        if e["id"] not in posted_ids
-        and not _is_generic_title(e.get("title", ""))
-        and is_keiba_related(e)
-    ]
+    candidates = []
+    for e in unique:
+        if e["id"] in posted_ids:
+            continue
+        if _is_generic_title(e.get("title", "")):
+            record_exclusion(e, "generic_title")
+            continue
+        if not is_keiba_related(e):
+            continue
+        candidates.append(e)
     print(f"[Cluster] 候補 {len(candidates)}件（全{len(unique)}件）")
 
     # 貪欲クラスタリング: 類似タイトルをまとめ、報じた媒体数を数える
