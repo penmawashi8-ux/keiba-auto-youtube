@@ -24,6 +24,7 @@ from fetch_news import (  # noqa: E402
     _extract_next_data_body,
     _DENY_KEYWORDS,
     _DENY_TITLE_PREFIXES,
+    is_retrospective,
 )
 
 # ---------------------------------------------------------------------------
@@ -136,6 +137,10 @@ def is_result_article(entry: dict) -> bool:
     # 予想・登録記事を除外
     if _DENY_RESULT_PATTERN.search(title):
         print(f"  [除外] 予想/登録記事のためスキップ: {title[:60]}")
+        return False
+    # 過去レースを振り返るプレイバック記事を除外（当日の結果記事ではない）
+    if is_retrospective(title):
+        print(f"  [除外] プレイバック（懐古）記事のためスキップ: {title[:60]}")
         return False
     # 結果キーワードが含まれていることを確認（緩め: タイトルになくても通す）
     return True

@@ -75,6 +75,24 @@ _DENY_TITLE_PREFIXES = [
     "video:", "watch:", "【動画】", "（動画）", "(動画)",
 ]
 
+# 過去のレースを振り返る「プレイバック」系の懐古記事は速報ニュースではないため除外。
+# タイトルのみで判定する（本文・サマリーには「振り返ると」等が普通に出るため）。
+_DENY_RETROSPECTIVE_PATTERN = re.compile(
+    r"プレイバック|プレーバック|playback|"
+    r"名勝負|名場面|迷勝負|語り継|伝説の|秘話|"
+    r"懐かし|思い出|回顧|回想|追憶|振り返|あの日|あの頃|"
+    r"今日は何の日|歴史に残る|アーカイブ|リバイバル|"
+    r"歴代(?:最強|名馬|の名馬|ベスト|名勝負)|"
+    r"\d+\s*年前|\d+\s*周年|昭和の名馬|平成の名馬",
+    re.IGNORECASE,
+)
+
+
+def is_retrospective(title: str) -> bool:
+    """過去のレースを振り返る懐古（プレイバック）記事かどうか。"""
+    normalized = unicodedata.normalize("NFKC", title)
+    return bool(_DENY_RETROSPECTIVE_PATTERN.search(normalized))
+
 
 def is_keiba_related(entry: dict) -> bool:
     """競馬関連の記事かどうかを判定する。除外キーワード優先。"""
@@ -82,6 +100,10 @@ def is_keiba_related(entry: dict) -> bool:
     # 動画説明タイトルを除外
     if any(title.lower().startswith(p.lower()) for p in _DENY_TITLE_PREFIXES):
         print(f"  [除外] 動画タイトルのためスキップ: {title[:60]}")
+        return False
+    # プレイバック系の懐古記事を除外
+    if is_retrospective(title):
+        print(f"  [除外] プレイバック（懐古）記事のためスキップ: {title[:60]}")
         return False
     text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
