@@ -1,8 +1,8 @@
-date: 2026-08-11T14:17:17.110387Z
+date: 2026-08-12T14:19:45.713299Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=J0mEjLSSRgA
-source_short=DX6Ex5j3LDc views=1074
-title=8月11日 山の日に知りたい「山」のレース名 日本一の富士山から標高4.5mの天保山まで
+OK project=1 video_id=XKeoMTHTlrw
+source_short=sg15ssth730 views=913
+title=8月12日 【中京記念】しらさぎSで復調2着　キープカルムが坂路で好時計　中竹調教師「前走くらいの状態にあると思う」
