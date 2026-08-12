@@ -1,10 +1,10 @@
-date: 2026-08-12T10:13:15.951910Z
+date: 2026-08-12T11:49:28.658741Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hrPy8CRaNUs title=【中京記念】好調の若武者とコンビを組むチェルビアット　高野調教師「マイルの距離も
-OK project=1 video_id=2gvvGFhH-8E title=【札幌記念】ショウヘイは初めての北海道で躍動感十分　洋芝も問題なし　陣営「違和感
-OK project=1 video_id=1WmRt7wBIsc title=8・30新潟記念に出走するNHKマイルC覇者ロデオドライブはルメールとの新コンビ
+OK project=1 video_id=NKRqlMULBIo title=【読売レディス杯】高知から遠征のスカンジナビアが8連勝で重賞初勝利　井上瑛太騎手
+OK project=1 video_id=fGLaRcbJHSQ title=【中京記念】サトノシャイニングは首を連動させて軽快に登坂　乗り替わりに杉山晴調教
+OK project=1 video_id=l4eaikWxYF4 title=【新潟記念・2週前】安田記念10着のステレンボッシュは再び中距離路線へ　宮田調教
