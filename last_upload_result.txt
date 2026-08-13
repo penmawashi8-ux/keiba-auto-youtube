@@ -1,9 +1,10 @@
-date: 2026-08-13T03:31:41.895057Z
+date: 2026-08-13T04:56:58.470158Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=p1UW12F1oCo title=【門別・北海道SC】秋の飛躍へ快足3歳馬が覇を競う 少数精鋭の10頭が激突
-OK project=1 video_id=iEKBjJ1h0FM title=【注目馬動向】佐渡Sでオープン入りした皐月賞3着馬ライヒスアドラーは毎日王冠へ
+OK project=1 video_id=aW5ptPy_wos title=南米の名手ゴンサルベスがＮＡＲの短期免許を取得　船橋・山下貴之厩舎所属で２４日か
+OK project=1 video_id=xrWTs3G2LfU title=【注目馬動向】フラワーC勝ち馬スマートプリエールはローズSで復帰　帝王賞2着のア
+OK project=1 video_id=Xqh_8AtgvGU title=【注目馬動向】読売マイラーズC2着のドラゴンブーストは毎日王冠→マイルCS
