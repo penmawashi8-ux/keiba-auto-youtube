@@ -1,8 +1,8 @@
-date: 2026-08-12T14:19:45.713299Z
+date: 2026-08-13T14:20:39.618195Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XKeoMTHTlrw
-source_short=sg15ssth730 views=913
-title=8月12日 【中京記念】しらさぎSで復調2着　キープカルムが坂路で好時計　中竹調教師「前走くらいの状態にあると思う」
+OK project=1 video_id=tHFHdYzObjk
+source_short=aW5ptPy_wos views=1132
+title=8月13日 南米の名手ゴンサルベスがＮＡＲの短期免許を取得　船橋・山下貴之厩舎所属で２４日から１１月６日まで
