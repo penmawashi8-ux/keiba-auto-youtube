@@ -1,6 +1,9 @@
-date: 2026-08-12T13:04:38.425800Z
-type: popular_news_landscape
+date: 2026-08-13T03:31:41.895057Z
+projects_loaded: 2
+uploaded: 2
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=URHedFz61qA views=43954 title=【注目馬動向】NHKマイルC覇者のロデオドライブは新潟記念でルメール騎手と初コンビ　初めての2000メートルに挑戦【4.
+OK project=1 video_id=p1UW12F1oCo title=【門別・北海道SC】秋の飛躍へ快足3歳馬が覇を競う 少数精鋭の10頭が激突
+OK project=1 video_id=iEKBjJ1h0FM title=【注目馬動向】佐渡Sでオープン入りした皐月賞3着馬ライヒスアドラーは毎日王冠へ
