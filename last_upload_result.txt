@@ -1,10 +1,10 @@
-date: 2026-08-13T08:19:49.559737Z
+date: 2026-08-13T11:50:46.010068Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wma0ig5kMsQ title=【週末情報】ルーラーシップ産駒レジームチェンジに鹿戸師が好感触「速いところでもち
-OK project=1 video_id=hpN9q74aIlg title=【有力馬動向】北海道の水が合うエイシンディード キーンランドCへ攻め気配は文句な
-OK project=1 video_id=MeybZo_HVrc title=【POG】母に海外G1馬の良血馬ホウオウワールドが16日の中京3Rでデビュー　池
+OK project=1 video_id=j2mlykWz2dE title=【大井・黒潮盃結果】ミルトイブニングが捲り切って重賞2勝目を挙げる
+OK project=1 video_id=9MUIcb5UxDE title=【北海道スプリントC】地元の石川倭騎手は2年連続Vならず　2番人気のトウカイマシ
+OK project=1 video_id=1SxJtA5MtME title=【北海道スプリントC】地元のベストグリーンがJRA勢を撃破　落合玄太騎手は当レー
