@@ -1,10 +1,10 @@
-date: 2026-08-14T08:14:42.320858Z
+date: 2026-08-14T10:12:15.653899Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZfzMwpHmzuc title=【報知杯大雪HC】前走11番人気3着のプロミシングスターが昇級狙う　陣営「能力は
-OK project=1 video_id=Xt-GbCnXhIk title=【キーンランドC想定馬・騎手】ウインカーネリアン、パンジャタワーなど19頭
-OK project=1 video_id=gfcBgqKt1KA title=【有力馬動向】アウダーシア復帰戦へ向けて初追い切り/馬三郎のつぶやき
+OK project=1 video_id=H_MHnP_NflI title=1番人気が14連敗中の札幌記念 今年ジンクス克服に挑むのは？
+OK project=1 video_id=zeRhmJpar64 title=【阪神アーバン競馬】「ミスタータイガース」掛布雅之氏が園田で野球教室開催
+OK project=1 video_id=OBOUDXkGeXY title=【大井競馬】ディクテオン　コリアC招待を受諾　荒山勝徳師　連覇へ「身が引き締まる
