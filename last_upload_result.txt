@@ -1,10 +1,10 @@
-date: 2026-08-14T04:54:50.580352Z
+date: 2026-08-14T08:14:42.320858Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-DcdgAx3bPQ title=不成立のレース→新潟1Rへ急きょ投票変更で出走のオーラムミーティア　吉村調教師「
-OK project=1 video_id=9ca2A_BSLuM title=【注目馬動向】初来日の「インドのマジックマン」スラジ・ナレドゥ騎手とコンビ　イツ
-OK project=1 video_id=C-DvuEm8kuo title=【netkeiba×キーファーズ】ドウデュースファンミーティング「DO DEUC
+OK project=1 video_id=ZfzMwpHmzuc title=【報知杯大雪HC】前走11番人気3着のプロミシングスターが昇級狙う　陣営「能力は
+OK project=1 video_id=Xt-GbCnXhIk title=【キーンランドC想定馬・騎手】ウインカーネリアン、パンジャタワーなど19頭
+OK project=1 video_id=gfcBgqKt1KA title=【有力馬動向】アウダーシア復帰戦へ向けて初追い切り/馬三郎のつぶやき
