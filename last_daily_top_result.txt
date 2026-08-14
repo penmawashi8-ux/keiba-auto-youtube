@@ -1,8 +1,8 @@
-date: 2026-08-13T14:20:39.618195Z
+date: 2026-08-14T14:13:45.481670Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tHFHdYzObjk
-source_short=aW5ptPy_wos views=1132
-title=8月13日 南米の名手ゴンサルベスがＮＡＲの短期免許を取得　船橋・山下貴之厩舎所属で２４日から１１月６日まで
+OK project=1 video_id=80fQFNEdXyY
+source_short=-DcdgAx3bPQ views=1069
+title=8月14日 不成立のレース→新潟1Rへ急きょ投票変更で出走のオーラムミーティア　吉村調教師「体があまりない馬ですからね」
