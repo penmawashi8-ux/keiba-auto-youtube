@@ -1,10 +1,10 @@
-date: 2026-08-14T10:12:15.653899Z
+date: 2026-08-14T11:49:41.561933Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=H_MHnP_NflI title=1番人気が14連敗中の札幌記念 今年ジンクス克服に挑むのは？
-OK project=1 video_id=zeRhmJpar64 title=【阪神アーバン競馬】「ミスタータイガース」掛布雅之氏が園田で野球教室開催
-OK project=1 video_id=OBOUDXkGeXY title=【大井競馬】ディクテオン　コリアC招待を受諾　荒山勝徳師　連覇へ「身が引き締まる
+OK project=1 video_id=w8FXcsw0TTg title=【園田・摂津盃結果】オマツリオトコが豪快に差し切って久々の重賞勝利
+OK project=1 video_id=wN3jvKlUoMI title=【阪神アーバン競馬】「ミスタータイガース」掛布雅之氏が園田でトークショー　阪神連
+OK project=1 video_id=Oq2gFgxlrZQ title=【注目馬動向】目黒記念2着のウィクトルウェルスはオールカマーへ
