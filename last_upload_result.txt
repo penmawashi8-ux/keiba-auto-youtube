@@ -1,10 +1,10 @@
-date: 2026-08-13T11:50:46.010068Z
+date: 2026-08-14T04:54:50.580352Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=j2mlykWz2dE title=【大井・黒潮盃結果】ミルトイブニングが捲り切って重賞2勝目を挙げる
-OK project=1 video_id=9MUIcb5UxDE title=【北海道スプリントC】地元の石川倭騎手は2年連続Vならず　2番人気のトウカイマシ
-OK project=1 video_id=1SxJtA5MtME title=【北海道スプリントC】地元のベストグリーンがJRA勢を撃破　落合玄太騎手は当レー
+OK project=1 video_id=-DcdgAx3bPQ title=不成立のレース→新潟1Rへ急きょ投票変更で出走のオーラムミーティア　吉村調教師「
+OK project=1 video_id=9ca2A_BSLuM title=【注目馬動向】初来日の「インドのマジックマン」スラジ・ナレドゥ騎手とコンビ　イツ
+OK project=1 video_id=C-DvuEm8kuo title=【netkeiba×キーファーズ】ドウデュースファンミーティング「DO DEUC
