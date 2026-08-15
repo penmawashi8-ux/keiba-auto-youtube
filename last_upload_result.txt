@@ -1,10 +1,10 @@
-date: 2026-08-15T02:20:39.914934Z
+date: 2026-08-15T03:44:26.430139Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hycHLT4NHB8 title=【中京3R新馬戦結果】カラヴァッジオ産駒セイウンマイラヴが逃げ切り勝ち
-OK project=1 video_id=ZFKvM0M7v4A title=【新潟1R・2歳未勝利】フルーツバスケットが2番手から押し切り3馬身差の完勝　川
-OK project=1 video_id=_C9khv9CH-Q title=【新潟3R新馬戦結果】モーリス産駒ピコベリーが突き抜け快勝
+OK project=1 video_id=_h5KhFupxu8 title=【札幌5R新馬戦結果】ビッグアーサー産駒ジオパークカツキが人気に応えて快勝
+OK project=1 video_id=LDbIyAWfm-U title=【中京3R・2歳新馬】セイウンマイラヴが逃げ切りV　田山旺佑騎手「いい内容」　母
+OK project=1 video_id=DomVxut_BD0 title=【新潟3R・2歳新馬】モーリス産駒ピコベリーが初陣V　津村明秀騎手「楽しみ」　圧
