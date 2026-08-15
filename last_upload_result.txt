@@ -1,10 +1,6 @@
-date: 2026-08-15T11:24:07.258268Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-15T12:33:26.321347Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DhzV7GJBlz4 title=【中京記念】3連単は1番人気が98・8倍の混戦ムード!　単勝1番人気は4・1倍で
-OK project=1 video_id=7o6kekxvY38 title=混戦ムード漂うジャックルマロワ賞 日本からシックスペンス＆シュトラウスが参戦
-OK project=1 video_id=fkjg9CUW2dc title=【AI予想・札幌記念】前走GIで上位争いした馬を素直に評価すべき一戦！ 今年のメ
+OK project=1 video_id=S81TB4uYKUM views=48987 title=桜花賞馬スターアニスがスプリンターズＳへ　オークス内容を踏まえて適距離にシフト　過去の桜花賞馬ニシノフラワーやグランアレ
