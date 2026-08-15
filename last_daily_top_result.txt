@@ -1,8 +1,8 @@
-date: 2026-08-14T14:13:45.481670Z
+date: 2026-08-15T13:27:24.039423Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=80fQFNEdXyY
-source_short=-DcdgAx3bPQ views=1069
-title=8月14日 不成立のレース→新潟1Rへ急きょ投票変更で出走のオーラムミーティア　吉村調教師「体があまりない馬ですからね」
+OK project=1 video_id=hR1nJ9fG0VY
+source_short=_h5KhFupxu8 views=1032
+title=8月15日 【札幌5R新馬戦結果】ビッグアーサー産駒ジオパークカツキが人気に応えて快勝
