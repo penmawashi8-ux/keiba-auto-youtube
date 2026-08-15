@@ -1,10 +1,10 @@
-date: 2026-08-14T11:49:41.561933Z
+date: 2026-08-15T02:20:39.914934Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=w8FXcsw0TTg title=【園田・摂津盃結果】オマツリオトコが豪快に差し切って久々の重賞勝利
-OK project=1 video_id=wN3jvKlUoMI title=【阪神アーバン競馬】「ミスタータイガース」掛布雅之氏が園田でトークショー　阪神連
-OK project=1 video_id=Oq2gFgxlrZQ title=【注目馬動向】目黒記念2着のウィクトルウェルスはオールカマーへ
+OK project=1 video_id=hycHLT4NHB8 title=【中京3R新馬戦結果】カラヴァッジオ産駒セイウンマイラヴが逃げ切り勝ち
+OK project=1 video_id=ZFKvM0M7v4A title=【新潟1R・2歳未勝利】フルーツバスケットが2番手から押し切り3馬身差の完勝　川
+OK project=1 video_id=_C9khv9CH-Q title=【新潟3R新馬戦結果】モーリス産駒ピコベリーが突き抜け快勝
