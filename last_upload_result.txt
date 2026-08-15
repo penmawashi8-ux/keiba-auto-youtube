@@ -1,10 +1,10 @@
-date: 2026-08-15T07:30:34.180491Z
+date: 2026-08-15T09:34:07.703071Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=msYdI8AoOXY title=【コスモス賞レース後コメント】デアグランツ浜中俊騎手ら
-OK project=1 video_id=AgJx4n3WkEE title=【注目馬動向】桜花賞馬スターアニスはスプリンターズSへ　未勝利以来の1200戦
-OK project=1 video_id=1yTRtv0Z0no title=【メイクデビュー札幌5Rレース後コメント】ジオパークカツキ横山武史騎手ら
+OK project=1 video_id=m48RASKA4wg title=【新潟ジャンプS】ローディアマントが手に汗握る攻防を首差制す　伴啓太騎手「僕の馬
+OK project=1 video_id=Fnu-TifsHfI title=衝撃レコードVで菊花賞路線へファンの期待大「かなりの大物」「ロブチェン討伐」　ロ
+OK project=1 video_id=xctqwvsQwTY title=【新潟9R】ローディアマント、競り合い制して鮮やかV　コンビ伴は絶賛「勝負根性凄
