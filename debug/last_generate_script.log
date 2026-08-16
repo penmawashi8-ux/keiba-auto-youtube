@@ -1,64 +1,55 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemini-3.7-flash-video-understanding-eap', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[0]: 【中京3R新馬戦結果】ロードカナロア産駒ホウオウワールドが接戦を制す ---
-[0] Gemini入力本文 349文字: '16日、中京競馬場3Rで行われた新馬戦(2歳・芝1600m・8頭)は、ハナに立って最後まで粘り切ったJ.コレット騎手騎乗の1番人気ホウオウワールド(牡2、栗東・池江泰寿厩舎)が、ゴール前で外から並んできた7番人気ティフォシ(牡2、栗東・宮地'
+--- 記事[0]: 【札幌5R新馬戦結果】コントレイル産駒シティオブドリームが逃げ切り勝ち ---
+[0] Gemini入力本文 351文字: '16日、札幌競馬場5Rで行われた新馬戦(2歳・芝1800m・12頭)は、ハナに立ってそのまま逃げ切った横山典弘騎手騎乗の3番人気シティオブドリーム(牝2、栗東・昆貢厩舎)が、1番人気レジームチェンジ(牡2、美浦・鹿戸雄一厩舎)に1.1/2馬'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[1]: 小林美が病気のため乗り替わり　札幌1RでJRA通算98勝目も ---
-[1] Gemini入力本文 252文字: 'JRAは16日、札幌で騎乗予定だった小林美駒(21＝鈴木伸)の3R以降の乗り替わりを発表した。理由は病気のため。\n\u30002番人気プルーフリーディンに騎乗した1Rでは見事な差し切りV。JRA通算98勝目を挙げていた。 JRAは16日、札幌で騎乗予'
+--- 記事[1]: 新潟４Ｒの新馬戦で今村聖奈騎手がトップレイアーをＶに導く ---
+[1] Gemini入力本文 331文字: '聖奈とのコンビで良血馬が好発進だ。１６日の新潟４Ｒの新馬戦で２番人気のトップレイアー（牡２歳、父モーリス、栗東・大久保）が、上がり３Ｆ３３秒０の末脚で鮮やかに差し切った。母は２０１７年京都大賞典など重賞４勝したスマートレイアー。\n\u3000今年のＪ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 小林美駒騎手が病気のため札幌3R以降で乗り替わり　1Rの勝利でJRA通算100勝まであと「2」 ---
-[2] Gemini入力本文 348文字: '小林美駒騎手＝美浦・鈴木伸尋厩舎＝が病気のため、8月16日の札幌3R以降に騎乗予定だった6鞍で乗り替わりとなることが発表された。1Rのブルーフリーディン(牝3歳、栗東・小林真也厩舎、父ジャスタウェイ)で勝利し、JRA通算100勝まであと「2'
+--- 記事[2]: 【注目馬動向】新馬戦を3馬身半差完勝のリサナウトは9月27日中山のサフラン賞へ　祖母はエアグルーヴ ---
+[2] Gemini入力本文 349文字: '7月12日の福島・2歳新馬戦(芝1800メートル)を3馬身半差で完勝したリサナウト(牝、美浦・黒岩陽一厩舎、父リオンディーズ)が、次走はサフラン賞・2歳1勝クラス(牝馬限定、9月27日、中山競馬場・芝1600メートル)を目標とすることが分か'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 232文字]: '最新情報をお届けします。16日、中京競馬場3Rで行われた新馬戦の結果です。2歳、芝1600m、8頭立てのこのレースは、J.コレット騎手騎乗の1番人気ホウオウワールドが接戦を制し優勝しました。ホウオウワールドはハナに立って最後まで粘り切り、ゴール前で外から並んできた7番人気のティフォシにハナ差をつけました。勝ちタイムは1分36秒1、馬場は良でした。さらにクビ差の3着には4番人気のグラシアレスインクが入っています。なお、2番人気のデュアルサインも出走していました。'
-[0]  [redirectフィルター] 232文字 → 220文字
+[1]  [Gemini生出力 255文字]: '最新のレース情報が入ってきました。１６日の新潟４Ｒの新馬戦では、今村聖奈騎手が２番人気のトップレイアーを勝利に導きました。トップレイアーは上がり３Ｆ３３秒０の末脚を使い、鮮やかに差し切っています。この馬の母は、２０１７年京都大賞典など重賞４勝を挙げたスマートレイアーです。今村聖奈騎手にとって、この勝利は今年のＪＲＡ１１勝目、そしてＪＲＡ通算１１５勝目となりました。今村聖奈騎手は「普段の調教からコンタクトを取ってきましたが、まだ幼くて、レース前にスタッフの方と話を合わせて努力してもら」とコメントしています。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (255文字)
+[1]  プレビュー: 最新のレース情報が入ってきました。１６日の新潟４Ｒの新馬戦では、今村聖奈騎手が２番人気のトップレイアーを勝利に導きました。トップレイアーは上がり３Ｆ３３秒０の末...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[0]  [Gemini生出力 204文字]: '最新のレース情報が入ってきました。16日、札幌競馬場5Rで行われた新馬戦、2歳・芝1800m・12頭立てのレースは、コントレイル産駒のシティオブドリームが逃げ切り勝ちを収めました。横山典弘騎手騎乗の3番人気シティオブドリームは、ハナに立ってそのまま優勝。1番人気レジームチェンジに1.1/2馬身差をつけ、勝ちタイムは1分51秒7、馬場は良でした。さらにハナ差の3着には6番人気ハヤブサカツオーが入っています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (220文字)
-[0]  プレビュー: 16日、中京競馬場3Rで行われた新馬戦の結果です。2歳、芝1600m、8頭立てのこのレースは、J.コレット騎手騎乗の1番人気ホウオウワールドが接戦を制し優勝しま...
+[0]  → output/script_0.txt 保存 (204文字)
+[0]  プレビュー: 最新のレース情報が入ってきました。16日、札幌競馬場5Rで行われた新馬戦、2歳・芝1800m・12頭立てのレースは、コントレイル産駒のシティオブドリームが逃げ切...
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***189Y model=gemini-2.5-flash
 [2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 158文字]: '競馬ファン注目の情報です。JRAは16日、札幌で騎乗予定だった小林美駒騎手の3R以降の乗り替わりを発表しました。乗り替わりの理由は病気のためとされています。小林美駒騎手は、この発表に先立つ札幌1Rで、2番人気のプルーフリーディンに騎乗し、見事な差し切りVを飾っていました。この勝利は、JRA通算98勝目となりました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (158文字)
-[1]  プレビュー: 競馬ファン注目の情報です。JRAは16日、札幌で騎乗予定だった小林美駒騎手の3R以降の乗り替わりを発表しました。乗り替わりの理由は病気のためとされています。小林...
-  HTTP 200
-[2]  [Gemini生出力 164文字]: '今週の競馬注目情報をお伝えします。小林美駒騎手が病気のため、8月16日の札幌3R以降に騎乗予定だった6鞍で乗り替わりとなることが発表されました。小林美駒騎手は1Rのブルーフリーディンで勝利し、JRA通算100勝まであと「2」としていました。2Rはモミスケで8着でした。3Rのクラシカルカイザーは舟山瑠泉騎に乗り替わりとなります。'
+[2]  [Gemini生出力 225文字]: '最新情報をお届けします。\n7月12日の福島・2歳新馬戦を3馬身半差で完勝したリサナウトが、次走はサフラン賞を目標とすることが分かりました。美浦・黒岩陽一厩舎のリサナウトは、9月27日に中山競馬場で行われる芝1600メートルの2歳1勝クラス、牝馬限定のサフラン賞に出走を予定しています。このリオンディーズ産駒は、祖母が97年の天皇賞・秋などG1・2勝のエアグルーヴという良血馬です。サンデーサラブレッドクラブが16日までに、ホームページで発表しました。'
+[2]  [redirectフィルター] 225文字 → 212文字
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (164文字)
-[2]  プレビュー: 今週の競馬注目情報をお伝えします。小林美駒騎手が病気のため、8月16日の札幌3R以降に騎乗予定だった6鞍で乗り替わりとなることが発表されました。小林美駒騎手は1...
+[2]  → output/script_2.txt 保存 (212文字)
+[2]  プレビュー: 7月12日の福島・2歳新馬戦を3馬身半差で完勝したリサナウトが、次走はサフラン賞を目標とすることが分かりました。美浦・黒岩陽一厩舎のリサナウトは、9月27日に中...
 
 3 件の脚本を生成しました。
