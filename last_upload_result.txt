@@ -1,10 +1,6 @@
-date: 2026-08-16T11:24:09.196380Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-16T12:35:36.562898Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dsTnXanTaqg title=【稲妻Sレース後コメント】カウスリップ津村明秀騎手ら
-OK project=1 video_id=3dlgrHhldG8 title=【メイクデビュー札幌5Rレース後コメント】シティオブドリーム昆貢調教師ら
-OK project=1 video_id=ddAEVi87Pjc title=【メイクデビュー中京3Rレース後コメント】ホウオウワールド J.コレット騎手ら
+OK project=1 video_id=Y84qVcKGH_I views=50878 title=【札幌記念結果】シェイクユアハートが突き抜け完勝！ コースレコードを18年ぶりに更新【5.1万回閲覧・話題の競馬ニュース
