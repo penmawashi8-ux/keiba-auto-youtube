@@ -1,10 +1,10 @@
-date: 2026-08-16T03:53:08.223486Z
+date: 2026-08-16T07:30:55.150683Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cu54kuvzA5k title=【札幌5R新馬戦結果】コントレイル産駒シティオブドリームが逃げ切り勝ち
-OK project=1 video_id=1fdinuTDs6Q title=新潟４Ｒの新馬戦で今村聖奈騎手がトップレイアーをＶに導く
-OK project=1 video_id=iWcKjFpzRy0 title=【注目馬動向】新馬戦を3馬身半差完勝のリサナウトは9月27日中山のサフラン賞へ　
+OK project=1 video_id=WXQ3An5wi_A title=【中京記念】まさか…3番人気ナムラコスモスはブービー15着　田口貫太騎手はJRA
+OK project=1 video_id=-9E1Lkp_vCI title=【新潟7R・NST賞】ワイワイレジェンドが今後に向けて実り多きV　田辺裕信騎手「
+OK project=1 video_id=IQMi6X0aKkw title=【札幌記念】シェイクユアハート　大外から豪快に伸びて重賞3V　18年ぶりにコース
