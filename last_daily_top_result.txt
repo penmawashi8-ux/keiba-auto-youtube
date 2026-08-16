@@ -1,8 +1,8 @@
-date: 2026-08-15T13:27:24.039423Z
+date: 2026-08-16T13:29:36.122622Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hR1nJ9fG0VY
-source_short=_h5KhFupxu8 views=1032
-title=8月15日 【札幌5R新馬戦結果】ビッグアーサー産駒ジオパークカツキが人気に応えて快勝
+OK project=1 video_id=xp-AIzBzZbA
+source_short=L800ipzLjJ4 views=901
+title=8月16日 小林美が病気のため乗り替わり　札幌1RでJRA通算98勝目も
