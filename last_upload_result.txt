@@ -1,10 +1,10 @@
-date: 2026-08-16T09:36:51.142473Z
+date: 2026-08-16T11:24:09.196380Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SJnRYhw3uaI title=「泣きそうです」助手から障害専門ジョッキー転身の坂口智康騎手　全面サポートの浅利
-OK project=1 video_id=1wMm1Wf-ZzE title=小林真也調教師が札幌1RでJRA通算100勝を達成　「これからも向上心を持って研
-OK project=1 video_id=5hTDQf5o55w title=「これはヤバい」「菊花賞馬との出会い」大差→8馬身差で連勝の3・9億円馬に驚がく
+OK project=1 video_id=dsTnXanTaqg title=【稲妻Sレース後コメント】カウスリップ津村明秀騎手ら
+OK project=1 video_id=3dlgrHhldG8 title=【メイクデビュー札幌5Rレース後コメント】シティオブドリーム昆貢調教師ら
+OK project=1 video_id=ddAEVi87Pjc title=【メイクデビュー中京3Rレース後コメント】ホウオウワールド J.コレット騎手ら
