@@ -1,10 +1,6 @@
-date: 2026-08-17T11:46:09.155576Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-17T12:39:24.933287Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2-xeapfeG78 title=【キーンランドC】シュヴァルグラン産駒が重賞初制覇なるか 昨年3着のカルプスペル
-OK project=1 video_id=Sz0g-2BzuII title=【新潟2歳S】シャンデヴァーグ2連勝で重賞Vへ　津村明秀騎手「落ち着きがあって雰
-OK project=1 video_id=cmBuagLyFNY title=【キーンランドC】G1で活躍したクレアに続く姉妹Vへ　ナムラクララの前走は収穫大
+OK project=1 video_id=LO2U7iiZUAs views=102495 title=【仏・ジャックルマロワ賞結果】地元の3歳馬ライフがV シュトラウス9着、シックスペンス10着【10万回閲覧・話題の競馬ニ
