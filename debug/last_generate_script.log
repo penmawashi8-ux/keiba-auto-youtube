@@ -1,45 +1,63 @@
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (37個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【新潟2歳S見どころ】素質非凡のシャンデヴァーグが重賞を制する ---
-[0] Gemini入力本文 463文字: '初戦が着差以上の強さだったシャンデヴァーグに注目。出走を予定している主な有力馬は次の通り。\n■8/23(日)\u3000新潟2歳ステークス(2歳・GIII・新潟芝1600m)\n\u3000東京のマイル戦でデビュー勝ち。着差は僅かだったが終いの反応が鋭かったシャ'
+--- 記事[0]: 欧州で現在6戦無敗の半弟を矢作調教師が1・8億円で落札!フランス1歳セールで「藤田晋氏のために購入」 ---
+[0] Gemini入力本文 510文字: '欧州のサラブレッド1歳セールで超良血馬が日本人購買者によって落札された。フランスのドーヴィルで行われているアルカナ社のオーガストセール2日目(現地時間16日)に登場した、仏オークスなど6戦無敗のダイヤモンドネックレスの半弟(父シユーニ)を、'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【キーンランドC見どころ】実績は他馬を上回るパンジャタワー ---
-[1] Gemini入力本文 468文字: 'GI馬で連覇を狙うパンジャタワーの鋭い末脚に注目。出走を予定している主な有力馬は次の通り。\n■8/23(日)\u3000キーンランドカップ(3歳上・GIII・札幌芝1200m)\n\u3000ここ数戦は海外遠征や、その海外帰り後の高松宮記念、そして前走の安田記念'
+--- 記事[1]: 「結果を踏まえると...」武豊騎手がまさかの最下位10着に終わったシックスペンスについてコメント　ジャックルマロワ賞 ---
+[1] Gemini入力本文 343文字: '8月16日に行われた「第105回ジャックルマロワ賞・仏G1」(ドーヴィル競馬場・直線芝1600メートル、稍重)で、武豊騎手＝栗東・フリー＝が騎乗したシックスペンス(牡5歳、美浦・田中博康厩舎、父キズナ)は、まさかの最下位10着に敗れた。\n\t'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: 【キーンランドC・山下の特注馬】ベストの条件!パンジャタワーが連覇で貫禄の違いを見せる ---
-[2] Gemini入力本文 349文字: '◆第21回キーンランドC・G3(8月23日、札幌競馬場・芝1200メートル)\n\t\t\t\t\u3000サマースプリントシリーズ第5戦、パンジャタワー(牡4歳、栗東・橋口慎介厩舎、父タワーオブロンドン)の連覇に期待したい。昨年はNHKマイルCを勝ったあと、'
+--- 記事[2]: 【新潟2歳S展望】母娘重賞制覇を狙うシャンデヴァーグ　新馬戦を3馬身差で完勝のレッチュベルクにも注目 ---
+[2] Gemini入力本文 358文字: '第46回新潟2歳ステークス・G3は23日、新潟競馬場の芝1600メートルで行われる。\n\t\t\t\t\u3000シャンデヴァーグ(牝、美浦・森一誠厩舎、父ロードカナロア)は母が19年の報知杯フィリーズレビューを制したプールヴィルという良血馬。新馬戦は着差こ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 253文字]: '注目の競馬情報をお届けします。第21回キーンランドC、G3は8月23日に札幌競馬場・芝1200メートルで開催されます。サマースプリントシリーズ第5戦となるこのレースでは、パンジャタワーの連覇に期待が寄せられています。パンジャタワーは橋口慎介厩舎所属です。昨年、NHKマイルCを勝ったあと、キーンランドCが初の古馬との対戦となりましたが、直線で外から力強く伸びてあっさりと差し切ってみせました。その後は勝ち星から遠ざかっていますが、帰国検疫明けで本来の状態ではなかった高松宮記念からの巻き返しも注目されます。'
-[2]  [redirectフィルター] 253文字 → 238文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (238文字)
-[2]  プレビュー: 第21回キーンランドC、G3は8月23日に札幌競馬場・芝1200メートルで開催されます。サマースプリントシリーズ第5戦となるこのレースでは、パンジャタワーの連覇...
+[0]  [Gemini生出力 245文字]: '今週の競馬注目情報をお伝えします。\n欧州のサラブレッド1歳セールで、超良血馬が日本人購買者によって落札されました。フランスのドーヴィルで行われたアルカナ社のオーガストセール2日目、現地時間16日に登場した馬です。仏オークスなど6戦無敗のダイヤモンドネックレスの半弟、父シユーニの馬を、日本の矢作芳人調教師が100万ユーロ、日本円にして約1億8500万円で落札しました。矢作師は「藤田晋氏のために購入」とコメントしており、このダイヤモンドネックレスの半弟は世界的に注目を集める優秀な血統です。'
+[0]  [重複除去] 245文字 → 244文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (244文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。欧州のサラブレッド1歳セールで、超良血馬が日本人購買者によって落札されました。フランスのドーヴィルで行われたアルカナ社のオーガ...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[1]  [Gemini生出力 280文字]: '重要な競馬ニュースをお伝えします。8月23日日曜日に札幌芝1200mで行われるキーンランドカップ（3歳上・GIII）の見どころです。GI馬で連覇を狙うパンジャタワーの鋭い末脚に注目が集まっています。牡4のパンジャタワーは栗東の橋口慎介厩舎に所属し、ここ数戦は海外遠征や、その海外帰り後の高松宮記念、そして前走の安田記念では外枠と条件が厳しい中で大崩れせずに走っており、これが実力上位の証しです。昨年の当レースの覇者でもあり、当時は3歳で斤量の恩恵がありました。キーンランドカップの勝ち時計ランキングでは、2012年のパドトロワが1分7秒6で1位となっています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (280文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。8月23日日曜日に札幌芝1200mで行われるキーンランドカップ（3歳上・GIII）の見どころです。GI馬で連覇を狙うパンジャタ...
+[2]  [Gemini生出力 230文字]: '最新のレース情報が入ってきました。第46回新潟2歳ステークス・G3は23日、新潟競馬場の芝1600メートルで行われます。シャンデヴァーグは、母が19年の報知杯フィリーズレビューを制したプールヴィルという良血馬です。新馬戦は着差こそ鼻差でしたが、余裕を感じさせる勝ち方でした。スタートも折り合いも良く、レースセンスを感じさせます。1週前追い切りの動きから状態は良さそうで、母に続く重賞制覇を狙います。新馬戦を3馬身差で完勝したレッチュベルクにも注目が集まります。'
   HTTP 200
-[0]  [Gemini生出力 264文字]: '注目の競馬情報をお届けします。8月23日日曜日に開催が予定されている新潟2歳ステークス、2歳・GIII・新潟芝1600mのレースに注目が集まっています。特に、シャンデヴァーグが有力馬として挙げられています。シャンデヴァーグは東京のマイル戦でデビュー勝ちを収めており、着差は僅かだったものの、終いの反応が鋭い走りを見せました。デビュー戦で接戦を演じた2着馬と3着馬がその後勝ち星を挙げて未勝利を脱出していることから、そのレースレベルは高いと評価されています。休み明けでの出走となりますが、レッチュベルクなどと共に登録されています。'
-[0]  [redirectフィルター] 264文字 → 249文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (249文字)
-[0]  プレビュー: 8月23日日曜日に開催が予定されている新潟2歳ステークス、2歳・GIII・新潟芝1600mのレースに注目が集まっています。特に、シャンデヴァーグが有力馬として挙...
+[1]  [Gemini生出力 213文字]: '本日の競馬ニュースです。\n8月16日に行われた第105回ジャックルマロワ賞・仏G1で、武豊騎手が騎乗したシックスペンスは、まさかの最下位10着に敗れました。ドーヴィル競馬場の直線芝1600メートル、稍重の馬場で行われたこのレースは、武豊騎手にとって同レース6度目の騎乗でした。武豊騎手は「良いスタートを切れましたし、いい感じかなと思っていたのですが、途中から手応えがなくなってしまい、厳しいレースでした」とコメントしています。'
+[1]  [重複除去] 213文字 → 212文字
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (230文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第46回新潟2歳ステークス・G3は23日、新潟競馬場の芝1600メートルで行われます。シャンデヴァーグは、母が19年の報知杯フ...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (212文字)
+[1]  プレビュー: 本日の競馬ニュースです。8月16日に行われた第105回ジャックルマロワ賞・仏G1で、武豊騎手が騎乗したシックスペンスは、まさかの最下位10着に敗れました。ドーヴ...
 
 3 件の脚本を生成しました。
