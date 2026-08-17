@@ -1,6 +1,10 @@
-date: 2026-08-16T12:35:36.562898Z
-type: popular_news_landscape
+date: 2026-08-17T02:26:08.801253Z
+projects_loaded: 2
+uploaded: 3
+quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Y84qVcKGH_I views=50878 title=【札幌記念結果】シェイクユアハートが突き抜け完勝！ コースレコードを18年ぶりに更新【5.1万回閲覧・話題の競馬ニュース
+OK project=1 video_id=NcydqV44uhM title=【新潟2歳S見どころ】素質非凡のシャンデヴァーグが重賞を制する
+OK project=1 video_id=O-LTGMfGVZM title=【キーンランドC見どころ】実績は他馬を上回るパンジャタワー
+OK project=1 video_id=je2YocXBsaw title=【キーンランドC・山下の特注馬】ベストの条件!パンジャタワーが連覇で貫禄の違いを
