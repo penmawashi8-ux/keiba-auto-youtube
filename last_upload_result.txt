@@ -1,10 +1,10 @@
-date: 2026-08-17T03:57:55.141497Z
+date: 2026-08-17T07:56:02.578366Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=a19adFKG-CM title=欧州で現在6戦無敗の半弟を矢作調教師が1・8億円で落札!フランス1歳セールで「藤
-OK project=1 video_id=YEJhvrpd8Yg title=「結果を踏まえると...」武豊騎手がまさかの最下位10着に終わったシックスペンス
-OK project=1 video_id=q8ldgFfpEJ0 title=【新潟2歳S展望】母娘重賞制覇を狙うシャンデヴァーグ　新馬戦を3馬身差で完勝のレ
+OK project=1 video_id=lHCf00m45zg title=「ご心配をおかけして、大変申し訳ありませんでした」古川奈穂騎手がSNSで現状を報
+OK project=1 video_id=x9qkJmhGysE title=【ばんえいグランプリ】ファン投票1位のメムロボブサップが史上初の6連覇　阿部武臣
+OK project=1 video_id=HK7xyJOOmPM title=【札幌記念】シェイクユアハート　２馬身半差レコードＶ　大外一気で重賞３勝目　古川
