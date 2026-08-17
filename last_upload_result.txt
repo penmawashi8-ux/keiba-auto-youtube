@@ -1,10 +1,10 @@
-date: 2026-08-17T07:56:02.578366Z
+date: 2026-08-17T11:46:09.155576Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lHCf00m45zg title=「ご心配をおかけして、大変申し訳ありませんでした」古川奈穂騎手がSNSで現状を報
-OK project=1 video_id=x9qkJmhGysE title=【ばんえいグランプリ】ファン投票1位のメムロボブサップが史上初の6連覇　阿部武臣
-OK project=1 video_id=HK7xyJOOmPM title=【札幌記念】シェイクユアハート　２馬身半差レコードＶ　大外一気で重賞３勝目　古川
+OK project=1 video_id=2-xeapfeG78 title=【キーンランドC】シュヴァルグラン産駒が重賞初制覇なるか 昨年3着のカルプスペル
+OK project=1 video_id=Sz0g-2BzuII title=【新潟2歳S】シャンデヴァーグ2連勝で重賞Vへ　津村明秀騎手「落ち着きがあって雰
+OK project=1 video_id=cmBuagLyFNY title=【キーンランドC】G1で活躍したクレアに続く姉妹Vへ　ナムラクララの前走は収穫大
