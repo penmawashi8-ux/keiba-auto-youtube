@@ -34,6 +34,7 @@
   python scripts/create_gen25_video.py                      # フル尺+ショート5本
   python scripts/create_gen25_video.py --only full          # 横型フル尺だけ
   python scripts/create_gen25_video.py --only shorts        # 縦型ショートだけ
+  python scripts/create_gen25_video.py --no-sfx             # 効果音なし
   python scripts/create_gen25_video.py \
       --script data/gen25_short_1.txt --orientation portrait \
       --out output/gen25_short_1.mp4 --cta
@@ -60,6 +61,12 @@ except Exception:                                    # 単体実行時の保険
     def apply_readings(text: str) -> str:
         return text
 
+try:
+    from make_sfx import ensure_sfx                  # 効果音は ffmpeg で合成する
+except Exception:
+    def ensure_sfx() -> dict[str, str]:
+        return {}
+
 VOICE  = "ja-JP-KeitaNeural"     # 解説シリーズ（ニュース系と同じ男性ナレーター）
 RATE   = "+10%"                  # 早口寄り（テンポ重視）
 VOLUME = "+0%"
@@ -71,6 +78,12 @@ ENDING_DUR = 4.0
 
 # 横型フル尺は腰を据えて見る動画なので、ショートよりゆっくり喋らせる。
 ORIENT_SPEED = {"landscape": 0.86, "portrait": 1.0}
+
+# 図解の行が出るタイミング（完成した動画での秒数）。ここに効果音を当てる。
+ROW_LEAD = 0.35      # シーンの頭から1行目まで
+ROW_STEP = 0.45      # 2行目以降の間隔
+SFX_VOL = {"impact": 0.8, "tick": 0.5, "whoosh": 0.45}
+SFX_DECAY = 0.86     # 2行目以降、1行ごとに音量をこの比率で下げる
 
 SERIES_LABEL = "競馬25世代 解説"
 CTA_BADGE    = "▶本編は概要欄"
@@ -354,7 +367,8 @@ def _row_color(row: str) -> str:
 # ---------------------------------------------------------------------------
 # 図解（drawtext のみ・先頭 "," 付きのフィルタ列を返す）
 # ---------------------------------------------------------------------------
-def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> str:
+def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str,
+                speed: float = 1.0) -> str:
     """図解を1枚だけ描く。シーンが続くあいだ描き直さないので画面は静止する。"""
     kind = scene.get("kind", "plain")
     if kind == "plain":
@@ -398,8 +412,10 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
 
     for i, row in enumerate(rows):
         fg = _row_color(row) if kind == "result" else C_WHITE
+        # 最後に倍速をかけるので、その分だけ引き伸ばして指定する。
+        # こうすると完成した動画では ROW_LEAD + i*ROW_STEP 秒の等間隔で出る。
         chip(wf(f"r{i}", row), geom["board_row_y"] + i * gap, size, fg,
-             enable=f"gte(t\\,{0.25 + i * 0.30:.2f})")
+             enable=f"gte(t\\,{(ROW_LEAD + i * ROW_STEP) * speed:.3f})")
 
     return ("," + ",".join(parts)) if parts else ""
 
@@ -408,7 +424,7 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
 # クリップ生成
 # ---------------------------------------------------------------------------
 def make_scene_clip(gidx, lines, scene, audios, font, tmp_dir, geom,
-                    is_ending=False, cta=False) -> str:
+                    is_ending=False, cta=False, speed=1.0) -> str:
     """同じ図解を使うナレーション行をまとめて1クリップに描く。
 
     以前は「1行＝1クリップ」だったため、字幕が変わるたびに背景と図解が
@@ -440,7 +456,7 @@ def make_scene_clip(gidx, lines, scene, audios, font, tmp_dir, geom,
     chain = f"[0:v]{BG_FILTER},format=yuv420p"
 
     if not is_ending:
-        chain += build_scene(scene, geom, tmp_dir, gidx, font)
+        chain += build_scene(scene, geom, tmp_dir, gidx, font, speed)
 
     chain += (f",drawtext=textfile='{lf}':fontfile='{fp}':"
               f"fontsize={geom['label_size']}:fontcolor=0x{C_GOLD}@0.96:"
@@ -531,8 +547,84 @@ def _concat(clips: list[str], out: str, tmp_dir: str, tag: str) -> None:
                    check=True, capture_output=True)
 
 
+def sfx_events(groups: list[dict], speed: float) -> list[tuple[float, str, float]]:
+    """(完成動画での秒数, 効果音名, 音量) の一覧を作る。
+
+    図解の行が出る瞬間に音を当てる。@result は「バーン」、@card は軽い
+    「トッ」、@chapter は登場音。行が下にいくほど音量を落として、
+    1着の一発がいちばん目立つようにする。
+    """
+    events: list[tuple[float, str, float]] = []
+    t = 0.0                       # 完成動画での、そのシーンの開始時刻
+    for grp in groups:
+        scene = grp["scene"]
+        kind = scene.get("kind", "plain")
+        if kind == "chapter":
+            events.append((t + 0.15, "whoosh", SFX_VOL["whoosh"]))
+        elif kind in ("result", "card"):
+            name = "impact" if kind == "result" else "tick"
+            for i in range(len(scene.get("rows", []))):
+                events.append((t + ROW_LEAD + i * ROW_STEP, name,
+                               SFX_VOL[name] * (SFX_DECAY ** i)))
+        t += sum(dur + GAP for _, dur in grp["audios"]) / speed
+    return events
+
+
+def mix_audio(base: str, out_path: str,
+              events: list[tuple[float, str, float]],
+              sfx: dict[str, str], bgm: str | None) -> None:
+    """完成尺の動画に効果音とBGMを重ねる。映像は再エンコードしない。"""
+    events = [(t, n, v) for t, n, v in events if n in sfx]
+    if not events and not bgm:
+        shutil.move(base, out_path)
+        return
+
+    cmd = ["ffmpeg", "-y", "-i", base]
+    legs, mixed = [], ["[0:a]"]
+
+    # 同じ効果音ファイルを何度も使うので、入力は1本にして asplit で分ける
+    used = sorted({n for _, n, _ in events})
+    slot: dict[str, int] = {}
+    for idx, name in enumerate(used, start=1):
+        cmd += ["-i", sfx[name]]
+        slot[name] = idx
+    idx = len(used) + 1
+
+    counts = {n: sum(1 for _, m, _ in events if m == n) for n in used}
+    for name in used:
+        outs = "".join(f"[{name}_{k}]" for k in range(counts[name]))
+        legs.append(f"[{slot[name]}:a]asplit={counts[name]}{outs}")
+
+    seen = {n: 0 for n in used}
+    for t, name, vol in events:
+        k = seen[name]
+        seen[name] += 1
+        tag = f"e_{name}_{k}"
+        legs.append(f"[{name}_{k}]adelay={int(max(t, 0) * 1000)}:all=1,"
+                    f"volume={vol:.3f}[{tag}]")
+        mixed.append(f"[{tag}]")
+
+    if bgm:
+        cmd += ["-stream_loop", "-1", "-i", bgm]
+        legs.append(f"[{idx}:a]volume={BGM_VOLUME}[bgm]")
+        mixed.append("[bgm]")
+
+    legs.append(f"{''.join(mixed)}amix=inputs={len(mixed)}:duration=first:"
+                f"normalize=0,alimiter=limit=0.95[aout]")
+    cmd += ["-filter_complex", ";".join(legs), "-map", "0:v", "-map", "[aout]",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "44100",
+            "-ac", "2", "-shortest", out_path]
+
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode != 0:
+        print(f"  [警告] 効果音・BGMのミックスに失敗（音なしで続行）:\n"
+              f"{r.stderr[-700:]}", file=sys.stderr)
+        shutil.move(base, out_path)
+
+
 def build_video(script_path, orientation, out_path, font, bgm, engine,
-                speed=1.0, cta=False) -> float:
+                sfx=None, speed=1.0, cta=False) -> float:
+    sfx = sfx or {}
     geom = geometry(orientation)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     tmp_dir = f"/tmp/gen25_{Path(out_path).stem}"
@@ -573,7 +665,8 @@ def build_video(script_path, orientation, out_path, font, bgm, engine,
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = {
             ex.submit(make_scene_clip, g, grp["lines"], grp["scene"],
-                      grp["audios"], font, tmp_dir, geom, cta=cta): g
+                      grp["audios"], font, tmp_dir, geom, cta=cta,
+                      speed=speed): g
             for g, grp in enumerate(groups)
         }
         for n, fut in enumerate(as_completed(futures), 1):
@@ -612,16 +705,10 @@ def build_video(script_path, orientation, out_path, font, bgm, engine,
     base = f"{tmp_dir}/base.mp4"
     _concat([body, ending], base, tmp_dir, "final")
 
-    if bgm:
-        subprocess.run(
-            ["ffmpeg", "-y", "-i", base, "-stream_loop", "-1", "-i", bgm,
-             "-filter_complex",
-             f"[0:a][1:a]amix=inputs=2:duration=first:weights=1 {BGM_VOLUME}[aout]",
-             "-map", "0:v", "-map", "[aout]", "-c:v", "copy", "-c:a", "aac",
-             "-b:a", "192k", "-shortest", out_path],
-            check=True, capture_output=True)
-    else:
-        shutil.move(base, out_path)
+    # 効果音は倍速をかけたあとの完成尺に対して置く。クリップの中に混ぜると
+    # あとから倍速がかかって「バーン」が「バッ」に潰れてしまうため。
+    events = sfx_events(groups, speed)
+    mix_audio(base, out_path, events, sfx, bgm)
 
     thumb = str(Path(out_path).with_suffix("")) + "_thumb.jpg"
     subprocess.run(["ffmpeg", "-y", "-ss", "1.2", "-i", out_path,
@@ -649,6 +736,7 @@ def main() -> None:
     ap.add_argument("--cta", action="store_true")
     ap.add_argument("--only", choices=["full", "shorts", "all"], default="all")
     ap.add_argument("--no-bgm", action="store_true")
+    ap.add_argument("--no-sfx", action="store_true")
     args = ap.parse_args()
 
     font = find_font()
@@ -656,8 +744,10 @@ def main() -> None:
         print("[エラー] CJKフォントが見つかりません。", file=sys.stderr)
         sys.exit(1)
     bgm = None if args.no_bgm else find_bgm()
+    sfx = {} if args.no_sfx else ensure_sfx()
     print(f"フォント: {font}")
     print(f"BGM: {bgm or 'なし（ナレーションのみ）'}")
+    print(f"効果音: {'/'.join(sorted(sfx)) or 'なし'}")
     engine = choose_engine()
     speed = args.speed if args.speed else ENGINE_SPEED.get(engine, 1.0)
     print(f"TTS: {engine} / 再生速度: {speed}x")
@@ -677,7 +767,7 @@ def main() -> None:
         # 横型フル尺は落ち着いて見る動画なので、ショートより一段ゆっくり喋らせる
         sp = speed * (1.0 if args.speed else ORIENT_SPEED.get(orientation, 1.0))
         results.append((out, build_video(script, orientation, out, font, bgm,
-                                         engine, speed=sp, cta=cta)))
+                                         engine, sfx=sfx, speed=sp, cta=cta)))
 
     print("\n=== 完了 ===")
     for out, dur in results:
