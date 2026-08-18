@@ -25,7 +25,7 @@
     フォールバック。ネットワーク制限のある環境でも必ず動画が完成する。
 
 プロジェクトルール（CLAUDE.md）順守:
-  - 画面はすべて ffmpeg（lavfi gradients + drawtext box=1）で生成。
+  - 画面はすべて ffmpeg（lavfi color + vignette + drawtext）で生成。
     Pillow / numpy画像処理 / drawbox は一切使わない。
   - 日本語テキストは textfile= でファイル経由（エスケープ回避）。
   - サムネイルは動画ネイティブ解像度のままフレーム抽出（-s リサイズ禁止）。
@@ -88,15 +88,17 @@ BG_FILTER = "vignette=PI/8:dither=0"
 # edge-tts は rate=+10% でおよそ8字/秒、Google音声は素で約3.9字/秒。
 ENGINE_SPEED = {"edge": 1.12, "google": 2.2, "oj": 1.4}
 
-# 着順の色は「文字」だけに乗せる。パネルの背景は全行そろえて暗色1色にする。
-# （行ごとに背景色を変えると図解がうるさくなり、文字も読みにくい）
+# 着順の違いは「文字色」だけで表す（背景の帯は敷かない）。
 C_GOLD   = "FFD24A"    # 1着
 C_SILVER = "D8DEE5"    # 2着
 C_BRONZE = "E09A56"    # 3着
 C_RED    = "F08A8A"    # 回避・中止・除外
 C_WHITE  = "FFFFFF"
-C_PANEL  = "000000"    # 図解パネル共通の背景
-PANEL_A  = 0.5         # その不透明度
+
+# 背景の帯を敷くのは字幕だけ。図解・見出し・ラベルは地の背景に直接置き、
+# 太めの黒フチと影だけで読ませる（背景色を重ねると画面がうるさくなるため）。
+TEXT_EDGE = ("borderw=6:bordercolor=0x04180f@0.92:"
+             "shadowcolor=0x000000@0.55:shadowx=3:shadowy=4")
 
 
 # ---------------------------------------------------------------------------
@@ -366,11 +368,10 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
         Path(p).write_text(text, encoding="utf-8")
         return p.replace("'", "\\'")
 
-    def chip(path, y, size, fg, border=18, enable=None, ls=8, alpha=PANEL_A):
+    def chip(path, y, size, fg, enable=None, ls=8):
         s = (f"drawtext=textfile='{path}':fontfile='{fp}':fontsize={size}:"
              f"fontcolor=0x{fg}:x={cx}-text_w/2:y={y}:line_spacing={ls}:"
-             f"box=1:boxcolor=0x{C_PANEL}@{alpha}:boxborderw={border}:"
-             f"borderw=2:bordercolor=0x000000")
+             f"{TEXT_EDGE}")
         if enable is not None:
             s += f":enable='{enable}'"
         parts.append(s)
@@ -378,8 +379,7 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
     if kind == "chapter":
         title = scene.get("title", "")
         chip(wf("ch", wrap_text(title, 11 if geom["orient"] == "portrait" else 18)),
-             geom["chapter_y"], geom["chapter_size"], C_GOLD,
-             border=34, ls=20, alpha=0.62)
+             geom["chapter_y"], geom["chapter_size"], C_GOLD, ls=20)
         return ("," + ",".join(parts)) if parts else ""
 
     title = scene.get("title", "")
@@ -394,12 +394,12 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
     t_chars = 18 if geom["orient"] == "portrait" else 30
     t_size = min(int(size * 0.86), 46)
     chip(wf("t", wrap_text(title, t_chars)), geom["board_title_y"], t_size,
-         C_WHITE, border=20, ls=10, alpha=0.62)
+         C_WHITE, ls=10)
 
     for i, row in enumerate(rows):
         fg = _row_color(row) if kind == "result" else C_WHITE
         chip(wf(f"r{i}", row), geom["board_row_y"] + i * gap, size, fg,
-             border=16, enable=f"gte(t\\,{0.25 + i * 0.30:.2f})")
+             enable=f"gte(t\\,{0.25 + i * 0.30:.2f})")
 
     return ("," + ",".join(parts)) if parts else ""
 
@@ -444,14 +444,12 @@ def make_scene_clip(gidx, lines, scene, audios, font, tmp_dir, geom,
 
     chain += (f",drawtext=textfile='{lf}':fontfile='{fp}':"
               f"fontsize={geom['label_size']}:fontcolor=0x{C_GOLD}@0.96:"
-              f"x=(w-text_w)/2:y={geom['label_y']}:"
-              f"box=1:boxcolor=0x000000@0.55:boxborderw=16:"
-              f"borderw=2:bordercolor=0x000000")
+              f"x=(w-text_w)/2:y={geom['label_y']}:{TEXT_EDGE}")
 
     if cta and not is_ending:
         chain += (f",drawtext=textfile='{bf}':fontfile='{fp}':fontsize=32:"
-                  f"fontcolor=0x{C_GOLD}:x=w-text_w-40:y={geom['label_y'] + 4}:"
-                  f"box=1:boxcolor=0x000000@0.55:boxborderw=12")
+                  f"fontcolor=0x{C_GOLD}:x=w-text_w-40:"
+                  f"y={geom['label_y'] + 4}:{TEXT_EDGE}")
 
     if is_ending:
         p = f"{tmp_dir}/text_{gidx:04d}.txt"
@@ -459,7 +457,7 @@ def make_scene_clip(gidx, lines, scene, audios, font, tmp_dir, geom,
         chain += (f",drawtext=textfile='{p}':fontfile='{fp}':"
                   f"fontsize={geom['end_size']}:fontcolor=0x{C_GOLD}:"
                   f"x=(w-text_w)/2:y=(h-text_h)/2:line_spacing=20:"
-                  f"box=1:boxcolor=0x000000@0.6:boxborderw=28")
+                  f"{TEXT_EDGE}")
     else:
         for i, text in enumerate(lines):
             p = f"{tmp_dir}/text_{gidx:04d}_{i:02d}.txt"
