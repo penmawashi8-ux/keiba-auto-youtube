@@ -1,8 +1,8 @@
-date: 2026-08-17T13:37:11.684413Z
+date: 2026-08-18T13:39:18.147116Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cVKt1Oc7S0w
-source_short=YEJhvrpd8Yg views=895
-title=8月17日 「結果を踏まえると...」武豊騎手がまさかの最下位10着に終わったシックスペンスについてコメント　ジャックル
+OK project=1 video_id=1xjTi0mhAGc
+source_short=agQcNOt5zMo views=308
+title=8月18日 ワールドオールスタージョッキーズ出走予定馬決定!出場騎手14人で第2戦はギリギリ14頭がそろう
