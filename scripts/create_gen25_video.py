@@ -8,7 +8,7 @@
     #  から始まる行           … コメント（無視）
     @chapter 見出し           … 章タイトルカード
     @card タイトル|行|行      … 箇条書きカード
-    @result レース名|行|行    … 着順ボード（1着=金 2着=銀 3着=銅 回避=赤 他=紺）
+    @result 見出し|行|行      … 着順ボード（着順に応じて文字色が変わる）
     @plain                    … 図なし（字幕のみ）
     それ以外の行              … ナレーション1行 ＝ 字幕1枚
     行末に「||読み」を付けるとTTSにはそちらを渡す（字幕は元テキストのまま）
@@ -16,8 +16,11 @@
 @ 行で指定した図は、次の @ 行が来るまでのナレーション行に適用される。
 
 設計:
-  - 「1行 = 1字幕セグメント」。行ごとに音声を合成して尺を測り、その長さで
-    クリップを作るため、どのTTSエンジンでも字幕と音声が必ず同期する。
+  - 「1行 = 1字幕セグメント」。行ごとに音声を合成して尺を測るため、どのTTS
+    エンジンでも字幕と音声が必ず同期する。
+  - 映像は「1シーン = 1クリップ」。同じ図解を使う連続行はまとめて描き、字幕は
+    drawtext の enable で切り替える。行ごとにクリップを切ると連結の境目で
+    画面が描き直されてチカチカするため。
   - TTS は edge-tts（本番標準）→ Google翻訳TTS → pyopenjtalk → 無音 の順で
     フォールバック。ネットワーク制限のある環境でも必ず動画が完成する。
 
@@ -66,6 +69,9 @@ BGM_VOLUME = 0.18
 GAP        = 0.18                # 行間の無音（テンポ優先で短め）
 ENDING_DUR = 4.0
 
+# 横型フル尺は腰を据えて見る動画なので、ショートよりゆっくり喋らせる。
+ORIENT_SPEED = {"landscape": 0.86, "portrait": 1.0}
+
 SERIES_LABEL = "競馬25世代 解説"
 CTA_BADGE    = "▶本編は概要欄"
 CTA_ENDING   = "つづきは本編で！\n▶ 概要欄・コメント欄から"
@@ -73,19 +79,24 @@ END_TEXT     = "チャンネル登録・高評価\nよろしくお願いしま�
 
 # 背景はターフ色のフラットな単色＋弱いビネット。
 # 2色グラデーションは安っぽく見えるので使わない。
+# vignette は dither=0 が必須。既定の dither=1 だとフレームごとに乱数ノイズが
+# 乗り、単色背景ではそれが「チカチカ」として見えてしまう。
 BG_COLOR = "0x16463a"
+BG_FILTER = "vignette=PI/8:dither=0"
 
 # TTSエンジンごとの標準再生速度（かなり早口寄りに設定）。
 # edge-tts は rate=+10% でおよそ8字/秒、Google音声は素で約3.9字/秒。
 ENGINE_SPEED = {"edge": 1.12, "google": 2.2, "oj": 1.4}
 
+# 着順の色は「文字」だけに乗せる。パネルの背景は全行そろえて暗色1色にする。
+# （行ごとに背景色を変えると図解がうるさくなり、文字も読みにくい）
 C_GOLD   = "FFD24A"    # 1着
-C_SILVER = "C7CDD4"    # 2着
-C_BRONZE = "D08B4A"    # 3着
-C_RED    = "E06C6C"    # 回避・凡走
-C_NAVY   = "13314a"    # その他の着順
+C_SILVER = "D8DEE5"    # 2着
+C_BRONZE = "E09A56"    # 3着
+C_RED    = "F08A8A"    # 回避・中止・除外
 C_WHITE  = "FFFFFF"
-C_DARK   = "05221a"
+C_PANEL  = "000000"    # 図解パネル共通の背景
+PANEL_A  = 0.5         # その不透明度
 
 
 # ---------------------------------------------------------------------------
@@ -325,23 +336,24 @@ def wrap_text(text: str, max_chars: int) -> str:
     return "\n".join(out)
 
 
-def _row_colors(row: str) -> tuple[str, str]:
-    """行頭の着順表記から (文字色, 背景色) を決める。"""
+def _row_color(row: str) -> str:
+    """行頭の着順表記から文字色を決める（背景は全行共通の暗色）。"""
     if row.startswith("1着"):
-        return C_DARK, C_GOLD
+        return C_GOLD
     if row.startswith("2着"):
-        return C_DARK, C_SILVER
+        return C_SILVER
     if row.startswith("3着"):
-        return C_DARK, C_BRONZE
+        return C_BRONZE
     if row.startswith(("回避", "中止", "除外")):
-        return C_WHITE, C_RED
-    return C_WHITE, C_NAVY
+        return C_RED
+    return C_WHITE
 
 
 # ---------------------------------------------------------------------------
 # 図解（drawtext のみ・先頭 "," 付きのフィルタ列を返す）
 # ---------------------------------------------------------------------------
 def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> str:
+    """図解を1枚だけ描く。シーンが続くあいだ描き直さないので画面は静止する。"""
     kind = scene.get("kind", "plain")
     if kind == "plain":
         return ""
@@ -354,10 +366,10 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
         Path(p).write_text(text, encoding="utf-8")
         return p.replace("'", "\\'")
 
-    def chip(path, y, size, fg, bg, border=18, enable=None, ls=8):
+    def chip(path, y, size, fg, border=18, enable=None, ls=8, alpha=PANEL_A):
         s = (f"drawtext=textfile='{path}':fontfile='{fp}':fontsize={size}:"
              f"fontcolor=0x{fg}:x={cx}-text_w/2:y={y}:line_spacing={ls}:"
-             f"box=1:boxcolor=0x{bg}@0.94:boxborderw={border}:"
+             f"box=1:boxcolor=0x{C_PANEL}@{alpha}:boxborderw={border}:"
              f"borderw=2:bordercolor=0x000000")
         if enable is not None:
             s += f":enable='{enable}'"
@@ -366,8 +378,8 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
     if kind == "chapter":
         title = scene.get("title", "")
         chip(wf("ch", wrap_text(title, 11 if geom["orient"] == "portrait" else 18)),
-             geom["chapter_y"], geom["chapter_size"], C_GOLD, "000000",
-             border=34, ls=20)
+             geom["chapter_y"], geom["chapter_size"], C_GOLD,
+             border=34, ls=20, alpha=0.62)
         return ("," + ",".join(parts)) if parts else ""
 
     title = scene.get("title", "")
@@ -382,11 +394,11 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
     t_chars = 18 if geom["orient"] == "portrait" else 30
     t_size = min(int(size * 0.86), 46)
     chip(wf("t", wrap_text(title, t_chars)), geom["board_title_y"], t_size,
-         C_WHITE, "000000", border=20, ls=10)
+         C_WHITE, border=20, ls=10, alpha=0.62)
 
     for i, row in enumerate(rows):
-        fg, bg = _row_colors(row) if kind == "result" else (C_WHITE, C_NAVY)
-        chip(wf(f"r{i}", row), geom["board_row_y"] + i * gap, size, fg, bg,
+        fg = _row_color(row) if kind == "result" else C_WHITE
+        chip(wf(f"r{i}", row), geom["board_row_y"] + i * gap, size, fg,
              border=16, enable=f"gte(t\\,{0.25 + i * 0.30:.2f})")
 
     return ("," + ",".join(parts)) if parts else ""
@@ -395,35 +407,40 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str) -> s
 # ---------------------------------------------------------------------------
 # クリップ生成
 # ---------------------------------------------------------------------------
-def make_clip(idx, text, scene, audio_path, duration, font, tmp_dir, geom,
-              is_ending=False, cta=False) -> str:
-    W, H = geom["w"], geom["h"]
-    clip_path  = f"{tmp_dir}/clip_{idx:04d}.mp4"
-    # 並列生成するのでテキストファイルはクリップごとに分ける（書き込み競合の回避）
-    label_file = f"{tmp_dir}/label_{idx:04d}.txt"
-    text_file  = f"{tmp_dir}/text_{idx:04d}.txt"
-    badge_file = f"{tmp_dir}/badge_{idx:04d}.txt"
-    duration   = max(duration, 0.6)
+def make_scene_clip(gidx, lines, scene, audios, font, tmp_dir, geom,
+                    is_ending=False, cta=False) -> str:
+    """同じ図解を使うナレーション行をまとめて1クリップに描く。
 
+    以前は「1行＝1クリップ」だったため、字幕が変わるたびに背景と図解が
+    描き直され、連結の切れ目で画面がチカチカしていた。ここでは背景と図解を
+    通しで1回だけ描き、字幕だけを enable=between(t,…) で切り替えるので、
+    シーンが続くあいだ画面は完全に静止する。
+    """
+    W, H = geom["w"], geom["h"]
+    clip_path  = f"{tmp_dir}/clip_{gidx:04d}.mp4"
+    # 並列生成するのでテキストファイルはクリップごとに分ける（書き込み競合の回避）
+    label_file = f"{tmp_dir}/label_{gidx:04d}.txt"
+    badge_file = f"{tmp_dir}/badge_{gidx:04d}.txt"
     Path(label_file).write_text(SERIES_LABEL, encoding="utf-8")
     Path(badge_file).write_text(CTA_BADGE, encoding="utf-8")
-    if is_ending:
-        Path(text_file).write_text(CTA_ENDING if cta else END_TEXT,
-                                   encoding="utf-8")
-    else:
-        Path(text_file).write_text(wrap_text(text, geom["sub_chars"]),
-                                   encoding="utf-8")
 
-    src = f"color=c={BG_COLOR}:s={W}x{H}:r={FPS}:d={duration + 2:.2f}"
-    chain = "[0:v]vignette=PI/8,format=yuv420p"
+    # 字幕の表示区間 = その行の音声長 + 行間の無音
+    spans: list[tuple[float, float]] = []
+    t = 0.0
+    for _, dur in audios:
+        spans.append((t, t + dur + GAP))
+        t += dur + GAP
+    total = max(t, 0.6) if audios else ENDING_DUR
 
     fp = font.replace("'", "\\'")
     lf = label_file.replace("'", "\\'")
-    tf = text_file.replace("'", "\\'")
     bf = badge_file.replace("'", "\\'")
 
+    src = f"color=c={BG_COLOR}:s={W}x{H}:r={FPS}:d={total + 1:.2f}"
+    chain = f"[0:v]{BG_FILTER},format=yuv420p"
+
     if not is_ending:
-        chain += build_scene(scene, geom, tmp_dir, idx, font)
+        chain += build_scene(scene, geom, tmp_dir, gidx, font)
 
     chain += (f",drawtext=textfile='{lf}':fontfile='{fp}':"
               f"fontsize={geom['label_size']}:fontcolor=0x{C_GOLD}@0.96:"
@@ -433,43 +450,62 @@ def make_clip(idx, text, scene, audio_path, duration, font, tmp_dir, geom,
 
     if cta and not is_ending:
         chain += (f",drawtext=textfile='{bf}':fontfile='{fp}':fontsize=32:"
-                  f"fontcolor=0x000000:x=w-text_w-26:y={geom['label_y'] + 4}:"
-                  f"box=1:boxcolor=0x{C_GOLD}@0.92:boxborderw=12")
+                  f"fontcolor=0x{C_GOLD}:x=w-text_w-40:y={geom['label_y'] + 4}:"
+                  f"box=1:boxcolor=0x000000@0.55:boxborderw=12")
 
     if is_ending:
-        chain += (f",drawtext=textfile='{tf}':fontfile='{fp}':"
+        p = f"{tmp_dir}/text_{gidx:04d}.txt"
+        Path(p).write_text(CTA_ENDING if cta else END_TEXT, encoding="utf-8")
+        chain += (f",drawtext=textfile='{p}':fontfile='{fp}':"
                   f"fontsize={geom['end_size']}:fontcolor=0x{C_GOLD}:"
                   f"x=(w-text_w)/2:y=(h-text_h)/2:line_spacing=20:"
                   f"box=1:boxcolor=0x000000@0.6:boxborderw=28")
     else:
-        chain += (f",drawtext=textfile='{tf}':fontfile='{fp}':"
-                  f"fontsize={geom['sub_size']}:fontcolor=0x{C_WHITE}:"
-                  f"x=(w-text_w)/2:y={geom['sub_y']}:line_spacing=14:"
-                  f"box=1:boxcolor=0x041b12@0.85:boxborderw=26:"
-                  f"borderw=2:bordercolor=0x000000")
-    chain += "[vout];[1:a]aresample=44100,apad[aout]"
+        for i, text in enumerate(lines):
+            p = f"{tmp_dir}/text_{gidx:04d}_{i:02d}.txt"
+            Path(p).write_text(wrap_text(text, geom["sub_chars"]),
+                               encoding="utf-8")
+            s, e = spans[i]
+            # 最終行は端数で字幕が消えないよう gte で開きっぱなしにする
+            cond = (f"gte(t\\,{s:.3f})" if i == len(lines) - 1
+                    else f"between(t\\,{s:.3f}\\,{e:.3f})")
+            chain += (f",drawtext=textfile='{p}':fontfile='{fp}':"
+                      f"fontsize={geom['sub_size']}:fontcolor=0x{C_WHITE}:"
+                      f"x=(w-text_w)/2:y={geom['sub_y']}:line_spacing=14:"
+                      f"box=1:boxcolor=0x041b12@0.85:boxborderw=26:"
+                      f"borderw=2:bordercolor=0x000000:enable='{cond}'")
 
     cmd = ["ffmpeg", "-y", "-f", "lavfi", "-i", src]
-    if audio_path:
-        cmd += ["-i", audio_path]
+    if audios:
+        for path, _ in audios:
+            cmd += ["-i", path]
+        legs = ";".join(
+            f"[{k + 1}:a]aformat=sample_fmts=fltp:sample_rates=44100:"
+            f"channel_layouts=stereo,apad=pad_dur={GAP}[na{k}]"
+            for k in range(len(audios)))
+        joined = "".join(f"[na{k}]" for k in range(len(audios)))
+        chain += (f"[vout];{legs};{joined}"
+                  f"concat=n={len(audios)}:v=0:a=1,apad[aout]")
     else:
         cmd += ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
+        chain += "[vout];[1:a]aresample=44100[aout]"
+
     # 中間クリップは最後の連結時に必ず再エンコードされるので、ここでは
     # ultrafast + 低CRF（＝ほぼ劣化なし）で速度を優先する。
     cmd += ["-filter_complex", chain, "-map", "[vout]", "-map", "[aout]",
             "-threads", "2", "-c:v", "libx264", "-pix_fmt", "yuv420p",
             "-preset", "ultrafast", "-crf", "18",
             "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
-            "-t", f"{duration}", clip_path]
+            "-t", f"{total:.3f}", clip_path]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
-        print(f"  [警告] クリップ{idx}生成失敗:\n{r.stderr[-700:]}", file=sys.stderr)
+        print(f"  [警告] クリップ{gidx}生成失敗:\n{r.stderr[-900:]}", file=sys.stderr)
         subprocess.run(
             ["ffmpeg", "-y", "-f", "lavfi", "-i",
              f"color=c={BG_COLOR}:s={W}x{H}:r={FPS}",
              "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
              "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac",
-             "-t", f"{duration}", clip_path], check=True, capture_output=True)
+             "-t", f"{total:.3f}", clip_path], check=True, capture_output=True)
     return clip_path
 
 
@@ -519,21 +555,34 @@ def build_video(script_path, orientation, out_path, font, bgm, engine,
         print(f"  [音声 {i+1}/{len(segs)}] {dur:5.2f}s "
               f"[{seg['scene']['kind']:7}] 「{seg['text'][:24]}」")
 
-    # 2) 映像クリップは重いのでコア数に応じて並列生成する
+    # 2) 同じ図解を使う連続した行を1シーンにまとめる。
+    #    こうすると背景と図解がシーン中ずっと描かれっぱなしになり、
+    #    字幕が変わるたびに画面が描き直されてチカチカする問題がなくなる。
+    groups: list[dict] = []
+    for i, seg in enumerate(segs):
+        if groups and groups[-1]["scene"] is seg["scene"]:
+            groups[-1]["lines"].append(seg["text"])
+            groups[-1]["audios"].append(audios[i])
+        else:
+            groups.append({"scene": seg["scene"], "lines": [seg["text"]],
+                           "audios": [audios[i]]})
+
+    # 3) 映像クリップは重いのでコア数に応じて並列生成する
     workers = max(1, min(4, (os.cpu_count() or 2)))
-    print(f"  クリップ生成: {len(segs)}本を{workers}並列で処理します")
-    clips: list[str] = [""] * len(segs)
+    print(f"  クリップ生成: {len(segs)}行を{len(groups)}シーンにまとめ、"
+          f"{workers}並列で処理します")
+    clips: list[str] = [""] * len(groups)
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = {
-            ex.submit(make_clip, i, seg["text"], seg["scene"], audios[i][0],
-                      audios[i][1] + GAP, font, tmp_dir, geom, cta=cta): i
-            for i, seg in enumerate(segs)
+            ex.submit(make_scene_clip, g, grp["lines"], grp["scene"],
+                      grp["audios"], font, tmp_dir, geom, cta=cta): g
+            for g, grp in enumerate(groups)
         }
         for n, fut in enumerate(as_completed(futures), 1):
-            i = futures[fut]
-            clips[i] = fut.result()
-            if n % 10 == 0 or n == len(segs):
-                print(f"  クリップ {n}/{len(segs)} 完了")
+            g = futures[fut]
+            clips[g] = fut.result()
+            if n % 5 == 0 or n == len(groups):
+                print(f"  シーン {n}/{len(groups)} 完了")
 
     # YouTube概要欄に貼るチャプター一覧（@chapter の位置＝章の開始時刻）
     chapters, t = [], 0.0
@@ -560,8 +609,8 @@ def build_video(script_path, orientation, out_path, font, bgm, engine,
             check=True, capture_output=True)
         body = fast
 
-    ending = make_clip(len(segs), "", {"kind": "plain"}, None, ENDING_DUR,
-                       font, tmp_dir, geom, is_ending=True, cta=cta)
+    ending = make_scene_clip(len(groups), [], {"kind": "plain"}, [],
+                             font, tmp_dir, geom, is_ending=True, cta=cta)
     base = f"{tmp_dir}/base.mp4"
     _concat([body, ending], base, tmp_dir, "final")
 
@@ -627,8 +676,10 @@ def main() -> None:
 
     results = []
     for script, orientation, out, cta in jobs:
+        # 横型フル尺は落ち着いて見る動画なので、ショートより一段ゆっくり喋らせる
+        sp = speed * (1.0 if args.speed else ORIENT_SPEED.get(orientation, 1.0))
         results.append((out, build_video(script, orientation, out, font, bgm,
-                                         engine, speed=speed, cta=cta)))
+                                         engine, speed=sp, cta=cta)))
 
     print("\n=== 完了 ===")
     for out, dur in results:
