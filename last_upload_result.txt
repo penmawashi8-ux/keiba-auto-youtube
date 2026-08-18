@@ -1,10 +1,6 @@
-date: 2026-08-18T11:29:41.852702Z
-projects_loaded: 2
-uploaded: 3
-quota_exceeded: False
+date: 2026-08-18T12:41:19.596306Z
+type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4v_uJxOQMgU title=【キーンランドC】7歳エーティーマクフィが函館スプリントS2着のリベンジへ　陣営
-OK project=1 video_id=AZdWYLDzzoI title=【新潟2歳S】新馬戦完勝のシャンデヴァーグ　陣営「スピードがあります」連勝で大舞
-OK project=1 video_id=vcgkV9WTMgE title=【キーンランドC】武豊騎手と久々のコンビ　サウンドモリアーナが順調な仕上がり　陣
+OK project=1 video_id=pkxWvYUHbrc views=29021 title=ダート2冠馬フィンガーは3番ゲートに決定　主催者想定オッズは4番人気タイ　23日朝に米G1・パシフィッククラシックS【2
