@@ -1,10 +1,10 @@
-date: 2026-08-18T07:37:26.451165Z
+date: 2026-08-18T09:41:03.572427Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=sdjkuCr8bmE title=【注目馬動向】エルムSで2着のペリエールは南部杯を目標に　Jpn1初制覇を目指す
-OK project=1 video_id=agQcNOt5zMo title=ワールドオールスタージョッキーズ出走予定馬決定!出場騎手14人で第2戦はギリギリ
-OK project=1 video_id=zpllCOo2uoE title=サトノレーヴは今週末の英国G1・2レースに登録を残す　伝統の「イボアフェスティバ
+OK project=1 video_id=uLakBJJua4s title=【今週のトク注新馬】父オルフェーヴルと同じ栗毛　キトゥンズクラフトは乗り込み十分
+OK project=1 video_id=MFatANfSkxw title=【盛岡・OROカップ結果】11番人気のシンボが重賞2勝目を挙げる
+OK project=1 video_id=m9xGQf1-cPY title=【キーンランドC】レース史上初のGI馬ワンツーなるか ウインカーネリアン＆パンジ
