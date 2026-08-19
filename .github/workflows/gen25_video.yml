@@ -69,6 +69,13 @@ jobs:
       # 焼いたものなのでBGMが入っていない。ここで焼き直すと
       # download_bgm.py が Musopen の CC0 音源を取れるので、
       # ニュースシリーズと同じ本物の音楽入りになる。
+      - name: ffmpeg と日本語フォントを入れる
+        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          ffmpeg -version | head -1
+
       - name: 動画を作り直す（BGM入り）
         if: ${{ github.event_name == 'push' || inputs.rebuild }}
         run: |
