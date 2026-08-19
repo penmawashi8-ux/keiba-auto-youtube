@@ -1,8 +1,8 @@
-date: 2026-08-18T13:39:18.147116Z
+date: 2026-08-19T13:40:24.694447Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1xjTi0mhAGc
-source_short=agQcNOt5zMo views=308
-title=8月18日 ワールドオールスタージョッキーズ出走予定馬決定!出場騎手14人で第2戦はギリギリ14頭がそろう
+OK project=1 video_id=JAcismUjJP0
+source_short=hdaiggjS0OA views=607
+title=8月19日 落馬負傷の古川奈穂騎手が札幌競馬場で元気な姿を見せて無事を報告　「今週は乗る予定です」
