@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      contents: read
+      contents: write
 
     env:
       GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
@@ -121,6 +121,22 @@ jobs:
           name: gen25-videos
           path: dist/gen25/
           retention-days: 14
+
+      # Artifact の実体は Azure Blob にあり、ネットワーク制限のある環境からは
+      # 落とせない。焼き上がりをブランチにも戻しておくと git 経由で取れる。
+      # コミットメッセージの [skip ci] で、この push による再実行を止めている。
+      - name: 焼き上がりをブランチに戻す
+        if: ${{ github.event_name == 'push' && github.ref_name == 'run-gen25-build' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/gen25/
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "build(gen25): BGM入りで焼き直した動画 [skip ci]"
+            git push origin HEAD:run-gen25-build
+          fi
 
       - name: Upload 本編(横フル)
         if: ${{ (github.event_name == 'push' && github.ref_name == 'run-gen25-upload') || inputs.post_full }}
