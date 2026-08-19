@@ -220,7 +220,7 @@ def _trust_proxy_ca() -> None:
     for ca in (os.environ.get("SSL_CERT_FILE"),
                os.environ.get("REQUESTS_CA_BUNDLE"),
                "/root/.ccr/ca-bundle.crt"):
-        if ca and Path(ca).exists():
+        if _readable(ca):
             try:
                 ctx.load_verify_locations(cafile=ca)
             except Exception:
@@ -228,10 +228,20 @@ def _trust_proxy_ca() -> None:
     _ec._SSL_CTX = ctx
 
 
+def _readable(path: str | None) -> bool:
+    """存在チェック。読めない場所（GitHub Actions の /root など）でも例外を出さない。"""
+    if not path:
+        return False
+    try:
+        return Path(path).exists()
+    except OSError:            # PermissionError も OSError のサブクラス
+        return False
+
+
 _G_CTX = ssl.create_default_context()
 for _ca in ("/root/.ccr/ca-bundle.crt", os.environ.get("SSL_CERT_FILE"),
             os.environ.get("REQUESTS_CA_BUNDLE")):
-    if _ca and Path(_ca).exists():
+    if _readable(_ca):
         try:
             _G_CTX.load_verify_locations(cafile=_ca)
         except Exception:
