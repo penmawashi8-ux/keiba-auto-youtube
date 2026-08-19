@@ -1,10 +1,10 @@
-date: 2026-08-19T02:33:10.171502Z
+date: 2026-08-19T03:50:37.516158Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hdaiggjS0OA title=落馬負傷の古川奈穂騎手が札幌競馬場で元気な姿を見せて無事を報告　「今週は乗る予定
-OK project=1 video_id=463NMOk6C_s title=ダート王者フォーエバーヤングが“異例”の芝コースで追い!　函館で迫力満点の動き　
-OK project=1 video_id=Tx56cy1keNM title=9・5英スプリントC登録馬発表　サトノレーヴ1番人気タイ　英ブックメーカー　今週
+OK project=1 video_id=IOsEJHpY-44 title=アウダーシアはセントライト記念で始動　スプリングSで重賞Vに導いた津村とコンビ再
+OK project=1 video_id=oJix5LSp47M title=【新潟記念想定】ロデオドライブ、ドゥレッツァなど12頭
+OK project=1 video_id=4h_qCYjaPjw title=【注目馬動向】先週の中京記念Vのラヴァンダは連覇のかかるアイルランドTへ
