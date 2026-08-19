@@ -131,11 +131,18 @@ def find_font() -> str | None:
 
 
 def find_bgm() -> str | None:
+    """BGMは scripts/download_bgm.py が取ってきた本物の音楽だけを使う。
+
+    合成した簡易パッドを敷くくらいならBGMなしのほうがマシなので、
+    フォールバックは用意しない。archive.org に到達できない環境では
+    BGMなしで焼き上がり、GitHub Actions 上で焼き直すと音楽が入る。
+    """
     for c in ["assets/bgm/horse_drama_bgm.mp3", "assets/bgm/bgm_1.mp3"]:
         if Path(c).exists():
             return c
-    allb = sorted(glob.glob("assets/bgm/*.mp3"))
-    return allb[0] if allb else None
+    real = [p for p in sorted(glob.glob("assets/bgm/*.mp3"))
+            if "fallback" not in Path(p).name]
+    return real[0] if real else None
 
 
 def probe_duration(path: str) -> float:
@@ -412,10 +419,13 @@ def build_scene(scene: dict, geom: dict, tmp_dir: str, idx: int, font: str,
 
     for i, row in enumerate(rows):
         fg = _row_color(row) if kind == "result" else C_WHITE
+        # 1行ずつ小分けに出すのは着順ボードだけ。箇条書きカードは
+        # 全部まとめて出す（読み物なので、じらす意味がない）。
         # 最後に倍速をかけるので、その分だけ引き伸ばして指定する。
         # こうすると完成した動画では ROW_LEAD + i*ROW_STEP 秒の等間隔で出る。
+        step = ROW_STEP if kind == "result" else 0.0
         chip(wf(f"r{i}", row), geom["board_row_y"] + i * gap, size, fg,
-             enable=f"gte(t\\,{(ROW_LEAD + i * ROW_STEP) * speed:.3f})")
+             enable=f"gte(t\\,{(ROW_LEAD + i * step) * speed:.3f})")
 
     return ("," + ",".join(parts)) if parts else ""
 
@@ -561,11 +571,15 @@ def sfx_events(groups: list[dict], speed: float) -> list[tuple[float, str, float
         kind = scene.get("kind", "plain")
         if kind == "chapter":
             events.append((t + 0.15, "whoosh", SFX_VOL["whoosh"]))
-        elif kind in ("result", "card"):
-            name = "impact" if kind == "result" else "tick"
+        elif kind == "result":
+            # 着順は1行ずつ出るので、その1行ごとに「バーン」
             for i in range(len(scene.get("rows", []))):
-                events.append((t + ROW_LEAD + i * ROW_STEP, name,
-                               SFX_VOL[name] * (SFX_DECAY ** i)))
+                events.append((t + ROW_LEAD + i * ROW_STEP, "impact",
+                               SFX_VOL["impact"] * (SFX_DECAY ** i)))
+        elif kind == "card":
+            # カードはまとめて出るので、音も1枚につき1発だけ
+            if scene.get("rows"):
+                events.append((t + ROW_LEAD, "tick", SFX_VOL["tick"]))
         t += sum(dur + GAP for _, dur in grp["audios"]) / speed
     return events
 

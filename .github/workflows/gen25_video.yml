@@ -22,6 +22,11 @@ on:
         required: false
         default: true
         type: boolean
+      rebuild:
+        description: "動画を作り直す（BGMを本物の音楽にするにはON）"
+        required: false
+        default: true
+        type: boolean
 
   # 専用ブランチ run-gen25-upload への push でも起動（API dispatch 不可の環境向け）
   push:
@@ -59,6 +64,34 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install google-api-python-client google-auth google-auth-oauthlib
+
+      # dist/ に入っている動画は、開発環境（archive.orgに到達できない）で
+      # 焼いたものなのでBGMが入っていない。ここで焼き直すと
+      # download_bgm.py が Musopen の CC0 音源を取れるので、
+      # ニュースシリーズと同じ本物の音楽入りになる。
+      - name: 動画を作り直す（BGM入り）
+        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        run: |
+          pip install edge-tts
+          python scripts/download_bgm.py || true
+          python scripts/create_gen25_video.py
+          cp output/gen25_full.mp4 output/gen25_full_thumb.jpg dist/gen25/
+          cp output/gen25_short_*.mp4 output/gen25_short_*_thumb.jpg dist/gen25/
+          python - <<'EOF'
+          from pathlib import Path
+          tpl = Path("dist/gen25/full_desc_template.txt").read_text(encoding="utf-8")
+          ch = Path("output/gen25_full_chapters.txt").read_text(encoding="utf-8").strip()
+          Path("dist/gen25/full_desc.txt").write_text(
+              tpl.replace("{{CHAPTERS}}", "【チャプター】\n" + ch), encoding="utf-8")
+          EOF
+
+      - name: 出来上がった動画を成果物として残す
+        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: gen25-videos
+          path: dist/gen25/
+          retention-days: 14
 
       - name: Upload 本編(横フル)
         if: ${{ github.event_name == 'push' || inputs.post_full }}

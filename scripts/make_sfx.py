@@ -4,15 +4,14 @@
 音源をどこからも取ってこないので、ライセンスの心配も、ネットワーク制限で
 落ちてこない心配もない。生成物は assets/sfx/ と assets/bgm/ に置く。
 
-  impact.wav … 着順が出るときの「バーン」（サブベースの落下＋アタック）
+  impact.wav … 着順が出るときの「バーン」（中音域の落下＋倍音＋アタック）
   tick.wav   … カードの箇条書きが1行出るときの軽い「トッ」
   whoosh.wav … 章タイトルの登場音
 
-BGMは本来 scripts/download_bgm.py が archive.org の CC0 音源を取ってくる。
-それが使えない環境向けのフォールバックとして、ここで簡単なパッドを合成する。
+BGMはここでは作らない。scripts/download_bgm.py が archive.org から取ってくる
+CC0のクラシック音源だけを使う（合成パッドを敷くくらいならBGMなしのほうがマシ）。
 
-  python scripts/make_sfx.py            # 効果音だけ
-  python scripts/make_sfx.py --bgm      # BGMが1本も無ければパッドも作る
+  python scripts/make_sfx.py            # 効果音を作る
 """
 
 import argparse
@@ -21,7 +20,6 @@ import sys
 from pathlib import Path
 
 SFX_DIR = Path("assets/sfx")
-BGM_DIR = Path("assets/bgm")
 
 
 def _run(args: list[str]) -> bool:
@@ -35,23 +33,30 @@ def make_impact(dest: Path) -> bool:
     """「バーン」。160Hz→45Hz へ落ちるサブベースに、短いアタックを重ねる。
 
     aevalsrc の位相を t の2次式にすると瞬間周波数が直線的に下がるので、
-    サンプル音源なしでも太い打撃音になる。
+    サンプル音源なしでも打撃音になる。
+
+    以前は 160→45Hz のサブベースだったが、音程が低すぎてスマホやノートPCの
+    スピーカーでは「ボフッ」としか鳴らず聞き取りにくかった。中音域まで
+    持ち上げて（440→170Hz）、上に倍音と金属質のアタックを足している。
     """
     return _run([
-        # 落下するサブベース（瞬間周波数 = 160 - 192t Hz）
-        "-f", "lavfi", "-i", "aevalsrc='sin(2*PI*(160*t-96*t*t))':d=1.1:s=44100",
-        # 胴鳴りの倍音（少し高い成分を足すとスマホでも聞こえる）
-        "-f", "lavfi", "-i", "aevalsrc='sin(2*PI*(320*t-192*t*t))':d=1.1:s=44100",
-        # 打撃のアタック（ブラウンノイズを一瞬だけ）
-        "-f", "lavfi", "-i", "anoisesrc=d=0.25:c=brown:a=0.9:r=44100",
+        # 主音。瞬間周波数 = 440 - 540t Hz（0.5秒で440→170Hz）
+        "-f", "lavfi", "-i", "aevalsrc='sin(2*PI*(440*t-270*t*t))':d=0.6:s=44100",
+        # 1オクターブ上。抜けを作って小さいスピーカーでも輪郭が出るようにする
+        "-f", "lavfi", "-i", "aevalsrc='sin(2*PI*(880*t-540*t*t))':d=0.6:s=44100",
+        # 土台のローエンド（鳴らしすぎない程度に厚みだけ足す）
+        "-f", "lavfi", "-i", "aevalsrc='sin(2*PI*(150*t-90*t*t))':d=0.6:s=44100",
+        # 打撃のアタック
+        "-f", "lavfi", "-i", "anoisesrc=d=0.18:c=pink:a=0.9:r=44100",
         "-filter_complex",
-        "[0:a]afade=t=out:st=0.05:d=1.05:curve=exp,volume=1.0[sub];"
-        "[1:a]afade=t=out:st=0:d=0.45:curve=exp,volume=0.35[bod];"
-        "[2:a]afade=t=out:st=0:d=0.22:curve=exp,highpass=f=200,volume=0.5[atk];"
-        "[sub][bod][atk]amix=inputs=3:duration=longest:normalize=0,"
-        "lowpass=f=4000,alimiter=limit=0.9,"
+        "[0:a]afade=t=out:st=0.02:d=0.5:curve=exp,volume=1.0[mid];"
+        "[1:a]afade=t=out:st=0:d=0.3:curve=exp,volume=0.45[hi];"
+        "[2:a]afade=t=out:st=0.02:d=0.45:curve=exp,volume=0.5[low];"
+        "[3:a]afade=t=out:st=0:d=0.14:curve=exp,highpass=f=700,volume=0.55[atk];"
+        "[mid][hi][low][atk]amix=inputs=4:duration=longest:normalize=0,"
+        "highpass=f=90,lowpass=f=9000,alimiter=limit=0.9,"
         "aformat=sample_fmts=s16:sample_rates=44100:channel_layouts=stereo",
-        "-t", "1.1", str(dest),
+        "-t", "0.6", str(dest),
     ])
 
 
@@ -83,42 +88,6 @@ def make_whoosh(dest: Path) -> bool:
 
 
 # フォールバックBGM: Am → F → C → G を1コード6秒で回す静かなパッド。
-_CHORDS = [(220.0, 261.63, 329.63),      # Am
-           (174.61, 220.0, 261.63),      # F
-           (196.0, 261.63, 329.63),      # C
-           (196.0, 246.94, 293.66)]      # G
-_CHORD_DUR = 6.0
-
-
-def make_pad_bgm(dest: Path) -> bool:
-    """BGMが1本も無いときのフォールバック。合成のやわらかいパッド。"""
-    parts = Path("/tmp/_gen25_pad")
-    parts.mkdir(parents=True, exist_ok=True)
-    files = []
-    for i, (f1, f2, f3) in enumerate(_CHORDS):
-        p = parts / f"c{i}.wav"
-        expr = (f"0.30*sin(2*PI*{f1}*t)+0.22*sin(2*PI*{f2}*t)"
-                f"+0.16*sin(2*PI*{f3}*t)+0.10*sin(2*PI*{f1 / 2}*t)")
-        ok = _run([
-            "-f", "lavfi", "-i", f"aevalsrc='{expr}':d={_CHORD_DUR}:s=44100",
-            "-af", (f"afade=t=in:st=0:d=1.6,afade=t=out:st={_CHORD_DUR - 1.8}:d=1.8,"
-                    "lowpass=f=1100,tremolo=f=0.22:d=0.25"),
-            "-ac", "2", str(p),
-        ])
-        if not ok:
-            return False
-        files.append(p)
-
-    lst = parts / "list.txt"
-    lst.write_text("".join(f"file '{p}'\n" for p in files), encoding="utf-8")
-    return _run([
-        "-f", "concat", "-safe", "0", "-i", str(lst),
-        "-af", ("aecho=0.8:0.85:420|780:0.28|0.18,lowpass=f=1400,"
-                "loudnorm=I=-23:TP=-3:LRA=9"),
-        "-c:a", "libmp3lame", "-b:a", "128k", "-ac", "2", str(dest),
-    ])
-
-
 def ensure_sfx() -> dict[str, str]:
     """効果音を（無ければ）作って、名前→パスの辞書を返す。"""
     SFX_DIR.mkdir(parents=True, exist_ok=True)
@@ -135,23 +104,9 @@ def ensure_sfx() -> dict[str, str]:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--bgm", action="store_true",
-                    help="BGMが1本も無ければ合成パッドを作る")
-    args = ap.parse_args()
-
+    argparse.ArgumentParser().parse_args()
     for name, path in ensure_sfx().items():
         print(f"  効果音: {name} → {path}")
-
-    if args.bgm:
-        BGM_DIR.mkdir(parents=True, exist_ok=True)
-        if any(BGM_DIR.glob("*.mp3")):
-            print("  BGM: 既存の音源があるので合成はしません")
-        else:
-            dest = BGM_DIR / "pad_fallback.mp3"
-            print("  BGM: 音源が無いので合成パッドを作ります →", dest)
-            if not make_pad_bgm(dest):
-                print("  [警告] BGMの合成に失敗しました", file=sys.stderr)
 
 
 if __name__ == "__main__":
