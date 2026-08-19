@@ -118,6 +118,12 @@ TEXT_EDGE = ("borderw=6:bordercolor=0x04180f@0.92:"
 # 環境ヘルパー
 # ---------------------------------------------------------------------------
 def find_font() -> str | None:
+    """日本語が出せるフォントを探す。
+
+    システムのNoto CJKが第一候補。GitHub Actions のランナーに入っていない
+    場合に備えて、scripts/download_fonts.py が assets/fonts/ に落とす
+    日本語フォントもフォールバックとして見る。
+    """
     for p in [
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
         "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
@@ -127,7 +133,18 @@ def find_font() -> str | None:
         if Path(p).exists():
             return p
     hits = glob.glob("/usr/share/fonts/**/*CJK*.ttc", recursive=True)
-    return hits[0] if hits else None
+    if hits:
+        return hits[0]
+    hits = glob.glob("/usr/share/fonts/**/NotoSansJP*.*", recursive=True)
+    if hits:
+        return hits[0]
+    for name in ("BIZUDGothic-Bold.ttf", "MPLUS1p-Black.ttf",
+                 "NotoSansJP-Bold.ttf", "DelaGothicOne-Regular.ttf"):
+        p = Path("assets/fonts") / name
+        if p.exists():
+            return str(p)
+    local = sorted(glob.glob("assets/fonts/*.ttf") + glob.glob("assets/fonts/*.otf"))
+    return local[0] if local else None
 
 
 def find_bgm() -> str | None:

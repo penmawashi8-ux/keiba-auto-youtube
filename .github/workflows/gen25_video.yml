@@ -39,7 +39,7 @@ on:
 jobs:
   upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     permissions:
       contents: read
 
@@ -72,12 +72,31 @@ jobs:
       # 焼いたものなのでBGMが入っていない。ここで焼き直すと
       # download_bgm.py が Musopen の CC0 音源を取れるので、
       # ニュースシリーズと同じ本物の音楽入りになる。
-      - name: ffmpeg と日本語フォントを入れる
+      # apt は unattended-upgrades がロックを握っていると待ち続けるので、
+      # ロック待ちに上限を付けたうえで失敗しても止めない。ffmpeg も
+      # 日本語フォントも、無いときだけ入れれば良い。
+      - name: ffmpeg と日本語フォントを用意する
         if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        env:
+          DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          need=""
+          command -v ffmpeg >/dev/null || need="$need ffmpeg"
+          fc-list 2>/dev/null | grep -qi "cjk\|noto sans jp" || need="$need fonts-noto-cjk"
+          if [ -n "$need" ]; then
+            echo "入れるもの:$need"
+            sudo -E apt-get -o DPkg::Lock::Timeout=180 update -qq || true
+            timeout 420 sudo -E apt-get -o DPkg::Lock::Timeout=180 \
+              install -y --no-install-recommends $need || true
+          fi
           ffmpeg -version | head -1
+          # aptで入らなかった場合はGoogle Fontsから日本語フォントを落とす
+          if ! fc-list 2>/dev/null | grep -qi "cjk\|noto sans jp"; then
+            echo "aptで日本語フォントが入らなかったので Google Fonts から取得します"
+            pip install requests
+            python scripts/download_fonts.py || true
+            ls -la assets/fonts/ || true
+          fi
 
       - name: 動画を作り直す（BGM入り）
         if: ${{ github.event_name == 'push' || inputs.rebuild }}
