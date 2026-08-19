@@ -1,10 +1,10 @@
-date: 2026-08-19T09:43:25.407783Z
+date: 2026-08-19T11:36:35.022306Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fZCDJ1H23NQ title=英遠征サトノレーヴがシティオブヨークS最終追い消化「能力を発揮できる態勢が整った
-OK project=1 video_id=_1_kvjztnjs title=「有馬の流れか!」「恐るべき速さ」異例の芝コースで追い切ったダート王者フォーエバ
-OK project=1 video_id=AAkK8gFHbPA title=【WASJ】武豊騎手のA評価は第1戦のアスミル　騎乗馬と騎手の組み合わせ決定　2
+OK project=1 video_id=bCnzJFfgAGo title=【新潟記念・1週前】ジュンブロッサムが3年5か月ぶりの距離で復活へ　友道調教師「
+OK project=1 video_id=nd4CdFBsx8k title=絶好調の新種牡馬が日高のセリでも大人気!初日に続いて3日目もエフフォーリア産駒が
+OK project=1 video_id=Wg4wX4j-SIE title=【キーンランドC】9歳馬ウインカーネリアンは三浦皇成騎手を背に活気ある動き　「ス
