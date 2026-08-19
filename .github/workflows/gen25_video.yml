@@ -28,9 +28,12 @@ on:
         default: true
         type: boolean
 
-  # 専用ブランチ run-gen25-upload への push でも起動（API dispatch 不可の環境向け）
+  # 専用ブランチへの push でも起動（API dispatch 不可の環境向け）
+  #   run-gen25-build  … 焼き直すだけ。YouTubeには投稿しない（音の確認用）
+  #   run-gen25-upload … 焼き直して投稿までやる
   push:
     branches:
+      - "run-gen25-build"
       - "run-gen25-upload"
 
 jobs:
@@ -101,7 +104,7 @@ jobs:
           retention-days: 14
 
       - name: Upload 本編(横フル)
-        if: ${{ github.event_name == 'push' || inputs.post_full }}
+        if: ${{ (github.event_name == 'push' && github.ref_name == 'run-gen25-upload') || inputs.post_full }}
         run: |
           python scripts/upload_custom_youtube.py \
             --file dist/gen25/gen25_full.mp4 \
@@ -113,7 +116,7 @@ jobs:
             --description "$(cat dist/gen25/full_desc.txt)"
 
       - name: Upload ショート(縦5本) ※本編へ誘導リンク付き
-        if: ${{ github.event_name == 'push' || inputs.post_shorts }}
+        if: ${{ (github.event_name == 'push' && github.ref_name == 'run-gen25-upload') || inputs.post_shorts }}
         run: |
           FULL_URL=""
           [ -f /tmp/full_url.txt ] && FULL_URL=$(cat /tmp/full_url.txt)
