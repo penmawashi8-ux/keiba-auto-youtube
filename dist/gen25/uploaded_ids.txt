@@ -1,0 +1,2 @@
+# gen25 でアップロード済みの動画ID（run-gen25-publish への push で公開に切り替わる）
+SZgU2oYTi0s   # ショート① 2歳戦
