@@ -98,11 +98,44 @@ jobs:
             ls -la assets/fonts/ || true
           fi
 
+      # archive.org は検索が空を返すことがある（実際に一度これで
+      # BGMなしの動画が焼き上がった）。何回か粘ったうえで、それでも
+      # 手に入らなければ黙って無音で焼かずに落とす。
+      - name: BGMを用意する
+        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        run: |
+          for i in 1 2 3 4 5; do
+            ls assets/bgm/*.mp3 >/dev/null 2>&1 && break
+            echo "--- BGM取得 試行 $i ---"
+            python scripts/download_bgm.py || true
+            ls assets/bgm/*.mp3 >/dev/null 2>&1 && break
+            sleep $((i * 20))
+          done
+          if ! ls assets/bgm/*.mp3 >/dev/null 2>&1; then
+            echo "::error::BGMを取得できませんでした。無音で焼くのを避けるため中止します。"
+            exit 1
+          fi
+          ls -la assets/bgm/
+
+      # 取れたBGMはリポジトリに残す。次回以降は download_bgm.py が
+      # 既存ファイルを見てスキップするので、archive.org の機嫌に左右されない。
+      - name: BGMをブランチに保存する
+        if: ${{ github.event_name == 'push' && github.ref_name == 'run-gen25-build' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f assets/bgm/
+          if git diff --cached --quiet; then
+            echo "BGMに変更なし"
+          else
+            git commit -m "chore(bgm): 取得したCC0音源を保存する [skip ci]"
+            git push origin HEAD:run-gen25-build
+          fi
+
       - name: 動画を作り直す（BGM入り）
         if: ${{ github.event_name == 'push' || inputs.rebuild }}
         run: |
           pip install edge-tts
-          python scripts/download_bgm.py || true
           python scripts/create_gen25_video.py
           cp output/gen25_full.mp4 output/gen25_full_thumb.jpg dist/gen25/
           cp output/gen25_short_*.mp4 output/gen25_short_*_thumb.jpg dist/gen25/
