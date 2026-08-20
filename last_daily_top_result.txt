@@ -1,8 +1,8 @@
-date: 2026-08-19T13:40:24.694447Z
+date: 2026-08-20T13:44:01.022719Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JAcismUjJP0
-source_short=hdaiggjS0OA views=607
-title=8月19日 落馬負傷の古川奈穂騎手が札幌競馬場で元気な姿を見せて無事を報告　「今週は乗る予定です」
+OK project=1 video_id=wOcyv1cDtBU
+source_short=bSHJumAXak0 views=258
+title=8月20日 内田博幸が調教再開　「追い切りだったけど、全然大丈夫でしたね」　負傷の左肩「しっかり治して不安を取り除けまし
