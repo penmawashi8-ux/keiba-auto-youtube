@@ -68,7 +68,7 @@ except Exception:
         return {}
 
 VOICE  = "ja-JP-KeitaNeural"     # 解説シリーズ（ニュース系と同じ男性ナレーター）
-RATE   = "+10%"                  # 早口寄り（テンポ重視）
+RATE   = "+30%"                  # 早口寄り（テンポ重視）
 VOLUME = "+0%"
 
 FPS        = 30
@@ -76,8 +76,8 @@ BGM_VOLUME = 0.18
 GAP        = 0.18                # 行間の無音（テンポ優先で短め）
 ENDING_DUR = 4.0
 
-# 横型フル尺は腰を据えて見る動画なので、ショートよりゆっくり喋らせる。
-ORIENT_SPEED = {"landscape": 0.86, "portrait": 1.0}
+# 横型フル尺は腰を据えて見る動画なので、ショートより少しだけゆっくり喋らせる。
+ORIENT_SPEED = {"landscape": 0.92, "portrait": 1.0}
 
 # 図解の行が出るタイミング（完成した動画での秒数）。ここに効果音を当てる。
 ROW_LEAD = 0.35      # シーンの頭から1行目まで
@@ -98,8 +98,11 @@ BG_COLOR = "0x16463a"
 BG_FILTER = "vignette=PI/8:dither=0"
 
 # TTSエンジンごとの標準再生速度（かなり早口寄りに設定）。
-# edge-tts は rate=+10% でおよそ8字/秒、Google音声は素で約3.9字/秒。
-ENGINE_SPEED = {"edge": 1.12, "google": 2.2, "oj": 1.4}
+# edge の値は実測から決めている。rate=+10% / atempo 1.12 / 横型0.86 で
+# フル尺が8分46秒になり長すぎたので、rate と atempo の両方を上げて
+# 全体を約1.5倍に。native な rate を先に上げ、atempo は控えめにする
+# （atempo で伸ばすより、エンジン側で速く喋らせるほうが自然に聞こえる）。
+ENGINE_SPEED = {"edge": 1.31, "google": 2.2, "oj": 1.4}
 
 # 着順の違いは「文字色」だけで表す（背景の帯は敷かない）。
 C_GOLD   = "FFD24A"    # 1着
