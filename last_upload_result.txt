@@ -1,10 +1,10 @@
-date: 2026-08-20T02:24:10.175092Z
+date: 2026-08-20T03:50:12.549125Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AoYyUXzPRok title=【園田競馬・今日の世麗】19日も1日2勝の活躍で勢いが止まらない!　20日も3R
-OK project=1 video_id=Gnwy71aU8ug title=【園田競馬・人気ジョッキーは語る】アドワン(8R)に力が入る田野豊三騎手「逃げが
-OK project=1 video_id=qiIpIDZtYCk title=【新潟2歳S】シャンデヴァーグ「仕上がった」メンバー手薄V頂き
+OK project=1 video_id=Is9S5k1mx5c title=フォーエバーヤングが芝で初の追い切り、「初めてと思えないぐらい…」坂井瑠星騎手も
+OK project=1 video_id=GgC4I5IxCQI title=【キーンランドC】パンジャタワー連覇へ死角なし馬なり猛時計
+OK project=1 video_id=bSHJumAXak0 title=内田博幸が調教再開　「追い切りだったけど、全然大丈夫でしたね」　負傷の左肩「しっ
