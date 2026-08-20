@@ -1,0 +1,238 @@
+name: Gen25 - 競馬25世代解説を投稿
+
+on:
+  workflow_dispatch:
+    inputs:
+      privacy:
+        description: "公開設定"
+        required: true
+        default: "private"
+        type: choice
+        options:
+          - public
+          - unlisted
+          - private
+      post_full:
+        description: "本編(横フル)を投稿"
+        required: false
+        default: true
+        type: boolean
+      post_shorts:
+        description: "ショート(縦5本)を投稿"
+        required: false
+        default: true
+        type: boolean
+      rebuild:
+        description: "動画を作り直す（BGMを本物の音楽にするにはON）"
+        required: false
+        default: true
+        type: boolean
+
+  # 専用ブランチへの push でも起動（API dispatch 不可の環境向け）
+  #   run-gen25-build         … 焼き直すだけ。YouTubeには投稿しない（音の確認用）
+  #   run-gen25-upload        … 焼き直して本編+ショート5本を投稿する
+  #   run-gen25-upload-short1 … 焼き直さず、ショート①だけを投稿する（お試し用）
+  #   run-gen25-publish       … 投稿済みの動画を「公開」に切り替える
+  #                             （対象は dist/gen25/uploaded_ids.txt）
+  push:
+    branches:
+      - "run-gen25-build"
+      - "run-gen25-upload"
+      - "run-gen25-upload-short1"
+      - "run-gen25-publish"
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+
+    env:
+      GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+      GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+      GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+      GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+      PRIVACY: ${{ github.event.inputs.privacy || 'private' }}
+      TAGS_BASE: "競馬,JRA,25世代,クロワデュノール,マスカレードボール,ミュージアムマイル,競馬解説,クラシック,三冠"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-oauthlib
+
+      # dist/ に入っている動画は、開発環境（archive.orgに到達できない）で
+      # 焼いたものなのでBGMが入っていない。ここで焼き直すと
+      # download_bgm.py が Musopen の CC0 音源を取れるので、
+      # ニュースシリーズと同じ本物の音楽入りになる。
+      # apt は unattended-upgrades がロックを握っていると待ち続けるので、
+      # ロック待ちに上限を付けたうえで失敗しても止めない。ffmpeg も
+      # 日本語フォントも、無いときだけ入れれば良い。
+      - name: ffmpeg と日本語フォントを用意する
+        if: ${{ (github.event_name == 'push' && !startsWith(github.ref_name, 'run-gen25-upload') && github.ref_name != 'run-gen25-publish') || inputs.rebuild }}
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          need=""
+          command -v ffmpeg >/dev/null || need="$need ffmpeg"
+          fc-list 2>/dev/null | grep -qi "cjk\|noto sans jp" || need="$need fonts-noto-cjk"
+          if [ -n "$need" ]; then
+            echo "入れるもの:$need"
+            sudo -E apt-get -o DPkg::Lock::Timeout=180 update -qq || true
+            timeout 420 sudo -E apt-get -o DPkg::Lock::Timeout=180 \
+              install -y --no-install-recommends $need || true
+          fi
+          ffmpeg -version | head -1
+          # aptで入らなかった場合はGoogle Fontsから日本語フォントを落とす
+          if ! fc-list 2>/dev/null | grep -qi "cjk\|noto sans jp"; then
+            echo "aptで日本語フォントが入らなかったので Google Fonts から取得します"
+            pip install requests
+            python scripts/download_fonts.py || true
+            ls -la assets/fonts/ || true
+          fi
+
+      # archive.org は検索が空を返すことがある（実際に一度これで
+      # BGMなしの動画が焼き上がった）。何回か粘ったうえで、それでも
+      # 手に入らなければ黙って無音で焼かずに落とす。
+      - name: BGMを用意する
+        if: ${{ (github.event_name == 'push' && !startsWith(github.ref_name, 'run-gen25-upload') && github.ref_name != 'run-gen25-publish') || inputs.rebuild }}
+        run: |
+          for i in 1 2 3 4 5; do
+            ls assets/bgm/*.mp3 >/dev/null 2>&1 && break
+            echo "--- BGM取得 試行 $i ---"
+            python scripts/download_bgm.py || true
+            ls assets/bgm/*.mp3 >/dev/null 2>&1 && break
+            sleep $((i * 20))
+          done
+          if ! ls assets/bgm/*.mp3 >/dev/null 2>&1; then
+            echo "::error::BGMを取得できませんでした。無音で焼くのを避けるため中止します。"
+            exit 1
+          fi
+          ls -la assets/bgm/
+
+      # 取れたBGMはリポジトリに残す。次回以降は download_bgm.py が
+      # 既存ファイルを見てスキップするので、archive.org の機嫌に左右されない。
+      - name: BGMをブランチに保存する
+        if: ${{ github.event_name == 'push' && github.ref_name == 'run-gen25-build' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f assets/bgm/
+          if git diff --cached --quiet; then
+            echo "BGMに変更なし"
+          else
+            git commit -m "chore(bgm): 取得したCC0音源を保存する [skip ci]"
+            git push origin HEAD:run-gen25-build
+          fi
+
+      - name: 動画を作り直す（BGM入り）
+        if: ${{ (github.event_name == 'push' && !startsWith(github.ref_name, 'run-gen25-upload') && github.ref_name != 'run-gen25-publish') || inputs.rebuild }}
+        run: |
+          pip install edge-tts
+          python scripts/create_gen25_video.py
+          cp output/gen25_full.mp4 output/gen25_full_thumb.jpg dist/gen25/
+          cp output/gen25_short_*.mp4 output/gen25_short_*_thumb.jpg dist/gen25/
+          python - <<'EOF'
+          from pathlib import Path
+          tpl = Path("dist/gen25/full_desc_template.txt").read_text(encoding="utf-8")
+          ch = Path("output/gen25_full_chapters.txt").read_text(encoding="utf-8").strip()
+          Path("dist/gen25/full_desc.txt").write_text(
+              tpl.replace("{{CHAPTERS}}", "【チャプター】\n" + ch), encoding="utf-8")
+          EOF
+
+      - name: 出来上がった動画を成果物として残す
+        if: ${{ (github.event_name == 'push' && !startsWith(github.ref_name, 'run-gen25-upload') && github.ref_name != 'run-gen25-publish') || inputs.rebuild }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: gen25-videos
+          path: dist/gen25/
+          retention-days: 14
+
+      # Artifact の実体は Azure Blob にあり、ネットワーク制限のある環境からは
+      # 落とせない。焼き上がりをブランチにも戻しておくと git 経由で取れる。
+      # 戻しコミットのメッセージに付けたスキップ指示で、この push による
+      # 再実行は止まる。
+      # 注意: このリポジトリにコミットする人間もツールも、メッセージの本文に
+      #       スキップ指示の文字列を書かないこと。GitHub は件名だけでなく
+      #       本文も見るので、書くとその push がまるごと無視される。
+      - name: 焼き上がりをブランチに戻す
+        if: ${{ github.event_name == 'push' && github.ref_name == 'run-gen25-build' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/gen25/
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "build(gen25): BGM入りで焼き直した動画 [skip ci]"
+            git push origin HEAD:run-gen25-build
+          fi
+
+      - name: Upload 本編(横フル)
+        if: ${{ (github.event_name == 'push' && github.ref_name == 'run-gen25-upload') || inputs.post_full }}
+        run: |
+          python scripts/upload_custom_youtube.py \
+            --file dist/gen25/gen25_full.mp4 \
+            --thumbnail dist/gen25/gen25_full_thumb.jpg \
+            --privacy "$PRIVACY" \
+            --url-out /tmp/full_url.txt \
+            --tags "$TAGS_BASE" \
+            --title "【最強世代】三冠が3頭に割れた「25世代」を6分で完全解説｜クロワデュノール／マスカレードボール／ミュージアムマイル" \
+            --description "$(cat dist/gen25/full_desc.txt)"
+
+      - name: Upload ショート ※本編へ誘導リンク付き
+        if: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'run-gen25-upload')) || inputs.post_shorts }}
+        env:
+          # お試し用ブランチのときは①だけ投稿する
+          SHORTS: ${{ github.ref_name == 'run-gen25-upload-short1' && '1' || '1 2 3 4 5' }}
+        run: |
+          FULL_URL=""
+          [ -f /tmp/full_url.txt ] && FULL_URL=$(cat /tmp/full_url.txt)
+          if [ -n "$FULL_URL" ]; then
+            DESC=$(sed "s#{{FULL_URL}}#▶ 詳しい本編はこちら: $FULL_URL#" dist/gen25/short_desc.txt)
+          else
+            DESC=$(sed "/{{FULL_URL}}/d" dist/gen25/short_desc.txt)
+          fi
+
+          titles=(
+            "2馬身差の完勝。ここから最強世代が始まった【25世代①2歳戦】#Shorts"
+            "単勝1.5倍が敗れた皐月賞。二冠は分かれた【25世代②皐月賞・ダービー】#Shorts"
+            "主役2頭が不在だった三冠目【25世代③菊花賞と凱旋門賞】#Shorts"
+            "3歳馬が古馬G1を制圧した秋【25世代④天皇賞・秋／JC／有馬】#Shorts"
+            "4歳になった最強世代のいま【25世代⑤2026年8月】#Shorts"
+          )
+          echo "投稿するショート: $SHORTS"
+          first=1
+          for i in $SHORTS; do
+            # ショートは連続投稿すると弾かれることがあるので少し間隔を空ける
+            [ "$first" -eq 0 ] && sleep 30
+            first=0
+            python scripts/upload_custom_youtube.py \
+              --file "dist/gen25/gen25_short_${i}.mp4" \
+              --thumbnail "dist/gen25/gen25_short_${i}_thumb.jpg" \
+              --privacy "$PRIVACY" \
+              --tags "$TAGS_BASE,Shorts" \
+              --title "${titles[$((i-1))]}" \
+              --description "$DESC"
+          done
+
+      # 非公開で上げた動画を公開に切り替える。上げ直すと同じ動画が
+      # 二重に並ぶので、既存の動画を更新する。
+      - name: 投稿済みの動画を公開にする
+        if: ${{ github.event_name == 'push' && github.ref_name == 'run-gen25-publish' }}
+        run: |
+          python scripts/set_video_privacy.py \
+            --ids-file dist/gen25/uploaded_ids.txt \
+            --privacy public

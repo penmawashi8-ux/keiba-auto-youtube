@@ -18,6 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import landscape_video  # 横型動画のネイティブ生成パイプラインを再利用
 import upload_landscape_youtube as uploader  # 認証・アップロード・サムネイル処理を再利用
+import playlist_utils  # 投稿した動画を再生リストに入れる
 
 from googleapiclient.discovery import build
 
@@ -168,6 +169,8 @@ def main() -> None:
             uploader.upload_thumbnail(youtube, video_id, thumb)
         except Exception as e:
             print(f"  [警告] サムネイル処理失敗: {e}", file=sys.stderr)
+
+        playlist_utils.add_to_playlist(youtube, video_id)
 
         append_posted_id(item["id"])
         result_lines.append(
