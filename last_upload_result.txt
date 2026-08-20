@@ -1,10 +1,10 @@
-date: 2026-08-19T11:36:35.022306Z
+date: 2026-08-20T02:24:10.175092Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bCnzJFfgAGo title=【新潟記念・1週前】ジュンブロッサムが3年5か月ぶりの距離で復活へ　友道調教師「
-OK project=1 video_id=nd4CdFBsx8k title=絶好調の新種牡馬が日高のセリでも大人気!初日に続いて3日目もエフフォーリア産駒が
-OK project=1 video_id=Wg4wX4j-SIE title=【キーンランドC】9歳馬ウインカーネリアンは三浦皇成騎手を背に活気ある動き　「ス
+OK project=1 video_id=AoYyUXzPRok title=【園田競馬・今日の世麗】19日も1日2勝の活躍で勢いが止まらない!　20日も3R
+OK project=1 video_id=Gnwy71aU8ug title=【園田競馬・人気ジョッキーは語る】アドワン(8R)に力が入る田野豊三騎手「逃げが
+OK project=1 video_id=qiIpIDZtYCk title=【新潟2歳S】シャンデヴァーグ「仕上がった」メンバー手薄V頂き
