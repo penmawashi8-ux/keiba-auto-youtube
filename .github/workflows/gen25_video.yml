@@ -29,12 +29,14 @@ on:
         type: boolean
 
   # 専用ブランチへの push でも起動（API dispatch 不可の環境向け）
-  #   run-gen25-build  … 焼き直すだけ。YouTubeには投稿しない（音の確認用）
-  #   run-gen25-upload … 焼き直して投稿までやる
+  #   run-gen25-build         … 焼き直すだけ。YouTubeには投稿しない（音の確認用）
+  #   run-gen25-upload        … 焼き直して本編+ショート5本を投稿する
+  #   run-gen25-upload-short1 … 焼き直さず、ショート①だけを投稿する（お試し用）
   push:
     branches:
       - "run-gen25-build"
       - "run-gen25-upload"
+      - "run-gen25-upload-short1"
 
 jobs:
   upload:
@@ -76,7 +78,7 @@ jobs:
       # ロック待ちに上限を付けたうえで失敗しても止めない。ffmpeg も
       # 日本語フォントも、無いときだけ入れれば良い。
       - name: ffmpeg と日本語フォントを用意する
-        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        if: ${{ (github.event_name == 'push' && github.ref_name != 'run-gen25-upload-short1') || inputs.rebuild }}
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
@@ -102,7 +104,7 @@ jobs:
       # BGMなしの動画が焼き上がった）。何回か粘ったうえで、それでも
       # 手に入らなければ黙って無音で焼かずに落とす。
       - name: BGMを用意する
-        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        if: ${{ (github.event_name == 'push' && github.ref_name != 'run-gen25-upload-short1') || inputs.rebuild }}
         run: |
           for i in 1 2 3 4 5; do
             ls assets/bgm/*.mp3 >/dev/null 2>&1 && break
@@ -133,7 +135,7 @@ jobs:
           fi
 
       - name: 動画を作り直す（BGM入り）
-        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        if: ${{ (github.event_name == 'push' && github.ref_name != 'run-gen25-upload-short1') || inputs.rebuild }}
         run: |
           pip install edge-tts
           python scripts/create_gen25_video.py
@@ -148,7 +150,7 @@ jobs:
           EOF
 
       - name: 出来上がった動画を成果物として残す
-        if: ${{ github.event_name == 'push' || inputs.rebuild }}
+        if: ${{ (github.event_name == 'push' && github.ref_name != 'run-gen25-upload-short1') || inputs.rebuild }}
         uses: actions/upload-artifact@v4
         with:
           name: gen25-videos
@@ -187,8 +189,11 @@ jobs:
             --title "【最強世代】三冠が3頭に割れた「25世代」を6分で完全解説｜クロワデュノール／マスカレードボール／ミュージアムマイル" \
             --description "$(cat dist/gen25/full_desc.txt)"
 
-      - name: Upload ショート(縦5本) ※本編へ誘導リンク付き
-        if: ${{ (github.event_name == 'push' && github.ref_name == 'run-gen25-upload') || inputs.post_shorts }}
+      - name: Upload ショート ※本編へ誘導リンク付き
+        if: ${{ (github.event_name == 'push' && startsWith(github.ref_name, 'run-gen25-upload')) || inputs.post_shorts }}
+        env:
+          # お試し用ブランチのときは①だけ投稿する
+          SHORTS: ${{ github.ref_name == 'run-gen25-upload-short1' && '1' || '1 2 3 4 5' }}
         run: |
           FULL_URL=""
           [ -f /tmp/full_url.txt ] && FULL_URL=$(cat /tmp/full_url.txt)
@@ -205,9 +210,12 @@ jobs:
             "3歳馬が古馬G1を制圧した秋【25世代④天皇賞・秋／JC／有馬】#Shorts"
             "4歳になった最強世代のいま【25世代⑤2026年8月】#Shorts"
           )
-          for i in 1 2 3 4 5; do
+          echo "投稿するショート: $SHORTS"
+          first=1
+          for i in $SHORTS; do
             # ショートは連続投稿すると弾かれることがあるので少し間隔を空ける
-            [ "$i" -gt 1 ] && sleep 30
+            [ "$first" -eq 0 ] && sleep 30
+            first=0
             python scripts/upload_custom_youtube.py \
               --file "dist/gen25/gen25_short_${i}.mp4" \
               --thumbnail "dist/gen25/gen25_short_${i}_thumb.jpg" \
