@@ -1,10 +1,10 @@
-date: 2026-08-20T09:41:37.638498Z
+date: 2026-08-20T11:30:58.632944Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZISUNcMGybo title=【新潟記念・1週前】アーバンシックが復活へ向けて1週ごとに上昇中　三浦皇成騎手「
-OK project=1 video_id=ACZoFD465u0 title=イトコに名馬ドウデュース サンクサンスがデビュー勝ちなるか
-OK project=1 video_id=6cpMluIqcXI title=武豊騎手と凱旋門賞へ向かうメイショウタバルが栗東・CWで追い切り　石橋調教師「啓
+OK project=1 video_id=FAWtatL96bs title=【キーンランドC・データ埋蔵金】上位人気馬は素直に信頼していいレース　パンジャタ
+OK project=1 video_id=Wetwdl9gUKI title=【POG】金子真人オーナーゆかりのマカヒキ×アパパネの超良血牡馬　ククイプカが札
+OK project=1 video_id=lZSB9sP3SUA title=母は仏G1勝ちの名牝 グランドストーリーがデビュー勝ち狙う
