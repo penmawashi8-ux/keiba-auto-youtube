@@ -184,7 +184,7 @@ jobs:
             --privacy "$PRIVACY" \
             --url-out /tmp/full_url.txt \
             --tags "$TAGS_BASE" \
-            --title "【最強世代】競馬25世代を完全解説｜クロワデュノール・マスカレードボール・ミュージアムマイル" \
+            --title "【最強世代】三冠が3頭に割れた「25世代」を6分で完全解説｜クロワデュノール／マスカレードボール／ミュージアムマイル" \
             --description "$(cat dist/gen25/full_desc.txt)"
 
       - name: Upload ショート(縦5本) ※本編へ誘導リンク付き
@@ -199,11 +199,11 @@ jobs:
           fi
 
           titles=(
-            "①2歳戦編｜最強世代25世代のはじまり #Shorts"
-            "②皐月賞とダービー｜二冠を分け合った三強 #Shorts"
-            "③菊花賞と凱旋門賞｜三冠が3頭に割れた秋 #Shorts"
-            "④古馬との対決｜3歳馬が秋冬G1を制圧 #Shorts"
-            "⑤4歳になった今｜25世代の現在地【2026年8月】 #Shorts"
+            "2馬身差の完勝。ここから最強世代が始まった【25世代①2歳戦】#Shorts"
+            "単勝1.5倍が敗れた皐月賞。二冠は分かれた【25世代②皐月賞・ダービー】#Shorts"
+            "主役2頭が不在だった三冠目【25世代③菊花賞と凱旋門賞】#Shorts"
+            "3歳馬が古馬G1を制圧した秋【25世代④天皇賞・秋／JC／有馬】#Shorts"
+            "4歳になった最強世代のいま【25世代⑤2026年8月】#Shorts"
           )
           for i in 1 2 3 4 5; do
             # ショートは連続投稿すると弾かれることがあるので少し間隔を空ける
@@ -213,6 +213,6 @@ jobs:
               --thumbnail "dist/gen25/gen25_short_${i}_thumb.jpg" \
               --privacy "$PRIVACY" \
               --tags "$TAGS_BASE,Shorts" \
-              --title "【最強世代】${titles[$((i-1))]}" \
+              --title "${titles[$((i-1))]}" \
               --description "$DESC"
           done
