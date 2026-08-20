@@ -14,6 +14,7 @@
 
 import argparse
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -36,18 +37,38 @@ def read_ids(path: str) -> list[str]:
     return ids
 
 
+def _is_not_found(e: HttpError) -> bool:
+    return getattr(getattr(e, "resp", None), "status", None) == 404
+
+
 def existing_items(youtube, playlist_id: str) -> set[str]:
-    """再生リストに入っている動画IDを集める（重複追加を避けるため）。"""
-    out, token = set(), None
-    while True:
-        resp = youtube.playlistItems().list(
-            part="contentDetails", playlistId=playlist_id,
-            maxResults=50, pageToken=token).execute()
-        for item in resp.get("items", []):
-            out.add(item["contentDetails"]["videoId"])
-        token = resp.get("nextPageToken")
-        if not token:
-            return out
+    """再生リストに入っている動画IDを集める（重複追加を避けるため）。
+
+    作りたてだと YouTube 側の反映が追いつかず playlistNotFound(404) が
+    返ることがある。少し待って何度か試し、それでも駄目なら
+    「空の再生リスト」とみなす（実際、作りたてなら中身は無い）。
+    """
+    for attempt in range(5):
+        out, token = set(), None
+        try:
+            while True:
+                resp = youtube.playlistItems().list(
+                    part="contentDetails", playlistId=playlist_id,
+                    maxResults=50, pageToken=token).execute()
+                for item in resp.get("items", []):
+                    out.add(item["contentDetails"]["videoId"])
+                token = resp.get("nextPageToken")
+                if not token:
+                    return out
+        except HttpError as e:
+            if not _is_not_found(e):
+                raise
+            wait = 3 * (attempt + 1)
+            print(f"  再生リストがまだ見えません。{wait}秒待って再試行します"
+                  f" ({attempt + 1}/5)")
+            time.sleep(wait)
+    print("  [情報] 反映待ちが解消しないので、空の再生リストとして扱います")
+    return set()
 
 
 def main() -> None:
@@ -73,6 +94,7 @@ def main() -> None:
     except HttpError as e:
         print(f"[エラー] 再生リストの中身を取得できません: {e}", file=sys.stderr)
         sys.exit(1)
+
     print(f"再生リストの現在の本数: {len(already)}")
 
     todo = [v for v in ids if v not in already]
