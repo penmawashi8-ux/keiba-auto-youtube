@@ -1,0 +1,64 @@
+name: News Playlist Backfill
+
+# 過去に投稿した横型ニュース動画を、再生リスト「競馬ニュース（毎日更新）」に
+# まとめて入れる。対象は data/news_landscape_ids.txt。
+# すでに入っているものは飛ばすので、何度実行しても重複しない。
+#
+# 2026-08-21 以降の投稿は playlist_utils が自動で入れるため、
+# このワークフローは過去分の取り込み用（必要なときだけ手で回す）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "追加せず、対象を表示するだけ"
+        required: false
+        default: false
+        type: boolean
+
+  # API dispatch が使えない環境向けの起動ブランチ
+  #   run-news-playlist-backfill     … 実際に追加する
+  #   run-news-playlist-backfill-dry … 何が追加されるか見るだけ
+  push:
+    branches:
+      - "run-news-playlist-backfill"
+      - "run-news-playlist-backfill-dry"
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+
+    env:
+      GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+      GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+      GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+      GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-oauthlib
+
+      - name: 過去の横型ニュースを再生リストに入れる
+        run: |
+          DRY=""
+          if [ "${{ github.ref_name }}" = "run-news-playlist-backfill-dry" ] \
+             || [ "${{ inputs.dry_run }}" = "true" ]; then
+            DRY="--dry-run"
+          fi
+          python scripts/backfill_playlist.py $DRY

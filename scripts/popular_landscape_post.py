@@ -26,7 +26,9 @@ JST = datetime.timezone(datetime.timedelta(hours=9))
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 POSTED_IDS_FILE = "posted_ids.txt"
-RESULT_FILE = "last_upload_result.txt"
+# ショート側の upload_youtube.py も last_upload_result.txt を書くため、
+# 同じ名前にしていると後から走ったほうに上書きされて記録が消える。
+RESULT_FILE = "last_popular_landscape_result.txt"
 
 
 def append_posted_id(entry_id: str) -> None:

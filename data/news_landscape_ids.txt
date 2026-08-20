@@ -1,0 +1,17 @@
+# 横型ニュース動画の投稿記録（再生リスト「競馬ニュース（毎日更新）」の対象）
+# 投稿ログ（last_daily_top_result.txt / last_upload_result.txt）のGit履歴から、
+# type: daily_top_landscape / popular_news_landscape のものだけを抽出したもの。
+# 2026-08-21 以降の投稿は playlist_utils が自動で再生リストに入れるため、
+# ここに追記する必要はない。
+tHFHdYzObjk   # 2026-08-14 daily_top
+80fQFNEdXyY   # 2026-08-14 daily_top
+S81TB4uYKUM   # 2026-08-15 popular_news
+hR1nJ9fG0VY   # 2026-08-15 daily_top
+Y84qVcKGH_I   # 2026-08-16 popular_news
+xp-AIzBzZbA   # 2026-08-16 daily_top
+LO2U7iiZUAs   # 2026-08-17 popular_news
+cVKt1Oc7S0w   # 2026-08-17 daily_top
+pkxWvYUHbrc   # 2026-08-18 popular_news
+1xjTi0mhAGc   # 2026-08-18 daily_top
+JAcismUjJP0   # 2026-08-19 daily_top
+wOcyv1cDtBU   # 2026-08-20 daily_top
