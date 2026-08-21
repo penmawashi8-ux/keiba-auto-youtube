@@ -1,10 +1,10 @@
-date: 2026-08-21T09:45:48.164009Z
+date: 2026-08-21T11:30:52.929844Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3X53Jnx0MXg title=今週の武豊騎手は13鞍 サウンドモリアーナでキーンランドC初勝利なるか
-OK project=1 video_id=9KtDr9p84jw title=【シティオブヨークS】サトノレーヴは4番ゲートから偉業へ　堀調教師「モレイラ騎手
-OK project=1 video_id=1P7j4gO5vdc title=【POG】母リスグラシュー似のリスグロワールが阪神でデビュー/馬三郎のつぶやき
+OK project=1 video_id=fms3bUdusrM title=佐々木蔵之介がアゲアゲで登場　セレモニー前に「３カ月の子馬にミルクをあげて」　Ｗ
+OK project=1 video_id=DmjnCX2SjHM title=【WASJ】23歳の超イケメン!　豪州から初来日のザック・ロイド騎手　日本語を学
+OK project=1 video_id=tPcd8YoTeos title=福永祐一厩舎の億超えコントレイル産駒 ドミナントが新馬勝ち狙う
