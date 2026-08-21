@@ -1,10 +1,10 @@
-date: 2026-08-21T07:42:17.713971Z
+date: 2026-08-21T09:45:48.164009Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DINjaplbJQ8 title=【新潟記念想定馬・騎手】ロデオドライブ、ゾロアストロなど11頭
-OK project=1 video_id=u4fCzrzUV1k title=【中京2歳S想定馬・騎手】ジーティーマイカ、サンタンジェロなど6頭
-OK project=1 video_id=t-C8Dt7mr0c title=ジャックルマロワ賞に出走したシックスペンスとシュトラウスがフランスから帰国
+OK project=1 video_id=3X53Jnx0MXg title=今週の武豊騎手は13鞍 サウンドモリアーナでキーンランドC初勝利なるか
+OK project=1 video_id=9KtDr9p84jw title=【シティオブヨークS】サトノレーヴは4番ゲートから偉業へ　堀調教師「モレイラ騎手
+OK project=1 video_id=1P7j4gO5vdc title=【POG】母リスグラシュー似のリスグロワールが阪神でデビュー/馬三郎のつぶやき
