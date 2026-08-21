@@ -1,10 +1,10 @@
-date: 2026-08-20T11:30:58.632944Z
+date: 2026-08-21T02:29:30.740396Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FAWtatL96bs title=【キーンランドC・データ埋蔵金】上位人気馬は素直に信頼していいレース　パンジャタ
-OK project=1 video_id=Wetwdl9gUKI title=【POG】金子真人オーナーゆかりのマカヒキ×アパパネの超良血牡馬　ククイプカが札
-OK project=1 video_id=lZSB9sP3SUA title=母は仏G1勝ちの名牝 グランドストーリーがデビュー勝ち狙う
+OK project=1 video_id=vSgdWdgeX8A title=【新潟2歳S】インカルナータは大外からエフフォーリア産駒初の重賞V狙う　コレット
+OK project=1 video_id=ckTMSAhimFY title=凱旋門賞上位人気馬がギリギリしのいだ!ディープインパクトの孫娘カルパナがヨークシ
+OK project=1 video_id=UqiHaZ3aSw4 title=【キーンランドC】連覇を狙うパンジャタワーは2枠3番　ウインカーネリアンは4枠8
