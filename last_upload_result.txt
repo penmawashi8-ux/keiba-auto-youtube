@@ -1,10 +1,10 @@
-date: 2026-08-21T02:29:30.740396Z
+date: 2026-08-21T03:58:03.794149Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vSgdWdgeX8A title=【新潟2歳S】インカルナータは大外からエフフォーリア産駒初の重賞V狙う　コレット
-OK project=1 video_id=ckTMSAhimFY title=凱旋門賞上位人気馬がギリギリしのいだ!ディープインパクトの孫娘カルパナがヨークシ
-OK project=1 video_id=UqiHaZ3aSw4 title=【キーンランドC】連覇を狙うパンジャタワーは2枠3番　ウインカーネリアンは4枠8
+OK project=1 video_id=as2HQ0CIlfU title=【注目馬動向】香港最強スプリンターのカーインライジング始動戦が決定　「21連勝を
+OK project=1 video_id=CR0OTBxumso title=競馬開催の売り上げから1億円を熊本県へ寄付　中央競馬サークルからも続々　JRAが
+OK project=1 video_id=1-04Pbe4goU title=英ヨーク開催の激戦G1を勝ち切ったアイテム、カルパナの凱旋門賞オッズ上方修正　英
