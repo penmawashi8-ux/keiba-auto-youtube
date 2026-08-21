@@ -1,8 +1,8 @@
-date: 2026-08-20T13:44:01.022719Z
+date: 2026-08-21T13:43:11.724251Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wOcyv1cDtBU
-source_short=bSHJumAXak0 views=258
-title=8月20日 内田博幸が調教再開　「追い切りだったけど、全然大丈夫でしたね」　負傷の左肩「しっかり治して不安を取り除けまし
+OK project=1 video_id=bd203tvBR_I
+source_short=UqiHaZ3aSw4 views=392
+title=8月21日 【キーンランドC】連覇を狙うパンジャタワーは2枠3番　ウインカーネリアンは4枠8番　枠順確定
