@@ -1,10 +1,10 @@
-date: 2026-08-22T07:30:32.465755Z
+date: 2026-08-22T11:23:40.141277Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KEx2Tgcjkj0 title=松山弘平騎手がWASJ第2戦でスタート直後に落馬　地面激突のシーンにファン沈痛「
-OK project=1 video_id=qKqluA72eKM title=【JRA・WIN5】本日のWIN5は的中111票、配当243万4420円
-OK project=1 video_id=1d-dWyn-1nc title=【WASJ】第1戦は武豊騎手がアスミルで勝利して30ポイント獲得　「ここは、と思
+OK project=1 video_id=-A3_lvRBFpQ title=【AI予想・キーンランドC】昨年のリベンジへ準備万端！ 人工知能はハイレベルな活
+OK project=1 video_id=YOh-BBPmbcc title=【キーンランドC】断トツ人気はパンジャタワー　3連勝中の3歳馬が単勝7・0倍2番
+OK project=1 video_id=1eDgIb6EcJ8 title=スラジ・ナレドゥ騎手がJRA初勝利！ 「世界の頂点に立ったかのような気持ち」
