@@ -1,10 +1,10 @@
-date: 2026-08-21T11:30:52.929844Z
+date: 2026-08-22T02:19:58.366200Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fms3bUdusrM title=佐々木蔵之介がアゲアゲで登場　セレモニー前に「３カ月の子馬にミルクをあげて」　Ｗ
-OK project=1 video_id=DmjnCX2SjHM title=【WASJ】23歳の超イケメン!　豪州から初来日のザック・ロイド騎手　日本語を学
-OK project=1 video_id=tPcd8YoTeos title=福永祐一厩舎の億超えコントレイル産駒 ドミナントが新馬勝ち狙う
+OK project=1 video_id=BiQCQ8PkQhw title=【新潟3R新馬戦結果】ジップスパークが好位から抜け出し快勝！
+OK project=1 video_id=K8hhPs_IaMI title=【札幌1R・2歳未勝利】「ヘルパーやってよかった!」国枝栄厩務員も感無量　担当の
+OK project=1 video_id=-dgCsba1NIU title=国枝厩務員が転身後初勝利!鞍上は“夏休み”明けルメールにネット沸く「名コンビ再び
