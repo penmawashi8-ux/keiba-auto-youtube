@@ -1,10 +1,10 @@
-date: 2026-08-22T03:46:54.549635Z
+date: 2026-08-22T07:30:32.465755Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xlOcOeZSQrM title=【札幌5R新馬戦結果】ビッグアーサー産駒ツキミが人気に応えて快勝
-OK project=1 video_id=2mGz-5ZM8iY title=【札幌3R・3歳未勝利】リンが初V　松山弘平騎手&深澤朝房オーナーのコンビでパン
-OK project=1 video_id=7RPGZd3xF7g title=先週の新潟で落馬負傷した原優介騎手が復帰初戦でいきなりV!「全く問題ないです。走
+OK project=1 video_id=KEx2Tgcjkj0 title=松山弘平騎手がWASJ第2戦でスタート直後に落馬　地面激突のシーンにファン沈痛「
+OK project=1 video_id=qKqluA72eKM title=【JRA・WIN5】本日のWIN5は的中111票、配当243万4420円
+OK project=1 video_id=1d-dWyn-1nc title=【WASJ】第1戦は武豊騎手がアスミルで勝利して30ポイント獲得　「ここは、と思
