@@ -1,10 +1,10 @@
-date: 2026-08-23T09:36:45.925817Z
+date: 2026-08-23T11:24:03.324475Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_nraE7Q8jzw title=落馬負傷の小野寺祐太騎手が実戦復帰　２着に奮闘も「人間が久々だったのでドキドキし
-OK project=1 video_id=vk3HWjAK4rw title=【中京9R・障害3歳上未勝利】落馬負傷から約4か月ぶり復帰の小野寺祐太騎手は2着
-OK project=1 video_id=LGohtHjacPk title=【キーンランドC】丹内祐次騎手「まだまだこれからの馬」3歳馬ロジケープは重賞初挑
+OK project=1 video_id=EXfGwodIDWc title=【新潟2歳Sレース後コメント】レッチュベルク田辺裕信騎手ら
+OK project=1 video_id=7jJzHauICPU title=【WASJ】「ジョッキーは辞められないね」横山典弘騎手が史上最多となる17年ぶり
+OK project=1 video_id=8Av4LL9uUPc title=8月23日の出来事一覧/札幌・新潟・中京
