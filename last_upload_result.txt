@@ -1,10 +1,10 @@
-date: 2026-08-23T02:28:39.860177Z
+date: 2026-08-23T03:55:07.996562Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=scUFPNrMujg title=【米・パシフィッククラシックS結果】ナイツブリッジが圧勝 フィンガーは11着
-OK project=1 video_id=Spthi2vWCbY title=【中京3R新馬戦結果】キズナ産駒ファミーリエが突き抜け快勝
-OK project=1 video_id=o2u-l8Y5nkY title=【新潟1R・2歳未勝利】ノーセットが圧巻の7馬身差V　津村明秀騎手「本当に強い競
+OK project=1 video_id=jhekrpeK6ng title=【札幌5R新馬戦結果】コントレイル産駒ヴァンドレストが人気に応えて快勝
+OK project=1 video_id=ExRIY51itJY title=古賀大生調教師が開業15戦目で初勝利　「どんどん勝利を重ねていけるよう日々精進し
+OK project=1 video_id=5jlNaQl7TCY title=ダート2冠馬の惨敗に「やばさが際立つ」「感覚狂ってる」　フォーエバーヤングの強さ
