@@ -1,10 +1,10 @@
-date: 2026-08-22T11:23:40.141277Z
+date: 2026-08-23T02:28:39.860177Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-A3_lvRBFpQ title=【AI予想・キーンランドC】昨年のリベンジへ準備万端！ 人工知能はハイレベルな活
-OK project=1 video_id=YOh-BBPmbcc title=【キーンランドC】断トツ人気はパンジャタワー　3連勝中の3歳馬が単勝7・0倍2番
-OK project=1 video_id=1eDgIb6EcJ8 title=スラジ・ナレドゥ騎手がJRA初勝利！ 「世界の頂点に立ったかのような気持ち」
+OK project=1 video_id=scUFPNrMujg title=【米・パシフィッククラシックS結果】ナイツブリッジが圧勝 フィンガーは11着
+OK project=1 video_id=Spthi2vWCbY title=【中京3R新馬戦結果】キズナ産駒ファミーリエが突き抜け快勝
+OK project=1 video_id=o2u-l8Y5nkY title=【新潟1R・2歳未勝利】ノーセットが圧巻の7馬身差V　津村明秀騎手「本当に強い競
