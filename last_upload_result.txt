@@ -1,10 +1,10 @@
-date: 2026-08-23T03:55:07.996562Z
+date: 2026-08-23T07:33:28.164821Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jhekrpeK6ng title=【札幌5R新馬戦結果】コントレイル産駒ヴァンドレストが人気に応えて快勝
-OK project=1 video_id=ExRIY51itJY title=古賀大生調教師が開業15戦目で初勝利　「どんどん勝利を重ねていけるよう日々精進し
-OK project=1 video_id=5jlNaQl7TCY title=ダート2冠馬の惨敗に「やばさが際立つ」「感覚狂ってる」　フォーエバーヤングの強さ
+OK project=1 video_id=KB5bymbS_R4 title=【メイクデビュー中京2Rレース後コメント】キトゥンズクラフト吉村誠之助騎手ら
+OK project=1 video_id=ij2H-qTl-4E title=【メイクデビュー新潟2Rレース後コメント】タイヴァス坂井瑠星騎手ら
+OK project=1 video_id=wFGeO78effk title=【新潟2歳S】2番人気のトウシンマジックは2着　コレット騎手&秋本調教師は重賞初
