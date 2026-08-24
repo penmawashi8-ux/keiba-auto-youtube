@@ -1,10 +1,10 @@
-date: 2026-08-24T07:57:58.191459Z
+date: 2026-08-24T11:31:07.104291Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=1GaRgRHBNPE title=【WASJ】ザック・ロイドが2位　豪州の23歳イケメン「次は1位になれるように頑
-OK project=1 video_id=b1hKPPz0dWU title=【中京2歳S】スピード十分のシスキンブルーム　放牧効果で斉藤崇調教師「体つき自体
-OK project=1 video_id=lG0E9ju1jV0 title=【先週のJRA抹消馬】24年ブルーバードCで2着のエコロガイア、桜花賞馬の仔エン
+OK project=1 video_id=8Gl2rgBk7tw title=【中京2歳S】前川調教師「バネがあってゴムまりみたい」好素材ジーティーマイカで厩
+OK project=1 video_id=jo73fQbzmgM title=【新潟記念】セレクト3.1億円のダノンシーマ 史上最高価格のJRA重賞勝ち馬とな
+OK project=1 video_id=b4CvSyCnDXs title=【中京2歳S】ビスケットサンドが重賞でもおいしいぞ　陣営「理想1週前の追い切りが
