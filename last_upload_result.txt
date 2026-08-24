@@ -1,10 +1,10 @@
-date: 2026-08-23T11:24:03.324475Z
+date: 2026-08-24T02:26:38.306075Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=EXfGwodIDWc title=【新潟2歳Sレース後コメント】レッチュベルク田辺裕信騎手ら
-OK project=1 video_id=7jJzHauICPU title=【WASJ】「ジョッキーは辞められないね」横山典弘騎手が史上最多となる17年ぶり
-OK project=1 video_id=8Av4LL9uUPc title=8月23日の出来事一覧/札幌・新潟・中京
+OK project=1 video_id=eThbxlohV1M title=【新潟記念見どころ】安定感抜群のロデオドライブ
+OK project=1 video_id=Iwkro5S9_Sk title=【中京2歳S見どころ】圧巻のデビュー戦だったジーティーマイカ
+OK project=1 video_id=w5UR18nN9FY title=【中京2歳S想定騎手】ジーティーマイカは松山弘平騎手、シスキンブルームは団野大成
