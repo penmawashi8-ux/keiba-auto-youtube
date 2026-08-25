@@ -1,10 +1,10 @@
-date: 2026-08-25T09:44:41.190226Z
+date: 2026-08-25T11:29:43.896746Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=iHVYVknW5no title=【新潟記念】レース史上初のGI馬の勝利なるか 大物5頭が激突だ
-OK project=1 video_id=4Y_SKyf0LIE title=【中京2歳S】前川調教師「大人っぽくなってきました」前走レコードタイのジーティー
-OK project=1 video_id=NCEeZc325Es title=【佐賀競馬　9月3日発走　サマーチャンピオン】リーダー・桜衣かれんの推しはインユ
+OK project=1 video_id=Ziu8OHtSGZM title=【金沢・イヌワシ賞結果】兵庫のダンテバローズが4連勝で重賞連勝を飾る
+OK project=1 video_id=j65ZZPrS4pQ title=「早すぎるよ…」「言葉も出ない」調教中の急死にSNSで悼む声相次ぐ　25年函館記
+OK project=1 video_id=w5HjqZttuTY title=【新潟記念】今夏重賞4勝の田辺裕信騎手との新コンビで臨むドゥレッツァ　尾関知人調
