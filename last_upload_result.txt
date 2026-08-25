@@ -1,10 +1,10 @@
-date: 2026-08-25T02:23:53.884162Z
+date: 2026-08-25T03:52:21.930937Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2G3ZFqT2Jvw title=ミカエル・ミシェル騎手が29日の新潟から騎乗「また日本でお会いできるのを楽しみに
-OK project=1 video_id=M4klSH1ordo title=前代未聞!?ばんえい競馬で笑撃Vの岩田康誠騎手「優勝するとは思っていなかった」後
-OK project=1 video_id=aOXneqNxPmQ title=【競走伝】4歳の若さで天国へ旅立った快速牝馬による物語の始まり　余力十分に2馬身
+OK project=1 video_id=2FODPLiiJlI title=【新潟記念】前走だけでは見限れないサヴォーナ　中竹調教師「休み明けで勝った2走前
+OK project=1 video_id=vsuDz9JqlgA title=“インドのマジックマン”の胸熱メッセージに「来てくれてありがとう」「日本でまた」
+OK project=1 video_id=hpJF2avNn-M title=【中京2歳S】現役最多のJRA2歳重賞15勝 須貝尚介調教師がサンタンジェロで一
