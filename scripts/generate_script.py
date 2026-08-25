@@ -103,6 +103,29 @@ RESULTS_SYSTEM_PROMPT = (
 )
 
 
+# --- コメント記事の取りこぼし対策 -------------------------------------------
+# 「レース後コメント」のようなタイトルの記事は、本文の発言部分を取得できない
+# ことがある（netkeiba のコメント欄が取れないケースなど）。そのまま脚本を
+# 作ると、タイトルはコメントを名乗っているのに中身はレース結果を読み上げる
+# だけの動画になってしまう。視聴者から実際に指摘があったため、
+# 発言が取れていない場合は動画を作らない。
+_COMMENT_TITLE_RE = re.compile(
+    r"コメント|談話|会見|インタビュー|一問一答|語る|振り返(?:る|り)"
+)
+# 実際の発言とみなす鉤括弧。レース名などの短い引用と区別するため長さを見る。
+_QUOTE_RE = re.compile(r"[「『][^」』]{10,}[」』]")
+
+
+def title_promises_comments(title: str) -> bool:
+    """タイトルが「関係者の発言」を約束しているか。"""
+    return bool(_COMMENT_TITLE_RE.search(title or ""))
+
+
+def body_has_quote(body: str) -> bool:
+    """本文に実際の発言（十分な長さの鉤括弧）が含まれているか。"""
+    return bool(_QUOTE_RE.search(body or ""))
+
+
 def fact_check_script(
     api_key: str, model_name: str,
     article_title: str, article_body: str, script: str,
@@ -328,6 +351,13 @@ def main() -> None:
         summary_text = '\n'.join(_clean_sum).strip()
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
         print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
+
+        # タイトルがコメントを名乗っているのに本文に発言が無い記事は作らない。
+        # 結果を読み上げるだけの「レース後コメント」動画になってしまうため。
+        wants_comments = title_promises_comments(item["title"])
+        if wants_comments and not body_has_quote(summary_text):
+            print(f"[{i}]  → タイトルはコメントだが本文に発言が無いためスキップ")
+            return i, True
         sys_prompt = get_system_prompt()
         _BODY_LIMIT = 1500
         if len(summary_text) > _BODY_LIMIT:
@@ -344,6 +374,13 @@ def main() -> None:
             f"内容: {body_for_gemini}\n\n"
             f"【書き出し指示】このナレーションは必ず「{opening_pattern}」という一文で始めること。"
         )
+        if wants_comments:
+            user_content += (
+                "\n【この記事について】関係者の発言が主題の記事です。"
+                "レース結果の羅列で終わらせず、本文の鉤括弧の発言を必ず脚本に入れ、"
+                "誰が何を言ったかが伝わるようにしてください。"
+                "発言は言い換えず、本文のまま使ってください。"
+            )
         lenient_sys_prompt = (
             sys_prompt
             + "\n\n【追加指示】元のニュース本文には情報が含まれています。"
