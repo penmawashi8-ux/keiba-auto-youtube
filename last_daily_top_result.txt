@@ -1,8 +1,8 @@
-date: 2026-08-25T13:44:07.644556Z
+date: 2026-08-26T13:48:18.098762Z
 type: daily_top_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jBcbvrh9-G8
-source_short=2G3ZFqT2Jvw views=946
-title=8月25日 ミカエル・ミシェル騎手が29日の新潟から騎乗「また日本でお会いできるのを楽しみにしています」
+OK project=1 video_id=gQFik2EXqYo
+source_short=zAFme6hHywo views=420
+title=8月26日 「一応覚悟もしておく」「何があったんだ」「そろそろ決断時期」香港からのショッキングな報告にネットは騒然
