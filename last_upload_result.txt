@@ -1,10 +1,10 @@
-date: 2026-08-26T07:45:09.366481Z
+date: 2026-08-26T09:50:35.885399Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=k8vUU7lZhHI title=23年共同通信杯Vで皐月賞3着のファントムシーフが競走馬登録を抹消　今後は谷川牧
-OK project=1 video_id=sWKZezkr0ho title=セントウルS出走予定の香港馬ファストネットワークが12時間かけて日本到着　スプリ
-OK project=1 video_id=Vv80JFmJQOU title=武豊騎手と凱旋門賞に挑むメイショウタバルが好時計マーク　来週の国内最終追い切りへ
+OK project=1 video_id=cD7ffdGfUOk title=ミカエル・ミシェル騎手が美浦で調教に騎乗「戻ってこられて最高にうれしい」自身初の
+OK project=1 video_id=eR09nu12Pe0 title=メイショウタバル、凱旋門賞国内追い切り速報/栗東トレセンニュース
+OK project=1 video_id=f8vrr3zGNS4 title=【中京2歳S】ジーティーマイカはDPコースで軽快に最先着　松山弘平騎手「すごくい
