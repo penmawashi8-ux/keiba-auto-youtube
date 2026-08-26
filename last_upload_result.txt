@@ -1,10 +1,10 @@
-date: 2026-08-26T09:50:35.885399Z
+date: 2026-08-26T11:33:47.300372Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cD7ffdGfUOk title=ミカエル・ミシェル騎手が美浦で調教に騎乗「戻ってこられて最高にうれしい」自身初の
-OK project=1 video_id=eR09nu12Pe0 title=メイショウタバル、凱旋門賞国内追い切り速報/栗東トレセンニュース
-OK project=1 video_id=f8vrr3zGNS4 title=【中京2歳S】ジーティーマイカはDPコースで軽快に最先着　松山弘平騎手「すごくい
+OK project=1 video_id=O3ovom0zRIE title=Xではライバルの名前がトレンド入り!　松山弘平騎手はパンジャタワーとコンビ継続で
+OK project=1 video_id=R_TMPh_Z_L8 title=【新潟記念】ゾロアストロとステレンボッシュがPコースで併せ馬の理由　宮田調教師「
+OK project=1 video_id=hwtiSBP1HYs title=ミシェル騎手が短期免許取得「降臨。お美しい!」「今村騎手と腕比べして」　週末待ち
