@@ -1,10 +1,10 @@
-date: 2026-08-26T03:57:10.283754Z
+date: 2026-08-26T07:45:09.366481Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3exr74emQ7Y title=【新潟記念】ダノンシーマが勢力図を塗り替える　自ら追い切り騎乗の中内田調教師「メ
-OK project=1 video_id=zAFme6hHywo title=「一応覚悟もしておく」「何があったんだ」「そろそろ決断時期」香港からのショッキン
-OK project=1 video_id=V2omQoN4t6g title=【中京2歳S】祖母に3冠牝馬のサンタンジェロは落ち着き払った走りで好仕上がり　陣
+OK project=1 video_id=k8vUU7lZhHI title=23年共同通信杯Vで皐月賞3着のファントムシーフが競走馬登録を抹消　今後は谷川牧
+OK project=1 video_id=sWKZezkr0ho title=セントウルS出走予定の香港馬ファストネットワークが12時間かけて日本到着　スプリ
+OK project=1 video_id=Vv80JFmJQOU title=武豊騎手と凱旋門賞に挑むメイショウタバルが好時計マーク　来週の国内最終追い切りへ
