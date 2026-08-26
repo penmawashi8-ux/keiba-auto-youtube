@@ -1,10 +1,10 @@
-date: 2026-08-26T02:30:08.378362Z
+date: 2026-08-26T03:57:10.283754Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=W7RcEna0lTs title=【セントウルS想定】ママコチャ、ファストネットワークなど14頭
-OK project=1 video_id=rqyAmzaoyOM title=【園田競馬・今日の世麗】休み明け2走目ベビーヴァギーの前進に期待
-OK project=1 video_id=ZvrvINo2Sj8 title=【園田競馬・人気ジョッキーは語る】マーブルヘイロー(10R)に自信を見せる田野豊
+OK project=1 video_id=3exr74emQ7Y title=【新潟記念】ダノンシーマが勢力図を塗り替える　自ら追い切り騎乗の中内田調教師「メ
+OK project=1 video_id=zAFme6hHywo title=「一応覚悟もしておく」「何があったんだ」「そろそろ決断時期」香港からのショッキン
+OK project=1 video_id=V2omQoN4t6g title=【中京2歳S】祖母に3冠牝馬のサンタンジェロは落ち着き払った走りで好仕上がり　陣
