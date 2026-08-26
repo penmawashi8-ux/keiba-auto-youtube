@@ -1,6 +1,6 @@
-date: 2026-08-25T12:43:04.999344Z
+date: 2026-08-26T12:46:26.973645Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PXLfuEHiCdw views=30736 title=またミカエル・ミシェル騎手の笑顔が見られる!　今週29日からJRAで騎乗　自身初の短期免許を取得へ【3.1万回閲覧・話題
+OK project=1 video_id=CA7E_hEordY views=32033 title=ロマンチックウォリアーが故障か　関節のさらなる検査が必要「詳細は追ってお知らせいたします」世界最高賞金獲得の香港馬【3.
