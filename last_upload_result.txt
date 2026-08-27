@@ -1,10 +1,10 @@
-date: 2026-08-27T09:15:46.447027Z
+date: 2026-08-27T13:16:29.698053Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=k4pLKo6aHnI title=母は重賞3勝のプリモシーン 3歳のプリモマーレが待望の初陣だ
-OK project=1 video_id=7DSZgXCttBw title=【注目馬動向】札幌記念6着のマジックサンズは距離短縮で富士Sへ　東京マイルは昨春
-OK project=1 video_id=-RtzlviGASk title=【有力馬動向】馬体にさらなる迫力が出てきたフォーエバーヤング/馬三郎のつぶやき
+OK project=1 video_id=X1Zao6LLNII title=【データ埋蔵金・中京2歳S】単なるレコード勝ちではない!さらなる飛躍の可能性秘め
+OK project=1 video_id=X6qeDK5QP00 title=【地方競馬】“ぶり”メンコを付けるブリダイコーンが出世レースを快勝
+OK project=1 video_id=QTPMq5mLgTs title=【データ埋蔵金・新潟記念】G1馬が5頭出走も斤量面は楽ではない...その牙城を崩
