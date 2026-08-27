@@ -1,8 +1,3 @@
-date: 2026-08-26T13:48:18.098762Z
+date: 2026-08-27T22:44:19.773030Z
 type: daily_top_landscape
-p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
-p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
-p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gQFik2EXqYo
-source_short=zAFme6hHywo views=420
-title=8月26日 「一応覚悟もしておく」「何があったんだ」「そろそろ決断時期」香港からのショッキングな報告にネットは騒然
+result: no_candidates
