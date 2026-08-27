@@ -1,10 +1,10 @@
-date: 2026-08-26T11:33:47.300372Z
+date: 2026-08-27T09:15:46.447027Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=O3ovom0zRIE title=Xではライバルの名前がトレンド入り!　松山弘平騎手はパンジャタワーとコンビ継続で
-OK project=1 video_id=R_TMPh_Z_L8 title=【新潟記念】ゾロアストロとステレンボッシュがPコースで併せ馬の理由　宮田調教師「
-OK project=1 video_id=hwtiSBP1HYs title=ミシェル騎手が短期免許取得「降臨。お美しい!」「今村騎手と腕比べして」　週末待ち
+OK project=1 video_id=k4pLKo6aHnI title=母は重賞3勝のプリモシーン 3歳のプリモマーレが待望の初陣だ
+OK project=1 video_id=7DSZgXCttBw title=【注目馬動向】札幌記念6着のマジックサンズは距離短縮で富士Sへ　東京マイルは昨春
+OK project=1 video_id=-RtzlviGASk title=【有力馬動向】馬体にさらなる迫力が出てきたフォーエバーヤング/馬三郎のつぶやき
