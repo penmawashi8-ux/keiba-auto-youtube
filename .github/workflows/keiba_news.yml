@@ -297,7 +297,10 @@ jobs:
             echo "変更なし。コミットをスキップします。"
           else
             git commit -m "chore: update posted_ids.txt [skip ci]"
-            git pull --rebase origin ${{ github.ref_name }}
+            # fetch_news.py が debug/excluded_news.jsonl を書き換えるため、
+            # ここでは未ステージの変更が残っている。--autostash がないと
+            # 「cannot pull with rebase: You have unstaged changes」で落ちる。
+            git pull --rebase --autostash origin ${{ github.ref_name }}
             git push origin HEAD:${{ github.ref_name }}
           fi
 
@@ -319,6 +322,6 @@ jobs:
             echo "ログ変更なし。"
           else
             git commit -m "chore: save fetch_news log [skip ci]"
-            git pull --rebase origin ${{ github.ref_name }}
+            git pull --rebase --autostash origin ${{ github.ref_name }}
             git push origin HEAD:${{ github.ref_name }}
           fi
