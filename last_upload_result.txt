@@ -1,10 +1,10 @@
-date: 2026-08-28T08:13:24.108832Z
+date: 2026-08-28T11:44:14.888815Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hv8R_AFsD04 title=【注目馬動向】ステイヤーズSで39年ぶり牝馬Vのホーエリートは新潟牝馬Sを予定　
-OK project=1 video_id=04_K8Sr5xLo title=【注目馬動向】札幌で初勝利を挙げたデザートスピリットは横山和生騎手で札幌2歳Sへ
-OK project=1 video_id=S1zeMCUlBhI title=【中京2歳S・金曜気配】名牝の孫サンタンジェロは坂路で素軽い脚取り　陣営「テンシ
+OK project=1 video_id=ONgpL3vJcHQ title=半姉は二冠牝馬のチェルヴィニア エフフォーリア産駒のチェスティーノが初陣だ
+OK project=1 video_id=AWAyZLckn70 title=【トラヴァーズS】真夏のダービーに米2冠馬が出走　フォーエバーヤング出走のBCク
+OK project=1 video_id=9XcjgSfQ8lY title=凱旋門賞の有力候補が電撃引退!繁殖入りが決まった英国のエストレンジ　直前で出走取
