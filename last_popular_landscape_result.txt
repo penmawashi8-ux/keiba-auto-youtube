@@ -1,6 +1,6 @@
-date: 2026-08-27T21:45:18.743944Z
+date: 2026-08-28T21:44:39.719527Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Tss_CaFeoCw views=112392 title=橋木太希騎手が引退…重大な非行で1年間の騎乗停止中　デビュー3年目の20歳　本人が騎手免許取消申請【11万回閲覧・話題の
+OK project=1 video_id=NETwRUyEPkw views=36034 title=【紫苑S想定馬・騎手】ドリームコア、ジッピーチューンなど11頭【3.6万回閲覧・話題の競馬ニュース】
