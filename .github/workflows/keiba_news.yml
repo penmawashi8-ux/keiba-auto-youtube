@@ -113,6 +113,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          # 一部の記事で脚本生成に失敗しても、成功した記事だけで動画を作る。
+          # これが無いと、3件中1件がファクトチェックNGで弾かれただけで
+          # 生成済みの残り2件も破棄され、実行全体が失敗になる。
+          # 縦型ニュース動画のみ。他ワークフローは従来どおり全件必須。
+          ALLOW_PARTIAL_SCRIPTS: "1"
         run: |
           python scripts/generate_script.py 2>&1 | tee /tmp/gemini.log
           STATUS=${PIPESTATUS[0]}
