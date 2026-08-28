@@ -1,20 +1,26 @@
 name: Keiba News YouTube Auto Post
 
+# 定期実行は GitHub の schedule ではなく、外部の cron サービス
+# (cron-job.org) から workflow_dispatch API を叩いて起動している。
+#
+# GitHub の schedule を使わない理由:
+#   2026-08-26〜28 にかけて schedule イベントの配信が大幅に劣化し、
+#   9時間40分遅れて発火する / 7枠連続で不発になる、という状態が続いた。
+#   cron の分を毎時0分から外しても改善しなかった。一方 workflow_dispatch は
+#   一貫して即座に起動していたため、起動元を外部に移した。
+#
+# 投稿時刻を変えたい場合は cron-job.org 側のジョブを編集すること。
+# このファイルに schedule: を戻すと、GitHub 側の遅延した実行と
+# 外部 cron の実行が二重に走るので戻さないこと。
 on:
-  schedule:
-    # 10:00〜20:00 JST に5回実行（JST = UTC+9）
-    #
-    # 分は「0」を避けること。毎時0分は世界中のcronが集中してGitHub Actions側が
-    # 最も混雑する時間帯で、スケジュール実行が大幅に遅延するか、負荷次第では
-    # 実行そのものが破棄される（キューにも残らない）。
-    # 実際、全cronが0分だった頃は毎回15〜80分遅れており、2026-08-27には
-    # 01:00 / 03:00 / 07:00 の3枠が連続で不発になった。
-    - cron: "13 1 * * *"   # 10:13 JST
-    - cron: "27 3 * * *"   # 12:27 JST
-    - cron: "41 7 * * *"   # 16:41 JST
-    - cron: "19 9 * * *"   # 18:19 JST
-    - cron: "37 11 * * *"  # 20:37 JST
   workflow_dispatch:
+
+# 外部 cron と手動実行が重なっても同時に走らないようにする。
+# cancel-in-progress: false = 実行中のものは殺さず待たせる
+# （アップロード中に打ち切られるのを防ぐため）。
+concurrency:
+  group: keiba-news
+  cancel-in-progress: false
 
 jobs:
   post-keiba-news:
