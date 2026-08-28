@@ -559,7 +559,13 @@ def main() -> None:
             except QuotaExceeded:
                 print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。20秒待機後に次へ切り替えます。", file=sys.stderr)
                 time.sleep(20)
-        print(f"[{i}] [エラー] 全キー・全モデルでクォータ超過。", file=sys.stderr)
+        # ここに来る理由はクォータ超過とは限らない。ファクトチェックNGや
+        # 語尾チェックで弾かれ続けた場合も全組み合わせを使い切って到達する。
+        print(
+            f"[{i}] [エラー] 全キー・全モデルを試しましたが、"
+            "条件を満たす脚本が得られませんでした。",
+            file=sys.stderr,
+        )
         return i, False
 
     with ThreadPoolExecutor(max_workers=len(news_items)) as executor:
@@ -570,13 +576,26 @@ def main() -> None:
             if not ok:
                 failed.append(i)
 
-    if failed:
-        print(f"[エラー] 記事 {failed} のスクリプト生成失敗。", file=sys.stderr)
-        sys.exit(1)
+    written = sorted(Path(OUTPUT_DIR).glob("script_*.txt"))
 
-    written = list(Path(OUTPUT_DIR).glob("script_*.txt"))
+    # ALLOW_PARTIAL_SCRIPTS=1 のときは、一部の記事で脚本生成に失敗しても
+    # 成功した分だけで先に進む。1件の失敗のために、生成できていた他の脚本まで
+    # 捨ててしまうのを防ぐため。
+    # 設定するのは縦型ニュース動画 (keiba_news.yml) のみ。
+    # keiba_popular_news / keiba_results は未設定なので、従来どおり
+    # 1件でも失敗したら全体を失敗として扱う。
+    if failed:
+        if os.environ.get("ALLOW_PARTIAL_SCRIPTS") != "1":
+            print(f"[エラー] 記事 {failed} のスクリプト生成失敗。", file=sys.stderr)
+            sys.exit(1)
+        print(
+            f"[警告] 記事 {failed} のスクリプト生成に失敗しましたが、"
+            f"成功した {len(written)} 件で続行します。",
+            file=sys.stderr,
+        )
+
     if not written:
-        print("\n全ての記事がスキップされました。動画生成をスキップします。")
+        print("\n生成できた脚本が0件です。動画生成をスキップします。")
         sys.exit(0)
 
     print(f"\n{len(written)} 件の脚本を生成しました。")
