@@ -1,10 +1,10 @@
-date: 2026-08-29T09:08:55.401826Z
+date: 2026-08-29T11:06:27.158517Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=awEviqmHdmw title=【千歳特別レース後コメント】オンザムービー横山和生騎手ら
-OK project=1 video_id=39CCaKZ_dME title=8月29日の新潟3Rで落馬した谷原柚希騎手は左肩の負傷のため30日は全2鞍で乗り
-OK project=1 video_id=zzesaBjsHjs title=【桑名特別レース後コメント】トライアンフパス松若風馬騎手ら
+OK project=1 video_id=-_-zSJ2CF-8 title=【AI予想・新潟記念】強敵相手も能力発揮ならチャンスは十分！ 人工知能が重賞初制
+OK project=1 video_id=-gKOSmR91Jo title=【新潟記念】G1馬5頭出走もシビアなファン目線が前日オッズに反映　1、2番人気は
+OK project=1 video_id=wSSB32epNc0 title=【中京2歳S前日オッズ】ジーティーマイカが2.4倍で1番人気
