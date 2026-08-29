@@ -1,10 +1,10 @@
-date: 2026-08-28T12:56:01.327151Z
+date: 2026-08-29T06:44:02.724459Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=uM3cApfDkTI title=【新潟記念・金曜気配】チェルヴィニアが新コンビの津村明秀騎手と再出発　陣営「ジョ
-OK project=1 video_id=VIjBppYlUZQ title=【中京＆新潟の危険な人気馬】カズタンジャー　新潟８Ｒ・ＢＳＮ賞
-OK project=1 video_id=6vFBIrpzKeI title=BAOO男鹿とBAOOみぞべが9月にオープン　BAOO高崎は同月に移転
+OK project=1 video_id=0EtsqkeLnGE title=【札幌10R・すずらん賞】ワールドエンジェルがデビュー2連勝　横山和「イメージよ
+OK project=1 video_id=J_OIvymC7Lo title=【2歳未勝利新潟3Rレース後コメント】キムケンシーサー今村聖奈騎手ら
+OK project=1 video_id=-X54Vj_vdMU title=【メイクデビュー中京3Rレース後コメント】ビンチャリ岩田望来騎手ら
