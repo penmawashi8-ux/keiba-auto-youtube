@@ -1,10 +1,10 @@
-date: 2026-08-30T05:07:44.928652Z
+date: 2026-08-30T07:07:26.867528Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=df2JPQGIxng title=「代打ホームラン」「ステキなサプライズ!」今村聖奈騎手が前日にコンビ決定の7番人
-OK project=1 video_id=67ma0T1iS1M title=【札幌5R・2歳新馬】武豊騎手が良血馬対決を制す　ヴァンクライに「いいストライド
-OK project=1 video_id=LFsUJ_HcFdg title=【札幌5R・新馬戦】ヴァンクライが断然人気に応えて新馬勝ち　武豊「いいストライド
+OK project=1 video_id=yn1ZCnyFH34 title=【JRA・WIN5】本日のWIN5は的中1944票、配当28万1590円
+OK project=1 video_id=VmZnCRa_eos title=【メイクデビュー中京3Rレース後コメント】ゴーイントゥノヴァ坂井瑠星騎手ら
+OK project=1 video_id=28IT1RpXar4 title=【新潟記念】3歳馬ゾロアストロが豪雨のなかG1ホース5頭を撃破　鼻出血で日本ダー
