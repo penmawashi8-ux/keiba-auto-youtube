@@ -1,6 +1,6 @@
-date: 2026-08-29T16:11:29.633043Z
+date: 2026-08-31T18:45:26.571673Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ig4rktXMf48 views=67740 title=【注目馬動向】スターアニスはルメール騎手との新コンビでスプリンターズSへ【6.8万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=NLv4_jNPhjA views=18633 title=秋競馬が開幕！ 紫苑S・セントウルSなど4重賞/今週の競馬界の見どころ【1.9万回閲覧・話題の競馬ニュース】
