@@ -1,10 +1,10 @@
-date: 2026-08-31T09:07:25.252479Z
+date: 2026-08-31T11:08:28.334893Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_Kthr2XQYbM title=追い切りで素晴らしい切れ味 レーヴドヒロインが土曜阪神で初陣/関西馬メイクデビュ
-OK project=1 video_id=e94sOgfp4KE title=【セントウルS】「少し落ち着かない様子でしたが…」香港馬ファストネットワークが阪
-OK project=1 video_id=3ca115hGA9s title=【セントウルS】唯一のG1馬ママコチャは武豊とコンビ継続　斉藤助手「距離は千二が
+OK project=1 video_id=PxDlu6QrpcI title=【京成杯AH】半兄はダート王のフォーエバーヤング ブラウンラチェットが待望の復活
+OK project=1 video_id=QEWMQw7rJlE title=【セントウルS】快速女王ピューロマジックは5着以内でシリーズ制覇確定　岩田望来騎
+OK project=1 video_id=EcnCfeId3F8 title=【紫苑S】レース史上初の母娘制覇なるか ジワタネホが意欲の格上挑戦だ
