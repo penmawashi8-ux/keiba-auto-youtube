@@ -1,10 +1,9 @@
-date: 2026-08-31T01:08:10.430244Z
+date: 2026-08-31T03:08:31.351699Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7BDnhs-Pw8E title=【セントウルステークス展望】フリッカージャブが重賞連勝を狙う　ピューロマジックは
-OK project=1 video_id=Odwzflfxnhg title=【中京2歳S・レースメモ】ジーティーマイカでシスキン産駒が当レース初出走・初勝利
-OK project=1 video_id=NdtKXe9I6Ns title=【競走伝】“40億円ホース”アドマイヤムーンの重賞初制覇　その馬上にいたのは… 
+OK project=1 video_id=LNPRyGsgpHE title=【紫苑S想定騎手】ドリームコアはC.ルメール騎手、ジッピーチューンは北村友一騎手
+OK project=1 video_id=6bqfScrXmHQ title=【セントウルS想定騎手】ダイヤモンドノットは川田将雅騎手、フリッカージャブは松山
