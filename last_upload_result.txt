@@ -1,10 +1,10 @@
-date: 2026-08-31T11:08:28.334893Z
+date: 2026-09-01T01:07:33.677876Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PxDlu6QrpcI title=【京成杯AH】半兄はダート王のフォーエバーヤング ブラウンラチェットが待望の復活
-OK project=1 video_id=QEWMQw7rJlE title=【セントウルS】快速女王ピューロマジックは5着以内でシリーズ制覇確定　岩田望来騎
-OK project=1 video_id=EcnCfeId3F8 title=【紫苑S】レース史上初の母娘制覇なるか ジワタネホが意欲の格上挑戦だ
+OK project=1 video_id=xJwEkiEmqLk title=【札幌2歳S】フライトライン産駒が重賞初制覇へ セレクト2.1億円のショウナンガ
+OK project=1 video_id=V1nQZzerxMo title=ミカエル・ミシェル騎手、JRA重賞初挑戦　紫苑Sはアストリル、京成杯オータムHは
+OK project=1 video_id=NbDsLlsPAIc title=【セントウルS】フリッカージャブ、3連勝でサマースプリント王者へ　西園調教師「い
