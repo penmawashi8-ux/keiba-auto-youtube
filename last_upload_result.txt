@@ -1,10 +1,10 @@
-date: 2026-09-01T03:08:27.084871Z
+date: 2026-09-01T05:16:37.850359Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=J38KyLpYR4M title=【盛岡・不来方賞】ジャパンダートクラシックのトライアル 秋初戦を制して飛躍につな
-OK project=1 video_id=AzN7O4mDPIc title=七夕賞で重賞初制覇のアスクナイスショーは全治9か月以上　右前浅屈腱炎が判明　JR
-OK project=1 video_id=UPfzqrxlIlM title=七夕賞覇者アスクナイスショーは右前浅屈腱炎が判明…9カ月以上の休養へ　シルバース
+OK project=1 video_id=f3YE2o5LSeM title=【注目馬動向】中京2歳Sを快勝したジーティーマイカは阪神JFが目標　前川調教師「
+OK project=1 video_id=vK1Dn4Cyzrw title=社台スタリオンステーションが26年種付け頭数発表　シスキンが最多224頭　イクイ
+OK project=1 video_id=j-wVxHuQCPk title=インゼルサラブレッドクラブ　2026年度募集馬発表
