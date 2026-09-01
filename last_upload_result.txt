@@ -1,10 +1,10 @@
-date: 2026-09-01T07:08:32.559491Z
+date: 2026-09-01T09:07:13.377440Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WtLyq1pFc1I title=6歳秋に初ダート参戦!安田記念7着レーベンスティールは南部杯を目標に調整　芝で重
-OK project=1 video_id=ShUgha-Ix04 title=豪メルボルンC登録馬発表　日本調教馬はスティンガーグラスが登録「デルタブルースの
-OK project=1 video_id=blcXWt78cAA title=目玉はドウデュース半妹のイクイノックス産駒　インゼルサラブレッドクラブが2026
+OK project=1 video_id=93yeJA3eIew title=【不来方賞】武豊騎手は2年ぶりの勝利を飾れず　シーズザスローンは直線で脚を伸ばす
+OK project=1 video_id=Hly3uu6XTwI title=ホリエモン馬が楽々逃げ切り　イッテラッシャイが重賞初制覇　戸崎圭太騎手「オーナー
+OK project=1 video_id=5AexGqiI9IE title=【盛岡・不来方賞結果】イッテラッシャイが6馬身差逃げ切りV！3連勝で重賞初制覇
