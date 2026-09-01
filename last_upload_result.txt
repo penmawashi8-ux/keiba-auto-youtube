@@ -1,10 +1,10 @@
-date: 2026-09-01T05:16:37.850359Z
+date: 2026-09-01T07:08:32.559491Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=f3YE2o5LSeM title=【注目馬動向】中京2歳Sを快勝したジーティーマイカは阪神JFが目標　前川調教師「
-OK project=1 video_id=vK1Dn4Cyzrw title=社台スタリオンステーションが26年種付け頭数発表　シスキンが最多224頭　イクイ
-OK project=1 video_id=j-wVxHuQCPk title=インゼルサラブレッドクラブ　2026年度募集馬発表
+OK project=1 video_id=WtLyq1pFc1I title=6歳秋に初ダート参戦!安田記念7着レーベンスティールは南部杯を目標に調整　芝で重
+OK project=1 video_id=ShUgha-Ix04 title=豪メルボルンC登録馬発表　日本調教馬はスティンガーグラスが登録「デルタブルースの
+OK project=1 video_id=blcXWt78cAA title=目玉はドウデュース半妹のイクイノックス産駒　インゼルサラブレッドクラブが2026
