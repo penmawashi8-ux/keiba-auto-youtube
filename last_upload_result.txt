@@ -1,10 +1,10 @@
-date: 2026-09-02T01:15:00.252970Z
+date: 2026-09-02T03:09:02.572516Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Oi-DRbfygQ8 title=【園田競馬・人気ジョッキーは語る】ジューンスピーク(3R)で勝利を意識する杉浦健
-OK project=1 video_id=tnUbu9BqNGA title=【園田競馬・今日の世麗】1Rのヴァンガルダから有力馬がそろい、勝ち星量産に期待が
-OK project=1 video_id=OGb2xebgoMQ title=【札幌2歳S】ショウナンガレオン「あれはG1馬」怪物候補ここは通過点
+OK project=1 video_id=eeii_Ajbis8 title=【注目馬動向】武豊騎手とのコンビで新馬快勝のヴァンクライは萩Sを視野
+OK project=1 video_id=6-4gpJLFNc0 title=【紫苑S】オークス4着リアライズルミナスが坂路で力強い動き　気になる喉の状態は橋
+OK project=1 video_id=JwCQ6-0VmL0 title=肋骨骨折で休養していた木幡巧　5日の中山競馬で復帰へ、8月15日の新潟6Rで落馬
