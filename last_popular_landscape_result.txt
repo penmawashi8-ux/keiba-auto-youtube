@@ -1,6 +1,6 @@
-date: 2026-09-01T16:03:44.519696Z
+date: 2026-09-02T15:21:06.770238Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=i1hPAbngn5A views=10868 title=暑さ対策に馬のクールネック  開業１年目の柴田卓調教師が導入　夏季の調教時間も「コンパクトに」【1.1万回閲覧・話題の競
+OK project=1 video_id=kXXApSU349Q views=38150 title=【注目馬動向】新潟記念2着のロデオドライブ　右前脚の繋靱帯脚部の炎症か　社台グループオーナーズが発表【3.8万回閲覧・話
