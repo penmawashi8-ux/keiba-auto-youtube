@@ -1,94 +1,75 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] タイムアウト (attempt 2)。リトライします。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[1]  [ファクトチェックNG] NG: 元記事に存在しないレース結果・
+[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 【園田競馬・人気ジョッキーは語る】ジューンスピーク(3R)で勝利を意識する杉浦健太騎手「放牧先でも乗り込んでおり、力は出 ---
-[0] Gemini入力本文 364文字: '◆園田競馬1日目(9月2日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u3000145勝。モーモーインパクト(3R)に手応え。「好勝負を見込んでいる」(◎)。キクノルメイユール(10R)も「期待している」(◎)。ダイヤグラフ(8R)は「叩き2走目で前進に期'
+--- 記事[0]: 【注目馬動向】武豊騎手とのコンビで新馬快勝のヴァンクライは萩Sを視野 ---
+[0] Gemini入力本文 358文字: '先週の札幌で武豊騎手＝栗東・フリー＝が騎乗して新馬を快勝したヴァンクライ(牡2歳、栗東・須貝尚介厩舎、父ハービンジャー)は萩S・リステッド(10月25日、京都競馬場・芝1800メートル)を視野に調整される。\n\t\t\t\t\u3000同馬は先週の札幌・芝1'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【園田競馬・今日の世麗】1Rのヴァンガルダから有力馬がそろい、勝ち星量産に期待がかかる ---
-[1] Gemini入力本文 347文字: '佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝は先週、8月28日の12Rで4連勝の懸かったゴッドアマベルに騎乗したが伸び切れず6着。「スタートが決まったのにリードを築けなかった。雨が降った後はあまり得意ではないかも…」と悔しがった。それでも2'
+--- 記事[1]: 【紫苑S】オークス4着リアライズルミナスが坂路で力強い動き　気になる喉の状態は橋口調教師「息づかいも...」 ---
+[1] Gemini入力本文 352文字: '◆第11回紫苑S・G2(9月6日、中山競馬場・芝2000メートル、1〜3着馬に秋華賞・G1の優先出走権)追い切り＝9月2日、栗東トレセン\n\t\t\t\t\u3000リアライズルミナス(牝3歳、栗東・橋口慎介厩舎、父シルバーステート)は、朝一番の坂路でディー'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【札幌2歳S】ショウナンガレオン「あれはG1馬」怪物候補ここは通過点 ---
-[2] Gemini入力本文 350文字: '◆第61回札幌2歳S・G3(9月5日、札幌競馬場・芝1800メートル)\n\t\t\t\t\u3000第61回札幌2歳S・G3は5日、札幌競馬場の芝1800メートルで行われる。デビュー戦を2歳コースレコードで完勝したショウナンガレオンは、能力に加えてルックスも'
+--- 記事[2]: 肋骨骨折で休養していた木幡巧　5日の中山競馬で復帰へ、8月15日の新潟6Rで落馬 ---
+[2] Gemini入力本文 305文字: '骨折で休養していた木幡巧也騎手(30＝牧)が今週5日の中山競馬で復帰する。\n\u30008月15日の新潟6Rで落馬、肋骨を骨折したが、その後、順調に回復。1日から調教騎乗を再開していた。\n\u3000「ご心配をかけましたが、もう大丈夫です。追い切りに乗っても違'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 429
   HTTP 429
-[2] 使用: key=***189Y model=gemini-2.5-flash
-[0] 使用: key=***189Y model=gemini-2.5-flash
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[1]  [Gemini生出力 246文字]: '注目の競馬情報をお届けします。佐々木世麗騎手は先週、8月28日の12Rで4連勝の懸かったゴッドアマベルに騎乗しましたが、伸び切れず6着でした。「スタートが決まったのにリードを築けなかった。雨が降った後はあまり得意ではないかも…」と悔しさをにじませています。それでも26日には1勝を加え、今年65勝目をマークし、快調なペースで勝ち星を積み重ねています。2日は8鞍に騎乗予定で、C2クラス820メートル戦2鞍を筆頭に有力馬がそろっており、1Rのヴァンガルダからも勝ち星量産に期待がかかっています。'
-[1]  [redirectフィルター] 246文字 → 231文字
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (230文字)
-[1]  プレビュー: 佐々木世麗騎手は先週、8月28日の12Rで4連勝の懸かったゴッドアマベルに騎乗しましたが、伸び切れず6着でした。「スタートが決まったのにリードを築けなかった。雨...
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[2]  [Gemini生出力 221文字]: '重要な競馬ニュースをお伝えします。\n第61回札幌2歳S・G3が9月5日に札幌競馬場の芝1800メートルで行われます。デビュー戦を2歳コースレコードで完勝したショウナンガレオンが注目を集めています。ショウナンガレオンは、能力に加えてルックスも抜群のフライトライン産駒です。怪物候補の“イケメン”として、現地に滞在している坂本達洋記者が「見た」と報じています。“大物候補”と話題を集めるこの馬は、一目見た時から品があり格好いい馬だとされています。'
-[2]  [重複除去] 221文字 → 220文字
-[2]  ファクトチェック: SKIPPED(error:ReadTimeout)
-[2]  → output/script_2.txt 保存 (220文字)
-[2]  プレビュー: 重要な競馬ニュースをお伝えします。第61回札幌2歳S・G3が9月5日に札幌競馬場の芝1800メートルで行われます。デビュー戦を2歳コースレコードで完勝したショウ...
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 200
-[0]  [Gemini生出力 307文字]: '重要な競馬ニュースをお伝えします。杉浦健太騎手はジューンスピーク(3R)で勝利を意識しており、「放牧先でも乗り込んでおり、力は出せる」と語っています。小牧太騎手は現在145勝を挙げており、モーモーインパクト(3R)については「好勝負を見込んでいる」と手応えを語りました。また、キクノルメイユール(10R)にも「期待している」と述べ、ダイヤグラフ(8R)は「叩き2走目で前進に期待」とコメントしています。ゴーゴーツヨシ(11R)は「大崩れはしないはず」とし、ジーティートゥルー(12R)については「休み明けだが、降級したので条件はよくなった。じっくり乗って」と話しています。田野豊三騎手は現在104勝を挙げています。'
+[0]  [Gemini生出力 212文字]: '注目の競馬情報をお届けします。\n先週の札幌で武豊騎手が騎乗して新馬を快勝したヴァンクライは、萩S・リステッドを視野に調整されます。萩Sは10月25日に京都競馬場の芝1800メートルで行われる予定です。ヴァンクライは先週の札幌・芝1800メートルで、母にG1馬アエロリットを持つイルリサットと後続を7馬身も突き放すマッチレースを展開しました。その結果、イルリサットをねじ伏せるように1馬身半差をつけ、デビュー戦を飾っています。'
+[0]  [redirectフィルター] 212文字 → 196文字
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (307文字)
-[0]  プレビュー: 重要な競馬ニュースをお伝えします。杉浦健太騎手はジューンスピーク(3R)で勝利を意識しており、「放牧先でも乗り込んでおり、力は出せる」と語っています。小牧太騎手...
+[0]  → output/script_0.txt 保存 (196文字)
+[0]  プレビュー: 先週の札幌で武豊騎手が騎乗して新馬を快勝したヴァンクライは、萩S・リステッドを視野に調整されます。萩Sは10月25日に京都競馬場の芝1800メートルで行われる予...
+[1] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[1]  [Gemini生出力 280文字]: '重要な競馬ニュースをお伝えします。\n第11回紫苑ステークス・G2は、9月6日に中山競馬場・芝2000メートルで行われ、1着から3着までの馬に秋華賞・G1の優先出走権が与えられます。このレースに向けて、9月2日に栗東トレセンで追い切りが行われました。リアライズルミナスは、朝一番の坂路でディーエストッキーと併せ、52秒7―12秒5のタイムを記録しています。輸送を控えているため余力残しでしたが、きれいなフォームで駆け抜けました。橋口調教師は「引っ張ったきりで上がってきてくれた。数字は変...」とコメントし、喉の状態については「息づかいも...」と述べています。'
+[1]  [重複除去] 274文字 → 273文字
+  HTTP 200
+[2]  [Gemini生出力 178文字]: '本日の競馬ニュースです。肋骨骨折で休養していた木幡巧也騎手が、今週5日の中山競馬で復帰します。木幡巧也騎手は8月15日の新潟6Rで落馬し、肋骨を骨折していました。その後は順調に回復し、1日から調教騎乗を再開しています。同騎手は「ご心配をかけましたが、もう大丈夫です。追い切りに乗っても違和感はありませんし、今週から元気にレースに向かいたい」と語っています。'
+[1] 使用: key=***l-ME model=gemini-2.5-flash
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (178文字)
+[2]  プレビュー: 本日の競馬ニュースです。肋骨骨折で休養していた木幡巧也騎手が、今週5日の中山競馬で復帰します。木幡巧也騎手は8月15日の新潟6Rで落馬し、肋骨を骨折していました...
+  HTTP 200
+[1]  [Gemini生出力 260文字]: '重要な競馬ニュースをお伝えします。第11回紫苑S・G2の追い切りが9月2日に栗東トレセンで行われました。9月6日に中山競馬場・芝2000メートルで開催されるこのレースは、1〜3着馬に秋華賞・G1の優先出走権が与えられます。リアライズルミナスは朝一番の坂路でディーエストッキーと併せ、52秒7―12秒5を記録しました。輸送を控えているため余力残しでしたが、きれいなフォームで駆け抜けています。橋口調教師は「引っ張ったきりで上がってきてくれた」とコメントしました。また、喉の状態については「息づかいも...」と述べています。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (257文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。第11回紫苑S・G2の追い切りが9月2日に栗東トレセンで行われました。9月6日に中山競馬場・芝2000メートルで開催されるこの...
 
 3 件の脚本を生成しました。
