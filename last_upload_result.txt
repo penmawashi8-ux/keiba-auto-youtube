@@ -1,10 +1,10 @@
-date: 2026-09-02T03:09:02.572516Z
+date: 2026-09-02T05:08:49.826044Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=eeii_Ajbis8 title=【注目馬動向】武豊騎手とのコンビで新馬快勝のヴァンクライは萩Sを視野
-OK project=1 video_id=6-4gpJLFNc0 title=【紫苑S】オークス4着リアライズルミナスが坂路で力強い動き　気になる喉の状態は橋
-OK project=1 video_id=JwCQ6-0VmL0 title=肋骨骨折で休養していた木幡巧　5日の中山競馬で復帰へ、8月15日の新潟6Rで落馬
+OK project=1 video_id=C47CErC6OB0 title=【ローズS・1週前】超新星モンローウォークが豪快デモ!「やり過ぎないように」馬な
+OK project=1 video_id=19XuOQvqBPY title=【セントライト記念想定】ゴーイントゥスカイ、サノノグレーターなど11頭
+OK project=1 video_id=aXETQAi-TK8 title=落馬負傷で左肩骨折の谷原柚希騎手は手術をせずに復帰を目指す　伊藤圭調教師「3か月
