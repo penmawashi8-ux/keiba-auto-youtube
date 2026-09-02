@@ -1,10 +1,10 @@
-date: 2026-09-02T07:08:12.312993Z
+date: 2026-09-02T09:07:36.875745Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BWSUS5SMc6o title=獲得賞金歴代最高55億円超のロマンチックウォリアー引退　G1・15勝　香港ジョッ
-OK project=1 video_id=9gnmafQlnNk title=左肩骨折の谷原柚希は、手術せずに3カ月で復帰へ
-OK project=1 video_id=bUcAUZhHegs title=【浦和競馬】9月22〜25日の12Rは「支援レース」　熊本地震被災者へ売上金の1
+OK project=1 video_id=gtU-Hnj6bVo title=【セントウルS】ビッグアーサー産駒が3連覇なるか ビッグシーザーが2つ目のタイト
+OK project=1 video_id=3tmRN_DwgCQ title=【週末情報】ライフゲートは滞在効果でリラックス/馬三郎のつぶやき
+OK project=1 video_id=Tb0-AfMFsYQ title=【POG】阪神JF目標のジーティーマイカ 1F延長も対応可能/馬三郎のつぶやき
