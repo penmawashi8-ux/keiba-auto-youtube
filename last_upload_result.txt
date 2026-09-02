@@ -1,10 +1,10 @@
-date: 2026-09-01T11:06:50.120605Z
+date: 2026-09-02T01:15:00.252970Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=yKCfZlevW40 title=【セントウルS】レース史上初の外国馬Vなるか 香港のファストネットワークが参戦だ
-OK project=1 video_id=hOP7x0Qh5TY title=【京成杯AH】サマーマイルシリーズは2頭が優勝権利持ちの杉山晴厩舎　関屋記念2着
-OK project=1 video_id=L7qFW_gZ1Mk title=【紫苑S】「秋華賞の権利を取って賞金を加算したい」　骨折から復帰の桜花賞3着馬ジ
+OK project=1 video_id=Oi-DRbfygQ8 title=【園田競馬・人気ジョッキーは語る】ジューンスピーク(3R)で勝利を意識する杉浦健
+OK project=1 video_id=tnUbu9BqNGA title=【園田競馬・今日の世麗】1Rのヴァンガルダから有力馬がそろい、勝ち星量産に期待が
+OK project=1 video_id=OGb2xebgoMQ title=【札幌2歳S】ショウナンガレオン「あれはG1馬」怪物候補ここは通過点
