@@ -1,10 +1,10 @@
-date: 2026-09-02T09:07:36.875745Z
+date: 2026-09-02T11:10:48.039193Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gtU-Hnj6bVo title=【セントウルS】ビッグアーサー産駒が3連覇なるか ビッグシーザーが2つ目のタイト
-OK project=1 video_id=3tmRN_DwgCQ title=【週末情報】ライフゲートは滞在効果でリラックス/馬三郎のつぶやき
-OK project=1 video_id=Tb0-AfMFsYQ title=【POG】阪神JF目標のジーティーマイカ 1F延長も対応可能/馬三郎のつぶやき
+OK project=1 video_id=rH28FLz8e6o title=【札幌2歳S】フライトライン産駒の“大物候補”ショウナンガレオン　最終追い切りで
+OK project=1 video_id=PVw1NRvhnwM title=【セントウルS】レッドモンレーヴは馬なりで余裕たっぷりの動き　蛯名正調教師「調教
+OK project=1 video_id=mG3LaxmTN6M title=【セントウルS】ダイヤモンドノットはまっすぐ登坂　未勝利以来のスプリント戦も陣営
