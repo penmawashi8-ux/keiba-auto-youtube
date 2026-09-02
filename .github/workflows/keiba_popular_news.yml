@@ -3,12 +3,10 @@ name: Keiba Popular News YouTube Auto Post
 # 既存の keiba_news.yml とは別系統で、netkeibaアクセスランキング上位（閲覧数の多い）
 # 記事を1本投稿する。投稿済み管理は posted_ids.txt を共有して重複投稿を防ぐ。
 on:
-  schedule:
-    # 1日1回・夜のみ実行（当日のアクセスランキング）。
-    # 以前は朝08:00にも実行していたが、同じ記事が朝夜で二重投稿されるため夜だけに変更。
-    # 毎時0分はGitHubスケジューラが最も混雑し数時間遅延する（投稿が夜中になる）ため、
-    # 混雑の少ない中途半端な分に設定して遅延を最小化する。
-    - cron: "37 11 * * *"  # 20:37 JST目安（当日のアクセスランキング）
+  # 定時投稿は外部スケジューラ（cron-job.org 等）から workflow_dispatch API で起動する。
+  # GitHub の schedule(cron) は無料枠だと数時間遅延して深夜投稿になるため使わない。
+  #   POST https://api.github.com/repos/<owner>/<repo>/actions/workflows/keiba_popular_news.yml/dispatches
+  #   body: {"ref": "main"}
   workflow_dispatch:
 
 jobs:
