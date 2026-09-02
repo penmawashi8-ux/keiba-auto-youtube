@@ -1,10 +1,10 @@
-date: 2026-09-02T05:08:49.826044Z
+date: 2026-09-02T07:08:12.312993Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=C47CErC6OB0 title=【ローズS・1週前】超新星モンローウォークが豪快デモ!「やり過ぎないように」馬な
-OK project=1 video_id=19XuOQvqBPY title=【セントライト記念想定】ゴーイントゥスカイ、サノノグレーターなど11頭
-OK project=1 video_id=aXETQAi-TK8 title=落馬負傷で左肩骨折の谷原柚希騎手は手術をせずに復帰を目指す　伊藤圭調教師「3か月
+OK project=1 video_id=BWSUS5SMc6o title=獲得賞金歴代最高55億円超のロマンチックウォリアー引退　G1・15勝　香港ジョッ
+OK project=1 video_id=9gnmafQlnNk title=左肩骨折の谷原柚希は、手術せずに3カ月で復帰へ
+OK project=1 video_id=bUcAUZhHegs title=【浦和競馬】9月22〜25日の12Rは「支援レース」　熊本地震被災者へ売上金の1
