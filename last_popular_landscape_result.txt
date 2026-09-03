@@ -1,6 +1,6 @@
-date: 2026-09-02T15:21:06.770238Z
+date: 2026-09-03T07:09:02.461713Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=kXXApSU349Q views=38150 title=【注目馬動向】新潟記念2着のロデオドライブ　右前脚の繋靱帯脚部の炎症か　社台グループオーナーズが発表【3.8万回閲覧・話
+OK project=1 video_id=SLLS6TB6BA0 views=52229 title=【注目馬動向】新潟記念2着のロデオドライブ　右前脚の繋靱帯脚部の炎症か　社台グループオーナーズが発表【5.2万回閲覧・話
