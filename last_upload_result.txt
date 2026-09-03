@@ -1,10 +1,10 @@
-date: 2026-09-03T01:11:47.939141Z
+date: 2026-09-03T03:08:46.271718Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bbkn2nglDoA title=【園田競馬・人気ジョッキーは語る】リンゴヒメ(3R)に好感触の小谷哲平騎手「能検
-OK project=1 video_id=GE7Z51Fu8ps title=【園田競馬・今日の世麗】2日は1勝を挙げて66勝目　3日も8鞍に騎乗1Rマメーア
-OK project=1 video_id=uDIyMBnFvas title=【セントウルS】平坦巧者のピューロマジック 天敵の急坂克服で重賞6勝目なるか
+OK project=1 video_id=ETJ61Gjmr28 title=【セントウルS展望】充実の4歳世代からカルプスペルシュが波乱を呼ぶ
+OK project=1 video_id=JlCIveC81C4 title=【佐賀・サマーチャンピオン】晩夏の佐賀競馬を飾る一戦 秋の大舞台に駒を進める馬は
+OK project=1 video_id=LGOurUWvJB4 title=武豊騎手が京成杯AH初制覇なるか エコロブルームで5回目の参戦だ
