@@ -1,10 +1,10 @@
-date: 2026-09-03T03:08:46.271718Z
+date: 2026-09-03T05:09:56.078700Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ETJ61Gjmr28 title=【セントウルS展望】充実の4歳世代からカルプスペルシュが波乱を呼ぶ
-OK project=1 video_id=JlCIveC81C4 title=【佐賀・サマーチャンピオン】晩夏の佐賀競馬を飾る一戦 秋の大舞台に駒を進める馬は
-OK project=1 video_id=LGOurUWvJB4 title=武豊騎手が京成杯AH初制覇なるか エコロブルームで5回目の参戦だ
+OK project=1 video_id=2ujN5o3Lwk0 title=インゼルサラブレッドクラブが募集馬ラインナップ発表 注目はドウデュース半妹「ダス
+OK project=1 video_id=my81LwrQUcA title=【紫苑S展望】秋華賞へ向けた重要な一戦、オークス2着馬ドリームコアが中心
+OK project=1 video_id=x5_-YQv8NFw title=【セントウルＳ】フリッカージャブ　逆転戴冠へ万全　２カ月ぶりも西園翔師「本当に状
