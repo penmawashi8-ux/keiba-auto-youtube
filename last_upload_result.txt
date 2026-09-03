@@ -1,10 +1,10 @@
-date: 2026-09-03T05:09:56.078700Z
+date: 2026-09-03T06:44:38.736475Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2ujN5o3Lwk0 title=インゼルサラブレッドクラブが募集馬ラインナップ発表 注目はドウデュース半妹「ダス
-OK project=1 video_id=my81LwrQUcA title=【紫苑S展望】秋華賞へ向けた重要な一戦、オークス2着馬ドリームコアが中心
-OK project=1 video_id=x5_-YQv8NFw title=【セントウルＳ】フリッカージャブ　逆転戴冠へ万全　２カ月ぶりも西園翔師「本当に状
+OK project=1 video_id=TSkwMtDul24 title=23年南関東無敗の3冠馬ミックファイアが引退　レックススタッドで種牡馬入りへ
+OK project=1 video_id=bGUS8OgIp4Q title=【札幌2歳S】ノヴァヴェローチェ回避　上村師「追い切り後に左後肢のハ行が判明」
+OK project=1 video_id=ePw-cSIU5Kw title=南関東3冠馬ミックファイアが引退　渡辺和雄調教師「出会ってから引退までドラマのよ
