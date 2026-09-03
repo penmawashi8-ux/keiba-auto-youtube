@@ -1,10 +1,9 @@
-date: 2026-09-03T07:07:52.945298Z
+date: 2026-09-03T09:07:07.905819Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fdryqmvbntU title=【京成杯AH出走馬・騎手確定】フォルテアンジェロ＆D.レーン騎手、レザベーション
-OK project=1 video_id=m-k2UeDnbKY title=【札幌2歳S出走馬・騎手確定】ショウナンガレオン＆鮫島克駿騎手、テンカタイヘイ＆
-OK project=1 video_id=027NLbGEQRE title=【セントウルS出走馬・騎手確定】ダイヤモンドノット＆川田将雅騎手、フリッカージャ
+OK project=1 video_id=5iE1_2pYv_M title=安田記念2着同着ワールズエンドは津村とコンビ継続!スプリンターズSに照準　芝6F
+OK project=1 video_id=sawMN9CEuGI title=【有力馬動向】スマートプリエールは田山でローズSへ 大久保師はひと夏を越しての成
