@@ -1,10 +1,10 @@
-date: 2026-09-02T11:10:48.039193Z
+date: 2026-09-03T01:11:47.939141Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rH28FLz8e6o title=【札幌2歳S】フライトライン産駒の“大物候補”ショウナンガレオン　最終追い切りで
-OK project=1 video_id=PVw1NRvhnwM title=【セントウルS】レッドモンレーヴは馬なりで余裕たっぷりの動き　蛯名正調教師「調教
-OK project=1 video_id=mG3LaxmTN6M title=【セントウルS】ダイヤモンドノットはまっすぐ登坂　未勝利以来のスプリント戦も陣営
+OK project=1 video_id=bbkn2nglDoA title=【園田競馬・人気ジョッキーは語る】リンゴヒメ(3R)に好感触の小谷哲平騎手「能検
+OK project=1 video_id=GE7Z51Fu8ps title=【園田競馬・今日の世麗】2日は1勝を挙げて66勝目　3日も8鞍に騎乗1Rマメーア
+OK project=1 video_id=uDIyMBnFvas title=【セントウルS】平坦巧者のピューロマジック 天敵の急坂克服で重賞6勝目なるか
