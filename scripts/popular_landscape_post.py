@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import landscape_video  # 横型動画のネイティブ生成パイプラインを再利用
 import upload_landscape_youtube as uploader  # 認証・アップロード・サムネイル処理を再利用
 import playlist_utils  # 投稿した動画を再生リストに入れる
+import posted_ids_utils  # posted_ids.txt の安全な読み書き（連結破損対策）
 
 from googleapiclient.discovery import build
 
@@ -32,13 +33,10 @@ RESULT_FILE = "last_popular_landscape_result.txt"
 
 
 def append_posted_id(entry_id: str) -> None:
-    path = Path(POSTED_IDS_FILE)
-    existing = path.read_text(encoding="utf-8") if path.exists() else ""
-    if entry_id in existing.splitlines():
-        return
-    with path.open("a", encoding="utf-8") as f:
-        f.write(entry_id + "\n")
-    print(f"投稿済みIDを {POSTED_IDS_FILE} に追記: {entry_id}")
+    # 末尾改行を保証して追記する（過去に改行なしファイルへ連結され、
+    # 重複チェックが効かず再投稿される破損が起きたため共通処理を使う）
+    if posted_ids_utils.append_id(POSTED_IDS_FILE, entry_id):
+        print(f"投稿済みIDを {POSTED_IDS_FILE} に追記: {entry_id}")
 
 
 def build_title(item: dict) -> str:

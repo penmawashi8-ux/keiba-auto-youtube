@@ -239,13 +239,18 @@ def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
 
 
 def update_posted_ids(news_items: list[dict]) -> None:
-    """投稿済みIDをposted_ids.txtに追記する。"""
-    path = Path(POSTED_IDS_FILE)
-    existing = set(path.read_text(encoding="utf-8").splitlines()) if path.exists() else set()
-    new_ids = {item["id"] for item in news_items}
-    all_ids = existing | new_ids
-    path.write_text("\n".join(sorted(all_ids)), encoding="utf-8")
-    print(f"投稿済みID {len(new_ids)} 件を {POSTED_IDS_FILE} に追記しました。")
+    """投稿済みIDをposted_ids.txtに追記する（1行1件・末尾改行を保証）。"""
+    import posted_ids_utils
+    ids = posted_ids_utils.load_ids_ordered(POSTED_IDS_FILE)  # 破損があればここで修復
+    seen = set(ids)
+    added = 0
+    for item in news_items:
+        if item["id"] not in seen:
+            ids.append(item["id"])
+            seen.add(item["id"])
+            added += 1
+    posted_ids_utils.write_ids(POSTED_IDS_FILE, ids)
+    print(f"投稿済みID {added} 件を {POSTED_IDS_FILE} に追記しました。")
 
 
 def _get_error_reasons(http_error: HttpError) -> set[str]:
