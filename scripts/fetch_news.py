@@ -172,10 +172,10 @@ def is_keiba_related(entry: dict) -> bool:
 # ---------------------------------------------------------------------------
 
 def load_posted_ids() -> set:
-    path = Path(POSTED_IDS_FILE)
-    if not path.exists():
-        return set()
-    return set(path.read_text(encoding="utf-8").splitlines())
+    # 連結破損（1行に複数URLが詰まった状態）でも各URLを個別に認識できるよう、
+    # 共通ユーティリティで分解して読み込む（重複チェックの取りこぼしを防ぐ）
+    import posted_ids_utils
+    return posted_ids_utils.load_ids(POSTED_IDS_FILE)
 
 
 # Google が要求する同意クッキー（リダイレクトを機能させるため）
