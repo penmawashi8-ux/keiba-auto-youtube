@@ -1,53 +1,74 @@
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
-利用可能モデル (38個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
+利用可能モデル (40個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemini-flash-latest-high-res-exp', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【札幌2歳S】フライトライン産駒の“大物候補”ショウナンガレオン　最終追い切りでも脚力の違い発揮　唯一の不安要素は… ---
-[0] Gemini入力本文 351文字: '◆第61回札幌2歳S・G3(9月5日、札幌競馬場・芝1800メートル)追い切り＝9月2日、札幌競馬場\n\t\t\t\t\u3000フライトライン産駒の良血馬のショウナンガレオン(牡2歳、美浦・加藤士津八厩舎)が、先週に引き続き脚力の違いをアピールした。\n\t\t'
+--- 記事[0]: 【園田競馬・人気ジョッキーは語る】リンゴヒメ(3R)に好感触の小谷哲平騎手「能検で動いた」 ---
+[0] Gemini入力本文 497文字: '◆園田競馬2日目(9月3日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u30003勝を挙げて148勝。5連勝の懸かるゼットシルヴィア(8R)は「好勝負になるでしょう」(◎)と手応え十分。スノーウィザード(3R)も「期待している。初戦から走ってほしい」(◎)'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
+--- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[1]: 【セントウルS】レッドモンレーヴは馬なりで余裕たっぷりの動き　蛯名正調教師「調教過程では随分集中して走れるように」 ---
-[1] Gemini入力本文 352文字: '◆第40回セントウルS・G2(9月6日、阪神競馬場・芝1200メートル＝1着馬にスプリンターズSの優先出走権)＝9月2日、美浦トレセン\n\t\t\t\t\u3000秋の大一番での逆転へ。高松宮記念2着以来の実戦となるレッドモンレーヴ(牡7歳、美浦・蛯名正義厩'
+--- 記事[1]: 【園田競馬・今日の世麗】2日は1勝を挙げて66勝目　3日も8鞍に騎乗1Rマメーアップルで勝利を意識 ---
+[1] Gemini入力本文 347文字: '2日は8鞍に騎乗した佐々木世麗騎手(23)＝園田・尾林幸二厩舎＝。1Rのヴァンガルダは2着だったが、9Rでは初コンビのハリエンジェを勝利に導いて今年66勝目。9月に入っても好調をキープしている。「強かった」と笑顔を見せた。\n\t\t\t\t\u30003日も'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[2]: 【セントウルS】ダイヤモンドノットはまっすぐ登坂　未勝利以来のスプリント戦も陣営「やるごとにパンプアップして…」 ---
-[2] Gemini入力本文 351文字: '◆第40回セントウルS・G2(9月6日、阪神競馬場・芝1200メートル＝1着馬にスプリンターズSの優先出走権)追い切り＝9月2日、栗東トレセン\n\t\t\t\t\u3000NHKマイルC5着以来となるダイヤモンドノット(牡3歳、栗東・福永祐一厩舎、父ブリック'
+--- 記事[2]: 【セントウルS】平坦巧者のピューロマジック 天敵の急坂克服で重賞6勝目なるか ---
+[2] Gemini入力本文 342文字: '現役屈指の快足を誇るピューロマジック(牝5、栗東・安田翔伍厩舎)が、セントウルステークス(3歳上・GII・芝1200m)で重賞6勝目を狙う。\n\u3000ピューロマジックは父アジアエクスプレス、母メジェルダ、母の父ディープインパクトの血統。母は15年'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 268文字]: '最新のレース情報が入ってきました。第40回セントウルS・G2のニュースです。9月6日に阪神競馬場・芝1200メートルで行われるこのレースでは、1着馬にスプリンターズSの優先出走権が与えられます。9月2日、美浦トレセンでは、高松宮記念2着以来の実戦となるレッドモンレーヴが、美浦・Wコースでプリムツァールと併せ馬を行いました。道中は僚馬を約6馬身追走する形で進め、5ハロン68秒0―11秒4をマークし、併入に持ち込んでいます。馬なりで余裕たっぷりの動きを見せ、蛯名正義調教師は「調教過程では随分集中して走れるように」とコメントしています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (268文字)
-[1]  プレビュー: 最新のレース情報が入ってきました。第40回セントウルS・G2のニュースです。9月6日に阪神競馬場・芝1200メートルで行われるこのレースでは、1着馬にスプリンタ...
-  HTTP 200
-[2]  [Gemini生出力 253文字]: '今日の競馬情報です。第40回セントウルS・G2は、9月6日に阪神競馬場・芝1200メートルで行われます。このレースの1着馬には、スプリンターズSの優先出走権が与えられます。9月2日には栗東トレセンで追い切りが行われ、NHKマイルC5着以来となるダイヤモンドノットが栗東・坂路を単走で駆け抜けました。福永祐一厩舎のダイヤモンドノットは、操縦性の良さが目を引くまっすぐな脚取りで、55秒6―12秒3のタイムを記録しました。松岡助手は、ここ2週はスプリント戦の速い時計に対応できるよう調整してきたと述べています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (253文字)
-[2]  プレビュー: 今日の競馬情報です。第40回セントウルS・G2は、9月6日に阪神競馬場・芝1200メートルで行われます。このレースの1着馬には、スプリンターズSの優先出走権が与...
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  HTTP 503
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+[2] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 277文字]: '本日の競馬ニュースです。\n現役屈指の快足を誇るピューロマジックが、セントウルステークスで重賞6勝目を狙います。ピューロマジックは牝5で、栗東の安田翔伍厩舎に所属しており、セントウルステークスは3歳以上、GII、芝1200mのレースです。ピューロマジックの血統は、父がアジアエクスプレス、母がメジェルダ、母の父がディープインパクトです。母のメジェルダは15年のファンタジーSの2着馬でした。また、全兄のメディーヴァルは23年の韋駄天Sの勝ち馬で、半兄のバグラダスもオープンまで出世しています。馬主は株式会社スリーエイチレーシング、生産者は北海道新冠町です。'
+[2]  [重複除去] 277文字 → 276文字
+  HTTP 200
+[1]  [Gemini生出力 226文字]: '今週の競馬注目情報をお伝えします。\n佐々木世麗騎手は2日、8鞍に騎乗しました。1Rのヴァンガルダでは2着でしたが、9Rでは初コンビのハリエンジェを勝利に導き、今年66勝目を挙げました。9月に入っても好調をキープしており、「強かった」と笑顔を見せています。3日も引き続き8鞍に騎乗する予定です。特に1Rのマメーアップルは、JRAで2着3回、3着1回と実績を残しています。佐々木騎手は調教にも騎乗して特徴を把握しており、転入初戦からの勝利を意識しています。'
+[1]  [重複除去] 226文字 → 225文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (225文字)
+[1]  プレビュー: 今週の競馬注目情報をお伝えします。佐々木世麗騎手は2日、8鞍に騎乗しました。1Rのヴァンガルダでは2着でしたが、9Rでは初コンビのハリエンジェを勝利に導き、今年...
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (276文字)
+[2]  プレビュー: 本日の競馬ニュースです。現役屈指の快足を誇るピューロマジックが、セントウルステークスで重賞6勝目を狙います。ピューロマジックは牝5で、栗東の安田翔伍厩舎に所属し...
+  HTTP 429
 [0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 207文字]: '今日の競馬情報です。\n第61回札幌2歳S・G3の追い切りが9月2日、札幌競馬場で行われました。フライトライン産駒の良血馬であるショウナンガレオンが、先週に引き続き脚力の違いをアピールしました。札幌の芝コースで、外のローズファミリー、中のアンミツの3番手からスタート。馬なりで好時計をマークし、楽にローズファミリーと併入しました。アンミツには2馬身先着しています。鮫島克駿騎手は「先週にしっか」とコメントしています。'
-[0]  [重複除去] 207文字 → 206文字
+[0]  [Gemini生出力 236文字]: '競馬ファン注目の情報です。\n園田競馬2日目、9月3日の情報です。\n小牧太騎手は3勝を挙げて148勝を記録。5連勝がかかるゼットシルヴィアについては「好勝負になるでしょう」と手応え十分です。\nスノーウィザードも「期待している。初戦から走ってほしい」とコメントしました。\nジャクソンルーツは「砂をかぶらない位置で競馬できれば」、シェナスカイは「最後はいい脚を使う」と語っています。\n田野豊三騎手は104勝を挙げており、クリノアチーバーには「折り合...」と気合を見せています。'
+[0]  [重複除去] 233文字 → 228文字
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (206文字)
-[0]  プレビュー: 今日の競馬情報です。第61回札幌2歳S・G3の追い切りが9月2日、札幌競馬場で行われました。フライトライン産駒の良血馬であるショウナンガレオンが、先週に引き続き...
+[0]  → output/script_0.txt 保存 (228文字)
+[0]  プレビュー: 競馬ファン注目の情報です。園田競馬2日目、9月3日の情報です。小牧太騎手は3勝を挙げて148勝を記録。5連勝がかかるゼットシルヴィアについては「好勝負になるでし...
 
 3 件の脚本を生成しました。
