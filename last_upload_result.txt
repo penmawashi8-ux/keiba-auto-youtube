@@ -1,10 +1,10 @@
-date: 2026-09-03T06:44:38.736475Z
+date: 2026-09-03T07:07:52.945298Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TSkwMtDul24 title=23年南関東無敗の3冠馬ミックファイアが引退　レックススタッドで種牡馬入りへ
-OK project=1 video_id=bGUS8OgIp4Q title=【札幌2歳S】ノヴァヴェローチェ回避　上村師「追い切り後に左後肢のハ行が判明」
-OK project=1 video_id=ePw-cSIU5Kw title=南関東3冠馬ミックファイアが引退　渡辺和雄調教師「出会ってから引退までドラマのよ
+OK project=1 video_id=fdryqmvbntU title=【京成杯AH出走馬・騎手確定】フォルテアンジェロ＆D.レーン騎手、レザベーション
+OK project=1 video_id=m-k2UeDnbKY title=【札幌2歳S出走馬・騎手確定】ショウナンガレオン＆鮫島克駿騎手、テンカタイヘイ＆
+OK project=1 video_id=027NLbGEQRE title=【セントウルS出走馬・騎手確定】ダイヤモンドノット＆川田将雅騎手、フリッカージャ
