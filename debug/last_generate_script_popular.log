@@ -1,19 +1,19 @@
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
-利用可能モデル (39個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
+利用可能モデル (40個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemini-flash-latest-high-res-exp', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「最新情報をお届けします。」 ---
 
 --- 記事[0]: 【注目馬動向】新潟記念2着のロデオドライブ　右前脚の繋靱帯脚部の炎症か　社台グループオーナーズが発表 ---
 [0] Gemini入力本文 100文字: 'NHKマイルCの覇者で新潟記念で2着に敗れたロデオドライブ(牡3歳、美浦・辻哲英厩舎、父サートゥルナーリア)は、JRAの獣医師より右前脚の繋靱(けいじん)帯脚部の炎症と指摘を受けたことが分かった。社…'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 150文字]: '今日の競馬情報です。NHKマイルCの覇者で、新潟記念で2着に敗れたロデオドライブの動向が明らかになりました。JRAの獣医師より、右前脚の繋靱帯脚部の炎症と指摘を受けたことが分かっています。この情報は、社台グループオーナーズが発表しました。ロデオドライブは3歳牡馬で、美浦の辻哲英厩舎に所属しています。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (150文字)
-[0]  プレビュー: 今日の競馬情報です。NHKマイルCの覇者で、新潟記念で2着に敗れたロデオドライブの動向が明らかになりました。JRAの獣医師より、右前脚の繋靱帯脚部の炎症と指摘を...
+[0]  [Gemini生出力 149文字]: '最新情報をお届けします。NHKマイルCの覇者で、新潟記念で2着に敗れたロデオドライブについて、JRAの獣医師より右前脚の繋靱帯脚部の炎症と指摘を受けたことが分かりました。3歳牡馬のロデオドライブは美浦の辻哲英厩舎に所属し、父はサートゥルナーリアです。この情報は社台グループオーナーズが発表しました。'
+[0]  [redirectフィルター] 149文字 → 137文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (137文字)
+[0]  プレビュー: NHKマイルCの覇者で、新潟記念で2着に敗れたロデオドライブについて、JRAの獣医師より右前脚の繋靱帯脚部の炎症と指摘を受けたことが分かりました。3歳牡馬のロデ...
 
 1 件の脚本を生成しました。
