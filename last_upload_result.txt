@@ -1,10 +1,10 @@
-date: 2026-09-04T03:10:48.373054Z
+date: 2026-09-04T05:09:47.507484Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=U1kKbk1DlA0 title=【凱旋門賞】武豊騎手と挑むメイショウタバルが国内最終追いでラスト11秒2の好時計
-OK project=1 video_id=prPe2WDxaTY title=【POG談義】どうしよう...G1・2勝馬と「能力の高さ」が共通点の妹と年度代表
-OK project=1 video_id=EqAOU6wNWrM title=メイショウタバル凱旋門賞に向けて国内最終追い　石橋師「いい動き。あとは向こうで調
+OK project=1 video_id=R9uDv63dpTY title=【札幌2歳S・金曜気配】未勝利で挑むハヤブサカツオーが“前日追い”で一発へ　陣営
+OK project=1 video_id=fH7WabPQVPw title=【紫苑S・金曜気配】ミシェル騎手との初コンビのアストリルは坂路で調整　陣営「道悪
+OK project=1 video_id=_DJSSo0ctEc title=「かっこよすぎ」「新鮮な感じ」ルメール騎手がレジェンドとの2ショット公開!レアな
