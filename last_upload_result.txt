@@ -1,10 +1,10 @@
-date: 2026-09-04T01:09:55.047127Z
+date: 2026-09-04T03:10:48.373054Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=M7Jtzr9o5Fs title=【セントウルS】香港馬ファストネットワークが阪神競馬場で追い切り　C・イプ調教師
-OK project=1 video_id=ITNLx1F7Ab0 title=【園田競馬・今日の世麗】3日は未勝利に終わったが4日は12Rのサウンドアンフィニ
-OK project=1 video_id=iwuhaCDi5E8 title=【園田競馬・人気ジョッキーは語る】スマイルクラーク(11R)でメイン制覇に燃える
+OK project=1 video_id=U1kKbk1DlA0 title=【凱旋門賞】武豊騎手と挑むメイショウタバルが国内最終追いでラスト11秒2の好時計
+OK project=1 video_id=prPe2WDxaTY title=【POG談義】どうしよう...G1・2勝馬と「能力の高さ」が共通点の妹と年度代表
+OK project=1 video_id=EqAOU6wNWrM title=メイショウタバル凱旋門賞に向けて国内最終追い　石橋師「いい動き。あとは向こうで調
