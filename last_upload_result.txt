@@ -1,9 +1,10 @@
-date: 2026-09-03T09:07:07.905819Z
+date: 2026-09-04T01:09:55.047127Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5iE1_2pYv_M title=安田記念2着同着ワールズエンドは津村とコンビ継続!スプリンターズSに照準　芝6F
-OK project=1 video_id=sawMN9CEuGI title=【有力馬動向】スマートプリエールは田山でローズSへ 大久保師はひと夏を越しての成
+OK project=1 video_id=M7Jtzr9o5Fs title=【セントウルS】香港馬ファストネットワークが阪神競馬場で追い切り　C・イプ調教師
+OK project=1 video_id=ITNLx1F7Ab0 title=【園田競馬・今日の世麗】3日は未勝利に終わったが4日は12Rのサウンドアンフィニ
+OK project=1 video_id=iwuhaCDi5E8 title=【園田競馬・人気ジョッキーは語る】スマイルクラーク(11R)でメイン制覇に燃える
