@@ -100,6 +100,24 @@ def is_retrospective(title: str) -> bool:
     return bool(retrospective_match(title))
 
 
+# 「【園田競馬・今日の世麗】3日は未勝利に終わったが4日は…」のような、
+# 特定の騎手・関係者の日々の近況を毎日追う連載コラムを除外する。
+# 速報ニュースではなく前日の結果と当日の騎乗予定を並べただけの定型記事で、
+# 動画にしても中身が薄く、同じ体裁のものが毎日流れてくる。
+#
+# 【】で囲まれた見出しの中に「今日の」「本日の」を含むものを対象とする。
+# 括弧を必須にしているのは、「今日の東京は雨で…」のような本文的な言い回しの
+# 記事まで巻き込まないため。
+_DENY_DAILY_COLUMN_PATTERN = re.compile(r"【[^】]*(?:今日|本日)の[^】]*】")
+
+
+def daily_column_match(title: str) -> str:
+    """毎日更新の連載コラム判定に一致した見出しを返す（不一致なら空文字）。"""
+    normalized = unicodedata.normalize("NFKC", title)
+    m = _DENY_DAILY_COLUMN_PATTERN.search(normalized)
+    return m.group(0) if m else ""
+
+
 # ---------------------------------------------------------------------------
 # 除外ログ（あとから「これは除外すべきでなかった」を振り返るための記録）
 # ---------------------------------------------------------------------------
@@ -154,6 +172,11 @@ def is_keiba_related(entry: dict) -> bool:
     matched = retrospective_match(title)
     if matched:
         record_exclusion(entry, "retrospective", matched)
+        return False
+    # 毎日更新の連載コラム（【○○・今日の△△】形式）を除外
+    matched = daily_column_match(title)
+    if matched:
+        record_exclusion(entry, "daily_column", matched)
         return False
     text = (entry.get("title", "") + " " + entry.get("summary", "")).lower()
     for kw in _DENY_KEYWORDS:
