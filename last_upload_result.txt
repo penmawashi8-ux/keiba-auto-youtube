@@ -1,10 +1,10 @@
-date: 2026-09-04T07:08:51.860316Z
+date: 2026-09-04T09:07:40.985750Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8-DuwSHtHHQ title=【川崎競馬】「熊本地震」被災地に441万円を寄付　8月20日に支援レースを実施
-OK project=1 video_id=hc5ebLquMus title=日本調教師会、日本騎手クラブが令和8年8月千葉豪雨の被災地支援
-OK project=1 video_id=kKkLar9-ORo title=武豊騎手「お目当ての馬」が土曜重賞に登場　伝説増やした北海道に別れ　今週は中山&
+OK project=1 video_id=C9NEL0Rt9bE title=今週の武豊騎手は11鞍 エコロブルームで京成杯AHの初制覇なるか
+OK project=1 video_id=rqbOWu1ypaQ title=【エニフS・金曜気配】好走の条件そろったリジルが変身　奥村豊調教師「勝ち負けにな
+OK project=1 video_id=rTPYh98RpRQ title=【週末情報】仕上がり良好のダイヤモンドノット、3つ目の重賞ゲットでGI戦線へ/馬
