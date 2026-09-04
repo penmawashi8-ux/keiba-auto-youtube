@@ -1,6 +1,6 @@
-date: 2026-09-03T11:05:18.092195Z
+date: 2026-09-04T11:04:45.856887Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TIFNjq2JWOA views=20327 title=【注目馬動向】ソフトバンク柳田悠岐オーナーのゴーイントゥノヴァは紫菊賞で無傷の2連勝狙う【2.0万回閲覧・話題の競馬ニュ
+OK project=1 video_id=xu1rJEqJ5f0 views=39285 title=【佐賀・サマーチャンピオン結果】マテンロウコマンドが人気に応え3連勝で重賞4勝目を飾る【3.9万回閲覧・話題の競馬ニュー
