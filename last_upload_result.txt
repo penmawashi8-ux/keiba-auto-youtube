@@ -1,10 +1,10 @@
-date: 2026-09-04T09:07:40.985750Z
+date: 2026-09-05T01:10:23.280671Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=C9NEL0Rt9bE title=今週の武豊騎手は11鞍 エコロブルームで京成杯AHの初制覇なるか
-OK project=1 video_id=rqbOWu1ypaQ title=【エニフS・金曜気配】好走の条件そろったリジルが変身　奥村豊調教師「勝ち負けにな
-OK project=1 video_id=rTPYh98RpRQ title=【週末情報】仕上がり良好のダイヤモンドノット、3つ目の重賞ゲットでGI戦線へ/馬
+OK project=1 video_id=v4tfaXk0k38 title=【5日の注目・札幌11R】的場親子の悲願かなうか　テングカゼで13年10か月ぶり
+OK project=1 video_id=gJH07Bi4h3w title=母アルーリングアクトの27歳時の産駒 アルーリングボーイが要注目の初陣だ
+OK project=1 video_id=JDXdejhUnIM title=京成杯AHは波乱傾向 ディープインパクト系が好成績
