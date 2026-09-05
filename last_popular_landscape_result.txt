@@ -1,6 +1,6 @@
-date: 2026-09-04T11:04:45.856887Z
+date: 2026-09-05T11:04:29.115911Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xu1rJEqJ5f0 views=39285 title=【佐賀・サマーチャンピオン結果】マテンロウコマンドが人気に応え3連勝で重賞4勝目を飾る【3.9万回閲覧・話題の競馬ニュー
+OK project=1 video_id=wyFLfUo3IFg views=50774 title=【セントライト記念想定馬・騎手】バステール、サノノグレーターなど16頭【5.1万回閲覧・話題の競馬ニュース】
