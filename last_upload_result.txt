@@ -1,10 +1,10 @@
-date: 2026-09-05T01:10:23.280671Z
+date: 2026-09-05T04:08:21.860643Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=v4tfaXk0k38 title=【5日の注目・札幌11R】的場親子の悲願かなうか　テングカゼで13年10か月ぶり
-OK project=1 video_id=gJH07Bi4h3w title=母アルーリングアクトの27歳時の産駒 アルーリングボーイが要注目の初陣だ
-OK project=1 video_id=JDXdejhUnIM title=京成杯AHは波乱傾向 ディープインパクト系が好成績
+OK project=1 video_id=HSNn4oQC-7o title=酒井学騎手が阪神4RでJRA通算1万1000回騎乗を達成　現役27人目、史上50
+OK project=1 video_id=Pa-poNOcq7s title=【札幌5R】シュヴァルツペルレが大外一気に突き抜けてデビュー勝ち　浜中「競馬に行
+OK project=1 video_id=ZEX7kBeB3ME title=【中山5R新馬戦結果】コントレイル産駒ヴェトロテンペスタが3馬身差で快勝
