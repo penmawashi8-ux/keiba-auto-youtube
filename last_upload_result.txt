@@ -1,10 +1,10 @@
-date: 2026-09-05T07:07:47.974799Z
+date: 2026-09-05T10:07:28.486281Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=i4Z9uvrCgp4 title=【京成杯AH結果】10番人気、最軽量ハンデのピコローズがV 重賞初制覇
-OK project=1 video_id=O_KQYpEcbn0 title=【エニフS結果】ゴッドブルービーが差し切りオープン初勝利
-OK project=1 video_id=ZPE9f_fbBxc title=岩田望来騎手が阪神9Rで年間100勝達成「毎年ここを目標に頑張ってきました」　ル
+OK project=1 video_id=V4BiiTILpX0 title=岩田望来騎手がJRA年間100勝達成 「毎年、年間100勝を目標に頑張ってます」
+OK project=1 video_id=8r8fuKP3cSQ title=C.ルメール騎手がJRA年間100勝達成 「秋シーズンも頑張りたい」
+OK project=1 video_id=DaREKXY9iBU title=9月5日の出来事一覧/札幌・中山・阪神
