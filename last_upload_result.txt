@@ -1,10 +1,10 @@
-date: 2026-09-06T01:07:33.467680Z
+date: 2026-09-06T04:15:41.743075Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wga3yWi6KDA title=【セントウルS予想】人気薄狙うならば絶好タイプも？ 過去データから探るGIIセン
-OK project=1 video_id=YZ8AaPhB_Gw title=セントウルSは馬体重増が好材料 阪神開催の近6回で複勝率30％
-OK project=1 video_id=bnqpeyrf4v0 title=【6日の注目・阪神8R】レシステンシア半弟バルセシートが登場　前走で本格化の兆し
+OK project=1 video_id=RkszXWBjU9o title=【中山5R新馬戦結果】キズナ産駒アイムオンアロールが接戦を制してV
+OK project=1 video_id=JJEwZND6Pf0 title=【阪神5R新馬戦結果】リスグラシューの娘リスグロワールが初陣飾る
+OK project=1 video_id=pqh8PM00YxQ title=河原田菜々騎手が３週連続の勝利　今年のＪＲＡ１４勝目＆通算３８勝目　「脚が上がっ
