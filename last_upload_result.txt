@@ -1,10 +1,10 @@
-date: 2026-09-05T10:07:28.486281Z
+date: 2026-09-06T01:07:33.467680Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=V4BiiTILpX0 title=岩田望来騎手がJRA年間100勝達成 「毎年、年間100勝を目標に頑張ってます」
-OK project=1 video_id=8r8fuKP3cSQ title=C.ルメール騎手がJRA年間100勝達成 「秋シーズンも頑張りたい」
-OK project=1 video_id=DaREKXY9iBU title=9月5日の出来事一覧/札幌・中山・阪神
+OK project=1 video_id=wga3yWi6KDA title=【セントウルS予想】人気薄狙うならば絶好タイプも？ 過去データから探るGIIセン
+OK project=1 video_id=YZ8AaPhB_Gw title=セントウルSは馬体重増が好材料 阪神開催の近6回で複勝率30％
+OK project=1 video_id=bnqpeyrf4v0 title=【6日の注目・阪神8R】レシステンシア半弟バルセシートが登場　前走で本格化の兆し
