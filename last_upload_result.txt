@@ -1,10 +1,8 @@
-date: 2026-09-06T07:07:05.042380Z
+date: 2026-09-06T10:05:47.312052Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-u2AXtqPzJI title=【JRA・WIN5】本日のWIN5は的中174票、配当276万9910円
-OK project=1 video_id=BuDEuGt4LMI title=【セントウルS】香港の刺客に日本馬の洗礼　ファストネットワークは15着大敗　馬体
-OK project=1 video_id=Dx_e7XcI4nY title=【紫苑S結果】6番人気マスターソアラが差し切り重賞初V 2月のクイーンC以来の一
+OK project=1 video_id=fJf58w0aROw title=【金沢・石川テレビ杯結果】ミラクルサリチャンが無傷の3連勝で重賞初制覇
