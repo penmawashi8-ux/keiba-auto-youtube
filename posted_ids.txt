@@ -2928,3 +2928,6 @@ https://news.netkeiba.com/?pid=news_view&no=342056
 https://news.netkeiba.com/?pid=news_view&no=342122
 https://news.netkeiba.com/?pid=news_view&no=342118
 https://news.netkeiba.com/?pid=news_view&no=342117
+https://news.netkeiba.com/?pid=news_view&no=342120
+https://news.netkeiba.com/?pid=news_view&no=342138
+https://news.netkeiba.com/?pid=news_view&no=342125
