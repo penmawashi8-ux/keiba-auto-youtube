@@ -1,9 +1,10 @@
-date: 2026-09-07T04:09:00.651802Z
+date: 2026-09-07T07:08:09.162308Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=uIe4vDJslIc title=香港馬ファストネットワークまさかの大敗は喉鳴りの再発が影響か?　スプリンターズS
-OK project=1 video_id=TR67s50oo7M title=【セントライト記念想定騎手】ゴーイントゥスカイは武豊騎手、バステールは川田将雅騎
+OK project=1 video_id=UQ3UCW1kYqs title=日本勢の強力ライバル絶好調　「これは凱旋門賞に向けて最高の準備だ」ダリズ連覇へ前
+OK project=1 video_id=JsRa_CsitSg title=07年ジャパンCなどG1・3勝馬アドマイヤムーンが23歳で死す　ダーレージャパン
+OK project=1 video_id=7ZLr96vtO9U title=フォーエバーヤングが出走する米G1ジョッキークラブGCをJRA馬券発売　19日午
