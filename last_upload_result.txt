@@ -1,8 +1,10 @@
-date: 2026-09-06T10:05:47.312052Z
+date: 2026-09-07T01:07:56.346608Z
 projects_loaded: 2
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fJf58w0aROw title=【金沢・石川テレビ杯結果】ミラクルサリチャンが無傷の3連勝で重賞初制覇
+OK project=1 video_id=kMh0TlIn0ag title=【チャレンジC展望】日本ダービー5着馬マテンロウゲイルが復帰Vの好機　強い4歳世
+OK project=1 video_id=6zqllouZ8yg title=【チャレンジC】「大魔神」佐々木主浩オーナーの超良血 グランヴィノスが初タイトル
+OK project=1 video_id=MveJC065RAw title=「恐怖映像」「怖い」「マジもんのホラー」異次元の強さにまさかの悲鳴続出　始動戦で
