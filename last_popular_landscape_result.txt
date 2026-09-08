@@ -1,6 +1,6 @@
-date: 2026-09-07T11:04:29.222776Z
+date: 2026-09-08T11:04:50.413716Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DYbxBEgEkGk views=57304 title=凱旋門賞アドマイヤテラの鞍上はC・デムーロ　近藤旬子オーナーがインスタで発表【5.7万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=udX0HNs8Tsk views=61345 title=高松宮記念連覇のサトノレーヴが電撃引退　秋のG1開幕前に決断した理由とは…　社台SSで種牡馬入りへ【6.1万回閲覧・話題
