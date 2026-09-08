@@ -1,10 +1,10 @@
-date: 2026-09-08T04:09:00.029546Z
+date: 2026-09-08T07:08:49.772164Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=o819WzfBQ9c title=【注目馬動向】今村聖奈騎手と制したオークス馬ジュウリョクピエロは秋華賞へ18日帰
-OK project=1 video_id=FRB0OBNOW-4 title=【注目馬動向】クイーンS勝ちのココナッツブラウンはマイルCSへの参戦決定　上村調
-OK project=1 video_id=4ET4RVEJ5QE title=【注目馬動向】重賞3連勝中のマテンロウコマンドはJBCスプリントに参戦　長谷川調
+OK project=1 video_id=QPnesLjdURE title=8日の笠松競馬は馬場コンディション不良のため7R以降を取りやめ
+OK project=1 video_id=mwcIT7d-GN0 title=凱旋門賞参戦のメイショウタバルらが栗東トレセンを出発
+OK project=1 video_id=GQnu5v5MB9U title=【注目馬動向】キタサンブラックの弟シュガークンはマイルの富士Sへ　清水久調教師「
