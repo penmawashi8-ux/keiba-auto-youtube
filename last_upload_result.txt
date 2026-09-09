@@ -1,10 +1,9 @@
-date: 2026-09-08T10:06:47.823052Z
+date: 2026-09-09T01:08:51.762313Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Zop-jwrpHGo title=【セントライト記念予想オッズ】ゴーイントゥスカイが予想1番人気
-OK project=1 video_id=-SIpUvvvgpg title=【ローズS予想オッズ】モンローウォークが予想1番人気
-OK project=1 video_id=EGmzQjbCLSQ title=【チャレンジC予想オッズ】ジョバンニが予想1番人気
+OK project=1 video_id=p_vFMynIy1U title=【セントライト記念】ベンバトル産駒の大器 ラージアンサンブルが父に初タイトルを届
+OK project=1 video_id=1buoi8biAWE title=【ローズS】戦歴も評価も仕上げもそっくり“令和のファインモーション”モンローウォ
