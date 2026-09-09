@@ -1,9 +1,10 @@
-date: 2026-09-09T01:08:51.762313Z
+date: 2026-09-09T04:08:27.232204Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=p_vFMynIy1U title=【セントライト記念】ベンバトル産駒の大器 ラージアンサンブルが父に初タイトルを届
-OK project=1 video_id=1buoi8biAWE title=【ローズS】戦歴も評価も仕上げもそっくり“令和のファインモーション”モンローウォ
+OK project=1 video_id=-HzTf5ECRhM title=【スプリンターズS想定】フリッカージャブ、ワールズエンドなど16頭
+OK project=1 video_id=sJvMm0Tj-3M title=【注目馬動向】ダイヤモンドノットはスワンSへ　福永調教師「一度使って上がってくる
+OK project=1 video_id=-271N69B_PU title=紫苑S3着ドリームコアは秋華賞へ　春は桜花賞9着からオークス2着　ラスト1冠に懸
