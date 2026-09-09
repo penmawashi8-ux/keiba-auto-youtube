@@ -1,10 +1,10 @@
-date: 2026-09-09T07:07:35.487926Z
+date: 2026-09-09T10:09:27.077322Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6FpjJbbmbi0 title=【注目馬動向】名牝の母と同じ道へ!新馬Vリスグロワールはリスグラシューが勝ったア
-OK project=1 video_id=0yZjPv4KARM title=クリノメイが競走馬登録抹消　2025年チューリップ賞V　木村牧場で繁殖入りの予定
-OK project=1 video_id=bTWl6TFOE7Q title=ディープモンスターは連覇が懸かる京都大賞典で復帰へ　昨年のＶ時の鞍上・浜中とコン
+OK project=1 video_id=Q3PW6hP7uA0 title=【神戸新聞杯・1週前】2冠馬ロブチェンに「改めてすごい馬」杉山晴調教師も感心　始
+OK project=1 video_id=aXiDD8OtY1E title=韓国に遠征したJRA所属馬3頭アメリカンステージ、サンデーファンデー、ドラゴンウ
+OK project=1 video_id=uRpOXQP0fhs title=【ローズS】「直線は長ければ長いほどいい」イクイノックスの全妹イクシードは軽快な
