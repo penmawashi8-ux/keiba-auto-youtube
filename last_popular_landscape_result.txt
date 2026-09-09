@@ -1,6 +1,6 @@
-date: 2026-09-08T11:04:50.413716Z
+date: 2026-09-09T11:05:04.790150Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=udX0HNs8Tsk views=61345 title=高松宮記念連覇のサトノレーヴが電撃引退　秋のG1開幕前に決断した理由とは…　社台SSで種牡馬入りへ【6.1万回閲覧・話題
+OK project=1 video_id=AUNUi28ZzPc views=55234 title=【セントライト記念】トライアル選択は武豊騎手の進言!ゴーイントゥスカイの上原佑調教師「『右回りも大丈夫そう』と」【5.5
