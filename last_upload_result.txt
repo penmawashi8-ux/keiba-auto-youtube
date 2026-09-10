@@ -1,8 +1,10 @@
-date: 2026-09-10T01:06:41.694385Z
+date: 2026-09-10T04:08:24.605630Z
 projects_loaded: 2
-uploaded: 1
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gKOdIX7iY3U title=【注目馬動向】フリッカージャブはスプリンターズSで西村淳也騎手と初コンビ
+OK project=1 video_id=Xk6sOupzQKU title=3連単5294万超の大波乱演出の要因とは?　岩田康誠騎手が衝撃の激走を語る　「今
+OK project=1 video_id=-Y6pyZVyjL8 title=団野大成騎手が前十字靭帯断裂で長期離脱も　若手のホープがG1シーズン目前に負傷
+OK project=1 video_id=H2NWZFG9H9g title=【セントライト記念】武豊騎手とコンビのゴーイントゥスカイが余力十分に併入　上原佑
