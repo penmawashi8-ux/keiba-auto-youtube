@@ -1,10 +1,10 @@
-date: 2026-09-10T04:08:24.605630Z
+date: 2026-09-10T07:14:07.079579Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Xk6sOupzQKU title=3連単5294万超の大波乱演出の要因とは?　岩田康誠騎手が衝撃の激走を語る　「今
-OK project=1 video_id=-Y6pyZVyjL8 title=団野大成騎手が前十字靭帯断裂で長期離脱も　若手のホープがG1シーズン目前に負傷
-OK project=1 video_id=H2NWZFG9H9g title=【セントライト記念】武豊騎手とコンビのゴーイントゥスカイが余力十分に併入　上原佑
+OK project=1 video_id=ktEMxf93hco title=【チャレンジC出走馬・騎手確定】ジョバンニ＆松山弘平騎手、マテンロウゲイル＆横山
+OK project=1 video_id=WjyM6v3F4As title=【ローズS出走馬・騎手確定】イクシード＆C.ルメール騎手、タイセイボーグ＆西村淳
+OK project=1 video_id=DF6BL57QtvA title=【セントライト記念出走馬・騎手確定】ゴーイントゥスカイ＆武豊騎手、バステール＆川
