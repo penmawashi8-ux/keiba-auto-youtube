@@ -1,10 +1,10 @@
-date: 2026-09-10T07:14:07.079579Z
+date: 2026-09-10T10:14:42.242985Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ktEMxf93hco title=【チャレンジC出走馬・騎手確定】ジョバンニ＆松山弘平騎手、マテンロウゲイル＆横山
-OK project=1 video_id=WjyM6v3F4As title=【ローズS出走馬・騎手確定】イクシード＆C.ルメール騎手、タイセイボーグ＆西村淳
-OK project=1 video_id=DF6BL57QtvA title=【セントライト記念出走馬・騎手確定】ゴーイントゥスカイ＆武豊騎手、バステール＆川
+OK project=1 video_id=McUHdJgLNW8 title=母は重賞2勝のトロワゼトワル スローブギがミシェル騎手で初陣だ
+OK project=1 video_id=L0MNFkCL4I8 title=【JRA新馬戦】ディープボンドの半弟サトノアニマなどがデビュー
+OK project=1 video_id=wMcmHi6vzB0 title=【JRA新馬戦】ディープボンドの半弟サトノアニマなどがデビュー
