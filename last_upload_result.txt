@@ -1,10 +1,10 @@
-date: 2026-09-11T04:10:24.331256Z
+date: 2026-09-11T07:08:42.745463Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ldytCZnFn00 title=エイダイクインが31歳で天国へ　メジロマックイーンの初年度産駒　98年クイーンC
-OK project=1 video_id=TtL9j0vmRCE title=98年クイーンC覇者エイダイクイン死す…31歳　00年エリザベス女王杯3着のメジ
-OK project=1 video_id=KH77Wf8SDRE title=【セントライト記念・金曜気配】菊の権利取りより勝利を?　ラディアントスターの林師
+OK project=1 video_id=rm_dFYsrAR0 title=12日の阪神4Rで国分優作騎手から国分恭介騎手に乗り替わり　負傷のため
+OK project=1 video_id=n_-SXFHQG68 title=「令和8年8月千葉豪雨」被災地へ日本馬主協会連合会などが計4000万円を支援
+OK project=1 video_id=rv94VqMF4FE title=三樹祐輔調教師が10月21日に美浦で新規開業　26年度合格者から古賀大調教師に続
