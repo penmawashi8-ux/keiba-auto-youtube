@@ -1,6 +1,6 @@
-date: 2026-09-10T11:05:03.362776Z
+date: 2026-09-11T11:07:41.070013Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YOmtIIs5VgU views=26261 title=フォーエバーヤングが制した新馬戦の1番人気馬が園田7Rで快勝　重賞5勝馬の孫ベラジオラオウ　不良馬場で2馬身差をつける【
+OK project=1 video_id=NMT9_4nWjrE views=36520 title=武豊騎手がメイショウタバルと挑む凱旋門賞に「とてもワクワクしています」　今村聖奈騎手とファンミーティング【3.7万回閲覧
