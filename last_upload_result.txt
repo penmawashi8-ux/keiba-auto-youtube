@@ -1,10 +1,10 @@
-date: 2026-09-11T01:09:58.603730Z
+date: 2026-09-11T04:10:24.331256Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8dPIqVHugCQ title=【園田競馬・人気ジョッキーは語る】ダイジョバナイ(11R)に期待を寄せる大山真吾
-OK project=1 video_id=jr9ijv4ZQ4o title=潮が引いた海岸線を疾走 アイルランドで年に一度の“ビーチ競馬”
-OK project=1 video_id=kTc8qiZDwVM title=名手から名前が挙がった秋G1の期待3頭は?　ルメール騎手「G1レースでベストパフ
+OK project=1 video_id=ldytCZnFn00 title=エイダイクインが31歳で天国へ　メジロマックイーンの初年度産駒　98年クイーンC
+OK project=1 video_id=TtL9j0vmRCE title=98年クイーンC覇者エイダイクイン死す…31歳　00年エリザベス女王杯3着のメジ
+OK project=1 video_id=KH77Wf8SDRE title=【セントライト記念・金曜気配】菊の権利取りより勝利を?　ラディアントスターの林師
