@@ -1,10 +1,10 @@
-date: 2026-09-10T10:14:42.242985Z
+date: 2026-09-11T01:09:58.603730Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=McUHdJgLNW8 title=母は重賞2勝のトロワゼトワル スローブギがミシェル騎手で初陣だ
-OK project=1 video_id=L0MNFkCL4I8 title=【JRA新馬戦】ディープボンドの半弟サトノアニマなどがデビュー
-OK project=1 video_id=wMcmHi6vzB0 title=【JRA新馬戦】ディープボンドの半弟サトノアニマなどがデビュー
+OK project=1 video_id=8dPIqVHugCQ title=【園田競馬・人気ジョッキーは語る】ダイジョバナイ(11R)に期待を寄せる大山真吾
+OK project=1 video_id=jr9ijv4ZQ4o title=潮が引いた海岸線を疾走 アイルランドで年に一度の“ビーチ競馬”
+OK project=1 video_id=kTc8qiZDwVM title=名手から名前が挙がった秋G1の期待3頭は?　ルメール騎手「G1レースでベストパフ
