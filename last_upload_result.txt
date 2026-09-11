@@ -1,10 +1,10 @@
-date: 2026-09-11T07:08:42.745463Z
+date: 2026-09-11T10:07:25.504316Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rm_dFYsrAR0 title=12日の阪神4Rで国分優作騎手から国分恭介騎手に乗り替わり　負傷のため
-OK project=1 video_id=n_-SXFHQG68 title=「令和8年8月千葉豪雨」被災地へ日本馬主協会連合会などが計4000万円を支援
-OK project=1 video_id=rv94VqMF4FE title=三樹祐輔調教師が10月21日に美浦で新規開業　26年度合格者から古賀大調教師に続
+OK project=1 video_id=OBDIQko2mHE title=ダート女王・アンモシエラの半弟 ベルウッドワタルがデビュー勝ちなるか
+OK project=1 video_id=i_MbJtbvk-g title=リーディング首位のルメール騎手「競い合う仲にも友情」　バチバチのライバル騎手と2
+OK project=1 video_id=PZMHDYbQ0HI title=【神戸新聞杯想定馬・騎手】ロブチェン、コンジェスタスなど12頭
