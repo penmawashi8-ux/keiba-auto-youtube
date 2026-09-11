@@ -1,65 +1,62 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (40個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: エイダイクインが31歳で天国へ　メジロマックイーンの初年度産駒　98年クイーンCをV ---
-[0] Gemini入力本文 350文字: '1998年のクイーンCを勝利したエイダイクインが9月10日、天国に旅立ったことがわかった。31歳だった。ジャパンスタッドブックインターナショナルが11日、発表した。\n\t\t\t\t\u3000同馬は、武豊騎手とのコンビで91、92年の天皇賞・春を連覇するな'
+--- 記事[0]: 12日の阪神4Rで国分優作騎手から国分恭介騎手に乗り替わり　負傷のため ---
+[0] Gemini入力本文 274文字: 'JRAは9月11日、12日の阪神4R・3歳未勝利(芝1800メートル)に出走予定の(3)ウインリーブル(牝3歳、栗東・緒方努厩舎、父ゴールドシップ)が、国分優作騎手＝栗東・坂口智康厩舎＝から国分恭介騎手＝栗東・フリー＝に乗り替わると発表した'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 98年クイーンC覇者エイダイクイン死す…31歳　00年エリザベス女王杯3着のメジロマックイーン産駒 ---
-[1] Gemini入力本文 341文字: 'ジャパンスタッドブックインターナショナルは11日、98年クイーンCを制したエイダイクイン(牝、父メジロマックイーン)が息を引き取ったと発表した。31歳だった。\n\u3000公式X(旧ツイッター)に「9月10日に死亡したと連絡がありました。北海道勇払郡'
+--- 記事[1]: 「令和8年8月千葉豪雨」被災地へ日本馬主協会連合会などが計4000万円を支援 ---
+[1] Gemini入力本文 298文字: '日本馬主協会連合会および各競馬場所在の馬主協会は9月11日、「令和8年8月千葉豪雨」被災地への支援(合計4000万円)を発表した。\n\t\t\t\t\u3000支援金の内訳は、日本馬主協会連合会からは千葉県に1000万円、各競馬場所在の馬主協会から千葉県に2'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[2]: 【セントライト記念・金曜気配】菊の権利取りより勝利を?　ラディアントスターの林師「降るなら降って…」と雨を期待 ---
-[2] Gemini入力本文 351文字: '◆第80回セントライト記念・G2(9月13日、中山競馬場・芝2200メートル＝3着まで菊花賞の優先出走権)＝9月11日、美浦トレセン\n\t\t\t\t\u3000京都新聞杯3着のラディアントスター(牡3歳、美浦・林徹厩舎、父サトノアラジン)は、坂路を59秒7'
+--- 記事[2]: 三樹祐輔調教師が10月21日に美浦で新規開業　26年度合格者から古賀大調教師に続き2人目 ---
+[2] Gemini入力本文 354文字: 'JRAは9月11日、美浦の三樹祐輔(みき・ゆうすけ)調教師(42)が10月21日に新規開業することを発表した。馬房数は14馬房となる。\n\t\t\t\t\u30006月29日に田村康仁調教師が死去したことにより、同30日から美浦・中舘英二調教師へ馬房の臨時貸'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 203文字]: '本日の競馬ニュースです。\nジャパンスタッドブックインターナショナルは11日、98年クイーンCを制したエイダイクインが息を引き取ったと発表しました。31歳でした。エイダイクインはメジロマックイーン産駒です。公式Xには、9月10日に死亡したと連絡があったこと、北海道勇払郡むかわ町の東振牧場で繋養され余生を過ごしていたことがつづられています。エイダイクインは97年秋に美浦の鈴木康弘厩舎所属でデビューしました。'
-[1]  [重複除去] 203文字 → 202文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (202文字)
-[1]  プレビュー: 本日の競馬ニュースです。ジャパンスタッドブックインターナショナルは11日、98年クイーンCを制したエイダイクインが息を引き取ったと発表しました。31歳でした。エ...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 242文字]: 'レース関連の最新情報です。\n1998年のクイーンCを勝利したエイダイクインが9月10日、天国に旅立ったことがわかりました。31歳でした。ジャパンスタッドブックインターナショナルが11日に発表しました。同馬は、武豊騎手とのコンビで1991年、1992年の天皇賞・春を連覇するなどG1を4勝したメジロマックイーンの初年度産駒です。1997年9月にデビューし、2戦目で初勝利を飾ると、その後、秋に500万クラス、オープンを連勝して臨んだ1998年のクイーンCで重賞タイトルを手に入れました。'
-[0]  [重複除去] 242文字 → 241文字
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (241文字)
-[0]  プレビュー: レース関連の最新情報です。1998年のクイーンCを勝利したエイダイクインが9月10日、天国に旅立ったことがわかりました。31歳でした。ジャパンスタッドブックイン...
-  HTTP 429
+[0]  [Gemini生出力 155文字]: '注目の競馬情報をお届けします。\nJRAは9月11日、12日の阪神4R・3歳未勝利、芝1800メートルに出走予定のウインリーブルが、騎手変更となることを発表しました。ウインリーブルは、国分優作騎手から国分恭介騎手に乗り替わります。この乗り替わりは、国分優作騎手の負傷によるものです。なお、斤量の変更はありません。'
+[0]  [redirectフィルター] 155文字 → 139文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (139文字)
+[0]  プレビュー: JRAは9月11日、12日の阪神4R・3歳未勝利、芝1800メートルに出走予定のウインリーブルが、騎手変更となることを発表しました。ウインリーブルは、国分優作騎...
+  HTTP 200
+[1]  [Gemini生出力 190文字]: '重要な競馬ニュースをお伝えします。\n日本馬主協会連合会および各競馬場所在の馬主協会は、9月11日に「令和8年8月千葉豪雨」被災地への支援を発表しました。支援の合計額は4000万円です。この支援金の内訳は、日本馬主協会連合会からは千葉県に1000万円、各競馬場所在の馬主協会からは千葉県に2000万円、市川市に400万円、船橋市に400万円、そして白井市に200万円となっています。'
+[1]  [重複除去] 190文字 → 189文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (189文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。日本馬主協会連合会および各競馬場所在の馬主協会は、9月11日に「令和8年8月千葉豪雨」被災地への支援を発表しました。支援の合計...
+  HTTP 503
 [2] 使用: key=***189Y model=gemini-2.5-flash
   HTTP 200
-[2]  [Gemini生出力 261文字]: '競馬ファン注目の情報です。第80回セントライト記念・G2は、9月13日に中山競馬場・芝2200メートルで行われ、3着までには菊花賞の優先出走権が与えられます。9月11日、美浦トレセンでの調整状況が伝えられました。京都新聞杯3着のラディアントスターは、坂路を59秒7―13秒4で駆け抜けました。しまいに少し脚を伸ばし、気持ち良さそうに走ったとのことです。林徹調教師は「雰囲気がいいですし、折り合いも走りも落ち着いていて良かったですね」とうなずきました。また、林調教師は「降るなら降って…」と雨を期待するコメントをしています。'
-[2]  ファクトチェック: SKIPPED(error:ReadTimeout)
-[2]  → output/script_2.txt 保存 (260文字)
-[2]  プレビュー: 競馬ファン注目の情報です。第80回セントライト記念・G2は、9月13日に中山競馬場・芝2200メートルで行われ、3着までには菊花賞の優先出走権が与えられます。9...
+[2]  [Gemini生出力 220文字]: '競馬速報です。\nJRAは9月11日、美浦の三樹祐輔調教師が10月21日に新規開業することを発表しました。馬房数は14馬房となります。この開業は、6月29日に田村康仁調教師が死去したことにより、同30日から美浦の中舘英二調教師へ行われていた馬房の臨時貸付が、10月20日で満了することに伴うものです。三樹調教師は島根県出身で、2010年にJRA競馬学校厩務員課程に入学し、2013年7月からは美浦の田中剛厩舎で調教助手として勤務していました。'
+[2]  [重複除去] 220文字 → 219文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (219文字)
+[2]  プレビュー: 競馬速報です。JRAは9月11日、美浦の三樹祐輔調教師が10月21日に新規開業することを発表しました。馬房数は14馬房となります。この開業は、6月29日に田村康...
 
 3 件の脚本を生成しました。
