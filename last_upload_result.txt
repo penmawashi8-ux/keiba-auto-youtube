@@ -1,10 +1,10 @@
-date: 2026-09-11T10:07:25.504316Z
+date: 2026-09-12T01:07:26.012173Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OBDIQko2mHE title=ダート女王・アンモシエラの半弟 ベルウッドワタルがデビュー勝ちなるか
-OK project=1 video_id=i_MbJtbvk-g title=リーディング首位のルメール騎手「競い合う仲にも友情」　バチバチのライバル騎手と2
-OK project=1 video_id=PZMHDYbQ0HI title=【神戸新聞杯想定馬・騎手】ロブチェン、コンジェスタスなど12頭
+OK project=1 video_id=K5BHI35P6qs title=チャレンジCは3歳馬が好成績 血統ではキングカメハメハ系に注目
+OK project=1 video_id=dAGP7zgagf0 title=【12日の注目・中山11R】フォーエバーヤングの半妹がダート初挑戦　24年アルテ
+OK project=1 video_id=r8K6H3ZT0WM title=【チャレンジC予想】秋の開幕告げるハンデ重賞 急坂2度越える阪神芝2000mはス
