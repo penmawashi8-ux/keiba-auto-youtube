@@ -1,10 +1,10 @@
-date: 2026-09-12T04:12:42.955622Z
+date: 2026-09-12T07:12:51.227837Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A0kUqGLuDFs title=【中山6R新馬戦結果】フィレンツェファイア産駒ナイトパイロットが3馬身半差でV
-OK project=1 video_id=LLzajdDsqRE title=【中山5R・2歳新馬】新米の季節にサトノハクマイが白星発進!　斎藤新騎手「初戦と
-OK project=1 video_id=43fPFfvYo50 title=【中山5R・新馬戦】1番人気サトノハクマイが初陣V!　斎藤「初戦としては文句ない
+OK project=1 video_id=EgazjfjV3WI title=【JRA・WIN5】本日のWIN5は的中74票、配当377万7170円
+OK project=1 video_id=irq_UZ721KY title=【チャレンジC】“11度目の正直”ジョバンニがついに重賞初制覇　松山弘平騎手は2
+OK project=1 video_id=0686VEhB9Iw title=【チャレンジC速報】ジョバンニが優勝
