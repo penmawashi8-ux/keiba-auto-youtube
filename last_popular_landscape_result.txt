@@ -1,6 +1,6 @@
-date: 2026-09-11T11:07:41.070013Z
+date: 2026-09-12T11:05:38.425134Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NMT9_4nWjrE views=36520 title=武豊騎手がメイショウタバルと挑む凱旋門賞に「とてもワクワクしています」　今村聖奈騎手とファンミーティング【3.7万回閲覧
+OK project=1 video_id=MCZfuDH8jLU views=79848 title=【スプリンターズS想定馬・騎手】スターアニス、ウインカーネリアンなど18頭【8.0万回閲覧・話題の競馬ニュース】
