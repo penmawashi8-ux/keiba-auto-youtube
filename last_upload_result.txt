@@ -1,10 +1,10 @@
-date: 2026-09-13T01:07:41.880806Z
+date: 2026-09-13T04:09:55.561353Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=d64dpry3MO0 title=【セントライト記念予想】上位人気強いレースでの死角はあるの？ 過去データから探る
-OK project=1 video_id=v_q6upKACBg title=母は名牝グランアレグリア グランマエストロが初勝利なるか
-OK project=1 video_id=FxXY38OQ6yg title=【チャレンジC・レースメモ】松山弘平騎手9回目の騎乗で初勝利
+OK project=1 video_id=nkQsri30ijU title=【中山5R新馬戦】フランス出身の女性騎手ミシェルが7年ぶりJRA勝利　1番人気ス
+OK project=1 video_id=wIL1nAkXWcc title=【中山5R新馬戦結果】スローブギが1番人気に応えてV ミカエル・ミシェル騎手はJ
+OK project=1 video_id=AUuOoMUTa5g title=【中山4R】「二の脚が全然つかず…」池添謙一騎手は首をかしげる　超良血グランマエ
