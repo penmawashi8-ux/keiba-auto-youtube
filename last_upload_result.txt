@@ -1,10 +1,10 @@
-date: 2026-09-13T04:09:55.561353Z
+date: 2026-09-13T07:10:56.050303Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nkQsri30ijU title=【中山5R新馬戦】フランス出身の女性騎手ミシェルが7年ぶりJRA勝利　1番人気ス
-OK project=1 video_id=wIL1nAkXWcc title=【中山5R新馬戦結果】スローブギが1番人気に応えてV ミカエル・ミシェル騎手はJ
-OK project=1 video_id=AUuOoMUTa5g title=【中山4R】「二の脚が全然つかず…」池添謙一騎手は首をかしげる　超良血グランマエ
+OK project=1 video_id=riGzaEhuoNY title=【JRA・WIN5】本日のWIN5は的中989票、配当49万7900円
+OK project=1 video_id=21GN3Dq7h6c title=ジョドレルバンクは戸崎との新コンビで芙蓉S参戦!新馬勝ちに導いたレーンが来日しな
+OK project=1 video_id=1FYPE6J37SA title=【セントライト記念速報】ジャスティンシカゴが優勝!

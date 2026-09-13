@@ -3000,3 +3000,6 @@ https://news.netkeiba.com/?pid=news_view&no=342601
 https://news.netkeiba.com/?pid=news_view&no=342620
 https://news.netkeiba.com/?pid=news_view&no=342604
 https://news.netkeiba.com/?pid=news_view&no=342618
+https://news.netkeiba.com/?pid=news_view&no=342608
+https://news.netkeiba.com/?pid=news_view&no=342645
+https://news.netkeiba.com/?pid=news_view&no=342607
