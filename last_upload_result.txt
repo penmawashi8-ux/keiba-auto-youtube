@@ -1,10 +1,10 @@
-date: 2026-09-14T07:08:13.522196Z
+date: 2026-09-14T10:13:22.107302Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PkART9uVK5A title=【先週のJRA抹消馬】25年チューリップ賞覇者クリノメイ、23年の皐月賞4着馬メ
-OK project=1 video_id=dDHQ1TIZGw8 title=武豊騎手「イチローさんに勝つなんて自慢できますね」　イベントで真剣勝負勝利にニッ
-OK project=1 video_id=O3Ov1mlfn6s title=大井競馬が熊本地震の被災者支援へ義援金2222万円を拠出
+OK project=1 video_id=Di20BB9CowU title=【オールカマー】「中山の鬼」コスモキュランダ 2年半ぶりの重賞2勝目なるか
+OK project=1 video_id=7e7aKVvj0XU title=【AI予想・オールカマー】人工知能は中山での好走実績を重視!? 中山に高い適性を
+OK project=1 video_id=xRHWbK_E1So title=母クルミナルはクラシック活躍馬 プルヴィナルが土曜中山で初陣/関東馬メイクデビュ
