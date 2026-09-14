@@ -3010,3 +3010,6 @@ https://news.netkeiba.com/?pid=news_view&no=342600
 https://news.netkeiba.com/?pid=news_view&no=342719
 https://news.netkeiba.com/?pid=news_view&no=342720
 https://news.netkeiba.com/?pid=news_view&no=342721
+https://news.netkeiba.com/?pid=news_view&no=342304
+https://news.netkeiba.com/?pid=news_view&no=342693
+https://news.netkeiba.com/?pid=news_view&no=342692
