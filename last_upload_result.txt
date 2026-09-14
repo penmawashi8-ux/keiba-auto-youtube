@@ -1,10 +1,10 @@
-date: 2026-09-14T04:09:19.304415Z
+date: 2026-09-14T07:08:13.522196Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=I3nVjNGVP9A title=1位は昨年のレガレイラ オールカマーの勝ち時計ランキング
-OK project=1 video_id=BP2COVVmS0M title=【オールカマー想定騎手】レガレイラは戸崎圭太騎手、コスモキュランダは横山武史騎手
-OK project=1 video_id=k1ZjzKBVRHk title=【神戸新聞杯想定騎手】ロブチェンは松山弘平騎手、コンジェスタスは西村淳也騎手
+OK project=1 video_id=PkART9uVK5A title=【先週のJRA抹消馬】25年チューリップ賞覇者クリノメイ、23年の皐月賞4着馬メ
+OK project=1 video_id=dDHQ1TIZGw8 title=武豊騎手「イチローさんに勝つなんて自慢できますね」　イベントで真剣勝負勝利にニッ
+OK project=1 video_id=O3Ov1mlfn6s title=大井競馬が熊本地震の被災者支援へ義援金2222万円を拠出
