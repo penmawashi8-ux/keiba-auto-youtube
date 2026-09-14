@@ -1,10 +1,10 @@
-date: 2026-09-13T10:07:07.236950Z
+date: 2026-09-14T01:09:22.993270Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hSZhFugZU-w title=ライラボンドが移籍後3連勝で建依別賞を優勝　鞍上は川崎の野畑凌騎手
-OK project=1 video_id=t8EJoaj3tuo title=伏兵スターキャンディがサラブレッド大賞典で重賞初制覇
-OK project=1 video_id=lCe_mO-KWfI title=【高知・建依別賞結果】ライラボンドが人気に応えて重賞2勝目
+OK project=1 video_id=WMDGh-RruD4 title=ミカエル・ミシェル騎手7年ぶり白星「うれしくて泣きそう」
+OK project=1 video_id=Ulv8dT8_TrE title=【セントライト記念】ジャスティンシカゴ12番人気V　菊も原優介騎手で
+OK project=1 video_id=pQGJDkr2rDQ title=【ローズS】令和のファインモーション、モンローウォーク3馬身差再現大楽勝
