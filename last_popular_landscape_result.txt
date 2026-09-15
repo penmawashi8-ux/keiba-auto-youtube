@@ -1,6 +1,6 @@
-date: 2026-09-13T11:05:05.294160Z
+date: 2026-09-15T11:04:24.925426Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DObLD3IqSQU views=55161 title=米ジョッキークラブゴールドCは7頭立てで確定!フォーエバーヤングは大外スタート【5.5万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=Kf28mXuJjKk views=80786 title=ＪＲＡ初の還暦ジョッキー柴田善臣が電撃引退　４２年の騎手人生に別れ　歴代６位のＪＲＡ通算２３４１勝【8.1万回閲覧・話題
