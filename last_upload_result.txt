@@ -1,10 +1,9 @@
-date: 2026-09-14T10:13:22.107302Z
+date: 2026-09-15T01:18:34.140079Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Di20BB9CowU title=【オールカマー】「中山の鬼」コスモキュランダ 2年半ぶりの重賞2勝目なるか
-OK project=1 video_id=7e7aKVvj0XU title=【AI予想・オールカマー】人工知能は中山での好走実績を重視!? 中山に高い適性を
-OK project=1 video_id=xRHWbK_E1So title=母クルミナルはクラシック活躍馬 プルヴィナルが土曜中山で初陣/関東馬メイクデビュ
+OK project=1 video_id=hvrJ5t0NwHA title=【オールカマー】昨秋と同じレースで始動のレガレイラ　連覇へ陣営自信「去年の前より
+OK project=1 video_id=qg3T1viZsxs title=【神戸新聞杯】ロブチェン9頭目3冠へ落とせない!　秋始動戦に杉山晴師「変化のない
