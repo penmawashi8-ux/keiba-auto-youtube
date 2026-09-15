@@ -1,9 +1,10 @@
-date: 2026-09-15T01:18:34.140079Z
+date: 2026-09-15T04:12:20.729716Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hvrJ5t0NwHA title=【オールカマー】昨秋と同じレースで始動のレガレイラ　連覇へ陣営自信「去年の前より
-OK project=1 video_id=qg3T1viZsxs title=【神戸新聞杯】ロブチェン9頭目3冠へ落とせない!　秋始動戦に杉山晴師「変化のない
+OK project=1 video_id=xgAjGLCyjgY title=ルメール騎手がゴールデンジョッキーCに初参戦　園田大好き!　騎乗機会5連勝中　気
+OK project=1 video_id=b5C7oml98lg title=【オールカマー】牝馬では現役最多の中山4勝 エセルフリーダが強敵撃破に挑む
+OK project=1 video_id=xivsSV285ek title=武豊騎手が「世界的スター2人」と立て続けにご対面「ボクは幸せ者ですね。笑」　今週
