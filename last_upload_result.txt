@@ -1,10 +1,10 @@
-date: 2026-09-15T04:12:20.729716Z
+date: 2026-09-15T07:13:16.510590Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xgAjGLCyjgY title=ルメール騎手がゴールデンジョッキーCに初参戦　園田大好き!　騎乗機会5連勝中　気
-OK project=1 video_id=b5C7oml98lg title=【オールカマー】牝馬では現役最多の中山4勝 エセルフリーダが強敵撃破に挑む
-OK project=1 video_id=xivsSV285ek title=武豊騎手が「世界的スター2人」と立て続けにご対面「ボクは幸せ者ですね。笑」　今週
+OK project=1 video_id=mzGJvGC8Pc8 title=【注目馬動向】札幌記念4着のローシャムパークは中東のバーレーンインターナショナル
+OK project=1 video_id=bRVKT5dLuI0 title=JRA新監事に慶大大学院教授の岩波敦子氏、弁護士の野口彩子氏が就任　小谷実可子氏
+OK project=1 video_id=tSkRRYWncFQ title=遠征経験豊富なローシャムパークがバーレーン国際トロフィーに登録　今年G1昇格　選
