@@ -1,10 +1,10 @@
-date: 2026-09-15T07:13:16.510590Z
+date: 2026-09-15T10:07:48.481823Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mzGJvGC8Pc8 title=【注目馬動向】札幌記念4着のローシャムパークは中東のバーレーンインターナショナル
-OK project=1 video_id=bRVKT5dLuI0 title=JRA新監事に慶大大学院教授の岩波敦子氏、弁護士の野口彩子氏が就任　小谷実可子氏
-OK project=1 video_id=tSkRRYWncFQ title=遠征経験豊富なローシャムパークがバーレーン国際トロフィーに登録　今年G1昇格　選
+OK project=1 video_id=9hMpYFxTmTM title=【阪神JS予想オッズ】ジューンベロシティが予想1番人気
+OK project=1 video_id=4X1-8AZGbDI title=【オールカマー予想オッズ】レガレイラが予想1番人気
+OK project=1 video_id=9V9Bd_DTmjI title=【神戸新聞杯予想オッズ】ロブチェンが予想1番人気
