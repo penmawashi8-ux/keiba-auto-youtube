@@ -1,9 +1,10 @@
-date: 2026-09-16T04:15:01.152718Z
+date: 2026-09-16T07:07:19.807817Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=eWKlxtmQ60E title=柴田善引退に武豊「もっと一緒に乗りたかった。見習うところだらけでしたね」
-OK project=1 video_id=6Drr9Bfj2Gc title=【柴田善と一問一答(2)】後輩騎手へ「騎手を世の中がどう見ているか、肝に銘じて行
+OK project=1 video_id=lIay9M-IKs4 title=【注目馬動向】春2冠の雪辱へセントライト記念4着のアスクエジンバラは菊花賞に挑む
+OK project=1 video_id=6P2GZlINDxs title=【注目馬動向】秋初戦の毎日王冠を見送り　オークス3着馬ラフターラインズは右前脚の
+OK project=1 video_id=Wbs58RGYAFs title=競走中止の スモモモモモモモモは骨折判明　SNSで心配の声相次ぐ「お大事に」「ア
