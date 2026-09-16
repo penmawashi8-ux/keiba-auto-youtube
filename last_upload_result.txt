@@ -1,10 +1,10 @@
-date: 2026-09-15T10:07:48.481823Z
+date: 2026-09-16T01:11:27.073497Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=9hMpYFxTmTM title=【阪神JS予想オッズ】ジューンベロシティが予想1番人気
-OK project=1 video_id=4X1-8AZGbDI title=【オールカマー予想オッズ】レガレイラが予想1番人気
-OK project=1 video_id=9V9Bd_DTmjI title=【神戸新聞杯予想オッズ】ロブチェンが予想1番人気
+OK project=1 video_id=Z8bqp34Hp2Q title=【園田競馬・人気ジョッキーは語る】メイショウカイコン(8R)に自信を見せる田野豊
+OK project=1 video_id=TqNi2PJCK6M title=米ジョッキークラブゴールドC2頭出走取消で5頭立てに…フォーエバーヤング断然1番
+OK project=1 video_id=fmw5A4t0UZ4 title=【園田競馬　16日発走　チャンピオンジョッキー賞】ルメール騎乗のグッドハビッツ
