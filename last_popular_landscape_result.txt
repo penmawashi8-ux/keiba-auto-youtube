@@ -1,6 +1,6 @@
-date: 2026-09-15T11:04:24.925426Z
+date: 2026-09-17T11:05:19.402366Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Kf28mXuJjKk views=80786 title=ＪＲＡ初の還暦ジョッキー柴田善臣が電撃引退　４２年の騎手人生に別れ　歴代６位のＪＲＡ通算２３４１勝【8.1万回閲覧・話題
+OK project=1 video_id=A3e0tnDQs8w views=21436 title=福永調教師が柴田善臣騎手へ敬意を表す　「長い間競馬界を支えていただいて頭が下がる思い」【2.1万回閲覧・話題の競馬ニュー
