@@ -1,10 +1,10 @@
-date: 2026-09-16T10:08:00.888579Z
+date: 2026-09-17T01:07:36.979275Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=n-DlX6ODm6o title=【注目馬動向】ヘデントールは京都大賞典で秋始動　昨年の天皇賞・春でG1初勝利
-OK project=1 video_id=fwsjgLt2vAk title=【神戸新聞杯】反撃狙うコンジェスタスはぶれなく登坂　高野調教師「ここを使って、次
-OK project=1 video_id=1y-vf4W6ZRY title=【神戸新聞杯】ダービー惨敗から変わり身十分のグリーンエナジー　上原佑調教師「ちょ
+OK project=1 video_id=0kv66anbdNo title=【園田競馬・人気ジョッキーは語る】ゴッズフェイヴリトで重賞制覇を目指す田野豊三騎
+OK project=1 video_id=53J6EZI-Ibs title=【神戸新聞杯】ロブチェン3冠へ余力仕上げ「ムチなしで勝ってほしい」
+OK project=1 video_id=4WT-BGMbwdQ title=60歳で引退柴田善臣騎手が若手にエール「昔は殴られたぞ、ちょっと甘い」
