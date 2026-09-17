@@ -1,10 +1,10 @@
-date: 2026-09-17T04:09:04.133981Z
+date: 2026-09-17T07:08:50.164268Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4VBb8Fi-BAQ title=サムシングスイートは松山との新コンビで秋華賞へ　団野負傷で乗り代わりに　ピコロー
-OK project=1 video_id=YFWIR1_0nxk title=【注目馬動向】母ラキシスのミラージュナイトはアルゼンチン共和国杯で初タイトル狙う
-OK project=1 video_id=S6vQXwuWGns title=【凱旋門賞】アドマイヤテラはCデムーロ騎手が1週前のパリロンシャン競馬場で初コン
+OK project=1 video_id=e4yip5oWz0M title=【阪神JS出走馬・騎手確定】ジューンベロシティ＆高田潤騎手、ホウオウプロサンゲ＆
+OK project=1 video_id=IK2EljD5foM title=【オールカマー出走馬・騎手確定】レガレイラ＆戸崎圭太騎手、コスモキュランダ＆横山
+OK project=1 video_id=Hc-u_y4pJE0 title=【神戸新聞杯出走馬・騎手確定】ロブチェン＆松山弘平騎手、グリーンエナジー＆戸崎圭
