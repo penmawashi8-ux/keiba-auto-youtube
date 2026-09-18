@@ -1,6 +1,6 @@
-date: 2026-09-17T11:05:19.402366Z
+date: 2026-09-18T11:05:11.408710Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A3e0tnDQs8w views=21436 title=福永調教師が柴田善臣騎手へ敬意を表す　「長い間競馬界を支えていただいて頭が下がる思い」【2.1万回閲覧・話題の競馬ニュー
+OK project=1 video_id=B6j28bq7fE8 views=33967 title=中学校の校庭に元競走馬が登場!　22年ジャパンC制覇の渡辺調教師「私は4000万をいただきました(笑)」JRA職業講話【
