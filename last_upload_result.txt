@@ -1,10 +1,9 @@
-date: 2026-09-17T10:10:31.779354Z
+date: 2026-09-18T01:17:06.146940Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=eZM8SOuysK4 title=【阪神JS】セレクト4.1億円のホウオウプロサンゲ 史上最高額のJRA重賞勝ち馬
-OK project=1 video_id=Eqk7Wx6ltcU title=【JRA新馬戦】重賞2勝馬ドゥーラの半弟メダルボーイなどがデビュー
-OK project=1 video_id=Bi4cguPLxO8 title=千葉豪雨の被災地支援で中山馬主協会の西川賢会長が熊谷千葉県知事と面談「被害に遭わ
+OK project=1 video_id=TtGxBktcZWQ title=18日の大井1Rでデビュー3連勝を狙う期待の牝馬コスモスフレイバー　鞍上の勝負服
+OK project=1 video_id=o2mFE9peIls title=【神戸新聞杯】アルトラムス　重馬場なんの軽快登坂　野中師「動きの質かなり良くなっ
