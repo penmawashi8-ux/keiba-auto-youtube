@@ -1,9 +1,10 @@
-date: 2026-09-18T01:17:06.146940Z
+date: 2026-09-18T04:07:42.436018Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TtGxBktcZWQ title=18日の大井1Rでデビュー3連勝を狙う期待の牝馬コスモスフレイバー　鞍上の勝負服
-OK project=1 video_id=o2mFE9peIls title=【神戸新聞杯】アルトラムス　重馬場なんの軽快登坂　野中師「動きの質かなり良くなっ
+OK project=1 video_id=6HMh8MAnau4 title=【白山大賞典】帝王賞2年連続2着のアウトレンジは最内1枠1番　岩田康誠騎手のホウ
+OK project=1 video_id=RV0x-s_vflI title=【注目馬動向・2歳】シスキンブルームは阪神JFへ直行　ルナパッショーネはアイビー
+OK project=1 video_id=v0_5nHECPdM title=【注目馬動向】セントライト記念11着のサノノグレーターは菊花賞へ　尾形和幸調教師
