@@ -1,10 +1,10 @@
-date: 2026-09-18T04:07:42.436018Z
+date: 2026-09-18T07:08:13.342546Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6HMh8MAnau4 title=【白山大賞典】帝王賞2年連続2着のアウトレンジは最内1枠1番　岩田康誠騎手のホウ
-OK project=1 video_id=RV0x-s_vflI title=【注目馬動向・2歳】シスキンブルームは阪神JFへ直行　ルナパッショーネはアイビー
-OK project=1 video_id=v0_5nHECPdM title=【注目馬動向】セントライト記念11着のサノノグレーターは菊花賞へ　尾形和幸調教師
+OK project=1 video_id=KKGD-8pf1ck title=TCKが東京23区に総額138億円を分配へ　来年4月に1区あたり6億円
+OK project=1 video_id=93CTPyZXkZY title=【金沢・白山大賞典枠順】アウトレンジは1枠1番、オディロンは5枠6番
+OK project=1 video_id=8bmgCsBx4F4 title=サトノレーヴが社台スタリオンステーションに到着 25・26年高松宮記念覇者
