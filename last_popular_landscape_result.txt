@@ -1,6 +1,6 @@
-date: 2026-09-18T11:05:11.408710Z
+date: 2026-09-19T11:04:32.467671Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=B6j28bq7fE8 views=33967 title=中学校の校庭に元競走馬が登場!　22年ジャパンC制覇の渡辺調教師「私は4000万をいただきました(笑)」JRA職業講話【
+OK project=1 video_id=Suft5SdOH00 views=99704 title=米G1フォーエバーヤングV　日本調教馬初の海外G1・4勝　獲得賞金50億円突破　BCクラシック連覇へ【10.0万回閲覧・
