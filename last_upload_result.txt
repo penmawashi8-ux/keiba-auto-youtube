@@ -1,10 +1,10 @@
-date: 2026-09-19T01:08:03.222115Z
+date: 2026-09-19T04:10:22.721615Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ey_s-RTTsbk title=【注目馬動向】小倉で新馬Vのエルドボルグは東京スポーツ杯2歳Sで復帰　同じ父持つ
-OK project=1 video_id=hj-5c-nc6a0 title=小倉で新馬勝ちのエルドボルグは東スポ杯2歳Sへ
-OK project=1 video_id=ABxLGG6l4TA title=米遠征フォーエバーヤングV　矢作師「馬に感謝」「応援ありがとうございました」
+OK project=1 video_id=jAm68mLGGOc title=【阪神6R新馬戦結果】ルヴァンスレーヴ産駒アンドレバローズが押し切り勝ち
+OK project=1 video_id=OYkWMl-VGjY title=【中山4R・2歳新馬】小林美駒騎手がシルバーノリダーでキャリアハイ更新の38勝目
+OK project=1 video_id=nNoFUP46vus title=【中山5R新馬戦結果】モーリス産駒プルヴィナルが抜け出しV
