@@ -1,10 +1,10 @@
-date: 2026-09-18T10:07:27.844353Z
+date: 2026-09-19T01:08:03.222115Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SJBDqS-ebvE title=アジア大会馬術競技が21日に開幕 “初老ジャパン”メンバーら日本代表選手が意気込
-OK project=1 video_id=w2SQAfKx8xg title=【スプリンターズS】連覇を狙うウインカーネリアンは1週前追い切り後も順調　鹿戸調
-OK project=1 video_id=eXaOahkdmaQ title=【九十九里特別・金曜気配】アーモンドアイの初子アロンズロッドが惜敗続きに終止符を
+OK project=1 video_id=ey_s-RTTsbk title=【注目馬動向】小倉で新馬Vのエルドボルグは東京スポーツ杯2歳Sで復帰　同じ父持つ
+OK project=1 video_id=hj-5c-nc6a0 title=小倉で新馬勝ちのエルドボルグは東スポ杯2歳Sへ
+OK project=1 video_id=ABxLGG6l4TA title=米遠征フォーエバーヤングV　矢作師「馬に感謝」「応援ありがとうございました」
