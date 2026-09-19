@@ -1,10 +1,10 @@
-date: 2026-09-19T04:10:22.721615Z
+date: 2026-09-19T07:08:48.774368Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jAm68mLGGOc title=【阪神6R新馬戦結果】ルヴァンスレーヴ産駒アンドレバローズが押し切り勝ち
-OK project=1 video_id=OYkWMl-VGjY title=【中山4R・2歳新馬】小林美駒騎手がシルバーノリダーでキャリアハイ更新の38勝目
-OK project=1 video_id=nNoFUP46vus title=【中山5R新馬戦結果】モーリス産駒プルヴィナルが抜け出しV
+OK project=1 video_id=BC10E0XPb64 title=【九十九里特別】３歳牡馬キンググローリーが押し切りＶで３勝目　古賀慎師「菊花賞を
+OK project=1 video_id=KiC7ECBYJGo title=【カンナS】ビッグアーサー産駒が上位独占!　ジオパークカツキで横山武史騎手は今年
+OK project=1 video_id=YT8X_KhnKC4 title=川田将雅騎手がＪＲＡ通算２３００勝達成　「多くの馬、関係者に感謝。ジョッキーはす
