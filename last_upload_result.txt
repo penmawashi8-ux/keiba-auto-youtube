@@ -1,10 +1,9 @@
-date: 2026-09-20T07:07:52.649358Z
+date: 2026-09-20T10:06:32.949145Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=VjjIFEIFUQw title=【JRA・WIN5】キャリーオーバーで売上大幅増、的中14票でも配当は1億超え！
-OK project=1 video_id=WeUYtrF5UtE title=【オールカマー】レガレイラ重馬場で差し届かず4着　史上2頭目連覇逃す　唯一のG1
-OK project=1 video_id=RWhXjHKtqss title=【メイクデビュー中山4Rレース後コメント】マートングレイス岩田康誠騎手ら
+OK project=1 video_id=rBWstndsMsA title=タバルで凱旋門賞に挑戦する武豊騎手がゲキリンを管理する笹田調教師にまさかの“進言
+OK project=1 video_id=iJ-jyfUyxy0 title=【松戸特別レース後コメント】ニヒトツーゼーア C.ルメール騎手ら
