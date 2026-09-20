@@ -1,10 +1,10 @@
-date: 2026-09-20T01:13:33.008074Z
+date: 2026-09-20T04:09:13.529087Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=br4Lq5RSJ2I title=【20日の注目・阪神3R】良血馬対決に惜しくも敗れた桜花賞馬の半妹が中1週で登場
-OK project=1 video_id=fBdAAh03zO4 title=【神戸新聞杯・日曜気配】春は一戦ごとに馬体減のコンジェスタスは大きく馬体増で出走
-OK project=1 video_id=Sbbp0gZyhuE title=【神戸新聞杯・日曜気配】武豊騎手×5・9億円馬エムズビギンは態勢万全　友道調教師
+OK project=1 video_id=6cU6S_1QBxo title=【中山4R】岩田康誠騎手がお得意の“イン突き”でマートングレイスを新馬Vに導く　
+OK project=1 video_id=q-EYNTU3ogY title=【中山5R新馬戦結果】エフフォーリア産駒ラプチュラスが初陣飾る
+OK project=1 video_id=v88tCz2Ktc4 title=【阪神5R新馬戦結果】レイデオロ産駒ミランダスマイルがV 祖母はダイワスカーレッ
