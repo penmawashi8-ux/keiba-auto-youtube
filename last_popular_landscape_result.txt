@@ -1,6 +1,6 @@
-date: 2026-09-19T11:04:32.467671Z
+date: 2026-09-20T11:05:01.640509Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Suft5SdOH00 views=99704 title=米G1フォーエバーヤングV　日本調教馬初の海外G1・4勝　獲得賞金50億円突破　BCクラシック連覇へ【10.0万回閲覧・
+OK project=1 video_id=0ftEW4JVIKI views=43689 title=【JRA】21日の中山競馬は台風のため開催中止 代替競馬は22日【4.4万回閲覧・話題の競馬ニュース】
