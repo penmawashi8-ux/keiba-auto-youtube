@@ -1,10 +1,10 @@
-date: 2026-09-21T07:08:16.587064Z
+date: 2026-09-21T10:06:38.867858Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vb7tKNjKzl8 title=【神戸新聞杯速報】ロブチェンが優勝!
-OK project=1 video_id=G1LWMeq-bmg title=ロブチェンの始動戦直前に…　松山弘平騎手が阪神10Rで7年連続のJRA年間100
-OK project=1 video_id=Iurxgy-MO6s title=【メイクデビュー阪神5Rレース後コメント】キングリア川田将雅騎手ら
+OK project=1 video_id=VhtXN1QVRUg title=【金沢鼓門賞結果】キュムロンニンバスが抜け出し重賞連勝
+OK project=1 video_id=Bwvfjt2FAcY title=セイクリスティーナが岩手3歳牝馬3冠を達成　オータムティアラを単勝1.1倍の支持
+OK project=1 video_id=PTZIA_aUeJk title=【水沢・オータムティアラ結果】セイクリスティーナ圧勝！ 史上初の岩手牝馬三冠達成
