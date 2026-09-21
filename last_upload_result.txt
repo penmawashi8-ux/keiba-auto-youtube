@@ -1,9 +1,10 @@
-date: 2026-09-20T10:06:32.949145Z
+date: 2026-09-21T01:07:45.841606Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=rBWstndsMsA title=タバルで凱旋門賞に挑戦する武豊騎手がゲキリンを管理する笹田調教師にまさかの“進言
-OK project=1 video_id=iJ-jyfUyxy0 title=【松戸特別レース後コメント】ニヒトツーゼーア C.ルメール騎手ら
+OK project=1 video_id=pEkXhpncU4w title=キタサンブラックの半弟アルマデオロ キタサンブラックCでオープン入りなるか
+OK project=1 video_id=9lXc6yJq7TA title=神戸新聞杯は日本ダービー組が近10回全勝 上がり上位馬にも注目
+OK project=1 video_id=7S1YIx7j9UU title=【21日の注目・阪神10R】メモリアルレースにキタサンブラックの半弟が登場　兄と
