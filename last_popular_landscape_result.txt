@@ -1,6 +1,6 @@
-date: 2026-09-20T11:05:01.640509Z
+date: 2026-09-21T11:04:18.121513Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=0ftEW4JVIKI views=43689 title=【JRA】21日の中山競馬は台風のため開催中止 代替競馬は22日【4.4万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=AefMqSO4GDU views=47928 title=代替開催の22日中山での乗り替わり発表　同日の白山大賞典に騎乗の岩田康誠騎手と三浦皇成騎手　小崎綾也騎手も【4.8万回閲
