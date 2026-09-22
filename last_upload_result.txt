@@ -1,10 +1,10 @@
-date: 2026-09-21T10:06:38.867858Z
+date: 2026-09-22T01:07:28.429810Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=VhtXN1QVRUg title=【金沢鼓門賞結果】キュムロンニンバスが抜け出し重賞連勝
-OK project=1 video_id=Bwvfjt2FAcY title=セイクリスティーナが岩手3歳牝馬3冠を達成　オータムティアラを単勝1.1倍の支持
-OK project=1 video_id=PTZIA_aUeJk title=【水沢・オータムティアラ結果】セイクリスティーナ圧勝！ 史上初の岩手牝馬三冠達成
+OK project=1 video_id=3ODr3x6-2w4 title=【22日の注目・中山10R】ディープインパクトの偉大な血を引くのはこの馬だけ…　
+OK project=1 video_id=66zHmuUaP7o title=【菊花賞を占う】より一層強くなったロブチェン“1強”の構図　打ち崩すなら…出否未
+OK project=1 video_id=e_knB-eT5kg title=「甘く見てた」「凄い人　人　人」21日の阪神競馬場は“爆入り”&“爆売れ”　 「
