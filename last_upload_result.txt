@@ -1,10 +1,10 @@
-date: 2026-09-22T07:11:38.483210Z
+date: 2026-09-22T10:11:04.324654Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tpwafrc0IhY title=【メイクデビュー中山6Rレース後コメント】ネオロマーネ横山武史騎手ら
-OK project=1 video_id=byCo7N-axAE title=【メイクデビュー中山5Rレース後コメント】ローズサルーテ小林美駒騎手ら
-OK project=1 video_id=kv6cSt2fbsA title=【注目馬動向】″キングジョージ”から巻き返し図るマスカレードボールは天皇賞・秋へ
+OK project=1 video_id=-Owl46EIuZA title=【白山大賞典】ロブチェンで神戸新聞杯Vの松山弘平騎手は2日連続の重賞勝利ならず　
+OK project=1 video_id=x623eGY7HZQ title=スワーヴバシレウスは気配に注目 日曜の中山芝2000mで初陣/関東馬メイクデビュ
+OK project=1 video_id=vtse0ZyCErs title=【スプリンターズS】「やればできると話しておきました」蛯名正調教師がレッドモンレ
