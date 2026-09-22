@@ -1,6 +1,6 @@
-date: 2026-09-21T11:04:18.121513Z
+date: 2026-09-22T11:05:38.457124Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AefMqSO4GDU views=47928 title=代替開催の22日中山での乗り替わり発表　同日の白山大賞典に騎乗の岩田康誠騎手と三浦皇成騎手　小崎綾也騎手も【4.8万回閲
+OK project=1 video_id=YJBYzITrnmY views=63659 title=英遠征明けのマスカレードボールは連覇が懸かる天皇賞・秋へ　キングジョージ7着から巻き返しを図る【6.4万回閲覧・話題の競
