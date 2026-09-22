@@ -3112,3 +3112,6 @@ https://news.netkeiba.com/?pid=news_view&no=343302
 https://news.netkeiba.com/?pid=news_view&no=343407
 https://news.netkeiba.com/?pid=news_view&no=343406
 https://news.netkeiba.com/?pid=news_view&no=343404
+https://news.netkeiba.com/?pid=news_view&no=343415
+https://news.netkeiba.com/?pid=news_view&no=343409
+https://news.netkeiba.com/?pid=news_view&no=343414
