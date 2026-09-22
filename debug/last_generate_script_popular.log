@@ -1,19 +1,19 @@
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
-利用可能モデル (41個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
+利用可能モデル (42個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 代替開催の22日中山での乗り替わり発表　同日の白山大賞典に騎乗の岩田康誠騎手と三浦皇成騎手　小崎綾也騎手も ---
-[0] Gemini入力本文 100文字: 'JRAは20日、台風の影響が予想されるため22日に延期となった中山開催での騎手変更を発表した。\u3000同日に金沢競馬場で行われる白山大賞典・Jpn3(ダート2100メートル)に騎乗予定の岩田康誠騎手、三浦…'
+--- 記事[0]: 英遠征明けのマスカレードボールは連覇が懸かる天皇賞・秋へ　キングジョージ7着から巻き返しを図る ---
+[0] Gemini入力本文 100文字: '英国に遠征し、7月25日のキングジョージ6世＆クイーンエリザベスSで7着のマスカレードボール(牡4＝手塚久、父ドゥラメンテ)は連覇が懸かる天皇賞・秋(11月1日、東京芝2000メートル)に向かう見通…'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 188文字]: '本日の競馬ニュースです。JRAは20日、台風の影響が予想されるため22日に延期となった中山開催での騎手変更を発表しました。これは、同日に金沢競馬場で行われる白山大賞典・Jpn3、ダート2100メートルに騎乗予定の岩田康誠騎手、三浦皇成騎手、そして小崎綾也騎手がいるためです。代替開催となる22日の中山競馬では、これらの騎手が騎乗できなくなることに伴い、乗り替わりが行われます。'
+[0]  [Gemini生出力 177文字]: '今日の競馬情報です。英国に遠征したマスカレードボールは、連覇が懸かる天皇賞・秋へ向かう見通しです。マスカレードボールは、7月25日に行われたキングジョージ6世＆クイーンエリザベスSで7着でした。手塚久調教師が管理するこの馬は、キングジョージでの7着から巻き返しを図ります。連覇が懸かる天皇賞・秋は、11月1日に東京芝2000メートルで開催される予定です。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (188文字)
-[0]  プレビュー: 本日の競馬ニュースです。JRAは20日、台風の影響が予想されるため22日に延期となった中山開催での騎手変更を発表しました。これは、同日に金沢競馬場で行われる白山...
+[0]  → output/script_0.txt 保存 (177文字)
+[0]  プレビュー: 今日の競馬情報です。英国に遠征したマスカレードボールは、連覇が懸かる天皇賞・秋へ向かう見通しです。マスカレードボールは、7月25日に行われたキングジョージ6世＆...
 
 1 件の脚本を生成しました。
