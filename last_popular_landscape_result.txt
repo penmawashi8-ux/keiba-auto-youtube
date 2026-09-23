@@ -1,6 +1,6 @@
-date: 2026-09-22T11:05:38.457124Z
+date: 2026-09-23T11:05:04.951661Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YJBYzITrnmY views=63659 title=英遠征明けのマスカレードボールは連覇が懸かる天皇賞・秋へ　キングジョージ7着から巻き返しを図る【6.4万回閲覧・話題の競
+OK project=1 video_id=iQjlknYXhGk views=63585 title=「新幹線の時間が間に合わないので…」岩田康誠騎手が早めまくり!?　ホウオウルーレットで歴代最多更新の6勝目　白山大賞典【
