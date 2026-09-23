@@ -1,10 +1,10 @@
-date: 2026-09-23T04:09:06.306894Z
+date: 2026-09-23T07:09:33.252727Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=n4V1LtAPHuk title=【凱旋門賞・1週前】メイショウタバルとアドマイヤテラが1週前追い切りを消化　日本
-OK project=1 video_id=WwiSj4lsacY title=【凱旋門賞】アドマイヤテラ、メイショウタバルがパリロンシャン競馬場で1週前追い切
-OK project=1 video_id=NGuu-fhVfkg title=田村太雅騎手が所属変更　24日付で栗東・谷厩舎から栗東・フリーへ　5月にも変更
+OK project=1 video_id=bxHZOFb0O6A title=【シリウスS】リアレストは今週復帰の荻野極騎手とコンビ継続で重賞初挑戦V狙う　尾
+OK project=1 video_id=Y27ZslG-TLY title=【注目馬動向】連勝中のラベルセーヌは荻野極騎手とコンビで秋華賞が目標　サンデーサ
+OK project=1 video_id=jQmzQ4GRlUA title=【先週のJRA抹消馬】24年愛知杯覇者ミッキーゴージャスなど
