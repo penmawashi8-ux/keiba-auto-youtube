@@ -1,10 +1,10 @@
-date: 2026-09-22T10:11:04.324654Z
+date: 2026-09-23T01:10:06.505576Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-Owl46EIuZA title=【白山大賞典】ロブチェンで神戸新聞杯Vの松山弘平騎手は2日連続の重賞勝利ならず　
-OK project=1 video_id=x623eGY7HZQ title=スワーヴバシレウスは気配に注目 日曜の中山芝2000mで初陣/関東馬メイクデビュ
-OK project=1 video_id=vtse0ZyCErs title=【スプリンターズS】「やればできると話しておきました」蛯名正調教師がレッドモンレ
+OK project=1 video_id=RYBJj5kMDYU title=【スプリンターズS見どころ】桜花賞馬スターアニスがGI3勝目を狙う
+OK project=1 video_id=rDFRd_j3Sh4 title=【シリウスS見どころ】海外競馬を含めキャリア豊富なラムジェット
+OK project=1 video_id=c8k0kV4zi-M title=【園田競馬・人気ジョッキーは語る】11Rのクールスカイに期待を寄せる大山真吾騎手
