@@ -1,10 +1,10 @@
-date: 2026-09-24T04:09:17.262046Z
+date: 2026-09-24T07:07:47.656632Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7ANyX6cSLOk title=【毎日王冠・1週前】リアライズシリウス遅れも手塚久調教師「満足ではないけど休み明
-OK project=1 video_id=0AA93ntoifQ title=【毎日王冠・1週前】レコードホルダーのセイウンハーデスが意欲的に追われる　幸英明
-OK project=1 video_id=fLJjucjNiAE title=「やり過ぎないように」オークス馬ジュウリョクピエロがCWコースで帰厩後初時計　陣
+OK project=1 video_id=CMO2Ub167iE title=【シリウスS出走馬・騎手確定】ラムジェット＆三浦皇成騎手、ダイシンピスケス＆松本
+OK project=1 video_id=Cu2NuBr2Wyc title=ダート重賞2勝シャドウスケイプ死す…27歳　04年根岸S、クラスターCを制したフ
+OK project=1 video_id=foruYDcbJAA title=10月4日当日に凱旋門賞PVを東京競馬場で開催　日本勢からはメイショウタバルとア
