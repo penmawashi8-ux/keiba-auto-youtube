@@ -1,10 +1,10 @@
-date: 2026-09-23T07:09:33.252727Z
+date: 2026-09-24T01:08:41.808884Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bxHZOFb0O6A title=【シリウスS】リアレストは今週復帰の荻野極騎手とコンビ継続で重賞初挑戦V狙う　尾
-OK project=1 video_id=Y27ZslG-TLY title=【注目馬動向】連勝中のラベルセーヌは荻野極騎手とコンビで秋華賞が目標　サンデーサ
-OK project=1 video_id=jQmzQ4GRlUA title=【先週のJRA抹消馬】24年愛知杯覇者ミッキーゴージャスなど
+OK project=1 video_id=d-WRP-UGQ40 title=【園田競馬・人気ジョッキーは語る】マーブルヘイローでメイン制覇に燃える田野豊三騎
+OK project=1 video_id=txmtJY9PQB4 title=【シリウスS展望】ギュルヴィの重賞初制覇に期待
+OK project=1 video_id=8PK76dF-wiw title=【スプリンターズＳ】スターアニス　満を持してスプリント戦線へ　最終追いで躍動　高
