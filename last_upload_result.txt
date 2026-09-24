@@ -1,10 +1,10 @@
-date: 2026-09-24T07:07:47.656632Z
+date: 2026-09-24T10:07:35.440663Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CMO2Ub167iE title=【シリウスS出走馬・騎手確定】ラムジェット＆三浦皇成騎手、ダイシンピスケス＆松本
-OK project=1 video_id=Cu2NuBr2Wyc title=ダート重賞2勝シャドウスケイプ死す…27歳　04年根岸S、クラスターCを制したフ
-OK project=1 video_id=foruYDcbJAA title=10月4日当日に凱旋門賞PVを東京競馬場で開催　日本勢からはメイショウタバルとア
+OK project=1 video_id=o10oknHBr6s title=【JRA新馬戦】ヴェラアズールの全弟ノーブルキングダムなどがデビュー
+OK project=1 video_id=hNvY5mbrvRI title=【POG】「これならルメールさんに頼んでも…」マリアライトの娘ダイアナマリアが2
+OK project=1 video_id=GscSOl8nXFk title=【笠松競馬】ヒャクレツケンで達成　藤田正治調教師が2Rで地方通算1800勝　2万
