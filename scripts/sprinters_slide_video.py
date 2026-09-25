@@ -15,6 +15,7 @@ Pillow / numpy / drawbox は使わず、ffmpeg の color・pad・drawtext(textfi
 
 import asyncio
 import glob
+import json
 import os
 import subprocess
 import sys
@@ -27,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from make_prediction_bgm import make_bgm  # noqa: E402
 from reading_utils import apply_readings  # noqa: E402
 
+NEWS_JSON = "news.json"
 OUTPUT_DIR = Path("output")
 VIDEO_PATH = OUTPUT_DIR / "landscape_video_0.mp4"
 THUMB_PATH = OUTPUT_DIR / "thumbnail_0.jpg"
@@ -346,6 +348,27 @@ def mix_bgm(video: Path, bgm: Path, total: float, out: Path) -> None:
     )
 
 
+def write_chapters(chapters: list[tuple[float, str]]) -> None:
+    """実際のスライド開始時刻から YouTube チャプターを作り、news.json の説明文に埋め込む。"""
+    lines = []
+    for start, title in chapters:
+        sec = int(start)
+        lines.append(f"{sec // 60}:{sec % 60:02d} {title}")
+    text = "\n".join(lines)
+    print("チャプター:\n" + text)
+
+    news_path = Path(NEWS_JSON)
+    if not news_path.exists():
+        print(f"[警告] {NEWS_JSON} がないためチャプターを説明文に埋め込めません。", file=sys.stderr)
+        return
+    entries = json.loads(news_path.read_text(encoding="utf-8"))
+    for entry in entries:
+        desc = entry.get("youtube_description", "")
+        if "{chapters}" in desc:
+            entry["youtube_description"] = desc.replace("{chapters}", text)
+    news_path.write_text(json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def main() -> None:
     OUTPUT_DIR.mkdir(exist_ok=True)
     font = find_font()
@@ -355,6 +378,7 @@ def main() -> None:
     with tempfile.TemporaryDirectory(prefix="sprinters_slides_") as tmp_dir:
         tmp = Path(tmp_dir)
         segments: list[Path] = []
+        chapters: list[tuple[float, str]] = []
         total = 0.0
         for i, (title, lines, narration) in enumerate(SLIDES, start=1):
             png = tmp / f"slide_{i:02d}.png"
@@ -364,6 +388,7 @@ def main() -> None:
             synthesize(narration, mp3)
             tail = END_TAIL if i == len(SLIDES) else TAIL
             dur = render_segment(png, mp3, seg, tail)
+            chapters.append((total, title))
             total += dur
             segments.append(seg)
             print(f"  [{i:02d}] {title}  {dur:.1f}s")
@@ -380,6 +405,8 @@ def main() -> None:
             check=True,
         )
         mix_bgm(narration_video, make_bgm(tmp / "bgm.wav"), total, VIDEO_PATH)
+
+    write_chapters(chapters)
 
     # サムネイルは動画からのフレーム抽出（リサイズしない）
     subprocess.run(
