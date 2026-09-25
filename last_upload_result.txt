@@ -1,10 +1,10 @@
-date: 2026-09-25T04:12:14.096741Z
+date: 2026-09-25T07:08:47.259287Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WA2KaAZDNbI title=【スプリンターズS・金曜気配】「力がいるような馬場なら歓迎です」パンジャタワーは
-OK project=1 video_id=gzXo9x7dqCw title=「WEST」休止の危機にネット不安「影響が長引くと…」「どうなるの」　電力確保で
-OK project=1 video_id=gQHQ8638bB0 title=【スプリンターズS・金曜気配】桜花賞馬スターアニスは5枠9番　高野調教師「自信を
+OK project=1 video_id=UyEwjc5Nh5Y title=【週末情報】フリッカージャブは外枠歓迎、破竹の4連勝でGI獲りだ/馬三郎のつぶや
+OK project=1 video_id=Rfvdrw4Ii2s title=【有力馬動向】ヴェルテンベルクの一変に期待/馬三郎のつぶやき
+OK project=1 video_id=OTMD9MK7Pws title=【スプリンターズS・金曜気配】G1初挑戦V狙うフリッカージャブは試練の8枠15番
