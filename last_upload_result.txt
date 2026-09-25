@@ -1,10 +1,10 @@
-date: 2026-09-24T10:07:35.440663Z
+date: 2026-09-25T01:10:06.019007Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=o10oknHBr6s title=【JRA新馬戦】ヴェラアズールの全弟ノーブルキングダムなどがデビュー
-OK project=1 video_id=hNvY5mbrvRI title=【POG】「これならルメールさんに頼んでも…」マリアライトの娘ダイアナマリアが2
-OK project=1 video_id=GscSOl8nXFk title=【笠松競馬】ヒャクレツケンで達成　藤田正治調教師が2Rで地方通算1800勝　2万
+OK project=1 video_id=zPC6K51lm7c title=【園田競馬・人気ジョッキーは語る】1Rのイングリッドローズに自信を見せる土方颯太
+OK project=1 video_id=caygX1tV6RM title=ジョセフ・オブライエン師「凱旋門賞は特別」英オークス馬サンダリングオンの出否「最
+OK project=1 video_id=yi5fah071uk title=【スプリンターズS枠順確定】スターアニスは5枠9番、フリッカージャブは8枠15番
