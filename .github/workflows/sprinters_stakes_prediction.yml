@@ -1,6 +1,13 @@
 name: スプリンターズS2026 最終予想動画（横型）生成・投稿
 
 on:
+  # ブランチへのpush時は動画生成のみ（YouTube投稿は手動実行時だけ）
+  push:
+    branches:
+      - claude/sprinters-stakes-2026-prediction-0ka270
+    paths:
+      - scripts/create_sprinters_prediction.py
+      - .github/workflows/sprinters_stakes_prediction.yml
   workflow_dispatch:
     inputs:
       dry_run:
@@ -80,7 +87,7 @@ jobs:
           retention-days: 7
 
       - name: Upload to YouTube
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run != true }}
         env:
           GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
@@ -94,7 +101,7 @@ jobs:
         run: python scripts/upload_landscape_youtube.py
 
       - name: Commit and push
-        if: always()
+        if: ${{ always() && github.event_name == 'workflow_dispatch' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
