@@ -4,7 +4,7 @@
 
 紺背景＋細い枠線、金色の見出し、白の箇条書き、フッター「SPRINTERS STAKES 2026 • NN」
 というシンプルなスライドを1枚ずつ表示し、スライドごとのナレーション（edge-tts）を乗せる。
-画面上の字幕は出さない。
+画面上の字幕は出さない。BGMは make_prediction_bgm.py のオリジナル曲を敷き、声に合わせて自動で音量を下げる。
 
 前提: scripts/create_sprinters_prediction.py で news.json を生成済み（アップロード用メタ）。
 出力: output/landscape_video_0.mp4 / output/thumbnail_0.jpg
@@ -24,6 +24,7 @@ from pathlib import Path
 import edge_tts
 
 sys.path.insert(0, str(Path(__file__).parent))
+from make_prediction_bgm import make_bgm  # noqa: E402
 from reading_utils import apply_readings  # noqa: E402
 
 OUTPUT_DIR = Path("output")
@@ -44,6 +45,8 @@ FOOTER_LABEL = "SPRINTERS STAKES 2026"
 
 LEAD_IN = 0.6   # スライド表示からナレーション開始までの間
 TAIL = 0.9      # ナレーション終了から次のスライドまでの間
+END_TAIL = 3.0  # 最終スライドの余韻（BGMのフェードアウト用）
+BGM_VOLUME = float(os.environ.get("BGM_VOLUME", "0.26"))
 
 # (見出し, 箇条書き, ナレーション)
 SLIDES: list[tuple[str, list[str], str]] = [
@@ -298,9 +301,9 @@ def render_slide_png(idx: int, title: str, lines: list[str], font: str,
     )
 
 
-def render_segment(png: Path, audio: Path, out: Path) -> float:
+def render_segment(png: Path, audio: Path, out: Path, tail: float = TAIL) -> float:
     """静止スライド＋ナレーションの1セグメントを書き出す。長さ(秒)を返す。"""
-    dur = LEAD_IN + audio_duration(audio) + TAIL
+    dur = LEAD_IN + audio_duration(audio) + tail
     delay_ms = int(LEAD_IN * 1000)
     subprocess.run(
         ["ffmpeg", "-y", "-loglevel", "error",
@@ -320,6 +323,29 @@ def render_segment(png: Path, audio: Path, out: Path) -> float:
     return dur
 
 
+def mix_bgm(video: Path, bgm: Path, total: float, out: Path) -> None:
+    """BGMをループさせてナレーションの下に敷く。声が出ている間は自動で音量を下げる。"""
+    fade_out_start = max(0.0, total - END_TAIL + 0.5)
+    fc = (
+        f"[1:a]volume={BGM_VOLUME},afade=t=in:d=2,"
+        f"afade=t=out:st={fade_out_start:.2f}:d={END_TAIL - 0.5:.2f},"
+        f"aformat=sample_rates=44100:channel_layouts=stereo[bgm];"
+        f"[0:a]asplit=2[voice][key];"
+        f"[bgm][key]sidechaincompress=threshold=0.03:ratio=2:attack=30:release=600[duck];"
+        f"[voice][duck]amix=inputs=2:duration=first:normalize=0,"
+        f"alimiter=limit=0.95[a]"
+    )
+    subprocess.run(
+        ["ffmpeg", "-y", "-loglevel", "error",
+         "-i", str(video), "-stream_loop", "-1", "-i", str(bgm),
+         "-filter_complex", fc,
+         "-map", "0:v", "-map", "[a]",
+         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+         "-t", f"{total:.3f}", "-movflags", "+faststart", str(out)],
+        check=True,
+    )
+
+
 def main() -> None:
     OUTPUT_DIR.mkdir(exist_ok=True)
     font = find_font()
@@ -336,7 +362,8 @@ def main() -> None:
             seg = tmp / f"seg_{i:02d}.mp4"
             render_slide_png(i, title, lines, font, tmp, png)
             synthesize(narration, mp3)
-            dur = render_segment(png, mp3, seg)
+            tail = END_TAIL if i == len(SLIDES) else TAIL
+            dur = render_segment(png, mp3, seg, tail)
             total += dur
             segments.append(seg)
             print(f"  [{i:02d}] {title}  {dur:.1f}s")
@@ -345,12 +372,14 @@ def main() -> None:
         concat_list.write_text(
             "".join(f"file '{s}'\n" for s in segments), encoding="utf-8"
         )
+        narration_video = tmp / "narration.mp4"
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error",
              "-f", "concat", "-safe", "0", "-i", str(concat_list),
-             "-c", "copy", "-movflags", "+faststart", str(VIDEO_PATH)],
+             "-c", "copy", str(narration_video)],
             check=True,
         )
+        mix_bgm(narration_video, make_bgm(tmp / "bgm.wav"), total, VIDEO_PATH)
 
     # サムネイルは動画からのフレーム抽出（リサイズしない）
     subprocess.run(

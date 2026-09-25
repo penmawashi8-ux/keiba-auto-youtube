@@ -8,6 +8,7 @@ on:
     paths:
       - scripts/create_sprinters_prediction.py
       - scripts/sprinters_slide_video.py
+      - scripts/make_prediction_bgm.py
       - .github/workflows/sprinters_stakes_prediction.yml
   workflow_dispatch:
     inputs:
