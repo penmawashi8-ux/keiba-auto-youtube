@@ -7,6 +7,7 @@ on:
       - claude/sprinters-stakes-2026-prediction-0ka270
     paths:
       - scripts/create_sprinters_prediction.py
+      - scripts/sprinters_slide_video.py
       - .github/workflows/sprinters_stakes_prediction.yml
   workflow_dispatch:
     inputs:
@@ -51,31 +52,10 @@ jobs:
       - name: スプリンターズS2026 最終予想コンテンツを生成
         run: python scripts/create_sprinters_prediction.py
 
-      - name: Generate audio（音声 + ASS字幕）
+      - name: スライド形式の予想動画を生成（横型 1280×720・ナレーション付き）
         env:
           TTS_VOICE: ja-JP-KeitaNeural
-        run: python scripts/generate_audio.py
-
-      - name: BGMをダウンロード (CC0 public domain only)
-        continue-on-error: true
-        run: |
-          mkdir -p assets/bgm
-          python scripts/download_bgm.py
-
-      - name: フォントをダウンロード
-        continue-on-error: true
-        run: |
-          mkdir -p assets/fonts
-          python scripts/download_fonts.py
-
-      - name: 背景画像を取得（Pixabay）
-        continue-on-error: true
-        env:
-          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-        run: python scripts/download_horse_images.py
-
-      - name: Generate landscape video（横型 1280×720）
-        run: python scripts/landscape_video.py
+        run: python scripts/sprinters_slide_video.py
 
       - name: Upload video as artifact
         uses: actions/upload-artifact@v4
