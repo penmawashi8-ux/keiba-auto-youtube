@@ -1,6 +1,6 @@
-date: 2026-09-25T11:08:56.413844Z
+date: 2026-09-26T11:05:46.441336Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=VrSREVav7mg views=39748 title=【スプリンターズS・調教後馬体重】スターアニスは488kg、フリッカージャブは508kg【4.0万回閲覧・話題の競馬ニュ
+OK project=1 video_id=bBQp0_lHZsI views=57184 title=【毎日王冠想定馬・騎手】リアライズシリウス、ホウオウビスケッツなど18頭【5.7万回閲覧・話題の競馬ニュース】
