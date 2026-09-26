@@ -1,10 +1,10 @@
-date: 2026-09-26T04:09:00.536343Z
+date: 2026-09-26T07:07:31.947492Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=4OK-2uikX6Q title=西村淳也騎手が阪神5Rで馬場入場後に落馬　スプリンターズSでフリッカージャブに騎
-OK project=1 video_id=Vj4XzFoccoM title=【阪神5R新馬戦結果】キタサンブラック産駒ネーロノワールが人気に応えて快勝
-OK project=1 video_id=6PQK0XfjTSg title=【注目馬動向】清秋ジャンプS3着のプラチナトレジャーは秋陽ジャンプSで連覇を目指
+OK project=1 video_id=b5ATh-4Qdjo title=【JRA・WIN5】本日のWIN5は的中62票、配当450万8390円
+OK project=1 video_id=SI3P86FfYT0 title=【シリウスS】7歳馬ヴァルツァーシャルが2年半ぶり復活星　28戦目最長2000メ
+OK project=1 video_id=bKsm2W3zeBc title=【ヤマボウシ賞】エランヴィータが好位から鮮やか差し切り!　三浦皇成騎手「距離の融
