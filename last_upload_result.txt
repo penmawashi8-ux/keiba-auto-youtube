@@ -1,10 +1,10 @@
-date: 2026-09-26T01:07:56.069849Z
+date: 2026-09-26T04:09:00.536343Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PwG0Dc2L04c title=【兵庫アーバン競馬】園田チャレンジCの一日売得金は10億円超え　小牧太騎手のエコ
-OK project=1 video_id=yNuJI7cce3Y title=【注目馬動向】ソヴリンティが調教再開でBCクラシックへ出走へ始動　フォーエバーヤ
-OK project=1 video_id=Ty1GbmxNGcM title=【26日の注目・阪神12R】セレクト3億円の超高額馬スターウェーブが初ダートで新
+OK project=1 video_id=4OK-2uikX6Q title=西村淳也騎手が阪神5Rで馬場入場後に落馬　スプリンターズSでフリッカージャブに騎
+OK project=1 video_id=Vj4XzFoccoM title=【阪神5R新馬戦結果】キタサンブラック産駒ネーロノワールが人気に応えて快勝
+OK project=1 video_id=6PQK0XfjTSg title=【注目馬動向】清秋ジャンプS3着のプラチナトレジャーは秋陽ジャンプSで連覇を目指
