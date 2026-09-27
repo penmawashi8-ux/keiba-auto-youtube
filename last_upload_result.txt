@@ -1,10 +1,10 @@
-date: 2026-09-27T04:09:27.859141Z
+date: 2026-09-27T07:12:57.293886Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=O3864gZ4gGs title=【阪神6R新馬戦結果】ルヴァンスレーヴ産駒ヤマニンガルブが初陣飾る
-OK project=1 video_id=6lcdLdm0WxA title=【中山5R新馬戦結果】マリアライトの娘ダイアナマリアが直線の一騎打ちを制す
-OK project=1 video_id=KBu31yY_9PM title=【中山4R・2歳新馬】7番人気ミエノヴィヴィッドが5馬身差圧勝　三浦皇成騎手「身
+OK project=1 video_id=Epe--aj6sTU title=【スプリンターズS】9番人気ピューロマジックG1初制覇!3連単46万2120円の
+OK project=1 video_id=RPaY8aSruxA title=【JRA・WIN5】本日のWIN5は的中122票、配当403万8790円
+OK project=1 video_id=uT_U9tuESUM title=【スプリンターズS】ルメール騎手騎乗のスターアニスは4着　新スプリント女王の誕生
