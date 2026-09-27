@@ -1,10 +1,10 @@
-date: 2026-09-26T10:05:54.984132Z
+date: 2026-09-27T01:08:01.618136Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_xnl71jY8Bc title=【スプリンターズS】前日最終オッズは4頭が10倍以下の混戦模様　単勝1番人気は桜
-OK project=1 video_id=hIvFQSqbim4 title=【スプリンターズS・土曜気配】「前走とは全然違う雰囲気」パンジャタワーが初の中山
-OK project=1 video_id=8saoyStzKbk title=【スプリンターズS・土曜気配】前日に輸送済みのレイピアは一晩明けてリラックス　陣
+OK project=1 video_id=6M16YAOWFu4 title=【スプリンターズS予想】7番人気以下を馬券に入れるのが正解？ 過去データから探る
+OK project=1 video_id=-8RhL3QMCmI title=【阪神5R・2歳新馬】ネーロノワールが最後方追走もノーステッキでV　斉藤崇調教師
+OK project=1 video_id=mKD_9NMUEek title=粗品「きつすぎると思う」スプリンターズSの前日1番人気を辛口評価　本命馬は「展開
