@@ -1,10 +1,10 @@
-date: 2026-09-27T10:08:03.744065Z
+date: 2026-09-28T01:07:27.871270Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=iBZtQJ1_VAY title=斎藤新騎手がJRA通算300勝達成！
-OK project=1 video_id=bNRYzpg0deM title=【高知競馬】牝馬サノノエスポが珊瑚冠賞を優勝　重賞2勝目　鞍上は愛知の塚本征吾騎
-OK project=1 video_id=6jI5G6HiQTU title=【高知・珊瑚冠賞結果】サノノエスポが逃げ切り重賞2勝目
+OK project=1 video_id=b_2WoUi4K1M title=【凱旋門賞展望】ダリズが史上8頭目の連覇狙う　メイショウタバルとアドマイヤテラが
+OK project=1 video_id=wx0KL--30yY title=【スプリンターズS】スターアニス、桜花賞馬の意地見せる4着　ルメール騎手「よく頑
+OK project=1 video_id=SDUem7-E2bw title=昨年覇者にディープの孫「全部つよそう」「有力馬多すぎて」日本勢2頭のライバルも超
