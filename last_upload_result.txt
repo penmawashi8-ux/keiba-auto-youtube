@@ -1,10 +1,10 @@
-date: 2026-09-28T07:12:18.772053Z
+date: 2026-09-28T10:07:50.406036Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nlv59IhiWOs title=【JRA定例会見】若手騎手へのコンプライアンス指導を一層強化　柴田善臣アドバイザ
-OK project=1 video_id=huXLkQXez_Y title=競馬速報・函館競馬場Wチップコースの調教タイム自動計測導入
-OK project=1 video_id=TpGDVTmg-QY title=凱旋門賞当日の馬場は?パリは“記録的な乾燥状態”…“昨年ビザンチンドリームが勝っ
+OK project=1 video_id=YZti37K_G1s title=【AI予想・毎日王冠】重賞実績や前走初角の位置取りに注意!? 東京芝1800mに
+OK project=1 video_id=c8kqeNaDyiQ title=【帯広ばんえい】元ガールズケイリン選手の日野未来さんが馬主初勝利　ぶち毛の愛馬「
+OK project=1 video_id=-wbjmaUkDMA title=今週から秋の東京開催が開幕 ギルデッドグロスに注目/関東馬メイクデビュー情報
