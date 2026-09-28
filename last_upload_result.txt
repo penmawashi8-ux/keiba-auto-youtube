@@ -1,10 +1,10 @@
-date: 2026-09-28T01:07:27.871270Z
+date: 2026-09-28T04:09:50.360868Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=b_2WoUi4K1M title=【凱旋門賞展望】ダリズが史上8頭目の連覇狙う　メイショウタバルとアドマイヤテラが
-OK project=1 video_id=wx0KL--30yY title=【スプリンターズS】スターアニス、桜花賞馬の意地見せる4着　ルメール騎手「よく頑
-OK project=1 video_id=SDUem7-E2bw title=昨年覇者にディープの孫「全部つよそう」「有力馬多すぎて」日本勢2頭のライバルも超
+OK project=1 video_id=jPwIrUIzlCc title=【マリーンC・枠順確定】関東オークス制覇のペンダントは4番枠　東京プリンセス賞V
+OK project=1 video_id=roTL1EP190Y title=【京都大賞典・ヤマタケの特注馬】凱旋門賞ウィークにキズナ産駒　実は長距離で中身濃
+OK project=1 video_id=LWcOulRtnbM title=JRAからクロフネ産駒が消える…最後の産駒ママコチャが現役引退　白毛のアイドルホ
