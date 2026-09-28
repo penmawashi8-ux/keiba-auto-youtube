@@ -1,10 +1,10 @@
-date: 2026-09-28T04:09:50.360868Z
+date: 2026-09-28T07:12:18.772053Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=jPwIrUIzlCc title=【マリーンC・枠順確定】関東オークス制覇のペンダントは4番枠　東京プリンセス賞V
-OK project=1 video_id=roTL1EP190Y title=【京都大賞典・ヤマタケの特注馬】凱旋門賞ウィークにキズナ産駒　実は長距離で中身濃
-OK project=1 video_id=LWcOulRtnbM title=JRAからクロフネ産駒が消える…最後の産駒ママコチャが現役引退　白毛のアイドルホ
+OK project=1 video_id=nlv59IhiWOs title=【JRA定例会見】若手騎手へのコンプライアンス指導を一層強化　柴田善臣アドバイザ
+OK project=1 video_id=huXLkQXez_Y title=競馬速報・函館競馬場Wチップコースの調教タイム自動計測導入
+OK project=1 video_id=TpGDVTmg-QY title=凱旋門賞当日の馬場は?パリは“記録的な乾燥状態”…“昨年ビザンチンドリームが勝っ
