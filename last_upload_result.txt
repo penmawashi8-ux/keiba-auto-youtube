@@ -1,9 +1,10 @@
-date: 2026-09-29T04:16:13.325998Z
+date: 2026-09-29T07:08:51.255784Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mNyRSK7B3_M title=ラスト1冠に照準　アルトラムスは菊花賞を視野　神戸新聞杯は2冠馬ロブチェンと推定
-OK project=1 video_id=Q3-QdtNNKk0 title=エイダン・オブライエン師、凱旋門賞3頭出し!鞍上は「ライアン・ムーアの選択次第」
+OK project=1 video_id=ws1-SIjGzNk title=仏遠征明けのシックスペンスはマイルCSへ　2走前に安田記念V　同一年の春秋マイル
+OK project=1 video_id=tol8iad9QNA title=競馬ファンの募金333万円超が熊本県へ　令和8年熊本地震の被災地支援のためJRA
+OK project=1 video_id=3h-5V8o1s4M title=ルメール騎手は秋の府中で毎年無双　昨年は連対率60%　G1で1番人気なら驚異の勝
