@@ -1,10 +1,9 @@
-date: 2026-09-29T01:07:24.897794Z
+date: 2026-09-29T04:16:13.325998Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2TuYi6jE41o title=JRA新たな暑熱対策　来年夏の新潟と中京の6週間を7レース制に
-OK project=1 video_id=e2F-YIxrpHc title=【競走伝】強すぎたがゆえの悲劇…スミヨン騎手が明かしたオルフェーヴル首差2着の”
-OK project=1 video_id=OYkWkSYkPAo title=【POGマニア】母譲りの脚力抜群!今後が非常に楽しみなG1・2勝馬マリアライトの
+OK project=1 video_id=mNyRSK7B3_M title=ラスト1冠に照準　アルトラムスは菊花賞を視野　神戸新聞杯は2冠馬ロブチェンと推定
+OK project=1 video_id=Q3-QdtNNKk0 title=エイダン・オブライエン師、凱旋門賞3頭出し!鞍上は「ライアン・ムーアの選択次第」
