@@ -1,10 +1,10 @@
-date: 2026-09-28T10:07:50.406036Z
+date: 2026-09-29T01:07:24.897794Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YZti37K_G1s title=【AI予想・毎日王冠】重賞実績や前走初角の位置取りに注意!? 東京芝1800mに
-OK project=1 video_id=c8kqeNaDyiQ title=【帯広ばんえい】元ガールズケイリン選手の日野未来さんが馬主初勝利　ぶち毛の愛馬「
-OK project=1 video_id=-wbjmaUkDMA title=今週から秋の東京開催が開幕 ギルデッドグロスに注目/関東馬メイクデビュー情報
+OK project=1 video_id=2TuYi6jE41o title=JRA新たな暑熱対策　来年夏の新潟と中京の6週間を7レース制に
+OK project=1 video_id=e2F-YIxrpHc title=【競走伝】強すぎたがゆえの悲劇…スミヨン騎手が明かしたオルフェーヴル首差2着の”
+OK project=1 video_id=OYkWkSYkPAo title=【POGマニア】母譲りの脚力抜群!今後が非常に楽しみなG1・2勝馬マリアライトの
