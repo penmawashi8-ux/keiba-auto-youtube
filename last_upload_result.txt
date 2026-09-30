@@ -1,10 +1,10 @@
-date: 2026-09-29T10:08:42.216904Z
+date: 2026-09-30T01:09:33.371549Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YbMbZDpa4L4 title=【毎日王冠予想オッズ】リアライズシリウスが予想1番人気
-OK project=1 video_id=y8zx03mpz_s title=【京都大賞典予想オッズ】ダノンシーマが予想1番人気
-OK project=1 video_id=YuDsXRsS-zg title=【凱旋門賞】メイショウタバルの最終追い切りには武豊騎手が騎乗　石橋調教師「どう変
+OK project=1 video_id=KYwp0bgPXus title=【園田競馬・人気ジョッキーは語る】7Rスイートサンライズに手応えを感じる杉浦健太
+OK project=1 video_id=AIzMX3QDz94 title=【園田競馬　30日発走　棋士のまち加古川特別】本命はサンライズナスカ
+OK project=1 video_id=yloeNaURaEA title=【凱旋門賞】水を含んだ馬場も力強い脚取りで駆け抜けた　アドマイヤテラ馬体もパワー
