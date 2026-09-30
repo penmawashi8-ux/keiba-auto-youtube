@@ -1,6 +1,6 @@
-date: 2026-09-29T11:07:14.981749Z
+date: 2026-09-30T11:06:08.190937Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nR2i-UzYLrw views=59673 title=「馬主」柳田悠岐オーナーが愛馬に衝撃の命名「アップティーバレー」　由来の上茶谷投手「10億円稼いでくれたら...」【6.
+OK project=1 video_id=SkoJ6op0z4c views=91037 title=クロワデュノールはＣ・デムーロとの新コンビで天皇賞・秋へ【9.1万回閲覧・話題の競馬ニュース】
