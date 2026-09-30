@@ -1,10 +1,10 @@
-date: 2026-09-30T04:08:09.444415Z
+date: 2026-09-30T07:09:27.368652Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WCLL79USJDE title=【注目馬動向】アメリカンステージは米国遠征を視野　矢作調教師「アメリカにもってい
-OK project=1 video_id=Z8jIvd-nuZk title=【秋華賞想定】ジュウリョクピエロ、モンローウォークなど16頭
-OK project=1 video_id=ptgPHEDCakg title=土田真翔騎手が美浦・加藤和宏厩舎所属に　10月1日から　JRA発表
+OK project=1 video_id=wxtx-xNwru4 title=【凱旋門賞】調教では初コンビ!メイショウタバルが武豊騎手を背に最終追い切り　シャ
+OK project=1 video_id=MfZDXnHmRyw title=クロワデュノールが秋初戦で新コンビ!「乗り替わり」がトレンド1位に　ファン騒然「
+OK project=1 video_id=D3hWd7fgOs0 title=電撃乗り替わりが発表!　クロワデュノールはCデムーロ騎手と新コンビで天皇賞・秋へ
