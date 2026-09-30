@@ -1,10 +1,10 @@
-date: 2026-09-30T01:09:33.371549Z
+date: 2026-09-30T04:08:09.444415Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KYwp0bgPXus title=【園田競馬・人気ジョッキーは語る】7Rスイートサンライズに手応えを感じる杉浦健太
-OK project=1 video_id=AIzMX3QDz94 title=【園田競馬　30日発走　棋士のまち加古川特別】本命はサンライズナスカ
-OK project=1 video_id=yloeNaURaEA title=【凱旋門賞】水を含んだ馬場も力強い脚取りで駆け抜けた　アドマイヤテラ馬体もパワー
+OK project=1 video_id=WCLL79USJDE title=【注目馬動向】アメリカンステージは米国遠征を視野　矢作調教師「アメリカにもってい
+OK project=1 video_id=Z8jIvd-nuZk title=【秋華賞想定】ジュウリョクピエロ、モンローウォークなど16頭
+OK project=1 video_id=ptgPHEDCakg title=土田真翔騎手が美浦・加藤和宏厩舎所属に　10月1日から　JRA発表
