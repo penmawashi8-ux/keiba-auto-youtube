@@ -1,10 +1,10 @@
-date: 2026-10-01T04:07:59.383829Z
+date: 2026-10-01T07:09:58.996255Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dt7uYB-L84A title=競馬中継で大活躍の43歳アナが突然の退社…「すごくショック」の声多数　「ラジオN
-OK project=1 video_id=i_rKbQ7JKX0 title=ママコチャの競走馬登録抹消をJRAが発表　白毛の全姉ソダシと同じ生まれ故郷のノー
-OK project=1 video_id=HLQVaAchD4c title=【船橋・マリーンC】3歳牝馬女王を決める戦い JBCレディスクラシックに弾みをつ
+OK project=1 video_id=hZerNElRpro title=【注目馬動向】札幌2歳Sを回避したノヴァヴェローチェは「程度としては軽傷です」　
+OK project=1 video_id=_39YS1pjthQ title=【毎日王冠出走馬・騎手確定】リアライズシリウス＆津村明秀騎手、ライヒスアドラー＆
+OK project=1 video_id=v0ebWFA-5Bc title=【京都大賞典出走馬・騎手確定】ダノンシーマ＆川田将雅騎手、アクアヴァーナル＆松山
