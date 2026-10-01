@@ -1,10 +1,10 @@
-date: 2026-10-01T01:11:04.582998Z
+date: 2026-10-01T04:07:59.383829Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=EC8WsrFztSY title=【川島正一調教師しゃべり馬っせ】きょうマリーンカップ　ナーサリーテイル動き抜群!
-OK project=1 video_id=-IAXu0TURJA title=【園田競馬・人気ジョッキーは語る】7Rのハルサメに期待する大山真吾騎手「復調の兆
-OK project=1 video_id=DU7x3eq6rr0 title=武豊騎手が悲願の凱旋門賞初制覇なるか メイショウタバルで12回目の参戦だ
+OK project=1 video_id=dt7uYB-L84A title=競馬中継で大活躍の43歳アナが突然の退社…「すごくショック」の声多数　「ラジオN
+OK project=1 video_id=i_rKbQ7JKX0 title=ママコチャの競走馬登録抹消をJRAが発表　白毛の全姉ソダシと同じ生まれ故郷のノー
+OK project=1 video_id=HLQVaAchD4c title=【船橋・マリーンC】3歳牝馬女王を決める戦い JBCレディスクラシックに弾みをつ
