@@ -1,10 +1,10 @@
-date: 2026-10-01T07:09:58.996255Z
+date: 2026-10-01T10:08:41.317930Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hZerNElRpro title=【注目馬動向】札幌2歳Sを回避したノヴァヴェローチェは「程度としては軽傷です」　
-OK project=1 video_id=_39YS1pjthQ title=【毎日王冠出走馬・騎手確定】リアライズシリウス＆津村明秀騎手、ライヒスアドラー＆
-OK project=1 video_id=v0ebWFA-5Bc title=【京都大賞典出走馬・騎手確定】ダノンシーマ＆川田将雅騎手、アクアヴァーナル＆松山
+OK project=1 video_id=Lm48tZcGgYA title=【JRA新馬戦】セレクトセール当歳4億1000万円のジーティーギャングなどがデビ
+OK project=1 video_id=uD4aKrhySeo title=「ロブチェン3冠最大の壁」「ラスボス」圧勝続き3・9億円馬の鞍上決定に騒然　ダノ
+OK project=1 video_id=a5-wUyXE_aU title=【凱旋門賞】アドマイヤテラはラモルレイ調教場で軽めの調整　友道調教師「程よい落ち
