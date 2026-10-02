@@ -1,10 +1,9 @@
-date: 2026-10-02T01:08:05.747478Z
+date: 2026-10-02T04:11:38.386861Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5EAcRxU5Dck title=【園田競馬・人気ジョッキーは語る】キングスピカでメイン制覇に意欲を見せる小牧太騎
-OK project=1 video_id=btxShYbwXXQ title=【凱旋賞】ライアン・ムーア騎手はベンヴェヌートチェッリーニに騎乗!A・オブライエ
-OK project=1 video_id=HTbRma2xvrk title=凱旋門賞枠順確定!メイショウタバル13番　武豊「外の方が自分のペースで走りやすい
+OK project=1 video_id=kbsiyDPSmAA title=ジューンブレア引退…繁殖入り　昨年スプリンターズS2着「よく頑張ってくれました」
+OK project=1 video_id=J6ApKHyLKE0 title=「94」「64・6」ルメール騎手を後押しする鬼データ　毎日王冠参戦のレイニングは
