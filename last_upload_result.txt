@@ -1,10 +1,10 @@
-date: 2026-10-02T07:07:31.351411Z
+date: 2026-10-02T10:08:06.675876Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8_2ck1YITds title=２５年スプリンターズＳ覇者ウインカーネリアンが引退、種牡馬入り　鹿戸師「カーネリ
-OK project=1 video_id=4JQHKghD1J4 title=【週末情報】レッドエヴァンスがOP初勝利へ 師が「ヤバくないですか!?」と驚くワ
-OK project=1 video_id=V6jXLemSkZ0 title=【POG】ブルーチップが骨折 陣営「残念としか言いようがない」 7月小倉の新馬戦
+OK project=1 video_id=B1RoUAQFHb8 title=三冠牝馬リバティアイランドの半弟 ダノンダックスが今度こそ初勝利なるか
+OK project=1 video_id=AKboo42DUwk title=【凱旋門賞】武豊騎手「満足しています」メイショウタバルは過去1勝の13番ゲートも
+OK project=1 video_id=Xyiao26vOzU title=【オパールS・金曜気配】良血馬ディアナザールの覚醒へ斉藤崇調教師が求めるもの　「
