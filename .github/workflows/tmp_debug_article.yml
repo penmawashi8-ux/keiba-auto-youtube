@@ -8,40 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: pip install -q -r requirements.txt
-      - name: dump
+      - name: fetch + script (no upload)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         run: |
           python3 - <<'PY'
-          import re, sys, html as H
+          import json, sys
           sys.path.insert(0, "scripts")
           import fetch_popular_news as f
-          for no in ["344432"]:
-              url = f"https://news.netkeiba.com/?pid=news_view&no={no}"
-              raw, _ = f.http_get_article(url)
-              m = re.search(rb'charset=["\']?\s*([a-zA-Z0-9_-]+)', raw[:2000])
-              enc = m.group(1).decode() if m else "utf-8"
-              h = raw.decode(enc, errors="replace")
-              print("=====", no, "len", len(h), "enc", enc)
-              print("ld+json count", len(re.findall(r'application/ld\+json', h)))
-              for jm in re.finditer(r'"articleBody"\s*:\s*"(.{0,300})', h):
-                  print("articleBody head:", jm.group(1)[:300])
-              print("<article> count", len(re.findall(r'<article', h, re.I)), "<table> count", len(re.findall(r'<table', h, re.I)))
-              i = h.find("モンローウォーク")
-              idxs = [m.start() for m in re.finditer("モンローウォーク", h)]
-              print("モンローウォーク positions", idxs[:20])
-              # show html around the body start and around the horse list
-              i0 = h.find("モンローウォーク", 10000)
-              print("BODY START @", i0)
-              seg = h[max(0, i0-2500): i0+7000]
-              seg = re.sub(r"<script.*?</script>", "", seg, flags=re.S)
-              print(re.sub(r"\s+", " ", seg))
-              body = f._extract_body(h)
-              print("EXTRACT_BODY len", len(body), ":", body[:1500])
-              item = f.build_news_item(no, url, "x"*10, 0)
-              print("SUMMARY len", len(item["summary"]) if item else None, ":", (item or {}).get("summary","")[:2000])
+          f.MAX_AGE_HOURS = 24 * 30
+          item = f.build_news_item("344432", "https://news.netkeiba.com/?pid=news_view&no=344432",
+                                   "【秋華賞想定馬・騎手】ジュウリョクピエロ、モンローウォークなど18頭", 96901)
+          print("SUMMARY:\n" + item["summary"])
+          json.dump([item], open("news.json", "w"), ensure_ascii=False, indent=2)
           PY
+          python scripts/generate_script.py
+          echo "===== SCRIPT ====="
+          cat output/script_0.txt
