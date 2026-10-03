@@ -1,6 +1,6 @@
-date: 2026-10-02T11:04:37.536007Z
+date: 2026-10-03T11:04:34.687536Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Kp7V6ZKzLi4 views=57423 title=【凱旋門賞】武豊騎手騎乗のメイショウタバルは13番ゲートに決定　アドマイヤテラは12番【5.7万回閲覧・話題の競馬ニュー
+OK project=1 video_id=nL3ptR5CKu4 views=96901 title=【秋華賞想定馬・騎手】ジュウリョクピエロ、モンローウォークなど18頭【9.7万回閲覧・話題の競馬ニュース】
