@@ -20,7 +20,7 @@ jobs:
           import re, sys, html as H
           sys.path.insert(0, "scripts")
           import fetch_popular_news as f
-          for no in ["344432", "344426"]:
+          for no in ["344432"]:
               url = f"https://news.netkeiba.com/?pid=news_view&no={no}"
               raw, _ = f.http_get_article(url)
               m = re.search(rb'charset=["\']?\s*([a-zA-Z0-9_-]+)', raw[:2000])
@@ -35,9 +35,11 @@ jobs:
               idxs = [m.start() for m in re.finditer("モンローウォーク", h)]
               print("モンローウォーク positions", idxs[:20])
               # show html around the body start and around the horse list
-              for p in idxs[:6]:
-                  print("---- ctx @", p)
-                  print(re.sub(r"\s+", " ", h[max(0,p-700):p+500]))
+              i0 = h.find("現時点では", 3000)
+              print("BODY START @", i0)
+              seg = h[max(0, i0-1500): i0+9000]
+              seg = re.sub(r"<script.*?</script>", "", seg, flags=re.S)
+              print(re.sub(r"[ \t]+", " ", seg))
               body = f._extract_body(h)
               print("EXTRACT_BODY len", len(body), ":", body[:1500])
               item = f.build_news_item(no, url, "x"*10, 0)
