@@ -35,11 +35,11 @@ jobs:
               idxs = [m.start() for m in re.finditer("モンローウォーク", h)]
               print("モンローウォーク positions", idxs[:20])
               # show html around the body start and around the horse list
-              i0 = h.find("現時点では", 3000)
+              i0 = h.find("モンローウォーク", 10000)
               print("BODY START @", i0)
-              seg = h[max(0, i0-1500): i0+9000]
+              seg = h[max(0, i0-2500): i0+7000]
               seg = re.sub(r"<script.*?</script>", "", seg, flags=re.S)
-              print(re.sub(r"[ \t]+", " ", seg))
+              print(re.sub(r"\s+", " ", seg))
               body = f._extract_body(h)
               print("EXTRACT_BODY len", len(body), ":", body[:1500])
               item = f.build_news_item(no, url, "x"*10, 0)
