@@ -1,10 +1,9 @@
-date: 2026-10-03T07:09:11.444973Z
+date: 2026-10-03T10:07:15.087277Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gheUHz2znrs title=【グリーンチャンネルC結果】唯一の3歳馬ドンエレクトスが逃げ切り勝ち
-OK project=1 video_id=YfEvYKX9zAo title=【オパールS結果】3歳牝馬リリージョワがゴール前で差し切りV
-OK project=1 video_id=rLpRQ2AOcws title=【京都9R・りんどう賞】重賞3勝馬の全妹ラムラベイが断然人気に応えて押し切る　松
+OK project=1 video_id=QzANkqtxLdw title=【白秋Sレース後コメント】フォーゲル池添謙一騎手ら
+OK project=1 video_id=DTSRIfyW4Ug title=【毎日王冠】前日最終オッズの単勝1番人気は皐月賞2着のリアライズシリウスで2・2
