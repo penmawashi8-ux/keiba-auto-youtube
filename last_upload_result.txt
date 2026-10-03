@@ -1,10 +1,9 @@
-date: 2026-09-25T01:10:06.019007Z
+date: 2026-10-03T10:07:15.087277Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zPC6K51lm7c title=【園田競馬・人気ジョッキーは語る】1Rのイングリッドローズに自信を見せる土方颯太
-OK project=1 video_id=caygX1tV6RM title=ジョセフ・オブライエン師「凱旋門賞は特別」英オークス馬サンダリングオンの出否「最
-OK project=1 video_id=yi5fah071uk title=【スプリンターズS枠順確定】スターアニスは5枠9番、フリッカージャブは8枠15番
+OK project=1 video_id=QzANkqtxLdw title=【白秋Sレース後コメント】フォーゲル池添謙一騎手ら
+OK project=1 video_id=DTSRIfyW4Ug title=【毎日王冠】前日最終オッズの単勝1番人気は皐月賞2着のリアライズシリウスで2・2
