@@ -1,9 +1,10 @@
-date: 2026-10-03T01:11:09.277705Z
+date: 2026-10-03T04:08:55.113741Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=a2m7JDPDQt4 title=全姉は名牝ディアドラ イベントホライゾンは確勝期す一戦だ
-OK project=1 video_id=g8WA9iO8oLs title=グリーンチャンネルCはストームキャット系が好相性 3歳馬にも注目
+OK project=1 video_id=qXVG49Aeacc title=【レディスプレリュード・枠順確定】秋初戦のダブルハートボンドは2枠2番　重賞2連
+OK project=1 video_id=7gvZM8Z0sQI title=【京都4R・2歳新馬】根性めっちゃすごい!　デラスゴイガンがマッチレース制す　松
+OK project=1 video_id=gJlYD_VHQLw title=【東京5R新馬戦結果】エピファネイア産駒ヴァルカモニカが断然人気に応え7馬身差V
