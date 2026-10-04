@@ -1,9 +1,10 @@
-date: 2026-10-04T07:06:17.386631Z
+date: 2026-10-04T10:08:05.463662Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cqrgj9iV3_0 title=【藤森Sレース後コメント】ゼットエール松本大輝騎手ら
-OK project=1 video_id=WboI1uURD0A title=【JRA・WIN5】本日のWIN5は的中6票、配当7512万3310円
+OK project=1 video_id=iFz-rHldpi8 title=【サウジアラビアRC　展望】完成度高いフィリオソラーレ　注目フライトライン産駒デ
+OK project=1 video_id=zZjrWhjwD9s title=【アイルランドT　展望】オークス馬カムニャック始動　実績で引け取らないクイーンズ
+OK project=1 video_id=ua-m033EeHE title=田口貫太騎手の父・輝彦調教師が祝福メッセージ「素直に『おめでとう』と伝えたいです
