@@ -3263,3 +3263,6 @@ https://news.netkeiba.com/?pid=news_view&no=344432
 https://news.netkeiba.com/?pid=news_view&no=344212
 https://news.netkeiba.com/?pid=news_view&no=344416
 https://news.netkeiba.com/?pid=news_view&no=344214
+https://news.netkeiba.com/?pid=news_view&no=344567
+https://news.netkeiba.com/?pid=news_view&no=344581
+https://news.netkeiba.com/?pid=news_view&no=344566

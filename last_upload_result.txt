@@ -1,9 +1,10 @@
-date: 2026-10-04T01:10:25.305630Z
+date: 2026-10-04T04:09:31.335362Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8rRVw-g2fAM title=【毎日王冠予想】馬券圏内9割の1番人気馬の死角は？ 過去データから探るGII毎日
-OK project=1 video_id=wyT5gzRcr8U title=アイドルホースオーディション3位のハルオーブ JRAでの2勝目なるか
+OK project=1 video_id=X3tPxtRFvgM title=【東京5R新馬戦結果】シルバーステート産駒シルヴァノーブルが逃げ切り快勝
+OK project=1 video_id=-F8I3si5Has title=【京都5R・2歳新馬】4・1億円馬は無念の3着…ジーティーギャング好位追走から伸
+OK project=1 video_id=PgBF41CijdU title=【京都5R新馬戦結果】ベンバトル産駒トロカアニマダが最後方から追い上げV
