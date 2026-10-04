@@ -1,6 +1,6 @@
-date: 2026-10-03T11:04:34.687536Z
+date: 2026-10-04T11:04:55.696617Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nL3ptR5CKu4 views=96901 title=【秋華賞想定馬・騎手】ジュウリョクピエロ、モンローウォークなど18頭【9.7万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=uBZG_NTtdYs views=109049 title=ジュウリョクピエロ秋華賞回避　便秘で順調さを欠いたため　今村聖奈とのコンビで5月オークス制覇【11万回閲覧・話題の競馬ニ
