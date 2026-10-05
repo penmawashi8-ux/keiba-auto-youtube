@@ -137,6 +137,61 @@ def body_has_quote(body: str) -> bool:
     return bool(_QUOTE_RE.search(body or ""))
 
 
+# --- 「本命候補3頭」系タイトルの中身欠落対策 ---------------------------------
+# netkeiba の【AI予想】などは有料記事で、取得できる本文はリード文だけのことが
+# ある。そのまま脚本を作ると、タイトルは「本命候補3頭」と約束しているのに
+# 馬名がほぼ出てこない動画になる（2026年10月に実際に発生）。
+# タイトルが頭数を約束している記事は、本文から該当馬を抽出し、
+# 頭数に足りなければ動画を作らない。足りていれば全頭を脚本に入れさせる。
+_KANJI_NUM = {"二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
+_PROMISED_HORSES_RE = re.compile(r"(?<![0-9０-９])([2-9２-９二三四五六七八九十])(?:頭|選)")
+# 「18頭立て」「16頭が登録」のように頭数がフィールドの大きさを表すだけのものは対象外
+_FIELD_SIZE_RE = re.compile(r"頭(?:立て|が登録|登録|出走|が出走|除外|回避)")
+_PICK_TITLE_RE = re.compile(r"予想|候補|注目|推奨|狙|穴|期待|おすすめ|オススメ|有力|激走|買い")
+
+
+def title_promised_horse_count(title: str) -> int | None:
+    """タイトルが「本命候補3頭」のように具体的な頭数の推奨馬を約束していれば、その頭数を返す。"""
+    title = title or ""
+    if not _PICK_TITLE_RE.search(title) or _FIELD_SIZE_RE.search(title):
+        return None
+    m = _PROMISED_HORSES_RE.search(title)
+    if not m:
+        return None
+    ch = unicodedata.normalize("NFKC", m.group(1))
+    return int(ch) if ch.isdigit() else _KANJI_NUM[ch]
+
+
+def extract_promised_horses(
+    api_key: str, model_name: str, title: str, body: str, count: int,
+) -> list[str]:
+    """タイトルが約束する推奨馬のうち、本文に馬名が書かれているものを返す。
+
+    Geminiに抽出させたうえで、本文に実在する文字列だけを残す（幻覚対策）。
+    QuotaExceeded 以外のAPI失敗は例外をそのまま投げる。
+    """
+    prompt = (
+        "以下の競馬ニュース記事のタイトルは、推奨・注目する馬を"
+        f"{count}頭紹介すると約束しています。\n"
+        "本文の中で、その推奨馬・注目馬として実際に名前が挙げられている競走馬の馬名だけを、"
+        "JSON配列（例: [\"馬名A\", \"馬名B\"]）で出力してください。\n"
+        "- 本文に書かれている馬名だけ。推測で補わないこと\n"
+        "- 種牡馬・血統（父・母父など）、過去の勝ち馬、関連記事リンク・見出しにだけ出てくる馬は含めないこと\n"
+        "- 該当する馬がいなければ [] と出力すること\n"
+        "JSON配列以外は出力しないこと。\n\n"
+        f"タイトル: {title}\n本文: {body}"
+    )
+    text = call_gemini(api_key, model_name, prompt)
+    m = re.search(r"\[.*?\]", text, re.DOTALL)
+    names = json.loads(m.group(0)) if m else []
+    result: list[str] = []
+    for name in names:
+        name = str(name).strip()
+        if name and name in body and name not in result:
+            result.append(name)
+    return result
+
+
 def fact_check_script(
     api_key: str, model_name: str,
     article_title: str, article_body: str, script: str,
@@ -400,6 +455,8 @@ def main() -> None:
                 "誰が何を言ったかが伝わるようにしてください。"
                 "発言は言い換えず、本文のまま使ってください。"
             )
+        promised_count = title_promised_horse_count(item["title"])
+        promised_horses: list[str] | None = None  # 抽出前は None
         lenient_sys_prompt = (
             sys_prompt
             + "\n\n【追加指示】元のニュース本文には情報が含まれています。"
@@ -412,6 +469,30 @@ def main() -> None:
             print(f"[{i}] 使用: key={key_label} model={model_name}")
             current_sys = lenient_sys_prompt if skip_count > 0 else sys_prompt
             try:
+                if promised_count and promised_horses is None:
+                    try:
+                        promised_horses = extract_promised_horses(
+                            key, model_name, item["title"], summary_text, promised_count
+                        )
+                    except QuotaExceeded:
+                        raise
+                    except Exception as e:
+                        print(f"[{i}]  [警告] 推奨馬の抽出に失敗: {type(e).__name__}。次のキー/モデルで再試行します。", file=sys.stderr)
+                        continue
+                    print(f"[{i}]  タイトルの約束 {promised_count}頭 / 本文の推奨馬: {promised_horses}")
+                    if len(promised_horses) < promised_count:
+                        print(
+                            f"[{i}]  → タイトルは{promised_count}頭を約束しているが本文に"
+                            f"{len(promised_horses)}頭しか馬名が無いためスキップ（有料記事の本文欠落など）"
+                        )
+                        return i, True
+                    user_content += (
+                        f"\n【この記事について】タイトルで{promised_count}頭の推奨馬を約束している記事です。"
+                        f"次の{len(promised_horses)}頭を必ずすべて馬名で挙げ、"
+                        "それぞれ本文に書かれている推奨理由・根拠を添えてください："
+                        + "、".join(promised_horses)
+                        + "。全頭を入れるため、この記事に限り350文字以内まで可とします。"
+                    )
                 script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
                 print(f"[{i}]  [Gemini生出力 {len(script)}文字]: {script!r}")
                 # 内容が薄い記事はスキップ（初回は強調プロンプトで再試行）
@@ -559,6 +640,12 @@ def main() -> None:
                     last_period = script.rfind("。")
                     if last_period != -1:
                         script = script[:last_period + 1]
+                # タイトルが約束した推奨馬が全頭脚本に入っているか
+                if promised_horses:
+                    missing = [h for h in promised_horses if h not in script]
+                    if missing:
+                        print(f"[{i}]  → 推奨馬 {missing} が脚本に無いため次のキー/モデルで再生成します。", file=sys.stderr)
+                        continue
                 # ファクトチェック: 元記事にない情報が混入していないか検証
                 fc_ok, fc_reason = fact_check_script(
                     key, model_name, item["title"], summary_text, script
