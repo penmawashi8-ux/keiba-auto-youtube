@@ -1,10 +1,9 @@
-date: 2026-10-04T10:08:05.463662Z
+date: 2026-10-05T01:07:35.605768Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=iFz-rHldpi8 title=【サウジアラビアRC　展望】完成度高いフィリオソラーレ　注目フライトライン産駒デ
-OK project=1 video_id=zZjrWhjwD9s title=【アイルランドT　展望】オークス馬カムニャック始動　実績で引け取らないクイーンズ
-OK project=1 video_id=ua-m033EeHE title=田口貫太騎手の父・輝彦調教師が祝福メッセージ「素直に『おめでとう』と伝えたいです
+OK project=1 video_id=NCZ5VpcF3E4 title=凱旋門賞売り上げ55億6302万9300円、昨年凱旋門賞66億3713万5900
+OK project=1 video_id=fGY53sZ_lgE title=【サウジアラビアロイヤルカップ展望】好調なエフフォーリア産駒からベルウッドディー
