@@ -1,10 +1,10 @@
-date: 2026-10-05T04:11:13.830220Z
+date: 2026-10-05T07:06:40.143542Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=cIgLS8Osz88 title=【スワンS想定騎手】ダイヤモンドノットは横山武史騎手、ウインマーベルは松山弘平騎
-OK project=1 video_id=EEtHcNK73uc title=【アイルランドT】ニシノティアモが西山軍団2週連続重賞Vへ　上原佑調教師「秋の大
-OK project=1 video_id=WXHVjSr9F_0 title=【東京盃・枠順確定】戸崎圭太騎手のサトノボヤージュは4枠5番　連覇かかるヤマニン
+OK project=1 video_id=CyPHfUkzWXQ title=【凱旋門賞】「ザ・ロイヤルファミリー」に“サイン”が隠されていた!?ネット反響「
+OK project=1 video_id=vlH6ElSTv_w title=【大井・東京盃枠順】サトノボヤージュは4枠5番、ヤマニンチェルキは5枠8番
+OK project=1 video_id=DXwXx4xRy1U title=川田将雅「ユーイチ!」　ゴール直後のブチギレ“不仲説”の真相…北村友「だいぶ払拭
