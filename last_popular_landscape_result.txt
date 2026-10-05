@@ -1,6 +1,6 @@
-date: 2026-10-04T11:04:55.696617Z
+date: 2026-10-05T11:07:09.395510Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=uBZG_NTtdYs views=109049 title=ジュウリョクピエロ秋華賞回避　便秘で順調さを欠いたため　今村聖奈とのコンビで5月オークス制覇【11万回閲覧・話題の競馬ニ
+OK project=1 video_id=ssu0AS837YE views=101692 title=【仏・凱旋門賞結果】ダリズが史上8頭目の連覇達成！ メイショウタバル14着、アドマイヤテラ11着【10万回閲覧・話題の競
