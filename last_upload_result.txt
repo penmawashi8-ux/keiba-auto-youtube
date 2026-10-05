@@ -1,9 +1,10 @@
-date: 2026-10-05T01:07:35.605768Z
+date: 2026-10-05T04:11:13.830220Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NCZ5VpcF3E4 title=凱旋門賞売り上げ55億6302万9300円、昨年凱旋門賞66億3713万5900
-OK project=1 video_id=fGY53sZ_lgE title=【サウジアラビアロイヤルカップ展望】好調なエフフォーリア産駒からベルウッドディー
+OK project=1 video_id=cIgLS8Osz88 title=【スワンS想定騎手】ダイヤモンドノットは横山武史騎手、ウインマーベルは松山弘平騎
+OK project=1 video_id=EEtHcNK73uc title=【アイルランドT】ニシノティアモが西山軍団2週連続重賞Vへ　上原佑調教師「秋の大
+OK project=1 video_id=WXHVjSr9F_0 title=【東京盃・枠順確定】戸崎圭太騎手のサトノボヤージュは4枠5番　連覇かかるヤマニン
