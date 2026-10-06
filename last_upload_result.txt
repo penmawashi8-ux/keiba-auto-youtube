@@ -1,10 +1,10 @@
-date: 2026-10-05T10:06:44.658273Z
+date: 2026-10-06T01:09:17.363757Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A-5fG6aZzb4 title=【AI予想・アイルランドT】人工知能は能力を素直に評価!? 過去の傾向からも好走
-OK project=1 video_id=gKoWsYIFwVM title=【スワンS】ショウナンザナドゥは2走前からのブリンカー効果絶大　松下調教師「しっ
-OK project=1 video_id=NNBYGRH-3WE title=【サウジアラビアRC】奥がありそうなベルウッドディープに注目　室井調教師「追い出
+OK project=1 video_id=vJ4j-Y_Cjm0 title=【根本康広　我が道6】3歳を怖がる16歳がいるか?　考えさせる師匠の短い言葉
+OK project=1 video_id=JKWybLWGNM0 title=【アイルランドT】「一瞬の切れ味というより総合力で勝負」25年オークス馬カムニャ
+OK project=1 video_id=kN5U5JUJyaU title=【競走伝】“世界のYAHAGI”はここから始まった　18度目の挑戦でつかんだ「特
