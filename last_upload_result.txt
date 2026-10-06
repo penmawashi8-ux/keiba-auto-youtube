@@ -1,10 +1,10 @@
-date: 2026-10-06T01:09:17.363757Z
+date: 2026-10-06T04:09:45.895885Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vJ4j-Y_Cjm0 title=【根本康広　我が道6】3歳を怖がる16歳がいるか?　考えさせる師匠の短い言葉
-OK project=1 video_id=JKWybLWGNM0 title=【アイルランドT】「一瞬の切れ味というより総合力で勝負」25年オークス馬カムニャ
-OK project=1 video_id=kN5U5JUJyaU title=【競走伝】“世界のYAHAGI”はここから始まった　18度目の挑戦でつかんだ「特
+OK project=1 video_id=xmn9bLzPZVU title=【アイルランドT】カネラフィーナは前走の競馬を糧に巻き返す　手塚久調教師「160
+OK project=1 video_id=Huqkx_3nGIQ title=【注目馬動向】マスカレードボールが天皇賞・秋連覇へ今日10月6日に帰厩　僚馬の毎
+OK project=1 video_id=3My6ABXL4U4 title=【POG】ブライトスクリプトが好調教通りの快勝　同厩舎の先輩G1馬級の能力の持ち
