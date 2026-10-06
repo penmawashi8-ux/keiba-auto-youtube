@@ -1,10 +1,10 @@
-date: 2026-10-06T04:09:45.895885Z
+date: 2026-10-06T07:11:23.934126Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xmn9bLzPZVU title=【アイルランドT】カネラフィーナは前走の競馬を糧に巻き返す　手塚久調教師「160
-OK project=1 video_id=Huqkx_3nGIQ title=【注目馬動向】マスカレードボールが天皇賞・秋連覇へ今日10月6日に帰厩　僚馬の毎
-OK project=1 video_id=3My6ABXL4U4 title=【POG】ブライトスクリプトが好調教通りの快勝　同厩舎の先輩G1馬級の能力の持ち
+OK project=1 video_id=-uHzEuMAV_0 title=【凱旋門賞】「勇敢な日本のサムライたちが…」夢敗れた日本馬へフランスギャロが温か
+OK project=1 video_id=ppipaDeG-Fc title=【凱旋門賞】福永師×川田タッグで挑戦期待も…今年も福永師が拒否!川田「バルザって
+OK project=1 video_id=4WoegB47Zqw title=【サウジアラビアRC】フライトライン産駒の逸材デミアンで「結果出したい」斎藤誠調
