@@ -1,10 +1,10 @@
-date: 2026-10-07T04:10:20.609731Z
+date: 2026-10-07T07:08:16.850458Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vo6QHPP_KMU title=【阪神アーバン競馬】吉村智洋騎手が地方通算4000勝　史上17人目　園田3Rのア
-OK project=1 video_id=YJ_GZFS5nqk title=【菊花賞想定】ロブチェン、ダノンヒストリーなど19頭
-OK project=1 video_id=KVQQm3WF3z8 title=【注目馬動向】凱旋門賞の雪辱を期すアドマイヤテラ　有馬記念参戦を視野に友道調教師
+OK project=1 video_id=pnXN9aOj_rw title=【よもやま話】菅原明良騎手と久々に美浦で会話…海外武者修行の成果発揮を期待！/馬
+OK project=1 video_id=YgFUUz845Ec title=【地方競馬】兵庫の吉村智洋騎手が通算４０００勝　史上１７人目で兵庫生え抜きでは３
+OK project=1 video_id=ENzzXOtdL9s title=【週末情報】ラヴァンダが栗東坂路で4F51秒5の好時計 連覇へ出撃態勢は文句なし
