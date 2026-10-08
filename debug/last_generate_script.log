@@ -1,46 +1,88 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (45個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash']
 試行組み合わせ数: 3 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【園田競馬・人気ジョッキーは語る】イングリッドローズで勝利を意識する土方颯太騎手「昇級戦だがチャンスは続いている」 ---
-[0] Gemini入力本文 359文字: '◆園田競馬5日目(10月8日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u3000ディナーラッシュ(9R)に力が入る。「調子のよさを生かしたい」(◎)。サンライズスコール(11R)は「枠の良さを生かしてどこまで迫れるか」(○)。\n\t\t\t\t\u3000《田野\u3000豊三》\n'
+--- 記事[0]: JRA調教師試験第1次は19人が合格、騎手免許試験第1次は2人合格　JRA発表 ---
+[0] Gemini入力本文 367文字: 'JRAは8日、2027年度調教師免許試験(新規)および騎手免許試験(新規)第1次試験の合格者数を発表した。\n\u3000調教師免許試験は19人、騎手免許試験は2人が合格した。\n\u30009月2日にJRAが発表した申請者数は調教師試験が114人、騎手試験はJR'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 【根本康広　我が道8】朝は厩舎仕事、夜は定時制通学　そこで妻と… ---
-[1] Gemini入力本文 372文字: '当時の卒業試験は京都、阪神、東京、中山の競馬場と白井(千葉県)で1次試験が行われました。普段は厩舎で下乗りをしているような短期講習の人たちもいるので、競馬学校卒業生がメインの今よりも人数が多かった。内容は毎年微妙に変わりますけど、1次試験は'
+--- 記事[1]: 【ジャパンダートクラシックレース後コメント】シルバーレシオ横山武史騎手ら ---
+[1] Gemini入力本文 625文字: '10月7日(水)、大井競馬場(曇・良)で、ダート3歳三冠の最終戦、第28回ジャパンダートクラシック(JpnI、ダート2000m、出走16頭)が行われ、JRAのシルバーレシオが、序盤は後ろから3頭目ぐらいに待機し、3、4コーナーで徐々に進出。'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「最新のレース情報が入ってきました。」 ---
 
---- 記事[2]: ミシェル騎手12日にJRA短期免許最終日「月曜日まで頑張りたい」先月2勝のみで「自分にがっかりしています」 ---
-[2] Gemini入力本文 367文字: '12日が自身初のJRA短期免許最終日となるミカエル・ミシェル騎手(31)＝フランス＝が7日、美浦トレセンで「月曜日(12日)まで騎乗があるので頑張りたい」と、ラストウィークへの意気込みを語った。\n\t\t\t\t\u3000印象深いレースとして先月13日の中'
+--- 記事[2]: 【アイルランドT】メンバー唯一のG1馬カムニャックがいつも通りの“友道流”仕上げ「今回は落ち着きもあります」 ---
+[2] Gemini入力本文 344文字: '◆アイルランドトロフィー追い切り(7日・栗東トレセン)\n\t\t\t\t\u3000第2回アイルランドトロフィー・G2(11日、東京＝1着にエリザベス女王杯の優先出走権)の追い切りが7日、東西トレセンで行われた。メンバー唯一のG1馬カムニャックは栗東・坂路で'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 429
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[1] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[2]  [Gemini生出力 234文字]: '注目の競馬情報をお届けします。ミカエル・ミシェル騎手のJRA短期免許最終日は12日となります。ミカエル・ミシェル騎手は7日、美浦トレセンで「月曜日まで騎乗があるので頑張りたい」と、ラストウィークへの意気込みを語りました。印象深いレースとして、先月13日の中山での騎乗機会2連勝を挙げたものの、勝利はその2つのみだったと述べています。ミカエル・ミシェル騎手は「いい経験ができたと思いますが、思ったより勝つことができず、自分にがっかりしています」と悔しさをにじませました。'
-[2]  [redirectフィルター] 234文字 → 219文字
+[0]  [Gemini生出力 226文字]: '競馬ファン注目の情報です。JRAは8日、2027年度調教師免許試験および騎手免許試験の第1次試験合格者数を発表しました。調教師免許試験では19人が、騎手免許試験では2人が合格。9月2日にJRAが発表した申請者数は、調教師試験が114人、騎手試験はJRA競馬学校生を除くと4人でした。調教師免許試験の第2次試験は12月2日と3日に行われ、合格発表予定日は12月10日です。騎手免許試験の第2次試験および競馬学校騎手課程生徒に対する試験は来年実施されます。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (226文字)
+[0]  プレビュー: 競馬ファン注目の情報です。JRAは8日、2027年度調教師免許試験および騎手免許試験の第1次試験合格者数を発表しました。調教師免許試験では19人が、騎手免許試験...
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[1]  [Gemini生出力 280文字]: '競馬ファン注目の情報です。10月7日(水)、大井競馬場で行われたダート3歳三冠の最終戦、第28回ジャパンダートクラシック(JpnI、ダート2000m、出走16頭)は、JRAのシルバーレシオが勝利しました。シルバーレシオは序盤、後ろから3頭目ぐらいに待機し、3、4コーナーで徐々に進出。直線では馬群の外から追い込んで前を捉え切り、勝ちタイム2分04秒0を記録しました。最後の直線で早めに抜け出したワンダーディーンが2着、追い上げたチェリヴェントが3着に入っています。シルバーレシオに騎乗した横山武史騎手は、「何が何でも結果を出そうと思っていた」と笑顔満開でした。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (280文字)
+[1]  プレビュー: 競馬ファン注目の情報です。10月7日(水)、大井競馬場で行われたダート3歳三冠の最終戦、第28回ジャパンダートクラシック(JpnI、ダート2000m、出走16頭...
+  HTTP 503
+[2] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 200
+[2]  [Gemini生出力 247文字]: '最新のレース情報が入ってきました。第2回アイルランドトロフィー・G2が11日に東京で開催されます。このレースは1着馬にエリザベス女王杯の優先出走権が与えられます。7日には東西トレセンで追い切りが行われ、メンバー唯一のG1馬であるカムニャックが栗東・坂路で余力十分の動きを見せました。これまで通りの当週ソフト調整で万全を期しており、順調だからこそいつも通りで整えられたとのことです。カムニャックは坂路で単走、しまいにスッと伸ばした程度でしたが、「今回は落ち着きもあります」とコメントされています。'
 [2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (219文字)
-[2]  プレビュー: ミカエル・ミシェル騎手のJRA短期免許最終日は12日となります。ミカエル・ミシェル騎手は7日、美浦トレセンで「月曜日まで騎乗があるので頑張りたい」と、ラストウィ...
-  HTTP 200
-[1]  [Gemini生出力 256文字]: '重要な競馬ニュースをお伝えします。根本康広氏の当時の卒業試験についてです。1次試験は京都、阪神、東京、中山の競馬場と千葉県の白井で行われました。当時は普段厩舎で下乗りをしているような短期講習の人たちもいたため、競馬学校卒業生がメインの今よりも人数が多かったとされています。試験内容は毎年微妙に変わりますが、1次試験は筆記と走路試験で構成され、追い切りのタイムと騎乗フォームが確認されました。そこでの点数上位者が、馬事公苑での2次試験、つまり最終試験へと進みました。根本氏は馬を動かせた自信があったと語っています。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (256文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。根本康広氏の当時の卒業試験についてです。1次試験は京都、阪神、東京、中山の競馬場と千葉県の白井で行われました。当時は普段厩舎で...
-  HTTP 200
-[0]  [Gemini生出力 269文字]: '今日の競馬情報です。園田競馬5日目、10月8日の情報をお伝えします。小牧太騎手は、9レースのディナーラッシュについて「調子のよさを生かしたい」と語っています。また、11レースのサンライズスコールについては「枠の良さを生かしてどこまで迫れるか」とコメントしました。田野豊三騎手は、3連勝がかかる9レースのフェアリータイザンに気合を見せており、「少し間隔は空いたけど状態はいい。引き続き前、前の競馬で。斤量の56キロも気にならない」と話しています。さらに、1レースのスティールソニックについては「前走がいい内容。1400?..」と述べました。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (267文字)
-[0]  プレビュー: 今日の競馬情報です。園田競馬5日目、10月8日の情報をお伝えします。小牧太騎手は、9レースのディナーラッシュについて「調子のよさを生かしたい」と語っています。ま...
+[2]  → output/script_2.txt 保存 (247文字)
+[2]  プレビュー: 最新のレース情報が入ってきました。第2回アイルランドトロフィー・G2が11日に東京で開催されます。このレースは1着馬にエリザベス女王杯の優先出走権が与えられます...
 
 3 件の脚本を生成しました。
