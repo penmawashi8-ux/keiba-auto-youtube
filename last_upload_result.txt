@@ -1,9 +1,10 @@
-date: 2026-10-07T10:06:50.365719Z
+date: 2026-10-08T01:08:01.171619Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=g7D2ze9cJK4 title=【サウジアラビアRC】ベルウッドディープは新人トレーナーに初重賞をプレゼントでき
-OK project=1 video_id=7nbwp0Hwn_E title=頸椎負傷の石川裕紀人騎手が今週から復帰「気持ちが入りますね」　日曜日のアイルラン
+OK project=1 video_id=9SRFHn71KvY title=【園田競馬・人気ジョッキーは語る】イングリッドローズで勝利を意識する土方颯太騎手
+OK project=1 video_id=oApcO3FPpvY title=【根本康広　我が道8】朝は厩舎仕事、夜は定時制通学　そこで妻と…
+OK project=1 video_id=GDrJrIq1MQI title=ミシェル騎手12日にJRA短期免許最終日「月曜日まで頑張りたい」先月2勝のみで「
