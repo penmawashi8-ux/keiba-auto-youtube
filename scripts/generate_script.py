@@ -127,9 +127,36 @@ _COMMENT_TITLE_RE = re.compile(
 _QUOTE_RE = re.compile(r"[「『][^」』]{10,}[」』]")
 
 
+# 「シルバーレシオ横山武史騎手ら」のように複数人の発言を約束するタイトル
+_MULTI_SPEAKER_TITLE_RE = re.compile(r"(?:騎手|調教師|師|助手|オーナー|陣営|関係者)ら")
+
+# --- 関連記事見出しの混入対策 -----------------------------------------------
+# netkeiba の有料記事などは本文が取れず、ページ下部の画像キャプションと
+# 関連記事の見出し（「【地方競馬】…横山武は「何が何でも…」と笑顔満開 【大井・…】…」）
+# だけが本文として入ってくる。見出しは別記事の内容なので、そこにある鉤括弧を
+# この記事のコメントとして数えたり脚本に使ったりしてしまう（2026年10月に発生）。
+# 句点を含まず次の【 か末尾まで続く【見出し】の並びは関連記事リンクとして除去する。
+_RELATED_HEADLINE_RE = re.compile(r"【[^】。]{1,40}】[^【。]*(?=【|$)")
+
+
+def strip_related_headlines(text: str) -> str:
+    text = re.sub(r"\s*-->\s*$", "", text or "")
+    return _RELATED_HEADLINE_RE.sub("", text).strip()
+
+
 def title_promises_comments(title: str) -> bool:
     """タイトルが「関係者の発言」を約束しているか。"""
     return bool(_COMMENT_TITLE_RE.search(title or ""))
+
+
+def title_promises_multiple_speakers(title: str) -> bool:
+    """タイトルが「〇〇騎手ら」のように複数人の発言を約束しているか。"""
+    return bool(_MULTI_SPEAKER_TITLE_RE.search(title or ""))
+
+
+def count_quotes(text: str) -> int:
+    """発言とみなせる鉤括弧の数（重複は1つとして数える）。"""
+    return len(set(_QUOTE_RE.findall(text or "")))
 
 
 def body_has_quote(body: str) -> bool:
@@ -415,6 +442,8 @@ def main() -> None:
                 _seen_sum.append(_norm_sl)
                 _clean_sum.append(_sl)
         summary_text = '\n'.join(_clean_sum).strip()
+        # 関連記事の見出し（別記事の内容）を除去
+        summary_text = strip_related_headlines(summary_text)
         print(f"\n--- 記事[{i}]: {item['title'][:60]} ---")
         print(f"[{i}] Gemini入力本文 {len(summary_text)}文字: {summary_text[:120]!r}")
 
@@ -423,6 +452,11 @@ def main() -> None:
         wants_comments = title_promises_comments(item["title"])
         if wants_comments and not body_has_quote(summary_text):
             print(f"[{i}]  → タイトルはコメントだが本文に発言が無いためスキップ")
+            return i, True
+        # 「〇〇騎手ら」なのに発言が1人分しか無ければ、タイトルと中身が食い違う
+        multi_speakers = wants_comments and title_promises_multiple_speakers(item["title"])
+        if multi_speakers and count_quotes(summary_text) < 2:
+            print(f"[{i}]  → タイトルは複数人のコメント（〜ら）だが本文の発言が1つ以下のためスキップ")
             return i, True
         sys_prompt = get_system_prompt()
         _BODY_LIMIT = 1500
@@ -454,6 +488,12 @@ def main() -> None:
                 "レース結果の羅列で終わらせず、本文の鉤括弧の発言を必ず脚本に入れ、"
                 "誰が何を言ったかが伝わるようにしてください。"
                 "発言は言い換えず、本文のまま使ってください。"
+            )
+        if multi_speakers:
+            user_content += (
+                "タイトルは複数の関係者のコメントを約束しているので、"
+                "本文に発言がある関係者を2人以上取り上げ、それぞれ誰の発言かを明示してください。"
+                "1人の発言だけで終わらせないこと。"
             )
         promised_count = title_promised_horse_count(item["title"])
         promised_horses: list[str] | None = None  # 抽出前は None
@@ -646,6 +686,10 @@ def main() -> None:
                     if missing:
                         print(f"[{i}]  → 推奨馬 {missing} が脚本に無いため次のキー/モデルで再生成します。", file=sys.stderr)
                         continue
+                # 「〇〇騎手ら」のタイトルなのに発言が1つしか入っていない脚本は作り直す
+                if multi_speakers and len(set(re.findall(r"「[^」]+」", script))) < 2:
+                    print(f"[{i}]  → 複数人のコメント記事なのに脚本の発言が1つ以下のため次のキー/モデルで再生成します。", file=sys.stderr)
+                    continue
                 # ファクトチェック: 元記事にない情報が混入していないか検証
                 fc_ok, fc_reason = fact_check_script(
                     key, model_name, item["title"], summary_text, script
