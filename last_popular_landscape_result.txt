@@ -1,6 +1,6 @@
-date: 2026-10-07T11:05:13.255276Z
+date: 2026-10-08T11:23:34.736257Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=JIPT9vW4Ik4 views=51983 title=【レディスプレリュード】まさか…単勝1・4倍のダブルハートボンドは初めて馬券圏外　坂井瑠星騎手「追ってから反応できなかっ
+OK project=1 video_id=idPII3gLUKI views=119168 title=【大井・ジャパンダートクラシック結果】シルバーレシオが差し切ってJpnI初制覇【12万回閲覧・話題の競馬ニュース】
