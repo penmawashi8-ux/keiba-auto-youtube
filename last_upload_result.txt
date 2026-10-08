@@ -1,10 +1,10 @@
-date: 2026-10-08T07:10:36.662381Z
+date: 2026-10-08T10:07:29.964074Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KSKBvUY75uU title=【サウジアラビアRC出走馬・騎手確定】フィリオソラーレ＆C.ルメール騎手、ベルウ
-OK project=1 video_id=N23BoTVfKE4 title=【アイルランドT出走馬・騎手確定】カムニャック＆川田将雅騎手、クイーンズウォーク
-OK project=1 video_id=AUWz8ReWYbc title=【スワンS出走馬・騎手確定】エリカエクスプレス＆武豊騎手、オフトレイル＆菅原明良
+OK project=1 video_id=lsdvgegEf0s title=【JRA新馬戦】スターズオンアースの半弟ラニアケアなどがデビュー
+OK project=1 video_id=QT99JBQD4wg title=【秋華賞・1週前】最後の1冠獲得へドリームコアが好時計　それでも田中博調教師は「
+OK project=1 video_id=LRKf_DQZhfc title=【アイルランドT】ミラビリスマジックの木曜追いに明確な2つの狙い　千葉調教師「水
