@@ -1,10 +1,9 @@
-date: 2026-10-09T07:10:15.750250Z
+date: 2026-10-09T10:06:30.026521Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6QRK_9AypDo title=【週末情報】前走の中京記念に続く重賞連勝＆連覇達成へ ラヴァンダは臨戦態勢に抜か
-OK project=1 video_id=4yWCfb-VNVE title=【POG】フォーエバーヤングの弟ヤングリッチが来週京都で初陣へ 1週前の攻め内容
-OK project=1 video_id=v-MmlDe49aQ title=【有力馬動向】ラベルセーヌが美浦坂路で15-15 しなやかな身のこなしが好調ぶり
+OK project=1 video_id=SkV5k7S1owM title=【菊花賞想定馬・騎手】ロブチェン、ダノンヒストリーなど22頭
+OK project=1 video_id=snkrNgEOL3w title=【富士S想定馬・騎手】トロヴァトーレ、シュガークンなど15頭

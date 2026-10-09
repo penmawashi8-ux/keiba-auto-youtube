@@ -3334,3 +3334,6 @@ https://news.netkeiba.com/?pid=news_view&no=345070
 https://news.netkeiba.com/?pid=news_view&no=345085
 https://news.netkeiba.com/?pid=news_view&no=345083
 https://news.netkeiba.com/?pid=news_view&no=345084
+https://news.netkeiba.com/?pid=news_view&no=345092
+https://news.netkeiba.com/?pid=news_view&no=345093
+https://news.netkeiba.com/?pid=news_view&no=345100
