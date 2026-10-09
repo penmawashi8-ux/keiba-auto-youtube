@@ -1,10 +1,10 @@
-date: 2026-10-09T01:08:13.128415Z
+date: 2026-10-09T04:08:11.577997Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8ulApLgtsfc title=9日の大井3Rで素質馬が激突　破格の時計を出したリアライズオリオン　「どこまで行
-OK project=1 video_id=h_0yQz4V1MQ title=【根本康広　我が道9】騎手試験4回目でついに合格　そしていよいよ迎えた最初のレー
-OK project=1 video_id=b57iAeM1j6E title=【サウジアラビアRC】阪神連覇にあやかり!ニシノトラノスケが西山オーナーに2週連
+OK project=1 video_id=fJ3c1ujPlA0 title=「イケメンおふたりで眼福」「何か似てるw」DAIGOが誕生日を迎える名手との2シ
+OK project=1 video_id=hNUd-NV-yWQ title=【注目馬動向】ルガルは選出されればマーフィー騎手でBCターフへ　ジョバンニは松山
+OK project=1 video_id=GrZ1coawEYQ title=香港の短距離王カーインライジングがレーティング135で首位守る　ロンジンワールド
