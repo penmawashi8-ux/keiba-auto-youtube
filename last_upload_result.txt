@@ -1,9 +1,10 @@
-date: 2026-10-09T10:06:30.026521Z
+date: 2026-10-10T01:10:42.013304Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SkV5k7S1owM title=【菊花賞想定馬・騎手】ロブチェン、ダノンヒストリーなど22頭
-OK project=1 video_id=snkrNgEOL3w title=【富士S想定馬・騎手】トロヴァトーレ、シュガークンなど15頭
+OK project=1 video_id=tT9FVKz8WM4 title=【注目馬動向】ローシャムパークが一気の距離延長!　ステイヤーズS参戦をサンデーサ
+OK project=1 video_id=Vs8OclDF-yM title=【注目馬動向】新潟記念を勝ったゾロアストロは天皇賞・秋への出走を見送る
+OK project=1 video_id=MtsKTiCPWNU title=新潟記念覇者ゾロアストロは天皇賞・秋見送り　状態が上向いたタイミングで次の目標を
