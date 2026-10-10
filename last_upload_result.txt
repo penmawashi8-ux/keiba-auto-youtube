@@ -1,10 +1,8 @@
-date: 2026-10-10T07:06:54.232228Z
+date: 2026-10-10T10:06:15.746569Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ZYkBCgx1e9c title=【JRA・WIN5】本日のWIN5は的中318票、配当108万6880円
-OK project=1 video_id=U2s9rHeTTW4 title=【サウジアラビアRC】1番人気ルメール騎手のフィリオソラーレは3着　直線猛追する
-OK project=1 video_id=1iSubMZoddk title=【サウジアラビアRC】アゴルディーノ　ゴール前でサトノハクマイを差し切って1位入
+OK project=1 video_id=o74HzBmEnQc title=【注目馬動向】芙蓉S3着のジョドレルバンクは東京スポーツ杯2歳Sで巻き返しへ
