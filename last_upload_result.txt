@@ -1,10 +1,10 @@
-date: 2026-10-10T01:10:42.013304Z
+date: 2026-10-10T04:07:55.861707Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tT9FVKz8WM4 title=【注目馬動向】ローシャムパークが一気の距離延長!　ステイヤーズS参戦をサンデーサ
-OK project=1 video_id=Vs8OclDF-yM title=【注目馬動向】新潟記念を勝ったゾロアストロは天皇賞・秋への出走を見送る
-OK project=1 video_id=MtsKTiCPWNU title=新潟記念覇者ゾロアストロは天皇賞・秋見送り　状態が上向いたタイミングで次の目標を
+OK project=1 video_id=xqBAnpMBI08 title=【京都6R新馬戦結果】モーニン産駒マイスターシューズが後方からの差し切り勝ち
+OK project=1 video_id=CEiBvtwQdNA title=【東京5R新馬戦結果】サートゥルナーリア産駒サトノカグラが初陣飾る
+OK project=1 video_id=5Uk_0Te9Tj8 title=【東京4R・2歳新馬】6番人気のカラメーロがメンバー最速の末脚でV　大野拓弥騎手
