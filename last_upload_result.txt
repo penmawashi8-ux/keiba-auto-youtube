@@ -1,10 +1,10 @@
-date: 2026-10-10T04:07:55.861707Z
+date: 2026-10-10T07:06:54.232228Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=xqBAnpMBI08 title=【京都6R新馬戦結果】モーニン産駒マイスターシューズが後方からの差し切り勝ち
-OK project=1 video_id=CEiBvtwQdNA title=【東京5R新馬戦結果】サートゥルナーリア産駒サトノカグラが初陣飾る
-OK project=1 video_id=5Uk_0Te9Tj8 title=【東京4R・2歳新馬】6番人気のカラメーロがメンバー最速の末脚でV　大野拓弥騎手
+OK project=1 video_id=ZYkBCgx1e9c title=【JRA・WIN5】本日のWIN5は的中318票、配当108万6880円
+OK project=1 video_id=U2s9rHeTTW4 title=【サウジアラビアRC】1番人気ルメール騎手のフィリオソラーレは3着　直線猛追する
+OK project=1 video_id=1iSubMZoddk title=【サウジアラビアRC】アゴルディーノ　ゴール前でサトノハクマイを差し切って1位入
