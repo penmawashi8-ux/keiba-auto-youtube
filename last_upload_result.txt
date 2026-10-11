@@ -1,9 +1,10 @@
-date: 2026-10-11T01:06:53.487181Z
+date: 2026-10-11T04:07:40.538277Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nz-inTVmZf4 title=【高知競馬・横浜特別】波乱!　単勝85・8倍のサンダーゼウスが逃げ粘った　近藤翔
-OK project=1 video_id=zr6dlXSUqyQ title=【アイルランドT予想】狙うべき人気順・枠・騎手・馬名!? 過去データから探るGI
+OK project=1 video_id=jtf451SdH4A title=【京都5R・2歳新馬】サダムパテックの近親ゴルトクリーガーが1番人気に応える　松
+OK project=1 video_id=GFLQRi84uIc title=【東京5R・2歳新馬】2・7億円のラニアケアはインで詰まったまま終戦の6着　姉は
+OK project=1 video_id=6B39P6WxQlk title=【東京5R新馬戦結果】キタサンブラック産駒グロリアススマイルが差し切り勝ち
