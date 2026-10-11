@@ -1,8 +1,9 @@
-date: 2026-10-10T10:06:15.746569Z
+date: 2026-10-11T01:06:53.487181Z
 projects_loaded: 2
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=o74HzBmEnQc title=【注目馬動向】芙蓉S3着のジョドレルバンクは東京スポーツ杯2歳Sで巻き返しへ
+OK project=1 video_id=nz-inTVmZf4 title=【高知競馬・横浜特別】波乱!　単勝85・8倍のサンダーゼウスが逃げ粘った　近藤翔
+OK project=1 video_id=zr6dlXSUqyQ title=【アイルランドT予想】狙うべき人気順・枠・騎手・馬名!? 過去データから探るGI
