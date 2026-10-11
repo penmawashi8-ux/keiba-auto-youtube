@@ -1,6 +1,6 @@
-date: 2026-10-10T11:04:10.275993Z
+date: 2026-10-11T11:04:29.963210Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A_XX7tPjjgo views=75592 title=ダミアン・レーン騎手が公式XでJRA騎手免許1次試験合格を明かす　ルメール&Mデムーロ騎手に続くか?【7.6万回閲覧・話
+OK project=1 video_id=prly08jjfQo views=35685 title=【サウジアラビアRCレース後コメント】アゴルディーノ横山和生騎手ら【3.6万回閲覧・話題の競馬ニュース】
