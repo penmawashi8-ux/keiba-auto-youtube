@@ -30,7 +30,7 @@ concurrency:
 jobs:
   simulate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60  # 馬ページの取得は42分で区切り、残りは次回の実行で続きから取る
+    timeout-minutes: 130  # 馬ページの取得は100分で区切り、残りは次回の実行で続きから取る
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -62,7 +62,7 @@ jobs:
         run: python scripts/sim_fetch.py 2003 2025
 
       - name: Fetch full careers of graded runners (time-boxed, resumes next run)
-        run: python scripts/sim_fetch_horses.py 42
+        run: python scripts/sim_fetch_horses.py 100
 
       - name: Save fetched data to research-output branch
         run: bash .github/scripts/save_sim_outputs.sh "取得データ" sim/races_cache.json sim/races.json sim/horses_cache.json
