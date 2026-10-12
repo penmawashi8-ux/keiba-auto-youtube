@@ -8,7 +8,7 @@
   2. 1走ごとのスピード値 = その年・その馬場・そのペースでの「平均的なG1勝ち馬」のタイム − その馬のタイム
      （2400m換算。定量より重い/軽い斤量を背負った分も補正）
      → 0 なら平均的なG1馬、+1.0 なら平均的なG1馬より2400mで1秒速い
-  3. 能力値 = 対象レース（JRA芝1800〜2600mの重賞。2歳戦・牝馬限定戦は除く）のスピード値上位4走の平均
+  3. 能力値 = 対象レース（JRA芝1800〜2600mのG1/G2。2歳戦・牝馬限定戦は除く）のスピード値上位4走の平均
      ばらつき = 上位6走の標準偏差（0.45〜0.9秒に制限）
   4. 脚質 = 通過順の最初の位置 ÷ 頭数 の平均（0=逃げ, 1=追込）
   5. 1回のレース: 能力 + ばらつき×乱数 + 展開（ハイペースなら差し有利）で着順を決める。
@@ -38,26 +38,6 @@ DIST_MIN, DIST_MAX = 1800, 2600
 GOINGS = ["良", "稍", "重", "不"]
 COLORS = ["#E53935", "#1E88E5", "#FDD835", "#43A047", "#FFFFFF", "#8E24AA", "#FB8C00", "#00ACC1"]
 
-AGE2_KEYS = ["2歳", "朝日杯", "ジュベナイル", "阪神JF", "ホープフル"]
-AGE3_KEYS = ["皐月賞", "東京優駿", "日本ダービー", "菊花賞", "桜花賞", "優駿牝馬", "オークス", "秋華賞",
-             "NHKマイル", "神戸新聞杯", "セントライト", "弥生賞", "スプリングS", "スプリングステークス",
-             "青葉賞", "京都新聞杯", "ローズS", "ローズステークス", "紫苑S", "フローラS", "チューリップ賞",
-             "フィリーズレビュー", "ニュージーランドT"]
-MARE_KEYS = ["牝馬", "桜花賞", "オークス", "秋華賞", "ヴィクトリアマイル", "エリザベス女王杯", "ローズS",
-             "ローズステークス", "チューリップ賞", "フィリーズ", "紫苑S", "フローラS", "ジュベナイル", "阪神JF"]
-
-
-def has(name: str, keys: list[str]) -> bool:
-    return any(k in name for k in keys)
-
-
-def grade_of(name: str) -> str:
-    for g, keys in (("G1", ["(GI)", "(G1)"]), ("G2", ["(GII)", "(G2)"]), ("G3", ["(GIII)", "(G3)"])):
-        if any(k in name for k in keys):
-            return g
-    return ""
-
-
 def course_key(venue: str, distance: int) -> str:
     return f"{venue}{distance}"
 
@@ -84,7 +64,7 @@ class ParModel:
     """平均的な重賞勝ち馬のタイムを、コース・馬場・年・ペース・レース区分から予測する"""
 
     def __init__(self, rows: list[dict]):
-        rows = [r for r in rows if r["grade"] in ("G1", "G2") and not has(r["race_name"], AGE2_KEYS)]
+        rows = [r for r in rows if r["grade"] in ("G1", "G2") and not r["age2"]]
         by_course = {}
         for r in rows:
             if r["front3f"]:
@@ -100,7 +80,7 @@ class ParModel:
         atb = [0.0] * k
         for r in rows:
             xi = self._x(course_key(r["venue"], r["distance"]), r["going"], r["year"], r["front3f"],
-                         r["grade"] == "G2", has(r["race_name"], AGE3_KEYS), has(r["race_name"], MARE_KEYS))
+                         r["grade"] == "G2", r["age3"], r["mare"])
             for i, xv in enumerate(xi):
                 if xv:
                     atb[i] += xv * r["time"]
@@ -159,28 +139,29 @@ def wfa_weight(year: int, age: int, sex: str, age3_race: bool) -> float:
 
 
 def build_ratings(data: dict, model: ParModel) -> dict:
+    base = {b["race_id"]: b for b in data["baseline"]}
     horses = {}
     for name, h in data["horses"].items():
         birth = int(h["id"][:4]) if h["id"][:4].isdigit() else None
         figs, styles = [], []
         for r in h["races"]:
             name_r = r["race_name"]
-            if (not r["time"] or not r["distance"] or r["surface"] != "芝"
-                    or not r["race_id"].isdigit() or not (DIST_MIN <= r["distance"] <= DIST_MAX)
-                    or grade_of(name_r) not in ("G1", "G2") or has(name_r, AGE2_KEYS) or has(name_r, MARE_KEYS)):
+            b = base.get(r["race_id"])  # 重賞日程に載った JRA芝 G1/G2 だけが対象
+            if (not b or not r["time"] or not (DIST_MIN <= b["distance"] <= DIST_MAX)
+                    or b["age2"] or b["mare"]):
                 continue
-            year = int(r["race_id"][:4])
-            age3 = has(name_r, AGE3_KEYS)
-            exp = model.predict(r["venue"], r["distance"], r["going"], year, r.get("front3f"), age3)
+            year = b["year"]
+            age3 = b["age3"]
+            exp = model.predict(b["venue"], b["distance"], b["going"], year, b["front3f"], age3)
             if exp is None:
                 continue
-            fig = (exp - r["time"]) * 2400 / r["distance"]
+            fig = (exp - r["time"]) * 2400 / b["distance"]
             if r["weight"] and birth:
                 extra = r["weight"] - wfa_weight(year, year - birth, h["sex"], age3)
                 fig += extra * SEC_PER_KG * 1.2
             figs.append({"fig": round(fig, 2), "race": name_r, "date": r["date"], "pos": r["position"],
-                         "time": r["time"], "course": f"{r['venue']}{r['distance']}", "going": r["going"],
-                         "front3f": r.get("front3f"), "weight": r["weight"]})
+                         "time": r["time"], "course": f"{b['venue']}{b['distance']}", "going": b["going"],
+                         "front3f": b["front3f"], "weight": r["weight"]})
             s = first_pass_ratio(r["passing"], r["field_size"])
             if s is not None:
                 styles.append(s)

@@ -22,7 +22,7 @@ env:
 jobs:
   simulate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60  # 重賞約1,000レースの結果ページを1秒間隔で取得するため
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
