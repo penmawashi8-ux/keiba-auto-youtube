@@ -1,0 +1,64 @@
+name: Research Keiba Landscape Trends
+
+# 競馬ジャンルで伸びている横動画（Shorts以外）を YouTube Data API で調査し、
+# research-output ブランチに CSV / Markdown レポートを保存する。
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "直近何日以内に公開された動画を対象にするか"
+        default: "30"
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/research_keiba_trends.py
+      - .github/workflows/research_keiba_trends.yml
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install google-api-python-client==2.151.0 google-auth==2.35.0
+
+      - name: Run trend research
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GOOGLE_CLIENT_ID_2: ${{ secrets.GOOGLE_CLIENT_ID2 }}
+          GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+          GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+          GOOGLE_CLIENT_ID_3: ${{ secrets.GOOGLE_CLIENT_ID3 }}
+          GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+          GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+        run: python scripts/research_keiba_trends.py --days "${{ github.event.inputs.days || '30' }}"
+
+      - name: Save report to research-output branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp -r research /tmp/research
+          if git fetch origin research-output 2>/dev/null; then
+            git switch -c research-output FETCH_HEAD
+          else
+            git switch --orphan research-output
+            git rm -rf --cached . >/dev/null 2>&1 || true
+          fi
+          mkdir -p research && cp /tmp/research/* research/
+          git add -f research
+          git commit -m "競馬横動画トレンド調査 (run ${GITHUB_RUN_ID}) [skip ci]"
+          git push origin research-output
