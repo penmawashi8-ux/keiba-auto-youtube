@@ -1,10 +1,10 @@
-date: 2026-10-11T10:07:41.209427Z
+date: 2026-10-12T01:08:06.005445Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Zma4m1Bfpno title=【スワンS・日曜気配】アイサンサンは中1週でも状態キープ　橋田調教師「スムーズな
-OK project=1 video_id=wF7EJF0Povc title=ジョッキーベイビーズは笠松渚さんが優勝「夢はジョッキー。あこがれは今村聖奈さん」
-OK project=1 video_id=YVzsNpxbyAg title=トウカイの勝負服　11歳の笠松渚さんがジョッキーベイビーズ優勝「勝ててとてもうれ
+OK project=1 video_id=KBFDfgnLQz8 title=【ばんえい十勝】クリスタルザイオンが2歳世代最初の重賞勝利　西謙一騎手は兄クリス
+OK project=1 video_id=T9a-tW63vMk title=【12日の注目・東京9R】短期免許ラストデーのミシェル騎手　最終騎乗予定のマツリ
+OK project=1 video_id=IYviLF5dY4o title=【根本康広　我が道12】障害未勝利で絶対王者に騎乗　普通ではあり得ない話…重圧ズ
