@@ -48,7 +48,8 @@ jobs:
         run: python scripts/sim_dream_race.py
 
       - name: Save outputs to research-output branch
-        if: always()
+        # 失敗時に前回の出力を消さないよう、成功したときだけ保存する
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
