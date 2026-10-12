@@ -2,14 +2,16 @@
 """夢の対決シミュレーションの能力推定モデルとバックテスト。
 
 データ: sim/races.json（sim_fetch.py が集めた JRA芝1600〜3200m G1/G2 の全出走馬成績）
+      sim/horses_cache.json（sim_fetch_horses.py が集めた、それらの馬の全キャリア。JRA芝1400〜3600m）
 
 ■ スピード値（1走ごとの能力の物差し。単位は「2400m換算の秒」）
   基準タイム = 平均的なG1勝ち馬が、そのコース・馬場・年・ペースで走ったときのタイム
   スピード値 = (基準タイム − その馬のタイム) × 2400 / 距離 + 定量との斤量差の補正
               − 展開の有利不利（脚質とペースの噛み合い。効きの大きさは過去データから推定）
   基準タイムは勝ち馬のタイムを
-      コース(場・距離) + 馬場 + 年 + ペース + 格(G2) + 3歳限定 + 牝馬限定
-  で回帰して求める。格や限定戦の項は回帰を歪ませないためだけに使い、スピード値は
+      コース(場・距離) + 馬場 + 年 + ペース + クラス + 3歳限定 + 牝馬限定
+  で回帰して求める（全クラスの勝ちタイムを使い、格は G2〜新馬のクラス項で表す）。
+  格や限定戦の項は回帰を歪ませないためだけに使い、スピード値は
   すべて「古馬混合G1」の物差しで測る（3歳春の走りは未完成なぶん低く出る）。
   年の項は隣接年の差に罰則をかけて滑らかにする（馬場の高速化を表す）。
 
@@ -91,19 +93,97 @@ def course_key(r: dict) -> str:
     return f"{r['venue']}{r['distance']}"
 
 
-def load_races(path: Path = SIM_DIR / "races.json") -> list[dict]:
-    races = json.loads(path.read_text(encoding="utf-8"))
-    out = []
-    for r in races:
+CLASSES = ["G1", "G2", "G3", "L", "OP", "3勝", "2勝", "1勝", "未勝利", "新馬"]
+CAREER_DIST_MIN, CAREER_DIST_MAX = 1400, 3600
+
+
+def race_class(name: str) -> str:
+    """レース名から格・クラスを判定する（旧表記の500万下などにも対応）"""
+    for cls, keys in (("G1", ["(GI)", "(G1)"]), ("G2", ["(GII)", "(G2)"]), ("G3", ["(GIII)", "(G3)"]),
+                      ("L", ["(L)"]), ("新馬", ["新馬"]), ("未勝利", ["未勝利"]),
+                      ("1勝", ["1勝クラス", "500万"]), ("2勝", ["2勝クラス", "1000万"]),
+                      ("3勝", ["3勝クラス", "1600万"])):
+        if any(k in name for k in keys):
+            return cls
+    return "OP"
+
+
+def birth_year(horse_id: str) -> int | None:
+    return int(horse_id[:4]) if horse_id[:4].isdigit() and 1980 < int(horse_id[:4]) < 2030 else None
+
+
+def _prep_runners(r: dict, field: int) -> None:
+    for x in r["runners"]:
+        x["early"] = x["time"] - x["last3f"] if x.get("time") and x.get("last3f") else None
+        x["style"] = first_pass_ratio(x.get("passing", ""), field)
+
+
+def load_races(path: Path = SIM_DIR / "races.json",
+               careers_path: Path = SIM_DIR / "horses_cache.json") -> list[dict]:
+    """重賞（全出走馬）に、出走馬の全キャリア（条件戦・OP・G3など）を合わせたレース一覧を作る。
+
+    重賞以外のレースは「データに含まれる馬の分だけ」の出走馬しか持たないが、勝ちタイムは
+    各馬のタイムと着差から求められるので基準タイムの回帰に使える。
+    graded=True のレース（G1/G2、全出走馬と単勝人気がそろう）だけをバックテストの採点に使う。
+    """
+    graded = json.loads(path.read_text(encoding="utf-8"))
+    out, sex_of, graded_ids = [], {}, set()
+    for r in graded:
+        graded_ids.add(r["race_id"])
+        for x in r["runners"]:
+            if x.get("sex"):
+                sex_of[x["horse_id"]] = x["sex"]
         if r["age2"] or not r.get("date"):
             continue
-        field = len(r["runners"])
-        r["front"] = front600(r["distance"], r.get("pace_cum") or [])
-        for x in r["runners"]:
-            x["early"] = x["time"] - x["last3f"] if x.get("time") and x.get("last3f") else None
-            x["style"] = first_pass_ratio(x.get("passing", ""), field)
+        win = next((x for x in r["runners"] if x["pos"] == 1 and x.get("time")), None)
+        if not win:
+            continue
+        r.update(graded=True, cls=r["grade"], win_time=win["time"],
+                 front=front600(r["distance"], r.get("pace_cum") or []))
+        _prep_runners(r, len(r["runners"]))
+        out.append(r)
+
+    careers = json.loads(careers_path.read_text(encoding="utf-8")) if careers_path.exists() else {}
+    by_race = {}
+    for hid, rows in careers.items():
+        for row in rows:
+            if (row["race_id"] in graded_ids or row["surface"] != "芝"
+                    or not (CAREER_DIST_MIN <= row["distance"] <= CAREER_DIST_MAX) or not row.get("date")):
+                continue
+            by_race.setdefault(row["race_id"], []).append((hid, row))
+    for rid, rows in by_race.items():
+        row0 = rows[0][1]
+        name = row0["race_name"]
+        if "2歳" in name or "障害" in name:
+            continue
+        wins = [rw["time"] - max(rw["margin"] or 0.0, 0.0) for _, rw in rows
+                if rw.get("time") and rw.get("pos") and rw.get("margin") is not None]
+        if not wins:
+            continue
+        front = None
+        m = row0.get("pace", "").split("-")
+        if len(m) == 2:
+            try:
+                front = float(m[0])
+            except ValueError:
+                front = None
+        year = int(row0["date"][:4])
+        runners = []
+        for hid, rw in rows:
+            by = birth_year(hid)
+            runners.append({"pos": rw.get("pos"), "horse_id": hid, "horse": "", "sex": sex_of.get(hid, ""),
+                            "age": year - by if by else None, "weight": rw.get("weight"), "time": rw.get("time"),
+                            "passing": rw.get("passing", ""), "last3f": rw.get("last3f"), "pop": rw.get("pop")})
+        r = {"race_id": rid, "year": year, "date": row0["date"], "race_name": name, "grade": "",
+             "venue": row0["venue"], "distance": row0["distance"], "going": row0["going"],
+             "age2": False, "age3": name.startswith("3歳") and "以上" not in name and "3歳上" not in name,
+             "mare": "牝" in name, "graded": False, "cls": race_class(name),
+             "win_time": statistics.median(wins), "front": front, "runners": runners}
+        _prep_runners(r, row0.get("field") or len(rows))
         out.append(r)
     out.sort(key=lambda r: r["date"])
+    print(f"データ: 重賞 {sum(r['graded'] for r in out)}レース + その他 {sum(not r['graded'] for r in out)}レース"
+          f" / のべ {sum(len(r['runners']) for r in out)}走")
     return out
 
 
@@ -126,26 +206,32 @@ def solve(a: list[list[float]], b: list[float]) -> list[float]:
 
 
 class ParModel:
-    """平均的なG1勝ち馬のタイムを、コース・馬場・年・ペースから予測する"""
+    """平均的なG1勝ち馬のタイムを、コース・馬場・年・ペースから予測する。
+
+    回帰には全クラスの勝ちタイムを使い、クラス（G2〜新馬）・3歳限定・牝馬限定の項で
+    レースの水準差を吸収する。予測（par）ではこれらの項を使わず、古馬混合G1の物差しにそろえる。"""
 
     def __init__(self, races: list[dict], pace: str):
         self.pace = pace
         rows = []
         for r in races:
             win = next((x for x in r["runners"] if x["pos"] == 1 and x.get("time")), None)
-            if win:
-                rows.append((r, win))
+            # 各馬自身のペースで補正する場合は、勝ち馬の前半タイムが分かるレースだけを使う
+            if pace == "own" and not (win and win.get("early")):
+                continue
+            rows.append((r, win))
         # ペースの基準（コースごとの平均）
         self.pace_mean = {}
         for r, win in rows:
-            v = self._pace_value(r, win)
+            v = self._pace_value(r, win or {})
             if v is not None:
                 self.pace_mean.setdefault(course_key(r), []).append(v)
         self.pace_mean = {c: statistics.mean(v) for c, v in self.pace_mean.items()}
         self.courses = sorted({course_key(r) for r, _ in rows})
         self.years = sorted({r["year"] for r, _ in rows} - {REF_YEAR})
         self.feats = (["c:" + c for c in self.courses] + ["g:" + g for g in GOINGS[1:]]
-                      + [f"y:{y}" for y in self.years] + ["pace", "G2", "3歳限定", "牝馬限定"])
+                      + [f"y:{y}" for y in self.years] + ["pace", "3歳限定", "牝馬限定"]
+                      + ["cls:" + c for c in CLASSES[1:]])
         self.n_rows = len(rows)
         idx = {f: i for i, f in enumerate(self.feats)}
         k = len(self.feats)
@@ -157,12 +243,13 @@ class ParModel:
                 xi[idx["g:" + r["going"]]] = 1.0
             if r["year"] != REF_YEAR:
                 xi[idx[f"y:{r['year']}"]] = 1.0
-            xi[idx["pace"]] = self.pace_dev(r, win)
-            xi[idx["G2"]] = float(r["grade"] == "G2")
+            xi[idx["pace"]] = self.pace_dev(r, win or {})
             xi[idx["3歳限定"]] = float(r["age3"])
             xi[idx["牝馬限定"]] = float(r["mare"])
+            if r["cls"] != "G1":
+                xi[idx["cls:" + r["cls"]]] = 1.0
             for i, v in xi.items():
-                atb[i] += v * win["time"]
+                atb[i] += v * r["win_time"]
                 for j, w in xi.items():
                     ata[i][j] += v * w
         for i in range(k):
@@ -183,7 +270,7 @@ class ParModel:
         if self.pace == "race":
             return r["front"]
         if self.pace == "own":
-            return x["early"] / (r["distance"] - 600) * 600 if x["early"] else None
+            return x["early"] / (r["distance"] - 600) * 600 if x.get("early") else None
         return None
 
     def pace_dev(self, r: dict, x: dict) -> float:
@@ -266,7 +353,7 @@ def backtest(races: list[dict], figs: dict, n: int, w: int, k: float, m0: float,
     diffs = []          # (能力値の差, 先着したら1)
     win_hit = fav_hit = n_full = 0
     for r in races:
-        if r["year"] not in years:
+        if r["year"] not in years or not r.get("graded"):
             continue
         rated = []
         for x in r["runners"]:

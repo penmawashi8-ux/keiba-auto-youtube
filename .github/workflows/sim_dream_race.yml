@@ -14,6 +14,7 @@ on:
       - claude/youtube-keiba-video-research-x6jdvw
     paths:
       - scripts/sim_fetch.py
+      - scripts/sim_fetch_horses.py
       - scripts/sim_model.py
       - scripts/sim_dream_race.py
       - .github/workflows/sim_dream_race.yml
@@ -21,10 +22,15 @@ on:
 env:
   DEFAULT_HORSES: "ディープインパクト=2002100816 オルフェーヴル=2008102636 キタサンブラック=2012102013 アーモンドアイ=2015104961 イクイノックス=2019105219"
 
+# netkeiba への同時アクセスを避けるため、実行は1本ずつ（後から来た実行は待つ）
+concurrency:
+  group: sim-dream-race
+  cancel-in-progress: false
+
 jobs:
   simulate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60  # 初回は重賞約1,000レースの結果ページを1秒間隔で取得するため
+    timeout-minutes: 60  # 馬ページの取得は42分で区切り、残りは次回の実行で続きから取る
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -43,20 +49,29 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
           pip install requests==2.32.3 beautifulsoup4
 
-      - name: Restore fetch cache from research-output
+      - name: Restore fetch caches from research-output
         run: |
           mkdir -p sim
-          git fetch -q origin research-output && git show FETCH_HEAD:sim/races_cache.json > sim/races_cache.json \
-            && echo "キャッシュ復元: $(wc -c < sim/races_cache.json) bytes" || { rm -f sim/races_cache.json; echo "キャッシュなし"; }
+          git fetch -q origin research-output || true
+          for f in races_cache.json horses_cache.json; do
+            git show FETCH_HEAD:sim/$f > sim/$f 2>/dev/null \
+              && echo "キャッシュ復元 $f: $(wc -c < sim/$f) bytes" || { rm -f sim/$f; echo "キャッシュなし $f"; }
+          done
 
       - name: Fetch graded race results
         run: python scripts/sim_fetch.py 2003 2025
 
+      - name: Fetch full careers of graded runners (time-boxed, resumes next run)
+        run: python scripts/sim_fetch_horses.py 42
+
       - name: Save fetched data to research-output branch
-        run: bash .github/scripts/save_sim_outputs.sh "取得データ" sim/races_cache.json sim/races.json
+        run: bash .github/scripts/save_sim_outputs.sh "取得データ" sim/races_cache.json sim/races.json sim/horses_cache.json
 
       - name: Backtest, simulate and render
+        # 全馬の成績がそろうまでは取得だけ行う（次の実行で続きを取る）
+        if: hashFiles('sim/horses_done') != ''
         run: python scripts/sim_dream_race.py ${{ github.event.inputs.horses || env.DEFAULT_HORSES }}
 
       - name: Save outputs to research-output branch
-        run: bash .github/scripts/save_sim_outputs.sh "夢の対決シミュレーション試作" sim/*.md sim/*.json sim/*.mp4 sim/*.jpg
+        if: hashFiles('sim/horses_done') != ''
+        run: bash .github/scripts/save_sim_outputs.sh "夢の対決シミュレーション試作" sim/report.md sim/result.json sim/race.mp4 sim/frame_*.jpg
