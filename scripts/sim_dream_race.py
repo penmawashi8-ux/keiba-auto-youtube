@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""夢の対決シミュレーション（試作）: sim/data.json から能力値を推定し、仮想レースを1万回走らせる。
+"""夢の対決シミュレーション（試作2号）: sim/data.json から能力値を推定し、仮想レースを1万回走らせる。
 
 モデル（すべて公開成績のタイムから自前で計算。netkeiba のタイム指数は使わない）:
-  1. レース基準タイム: 各レースの1〜5着タイムの中央値を「そのレースの水準」とし、
-     「コース(場・距離) + 馬場状態 + 年」の線形回帰で年ごとの馬場の高速化を推定する
-  2. 1走ごとのスピード値 = 基準年に換算した期待タイム − その馬のタイム（秒、2400m換算、斤量57kg換算）
-  3. 馬の能力 = スピード値の上位5走の平均（全盛期）、ばらつき = その標準偏差
+  1. 基準タイム: 2000年以降の JRA芝 G1/G2 勝ちタイム（約1,000レース）を
+       コース(場・距離) + 馬場状態 + 年 + 前半3Fのペース + 格(G2) + 3歳限定 + 牝馬限定
+     で回帰する。年の項が「馬場の高速化」、ペースの項が「スローで時計が遅くなる分」を吸収する
+  2. 1走ごとのスピード値 = その年・その馬場・そのペースでの「平均的なG1勝ち馬」のタイム − その馬のタイム
+     （2400m換算。定量より重い/軽い斤量を背負った分も補正）
+     → 0 なら平均的なG1馬、+1.0 なら平均的なG1馬より2400mで1秒速い
+  3. 能力値 = 対象レース（JRA芝1800〜2600mの重賞。2歳戦・牝馬限定戦は除く）のスピード値上位4走の平均
+     ばらつき = 上位6走の標準偏差（0.45〜0.9秒に制限）
   4. 脚質 = 通過順の最初の位置 ÷ 頭数 の平均（0=逃げ, 1=追込）
-  5. 1回のレース: 能力 + ばらつき×乱数 + 展開（ハイペースなら差し有利）で着順を決める
+  5. 1回のレース: 能力 + ばらつき×乱数 + 展開（ハイペースなら差し有利）で着順を決める。
+     斤量は全馬「定量」（馬齢・性別に応じた通常の斤量）なので追加の補正はしない
 
 出力: sim/report.md, sim/result.json, sim/race.mp4, sim/frame_*.jpg
 numpy / Pillow は使わない（プロジェクトルール）。描画は ffmpeg drawtext のみ。
@@ -15,23 +20,46 @@ numpy / Pillow は使わない（プロジェクトルール）。描画は ffmp
 
 import glob
 import json
-import math
 import random
 import statistics
 import subprocess
 from pathlib import Path
 
 SIM_DIR = Path("sim")
-REF_YEAR = 2023            # 馬場の速さをこの年に揃える
+REF_YEAR = 2023            # この年を基準に、各年の馬場の速さを差として推定する
 TARGET = {"venue": "東京", "distance": 2400, "going": "良", "label": "東京 芝2400m（良）"}
 N_RUNS = 10000
 SEC_PER_KG = 0.15          # 斤量1kg ≈ 2000mで0.15秒
 STYLE_PACE = 0.6           # 展開の効き（秒）。ハイペースで追込に最大この程度有利
-MARE_ALLOWANCE_KG = 2.0    # 牝馬は2kg軽い（実際のJCと同じ条件）
-TOP_N = 5
-SIGMA_FLOOR = 0.5         # 1走ごとの調子の波の下限（秒）。上位5走だけだと小さく出すぎるため
+TOP_N = 4                  # 能力値に使う上位走数
+SIGMA_TOP = 6              # ばらつきの計算に使う上位走数
+SIGMA_MIN, SIGMA_MAX = 0.45, 0.9
+DIST_MIN, DIST_MAX = 1800, 2600
 GOINGS = ["良", "稍", "重", "不"]
 COLORS = ["#E53935", "#1E88E5", "#FDD835", "#43A047", "#FFFFFF", "#8E24AA", "#FB8C00", "#00ACC1"]
+
+AGE2_KEYS = ["2歳", "朝日杯", "ジュベナイル", "阪神JF", "ホープフル"]
+AGE3_KEYS = ["皐月賞", "東京優駿", "日本ダービー", "菊花賞", "桜花賞", "優駿牝馬", "オークス", "秋華賞",
+             "NHKマイル", "神戸新聞杯", "セントライト", "弥生賞", "スプリングS", "スプリングステークス",
+             "青葉賞", "京都新聞杯", "ローズS", "ローズステークス", "紫苑S", "フローラS", "チューリップ賞",
+             "フィリーズレビュー", "ニュージーランドT"]
+MARE_KEYS = ["牝馬", "桜花賞", "オークス", "秋華賞", "ヴィクトリアマイル", "エリザベス女王杯", "ローズS",
+             "ローズステークス", "チューリップ賞", "フィリーズ", "紫苑S", "フローラS", "ジュベナイル", "阪神JF"]
+
+
+def has(name: str, keys: list[str]) -> bool:
+    return any(k in name for k in keys)
+
+
+def grade_of(name: str) -> str:
+    for g, keys in (("G1", ["(GI)", "(G1)"]), ("G2", ["(GII)", "(G2)"]), ("G3", ["(GIII)", "(G3)"])):
+        if any(k in name for k in keys):
+            return g
+    return ""
+
+
+def course_key(venue: str, distance: int) -> str:
+    return f"{venue}{distance}"
 
 
 # ---------------------------------------------------------------------------
@@ -52,41 +80,57 @@ def solve(a: list[list[float]], b: list[float]) -> list[float]:
     return [m[i][n] / (m[i][i] or 1e-12) for i in range(n)]
 
 
-def course_key(venue: str, distance: int) -> str:
-    return f"{venue}{distance}"
+class ParModel:
+    """平均的な重賞勝ち馬のタイムを、コース・馬場・年・ペース・レース区分から予測する"""
 
+    def __init__(self, rows: list[dict]):
+        rows = [r for r in rows if r["grade"] in ("G1", "G2") and not has(r["race_name"], AGE2_KEYS)]
+        by_course = {}
+        for r in rows:
+            if r["front3f"]:
+                by_course.setdefault(course_key(r["venue"], r["distance"]), []).append(r["front3f"])
+        self.front_mean = {c: statistics.mean(v) for c, v in by_course.items()}
+        self.courses = sorted({course_key(r["venue"], r["distance"]) for r in rows})
+        self.years = sorted({r["year"] for r in rows} - {REF_YEAR})
+        self.feats = (["c:" + c for c in self.courses] + ["g:" + g for g in GOINGS[1:]]
+                      + [f"y:{y}" for y in self.years] + ["front3f", "G2", "3歳限定", "牝馬限定"])
+        self.n_rows = len(rows)
+        k = len(self.feats)
+        ata = [[0.0] * k for _ in range(k)]
+        atb = [0.0] * k
+        for r in rows:
+            xi = self._x(course_key(r["venue"], r["distance"]), r["going"], r["year"], r["front3f"],
+                         r["grade"] == "G2", has(r["race_name"], AGE3_KEYS), has(r["race_name"], MARE_KEYS))
+            for i, xv in enumerate(xi):
+                if xv:
+                    atb[i] += xv * r["time"]
+                    for j, xw in enumerate(xi):
+                        if xw:
+                            ata[i][j] += xv * xw
+        for i in range(k):
+            ata[i][i] += 1e-3
+        self.coef = dict(zip(self.feats, solve(ata, atb)))
 
-def fit_par_model(rows: list[dict]):
-    """rows: {course, going, year, par} → 期待タイム関数 f(course, going, year)"""
-    courses = sorted({r["course"] for r in rows})
-    feats = ["c:" + c for c in courses] + ["g:" + g for g in GOINGS[1:]] + ["year"]
+    def front_dev(self, course: str, front3f: float | None) -> float:
+        if front3f is None or course not in self.front_mean:
+            return 0.0
+        return front3f - self.front_mean[course]
 
-    def x(course, going, year):
-        v = [1.0 if course == c else 0.0 for c in courses]
+    def _x(self, course, going, year, front3f, g2, age3, mare) -> list[float]:
+        v = [1.0 if course == c else 0.0 for c in self.courses]
         v += [1.0 if going == g else 0.0 for g in GOINGS[1:]]
-        v.append(year - REF_YEAR)
+        v += [1.0 if year == y else 0.0 for y in self.years]
+        v += [self.front_dev(course, front3f), float(g2), float(age3), float(mare)]
         return v
 
-    k = len(feats)
-    ata = [[0.0] * k for _ in range(k)]
-    atb = [0.0] * k
-    for r in rows:
-        xi = x(r["course"], r["going"], r["year"])
-        for i in range(k):
-            atb[i] += xi[i] * r["par"]
-            for j in range(k):
-                ata[i][j] += xi[i] * xi[j]
-    for i in range(k):
-        ata[i][i] += 1e-3
-    beta = solve(ata, atb)
-    coef = dict(zip(feats, beta))
-
-    def predict(course, going, year):
-        if "c:" + course not in coef:
+    def predict(self, venue, distance, going, year, front3f=None, age3=False) -> float | None:
+        """その条件での「平均的なG1勝ち馬」（古馬混合・牡馬基準）のタイム"""
+        course = course_key(venue, distance)
+        if "c:" + course not in self.coef:
             return None
-        return coef["c:" + course] + coef.get("g:" + going, 0.0) + coef["year"] * (year - REF_YEAR)
-
-    return predict, coef
+        c = self.coef
+        return (c["c:" + course] + c.get("g:" + (going or "良"), 0.0) + c.get(f"y:{year}", 0.0)
+                + c["front3f"] * self.front_dev(course, front3f) + (c["3歳限定"] if age3 else 0.0))
 
 
 # ---------------------------------------------------------------------------
@@ -102,66 +146,66 @@ def first_pass_ratio(passing: str, field: int | None) -> float | None:
     return min(max((first - 1) / max(field - 1, 1), 0.0), 1.0)
 
 
-def build_ratings(data: dict):
-    par_rows = []
-    for rid, info in data["races"].items():
-        times = sorted(info["top_times"])
-        if len(times) < 3:
-            continue
-        # レース条件は出走馬側の成績行から引く
-        row = next((r for h in data["horses"].values() for r in h["races"] if r["race_id"] == rid), None)
-        if not row or not row["distance"]:
-            continue
-        par_rows.append({"rid": rid, "course": course_key(row["venue"], row["distance"]),
-                         "distance": row["distance"], "going": row["going"] or "良",
-                         "year": info["year"], "par": statistics.median(times)})
-    predict, coef = fit_par_model(par_rows)
+def wfa_weight(year: int, age: int, sex: str, age3_race: bool) -> float:
+    """定量（馬齢・性別に応じた通常の斤量）。2023年から古馬の基準が1kg増えた"""
+    base = 58.0 if year >= 2023 else 57.0
+    if age3_race:
+        base = 57.0
+    elif age == 3:
+        base -= 2.0
+    if sex == "牝":
+        base -= 2.0
+    return base
 
+
+def build_ratings(data: dict, model: ParModel) -> dict:
     horses = {}
     for name, h in data["horses"].items():
+        birth = int(h["id"][:4]) if h["id"][:4].isdigit() else None
         figs, styles = [], []
         for r in h["races"]:
-            if r["race_id"] not in data["races"] or not r["time"] or not r["distance"]:
+            name_r = r["race_name"]
+            if (not r["time"] or not r["distance"] or r["surface"] != "芝"
+                    or not r["race_id"].isdigit() or not (DIST_MIN <= r["distance"] <= DIST_MAX)
+                    or grade_of(name_r) not in ("G1", "G2") or has(name_r, AGE2_KEYS) or has(name_r, MARE_KEYS)):
                 continue
-            if not (1600 <= r["distance"] <= 3200):
-                continue
-            year = data["races"][r["race_id"]]["year"]
-            exp = predict(course_key(r["venue"], r["distance"]), r["going"] or "良", REF_YEAR)
+            year = int(r["race_id"][:4])
+            age3 = has(name_r, AGE3_KEYS)
+            exp = model.predict(r["venue"], r["distance"], r["going"], year, r.get("front3f"), age3)
             if exp is None:
                 continue
-            scale = 2400 / r["distance"]
-            fig = (exp - r["time"]) * scale
-            if r["weight"]:
-                fig += (r["weight"] - 57) * SEC_PER_KG * 1.2
-            figs.append({"fig": round(fig, 2), "race": r["race_name"], "date": r["date"],
-                         "pos": r["position"], "time": r["time"], "course": f"{r['venue']}{r['distance']}",
-                         "going": r["going"], "year": year})
+            fig = (exp - r["time"]) * 2400 / r["distance"]
+            if r["weight"] and birth:
+                extra = r["weight"] - wfa_weight(year, year - birth, h["sex"], age3)
+                fig += extra * SEC_PER_KG * 1.2
+            figs.append({"fig": round(fig, 2), "race": name_r, "date": r["date"], "pos": r["position"],
+                         "time": r["time"], "course": f"{r['venue']}{r['distance']}", "going": r["going"],
+                         "front3f": r.get("front3f"), "weight": r["weight"]})
             s = first_pass_ratio(r["passing"], r["field_size"])
             if s is not None:
                 styles.append(s)
         figs.sort(key=lambda f: -f["fig"])
-        top = [f["fig"] for f in figs[:TOP_N]]
-        if not top:
-            print(f"[警告] {name}: 有効な成績がありません")
+        if not figs:
+            print(f"[警告] {name}: 対象レースがありません")
             continue
+        top = [f["fig"] for f in figs[:TOP_N]]
+        spread = [f["fig"] for f in figs[:SIGMA_TOP]]
+        sigma = statistics.pstdev(spread) if len(spread) > 1 else SIGMA_MAX
         horses[name] = {
             "mu": statistics.mean(top),
-            "sigma": max(statistics.pstdev(top) if len(top) > 1 else 0.5, SIGMA_FLOOR),
+            "sigma": min(max(sigma, SIGMA_MIN), SIGMA_MAX),
             "style": statistics.mean(styles) if styles else 0.5,
             "sex": h["sex"],
             "figs": figs,
         }
-    return horses, coef, par_rows, predict
+    return horses
 
 
 # ---------------------------------------------------------------------------
 # 5. モンテカルロ
 # ---------------------------------------------------------------------------
 def perf(h: dict, z: float, pace: float) -> float:
-    p = h["mu"] + h["sigma"] * z + pace * (h["style"] - 0.5) * STYLE_PACE
-    if h["sex"] == "牝":
-        p += MARE_ALLOWANCE_KG * SEC_PER_KG * 1.2
-    return p
+    return h["mu"] + h["sigma"] * z + pace * (h["style"] - 0.5) * STYLE_PACE
 
 
 def monte_carlo(horses: dict, seed: int = 20261012) -> dict:
@@ -183,38 +227,45 @@ def fmt_time(sec: float) -> str:
     return f"{int(sec // 60)}:{sec % 60:04.1f}"
 
 
-def write_report(horses, coef, par_rows, rank_counts, base_time, race) -> None:
+def write_report(horses, model: ParModel, rank_counts, base_time, race) -> None:
     names = sorted(horses, key=lambda n: -rank_counts[n][0])
-    md = [f"# 夢の対決シミュレーション（試作） {TARGET['label']}", "",
-          f"- 試行回数: {N_RUNS:,}回 / 基準年: {REF_YEAR}年の馬場に換算 / 斤量57kg（牝馬55kg）",
-          f"- 年ごとの馬場高速化の推定: 1年あたり {coef['year']:+.3f}秒（基準レース{len(par_rows)}件から回帰）",
-          f"- 想定勝ちタイム水準: {fmt_time(base_time)}", "",
+    c = model.coef
+    md = [f"# 夢の対決シミュレーション（試作2号） {TARGET['label']}", "",
+          f"- 試行回数: {N_RUNS:,}回 / 斤量は全馬定量 / 馬場は{REF_YEAR}年の速さ",
+          f"- 基準データ: JRA芝 G1/G2 {model.n_rows}レースの勝ちタイム",
+          f"- ペース補正: 前半3Fが1秒遅いと勝ちタイムが {c['front3f']:+.2f}秒",
+          f"- 想定タイム（平均的なG1勝ち馬）: {fmt_time(base_time)}", "",
           "## 勝率", "", "| 馬 | 勝率 | 2着内 | 3着内 | 能力値 | ばらつき | 脚質(0逃げ〜1追込) |",
           "|---|---:|---:|---:|---:|---:|---:|"]
     for n in names:
-        c = rank_counts[n]
+        rc = rank_counts[n]
         h = horses[n]
-        md.append(f"| {n} | {c[0] / N_RUNS:.1%} | {sum(c[:2]) / N_RUNS:.1%} | {sum(c[:3]) / N_RUNS:.1%} | "
+        md.append(f"| {n} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | {sum(rc[:3]) / N_RUNS:.1%} | "
                   f"{h['mu']:+.2f} | {h['sigma']:.2f} | {h['style']:.2f} |")
-    md += ["", "## 代表レース（展開・調子が平均的な場合）", "", "| 着 | 馬 | タイム | 着差 |", "|---|---|---|---|"]
+    md += ["", "能力値: 平均的なG1勝ち馬との差（2400m換算・秒）。+1.0 なら約6馬身先着する計算", "",
+           "## 代表レース（展開・調子が平均的な場合）", "", "| 着 | 馬 | タイム | 着差 |", "|---|---|---|---|"]
     win_t = race[0][1]
     for i, (n, t) in enumerate(race, 1):
         md.append(f"| {i} | {n} | {fmt_time(t)} | {'' if i == 1 else f'+{t - win_t:.1f}秒'} |")
-    md += ["", "## 各馬のスピード値（上位5走が能力値）", ""]
+    md += ["", "## 馬場の速さ（年ごと、2023年との差）", "",
+           "| 年 | 差（秒） |", "|---|---:|"]
+    md += [f"| {y} | {c.get(f'y:{y}', 0.0):+.2f} |" for y in model.years + [REF_YEAR]]
+    md += ["", f"## 各馬のスピード値（太字の上位{TOP_N}走が能力値）", ""]
     for n in names:
-        md += [f"### {n}", "", "| 値 | 日付 | レース | 着 | コース | 馬場 | タイム |", "|---:|---|---|---:|---|---|---|"]
+        md += [f"### {n}", "", "| 値 | 日付 | レース | 着 | コース | 馬場 | 前半3F | 斤量 | タイム |",
+               "|---:|---|---|---:|---|---|---:|---:|---|"]
         for i, f in enumerate(horses[n]["figs"]):
             mark = "**" if i < TOP_N else ""
             md.append(f"| {mark}{f['fig']:+.2f}{mark} | {f['date']} | {f['race']} | {f['pos']} | {f['course']} | "
-                      f"{f['going']} | {fmt_time(f['time'])} |")
+                      f"{f['going']} | {f['front3f'] or '-'} | {f['weight'] or '-'} | {fmt_time(f['time'])} |")
         md.append("")
-    md += ["## 基準タイム回帰の係数", "", "| 項目 | 値 |", "|---|---:|"]
-    md += [f"| {k} | {v:.3f} |" for k, v in coef.items()]
+    md += ["## 回帰係数（コース以外）", "", "| 項目 | 値 |", "|---|---:|"]
+    md += [f"| {k} | {v:+.3f} |" for k, v in c.items() if not k.startswith(("c:", "y:"))]
     (SIM_DIR / "report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     (SIM_DIR / "result.json").write_text(json.dumps({
         "win_rate": {n: rank_counts[n][0] / N_RUNS for n in names},
         "ratings": {n: {k: horses[n][k] for k in ("mu", "sigma", "style", "sex")} for n in names},
-        "year_coef": coef["year"], "race": race,
+        "race": race,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
@@ -361,13 +412,14 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
 
 def main() -> None:
     data = json.loads((SIM_DIR / "data.json").read_text(encoding="utf-8"))
-    horses, coef, par_rows, predict = build_ratings(data)
+    model = ParModel(data["baseline"])
+    horses = build_ratings(data, model)
     rank_counts = monte_carlo(horses)
-    base = predict(course_key(TARGET["venue"], TARGET["distance"]), TARGET["going"], REF_YEAR) or 143.5
+    base = model.predict(TARGET["venue"], TARGET["distance"], TARGET["going"], REF_YEAR)
     # 代表レース: 調子・展開が平均（z=0, pace=0）のときのタイム
     race = sorted(((n, base - perf(h, 0.0, 0.0)) for n, h in horses.items()), key=lambda x: x[1])
-    write_report(horses, coef, par_rows, rank_counts, base, race)
-    print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:1500])
+    write_report(horses, model, rank_counts, base, race)
+    print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:2500])
     render(horses, race)
 
 

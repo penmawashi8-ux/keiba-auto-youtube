@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""夢の対決シミュレーション: netkeiba DB から出走馬の全成績と、出走レースの上位タイムを取得する。
+"""夢の対決シミュレーション: netkeiba DB から出走馬の全成績と、重賞の勝ちタイム一覧を取得する。
 
 出力: sim/data.json
   {
-    "horses": {馬名: {"id": ..., "sex": "牡"|"牝", "races": [行, ...]}},
-    "races":  {race_id: {"top_times": [1〜5着のタイム秒], "year": 2023}}
+    "horses":   {馬名: {"id": ..., "sex": "牡"|"牝", "races": [成績行, ...]}},
+    "baseline": [2000〜2025年 JRA芝 G1/G2 の勝ちタイム行, ...]   # 時代補正・ペース補正用
   }
 成績行: date, venue, race_name, race_id, field_size, position, weight(斤量), surface, distance,
-        going, time, passing(通過), last3f(上り)
+        going, time, passing(通過), front3f(前半3F), last3f(上り)
 
 使い方: python scripts/sim_fetch.py ディープインパクト=2002100816 イクイノックス=2019105219 ...
 """
@@ -101,7 +101,7 @@ def fetch_horse(session, name: str, horse_id: str) -> dict:
     print(f"  {name}: {url} / 列={heads}")
 
     idx = {k: col(heads, k) for k in
-           ["日付", "開催", "レース名", "頭数", "着順", "斤量", "距離", "馬場", "タイム", "通過", "上り"]}
+           ["日付", "開催", "レース名", "頭数", "着順", "斤量", "距離", "馬場", "タイム", "通過", "ペース", "上り"]}
     races = []
     for tr in table.find_all("tr")[1:]:
         tds = tr.find_all("td")
@@ -133,29 +133,75 @@ def fetch_horse(session, name: str, horse_id: str) -> dict:
             "position": position, "weight": weight,
             "surface": dist.group(1) if dist else "", "distance": int(dist.group(2)) if dist else None,
             "going": g("馬場")[:1], "time": parse_time(g("タイム")),
-            "passing": g("通過"), "last3f": float(g("上り")) if re.fullmatch(r"\d+\.\d", g("上り")) else None,
+            "passing": g("通過"), "front3f": parse_front3f(g("ペース")), "last3f": float(g("上り")) if re.fullmatch(r"\d+\.\d", g("上り")) else None,
         })
     print(f"  {name}: {len(races)}走 / 性別 {sex}")
     return {"id": horse_id, "sex": sex, "races": races}
 
 
-def fetch_race_top_times(session, race_id: str) -> list[float]:
-    soup = BeautifulSoup(get(session, f"https://db.netkeiba.com/race/{race_id}/"), "html.parser")
-    table, heads = find_table(soup, ["着順", "馬名", "タイム"])
-    if not table:
-        print(f"  race {race_id}: 結果表なし")
-        return []
-    ip, it = heads.index("着順"), heads.index("タイム")
-    out = []
-    for tr in table.find_all("tr")[1:]:
-        tds = tr.find_all("td")
-        if len(tds) <= max(ip, it):
-            continue
-        pos = tds[ip].get_text(strip=True)
-        t = parse_time(tds[it].get_text(strip=True))
-        if pos.isdigit() and int(pos) <= 5 and t:
-            out.append(t)
-    return out
+def parse_front3f(pace: str) -> float | None:
+    """「35.0-34.5」形式のペース（前半3F-後半3F）から前半3Fを取り出す"""
+    m = re.match(r"(\d+\.\d)-(\d+\.\d)", pace or "")
+    return float(m.group(1)) if m else None
+
+
+GRADE_RE = re.compile(r"\((?:J・)?G(I{1,3}|[123])\)")
+
+
+def grade_of(race_name: str) -> str:
+    """「ジャパンC(GI)」→ G1。表記ゆれ（G1 / GI）に対応"""
+    m = GRADE_RE.search(race_name)
+    if not m:
+        return ""
+    g = m.group(1)
+    return f"G{g}" if g.isdigit() else f"G{len(g)}"
+
+
+BASELINE_URL = ("https://db.netkeiba.com/?pid=race_list&word=&track%5B%5D=1"
+                "&start_year={y0}&start_mon=none&end_year={y1}&end_mon=none"
+                "&grade%5B%5D=1&grade%5B%5D=2&kyori_min=&kyori_max=&sort=date&list=100&page={page}")
+
+
+def fetch_baseline(session, y0: int, y1: int) -> list[dict]:
+    """JRA芝の G1/G2 の勝ちタイム一覧（時代補正・ペース補正の基準データ）"""
+    rows, seen = [], set()
+    for page in range(1, 40):
+        soup = BeautifulSoup(get(session, BASELINE_URL.format(y0=y0, y1=y1, page=page)), "html.parser")
+        table, heads = find_table(soup, ["レース名", "距離", "タイム"])
+        if not table:
+            title = soup.title.get_text(strip=True) if soup.title else ""
+            print(f"  基準データ page{page}: 表なし (title={title[:60]!r})")
+            break
+        if page == 1:
+            print(f"  基準データの列: {heads}")
+        idx = {k: col(heads, k) for k in ["開催日", "開催", "レース名", "距離", "馬場", "タイム", "ペース"]}
+        added = 0
+        for tr in table.find_all("tr")[1:]:
+            tds = tr.find_all("td")
+
+            def g(k):
+                i = idx[k]
+                return tds[i].get_text(strip=True) if i is not None and i < len(tds) else ""
+
+            a = tds[idx["レース名"]].find("a", href=True) if idx["レース名"] is not None and tds else None
+            m = re.search(r"/race/(\d+)/", a["href"]) if a else None
+            if not m or m.group(1) in seen:
+                continue
+            seen.add(m.group(1))
+            dist = re.match(r"(芝|ダ|障)(\d+)", g("距離"))
+            venue = next((v for v in JRA_VENUES if v in g("開催")), "")
+            t = parse_time(g("タイム"))
+            if not dist or dist.group(1) != "芝" or not venue or not t:
+                continue
+            rows.append({"race_id": m.group(1), "year": int(m.group(1)[:4]), "date": g("開催日"),
+                         "venue": venue, "distance": int(dist.group(2)), "going": g("馬場")[:1] or "良",
+                         "race_name": g("レース名"), "grade": grade_of(g("レース名")),
+                         "time": t, "front3f": parse_front3f(g("ペース"))})
+            added += 1
+        print(f"  基準データ page{page}: +{added}件（累計{len(rows)}）")
+        if added == 0:
+            break
+    return rows
 
 
 def main() -> None:
@@ -163,16 +209,19 @@ def main() -> None:
     if not pairs:
         sys.exit("usage: sim_fetch.py 馬名=netkeibaID ...")
     session = requests.Session()
-    data = {"horses": {}, "races": {}}
+    data = {"horses": {}, "baseline": []}
     for name, hid in pairs:
         print(f"[馬] {name} ({hid})")
         data["horses"][name] = fetch_horse(session, name, hid)
 
-    race_ids = sorted({r["race_id"] for h in data["horses"].values() for r in h["races"]
-                       if r["race_id"].isdigit() and r["venue"] in JRA_VENUES and r["surface"] == "芝"})
-    print(f"[レース] JRA芝 {len(race_ids)}レースの上位タイムを取得")
-    for rid in race_ids:
-        data["races"][rid] = {"year": int(rid[:4]), "top_times": fetch_race_top_times(session, rid)}
+    print("[基準] JRA芝 G1/G2 の勝ちタイムを取得")
+    data["baseline"] = fetch_baseline(session, 2000, 2025)
+    grades = {}
+    for r in data["baseline"]:
+        grades[r["grade"]] = grades.get(r["grade"], 0) + 1
+    print(f"  基準データ {len(data['baseline'])}件 / 格の内訳 {grades}")
+    if len(data["baseline"]) < 300:
+        raise RuntimeError("基準データが少なすぎます（検索ページの形式が変わった可能性）")
 
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
