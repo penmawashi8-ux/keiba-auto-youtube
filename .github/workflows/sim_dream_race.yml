@@ -1,0 +1,62 @@
+name: Dream Race Simulation (prototype)
+
+# 夢の対決シミュレーションの試作。netkeiba DB から成績を取得し、仮想レースを1万回走らせて
+# 勝率レポート・アニメーション・静止画を research-output ブランチの sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+    inputs:
+      horses:
+        description: "馬名=netkeibaID をスペース区切り"
+        default: "ディープインパクト=2002100816 オルフェーヴル=2008102636 キタサンブラック=2012102013 アーモンドアイ=2015104961 イクイノックス=2019105219"
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/sim_fetch.py
+      - scripts/sim_dream_race.py
+      - .github/workflows/sim_dream_race.yml
+
+env:
+  DEFAULT_HORSES: "ディープインパクト=2002100816 オルフェーヴル=2008102636 キタサンブラック=2012102013 アーモンドアイ=2015104961 イクイノックス=2019105219"
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          pip install requests==2.32.3 beautifulsoup4
+
+      - name: Fetch race records
+        run: python scripts/sim_fetch.py ${{ github.event.inputs.horses || env.DEFAULT_HORSES }}
+
+      - name: Run simulation and render
+        run: python scripts/sim_dream_race.py
+
+      - name: Save outputs to research-output branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          rm -rf /tmp/sim_out && mkdir -p /tmp/sim_out
+          cp sim/*.md sim/*.json sim/*.mp4 sim/*.jpg /tmp/sim_out/ 2>/dev/null || true
+          git fetch origin research-output
+          git switch -c research-output FETCH_HEAD
+          rm -rf sim && mkdir -p sim && cp /tmp/sim_out/* sim/ 2>/dev/null || true
+          git add -f sim
+          git commit -m "夢の対決シミュレーション試作 (run ${GITHUB_RUN_ID}) [skip ci]" || echo "変更なし"
+          git push origin research-output
