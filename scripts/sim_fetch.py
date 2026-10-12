@@ -7,7 +7,7 @@
     "baseline": [2000〜2025年 JRA芝1600〜3200m G1/G2 の勝ちタイム行, ...]   # 時代補正・ペース補正用
   }
 基準データ行: race_id, year, race_name, grade, venue, distance, cond(出走条件), age2/age3/mare(区分),
-            time(勝ちタイム), going, front3f(前半3F)
+            time(勝ちタイム), going, front3f(累計ペースの3つ目), pace_cum(累計ペース)
 成績行: date, venue, race_name, race_id, field_size, position, weight(斤量), surface, distance,
         going, time, passing(通過), front3f(前半3F), last3f(上り)
 
@@ -192,11 +192,13 @@ def fetch_race_result(session, race_id: str) -> dict | None:
             break
     text = soup.get_text(" ", strip=True)
     going = re.search(r"芝\s*:\s*(良|稍|重|不)", text)
-    pace = re.search(r"ペース\s*([\d.]+)\s*-\s*([\d.]+)\s*-\s*([\d.]+)", text)
+    # 「ペース 12.7 - 24.0 - 35.5 - 46.5 ...」= スタートからの累計タイム（距離が200で割り切れないと最初が100m）
+    pace = re.search(r"ペース\s*((?:[\d.]+\s*-\s*)+[\d.]+)", text)
+    cum = [float(v) for v in re.findall(r"[\d.]+", pace.group(1))] if pace else []
     if not win_time:
         return None
     return {"time": win_time, "going": going.group(1) if going else "良",
-            "front3f": float(pace.group(3)) if pace else None}
+            "front3f": cum[2] if len(cum) >= 3 else None, "pace_cum": cum}
 
 
 def fetch_baseline(session, y0: int, y1: int) -> list[dict]:

@@ -3,8 +3,9 @@
 
 モデル（すべて公開成績のタイムから自前で計算。netkeiba のタイム指数は使わない）:
   1. 基準タイム: 2000年以降の JRA芝 G1/G2 勝ちタイム（約1,000レース）を
-       コース(場・距離) + 馬場状態 + 年 + 前半3Fのペース + 格(G2) + 3歳限定 + 牝馬限定
+       コース(場・距離) + 馬場状態 + 年 + 前半600mのペース + 格(G2) + 3歳限定 + 牝馬限定
      で回帰する。年の項が「馬場の高速化」、ペースの項が「スローで時計が遅くなる分」を吸収する
+     （年の項は隣接年の差に罰則をかけて滑らかにする）
   2. 1走ごとのスピード値 = その年・その馬場・そのペースでの「平均的なG1勝ち馬」のタイム − その馬のタイム
      （2400m換算。定量より重い/軽い斤量を背負った分も補正）
      → 0 なら平均的なG1馬、+1.0 なら平均的なG1馬より2400mで1秒速い
@@ -31,6 +32,7 @@ TARGET = {"venue": "東京", "distance": 2400, "going": "良", "label": "東京 
 N_RUNS = 10000
 SEC_PER_KG = 0.15          # 斤量1kg ≈ 2000mで0.15秒
 STYLE_PACE = 0.6           # 展開の効き（秒）。ハイペースで追込に最大この程度有利
+YEAR_SMOOTH = 15.0         # 年ごとの馬場の速さの平滑化の強さ
 TOP_N = 4                  # 能力値に使う上位走数
 SIGMA_TOP = 6              # ばらつきの計算に使う上位走数
 SIGMA_MIN, SIGMA_MAX = 0.45, 0.9
@@ -60,6 +62,37 @@ def solve(a: list[list[float]], b: list[float]) -> list[float]:
     return [m[i][n] / (m[i][i] or 1e-12) for i in range(n)]
 
 
+def front600(r: dict) -> float | None:
+    """スタートから600m地点までの通過タイム。
+
+    ラップは200mごとだが、距離が200で割り切れないレース（2500mなど）は最初の区間が100m。
+    累計ペース（pace_cum）があれば600m地点を補間で求め、無い古いデータは
+    「3つ目の累計値＝500m通過」を600m相当に換算する。
+    """
+    cum = r.get("pace_cum")
+    first = 100 if r["distance"] % 200 == 100 else 200
+    if cum:
+        marks = [first + 200 * i for i in range(len(cum))]
+        for (m0, t0), (m1, t1) in zip(zip(marks, cum), zip(marks[1:], cum[1:])):
+            if m0 <= 600 <= m1:
+                return t0 + (t1 - t0) * (600 - m0) / (m1 - m0)
+        return None
+    if r.get("front3f") is None:
+        return None
+    return r["front3f"] * 600 / 500 if first == 100 else r["front3f"]
+
+
+def clean_baseline(rows: list[dict]) -> list[dict]:
+    """重賞日程のリンク誤り（同じレースIDが別レースの行にも付いている）を除き、600m通過を付ける"""
+    count = {}
+    for r in rows:
+        count[r["race_id"]] = count.get(r["race_id"], 0) + 1
+    dup = {k for k, v in count.items() if v > 1}
+    if dup:
+        print(f"[基準] レースIDが重複した {len(dup)}件を除外: {sorted(dup)}")
+    return [{**r, "front": front600(r)} for r in rows if r["race_id"] not in dup]
+
+
 class ParModel:
     """平均的な重賞勝ち馬のタイムを、コース・馬場・年・ペース・レース区分から予測する"""
 
@@ -67,8 +100,8 @@ class ParModel:
         rows = [r for r in rows if r["grade"] in ("G1", "G2") and not r["age2"]]
         by_course = {}
         for r in rows:
-            if r["front3f"]:
-                by_course.setdefault(course_key(r["venue"], r["distance"]), []).append(r["front3f"])
+            if r["front"]:
+                by_course.setdefault(course_key(r["venue"], r["distance"]), []).append(r["front"])
         self.front_mean = {c: statistics.mean(v) for c, v in by_course.items()}
         self.courses = sorted({course_key(r["venue"], r["distance"]) for r in rows})
         self.years = sorted({r["year"] for r in rows} - {REF_YEAR})
@@ -79,7 +112,7 @@ class ParModel:
         ata = [[0.0] * k for _ in range(k)]
         atb = [0.0] * k
         for r in rows:
-            xi = self._x(course_key(r["venue"], r["distance"]), r["going"], r["year"], r["front3f"],
+            xi = self._x(course_key(r["venue"], r["distance"]), r["going"], r["year"], r["front"],
                          r["grade"] == "G2", r["age3"], r["mare"])
             for i, xv in enumerate(xi):
                 if xv:
@@ -89,6 +122,18 @@ class ParModel:
                             ata[i][j] += xv * xw
         for i in range(k):
             ata[i][i] += 1e-3
+        # 年ごとの馬場の速さは隣の年と大きく変わらないはずなので、隣接年の差に罰則をかけて滑らかにする
+        # （1年あたり約45レースしかなく、そのままだと特定の年が±2秒も跳ねるため）
+        ypos = {y: self.feats.index(f"y:{y}") for y in self.years}
+        all_years = sorted(self.years + [REF_YEAR])
+        for y0, y1 in zip(all_years, all_years[1:]):
+            i, j = ypos.get(y0), ypos.get(y1)   # 基準年は係数0固定なので片側だけの罰則になる
+            for a in (i, j):
+                if a is not None:
+                    ata[a][a] += YEAR_SMOOTH
+            if i is not None and j is not None:
+                ata[i][j] -= YEAR_SMOOTH
+                ata[j][i] -= YEAR_SMOOTH
         self.coef = dict(zip(self.feats, solve(ata, atb)))
 
     def front_dev(self, course: str, front3f: float | None) -> float:
@@ -104,6 +149,7 @@ class ParModel:
         return v
 
     def predict(self, venue, distance, going, year, front3f=None, age3=False) -> float | None:
+        # front3f は600m通過タイム（front600 で換算済みの値）
         """その条件での「平均的なG1勝ち馬」（古馬混合・牡馬基準）のタイム"""
         course = course_key(venue, distance)
         if "c:" + course not in self.coef:
@@ -150,9 +196,13 @@ def build_ratings(data: dict, model: ParModel) -> dict:
             if (not b or not r["time"] or not (DIST_MIN <= b["distance"] <= DIST_MAX)
                     or b["age2"] or b["mare"]):
                 continue
+            if (b["venue"], b["distance"]) != (r["venue"], r["distance"]):
+                print(f"[警告] {name} {name_r}: 基準データと条件が食い違うため除外 "
+                      f"({r['venue']}{r['distance']} vs {b['venue']}{b['distance']})")
+                continue
             year = b["year"]
             age3 = b["age3"]
-            exp = model.predict(b["venue"], b["distance"], b["going"], year, b["front3f"], age3)
+            exp = model.predict(b["venue"], b["distance"], b["going"], year, b["front"], age3)
             if exp is None:
                 continue
             fig = (exp - r["time"]) * 2400 / b["distance"]
@@ -161,7 +211,7 @@ def build_ratings(data: dict, model: ParModel) -> dict:
                 fig += extra * SEC_PER_KG * 1.2
             figs.append({"fig": round(fig, 2), "race": name_r, "date": r["date"], "pos": r["position"],
                          "time": r["time"], "course": f"{b['venue']}{b['distance']}", "going": b["going"],
-                         "front3f": b["front3f"], "weight": r["weight"]})
+                         "front3f": round(b["front"], 1) if b["front"] else None, "weight": r["weight"]})
             s = first_pass_ratio(r["passing"], r["field_size"])
             if s is not None:
                 styles.append(s)
@@ -393,6 +443,7 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
 
 def main() -> None:
     data = json.loads((SIM_DIR / "data.json").read_text(encoding="utf-8"))
+    data["baseline"] = clean_baseline(data["baseline"])
     model = ParModel(data["baseline"])
     horses = build_ratings(data, model)
     rank_counts = monte_carlo(horses)
