@@ -1,7 +1,8 @@
 name: Dream Race Simulation (prototype)
 
-# 夢の対決シミュレーションの試作。netkeiba DB から成績を取得し、仮想レースを1万回走らせて
-# 勝率レポート・アニメーション・静止画を research-output ブランチの sim/ に保存する（投稿はしない）。
+# 夢の対決シミュレーションの試作。netkeiba から JRA芝重賞の全出走馬成績を取得し、
+# バックテストで計算方法を選んだうえで仮想レースを1万回走らせる。
+# 結果（レポート・アニメーション・静止画・取得データ）は research-output ブランチの sim/ に保存する（投稿はしない）。
 on:
   workflow_dispatch:
     inputs:
@@ -13,6 +14,7 @@ on:
       - claude/youtube-keiba-video-research-x6jdvw
     paths:
       - scripts/sim_fetch.py
+      - scripts/sim_model.py
       - scripts/sim_dream_race.py
       - .github/workflows/sim_dream_race.yml
 
@@ -22,7 +24,7 @@ env:
 jobs:
   simulate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60  # 重賞約1,000レースの結果ページを1秒間隔で取得するため
+    timeout-minutes: 60  # 初回は重賞約1,000レースの結果ページを1秒間隔で取得するため
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -41,23 +43,20 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
           pip install requests==2.32.3 beautifulsoup4
 
-      - name: Fetch race records
-        run: python scripts/sim_fetch.py ${{ github.event.inputs.horses || env.DEFAULT_HORSES }}
+      - name: Restore fetch cache from research-output
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output && git show FETCH_HEAD:sim/races_cache.json > sim/races_cache.json \
+            && echo "キャッシュ復元: $(wc -c < sim/races_cache.json) bytes" || { rm -f sim/races_cache.json; echo "キャッシュなし"; }
 
-      - name: Run simulation and render
-        run: python scripts/sim_dream_race.py
+      - name: Fetch graded race results
+        run: python scripts/sim_fetch.py 2003 2025
+
+      - name: Save fetched data to research-output branch
+        run: bash .github/scripts/save_sim_outputs.sh "取得データ" sim/races_cache.json sim/races.json
+
+      - name: Backtest, simulate and render
+        run: python scripts/sim_dream_race.py ${{ github.event.inputs.horses || env.DEFAULT_HORSES }}
 
       - name: Save outputs to research-output branch
-        # 失敗時に前回の出力を消さないよう、成功したときだけ保存する
-        if: success()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          rm -rf /tmp/sim_out && mkdir -p /tmp/sim_out
-          cp sim/*.md sim/*.json sim/*.mp4 sim/*.jpg /tmp/sim_out/ 2>/dev/null || true
-          git fetch origin research-output
-          git switch -c research-output FETCH_HEAD
-          rm -rf sim && mkdir -p sim && cp /tmp/sim_out/* sim/ 2>/dev/null || true
-          git add -f sim
-          git commit -m "夢の対決シミュレーション試作 (run ${GITHUB_RUN_ID}) [skip ci]" || echo "変更なし"
-          git push origin research-output
+        run: bash .github/scripts/save_sim_outputs.sh "夢の対決シミュレーション試作" sim/*.md sim/*.json sim/*.mp4 sim/*.jpg
