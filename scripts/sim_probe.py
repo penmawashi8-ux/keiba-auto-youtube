@@ -26,7 +26,8 @@ def show(label: str, r: requests.Response) -> None:
     print(f"== {label}: HTTP {r.status_code} url={r.url[:160]} len={len(raw)} enc={enc}")
     print(f"   history={[h.status_code for h in r.history]} title={title.group(1).strip()[:80] if title else None!r}")
     print(f"   /race/ リンク数={len(links)} 先頭={links[:3]}")
-    print(f"   table class={re.findall(r'<table[^>]*class=\"([^\"]+)\"', text)[:5]}")
+    classes = re.findall(r'<table[^>]*class="([^"]+)"', text)[:5]
+    print(f"   table class={classes}")
     if not links:
         print("   先頭600字:", re.sub(r"\s+", " ", text[:600]))
 
