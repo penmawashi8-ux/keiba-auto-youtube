@@ -1,98 +1,72 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 503 サービス一時停止。リトライします。
-[2]  [key=***189Y / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***l-ME / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***l-ME / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[1] [エラー] 全キー・全モデルを試しましたが、条件を満たす脚本が得られませんでした。
-[2] [エラー] 全キー・全モデルを試しましたが、条件を満たす脚本が得られませんでした。
-[警告] 記事 [1, 2] のスクリプト生成に失敗しましたが、成功した 1 件で続行します。
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (45個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
-使用候補モデル: ['gemini-2.5-flash']
-試行組み合わせ数: 3 (キー×モデル)
+使用候補モデル: ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
+試行組み合わせ数: 18 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 【もみじS・水納の特注馬】函館2歳S12着のロンドンガーズの巻き返しに期待　良馬場なら違う ---
-[0] Gemini入力本文 366文字: '◆もみじS・2歳オープン(10月17日、京都競馬場・芝1400メートル)\n\t\t\t\t\u3000函館2歳Sで12着と大敗したロンドンガーズ(牡2歳、栗東・前川恭子厩舎、父グレーターロンドン)の巻き返しに期待したい。\n\t\t\t\t\u3000前走は3番人気の支持を裏切'
+--- 記事[0]: 1位はミッキークイーンの二冠制覇 秋華賞の勝ち時計ランキング ---
+[0] Gemini入力本文 347文字: '10月18日(日)に京都競馬場で行われる秋華賞(3歳牝・GI・芝2000m)。96年にエリザベス女王杯が古馬開放されたことにともない、牝馬三冠の最終戦として創設された。今年は無傷の4連勝でローズSを制したモンローウォークなど、18頭がエント'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[1]: 【秋華賞・イシゴーの特注馬】前走で上がり3ハロン32秒3を繰り出したラベルセーヌ　瞬発力勝負なら勝機十分 ---
-[1] Gemini入力本文 360文字: '◆第31回秋華賞・G1(10月18日、京都競馬場・芝2000メートル)\n\t\t\t\t\u30004連勝中のモンローウォークに死角があるとすれば、高速決着が続く京都で究極の瞬発力勝負になったシーンか。それならばラベルセーヌ(牝3歳、美浦・鹿戸雄一厩舎、父キ'
+--- 記事[1]: 【注目馬動向】昨年の最優秀2歳牡馬カヴァレリッツォは復帰予定の富士Sへの登録見送る　シルクホースクラブ発表 ---
+[1] Gemini入力本文 345文字: '昨年の朝日杯FS勝ち馬で、富士S・G2(10月17日、東京競馬場・芝1600メートル)での復帰を予定していた昨年の最優秀2歳牡馬カヴァレリッツォ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)が、同レースへの登録を見送った。馬主のシルク'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[2]: 【秋華賞・高野の特注馬】スイートピーS覇者のカナルサンマルタン　5か月以上の休養明けでも好勝負必至 ---
-[2] Gemini入力本文 365文字: '◆第31回秋華賞・G1(10月18日、京都競馬場・芝2000メートル)\n\t\t\t\t\u3000才能豊かなリアルスティール産駒が“令和のファインモーション”ことモンローウォークに待ったをかける。カナルサンマルタン(牝3歳、美浦・宮田敬介厩舎、父リアルステ'
+--- 記事[2]: 【富士ステークス展望】重賞3勝馬トロヴァトーレが中心　本格化したアンパドゥも勝ち負けになる ---
+[2] Gemini入力本文 371文字: '第29回富士ステークス・G2(1着馬にマイルCSの優先出走権)は10月17日、東京競馬場の芝1600メートルで行われる。\n\t\t\t\t\u3000トロヴァトーレ(牡5歳、美浦・鹿戸雄一厩舎、父レイデオロ)は今年、東京新聞杯とエプソムカップを連勝するなど重'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
   HTTP 200
-[0]  [Gemini生出力 219文字]: 'レース関連の最新情報です。もみじS・2歳オープン、10月17日に京都競馬場・芝1400メートルで行われるレースについてです。函館2歳Sで12着と大敗したロンドンガーズの巻き返しに期待が寄せられています。前走では3番人気の支持を裏切る形となりましたが、敗因は馬場と明確にされています。4番手につけながら3角過ぎで手応えが悪くなったのは、初めての洋芝かつ重馬場で余力がなくなった印象を受けたとのことです。新馬戦では3馬身差で逃げ切っています。'
+[0]  [Gemini生出力 249文字]: '競馬ファン注目の情報です。10月18日(日)に京都競馬場で行われる秋華賞は、3歳牝馬のGI、芝2000mのレースです。このレースは、1996年にエリザベス女王杯が古馬開放されたことにともない、牝馬三冠の最終戦として創設されました。今年は、無傷の4連勝でローズSを制したモンローウォークなど、18頭がエントリーしています。歴代勝ち時計のランキングでは、ミッキークイーンの二冠制覇が1位と紹介されています。また、4位タイには1996年のファビラスラフインが記録した1分58秒1という勝ち時計があります。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (219文字)
-[0]  プレビュー: レース関連の最新情報です。もみじS・2歳オープン、10月17日に京都競馬場・芝1400メートルで行われるレースについてです。函館2歳Sで12着と大敗したロンドン...
-[2] 使用: key=***189Y model=gemini-2.5-flash
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 503
-[1] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
-[2] 使用: key=***l-ME model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
+[0]  → output/script_0.txt 保存 (249文字)
+[0]  プレビュー: 競馬ファン注目の情報です。10月18日(日)に京都競馬場で行われる秋華賞は、3歳牝馬のGI、芝2000mのレースです。このレースは、1996年にエリザベス女王杯...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   HTTP 429
-
-1 件の脚本を生成しました。
+[1] 使用: key=***zGG0 model=gemini-2.5-flash-lite
+[2] 使用: key=***zGG0 model=gemini-2.5-flash-lite
+  HTTP 404
+  HTTP 404
+Traceback (most recent call last):
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 762, in <module>
+    main()
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 732, in main
+    i, ok = future.result()
+            ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 543, in generate_one
+    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 382, in call_gemini
+    raise requests.exceptions.HTTPError(safe_msg) from None
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=***
