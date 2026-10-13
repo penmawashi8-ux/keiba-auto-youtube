@@ -255,26 +255,52 @@ def formation(finish: list[float], styles: list[float], dist: int, taus: list[fl
             ramp = _smooth(u / 0.1)
             late = _smooth((u - 0.6) / 0.4)
             gap = (3.0 + styles[i] * 26.0) * ramp
-            wob = 1.2 * math.sin(2 * math.pi * (2.5 * u + i * 0.37)) * ramp * (1 - late)
+            wob = 0.6 * math.sin(2 * math.pi * (2.5 * u + i * 0.37)) * ramp * (1 - late)
             D[i][k] = max(v * tau - gap * (1 - late) - (finish[i] - win_t) * v * late + wob, 0.0)
-        order = sorted(range(n), key=lambda i: -D[i][k])
+        prev = [LAT[i][k - 1] if k > 0 else 2.0 + i * 3.6 for i in range(n)]
+        # 内にいる馬ほど優先して今の車線を保つ。抜きにかかる馬のほうが外を回る
+        # （抜いた馬が内に切れ込んで、抜かれた馬を外へ押し出すとふらついて見えるため）
+        if k > 0 and tau >= win_t:     # ゴール後は横に動かさない
+            for i in range(n):
+                LAT[i][k] = prev[i]
+            continue
+        order = sorted(range(n), key=lambda i: (round(prev[i], 1), -D[i][k]))
         placed = []
         for i in order:
             rem = dist - D[i][k]
             want = 1.8 + _smooth((520 - rem) / 140) * max(styles[i] - 0.3, 0.0) * 14.0   # 直線で外に持ち出す
             g = _smooth(D[i][k] / 160)                                                  # ゲートから内へ
             lat = (2.0 + i * 3.6) * (1 - g) + want * g
-            # 前後4.8m・左右3.4m以内に馬がいたら、その外側に並ぶ（重なり防止）
+            if k > 0:                      # 内へは少しずつしか寄らない
+                lat = max(lat, prev[i] - 0.5)
+
+            def hits(x):
+                # 前後4.8m・左右3.4m以内に馬がいたら重なるとみなす。
+                # 前の馬に追いついている最中は前方12mまで見て、早めに外へ出す
+                out = []
+                for j, pd, pl in placed:
+                    ahead = pd - D[i][k]
+                    closing = k > 0 and (D[i][k] - D[i][k - 1]) - (D[j][k] - D[j][k - 1]) > 0.3
+                    if -4.8 < ahead < (12.0 if closing else 4.8) and abs(pl - x) < 3.4:
+                        out.append(pl)
+                return out
+
             for _ in range(n):
-                hit = [pl for pd, pl in placed if abs(pd - D[i][k]) < 4.8 and abs(pl - lat) < 3.4]
-                if not hit:
+                h = hits(lat)
+                if not h:
                     break
-                lat = max(hit) + 3.6
+                lat = max(h) + 3.6
             lat = min(lat, TRACK_W_M - 1.5)
-            if k > 0:                      # 横の動きは少しずつ（急に車線が飛ばないように）
-                lat = LAT[i][k - 1] + (lat - LAT[i][k - 1]) * 0.45
-            placed.append((D[i][k], lat))
+            if k > 0:                      # 外へも急には動かない
+                lat = min(lat, prev[i] + 1.2)
+            placed.append((i, D[i][k], lat))
             LAT[i][k] = lat
+    # 細かい揺れを残さないよう、横位置を前後の時刻でならす
+    for i in range(n):
+        row = LAT[i][:]
+        for k in range(len(taus)):
+            win = row[max(0, k - 2):k + 3]
+            LAT[i][k] = sum(win) / len(win)
     return D, LAT
 
 
