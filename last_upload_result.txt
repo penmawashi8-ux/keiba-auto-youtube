@@ -1,10 +1,9 @@
-date: 2026-10-13T07:08:16.398840Z
+date: 2026-10-13T10:08:22.538482Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=e-cj7jqDumU title=フランス遠征明けのシュトラウスはキャピタルSが次走の候補　ジャパンC前日のリステ
-OK project=1 video_id=DfZGNEVIUKc title=【地方競馬】2027年ダート主要競走の日程など発表　JRAオープン交流競走を新設
-OK project=1 video_id=qLz88d0z1JE title=【東京HJ想定騎手】エコロデュエルは草野太郎騎手、ジューンベロシティは高田潤騎手
+OK project=1 video_id=o8FyQhRoUhw title=【秋華賞】四位洋文調教師がGI初制覇へ フェスティバルヒルで波乱呼ぶか
+OK project=1 video_id=Mm5Dopyv7LE title=【秋華賞】指揮官がレジェンドから託されたひと言は　同期の蛯名正義調教師と武豊騎手
