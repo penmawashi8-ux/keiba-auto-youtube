@@ -199,8 +199,8 @@ def render(horses: dict, race: list[tuple[str, float]], premise: list[str]) -> N
     dt(tf("sub", f"{TARGET['label']}　{N_RUNS:,}回の期待値レース"), 34, "0xFFF59D", "(w-text_w)/2", "350", title_on)
 
     # 前提条件・注意事項
-    dt(tf("premise", "\n".join(premise)), 26, "white", "'max(40,(w-text_w)/2)'", "(h-text_h)/2",
-       f":expansion=none:line_spacing=11:box=1:boxcolor=black@0.55:boxborderw=26"  # 「%」をそのまま表示
+    dt(tf("premise", "\n".join(premise)), 22, "white", "'max(40,(w-text_w)/2)'", "(h-text_h)/2",
+       f":expansion=none:line_spacing=6:box=1:boxcolor=black@0.55:boxborderw=22"  # 「%」をそのまま表示。Notoは行高が大きいので小さめ
        f":enable='between(t,{TITLE_SEC},{TITLE_SEC + PREMISE_SEC})'")
 
     # レース画面（ゲートに並んだ状態から表示し、RACE_START でスタート）
