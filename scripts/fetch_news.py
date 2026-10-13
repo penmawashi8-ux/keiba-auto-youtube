@@ -119,6 +119,13 @@ _DENY_SERIES_KEYWORDS = (
     "出来事一覧",
 )
 
+# 見出しの【】内にシリーズ名が入る連載。回数や「番外編」が付くので正規表現で判定する。
+#   我が道 … スポニチの自伝連載「【根本康広　我が道12】…」。ニュースではない
+# 【】内に限定しているので、本文見出しの「我が道を行く逃げ」等は巻き込まない。
+_DENY_SERIES_PATTERNS = (
+    re.compile(r"【[^】]*我が道[^】]*】"),
+)
+
 
 def daily_column_match(title: str) -> str:
     """除外対象の定型シリーズ名を返す（該当しなければ空文字）。"""
@@ -126,6 +133,10 @@ def daily_column_match(title: str) -> str:
     for name in _DENY_SERIES_KEYWORDS:
         if name in normalized:
             return name
+    for pat in _DENY_SERIES_PATTERNS:
+        m = pat.search(normalized)
+        if m:
+            return m.group(0)
     return ""
 
 
