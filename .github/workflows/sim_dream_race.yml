@@ -17,6 +17,8 @@ on:
       - scripts/sim_fetch_horses.py
       - scripts/sim_model.py
       - scripts/sim_learn.py
+      - scripts/sim_render.py
+      - scripts/sim_bgm.py
       - scripts/sim_dream_race.py
       - .github/workflows/sim_dream_race.yml
 

@@ -5,7 +5,8 @@
    2頭比較のモデルを学習（2008〜2018年）・検証（2019〜2025年、単勝人気と比較）する
 2. 対象馬それぞれの全盛期のスコアを出す（その日の事情に当たる手がかりは全馬同じにそろえる）
 3. 1回のレース = スコア + ガンベル分布の乱数 で着順を決める（学習した2頭比較の確率と一致）
-4. レポートと動画（前提条件・注意事項 → コース図のレース → 結果・分析）を出力する（描画は sim_render.py）
+4. 1万回のうち代表的な1回をレース映像にし、前提条件・注意事項 → レース → 結果・分析 の動画を作る
+   （描画は sim_render.py、オリジナルBGMは sim_bgm.py）
 
 使い方: python scripts/sim_dream_race.py ディープインパクト=2002100816 イクイノックス=2019105219 ...
 出力: sim/report.md, sim/result.json, sim/race.mp4, sim/frame_*.jpg
@@ -17,12 +18,14 @@ import json
 import math
 import random
 import statistics
+import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import sim_learn as sl
 import sim_model as sm
+import sim_bgm as sb
 import sim_render as sr
 
 SIM_DIR = Path("sim")
@@ -213,7 +216,7 @@ def before_pages(horses: dict, kit: dict, famous: list[dict]) -> list[dict]:
 
     pages.append(sr.text_page("注意事項", [
         "・これは実際のレース映像ではありません。公開データから計算したシミュレーションです",
-        f"・表示するレースは、{N_RUNS:,}回のうち「全馬がスコアどおりに走った」1回です",
+        f"・映像のレースは、{N_RUNS:,}回走らせたうちの代表的な1回です",
         "　毎回この着順になるわけではありません（勝率は最後に表示します）",
         "・騎手・調教・当日の状態・枠順・馬場の内外の差は考慮していません",
         "・海外（凱旋門賞など）・地方・ダートのレースは計算に含めていません",
@@ -223,74 +226,114 @@ def before_pages(horses: dict, kit: dict, famous: list[dict]) -> list[dict]:
     return pages
 
 
+def pick_display_race(horses: dict, rank_counts: dict, base: float, k: float, ref: float,
+                      seed: int = 7) -> list[tuple[str, float]]:
+    """映像で見せるレースを、1万回のシミュレーションと同じ方法で走らせた中から1回選ぶ。
+
+    条件: 最も勝率が高い馬が勝ち、1着〜最下位の差が約3〜8馬身（0.5〜1.4秒）。
+    その中で、着順が「全馬スコアどおり」の順に最も近い回を選ぶ（毎回同じ結果になるよう乱数は固定）。
+    """
+    rnd = random.Random(seed)
+    names = list(horses)
+    fav = max(names, key=lambda n: rank_counts[n][0])
+    expected = sorted(names, key=lambda n: -horses[n]["score"])
+    best = None
+    for _ in range(N_RUNS):
+        perf = {n: horses[n]["score"] - math.log(-math.log(rnd.random() or 1e-12)) for n in names}
+        order = sorted(names, key=lambda n: -perf[n])
+        times = {n: base - k * (perf[n] - ref) for n in names}
+        spread = times[order[-1]] - times[order[0]]
+        if order[0] != fav or not (0.5 <= spread <= 1.4):
+            continue
+        dist = sum(abs(order.index(n) - expected.index(n)) for n in names)
+        if best is None or dist < best[0]:
+            best = (dist, sorted(times.items(), key=lambda t: t[1]))
+        if dist == 0:
+            break
+    if best is None:     # 条件に合う回が無ければ、スコアどおりの順
+        return sorted(((n, base - k * (horses[n]["score"] - ref)) for n in names), key=lambda t: t[1])
+    return best[1]
+
+
 def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str, float]]) -> list[dict]:
+    """結果ページ。1画面の情報は少なめ・文字は大きめにする"""
     names = list(horses)
     idx = {n: i for i, n in enumerate(names)}
     win_t = race[0][1]
-    rows = [[{"text": "着順", "x": 80, "color": "0xBDBDBD"}, {"text": "馬名", "x": 200, "color": "0xBDBDBD"},
-             {"text": "タイム", "x": 640, "color": "0xBDBDBD"}, {"text": "着差", "x": 860, "color": "0xBDBDBD"}]]
+    rows = [[{"text": "着順", "x": 90, "color": "0xBDBDBD"}, {"text": "馬名", "x": 210, "color": "0xBDBDBD"},
+             {"text": "タイム", "x": 660, "color": "0xBDBDBD"}, {"text": "着差", "x": 880, "color": "0xBDBDBD"}]]
     for k, (n, t) in enumerate(race, 1):
-        rows.append([{"text": f"{k}着", "x": 80, "size": 32}, {"text": n, "x": 200, "size": 32, "badge": idx[n]},
-                     {"text": fmt_time(t), "x": 640, "size": 32},
-                     {"text": "" if k == 1 else f"{lengths(t - win_t)}（{t - win_t:.1f}秒）", "x": 860, "size": 28}])
-    rows += ["", {"text": "※全馬がスコアどおりに走った場合の1レース。タイムは2023年の東京の良馬場に換算", "size": 20},
-             {"text": f"※実際には調子やペースで毎回着順が変わる。{N_RUNS:,}回走らせた勝率は次のページ", "size": 20}]
-    pages = [sr.text_page(f"結果① 着順（{TARGET['label']}）", rows, 9.0, size=28, top=130)]
+        rows.append([{"text": f"{k}着", "x": 90, "size": 34}, {"text": n, "x": 210, "size": 34, "badge": idx[n]},
+                     {"text": fmt_time(t), "x": 660, "size": 34},
+                     {"text": "" if k == 1 else lengths(t - win_t), "x": 880, "size": 34}])
+    rows += ["", {"text": f"※映像のレースは{N_RUNS:,}回のうちの代表的な1回。毎回この着順になるわけではありません",
+                  "size": 21, "color": "0xBDBDBD"}]
+    pages = [sr.text_page("レース結果", rows, 8.0, size=30, top=130)]
 
     order = sorted(names, key=lambda n: -rank_counts[n][0])
     top_rate = rank_counts[order[0]][0] / N_RUNS
-    rows = [[{"text": "馬名", "x": 60, "color": "0xBDBDBD"}, {"text": "勝率", "x": 380, "color": "0xBDBDBD"},
-             {"text": "2着以内", "x": 520, "color": "0xBDBDBD"}, {"text": "3着以内", "x": 660, "color": "0xBDBDBD"},
-             {"text": "勝った回数", "x": 820, "color": "0xBDBDBD"}]]
-    for n in order:
-        rc = rank_counts[n]
-        rows.append([{"text": n, "x": 60, "size": 28, "badge": idx[n]},
-                     {"text": f"{rc[0] / N_RUNS:.1%}", "x": 380, "size": 28},
-                     {"text": f"{sum(rc[:2]) / N_RUNS:.1%}", "x": 520, "size": 28},
-                     {"text": f"{sum(rc[:3]) / N_RUNS:.1%}", "x": 660, "size": 28},
-                     {"text": f"{rc[0]:,}回", "x": 820, "size": 28}])
-        rows.append({"text": "■" * max(1, round(rc[0] / N_RUNS / max(top_rate, 1e-9) * 30)), "x": 60, "size": 14,
-                     "color": sr.COLORS[idx[n]], "extra": sr.DOT_BORDER[idx[n]]})
-    pages.append(sr.text_page(f"結果② {N_RUNS:,}回走らせた結果", rows, 10.0, size=26))
-
-    fi = {name: i for i, name in enumerate(sl.FEATS)}
     rows = []
     for n in order:
+        p = rank_counts[n][0] / N_RUNS
+        rows.append([{"text": n, "x": 60, "size": 32, "badge": idx[n]},
+                     {"text": f"勝率 {p:.1%}", "x": 520, "size": 34, "color": "0xFFF59D"}])
+        rows.append({"text": "■" * max(1, round(p / max(top_rate, 1e-9) * 34)), "x": 110, "size": 16,
+                     "color": sr.COLORS[idx[n]], "extra": sr.DOT_BORDER[idx[n]]})
+    pages.append(sr.text_page(f"{N_RUNS:,}回走らせた勝率", rows, 9.0, size=30, top=120))
+
+    rows = [[{"text": "", "x": 60}, {"text": "勝率", "x": 470, "color": "0xBDBDBD"},
+             {"text": "2着以内", "x": 640, "color": "0xBDBDBD"}, {"text": "3着以内", "x": 840, "color": "0xBDBDBD"}]]
+    for n in order:
+        rc = rank_counts[n]
+        rows.append([{"text": n, "x": 60, "size": 30, "badge": idx[n]},
+                     {"text": f"{rc[0] / N_RUNS:.1%}", "x": 470, "size": 30},
+                     {"text": f"{sum(rc[:2]) / N_RUNS:.1%}", "x": 640, "size": 30},
+                     {"text": f"{sum(rc[:3]) / N_RUNS:.1%}", "x": 840, "size": 30}])
+    pages.append(sr.text_page("2着以内・3着以内に入る確率", rows, 8.0, size=28, top=130))
+
+    # 1頭1画面の分析
+    fi = {name: i for i, name in enumerate(sl.FEATS)}
+    for rank, n in enumerate(order, 1):
         f = horses[n]["feats"]
         strong, weak = [], []
         for key, label in FEATURE_LABELS.items():
             vals = sorted((horses[m]["feats"][fi[key]] for m in names), reverse=True)
-            rank = vals.index(f[fi[key]]) + 1
-            if rank == 1:
+            r = vals.index(f[fi[key]]) + 1
+            if r == 1:
                 strong.append(label)
-            elif rank == len(names):
+            elif r == len(names):
                 weak.append(label)
-        rows.append({"text": f"{n}（勝率 {rank_counts[n][0] / N_RUNS:.1%}・全盛期 {ym(horses[n]['peak_date'])}）",
-                     "badge": idx[n], "size": 24})
-        rows.append({"text": f"　5頭中1位：{'、'.join(strong) if strong else 'なし（全体的にバランス型）'}", "size": 20})
-        rows.append({"text": f"　5頭中最下位：{'、'.join(weak) if weak else 'なし'}", "size": 20, "color": "0xBDBDBD"})
-    pages.append(sr.text_page("結果③ 各馬の分析（5頭の中で何が強みか）", rows, 14.0, top=104))
+        age = int(horses[n]["peak_date"][:4]) - (sm.birth_year(horses[n]["id"]) or int(horses[n]["peak_date"][:4]))
+        rows = [{"text": n, "size": 44, "badge": idx[n]}, "",
+                {"text": f"勝率 {rank_counts[n][0] / N_RUNS:.1%}（{rank}位）", "size": 36, "color": "0xFFF59D"},
+                {"text": f"全盛期：{ym(horses[n]['peak_date'])}（{age}歳）・{style_name(horses[n]['style'])}", "size": 28},
+                "",
+                {"text": "5頭の中で1位", "size": 26, "color": "0x80CBC4"}]
+        rows += [{"text": f"　◎ {s}", "size": 30} for s in strong[:3]] or [{"text": "　なし（バランス型）", "size": 30}]
+        rows += ["", {"text": "5頭の中で最下位", "size": 26, "color": "0xEF9A9A"}]
+        rows += [{"text": f"　△ {w}", "size": 30} for w in weak[:2]] or [{"text": "　なし", "size": 30}]
+        pages.append(sr.text_page(f"分析 {rank}/{len(names)}", rows, 7.0, top=120))
 
     first, second, last = order[0], order[1], order[-1]
     p1, p2, p5 = (rank_counts[n][0] / N_RUNS for n in (first, second, last))
-    spread = race[-1][1] - race[0][1]
     # 1万回の勝率の誤差は ±0.4ポイント程度（標準誤差）。差が1ポイント未満なら「並んだ」と書く
     if p1 - p2 < 0.01:
-        head = [{"text": f"・{first}と{second}が勝率{p1:.1%}・{p2:.1%}で並んだ（誤差の範囲）", "size": 28,
-                 "color": "0xFFF59D"},
-                f"・期待値レース（結果①）の1着は{race[0][0]}。どちらが勝ってもおかしくない互角"]
+        head = [{"text": f"{first}と{second}が", "size": 40, "color": "0xFFF59D"},
+                {"text": f"勝率{p1:.1%}・{p2:.1%}で並んだ", "size": 40, "color": "0xFFF59D"},
+                "", {"text": "差は誤差の範囲。どちらが勝ってもおかしくない互角", "size": 30}]
     else:
-        head = [{"text": f"・最も多く勝ったのは {first}（{p1:.1%}）", "size": 28, "color": "0xFFF59D"},
-                f"・2位の{second}は{p2:.1%}。差は{(p1 - p2) * 100:.1f}ポイント"]
-    pages.append(sr.text_page("結果④ まとめ", head + [
-        f"・最下位評価の{last}でも{p5:.1%}＝{N_RUNS:,}回中{rank_counts[last][0]:,}回は勝つ",
-        f"・全馬がスコアどおりに走ると、1着と{len(names)}着の差は{lengths(spread)}（{spread:.1f}秒）",
+        head = [{"text": f"最も多く勝ったのは {first}", "size": 40, "color": "0xFFF59D"},
+                {"text": f"勝率 {p1:.1%}", "size": 40, "color": "0xFFF59D"},
+                "", {"text": f"2位の{second}は{p2:.1%}（差 {(p1 - p2) * 100:.1f}ポイント）", "size": 30}]
+    pages.append(sr.text_page("まとめ", head, 7.0, top=150))
+    pages.append(sr.text_page("まとめ", [
+        {"text": f"最下位評価の{last}でも", "size": 34},
+        {"text": f"{N_RUNS:,}回中{rank_counts[last][0]:,}回は勝つ（{p5:.1%}）", "size": 34, "color": "0xFFF59D"},
         "",
-        "・結論：データ上はわずかな差があるものの、どの馬にも十分に勝つチャンスがある",
-        "　実際のレースでは、展開や調子しだいで着順は大きく入れ替わる",
-        "",
-        {"text": "あなたの予想は？コメントで教えてください", "size": 30, "color": "0xFFEB3B"},
-    ], 10.0, size=26))
+        {"text": "データ上の差はわずか。どの馬にも十分に勝つチャンスがある", "size": 30},
+        "", "",
+        {"text": "あなたの予想は？コメントで教えてください", "size": 36, "color": "0xFFEB3B"},
+    ], 8.0, top=150))
     return pages
 
 
@@ -311,24 +354,36 @@ def main() -> None:
         horses[name] = {"id": hid, "score": peak[0], "peak_date": peak[1], "feats": peak[2],
                         "style": statistics.mean(styles) if styles else 0.5, "history": hist}
     rank_counts = monte_carlo(horses)
-    # 代表レース: 平均的なG1勝ち馬（東京2400m・良・基準年の想定タイム）からのスコア差を秒に換算
+    # タイムへの換算: 平均的なG1勝ち馬（東京2400m・良・基準年の想定タイム）からのスコア差を秒に直す
     base = kit["model"].coef[f"c:{TARGET['venue']}{TARGET['distance']}"]
     k = kit["train"]["sec_per_score"]
-    race = sorted(((n, base - k * (h["score"] - kit["g1_winner_score"])) for n, h in horses.items()),
-                  key=lambda x: x[1])
-    write_report(horses, kit, rank_counts, race)
+    expected = sorted(((n, base - k * (h["score"] - kit["g1_winner_score"])) for n, h in horses.items()),
+                      key=lambda x: x[1])
+    shown = pick_display_race(horses, rank_counts, base, k, kit["g1_winner_score"])
+    write_report(horses, kit, rank_counts, expected)
     print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:3500])
+    print("映像のレース:", " / ".join(f"{n} {fmt_time(t)}" for n, t in shown))
 
     names = list(horses)
-    finish = dict(race)
-    sr.render(SIM_DIR / "race.mp4", SIM_DIR / "work", find_font(), names,
-              [horses[n]["style"] for n in names], [finish[n] for n in names],
-              before_pages(horses, kit, sl.famous_checks(kit, races)),
-              after_pages(horses, kit, rank_counts, race), dist=TARGET["distance"],
-              frames={"title": 1.0, "premise1": 6.0, "premise2": 15.0, "premise3": 27.0, "premise4": 39.0,
-                      "caution": 50.0, "start": "race_start", "corner": ("race_start", 18.0), "goal": "goal",
-                      "result1": ("race_end", 4.0), "result2": ("race_end", 13.0), "result3": ("race_end", 23.0),
-                      "result4": ("race_end", 37.0)})
+    finish = dict(shown)
+    after = after_pages(horses, kit, rank_counts, shown)
+    video = SIM_DIR / "race_video.mp4"
+    marks = sr.render(video, SIM_DIR / "work", find_font(), names,
+                      [horses[n]["style"] for n in names], [finish[n] for n in names],
+                      before_pages(horses, kit, sl.famous_checks(kit, races)), after, dist=TARGET["distance"],
+                      frames={"title": 1.0, "premise1": 7.0, "premise2": 18.0, "premise3": 30.0, "premise4": 42.0,
+                              "caution": 52.0, "gate": ("gate", 1.0), "start": ("race_start", 0.5),
+                              "corner": ("race_start", 24.0), "stretch": ("goal", -6.0), "goal": ("goal", 0.3),
+                              "result1": ("race_end", 4.0), "result2": ("race_end", 12.0),
+                              "analysis1": ("race_end", 28.0), "summary": ("total", -4.0)})
+    # BGM: 説明（落ち着いた曲）→ ゲートイン〜ゴール（レース曲）→ ファンファーレ → 結果（明るめの曲）
+    fan = 3.5
+    sections = [("calm", marks["gate"]), ("race", marks["goal"] - marks["gate"]), ("fanfare", fan),
+                ("result", marks["total"] - marks["goal"] - fan)]
+    bgm = sb.make_bgm(sections, SIM_DIR / "work" / "bgm.m4a")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(bgm), "-map", "0:v",
+                    "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest",
+                    str(SIM_DIR / "race.mp4")], check=True)
     print(f"保存: {SIM_DIR / 'race.mp4'}")
 
 
