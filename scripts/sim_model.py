@@ -103,6 +103,41 @@ def _prep_runners(r: dict, field: int) -> None:
         x["style"] = first_pass_ratio(x.get("passing", ""), field)
 
 
+AGE3_RACE_KEYS = ["皐月賞", "東京優駿", "ダービー", "菊花賞", "神戸新聞杯", "セントライト", "弥生賞", "スプリングS",
+                  "青葉賞", "京都新聞杯", "NHKマイル", "桜花賞", "優駿牝馬", "オークス", "秋華賞", "ローズS",
+                  "フローラS", "紫苑S", "チューリップ賞", "フィリーズレビュー", "ニュージーランドT"]
+MARE_RACE_KEYS = ["牝", "桜花賞", "優駿牝馬", "オークス", "秋華賞", "エリザベス女王杯", "ヴィクトリアマイル",
+                  "ローズS", "フローラS", "紫苑S", "チューリップ賞", "フィリーズレビュー"]
+
+
+def fix_schedule_links(graded: list[dict], careers: dict) -> list[dict]:
+    """重賞日程ページのリンク誤り（別のレースのIDが付いている）を、馬ページのレース名で直す。
+
+    実例: 2011年「フローラS」の行に皐月賞（同じ東京2000m）、2010・2012年「安田記念」の行に
+    ユニコーンS（ダート）のIDが付いていた。馬ページ側の名前・格・芝ダートが正しいので、
+    格が食い違うレースはダートなら除外し、芝なら馬ページの名前・格・限定条件に置き換える。
+    """
+    info = {}
+    for rows in careers.values():
+        for row in rows:
+            info.setdefault(row["race_id"], (row["race_name"], row["surface"]))
+    out = []
+    for r in graded:
+        name, surface = info.get(r["race_id"], (None, None))
+        if name is None or race_class(name) == r["grade"]:
+            out.append(r)
+            continue
+        if surface != "芝":
+            print(f"[補正] {r['race_id']} 日程「{r['race_name']}」→ 実際は「{name}」（ダート）のため除外")
+            continue
+        print(f"[補正] {r['race_id']} 日程「{r['race_name']}」→ 実際は「{name}」に修正")
+        base = name.split("(")[0]
+        out.append({**r, "race_name": base, "grade": race_class(name),
+                    "age3": any(k in base for k in AGE3_RACE_KEYS),
+                    "mare": any(k in base for k in MARE_RACE_KEYS)})
+    return out
+
+
 def load_races(path: Path = SIM_DIR / "races.json",
                careers_path: Path = SIM_DIR / "horses_cache.json") -> list[dict]:
     """重賞（全出走馬）に、出走馬の全キャリア（条件戦・OP・G3など）を合わせたレース一覧を作る。
@@ -112,6 +147,8 @@ def load_races(path: Path = SIM_DIR / "races.json",
     graded=True のレース（G1/G2、全出走馬と単勝人気がそろう）だけをバックテストの採点に使う。
     """
     graded = json.loads(path.read_text(encoding="utf-8"))
+    careers = json.loads(careers_path.read_text(encoding="utf-8")) if careers_path.exists() else {}
+    graded = fix_schedule_links(graded, careers)
     out, sex_of, graded_ids = [], {}, set()
     for r in graded:
         graded_ids.add(r["race_id"])
@@ -128,7 +165,6 @@ def load_races(path: Path = SIM_DIR / "races.json",
         _prep_runners(r, len(r["runners"]))
         out.append(r)
 
-    careers = json.loads(careers_path.read_text(encoding="utf-8")) if careers_path.exists() else {}
     by_race = {}
     for hid, rows in careers.items():
         for row in rows:

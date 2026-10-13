@@ -233,8 +233,9 @@ def build(races: list[dict], log=print) -> dict:
     situ["前走のクラス"] = float(CLS_RANK["G1"])
     # 「平均的なG1勝ち馬」のスコア（代表レースのタイムの基準）
     g1_win = [pm.score(f) for r, rows in train for x, f in rows if r["cls"] == "G1" and x["pos"] == 1]
-    return {"g1_winner_score": statistics.mean(g1_win),"model": model, "beta": beta, "rel": rel, "tim": tim, "age_eff": age_eff, "feats": feats,
-            "pm": pm, "train": ev_train, "test": ev_test, "situational": situ}
+    return {"model": model, "beta": beta, "rel": rel, "tim": tim, "age_eff": age_eff, "feats": feats,
+            "pm": pm, "train": ev_train, "test": ev_test, "situational": situ,
+            "g1_winner_score": statistics.mean(g1_win)}
 
 
 def peak_score(kit: dict, horse_id: str, distance: int, venue: str) -> tuple[float, str, list[float]] | None:
@@ -252,3 +253,30 @@ def peak_score(kit: dict, horse_id: str, distance: int, venue: str) -> tuple[flo
         if best is None or s > best[0]:
             best = (s, d, f)
     return best
+
+
+FAMOUS_RACES = [("ジャパンカップ", 2023), ("有馬記念", 2006), ("天皇賞(秋)", 2020), ("有馬記念", 2013),
+                ("宝塚記念", 2022), ("ジャパンカップ", 2020), ("天皇賞(秋)", 2023), ("日本ダービー", 2005)]
+
+
+def famous_checks(kit: dict, races: list[dict]) -> list[dict]:
+    """有名レースについて、レース前の情報だけで出したモデルの評価順と実際の着順を並べる"""
+    out = []
+    for name, year in FAMOUS_RACES:
+        r = next((r for r in races if r.get("graded") and r["year"] == year and name in r["race_name"]), None)
+        if not r:
+            continue
+        rows = []
+        for x in r["runners"]:
+            if x["pos"] is None:
+                continue
+            f = kit["feats"].of(x["horse_id"], r["date"], r["distance"], r["venue"])
+            if f:
+                rows.append((x, kit["pm"].score(f)))
+        if len(rows) < 3:
+            continue
+        tot = sum(math.exp(s) for _, s in rows)
+        rows.sort(key=lambda t: -t[1])
+        out.append({"race": f"{year}年 {r['race_name']}",
+                    "top": [(x["horse"], math.exp(s) / tot, x["pos"], x.get("pop")) for x, s in rows[:3]]})
+    return out

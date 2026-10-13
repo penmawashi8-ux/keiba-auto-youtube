@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""夢の対決シミュレーション（試作5号）: 学習した能力モデルで、仮想レースを1万回走らせる。
+"""夢の対決シミュレーション（試作6号）: 学習した能力モデルで、仮想レースを1万回走らせる。
 
 1. sim_learn.build で物差し（基準タイム・着差×相手関係）を作り、複数の手がかりを組み合わせる
    2頭比較のモデルを学習（2008〜2018年）・検証（2019〜2025年、単勝人気と比較）する
 2. 対象馬それぞれの全盛期のスコアを出す（その日の事情に当たる手がかりは全馬同じにそろえる）
 3. 1回のレース = スコア + ガンベル分布の乱数 で着順を決める（学習した2頭比較の確率と一致）
-4. レポート・期待値レースのアニメーションを出力する
+4. レポートと動画（前提条件・注意事項 → コース図のレース → 結果・分析）を出力する（描画は sim_render.py）
 
 使い方: python scripts/sim_dream_race.py ディープインパクト=2002100816 イクイノックス=2019105219 ...
 出力: sim/report.md, sim/result.json, sim/race.mp4, sim/frame_*.jpg
@@ -17,18 +17,17 @@ import json
 import math
 import random
 import statistics
-import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import sim_learn as sl
 import sim_model as sm
+import sim_render as sr
 
 SIM_DIR = Path("sim")
 TARGET = {"venue": "東京", "distance": 2400, "going": "良", "label": "東京 芝2400m（良）"}
 N_RUNS = 10000
-COLORS = ["#E53935", "#1E88E5", "#FDD835", "#43A047", "#FFFFFF", "#8E24AA", "#FB8C00", "#00ACC1"]
 
 
 # ---------------------------------------------------------------------------
@@ -106,17 +105,19 @@ def write_report(horses, kit, rank_counts, race) -> None:
 
 
 # ---------------------------------------------------------------------------
-# アニメーション（ffmpeg drawtext のみ）
+# 動画（説明ページ → レース → 結果ページ）
 # ---------------------------------------------------------------------------
-W, H, FPS = 1280, 720, 30
-SPEEDUP = 4.0
-TITLE_SEC = 2.5           # タイトル
-PREMISE_SEC = 8.0         # 前提条件・注意事項
-GATE_SEC = 1.5            # ゲートに並んだ状態（最後に「スタート！」）
-RACE_START = TITLE_SEC + PREMISE_SEC + GATE_SEC
-RESULT_SEC = 6.0
-LEAD_X, PX_PER_M = 1050, 7.0
-DOT_W = 38                # fontsize 46 の●の幅（px）
+STYLE_NAMES = [(0.25, "逃げ・先行"), (0.45, "先行"), (0.65, "好位〜中団"), (0.8, "差し"), (1.01, "追込")]
+FEATURE_LABELS = {          # 分析ページで使う、わかりやすい呼び名
+    "相手関係(最近重視)": "強い相手に対する着差",
+    "時計(最近重視)": "走破タイムの速さ",
+    "2年内ベスト": "ベストパフォーマンス",
+    "前走": "全盛期直前のレースの出来",
+    "3着内率": "安定感（3着内率）",
+    "距離適性": "2400m前後の適性",
+    "重賞勝数(log)": "重賞の勝ち星",
+    "同じ競馬場の適性": "東京コースの適性",
+}
 
 
 def find_font() -> str:
@@ -132,134 +133,165 @@ def find_font() -> str:
     return hits[0]
 
 
-def _smooth(v: float) -> float:
-    v = min(max(v, 0.0), 1.0)
-    return v * v * (3 - 2 * v)
+def style_name(v: float) -> str:
+    return next(name for th, name in STYLE_NAMES if v < th)
 
 
-def distance_at(tau: float, my_t: float, win_t: float, style: float, dist: float) -> float:
-    """経過時間 tau での走行距離。
-
-    道中は勝ち馬と同じ平均ペースで、脚質ぶん前後（逃げは前・追込は後ろ）に隊列を組む。
-    残り約3割で隊列が崩れ、勝ち馬のゴール時点で各馬の着差（走破タイム差×速度）に収束する。
-    その後は同じ速度でゴールまで走る。
-    """
-    v = dist / win_t
-    if tau >= win_t:
-        return min(dist - (my_t - win_t) * v + (tau - win_t) * v, dist)
-    u = tau / win_t
-    late = _smooth((u - 0.7) / 0.3)
-    style_offset = (0.5 - style) * 25.0 * min(u / 0.12, 1.0)
-    return v * tau + style_offset * (1 - late) - (my_t - win_t) * v * late
+def ym(date: str) -> str:
+    return f"{date[:4]}年{int(date[5:7])}月"
 
 
-def piecewise(keys: list[tuple[float, float]]) -> str:
-    """[(t, v), ...] を線形補間する ffmpeg 式"""
-    expr = f"{keys[-1][1]:.1f}"
-    for (t0, v0), (t1, v1) in reversed(list(zip(keys, keys[1:]))):
-        expr = f"if(lt(t,{t1:.3f}),{v0:.1f}+({v1 - v0:.1f})*(t-{t0:.3f})/{t1 - t0:.3f},{expr})"
-    return f"if(lt(t,{keys[0][0]:.3f}),{keys[0][1]:.1f},{expr})"
+def lengths(sec: float) -> str:
+    """秒差を馬身に（1馬身 ≒ 0.17秒）"""
+    return sr.margin_label(sec * 2400 / 143.0)
 
 
-def render(horses: dict, race: list[tuple[str, float]], premise: list[str]) -> None:
-    font = find_font()
-    tmp = SIM_DIR / "txt"
-    tmp.mkdir(exist_ok=True)
-
-    def tf(key: str, text: str) -> str:
-        p = tmp / f"{key}.txt"
-        p.write_text(text, encoding="utf-8")
-        return str(p)
-
-    dist = TARGET["distance"]
-    finish = {n: t for n, t in race}
-    t_end = max(finish.values())
-    win_t = min(finish.values())
-    race_video = t_end / SPEEDUP + 1.0
-    total = RACE_START + race_video + RESULT_SEC
+def before_pages(horses: dict, kit: dict, famous: list[dict]) -> list[dict]:
     names = list(horses)
-    lane_y = {n: 170 + i * (430 // max(len(names), 1)) for i, n in enumerate(names)}
+    te, tr = kit["test"], kit["train"]
+    n_horses = len(kit["rel"])
+    n_runs = sum(len(v) for v in kit["rel"].values())
+    fi = {name: i for i, name in enumerate(sl.FEATS)}
+    pages = [{"sec": 3.5, "items": [
+        {"text": "夢の対決シミュレーション", "x": "(w-text_w)/2", "y": 210, "size": 64, "color": "white"},
+        {"text": "・".join(names), "x": "(w-text_w)/2", "y": 320, "size": 28, "color": "0xFFF59D"},
+        {"text": f"{TARGET['label']}　データで{N_RUNS:,}回走らせたら？", "x": "(w-text_w)/2", "y": 380,
+         "size": 30, "color": "white"}]}]
 
-    # 0.75秒（動画時間）ごとのキーフレーム
-    step = 0.75 * SPEEDUP
-    taus = sorted({round(i * step, 3) for i in range(int(t_end / step) + 2)} | {round(win_t, 3)})
-    lead = [max(distance_at(tau, finish[n], win_t, horses[n]["style"], dist) for n in names) for tau in taus]
-    vt = lambda tau: RACE_START + tau / SPEEDUP
+    pages.append(sr.text_page("前提条件① レースの条件", [
+        "・競馬場：東京競馬場 芝2400m（左回り＝反時計回り）",
+        f"・コース：1周 約{sr.LAP_M:,.0f}m、最後の直線 {sr.STRAIGHT_M}m",
+        f"・スタート：正面スタンド前（ゴールの約{TARGET['distance'] - sr.LAP_M:.0f}m手前）→ ゴール前を通過して1周",
+        "・馬場状態：良（芝が乾いた、いちばん速い状態）",
+        f"・頭数：{len(names)}頭立て（枠順・内外の有利不利はなし）",
+        "・斤量：全馬「定量」＝年齢・性別に応じた通常の重さ（牝馬は2kg軽い）",
+        "・馬場の速さ：2023年の東京の馬場に換算（年ごとに速くなった分を補正）",
+        "・展開：1万回それぞれでペースが変わる（速い流れ・遅い流れの両方を含む）",
+        "・考慮しないもの：騎手・調教・当日の体調・天候・風",
+    ], 10.0))
 
-    f = [f"color=c=0x1B5E20:s={W}x{H}:r={FPS}:d={total:.2f}[bg]", "[bg]"]
-    chain = []
+    rows = [[{"text": "馬名", "x": 60, "color": "0xBDBDBD"}, {"text": "全盛期", "x": 330, "color": "0xBDBDBD"},
+             {"text": "当時の年齢", "x": 520, "color": "0xBDBDBD"}, {"text": "JRA芝G1勝利", "x": 680, "color": "0xBDBDBD"},
+             {"text": "3着内率", "x": 870, "color": "0xBDBDBD"}, {"text": "脚質", "x": 1010, "color": "0xBDBDBD"}]]
+    for i, (n, h) in enumerate(horses.items()):
+        f = h["feats"]
+        age = int(h["peak_date"][:4]) - (sm.birth_year(h["id"]) or int(h["peak_date"][:4]))
+        rows.append([{"text": n, "x": 60, "badge": i},
+                     {"text": ym(h["peak_date"]), "x": 330}, {"text": f"{age}歳", "x": 520},
+                     {"text": f"{int(f[fi['G1勝数']])}勝", "x": 680},
+                     {"text": f"{f[fi['3着内率']]:.0%}", "x": 870}, {"text": style_name(h["style"]), "x": 1010}])
+    rows += ["", {"text": "・全盛期＝現役中で、データ上の能力スコアがいちばん高かった時点", "size": 22},
+             {"text": "・G1勝利と3着内率は、全盛期までのJRA芝1400〜3600mの成績から計算（海外・地方・ダートは含まない）",
+              "size": 20},
+             {"text": "・脚質は、レース序盤の位置取り（通過順位）の平均から判定", "size": 22}]
+    pages.append(sr.text_page("前提条件② 出走馬と「全盛期」", rows, 11.0))
 
-    def dt(text_file, size, color, x, y, extra=""):
-        chain.append(f"drawtext=textfile='{text_file}':fontfile='{font}':fontsize={size}:"
-                     f"fontcolor={color}:x={x}:y={y}{extra}")
+    pages.append(sr.text_page("前提条件③ 使ったデータと計算方法", [
+        f"・データ：netkeibaで公開されている成績（2003〜2025年）",
+        f"　JRA重賞に出走した{n_horses:,}頭の、芝1400〜3600m・全クラスの全成績（のべ{n_runs:,}走）",
+        "",
+        "・計算の流れ",
+        "　① 1走ごとの「出来」を数値化：出走馬それぞれの普段の力＋着差から、レースの水準を見積もる",
+        "　　（走破タイムだけだとペースに大きく左右されるため、メンバー比較を中心にした）",
+        "　② 補正：年ごとの馬場の速さ・展開の有利不利・斤量・年齢による成長（3歳春→4歳後半が頂点）",
+        "　③ 学習：15種類の手がかりを組み合わせ「2頭のどちらが先着するか」を当てる計算式を作る",
+        "　　（最近の出来・走破タイム・距離適性・重賞の勝ち星・安定感など）",
+        "　④ 各馬の全盛期のスコアで、調子とペースをランダムに変えながら1万回レースを走らせる",
+    ], 12.0, size=23))
 
-    # タイトル
-    title_on = f":enable='lt(t,{TITLE_SEC})'"
-    dt(tf("title", "夢の対決シミュレーション"), 64, "white", "(w-text_w)/2", "250", title_on)
-    dt(tf("sub", f"{TARGET['label']}　{N_RUNS:,}回の期待値レース"), 34, "0xFFF59D", "(w-text_w)/2", "350", title_on)
+    rows = [f"・2008〜2018年の重賞で学習 → 2019〜2025年の重賞{te['n_full'] if te['n_full'] else ''}レースで検証",
+            f"・2頭のどちらが先着するか（{te['pairs']:,}組）",
+            {"text": f"　このモデル {te['acc_model']:.1%}　／　単勝人気 {te['acc_market']:.1%}　／　でたらめなら 50%",
+             "color": "0xFFF59D"},
+            "　（単勝人気は騎手・調教・当日の気配まで織り込んだ予想。それに近い精度）", "",
+            "・実例：レース前の情報だけで出した評価順（左から評価の高い順）"]
+    for c in famous[:4]:
+        top = "　→　".join(f"{h}（{p:.0%}）＝{pos}着" for h, p, pos, _pop in c["top"])
+        rows.append({"text": f"　{c['race']}", "size": 21, "color": "0xFFF59D"})
+        rows.append({"text": f"　　評価順：{top}", "size": 20})
+    pages.append(sr.text_page("前提条件④ このモデルの精度", rows, 12.0, size=23))
 
-    # 前提条件・注意事項
-    dt(tf("premise", "\n".join(premise)), 22, "white", "'max(40,(w-text_w)/2)'", "(h-text_h)/2",
-       f":expansion=none:line_spacing=6:box=1:boxcolor=black@0.55:boxborderw=22"  # 「%」をそのまま表示。Notoは行高が大きいので小さめ
-       f":enable='between(t,{TITLE_SEC},{TITLE_SEC + PREMISE_SEC})'")
+    pages.append(sr.text_page("注意事項", [
+        "・これは実際のレース映像ではありません。公開データから計算したシミュレーションです",
+        f"・表示するレースは、{N_RUNS:,}回のうち「全馬がスコアどおりに走った」1回です",
+        "　毎回この着順になるわけではありません（勝率は最後に表示します）",
+        "・騎手・調教・当日の状態・枠順・馬場の内外の差は考慮していません",
+        "・海外（凱旋門賞など）・地方・ダートのレースは計算に含めていません",
+        "・時代が違う馬の比較には、どうしても不確かさが残ります",
+        "・どの馬が最強かを断定するものではありません。楽しみ方のひとつとしてご覧ください",
+    ], 10.0))
+    return pages
 
-    # レース画面（ゲートに並んだ状態から表示し、RACE_START でスタート）
-    race_end = RACE_START + race_video
-    race_on = f":enable='between(t,{RACE_START - GATE_SEC},{race_end:.2f})'"
-    dt(tf("gate", "ゲートイン"), 40, "white", "40", "40",
-       f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{RACE_START - GATE_SEC},{RACE_START - 0.6})'")
-    dt(tf("start", "スタート！"), 96, "0xFFEB3B", "(w-text_w)/2", "(h-text_h)/2",
-       f":borderw=6:bordercolor=black:enable='between(t,{RACE_START - 0.6},{RACE_START + 0.9})'")
-    # レーン区切り（文字の罫線）
-    sep = tf("sep", "─" * 80)
-    for n in names:
-        dt(sep, 20, "0xFFFFFF@0.25", "0", str(lane_y[n] + 55), race_on)
-    # ゴール板（先頭がゴール前250mに来たら画面右から入ってくる）
-    goal_keys = [(vt(tau), LEAD_X + (dist - d) * PX_PER_M) for tau, d in zip(taus, lead)]
-    goal = tf("goal", "\n".join(["|"] * 12))
-    dt(goal, 40, "white", f"'{piecewise(goal_keys)}'", "150", race_on)
-    # 残り距離の表示（200mごと）
-    for rem in range(dist - 200, -1, -200):
-        t0 = next((vt(tau) for tau, d in zip(taus, lead) if dist - d <= rem + 200), None)
-        t1 = min(next((vt(tau) for tau, d in zip(taus, lead) if dist - d <= rem), vt(win_t)), vt(win_t))
-        if t0 is None:
-            continue
-        dt(tf(f"rem{rem}", f"残り {rem + 200}m"), 40, "white", "40", "40",
-           f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{t0:.2f},{t1:.2f})'")
-    goal_t = vt(win_t)
-    dt(tf("goal_label", "ゴール！"), 40, "white", "40", "40",
-       f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{goal_t:.2f},{race_end:.2f})'")
-    dt(tf("speed", f"{int(SPEEDUP)}倍速"), 28, "0xFFFFFF@0.7", "w-text_w-40", "48", race_on)
-    # 各馬
-    for i, n in enumerate(names):
-        xs = [(vt(tau), LEAD_X + (distance_at(tau, finish[n], win_t, horses[n]["style"], dist) - ld) * PX_PER_M)
-              for tau, ld in zip(taus, lead)]
-        x_expr = f"'{piecewise(xs)}-{DOT_W}'"  # ●の右端（鼻先）を走行位置に合わせる
-        color = COLORS[i % len(COLORS)]
-        dt(tf(f"dot{i}", "●"), 46, color, x_expr, str(lane_y[n]), race_on)
-        dt(tf(f"name{i}", n), 26, "white", f"{x_expr}-text_w-8", str(lane_y[n] + 12),
-           ":box=1:boxcolor=black@0.45:boxborderw=6" + race_on)
 
-    # 結果ボード
-    lines = ["結果（期待値レース）", ""] + [
-        f"{i}着  {n}　{fmt_time(t)}{'' if i == 1 else f'  (+{t - win_t:.1f})'}" for i, (n, t) in enumerate(race, 1)]
-    dt(tf("result", "\n".join(lines)), 40, "white", "(w-text_w)/2", "(h-text_h)/2",
-       f":line_spacing=14:box=1:boxcolor=black@0.6:boxborderw=30:enable='gte(t,{race_end:.2f})'")
+def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str, float]]) -> list[dict]:
+    names = list(horses)
+    idx = {n: i for i, n in enumerate(names)}
+    win_t = race[0][1]
+    rows = [[{"text": "着順", "x": 80, "color": "0xBDBDBD"}, {"text": "馬名", "x": 200, "color": "0xBDBDBD"},
+             {"text": "タイム", "x": 640, "color": "0xBDBDBD"}, {"text": "着差", "x": 860, "color": "0xBDBDBD"}]]
+    for k, (n, t) in enumerate(race, 1):
+        rows.append([{"text": f"{k}着", "x": 80, "size": 32}, {"text": n, "x": 200, "size": 32, "badge": idx[n]},
+                     {"text": fmt_time(t), "x": 640, "size": 32},
+                     {"text": "" if k == 1 else f"{lengths(t - win_t)}（{t - win_t:.1f}秒）", "x": 860, "size": 28}])
+    rows += ["", {"text": "※全馬がスコアどおりに走った場合の1レース。タイムは2023年の東京の良馬場に換算", "size": 20},
+             {"text": f"※実際には調子やペースで毎回着順が変わる。{N_RUNS:,}回走らせた勝率は次のページ", "size": 20}]
+    pages = [sr.text_page(f"結果① 着順（{TARGET['label']}）", rows, 9.0, size=28, top=130)]
 
-    graph = f[0] + ";" + f[1] + ",".join(chain) + "[v]"
-    script = SIM_DIR / "filter.txt"
-    script.write_text(graph, encoding="utf-8")
-    out = SIM_DIR / "race.mp4"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-filter_complex_script", str(script),
-                    "-map", "[v]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-t", f"{total:.2f}", str(out)],
-                   check=True)
-    # 静止画（レース中盤・ゴール前・結果）
-    for label, sec in [("premise", TITLE_SEC + PREMISE_SEC / 2), ("start", RACE_START - 0.2),
-                       ("mid", vt(win_t * 0.5)), ("stretch", vt(win_t * 0.9)), ("goal", goal_t + 0.1),
-                       ("result", total - 1.0)]:
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{sec:.2f}", "-i", str(out),
-                        "-vframes", "1", "-q:v", "2", str(SIM_DIR / f"frame_{label}.jpg")], check=True)
-    print(f"保存: {out}")
+    order = sorted(names, key=lambda n: -rank_counts[n][0])
+    top_rate = rank_counts[order[0]][0] / N_RUNS
+    rows = [[{"text": "馬名", "x": 60, "color": "0xBDBDBD"}, {"text": "勝率", "x": 380, "color": "0xBDBDBD"},
+             {"text": "2着以内", "x": 520, "color": "0xBDBDBD"}, {"text": "3着以内", "x": 660, "color": "0xBDBDBD"},
+             {"text": "勝った回数", "x": 820, "color": "0xBDBDBD"}]]
+    for n in order:
+        rc = rank_counts[n]
+        rows.append([{"text": n, "x": 60, "size": 28, "badge": idx[n]},
+                     {"text": f"{rc[0] / N_RUNS:.1%}", "x": 380, "size": 28},
+                     {"text": f"{sum(rc[:2]) / N_RUNS:.1%}", "x": 520, "size": 28},
+                     {"text": f"{sum(rc[:3]) / N_RUNS:.1%}", "x": 660, "size": 28},
+                     {"text": f"{rc[0]:,}回", "x": 820, "size": 28}])
+        rows.append({"text": "■" * max(1, round(rc[0] / N_RUNS / max(top_rate, 1e-9) * 30)), "x": 60, "size": 14,
+                     "color": sr.COLORS[idx[n]], "extra": sr.DOT_BORDER[idx[n]]})
+    pages.append(sr.text_page(f"結果② {N_RUNS:,}回走らせた結果", rows, 10.0, size=26))
+
+    fi = {name: i for i, name in enumerate(sl.FEATS)}
+    rows = []
+    for n in order:
+        f = horses[n]["feats"]
+        strong, weak = [], []
+        for key, label in FEATURE_LABELS.items():
+            vals = sorted((horses[m]["feats"][fi[key]] for m in names), reverse=True)
+            rank = vals.index(f[fi[key]]) + 1
+            if rank == 1:
+                strong.append(label)
+            elif rank == len(names):
+                weak.append(label)
+        rows.append({"text": f"{n}（勝率 {rank_counts[n][0] / N_RUNS:.1%}・全盛期 {ym(horses[n]['peak_date'])}）",
+                     "badge": idx[n], "size": 24})
+        rows.append({"text": f"　5頭中1位：{'、'.join(strong) if strong else 'なし（全体的にバランス型）'}", "size": 20})
+        rows.append({"text": f"　5頭中最下位：{'、'.join(weak) if weak else 'なし'}", "size": 20, "color": "0xBDBDBD"})
+    pages.append(sr.text_page("結果③ 各馬の分析（5頭の中で何が強みか）", rows, 14.0, top=104))
+
+    first, second, last = order[0], order[1], order[-1]
+    p1, p2, p5 = (rank_counts[n][0] / N_RUNS for n in (first, second, last))
+    spread = race[-1][1] - race[0][1]
+    # 1万回の勝率の誤差は ±0.4ポイント程度（標準誤差）。差が1ポイント未満なら「並んだ」と書く
+    if p1 - p2 < 0.01:
+        head = [{"text": f"・{first}と{second}が勝率{p1:.1%}・{p2:.1%}で並んだ（誤差の範囲）", "size": 28,
+                 "color": "0xFFF59D"},
+                f"・期待値レース（結果①）の1着は{race[0][0]}。どちらが勝ってもおかしくない互角"]
+    else:
+        head = [{"text": f"・最も多く勝ったのは {first}（{p1:.1%}）", "size": 28, "color": "0xFFF59D"},
+                f"・2位の{second}は{p2:.1%}。差は{(p1 - p2) * 100:.1f}ポイント"]
+    pages.append(sr.text_page("結果④ まとめ", head + [
+        f"・最下位評価の{last}でも{p5:.1%}＝{N_RUNS:,}回中{rank_counts[last][0]:,}回は勝つ",
+        f"・全馬がスコアどおりに走ると、1着と{len(names)}着の差は{lengths(spread)}（{spread:.1f}秒）",
+        "",
+        "・結論：データ上はわずかな差があるものの、どの馬にも十分に勝つチャンスがある",
+        "　実際のレースでは、展開や調子しだいで着順は大きく入れ替わる",
+        "",
+        {"text": "あなたの予想は？コメントで教えてください", "size": 30, "color": "0xFFEB3B"},
+    ], 10.0, size=26))
+    return pages
 
 
 def main() -> None:
@@ -276,7 +308,7 @@ def main() -> None:
             continue
         hist = kit["rel"][hid]
         styles = [x["style"] for _, _, _, x in hist if x.get("style") is not None]
-        horses[name] = {"score": peak[0], "peak_date": peak[1], "feats": peak[2],
+        horses[name] = {"id": hid, "score": peak[0], "peak_date": peak[1], "feats": peak[2],
                         "style": statistics.mean(styles) if styles else 0.5, "history": hist}
     rank_counts = monte_carlo(horses)
     # 代表レース: 平均的なG1勝ち馬（東京2400m・良・基準年の想定タイム）からのスコア差を秒に換算
@@ -286,33 +318,18 @@ def main() -> None:
                   key=lambda x: x[1])
     write_report(horses, kit, rank_counts, race)
     print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:3500])
-    render(horses, race, premise_lines(horses, kit))
 
-
-def premise_lines(horses: dict, kit: dict) -> list[str]:
-    """動画の冒頭に出す前提条件・注意事項（数字は計算結果から入れる）"""
-    n_horses = len(kit["rel"])
-    n_runs = sum(len(v) for v in kit["rel"].values())
-    items = [f"{n}（{h['peak_date'][:4]}年{int(h['peak_date'][5:7])}月）" for n, h in horses.items()]
-    peaks = ["　" + "、".join(items[i:i + 2]) for i in range(0, len(items), 2)]   # 横幅に収まるよう2頭ずつ
-    te = kit["test"]
-    return [
-        "【前提条件】",
-        f"・コース：{TARGET['label'].replace('（', '・').replace('）', '馬場')}／{len(horses)}頭立て",
-        "・各馬は現役時代で最も強かった時点（全盛期）の能力で出走",
-        *peaks,
-        "・斤量は全馬「定量」（年齢・性別に応じた通常の重さ）",
-        "・時代による馬場の速さの違いは補正済み（2023年の馬場に換算）",
-        f"・データ：2003〜2025年のJRA重賞出走馬 {n_horses:,}頭・のべ{n_runs:,}走の全成績",
-        "",
-        "【注意事項】",
-        "・実際のレース映像ではなく、データから作ったシミュレーションです",
-        f"・{N_RUNS:,}回走らせた中で、展開・調子が平均的な1レースを表示しています",
-        f"・予測精度：過去の重賞で「2頭のどちらが先着するか」の正答率 {te['acc_model']:.1%}"
-        f"（単勝人気は {te['acc_market']:.1%}）",
-        "・騎手・調教・当日の状態は考慮していません",
-        "・どの馬が最強かを断定するものではありません",
-    ]
+    names = list(horses)
+    finish = dict(race)
+    sr.render(SIM_DIR / "race.mp4", SIM_DIR / "work", find_font(), names,
+              [horses[n]["style"] for n in names], [finish[n] for n in names],
+              before_pages(horses, kit, sl.famous_checks(kit, races)),
+              after_pages(horses, kit, rank_counts, race), dist=TARGET["distance"],
+              frames={"title": 1.0, "premise1": 6.0, "premise2": 15.0, "premise3": 27.0, "premise4": 39.0,
+                      "caution": 50.0, "start": "race_start", "corner": ("race_start", 18.0), "goal": "goal",
+                      "result1": ("race_end", 4.0), "result2": ("race_end", 13.0), "result3": ("race_end", 23.0),
+                      "result4": ("race_end", 37.0)})
+    print(f"保存: {SIM_DIR / 'race.mp4'}")
 
 
 if __name__ == "__main__":

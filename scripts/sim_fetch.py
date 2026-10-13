@@ -109,6 +109,8 @@ def fetch_race(session, race_id: str) -> dict | None:
     col = {h: i for i, h in enumerate(heads)}
     text = soup.get_text(" ", strip=True)
     dist = re.search(r"芝[^\d]{0,6}(\d{4})m", text)
+    # 重賞日程のリンクが別レース（ダートなど）を指していることがあるので、コースの種類も記録する
+    surface = re.search(r"(芝|ダ)[右左直外内\s]{0,4}\d{3,4}m", text)
     going = re.search(r"芝\s*:\s*(良|稍|重|不)", text)
     date = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", text)
     # 「ペース 12.7 - 24.0 - 35.5 ...」= スタートからの累計タイム（距離が200で割り切れないと最初が100m）
@@ -138,6 +140,7 @@ def fetch_race(session, race_id: str) -> dict | None:
         })
     return {
         "distance_page": int(dist.group(1)) if dist else None,
+        "surface_page": surface.group(1) if surface else None,
         "going": going.group(1) if going else "良",
         "date": f"{date.group(1)}-{int(date.group(2)):02d}-{int(date.group(3)):02d}" if date else "",
         "pace_cum": [float(v) for v in re.findall(r"[\d.]+", pace.group(1))] if pace else [],
@@ -177,7 +180,10 @@ def main() -> None:
         if r.get("distance_page") and r["distance_page"] != s["distance"]:
             dropped.append((s["race_id"], s["race_name"], f"距離不一致 {s['distance']}≠{r['distance_page']}"))
             continue
-        races.append({**s, **{k: v for k, v in r.items() if k != "distance_page"}})
+        if r.get("surface_page") and r["surface_page"] != "芝":
+            dropped.append((s["race_id"], s["race_name"], "芝ではない（日程のリンク誤り）"))
+            continue
+        races.append({**s, **{k: v for k, v in r.items() if k not in ("distance_page", "surface_page")}})
     for d in dropped:
         print(f"  除外: {d}")
     OUT.write_text(json.dumps(races, ensure_ascii=False), encoding="utf-8")
