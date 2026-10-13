@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""夢の対決シミュレーション（試作3号）: バックテストで選んだ能力推定で、仮想レースを1万回走らせる。
+"""夢の対決シミュレーション（試作5号）: 学習した能力モデルで、仮想レースを1万回走らせる。
 
-1. sim_model.select_model で、ペース補正・能力値の設定をバックテスト（2008〜2018年で選択、
-   2019〜2025年で検証）して決め、調子の波 σ と展開の効きも過去データから推定する
-2. 対象馬それぞれの全盛期の能力値（直近W年の上位N走）を出す
-3. 1回のレース: 能力値 + σ×乱数 + 展開の効き×(脚質−0.5)×ペース で着順を決める（斤量は全馬定量）
+1. sim_learn.build で物差し（基準タイム・着差×相手関係）を作り、複数の手がかりを組み合わせる
+   2頭比較のモデルを学習（2008〜2018年）・検証（2019〜2025年、単勝人気と比較）する
+2. 対象馬それぞれの全盛期のスコアを出す（その日の事情に当たる手がかりは全馬同じにそろえる）
+3. 1回のレース = スコア + ガンベル分布の乱数 で着順を決める（学習した2頭比較の確率と一致）
 4. レポート・期待値レースのアニメーションを出力する
 
 使い方: python scripts/sim_dream_race.py ディープインパクト=2002100816 イクイノックス=2019105219 ...
@@ -14,6 +14,7 @@ numpy / Pillow は使わない（プロジェクトルール）。描画は ffmp
 
 import glob
 import json
+import math
 import random
 import statistics
 import subprocess
@@ -21,6 +22,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import sim_learn as sl
 import sim_model as sm
 
 SIM_DIR = Path("sim")
@@ -30,20 +32,15 @@ COLORS = ["#E53935", "#1E88E5", "#FDD835", "#43A047", "#FFFFFF", "#8E24AA", "#FB
 
 
 # ---------------------------------------------------------------------------
-# モンテカルロ
+# モンテカルロ（スコア + ガンベル乱数 → 2頭比較の確率がロジスティックになる）
 # ---------------------------------------------------------------------------
-def perf(h: dict, z: float, fast: float, sigma: float, beta: float) -> float:
-    return h["mu"] + sigma * z + beta * (h["style"] - 0.5) * fast
-
-
-def monte_carlo(horses: dict, sigma: float, beta: float, fast_sd: float, seed: int = 20261012) -> dict:
+def monte_carlo(horses: dict, seed: int = 20261012) -> dict:
     rnd = random.Random(seed)
     names = list(horses)
     rank_counts = {n: [0] * len(names) for n in names}
     for _ in range(N_RUNS):
-        fast = rnd.gauss(0, fast_sd)
-        order = sorted(names, key=lambda n: -perf(horses[n], rnd.gauss(0, 1), fast, sigma, beta))
-        for i, n in enumerate(order):
+        perf = {n: horses[n]["score"] - math.log(-math.log(rnd.random() or 1e-12)) for n in names}
+        for i, n in enumerate(sorted(names, key=lambda n: -perf[n])):
             rank_counts[n][i] += 1
     return rank_counts
 
@@ -55,65 +52,55 @@ def fmt_time(sec: float) -> str:
     return f"{int(sec // 60)}:{sec % 60:04.1f}"
 
 
-def write_report(horses, sel, rank_counts, base_time, race) -> None:
+def write_report(horses, kit, rank_counts, race) -> None:
     names = sorted(horses, key=lambda n: -rank_counts[n][0])
-    tr, te = sel["train"], sel["test"]
-    c = sel["model"].coef
-    w_label = "全期間" if sel["w"] >= 99 else f"直近{sel['w']}年"
-    tol_label = "制限なし" if sel["tol"] >= 9999 else f"{TARGET['distance']}m±{sel['tol']}m"
-    md = [f"# 夢の対決シミュレーション（試作3号） {TARGET['label']}", "",
-          "## 結果", "", "| 馬 | 勝率 | 2着内 | 3着内 | 全盛期の能力値 | 全盛期 | 脚質(0逃げ〜1追込) |",
+    tr, te, pm = kit["train"], kit["test"], kit["pm"]
+    md = [f"# 夢の対決シミュレーション（試作5号） {TARGET['label']}", "",
+          "## 結果", "", "| 馬 | 勝率 | 2着内 | 3着内 | 全盛期のスコア | 全盛期 | 脚質(0逃げ〜1追込) |",
           "|---|---:|---:|---:|---:|---|---:|"]
     for n in names:
         rc, h = rank_counts[n], horses[n]
         md.append(f"| {n} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | {sum(rc[:3]) / N_RUNS:.1%} | "
-                  f"{h['mu']:+.2f} | 〜{h['peak_date']} | {h['style']:.2f} |")
-    md += ["", "能力値: 平均的なG1勝ち馬より2400m換算で何秒速いか（+1.0 ≒ 6馬身）", "",
-           "## 代表レース（調子・展開が平均的な場合）", "", "| 着 | 馬 | タイム | 着差 |", "|---|---|---|---|"]
+                  f"{h['score']:+.2f} | 〜{h['peak_date']} | {h['style']:.2f} |")
+    md += ["", "スコア: 学習した重み × 手がかり。差が1あると、2頭比較で上の馬が先着する確率は約73%",
+           f"（スコア差1 ≒ {tr['sec_per_score']:.2f}秒差 ≒ {tr['sec_per_score'] * 6:.1f}馬身。学習期間の実際の着差から換算）", "",
+           "## 代表レース（スコアどおりに走った場合）", "", "| 着 | 馬 | タイム | 着差 |", "|---|---|---|---|"]
     win_t = race[0][1]
     for i, (n, t) in enumerate(race, 1):
         md.append(f"| {i} | {n} | {fmt_time(t)} | {'' if i == 1 else f'+{t - win_t:.1f}秒'} |")
     md += ["", "## モデルの精度（バックテスト）", "",
-           "各重賞について、そのレースより前の成績だけで出走馬の能力値を出し、実際の着順と比べた。",
-           "", "| 期間 | 2頭比較の正答率（モデル） | 同（単勝人気） | 比較した組 | 1位評価の勝率（モデル） | 1番人気の勝率 | 対象レース |",
-           "|---|---:|---:|---:|---:|---:|---:|",
-           f"| 学習 2008〜2018 | {tr['acc_model']:.1%} | {tr['acc_market']:.1%} | {tr['pairs']:,} | "
-           f"{tr['win_model']:.1%} | {tr['win_market']:.1%} | {tr['n_full']} |",
-           f"| 検証 2019〜2025 | {te['acc_model']:.1%} | {te['acc_market']:.1%} | {te['pairs']:,} | "
-           f"{te['win_model']:.1%} | {te['win_market']:.1%} | {te['n_full']} |", "",
-           f"- 選ばれた設定: ペース補正 **{sel['pace']}** / 時計の比率 **{sel['blend']}** / "
-           f"能力値 = {w_label}の上位**{sel['n']}走** / 縮小 K={sel['k']}"
-           f" / 距離 {tol_label}",
-           f"- 調子の波 σ = {sel['sigma']:.2f}秒（対数損失 学習 {sel['train_loss']:.4f} / 検証 {sel['test_loss']:.4f}）",
-           f"- 展開の効き = {sel['style_beta']:+.3f}（前半600mが1秒速いとき、追込は逃げより {sel['style_beta']:+.2f}秒有利）",
-           f"- 基準データ: {sel['model'].n_rows}レース / ペース係数 {c['pace']:+.3f}", "",
-           "### 物差しごとの最良設定（学習期間の正答率）", "",
-           "時計の比率: レース水準の見積もりで走破タイムを使う割合（0 = 着差と相手関係だけ、1 = 時計だけ）", "",
-           "| ペース補正 | 時計の比率 | 正答率 | 上位N走 | 期間 | K | 距離 |", "|---|---:|---:|---:|---|---:|---|"]
-    for (pace, blend), (acc, n, w, k, tol) in sorted(sel["best_by_blend"].items()):
-        md.append(f"| {pace} | {blend} | {acc:.2%} | {n} | {'全' if w >= 99 else w}年 | {k} | "
-                  f"{'制限なし' if tol >= 9999 else f'±{tol}m'} |")
-    md += ["", "### 上位10設定", ""] + [
-        f"- {acc:.2%}  {pace} / 時計の比率 {blend} / 上位{n}走 / {'全' if w >= 99 else w}年 / K={k} / "
-        f"距離{'制限なし' if tol >= 9999 else f'±{tol}m'}"
-        for acc, pace, blend, n, w, k, tol, _ in sel["top"]]
-    md += ["", "## 馬場の速さ（年ごと、2023年との差・秒）", "",
-           " / ".join(f"{y}: {c.get(f'y:{y}', 0.0):+.2f}" for y in sel["model"].years + [sm.REF_YEAR]), "",
-           "## 各馬のスピード値（重賞の全成績）", ""]
+           "各重賞について、そのレースより前の成績だけで手がかりを作り、実際の着順と比べた。",
+           "", "| 期間 | 2頭比較の正答率（モデル） | 同（単勝人気） | 比較した組 | 対数損失 | 1位評価の勝率 | 1番人気の勝率 | 対象レース |",
+           "|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for label, ev in (("学習 2008〜2018", tr), ("検証 2019〜2025", te)):
+        md.append(f"| {label} | {ev['acc_model']:.1%} | {ev['acc_market']:.1%} | {ev['pairs']:,} | "
+                  f"{ev['logloss']:.4f} | {ev['win_model']:.1%} | {ev['win_market']:.1%} | {ev['n_full']} |")
+    md += ["", "### 手がかりの重み（標準化した値1つ分あたり。正 = 大きいほど先着しやすい）", "",
+           "| 手がかり | 重み | 夢の対決での扱い |", "|---|---:|---|"]
+    for name, w in sorted(zip(sl.FEATS, pm.w), key=lambda t: -abs(t[1])):
+        how = "全馬同じ値" if name in kit["situational"] else ("東京2400mに合わせて計算" if "適性" in name else "全盛期の値")
+        md.append(f"| {name} | {w:+.3f} | {how} |")
+    md += ["", "### 年齢曲線（同じ馬の中での変化、4歳0か月 = 0、秒）", "",
+           " / ".join(f"{a:.2f}歳〜: {e:+.2f}" for a, e in zip(sl.AGE_BINS, kit["age_eff"])), "",
+           f"- 展開の効き（スピード値の補正に使用）: {kit['beta']:+.3f}",
+           f"- 基準データ: {kit['model'].n_rows:,}レース", ""]
+    md += ["## 各馬の全盛期の手がかり", "", "| 手がかり | " + " | ".join(names) + " |",
+           "|---|" + "---:|" * len(names)]
+    for i, name in enumerate(sl.FEATS):
+        md.append(f"| {name} | " + " | ".join(f"{horses[n]['feats'][i]:.2f}" for n in names) + " |")
+    md += ["", "## 各馬のスピード値（着差×相手関係、JRA芝1400〜3600mの全成績）", ""]
     for n in names:
-        md += [f"### {n}", "", "| 値 | 日付 | レース | 着 | コース | 馬場 | 斤量 | タイム | 上がり |",
-               "|---:|---|---|---:|---|---|---:|---|---:|"]
+        md += [f"### {n}", "", "| 値 | 日付 | レース | 着 | コース | 馬場 |", "|---:|---|---|---:|---|---|"]
         for date, fig, r, x in horses[n]["history"]:
-            md.append(f"| {fig:+.2f} | {date} | {r['race_name']} | {x['pos']} | {r['venue']}{r['distance']} | "
-                      f"{r['going']} | {x['weight']} | {fmt_time(x['time'])} | {x['last3f']} |")
+            md.append(f"| {fig:+.2f} | {date} | {r['race_name']} | {x['pos']} | {r['venue']}{r['distance']} | {r['going']} |")
         md.append("")
     (SIM_DIR / "report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     (SIM_DIR / "result.json").write_text(json.dumps({
         "win_rate": {n: rank_counts[n][0] / N_RUNS for n in names},
-        "ratings": {n: {"mu": horses[n]["mu"], "style": horses[n]["style"], "peak": horses[n]["peak_date"]}
-                    for n in names},
-        "model": {k: sel[k] for k in ("pace", "blend", "n", "w", "k", "tol", "sigma", "style_beta")},
-        "backtest": {p: {k: v for k, v in sel[p].items() if k != "diffs"} for p in ("train", "test")},
+        "horses": {n: {"score": horses[n]["score"], "peak": horses[n]["peak_date"], "style": horses[n]["style"],
+                       "features": dict(zip(sl.FEATS, horses[n]["feats"]))} for n in names},
+        "weights": dict(zip(sl.FEATS, pm.w)),
+        "backtest": {"train": tr, "test": te},
         "race": race,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -264,28 +251,25 @@ def main() -> None:
     if not targets:
         sys.exit("usage: sim_dream_race.py 馬名=netkeibaID ...")
     races = sm.load_races()
-    sel = sm.select_model(races)
+    kit = sl.build(races)
     horses = {}
     for name, hid in targets:
-        hist = sel["figs"].get(hid)
-        if not hist:
-            print(f"[警告] {name}（{hid}）の重賞成績が見つかりません")
+        peak = sl.peak_score(kit, hid, TARGET["distance"], TARGET["venue"])
+        if not peak:
+            print(f"[警告] {name}（{hid}）の成績が見つかりません")
             continue
-        mu, peak = sm.peak_rating(hist, sel["n"], sel["w"], sel["k"], sel["m0"], TARGET["distance"], sel["tol"])
+        hist = kit["rel"][hid]
         styles = [x["style"] for _, _, _, x in hist if x.get("style") is not None]
-        horses[name] = {"mu": mu, "peak_date": peak, "style": statistics.mean(styles) if styles else 0.5,
-                        "history": hist}
-    # 東京2400mの前半600mのばらつき（展開の振れ幅）
-    fronts = [r["front"] for r in races if r["venue"] == TARGET["venue"]
-              and r["distance"] == TARGET["distance"] and r["front"] is not None]
-    fast_sd = statistics.pstdev(fronts) if len(fronts) > 2 else 1.0
-    rank_counts = monte_carlo(horses, sel["sigma"], sel["style_beta"], fast_sd)
-    # 想定タイム: 基準年・良馬場・平均ペースでの平均的なG1勝ち馬
-    c = sel["model"].coef
-    base = c[f"c:{TARGET['venue']}{TARGET['distance']}"]
-    race = sorted(((n, base - h["mu"]) for n, h in horses.items()), key=lambda x: x[1])
-    write_report(horses, sel, rank_counts, base, race)
-    print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:3000])
+        horses[name] = {"score": peak[0], "peak_date": peak[1], "feats": peak[2],
+                        "style": statistics.mean(styles) if styles else 0.5, "history": hist}
+    rank_counts = monte_carlo(horses)
+    # 代表レース: 平均的なG1勝ち馬（東京2400m・良・基準年の想定タイム）からのスコア差を秒に換算
+    base = kit["model"].coef[f"c:{TARGET['venue']}{TARGET['distance']}"]
+    k = kit["train"]["sec_per_score"]
+    race = sorted(((n, base - k * (h["score"] - kit["g1_winner_score"])) for n, h in horses.items()),
+                  key=lambda x: x[1])
+    write_report(horses, kit, rank_counts, race)
+    print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:3500])
     render(horses, race)
 
 

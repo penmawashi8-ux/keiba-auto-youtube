@@ -1,42 +1,32 @@
 #!/usr/bin/env python3
-"""夢の対決シミュレーションの能力推定モデルとバックテスト。
+"""夢の対決シミュレーションの物差し（基準タイムとスピード値）。学習モデルは sim_learn.py。
 
 データ: sim/races.json（sim_fetch.py が集めた JRA芝1600〜3200m G1/G2 の全出走馬成績）
       sim/horses_cache.json（sim_fetch_horses.py が集めた、それらの馬の全キャリア。JRA芝1400〜3600m）
 
-■ スピード値（1走ごとの能力の物差し。単位は「2400m換算の秒」）
-  基準タイム = 平均的なG1勝ち馬が、そのコース・馬場・年・ペースで走ったときのタイム
-  スピード値 = (基準タイム − その馬のタイム) × 2400 / 距離 + 定量との斤量差の補正
-              − 展開の有利不利（脚質とペースの噛み合い。効きの大きさは過去データから推定）
-  基準タイムは勝ち馬のタイムを
-      コース(場・距離) + 馬場 + 年 + ペース + クラス + 3歳限定 + 牝馬限定
-  で回帰して求める（全クラスの勝ちタイムを使い、格は G2〜新馬のクラス項で表す）。
-  格や限定戦の項は回帰を歪ませないためだけに使い、スピード値は
-  すべて「古馬混合G1」の物差しで測る（3歳春の走りは未完成なぶん低く出る）。
+■ 基準タイム（ParModel）
+  平均的なG1勝ち馬が、そのコース・馬場・年・ペースで走ったときのタイム。全クラスの勝ちタイムを
+      コース(場・距離) + 馬場 + 年 + ペース + クラス(G2〜新馬) + 3歳限定 + 牝馬限定
+  で回帰して求め、予測ではクラスや限定戦の項を使わず「古馬混合G1」の物差しにそろえる。
   年の項は隣接年の差に罰則をかけて滑らかにする（馬場の高速化を表す）。
 
-■ ペース補正の候補（バックテストで選ぶ）
-  none : 補正しない
-  race : レース全体の前半600m通過タイム（逃げ馬のペース）で補正
-  own  : 各馬自身の前半（走破タイム − 上がり3F）で補正。大逃げがいたレースで後続を正しく扱える
+■ スピード値（1走ごとの出来。単位は「2400m換算の秒」）
+  時計ベース（speed_figures）:
+      (基準タイム − その馬のタイム) × 2400/距離 + 定量との斤量差 − 展開の有利不利
+  着差×相手関係（relative_figures）:
+      レース水準 = 出走馬それぞれの「事前のふだんの出来 + 勝ち馬との着差」の中央値（ペースに左右されない）
+      今回の出来 = レース水準 − 着差 + 斤量補正 − 展開の有利不利
+      世代をまたぐと水準がずれるので、年ごとの平均を時計ベースに合わせる（anchor_years）
+  展開の有利不利 = 展開の効き ×（脚質 − 0.5）×（ハイペース度）。効きは同じ馬の中での回帰で推定。
 
-■ 能力値（ある時点での馬の強さ）
-  直近 W 年以内（距離が対象レース±TOL のレースに限ることもできる）のスピード値の上位 N 走を、
-  出走数が少ない馬ほど全体平均 M0 に寄せて平均する
-      能力値 = (上位N走の合計 + K × M0) / (使った走数 + K)
-
-■ バックテスト
-  各重賞について「そのレースより前の成績だけ」で全出走馬の能力値を出し、実際の着順と比べる。
-  2頭ずつの組で先着を当てた割合（2頭比較の正答率）を、同じ組の単勝人気の正答率と比べる。
-  2008〜2018年で設定を選び、2019〜2025年で検証する（選んだ年で検証しない）。
-  調子の波 σ は「2頭比較の勝率予測」の対数損失が最小になる値に合わせる。
+■ これまでの検証で分かったこと（2頭比較の正答率、検証期間 2019〜2025、単勝人気は約69%）
+  時計ベースのみ 59〜60% → 着差×相手関係 62% → 最近重視・年齢曲線 63% → 複数の手がかりの学習 65.7%
+  各馬自身の前半タイムでのペース補正（own）は、逃げ・先行を不当に低く評価したため不採用。
 
 numpy は使わない（プロジェクトルール）。
 """
 
-import bisect
 import json
-import math
 import statistics
 from pathlib import Path
 
@@ -47,12 +37,6 @@ SEC_PER_KG = 0.15 * 1.2       # 斤量1kgあたりの秒（2400m換算）
 YEAR_SMOOTH = 15.0
 TRAIN_YEARS = range(2008, 2019)
 TEST_YEARS = range(2019, 2026)
-PACE_OPTIONS = ["none", "race"]   # 各馬自身のペース（own）は試作3号で不採用（後述）
-BLENDS = [0.0, 0.25, 0.5, 0.75, 1.0]   # レース水準の見積もりで時計を使う比率（残りは相手関係）
-GRID_N = [1, 2, 3, 4, 6]
-GRID_W = [1, 2, 99]
-GRID_K = [0.0, 1.0, 3.0]
-GRID_TOL = [9999, 600, 400]   # 能力値に使うレースの距離の幅（9999 = 制限なし）
 
 
 # ---------------------------------------------------------------------------
@@ -395,128 +379,6 @@ def typical_level(history: list[tuple], before: str, last: int = 3) -> float | N
     return statistics.mean(vals) if vals else None
 
 
-# ---------------------------------------------------------------------------
-# 能力値
-# ---------------------------------------------------------------------------
-def rating(history: list[tuple], before: str | None, n: int, w: int, k: float, m0: float,
-           dist: int | None = None, tol: int = 9999) -> tuple[float, int] | None:
-    """date < before（before=None なら全期間）の直近 w 年の成績から能力値を出す。
-
-    dist と tol を渡すと、距離が dist±tol のレースだけを使う（該当が無ければ全距離を使う）。
-    """
-    dates = [h[0] for h in history]
-    hi = bisect.bisect_left(dates, before) if before else len(history)
-    lo = 0
-    if w < 99 and before:
-        y, rest = int(before[:4]) - w, before[4:]
-        lo = bisect.bisect_left(dates, f"{y}{rest}")
-    pool = history[lo:hi]
-    if dist is not None and tol < 9999:
-        near = [h for h in pool if abs(h[2]["distance"] - dist) <= tol]
-        pool = near or pool
-    vals = sorted((h[1] for h in pool), reverse=True)[:n]
-    if not vals:
-        return None
-    return (sum(vals) + k * m0) / (len(vals) + k), len(vals)
-
-
-def phi(z: float) -> float:
-    return 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
-
-
-def backtest(races: list[dict], figs: dict, n: int, w: int, k: float, m0: float, years,
-             tol: int = 9999) -> dict:
-    """years のレースについて、2頭比較の正答率（モデル・単勝人気）と比較用の差分リストを返す"""
-    pairs_model = pairs_market = pairs = 0
-    diffs = []          # (能力値の差, 先着したら1)
-    win_hit = fav_hit = n_full = 0
-    for r in races:
-        if r["year"] not in years or not r.get("graded"):
-            continue
-        rated = []
-        for x in r["runners"]:
-            if x["pos"] is None or not x["horse_id"]:
-                continue
-            rt = rating(figs.get(x["horse_id"], []), r["date"], n, w, k, m0, r["distance"], tol)
-            if rt:
-                rated.append((x, rt[0]))
-        finishers = [x for x in r["runners"] if x["pos"] is not None]
-        if len(rated) >= 2 and len(rated) == len(finishers):
-            n_full += 1
-            win_hit += max(rated, key=lambda t: t[1])[0]["pos"] == 1
-            fav = min((t for t in rated if t[0].get("pop")), key=lambda t: t[0]["pop"], default=None)
-            fav_hit += bool(fav and fav[0]["pos"] == 1)
-        for i in range(len(rated)):
-            for j in range(i + 1, len(rated)):
-                (a, ra), (b, rb) = rated[i], rated[j]
-                if a["pos"] == b["pos"] or ra == rb:
-                    continue
-                a_first = a["pos"] < b["pos"]
-                pairs += 1
-                pairs_model += (ra > rb) == a_first
-                if a.get("pop") and b.get("pop"):
-                    pairs_market += (a["pop"] < b["pop"]) == a_first
-                diffs.append((ra - rb, 1 if a_first else 0))
-    return {"pairs": pairs, "acc_model": pairs_model / pairs if pairs else 0.0,
-            "acc_market": pairs_market / pairs if pairs else 0.0,
-            "n_full": n_full, "win_model": win_hit / n_full if n_full else 0.0,
-            "win_market": fav_hit / n_full if n_full else 0.0, "diffs": diffs}
-
-
-def fit_sigma(diffs: list[tuple[float, int]]) -> tuple[float, float]:
-    """P(先着) = Φ(差 / s) の対数損失が最小になる s を探し、1走ごとの調子の波 σ = s/√2 を返す"""
-    def loss(s):
-        tot = 0.0
-        for d, y in diffs:
-            p = min(max(phi(d / s), 1e-6), 1 - 1e-6)
-            tot -= math.log(p if y else 1 - p)
-        return tot / len(diffs)
-    best = min((loss(s), s) for s in [0.5 + 0.1 * i for i in range(36)])
-    return best[1] / math.sqrt(2), best[0]
-
-
-def select_model(races: list[dict], log=print) -> dict:
-    """ペース補正・能力値の設定をバックテストで選ぶ"""
-    results = []
-    cache = {}
-    for pace in PACE_OPTIONS:
-        model = ParModel(races, pace)
-        # 展開の効きを時計ベースのスピード値で推定してから、各物差しのスピード値を作る
-        beta = fit_style_effect(races, speed_figures(races, model))
-        for blend in BLENDS:
-            figs = relative_figures(races, model, beta, blend)
-            m0 = statistics.median(f for v in figs.values() for _, f, _, _ in v)
-            cache[(pace, blend)] = (model, figs, m0, beta)
-            for n in GRID_N:
-                for w in GRID_W:
-                    for k in GRID_K:
-                        for tol in GRID_TOL:
-                            bt = backtest(races, figs, n, w, k, m0, TRAIN_YEARS, tol)
-                            results.append((bt["acc_model"], pace, blend, n, w, k, tol, bt["pairs"]))
-            best = max(x[0] for x in results if x[1] == pace and x[2] == blend)
-            log(f"  ペース補正={pace} 時計の比率={blend}: 展開の効き {beta:+.3f} / 最良 {best:.2%}")
-    results.sort(reverse=True)
-    log("学習期間（2008〜2018）の2頭比較の正答率 上位10設定:")
-    for acc, pace, blend, n, w, k, tol, p in results[:10]:
-        log(f"  {acc:.3%}  ペース補正={pace} 時計の比率={blend} 上位{n}走 直近{w if w < 99 else '全'}年 "
-            f"縮小K={k} 距離±{tol if tol < 9999 else '制限なし'}  ({p}組)")
-    best_by_blend = {}
-    for acc, pace, blend, n, w, k, tol, p in results:
-        best_by_blend.setdefault((pace, blend), (acc, n, w, k, tol))
-    _, pace, blend, n, w, k, tol, _ = results[0]
-    model, figs, m0, style_beta = cache[(pace, blend)]
-    train = backtest(races, figs, n, w, k, m0, TRAIN_YEARS, tol)
-    sigma, train_loss = fit_sigma(train["diffs"])
-    test = backtest(races, figs, n, w, k, m0, TEST_YEARS, tol)
-    s = sigma * math.sqrt(2)
-    test_loss = -sum(math.log(min(max(phi(d / s) if y else 1 - phi(d / s), 1e-6), 1 - 1e-6))
-                     for d, y in test["diffs"]) / max(len(test["diffs"]), 1)
-    return {"pace": pace, "blend": blend, "n": n, "w": w, "k": k, "tol": tol, "m0": m0, "sigma": sigma,
-            "model": model, "figs": figs, "train": train, "test": test, "train_loss": train_loss,
-            "test_loss": test_loss, "best_by_blend": best_by_blend, "style_beta": style_beta,
-            "top": results[:10]}
-
-
 def fit_style_effect(races, figs) -> float:
     """展開の効き: 同じ馬の中で (スピード値 − その馬の平均) を (脚質−0.5)×(ハイペース度) に回帰した傾き。
 
@@ -541,15 +403,3 @@ def fit_style_effect(races, figs) -> float:
             sxy += (u - mu) * (f - mf)
             sxx += (u - mu) ** 2
     return sxy / sxx if sxx else 0.0
-
-
-def peak_rating(history: list[tuple], n: int, w: int, k: float, m0: float,
-                dist: int | None = None, tol: int = 9999) -> tuple[float, str]:
-    """全盛期の能力値: 各出走日を終点とする直近W年の能力値の最大値"""
-    best = (-99.0, "")
-    for date, *_rest in history:
-        # date + "~" は同じ日付の文字列より後ろに並ぶので、その日のレースまでを含む
-        rt = rating(history, date + "~", n, w, k, m0, dist, tol)
-        if rt and rt[0] > best[0]:
-            best = (rt[0], date)
-    return best
