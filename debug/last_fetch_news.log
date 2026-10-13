@@ -1,5 +1,5 @@
   [GNews] 取得失敗 ('JRA 重賞 競走馬'): 429 Client Error: Too Many Requests for url: https://gnews.io/api/v4/search?q=JRA%20%E9%87%8D%E8%B3%9E%20%E7%AB%B6%E8%B5%B0%E9%A6%AC&lang=ja&country=jp&max=10&apikey=bfafaf17044691c41268e7da2d1792ba
-  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7f53357fcad0>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
+  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7febceab1190>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
 === 競馬ニュース取得開始 ===
 投稿済みID数: 3369
 === GNews API ===
@@ -32,10 +32,10 @@
   有効エントリー: 30 件
 フィード取得中: https://www.keiba.jp/rss/
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 130050 bytes
+  [HTTP] 200 128866 bytes
   有効エントリー: 106 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 113146 bytes
+  [HTTP] 200 113217 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
   [HTTP] 200 122583 bytes
@@ -47,12 +47,12 @@
   [HTTP] 200 120739 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
-  [HTTP] 200 129684 bytes
+  [HTTP] 200 129656 bytes
   有効エントリー: 100 件
 JRA公式ニュースをスクレイピング中...
   [HTTP] 200 80033 bytes
   [JRA] 1 件スクレイプ
-未投稿エントリー: 600 件
+未投稿エントリー: 597 件
   [除外:daily_column] （出来事一覧）10月12日の出来事一覧/東京・京都 - netkeiba
   [除外:retrospective] （回顧）【アイルランドT・レース回顧】カムニャックが秘める「歴史的名牝」の可能性 東京のGⅠで見たい！（東スポ競馬） - Yah
   [除外:retrospective] （回顧）【アイルランドT・レース回顧】カムニャックが秘める「歴史的名牝」の可能性　東京のGⅠで見たい！ - ｄメニューニュース
@@ -66,8 +66,8 @@ JRA公式ニュースをスクレイピング中...
   [除外:retrospective] （追憶）【追憶の柴田善臣】JRA重賞96勝 最も勝った重賞レースは? 一番重賞を獲った馬は? - netkeiba
   [除外:retrospective] （回想）C.ルメール騎手が新潟重賞初制覇 ディープ産駒の良血が制した19年関屋記念を回想 - netkeiba
   [除外:retrospective] （回顧）［重賞回顧］2強激突！連綿と続く勝利への路～2026年・ヴィクトリアマイル～ - ウマフリ
-競馬関連フィルタ後: 587 件
-フィルタ「24時間以内」: 直接ニュース 30件 / 直接コラム 0件 / GoogleNews 124件 → 候補プール 30件
+競馬関連フィルタ後: 584 件
+フィルタ「24時間以内」: 直接ニュース 30件 / 直接コラム 0件 / GoogleNews 121件 → 候補プール 30件
   [HTTP] 200 71711 bytes (attempt 1)
   [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=345462
   [DEBUG] HTML長: 63685文字
