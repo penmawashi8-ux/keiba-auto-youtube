@@ -3,7 +3,10 @@ edge-tts
 kokoro>=0.9.4
 fugashi[unidic-lite]
 pyopenjtalk
-misaki[ja_espeak]
+# misaki[ja] は unidic(要別途DL)まで入るため、ja の依存を個別に入れる（辞書は unidic-lite）
+misaki>=0.9.4
+jaconv
+mojimoji
 soundfile
 google-api-python-client==2.151.0
 google-auth==2.35.0
