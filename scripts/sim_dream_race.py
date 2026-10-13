@@ -110,7 +110,11 @@ def write_report(horses, kit, rank_counts, race) -> None:
 # ---------------------------------------------------------------------------
 W, H, FPS = 1280, 720, 30
 SPEEDUP = 4.0
-TITLE_SEC, RESULT_SEC = 3.0, 6.0
+TITLE_SEC = 2.5           # タイトル
+PREMISE_SEC = 8.0         # 前提条件・注意事項
+GATE_SEC = 1.5            # ゲートに並んだ状態（最後に「スタート！」）
+RACE_START = TITLE_SEC + PREMISE_SEC + GATE_SEC
+RESULT_SEC = 6.0
 LEAD_X, PX_PER_M = 1050, 7.0
 DOT_W = 38                # fontsize 46 の●の幅（px）
 
@@ -157,7 +161,7 @@ def piecewise(keys: list[tuple[float, float]]) -> str:
     return f"if(lt(t,{keys[0][0]:.3f}),{keys[0][1]:.1f},{expr})"
 
 
-def render(horses: dict, race: list[tuple[str, float]]) -> None:
+def render(horses: dict, race: list[tuple[str, float]], premise: list[str]) -> None:
     font = find_font()
     tmp = SIM_DIR / "txt"
     tmp.mkdir(exist_ok=True)
@@ -172,7 +176,7 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
     t_end = max(finish.values())
     win_t = min(finish.values())
     race_video = t_end / SPEEDUP + 1.0
-    total = TITLE_SEC + race_video + RESULT_SEC
+    total = RACE_START + race_video + RESULT_SEC
     names = list(horses)
     lane_y = {n: 170 + i * (430 // max(len(names), 1)) for i, n in enumerate(names)}
 
@@ -180,7 +184,7 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
     step = 0.75 * SPEEDUP
     taus = sorted({round(i * step, 3) for i in range(int(t_end / step) + 2)} | {round(win_t, 3)})
     lead = [max(distance_at(tau, finish[n], win_t, horses[n]["style"], dist) for n in names) for tau in taus]
-    vt = lambda tau: TITLE_SEC + tau / SPEEDUP
+    vt = lambda tau: RACE_START + tau / SPEEDUP
 
     f = [f"color=c=0x1B5E20:s={W}x{H}:r={FPS}:d={total:.2f}[bg]", "[bg]"]
     chain = []
@@ -194,7 +198,18 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
     dt(tf("title", "夢の対決シミュレーション"), 64, "white", "(w-text_w)/2", "250", title_on)
     dt(tf("sub", f"{TARGET['label']}　{N_RUNS:,}回の期待値レース"), 34, "0xFFF59D", "(w-text_w)/2", "350", title_on)
 
-    race_on = f":enable='between(t,{TITLE_SEC},{TITLE_SEC + race_video:.2f})'"
+    # 前提条件・注意事項
+    dt(tf("premise", "\n".join(premise)), 26, "white", "'max(40,(w-text_w)/2)'", "(h-text_h)/2",
+       f":expansion=none:line_spacing=11:box=1:boxcolor=black@0.55:boxborderw=26"  # 「%」をそのまま表示
+       f":enable='between(t,{TITLE_SEC},{TITLE_SEC + PREMISE_SEC})'")
+
+    # レース画面（ゲートに並んだ状態から表示し、RACE_START でスタート）
+    race_end = RACE_START + race_video
+    race_on = f":enable='between(t,{RACE_START - GATE_SEC},{race_end:.2f})'"
+    dt(tf("gate", "ゲートイン"), 40, "white", "40", "40",
+       f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{RACE_START - GATE_SEC},{RACE_START - 0.6})'")
+    dt(tf("start", "スタート！"), 96, "0xFFEB3B", "(w-text_w)/2", "(h-text_h)/2",
+       f":borderw=6:bordercolor=black:enable='between(t,{RACE_START - 0.6},{RACE_START + 0.9})'")
     # レーン区切り（文字の罫線）
     sep = tf("sep", "─" * 80)
     for n in names:
@@ -213,7 +228,7 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
            f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{t0:.2f},{t1:.2f})'")
     goal_t = vt(win_t)
     dt(tf("goal_label", "ゴール！"), 40, "white", "40", "40",
-       f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{goal_t:.2f},{TITLE_SEC + race_video:.2f})'")
+       f":box=1:boxcolor=black@0.5:boxborderw=12:enable='between(t,{goal_t:.2f},{race_end:.2f})'")
     dt(tf("speed", f"{int(SPEEDUP)}倍速"), 28, "0xFFFFFF@0.7", "w-text_w-40", "48", race_on)
     # 各馬
     for i, n in enumerate(names):
@@ -229,7 +244,7 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
     lines = ["結果（期待値レース）", ""] + [
         f"{i}着  {n}　{fmt_time(t)}{'' if i == 1 else f'  (+{t - win_t:.1f})'}" for i, (n, t) in enumerate(race, 1)]
     dt(tf("result", "\n".join(lines)), 40, "white", "(w-text_w)/2", "(h-text_h)/2",
-       f":line_spacing=14:box=1:boxcolor=black@0.6:boxborderw=30:enable='gte(t,{TITLE_SEC + race_video:.2f})'")
+       f":line_spacing=14:box=1:boxcolor=black@0.6:boxborderw=30:enable='gte(t,{race_end:.2f})'")
 
     graph = f[0] + ";" + f[1] + ",".join(chain) + "[v]"
     script = SIM_DIR / "filter.txt"
@@ -239,7 +254,8 @@ def render(horses: dict, race: list[tuple[str, float]]) -> None:
                     "-map", "[v]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-t", f"{total:.2f}", str(out)],
                    check=True)
     # 静止画（レース中盤・ゴール前・結果）
-    for label, sec in [("mid", vt(win_t * 0.5)), ("stretch", vt(win_t * 0.9)), ("goal", goal_t + 0.1),
+    for label, sec in [("premise", TITLE_SEC + PREMISE_SEC / 2), ("start", RACE_START - 0.2),
+                       ("mid", vt(win_t * 0.5)), ("stretch", vt(win_t * 0.9)), ("goal", goal_t + 0.1),
                        ("result", total - 1.0)]:
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{sec:.2f}", "-i", str(out),
                         "-vframes", "1", "-q:v", "2", str(SIM_DIR / f"frame_{label}.jpg")], check=True)
@@ -270,7 +286,33 @@ def main() -> None:
                   key=lambda x: x[1])
     write_report(horses, kit, rank_counts, race)
     print((SIM_DIR / "report.md").read_text(encoding="utf-8")[:3500])
-    render(horses, race)
+    render(horses, race, premise_lines(horses, kit))
+
+
+def premise_lines(horses: dict, kit: dict) -> list[str]:
+    """動画の冒頭に出す前提条件・注意事項（数字は計算結果から入れる）"""
+    n_horses = len(kit["rel"])
+    n_runs = sum(len(v) for v in kit["rel"].values())
+    items = [f"{n}（{h['peak_date'][:4]}年{int(h['peak_date'][5:7])}月）" for n, h in horses.items()]
+    peaks = ["　" + "、".join(items[i:i + 2]) for i in range(0, len(items), 2)]   # 横幅に収まるよう2頭ずつ
+    te = kit["test"]
+    return [
+        "【前提条件】",
+        f"・コース：{TARGET['label'].replace('（', '・').replace('）', '馬場')}／{len(horses)}頭立て",
+        "・各馬は現役時代で最も強かった時点（全盛期）の能力で出走",
+        *peaks,
+        "・斤量は全馬「定量」（年齢・性別に応じた通常の重さ）",
+        "・時代による馬場の速さの違いは補正済み（2023年の馬場に換算）",
+        f"・データ：2003〜2025年のJRA重賞出走馬 {n_horses:,}頭・のべ{n_runs:,}走の全成績",
+        "",
+        "【注意事項】",
+        "・実際のレース映像ではなく、データから作ったシミュレーションです",
+        f"・{N_RUNS:,}回走らせた中で、展開・調子が平均的な1レースを表示しています",
+        f"・予測精度：過去の重賞で「2頭のどちらが先着するか」の正答率 {te['acc_model']:.1%}"
+        f"（単勝人気は {te['acc_market']:.1%}）",
+        "・騎手・調教・当日の状態は考慮していません",
+        "・どの馬が最強かを断定するものではありません",
+    ]
 
 
 if __name__ == "__main__":
