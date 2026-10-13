@@ -20,7 +20,7 @@ GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # gemini-2.0 系・gemma-3 系は 2026-10 時点で ListModels から消えている（残しても無害）
 PREFERRED_MODELS = [
     "gemini-2.5-flash",
-    "gemini-2.5-flash-lite",
+    # gemini-2.5-flash-lite は ListModels に出るが generateContent が 404 のため入れない
     "gemini-flash-latest",
     "gemini-flash-lite-latest",
     "gemma-4-31b-it",
@@ -716,6 +716,11 @@ def main() -> None:
             except QuotaExceeded:
                 print(f"[{i}]  [key={key_label} / {model_name}] クォータ超過。20秒待機後に次へ切り替えます。", file=sys.stderr)
                 time.sleep(20)
+            except requests.exceptions.HTTPError as e:
+                # ListModels に載っていても generateContent が 404 を返すモデルがある
+                # （2026-10 の gemini-2.5-flash-lite）。1モデルの失敗で脚本生成全体を
+                # 落とさず、次のキー/モデルへ進む。
+                print(f"[{i}]  [key={key_label} / {model_name}] API失敗: {e}。次へ切り替えます。", file=sys.stderr)
         # ここに来る理由はクォータ超過とは限らない。ファクトチェックNGや
         # 語尾チェックで弾かれ続けた場合も全組み合わせを使い切って到達する。
         print(
