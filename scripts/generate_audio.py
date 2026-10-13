@@ -62,7 +62,8 @@ def normalize_racing_terms(text: str, track: list | None = None) -> str:
 _EDGE_VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
 
 # Kokoro 日本語ボイスプール
-_KOKORO_VOICE_POOL = ["jf_alpha", "jf_beta", "jm_alpha"]
+# hexgrad/Kokoro-82M に実在する日本語ボイスのみ（jf_beta / jm_alpha は存在せず 404 になる）
+_KOKORO_VOICE_POOL = ["jf_alpha", "jf_gongitsune", "jf_nezumi", "jf_tebukuro", "jm_kumo"]
 _kokoro_pipeline: "KPipeline | None" = None
 
 
@@ -552,6 +553,9 @@ def main() -> None:
                 elif attempt < 3:
                     time.sleep(10 * attempt)
                 else:
+                    # 失敗時に残る壊れた音声を消しておく。残っていると generate_video.py が
+                    # この記事を処理しようとして ffmpeg で落ち、成功した他の記事まで投稿されない
+                    Path(audio_path).unlink(missing_ok=True)
                     raise RuntimeError(f"音声生成を3回試みましたが失敗しました。idx={idx}")
 
         apply_audio_variation(audio_path, pitch_factor, volume_db)
