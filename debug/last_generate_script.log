@@ -1,72 +1,54 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (45個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
-使用候補モデル: ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
-試行組み合わせ数: 18 (キー×モデル)
+使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
+試行組み合わせ数: 15 (キー×モデル)
 
 --- 記事[0] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[0]: 1位はミッキークイーンの二冠制覇 秋華賞の勝ち時計ランキング ---
-[0] Gemini入力本文 347文字: '10月18日(日)に京都競馬場で行われる秋華賞(3歳牝・GI・芝2000m)。96年にエリザベス女王杯が古馬開放されたことにともない、牝馬三冠の最終戦として創設された。今年は無傷の4連勝でローズSを制したモンローウォークなど、18頭がエント'
+--- 記事[0]: フランス遠征明けのシュトラウスはキャピタルSが次走の候補　ジャパンC前日のリステッド競走 ---
+[0] Gemini入力本文 316文字: '夏にフランスに遠征し、8月16日のジャックルマロワ賞で9着のシュトラウス(牡5＝武井、父モーリス)はフランスギャロ賞キャピタルS(11月28日、東京芝1600メートル)が次走の候補となっている。\n\u300013日、キャロットクラブが発表した。\n\u3000同'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[1]: 【注目馬動向】昨年の最優秀2歳牡馬カヴァレリッツォは復帰予定の富士Sへの登録見送る　シルクホースクラブ発表 ---
-[1] Gemini入力本文 345文字: '昨年の朝日杯FS勝ち馬で、富士S・G2(10月17日、東京競馬場・芝1600メートル)での復帰を予定していた昨年の最優秀2歳牡馬カヴァレリッツォ(牡3歳、栗東・吉岡辰弥厩舎、父サートゥルナーリア)が、同レースへの登録を見送った。馬主のシルク'
+--- 記事[1]: 【地方競馬】2027年ダート主要競走の日程など発表　JRAオープン交流競走を新設 ---
+[1] Gemini入力本文 376文字: '地方競馬全国協会は13日、地方競馬における2027年および28年1月から3月までのダート主要競走の日程などが決まったと発表した。\n\u300027年からは将来的なダートグレード競走としての実施、国際格付け取得を目指しJRAとの交流競走として「JRAオ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[2]: 【富士ステークス展望】重賞3勝馬トロヴァトーレが中心　本格化したアンパドゥも勝ち負けになる ---
-[2] Gemini入力本文 371文字: '第29回富士ステークス・G2(1着馬にマイルCSの優先出走権)は10月17日、東京競馬場の芝1600メートルで行われる。\n\t\t\t\t\u3000トロヴァトーレ(牡5歳、美浦・鹿戸雄一厩舎、父レイデオロ)は今年、東京新聞杯とエプソムカップを連勝するなど重'
+--- 記事[2]: 【東京HJ想定騎手】エコロデュエルは草野太郎騎手、ジューンベロシティは高田潤騎手 ---
+[2] Gemini入力本文 341文字: '10月18日に東京競馬場で行われる、第28回東京ハイジャンプ(障害3歳上・JGII・芝3110m)の登録馬・想定騎手は以下の通り。\n\u3000障害王者エコロデュエル(牡7、美浦・岩戸孝樹厩舎)は草野太郎騎手、同レース3連覇を狙うジューンベロシティ('
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[0]  [Gemini生出力 249文字]: '競馬ファン注目の情報です。10月18日(日)に京都競馬場で行われる秋華賞は、3歳牝馬のGI、芝2000mのレースです。このレースは、1996年にエリザベス女王杯が古馬開放されたことにともない、牝馬三冠の最終戦として創設されました。今年は、無傷の4連勝でローズSを制したモンローウォークなど、18頭がエントリーしています。歴代勝ち時計のランキングでは、ミッキークイーンの二冠制覇が1位と紹介されています。また、4位タイには1996年のファビラスラフインが記録した1分58秒1という勝ち時計があります。'
+[1]  [Gemini生出力 286文字]: '重要な競馬ニュースをお伝えします。\n地方競馬全国協会は13日、地方競馬における2027年および28年1月から3月までのダート主要競走の日程などが決まったと発表しました。2027年からは、将来的なダートグレード競走としての実施と国際格付け取得を目指し、JRAとの交流競走として「JRAオープン交流競走」を新設します。この新設される競走の該当レースは、2027年からのオグリキャップ記念が笠松で、翌2028年からは桜花賞が浦和で実施される予定です。なお、桜花賞のレース名は変更予定とされています。また、兵庫ジュニアグランプリと兵庫ゴールドトロフィーについても発表がありました。'
+[1]  [重複除去] 286文字 → 285文字
+  HTTP 200
+[0]  [Gemini生出力 207文字]: '競馬ファン注目の情報です。夏にフランスへ遠征し、8月16日のジャックルマロワ賞で9着だったシュトラウスの次走の候補は、フランスギャロ賞キャピタルSとなっています。このレースは11月28日に東京芝1600メートルで行われるリステッド競走で、ジャパンC前日に組まれています。この情報は13日にキャロットクラブが発表しました。シュトラウスはフランスから帰国後、検疫を経て福島県のノーザンファーム天栄で調整を進めています。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (249文字)
-[0]  プレビュー: 競馬ファン注目の情報です。10月18日(日)に京都競馬場で行われる秋華賞は、3歳牝馬のGI、芝2000mのレースです。このレースは、1996年にエリザベス女王杯...
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-2.5-flash-lite
-[2] 使用: key=***zGG0 model=gemini-2.5-flash-lite
-  HTTP 404
-  HTTP 404
-Traceback (most recent call last):
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 762, in <module>
-    main()
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 732, in main
-    i, ok = future.result()
-            ^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/_base.py", line 449, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 543, in generate_one
-    script = call_gemini(key, model_name, user_content, system_prompt=current_sys)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/keiba-auto-youtube/keiba-auto-youtube/scripts/generate_script.py", line 382, in call_gemini
-    raise requests.exceptions.HTTPError(safe_msg) from None
-requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=***
+[0]  → output/script_0.txt 保存 (207文字)
+[0]  プレビュー: 競馬ファン注目の情報です。夏にフランスへ遠征し、8月16日のジャックルマロワ賞で9着だったシュトラウスの次走の候補は、フランスギャロ賞キャピタルSとなっています...
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (285文字)
+[1]  プレビュー: 重要な競馬ニュースをお伝えします。地方競馬全国協会は13日、地方競馬における2027年および28年1月から3月までのダート主要競走の日程などが決まったと発表しま...
+  HTTP 200
+[2]  [Gemini生出力 178文字]: '競馬ファン注目の情報です。10月18日に東京競馬場で行われる第28回東京ハイジャンプ、障害3歳上・JGII・芝3110mの登録馬と想定騎手が発表されました。障害王者のエコロデュエルは草野太郎騎手、そして同レース3連覇を目指すジューンベロシティは高田潤騎手が想定されています。これらの情報は主に先週までの取材に基づくもので、今後変更される可能性もございます。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (178文字)
+[2]  プレビュー: 競馬ファン注目の情報です。10月18日に東京競馬場で行われる第28回東京ハイジャンプ、障害3歳上・JGII・芝3110mの登録馬と想定騎手が発表されました。障害...
+
+3 件の脚本を生成しました。
