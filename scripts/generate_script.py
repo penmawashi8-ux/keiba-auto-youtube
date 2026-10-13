@@ -16,8 +16,15 @@ import requests
 NEWS_JSON = "news.json"
 OUTPUT_DIR = "output"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# クォータはモデルごとに別枠なので、2.5-flash が尽きても下位モデルで続行できるよう並べる。
+# gemini-2.0 系・gemma-3 系は 2026-10 時点で ListModels から消えている（残しても無害）
 PREFERRED_MODELS = [
     "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemma-4-31b-it",
+    "gemma-4-26b-a4b-it",
     "gemini-2.0-flash",
     "gemini-2.0-flash-lite",
     "gemma-3-4b-it",
