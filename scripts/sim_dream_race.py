@@ -81,21 +81,22 @@ def write_report(horses, sel, rank_counts, base_time, race) -> None:
            f"{tr['win_model']:.1%} | {tr['win_market']:.1%} | {tr['n_full']} |",
            f"| 検証 2019〜2025 | {te['acc_model']:.1%} | {te['acc_market']:.1%} | {te['pairs']:,} | "
            f"{te['win_model']:.1%} | {te['win_market']:.1%} | {te['n_full']} |", "",
-           f"- 選ばれた設定: ペース補正 **{sel['pace']}** / 能力値 = {w_label}の上位**{sel['n']}走** / 縮小 K={sel['k']}"
+           f"- 選ばれた設定: ペース補正 **{sel['pace']}** / 時計の比率 **{sel['blend']}** / "
+           f"能力値 = {w_label}の上位**{sel['n']}走** / 縮小 K={sel['k']}"
            f" / 距離 {tol_label}",
            f"- 調子の波 σ = {sel['sigma']:.2f}秒（対数損失 学習 {sel['train_loss']:.4f} / 検証 {sel['test_loss']:.4f}）",
            f"- 展開の効き = {sel['style_beta']:+.3f}（前半600mが1秒速いとき、追込は逃げより {sel['style_beta']:+.2f}秒有利）",
            f"- 基準データ: {sel['model'].n_rows}レース / ペース係数 {c['pace']:+.3f}", "",
-           "### ペース補正ごとの最良設定（学習期間の正答率）", "", "| ペース補正 | 正答率 | 上位N走 | 期間 | K |",
-           "|---|---:|---:|---|---:|"]
-    for pace, (acc, n, w, k, tol) in sel["best_by_pace"].items():
-        md.append(f"| {pace} | {acc:.2%} | {n} | {'全' if w >= 99 else w}年 | {k} |")
-    md += ["", "### 距離の絞り込みごとの最良設定", ""] + [
-        f"- 距離{'制限なし' if tol >= 9999 else f'±{tol}m'}: {acc:.2%}（{pace} / 上位{n}走 / {'全' if w >= 99 else w}年 / K={k}）"
-        for tol, (acc, pace, n, w, k) in sel["best_by_tol"].items()]
+           "### 物差しごとの最良設定（学習期間の正答率）", "",
+           "時計の比率: レース水準の見積もりで走破タイムを使う割合（0 = 着差と相手関係だけ、1 = 時計だけ）", "",
+           "| ペース補正 | 時計の比率 | 正答率 | 上位N走 | 期間 | K | 距離 |", "|---|---:|---:|---:|---|---:|---|"]
+    for (pace, blend), (acc, n, w, k, tol) in sorted(sel["best_by_blend"].items()):
+        md.append(f"| {pace} | {blend} | {acc:.2%} | {n} | {'全' if w >= 99 else w}年 | {k} | "
+                  f"{'制限なし' if tol >= 9999 else f'±{tol}m'} |")
     md += ["", "### 上位10設定", ""] + [
-        f"- {acc:.2%}  {pace} / 上位{n}走 / {'全' if w >= 99 else w}年 / K={k} / 距離{'制限なし' if tol >= 9999 else f'±{tol}m'}"
-        for acc, pace, n, w, k, tol, _ in sel["top"]]
+        f"- {acc:.2%}  {pace} / 時計の比率 {blend} / 上位{n}走 / {'全' if w >= 99 else w}年 / K={k} / "
+        f"距離{'制限なし' if tol >= 9999 else f'±{tol}m'}"
+        for acc, pace, blend, n, w, k, tol, _ in sel["top"]]
     md += ["", "## 馬場の速さ（年ごと、2023年との差・秒）", "",
            " / ".join(f"{y}: {c.get(f'y:{y}', 0.0):+.2f}" for y in sel["model"].years + [sm.REF_YEAR]), "",
            "## 各馬のスピード値（重賞の全成績）", ""]
@@ -111,7 +112,7 @@ def write_report(horses, sel, rank_counts, base_time, race) -> None:
         "win_rate": {n: rank_counts[n][0] / N_RUNS for n in names},
         "ratings": {n: {"mu": horses[n]["mu"], "style": horses[n]["style"], "peak": horses[n]["peak_date"]}
                     for n in names},
-        "model": {k: sel[k] for k in ("pace", "n", "w", "k", "tol", "sigma", "style_beta")},
+        "model": {k: sel[k] for k in ("pace", "blend", "n", "w", "k", "tol", "sigma", "style_beta")},
         "backtest": {p: {k: v for k, v in sel[p].items() if k != "diffs"} for p in ("train", "test")},
         "race": race,
     }, ensure_ascii=False, indent=1), encoding="utf-8")

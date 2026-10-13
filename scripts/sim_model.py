@@ -47,7 +47,8 @@ SEC_PER_KG = 0.15 * 1.2       # 斤量1kgあたりの秒（2400m換算）
 YEAR_SMOOTH = 15.0
 TRAIN_YEARS = range(2008, 2019)
 TEST_YEARS = range(2019, 2026)
-PACE_OPTIONS = ["none", "race", "own"]
+PACE_OPTIONS = ["none", "race"]   # 各馬自身のペース（own）は試作3号で不採用（後述）
+BLENDS = [0.0, 0.25, 0.5, 0.75, 1.0]   # レース水準の見積もりで時計を使う比率（残りは相手関係）
 GRID_N = [1, 2, 3, 4, 6]
 GRID_W = [1, 2, 99]
 GRID_K = [0.0, 1.0, 3.0]
@@ -278,9 +279,11 @@ class ParModel:
         m = self.pace_mean.get(course_key(r))
         return v - m if v is not None and m is not None else 0.0
 
-    def par(self, r: dict, x: dict) -> float:
-        """古馬混合G1の物差しでの基準タイム（格・限定戦の項は使わない）"""
+    def par(self, r: dict, x: dict) -> float | None:
+        """古馬混合G1の物差しでの基準タイム（格・限定戦の項は使わない）。回帰に無いコースは None"""
         c = self.coef
+        if "c:" + course_key(r) not in c:
+            return None
         return (c["c:" + course_key(r)] + c.get("g:" + r["going"], 0.0) + c.get(f"y:{r['year']}", 0.0)
                 + c["pace"] * self.pace_dev(r, x))
 
@@ -305,7 +308,10 @@ def speed_figures(races: list[dict], model: ParModel, beta: float = 0.0) -> dict
         for x in r["runners"]:
             if not x.get("time") or not x["horse_id"] or x["pos"] is None:
                 continue
-            fig = (model.par(r, x) - x["time"]) * 2400 / r["distance"]
+            par = model.par(r, x)
+            if par is None:
+                continue
+            fig = (par - x["time"]) * 2400 / r["distance"]
             if beta and x.get("style") is not None:
                 fig -= beta * (x["style"] - 0.5) * fast
             if x.get("weight") and x.get("age"):
@@ -315,6 +321,78 @@ def speed_figures(races: list[dict], model: ParModel, beta: float = 0.0) -> dict
     for v in figs.values():
         v.sort(key=lambda t: t[0])
     return figs
+
+
+def relative_figures(races: list[dict], model: ParModel, beta: float, blend: float) -> dict:
+    """着差×相手関係のスピード値（古い順に1レースずつ、その時点までの情報だけで計算する）。
+
+    レースの水準 L（勝ち馬の出来）を2通りで見積もって混ぜる:
+      時計: L_time = (基準タイム − 勝ちタイム) × 2400/距離            … 時代・馬場の物差し
+      相手: L_riv  = 出走馬それぞれの「事前のふだんの出来 + 勝ち馬との着差」の中央値 … ペースに左右されない
+      L = blend × L_time + (1 − blend) × L_riv   （相手の事前評価が2頭未満なら L_time）
+    各馬の今回の出来 = L − 着差（2400m換算、4秒で打ち切り）+ 斤量補正 − 展開の有利不利
+    「ふだんの出来」は直近1年の最近3走の平均（上位だけを使うと水準が年々上振れするため）。
+    """
+    fmean = course_front_means(races)
+    hist = {}
+    for r in races:
+        win = next((x for x in r["runners"] if x["pos"] == 1), None)
+        par = model.par(r, win or {})
+        if par is None or not r.get("win_time"):
+            continue
+        scale = 2400 / r["distance"]
+        l_time = (par - r["win_time"]) * scale
+        fast = fmean[course_key(r)] - r["front"] if r["front"] is not None else 0.0
+        rows, ests = [], []
+        for x in r["runners"]:
+            if not x.get("time") or not x["horse_id"] or x["pos"] is None:
+                continue
+            margin = min(max(x["time"] - r["win_time"], 0.0), 4.0) * scale
+            adj = 0.0
+            if x.get("weight") and x.get("age"):
+                adj += (x["weight"] - wfa_weight(r["year"], x["age"], x["sex"], r["age3"])) * SEC_PER_KG
+            if beta and x.get("style") is not None:
+                adj -= beta * (x["style"] - 0.5) * fast
+            rows.append((x, margin, adj))
+            typ = typical_level(hist.get(x["horse_id"], []), r["date"])
+            if typ is not None:
+                ests.append(typ + margin - adj)
+        level = l_time
+        if len(ests) >= 2 and blend < 1.0:
+            level = blend * l_time + (1 - blend) * statistics.median(ests)
+        for x, margin, adj in rows:
+            hist.setdefault(x["horse_id"], []).append((r["date"], level - margin + adj, r, x))
+        r["_l_time"] = l_time
+    return anchor_years(hist) if blend < 1.0 else hist
+
+
+def anchor_years(hist: dict) -> dict:
+    """年ごとの水準を時計の物差しに合わせる。
+
+    相手関係でつないだ物差しは、世代をまたいで少しずつずれる（実データで2005年前後が
+    2023年前後より約0.7秒低く出た）。年ごとに「勝ち馬の出来 − 時計で測った勝ち馬の出来」の
+    平均を求め（前後1年で平滑化）、その年の全成績から差し引く。同じ年の中の並びは変わらない。
+    """
+    gaps = {}
+    for v in hist.values():
+        for _date, perf, r, x in v:
+            if x["pos"] == 1 and "_l_time" in r:
+                gaps.setdefault(r["year"], []).append(perf - r["_l_time"])
+    raw = {y: statistics.mean(g) for y, g in gaps.items()}
+    offset = {}
+    for y in raw:
+        near = [raw[z] for z in (y - 1, y, y + 1) if z in raw]
+        offset[y] = statistics.mean(near)
+    return {h: [(d, perf - offset.get(r["year"], 0.0), r, x) for d, perf, r, x in v]
+            for h, v in hist.items()}
+
+
+def typical_level(history: list[tuple], before: str, last: int = 3) -> float | None:
+    """直近1年の最近 last 走の出来の平均（レース水準の見積もり用）"""
+    y, rest = int(before[:4]) - 1, before[4:]
+    lo = f"{y}{rest}"
+    vals = [h[1] for h in history if lo <= h[0] < before][-last:]
+    return statistics.mean(vals) if vals else None
 
 
 # ---------------------------------------------------------------------------
@@ -403,40 +481,39 @@ def select_model(races: list[dict], log=print) -> dict:
     cache = {}
     for pace in PACE_OPTIONS:
         model = ParModel(races, pace)
-        # 展開の効きを推定してから、その分を差し引いたスピード値を作る
+        # 展開の効きを時計ベースのスピード値で推定してから、各物差しのスピード値を作る
         beta = fit_style_effect(races, speed_figures(races, model))
-        figs = speed_figures(races, model, beta)
-        m0 = statistics.median(f for v in figs.values() for _, f, _, _ in v)
-        cache[pace] = (model, figs, m0, beta)
-        for n in GRID_N:
-            for w in GRID_W:
-                for k in GRID_K:
-                    for tol in GRID_TOL:
-                        bt = backtest(races, figs, n, w, k, m0, TRAIN_YEARS, tol)
-                        results.append((bt["acc_model"], pace, n, w, k, tol, bt["pairs"]))
-        log(f"  ペース補正={pace}: 展開の効き {beta:+.3f} / 設定 {len(results)}件まで評価")
+        for blend in BLENDS:
+            figs = relative_figures(races, model, beta, blend)
+            m0 = statistics.median(f for v in figs.values() for _, f, _, _ in v)
+            cache[(pace, blend)] = (model, figs, m0, beta)
+            for n in GRID_N:
+                for w in GRID_W:
+                    for k in GRID_K:
+                        for tol in GRID_TOL:
+                            bt = backtest(races, figs, n, w, k, m0, TRAIN_YEARS, tol)
+                            results.append((bt["acc_model"], pace, blend, n, w, k, tol, bt["pairs"]))
+            best = max(x[0] for x in results if x[1] == pace and x[2] == blend)
+            log(f"  ペース補正={pace} 時計の比率={blend}: 展開の効き {beta:+.3f} / 最良 {best:.2%}")
     results.sort(reverse=True)
     log("学習期間（2008〜2018）の2頭比較の正答率 上位10設定:")
-    for acc, pace, n, w, k, tol, p in results[:10]:
-        log(f"  {acc:.3%}  ペース補正={pace} 上位{n}走 直近{w if w < 99 else '全'}年 縮小K={k} "
-            f"距離±{tol if tol < 9999 else '制限なし'}  ({p}組)")
-    best_by_pace = {}
-    for acc, pace, n, w, k, tol, p in results:
-        best_by_pace.setdefault(pace, (acc, n, w, k, tol))
-    best_by_tol = {}
-    for acc, pace, n, w, k, tol, p in results:
-        best_by_tol.setdefault(tol, (acc, pace, n, w, k))
-    _, pace, n, w, k, tol, _ = results[0]
-    model, figs, m0, style_beta = cache[pace]
+    for acc, pace, blend, n, w, k, tol, p in results[:10]:
+        log(f"  {acc:.3%}  ペース補正={pace} 時計の比率={blend} 上位{n}走 直近{w if w < 99 else '全'}年 "
+            f"縮小K={k} 距離±{tol if tol < 9999 else '制限なし'}  ({p}組)")
+    best_by_blend = {}
+    for acc, pace, blend, n, w, k, tol, p in results:
+        best_by_blend.setdefault((pace, blend), (acc, n, w, k, tol))
+    _, pace, blend, n, w, k, tol, _ = results[0]
+    model, figs, m0, style_beta = cache[(pace, blend)]
     train = backtest(races, figs, n, w, k, m0, TRAIN_YEARS, tol)
     sigma, train_loss = fit_sigma(train["diffs"])
     test = backtest(races, figs, n, w, k, m0, TEST_YEARS, tol)
     s = sigma * math.sqrt(2)
     test_loss = -sum(math.log(min(max(phi(d / s) if y else 1 - phi(d / s), 1e-6), 1 - 1e-6))
                      for d, y in test["diffs"]) / max(len(test["diffs"]), 1)
-    return {"pace": pace, "n": n, "w": w, "k": k, "tol": tol, "m0": m0, "sigma": sigma, "model": model,
-            "figs": figs, "train": train, "test": test, "train_loss": train_loss, "test_loss": test_loss,
-            "best_by_pace": best_by_pace, "best_by_tol": best_by_tol, "style_beta": style_beta,
+    return {"pace": pace, "blend": blend, "n": n, "w": w, "k": k, "tol": tol, "m0": m0, "sigma": sigma,
+            "model": model, "figs": figs, "train": train, "test": test, "train_loss": train_loss,
+            "test_loss": test_loss, "best_by_blend": best_by_blend, "style_beta": style_beta,
             "top": results[:10]}
 
 
