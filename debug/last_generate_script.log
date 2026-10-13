@@ -1,17 +1,27 @@
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [ファクトチェックNG] NG: 元記事に存在しない「最新の
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [ファクトチェックNG] NG: 元記事に存在しない「最新のレース
 [0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***l-ME / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+[0] [エラー] 全キー・全モデルを試しましたが、条件を満たす脚本が得られませんでした。
+[警告] 記事 [0] のスクリプト生成に失敗しましたが、成功した 2 件で続行します。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (45個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
@@ -24,13 +34,13 @@ Gemini APIキー: 3 件ロード
 [0] Gemini入力本文 372文字: '半世紀近い騎手、調教師人生で本当に多くの騎手を見てきました。番外編の今回は私が「凄い！！」と思った騎手5選を紹介します。\n\u30001人目はマイク・ベネツィアという米国出身の騎手。74年に外国人として初めて短期での日本騎乗が認められた騎手です。今み'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
 --- 記事[1]: 【競走伝】ロブチェンで3冠狙う松山弘平騎手&杉山晴調教師が史上初の大偉業　コロナ禍の競馬界を盛り上げた大きな光　20年秋 ---
 [1] Gemini入力本文 380文字: '馬トク報知で過去の名勝負を当時の記事から振り返る【競走伝】。今回はデアリングタクトが勝った2020年の秋華賞を取り上げる。6頭目ながら、史上初となる無敗での牝馬3冠達成。来週にロブチェンで牡馬3冠挑戦を控える松山弘平騎手＝栗東・フリー＝と杉'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
+--- 記事[2] 書き出しパターン: 「レース関連の最新情報です。」 ---
 
 --- 記事[2]: 【G1・1週前まとめ】モンローウォークの上村調教師「良くも悪くも変わらない。順調ですよ」秋華賞 ---
 [2] Gemini入力本文 396文字: '◆第31回秋華賞・G1(10月18日、京都競馬場・芝2000メートル)\n\t\t\t\t\u3000今週から秋のG1ウィークが再開する。牝馬3冠最終戦の第31回秋華賞・G1が18日、京都競馬場の芝2000メートルで争われる。今年は7年ぶりに桜花賞、オークス馬'
@@ -39,34 +49,43 @@ Gemini APIキー: 3 件ロード
   30秒待機後にリトライ... (attempt 2)
   HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[2]  [Gemini生出力 233文字]: '競馬ファン注目の情報です。今週から秋のG1ウィークが再開し、牝馬3冠最終戦の第31回秋華賞・G1が10月18日に京都競馬場の芝2000メートルで争われます。今年は7年ぶりに桜花賞、オークス馬が不在の一戦となりますが、無傷5連勝でG1初挑戦Vを狙うモンローウォークが断然の主役とされています。モンローウォークの上村調教師は「良くも悪くも変わらない。順調ですよ」とコメントしています。また、エンネの吉岡調教師は「道中の雰囲気が非常に良くて、いつで...」と話しています。'
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (230文字)
-[2]  プレビュー: 競馬ファン注目の情報です。今週から秋のG1ウィークが再開し、牝馬3冠最終戦の第31回秋華賞・G1が10月18日に京都競馬場の芝2000メートルで争われます。今年...
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[0] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
+  HTTP 429
 [1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 219文字]: '今週の競馬注目情報をお伝えします。馬トク報知の【競走伝】では、過去の名勝負を当時の記事から振り返っています。今回はデアリングタクトが勝った2020年の秋華賞を取り上げています。デアリングタクトは6頭目ながら、史上初となる無敗での牝馬3冠を達成しました。この一戦は、来週にロブチェンで牡馬3冠挑戦を控える松山弘平騎手と杉山晴紀調教師のコンビが、とてつもないプレッシャーに打ち勝ったものです。松山弘平騎手は馬上で高らかに3本の指を掲げました。'
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (219文字)
-[1]  プレビュー: 今週の競馬注目情報をお伝えします。馬トク報知の【競走伝】では、過去の名勝負を当時の記事から振り返っています。今回はデアリングタクトが勝った2020年の秋華賞を取...
-  HTTP 503
+[0] 使用: key=***189Y model=gemini-2.5-flash
+[2] 使用: key=***189Y model=gemini-2.5-flash
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 216文字]: '最新のレース情報が入ってきました。根本康広氏が半世紀近い騎手、調教師人生で「凄い！！」と思った騎手5選の番外編を紹介しています。武豊騎手は人格も技術も最高で、日本の競馬を大きく発展させたと評価されています。武豊騎手はディープインパクトで2005年の皐月賞を制覇しました。また、1人目として紹介されたのは米国出身のマイク・ベネツィア騎手です。マイク・ベネツィア騎手は1974年に外国人として初めて短期での日本騎乗が認められた騎手です。'
+[0]  [Gemini生出力 299文字]: '最新のレース情報が入ってきました。\n根本康広氏が半世紀近い騎手、調教師人生で多くの騎手を見てきた中で、「凄い！！」と思った騎手5選の番外編を紹介しています。根本氏は武豊騎手について、人格も技術も最高であり、日本の競馬を大きく発展させたと評価しています。武豊騎手はディープインパクトで2005年皐月賞を制覇しました。また、1人目として米国出身のマイク・ベネツィア騎手が挙げられています。ベネツィア騎手は1974年に外国人として初めて短期での日本騎乗が認められた騎手です。当時、動画がすぐ手に入る時代ではなく、ケンタッキーダービーの結果は2カ月後に届き、外国人騎手の乗り方は写真から想像したものでした。'
+[0]  [重複除去] 299文字 → 298文字
 [0] 使用: key=***l-ME model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 200
-[0]  [Gemini生出力 179文字]: '最新のレース情報が入ってきました。\n根本康広が「凄い！！」と思った騎手5選を紹介する番外編です。1人目は米国出身のマイク・ベネツィアで、1974年に外国人として初めて短期での日本騎乗が認められました。武豊騎手は競馬界の顔。ディープインパクトで2005年皐月賞を制覇しました。根本康広は、武豊の人格も技術も最高で、日本の競馬を大きく発展させたと評価しています。'
-[0]  [重複除去] 179文字 → 178文字
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (178文字)
-[0]  プレビュー: 最新のレース情報が入ってきました。根本康広が「凄い！！」と思った騎手5選を紹介する番外編です。1人目は米国出身のマイク・ベネツィアで、1974年に外国人として初...
+[1]  [Gemini生出力 203文字]: '競馬速報です。\n過去の名勝負を当時の記事から振り返る「競走伝」では、デアリングタクトが勝った2020年の秋華賞を取り上げています。デアリングタクトは史上初となる無敗での牝馬3冠を達成し、これは6頭目の快挙でした。来週にロブチェンで牡馬3冠挑戦を控える松山弘平騎手と杉山晴紀調教師のコンビが、とてつもないプレッシャーに打ち勝った一戦です。馬上で高らかに3本の指を掲げたデアリングタクトの姿が報じられています。'
+[1]  [重複除去] 203文字 → 202文字
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (202文字)
+[1]  プレビュー: 競馬速報です。過去の名勝負を当時の記事から振り返る「競走伝」では、デアリングタクトが勝った2020年の秋華賞を取り上げています。デアリングタクトは史上初となる無...
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 200
+[2]  [Gemini生出力 238文字]: 'レース関連の最新情報です。今週から秋のG1ウィークが再開し、牝馬3冠最終戦の第31回秋華賞・G1が10月18日、京都競馬場の芝2000メートルで争われます。今年は7年ぶりに桜花賞、オークス馬が不在の一戦となりますが、無傷5連勝でG1初挑戦Vを狙うモンローウォークが断然の主役です。1週前まとめとして、モンローウォークの上村調教師は「良くも悪くも変わらない。順調ですよ」とコメントしています。また、エンネの吉岡調教師は「道中の雰囲気が非常に良くて、いつで...」と話しています。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (235文字)
+[2]  プレビュー: レース関連の最新情報です。今週から秋のG1ウィークが再開し、牝馬3冠最終戦の第31回秋華賞・G1が10月18日、京都競馬場の芝2000メートルで争われます。今年...
+  HTTP 429
 
-3 件の脚本を生成しました。
+2 件の脚本を生成しました。

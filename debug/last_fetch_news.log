@@ -1,5 +1,5 @@
   [GNews] 取得失敗 ('JRA 重賞 競走馬'): 429 Client Error: Too Many Requests for url: https://gnews.io/api/v4/search?q=JRA%20%E9%87%8D%E8%B3%9E%20%E7%AB%B6%E8%B5%B0%E9%A6%AC&lang=ja&country=jp&max=10&apikey=bfafaf17044691c41268e7da2d1792ba
-  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): HTTPSConnectionPool(host='www.keiba.jp', port=443): Max retries exceeded with url: /rss/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.keiba.jp', port=443) at 0x7febceab1190>, 'Connection to www.keiba.jp timed out. (connect timeout=20)'))
+  [警告] HTTP取得失敗 (https://www.keiba.jp/rss/): 404 Client Error: Not Found for url: https://www.keiba.jp/rss/
 === 競馬ニュース取得開始 ===
 投稿済みID数: 3369
 === GNews API ===
@@ -31,11 +31,12 @@
   [RSS#10] desc='<img src="https://cdn.netkeiba.com/img.news/?pid=news_img&amp;id=1080267" /><br />\u3000「秋華賞・Ｇ１」（１８日、京都）\n\n\u3000騎手時代同期の武豊＆蛯名正師のタッグで挑む紫苑Ｓ覇者マスターソアラも注目の一頭。厩舎初のＧ１タイトルを名手がもたらすか。\n\n\u3000「調教どうする？」「任せるよ」-。本番でのマスターソアラ騎乗が決まった後、東京競馬場での短いやりとりに３９年分の信頼が詰まっていた。蛯名正師と武豊は競馬学校３期生の同期。８７年のデビューからお互いに競い、高め合ってきた２人が、今度はタッ...'
   有効エントリー: 30 件
 フィード取得中: https://www.keiba.jp/rss/
+  [HTTP] 404 42350 bytes
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC&hl=ja&gl=JP&ceid=JP:ja
-  [HTTP] 200 128866 bytes
-  有効エントリー: 106 件
+  [HTTP] 200 126354 bytes
+  有効エントリー: 105 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+%E3%83%AC%E3%83%BC%E3%82
-  [HTTP] 200 113217 bytes
+  [HTTP] 200 111967 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E9%87%8D%E8%B3%9E+%E7%AB%B6%E9%A6%AC+%E5%8
   [HTTP] 200 122583 bytes
@@ -44,10 +45,10 @@
   [HTTP] 200 117006 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=JRA+%E7%AB%B6%E9%A6%AC+%E9%A8%8E%E6%89%8B&h
-  [HTTP] 200 120739 bytes
+  [HTTP] 200 120807 bytes
   有効エントリー: 100 件
 フィード取得中: https://news.google.com/rss/search?q=%E7%AB%B6%E9%A6%AC+news.yahoo.co.jp&hl=ja&g
-  [HTTP] 200 129656 bytes
+  [HTTP] 200 129674 bytes
   有効エントリー: 100 件
 JRA公式ニュースをスクレイピング中...
   [HTTP] 200 80033 bytes
@@ -55,19 +56,17 @@ JRA公式ニュースをスクレイピング中...
 未投稿エントリー: 597 件
   [除外:daily_column] （出来事一覧）10月12日の出来事一覧/東京・京都 - netkeiba
   [除外:retrospective] （回顧）【アイルランドT・レース回顧】カムニャックが秘める「歴史的名牝」の可能性 東京のGⅠで見たい！（東スポ競馬） - Yah
-  [除外:retrospective] （回顧）【アイルランドT・レース回顧】カムニャックが秘める「歴史的名牝」の可能性　東京のGⅠで見たい！ - ｄメニューニュース
   [除外:retrospective] （伝説の）「斜めに走る…」渡辺明九段のコアすぎる競馬愛が炸裂！レジェンド武豊から引き出した“伝説の逃げ馬”のマル秘エピソード - 
   [除外:retrospective] （4年前）【盛岡競馬・南部杯】得意の左回りワンターンで期待大のルクソールカフェ 4年前の兄に続くVなるか（東スポ競馬） - Yah
   [除外:retrospective] （50周年）【JRA電話・インターネット発売50周年記念レース後コメント】コズミックダンサー橋田宜長調教師ら - netkeiba
   [除外:retrospective] （プレーバック）【阪神アーバン競馬プレーバック】今月初のJRA交流競走Vは秋山稔樹騎乗のバトゥカーダ　立役者は小牧? | 競馬ニュース 
-  [除外:retrospective] （回顧）【スプリンターズS・レース回顧】予想以上だった馬場悪化 フリッカージャブ、パンジャタワーそれぞれの敗因は？（東スポ競馬）
   [除外:retrospective] （プレーバック）【阪神アーバン競馬プレーバック】他地区のゴールデンジョッキーC最上位は高知・赤岡 翌日の重賞も制覇
   [除外:retrospective] （プレーバック）【阪神アーバン競馬プレーバック】ゴールデンジョッキーカップは小牧太が席巻！史上最多得点で初V
   [除外:retrospective] （追憶）【追憶の柴田善臣】JRA重賞96勝 最も勝った重賞レースは? 一番重賞を獲った馬は? - netkeiba
   [除外:retrospective] （回想）C.ルメール騎手が新潟重賞初制覇 ディープ産駒の良血が制した19年関屋記念を回想 - netkeiba
   [除外:retrospective] （回顧）［重賞回顧］2強激突！連綿と続く勝利への路～2026年・ヴィクトリアマイル～ - ウマフリ
-競馬関連フィルタ後: 584 件
-フィルタ「24時間以内」: 直接ニュース 30件 / 直接コラム 0件 / GoogleNews 121件 → 候補プール 30件
+競馬関連フィルタ後: 586 件
+フィルタ「24時間以内」: 直接ニュース 30件 / 直接コラム 0件 / GoogleNews 119件 → 候補プール 30件
   [HTTP] 200 71711 bytes (attempt 1)
   [DEBUG] フェッチURL: https://news.netkeiba.com/?pid=news_view&no=345462
   [DEBUG] HTML長: 63685文字
