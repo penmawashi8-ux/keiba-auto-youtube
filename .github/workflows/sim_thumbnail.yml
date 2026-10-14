@@ -39,7 +39,7 @@ jobs:
           pip install requests==2.32.3 beautifulsoup4
 
       - name: Make thumbnail
-        run: python scripts/sim_thumbnail.py
+        run: python -u scripts/sim_thumbnail.py
 
       - name: Save outputs to research-output branch
         if: success()

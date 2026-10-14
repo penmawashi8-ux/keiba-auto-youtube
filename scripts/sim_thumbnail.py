@@ -32,32 +32,40 @@ SIM_DIR = Path("sim")
 WORK = SIM_DIR / "thumb_work"
 CHOICE = Path("data/sim_thumb_choice.json")
 API = "https://commons.wikimedia.org/w/api.php"
-UA = "keiba-auto-youtube/1.0 (github.com/penmawashi8-ux/keiba-auto-youtube)"
+UA = "keiba-auto-youtube-thumbnail/1.0 (https://github.com/penmawashi8-ux/keiba-auto-youtube; python-urllib)"
 N_CAND = 8
 
 # (表示名, Commons のカテゴリ候補, 検索語)
+# (表示名, Commons のカテゴリ候補, 検索語, Wikipedia の記事名（ja / en）)
 HORSES = [
-    ("ディープインパクト", ["Deep Impact (horse)"], ["Deep Impact horse", "ディープインパクト 競走馬"]),
-    ("オルフェーヴル", ["Orfevre (horse)", "Orfevre"], ["Orfevre horse", "オルフェーヴル"]),
-    ("キタサンブラック", ["Kitasan Black"], ["Kitasan Black horse", "キタサンブラック"]),
-    ("アーモンドアイ", ["Almond Eye (horse)", "Almond Eye"], ["Almond Eye horse", "アーモンドアイ"]),
-    ("イクイノックス", ["Equinox (horse)"], ["Equinox racehorse", "イクイノックス 競走馬"]),
+    ("ディープインパクト", ["Deep Impact (horse)"], ["Deep Impact horse", "ディープインパクト"],
+     ["ディープインパクト (競走馬)", "Deep Impact (horse)"]),
+    ("オルフェーヴル", ["Orfevre (horse)", "Orfevre"], ["Orfevre horse", "オルフェーヴル"],
+     ["オルフェーヴル", "Orfevre (horse)"]),
+    ("キタサンブラック", ["Kitasan Black"], ["Kitasan Black horse", "キタサンブラック"],
+     ["キタサンブラック", "Kitasan Black"]),
+    ("アーモンドアイ", ["Almond Eye (horse)", "Almond Eye"], ["Almond Eye horse", "アーモンドアイ"],
+     ["アーモンドアイ", "Almond Eye (horse)"]),
+    ("イクイノックス", ["Equinox (horse)"], ["Equinox racehorse", "イクイノックス"],
+     ["イクイノックス (競走馬)", "Equinox (horse)"]),
 ]
 FREE = ("cc", "public domain", "pd")
 EXCLUDE = ("cosplay", "コスプレ", "ウマ娘", "uma musume", "uma_musume", "anime", "figure", "card", "illustration",
            "statue", "像", "grave", "墓", "logo", "poster", "map")
 
 
-def api(params: dict) -> dict:
-    url = API + "?" + urllib.parse.urlencode({**params, "format": "json", "formatversion": "2"})
-    for attempt in range(3):
+def api(params: dict, base: str = API) -> dict:
+    url = base + "?" + urllib.parse.urlencode({**params, "format": "json", "formatversion": "2"})
+    for attempt in range(5):
+        time.sleep(1.5)                # Wikimedia のアクセス制限（429）を避ける
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read())
         except Exception as e:     # noqa: BLE001
             print(f"  再試行: {e}")
-            time.sleep(3 * (attempt + 1))
+            time.sleep(10 * (attempt + 1))
+    print(f"  [警告] 取得できませんでした: {url[:120]}")
     return {}
 
 
@@ -73,14 +81,17 @@ def file_infos(titles: list[str]) -> list[dict]:
         for p in data.get("query", {}).get("pages", []):
             ii = (p.get("imageinfo") or [None])[0]
             if not ii or not re.search(r"\.(jpe?g|png)$", ii.get("url", ""), re.I):
+                print(f"    除外（写真ではない/情報なし）: {p.get('title')}")
                 continue
             m = ii.get("extmetadata", {})
             lic = m.get("LicenseShortName", {}).get("value", "")
             # 改変禁止（ND）・非営利限定（NC）は、文字入れ・収益化があるサムネイルには使えない
             tokens = re.split(r"[\s\-]+", lic.lower())
             if not lic.lower().startswith(FREE) or "nd" in tokens or "nc" in tokens:
+                print(f"    除外（ライセンス {lic or '不明'}）: {p['title']}")
                 continue
             if any(x in p["title"].lower() for x in EXCLUDE) or ii.get("width", 0) < 600:
+                print(f"    除外（対象外の内容か小さすぎる {ii.get('width')}px）: {p['title']}")
                 continue
             out.append({"title": p["title"], "url": ii.get("thumburl") or ii["url"],
                         "w": ii["width"], "h": ii["height"], "license": lic,
@@ -90,16 +101,25 @@ def file_infos(titles: list[str]) -> list[dict]:
     return out
 
 
-def candidates(cats: list[str], queries: list[str]) -> list[dict]:
+def candidates(cats: list[str], queries: list[str], articles: list[str]) -> list[dict]:
     titles = []
+    # Wikipedia の記事に使われている写真（その馬だと確認されている。自由ライセンスなら Commons にある）
+    for lang, art in zip(("ja", "en"), articles):
+        data = api({"action": "query", "titles": art, "prop": "images", "imlimit": "50", "redirects": "1"},
+                   base=f"https://{lang}.wikipedia.org/w/api.php")
+        for p in data.get("query", {}).get("pages", []):
+            titles += [("File:" + i["title"].split(":", 1)[1]) for i in p.get("images", [])
+                       if re.search(r"\.(jpe?g|png)$", i["title"], re.I)]
     for c in cats:
         data = api({"action": "query", "list": "categorymembers", "cmtitle": f"Category:{c}", "cmtype": "file",
                     "cmlimit": "50"})
         titles += [m["title"] for m in data.get("query", {}).get("categorymembers", [])]
     in_cat = set(titles)
+    print(f"  記事・カテゴリの画像 {len(in_cat)} 件")
     for q in queries:
         data = api({"action": "query", "list": "search", "srsearch": q, "srnamespace": "6", "srlimit": "20"})
         titles += [m["title"] for m in data.get("query", {}).get("search", [])]
+    print(f"  候補の合計 {len(titles)} 件")
     seen = []
     for t in titles:
         if t not in seen:
@@ -182,9 +202,9 @@ def main() -> None:
     font = find_font()
     choice = json.loads(CHOICE.read_text(encoding="utf-8")) if CHOICE.exists() else {}
     report, chosen, credits = {}, [], []
-    for n, (name, cats, queries) in enumerate(HORSES):
-        print(f"=== {name}")
-        cands = candidates(cats, queries)
+    for n, (name, cats, queries, articles) in enumerate(HORSES):
+        print(f"=== {name}", flush=True)
+        cands = candidates(cats, queries, articles)
         files = []
         for j, c in enumerate(cands):
             p = WORK / f"h{n}_{j}.jpg"
