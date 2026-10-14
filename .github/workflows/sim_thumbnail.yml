@@ -1,0 +1,46 @@
+name: Dream Race Thumbnail (prototype)
+
+# 夢の対決シミュレーションのサムネイルを、Wikimedia Commons の自由ライセンス写真で作る。
+# 候補一覧・サムネイル・写真の出典は research-output ブランチの sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/sim_thumbnail.py
+      - data/sim_thumb_choice.json
+      - .github/workflows/sim_thumbnail.yml
+
+concurrency:
+  group: sim-thumbnail
+  cancel-in-progress: false
+
+jobs:
+  thumbnail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          pip install requests==2.32.3 beautifulsoup4
+
+      - name: Make thumbnail
+        run: python scripts/sim_thumbnail.py
+
+      - name: Save outputs to research-output branch
+        if: success()
+        run: bash .github/scripts/save_sim_outputs.sh "夢の対決サムネイル" sim/thumbnail.jpg sim/thumb_candidates_*.jpg sim/thumb_candidates.json sim/thumb_credits.txt
