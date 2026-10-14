@@ -1,16 +1,6 @@
 {
  "ディープインパクト": [
   {
-   "title": "File:Deep Impact 20090813.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Deep_Impact_20090813.jpg/1280px-Deep_Impact_20090813.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "w": 3456,
-   "h": 2304,
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "author": "Goki (talk)",
-   "page": "https://commons.wikimedia.org/wiki/File%3ADeep_Impact_20090813.jpg"
-  },
-  {
    "title": "File:Deep Impact(horse)20060430R1.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Deep_Impact%28horse%2920060430R1.jpg/1280px-Deep_Impact%28horse%2920060430R1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "w": 3357,
@@ -19,6 +9,16 @@
    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
    "author": "Goki (talk)",
    "page": "https://commons.wikimedia.org/wiki/File%3ADeep_Impact%28horse%2920060430R1.jpg"
+  },
+  {
+   "title": "File:Deep Impact 20090813.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Deep_Impact_20090813.jpg/1280px-Deep_Impact_20090813.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3456,
+   "h": 2304,
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Goki (talk)",
+   "page": "https://commons.wikimedia.org/wiki/File%3ADeep_Impact_20090813.jpg"
   },
   {
    "title": "File:Deep Impact 003.jpg",
