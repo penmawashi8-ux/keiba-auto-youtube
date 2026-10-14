@@ -50,7 +50,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
-          pip install requests==2.32.3 beautifulsoup4
+          pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
 
       - name: Restore fetch caches from research-output
         run: |

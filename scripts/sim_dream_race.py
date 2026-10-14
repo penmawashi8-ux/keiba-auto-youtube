@@ -111,16 +111,50 @@ def write_report(horses, kit, rank_counts, race) -> None:
 # 動画（説明ページ → レース → 結果ページ）
 # ---------------------------------------------------------------------------
 STYLE_NAMES = [(0.25, "逃げ・先行"), (0.45, "先行"), (0.65, "好位〜中団"), (0.8, "差し"), (1.01, "追込")]
-FEATURE_LABELS = {          # 分析ページで使う、わかりやすい呼び名
-    "相手関係(最近重視)": "強い相手に対する着差",
-    "時計(最近重視)": "走破タイムの速さ",
-    "2年内ベスト": "ベストパフォーマンス",
-    "前走": "全盛期直前のレースの出来",
-    "3着内率": "安定感（3着内率）",
-    "距離適性": "2400m前後の適性",
-    "重賞勝数(log)": "重賞の勝ち星",
-    "同じ競馬場の適性": "東京コースの適性",
-}
+JRA_VENUES = {"札幌", "函館", "福島", "新潟", "東京", "中山", "中京", "京都", "阪神", "小倉"}
+
+
+def career_stats(horse_id: str, careers: dict, graded: list[dict]) -> dict:
+    """分析ページ用の、だれが見てもわかる成績（JRAの芝・平地の全成績）"""
+    rows = [r for r in careers.get(horse_id, [])
+            if r.get("venue") in JRA_VENUES and r.get("surface") == "芝" and r.get("pos")]
+    wins = [r for r in rows if r["pos"] == 1]
+    g1 = [r for r in rows if "(GI)" in r["race_name"] or "(G1)" in r["race_name"]]
+    mid = [r for r in rows if 2200 <= (r.get("distance") or 0) <= 2600]
+    tokyo = [r for r in rows if r["venue"] == "東京"]
+    win_m = [-r["margin"] for r in wins if isinstance(r.get("margin"), (int, float)) and r["margin"] < 0]
+    lose_m = [r["margin"] for r in rows if r["pos"] > 1 and isinstance(r.get("margin"), (int, float))]
+    # 上がり最速: 全出走馬の上がりがそろう G1/G2 で、出走馬の中でいちばん速かった割合
+    fast = runs = 0
+    for race in graded:
+        mine = next((x for x in race["runners"] if x["horse_id"] == horse_id), None)
+        if not mine or not mine.get("last3f"):
+            continue
+        runs += 1
+        fast += mine["last3f"] <= min(x["last3f"] for x in race["runners"] if x.get("last3f"))
+    return {"starts": len(rows), "wins": len(wins), "top3": sum(r["pos"] <= 3 for r in rows),
+            "g1_wins": sum(r["pos"] == 1 for r in g1), "g1_starts": len(g1),
+            "win_margin": statistics.mean(win_m) if win_m else 0.0,
+            "lose_margin": statistics.mean(lose_m) if lose_m else 0.0,
+            "fast_rate": fast / runs if runs else 0.0, "fast_runs": runs,
+            "mid": (len(mid), sum(r["pos"] == 1 for r in mid)),
+            "tokyo": (len(tokyo), sum(r["pos"] == 1 for r in tokyo))}
+
+
+def stat_items(s: dict) -> list[tuple[str, float, str]]:
+    """(項目名, 比べる値（大きいほど良い）, 表示する文)"""
+    top3 = s["top3"] / s["starts"] if s["starts"] else 0.0
+    items = [("G1の勝ち星", s["g1_wins"], f"JRAの芝G1を{s['g1_wins']}勝（{s['g1_starts']}戦）"),
+             ("勝ちっぷり", s["win_margin"], f"勝つときは平均{lengths(s['win_margin'])}差をつける"),
+             ("負けても崩れない", -s["lose_margin"],
+              f"負けたときも勝ち馬から平均{lengths(s['lose_margin'])}差" if s["starts"] > s["wins"] else "負けなし"),
+             ("安定感", top3, f"3着以内に入った割合 {top3:.0%}（{s['starts']}戦{s['top3']}回）"),
+             ("末脚の切れ", s["fast_rate"], f"G1・G2で上がり最速を出した割合 {s['fast_rate']:.0%}")]
+    for key, label in (("mid", "2400m前後の実績"), ("tokyo", "東京コースの実績")):
+        n, w = s[key]
+        where = "2200〜2600m" if key == "mid" else "東京の芝"
+        items.append((label, (w + 0.5) / (n + 1.5), f"{where}で{n}戦{w}勝" if n else f"{where}は走ったことがない"))
+    return items
 
 
 def find_font() -> str:
@@ -194,12 +228,12 @@ def before_pages(horses: dict, kit: dict, famous: list[dict]) -> list[dict]:
         f"　JRA重賞に出走した{n_horses:,}頭の、芝1400〜3600m・全クラスの全成績（のべ{n_runs:,}走）",
         "",
         "・計算の流れ",
-        "　① 1走ごとの「出来」を数値化：出走馬それぞれの普段の力＋着差から、レースの水準を見積もる",
-        "　　（走破タイムだけだとペースに大きく左右されるため、メンバー比較を中心にした）",
-        "　② 補正：年ごとの馬場の速さ・展開の有利不利・斤量・年齢による成長（3歳春→4歳後半が頂点）",
-        "　③ 学習：15種類の手がかりを組み合わせ「2頭のどちらが先着するか」を当てる計算式を作る",
-        "　　（最近の出来・走破タイム・距離適性・重賞の勝ち星・安定感など）",
-        "　④ 各馬の全盛期のスコアで、調子とペースをランダムに変えながら1万回レースを走らせる",
+        "　① 1走ごとに「どれだけ強い走りだったか」を点数にする",
+        "　　強い馬に勝てば高得点、弱い相手に負ければ低得点（一緒に走った馬の実力と着差から計算）",
+        "　② 条件の差をならす：年ごとの馬場の速さ・ペースの向き不向き・背負った重さ・年齢",
+        "　③ 過去のレースで「2頭のうちどちらが先にゴールするか」を当てる式を作る",
+        "　　使ったデータ：最近の点数・走破タイム・距離の得意不得意・重賞の勝ち星・3着以内の割合など",
+        "　④ 各馬のいちばん強かった時期（全盛期）の力で、調子を毎回ランダムに変えて1万回走らせる",
     ], 12.0, size=23))
 
     rows = [f"・2008〜2018年の重賞で学習 → 2019〜2025年の重賞{te['n_full'] if te['n_full'] else ''}レースで検証",
@@ -292,27 +326,34 @@ def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str
     pages.append(sr.text_page("2着以内・3着以内に入る確率", rows, 8.0, size=28, top=130))
 
     # 1頭1画面の分析
-    fi = {name: i for i, name in enumerate(sl.FEATS)}
+    # 強み・弱みは、だれでも確かめられる実際の成績で比べる（JRA芝の通算成績）
+    items = {n: stat_items(horses[n]["stats"]) for n in names}
     for rank, n in enumerate(order, 1):
-        f = horses[n]["feats"]
+        h, s = horses[n], horses[n]["stats"]
         strong, weak = [], []
-        for key, label in FEATURE_LABELS.items():
-            vals = sorted((horses[m]["feats"][fi[key]] for m in names), reverse=True)
-            r = vals.index(f[fi[key]]) + 1
-            if r == 1:
-                strong.append(label)
-            elif r == len(names):
-                weak.append(label)
-        age = int(horses[n]["peak_date"][:4]) - (sm.birth_year(horses[n]["id"]) or int(horses[n]["peak_date"][:4]))
-        rows = [{"text": n, "size": 44, "badge": idx[n]}, "",
-                {"text": f"勝率 {rank_counts[n][0] / N_RUNS:.1%}（{rank}位）", "size": 36, "color": "0xFFF59D"},
-                {"text": f"全盛期：{ym(horses[n]['peak_date'])}（{age}歳）・{style_name(horses[n]['style'])}", "size": 28},
+        for j, (label, val, text) in enumerate(items[n]):
+            vals = [items[m][j][1] for m in names]
+            better = sum(v > val + 1e-9 for v in vals)
+            if better == 0:
+                strong.append((label, text))
+            elif better == len(names) - 1:
+                weak.append((label, text))
+        best = max((x for x in h["history"] if x[0] <= h["peak_date"]), key=lambda x: x[1])
+        rows = [[{"text": n, "size": 40, "badge": idx[n], "x": 60},
+                 {"text": f"勝率 {rank_counts[n][0] / N_RUNS:.1%}（{rank}位）", "x": 700, "size": 34,
+                  "color": "0xFFF59D"}],
+                {"text": f"JRA芝 {s['starts']}戦{s['wins']}勝 ／ 脚質：{style_name(h['style'])}", "size": 24,
+                 "color": "0xE0E0E0"},
+                {"text": f"データ上いちばん強かったレース：{ym(best[0])} {best[2]['race_name']}（{best[3]['pos']}着）",
+                 "size": 24, "color": "0xE0E0E0"},
                 "",
-                {"text": "5頭の中で1位", "size": 26, "color": "0x80CBC4"}]
-        rows += [{"text": f"　◎ {s}", "size": 30} for s in strong[:3]] or [{"text": "　なし（バランス型）", "size": 30}]
-        rows += ["", {"text": "5頭の中で最下位", "size": 26, "color": "0xEF9A9A"}]
-        rows += [{"text": f"　△ {w}", "size": 30} for w in weak[:2]] or [{"text": "　なし", "size": 30}]
-        pages.append(sr.text_page(f"分析 {rank}/{len(names)}", rows, 7.0, top=120))
+                {"text": f"{len(names)}頭の中でいちばん", "size": 26, "color": "0x80CBC4"}]
+        rows += ([{"text": f"　◎ {lb}：{tx}", "size": 27} for lb, tx in strong[:3]]
+                 or [{"text": "　とび抜けた項目はなし（バランス型）", "size": 27}])
+        rows += ["", {"text": f"{len(names)}頭の中ではいちばん下", "size": 26, "color": "0xEF9A9A"}]
+        rows += ([{"text": f"　△ {lb}：{tx}", "size": 27} for lb, tx in weak[:2]]
+                 or [{"text": "　なし", "size": 27}])
+        pages.append(sr.text_page(f"分析 {rank}/{len(names)}", rows, 8.0, top=110))
 
     first, second, last = order[0], order[1], order[-1]
     p1, p2, p5 = (rank_counts[n][0] / N_RUNS for n in (first, second, last))
@@ -337,12 +378,96 @@ def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str
     return pages
 
 
+# ---------------------------------------------------------------------------
+# 実況の読み上げ（edge-tts）と音声の合成
+# ---------------------------------------------------------------------------
+VOICE = "ja-JP-KeitaNeural"     # 実況は男性の声
+
+
+def make_tts(work: Path):
+    """実況を読み上げる関数を返す。edge-tts が使えない環境では None を返す関数（テロップだけになる）"""
+    import asyncio
+    import hashlib
+    import os
+    import ssl
+    try:
+        import edge_tts
+        import edge_tts.communicate as ec
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+        for ca in (os.environ.get("SSL_CERT_FILE"), os.environ.get("REQUESTS_CA_BUNDLE"), "/root/.ccr/ca-bundle.crt"):
+            if ca and Path(ca).exists():
+                ctx.load_verify_locations(cafile=ca)
+        ec._SSL_CTX = ctx
+    except Exception as e:     # noqa: BLE001
+        print(f"[警告] edge-tts が使えないため、実況はテロップのみ: {e}")
+        return lambda text: None
+    work.mkdir(parents=True, exist_ok=True)
+    state = {"ok": True}
+
+    def speak(text: str):
+        if not state["ok"]:
+            return None
+        out = work / f"voice_{hashlib.md5(text.encode()).hexdigest()[:10]}.mp3"
+        try:
+            if not out.exists():
+                comm = edge_tts.Communicate(text, VOICE, rate="+18%", pitch="+4Hz")
+                asyncio.run(comm.save(str(out)))
+            dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of",
+                                        "default=noprint_wrappers=1:nokey=1", str(out)],
+                                       capture_output=True, text=True, check=True).stdout)
+            return str(out), dur
+        except Exception as e:     # noqa: BLE001
+            print(f"[警告] 実況の読み上げに失敗（以後はテロップのみ）: {e}")
+            state["ok"] = False
+            return None
+
+    return speak
+
+
+def mix_audio(video: Path, bgm: Path, marks: dict, out: Path) -> None:
+    """BGM（実況中は自動で音量を下げる）＋実況＋歓声（最後の直線で大きくなり、ゴールで最高潮）"""
+    total = marks["total"]
+    s0, st, gl, end = marks["race_start"], marks["straight"], marks["goal"], marks["race_end"]
+    env = sr.piecewise([(0.0, 0.0), (s0 - 0.3, 0.0), (s0, 0.55), (s0 + 2.0, 0.22), (st - 1.0, 0.25),
+                        (gl - 0.3, 0.95), (gl + 1.0, 1.0), (gl + 5.0, 0.4), (end + 0.5, 0.15), (end + 2.5, 0.0)])
+    inputs = ["-i", str(video), "-i", str(bgm)]
+    chains = [f"anoisesrc=color=pink:sample_rate=44100:amplitude=0.6:duration={total:.2f},"
+              f"bandpass=f=1100:width_type=h:w=1800,lowpass=f=5000,volume=volume='{env}':eval=frame,"
+              f"aformat=channel_layouts=stereo[crowd]"]
+    voices = marks.get("voice") or []
+    for j, (t0, path) in enumerate(voices):
+        inputs += ["-i", path]
+        ms = int(t0 * 1000)
+        chains.append(f"[{2 + j}:a]aformat=sample_rates=44100:channel_layouts=stereo,adelay={ms}|{ms},"
+                      f"volume=2.2[v{j}]")
+    chains.append("[1:a]aformat=sample_rates=44100:channel_layouts=stereo[bg]")
+    if voices:
+        chains.append("".join(f"[v{j}]" for j in range(len(voices))) +
+                      f"amix=inputs={len(voices)}:normalize=0,apad=whole_dur={total:.2f},asplit=2[vo][sc]")
+        chains.append("[bg][sc]sidechaincompress=threshold=0.03:ratio=8:attack=30:release=500[bgd]")
+        chains.append("[bgd][vo][crowd]amix=inputs=3:normalize=0,alimiter=limit=0.95[a]")
+    else:
+        chains.append("[bg][crowd]amix=inputs=2:normalize=0,alimiter=limit=0.95[a]")
+    script = video.parent / "work" / "audio_filter.txt"
+    script.write_text(";".join(chains), encoding="utf-8")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex_script", str(script),
+                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                    "-t", f"{total:.2f}", str(out)], check=True)
+
+
+SHORT_NAMES = {"ディープインパクト": "ディープ", "オルフェーヴル": "オルフェ", "キタサンブラック": "キタサン",
+               "アーモンドアイ": "アーモンド", "イクイノックス": "イクイノ"}
+
+
 def main() -> None:
     targets = [a.split("=", 1) for a in sys.argv[1:]]
     if not targets:
         sys.exit("usage: sim_dream_race.py 馬名=netkeibaID ...")
     races = sm.load_races()
     kit = sl.build(races)
+    careers = json.loads((SIM_DIR / "horses_cache.json").read_text(encoding="utf-8"))
+    graded = json.loads((SIM_DIR / "races.json").read_text(encoding="utf-8"))
     horses = {}
     for name, hid in targets:
         peak = sl.peak_score(kit, hid, TARGET["distance"], TARGET["venue"])
@@ -352,7 +477,8 @@ def main() -> None:
         hist = kit["rel"][hid]
         styles = [x["style"] for _, _, _, x in hist if x.get("style") is not None]
         horses[name] = {"id": hid, "score": peak[0], "peak_date": peak[1], "feats": peak[2],
-                        "style": statistics.mean(styles) if styles else 0.5, "history": hist}
+                        "style": statistics.mean(styles) if styles else 0.5, "history": hist,
+                        "stats": career_stats(hid, careers, graded)}
     rank_counts = monte_carlo(horses)
     # タイムへの換算: 平均的なG1勝ち馬（東京2400m・良・基準年の想定タイム）からのスコア差を秒に直す
     base = kit["model"].coef[f"c:{TARGET['venue']}{TARGET['distance']}"]
@@ -373,17 +499,17 @@ def main() -> None:
                       before_pages(horses, kit, sl.famous_checks(kit, races)), after, dist=TARGET["distance"],
                       frames={"title": 1.0, "premise1": 7.0, "premise2": 18.0, "premise3": 30.0, "premise4": 42.0,
                               "caution": 52.0, "gate": ("gate", 1.0), "start": ("race_start", 0.5),
-                              "corner": ("race_start", 24.0), "stretch": ("goal", -6.0), "goal": ("goal", 0.3),
-                              "result1": ("race_end", 4.0), "result2": ("race_end", 12.0),
-                              "analysis1": ("race_end", 28.0), "summary": ("total", -4.0)})
+                              "corner": ("race_start", 24.0), "stretch": ("straight", 1.5), "slow": ("slow", 3.0),
+                              "goal": ("goal", 0.3), "result1": ("race_end", 4.0), "result2": ("race_end", 12.0),
+                              "analysis1": ("race_end", 28.0), "summary": ("total", -4.0)},
+                      short=[SHORT_NAMES.get(n, n[:5]) for n in names], tts=make_tts(SIM_DIR / "work" / "voice"))
+    print("実況の読み上げ:", len(marks["voice"]), "本")
     # BGM: 説明（落ち着いた曲）→ ゲートイン〜ゴール（レース曲）→ ファンファーレ → 結果（明るめの曲）
     fan = 3.5
     sections = [("calm", marks["gate"]), ("race", marks["goal"] - marks["gate"]), ("fanfare", fan),
                 ("result", marks["total"] - marks["goal"] - fan)]
     bgm = sb.make_bgm(sections, SIM_DIR / "work" / "bgm.m4a")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(bgm), "-map", "0:v",
-                    "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest",
-                    str(SIM_DIR / "race.mp4")], check=True)
+    mix_audio(video, bgm, marks, SIM_DIR / "race.mp4")
     print(f"保存: {SIM_DIR / 'race.mp4'}")
 
 

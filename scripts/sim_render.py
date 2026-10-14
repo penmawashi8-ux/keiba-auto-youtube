@@ -4,9 +4,12 @@
 構成: 説明ページ（前提条件など）→ ゲートイン・スタート → レース（コース図）→ 結果ページ
 
 ■ レース画面
-  東京競馬場の芝コースを上から見た図（左回り＝反時計回り）。背景のコース図は ffmpeg の geq で
-  1枚の画像として作り、馬（●と番号）はコース上の位置を時間の関数（drawtext の x/y 式）で動かす。
-  コース全体を映すと僅差が見えないため、右側に「現在の順位と先頭からの馬身差」を常時表示する。
+  東京競馬場の芝コースを上から見た図（左回り＝反時計回り）。背景のコース図（芝・内側のダート・
+  観客スタンド）は ffmpeg の geq で1枚の大きな画像として作り、馬群を追うカメラで切り抜いて拡大する。
+  馬は上から見た馬の形のアイコン（geq で作る透明PNG）を進行方向に回転させて重ね、位置は時間の関数
+  （overlay / drawtext の x/y 式）で動かす。右側に「現在の順位と先頭からの馬身差」を常時表示する。
+  演出: 実況テロップ（読み上げ音声は呼び出し側で合成）、最後の直線のスローモーション、ゴールの
+  フラッシュと1着の表示。
 
   コース形状: 2本の直線（各 STRAIGHT_M）と2つの半円をつないだ形で、1周 LAP_M。
   下側が正面スタンド前の直線（左→右に走る）、ゴールはその右端。2400m はゴールの
@@ -142,6 +145,7 @@ BIG_H = int(2 * (BIG_ROUT + BIG_MARGIN))
 BCX, BCY = BIG_W / 2, BIG_H / 2
 VIEW_W = PANEL_X           # 追従カメラで見えるコースの幅（右側は順位パネル）
 RACE_SPEEDUP = 3.0
+ZOOM = 1.5                 # 追従カメラの拡大率（拡大図を切り抜いて拡大。馬アイコンは拡大後に重ねる）
 # 右下の全体図（ゲートイン画面のコース図を切り抜いて縮小したもの）
 MINI_CROP_Y, MINI_CROP_H = 170, 440
 MINI_W, MINI_H = 330, 156
@@ -184,21 +188,33 @@ def make_big_track_png(path: Path, font: str, start_s: float, dist: int) -> None
 
     # スタート地点は2400mだとゴール前の直線上にあり、最後の直線で紛らわしいので拡大図には描かない
     # （どこからスタートするかはゲートインの全体図で見せる）
-    def ch(rail, goal, t1, t2, infield, outside):
+    # 内側のダートコース（芝の内側 3m あけて幅 22m）と、正面直線の外側の観客スタンド
+    d_out, d_in = BIG_RIN - 3 * SB, BIG_RIN - 25 * SB
+    st0, st1 = BIG_ROUT + 12 * SB, BIG_ROUT + 52 * SB
+    stand = f"lt(abs(X-{BCX:.1f}),{BIG_A + 60:.1f})*between(Y-{BCY:.1f},{st0:.1f},{st1:.1f})"
+
+    def crowd(seed, base):
+        # 観客 = 9px ごとの点。色は座標から作る疑似乱数（背景は座席の灰色）
+        return (f"if(lt(mod(X,8),5)*lt(mod(Y,10),6),{base}+40*sin(floor(X/8)*{seed}+floor(Y/10)*78.233),"
+                f"if(gt(Y-{BCY:.1f},{st1 - 30:.1f}),40,62))")
+
+    def ch(rail, goal, t1, t2, infield, outside, dirt, seed):
         return (f"st(0,{d});st(1,{on_track});"
                 f"if(lt(abs(ld(0)-{BIG_RIN:.1f}),3)+lt(abs(ld(0)-{BIG_ROUT:.1f}),3),{rail},"
                 f"if(ld(1)*lt(abs(X-{fx:.1f}),4)*gt(Y,{BCY:.1f}),{goal},"
                 f"if(ld(1),if(mod(floor(X/56)+floor(Y/56),2),{t1},{t2}),"
-                f"if(lt(ld(0),{BIG_RIN:.1f}),{infield},{outside}))))")
+                f"if(between(ld(0),{d_in:.1f},{d_out:.1f}),{dirt}+6*sin(X*0.9+Y*1.3),"
+                f"if(lt(ld(0),{BIG_RIN:.1f}),{infield},if({stand},{crowd(seed, 105)},{outside}))))))")
 
-    geq = (f"geq=r='{ch(240, 230, 66, 58, 34, 22)}':g='{ch(240, 40, 156, 142, 100, 64)}'"
-           f":b='{ch(240, 40, 68, 60, 40, 30)}'")
+    geq = (f"geq=r='{ch(240, 230, 66, 58, 34, 22, 150, 12.9898)}'"
+           f":g='{ch(240, 40, 156, 142, 100, 64, 112, 39.346)}'"
+           f":b='{ch(240, 40, 68, 60, 40, 30, 74, 7.233)}'")
     texts = []
 
     def label(text, x, y, size, color):
         p = path.parent / f"big_label_{len(texts):03d}.txt"
         p.write_text(text, encoding="utf-8")
-        texts.append(f"drawtext=textfile='{p}':fontfile='{font}':fontsize={size}:fontcolor={color}:"
+        texts.append(f"drawtext=textfile='{p}':fontfile='{font}':fontsize={size / ZOOM:.0f}:fontcolor={color}:"
                      f"x={x:.0f}-text_w/2:y={y:.0f}-text_h/2:borderw=3:bordercolor=black@0.6")
 
     for k in range(200, dist, 200):                    # ハロン棒（残り距離）
@@ -221,7 +237,7 @@ def make_big_track_png(path: Path, font: str, start_s: float, dist: int) -> None
     for s in (STRAIGHT_M * 0.2, STRAIGHT_M * 0.55, STRAIGHT_M * 0.9):
         x, y = big_point(STRAIGHT_M + math.pi * CURVE_R_M + s, TRACK_W_M + 24)
         label("向こう正面", x, y, 64, "0xE0E0E0")
-    x, y = big_point(STRAIGHT_M, TRACK_W_M + 12)
+    x, y = big_point(STRAIGHT_M, -14)
     label("ゴール", x, y, 72, "0xFF5252")
     for s in (STRAIGHT_M * 0.25, STRAIGHT_M * 0.8, 2 * STRAIGHT_M + math.pi * CURVE_R_M * 0.5):
         x, y = big_point(s, -22)
@@ -249,8 +265,9 @@ def formation(finish: list[float], styles: list[float], dist: int, taus: list[fl
     for k, tau in enumerate(taus):
         u = tau / win_t
         for i in range(n):
-            if tau >= win_t:
-                D[i][k] = min(dist - (finish[i] - win_t) * v + (tau - win_t) * v, dist)
+            if tau >= win_t:          # 勝ち馬のゴール後: 着差どおりに入線し、ゴール後は少し減速して走り抜ける
+                d = tau - finish[i]
+                D[i][k] = dist + v * d * (0.75 if d > 0 else 1.0)
                 continue
             ramp = _smooth(u / 0.1)
             late = _smooth((u - 0.6) / 0.4)
@@ -310,14 +327,133 @@ def camera_keys(D, taus, start_s: float, dist: int) -> list[tuple[float, float, 
     for k, tau in enumerate(taus):
         ds = [row[k] for row in D]
         c = (max(ds) + min(ds)) / 2
-        if max(ds) - min(ds) > 120:
-            c = max(ds) - 60
-        c = min(c, dist - 18)
+        c = max(c, max(ds) - 30)        # 馬群が長いときは先頭が見える位置を優先（映る範囲は約77m）
         x, y = big_point(start_s + c, TRACK_W_M / 2)
-        cx = min(max(x - VIEW_W / 2, 0), BIG_W - W)
-        cy = min(max(y - H / 2, 0), BIG_H - H)
+        cx = min(max(x - VIEW_W / 2 / ZOOM, 0), BIG_W - W / ZOOM)
+        cy = min(max(y - H / 2 / ZOOM, 0), BIG_H - H / ZOOM)
         keys.append((tau, cx, cy))
     return keys
+
+
+class TimeMap:
+    """レース内の時刻 tau[秒] ⇔ 動画の時刻。
+
+    ふだんは RACE_SPEEDUP 倍速。先頭が残り SLOW_FROM_M に来るまでに SLOW_SPEEDUP 倍速まで落とし、
+    最後の直線の叩き合いからゴールまでをスローで見せる。
+    """
+
+    def __init__(self, start: float, win_t: float, t_end: float, lead_at):
+        tau_s = lead_at(SLOW_FROM_M)
+        tau_a = max(tau_s - 6.0, 0.0)
+        self.taus, self.vts = [0.0], [start]
+        step = 0.01
+        tau = 0.0
+        while tau < t_end + 10:
+            r = min(max((tau - tau_a) / max(tau_s - tau_a, 1e-6), 0.0), 1.0)
+            sp = RACE_SPEEDUP + (SLOW_SPEEDUP - RACE_SPEEDUP) * r
+            tau += step
+            self.taus.append(tau)
+            self.vts.append(self.vts[-1] + step / sp)
+        self.slow_from = self.vt(tau_a)
+
+    @staticmethod
+    def _interp(xs, ys, x):
+        import bisect
+        j = min(max(bisect.bisect_right(xs, x) - 1, 0), len(xs) - 2)
+        return ys[j] + (ys[j + 1] - ys[j]) * (x - xs[j]) / (xs[j + 1] - xs[j])
+
+    def vt(self, tau: float) -> float:
+        return self._interp(self.taus, self.vts, tau)
+
+    def tau(self, vt: float) -> float:
+        return max(self._interp(self.vts, self.taus, vt), 0.0)
+
+
+SLOW_SPEEDUP = 1.4          # 最後の直線の叩き合い（スロー）
+SLOW_FROM_M = 230           # 先頭が残りこの距離になったらスロー
+ICON = 96                   # 馬アイコンの画像サイズ（px、中心＝騎手）
+COATS = [(112, 62, 30), (150, 78, 34), (66, 40, 26), (124, 70, 36), (48, 34, 28), (138, 84, 44),
+         (90, 52, 30), (160, 96, 52)]   # 鹿毛・栗毛・黒鹿毛など
+
+
+def make_horse_icon(path: Path, i: int) -> None:
+    """上から見た馬（右向き）と、枠色の勝負服の騎手。透明背景の PNG を geq で作る"""
+    c = ICON / 2
+
+    def ell(cx, cy, rx, ry):          # 楕円の内側で 1、境界はなめらかに 0 へ
+        return f"clip((1-(pow((X-{cx})/{rx},2)+pow((Y-{cy})/{ry},2)))*6,0,1)"
+
+    body = f"max(max({ell(c - 4, c, 23, 10.5)},{ell(c + 22, c, 13, 5.2)}),{ell(c - 30, c, 9, 2.4)})"
+    jock = f"clip(({11.5}-hypot(X-{c},Y-{c}))*1.5,0,1)"
+    ring = f"clip(({13.5}-hypot(X-{c},Y-{c}))*1.5,0,1)"
+    silk = COLORS[i]
+    sr_, sg, sb_ = int(silk[1:3], 16), int(silk[3:5], 16), int(silk[5:7], 16)
+    coat = COATS[i % len(COATS)]
+    edge = 235 if i == 1 else 25          # 黒い勝負服は白で縁取り
+
+    def chan(cv, sv):
+        return f"st(0,{body});st(1,{jock});st(2,{ring});{cv}*(1-ld(2))+({edge}*(1-ld(1))+{sv}*ld(1))*ld(2)"
+
+    geq = (f"geq=r='{chan(coat[0], sr_)}':g='{chan(coat[1], sg)}':b='{chan(coat[2], sb_)}'"
+           f":a='255*max(st(0,{body}),{ring})'")
+    script = path.with_suffix(".filter.txt")
+    script.write_text(f"color=c=black@0:s={ICON}x{ICON}:d=1,format=rgba,{geq}", encoding="utf-8")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-filter_complex_script", str(script),
+                    "-frames:v", "1", str(path)], check=True)
+
+
+def commentary(names: list[str], D, LAT, taus, finish, dist: int) -> list[tuple[float, str, str]]:
+    """隊列から実況を作る。(レース内の時刻, 画面の文, 読み上げる文)"""
+    n = len(names)
+    win_t = min(finish)
+    lead = [max(D[i][k] for i in range(n)) for k in range(len(taus))]
+
+    def k_at(m):                       # 先頭が m 地点に来たキーフレーム
+        return next((k for k, d in enumerate(lead) if d >= m), len(taus) - 1)
+
+    def order(k):
+        return sorted(range(n), key=lambda i: -D[i][k])
+
+    out = [(0.2, "スタートしました！", "スタートしました！")]
+    k = k_at(220)
+    o = order(k)
+    out.append((taus[k], f"ハナを切ったのは{names[o[0]]}、2番手に{names[o[1]]}",
+                f"ハナを切ったのは{names[o[0]]}。2番手に{names[o[1]]}"))
+    k = k_at(700)
+    o = order(k)
+    out.append((taus[k], f"最後方に{names[o[-1]]}、じっくり脚をためる",
+                f"最後方に{names[o[-1]]}。じっくりと脚をためます"))
+    k = k_at(1000)
+    t1000 = taus[k]
+    pace = "ややハイペース" if t1000 < 58.8 else "落ち着いた流れ" if t1000 > 60.8 else "平均ペース"
+    out.append((t1000, f"1000m通過は{t1000:.1f}秒、{pace}", f"1000メートル通過は{t1000:.1f}秒。{pace}です"))
+    k = k_at(dist - 900)
+    out.append((taus[k], "3コーナーから4コーナー、後続が差を詰める！", "3コーナーから4コーナー。後ろの馬が差を詰めてきた！"))
+    k = k_at(dist - 525)
+    o = order(k)
+    out.append((taus[k], f"最後の直線！先頭は{names[o[0]]}！", f"さあ最後の直線！先頭は{names[o[0]]}！"))
+    k, k2 = k_at(dist - 400), k_at(dist - 150)
+    o = order(k)
+    gain = max(o[1:], key=lambda i: (D[i][k2] - lead[k2]) - (D[i][k] - lead[k]))
+    lat = LAT[gain][k2]
+    side = "外から" if lat > 8 else "内から" if lat < 4 else "馬場の真ん中から"
+    out.append((taus[k], f"{side}{names[gain]}が伸びてくる！", f"{side}{names[gain]}が伸びてくる！"))
+    k = k_at(dist - 200)
+    o = order(k)
+    a, b = o[0], o[1]
+    if D[a][k] - D[b][k] < 2.4:
+        out.append((taus[k], f"{names[a]}と{names[b]}、激しい叩き合い！", f"{names[a]}と{names[b]}！激しい叩き合い！"))
+    else:
+        out.append((taus[k], f"{names[a]}が抜け出した！", f"{names[a]}が抜け出した！{names[b]}も追う！"))
+    fin = sorted(range(n), key=lambda i: finish[i])
+    w = names[fin[0]]
+    if finish[fin[1]] - finish[fin[0]] < 0.1:
+        out.append((win_t - 1.6, f"{w}か！{w}だ！", f"{w}か！{w}だ！"))
+    else:
+        out.append((win_t - 1.6, f"{w}、先頭でゴールイン！", f"{w}、先頭でゴールイン！"))
+    out.append((max(finish) + 0.3, f"2着{names[fin[1]]}、3着{names[fin[2]]}",
+                f"2着は{names[fin[1]]}、3着は{names[fin[2]]}"))
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -379,8 +515,12 @@ class Renderer:
 
 def render(out: Path, work: Path, font: str, names: list[str], styles: list[float],
            finish: list[float], before: list[dict], after: list[dict], dist: int = 2400,
-           gate_sec: float = 3.0, frames: dict | None = None) -> dict:
+           gate_sec: float = 3.0, frames: dict | None = None, short: list[str] | None = None,
+           tts=None) -> dict:
     """動画（映像のみ）を書き出し、各場面の開始時刻を返す。finish は各馬の走破タイム（names と同じ順）
+
+    short: レース中に馬の上に出す短い名前。tts(文) → (音声ファイル, 秒) または None で実況を読み上げる
+    （読み上げた音声と開始時刻は戻り値の "voice" に入れる。音声の合成は呼び出し側で行う）
 
     場面: 説明ページ → ゲートイン（コース全体図）→ レース（追従カメラ＋順位パネル＋全体図）→ 結果ページ
     """
@@ -399,13 +539,19 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     gate_t = t
     race_start = gate_t + gate_sec
     win_t, t_end = min(finish), max(finish)
-    race_end = race_start + t_end / RACE_SPEEDUP + 2.0
-    vt = lambda tau: race_start + tau / RACE_SPEEDUP   # noqa: E731
     n = len(names)
+    short = short or names
 
-    # ---- 隊列とカメラ（0.25秒（動画時間）ごとのキーフレーム）
-    step = 0.25 * RACE_SPEEDUP
-    taus = sorted({round(i * step, 3) for i in range(int(t_end / step) + 2)} | {round(win_t, 3)})
+    # ---- 時間の進み方（最後の直線はスロー）と、隊列・カメラ（動画の0.25秒ごとのキーフレーム）
+    fine = [i * 0.1 for i in range(int((t_end + 2) / 0.1) + 1)]
+    fd, _ = formation(finish, styles, dist, fine)
+    lead_at = lambda m: next((tau for k, tau in enumerate(fine)          # noqa: E731
+                              if max(row[k] for row in fd) >= dist - m), win_t)
+    tm = TimeMap(race_start, win_t, t_end, lead_at)
+    vt = tm.vt
+    race_end = vt(t_end) + 3.0
+    taus = sorted({round(tm.tau(race_start + j * 0.25), 3) for j in range(int((race_end - race_start) / 0.25) + 2)}
+                  | {round(win_t, 3)})
     D, LAT = formation(finish, styles, dist, taus)
     cam = camera_keys(D, taus, start_s, dist)
     cam_x = piecewise([(vt(tau), cx) for tau, cx, _ in cam])
@@ -434,14 +580,27 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     rd.dt("スタート！", 72, "0xFFEB3B", f"{VIEW_W // 2}-text_w/2", "90", g1 - 0.6, r0 + 1.4,
           ":borderw=6:bordercolor=black")
     rd.dt("東京 芝2400m", 22, "white", "24", "18", r0, r1, ":box=1:boxcolor=black@0.45:boxborderw=6")
-    rd.dt(f"{RACE_SPEEDUP:g}倍速", 18, "white", "24", "54", r0, r1, ":box=1:boxcolor=black@0.45:boxborderw=5")
+    rd.dt(f"{RACE_SPEEDUP:g}倍速", 18, "white", "24", "54", r0, tm.slow_from, ":box=1:boxcolor=black@0.45:boxborderw=5")
+    rd.dt("スローモーション", 22, "0xFFEB3B", "24", "54", tm.slow_from, r1, ":box=1:boxcolor=0xB71C1C@0.8:boxborderw=6")
+    icons = []                                   # (x式, y式, 角度式) … 合成のところで馬アイコンを重ねる
     for i in range(n):
         pts = [big_point(start_s + D[i][k], LAT[i][k]) for k in range(len(taus))]
-        xs = [(vt(tau), p[0] - c[1]) for tau, p, c in zip(taus, pts, cam)]
-        ys = [(vt(tau), p[1] - c[2]) for tau, p, c in zip(taus, pts, cam)]
+        xs = [(vt(tau), (p[0] - c[1]) * ZOOM) for tau, p, c in zip(taus, pts, cam)]
+        ys = [(vt(tau), (p[1] - c[2]) * ZOOM) for tau, p, c in zip(taus, pts, cam)]
         xe, ye = piecewise(xs), piecewise(ys)
-        rd.dt("●", 30, COLORS[i], f"'{xe}-text_w/2'", f"'{ye}-text_h/2'", r0, r1, DOT_BORDER[i])
-        rd.dt(str(i + 1), 17, NUM_COLORS[i], f"'{xe}-text_w/2'", f"'{ye}-text_h/2+1'", r0, r1)
+        # 進行方向（画面の向き、時計回りが正）。一周で角度が飛ばないようにつなげる
+        angs, prev_a = [], None
+        for k in range(len(taus)):
+            x0, y0 = big_point(start_s + D[i][k], LAT[i][k])
+            x1, y1 = big_point(start_s + D[i][k] + 1.0, LAT[i][k])
+            a = math.atan2(y1 - y0, x1 - x0)
+            if prev_a is not None:
+                a += round((prev_a - a) / (2 * math.pi)) * 2 * math.pi
+            angs.append((vt(taus[k]), a * 100))      # piecewise は小数1桁なので100倍で渡す
+            prev_a = a
+        icons.append((xe, ye, f"({piecewise(angs)})/100"))
+        rd.dt(str(i + 1), 18, NUM_COLORS[i], f"'{xe}-text_w/2'", f"'{ye}-text_h/2+1'", r0, r1)
+        rd.dt(short[i], 18, "white", f"'{xe}-text_w/2'", f"'{ye}-46'", r0, r1, ":borderw=3:bordercolor=black@0.8")
         # 全体図（右下）の小さな点
         mpts = [course_point(start_s + D[i][k], -TRACK_HALF + 4 + LAT[i][k] * 1.2) for k in range(len(taus))]
         mxe = piecewise([(vt(tau), MINI_X + p[0] * MINI_SX) for tau, p in zip(taus, mpts)])
@@ -456,18 +615,39 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
         if a0 is not None and a1 > a0:
             rd.dt(f"残り {rem + 200}m", 34, "white", f"{VIEW_W // 2}-text_w/2", "24", max(a0, r0 + 1.4), a1 - 0.04,
                   ":box=1:boxcolor=black@0.55:boxborderw=10")
-    rd.dt("ゴール！", 64, "0xFF5252", f"{VIEW_W // 2}-text_w/2", "90", vt(win_t), r1,
-          ":borderw=6:bordercolor=black")
+    w = min(range(n), key=lambda i: finish[i])
+    rd.dt(f"1着　{names[w]}", 52, "white", f"{VIEW_W // 2}-text_w/2", str(H - 190), vt(win_t) + 0.6, r1,
+          ":box=1:boxcolor=0xC62828@0.92:boxborderw=16")
+
+    # ---- 実況（テロップと読み上げ）。前の実況と重なるときは後ろにずらし、遅れすぎる実況は省く
+    voice, telops, cur = [], [], r0 - 0.5
+    lines = commentary(names, D, LAT, taus, finish, dist)
+    for j, (tau, text, speech) in enumerate(lines):
+        ev = vt(min(tau, win_t - 2.2) if j == len(lines) - 2 else tau)
+        clip = tts(speech) if tts else None
+        dur = clip[1] if clip else max(1.8, len(text) * 0.13)
+        start = max(ev, cur + 0.1)
+        if start - ev > 2.5 and j < len(lines) - 2:
+            continue
+        if clip:
+            voice.append((start, clip[0]))
+        telops.append([start, start + dur + 0.6, text])
+        cur = start + dur
+    for j, (a, b, text) in enumerate(telops):
+        if j + 1 < len(telops):
+            b = min(b, telops[j + 1][0] - 0.02)
+        rd.dt(text, 34, "white", f"{VIEW_W // 2}-text_w/2", str(H - 86), a, min(b, r1),
+              ":box=1:boxcolor=black@0.7:boxborderw=14")
 
     # ---- 右側の順位パネル（順位が変わると行が入れ替わる）
     p0 = g0
     rd.dt("現在の順位", 26, "0xFFEB3B", str(PANEL_X + 22), "84", p0, r1)
     rd.dt("先頭との差", 18, "0xBDBDBD", "w-text_w-14", "92", p0, r1)
     row_y = lambda r: 138 + r * 54   # noqa: E731
-    seg_ts = [g0] + [r0 + k * 1.0 for k in range(int(r1 - r0) + 1)]
+    seg_ts = [g0] + [r0 + k * 0.5 for k in range(int((r1 - r0) / 0.5) + 1)]
     ranks_at = []
     for t0 in seg_ts:
-        tau = max((t0 - r0) * RACE_SPEEDUP, 0.0)
+        tau = tm.tau(t0) if t0 > r0 else 0.0
         k = min(range(len(taus)), key=lambda j: abs(taus[j] - tau))
         ds = [D[i][k] for i in range(n)]
         order = sorted(range(n), key=lambda i: (finish[i] if ds[i] >= dist - 0.01 else 1e9, -ds[i]))
@@ -478,7 +658,7 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
             y = row_y(order.index(i))
             ykeys.append((t0, y))
             if k + 1 < len(ranks_at):
-                ykeys.append((ranks_at[k + 1][0] - 0.4, y))   # 入れ替わりは0.4秒で動かす
+                ykeys.append((ranks_at[k + 1][0] - 0.3, y))   # 入れ替わりは0.3秒で動かす
         ye = piecewise(sorted(ykeys))
         rd.dt("●", 28, COLORS[i], str(PANEL_X + 18), f"'{ye}'", p0, r1, DOT_BORDER[i])
         rd.dt(str(i + 1), 15, NUM_COLORS[i], str(PANEL_X + 27), f"'{ye}+7'", p0, r1)
@@ -504,24 +684,39 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
 
     # ---- 合成
     pages_on = "+".join(f"between(t,{a:.3f},{b:.3f})" for a, b in page_windows) or "0"
+    icon_inputs, horses_graph, cur = [], "", "cam0"
+    for i, (xe, ye, ang) in enumerate(icons):
+        p = work / f"horse_{i}.png"
+        make_horse_icon(p, i)
+        icon_inputs += ["-i", str(p)]
+        nxt = "cam" if i == n - 1 else f"cam{i + 1}"
+        horses_graph += (f"[{2 + i}:v]format=rgba,loop=loop=-1:size=1:start=0,setpts=N/{FPS}/TB,"
+                         f"rotate=a='{ang}':c=none:ow={ICON}:oh={ICON}[h{i}];"
+                         f"[{cur}][h{i}]overlay=x='{xe}-{ICON // 2}':y='{ye}-{ICON // 2}':"
+                         f"enable='between(t,{r0:.3f},{r1:.3f})'[{nxt}];")
+        cur = nxt
+    gw = vt(win_t)
     graph = (
         f"[0:v]format=yuv420p,loop=loop=-1:size=1:start=0,setpts=N/{FPS}/TB,"
-        f"crop=w={W}:h={H}:x='{cam_x}':y='{cam_y}'[cam];"
+        f"crop=w={W / ZOOM:.0f}:h={H / ZOOM:.0f}:x='{cam_x}':y='{cam_y}',scale={W}:{H}[cam0];" + horses_graph +
         f"[1:v]format=yuv420p,loop=loop=-1:size=1:start=0,setpts=N/{FPS}/TB,split=2[ov][ovm];"
         f"[ovm]crop={PANEL_X}:{MINI_CROP_H}:0:{MINI_CROP_Y},scale={MINI_W}:{MINI_H}[mini];"
         f"color=c=0x0E1812:s={W - PANEL_X}x{H}:r={FPS}:d={total:.2f}[pnl];"
         f"color=c={BG_PAGE}:s={W}x{H}:r={FPS}:d={total:.2f}[pg];"
         f"[cam][pnl]overlay=x={PANEL_X}:y=0[c1];[c1][mini]overlay=x={MINI_X}:y={MINI_Y}[c2];"
-        f"[c2][ov]overlay=enable='between(t,{g0:.3f},{g1:.3f})'[c3];"
+        f"[c2][ov]overlay=enable='between(t,{g0:.3f},{g1:.3f})'[c3a];"
+        f"color=c=white:s={W}x{H}:r={FPS}:d={total:.2f},format=yuva420p,colorchannelmixer=aa=0.6[fl];"
+        f"[c3a][fl]overlay=enable='between(t,{gw:.3f},{gw + 0.16:.3f})'[c3];"
         f"[c3][pg]overlay=enable='{pages_on}'[base];[base]" + ",".join(rd.chain) + "[v]")
     script = work / "filter.txt"
     script.write_text(graph, encoding="utf-8")
     # 大きなコース図は1回だけ読み込み、loop フィルターでメモリ上の1枚を繰り返す（毎フレームのPNG展開を避ける）
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(big), "-i",
-                    str(overview), "-filter_complex_script", str(script), "-map", "[v]", "-c:v", "libx264",
+                    str(overview), *icon_inputs, "-filter_complex_script", str(script), "-map", "[v]", "-c:v", "libx264",
                     "-pix_fmt", "yuv420p", "-r", str(FPS), "-t", f"{total:.2f}", str(out)], check=True)
     marks = {"gate": gate_t, "race_start": race_start, "goal": vt(win_t), "race_end": race_end, "total": total,
-             "pages": page_windows, "before_end": gate_t}
+             "pages": page_windows, "before_end": gate_t, "voice": voice,
+             "straight": vt(lead_at(STRAIGHT_M)), "slow": tm.slow_from}
     for label, sec in (frames or {}).items():
         if isinstance(sec, tuple):            # ("race_end", 3.0) = レース終了の3秒後
             sec = marks[sec[0]] + sec[1]
