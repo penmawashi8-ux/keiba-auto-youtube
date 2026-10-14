@@ -254,7 +254,7 @@ def formation(finish: list[float], styles: list[float], dist: int, taus: list[fl
 
     道中: 逃げ・先行は前、差し・追込は後ろで縦長の隊列（最大10馬身ほど）。
     残り4割で後ろの馬が差を詰め、勝ち馬のゴール時点で各馬の着差に収束する。
-    横位置: 基本は内ラチ沿い。前後4.8m・左右3.4m以内に馬がいるときだけ、その外側に並ぶ。
+    横位置: 基本は内ラチ沿い。前後4.8m・左右4.0m以内に馬がいるときだけ、その外側に並ぶ。
     スタート直後はゲートの並びから内に寄り、最後の直線では差し・追込が外に持ち出す。
     """
     n = len(finish)
@@ -270,7 +270,10 @@ def formation(finish: list[float], styles: list[float], dist: int, taus: list[fl
                 D[i][k] = dist + v * d * (0.75 if d > 0 else 1.0)
                 continue
             ramp = _smooth(u / 0.1)
-            late = _smooth((u - 0.6) / 0.4)
+            # 仕掛けのタイミングは馬ごとにずらす（差し・追込ほど早く動き、逃げ・先行は直線まで粘る）。
+            # 全馬が同時に動くと、道中の順と着順が逆のとき直線入口で全馬が横一列に並んでしまう
+            u0 = 0.66 + 0.14 * (1 - styles[i])
+            late = _smooth((u - u0) / (1 - u0))
             gap = (3.0 + styles[i] * 26.0) * ramp
             wob = 0.6 * math.sin(2 * math.pi * (2.5 * u + i * 0.37)) * ramp * (1 - late)
             D[i][k] = max(v * tau - gap * (1 - late) - (finish[i] - win_t) * v * late + wob, 0.0)
@@ -292,13 +295,13 @@ def formation(finish: list[float], styles: list[float], dist: int, taus: list[fl
                 lat = max(lat, prev[i] - 0.5)
 
             def hits(x):
-                # 前後4.8m・左右3.4m以内に馬がいたら重なるとみなす。
+                # 前後4.8m・左右4.0m以内に馬がいたら重なるとみなす。
                 # 前の馬に追いついている最中は前方12mまで見て、早めに外へ出す
                 out = []
                 for j, pd, pl in placed:
                     ahead = pd - D[i][k]
                     closing = k > 0 and (D[i][k] - D[i][k - 1]) - (D[j][k] - D[j][k - 1]) > 0.3
-                    if -4.8 < ahead < (12.0 if closing else 4.8) and abs(pl - x) < 3.4:
+                    if -4.8 < ahead < (12.0 if closing else 4.8) and abs(pl - x) < 4.0:
                         out.append(pl)
                 return out
 
@@ -306,7 +309,7 @@ def formation(finish: list[float], styles: list[float], dist: int, taus: list[fl
                 h = hits(lat)
                 if not h:
                     break
-                lat = max(h) + 3.6
+                lat = max(h) + 4.2
             lat = min(lat, TRACK_W_M - 1.5)
             if k > 0:                      # 外へも急には動かない
                 lat = min(lat, prev[i] + 1.2)
@@ -600,7 +603,7 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
             prev_a = a
         icons.append((xe, ye, f"({piecewise(angs)})/100"))
         rd.dt(str(i + 1), 18, NUM_COLORS[i], f"'{xe}-text_w/2'", f"'{ye}-text_h/2+1'", r0, r1)
-        rd.dt(short[i], 18, "white", f"'{xe}-text_w/2'", f"'{ye}-46'", r0, r1, ":borderw=3:bordercolor=black@0.8")
+        rd.dt(short[i], 16, "white", f"'{xe}-text_w/2'", f"'{ye}-38'", r0, r1, ":borderw=3:bordercolor=black@0.8")
         # 全体図（右下）の小さな点
         mpts = [course_point(start_s + D[i][k], -TRACK_HALF + 4 + LAT[i][k] * 1.2) for k in range(len(taus))]
         mxe = piecewise([(vt(tau), MINI_X + p[0] * MINI_SX) for tau, p in zip(taus, mpts)])
