@@ -7,8 +7,8 @@ sim/thumb_credits.txt に書き出すので、動画の概要欄に必ず載せ�
 
 1. 各馬について Commons のカテゴリと検索から候補を集め、ライセンスを確認して取得する
 2. 候補を一覧にした画像（sim/thumb_candidates_N.jpg）を作る … どの写真を使うかを目で選ぶため
-3. data/sim_thumb_choice.json の指定（候補番号と切り抜き位置）でサムネイルを合成する
-   （指定が無い馬は候補0番・中央で切り抜き）
+3. data/sim_thumb_choice.json の指定（ファイル名と切り抜き位置 x, y = 0〜1）でサムネイルを合成する
+   （指定が無い馬は、カテゴリ内でいちばん大きい写真を中央で切り抜き）
 
 使い方: python scripts/sim_thumbnail.py
 出力: sim/thumbnail.jpg, sim/thumb_candidates_*.jpg, sim/thumb_credits.txt, sim/thumb_candidates.json
@@ -39,7 +39,8 @@ MAX_CHECK = 30             # 1頭あたりライセンスを確認する画像�
 # (表示名, Commons のカテゴリ候補, 検索語)
 # (表示名, Commons のカテゴリ候補, 検索語, Wikipedia の記事名（ja / en）)
 HORSES = [
-    ("ディープインパクト", ["Deep Impact (horse)"], ["Deep Impact horse", "ディープインパクト"],
+    ("ディープインパクト", ["Deep Impact (horse)"],
+     ["Deep Impact horse", "ディープインパクト", "Deep Impact Shadai stallion", "Deep Impact 2006", "Deep Impact Takeyutaka"],
      ["ディープインパクト (競走馬)", "Deep Impact (horse)"]),
     ("オルフェーヴル", ["Orfevre (horse)", "Orfevre"], ["Orfevre horse", "オルフェーヴル"],
      ["オルフェーヴル", "Orfevre (horse)"]),
@@ -104,8 +105,11 @@ def file_infos(titles: list[str]) -> list[dict]:
     return out
 
 
-def candidates(cats: list[str], queries: list[str], articles: list[str]) -> list[dict]:
-    titles = []
+def candidates(cats: list[str], queries: list[str], articles: list[str], keys: list[str],
+               first: str | None = None) -> list[dict]:
+    """その馬の写真の候補。記事には産駒など別の馬の写真も載っているので、
+    ファイル名に馬名（英語か日本語）が入っているものだけを残す。first は指定済みの写真"""
+    titles = [first] if first else []
     # Wikipedia の記事に使われている写真（その馬だと確認されている。自由ライセンスなら Commons にある）
     for lang, art in zip(("ja", "en"), articles):
         data = api({"action": "query", "titles": art, "prop": "images", "imlimit": "50", "redirects": "1"},
@@ -125,11 +129,13 @@ def candidates(cats: list[str], queries: list[str], articles: list[str]) -> list
     print(f"  候補の合計 {len(titles)} 件")
     seen = []
     for t in titles:
-        if t not in seen:
+        low = t.lower().replace("_", " ")
+        if t not in seen and (t == first or any(k.lower() in low for k in keys)):
             seen.append(t)
+    print(f"  馬名入りの写真 {len(seen)} 件")
     infos = file_infos(seen[:MAX_CHECK])
     # カテゴリに入っている写真（＝その馬だと確認されたもの）を優先し、次に大きい写真
-    infos.sort(key=lambda x: (x["title"] not in in_cat, -x["w"] * x["h"]))
+    infos.sort(key=lambda x: (x["title"] != first, x["title"] not in in_cat, -x["w"] * x["h"]))
     return infos[:N_CAND]
 
 
@@ -207,7 +213,9 @@ def main() -> None:
     report, chosen, credits = {}, [], []
     for n, (name, cats, queries, articles) in enumerate(HORSES):
         print(f"=== {name}", flush=True)
-        cands = candidates(cats, queries, articles)
+        ch = choice.get(name, {})
+        keys = [name, articles[1].split(" (")[0]]
+        cands = candidates(cats, queries, articles, keys, ch.get("file"))
         files = []
         for j, c in enumerate(cands):
             p = WORK / f"h{n}_{j}.jpg"
@@ -220,8 +228,7 @@ def main() -> None:
             print(f"[警告] {name} の自由ライセンス写真が見つかりません")
             continue
         contact_sheet(name, files, SIM_DIR / f"thumb_candidates_{n}.jpg", font)
-        ch = choice.get(name, {})
-        j = min(ch.get("index", 0), len(files) - 1)
+        j = 0                     # 指定した写真（data/sim_thumb_choice.json の file）が先頭に来る
         chosen.append((name, files[j], ch.get("x", 0.5), ch.get("y", 0.5)))
         c = cands[j]
         credits.append(f"{name}: \"{c['title'].removeprefix('File:')}\" by {c['author']}, "
