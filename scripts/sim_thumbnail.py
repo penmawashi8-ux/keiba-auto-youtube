@@ -82,8 +82,9 @@ def file_infos(titles: list[str]) -> list[dict]:
                     "iiprop": "url|size|extmetadata|mediatype", "iiurlwidth": "1280"})
         for p in data.get("query", {}).get("pages", []):
             ii = (p.get("imageinfo") or [None])[0]
-            if not ii or not re.search(r"\.(jpe?g|png)$", ii.get("url", ""), re.I):
-                print(f"    除外（写真ではない/情報なし）: {p.get('title')} 応答: {json.dumps(p, ensure_ascii=False)[:300]}")
+            # URL の末尾には ?utm_source=... が付くことがあるので、拡張子はファイル名で判定する
+            if not ii or not re.search(r"\.(jpe?g|png)$", p.get("title", ""), re.I):
+                print(f"    除外（写真ではない/情報なし）: {p.get('title')}")
                 continue
             m = ii.get("extmetadata", {})
             lic = m.get("LicenseShortName", {}).get("value", "")
