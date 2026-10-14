@@ -395,10 +395,17 @@ def make_tts(work: Path):
         import edge_tts.communicate as ec
         import certifi
         ctx = ssl.create_default_context(cafile=certifi.where())
+        extra = False
+        # プロキシ経由の環境では、その証明書も信頼する（GitHub Actions では読めないので飛ばす）
         for ca in (os.environ.get("SSL_CERT_FILE"), os.environ.get("REQUESTS_CA_BUNDLE"), "/root/.ccr/ca-bundle.crt"):
-            if ca and Path(ca).exists():
-                ctx.load_verify_locations(cafile=ca)
-        ec._SSL_CTX = ctx
+            try:
+                if ca and Path(ca).is_file():
+                    ctx.load_verify_locations(cafile=ca)
+                    extra = True
+            except OSError:
+                pass
+        if extra:
+            ec._SSL_CTX = ctx
     except Exception as e:     # noqa: BLE001
         print(f"[警告] edge-tts が使えないため、実況はテロップのみ: {e}")
         return lambda text: None
