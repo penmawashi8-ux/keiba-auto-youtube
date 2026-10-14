@@ -1,9 +1,10 @@
-date: 2026-10-13T10:08:22.538482Z
+date: 2026-10-14T01:13:01.931517Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=o8FyQhRoUhw title=【秋華賞】四位洋文調教師がGI初制覇へ フェスティバルヒルで波乱呼ぶか
-OK project=1 video_id=Mm5Dopyv7LE title=【秋華賞】指揮官がレジェンドから託されたひと言は　同期の蛯名正義調教師と武豊騎手
+OK project=1 video_id=Ld2van6Yvss title=【園田競馬・人気ジョッキーは語る】キミノハート(11R)でメイン制覇に燃える田野
+OK project=1 video_id=p49__lXoviM title=【POGマニア】良血のキューティボンドが快勝　サートゥルナーリア産駒は先週3勝で
+OK project=1 video_id=4x5_dhE9riM title=ジュウリョクピエロ登録見送りも...今村聖奈騎手が自厩舎の“隠し球”と秋華賞へ　
