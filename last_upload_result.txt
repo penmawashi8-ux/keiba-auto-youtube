@@ -1,10 +1,10 @@
-date: 2026-10-14T07:10:13.495907Z
+date: 2026-10-14T10:07:51.216721Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CQLqBB7MjAo title=【秋華賞】スマートプリエールは馬なりで鋭伸　初コンタクトの幸英明騎手「やっぱりい
-OK project=1 video_id=Jq8i5uy2lx4 title=国枝栄元調教師が奥村武厩舎で臨時補充員を再開!「無事に1日終わりました」と笑顔
-OK project=1 video_id=8vNQil4keBU title=【天皇賞(秋)想定】マスカレードボール、クロワデュノールなど17頭
+OK project=1 video_id=AlE37R_S9LA title=【秋華賞】歴代最多4勝のC.ルメール騎手 ドリームコアで史上初の3連覇なるか
+OK project=1 video_id=WEcn5oiBx0g title=【注目馬動向】名牝アーモンドアイの2番子、プロメサアルムンドが美浦に帰厩　2度の
+OK project=1 video_id=baV9l5G1v3A title=【よもやま話】ミシェル騎手の身元引受調教師の西田師 大役を務め終え安ど/馬三郎の
