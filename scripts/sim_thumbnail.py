@@ -7,7 +7,7 @@ sim/thumb_credits.txt に書き出すので、動画の概要欄に必ず載せ�
 
 1. 各馬について Commons のカテゴリと検索から候補を集め、ライセンスを確認して取得する
 2. 候補を一覧にした画像（sim/thumb_candidates_N.jpg）を作る … どの写真を使うかを目で選ぶため
-3. data/sim_thumb_choice.json の指定（ファイル名と切り抜き位置 x, y = 0〜1）でサムネイルを合成する
+3. data/sim_thumb_choice.json の指定（ファイル名・切り抜き位置 x, y = 0〜1・拡大率 zoom）でサムネイルを合成する
    （指定が無い馬は、カテゴリ内でいちばん大きい写真を中央で切り抜き）
 
 使い方: python scripts/sim_thumbnail.py
@@ -170,13 +170,14 @@ def contact_sheet(name: str, files: list[Path], out: Path, font: str) -> None:
                     "-map", "[v]", "-frames:v", "1", "-q:v", "3", str(out)], check=True)
 
 
-def compose(chosen: list[tuple[str, Path, float, float]], font: str, out: Path) -> None:
+def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out: Path) -> None:
     """上に見出し、中段に5頭の写真（枠色の名札付き）、下にシミュレーションの説明"""
     sw, ph, top = 256, 400, 168
     inputs, chains = [], []
-    for i, (_name, path, fx, fy) in enumerate(chosen):
+    for i, (_name, path, fx, fy, zoom) in enumerate(chosen):
         inputs += ["-i", str(path)]
-        chains.append(f"[{i}:v]scale={sw - 4}:{ph}:force_original_aspect_ratio=increase,"
+        # zoom > 1 で写真を拡大してから切り抜く（遠くから撮ったレース写真の馬を大きく見せる）
+        chains.append(f"[{i}:v]scale={(sw - 4) * zoom:.0f}:{ph * zoom:.0f}:force_original_aspect_ratio=increase,"
                       f"crop={sw - 4}:{ph}:'(iw-{sw - 4})*{fx:.2f}':'(ih-{ph})*{fy:.2f}',"
                       f"eq=contrast=1.08:saturation=1.15,pad={sw}:{ph}:2:0:color=0x0B1020[p{i}]")
     chains.append("".join(f"[p{i}]" for i in range(len(chosen))) + f"hstack=inputs={len(chosen)}[row]")
@@ -229,7 +230,7 @@ def main() -> None:
             continue
         contact_sheet(name, files, SIM_DIR / f"thumb_candidates_{n}.jpg", font)
         j = 0                     # 指定した写真（data/sim_thumb_choice.json の file）が先頭に来る
-        chosen.append((name, files[j], ch.get("x", 0.5), ch.get("y", 0.5)))
+        chosen.append((name, files[j], ch.get("x", 0.5), ch.get("y", 0.5), ch.get("zoom", 1.0)))
         c = cands[j]
         credits.append(f"{name}: \"{c['title'].removeprefix('File:')}\" by {c['author']}, "
                        f"{c['license']} {c['license_url']} （{c['page']}）")
