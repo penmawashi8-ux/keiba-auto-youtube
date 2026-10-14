@@ -34,6 +34,7 @@ CHOICE = Path("data/sim_thumb_choice.json")
 API = "https://commons.wikimedia.org/w/api.php"
 UA = "keiba-auto-youtube-thumbnail/1.0 (https://github.com/penmawashi8-ux/keiba-auto-youtube; python-urllib)"
 N_CAND = 8
+MAX_CHECK = 30             # 1頭あたりライセンスを確認する画像の数（記事・カテゴリの画像を先に見る）
 
 # (表示名, Commons のカテゴリ候補, 検索語)
 # (表示名, Commons のカテゴリ候補, 検索語, Wikipedia の記事名（ja / en）)
@@ -75,8 +76,9 @@ def strip_html(s: str) -> str:
 
 def file_infos(titles: list[str]) -> list[dict]:
     out = []
-    for k in range(0, len(titles), 40):
-        data = api({"action": "query", "titles": "|".join(titles[k:k + 40]), "prop": "imageinfo",
+    # まとめて問い合わせると、詳しい情報（extmetadata）は一部の画像の分しか返らないので1件ずつ聞く
+    for k in range(len(titles)):
+        data = api({"action": "query", "titles": titles[k], "prop": "imageinfo",
                     "iiprop": "url|size|extmetadata|mediatype", "iiurlwidth": "1280"})
         for p in data.get("query", {}).get("pages", []):
             ii = (p.get("imageinfo") or [None])[0]
@@ -124,7 +126,7 @@ def candidates(cats: list[str], queries: list[str], articles: list[str]) -> list
     for t in titles:
         if t not in seen:
             seen.append(t)
-    infos = file_infos(seen)
+    infos = file_infos(seen[:MAX_CHECK])
     # カテゴリに入っている写真（＝その馬だと確認されたもの）を優先し、次に大きい写真
     infos.sort(key=lambda x: (x["title"] not in in_cat, -x["w"] * x["h"]))
     return infos[:N_CAND]
