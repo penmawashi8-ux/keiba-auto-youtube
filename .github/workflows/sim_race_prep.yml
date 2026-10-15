@@ -21,6 +21,7 @@ on:
       - scripts/sim_entries.py
       - scripts/sim_fetch.py
       - scripts/sim_fetch_horses.py
+      - scripts/sim_fetch_related.py
       - scripts/sim_race_preview.py
       - .github/workflows/sim_race_prep.yml
 
@@ -36,7 +37,7 @@ concurrency:
 jobs:
   prep:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 130
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -67,10 +68,17 @@ jobs:
       - name: Fetch graded race results up to this year
         run: python scripts/sim_fetch.py 2003 "${RACE_DATE:0:4}"
 
-      - name: Fetch careers (entrants are always refreshed)
+      - name: Fetch careers of entrants (always refreshed)
         run: |
           ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
-          python scripts/sim_fetch_horses.py 60 --refresh $ids
+          python scripts/sim_fetch_horses.py 10 --refresh $ids
+
+      # 今年の重賞は日程ページからIDが取れないので、出走馬が走ったレースの結果ページから対戦相手を集める
+      - name: Fetch opponents of entrants (past 2 years)
+        run: python scripts/sim_fetch_related.py
+
+      - name: Fetch careers of opponents (time-boxed, resumes next run)
+        run: python scripts/sim_fetch_horses.py 70 $(cat sim/related_ids.txt) --refresh $(cat sim/related_refresh.txt)
 
       - name: Save fetched data to research-output branch
         run: bash .github/scripts/save_sim_outputs.sh "レース用データ ${RACE_NAME}" sim/races_cache.json sim/races.json sim/horses_cache.json sim/entries.json
