@@ -770,12 +770,14 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     graph = (
         f"[0:v]format=yuv420p,loop=loop=-1:size=1:start=0,setpts=N/{FPS}/TB,"
         f"crop=w={W / ZOOM:.0f}:h={H / ZOOM:.0f}:x='{cam_x}':y='{cam_y}',scale={W}:{H}[cam0];" + horses_graph +
-        f"[1:v]format=yuv420p,loop=loop=-1:size=1:start=0,setpts=N/{FPS}/TB,split=2[ov][ovm];"
-        f"[ovm]crop={PANEL_X}:{MINI_CROP_H}:0:{MINI_CROP_Y},scale={MINI_W}:{MINI_H}[mini];"
+        f"[1:v]format=yuv420p,loop=loop=-1:size=1:start=0,setpts=N/{FPS}/TB"
+        # 多頭数では右下の全体図を作らない（使わない出力を捨てると、もう一方の出力の分が際限なくメモリに溜まる）
+        + (f",split=2[ov][ovm];[ovm]crop={PANEL_X}:{MINI_CROP_H}:0:{MINI_CROP_Y},scale={MINI_W}:{MINI_H}[mini];"
+           if n <= 8 else "[ov];") +
         f"color=c=0x0E1812:s={W - PANEL_X}x{H}:r={FPS}:d={total:.2f}[pnl];"
         f"color=c={BG_PAGE}:s={W}x{H}:r={FPS}:d={total:.2f}[pg];"
         f"[cam][pnl]overlay=x={PANEL_X}:y=0[c1];"
-        + (f"[c1][mini]overlay=x={MINI_X}:y={MINI_Y}[c2];" if n <= 8 else "[c1]null[c2];[mini]nullsink;") +
+        + (f"[c1][mini]overlay=x={MINI_X}:y={MINI_Y}[c2];" if n <= 8 else "[c1]null[c2];") +
         f"[c2][ov]overlay=enable='between(t,{g0:.3f},{g1:.3f})'[c3a];"
         f"color=c=white:s={W}x{H}:r={FPS}:d={total:.2f},format=yuva420p,colorchannelmixer=aa=0.6[fl];"
         f"[c3a][fl]overlay=enable='between(t,{gw:.3f},{gw + 0.16:.3f})'[c3];"
