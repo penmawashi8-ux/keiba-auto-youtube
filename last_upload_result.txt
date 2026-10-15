@@ -1,10 +1,10 @@
-date: 2026-10-15T04:09:06.541976Z
+date: 2026-10-15T07:07:43.503649Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ut29Mo2PSzY title=【菊花賞・1週前】2冠馬ロブチェンは主戦を背に上々の仕上がり　松山弘平騎手「先週
-OK project=1 video_id=k1dd0N-gDH4 title=【阪神アーバン競馬】広瀬航騎手が園田2Rで地方通算1400勝を達成「まだまだ通過
-OK project=1 video_id=_KV1g0-7qaA title=【秋華賞】佐々木大輔騎手がGI初制覇なるか 伏兵スウィートハピネスで一発狙う
+OK project=1 video_id=gNurUBx99EQ title=【東京ハイJ出走馬・騎手確定】エコロデュエル＆草野太郎騎手、ジューンベロシティ＆
+OK project=1 video_id=0h_Z120U1wo title=【富士S出走馬・騎手確定】アドマイヤズーム＆武豊騎手、アンパドゥ＆岩田望来騎手な
+OK project=1 video_id=cRwBKZRwwPc title=【東京ハイジャンプ】エコロデュエルは仕上がり良好　草野「例年の前哨戦くらいの状態
