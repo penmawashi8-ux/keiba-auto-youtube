@@ -1,44 +1,73 @@
+[2]  [ファクトチェックNG] NG: 元記事にルメール騎手と
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [ファクトチェックNG] NG: 元記事に存在しない馬
+[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
 [0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [ファクトチェックNG] NG: クリストフ・ルメール騎手
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (46個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【東京ハイJ出走馬・騎手確定】エコロデュエル＆草野太郎騎手、ジューンベロシティ＆高田潤騎手など9頭 ---
-[0] Gemini入力本文 342文字: '10月18日に東京競馬場で行われる、第28回東京ハイジャンプ(障害3歳上・JGII・芝3110m)の出走馬・騎手が確定した。\n\u3000障害王者エコロデュエル(牡7、美浦・岩戸孝樹厩舎)は草野太郎騎手、このレース3連覇を狙うジューンベロシティ(牡8'
+--- 記事[0]: 【JRA新馬戦】フォーエバーヤングの半弟で3億円のヤングリッチなどがデビュー ---
+[0] Gemini入力本文 1841文字: '17日(土)・18日(日)に行われる新馬戦の出走馬が、15日確定した。\n\u3000今週は新潟、東京、京都で計10鞍の新馬戦が組まれている。主な出走馬は以下の通り。\n◆10/17(土)\n・新潟5R(ダ1200m・15頭)\nハイグッドカンフー(牡、森田'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【富士S出走馬・騎手確定】アドマイヤズーム＆武豊騎手、アンパドゥ＆岩田望来騎手など14頭 ---
-[1] Gemini入力本文 343文字: '10月17日に東京競馬場で行われる、第29回富士ステークス(3歳上・GII・芝1600m)の出走馬・騎手が確定した。\n\u30004月のマイラーズCを勝ったGI馬アドマイヤズーム(牡4、栗東・友道康夫厩舎)は武豊騎手、関屋記念を圧勝したアンパドゥ(牡'
+--- 記事[1]: 2歳女王レシステンシアの初仔 コルベータが初勝利なるか ---
+[1] Gemini入力本文 349文字: '必勝を期す一戦だ。19年の阪神JFを制したレシステンシアの初仔となるコルベータ(牡2、栗東・松下武士厩舎)が、土曜京都2Rの2歳未勝利(芝1200m)で初勝利を狙う。\n\u3000コルベータは父モーリス、母レシステンシア、母の父ダイワメジャーの血統。'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【東京ハイジャンプ】エコロデュエルは仕上がり良好　草野「例年の前哨戦くらいの状態にはある」 ---
-[2] Gemini入力本文 342文字: '障害王者が秋の始動戦に臨む。「第28回東京ハイジャンプ」の最終追い切りが15日、東西トレセンで行われ、昨年2着のエコロデュエルが好仕上がりをアピールした。草野を背にWコースで終始、リズムのいい走りを披露。軽やかなフットワークで5F68秒4〜'
+--- 記事[2]: 【菊花賞・1週前】菊花賞3連覇中ルメール騎手と新コンビ　ダノンヒストリーは一杯に追われる　堀調教師「健康状態は良好」 ---
+[2] Gemini入力本文 411文字: '◆第87回菊花賞・G1(10月25日、京都競馬場・芝3000メートル)1週前追い切り＝10月15日、美浦トレセン\n\t\t\t\t\u3000夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリー(牡3歳、美浦・堀宣行厩舎、父エピファネイア)は、美浦・'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
   HTTP 200
-[0]  [Gemini生出力 212文字]: '注目の競馬情報をお届けします。10月18日に東京競馬場で行われる、第28回東京ハイジャンプの出走馬と騎手が確定しました。障害3歳以上、JGII、芝3110mで争われるこのレースには、9頭が出走します。障害王者エコロデュエルには草野太郎騎手、そしてこのレース3連覇を狙うジューンベロシティには高田潤騎手が騎乗します。その他、キャネルには坂口智康騎手、サイードには小牧加矢太騎手、デシマルサーガには大江原圭騎手が確定しています。'
-[0]  [redirectフィルター] 212文字 → 197文字
+[1]  [Gemini生出力 240文字]: '競馬速報です。\n必勝を期す一戦として、19年の阪神JFを制したレシステンシアの初仔となるコルベータが、土曜京都2Rの2歳未勝利、芝1200mで初勝利を狙います。コルベータは牡2で、栗東の松下武士厩舎に所属しています。血統は父モーリス、母レシステンシア、母の父ダイワメジャーです。母レシステンシアは19年の阪神JF、21年の阪急杯とセントウルSの覇者であり、GIでは20年の桜花賞とNHKマイルC、21年の高松宮記念とスプリンターズS、そして香港スプリントで5回の2着がありました。'
+[1]  [重複除去] 240文字 → 239文字
   HTTP 200
-[2]  [Gemini生出力 258文字]: '本日の競馬ニュースです。\n障害王者が秋の始動戦に臨む「第28回東京ハイジャンプ」の最終追い切りが15日、東西トレセンで行われました。昨年2着のエコロデュエルが好仕上がりをアピールしています。草野を背にWコースで終始リズムのいい走りを披露し、軽やかなフットワークで5F68秒4〜1F12秒4をマークしました。約2馬身追走した僚馬エコロレイズと併入しています。鞍上の草野は「先週、直線でびっしり追って態勢は整っている。メニューを順調に消化してきた。先がある... 例年の前哨戦くらいの状態にはある」とコメントしています。'
-[2]  [重複除去] 255文字 → 254文字
-  HTTP 200
-[1]  [Gemini生出力 216文字]: '競馬速報です。10月17日に東京競馬場で行われる第29回富士ステークス、3歳上・GII・芝1600mの出走馬と騎手が確定しました。このレースには14頭が出走します。4月のマイラーズカップを勝ったGI馬アドマイヤズームは武豊騎手とコンビを組みます。また、関屋記念を圧勝したアンパドゥには岩田望来騎手が騎乗します。その他、ウォーターリヒトには幸英明騎手、エコロアルバには坂井瑠星騎手、エンペラーズソードには木幡巧也騎手が確定しています。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (197文字)
-[0]  プレビュー: 10月18日に東京競馬場で行われる、第28回東京ハイジャンプの出走馬と騎手が確定しました。障害3歳以上、JGII、芝3110mで争われるこのレースには、9頭が出...
-[2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (254文字)
-[2]  プレビュー: 本日の競馬ニュースです。障害王者が秋の始動戦に臨む「第28回東京ハイジャンプ」の最終追い切りが15日、東西トレセンで行われました。昨年2着のエコロデュエルが好仕...
+[2]  [Gemini生出力 231文字]: '重要な競馬ニュースをお伝えします。\n第87回菊花賞・G1の1週前追い切りが10月15日に美浦トレセンで行われました。菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーは、美浦・Wコースで併せ馬を実施しています。チザルピーノに2馬身ほど先行し、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6―11秒8をマークしています。夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーについて、堀調教師は「健康状態は良好」と述べています。'
+[2]  [重複除去] 231文字 → 230文字
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (216文字)
-[1]  プレビュー: 競馬速報です。10月17日に東京競馬場で行われる第29回富士ステークス、3歳上・GII・芝1600mの出走馬と騎手が確定しました。このレースには14頭が出走しま...
+[1]  → output/script_1.txt 保存 (239文字)
+[1]  プレビュー: 競馬速報です。必勝を期す一戦として、19年の阪神JFを制したレシステンシアの初仔となるコルベータが、土曜京都2Rの2歳未勝利、芝1200mで初勝利を狙います。コ...
+[2] 使用: key=***zGG0 model=gemini-flash-latest
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 359文字]: '今週の競馬注目情報をお伝えします。17日と18日に行われる新馬戦の出走馬が、15日に確定しました。今週は新潟、東京、京都で計10鞍の新馬戦が組まれています。\n\n主な出走馬として、17日には新潟5Rに半兄ケンシンコウがレパードSを勝ったハイグッドカンフーが、東京4Rには千葉サラブレッドセール2歳で9400万円のリアライズボルトがデビューします。東京5Rには母ファインルージュが重賞2勝のソーロブストが出走予定です。京都6Rでは半兄エアアンセムが函館記念を勝ったサントボーム、全兄ナルカミが重賞2勝のライデンが名を連ねています。\n\n18日には、東京4Rで仕上がりが良さそうなファクスカエリが、東京5Rではセレクトセール1歳で9800万円のユメノカケラがデビューを予定しています。ユメノカケラは初戦から期待したい一頭です。'
+[0]  [重複除去] 359文字 → 355文字
+[0] 使用: key=***zGG0 model=gemini-flash-latest
+  HTTP 200
+[0]  [Gemini生出力 198文字]: '今週の競馬注目情報をお伝えします。17日と18日に新潟、東京、京都で計10鞍の新馬戦が組まれています。17日の東京4レースには千葉サラブレッドセール2歳9400万円のリアライズボルトが坂井瑠星騎手で出走します。東京5レースには重賞2勝の母ファインルージュを持つソーロブストがC.ルメール騎手で、18日東京5レースにはセレクトセール1歳9800万円のユメノカケラが津村明秀騎手でデビューを迎えます。'
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (198文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。17日と18日に新潟、東京、京都で計10鞍の新馬戦が組まれています。17日の東京4レースには千葉サラブレッドセール2歳9400...
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+[2] 使用: key=***zGG0 model=gemini-flash-lite-latest
+  HTTP 200
+[2]  [Gemini生出力 257文字]: '重要な競馬ニュースをお伝えします。10月25日に京都競馬場で開催される第87回菊花賞・G1に向け、ダノンヒストリーは10月15日に美浦トレセンのWコースで1週前追い切りを実施しました。菊花賞3連覇中のクリストフ・ルメール騎手と新コンビを組むダノンヒストリーは、チザルピーノを2馬身ほど先行させ、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、ラスト1ハロン11秒8をマークしています。堀宣行調教師は「2週前の8日の追い切りに比べて息の入りや反応に良化が見られ、健康状態は良好です」と語りました。'
+[2] 使用: key=***zGG0 model=gemma-4-31b-it
+  HTTP 200
+[2]  [Gemini生出力 4073文字]: 'Professional Horse Racing News Announcer.\nCreate a YouTube narration script based on the provided news.\n\n        *   If no specific names (horses, jockeys, trainers), race results, or prediction bases are present $\\rightarrow$ SKIP.\n        *   If it\'s just a link/announcement without content $\\rightarrow$ SKIP.\n        *   If it\'s a prediction without reasons $\\rightarrow$ SKIP.\n        *   If it\'s just source attribution $\\rightarrow$ SKIP.\n        *   If it lacks specificity $\\rightarrow$ SKIP.\n\n        *   Only use information provided in the text. No additions, inferences, or fabrications.\n        *   Use original wording as much as possible. Do not paraphrase.\n        *   Keep proper nouns, technical terms, numbers, and unique expressions as is.\n        *   Future races must be treated as "plans/expectations." No result-oriented language (e.g., "won," "escaped").\n        *   No greetings ("Hello," "Everyone").\n        *   Start immediately with the core news.\n        *   No repetition of titles in 【Title】 format.\n        *   No website navigation/sidebar/source names (e.g., netkeiba, Sports Hochi).\n        *   No repetition of sentences.\n\n        *   Must use horse names if provided. No abstract terms like "a certain horse."\n        *   Must use jockey/trainer names if provided.\n        *   No parentheses after names (age, gender, stable, etc.). Example: "Danon History (Col 3...)" $\\rightarrow$ "Danon History".\n\n        *   Focus on the most news-worthy part.\n        *   Include all numbers, amounts, changes, times, etc.\n        *   Length: 150 to 250 characters.\n        *   Must consist of multiple sentences.\n        *   End with a period.\n        *   No external links or source references.\n        *   *Specific Start Instruction:* Must start with "重要な競馬ニュースをお伝えします。"\n\n    *   Title: 【菊花賞・1週前】菊花賞3連覇中ルメール騎手と新コンビ\u3000ダノンヒストリーは一杯に追われる\u3000堀調教師「健康状態は良好」\n    *   Content:\n        *   Race: 87th Kikuka Sho (G1), Oct 25, Kyoto Racecourse, Turf 3000m.\n        *   Event: 1-week-prior workout on Oct 15 at Miho Training Center.\n        *   Horse: Danon History (won 1-win and 2-win classes in Hokkaido).\n        *   Workout details: Miho W course, paired with Chizar Pino. Led by 2 lengths, pushed hard in the straight, finished half a length ahead.\n        *   Time: 5 furlongs 66.6 seconds - 11.8 seconds.\n        *   Trainer: Hori. Quote: "Health condition is good."\n        *   Jockey: Lemaire (new combo, currently aiming for 3 consecutive Kikuka Sho wins).\n\n    *   *Start:* 重要な競馬ニュースをお伝えします。\n    *   *Core News:* 10月25日に京都競馬場で芝3000メートルで行われる第87回菊花賞に向けて、10月15日に美浦トレセンで1週前追い切りが行われました。\n    *   *Horse Details:* 夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーは、美浦のWコースで併せ馬を実施しました。\n    *   *Workout Specifics:* チザルピーノに2馬身ほど先行し、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、11秒8をマークしました。\n    *   *Trainer/Jockey:* 菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーについて、堀調教師は「健康状態は良好」と話しています。\n\n    *   *No additions?* Yes.\n    *   *No paraphrasing?* Used original terms.\n    *   *No results for future race?* Yes, it\'s about the workout.\n    *   *No greetings?* Started with the required phrase.\n    *   *No title repetition?* Checked.\n    *   *No website names?* Removed netkeiba/Sports Hochi.\n    *   *No parentheses in names?* Removed (牡3歳...), (5歳2勝クラス).\n    *   *Length check:*\n        "重要な競馬ニュースをお伝えします。10月25日に京都競馬場で芝3000メートルで行われる第87回菊花賞に向けて、10月15日に美浦トレセンで1週前追い切りが行われました。夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーは、美浦のWコースで併せ馬を実施し、チザルピーノに2馬身ほど先行すると、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、11秒8をマークしました。菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーについて、堀調教師は「健康状態は良好」と話しています。"\n    *   *Character count:* ~230 characters. (Perfect, fits 150-250 range).\n\n    *   Ensure "Danon History" and "Chizar Pino" are used without parentheses.\n    *   Ensure "Lemaire" and "Hori" are used.\n    *   Ensure numbers (Oct 25, 3000m, Oct 15, 2 lengths, half length, 66.6, 11.8) are included.重要な競馬ニュースをお伝えします。10月25日に京都競馬場で芝3000メートルで行われる第87回菊花賞に向けて、10月15日に美浦トレセンで1週前追い切りが行われました。夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーは、美浦のWコースで併せ馬を実施し、チザルピーノに2馬身ほど先行すると、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、11秒8をマークしました。菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーについて、堀調教師は「健康状態は良好」と話しています。'[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+
+[2]  [重複除去] 4067文字 → 3777文字
+[2]  ファクトチェック: SKIPPED(gemma)
+[2]  → output/script_2.txt 保存 (3777文字)
+[2]  プレビュー: Professional Horse Racing News Announcer.
+Create a YouTube narration script base...
 
 3 件の脚本を生成しました。
