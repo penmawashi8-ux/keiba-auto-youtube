@@ -1,10 +1,10 @@
-date: 2026-10-15T01:09:17.790127Z
+date: 2026-10-15T04:09:06.541976Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=GchCBLTddGM title=【園田競馬・人気ジョッキーは語る】7Rのスマートイザナミに好感触の杉浦健太騎手「
-OK project=1 video_id=GadKZn75LNY title=【秋華賞】富田暁騎手がGI初制覇なるか 3連勝中のテイエムアイランで逃げ切り狙う
-OK project=1 video_id=1T8dOggdCCA title=【富士Sまとめ・調教後談話】アドマイヤズームはG2連勝へ納得の仕上がり　重賞4勝
+OK project=1 video_id=Ut29Mo2PSzY title=【菊花賞・1週前】2冠馬ロブチェンは主戦を背に上々の仕上がり　松山弘平騎手「先週
+OK project=1 video_id=k1dd0N-gDH4 title=【阪神アーバン競馬】広瀬航騎手が園田2Rで地方通算1400勝を達成「まだまだ通過
+OK project=1 video_id=_KV1g0-7qaA title=【秋華賞】佐々木大輔騎手がGI初制覇なるか 伏兵スウィートハピネスで一発狙う
