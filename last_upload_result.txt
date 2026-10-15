@@ -1,10 +1,10 @@
-date: 2026-10-14T10:07:51.216721Z
+date: 2026-10-15T01:09:17.790127Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AlE37R_S9LA title=【秋華賞】歴代最多4勝のC.ルメール騎手 ドリームコアで史上初の3連覇なるか
-OK project=1 video_id=WEcn5oiBx0g title=【注目馬動向】名牝アーモンドアイの2番子、プロメサアルムンドが美浦に帰厩　2度の
-OK project=1 video_id=baV9l5G1v3A title=【よもやま話】ミシェル騎手の身元引受調教師の西田師 大役を務め終え安ど/馬三郎の
+OK project=1 video_id=GchCBLTddGM title=【園田競馬・人気ジョッキーは語る】7Rのスマートイザナミに好感触の杉浦健太騎手「
+OK project=1 video_id=GadKZn75LNY title=【秋華賞】富田暁騎手がGI初制覇なるか 3連勝中のテイエムアイランで逃げ切り狙う
+OK project=1 video_id=1T8dOggdCCA title=【富士Sまとめ・調教後談話】アドマイヤズームはG2連勝へ納得の仕上がり　重賞4勝
