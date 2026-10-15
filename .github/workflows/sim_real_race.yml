@@ -1,0 +1,72 @@
+name: Real Race Simulation Video
+
+# 実際のレース（既定: 2026-10-18 秋華賞）のシミュレーション動画を作る。
+# 出馬表を取り直す（枠順確定後なら正式な馬番になる）→ 出走馬の成績を最新に → 1万回シミュレーション → 動画。
+# データ（対戦相手の成績など）は先に sim_race_prep.yml で集めておくこと。
+# 結果は research-output ブランチの sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "開催日 YYYYMMDD"
+        default: "20261018"
+      race:
+        description: "レース名（netkeiba のレース一覧の表記）"
+        default: "秋華賞"
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/sim_real_race.py
+      - .github/workflows/sim_real_race.yml
+
+env:
+  RACE_DATE: ${{ github.event.inputs.date || '20261018' }}
+  RACE_NAME: ${{ github.event.inputs.race || '秋華賞' }}
+
+concurrency:
+  group: sim-dream-race
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
+
+      - name: Restore data from research-output
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output
+          for f in races_cache.json races.json horses_cache.json; do
+            git show FETCH_HEAD:sim/$f > sim/$f && echo "復元 $f: $(wc -c < sim/$f) bytes"
+          done
+
+      - name: Refresh entries and entrants' careers
+        run: |
+          python scripts/sim_entries.py "$RACE_DATE" "$RACE_NAME"
+          ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
+          python scripts/sim_fetch_horses.py 10 --refresh $ids
+
+      - name: Simulate and render
+        run: python scripts/sim_real_race.py
+
+      - name: Save outputs to research-output branch
+        if: success()
+        run: bash .github/scripts/save_sim_outputs.sh "レース動画 ${RACE_NAME}" sim/real_report.md sim/real_result.json sim/real_race.mp4 sim/real_frame_*.jpg sim/entries.json sim/horses_cache.json
