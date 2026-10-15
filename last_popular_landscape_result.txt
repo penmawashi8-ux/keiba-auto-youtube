@@ -1,6 +1,6 @@
-date: 2026-10-14T11:05:15.613172Z
+date: 2026-10-15T11:06:33.331856Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3nB9iicLELg views=39818 title=ステイゴールド産駒が全て引退　地方所属の最後の産駒が競走馬登録を抹消　オルフェーヴル、ゴールドシップなど名馬多数【4.0
+OK project=1 video_id=vZ7CbqMlFXk views=37408 title=2冠馬ロブチェンと神戸新聞杯で鼻差2着の接戦　アルトラムスが菊花賞を回避　社台サラブレッドクラブが発表【3.7万回閲覧・
