@@ -78,7 +78,8 @@ def fetch_schedule(session, year: int) -> list[dict]:
     out = []
     for tr in table.find_all("tr")[1:]:
         tds = [td.get_text(" ", strip=True) for td in tr.find_all("td")]
-        a = tr.find("a", href=re.compile(r"/race/\d{12}/"))
+        # 過去の年は db.netkeiba.com/race/ID/、今年は race.netkeiba.com/race/result.html?race_id=ID の形
+        a = tr.find("a", href=re.compile(r"/race/\d{12}/|race_id=\d{12}"))
         if len(tds) < 6 or not a:
             continue
         name, grade, venue, dist, cond = tds[1], tds[2], tds[3], tds[4], tds[5]
@@ -87,10 +88,15 @@ def fetch_schedule(session, year: int) -> list[dict]:
             continue
         if not (DIST_MIN <= int(m.group(1)) <= DIST_MAX):
             continue
-        out.append({"race_id": re.search(r"/race/(\d{12})/", a["href"]).group(1), "year": year,
+        m_id = re.search(r"/race/(\d{12})/|race_id=(\d{12})", a["href"])
+        out.append({"race_id": m_id.group(1) or m_id.group(2), "year": year,
                     "race_name": name, "grade": grade, "venue": venue, "distance": int(m.group(1)),
                     "cond": cond, "age2": "2歳" in cond,
                     "age3": cond.startswith("3歳") and "3歳上" not in cond, "mare": "牝" in cond})
+    if not out:      # ページ形式が変わったときに原因がわかるよう、表の中身を少し出す
+        for tr in table.find_all("tr")[1:6]:
+            print("   ", [td.get_text(" ", strip=True) for td in tr.find_all("td")][:6],
+                  [x["href"] for x in tr.find_all("a", href=True)][:3])
     return out
 
 
