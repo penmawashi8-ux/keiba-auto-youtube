@@ -19,6 +19,8 @@ on:
       - claude/youtube-keiba-video-research-x6jdvw
     paths:
       - scripts/sim_entries.py
+      - scripts/sim_fetch.py
+      - scripts/sim_fetch_horses.py
       - scripts/sim_race_preview.py
       - .github/workflows/sim_race_prep.yml
 
