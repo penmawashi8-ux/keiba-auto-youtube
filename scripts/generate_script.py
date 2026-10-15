@@ -226,6 +226,36 @@ def extract_promised_horses(
     return result
 
 
+# --- 思考過程の混入対策 -------------------------------------------------------
+# 脚本は150〜250字（推奨馬を全頭入れる記事でも350字）の指示。実際には460字程度まで
+# 伸びることがあるので余裕を持たせ、
+# これを大きく超えるものは脚本ではない。
+_SCRIPT_MAX_CHARS = 600
+_LATIN_RE = re.compile(r"[A-Za-z]")
+
+
+def salvage_final_script(script: str, opening_pattern: str) -> str:
+    """思考過程の後ろに完成した脚本が付いている出力から、脚本部分だけを取り出す。
+
+    書き出し文より前に英字が多く含まれる場合だけ、書き出し文の最後の出現位置から切り出す。
+    """
+    idx = script.rfind(opening_pattern)
+    if idx > 0 and len(_LATIN_RE.findall(script[:idx])) >= 20:
+        return script[idx:].strip()
+    return script
+
+
+def invalid_script_reason(script: str) -> str:
+    """脚本として明らかに不正な出力ならその理由を返す（問題なければ空文字）。"""
+    if len(script) > _SCRIPT_MAX_CHARS:
+        return f"{len(script)}文字で長すぎる"
+    latin = len(_LATIN_RE.findall(script))
+    # JRA・G1・WIN5 など英字の略語は普通に入るので、割合で判定する
+    if latin > 30 and latin / max(len(script), 1) > 0.15:
+        return f"英字が{latin}文字含まれる"
+    return ""
+
+
 def fact_check_script(
     api_key: str, model_name: str,
     article_title: str, article_body: str, script: str,
@@ -385,7 +415,10 @@ def call_gemini(api_key: str, model_name: str, prompt: str, system_prompt: str =
             candidate = data["candidates"][0]
             finish_reason = candidate.get("finishReason", "UNKNOWN")
             # 全partsを結合して返す
-            text = "".join(p.get("text", "") for p in candidate["content"]["parts"]).strip()
+            # 思考型モデル（gemma-4 等）の思考過程パート（thought: true）は除外する
+            text = "".join(
+                p.get("text", "") for p in candidate["content"]["parts"] if not p.get("thought")
+            ).strip()
             if finish_reason not in ("STOP", "MAX_TOKENS"):
                 print(f"  [警告] finishReason={finish_reason} ({len(text)}文字)", file=sys.stderr)
             elif finish_reason == "MAX_TOKENS":
@@ -550,6 +583,16 @@ def main() -> None:
                         continue
                     print(f"[{i}]  → 再試行後もSKIPのためスキップ（動画生成しない）")
                     return i, True
+                # 思考型モデル（gemma-4 等）が英語の思考過程を本文に書き出し、
+                # その末尾に完成した脚本を付けて返すことがある。そのまま保存すると
+                # 英語の思考過程を5分読み上げる動画になる（2026年10月に発生）。
+                # 書き出し文の最後の出現位置から後ろだけを脚本として救出し、
+                # それでも長すぎる・英字だらけの出力は捨てて次のモデルへ回す。
+                script = salvage_final_script(script, opening_pattern)
+                bad_reason = invalid_script_reason(script)
+                if bad_reason:
+                    print(f"[{i}]  → 脚本として不正な出力（{bad_reason}）。次のキー/モデルへ切り替えます。", file=sys.stderr)
+                    continue
                 # プロンプトリーク検出：システムプロンプトの文言が混入している場合はリトライ
                 import re as _re
                 PROMPT_LEAK_PATTERNS = [
