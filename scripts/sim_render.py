@@ -480,10 +480,10 @@ def commentary(names: list[str], D, LAT, taus, finish, dist: int) -> list[tuple[
     out.append((t1000, f"1000m通過は{t1000:.1f}秒、{pace}", f"1000メートル通過は{t1000:.1f}秒。{pace}です"))
     k = k_at(dist - (STRAIGHT_M + math.pi * CURVE_R_M * 0.5))      # 3〜4コーナーの中間
     out.append((taus[k], "3コーナーから4コーナー、後続が差を詰める！", "3コーナーから4コーナー。後ろの馬が差を詰めてきた！"))
-    k = k_at(dist - 525)
+    k = k_at(dist - STRAIGHT_M + 5)                                  # 直線に入ったところ
     o = order(k)
     out.append((taus[k], f"最後の直線！先頭は{names[o[0]]}！", f"さあ最後の直線！先頭は{names[o[0]]}！"))
-    k, k2 = k_at(dist - 400), k_at(dist - 150)
+    k, k2 = k_at(dist - STRAIGHT_M * 0.75), k_at(dist - 150)          # 直線の前半で伸びてくる馬
     o = order(k)
     top3 = sorted(range(n), key=lambda i: finish[i])[:3]
     cand = [i for i in o[1:] if i in top3] or o[1:]          # 上位に来る馬の中で、いちばん伸びる馬
@@ -491,7 +491,7 @@ def commentary(names: list[str], D, LAT, taus, finish, dist: int) -> list[tuple[
     lat = LAT[gain][k2]
     side = "外から" if lat > 8 else "内から" if lat < 4 else "馬場の真ん中から"
     out.append((taus[k], f"{side}{names[gain]}が伸びてくる！", f"{side}{names[gain]}が伸びてくる！"))
-    k = k_at(dist - 200)
+    k = k_at(dist - min(200, STRAIGHT_M * 0.6))                     # 残り200m（短い直線では手前）
     o = order(k)
     a, b = o[0], o[1]
     if D[a][k] - D[b][k] < 2.4:
