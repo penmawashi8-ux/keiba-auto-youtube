@@ -11,7 +11,8 @@
 成績行: race_id, date, venue, race_name, field, pos, weight, surface, distance, going,
         time, margin(秒・勝ち馬は2着との差で負), passing, pace(前半3F-後半3F), last3f, pop
 
-使い方: python scripts/sim_fetch_horses.py [制限時間(分)] [追加の馬ID ...]
+使い方: python scripts/sim_fetch_horses.py [制限時間(分)] [追加の馬ID ...] [--refresh 取り直す馬ID ...]
+  --refresh の後の馬は、取得済みでも最新の成績を取り直す（これから走るレースの出走馬など）
 """
 
 import json
@@ -73,11 +74,13 @@ def fetch_horse_rows(session, horse_id: str) -> list[dict] | None:
 
 def main() -> None:
     budget_min = float(sys.argv[1]) if len(sys.argv) > 1 else 45.0
-    extra = sys.argv[2:]
+    args = sys.argv[2:]
+    refresh = set(args[args.index("--refresh") + 1:]) if "--refresh" in args else set()
+    extra = [a for a in args if a != "--refresh"]
     races = json.loads((SIM_DIR / "races.json").read_text(encoding="utf-8"))
     ids = sorted({x["horse_id"] for r in races for x in r["runners"] if x["horse_id"]} | set(extra))
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
-    todo = [h for h in ids if h not in cache]
+    todo = [h for h in refresh] + [h for h in ids if h not in cache and h not in refresh]
     print(f"対象 {len(ids)}頭 / 取得済み {len(ids) - len(todo)} / 残り {len(todo)}（制限 {budget_min:.0f}分）")
     session = requests.Session()
     t0 = time.time()

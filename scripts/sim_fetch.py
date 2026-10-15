@@ -165,7 +165,9 @@ def main() -> None:
     print(f"結果ページ: 取得 {len(todo)} / キャッシュ利用 {len(sched) - len(todo)}")
     for i, s in enumerate(todo, 1):
         res = fetch_race(session, s["race_id"])
-        cache[s["race_id"]] = res or {"runners": []}
+        if not res or not any(x["pos"] for x in res["runners"]):
+            continue      # まだ行われていないレース（結果なし）はキャッシュせず、次回また取りにいく
+        cache[s["race_id"]] = res
         if i % 50 == 0 or i == len(todo):
             CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
             print(f"  {i}/{len(todo)}")

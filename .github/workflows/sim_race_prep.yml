@@ -1,0 +1,81 @@
+name: Race Simulation Data Prep
+
+# 実際のレース（例: 秋華賞）のシミュレーション動画に向けたデータ集め。
+# 出馬表（枠順確定前は登録馬）→ 2026年までの重賞結果 → 出走馬の最新の全成績 を集め、
+# 能力モデルで仮計算して、データが足りているかを確かめる（動画は作らない）。
+# 枠順確定後にもう一度実行すると、馬番入りの出馬表に更新される。
+# 結果は research-output ブランチの sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "開催日 YYYYMMDD"
+        default: "20261018"
+      race:
+        description: "レース名（netkeiba のレース一覧の表記）"
+        default: "秋華賞"
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/sim_entries.py
+      - scripts/sim_race_preview.py
+      - .github/workflows/sim_race_prep.yml
+
+env:
+  RACE_DATE: ${{ github.event.inputs.date || '20261018' }}
+  RACE_NAME: ${{ github.event.inputs.race || '秋華賞' }}
+
+# 夢の対決と同じグループ（netkeiba への同時アクセスと、research-output への同時書き込みを避ける）
+concurrency:
+  group: sim-dream-race
+  cancel-in-progress: false
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests==2.32.3 beautifulsoup4
+
+      - name: Restore fetch caches from research-output
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output || true
+          for f in races_cache.json horses_cache.json; do
+            git show FETCH_HEAD:sim/$f > sim/$f 2>/dev/null \
+              && echo "キャッシュ復元 $f: $(wc -c < sim/$f) bytes" || { rm -f sim/$f; echo "キャッシュなし $f"; }
+          done
+
+      - name: Fetch entries (出馬表・登録馬)
+        run: python scripts/sim_entries.py "$RACE_DATE" "$RACE_NAME"
+
+      - name: Fetch graded race results up to this year
+        run: python scripts/sim_fetch.py 2003 "${RACE_DATE:0:4}"
+
+      - name: Fetch careers (entrants are always refreshed)
+        run: |
+          ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
+          python scripts/sim_fetch_horses.py 60 --refresh $ids
+
+      - name: Save fetched data to research-output branch
+        run: bash .github/scripts/save_sim_outputs.sh "レース用データ ${RACE_NAME}" sim/races_cache.json sim/races.json sim/horses_cache.json sim/entries.json
+
+      - name: Preview with the ability model (no video)
+        run: python scripts/sim_race_preview.py
+
+      - name: Save preview to research-output branch
+        if: success()
+        run: bash .github/scripts/save_sim_outputs.sh "レース仮計算 ${RACE_NAME}" sim/preview.md sim/preview.json sim/entries.json
