@@ -1,10 +1,10 @@
-date: 2026-10-15T07:07:43.503649Z
+date: 2026-10-15T10:17:07.239843Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gNurUBx99EQ title=【東京ハイJ出走馬・騎手確定】エコロデュエル＆草野太郎騎手、ジューンベロシティ＆
-OK project=1 video_id=0h_Z120U1wo title=【富士S出走馬・騎手確定】アドマイヤズーム＆武豊騎手、アンパドゥ＆岩田望来騎手な
-OK project=1 video_id=cRwBKZRwwPc title=【東京ハイジャンプ】エコロデュエルは仕上がり良好　草野「例年の前哨戦くらいの状態
+OK project=1 video_id=W9jKveq-oY4 title=【JRA新馬戦】フォーエバーヤングの半弟で3億円のヤングリッチなどがデビュー
+OK project=1 video_id=HN2oNW6dPXQ title=2歳女王レシステンシアの初仔 コルベータが初勝利なるか
+OK project=1 video_id=rojhcN1SaoU title=【菊花賞・1週前】菊花賞3連覇中ルメール騎手と新コンビ　ダノンヒストリーは一杯に
