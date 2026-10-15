@@ -18,6 +18,8 @@ on:
       - claude/youtube-keiba-video-research-x6jdvw
     paths:
       - scripts/sim_real_race.py
+      - scripts/sim_render.py
+      - scripts/sim_bgm.py
       - .github/workflows/sim_real_race.yml
 
 env:
