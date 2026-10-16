@@ -27,8 +27,10 @@ env:
   RACE_DATE: ${{ github.event.inputs.date || '20261018' }}
   RACE_NAME: ${{ github.event.inputs.race || '秋華賞' }}
 
+# 夢の対決・データ集めとは別のグループにする（同じグループだと、待っている実行が後から来た実行に
+# 置き換えられてキャンセルされる）。research-output への保存は save_sim_outputs.sh が再試行する
 concurrency:
-  group: sim-dream-race
+  group: sim-real-race
   cancel-in-progress: false
 
 jobs:

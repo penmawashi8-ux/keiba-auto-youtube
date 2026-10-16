@@ -15,5 +15,10 @@ for f in "$@"; do
 done
 git -C "$wt" add -f sim
 git -C "$wt" commit -q -m "${title} (run ${GITHUB_RUN_ID}) [skip ci]" || echo "変更なし"
-git -C "$wt" push -q origin research-output
+# 別のワークフローが同時に保存していると push が拒否されるので、取り込み直して再試行する
+for i in 1 2 3 4; do
+  git -C "$wt" push -q origin research-output && break
+  sleep $((i * 5))
+  git -C "$wt" pull -q --rebase origin research-output
+done
 git worktree remove --force "$wt"
