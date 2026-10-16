@@ -64,7 +64,8 @@ def fetch_entries(session, race_id: str, date: str) -> dict:
         tds = tr.find_all("td")
         texts = [td.get_text(" ", strip=True) for td in tds]
         sexage = next((re.match(r"(牡|牝|セ)(\d+)", t) for t in texts if re.match(r"(牡|牝|セ)\d+$", t)), None)
-        weight = next((to_float(t) for t in texts if re.fullmatch(r"\d{2}(\.\d)?", t)), None)
+        # 斤量は「55.0」の形（小数点なしの2桁は馬番と区別できないので使わない）
+        weight = next((to_float(t) for t in texts if re.fullmatch(r"\d{2}\.\d", t)), None)
         waku = tr.select_one("td[class^='Waku']")
         umaban = tr.select_one("td[class^='Umaban']")
         jockey = tr.select_one("td.Jockey a")

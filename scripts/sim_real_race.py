@@ -29,14 +29,24 @@ SIM_DIR = Path("sim")
 N_RUNS = 10000
 
 
-def monte_carlo(horses: dict, seed: int = 20261018) -> dict:
+def monte_carlo(horses: dict, seed: int = 20261018, upsets: dict | None = None) -> dict:
+    """着順の回数を数える。upsets を渡すと「荒れたレース」の記録も入れる:
+    評価（スコア）10位以下の馬が勝った回数と、1〜3着の評価順位の合計が最も大きかった回"""
     rnd = random.Random(seed)
     names = list(horses)
     counts = {n: [0] * len(names) for n in names}
+    rank = {n: r for r, n in enumerate(sorted(names, key=lambda m: -horses[m]["score"]), 1)}
     for _ in range(N_RUNS):
         perf = {n: horses[n]["score"] - math.log(-math.log(rnd.random() or 1e-12)) for n in names}
-        for i, n in enumerate(sorted(names, key=lambda n: -perf[n])):
+        order = sorted(names, key=lambda n: -perf[n])
+        for i, n in enumerate(order):
             counts[n][i] += 1
+        if upsets is not None:
+            upsets["low_winner"] = upsets.get("low_winner", 0) + (rank[order[0]] >= 10)
+            upsets["low_top3"] = upsets.get("low_top3", 0) + all(rank[m] >= 6 for m in order[:3])
+            sc = sum(rank[m] for m in order[:3])
+            if sc > upsets.get("score", 0):
+                upsets.update(score=sc, perf=perf, order=order, rank=rank)
     return counts
 
 
@@ -162,7 +172,8 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
     return pages
 
 
-def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn: bool) -> list[dict]:
+def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn: bool,
+                upsets: dict | None = None) -> list[dict]:
     names = list(horses)
     n = len(names)
     win_t = race[0][1]
@@ -171,12 +182,13 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
         if not chunk:
             continue
         rows = [[{"text": "着順", "x": 70, "color": "0xBDBDBD"}, {"text": "馬番・馬名", "x": 180, "color": "0xBDBDBD"},
-                 {"text": "タイム", "x": 680, "color": "0xBDBDBD"}, {"text": "着差", "x": 880, "color": "0xBDBDBD"}]]
+                 {"text": "タイム", "x": 680, "color": "0xBDBDBD"},
+                 {"text": "着差（前の馬との差）", "x": 860, "color": "0xBDBDBD"}]]
         for k, (m, t) in enumerate(chunk, 1 + 9 * (p - 1)):
             big = 30 if k <= 3 else 26
             rows.append([{"text": f"{k}着", "x": 70, "size": big}, badge_col(horses[m], 180, big),
                          {"text": sd.fmt_time(t), "x": 680, "size": big},
-                         {"text": "" if k == 1 else sd.lengths(t - win_t), "x": 880, "size": big}])
+                         {"text": "" if k == 1 else sd.jra_margin(t - race[k - 2][1]), "x": 860, "size": big}])
         pages.append(sr.text_page(f"レース結果 {p}/2", rows, 8.0 if p == 1 else 6.0, size=26, top=104))
 
     order = sorted(names, key=lambda m: -counts[m][0])
@@ -197,6 +209,25 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
                      {"text": f"{sum(rc[:2]) / N_RUNS:.1%}", "x": 690, "size": 26},
                      {"text": f"{sum(rc[:3]) / N_RUNS:.1%}", "x": 880, "size": 26}])
     pages.append(sr.text_page("3着以内に入る確率（上位9頭）", rows, 8.0, size=26, top=110))
+
+    # 1万回の中の大荒れのレース
+    if upsets and upsets.get("race"):
+        rk = upsets["rank"]
+        up = upsets["race"]
+        rows = [{"text": f"勝率10位以下の馬が勝った回数：{N_RUNS:,}回中 {upsets['low_winner']:,}回"
+                         f"（{upsets['low_winner'] / N_RUNS:.1%}）", "size": 26},
+                {"text": f"1〜3着が全部 勝率6位以下だった回数：{upsets['low_top3']:,}回"
+                         f"（{upsets['low_top3'] / N_RUNS:.1%}）", "size": 26}, "",
+                {"text": f"{N_RUNS:,}回でいちばん荒れたレース", "size": 30, "color": "0xFFF59D"}]
+        for k, (m, t) in enumerate(up[:3], 1):
+            rows.append([{"text": f"{k}着", "x": 90, "size": 32}, badge_col(horses[m], 200, 32),
+                         {"text": f"（勝率{rk[m]}位）", "x": 680, "size": 28, "color": "0xEF9A9A"},
+                         {"text": sd.fmt_time(t), "x": 940, "size": 28}])
+        fav = min(horses, key=lambda m: rk[m])
+        pos = next(i for i, (m, _t) in enumerate(up, 1) if m == fav)
+        rows += ["", {"text": f"勝率1位の{fav}は{pos}着", "size": 26},
+                 {"text": "データ上は不利でも、何が起きるかわからないのが競馬", "size": 26}]
+        pages.append(sr.text_page("1万回の中には大荒れも", rows, 9.0, size=26, top=110))
 
     # 注目馬（勝率上位5頭）を1頭1画面で。強み・弱みは出走馬の中での順位
     items = {m: sd.stat_items(horses[m]["stats"]) for m in names}
@@ -247,7 +278,9 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
 def main() -> None:
     ent = json.loads((SIM_DIR / "entries.json").read_text(encoding="utf-8"))
     careers = json.loads((SIM_DIR / "horses_cache.json").read_text(encoding="utf-8"))
-    graded = json.loads((SIM_DIR / "races.json").read_text(encoding="utf-8"))
+    # 上がり最速を数えるレース: 出走馬が走ったレースの結果ページ（全クラス。sim_fetch_related.py が取得）
+    rc = json.loads((SIM_DIR / "races_cache.json").read_text(encoding="utf-8"))
+    graded = [v for v in rc.values() if v.get("runners")]
     races = sm.load_races()
     kit = sl.build(races)
     date, dist, venue = ent["date"], ent["distance"], ent["venue"]
@@ -265,7 +298,7 @@ def main() -> None:
         horses[h["horse"]] = {"id": hid, "name": h["horse"], "num": num, "waku": h["waku"] if drawn else sr.waku_of(num, n),
                               "feats": f, "score": kit["pm"].score(f) if f else None, "history": hist,
                               "style": statistics.mean(styles) if styles else 0.5, "jockey": h["jockey"],
-                              "weight": h["weight"], "stats": sd.career_stats(hid, careers, graded)}
+                              "weight": h["weight"], "stats": sd.career_stats(hid, careers, graded, venue, dist, date, "出走したレース")}
     scored = sorted(h["score"] for h in horses.values() if h["score"] is not None)
     fill = scored[max(0, len(scored) // 10 - 1)]
     for h in horses.values():
@@ -288,7 +321,8 @@ def main() -> None:
     for h in horses.values():
         h["gate_adj"] -= mean_adj                               # 出走馬の平均との差だけを足す
         h["score"] += h["gate_adj"]
-    counts = monte_carlo(horses) if gate else counts_plain
+    upsets = {}
+    counts = monte_carlo(horses, upsets=upsets)
 
     key = f"c:{venue}{dist}"
     base = kit["model"].coef.get(key)
@@ -296,6 +330,9 @@ def main() -> None:
         sys.exit(f"基準タイムのモデルに {key} がありません")
     k = kit["train"]["sec_per_score"]
     shown = pick_display_race(horses, counts, base, k, kit["g1_winner_score"])
+    # 1万回のうち最も荒れた回（評価の低い馬ほど上位に来た回）のタイム
+    upsets["race"] = sorted(((m, base - k * (upsets["perf"][m] - kit["g1_winner_score"])) for m in horses),
+                            key=lambda t: t[1])
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
     md = [f"# {ent['race_name']} シミュレーション（{date} {venue} 芝{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
@@ -329,7 +366,7 @@ def main() -> None:
     video = SIM_DIR / "real_race_video.mp4"
     marks = sr.render(video, SIM_DIR / "work_real", sd.find_font(), names, [horses[m]["style"] for m in names],
                       [finish[m] for m in names], before_pages(ent, horses, kit, gate),
-                      after_pages(horses, counts, shown, drawn), dist=dist, venue=venue,
+                      after_pages(horses, counts, shown, drawn, upsets), dist=dist, venue=venue,
                       nums=[horses[m]["num"] for m in names], short=short,
                       tts=sd.make_tts(SIM_DIR / "work_real" / "voice"),
                       frames={"title": 1.0, "entries": 16.0, "gate": ("gate", 1.0), "start": ("race_start", 1.0),

@@ -114,14 +114,17 @@ STYLE_NAMES = [(0.25, "逃げ・先行"), (0.45, "先行"), (0.65, "好位〜中
 JRA_VENUES = {"札幌", "函館", "福島", "新潟", "東京", "中山", "中京", "京都", "阪神", "小倉"}
 
 
-def career_stats(horse_id: str, careers: dict, graded: list[dict]) -> dict:
+def career_stats(horse_id: str, careers: dict, graded: list[dict], venue: str = "東京", dist: int = 2400,
+                 before: str = "9999", fast_scope: str = "G1・G2") -> dict:
+    """graded: 上がり最速を数えるレース（全出走馬の上がりがそろうもの）。fast_scope はその呼び名"""
     """分析ページ用の、だれが見てもわかる成績（JRAの芝・平地の全成績）"""
     rows = [r for r in careers.get(horse_id, [])
             if r.get("venue") in JRA_VENUES and r.get("surface") == "芝" and r.get("pos")]
     wins = [r for r in rows if r["pos"] == 1]
     g1 = [r for r in rows if "(GI)" in r["race_name"] or "(G1)" in r["race_name"]]
-    mid = [r for r in rows if 2200 <= (r.get("distance") or 0) <= 2600]
-    tokyo = [r for r in rows if r["venue"] == "東京"]
+    rows = [r for r in rows if r.get("date", "") < before]
+    mid = [r for r in rows if dist - 200 <= (r.get("distance") or 0) <= dist + 200]
+    tokyo = [r for r in rows if r["venue"] == venue]
     win_m = [-r["margin"] for r in wins if isinstance(r.get("margin"), (int, float)) and r["margin"] < 0]
     lose_m = [r["margin"] for r in rows if r["pos"] > 1 and isinstance(r.get("margin"), (int, float))]
     # 上がり最速: 全出走馬の上がりがそろう G1/G2 で、出走馬の中でいちばん速かった割合
@@ -138,7 +141,7 @@ def career_stats(horse_id: str, careers: dict, graded: list[dict]) -> dict:
             "lose_margin": statistics.mean(lose_m) if lose_m else 0.0,
             "fast_rate": fast / runs if runs else 0.0, "fast_runs": runs,
             "mid": (len(mid), sum(r["pos"] == 1 for r in mid)),
-            "tokyo": (len(tokyo), sum(r["pos"] == 1 for r in tokyo))}
+            "tokyo": (len(tokyo), sum(r["pos"] == 1 for r in tokyo)), "venue": venue, "dist": dist, "fast_scope": fast_scope}
 
 
 def stat_items(s: dict) -> list[tuple[str, float, str]]:
@@ -149,10 +152,12 @@ def stat_items(s: dict) -> list[tuple[str, float, str]]:
              ("負けても崩れない", -s["lose_margin"],
               f"負けたときも勝ち馬から平均{lengths(s['lose_margin'])}差" if s["starts"] > s["wins"] else "負けなし"),
              ("安定感", top3, f"3着以内に入った割合 {top3:.0%}（{s['starts']}戦{s['top3']}回）"),
-             ("末脚の切れ", s["fast_rate"], f"G1・G2で上がり最速を出した割合 {s['fast_rate']:.0%}")]
-    for key, label in (("mid", "2400m前後の実績"), ("tokyo", "東京コースの実績")):
+             ("末脚の切れ", s["fast_rate"],
+              f"{s.get('fast_scope', 'G1・G2')}で上がり最速を出した割合 {s['fast_rate']:.0%}（{s['fast_runs']}戦）")]
+    venue, dist = s.get("venue", "東京"), s.get("dist", 2400)
+    for key, label in (("mid", f"{dist}m前後の実績"), ("tokyo", f"{venue}コースの実績")):
         n, w = s[key]
-        where = "2200〜2600m" if key == "mid" else "東京の芝"
+        where = f"{dist - 200}〜{dist + 200}m" if key == "mid" else f"{venue}の芝"
         items.append((label, (w + 0.5) / (n + 1.5), f"{where}で{n}戦{w}勝" if n else f"{where}は走ったことがない"))
     return items
 
@@ -181,6 +186,11 @@ def ym(date: str) -> str:
 def lengths(sec: float) -> str:
     """秒差を馬身に（1馬身 ≒ 0.17秒）"""
     return sr.margin_label(sec * 2400 / 143.0)
+
+
+def jra_margin(sec: float) -> str:
+    """前の馬との秒差を、JRAの着差の表記に"""
+    return sr.jra_margin(sec * 2400 / 143.0)
 
 
 def before_pages(horses: dict, kit: dict, famous: list[dict]) -> list[dict]:
@@ -295,11 +305,11 @@ def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str
     idx = {n: i for i, n in enumerate(names)}
     win_t = race[0][1]
     rows = [[{"text": "着順", "x": 90, "color": "0xBDBDBD"}, {"text": "馬名", "x": 210, "color": "0xBDBDBD"},
-             {"text": "タイム", "x": 660, "color": "0xBDBDBD"}, {"text": "着差", "x": 880, "color": "0xBDBDBD"}]]
+             {"text": "タイム", "x": 660, "color": "0xBDBDBD"}, {"text": "着差（前の馬との差）", "x": 880, "color": "0xBDBDBD"}]]
     for k, (n, t) in enumerate(race, 1):
         rows.append([{"text": f"{k}着", "x": 90, "size": 34}, {"text": n, "x": 210, "size": 34, "badge": idx[n]},
                      {"text": fmt_time(t), "x": 660, "size": 34},
-                     {"text": "" if k == 1 else lengths(t - win_t), "x": 880, "size": 34}])
+                     {"text": "" if k == 1 else jra_margin(t - race[k - 2][1]), "x": 880, "size": 34}])
     rows += ["", {"text": f"※映像のレースは{N_RUNS:,}回のうちの代表的な1回。毎回この着順になるわけではありません",
                   "size": 21, "color": "0xBDBDBD"}]
     pages = [sr.text_page("レース結果", rows, 8.0, size=30, top=130)]

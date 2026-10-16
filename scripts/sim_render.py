@@ -143,6 +143,24 @@ def piecewise(keys: list[tuple[float, float]]) -> str:
             f"if(gte(t,{keys[-1][0]:.3f}),{keys[-1][1]:.1f},{body}))")
 
 
+def jra_margin(m: float) -> str:
+    """前の馬との距離差[m] を、JRAの着差の表記に（ハナ・アタマ・クビ・1/2・3/4・1 1/4 … 大差）"""
+    b = m / 2.4
+    for lim, label in ((0.1, "ハナ"), (0.2, "アタマ"), (0.35, "クビ"), (0.6, "1/2馬身"), (0.85, "3/4馬身")):
+        if b < lim:
+            return label
+    if b < 2.125:                               # 1〜2馬身は 1/4 刻み
+        q = round(b * 4) / 4
+        whole, frac = int(q), q - int(q)
+        return f"{whole}{' ' + {0.25: '1/4', 0.5: '1/2', 0.75: '3/4'}[frac] if frac else ''}馬身"
+    if b < 3.75:                                # 2〜3.5馬身は 1/2 刻み
+        q = round(b * 2) / 2
+        return f"{int(q)}{' 1/2' if q % 1 else ''}馬身"
+    if b < 10.5:
+        return f"{round(b)}馬身"
+    return "大差"
+
+
 def margin_label(m: float) -> str:
     """距離差[m] を馬身表記に（1馬身 ≒ 2.4m）"""
     b = m / 2.4
