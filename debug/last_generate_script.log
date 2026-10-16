@@ -1,15 +1,19 @@
-[2]  [ファクトチェックNG] NG: 元記事にルメール騎手と
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [ファクトチェックNG] NG: 元記事に存在しない馬
-[0]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-[2]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
-[2]  [ファクトチェックNG] NG: クリストフ・ルメール騎手
-[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (46個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
@@ -18,56 +22,57 @@ Gemini APIキー: 3 件ロード
 
 --- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【JRA新馬戦】フォーエバーヤングの半弟で3億円のヤングリッチなどがデビュー ---
-[0] Gemini入力本文 1841文字: '17日(土)・18日(日)に行われる新馬戦の出走馬が、15日確定した。\n\u3000今週は新潟、東京、京都で計10鞍の新馬戦が組まれている。主な出走馬は以下の通り。\n◆10/17(土)\n・新潟5R(ダ1200m・15頭)\nハイグッドカンフー(牡、森田'
+--- 記事[0]: 【園田競馬・人気ジョッキーは語る】12Rのバウヴォーグに好感を得る笹田知宏騎手「追い切りの動きは良かったので何とかしたい ---
+[0] Gemini入力本文 372文字: '◆園田競馬3日目(10月16日)\n\t\t\t\t\u3000《小牧\u3000太》\n\t\t\t\t\u3000アイファーアイドル(10R)で勝利を意識。「初距離になるが、すんなり行ければ」(◎)。リーガルタイム(12R)も「力はある。地元に戻れば本領を発揮するでしょう」(◎)。ジュ'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 2歳女王レシステンシアの初仔 コルベータが初勝利なるか ---
-[1] Gemini入力本文 349文字: '必勝を期す一戦だ。19年の阪神JFを制したレシステンシアの初仔となるコルベータ(牡2、栗東・松下武士厩舎)が、土曜京都2Rの2歳未勝利(芝1200m)で初勝利を狙う。\n\u3000コルベータは父モーリス、母レシステンシア、母の父ダイワメジャーの血統。'
+--- 記事[1]: 【秋華賞】“令和のファインモーション”モンローウォークは4枠8番　武豊騎手×蛯名正調教師のマスターソアラは2枠3番 ---
+[1] Gemini入力本文 355文字: '◆第31回秋華賞・G1(10月18日、京都競馬場・芝2000メートル)＝枠順決定\n\t\t\t\t\u3000出走馬17頭の枠順が10月16日、確定した。\n\t\t\t\t\u3000無傷4連勝で初のG1挑戦でタイトルを狙うモンローウォーク(牝3歳、栗東・上村洋行厩舎、父キズ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【菊花賞・1週前】菊花賞3連覇中ルメール騎手と新コンビ　ダノンヒストリーは一杯に追われる　堀調教師「健康状態は良好」 ---
-[2] Gemini入力本文 411文字: '◆第87回菊花賞・G1(10月25日、京都競馬場・芝3000メートル)1週前追い切り＝10月15日、美浦トレセン\n\t\t\t\t\u3000夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリー(牡3歳、美浦・堀宣行厩舎、父エピファネイア)は、美浦・'
+--- 記事[2]: 【秋華賞枠順確定】モンローウォークは4枠8番、ドリームコアは7枠13番 ---
+[2] Gemini入力本文 352文字: '10月18日に京都競馬場で行われる、第31回秋華賞(3歳・牝・GI・芝2000m・1着賞金1億1000万円)の枠順が16日確定した。\n\u3000無傷の4連勝でローズSを制したモンローウォーク(牝3、栗東・上村洋行厩舎)は4枠8番からのスタートとなっ'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 240文字]: '競馬速報です。\n必勝を期す一戦として、19年の阪神JFを制したレシステンシアの初仔となるコルベータが、土曜京都2Rの2歳未勝利、芝1200mで初勝利を狙います。コルベータは牡2で、栗東の松下武士厩舎に所属しています。血統は父モーリス、母レシステンシア、母の父ダイワメジャーです。母レシステンシアは19年の阪神JF、21年の阪急杯とセントウルSの覇者であり、GIでは20年の桜花賞とNHKマイルC、21年の高松宮記念とスプリンターズS、そして香港スプリントで5回の2着がありました。'
-[1]  [重複除去] 240文字 → 239文字
-  HTTP 200
-[2]  [Gemini生出力 231文字]: '重要な競馬ニュースをお伝えします。\n第87回菊花賞・G1の1週前追い切りが10月15日に美浦トレセンで行われました。菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーは、美浦・Wコースで併せ馬を実施しています。チザルピーノに2馬身ほど先行し、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6―11秒8をマークしています。夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーについて、堀調教師は「健康状態は良好」と述べています。'
-[2]  [重複除去] 231文字 → 230文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (239文字)
-[1]  プレビュー: 競馬速報です。必勝を期す一戦として、19年の阪神JFを制したレシステンシアの初仔となるコルベータが、土曜京都2Rの2歳未勝利、芝1200mで初勝利を狙います。コ...
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 429
+  HTTP 429
+  HTTP 503
+[0] 使用: key=***zGG0 model=gemini-flash-latest
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
 [2] 使用: key=***zGG0 model=gemini-flash-latest
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
+[1] 使用: key=***zGG0 model=gemini-flash-latest
   HTTP 200
-[0]  [Gemini生出力 359文字]: '今週の競馬注目情報をお伝えします。17日と18日に行われる新馬戦の出走馬が、15日に確定しました。今週は新潟、東京、京都で計10鞍の新馬戦が組まれています。\n\n主な出走馬として、17日には新潟5Rに半兄ケンシンコウがレパードSを勝ったハイグッドカンフーが、東京4Rには千葉サラブレッドセール2歳で9400万円のリアライズボルトがデビューします。東京5Rには母ファインルージュが重賞2勝のソーロブストが出走予定です。京都6Rでは半兄エアアンセムが函館記念を勝ったサントボーム、全兄ナルカミが重賞2勝のライデンが名を連ねています。\n\n18日には、東京4Rで仕上がりが良さそうなファクスカエリが、東京5Rではセレクトセール1歳で9800万円のユメノカケラがデビューを予定しています。ユメノカケラは初戦から期待したい一頭です。'
-[0]  [重複除去] 359文字 → 355文字
-[0] 使用: key=***zGG0 model=gemini-flash-latest
+[1]  [Gemini生出力 171文字]: '競馬速報です。10月18日に京都競馬場・芝2000メートルで行われる第31回秋華賞の出走馬17頭の枠順が、10月16日に確定しました。無傷4連勝で初のG1挑戦でタイトルを狙うモンローウォークは4枠8番に決定しました。武豊騎手と蛯名正調教師のコンビによる競馬学校3期生の同期ラインで初めてG1へ挑むマスターソアラは、2枠3番からスタートします。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (171文字)
+[1]  プレビュー: 競馬速報です。10月18日に京都競馬場・芝2000メートルで行われる第31回秋華賞の出走馬17頭の枠順が、10月16日に確定しました。無傷4連勝で初のG1挑戦で...
   HTTP 200
-[0]  [Gemini生出力 198文字]: '今週の競馬注目情報をお伝えします。17日と18日に新潟、東京、京都で計10鞍の新馬戦が組まれています。17日の東京4レースには千葉サラブレッドセール2歳9400万円のリアライズボルトが坂井瑠星騎手で出走します。東京5レースには重賞2勝の母ファインルージュを持つソーロブストがC.ルメール騎手で、18日東京5レースにはセレクトセール1歳9800万円のユメノカケラが津村明秀騎手でデビューを迎えます。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (198文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。17日と18日に新潟、東京、京都で計10鞍の新馬戦が組まれています。17日の東京4レースには千葉サラブレッドセール2歳9400...
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-[2] 使用: key=***zGG0 model=gemini-flash-lite-latest
+[0]  [Gemini生出力 219文字]: '今週の競馬注目情報をお伝えします。10月16日の園田競馬について騎手陣が語りました。小牧太騎手はアイファーアイドルについて「初距離になるが、すんなり行ければ」と勝利を意識し、リーガルタイムも「力はある。地元に戻れば本領を発揮するでしょう」と語りました。ジュピターバローズは「調子は変わりないので改めて」とコメントしています。また、12レースのバウヴォーグに好感を得る笹田知宏騎手は「追い切りの動きは良かったので何とかしたい」と話しました。'
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (219文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。10月16日の園田競馬について騎手陣が語りました。小牧太騎手はアイファーアイドルについて「初距離になるが、すんなり行ければ」と...
   HTTP 200
-[2]  [Gemini生出力 257文字]: '重要な競馬ニュースをお伝えします。10月25日に京都競馬場で開催される第87回菊花賞・G1に向け、ダノンヒストリーは10月15日に美浦トレセンのWコースで1週前追い切りを実施しました。菊花賞3連覇中のクリストフ・ルメール騎手と新コンビを組むダノンヒストリーは、チザルピーノを2馬身ほど先行させ、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、ラスト1ハロン11秒8をマークしています。堀宣行調教師は「2週前の8日の追い切りに比べて息の入りや反応に良化が見られ、健康状態は良好です」と語りました。'
-[2] 使用: key=***zGG0 model=gemma-4-31b-it
-  HTTP 200
-[2]  [Gemini生出力 4073文字]: 'Professional Horse Racing News Announcer.\nCreate a YouTube narration script based on the provided news.\n\n        *   If no specific names (horses, jockeys, trainers), race results, or prediction bases are present $\\rightarrow$ SKIP.\n        *   If it\'s just a link/announcement without content $\\rightarrow$ SKIP.\n        *   If it\'s a prediction without reasons $\\rightarrow$ SKIP.\n        *   If it\'s just source attribution $\\rightarrow$ SKIP.\n        *   If it lacks specificity $\\rightarrow$ SKIP.\n\n        *   Only use information provided in the text. No additions, inferences, or fabrications.\n        *   Use original wording as much as possible. Do not paraphrase.\n        *   Keep proper nouns, technical terms, numbers, and unique expressions as is.\n        *   Future races must be treated as "plans/expectations." No result-oriented language (e.g., "won," "escaped").\n        *   No greetings ("Hello," "Everyone").\n        *   Start immediately with the core news.\n        *   No repetition of titles in 【Title】 format.\n        *   No website navigation/sidebar/source names (e.g., netkeiba, Sports Hochi).\n        *   No repetition of sentences.\n\n        *   Must use horse names if provided. No abstract terms like "a certain horse."\n        *   Must use jockey/trainer names if provided.\n        *   No parentheses after names (age, gender, stable, etc.). Example: "Danon History (Col 3...)" $\\rightarrow$ "Danon History".\n\n        *   Focus on the most news-worthy part.\n        *   Include all numbers, amounts, changes, times, etc.\n        *   Length: 150 to 250 characters.\n        *   Must consist of multiple sentences.\n        *   End with a period.\n        *   No external links or source references.\n        *   *Specific Start Instruction:* Must start with "重要な競馬ニュースをお伝えします。"\n\n    *   Title: 【菊花賞・1週前】菊花賞3連覇中ルメール騎手と新コンビ\u3000ダノンヒストリーは一杯に追われる\u3000堀調教師「健康状態は良好」\n    *   Content:\n        *   Race: 87th Kikuka Sho (G1), Oct 25, Kyoto Racecourse, Turf 3000m.\n        *   Event: 1-week-prior workout on Oct 15 at Miho Training Center.\n        *   Horse: Danon History (won 1-win and 2-win classes in Hokkaido).\n        *   Workout details: Miho W course, paired with Chizar Pino. Led by 2 lengths, pushed hard in the straight, finished half a length ahead.\n        *   Time: 5 furlongs 66.6 seconds - 11.8 seconds.\n        *   Trainer: Hori. Quote: "Health condition is good."\n        *   Jockey: Lemaire (new combo, currently aiming for 3 consecutive Kikuka Sho wins).\n\n    *   *Start:* 重要な競馬ニュースをお伝えします。\n    *   *Core News:* 10月25日に京都競馬場で芝3000メートルで行われる第87回菊花賞に向けて、10月15日に美浦トレセンで1週前追い切りが行われました。\n    *   *Horse Details:* 夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーは、美浦のWコースで併せ馬を実施しました。\n    *   *Workout Specifics:* チザルピーノに2馬身ほど先行し、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、11秒8をマークしました。\n    *   *Trainer/Jockey:* 菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーについて、堀調教師は「健康状態は良好」と話しています。\n\n    *   *No additions?* Yes.\n    *   *No paraphrasing?* Used original terms.\n    *   *No results for future race?* Yes, it\'s about the workout.\n    *   *No greetings?* Started with the required phrase.\n    *   *No title repetition?* Checked.\n    *   *No website names?* Removed netkeiba/Sports Hochi.\n    *   *No parentheses in names?* Removed (牡3歳...), (5歳2勝クラス).\n    *   *Length check:*\n        "重要な競馬ニュースをお伝えします。10月25日に京都競馬場で芝3000メートルで行われる第87回菊花賞に向けて、10月15日に美浦トレセンで1週前追い切りが行われました。夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーは、美浦のWコースで併せ馬を実施し、チザルピーノに2馬身ほど先行すると、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、11秒8をマークしました。菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーについて、堀調教師は「健康状態は良好」と話しています。"\n    *   *Character count:* ~230 characters. (Perfect, fits 150-250 range).\n\n    *   Ensure "Danon History" and "Chizar Pino" are used without parentheses.\n    *   Ensure "Lemaire" and "Hori" are used.\n    *   Ensure numbers (Oct 25, 3000m, Oct 15, 2 lengths, half length, 66.6, 11.8) are included.重要な競馬ニュースをお伝えします。10月25日に京都競馬場で芝3000メートルで行われる第87回菊花賞に向けて、10月15日に美浦トレセンで1週前追い切りが行われました。夏の北海道で1勝クラス、2勝クラスを連勝したダノンヒストリーは、美浦のWコースで併せ馬を実施し、チザルピーノに2馬身ほど先行すると、直線では一杯に追われて半馬身先着しました。タイムは5ハロン66秒6、11秒8をマークしました。菊花賞3連覇中のルメール騎手と新コンビを組むダノンヒストリーについて、堀調教師は「健康状態は良好」と話しています。'[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-
-[2]  [重複除去] 4067文字 → 3777文字
-[2]  ファクトチェック: SKIPPED(gemma)
-[2]  → output/script_2.txt 保存 (3777文字)
-[2]  プレビュー: Professional Horse Racing News Announcer.
-Create a YouTube narration script base...
+[2]  [Gemini生出力 164文字]: '今週の競馬注目情報をお伝えします。10月18日に京都競馬場で行われる、第31回秋華賞、芝2000m、1着賞金1億1000万円の枠順が16日確定しました。無傷の4連勝でローズSを制したモンローウォークは4枠8番からのスタートとなりました。また、オークス2着馬ドリームコアは7枠13番、ローズSで2着のエンネは2枠4番に入りました。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (164文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。10月18日に京都競馬場で行われる、第31回秋華賞、芝2000m、1着賞金1億1000万円の枠順が16日確定しました。無傷の4...
 
 3 件の脚本を生成しました。
