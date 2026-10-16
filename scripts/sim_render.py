@@ -150,7 +150,7 @@ def jra_margin(m: float) -> str:
         if b < lim:
             return label
     if b < 2.125:                               # 1〜2馬身は 1/4 刻み
-        q = round(b * 4) / 4
+        q = max(round(b * 4) / 4, 1.0)          # 3/4 と 1 の境目で「0 3/4」にならないように
         whole, frac = int(q), q - int(q)
         return f"{whole}{' ' + {0.25: '1/4', 0.5: '1/2', 0.75: '3/4'}[frac] if frac else ''}馬身"
     if b < 3.75:                                # 2〜3.5馬身は 1/2 刻み
