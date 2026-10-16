@@ -8,84 +8,18 @@
  "direction": "右",
  "course": "右 A",
  "post_time": "15:40",
- "drawn": false,
+ "drawn": true,
  "horses": [
-  {
-   "horse_id": "2023102102",
-   "horse": "エンネ",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "坂井瑠星",
-   "trainer": "吉岡辰弥",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023106846",
-   "horse": "カナルサンマルタン",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "岩田望来",
-   "trainer": "宮田敬介",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023107075",
-   "horse": "ガーネットフレア",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "北村友一",
-   "trainer": "杉山佳明",
-   "waku": null,
-   "umaban": null
-  },
   {
    "horse_id": "2023105825",
    "horse": "ギャラボーグ",
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "横山和生",
-   "trainer": "杉山晴紀",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023106219",
-   "horse": "サムシングスイート",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "松山弘平",
-   "trainer": "伊藤大士",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023104475",
-   "horse": "スウィートハピネス",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "佐々木大輔",
-   "trainer": "北出成人",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023106900",
-   "horse": "タイセイボーグ",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "西村淳也",
-   "trainer": "松下武士",
-   "waku": null,
-   "umaban": null
+   "jockey": "横山 和生",
+   "trainer": "杉山 晴紀",
+   "waku": 1,
+   "umaban": 1
   },
   {
    "horse_id": "2023100448",
@@ -93,65 +27,10 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "富田暁",
-   "trainer": "宮地貴稔",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023107146",
-   "horse": "ドリームコア",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "Ｃ．ルメール",
-   "trainer": "田中博康",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023105420",
-   "horse": "ナイスプレーアスク",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "岩田康誠",
-   "trainer": "中舘英二",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023106894",
-   "horse": "ハヤブササキチャン",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "吉田隼人",
-   "trainer": "東田明士",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023102906",
-   "horse": "バースデイフライト",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "田山旺佑",
-   "trainer": "新谷功一",
-   "waku": null,
-   "umaban": null
-  },
-  {
-   "horse_id": "2023107265",
-   "horse": "フェスティバルヒル",
-   "sex": "牝",
-   "age": 3,
-   "weight": 55.0,
-   "jockey": "浜中俊",
-   "trainer": "四位洋文",
-   "waku": null,
-   "umaban": null
+   "jockey": "富田 暁",
+   "trainer": "宮地 貴稔",
+   "waku": 1,
+   "umaban": 2
   },
   {
    "horse_id": "2023106810",
@@ -159,21 +38,32 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "武豊",
-   "trainer": "蛯名正義",
-   "waku": null,
-   "umaban": null
+   "jockey": "武 豊",
+   "trainer": "蛯名 正義",
+   "waku": 2,
+   "umaban": 3
   },
   {
-   "horse_id": "2023106859",
-   "horse": "モンローウォーク",
+   "horse_id": "2023102102",
+   "horse": "エンネ",
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "戸崎圭太",
-   "trainer": "上村洋行",
-   "waku": null,
-   "umaban": null
+   "jockey": "坂井 瑠星",
+   "trainer": "吉岡 辰弥",
+   "waku": 2,
+   "umaban": 4
+  },
+  {
+   "horse_id": "2023106900",
+   "horse": "タイセイボーグ",
+   "sex": "牝",
+   "age": 3,
+   "weight": 55.0,
+   "jockey": "西村 淳也",
+   "trainer": "松下 武士",
+   "waku": 3,
+   "umaban": 5
   },
   {
    "horse_id": "2023103818",
@@ -181,21 +71,131 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "荻野極",
-   "trainer": "鹿戸雄一",
-   "waku": null,
-   "umaban": null
+   "jockey": "荻野 極",
+   "trainer": "鹿戸 雄一",
+   "waku": 3,
+   "umaban": 6
+  },
+  {
+   "horse_id": "2023102906",
+   "horse": "バースデイフライト",
+   "sex": "牝",
+   "age": 3,
+   "weight": 55.0,
+   "jockey": "田山 旺佑",
+   "trainer": "新谷 功一",
+   "waku": 4,
+   "umaban": 7
+  },
+  {
+   "horse_id": "2023106859",
+   "horse": "モンローウォーク",
+   "sex": "牝",
+   "age": 3,
+   "weight": 55.0,
+   "jockey": "戸崎 圭太",
+   "trainer": "上村 洋行",
+   "waku": 4,
+   "umaban": 8
+  },
+  {
+   "horse_id": "2023104475",
+   "horse": "スウィートハピネス",
+   "sex": "牝",
+   "age": 3,
+   "weight": 55.0,
+   "jockey": "佐々木 大輔",
+   "trainer": "北出 成人",
+   "waku": 5,
+   "umaban": 9
+  },
+  {
+   "horse_id": "2023105420",
+   "horse": "ナイスプレーアスク",
+   "sex": "牝",
+   "age": 3,
+   "weight": 10.0,
+   "jockey": "岩田 康誠",
+   "trainer": "中舘 英二",
+   "waku": 5,
+   "umaban": 10
+  },
+  {
+   "horse_id": "2023107075",
+   "horse": "ガーネットフレア",
+   "sex": "牝",
+   "age": 3,
+   "weight": 11.0,
+   "jockey": "北村 友一",
+   "trainer": "杉山 佳明",
+   "waku": 6,
+   "umaban": 11
+  },
+  {
+   "horse_id": "2023106846",
+   "horse": "カナルサンマルタン",
+   "sex": "牝",
+   "age": 3,
+   "weight": 12.0,
+   "jockey": "岩田 望来",
+   "trainer": "宮田 敬介",
+   "waku": 6,
+   "umaban": 12
+  },
+  {
+   "horse_id": "2023107146",
+   "horse": "ドリームコア",
+   "sex": "牝",
+   "age": 3,
+   "weight": 13.0,
+   "jockey": "Ｃ．ルメール",
+   "trainer": "田中 博康",
+   "waku": 7,
+   "umaban": 13
+  },
+  {
+   "horse_id": "2023106219",
+   "horse": "サムシングスイート",
+   "sex": "牝",
+   "age": 3,
+   "weight": 14.0,
+   "jockey": "松山 弘平",
+   "trainer": "伊藤 大士",
+   "waku": 7,
+   "umaban": 14
+  },
+  {
+   "horse_id": "2023107265",
+   "horse": "フェスティバルヒル",
+   "sex": "牝",
+   "age": 3,
+   "weight": 15.0,
+   "jockey": "浜中 俊",
+   "trainer": "四位 洋文",
+   "waku": 8,
+   "umaban": 15
+  },
+  {
+   "horse_id": "2023106894",
+   "horse": "ハヤブササキチャン",
+   "sex": "牝",
+   "age": 3,
+   "weight": 16.0,
+   "jockey": "吉田 隼人",
+   "trainer": "東田 明士",
+   "waku": 8,
+   "umaban": 16
   },
   {
    "horse_id": "2023103661",
    "horse": "ロザーンジュ",
    "sex": "牝",
    "age": 3,
-   "weight": 55.0,
-   "jockey": "今村聖奈",
-   "trainer": "寺島良",
-   "waku": null,
-   "umaban": null
+   "weight": 17.0,
+   "jockey": "今村 聖奈",
+   "trainer": "寺島 良",
+   "waku": 8,
+   "umaban": 17
   }
  ]
 }
