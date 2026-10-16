@@ -8,7 +8,7 @@
  "direction": "右",
  "course": "右 A",
  "post_time": "15:40",
- "drawn": true,
+ "drawn": false,
  "horses": [
   {
    "horse_id": "2023105825",
@@ -16,8 +16,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "横山 和生",
-   "trainer": "杉山 晴紀",
+   "jockey": "横山和",
+   "trainer": "杉山晴",
    "waku": 1,
    "umaban": 1
   },
@@ -27,8 +27,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "富田 暁",
-   "trainer": "宮地 貴稔",
+   "jockey": "富田",
+   "trainer": "宮地",
    "waku": 1,
    "umaban": 2
   },
@@ -38,8 +38,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "武 豊",
-   "trainer": "蛯名 正義",
+   "jockey": "武豊",
+   "trainer": "蛯名正",
    "waku": 2,
    "umaban": 3
   },
@@ -49,8 +49,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "坂井 瑠星",
-   "trainer": "吉岡 辰弥",
+   "jockey": "坂井",
+   "trainer": "吉岡",
    "waku": 2,
    "umaban": 4
   },
@@ -60,8 +60,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "西村 淳也",
-   "trainer": "松下 武士",
+   "jockey": "西村淳",
+   "trainer": "松下",
    "waku": 3,
    "umaban": 5
   },
@@ -71,8 +71,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "荻野 極",
-   "trainer": "鹿戸 雄一",
+   "jockey": "荻野極",
+   "trainer": "鹿戸",
    "waku": 3,
    "umaban": 6
   },
@@ -82,8 +82,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "田山 旺佑",
-   "trainer": "新谷 功一",
+   "jockey": "田山",
+   "trainer": "新谷",
    "waku": 4,
    "umaban": 7
   },
@@ -93,8 +93,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "戸崎 圭太",
-   "trainer": "上村 洋行",
+   "jockey": "戸崎圭",
+   "trainer": "上村",
    "waku": 4,
    "umaban": 8
   },
@@ -104,8 +104,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 55.0,
-   "jockey": "佐々木 大輔",
-   "trainer": "北出 成人",
+   "jockey": "佐々木",
+   "trainer": "北出",
    "waku": 5,
    "umaban": 9
   },
@@ -115,8 +115,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 10.0,
-   "jockey": "岩田 康誠",
-   "trainer": "中舘 英二",
+   "jockey": "岩田康",
+   "trainer": "中舘",
    "waku": 5,
    "umaban": 10
   },
@@ -126,8 +126,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 11.0,
-   "jockey": "北村 友一",
-   "trainer": "杉山 佳明",
+   "jockey": "北村友",
+   "trainer": "杉山佳",
    "waku": 6,
    "umaban": 11
   },
@@ -137,8 +137,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 12.0,
-   "jockey": "岩田 望来",
-   "trainer": "宮田 敬介",
+   "jockey": "岩田望",
+   "trainer": "宮田",
    "waku": 6,
    "umaban": 12
   },
@@ -148,8 +148,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 13.0,
-   "jockey": "Ｃ．ルメール",
-   "trainer": "田中 博康",
+   "jockey": "ルメール",
+   "trainer": "田中博",
    "waku": 7,
    "umaban": 13
   },
@@ -159,8 +159,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 14.0,
-   "jockey": "松山 弘平",
-   "trainer": "伊藤 大士",
+   "jockey": "松山",
+   "trainer": "伊藤大",
    "waku": 7,
    "umaban": 14
   },
@@ -170,8 +170,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 15.0,
-   "jockey": "浜中 俊",
-   "trainer": "四位 洋文",
+   "jockey": "浜中",
+   "trainer": "四位",
    "waku": 8,
    "umaban": 15
   },
@@ -181,8 +181,8 @@
    "sex": "牝",
    "age": 3,
    "weight": 16.0,
-   "jockey": "吉田 隼人",
-   "trainer": "東田 明士",
+   "jockey": "吉田隼",
+   "trainer": "東田",
    "waku": 8,
    "umaban": 16
   },
@@ -192,10 +192,21 @@
    "sex": "牝",
    "age": 3,
    "weight": 17.0,
-   "jockey": "今村 聖奈",
-   "trainer": "寺島 良",
+   "jockey": "今村",
+   "trainer": "寺島",
    "waku": 8,
    "umaban": 17
+  },
+  {
+   "horse_id": "2023105825",
+   "horse": "ギャラボーグ",
+   "sex": "",
+   "age": null,
+   "weight": 35.9,
+   "jockey": "",
+   "trainer": "",
+   "waku": null,
+   "umaban": null
   }
  ]
 }
