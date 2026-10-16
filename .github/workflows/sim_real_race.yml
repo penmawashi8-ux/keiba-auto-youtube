@@ -34,7 +34,7 @@ concurrency:
 jobs:
   video:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -72,8 +72,22 @@ jobs:
       - name: Measure gate (draw) effect for this course
         run: python scripts/sim_gate_effect.py 35
 
+      # 枠×脚質を測るには過去レースの出走馬の「普段の脚質」が要るので、その馬たちの成績も取る（新しい馬から）
+      - name: Fetch careers of past runners on this course (time-boxed, resumes next run)
+        run: |
+          python - <<'PY' > sim/gate_runner_ids.txt
+          import json
+          cache = json.load(open("sim/gate_cache.json"))
+          have = set(json.load(open("sim/horses_cache.json")))
+          ids = {x["horse_id"] for r in cache.values() for x in r["runners"] if x.get("horse_id")} - have
+          print("\n".join(sorted(ids, reverse=True)))
+          PY
+          echo "未取得 $(wc -l < sim/gate_runner_ids.txt)頭"
+          python scripts/sim_fetch_horses.py 30 $(cat sim/gate_runner_ids.txt)
+          python scripts/sim_gate_effect.py 1
+
       - name: Save gate data
-        run: bash .github/scripts/save_sim_outputs.sh "枠順データ ${RACE_NAME}" sim/gate_cache.json sim/gate_effect.json
+        run: bash .github/scripts/save_sim_outputs.sh "枠順データ ${RACE_NAME}" sim/gate_cache.json sim/gate_effect.json sim/horses_cache.json
 
       - name: Simulate and render
         run: python scripts/sim_real_race.py

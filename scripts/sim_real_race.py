@@ -119,18 +119,25 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
                           "color": "0xEF9A9A"}]
         pages.append(sr.text_page(f"出走馬 {p}/2", rows, 9.0, size=24, top=104))
     if gate:
-        p_out = 1 / (1 + math.exp(-gate["coef"])) - 0.5
-        rows = [f"・{ent['venue']}芝{ent['distance']}mの過去{gate['n_races']}レース（{gate['from_year']}年〜・全クラス）の枠番別の成績",
-                [{"text": "枠", "x": 90, "color": "0xBDBDBD"}, {"text": "出走数", "x": 200, "color": "0xBDBDBD"},
-                 {"text": "勝率", "x": 380, "color": "0xBDBDBD"}, {"text": "3着内率", "x": 540, "color": "0xBDBDBD"}]]
-        for b in gate["by_waku"]:
-            rows.append([{"text": "●", "x": 90, "color": sr.COLORS[b["waku"] - 1], "extra": sr.DOT_BORDER[b["waku"] - 1]},
-                         {"text": f"{b['waku']}枠", "x": 125}, {"text": f"{b['runs']}", "x": 200},
-                         {"text": f"{b['win']:.1%}", "x": 380}, {"text": f"{b['top3']:.1%}", "x": 540}])
-        rows += ["", {"text": f"・同じくらいの人気の2頭で比べると、大外の馬は最内の馬より先着する確率が "
-                              f"{-p_out * 100:.1f}ポイント{'低い' if p_out < 0 else '高い'}", "color": "0xFFF59D"},
-                 "・この差を各馬の力に足して計算（内の馬ほどプラス、外の馬ほどマイナス）"]
-        pages.append(sr.text_page("前提条件 枠順の影響", rows, 11.0, size=22, top=100))
+        rows = [f"・{ent['venue']}芝{ent['distance']}mの過去{gate['n_races']}レース（{gate['from_year']}年〜・全クラス）",
+                "　枠（馬番を3等分）× 普段の脚質（序盤の位置取りの平均を3等分）ごとの成績",
+                [{"text": "", "x": 90}, {"text": "前に行く馬", "x": 300, "color": "0xBDBDBD"},
+                 {"text": "中団の馬", "x": 590, "color": "0xBDBDBD"}, {"text": "後ろから行く馬", "x": 860, "color": "0xBDBDBD"}]]
+        cell = {(c["gate"], c["style"]): c for c in gate["cross"]}
+        for gname in ("内", "中", "外"):
+            row = [{"text": f"{gname}枠", "x": 90, "color": "0xBDBDBD"}]
+            for x, sname in ((300, "前"), (590, "中団"), (860, "後方")):
+                c = cell.get((gname, sname))
+                row.append({"text": f"3着内 {c['top3']:.0%}（{c['runs']}走）" if c else "-", "x": x})
+            rows.append(row)
+        def edge(g, st):
+            v = gate["gate"] * g + gate["style"] * st + gate["gate_x_style"] * g * st
+            return (1 / (1 + math.exp(-v)) - 0.5) * 100
+        rows += ["", {"text": "・同じくらいの人気の馬どうしで比べた、内枠の先行馬との差（先着する確率）", "color": "0xFFF59D"},
+                 f"　内枠の差し馬 {edge(0, 1):+.1f}ポイント ／ 外枠の先行馬 {edge(1, 0):+.1f}ポイント ／ "
+                 f"外枠の差し馬 {edge(1, 1):+.1f}ポイント",
+                 "・この差を各馬の枠と脚質に合わせて力に足して計算"]
+        pages.append(sr.text_page("前提条件 枠順と脚質の影響", rows, 12.0, size=22, top=100))
     pages.append(sr.text_page("前提条件② データと計算方法", [
         "・データ：netkeibaで公開されている成績（2003〜2026年）",
         "　出走馬と、その対戦相手の芝1400〜3600m・全クラスの全成績",
@@ -269,12 +276,17 @@ def main() -> None:
     gate = None
     if drawn and (SIM_DIR / "gate_effect.json").exists():
         gate = json.loads((SIM_DIR / "gate_effect.json").read_text(encoding="utf-8"))
-        if gate.get("venue") != venue or gate.get("distance") != dist:
+        if gate.get("venue") != venue or gate.get("distance") != dist or "gate_x_style" not in gate:
             gate = None
     counts_plain = monte_carlo(horses)
+    # 枠と脚質の組み合わせ: ゲート×g + 脚質×s + ゲート×脚質×g×s（g: 0最内〜1大外、s: 0前〜1後方）
     for h in horses.values():
-        rel = (h["num"] - 1) / max(n - 1, 1)                   # 0 = 最内 〜 1 = 大外
-        h["gate_adj"] = gate["coef"] * (rel - 0.5) if gate else 0.0
+        g = (h["num"] - 1) / max(n - 1, 1)
+        st = h["style"]
+        h["gate_adj"] = (gate["gate"] * g + gate["style"] * st + gate["gate_x_style"] * g * st) if gate else 0.0
+    mean_adj = statistics.mean(h["gate_adj"] for h in horses.values())
+    for h in horses.values():
+        h["gate_adj"] -= mean_adj                               # 出走馬の平均との差だけを足す
         h["score"] += h["gate_adj"]
     counts = monte_carlo(horses) if gate else counts_plain
 
@@ -287,16 +299,20 @@ def main() -> None:
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
     md = [f"# {ent['race_name']} シミュレーション（{date} {venue} 芝{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
-          "| 馬番 | 馬 | 勝率 | 2着内 | 3着内 | スコア | うち枠の補正 | 枠を考えない勝率 | 脚質 |",
+          "| 馬番 | 馬 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 |",
           "|---:|---|---:|---:|---:|---:|---:|---:|---:|"]
     for m in order:
         rc, h = counts[m], horses[m]
         md.append(f"| {h['num']} | {m} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | {sum(rc[:3]) / N_RUNS:.1%} | "
                   f"{h['score']:+.2f} | {h['gate_adj']:+.2f} | {counts_plain[m][0] / N_RUNS:.1%} | {h['style']:.2f} |")
     if gate:
-        md += ["", f"枠の効果: {gate['n_races']}レース（{gate['from_year']}年〜）・{gate['n_pairs']:,}組で、"
-               f"大外と最内の差 {gate['coef']:+.3f}（±{gate['se']:.3f}）。改修後（2023年〜）"
-               f"{gate['recent']['n_races']}レース: {gate['recent']['coef']:+.3f}（±{gate['recent']['se']:.3f}）"]
+        md += ["", f"枠・脚質の効果（{gate['n_races']}レース・{gate['from_year']}年〜、人気をそろえた2頭比較）:"]
+        for mode, mm in gate["models"].items():
+            md.append(f"- {'普段の脚質' if mode == 'typical' else 'そのレースの位置取り（参考）'}"
+                      f"（{mm['n_pairs']:,}組）: " + " / ".join(f"{k2} {v:+.3f}（±{mm['se'][k2]:.3f}）"
+                                                         for k2, v in mm["coef"].items()))
+        md += ["", "| 枠 | 脚質 | 走数 | 勝率 | 3着内率 |", "|---|---|---:|---:|---:|"]
+        md += [f"| {c['gate']} | {c['style']} | {c['runs']} | {c['win']:.1%} | {c['top3']:.1%} |" for c in gate["cross"]]
     md += ["", "映像のレース: " + " / ".join(f"{horses[m]['num']} {m} {sd.fmt_time(t)}" for m, t in shown)]
     (SIM_DIR / "real_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     (SIM_DIR / "real_result.json").write_text(json.dumps({

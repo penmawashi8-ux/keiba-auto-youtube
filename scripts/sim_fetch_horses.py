@@ -80,7 +80,9 @@ def main() -> None:
     races = json.loads((SIM_DIR / "races.json").read_text(encoding="utf-8"))
     ids = sorted({x["horse_id"] for r in races for x in r["runners"] if x["horse_id"]} | set(extra))
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
-    todo = [h for h in refresh] + [h for h in ids if h not in cache and h not in refresh]
+    # 取り直す馬 → 追加で指定された馬（指定順） → その他 の順に取る
+    first = list(refresh) + [h for h in extra if h not in cache and h not in refresh]
+    todo = first + [h for h in ids if h not in cache and h not in set(first)]
     print(f"対象 {len(ids)}頭 / 取得済み {len(ids) - len(todo)} / 残り {len(todo)}（制限 {budget_min:.0f}分）")
     session = requests.Session()
     t0 = time.time()

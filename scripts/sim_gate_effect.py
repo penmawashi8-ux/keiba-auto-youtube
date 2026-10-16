@@ -17,6 +17,7 @@
 
 import json
 import math
+import re
 import sys
 import time
 from pathlib import Path
@@ -31,46 +32,116 @@ CACHE = SIM_DIR / "gate_cache.json"
 FROM_YEAR = 2008
 
 
-def fit(pairs: list[tuple[float, float, int]], epochs: int = 300) -> tuple[float, float, float]:
-    """y = 1(先着) を、オッズ差 a と ゲート差 g のロジスティック（切片なし）で。係数と標準誤差を返す"""
-    wa = wg = 0.0
-    lr = 0.5
-    n = len(pairs)
-    for _ in range(epochs):
-        ga = gg = 0.0
-        for a, g, y in pairs:
-            p = 1 / (1 + math.exp(-(wa * a + wg * g)))
-            ga += (y - p) * a
-            gg += (y - p) * g
-        wa += lr * ga / n
-        wg += lr * gg / n
-    # 標準誤差（フィッシャー情報量の逆行列。2頭比較は同じ馬が何度も出てくるので実際はもう少し大きい）
-    iaa = iag = igg = 0.0
-    for a, g, _y in pairs:
-        p = 1 / (1 + math.exp(-(wa * a + wg * g)))
-        w = p * (1 - p)
-        iaa += w * a * a
-        iag += w * a * g
-        igg += w * g * g
-    det = iaa * igg - iag * iag
-    se = math.sqrt(iaa / det) if det > 0 else float("nan")
-    return wa, wg, se
+def solve(m: list[list[float]], v: list[float]) -> list[float]:
+    """小さな連立一次方程式（ガウスの消去法）"""
+    k = len(v)
+    a = [row[:] + [v[i]] for i, row in enumerate(m)]
+    for c in range(k):
+        p = max(range(c, k), key=lambda r: abs(a[r][c]))
+        a[c], a[p] = a[p], a[c]
+        for r in range(k):
+            if r != c and a[c][c]:
+                f = a[r][c] / a[c][c]
+                a[r] = [x - f * y for x, y in zip(a[r], a[c])]
+    return [a[i][k] / a[i][i] for i in range(k)]
 
 
-def pairs_of(races: list[dict]) -> list[tuple[float, float, int]]:
+def fit(pairs: list[tuple[list[float], int]], iters: int = 12) -> tuple[list[float], list[float]]:
+    """y = 1(先着) を、特徴の差 x のロジスティック（切片なし）で。ニュートン法。係数と標準誤差を返す
+    （同じ馬が何度も出てくるので、実際の誤差はもう少し大きい）"""
+    k = len(pairs[0][0])
+    w = [0.0] * k
+    hess = [[0.0] * k for _ in range(k)]
+    for _ in range(iters):
+        grad = [0.0] * k
+        hess = [[0.0] * k for _ in range(k)]
+        for x, y in pairs:
+            p = 1 / (1 + math.exp(-sum(wi * xi for wi, xi in zip(w, x))))
+            q = p * (1 - p)
+            for i in range(k):
+                grad[i] += (y - p) * x[i]
+                for j in range(k):
+                    hess[i][j] += q * x[i] * x[j]
+        step = solve(hess, grad)
+        w = [wi + si for wi, si in zip(w, step)]
+    se = []
+    for i in range(k):
+        e = [0.0] * k
+        e[i] = 1.0
+        se.append(math.sqrt(max(solve(hess, e)[i], 0.0)))
+    return w, se
+
+
+def first_pos(x: dict, field: int) -> float | None:
+    """通過順の最初の位置を 0（先頭）〜 1（最後方）に"""
+    m = re.match(r"(\d+)", x.get("passing") or "")
+    return (int(m.group(1)) - 1) / (field - 1) if m and field > 1 else None
+
+
+def typical_styles(careers: dict) -> dict:
+    """各馬の、レースごとの序盤の位置（0=先頭〜1=最後方）の一覧 {horse_id: {race_id: 位置}}"""
+    out = {}
+    for hid, rows in careers.items():
+        d = {}
+        for r in rows:
+            m = re.match(r"(\d+)", r.get("passing") or "")
+            if m and (r.get("field") or 0) > 1 and r.get("surface") == "芝":
+                d[r["race_id"]] = (int(m.group(1)) - 1) / (r["field"] - 1)
+        if d:
+            out[hid] = d
+    return out
+
+
+def style_of(x: dict, race_id: str, field: int, typ: dict, mode: str) -> float | None:
+    if mode == "race":                        # そのレースで実際に運んだ位置
+        return first_pos(x, field)
+    d = typ.get(x["horse_id"], {})            # 普段の脚質（このレース以外の平均。2走以上）
+    vals = [v for rid, v in d.items() if rid != race_id]
+    return sum(vals) / len(vals) if len(vals) >= 2 else None
+
+
+def pairs_of(races: list[dict], typ: dict, mode: str) -> list[tuple[list[float], int]]:
+    """2頭ずつの比較: 特徴 = [人気（−log オッズ）, ゲート位置(0内〜1外), 脚質(0前〜1後), ゲート×脚質] の差"""
     out = []
     for r in races:
-        rs = [x for x in r["runners"] if x.get("pos") and x.get("odds") and x.get("umaban")]
         n = len(r["runners"])
+        rs = []
+        for x in r["runners"]:
+            if not (x.get("pos") and x.get("odds") and x.get("umaban")):
+                continue
+            st = style_of(x, r.get("race_id", ""), n, typ, mode)
+            if st is None:
+                continue
+            g = (x["umaban"] - 1) / (n - 1)
+            rs.append(([-math.log(x["odds"]), g, st, g * st], x["pos"]))
         if len(rs) < 6:
             continue
         for i in range(len(rs)):
             for j in range(i + 1, len(rs)):
-                x, z = rs[i], rs[j]
-                a = -(math.log(x["odds"]) - math.log(z["odds"]))      # オッズが低い（人気）ほど正
-                g = (x["umaban"] - z["umaban"]) / (n - 1)               # 外の馬ほど正
-                out.append((a, g, int(x["pos"] < z["pos"])))
+                (fx, px), (fz, pz) = rs[i], rs[j]
+                out.append(([a - b for a, b in zip(fx, fz)], int(px < pz)))
     return out
+
+
+def cross_table(races: list[dict], typ: dict) -> list[dict]:
+    """枠（内・中・外）× 普段の脚質（前・中団・後方）ごとの勝率・3着内率"""
+    cells = {}
+    for r in races:
+        n = len(r["runners"])
+        for x in r["runners"]:
+            if not (x.get("pos") and x.get("umaban")):
+                continue
+            st = style_of(x, r.get("race_id", ""), n, typ, "typical")
+            if st is None:
+                continue
+            g = (x["umaban"] - 1) / (n - 1)
+            key = (min(int(g * 3), 2), min(int(st * 3), 2))
+            c = cells.setdefault(key, [0, 0, 0])
+            c[0] += 1
+            c[1] += x["pos"] == 1
+            c[2] += x["pos"] <= 3
+    return [{"gate": ["内", "中", "外"][g], "style": ["前", "中団", "後方"][s], "runs": c[0],
+             "win": c[1] / c[0], "top3": c[2] / c[0]} for (g, s), c in sorted(cells.items())]
 
 
 def main() -> None:
@@ -102,16 +173,26 @@ def main() -> None:
             print(f"  {k}/{len(todo)}")
     CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
 
-    races = [cache[i] for i in ids if i in cache]
-    pairs = pairs_of(races)
-    if len(pairs) < 1000:
-        sys.exit(f"比較できる組が少なすぎます（{len(pairs)}組）")
-    wa, wg, se = fit(pairs)
-    # 改修後の京都（2023年4月〜）だけでも測る（参考）
-    recent = [cache[i] for i in ids if i in cache and i[:4] >= "2023"]
-    rp = pairs_of(recent)
-    rwa, rwg, rse = fit(rp) if len(rp) > 500 else (float("nan"),) * 3
-    # 枠番ごとの成績（表示用）
+    races = [dict(cache[i], race_id=i) for i in ids if i in cache]
+    typ = typical_styles(careers)
+    n_run = sum(1 for r in races for x in r["runners"] if x.get("pos"))
+    n_typ = sum(1 for r in races for x in r["runners"]
+                if x.get("pos") and style_of(x, r["race_id"], len(r["runners"]), typ, "typical") is not None)
+    print(f"{len(races)}レース・のべ{n_run}頭のうち、普段の脚質がわかる馬 {n_typ}頭（{n_typ / max(n_run, 1):.0%}）")
+    labels = ["人気", "ゲート", "脚質", "ゲート×脚質"]
+    result = {}
+    for mode in ("typical", "race"):
+        pairs = pairs_of(races, typ, mode)
+        if len(pairs) < 1000:
+            print(f"  {mode}: 比較できる組が少なすぎる（{len(pairs)}組）")
+            continue
+        w, se = fit(pairs)
+        result[mode] = {"n_pairs": len(pairs), "coef": dict(zip(labels, w)), "se": dict(zip(labels, se))}
+        name = "普段の脚質" if mode == "typical" else "そのレースの位置取り（参考）"
+        print(f"  [{name}] {len(pairs):,}組: " + " / ".join(f"{lb} {c:+.3f}（±{e:.3f}）" for lb, c, e in zip(labels, w, se)))
+    if "typical" not in result:
+        sys.exit("普段の脚質がわかる馬が少なすぎて測れません")
+    # 枠番ごとの成績・枠×脚質の成績（表示用）
     by = {w: [0, 0, 0] for w in range(1, 9)}
     for r in races:
         for x in r["runners"]:
@@ -120,17 +201,22 @@ def main() -> None:
                 b[0] += 1
                 b[1] += x["pos"] == 1
                 b[2] += x["pos"] <= 3
-    out = {"venue": venue, "distance": dist, "from_year": FROM_YEAR, "n_races": len(races), "n_pairs": len(pairs),
-           "coef": wg, "se": se, "odds_coef": wa,
-           "recent": {"n_races": len(recent), "coef": rwg, "se": rse},
+    c = result["typical"]["coef"]
+    out = {"venue": venue, "distance": dist, "from_year": FROM_YEAR, "n_races": len(races),
+           "n_runs": n_run, "n_typical": n_typ, "models": result,
+           # sim_real_race.py が使う係数（普段の脚質で測ったもの）。スコアに足す量 =
+           #   ゲート×g + 脚質×s + ゲート×脚質×g×s（g: 0内〜1外、s: 0前〜1後。出走馬の平均を引いて使う）
+           "gate": c["ゲート"], "style": c["脚質"], "gate_x_style": c["ゲート×脚質"],
            "by_waku": [{"waku": w, "runs": b[0], "win": b[1] / b[0] if b[0] else 0, "top3": b[2] / b[0] if b[0] else 0}
-                       for w, b in by.items()]}
+                       for w, b in by.items()],
+           "cross": cross_table(races, typ)}
     (SIM_DIR / "gate_effect.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"{len(races)}レース・{len(pairs):,}組: ゲート係数 {wg:+.3f}（±{se:.3f}）"
-          f"＝大外は最内より、2頭比較で先着する確率が {1 / (1 + math.exp(-wg)) - 0.5:+.1%}")
-    print(f"  改修後（2023年〜）{len(recent)}レース: {rwg:+.3f}（±{rse:.3f}）")
-    for b in out["by_waku"]:
-        print(f"  {b['waku']}枠: {b['runs']}走 勝率 {b['win']:.1%} 3着内率 {b['top3']:.1%}")
+    for g in (0.0, 1.0):
+        for st in (0.0, 0.5, 1.0):
+            print(f"  ゲート{'最内' if g == 0 else '大外'}・脚質{st:.1f}: "
+                  f"{c['ゲート'] * g + c['脚質'] * st + c['ゲート×脚質'] * g * st:+.3f}")
+    for b in out["cross"]:
+        print(f"  {b['gate']}枠×{b['style']}: {b['runs']}走 勝率 {b['win']:.1%} 3着内率 {b['top3']:.1%}")
 
 
 if __name__ == "__main__":
