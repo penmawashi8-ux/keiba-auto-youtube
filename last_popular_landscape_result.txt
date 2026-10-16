@@ -1,6 +1,6 @@
-date: 2026-10-15T11:06:33.331856Z
+date: 2026-10-16T11:06:43.987439Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vZ7CbqMlFXk views=37408 title=2冠馬ロブチェンと神戸新聞杯で鼻差2着の接戦　アルトラムスが菊花賞を回避　社台サラブレッドクラブが発表【3.7万回閲覧・
+OK project=1 video_id=Br8c5Toh900 views=60321 title=ジャパンCの予備登録馬を発表　連覇を狙うカランダガンなど22頭【6.0万回閲覧・話題の競馬ニュース】
