@@ -143,6 +143,8 @@ def fetch_race(session, race_id: str) -> dict | None:
             "margin": cell(tds, "着差"), "passing": cell(tds, "通過"),
             "last3f": to_float(cell(tds, "上り")), "odds": to_float(cell(tds, "単勝")),
             "pop": int(cell(tds, "人気")) if cell(tds, "人気").isdigit() else None,
+            "waku": int(cell(tds, "枠番")) if cell(tds, "枠番").isdigit() else None,
+            "umaban": int(cell(tds, "馬番")) if cell(tds, "馬番").isdigit() else None,
         })
     return {
         "distance_page": int(dist.group(1)) if dist else None,

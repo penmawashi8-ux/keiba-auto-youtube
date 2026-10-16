@@ -78,7 +78,7 @@ def badge_col(h: dict, x: int, size: int | None = None) -> dict:
     return c
 
 
-def before_pages(ent: dict, horses: dict, kit: dict) -> list[dict]:
+def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -> list[dict]:
     n = len(horses)
     drawn = ent["drawn"]
     course = sr.COURSES[ent["venue"]]
@@ -99,7 +99,7 @@ def before_pages(ent: dict, horses: dict, kit: dict) -> list[dict]:
         f"・コース：1周 約{lap:,.0f}m、最後の直線 {course['straight']}m",
         f"・スタート：正面スタンド前（ゴールの約{ent['distance'] - lap:.0f}m手前）→ ゴール前を通過して1周",
         "・馬場状態：良を想定",
-        f"・頭数：{n}頭（{'実際の枠順' if drawn else '枠順は未確定。内外の有利不利は計算に入れていない'}）",
+        f"・頭数：{n}頭（{'実際の枠順。内外の有利不利も計算に入れる' if gate else '内外の有利不利は計算に入れていない'}）",
         "・斤量：全馬 " + "・".join(sorted({f'{h["weight"]:g}kg' for h in horses.values() if h['weight']})) + "（定量）",
         "・各馬の力：レース当日時点のデータ（直近のレースほど重く見る）",
         "・考慮しないもの：調教・当日の馬体重やパドック・天候・展開の駆け引き",
@@ -118,6 +118,19 @@ def before_pages(ent: dict, horses: dict, kit: dict) -> list[dict]:
             rows += ["", {"text": "※馬番は仮（出馬表の並び順）。枠順確定後に正式な馬番で作り直します", "size": 20,
                           "color": "0xEF9A9A"}]
         pages.append(sr.text_page(f"出走馬 {p}/2", rows, 9.0, size=24, top=104))
+    if gate:
+        p_out = 1 / (1 + math.exp(-gate["coef"])) - 0.5
+        rows = [f"・{ent['venue']}芝{ent['distance']}mの過去{gate['n_races']}レース（{gate['from_year']}年〜・全クラス）の枠番別の成績",
+                [{"text": "枠", "x": 90, "color": "0xBDBDBD"}, {"text": "出走数", "x": 200, "color": "0xBDBDBD"},
+                 {"text": "勝率", "x": 380, "color": "0xBDBDBD"}, {"text": "3着内率", "x": 540, "color": "0xBDBDBD"}]]
+        for b in gate["by_waku"]:
+            rows.append([{"text": "●", "x": 90, "color": sr.COLORS[b["waku"] - 1], "extra": sr.DOT_BORDER[b["waku"] - 1]},
+                         {"text": f"{b['waku']}枠", "x": 125}, {"text": f"{b['runs']}", "x": 200},
+                         {"text": f"{b['win']:.1%}", "x": 380}, {"text": f"{b['top3']:.1%}", "x": 540}])
+        rows += ["", {"text": f"・同じくらいの人気の2頭で比べると、大外の馬は最内の馬より先着する確率が "
+                              f"{-p_out * 100:.1f}ポイント{'低い' if p_out < 0 else '高い'}", "color": "0xFFF59D"},
+                 "・この差を各馬の力に足して計算（内の馬ほどプラス、外の馬ほどマイナス）"]
+        pages.append(sr.text_page("前提条件 枠順の影響", rows, 11.0, size=22, top=100))
     pages.append(sr.text_page("前提条件② データと計算方法", [
         "・データ：netkeibaで公開されている成績（2003〜2026年）",
         "　出走馬と、その対戦相手の芝1400〜3600m・全クラスの全成績",
@@ -252,7 +265,18 @@ def main() -> None:
         if h["score"] is None:
             print(f"[注意] {h['name']}: 2年以内のJRA芝の成績が無いので下位1割のスコアで計算")
             h["score"] = fill
-    counts = monte_carlo(horses)
+    # 枠順の有利不利（sim_gate_effect.py が同じコースの過去レースから測ったもの）。枠順確定後だけ使う
+    gate = None
+    if drawn and (SIM_DIR / "gate_effect.json").exists():
+        gate = json.loads((SIM_DIR / "gate_effect.json").read_text(encoding="utf-8"))
+        if gate.get("venue") != venue or gate.get("distance") != dist:
+            gate = None
+    counts_plain = monte_carlo(horses)
+    for h in horses.values():
+        rel = (h["num"] - 1) / max(n - 1, 1)                   # 0 = 最内 〜 1 = 大外
+        h["gate_adj"] = gate["coef"] * (rel - 0.5) if gate else 0.0
+        h["score"] += h["gate_adj"]
+    counts = monte_carlo(horses) if gate else counts_plain
 
     key = f"c:{venue}{dist}"
     base = kit["model"].coef.get(key)
@@ -263,17 +287,24 @@ def main() -> None:
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
     md = [f"# {ent['race_name']} シミュレーション（{date} {venue} 芝{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
-          "| 馬番 | 馬 | 勝率 | 2着内 | 3着内 | スコア | 脚質 |", "|---:|---|---:|---:|---:|---:|---:|"]
+          "| 馬番 | 馬 | 勝率 | 2着内 | 3着内 | スコア | うち枠の補正 | 枠を考えない勝率 | 脚質 |",
+          "|---:|---|---:|---:|---:|---:|---:|---:|---:|"]
     for m in order:
         rc, h = counts[m], horses[m]
         md.append(f"| {h['num']} | {m} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | {sum(rc[:3]) / N_RUNS:.1%} | "
-                  f"{h['score']:+.2f} | {h['style']:.2f} |")
+                  f"{h['score']:+.2f} | {h['gate_adj']:+.2f} | {counts_plain[m][0] / N_RUNS:.1%} | {h['style']:.2f} |")
+    if gate:
+        md += ["", f"枠の効果: {gate['n_races']}レース（{gate['from_year']}年〜）・{gate['n_pairs']:,}組で、"
+               f"大外と最内の差 {gate['coef']:+.3f}（±{gate['se']:.3f}）。改修後（2023年〜）"
+               f"{gate['recent']['n_races']}レース: {gate['recent']['coef']:+.3f}（±{gate['recent']['se']:.3f}）"]
     md += ["", "映像のレース: " + " / ".join(f"{horses[m]['num']} {m} {sd.fmt_time(t)}" for m, t in shown)]
     (SIM_DIR / "real_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     (SIM_DIR / "real_result.json").write_text(json.dumps({
         "race": {k2: v for k2, v in ent.items() if k2 != "horses"},
         "win_rate": {m: counts[m][0] / N_RUNS for m in order},
         "top3": {m: sum(counts[m][:3]) / N_RUNS for m in order},
+        "win_rate_without_gate": {m: counts_plain[m][0] / N_RUNS for m in order},
+        "gate": gate,
         "shown": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n".join(md))
 
@@ -281,7 +312,7 @@ def main() -> None:
     short = [short_name(m) if m in order[:6] else "" for m in names]   # 勝率上位6頭だけ馬名を出す
     video = SIM_DIR / "real_race_video.mp4"
     marks = sr.render(video, SIM_DIR / "work_real", sd.find_font(), names, [horses[m]["style"] for m in names],
-                      [finish[m] for m in names], before_pages(ent, horses, kit),
+                      [finish[m] for m in names], before_pages(ent, horses, kit, gate),
                       after_pages(horses, counts, shown, drawn), dist=dist, venue=venue,
                       nums=[horses[m]["num"] for m in names], short=short,
                       tts=sd.make_tts(SIM_DIR / "work_real" / "voice"),
