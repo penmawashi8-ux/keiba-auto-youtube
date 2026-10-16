@@ -144,21 +144,24 @@ def career_stats(horse_id: str, careers: dict, graded: list[dict], venue: str = 
             "tokyo": (len(tokyo), sum(r["pos"] == 1 for r in tokyo)), "venue": venue, "dist": dist, "fast_scope": fast_scope}
 
 
-def stat_items(s: dict) -> list[tuple[str, float, str]]:
-    """(項目名, 比べる値（大きいほど良い）, 表示する文)"""
+def stat_items(s: dict) -> list[tuple[str, float | None, str]]:
+    """(項目名, 比べる値（大きいほど良い。データが少なすぎて比べない項目は None）, 表示する文)"""
     top3 = s["top3"] / s["starts"] if s["starts"] else 0.0
-    items = [("G1の勝ち星", s["g1_wins"], f"JRAの芝G1を{s['g1_wins']}勝（{s['g1_starts']}戦）"),
-             ("勝ちっぷり", s["win_margin"], f"勝つときは平均{lengths(s['win_margin'])}差をつける"),
-             ("負けても崩れない", -s["lose_margin"],
-              f"負けたときも勝ち馬から平均{lengths(s['lose_margin'])}差" if s["starts"] > s["wins"] else "負けなし"),
-             ("安定感", top3, f"3着以内に入った割合 {top3:.0%}（{s['starts']}戦{s['top3']}回）"),
-             ("末脚の切れ", s["fast_rate"],
+    losses = s["starts"] - s["wins"]
+    items = [("G1の実績", s["g1_wins"] if s["g1_starts"] else None, f"JRAの芝G1で{s['g1_starts']}戦{s['g1_wins']}勝"),
+             ("勝ったときの着差", s["win_margin"] if s["wins"] >= 2 else None,
+              f"勝ったレース（{s['wins']}勝）で2着につけた差は平均{lengths(s['win_margin'])}"),
+             ("負けたときの着差", -s["lose_margin"] if losses >= 2 else None,
+              f"負けたレース（{losses}回）で1着との差は平均{lengths(s['lose_margin'])}"),
+             ("安定感", top3 if s["starts"] >= 3 else None, f"3着以内に入った割合 {top3:.0%}（{s['starts']}戦{s['top3']}回）"),
+             ("末脚の切れ", s["fast_rate"] if s["fast_runs"] >= 4 else None,
               f"{s.get('fast_scope', 'G1・G2')}で上がり最速を出した割合 {s['fast_rate']:.0%}（{s['fast_runs']}戦）")]
     venue, dist = s.get("venue", "東京"), s.get("dist", 2400)
     for key, label in (("mid", f"{dist}m前後の実績"), ("tokyo", f"{venue}コースの実績")):
         n, w = s[key]
         where = f"{dist - 200}〜{dist + 200}m" if key == "mid" else f"{venue}の芝"
-        items.append((label, (w + 0.5) / (n + 1.5), f"{where}で{n}戦{w}勝" if n else f"{where}は走ったことがない"))
+        items.append((label, (w + 0.5) / (n + 1.5) if n else None,
+                      f"{where}で{n}戦{w}勝" if n else f"{where}は走ったことがない"))
     return items
 
 
@@ -342,11 +345,13 @@ def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str
         h, s = horses[n], horses[n]["stats"]
         strong, weak = [], []
         for j, (label, val, text) in enumerate(items[n]):
-            vals = [items[m][j][1] for m in names]
+            vals = [items[m][j][1] for m in names if items[m][j][1] is not None]
+            if val is None or len(vals) < 3:        # データが少なすぎる項目は比べない
+                continue
             better = sum(v > val + 1e-9 for v in vals)
             if better == 0:
                 strong.append((label, text))
-            elif better == len(names) - 1:
+            elif better == len(vals) - 1:
                 weak.append((label, text))
         best = max((x for x in h["history"] if x[0] <= h["peak_date"]), key=lambda x: x[1])
         rows = [[{"text": n, "size": 40, "badge": idx[n], "x": 60},
@@ -392,6 +397,10 @@ def after_pages(horses: dict, kit: dict, rank_counts: dict, race: list[tuple[str
 # 実況の読み上げ（edge-tts）と音声の合成
 # ---------------------------------------------------------------------------
 VOICE = "ja-JP-KeitaNeural"     # 実況は男性の声
+# 読み上げで間違えやすい競馬の言葉（edge-tts は「最後方」を「さいごほう」と読む）
+SPEECH_READINGS = {"最後方": "さいこうほう", "脚をためる": "あしをためる", "脚をため": "あしをため",
+                   "叩き合い": "たたきあい", "後続": "こうぞく", "先頭": "せんとう", "3コーナー": "さんコーナー",
+                   "4コーナー": "よんコーナー", "ハナを切った": "ハナをきった"}
 
 
 def make_tts(work: Path):
@@ -425,6 +434,8 @@ def make_tts(work: Path):
     def speak(text: str):
         if not state["ok"]:
             return None
+        for k, v in SPEECH_READINGS.items():      # 読み間違えやすい言葉はひらがなで渡す
+            text = text.replace(k, v)
         out = work / f"voice_{hashlib.md5(text.encode()).hexdigest()[:10]}.mp3"
         try:
             if not out.exists():

@@ -280,6 +280,8 @@ def make_big_track_png(path: Path, font: str, start_s: float, dist: int) -> None
                      f"x={x:.0f}-text_w/2:y={y:.0f}-text_h/2:borderw=3:bordercolor=black@0.6")
 
     for k in range(200, dist, 200):                    # ハロン棒（残り距離）
+        if k > LAP_M - 60:      # 1周より長い距離では、スタート直後の標識がゴール付近と重なるので描かない
+            continue
         x, y = big_point(STRAIGHT_M - k, TRACK_W_M + 7)
         label(f"残り{k}m", x, y, 52, "white")
     s = 0.0
@@ -493,7 +495,9 @@ def commentary(names: list[str], D, LAT, taus, finish, dist: int) -> list[tuple[
     out.append((taus[k], f"最後方に{names[o[-1]]}、じっくり脚をためる",
                 f"最後方に{names[o[-1]]}。じっくりと脚をためます"))
     k = k_at(1000)
-    t1000 = taus[k]
+    # キーフレームの間を補間して、先頭がちょうど1000mに来た時刻を出す
+    t1000 = taus[k] if k == 0 else (taus[k - 1] + (taus[k] - taus[k - 1]) * (1000 - lead[k - 1])
+                                    / max(lead[k] - lead[k - 1], 1e-6))
     pace = "ややハイペース" if t1000 < 58.8 else "落ち着いた流れ" if t1000 > 60.8 else "平均ペース"
     out.append((t1000, f"1000m通過は{t1000:.1f}秒、{pace}", f"1000メートル通過は{t1000:.1f}秒。{pace}です"))
     k = k_at(dist - (STRAIGHT_M + math.pi * CURVE_R_M * 0.5))      # 3〜4コーナーの中間
@@ -718,7 +722,10 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     for j, (a, b, text) in enumerate(telops):
         if j + 1 < len(telops):
             b = min(b, telops[j + 1][0] - 0.02)
-        rd.dt(text, 34, "white", f"{VIEW_W // 2}-text_w/2", str(H - 86), a, min(b, r1),
+        # 長い実況は文字を小さくして、画面（コース部分の幅）からはみ出さないようにする
+        units = sum(1.0 if ord(ch) > 255 else 0.6 for ch in text)
+        size = max(22, min(34, int((VIEW_W - 60) / max(units, 1))))
+        rd.dt(text, size, "white", f"{VIEW_W // 2}-text_w/2", str(H - 86 + (34 - size) // 2), a, min(b, r1),
               ":box=1:boxcolor=black@0.7:boxborderw=14")
 
     # ---- 右側の順位パネル（順位が変わると行が入れ替わる）

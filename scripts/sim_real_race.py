@@ -143,12 +143,12 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         def edge(g, st):
             v = gate["gate"] * g + gate["style"] * st + gate["gate_x_style"] * g * st
             return (1 / (1 + math.exp(-v)) - 0.5) * 100
-        rows += ["", {"text": "・同じくらいの人気の馬どうしで比べた、内枠の先行馬との差（先着する確率）", "color": "0xFFF59D"},
-                 f"　内枠の差し馬 {edge(0, 1):+.1f}ポイント ／ 外枠の先行馬 {edge(1, 0):+.1f}ポイント ／ "
-                 f"外枠の差し馬 {edge(1, 1):+.1f}ポイント",
+        rows += ["", {"text": "・同じくらいの人気の2頭で比べた、「内枠で前に行く馬」より先着しやすいか", "color": "0xFFF59D"},
+                 f"　内枠で後ろから行く馬 {edge(0, 1):+.1f}ポイント ／ 外枠で前に行く馬 {edge(1, 0):+.1f}ポイント ／ "
+                 f"外枠で後ろから行く馬 {edge(1, 1):+.1f}ポイント",
                  "・この差を各馬の枠と脚質に合わせて力に足して計算"]
-        pages.append(sr.text_page("前提条件 枠順と脚質の影響", rows, 12.0, size=22, top=100))
-    pages.append(sr.text_page("前提条件② データと計算方法", [
+        pages.append(sr.text_page("前提条件② 枠順と脚質の影響", rows, 12.0, size=22, top=100))
+    pages.append(sr.text_page(f"前提条件{'③' if gate else '②'} データと計算方法", [
         "・データ：netkeibaで公開されている成績（2003〜2026年）",
         "　出走馬と、その対戦相手の芝1400〜3600m・全クラスの全成績",
         "",
@@ -235,14 +235,17 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
         h = horses[m]
         strong, weak = [], []
         for j, (label, val, text) in enumerate(items[m]):
-            better = sum(items[o][j][1] > val + 1e-9 for o in names)
-            ties = sum(abs(items[o][j][1] - val) < 1e-9 for o in names)
+            vals = [items[o][j][1] for o in names if items[o][j][1] is not None]
+            if val is None or len(vals) < 6:          # データが少なすぎる項目（1勝だけ等）は比べない
+                continue
+            better = sum(v > val + 1e-9 for v in vals)
+            ties = sum(abs(v - val) < 1e-9 for v in vals)
             if ties > 3 or (j == 0 and val == 0):      # 多くの馬が同じ値（G1未勝利など）の項目は強み・弱みにしない
                 continue
             if better <= 1:
-                strong.append((label, text, better + 1))
-            elif better >= n - 3:
-                weak.append((label, text))
+                strong.append((label, text, f"{len(vals)}頭中{better + 1}位"))
+            elif better >= len(vals) - 3:
+                weak.append((label, text, f"{len(vals)}頭中{better + 1}位"))
         best = max(h["history"], key=lambda x: x[1]) if h["history"] else None
         rows = [[badge_col(h, 60, 40), {"text": f"勝率 {counts[m][0] / N_RUNS:.1%}（{rank}位）", "x": 720, "size": 32,
                                          "color": "0xFFF59D"}],
@@ -251,11 +254,12 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
         if best:
             rows.append({"text": f"データ上いちばん強かったレース：{sd.ym(best[0])} {best[2]['race_name']}（{best[3]['pos']}着）",
                          "size": 24, "color": "0xE0E0E0"})
-        rows += ["", {"text": f"{n}頭の中で上位", "size": 26, "color": "0x80CBC4"}]
-        rows += ([{"text": f"　◎ {lb}：{tx}（{r}位）", "size": 26} for lb, tx, r in strong[:3]]
+        rows += ["", {"text": "出走馬の中で上位の成績", "size": 26, "color": "0x80CBC4"}]
+        rows += ([{"text": f"　◎ {lb}：{tx}（{r}）", "size": 26} for lb, tx, r in strong[:3]]
                  or [{"text": "　とび抜けた項目はなし（バランス型）", "size": 26}])
-        rows += ["", {"text": f"{n}頭の中では下位", "size": 26, "color": "0xEF9A9A"}]
-        rows += ([{"text": f"　△ {lb}：{tx}", "size": 26} for lb, tx in weak[:2]] or [{"text": "　なし", "size": 26}])
+        rows += ["", {"text": "出走馬の中では下位の成績", "size": 26, "color": "0xEF9A9A"}]
+        rows += ([{"text": f"　△ {lb}：{tx}（{r}）", "size": 26} for lb, tx, r in weak[:2]]
+                 or [{"text": "　目立った弱点はなし", "size": 26}])
         pages.append(sr.text_page(f"注目馬 {rank}/5", rows, 8.0, top=104))
 
     first, second = order[0], order[1]
