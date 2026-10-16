@@ -78,6 +78,14 @@ def fetch_entries(session, race_id: str, date: str) -> dict:
             "waku": int(waku.get_text(strip=True)) if waku and waku.get_text(strip=True).isdigit() else None,
             "umaban": int(umaban.get_text(strip=True)) if umaban and umaban.get_text(strip=True).isdigit() else None,
         })
+    # 出馬表に同じ馬の行が2つ出ることがある（馬番なしの行が重複）。馬番のある行を残す
+    uniq = {}
+    for h in horses:
+        if h["horse_id"] not in uniq or (h["umaban"] and not uniq[h["horse_id"]]["umaban"]):
+            uniq[h["horse_id"]] = h
+    if len(uniq) < len(horses):
+        print(f"[注意] 出馬表の重複行を除いた: {len(horses)}行 → {len(uniq)}頭")
+    horses = list(uniq.values())
     if not horses:
         print(html[:3000])
         raise SystemExit("出馬表に馬が見つかりません（ページ形式が変わった可能性）")

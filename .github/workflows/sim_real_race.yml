@@ -19,6 +19,7 @@ on:
     paths:
       - scripts/sim_real_race.py
       - scripts/sim_gate_effect.py
+      - scripts/sim_entries.py
       - scripts/sim_render.py
       - scripts/sim_bgm.py
       - .github/workflows/sim_real_race.yml
