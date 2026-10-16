@@ -10,6 +10,7 @@ on:
     paths:
       - scripts/sim_thumbnail.py
       - data/sim_thumb_choice.json
+      - data/thumb_sets/**
       - .github/workflows/sim_thumbnail.yml
 
 concurrency:
@@ -19,7 +20,7 @@ concurrency:
 jobs:
   thumbnail:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -41,6 +42,13 @@ jobs:
       - name: Make thumbnail
         run: python -u scripts/sim_thumbnail.py
 
+      # 実際のレース用（data/thumb_sets/*.json ごとに作る）
+      - name: Make thumbnails for real races
+        run: |
+          for f in data/thumb_sets/*.json; do
+            [ -f "$f" ] && python -u scripts/sim_thumbnail.py "$f"
+          done
+
       - name: Save outputs to research-output branch
         if: success()
-        run: bash .github/scripts/save_sim_outputs.sh "夢の対決サムネイル" sim/thumbnail.jpg sim/thumb_candidates_*.jpg sim/thumb_candidates.json sim/thumb_credits.txt
+        run: bash .github/scripts/save_sim_outputs.sh "夢の対決サムネイル" sim/thumbnail.jpg sim/thumb_candidates_*.jpg sim/thumb_candidates.json sim/thumb_credits.txt sim/thumb_*

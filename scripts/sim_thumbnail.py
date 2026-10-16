@@ -130,7 +130,7 @@ def candidates(cats: list[str], queries: list[str], articles: list[str], keys: l
     seen = []
     for t in titles:
         low = t.lower().replace("_", " ")
-        if t not in seen and (t == first or any(k.lower() in low for k in keys)):
+        if t not in seen and (t == first or not keys or any(k.lower() in low for k in keys)):
             seen.append(t)
     print(f"  馬名入りの写真 {len(seen)} 件")
     infos = file_infos(seen[:MAX_CHECK])
@@ -170,9 +170,16 @@ def contact_sheet(name: str, files: list[Path], out: Path, font: str) -> None:
                     "-map", "[v]", "-frames:v", "1", "-q:v", "3", str(out)], check=True)
 
 
-def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out: Path) -> None:
-    """上に見出し、中段に5頭の写真（枠色の名札付き）、下にシミュレーションの説明"""
-    sw, ph, top = 256, 400, 168
+DREAM_TEXTS = {"title1": "伝説の名馬5頭が全盛期で戦ったら", "title2": "最強はどの馬？",
+               "sub1": "データで1万回シミュレーション", "sub2": "東京芝2400m・JRA全成績から計算"}
+
+
+def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out: Path,
+            texts_: dict | None = None, colors: list[int] | None = None) -> None:
+    """上に見出し、中段に馬の写真（枠色の名札付き）、下にシミュレーションの説明。写真の数は自由"""
+    t = texts_ or DREAM_TEXTS
+    colors = colors or list(range(len(chosen)))
+    sw, ph, top = 1280 // len(chosen), 400, 168
     inputs, chains = [], []
     for i, (_name, path, fx, fy, zoom) in enumerate(chosen):
         inputs += ["-i", str(path)]
@@ -190,16 +197,15 @@ def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out:
         texts.append(f"drawtext=textfile='{p}':fontfile='{font}':fontsize={size}:fontcolor={color}:"
                      f"x={x}:y={y}{extra}")
 
-    text("伝説の名馬5頭が全盛期で戦ったら", 46, "white", "(w-text_w)/2", "14", ":borderw=4:bordercolor=black")
-    text("最強はどの馬？", 74, "0xFFEB3B", "(w-text_w)/2", "70", ":borderw=6:bordercolor=0xB71C1C")
+    text(t["title1"], 46, "white", "(w-text_w)/2", "14", ":borderw=4:bordercolor=black")
+    text(t["title2"], 74, "0xFFEB3B", "(w-text_w)/2", "70", ":borderw=6:bordercolor=0xB71C1C")
     for i, (name, *_rest) in enumerate(chosen):
         cx = i * sw + sw // 2
-        text(name, 25, sr.NUM_COLORS[i], f"{cx}-text_w/2", str(top + ph - 44),
-             f":box=1:boxcolor={sr.COLORS[i]}@0.95:boxborderw=8")
-    text("データで1万回シミュレーション", 44, "white", "(w-text_w)/2", str(top + ph + 22),
-         ":borderw=4:bordercolor=black")
-    text("東京芝2400m・JRA全成績から計算", 30, "0xFFF59D", "(w-text_w)/2", str(top + ph + 86),
-         ":borderw=3:bordercolor=black")
+        c = colors[i]
+        text(name, 25 if sw < 300 else 30, sr.NUM_COLORS[c], f"{cx}-text_w/2", str(top + ph - 48),
+             f":box=1:boxcolor={sr.COLORS[c]}@0.95:boxborderw=8")
+    text(t["sub1"], 44, "white", "(w-text_w)/2", str(top + ph + 22), ":borderw=4:bordercolor=black")
+    text(t["sub2"], 30, "0xFFF59D", "(w-text_w)/2", str(top + ph + 86), ":borderw=3:bordercolor=black")
     chains.append("[b]" + ",".join(texts) + "[v]")
     script = WORK / "thumb_filter.txt"
     script.write_text(";".join(chains), encoding="utf-8")
@@ -207,7 +213,60 @@ def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out:
                     "-map", "[v]", "-frames:v", "1", "-q:v", "2", str(out)], check=True)
 
 
+def main_set(path: Path) -> None:
+    """data/thumb_sets/*.json の馬で作る（実際のレース用）。写真が見つかった馬を上から max_photos 頭まで使う。
+    出力: sim/<prefix>.jpg, sim/<prefix>_candidates_N.jpg, sim/<prefix>_credits.txt, sim/<prefix>_candidates.json"""
+    cfg = json.loads(path.read_text(encoding="utf-8"))
+    prefix = cfg["prefix"]
+    WORK.mkdir(parents=True, exist_ok=True)
+    font = find_font()
+    report, chosen, colors, credits = {}, [], [], []
+    for n, h in enumerate(cfg["horses"]):
+        if len(chosen) >= cfg.get("max_photos", 4):
+            break
+        name = h["name"]
+        print(f"=== {name}", flush=True)
+        ch = cfg.get("choice", {}).get(name, {})
+        # loose: ファイル名に馬名が無くても検索に出た写真を候補にする（候補一覧を目で確かめてから選ぶこと）
+        keys = [] if cfg.get("loose") else [name] + h.get("en", [])
+        queries = h.get("queries", [name, name + " 競走馬"] + [e + " horse" for e in h.get("en", [])])
+        cands = candidates(h.get("cats", []), queries, h.get("articles", [name, name]), keys, ch.get("file"))
+        files = []
+        for j, c in enumerate(cands):
+            p = WORK / f"{prefix}_h{n}_{j}.jpg"
+            if download(c["url"], p):
+                files.append(p)
+                print(f"  {j}: {c['title']} / {c['license']} / {c['author']} ({c['w']}x{c['h']})")
+            time.sleep(1)
+        report[name] = cands[:len(files)]
+        if not files:
+            print(f"  自由ライセンスの写真なし → この馬は使わない")
+            continue
+        contact_sheet(name, files, SIM_DIR / f"{prefix}_candidates_{n}.jpg", font)
+        if ch.get("skip"):
+            continue
+        chosen.append((f"{h['num']} {name}" if h.get("num") else name, files[0],
+                       ch.get("x", 0.5), ch.get("y", 0.5), ch.get("zoom", 1.0)))
+        colors.append(h.get("waku", len(chosen)) - 1)
+        c = cands[0]
+        credits.append(f"{name}: \"{c['title'].removeprefix('File:')}\" by {c['author']}, "
+                       f"{c['license']} {c['license_url']} （{c['page']}）")
+    (SIM_DIR / f"{prefix}_candidates.json").write_text(json.dumps(report, ensure_ascii=False, indent=1),
+                                                         encoding="utf-8")
+    (SIM_DIR / f"{prefix}_credits.txt").write_text(
+        "写真出典（Wikimedia Commons）※サムネイルで加工（切り抜き・色調整・文字入れ）\n" + "\n".join(credits) + "\n",
+        encoding="utf-8")
+    if chosen:
+        compose(chosen, font, SIM_DIR / f"{prefix}.jpg", cfg["texts"], colors)
+        print(f"保存: sim/{prefix}.jpg（{len(chosen)}頭）")
+    else:
+        print("[警告] 写真が1枚も見つからないので、サムネイルは作りませんでした")
+
+
 def main() -> None:
+    if len(sys.argv) > 1:
+        main_set(Path(sys.argv[1]))
+        return
     WORK.mkdir(parents=True, exist_ok=True)
     font = find_font()
     choice = json.loads(CHOICE.read_text(encoding="utf-8")) if CHOICE.exists() else {}
@@ -239,7 +298,7 @@ def main() -> None:
         "写真出典（Wikimedia Commons）※サムネイルで加工（切り抜き・色調整・文字入れ）\n" + "\n".join(credits) + "\n",
         encoding="utf-8")
     if len(chosen) == len(HORSES):
-        compose(chosen, font, SIM_DIR / "thumbnail.jpg")
+        compose(chosen, font, SIM_DIR / "thumbnail.jpg", DREAM_TEXTS)
         print("保存: sim/thumbnail.jpg")
     else:
         print("[警告] 写真がそろわない馬があるため、サムネイルは作りませんでした")

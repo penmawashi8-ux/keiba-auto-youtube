@@ -1,0 +1,17 @@
+{
+ "prefix": "thumb_shuka2026",
+ "max_photos": 4,
+ "loose": true,
+ "texts": {"title1": "秋華賞2026をデータで1万回シミュレーション", "title2": "データが選んだ本命は？",
+           "sub1": "京都芝2000m・枠順と脚質も計算", "sub2": "出走馬と対戦相手の全成績から計算"},
+ "horses": [
+  {"name": "モンローウォーク", "num": 8, "waku": 4, "en": ["Monroe Walk"]},
+  {"name": "ドリームコア", "num": 13, "waku": 7, "en": ["Dream Core"]},
+  {"name": "カナルサンマルタン", "num": 12, "waku": 6, "en": ["Canal Saint Martin", "Canal St Martin"]},
+  {"name": "ギャラボーグ", "num": 1, "waku": 1, "en": ["Gallaborg"]},
+  {"name": "サムシングスイート", "num": 14, "waku": 7, "en": ["Something Sweet"]},
+  {"name": "マスターソアラ", "num": 3, "waku": 2, "en": ["Master Soarer"]},
+  {"name": "エンネ", "num": 4, "waku": 2, "en": []}
+ ],
+ "choice": {}
+}
