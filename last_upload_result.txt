@@ -1,10 +1,10 @@
-date: 2026-10-15T10:17:07.239843Z
+date: 2026-10-16T01:10:09.446853Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=W9jKveq-oY4 title=【JRA新馬戦】フォーエバーヤングの半弟で3億円のヤングリッチなどがデビュー
-OK project=1 video_id=HN2oNW6dPXQ title=2歳女王レシステンシアの初仔 コルベータが初勝利なるか
-OK project=1 video_id=rojhcN1SaoU title=【菊花賞・1週前】菊花賞3連覇中ルメール騎手と新コンビ　ダノンヒストリーは一杯に
+OK project=1 video_id=AYtkeejWhCs title=【園田競馬・人気ジョッキーは語る】12Rのバウヴォーグに好感を得る笹田知宏騎手「
+OK project=1 video_id=GozqY2cR1E4 title=【秋華賞】“令和のファインモーション”モンローウォークは4枠8番　武豊騎手×蛯名
+OK project=1 video_id=C2gzMQsPE90 title=【秋華賞枠順確定】モンローウォークは4枠8番、ドリームコアは7枠13番
