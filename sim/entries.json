@@ -8,7 +8,7 @@
  "direction": "右",
  "course": "右 A",
  "post_time": "15:40",
- "drawn": false,
+ "drawn": true,
  "horses": [
   {
    "horse_id": "2023105825",
@@ -196,17 +196,6 @@
    "trainer": "寺島",
    "waku": 8,
    "umaban": 17
-  },
-  {
-   "horse_id": "2023105825",
-   "horse": "ギャラボーグ",
-   "sex": "",
-   "age": null,
-   "weight": 35.9,
-   "jockey": "",
-   "trainer": "",
-   "waku": null,
-   "umaban": null
   }
  ]
 }
