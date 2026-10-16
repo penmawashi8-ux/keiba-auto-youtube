@@ -179,6 +179,9 @@ def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out:
     """上に見出し、中段に馬の写真（枠色の名札付き）、下にシミュレーションの説明。写真の数は自由"""
     t = texts_ or DREAM_TEXTS
     colors = colors or list(range(len(chosen)))
+    if len(chosen) == 1:
+        compose_single(chosen[0], font, out, t, colors[0])
+        return
     sw, ph, top = 1280 // len(chosen), 400, 168
     inputs, chains = [], []
     for i, (_name, path, fx, fy, zoom) in enumerate(chosen):
@@ -210,6 +213,37 @@ def compose(chosen: list[tuple[str, Path, float, float, float]], font: str, out:
     script = WORK / "thumb_filter.txt"
     script.write_text(";".join(chains), encoding="utf-8")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex_script", str(script),
+                    "-map", "[v]", "-frames:v", "1", "-q:v", "2", str(out)], check=True)
+
+
+def compose_single(ch: tuple, font: str, out: Path, t: dict, color: int) -> None:
+    """写真が1頭分だけのとき: 写真を全面に敷き、左側を暗くして見出しを左寄せで載せる"""
+    name, path, fx, fy, zoom = ch
+    w, h = 1280, 720
+    pw, px = 820, w - 820                      # 写真は右側 820px。左は見出しの帯
+    chains = [f"[0:v]scale={pw * zoom:.0f}:{h * zoom:.0f}:force_original_aspect_ratio=increase,"
+              f"crop={pw}:{h}:'(iw-{pw})*{fx:.2f}':'(ih-{h})*{fy:.2f}',eq=contrast=1.08:saturation=1.15[ph]",
+              f"color=c=0x0B1020:s={w}x{h}:d=1[bg]", f"[bg][ph]overlay={px}:0[b]"]
+    texts = []
+
+    def text(tx, size, col, x, y, extra=""):
+        p = WORK / f"txt1_{len(texts)}.txt"
+        p.write_text(tx, encoding="utf-8")
+        texts.append(f"drawtext=textfile='{p}':fontfile='{font}':fontsize={size}:fontcolor={col}:"
+                     f"x={x}:y={y}{extra}")
+
+    lines = t["title1"].split("を", 1)
+    text(lines[0], 96, "0xFFEB3B", "48", "60", ":borderw=6:bordercolor=0xB71C1C")
+    text(("を" + lines[1]) if len(lines) > 1 else "", 33, "white", "52", "190", ":borderw=4:bordercolor=black")
+    text(t["title2"], 54, "white", "48", "300", ":box=1:boxcolor=0xC62828@0.92:boxborderw=16")
+    text(t["sub1"], 34, "0xFFF59D", "52", "450", ":borderw=3:bordercolor=black")
+    text(t["sub2"], 28, "0xE0E0E0", "52", "505", ":borderw=3:bordercolor=black")
+    text(name, 36, sr.NUM_COLORS[color], "w-text_w-40", "h-text_h-40",
+         f":box=1:boxcolor={sr.COLORS[color]}@0.95:boxborderw=10")
+    chains.append("[b]" + ",".join(texts) + "[v]")
+    script = WORK / "thumb_filter1.txt"
+    script.write_text(";".join(chains), encoding="utf-8")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(path), "-filter_complex_script", str(script),
                     "-map", "[v]", "-frames:v", "1", "-q:v", "2", str(out)], check=True)
 
 

@@ -3,20 +3,96 @@
  "max_photos": 4,
  "loose": false,
  "only_chosen": true,
- "texts": {"title1": "秋華賞2026をデータで1万回シミュレーション", "title2": "データが選んだ本命は？",
-           "sub1": "京都芝2000m・枠順と脚質も計算", "sub2": "出走馬と対戦相手の全成績から計算"},
+ "texts": {
+  "title1": "秋華賞2026をデータで1万回シミュレーション",
+  "title2": "データが選んだ本命は？",
+  "sub1": "京都芝2000m・枠順と脚質も計算",
+  "sub2": "出走馬と対戦相手の全成績から"
+ },
  "horses": [
-  {"name": "モンローウォーク", "num": 8, "waku": 4, "en": ["Monroe Walk", "Monroewalk"]},
-  {"name": "ドリームコア", "num": 13, "waku": 7, "en": ["Dream Core"]},
-  {"name": "カナルサンマルタン", "num": 12, "waku": 6, "en": ["Canal Saint Martin Horse", "Canal Saint Martin 20"]},
-  {"name": "ギャラボーグ", "num": 1, "waku": 1, "en": ["Gallaborg", "Galaborg", "Gallabog"]},
-  {"name": "サムシングスイート", "num": 14, "waku": 7, "en": ["Something Sweet"]},
-  {"name": "マスターソアラ", "num": 3, "waku": 2, "en": ["Master Soarer", "Master Soara"]},
-  {"name": "エンネ", "num": 4, "waku": 2, "en": []},
-  {"name": "ラベルセーヌ", "num": 6, "waku": 3, "en": ["Label Seine", "La Belle Seine"]},
-  {"name": "ガーネットフレア", "num": 11, "waku": 6, "en": ["Garnet Flare"]}
+  {
+   "name": "モンローウォーク",
+   "num": 8,
+   "waku": 4,
+   "en": [
+    "Monroe Walk",
+    "Monroewalk"
+   ]
+  },
+  {
+   "name": "ドリームコア",
+   "num": 13,
+   "waku": 7,
+   "en": [
+    "Dream Core"
+   ]
+  },
+  {
+   "name": "カナルサンマルタン",
+   "num": 12,
+   "waku": 6,
+   "en": [
+    "Canal Saint Martin Horse",
+    "Canal Saint Martin 20"
+   ]
+  },
+  {
+   "name": "ギャラボーグ",
+   "num": 1,
+   "waku": 1,
+   "en": [
+    "Gallaborg",
+    "Galaborg",
+    "Gallabog"
+   ]
+  },
+  {
+   "name": "サムシングスイート",
+   "num": 14,
+   "waku": 7,
+   "en": [
+    "Something Sweet"
+   ]
+  },
+  {
+   "name": "マスターソアラ",
+   "num": 3,
+   "waku": 2,
+   "en": [
+    "Master Soarer",
+    "Master Soara"
+   ]
+  },
+  {
+   "name": "エンネ",
+   "num": 4,
+   "waku": 2,
+   "en": []
+  },
+  {
+   "name": "ラベルセーヌ",
+   "num": 6,
+   "waku": 3,
+   "en": [
+    "Label Seine",
+    "La Belle Seine"
+   ]
+  },
+  {
+   "name": "ガーネットフレア",
+   "num": 11,
+   "waku": 6,
+   "en": [
+    "Garnet Flare"
+   ]
+  }
  ],
  "choice": {
-  "ドリームコア": {"file": "File:Dream Core 87th Oaks.jpg", "x": 0.35, "y": 0.5}
+  "ドリームコア": {
+   "file": "File:Dream Core 87th Oaks.jpg",
+   "x": 0.0,
+   "y": 0.4,
+   "zoom": 1.0
+  }
  }
 }
