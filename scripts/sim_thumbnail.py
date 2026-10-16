@@ -222,7 +222,7 @@ def main_set(path: Path) -> None:
     font = find_font()
     report, chosen, colors, credits = {}, [], [], []
     for n, h in enumerate(cfg["horses"]):
-        if len(chosen) >= cfg.get("max_photos", 4):
+        if len(chosen) >= cfg.get("max_photos", 4) and not cfg.get("only_chosen"):
             break
         name = h["name"]
         print(f"=== {name}", flush=True)
@@ -243,7 +243,10 @@ def main_set(path: Path) -> None:
             print(f"  自由ライセンスの写真なし → この馬は使わない")
             continue
         contact_sheet(name, files, SIM_DIR / f"{prefix}_candidates_{n}.jpg", font)
-        if ch.get("skip"):
+        # only_chosen: 候補一覧を見て写真を決めた馬（choice に file がある馬）だけを使う
+        if ch.get("skip") or (cfg.get("only_chosen") and not ch.get("file")):
+            continue
+        if len(chosen) >= cfg.get("max_photos", 4):
             continue
         chosen.append((f"{h['num']} {name}" if h.get("num") else name, files[0],
                        ch.get("x", 0.5), ch.get("y", 0.5), ch.get("zoom", 1.0)))
