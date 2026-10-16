@@ -1,10 +1,10 @@
-date: 2026-10-16T04:11:42.292939Z
+date: 2026-10-16T07:06:18.221577Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-8xMq7vjRr0 title=【秋華賞・金曜気配】打倒モンローウォークへラベルセーヌは15日に現地入り　3枠6
-OK project=1 video_id=B2kgxb1cJBU title=【秋華賞・金曜気配】ローズS2着のエンネは2枠4番に決定　吉岡調教師「内はいいで
-OK project=1 video_id=YuPFOGthb7g title=【秋華賞・金曜気配】サムシングスイートは外目の7枠14番にも　伊藤大調教師は「大
+OK project=1 video_id=l4UmZgRoMrk title=67歳7か月2日　川原正一騎手が園田1Rで国内最高齢の勝利記録　誕生日2日違いの
+OK project=1 video_id=3AbIMtEafsE title=【秋華賞・金曜気配】武豊騎手のマスターソアラは2枠3番　スタンド前発走がカギで蛯
+OK project=1 video_id=NmrWXbCqyKo title=【注目馬動向】5・9億円馬エムズビギンは岩田望来騎手との新コンビで菊花賞へ　友道
