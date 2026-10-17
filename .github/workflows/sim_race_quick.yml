@@ -14,7 +14,7 @@ on:
       - .github/workflows/sim_race_quick.yml
 
 concurrency:
-  group: sim-race-quick
+  group: sim-race-quick-fast
   cancel-in-progress: false
 
 jobs:
