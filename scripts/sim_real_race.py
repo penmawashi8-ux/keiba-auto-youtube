@@ -280,7 +280,12 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
 
 # ---------------------------------------------------------------------------
 def main() -> None:
+    # --no-video: 勝率などのデータだけ作る。--prefix 名前: 出力ファイル名の頭（別のレースの結果を上書きしない）
+    no_video = "--no-video" in sys.argv
+    prefix = sys.argv[sys.argv.index("--prefix") + 1] if "--prefix" in sys.argv else "real"
     ent = json.loads((SIM_DIR / "entries.json").read_text(encoding="utf-8"))
+    if ent.get("surface") != "芝":
+        sys.exit(f"{ent['race_name']} は{ent.get('surface')}のレース。このモデルはJRAの芝（1400〜3600m）専用なので計算しない")
     careers = json.loads((SIM_DIR / "horses_cache.json").read_text(encoding="utf-8"))
     # 上がり最速を数えるレース: 出走馬が走ったレースの結果ページ（全クラス。sim_fetch_related.py が取得）
     rc = json.loads((SIM_DIR / "races_cache.json").read_text(encoding="utf-8"))
@@ -288,7 +293,8 @@ def main() -> None:
     races = sm.load_races()
     kit = sl.build(races)
     date, dist, venue = ent["date"], ent["distance"], ent["venue"]
-    sr.set_course(venue)
+    if not no_video:
+        sr.set_course(venue)
     n = len(ent["horses"])
     drawn = ent["drawn"]
 
@@ -330,22 +336,25 @@ def main() -> None:
 
     key = f"c:{venue}{dist}"
     base = kit["model"].coef.get(key)
-    if base is None:
+    if base is None and not no_video:
         sys.exit(f"基準タイムのモデルに {key} がありません")
     k = kit["train"]["sec_per_score"]
-    shown = pick_display_race(horses, counts, base, k, kit["g1_winner_score"])
-    # 1万回のうち最も荒れた回（評価の低い馬ほど上位に来た回）のタイム
-    upsets["race"] = sorted(((m, base - k * (upsets["perf"][m] - kit["g1_winner_score"])) for m in horses),
-                            key=lambda t: t[1])
+    shown, upsets["race"] = [], []
+    if base is not None:
+        shown = pick_display_race(horses, counts, base, k, kit["g1_winner_score"])
+        # 1万回のうち最も荒れた回（評価の低い馬ほど上位に来た回）のタイム
+        upsets["race"] = sorted(((m, base - k * (upsets["perf"][m] - kit["g1_winner_score"])) for m in horses),
+                                key=lambda t: t[1])
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
     md = [f"# {ent['race_name']} シミュレーション（{date} {venue} 芝{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
-          "| 馬番 | 馬 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 |",
-          "|---:|---|---:|---:|---:|---:|---:|---:|---:|"]
+          "| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | JRA芝 |",
+          "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     for m in order:
         rc, h = counts[m], horses[m]
-        md.append(f"| {h['num']} | {m} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | {sum(rc[:3]) / N_RUNS:.1%} | "
-                  f"{h['score']:+.2f} | {h['gate_adj']:+.2f} | {counts_plain[m][0] / N_RUNS:.1%} | {h['style']:.2f} |")
+        md.append(f"| {h['num']} | {m} | {h['jockey']} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | "
+                  f"{sum(rc[:3]) / N_RUNS:.1%} | {h['score']:+.2f} | {h['gate_adj']:+.2f} | {counts_plain[m][0] / N_RUNS:.1%} | "
+                  f"{h['style']:.2f} | {len(h['history'])} | {h['stats']['starts']}戦{h['stats']['wins']}勝 |")
     if gate:
         md += ["", f"枠・脚質の効果（{gate['n_races']}レース・{gate['from_year']}年〜、人気をそろえた2頭比較）:"]
         for mode, mm in gate["models"].items():
@@ -354,9 +363,11 @@ def main() -> None:
                                                          for k2, v in mm["coef"].items()))
         md += ["", "| 枠 | 脚質 | 走数 | 勝率 | 3着内率 |", "|---|---|---:|---:|---:|"]
         md += [f"| {c['gate']} | {c['style']} | {c['runs']} | {c['win']:.1%} | {c['top3']:.1%} |" for c in gate["cross"]]
-    md += ["", "映像のレース: " + " / ".join(f"{horses[m]['num']} {m} {sd.fmt_time(t)}" for m, t in shown)]
-    (SIM_DIR / "real_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
-    (SIM_DIR / "real_result.json").write_text(json.dumps({
+    if shown:
+        md += ["", "代表レース: " + " / ".join(f"{horses[m]['num']} {m} {sd.fmt_time(t)}" for m, t in shown)]
+    md += ["", f"勝率10位以下の馬が勝った回数: {upsets.get('low_winner', 0):,}回 / {N_RUNS:,}回"]
+    (SIM_DIR / f"{prefix}_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    (SIM_DIR / f"{prefix}_result.json").write_text(json.dumps({
         "race": {k2: v for k2, v in ent.items() if k2 != "horses"},
         "win_rate": {m: counts[m][0] / N_RUNS for m in order},
         "top3": {m: sum(counts[m][:3]) / N_RUNS for m in order},
@@ -364,6 +375,8 @@ def main() -> None:
         "gate": gate,
         "shown": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n".join(md))
+    if no_video:
+        return
 
     finish = dict(shown)
     short = [short_name(m) if m in order[:6] else "" for m in names]   # 勝率上位6頭だけ馬名を出す

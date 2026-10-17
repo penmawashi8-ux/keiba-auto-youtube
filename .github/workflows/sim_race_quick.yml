@@ -1,0 +1,94 @@
+name: Race Simulation Data Only
+
+# 実際のレースの勝率などのデータだけを作る（動画は作らない）。
+# 対象は data/race_request.json（date: YYYYMMDD, race: netkeiba のレース名, prefix: 出力ファイル名の頭）。
+# 出馬表 → 出走馬と対戦相手の成績 → そのコースの枠×脚質の効果 → 1万回シミュレーション。
+# 結果は research-output ブランチの sim/<prefix>_report.md などに保存する（ほかのレースの結果は上書きしない）。
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/race_request.json
+      - .github/workflows/sim_race_quick.yml
+
+concurrency:
+  group: sim-race-quick
+  cancel-in-progress: false
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests==2.32.3 beautifulsoup4
+
+      - name: Read request
+        run: |
+          python - <<'PY' >> "$GITHUB_ENV"
+          import json
+          r = json.load(open("data/race_request.json"))
+          print(f"RACE_DATE={r['date']}")
+          print(f"RACE_NAME={r['race']}")
+          print(f"PREFIX={r['prefix']}")
+          PY
+
+      - name: Restore data from research-output
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output
+          for f in races_cache.json races.json horses_cache.json gate_cache.json; do
+            git show FETCH_HEAD:sim/$f > sim/$f 2>/dev/null && echo "復元 $f: $(wc -c < sim/$f) bytes" || rm -f sim/$f
+          done
+
+      - name: Fetch entries and entrants' careers
+        run: |
+          python scripts/sim_entries.py "$RACE_DATE" "$RACE_NAME"
+          ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
+          python scripts/sim_fetch_horses.py 10 --refresh $ids
+
+      - name: Fetch opponents and their careers (time-boxed)
+        run: |
+          python scripts/sim_fetch_related.py
+          python scripts/sim_fetch_horses.py 25 $(cat sim/related_ids.txt) --refresh $(cat sim/related_refresh.txt)
+
+      - name: Gate x style effect for this course (time-boxed)
+        run: |
+          python scripts/sim_gate_effect.py 15 || echo "枠の効果は測れなかった（補正なしで計算）"
+          if [ -f sim/gate_cache.json ]; then
+            python - <<'PY' > sim/gate_runner_ids.txt
+          import json
+          cache = json.load(open("sim/gate_cache.json"))
+          have = set(json.load(open("sim/horses_cache.json")))
+          ids = {x["horse_id"] for r in cache.values() for x in r["runners"] if x.get("horse_id")} - have
+          print("\n".join(sorted(ids, reverse=True)))
+          PY
+            python scripts/sim_fetch_horses.py 12 $(cat sim/gate_runner_ids.txt)
+            python scripts/sim_gate_effect.py 1 || true
+          fi
+
+      - name: Save fetched data
+        run: |
+          cp sim/entries.json "sim/${PREFIX}_entries.json"
+          [ -f sim/gate_effect.json ] && cp sim/gate_effect.json "sim/${PREFIX}_gate_effect.json" || true
+          bash .github/scripts/save_sim_outputs.sh "レース用データ ${RACE_NAME}" sim/races_cache.json sim/horses_cache.json sim/gate_cache.json "sim/${PREFIX}_entries.json" "sim/${PREFIX}_gate_effect.json"
+
+      - name: Simulate (no video)
+        run: python scripts/sim_real_race.py --no-video --prefix "$PREFIX"
+
+      - name: Save results
+        if: success()
+        run: bash .github/scripts/save_sim_outputs.sh "レースデータ ${RACE_NAME}" "sim/${PREFIX}_report.md" "sim/${PREFIX}_result.json"
