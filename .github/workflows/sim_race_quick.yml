@@ -58,16 +58,16 @@ jobs:
         run: |
           python scripts/sim_entries.py "$RACE_DATE" "$RACE_NAME"
           ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
-          python scripts/sim_fetch_horses.py 10 --refresh $ids
+          python scripts/sim_fetch_horses.py 3 --refresh $ids
 
       # 対戦相手の成績取得（races_cache / horses_cache を書く）と、同じコースの過去レース取得
       # （gate_cache を書く）は書き込むファイルが別なので同時に走らせて時短する
       - name: Opponents' careers and course history in parallel (time-boxed)
         run: |
-          python scripts/sim_gate_effect.py 15 > gate_log.txt 2>&1 &
+          python scripts/sim_gate_effect.py 6 > gate_log.txt 2>&1 &
           gate_pid=$!
           python scripts/sim_fetch_related.py
-          python scripts/sim_fetch_horses.py 20 $(cat sim/related_ids.txt) --refresh $(cat sim/related_refresh.txt)
+          python scripts/sim_fetch_horses.py 7 $(cat sim/related_ids.txt) --refresh $(cat sim/related_refresh.txt)
           wait $gate_pid || echo "枠の効果は測れなかった（補正なしで計算）"
           cat gate_log.txt
 
@@ -81,7 +81,7 @@ jobs:
           ids = {x["horse_id"] for r in cache.values() for x in r["runners"] if x.get("horse_id")} - have
           print("\n".join(sorted(ids, reverse=True)))
           PY
-            python scripts/sim_fetch_horses.py 8 $(cat sim/gate_runner_ids.txt)
+            python scripts/sim_fetch_horses.py 3 $(cat sim/gate_runner_ids.txt)
             python scripts/sim_gate_effect.py 1 || true
           fi
 
