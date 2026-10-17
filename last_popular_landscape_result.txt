@@ -1,6 +1,6 @@
-date: 2026-10-16T11:06:43.987439Z
+date: 2026-10-17T11:05:08.639930Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Br8c5Toh900 views=60321 title=ジャパンCの予備登録馬を発表　連覇を狙うカランダガンなど22頭【6.0万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=k_mnga9Y3hw views=119558 title=【天皇賞(秋)想定馬・騎手】クロワデュノール、リアライズシリウスなど17頭【12万回閲覧・話題の競馬ニュース】
