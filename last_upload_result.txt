@@ -1,10 +1,8 @@
-date: 2026-10-17T07:08:41.037749Z
+date: 2026-10-17T10:05:27.258494Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=eIlTX7iA8bE title=【JRA・WIN5】本日のWIN5は的中42票、配当711万8940円
-OK project=1 video_id=tYZx-ICyqjc title=【京都10R・清滝特別】力の差を見せつけたチェルヴァーラが3連勝!　西村淳也騎手
-OK project=1 video_id=ybkVcMJLgrQ title=【富士S速報】シュガークンが優勝!
+OK project=1 video_id=8OfDTMJqMsg title=【秋華賞】輸送慣れしているサムシングスイートは堂々と到着　陣営「特に問題もなく落
