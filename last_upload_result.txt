@@ -1,10 +1,10 @@
-date: 2026-10-17T01:11:05.673420Z
+date: 2026-10-17T04:07:06.813347Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=WjvhKpfvVqg title=半姉は二冠牝馬チェルヴィニア チェルヴァーラが3連勝なるか
-OK project=1 video_id=IcGyByn8qzU title=富士Sは前走GI組が複勝率39％ 外枠にも好走傾向
-OK project=1 video_id=i7aqMjS2pOc title=【17日の注目・京都10R】名より実を取った!?　本格化したオークス馬の弟が狙う
+OK project=1 video_id=1B9VcNmg0Yc title=【京都5R・2歳新馬】現2歳世代初の400キロ以下のデビューV!　マルキアが大外
+OK project=1 video_id=yzuQlHRy3MQ title=【東京5R新馬戦結果】レイデオロ産駒ソーロブストが断然人気に応えてV
+OK project=1 video_id=HEMrHdj1s1s title=【京都5R新馬戦結果】キズナ産駒マルキアが突き抜け完勝
