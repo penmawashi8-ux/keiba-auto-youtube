@@ -284,14 +284,21 @@ def main() -> None:
     no_video = "--no-video" in sys.argv
     prefix = sys.argv[sys.argv.index("--prefix") + 1] if "--prefix" in sys.argv else "real"
     ent = json.loads((SIM_DIR / "entries.json").read_text(encoding="utf-8"))
-    if ent.get("surface") != "芝":
-        sys.exit(f"{ent['race_name']} は{ent.get('surface')}のレース。このモデルはJRAの芝（1400〜3600m）専用なので計算しない")
+    surf = ent.get("surface")
+    if surf not in ("芝", "ダ"):
+        sys.exit(f"{ent['race_name']} の馬場（{surf}）がわからない")
+    if surf != "芝" and not no_video:
+        sys.exit("ダートは動画（基準タイム・コース図）に未対応。--no-video で勝率だけ出す")
     careers = json.loads((SIM_DIR / "horses_cache.json").read_text(encoding="utf-8"))
     # 上がり最速を数えるレース: 出走馬が走ったレースの結果ページ（全クラス。sim_fetch_related.py が取得）
     rc = json.loads((SIM_DIR / "races_cache.json").read_text(encoding="utf-8"))
     graded = [v for v in rc.values() if v.get("runners")]
     races = sm.load_races()
     kit = sl.build(races)
+    if surf == "ダ":
+        # 2頭比較の式（どの手がかりをどれだけ重く見るか）は芝のG1/G2で学習したものを流用し、
+        # 手がかり（各走の相対スコアなど）だけをダートのレースから作り直す。ダートでの精度は未検証
+        kit = {**kit, **sl.build_features(sm.load_races(surface="ダ"))}
     date, dist, venue = ent["date"], ent["distance"], ent["venue"]
     if not no_video:
         sr.set_course(venue)
@@ -308,18 +315,19 @@ def main() -> None:
         horses[h["horse"]] = {"id": hid, "name": h["horse"], "num": num, "waku": h["waku"] if drawn else sr.waku_of(num, n),
                               "feats": f, "score": kit["pm"].score(f) if f else None, "history": hist,
                               "style": statistics.mean(styles) if styles else 0.5, "jockey": h["jockey"],
-                              "weight": h["weight"], "stats": sd.career_stats(hid, careers, graded, venue, dist, date, "出走したレース")}
+                              "weight": h["weight"], "stats": sd.career_stats(hid, careers, graded, venue, dist, date, "出走したレース", surf)}
     scored = sorted(h["score"] for h in horses.values() if h["score"] is not None)
     fill = scored[max(0, len(scored) // 10 - 1)]
     for h in horses.values():
         if h["score"] is None:
-            print(f"[注意] {h['name']}: 2年以内のJRA芝の成績が無いので下位1割のスコアで計算")
+            print(f"[注意] {h['name']}: 2年以内のJRA{surf}の成績が無いので下位1割のスコアで計算")
             h["score"] = fill
     # 枠順の有利不利（sim_gate_effect.py が同じコースの過去レースから測ったもの）。枠順確定後だけ使う
     gate = None
     if drawn and (SIM_DIR / "gate_effect.json").exists():
         gate = json.loads((SIM_DIR / "gate_effect.json").read_text(encoding="utf-8"))
-        if gate.get("venue") != venue or gate.get("distance") != dist or "gate_x_style" not in gate:
+        if (gate.get("venue") != venue or gate.get("distance") != dist or gate.get("surface", "芝") != surf
+                or "gate_x_style" not in gate):
             gate = None
     counts_plain = monte_carlo(horses)
     # 枠と脚質の組み合わせ: ゲート×g + 脚質×s + ゲート×脚質×g×s（g: 0最内〜1大外、s: 0前〜1後方）
@@ -335,7 +343,7 @@ def main() -> None:
     counts = monte_carlo(horses, upsets=upsets)
 
     key = f"c:{venue}{dist}"
-    base = kit["model"].coef.get(key)
+    base = kit["model"].coef.get(key) if surf == "芝" else None
     if base is None and not no_video:
         sys.exit(f"基準タイムのモデルに {key} がありません")
     k = kit["train"]["sec_per_score"]
@@ -347,8 +355,8 @@ def main() -> None:
                                 key=lambda t: t[1])
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
-    md = [f"# {ent['race_name']} シミュレーション（{date} {venue} 芝{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
-          "| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | JRA芝 |",
+    md = [f"# {ent['race_name']} シミュレーション（{date} {venue} {surf}{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
+          f"| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | JRA{surf} |",
           "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     for m in order:
         rc, h = counts[m], horses[m]

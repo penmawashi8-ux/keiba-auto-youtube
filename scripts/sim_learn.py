@@ -214,6 +214,17 @@ class PairModel:
                 "win_model": win_hit / n_full if n_full else 0.0, "win_market": fav_hit / n_full if n_full else 0.0}
 
 
+def build_features(races: list[dict]) -> dict:
+    """物差し（相対スコア・タイム）と手がかりだけを作る。学習済みの PairModel を別の馬場（ダート）に流用するとき用"""
+    model = sm.ParModel(races, "race")
+    beta = sm.fit_style_effect(races, sm.speed_figures(races, model))
+    rel = sm.relative_figures(races, model, beta, 0.0)
+    tim = sm.speed_figures(races, model, beta)
+    age_eff = fit_age_curve(rel)
+    return {"model": model, "beta": beta, "rel": rel, "tim": tim, "age_eff": age_eff,
+            "feats": Features(rel, tim, age_eff)}
+
+
 def build(races: list[dict], log=print) -> dict:
     """物差しを作り、学習・検証して、夢の対決に使う部品一式を返す"""
     model = sm.ParModel(races, "race")

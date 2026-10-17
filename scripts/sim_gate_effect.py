@@ -78,14 +78,14 @@ def first_pos(x: dict, field: int) -> float | None:
     return (int(m.group(1)) - 1) / (field - 1) if m and field > 1 else None
 
 
-def typical_styles(careers: dict) -> dict:
+def typical_styles(careers: dict, surface: str = "芝") -> dict:
     """各馬の、レースごとの序盤の位置（0=先頭〜1=最後方）の一覧 {horse_id: {race_id: 位置}}"""
     out = {}
     for hid, rows in careers.items():
         d = {}
         for r in rows:
             m = re.match(r"(\d+)", r.get("passing") or "")
-            if m and (r.get("field") or 0) > 1 and r.get("surface") == "芝":
+            if m and (r.get("field") or 0) > 1 and r.get("surface") == surface:
                 d[r["race_id"]] = (int(m.group(1)) - 1) / (r["field"] - 1)
         if d:
             out[hid] = d
@@ -148,13 +148,13 @@ def main() -> None:
     budget = float(sys.argv[1]) if len(sys.argv) > 1 else 40.0
     ent = json.loads((SIM_DIR / "entries.json").read_text(encoding="utf-8"))
     careers = json.loads((SIM_DIR / "horses_cache.json").read_text(encoding="utf-8"))
-    venue, dist = ent["venue"], ent["distance"]
+    venue, dist, surf = ent["venue"], ent["distance"], ent["surface"]
     ids = sorted({r["race_id"] for v in careers.values() for r in v
-                  if r.get("venue") == venue and r.get("surface") == "芝" and r.get("distance") == dist
+                  if r.get("venue") == venue and r.get("surface") == surf and r.get("distance") == dist
                   and int(r["race_id"][:4]) >= FROM_YEAR and r.get("date", "") < ent["date"]})
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
     todo = [i for i in ids if i not in cache]
-    print(f"{venue}芝{dist}m（{FROM_YEAR}年〜）{len(ids)}レース / 取得 {len(todo)}（制限 {budget:.0f}分）")
+    print(f"{venue}{surf}{dist}m（{FROM_YEAR}年〜）{len(ids)}レース / 取得 {len(todo)}（制限 {budget:.0f}分）")
     session = requests.Session()
     t0 = time.time()
     for k, rid in enumerate(todo, 1):
@@ -174,7 +174,7 @@ def main() -> None:
     CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
 
     races = [dict(cache[i], race_id=i) for i in ids if i in cache]
-    typ = typical_styles(careers)
+    typ = typical_styles(careers, surf)
     n_run = sum(1 for r in races for x in r["runners"] if x.get("pos"))
     n_typ = sum(1 for r in races for x in r["runners"]
                 if x.get("pos") and style_of(x, r["race_id"], len(r["runners"]), typ, "typical") is not None)
@@ -202,7 +202,7 @@ def main() -> None:
                 b[1] += x["pos"] == 1
                 b[2] += x["pos"] <= 3
     c = result["typical"]["coef"]
-    out = {"venue": venue, "distance": dist, "from_year": FROM_YEAR, "n_races": len(races),
+    out = {"venue": venue, "surface": surf, "distance": dist, "from_year": FROM_YEAR, "n_races": len(races),
            "n_runs": n_run, "n_typical": n_typ, "models": result,
            # sim_real_race.py が使う係数（普段の脚質で測ったもの）。スコアに足す量 =
            #   ゲート×g + 脚質×s + ゲート×脚質×g×s（g: 0内〜1外、s: 0前〜1後。出走馬の平均を引いて使う）

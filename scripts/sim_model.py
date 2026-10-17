@@ -139,12 +139,13 @@ def fix_schedule_links(graded: list[dict], careers: dict) -> list[dict]:
 
 
 def load_races(path: Path = SIM_DIR / "races.json",
-               careers_path: Path = SIM_DIR / "horses_cache.json") -> list[dict]:
+               careers_path: Path = SIM_DIR / "horses_cache.json", surface: str = "芝") -> list[dict]:
     """重賞（全出走馬）に、出走馬の全キャリア（条件戦・OP・G3など）を合わせたレース一覧を作る。
 
     重賞以外のレースは「データに含まれる馬の分だけ」の出走馬しか持たないが、勝ちタイムは
     各馬のタイムと着差から求められるので基準タイムの回帰に使える。
     graded=True のレース（G1/G2、全出走馬と単勝人気がそろう）だけをバックテストの採点に使う。
+    surface="ダ" のときは、出走馬のキャリアのダートのレースだけで作る（重賞の全出走馬データは芝だけなので使わない）。
     """
     graded = json.loads(path.read_text(encoding="utf-8"))
     careers = json.loads(careers_path.read_text(encoding="utf-8")) if careers_path.exists() else {}
@@ -155,7 +156,7 @@ def load_races(path: Path = SIM_DIR / "races.json",
         for x in r["runners"]:
             if x.get("sex"):
                 sex_of[x["horse_id"]] = x["sex"]
-        if r["age2"] or not r.get("date"):
+        if r["age2"] or not r.get("date") or surface != "芝":
             continue
         win = next((x for x in r["runners"] if x["pos"] == 1 and x.get("time")), None)
         if not win:
@@ -168,7 +169,7 @@ def load_races(path: Path = SIM_DIR / "races.json",
     by_race = {}
     for hid, rows in careers.items():
         for row in rows:
-            if (row["race_id"] in graded_ids or row["surface"] != "芝"
+            if (row["race_id"] in graded_ids or row["surface"] != surface
                     or not (CAREER_DIST_MIN <= row["distance"] <= CAREER_DIST_MAX) or not row.get("date")):
                 continue
             by_race.setdefault(row["race_id"], []).append((hid, row))

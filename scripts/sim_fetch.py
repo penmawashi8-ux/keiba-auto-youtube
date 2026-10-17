@@ -114,10 +114,10 @@ def fetch_race(session, race_id: str) -> dict | None:
         return None
     col = {h: i for i, h in enumerate(heads)}
     text = soup.get_text(" ", strip=True)
-    dist = re.search(r"芝[^\d]{0,6}(\d{4})m", text)
+    dist = re.search(r"(?:芝|ダ)[^\d]{0,6}(\d{4})m", text)
     # 重賞日程のリンクが別レース（ダートなど）を指していることがあるので、コースの種類も記録する
     surface = re.search(r"(芝|ダ)[右左直外内\s]{0,4}\d{3,4}m", text)
-    going = re.search(r"芝\s*:\s*(良|稍|重|不)", text)
+    going = re.search(r"(?:芝|ダート)\s*:\s*(良|稍|重|不)", text)
     date = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", text)
     # 「ペース 12.7 - 24.0 - 35.5 ...」= スタートからの累計タイム（距離が200で割り切れないと最初が100m）
     pace = re.search(r"ペース\s*((?:[\d.]+\s*-\s*)+[\d.]+)", text)

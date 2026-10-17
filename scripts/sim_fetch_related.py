@@ -32,9 +32,9 @@ def main() -> None:
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
     since = f"{int(ent['date'][:4]) - YEARS_BACK}{ent['date'][4:]}"
     race_ids = sorted({r["race_id"] for h in ent["horses"] for r in careers.get(h["horse_id"], [])
-                       if r.get("surface") == "芝" and r.get("date", "") >= since})
+                       if r.get("surface") == ent["surface"] and r.get("date", "") >= since})
     todo = [rid for rid in race_ids if rid not in cache]
-    print(f"出走馬が過去{YEARS_BACK}年に走った芝のレース {len(race_ids)} / 取得 {len(todo)}")
+    print(f"出走馬が過去{YEARS_BACK}年に走った{ent['surface']}のレース {len(race_ids)} / 取得 {len(todo)}")
     session = requests.Session()
     for i, rid in enumerate(todo, 1):
         res = fetch_race(session, rid)

@@ -115,11 +115,11 @@ JRA_VENUES = {"札幌", "函館", "福島", "新潟", "東京", "中山", "中�
 
 
 def career_stats(horse_id: str, careers: dict, graded: list[dict], venue: str = "東京", dist: int = 2400,
-                 before: str = "9999", fast_scope: str = "G1・G2") -> dict:
+                 before: str = "9999", fast_scope: str = "G1・G2", surface: str = "芝") -> dict:
     """graded: 上がり最速を数えるレース（全出走馬の上がりがそろうもの）。fast_scope はその呼び名"""
     """分析ページ用の、だれが見てもわかる成績（JRAの芝・平地の全成績）"""
     rows = [r for r in careers.get(horse_id, [])
-            if r.get("venue") in JRA_VENUES and r.get("surface") == "芝" and r.get("pos")]
+            if r.get("venue") in JRA_VENUES and r.get("surface") == surface and r.get("pos")]
     wins = [r for r in rows if r["pos"] == 1]
     g1 = [r for r in rows if "(GI)" in r["race_name"] or "(G1)" in r["race_name"]]
     rows = [r for r in rows if r.get("date", "") < before]
