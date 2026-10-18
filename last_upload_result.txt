@@ -1,10 +1,10 @@
-date: 2026-10-18T04:08:54.297701Z
+date: 2026-10-18T07:08:25.410022Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HUCXdGSE2po title=【京都6R新馬戦結果】シルバーステート産駒シェフザーデが人気に応えて3馬身差快勝
-OK project=1 video_id=Mn7H43gzhYg title=ジャパンC参戦に変更なし　英チャンピオンSで2着に敗れたカランダガン陣営「日本遠
-OK project=1 video_id=vUM40OXv8I0 title=【東京5R・新馬戦】1番人気ユメノカケラが押し切りV!　津村「期待通りの走りだっ
+OK project=1 video_id=YNHE8C-YPLU title=【松浜特別レース後コメント】アナザーフェイス三浦皇成騎手ら
+OK project=1 video_id=Ig8rAIYWGmQ title=【JRA・WIN5】本日のWIN5は的中8794票、配当5万9940円
+OK project=1 video_id=UYFlfytkpj0 title=【秋華賞】和田アキ子がワイドでダブル的中!　「同じ牝馬の女王として」モンローウォ
