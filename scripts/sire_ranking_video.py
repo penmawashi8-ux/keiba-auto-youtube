@@ -93,19 +93,19 @@ def render(inputs: list[str], chains: list[str], last: str, dur: float, out: Pat
          "-pix_fmt", "yuv420p", str(out)])
 
 
-def photo_chains(i: int, x: float, y: float, dur: float, pw: int, ph: int, tag: str) -> list[str]:
-    """写真 [i] から、ぼかした背景 [bg{tag}] と、ゆっくり寄っていく写真 [ph{tag}]（pw×ph）を作る"""
-    zw, zh = int(pw * 1.12) // 2 * 2, int(ph * 1.12) // 2 * 2
+def photo_chains(i_bg: int, i_still: int, x: float, y: float, dur: float, pw: int, ph: int, tag: str) -> list[str]:
+    """ぼかした背景 [bg{tag}]（入力 i_bg）と、ゆっくり寄っていく写真 [ph{tag}]（入力 i_still、pw×ph）。
+    寄りは zoompan で作る。小さい画像のまま切り抜くと位置が1画素単位で飛んでプルプル揺れるので、
+    いったん4倍に拡大してから切り抜き、縮小する（1/4画素単位で動くので滑らかになる）"""
+    n = int(round(dur * FPS))
+    zw, zh = pw * 4, ph * 4
     return [
-        f"[{i}:v]split[a{tag}][b{tag}]",
-        f"[a{tag}]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=24:2,"
+        f"[{i_bg}:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=24:2,"
         f"eq=brightness=-0.28:saturation=0.75[bg{tag}]",
-        # 注目点 (x, y) が中心に来るように切り抜き、時間とともに少しずつ寄る（ケン・バーンズ風）
-        f"[b{tag}]scale={zw}:{zh}:force_original_aspect_ratio=increase,"
+        f"[{i_still}:v]scale={zw}:{zh}:force_original_aspect_ratio=increase:flags=lanczos,"
         f"crop={zw}:{zh}:x='(iw-{zw})*{x}':y='(ih-{zh})*{y}',"
-        f"crop=w='{zw}-({zw}-{pw})*min(t/{dur:.2f},1)':h='{zh}-({zh}-{ph})*min(t/{dur:.2f},1)':"
-        f"x='({zw}-{pw})*min(t/{dur:.2f},1)*{x}':y='({zh}-{ph})*min(t/{dur:.2f},1)*{y}',"
-        f"scale={pw}:{ph},setsar=1,pad={pw + 12}:{ph + 12}:6:6:color=white,format=rgba,"
+        f"zoompan=z='1+0.08*on/{n}':x='(iw-iw/zoom)*{x}':y='(ih-ih/zoom)*{y}':d={n}:s={pw}x{ph}:fps={FPS},"
+        f"setsar=1,pad={pw + 12}:{ph + 12}:6:6:color=white,format=rgba,"
         f"fade=t=in:st=0:d=0.5:alpha=1[ph{tag}]",
     ]
 
@@ -125,14 +125,14 @@ def horse_segment(cfg: dict, h: dict, photo: Path | None, credit: dict | None, d
     pw, ph, px, py = 1120, 740, 740, 150
     inputs, chains = [], []
     if photo:
-        inputs += ["-loop", "1", "-framerate", str(FPS), "-i", str(photo)]
-        chains += photo_chains(0, h["photo"].get("x", 0.5), h["photo"].get("y", 0.5), dur, pw, ph, "0")
-        chains.append(f"[bg0][ph0]overlay={px - 6}:{py - 6}:shortest=1[v0]")
+        inputs += ["-loop", "1", "-framerate", str(FPS), "-i", str(photo), "-i", str(photo)]
+        chains += photo_chains(0, 1, h["photo"].get("x", 0.5), h["photo"].get("y", 0.5), dur, pw, ph, "0")
+        chains.append(f"[bg0][ph0]overlay={px - 6}:{py - 6}:eof_action=repeat[v0]")
     else:
         inputs += ["-f", "lavfi", "-i", f"gradients=s={W}x{H}:c0=0x1d2433:c1=0x3b2f1a:x0=0:y0=0:x1={W}:y1={H}:d={dur:.2f}:r={FPS}"]
         chains.append("[0:v]format=yuv420p[v0]")
     inputs += ["-f", "lavfi", "-i", f"color=c=black@0.55:s=690x{H}:d={dur:.2f}:r={FPS}"]
-    chains.append(f"[1:v]format=rgba[pan];[v0][pan]overlay=0:0[v1]")
+    chains.append(f"[{2 if photo else 1}:v]format=rgba[pan];[v0][pan]overlay=0:0[v1]")
     rk = h["rank"]
     col = rank_color(rk)
     name = h["name"]
@@ -250,11 +250,13 @@ def chart_segment(cfg: dict, dur: float, out: Path, T: Text, work: Path) -> None
     render(inputs, chains, "out", dur, out, work)
 
 
-def make_speaker(work: Path):
+def make_speaker(work: Path, readings: dict):
     import edge_tts
     work.mkdir(parents=True, exist_ok=True)
 
     def speak(text: str, key: str) -> tuple[Path, float]:
+        for k, v in readings.items():        # 読み間違える言葉（産駒 → さんく など）はかなで渡す
+            text = text.replace(k, v)
         out = work / f"voice_{key}.mp3"
         for attempt in range(4):
             try:
@@ -293,7 +295,7 @@ def main() -> None:
     SIM_DIR.mkdir(exist_ok=True)
     T = Text(work, find_font())
     photos = fetch_photos(cfg, work)
-    speak = make_speaker(work / "voice")
+    speak = make_speaker(work / "voice", cfg.get("readings", {}))
 
     # 場面ごとの読み上げ → 長さを決める
     scenes = []          # (種類, 引数, 読み上げ)
