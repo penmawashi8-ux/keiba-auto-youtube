@@ -158,7 +158,7 @@ def horse_segment(cfg: dict, h: dict, photo: Path | None, credit: dict | None, d
     if not photo:
         d.append(T(name, 760, 430, 120, "white@0.13"))
         d.append(T("※自由に使える写真が見つからなかったため、写真なしで紹介", 760, 980, 26, "0xBDBDBD"))
-    d.append(T(cfg["source_note"], 50, 1020, 22, "0x9E9E9E"))
+    d.append(T(cfg["source_note"], 50, 1020, fit(cfg["source_note"], 620, 22), "0x9E9E9E"))
     chains.append("[v1]" + ",".join(d) + ",fade=t=in:st=0:d=0.35[out]")
     render(inputs, chains, "out", dur, out, work)
 
@@ -313,7 +313,7 @@ def main() -> None:
         plan.append((kind, arg, v, dur))
         print(f"場面 {k:02d} {kind:<5} {dur:5.1f}秒  {text[:40]}…")
 
-    segs, credits = [], []
+    segs, credits, short_credits = [], [], []
     intro_photos = [photos[f][0] for f in cfg.get("photos_intro", []) if f in photos]
     for k, (kind, arg, _v, dur) in enumerate(plan):
         out = work / f"seg_{k:02d}.mp4"
@@ -327,13 +327,14 @@ def main() -> None:
             horse_segment(cfg, arg, ph[0] if ph else None, ph[1] if ph else None, dur, out, T, work)
             if ph:
                 c = ph[1]
+                short_credits.append(f"{arg['name']}：{c['author'][:50]}（{c['license']}）")
                 credits.append(f"{arg['name']}: \"{c['title'].removeprefix('File:')}\" by {c['author']}, "
                                f"{c['license']} {c['license_url']} （{c['page']}）")
         elif kind == "chart":
             chart_segment(cfg, dur, out, T, work)
         elif kind == "outro":
-            lines = cfg["outro"]["lines"] + [""] + ["写真の出典（Wikimedia Commons・自由ライセンス）"] + [
-                c.split(" （")[0][:110] for c in credits]
+            lines = cfg["outro"]["lines"] + [""] + [
+                "写真の出典（Wikimedia Commons・自由ライセンス／詳しくは概要欄）"] + short_credits
             text_segment(lines, dur, out, T, work, cfg["outro"]["heading"], small=True)
         segs.append(out)
         print(f"  描画 {out.name}")
@@ -367,7 +368,7 @@ def main() -> None:
         labels.append(f"[n{k}]")
     chains.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0,volume=1.0[nar]")
     chains.append("[1:a]volume=0.30[bgm]")
-    chains.append("[nar][bgm]amix=inputs=2:normalize=0,alimiter=limit=0.95[aout]")
+    chains.append("[nar][bgm]amix=inputs=2:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[aout]")
     script = work / "mix_filter.txt"
     script.write_text(";".join(chains), encoding="utf-8")
     final = SIM_DIR / f"{prefix}.mp4"
