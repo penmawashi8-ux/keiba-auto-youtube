@@ -159,6 +159,7 @@ def main() -> None:
              "birth": info.get("生年月日", ""), "trainer": info.get("調教師", ""), "owner": info.get("馬主", ""),
              "breeder": info.get("生産者", ""), "record": info.get("通算成績", ""), "main_wins": info.get("主な勝鞍", ""),
              "blood": p["blood"], "g1_wins": g1, "graded_wins": graded,
+             "win_races": [f"{c.get('date', '')} {c['race_name']}" for c in won],
              "starts": len([c for c in career if c.get("pos") is not None]), "wins": len(won),
              "list_cells": r["cells"]}
         top.append(h)

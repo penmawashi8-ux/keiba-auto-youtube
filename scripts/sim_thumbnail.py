@@ -262,7 +262,7 @@ def main_set(path: Path) -> None:
         print(f"=== {name}", flush=True)
         ch = cfg.get("choice", {}).get(name, {})
         # loose: ファイル名に馬名が無くても検索に出た写真を候補にする（候補一覧を目で確かめてから選ぶこと）
-        keys = [] if cfg.get("loose") else [name] + h.get("en", [])
+        keys = [] if cfg.get("loose") or h.get("loose") else [name] + h.get("en", [])
         queries = h.get("queries", [name, name + " 競走馬"] + [e + " horse" for e in h.get("en", [])])
         cands = candidates(h.get("cats", []), queries, h.get("articles", [name, name]), keys, ch.get("file"))
         files = []

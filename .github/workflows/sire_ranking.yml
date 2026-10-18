@@ -60,10 +60,17 @@ jobs:
           import json, os
           p = os.environ["PREFIX"]
           rk = json.load(open(f"sim/{p}_ranking.json"))
+          req = json.load(open("data/sire_request.json"))
+          hints = req.get("photo_hints", {})
+          only = req.get("photo_only", [])        # 指定があれば、その馬だけ写真を探し直す
           horses = []
           for h in rk["top"][:int(os.environ["TOP"])]:
               en = h["name_en"].title() if h["name_en"] else ""
-              horses.append({"name": h["name"], "en": [en] if en else [], "articles": [h["name"], en or h["name"]]})
+              x = {"name": h["name"], "en": [en] if en else [], "articles": [h["name"], en or h["name"]]}
+              x.update(hints.get(h["name"], {}))    # data/sire_request.json の photo_hints（検索語の追加など）
+              if only and h["name"] not in only:
+                  continue
+              horses.append(x)
           cfg = {"prefix": f"{p}_photos", "max_photos": 0, "only_chosen": True, "loose": False,
                  "texts": {}, "horses": horses}
           json.dump(cfg, open("sim/photo_set.json", "w"), ensure_ascii=False, indent=1)
@@ -72,4 +79,4 @@ jobs:
 
       - name: Save outputs to research-output branch
         if: always()
-        run: bash .github/scripts/save_sim_outputs.sh "産駒賞金ランキング ${SIRE}" sim/${PREFIX}_ranking.json sim/${PREFIX}_search_debug*.html sim/${PREFIX}_photos_*
+        run: bash .github/scripts/save_sim_outputs.sh "産駒賞金ランキング ${SIRE}" sim/${PREFIX}_ranking.json sim/${PREFIX}_search_debug*.html sim/${PREFIX}_photos_* sim/${PREFIX}_ranking.json
