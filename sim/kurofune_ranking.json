@@ -1,0 +1,675 @@
+{
+ "sire": "クロフネ",
+ "fetched_at": "2026-10-18 12:12",
+ "n_offspring": 40,
+ "top": [
+  {
+   "rank": 1,
+   "horse_id": "2018105233",
+   "name": "ソダシ",
+   "name_en": "Sodashi",
+   "title": "ソダシ Sodashi 抹消　牝　白毛",
+   "prize_man": 62923.4,
+   "prize_raw": "62,923.4",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2018年3月8日",
+   "trainer": "須貝尚介 (栗東)",
+   "owner": "金子真人ホールディングス",
+   "breeder": "ノーザンファーム",
+   "record": "16戦7勝 [ 7-2-2-5 ]",
+   "main_wins": "22'ヴィクトリアマイル(G1)",
+   "blood": [],
+   "g1_wins": [
+    "ヴィクトリアマイル(GI)",
+    "桜花賞(GI)",
+    "阪神ジュベナイルF(GI)"
+   ],
+   "graded_wins": [
+    "ヴィクトリアマイル(GI)",
+    "札幌記念(GII)",
+    "桜花賞(GI)",
+    "阪神ジュベナイルF(GI)",
+    "アルテミスS(GIII)",
+    "札幌2歳S(GIII)"
+   ],
+   "starts": 16,
+   "wins": 7,
+   "list_cells": [
+    "",
+    "ソダシ",
+    "牝",
+    "2018",
+    "[血] [掲] [写] [繁]",
+    "[西] 須貝尚介",
+    "クロフネ [ ]",
+    "ブチコ [ ]",
+    "キングカメハメハ [ ]",
+    "金子真人ホールディングス",
+    "ノーザンファーム",
+    "62,923.4"
+   ]
+  },
+  {
+   "rank": 2,
+   "horse_id": "2019105394",
+   "name": "ママコチャ",
+   "name_en": "Mama Cocha",
+   "title": "ママコチャ Mama Cocha 抹消　牝　鹿毛",
+   "prize_man": 53902.3,
+   "prize_raw": "53,902.3",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2019年4月5日",
+   "trainer": "池江泰寿 (栗東)",
+   "owner": "金子真人ホールディングス",
+   "breeder": "ノーザンファーム",
+   "record": "30戦7勝 [ 7-6-4-13 ]",
+   "main_wins": "23'スプリンターズS(G1)",
+   "blood": [],
+   "g1_wins": [
+    "スプリンターズS(GI)"
+   ],
+   "graded_wins": [
+    "オーシャンS(GIII)",
+    "スプリンターズS(GI)"
+   ],
+   "starts": 27,
+   "wins": 7,
+   "list_cells": [
+    "",
+    "ママコチャ",
+    "牝",
+    "2019",
+    "[血] [掲] [写]",
+    "[西] 池江泰寿",
+    "クロフネ [ ]",
+    "ブチコ [ ]",
+    "キングカメハメハ [ ]",
+    "金子真人ホールディングス",
+    "ノーザンファーム",
+    "53,902.3"
+   ]
+  },
+  {
+   "rank": 3,
+   "horse_id": "2008100544",
+   "name": "ホエールキャプチャ",
+   "name_en": "Whale Capture",
+   "title": "ホエールキャプチャ Whale Capture 抹消　牝　芦毛",
+   "prize_man": 53231.6,
+   "prize_raw": "53,231.6",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2008年2月24日",
+   "trainer": "田中清隆 (美浦)",
+   "owner": "嶋田賢",
+   "breeder": "千代田牧場",
+   "record": "30戦7勝 [ 7-4-5-14 ]",
+   "main_wins": "12'ヴィクトリアマイル(G1)",
+   "blood": [],
+   "g1_wins": [
+    "ヴィクトリアマイル(GI)"
+   ],
+   "graded_wins": [
+    "東京新聞杯(GIII)",
+    "府中牝馬S(GII)",
+    "ヴィクトリアマイル(GI)",
+    "関西TVローズS(GII)",
+    "デイリー杯クイーンC(GIII)"
+   ],
+   "starts": 29,
+   "wins": 7,
+   "list_cells": [
+    "",
+    "ホエールキャプチャ",
+    "牝",
+    "2008",
+    "[血] [掲] [写] [繁]",
+    "[東] 田中清隆",
+    "クロフネ [ ]",
+    "グローバルピース [ ]",
+    "サンデーサイレンス [ ]",
+    "嶋田賢",
+    "千代田牧場",
+    "53,231.6"
+   ]
+  },
+  {
+   "rank": 4,
+   "horse_id": "2010105861",
+   "name": "アップトゥデイト",
+   "name_en": "Up to Date",
+   "title": "アップトゥデイト Up to Date 抹消　牡　芦毛",
+   "prize_man": 48820.5,
+   "prize_raw": "48,820.5",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2010年2月18日",
+   "trainer": "佐々木晶 (栗東)",
+   "owner": "今西宏枝",
+   "breeder": "ノースヒルズ",
+   "record": "37戦10勝 [ 10-11-2-14 ]",
+   "main_wins": "15'中山グランドジャンプ(J.G1)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [],
+   "starts": 34,
+   "wins": 10,
+   "list_cells": [
+    "",
+    "アップトゥデイト",
+    "牡",
+    "2010",
+    "[血] [掲] [写]",
+    "[西] 佐々木晶",
+    "クロフネ [ ]",
+    "リニアミューズ [ ]",
+    "トニービン [ ]",
+    "今西宏枝",
+    "ノースヒルズ",
+    "48,820.5"
+   ]
+  },
+  {
+   "rank": 5,
+   "horse_id": "2014105785",
+   "name": "アエロリット",
+   "name_en": "Aerolithe",
+   "title": "アエロリット Aerolithe 抹消　牝　芦毛",
+   "prize_man": 45917.8,
+   "prize_raw": "45,917.8",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2014年5月17日",
+   "trainer": "菊沢隆徳 (美浦)",
+   "owner": "サンデーレーシング",
+   "breeder": "ノーザンファーム",
+   "record": "19戦4勝 [ 4-7-1-7 ]",
+   "main_wins": "17'NHKマイルC(G1)",
+   "blood": [],
+   "g1_wins": [
+    "NHKマイルC(GI)"
+   ],
+   "graded_wins": [
+    "毎日王冠(GII)",
+    "クイーンS(GIII)",
+    "NHKマイルC(GI)"
+   ],
+   "starts": 18,
+   "wins": 4,
+   "list_cells": [
+    "",
+    "アエロリット",
+    "牝",
+    "2014",
+    "[血] [掲] [写] [繁]",
+    "[東] 菊沢隆徳",
+    "クロフネ [ ]",
+    "アステリックス [ ]",
+    "ネオユニヴァース [ ]",
+    "サンデーレーシング",
+    "ノーザンファーム",
+    "45,917.8"
+   ]
+  },
+  {
+   "rank": 6,
+   "horse_id": "2007102807",
+   "name": "カレンチャン",
+   "name_en": "Curren Chan",
+   "title": "カレンチャン Curren Chan 抹消　牝　芦毛",
+   "prize_man": 44906.1,
+   "prize_raw": "44,906.1",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2007年3月31日",
+   "trainer": "安田隆行 (栗東)",
+   "owner": "鈴木隆司",
+   "breeder": "社台ファーム",
+   "record": "18戦9勝 [ 9-3-1-5 ]",
+   "main_wins": "11'スプリンターズS(G1)",
+   "blood": [],
+   "g1_wins": [
+    "高松宮記念(GI)",
+    "スプリンターズS(GI)"
+   ],
+   "graded_wins": [
+    "高松宮記念(GI)",
+    "スプリンターズS(GI)",
+    "キーンランドC(GIII)",
+    "函館スプリントS(GIII)",
+    "サンスポ杯阪神牝馬S(GII)"
+   ],
+   "starts": 16,
+   "wins": 9,
+   "list_cells": [
+    "",
+    "カレンチャン",
+    "牝",
+    "2007",
+    "[血] [掲] [写] [繁]",
+    "[西] 安田隆行",
+    "クロフネ [ ]",
+    "スプリングチケット [ ]",
+    "トニービン [ ]",
+    "鈴木隆司",
+    "社台ファーム",
+    "44,906.1"
+   ]
+  },
+  {
+   "rank": 7,
+   "horse_id": "2004103021",
+   "name": "スリープレスナイト",
+   "name_en": "Sleepless Night",
+   "title": "スリープレスナイト Sleepless Night 抹消　牝　鹿毛",
+   "prize_man": 37316.5,
+   "prize_raw": "37,316.5",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2004年2月7日",
+   "trainer": "橋口弘次 (栗東)",
+   "owner": "サンデーレーシング",
+   "breeder": "ノーザンファーム",
+   "record": "18戦9勝 [ 9-6-1-2 ]",
+   "main_wins": "08'スプリンターズS(G1)",
+   "blood": [],
+   "g1_wins": [
+    "スプリンターズS(GI)"
+   ],
+   "graded_wins": [
+    "スプリンターズS(GI)",
+    "TV西日本北九州記念(GIII)",
+    "CBC賞(GIII)"
+   ],
+   "starts": 18,
+   "wins": 9,
+   "list_cells": [
+    "",
+    "スリープレスナイト",
+    "牝",
+    "2004",
+    "[血] [掲] [写] [繁]",
+    "[西] 橋口弘次",
+    "クロフネ [ ]",
+    "ホワットケイティーディド [ ]",
+    "Nureyev [ ]",
+    "サンデーレーシング",
+    "ノーザンファーム",
+    "37,316.5"
+   ]
+  },
+  {
+   "rank": 8,
+   "horse_id": "2012101830",
+   "name": "テイエムジンソク",
+   "name_en": "T M Jinsoku",
+   "title": "テイエムジンソク T M Jinsoku 抹消　牡　芦毛",
+   "prize_man": 30813.0,
+   "prize_raw": "30,813.0",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2012年4月21日",
+   "trainer": "木原一良 (栗東)",
+   "owner": "竹園正繼",
+   "breeder": "日高テイエム牧場",
+   "record": "30戦9勝 [ 9-6-4-11 ]",
+   "main_wins": "18'東海S(G2)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [
+    "東海テレビ杯東海S(GII)",
+    "みやこS(GIII)"
+   ],
+   "starts": 28,
+   "wins": 9,
+   "list_cells": [
+    "",
+    "テイエムジンソク",
+    "牡",
+    "2012",
+    "[血] [掲] [写] [繁]",
+    "[西] 木原一良",
+    "クロフネ [ ]",
+    "マイディスカバリー [ ]",
+    "フォーティナイナー [ ]",
+    "竹園正繼",
+    "日高テイエム牧場",
+    "30,813.0"
+   ]
+  },
+  {
+   "rank": 9,
+   "horse_id": "2012105752",
+   "name": "ホワイトフーガ",
+   "name_en": "White Fugue",
+   "title": "ホワイトフーガ White Fugue 抹消　牝　芦毛",
+   "prize_man": 29141.5,
+   "prize_raw": "29,141.5",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2012年3月28日",
+   "trainer": "高木登 (美浦)",
+   "owner": "西森鶴",
+   "breeder": "梅田牧場",
+   "record": "23戦10勝 [ 10-3-3-7 ]",
+   "main_wins": "16'JBCレディスクラシック(G1)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [],
+   "starts": 8,
+   "wins": 3,
+   "list_cells": [
+    "",
+    "ホワイトフーガ",
+    "牝",
+    "2012",
+    "[血] [掲] [写] [繁]",
+    "[東] 高木登",
+    "クロフネ [ ]",
+    "マリーンウィナー [ ]",
+    "フジキセキ [ ]",
+    "西森鶴",
+    "梅田牧場",
+    "29,141.5"
+   ]
+  },
+  {
+   "rank": 10,
+   "horse_id": "2003102955",
+   "name": "フサイチリシャール",
+   "name_en": "Fusaichi Richard",
+   "title": "フサイチリシャール Fusaichi Richard 抹消　牡　芦毛",
+   "prize_man": 27878.2,
+   "prize_raw": "27,878.2",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2003年4月6日",
+   "trainer": "松田国英 (栗東)",
+   "owner": "関口房朗",
+   "breeder": "ノーザンファーム",
+   "record": "24戦5勝 [ 5-3-0-16 ]",
+   "main_wins": "05'朝日杯フューチュリティS(G1)",
+   "blood": [],
+   "g1_wins": [
+    "朝日フューチュリティ(GI)"
+   ],
+   "graded_wins": [
+    "阪神C(GII)",
+    "朝日フューチュリティ(GI)",
+    "東京スポーツ杯2歳S(GIII)"
+   ],
+   "starts": 23,
+   "wins": 5,
+   "list_cells": [
+    "",
+    "フサイチリシャール",
+    "牡",
+    "2003",
+    "[血] [掲] [写] [繁]",
+    "[西] 松田国英",
+    "クロフネ [ ]",
+    "フサイチエアデール [ ]",
+    "サンデーサイレンス [ ]",
+    "関口房朗",
+    "ノーザンファーム",
+    "27,878.2"
+   ]
+  },
+  {
+   "rank": 11,
+   "horse_id": "2005103851",
+   "name": "ブラボーデイジー",
+   "name_en": "Bravo Daisy",
+   "title": "ブラボーデイジー Bravo Daisy 抹消　牝　芦毛",
+   "prize_man": 22987.0,
+   "prize_raw": "22,987.0",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2005年3月28日",
+   "trainer": "音無秀孝 (栗東)",
+   "owner": "松岡隆雄",
+   "breeder": "ヤナガワ牧場",
+   "record": "38戦5勝 [ 5-8-3-22 ]",
+   "main_wins": "10'エンプレス杯(G2)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [
+    "福島牝馬S(GIII)"
+   ],
+   "starts": 31,
+   "wins": 4,
+   "list_cells": [
+    "",
+    "ブラボーデイジー",
+    "牝",
+    "2005",
+    "[血] [掲] [写] [繁]",
+    "[西] 音無秀孝",
+    "クロフネ [ ]",
+    "ブラボーサンライズ [ ]",
+    "サンデーサイレンス [ ]",
+    "松岡隆雄",
+    "ヤナガワ牧場",
+    "22,987.0"
+   ]
+  },
+  {
+   "rank": 12,
+   "horse_id": "2009104934",
+   "name": "アースソニック",
+   "name_en": "Earth Sonic",
+   "title": "アースソニック Earth Sonic 抹消　牡　鹿毛",
+   "prize_man": 22937.4,
+   "prize_raw": "22,937.4",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2009年4月3日",
+   "trainer": "中竹和也 (栗東)",
+   "owner": "前田幸治",
+   "breeder": "新冠伊藤牧場",
+   "record": "48戦6勝 [ 6-6-10-26 ]",
+   "main_wins": "13'京阪杯(G3)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [
+    "京阪杯(GIII)"
+   ],
+   "starts": 48,
+   "wins": 6,
+   "list_cells": [
+    "",
+    "アースソニック",
+    "牡",
+    "2009",
+    "[血] [掲] [写]",
+    "[西] 中竹和也",
+    "クロフネ [ ]",
+    "ダイヤモンドピアス [ ]",
+    "サクラユタカオー [ ]",
+    "前田幸治",
+    "新冠伊藤牧場",
+    "22,937.4"
+   ]
+  },
+  {
+   "rank": 13,
+   "horse_id": "2010102637",
+   "name": "マイネルクロップ",
+   "name_en": "Meiner Crop",
+   "title": "マイネルクロップ Meiner Crop 抹消　牡　芦毛",
+   "prize_man": 22302.5,
+   "prize_raw": "22,302.5",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2010年4月16日",
+   "trainer": "畠山吉宏 (美浦)",
+   "owner": "サラブレッドクラブ・ラフィアン",
+   "breeder": "グランド牧場",
+   "record": "54戦9勝 [ 9-7-4-34 ]",
+   "main_wins": "15'マーチS(G3)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [
+    "マーチS(GIII)"
+   ],
+   "starts": 51,
+   "wins": 8,
+   "list_cells": [
+    "",
+    "マイネルクロップ",
+    "牡",
+    "2010",
+    "[血] [掲] [写]",
+    "[東] 畠山吉宏",
+    "クロフネ [ ]",
+    "グレートハーベスト [ ]",
+    "サンデーサイレンス [ ]",
+    "サラブレッドクラブ・ラフィアン",
+    "グランド牧場",
+    "22,302.5"
+   ]
+  },
+  {
+   "rank": 14,
+   "horse_id": "2007103968",
+   "name": "セイコーライコウ",
+   "name_en": "Seiko Raiko",
+   "title": "セイコーライコウ Seiko Raiko 抹消　牡　鹿毛",
+   "prize_man": 21359.2,
+   "prize_raw": "21,359.2",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2007年3月9日",
+   "trainer": "竹内正洋 (美浦)",
+   "owner": "竹國美枝子",
+   "breeder": "明治牧場",
+   "record": "37戦7勝 [ 7-7-3-20 ]",
+   "main_wins": "14'アイビスサマーダッシュ(G3)",
+   "blood": [],
+   "g1_wins": [],
+   "graded_wins": [
+    "アイビスサマーD(GIII)"
+   ],
+   "starts": 37,
+   "wins": 7,
+   "list_cells": [
+    "",
+    "セイコーライコウ",
+    "牡",
+    "2007",
+    "[血] [掲] [写]",
+    "[東] 竹内正洋",
+    "クロフネ [ ]",
+    "ファインセイコー [ ]",
+    "サンデーサイレンス [ ]",
+    "竹國美枝子",
+    "明治牧場",
+    "21,359.2"
+   ]
+  },
+  {
+   "rank": 15,
+   "horse_id": "2012106160",
+   "name": "クラリティスカイ",
+   "name_en": "Clarity Sky",
+   "title": "クラリティスカイ Clarity Sky 抹消　牡　鹿毛",
+   "prize_man": 20982.3,
+   "prize_raw": "20,982.3",
+   "prize_profile": "",
+   "prize_profile_man": null,
+   "birth": "2012年3月7日",
+   "trainer": "斎藤誠 (美浦)",
+   "owner": "杉山忠国",
+   "breeder": "パカパカファーム",
+   "record": "27戦3勝 [ 3-2-4-18 ]",
+   "main_wins": "15'NHKマイルC(G1)",
+   "blood": [],
+   "g1_wins": [
+    "NHKマイルC(GI)"
+   ],
+   "graded_wins": [
+    "NHKマイルC(GI)"
+   ],
+   "starts": 27,
+   "wins": 3,
+   "list_cells": [
+    "",
+    "クラリティスカイ",
+    "牡",
+    "2012",
+    "[血] [掲] [写]",
+    "[東] 斎藤誠",
+    "クロフネ [ ]",
+    "タイキクラリティ [ ]",
+    "スペシャルウィーク [ ]",
+    "杉山忠国",
+    "パカパカファーム",
+    "20,982.3"
+   ]
+  }
+ ],
+ "next": [
+  {
+   "name": "エルデュクラージュ",
+   "prize_raw": "20,491.9"
+  },
+  {
+   "name": "マリアエレーナ",
+   "prize_raw": "19,450.7"
+  },
+  {
+   "name": "ドリームセーリング",
+   "prize_raw": "16,940.5"
+  },
+  {
+   "name": "ショコラブラン",
+   "prize_raw": "16,725.6"
+  },
+  {
+   "name": "キャプテンペリー",
+   "prize_raw": "15,661.1"
+  },
+  {
+   "name": "スターシップ",
+   "prize_raw": "15,607.4"
+  },
+  {
+   "name": "エノク",
+   "prize_raw": "15,484.5"
+  },
+  {
+   "name": "ブラックシェル",
+   "prize_raw": "15,122.8"
+  },
+  {
+   "name": "ホワイトピルグリム",
+   "prize_raw": "14,969.0"
+  },
+  {
+   "name": "トウショウカズン",
+   "prize_raw": "14,501.2"
+  },
+  {
+   "name": "サトノファンタシー",
+   "prize_raw": "14,294.5"
+  },
+  {
+   "name": "モズライジン",
+   "prize_raw": "14,172.5"
+  },
+  {
+   "name": "グリッターウイング",
+   "prize_raw": "14,071.9"
+  },
+  {
+   "name": "インパルスヒーロー",
+   "prize_raw": "14,020.3"
+  },
+  {
+   "name": "マルカバッケン",
+   "prize_raw": "13,915.1"
+  }
+ ]
+}
