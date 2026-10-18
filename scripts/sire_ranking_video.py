@@ -166,12 +166,14 @@ def horse_segment(cfg: dict, h: dict, photo: Path | None, credit: dict | None, d
 def title_segment(cfg: dict, photos: list[Path], dur: float, out: Path, T: Text, work: Path, thumb: bool = False) -> None:
     inputs, chains = [], []
     n = len(photos)
+    # サムネイルは写真を明るく鮮やかに（動画のタイトル画面は文字を読ませるため暗め）
+    look = "eq=brightness=0.04:contrast=1.06:saturation=1.15" if thumb else "eq=brightness=-0.32:saturation=0.85"
     # 写真が4枚なら 2×2、それ以外は横に並べる
     tw, th = (W // 2, H // 2) if n == 4 else (W // max(n, 1), H)
     for i, p in enumerate(photos):
         inputs += ["-loop", "1", "-framerate", str(FPS), "-i", str(p)]
         chains.append(f"[{i}:v]scale={tw}:{th}:force_original_aspect_ratio=increase,crop={tw}:{th},"
-                      f"eq=brightness=-0.32:saturation=0.85,setsar=1[p{i}]")
+                      f"{look},setsar=1[p{i}]")
     if n == 4:
         chains.append(f"[p0][p1][p2][p3]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0,setsar=1[v0]")
     elif n > 1:
@@ -182,8 +184,10 @@ def title_segment(cfg: dict, photos: list[Path], dur: float, out: Path, T: Text,
         inputs += ["-f", "lavfi", "-i", f"color=c={BG}:s={W}x{H}:d={dur:.2f}:r={FPS}"]
         chains.append("[0:v]null[v0]")
     k = n if n else 1
-    inputs += ["-f", "lavfi", "-i", f"color=c=black@0.55:s={W}x520:d={dur:.2f}:r={FPS}"]
-    chains.append(f"[{k}:v]format=rgba[band];[v0][band]overlay=0:280[v1]")
+    inputs += ["-f", "lavfi", "-i", f"color=c=black@{0.5 if thumb else 0.55}:s={W}x520:d={dur:.2f}:r={FPS}"]
+    # サムネイルは帯を半透明にして、後ろの馬が透けて見えるように
+    alpha = ",colorchannelmixer=aa=0.5" if thumb else ""
+    chains.append(f"[{k}:v]format=rgba{alpha}[band];[v0][band]overlay=0:280[v1]")
     lines = cfg["thumb_title"] if thumb else cfg["title"]
     d = []
     sizes = [96, 132, 52]
