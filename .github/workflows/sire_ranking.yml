@@ -1,0 +1,75 @@
+name: Sire Offspring Prize Ranking (data + photos)
+
+# 種牡馬の産駒の獲得賞金ランキング（横動画用）のデータと、上位馬の写真候補を集める。
+# data/sire_request.json の種牡馬で作り、research-output ブランチの sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/sire_request.json
+      - scripts/sire_ranking_fetch.py
+      - .github/workflows/sire_ranking.yml
+
+concurrency:
+  group: sire-ranking
+  cancel-in-progress: false
+
+jobs:
+  ranking:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          pip install requests==2.32.3 beautifulsoup4
+
+      - name: Read request
+        run: |
+          python - <<'PY' >> "$GITHUB_ENV"
+          import json
+          r = json.load(open("data/sire_request.json"))
+          print(f"SIRE={r['sire']}")
+          print(f"PREFIX={r['prefix']}")
+          print(f"TOP={r.get('top', 10)}")
+          PY
+
+      - name: Fetch ranking
+        run: |
+          mkdir -p sim
+          python -u scripts/sire_ranking_fetch.py "$SIRE" "$PREFIX" "$TOP"
+
+      # 上位馬の写真候補（Wikimedia Commons の自由ライセンスのみ）。どの写真を使うかは候補一覧を見て決める
+      - name: Photo candidates
+        run: |
+          python - <<'PY'
+          import json, os
+          p = os.environ["PREFIX"]
+          rk = json.load(open(f"sim/{p}_ranking.json"))
+          horses = []
+          for h in rk["top"][:int(os.environ["TOP"])]:
+              en = h["name_en"].title() if h["name_en"] else ""
+              horses.append({"name": h["name"], "en": [en] if en else [], "articles": [h["name"], en or h["name"]]})
+          cfg = {"prefix": f"{p}_photos", "max_photos": 0, "only_chosen": True, "loose": False,
+                 "texts": {}, "horses": horses}
+          json.dump(cfg, open("sim/photo_set.json", "w"), ensure_ascii=False, indent=1)
+          PY
+          python -u scripts/sim_thumbnail.py sim/photo_set.json || echo "写真候補の取得で失敗"
+
+      - name: Save outputs to research-output branch
+        if: always()
+        run: bash .github/scripts/save_sim_outputs.sh "産駒賞金ランキング ${SIRE}" sim/${PREFIX}_ranking.json sim/${PREFIX}_search_debug*.html sim/${PREFIX}_photos_*
