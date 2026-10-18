@@ -1,9 +1,10 @@
-date: 2026-10-18T01:07:21.140915Z
+date: 2026-10-18T04:08:54.297701Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dP1SdJTLnY4 title=半兄はフォーエバーヤング セレクト3億円のヤングリッチが初陣だ
-OK project=1 video_id=yeoad1klMRM title=粗品「ヒモ選びを慎重に」秋華賞の予想を公開　想定通りの本命馬に「これ飛ばしたら…
+OK project=1 video_id=HUCXdGSE2po title=【京都6R新馬戦結果】シルバーステート産駒シェフザーデが人気に応えて3馬身差快勝
+OK project=1 video_id=Mn7H43gzhYg title=ジャパンC参戦に変更なし　英チャンピオンSで2着に敗れたカランダガン陣営「日本遠
+OK project=1 video_id=vUM40OXv8I0 title=【東京5R・新馬戦】1番人気ユメノカケラが押し切りV!　津村「期待通りの走りだっ
