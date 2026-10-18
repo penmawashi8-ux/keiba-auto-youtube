@@ -291,11 +291,61 @@ def fetch_photos(cfg: dict, work: Path) -> dict:
     return got
 
 
+def designed_thumb(td: dict, photos: dict, out: Path, T: Text, work: Path) -> None:
+    """左に主役の写真を大きく、右の濃紺パネルに文字、下に脇役の写真3枚を並べたサムネイル。
+    td（cfg["thumb_design"]）: hero {file, x, y}, subs [{file, x, y, name}], tag, lines [3行], badge"""
+    panel = "0x10131c"
+    hx = 1040                                   # 写真とパネルの境目
+    hero = td["hero"]
+    inputs = ["-loop", "1", "-i", str(photos[hero["file"]][0]),
+              "-f", "lavfi", "-i", f"color=c={panel}:s={W}x{H}:d=1:r={FPS}",
+              # 写真の右端をパネルの色へなじませるグラデーション（透明 → 濃紺）
+              "-f", "lavfi", "-i", f"color=c={panel}:s=360x{H}:d=1:r={FPS}",
+              "-f", "lavfi", "-i", f"color=c={GOLD}:s=760x6:d=1:r={FPS}"]
+    hw = hx + 120
+    chains = [f"[0:v]scale={hw}:{H}:force_original_aspect_ratio=increase,"
+              f"crop={hw}:{H}:x='(iw-{hw})*{hero.get('x', 0.5)}':y='(ih-{H})*{hero.get('y', 0.5)}',"
+              f"eq=brightness=0.03:contrast=1.08:saturation=1.15,setsar=1[hero]",
+              "[1:v][hero]overlay=0:0[a0]",
+              f"[2:v]format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*pow(X/W,1.3)'[gr];"
+              f"[a0][gr]overlay={hw - 360}:0[a1]",
+              f"[a1][3:v]overlay={hx + 60}:575[a2]"]
+    cur, k = "a2", 4
+    sw, sh, gap = 250, 168, 20
+    for j, sub in enumerate(td.get("subs", [])[:3]):
+        if sub["file"] not in photos:
+            continue
+        inputs += ["-loop", "1", "-i", str(photos[sub["file"]][0])]
+        x0 = hx + 60 + j * (sw + gap)
+        chains.append(f"[{k}:v]scale={sw}:{sh}:force_original_aspect_ratio=increase,"
+                      f"crop={sw}:{sh}:x='(iw-{sw})*{sub.get('x', 0.5)}':y='(ih-{sh})*{sub.get('y', 0.5)}',"
+                      f"eq=saturation=1.1,setsar=1,pad={sw + 8}:{sh + 8}:4:4:color=white[s{j}]")
+        chains.append(f"[{cur}][s{j}]overlay={x0 - 4}:{830 - 4}[b{j}]")
+        cur, k = f"b{j}", k + 1
+    tx = hx + 60
+    l1, l2, l3 = td["lines"]
+    d = [T(td["tag"], tx + 14, 80, fit(td["tag"], 740, 40), panel, box=GOLD),
+         T(l1, tx, 170, fit(l1, 780, 118), "white", border=0),
+         T(l2, tx, 320, fit(l2, 780, 136), GOLD),
+         T(l3, tx, 610, fit(l3, 780, 60), "white"),
+         T(td["badge"], tx, 690, fit(td["badge"], 780, 110), GOLD)]
+    for j, sub in enumerate(td.get("subs", [])[:3]):
+        d.append(T(sub["name"], tx + j * (sw + gap), 1012, fit(sub["name"], sw, 30), "white"))
+    if td.get("hero_name"):
+        d.append(T(td["hero_name"], 40, 990, 60, "white", border=4))
+    chains.append(f"[{cur}]" + ",".join(d) + "[out]")
+    render(inputs, chains, "out", 1.0, out, work)
+
+
 def make_thumb(cfg: dict, photos: dict, T: Text, work: Path) -> None:
     """サムネイル（専用の1枚を描いてからフレームを抜き出す。縦横比は動画のまま）"""
     thumb_v = work / "thumb.mp4"
-    tp = [photos[f][0] for f in cfg.get("photos_thumb", cfg.get("photos_intro", [])) if f in photos]
-    title_segment(cfg, tp, 1.0, thumb_v, T, work, thumb=True)
+    td = cfg.get("thumb_design")
+    if td and td["hero"]["file"] in photos:
+        designed_thumb(td, photos, thumb_v, T, work)
+    else:
+        tp = [photos[f][0] for f in cfg.get("photos_thumb", cfg.get("photos_intro", [])) if f in photos]
+        title_segment(cfg, tp, 1.0, thumb_v, T, work, thumb=True)
     run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-i", str(thumb_v), "-vframes", "1", "-q:v", "2",
          str(SIM_DIR / f"{cfg['prefix']}_thumb.jpg")])
     print(f"保存: sim/{cfg['prefix']}_thumb.jpg")
