@@ -1,0 +1,54 @@
+name: Sire Offspring Ranking Video (landscape)
+
+# 産駒の獲得賞金ランキングの横動画（1920×1080）を data/sire_video/*.json から作る。
+# 動画・サムネイル・写真の出典・確認用フレームは research-output ブランチの sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/sire_video/**
+      - scripts/sire_ranking_video.py
+      - .github/workflows/sire_video.yml
+
+concurrency:
+  group: sire-video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+          pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
+
+      - name: Make videos
+        run: |
+          mkdir -p sim
+          for f in data/sire_video/*.json; do
+            python -u scripts/sire_ranking_video.py "$f"
+          done
+
+      - name: Save outputs to research-output branch
+        if: always()
+        run: |
+          for f in data/sire_video/*.json; do
+            p=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['prefix'])" "$f")
+            bash .github/scripts/save_sim_outputs.sh "産駒ランキング動画 $p" sim/$p.mp4 sim/${p}_thumb.jpg sim/${p}_credits.txt sim/${p}_frame_*.jpg
+          done
