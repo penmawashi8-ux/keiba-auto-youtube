@@ -39,10 +39,17 @@ jobs:
           pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
 
       - name: Make videos
+        env:
+          THUMB_ONLY: ${{ contains(github.event.head_commit.message, '[thumb]') }}
         run: |
           mkdir -p sim
           for f in data/sire_video/*.json; do
-            python -u scripts/sire_ranking_video.py "$f"
+            # コミットの見出しに [thumb] があればサムネイルだけ作り直す（動画は前回のまま）
+            if [ "$THUMB_ONLY" = "true" ]; then
+              python -u scripts/sire_ranking_video.py "$f" --thumb-only
+            else
+              python -u scripts/sire_ranking_video.py "$f"
+            fi
           done
 
       - name: Save outputs to research-output branch

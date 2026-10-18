@@ -194,7 +194,7 @@ def title_segment(cfg: dict, photos: list[Path], dur: float, out: Path, T: Text,
     colors = ["white", GOLD, "white"]
     y = 310
     for j, line in enumerate(lines):
-        s = sizes[min(j, 2)]
+        s = fit(line, W - 120, sizes[min(j, 2)])
         d.append(T(line, "(w-text_w)/2", y, s, colors[min(j, 2)], border=5, fade_at=None if thumb else 0.3 * j))
         y += s + 40
     if not thumb:
@@ -291,6 +291,16 @@ def fetch_photos(cfg: dict, work: Path) -> dict:
     return got
 
 
+def make_thumb(cfg: dict, photos: dict, T: Text, work: Path) -> None:
+    """サムネイル（専用の1枚を描いてからフレームを抜き出す。縦横比は動画のまま）"""
+    thumb_v = work / "thumb.mp4"
+    tp = [photos[f][0] for f in cfg.get("photos_thumb", cfg.get("photos_intro", [])) if f in photos]
+    title_segment(cfg, tp, 1.0, thumb_v, T, work, thumb=True)
+    run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-i", str(thumb_v), "-vframes", "1", "-q:v", "2",
+         str(SIM_DIR / f"{cfg['prefix']}_thumb.jpg")])
+    print(f"保存: sim/{cfg['prefix']}_thumb.jpg")
+
+
 def main() -> None:
     cfg = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     prefix = cfg["prefix"]
@@ -299,6 +309,9 @@ def main() -> None:
     SIM_DIR.mkdir(exist_ok=True)
     T = Text(work, find_font())
     photos = fetch_photos(cfg, work)
+    if "--thumb-only" in sys.argv:        # サムネイルだけ作り直す
+        make_thumb(cfg, photos, T, work)
+        return
     speak = make_speaker(work / "voice", cfg.get("readings", {}))
 
     # 場面ごとの読み上げ → 長さを決める
@@ -382,12 +395,7 @@ def main() -> None:
          "-map", "[aout]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.2f}", str(final)])
     print(f"保存: {final}（{total:.1f}秒）")
 
-    # サムネイル（専用の1枚を描いてからフレームを抜き出す。縦横比は動画のまま）
-    thumb_v = work / "thumb.mp4"
-    tp = [photos[f][0] for f in cfg.get("photos_thumb", cfg.get("photos_intro", [])) if f in photos]
-    title_segment(cfg, tp, 1.0, thumb_v, T, work, thumb=True)
-    run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-i", str(thumb_v), "-vframes", "1", "-q:v", "2",
-         str(SIM_DIR / f"{prefix}_thumb.jpg")])
+    make_thumb(cfg, photos, T, work)
     # 確認用のフレーム
     for k, (kind, arg, _v, dur) in enumerate(plan):
         tag = f"rank{arg['rank']:02d}" if kind == "horse" else kind
