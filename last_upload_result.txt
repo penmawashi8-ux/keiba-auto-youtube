@@ -1,10 +1,10 @@
-date: 2026-10-19T04:09:26.254794Z
+date: 2026-10-19T07:10:27.967330Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=R2F5dG8RnlM title=無傷５連勝で秋華賞を制したモンローウォークが元気な姿を披露
-OK project=1 video_id=P_j8iFxbm1Q title=【アルテミスS想定騎手】リスグロワールは坂井瑠星騎手、プルヴィナルはC.ルメール
-OK project=1 video_id=H3C3Z_9Hg7o title=【アルテミスステークス展望】名牝の子リスグロワールに期待が高まる　母はG1・4勝
+OK project=1 video_id=AEDcWPH6_ek title=レガレイラは天皇賞・秋で岩田望来騎手と新コンビ　サンデーサラブレッドクラブが発表
+OK project=1 video_id=yTAh3yhlYyA title=【浦和競馬】母は南関東牝馬クラシック2冠のケラススヴィア　アンジュディーヴァが6
+OK project=1 video_id=RkWS4b44gok title=競馬場に34歳美人女優が降臨!“印象激変”のドレス姿が「可愛すぎ」「別人」「断然
