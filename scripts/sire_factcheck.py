@@ -92,7 +92,7 @@ def main() -> None:
     enc = urllib.parse.quote(sire.encode("euc-jp"))
     base = f"{SEARCH}?pid=horse_list&word=&match=partial_match&sire={enc}&list=100"
     rows, page = [], 1
-    while page <= 40:
+    while page <= 150:          # 産駒が多いので全ページ（1ページ20頭）
         got = parse_list(get(session, base + (f"&page={page}" if page > 1 else "")))
         new = [r for r in got if r["horse_id"] not in {x["horse_id"] for x in rows}]
         if not new:
@@ -109,6 +109,11 @@ def main() -> None:
         if by >= young:
             yrows.append((by, r))
     out.append(f"生年 {young} 年以降: {len(yrows)}頭")
+    by_year = {}
+    for r in rows:
+        y = next((int(c) for c in r["cells"] if re.fullmatch(r"(19|20)\d\d", c)), 0)
+        by_year[y] = by_year.get(y, 0) + 1
+    out.append("生年ごとの頭数: " + ", ".join(f"{y}:{n}" for y, n in sorted(by_year.items())))
     active = []
     for by, r in sorted(yrows, key=lambda t: -t[0]):
         st = status(session, r["horse_id"])

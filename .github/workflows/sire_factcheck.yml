@@ -30,7 +30,7 @@ jobs:
           mkdir -p sim
           git fetch -q origin research-output
           git show FETCH_HEAD:sim/kurofune_ranking.json > sim/kurofune_ranking.json
-          python -u scripts/sire_factcheck.py クロフネ kurofune 2017
+          python -u scripts/sire_factcheck.py クロフネ kurofune 2019
       - name: Save
         if: always()
         run: bash .github/scripts/save_sim_outputs.sh "産駒ランキング ファクトチェック" sim/kurofune_factcheck.txt
