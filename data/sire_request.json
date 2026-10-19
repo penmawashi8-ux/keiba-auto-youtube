@@ -1,1 +1,10 @@
-{"sire": "ステイゴールド", "prefix": "staygold", "top": 10, "young": 2014}
+{"sire": "ステイゴールド", "prefix": "staygold", "top": 10,
+ "photo_only": ["クロコスミア", "ドリームジャーニー"],
+ "photo_hints": {
+  "クロコスミア": {"en": ["Crocosmia"], "loose": true,
+                "queries": ["クロコスミア 競走馬", "Crocosmia horse", "Crocosmia Fuchu Himba", "Crocosmia Queen Elizabeth II Cup", "府中牝馬ステークス 2017", "エリザベス女王杯 2017", "エリザベス女王杯 2018"],
+                "articles": ["クロコスミア (競走馬)", "Crocosmia (horse)"]},
+  "ドリームジャーニー": {"en": ["Dream Journey", "DreamJourney"], "loose": true,
+                "queries": ["ドリームジャーニー", "Dream Journey horse", "Dream Journey Takarazuka Kinen", "Dream Journey Arima Kinen", "宝塚記念 2009", "有馬記念 2009"],
+                "articles": ["ドリームジャーニー", "Dream Journey (horse)"]}
+ }}
