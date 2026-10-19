@@ -77,6 +77,21 @@ _SSL_CTX = ssl.create_default_context()
 _WP_UA   = "keiba-auto-youtube/1.0"
 _WP_SKIP = {".svg", ".ogv", ".ogg", ".webm", ".gif"}
 
+# 「画像募集中」等のプレースホルダー画像のファイル名に含まれる語（URLデコード・小文字化後に照合）。
+# 写真の無い競走馬のWikipedia記事は infobox に「画像募集中」画像が入っており、
+# それが横動画の背景に使われる事故が発生した（2026年10月）。
+_PLACEHOLDER_IMAGE_WORDS = (
+    "画像募集", "写真募集", "画像提供", "noimage", "no_image", "no-image",
+    "nophoto", "no_photo", "no-photo", "image_needed", "image-needed",
+    "imageneeded", "image_is_needed", "replace_this_image", "placeholder",
+)
+
+
+def is_placeholder_image_url(url: str) -> bool:
+    """画像URLが「画像募集中」「No Image」等のプレースホルダーかどうか。"""
+    name = urllib.parse.unquote(url.split("?")[0]).lower().replace(" ", "_")
+    return any(w in name for w in _PLACEHOLDER_IMAGE_WORDS)
+
 
 def _fetch_wikipedia_image(horse_name: str, out_path: str,
                            require_horse: bool = False) -> bool:
@@ -103,6 +118,9 @@ def _fetch_wikipedia_image(horse_name: str, out_path: str,
                 continue
         src = (data.get("originalimage") or data.get("thumbnail") or {}).get("source", "")
         if not src or Path(src.split("?")[0]).suffix.lower() in _WP_SKIP:
+            continue
+        if is_placeholder_image_url(src):
+            print(f"  [情報] {horse_name}: プレースホルダー画像のため不使用 ({src})")
             continue
         ext = Path(src.split("?")[0]).suffix.lower() or ".jpg"
         try:
@@ -238,6 +256,9 @@ def fetch_article_image(image_url: str, out_path: str) -> str | None:
     ロゴ等の小さすぎる画像は使わない。成功時はパスを返す。
     """
     if not image_url or not image_url.startswith("http"):
+        return None
+    if is_placeholder_image_url(image_url):
+        print(f"  [情報] 記事画像がプレースホルダーのため不使用 ({image_url})")
         return None
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     try:

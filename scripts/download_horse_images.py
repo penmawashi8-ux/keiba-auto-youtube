@@ -9,6 +9,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from landscape_video import is_placeholder_image_url
+
 ASSETS_DIR = Path("assets/horses")
 UA = "keiba-auto-youtube/1.0"
 CTX = ssl.create_default_context()
@@ -41,6 +43,9 @@ def get_image_url(horse_name: str) -> str | None:
             continue
         ext = Path(src.split("?")[0]).suffix.lower()
         if ext in SKIP_EXTS:
+            continue
+        if is_placeholder_image_url(src):
+            print(f"    プレースホルダー画像のため不使用: {src}", file=sys.stderr)
             continue
         return src
     return None
