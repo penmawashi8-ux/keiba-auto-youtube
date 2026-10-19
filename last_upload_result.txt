@@ -1,10 +1,10 @@
-date: 2026-10-19T01:13:36.946018Z
+date: 2026-10-19T04:09:26.254794Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-G0WcQ1RFrU title=【秋華賞】戸崎圭太騎手絶叫「ベリベリホース!」モンローウォークが史上4頭目の無敗
-OK project=1 video_id=2sMq-wqlmYQ title=【秋華賞・レースメモ】戸崎圭太騎手が21年アカイトリノムスメ以来5年ぶりの2勝目
-OK project=1 video_id=oKUZ_J0f39g title=【G1・1週前まとめ】ロブチェンの松山弘平騎手「先週よりグンと良くなりました」菊
+OK project=1 video_id=R2F5dG8RnlM title=無傷５連勝で秋華賞を制したモンローウォークが元気な姿を披露
+OK project=1 video_id=P_j8iFxbm1Q title=【アルテミスS想定騎手】リスグロワールは坂井瑠星騎手、プルヴィナルはC.ルメール
+OK project=1 video_id=H3C3Z_9Hg7o title=【アルテミスステークス展望】名牝の子リスグロワールに期待が高まる　母はG1・4勝
