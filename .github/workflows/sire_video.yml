@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 2
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -43,7 +43,11 @@ jobs:
           THUMB_ONLY: ${{ contains(github.event.head_commit.message, '[thumb]') }}
         run: |
           mkdir -p sim
-          for f in data/sire_video/*.json; do
+          # 今回のコミットで変わった設定だけ作る（スクリプトの変更など、設定が変わっていなければ全部）
+          files=$(git diff --name-only HEAD~1 HEAD -- 'data/sire_video/*.json' || true)
+          [ -z "$files" ] && files=$(ls data/sire_video/*.json)
+          echo "$files" > sim/sire_video_targets.txt
+          for f in $files; do
             # コミットの見出しに [thumb] があればサムネイルだけ作り直す（動画は前回のまま）
             if [ "$THUMB_ONLY" = "true" ]; then
               python -u scripts/sire_ranking_video.py "$f" --thumb-only
@@ -55,7 +59,7 @@ jobs:
       - name: Save outputs to research-output branch
         if: always()
         run: |
-          for f in data/sire_video/*.json; do
+          for f in $(cat sim/sire_video_targets.txt); do
             p=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['prefix'])" "$f")
             bash .github/scripts/save_sim_outputs.sh "産駒ランキング動画 $p" sim/$p.mp4 sim/${p}_thumb.jpg sim/${p}_credits.txt sim/${p}_frame_*.jpg
           done
