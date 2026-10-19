@@ -19,7 +19,7 @@ concurrency:
 jobs:
   ranking:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     permissions:
       contents: write  # research-output ブランチへの push 用
     steps:
@@ -77,6 +77,14 @@ jobs:
           PY
           python -u scripts/sim_thumbnail.py sim/photo_set.json || echo "写真候補の取得で失敗"
 
+      # 確認用: 上位馬の全成績・血統、若い世代の産駒が中央で現役かどうか（data/sire_request.json の young 年以降）
+      - name: Fact check data
+        run: |
+          YOUNG=$(python -c "import json; print(json.load(open('data/sire_request.json')).get('young', 0))")
+          if [ "$YOUNG" != "0" ]; then
+            python -u scripts/sire_factcheck.py "$SIRE" "$PREFIX" "$YOUNG" || echo "ファクトチェック材料の取得で失敗"
+          fi
+
       - name: Save outputs to research-output branch
         if: always()
-        run: bash .github/scripts/save_sim_outputs.sh "産駒賞金ランキング ${SIRE}" sim/${PREFIX}_ranking.json sim/${PREFIX}_search_debug*.html sim/${PREFIX}_photos_* sim/${PREFIX}_ranking.json
+        run: bash .github/scripts/save_sim_outputs.sh "産駒賞金ランキング ${SIRE}" sim/${PREFIX}_ranking.json sim/${PREFIX}_search_debug*.html sim/${PREFIX}_photos_* sim/${PREFIX}_factcheck.txt

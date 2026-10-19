@@ -1,10 +1,1 @@
-{"sire": "クロフネ", "prefix": "kurofune", "top": 10,
- "photo_only": ["ママコチャ", "カレンチャン"],
- "photo_hints": {
-  "ママコチャ": {"en": ["Mama Cocha", "Mamacocha", "ママコチャ"], "loose": true,
-                "queries": ["ママコチャ", "Mama Cocha", "Mama Cocha horse", "Mamacocha", "Sprinters Stakes 2023", "スプリンターズステークス 2023"],
-                "articles": ["ママコチャ", "Mama Cocha"]},
-  "カレンチャン": {"en": ["Curren Chan", "Currenchan", "カレンチャン"], "loose": true,
-                "queries": ["カレンチャン", "Curren Chan", "Curren Chan horse", "Currenchan", "Sprinters Stakes 2011", "Takamatsunomiya Kinen 2012"],
-                "articles": ["カレンチャン", "Curren Chan"]}
- }}
+{"sire": "ステイゴールド", "prefix": "staygold", "top": 10, "young": 2014}
