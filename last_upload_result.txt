@@ -1,10 +1,10 @@
-date: 2026-10-19T07:10:27.967330Z
+date: 2026-10-19T10:09:57.934506Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AEDcWPH6_ek title=レガレイラは天皇賞・秋で岩田望来騎手と新コンビ　サンデーサラブレッドクラブが発表
-OK project=1 video_id=yTAh3yhlYyA title=【浦和競馬】母は南関東牝馬クラシック2冠のケラススヴィア　アンジュディーヴァが6
-OK project=1 video_id=RkWS4b44gok title=競馬場に34歳美人女優が降臨!“印象激変”のドレス姿が「可愛すぎ」「別人」「断然
+OK project=1 video_id=UAXREHzPRH0 title=【AI予想・菊花賞】人工知能は三冠達成ならずを示唆!? 長距離適性が光る本命候補
+OK project=1 video_id=Z2OW0IFsgv0 title=【11.3JBC競走】JBC2歳優駿　オーリエイト、イケメンモンスターなどが選定
+OK project=1 video_id=eroUyzTXGIU title=【注目馬動向】アイビーSを勝利したキャピタルストーンは年末の2歳G1へ　久保田調
