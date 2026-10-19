@@ -1,0 +1,36 @@
+name: Sire Ranking Fact Check
+
+# 産駒ランキング動画のファクトチェック材料（全成績・血統・若い世代の現役/抹消）を netkeiba から集める。
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/sire_factcheck.py
+      - .github/workflows/sire_factcheck.yml
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install requests==2.32.3 beautifulsoup4
+      - name: Fact check
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output
+          git show FETCH_HEAD:sim/kurofune_ranking.json > sim/kurofune_ranking.json
+          python -u scripts/sire_factcheck.py クロフネ kurofune 2017
+      - name: Save
+        if: always()
+        run: bash .github/scripts/save_sim_outputs.sh "産駒ランキング ファクトチェック" sim/kurofune_factcheck.txt
