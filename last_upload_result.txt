@@ -1,10 +1,10 @@
-date: 2026-10-20T01:09:46.600633Z
+date: 2026-10-20T07:09:40.786081Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HVcT9DaKwfs title=最高価格2億3000万円「アドマイヤ」が「ノーザンファームミックスセール」史上4
-OK project=1 video_id=H-giegjISGY title=【菊花賞】「人馬一体」杉山晴紀調教師×松山弘平騎手×ロブチェン 3冠へ死角なし
-OK project=1 video_id=loO4n92F7tc title=【アルテミスS展望】名牝の仔リスグロワールが重賞初制覇へ
+OK project=1 video_id=XecjVJ6k51M title=美人女優が推し活するジャスタウェイ産駒とは?　2ショット公開の横山めぐみ「何より
+OK project=1 video_id=_V2q2_Uz3bE title=ノーザンファームミックスセール当歳は売上総額60億円超 最高価格は「プレインチャ
+OK project=1 video_id=M-M8EAGXqec title=【菊花賞】ゴーイントゥスカイ　歴代最多タイ菊５勝の武豊とロブチェン３冠阻止だ　青
