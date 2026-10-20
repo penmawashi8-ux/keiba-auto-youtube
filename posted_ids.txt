@@ -3460,3 +3460,6 @@ https://news.netkeiba.com/?pid=news_view&no=346043
 https://news.netkeiba.com/?pid=news_view&no=346158
 https://news.netkeiba.com/?pid=news_view&no=346150
 https://news.netkeiba.com/?pid=news_view&no=346138
+https://news.netkeiba.com/?pid=news_view&no=346149
+https://news.netkeiba.com/?pid=news_view&no=346148
+https://news.netkeiba.com/?pid=news_view&no=346173
