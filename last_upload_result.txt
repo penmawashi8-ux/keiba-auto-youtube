@@ -1,10 +1,10 @@
-date: 2026-10-19T10:09:57.934506Z
+date: 2026-10-20T01:09:46.600633Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UAXREHzPRH0 title=【AI予想・菊花賞】人工知能は三冠達成ならずを示唆!? 長距離適性が光る本命候補
-OK project=1 video_id=Z2OW0IFsgv0 title=【11.3JBC競走】JBC2歳優駿　オーリエイト、イケメンモンスターなどが選定
-OK project=1 video_id=eroUyzTXGIU title=【注目馬動向】アイビーSを勝利したキャピタルストーンは年末の2歳G1へ　久保田調
+OK project=1 video_id=HVcT9DaKwfs title=最高価格2億3000万円「アドマイヤ」が「ノーザンファームミックスセール」史上4
+OK project=1 video_id=H-giegjISGY title=【菊花賞】「人馬一体」杉山晴紀調教師×松山弘平騎手×ロブチェン 3冠へ死角なし
+OK project=1 video_id=loO4n92F7tc title=【アルテミスS展望】名牝の仔リスグロワールが重賞初制覇へ
