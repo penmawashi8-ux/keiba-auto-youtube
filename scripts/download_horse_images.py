@@ -9,7 +9,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from landscape_video import is_placeholder_image_url
+from landscape_video import is_placeholder_image_url, is_shared_wiki_image
 
 ASSETS_DIR = Path("assets/horses")
 UA = "keiba-auto-youtube/1.0"
@@ -44,7 +44,7 @@ def get_image_url(horse_name: str) -> str | None:
         ext = Path(src.split("?")[0]).suffix.lower()
         if ext in SKIP_EXTS:
             continue
-        if is_placeholder_image_url(src):
+        if is_placeholder_image_url(src) or is_shared_wiki_image(src, lang):
             print(f"    プレースホルダー画像のため不使用: {src}", file=sys.stderr)
             continue
         return src

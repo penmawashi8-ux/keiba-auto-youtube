@@ -93,6 +93,43 @@ def is_placeholder_image_url(url: str) -> bool:
     return any(w in name for w in _PLACEHOLDER_IMAGE_WORDS)
 
 
+# 1枚のファイルがこの数以上の記事で使われていたら「画像募集中」等の共通画像とみなす。
+# 実在馬の写真は本人・レース・騎手記事など多くても十数記事程度。
+_WP_SHARED_IMAGE_USAGE = 40
+
+
+def is_shared_wiki_image(src: str, lang: str) -> bool:
+    """Wikipedia画像が多数の記事で共用されているプレースホルダーかどうか。
+
+    「画像募集中」画像（馬のシルエット入り）はファイル名にその語を含まないため
+    ファイル名判定をすり抜けた（2026年10月 ワンダーディーン等）。
+    共用画像は数百記事で使われるので、記事名前空間での使用数で判定する。
+    API失敗時は False（判定不能なら画像を使う）。
+    """
+    parts = urllib.parse.unquote(urllib.parse.urlparse(src).path).split("/")
+    if "thumb" in parts and len(parts) > parts.index("thumb") + 3:
+        fname = parts[parts.index("thumb") + 3]
+    else:
+        fname = parts[-1]
+    if not fname:
+        return False
+    api_url = f"https://{lang}.wikipedia.org/w/api.php?" + urllib.parse.urlencode({
+        "action": "query", "titles": f"File:{fname}", "prop": "fileusage",
+        "funamespace": "0", "fulimit": str(_WP_SHARED_IMAGE_USAGE),
+        "format": "json", "formatversion": "2",
+    })
+    try:
+        req = urllib.request.Request(api_url, headers={"User-Agent": _WP_UA})
+        with urllib.request.urlopen(req, timeout=12, context=_SSL_CTX) as r:
+            data = json.loads(r.read())
+    except Exception as e:
+        print(f"  [警告] Wikipedia画像の使用数確認失敗: {e}", file=sys.stderr)
+        return False
+    pages = data.get("query", {}).get("pages", [])
+    usage = len(pages[0].get("fileusage", [])) if pages else 0
+    return "continue" in data or usage >= _WP_SHARED_IMAGE_USAGE
+
+
 def _fetch_wikipedia_image(horse_name: str, out_path: str,
                            require_horse: bool = False) -> bool:
     """Wikipedia(ja→en)から馬の画像を取得してJPEGに変換する。
@@ -119,9 +156,10 @@ def _fetch_wikipedia_image(horse_name: str, out_path: str,
         src = (data.get("originalimage") or data.get("thumbnail") or {}).get("source", "")
         if not src or Path(src.split("?")[0]).suffix.lower() in _WP_SKIP:
             continue
-        if is_placeholder_image_url(src):
+        if is_placeholder_image_url(src) or is_shared_wiki_image(src, lang):
             print(f"  [情報] {horse_name}: プレースホルダー画像のため不使用 ({src})")
             continue
+        print(f"  Wikipedia画像URL: {src}")
         ext = Path(src.split("?")[0]).suffix.lower() or ".jpg"
         try:
             req2 = urllib.request.Request(src, headers={"User-Agent": _WP_UA})
