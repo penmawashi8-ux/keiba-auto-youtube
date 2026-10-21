@@ -42,7 +42,15 @@ DOT_BORDER = [":borderw=2:bordercolor=0x333333", ":borderw=2:bordercolor=white"]
 COURSES = {
     "東京": {"name": "東京競馬場", "lap": 2083.1, "straight": 525.9, "right": False, "note": "Aコース"},
     "京都": {"name": "京都競馬場", "lap": 1782.8, "straight": 328.4, "right": True, "note": "内回り Aコース"},
+    "京都外": {"name": "京都競馬場", "lap": 1894.3, "straight": 403.7, "right": True, "note": "外回り Aコース"},
 }
+# 外回りを使う距離（京都の芝。1600m は内・外の両方があるが、重賞は外回り）
+OUTER = {"京都": {1600, 1800, 2200, 2400, 3000, 3200}}
+
+
+def course_key(venue: str, dist: int) -> str:
+    """COURSES のキー（京都の外回りは「京都外」）"""
+    return venue + "外" if dist in OUTER.get(venue, set()) and venue + "外" in COURSES else venue
 
 
 def set_course(venue: str) -> None:
@@ -498,8 +506,13 @@ def commentary(names: list[str], D, LAT, taus, finish, dist: int) -> list[tuple[
     # キーフレームの間を補間して、先頭がちょうど1000mに来た時刻を出す
     t1000 = taus[k] if k == 0 else (taus[k - 1] + (taus[k] - taus[k - 1]) * (1000 - lead[k - 1])
                                     / max(lead[k] - lead[k - 1], 1e-6))
-    pace = "ややハイペース" if t1000 < 58.8 else "落ち着いた流れ" if t1000 > 60.8 else "平均ペース"
+    mid = 59.8 if dist <= 2400 else 61.6     # 1000m通過の平均的なタイム（長距離は遅い）
+    pace = "ややハイペース" if t1000 < mid - 1.0 else "落ち着いた流れ" if t1000 > mid + 1.0 else "平均ペース"
     out.append((t1000, f"1000m通過は{t1000:.1f}秒、{pace}", f"1000メートル通過は{t1000:.1f}秒。{pace}です"))
+    if dist - LAP_M > 900:                   # 1周以上走るレース: 1周目のスタンド前
+        k = k_at(dist - LAP_M + 150)
+        o = order(k)
+        out.append((taus[k], f"1周目のスタンド前、先頭は{names[o[0]]}", f"1周目のスタンド前を通過。先頭は{names[o[0]]}"))
     k = k_at(dist - (STRAIGHT_M + math.pi * CURVE_R_M * 0.5))      # 3〜4コーナーの中間
     out.append((taus[k], "3コーナーから4コーナー、後続が差を詰める！", "3コーナーから4コーナー。後ろの馬が差を詰めてきた！"))
     k = k_at(dist - STRAIGHT_M + 5)                                  # 直線に入ったところ
@@ -660,7 +673,7 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     r0, r1 = race_start, race_end
     rd.dt("スタート！", 72, "0xFFEB3B", f"{VIEW_W // 2}-text_w/2", "90", g1 - 0.6, r0 + 1.4,
           ":borderw=6:bordercolor=black")
-    rd.dt(f"{venue} 芝{dist}m", 22, "white", "24", "18", r0, r1, ":box=1:boxcolor=black@0.45:boxborderw=6")
+    rd.dt(f"{COURSE['name'][:2]} 芝{dist}m", 22, "white", "24", "18", r0, r1, ":box=1:boxcolor=black@0.45:boxborderw=6")
     rd.dt(f"{RACE_SPEEDUP:g}倍速", 18, "white", "24", "54", r0, tm.slow_from, ":box=1:boxcolor=black@0.45:boxborderw=5")
     rd.dt("スローモーション", 22, "0xFFEB3B", "24", "54", tm.slow_from, r1, ":box=1:boxcolor=0xB71C1C@0.8:boxborderw=6")
     icons = []                                   # (x式, y式, 角度式) … 合成のところで馬アイコンを重ねる

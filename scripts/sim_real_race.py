@@ -91,7 +91,7 @@ def badge_col(h: dict, x: int, size: int | None = None) -> dict:
 def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -> list[dict]:
     n = len(horses)
     drawn = ent["drawn"]
-    course = sr.COURSES[ent["venue"]]
+    course = sr.COURSES[sr.course_key(ent["venue"], ent["distance"])]
     te = kit["test"]
     lap = course["lap"]
     title = [{"text": f"{ent['race_name']} {ent['date'][:4]}", "x": "(w-text_w)/2", "y": 190, "size": 72,
@@ -301,7 +301,7 @@ def main() -> None:
         kit = {**kit, **sl.build_features(sm.load_races(surface="ダ"))}
     date, dist, venue = ent["date"], ent["distance"], ent["venue"]
     if not no_video:
-        sr.set_course(venue)
+        sr.set_course(sr.course_key(venue, dist))
     n = len(ent["horses"])
     drawn = ent["drawn"]
 
@@ -391,7 +391,7 @@ def main() -> None:
     video = SIM_DIR / "real_race_video.mp4"
     marks = sr.render(video, SIM_DIR / "work_real", sd.find_font(), names, [horses[m]["style"] for m in names],
                       [finish[m] for m in names], before_pages(ent, horses, kit, gate),
-                      after_pages(horses, counts, shown, drawn, upsets), dist=dist, venue=venue,
+                      after_pages(horses, counts, shown, drawn, upsets), dist=dist, venue=sr.course_key(venue, dist),
                       nums=[horses[m]["num"] for m in names], short=short,
                       tts=sd.make_tts(SIM_DIR / "work_real" / "voice"),
                       frames={"title": 1.0, "entries": 16.0, "gate": ("gate", 1.0), "start": ("race_start", 1.0),
