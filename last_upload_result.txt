@@ -1,10 +1,10 @@
-date: 2026-10-20T10:07:46.011955Z
+date: 2026-10-21T01:08:23.236570Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=5FR12kZbKQc title=【アルテミスS予想オッズ】リスグロワールが予想1番人気
-OK project=1 video_id=37cml_NInLs title=【菊花賞予想オッズ】ロブチェンが予想1番人気
-OK project=1 video_id=WSTDS96dAVQ title=【今週のトク注新馬】エフフォーリア産駒×鹿戸厩舎　「素直で一生懸命なのが似ている
+OK project=1 video_id=mnuCXyOSsdo title=【園田競馬・人気ジョッキーは語る】タガノディオーサ(7R)で勝利を意識する笹田知
+OK project=1 video_id=_AUOddvUCks title=【園田競馬　21日発走　京都畜産特別】マーブルヘイローが巻き返す
+OK project=1 video_id=2oPAXCnkhLc title=【菊花賞】打倒ロブチェンへ「想像を超えていく」ジャスティンシカゴと原優介騎手
