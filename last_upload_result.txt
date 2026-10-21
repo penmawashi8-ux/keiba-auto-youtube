@@ -1,10 +1,10 @@
-date: 2026-10-21T04:10:22.396339Z
+date: 2026-10-21T07:15:06.106466Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=zI1FrrRxM9Q title=【菊花賞】ロブチェンの杉山晴調教師が3冠へ意欲「何とか期待に応えられるように」共
-OK project=1 video_id=ei5k3fj_J4M title=【注目馬動向】5戦5勝の秋華賞馬モンローウォークは放牧へ　次戦は上村調教師「オー
-OK project=1 video_id=T50_4rEwJOE title=【菊花賞】連勝中のダノンヒストリーは併せ馬で手応え十分　堀調教師「非常にリズム良
+OK project=1 video_id=iGuFdKgjzx4 title=【注目馬動向】クイーンズウォークはエリザベス女王杯でCデムーロ騎手と新コンビを結
+OK project=1 video_id=XcpkQtZfkXI title=11・1米G1・ブリーダーズCダートマイルが2時10分→3時26分　スプリントが
+OK project=1 video_id=NVrGMHgoHHM title=【天皇賞1週前追い】ダノンデサイルに戸崎「道中のリズムが良かった」
