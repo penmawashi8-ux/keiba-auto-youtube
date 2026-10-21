@@ -1,10 +1,10 @@
-date: 2026-10-21T07:15:06.106466Z
+date: 2026-10-21T10:08:16.295953Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=iGuFdKgjzx4 title=【注目馬動向】クイーンズウォークはエリザベス女王杯でCデムーロ騎手と新コンビを結
-OK project=1 video_id=XcpkQtZfkXI title=11・1米G1・ブリーダーズCダートマイルが2時10分→3時26分　スプリントが
-OK project=1 video_id=NVrGMHgoHHM title=【天皇賞1週前追い】ダノンデサイルに戸崎「道中のリズムが良かった」
+OK project=1 video_id=tNoois-jkpM title=新潟記念6着ドゥレッツァの次走はジャパンCや香港国際競走を検討　23年菊花賞V
+OK project=1 video_id=dhrcRKVzhYw title=【菊花賞】「酔いしれたじゃないけど、気持ちよかったです」アスクエジンバラは岩田康
+OK project=1 video_id=JAQMGVAqR8Y title=【天皇賞・秋・1週前】「思ったイメージと違ったところは…」レガレイラと新コンビの
