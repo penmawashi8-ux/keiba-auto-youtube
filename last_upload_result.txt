@@ -1,9 +1,10 @@
-date: 2026-10-22T04:09:37.693463Z
+date: 2026-10-22T07:11:29.519064Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=H0KQ4F7eLlY title=【天皇賞・秋・1週前】重賞3勝馬エルトンバローズが好気配　松若風馬騎手「1週前の
-OK project=1 video_id=djNacqLtlJ8 title=【菊花賞】ゴーイントゥスカイが余力十分に好仕上げ　上原佑調教師「楽に走れていて良
+OK project=1 video_id=8KC2Nt-uQ1M title=【アルテミスS出走馬・騎手確定】リスグロワール＆坂井瑠星騎手、プルヴィナル＆C.
+OK project=1 video_id=35IwjVDyvSA title=【浦和3R・2歳新馬】3冠かかるロブチェンと父が同じテンマデノボレが圧巻の大差V
+OK project=1 video_id=g4_VWnBWpIQ title=【阪神アーバン競馬】ジュウリョクピエロの新馬戦2着馬が園田7Rで大楽勝　兵庫に移
