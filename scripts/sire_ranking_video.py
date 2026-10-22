@@ -328,7 +328,8 @@ def designed_thumb(td: dict, photos: dict, out: Path, T: Text, work: Path) -> No
          T(l1, tx, 170, fit(l1, 780, 118), "white", border=0),
          T(l2, tx, 320, fit(l2, 780, 136), GOLD),
          T(l3, tx, 610, fit(l3, 780, 60), "white"),
-         T(td["badge"], tx, 690, fit(td["badge"], 780, 110), GOLD)]
+         # 「%」は drawtext の展開記号なので全角の「％」にする
+         T(td["badge"].replace("%", "％"), tx, 690, fit(td["badge"], 780, 110), GOLD)]
     for j, sub in enumerate(td.get("subs", [])[:3]):
         d.append(T(sub["name"], tx + j * (sw + gap), 1012, fit(sub["name"], sw, 30), "white"))
     if td.get("hero_name"):
