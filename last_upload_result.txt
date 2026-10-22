@@ -1,10 +1,10 @@
-date: 2026-10-21T10:08:16.295953Z
+date: 2026-10-22T01:09:51.008795Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=tNoois-jkpM title=新潟記念6着ドゥレッツァの次走はジャパンCや香港国際競走を検討　23年菊花賞V
-OK project=1 video_id=dhrcRKVzhYw title=【菊花賞】「酔いしれたじゃないけど、気持ちよかったです」アスクエジンバラは岩田康
-OK project=1 video_id=JAQMGVAqR8Y title=【天皇賞・秋・1週前】「思ったイメージと違ったところは…」レガレイラと新コンビの
+OK project=1 video_id=lojio1LF-tk title=【阪神アーバン競馬・人気ジョッキーは語る】グレンセロース(園田12R)に自信を見
+OK project=1 video_id=jgU245kVLE0 title=【天皇賞・秋】G1・4勝クロワデュノール、秋初戦へ外から豪快な伸び脚披露
+OK project=1 video_id=xOtYj3JHrnk title=「優勝インタビューを受けられるように。その時に、さて何色になっているんだろう」武
