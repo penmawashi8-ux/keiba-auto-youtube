@@ -1,10 +1,10 @@
-date: 2026-10-22T07:11:29.519064Z
+date: 2026-10-22T10:10:48.499415Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8KC2Nt-uQ1M title=【アルテミスS出走馬・騎手確定】リスグロワール＆坂井瑠星騎手、プルヴィナル＆C.
-OK project=1 video_id=35IwjVDyvSA title=【浦和3R・2歳新馬】3冠かかるロブチェンと父が同じテンマデノボレが圧巻の大差V
-OK project=1 video_id=g4_VWnBWpIQ title=【阪神アーバン競馬】ジュウリョクピエロの新馬戦2着馬が園田7Rで大楽勝　兵庫に移
+OK project=1 video_id=YBH22cEjbXQ title=【JRA新馬戦】セレクトセール3億円のダノンカンタービレなどがデビュー
+OK project=1 video_id=ykq2f8m5H5E title=ノットゥルノがレックススタッドに到着 22年ジャパンダートダービー覇者
+OK project=1 video_id=HnOXcQAlnuo title=25年、26年フェブラリーS連覇のコスタノヴァが競走馬登録抹消　今後は種牡馬入り
