@@ -290,6 +290,8 @@ def make_big_track_png(path: Path, font: str, start_s: float, dist: int) -> None
     for k in range(200, dist, 200):                    # ハロン棒（残り距離）
         if k > LAP_M - 60:      # 1周より長い距離では、スタート直後の標識がゴール付近と重なるので描かない
             continue
+        if dist - LAP_M > 600:  # 1周半ほど走るレース（菊花賞など）は、1周目に「残り400m」などの標識を
+            continue            # 通って上の「残り○m」表示と食い違うので、地面の標識は描かない
         x, y = big_point(STRAIGHT_M - k, TRACK_W_M + 7)
         label(f"残り{k}m", x, y, 52, "white")
     s = 0.0
@@ -654,7 +656,9 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     sx, sy = course_point(start_s)
     fx, fy = course_point(STRAIGHT_M)
     rd.dt(f"{COURSE['name']} 芝{dist}m", 32, "white", "40", "24", g0, g1)
-    rd.dt(f"{TURN_FULL}に1周してゴール", 24, "0xFFEB3B", f"{CX}-text_w/2", f"{CY}-30", g0, g1)
+    laps = dist / LAP_M
+    lap_txt = "約1周半" if laps > 1.3 else "1周"
+    rd.dt(f"{TURN_FULL}に{lap_txt}してゴール", 24, "0xFFEB3B", f"{CX}-text_w/2", f"{CY}-30", g0, g1)
     bottom, top, rside, lside = ("←　←　←", "→　→　→", "↓", "↑") if RIGHT else ("→　→　→", "←　←　←", "↑", "↓")
     for txt, x, y in ((bottom, CX - 60, CY + R - TRACK_HALF - 40), (top, CX - 60, CY - R + TRACK_HALF + 12),
                       (rside, CX + A + R - TRACK_HALF - 34, CY - 14), (lside, CX - A - R + TRACK_HALF + 14, CY - 14)):
