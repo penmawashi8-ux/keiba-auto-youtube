@@ -146,7 +146,9 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         rows += ["", {"text": "・同じくらいの人気の2頭で比べた、「内枠で前に行く馬」より先着しやすいか", "color": "0xFFF59D"},
                  f"　内枠で後ろから行く馬 {edge(0, 1):+.1f}ポイント ／ 外枠で前に行く馬 {edge(1, 0):+.1f}ポイント ／ "
                  f"外枠で後ろから行く馬 {edge(1, 1):+.1f}ポイント",
-                 "・この差を各馬の枠と脚質に合わせて力に足して計算"]
+                 "・この差を各馬の枠と脚質に合わせて力に足して計算"
+                 + (f"（過去のレース数が少ないため、測った差を{gate['shrink']:.0%}に弱めて使用）"
+                    if gate.get("shrink", 1) < 0.85 else "")]
         pages.append(sr.text_page("前提条件② 枠順と脚質の影響", rows, 12.0, size=22, top=100))
     pages.append(sr.text_page(f"前提条件{'③' if gate else '②'} データと計算方法", [
         "・データ：netkeibaで公開されている成績（2003〜2026年）",
@@ -329,6 +331,13 @@ def main() -> None:
         if (gate.get("venue") != venue or gate.get("distance") != dist or gate.get("surface", "芝") != surf
                 or "gate_x_style" not in gate):
             gate = None
+    if gate:
+        # 過去レースが少ないコース（京都3000mは約30レース）では測った差がぶれやすいので、
+        # レース数に応じて弱めて使う（n/(n+50)。600レースなら 92%、34レースなら 40%）
+        gate["shrink"] = gate["n_races"] / (gate["n_races"] + 50)
+        for k2 in ("gate", "style", "gate_x_style"):
+            gate[k2] *= gate["shrink"]
+        print(f"枠・脚質の効果: {gate['n_races']}レース → {gate['shrink']:.0%} に弱めて使用")
     counts_plain = monte_carlo(horses)
     # 枠と脚質の組み合わせ: ゲート×g + 脚質×s + ゲート×脚質×g×s（g: 0最内〜1大外、s: 0前〜1後方）
     for h in horses.values():

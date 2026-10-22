@@ -87,6 +87,12 @@ def fetch_entries(session, race_id: str, date: str) -> dict:
     if len(uniq) < len(horses):
         print(f"[注意] 出馬表の重複行を除いた: {len(horses)}行 → {len(uniq)}頭")
     horses = list(uniq.values())
+    # 枠順確定後: 除外・取消で馬番の付かない登録馬は出走しないので外す
+    if any(h["umaban"] for h in horses):
+        out = [h for h in horses if not h["umaban"]]
+        if out:
+            print("[注意] 馬番のない登録馬を除外: " + "、".join(h["horse"] for h in out))
+        horses = [h for h in horses if h["umaban"]]
     if not horses:
         print(html[:3000])
         raise SystemExit("出馬表に馬が見つかりません（ページ形式が変わった可能性）")
