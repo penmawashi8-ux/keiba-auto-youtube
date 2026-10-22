@@ -161,7 +161,7 @@ def record_exclusion(entry: dict, reason: str, pattern: str = "") -> None:
     """除外した記事を JSONL に追記する。失敗しても本処理は止めない。
 
     reason は後で絞り込めるよう固定の識別子を使う:
-      retrospective / video_title / deny_keyword / generic_title / not_result
+      retrospective / video_title / deny_keyword / generic_title / not_result / teaser_quote
     """
     title = entry.get("title", "")
     print(f"  [除外:{reason}] {('（' + pattern + '）') if pattern else ''}{title[:60]}")
@@ -184,6 +184,30 @@ def record_exclusion(entry: dict, reason: str, pattern: str = "") -> None:
         path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     except Exception as e:  # ログ失敗で記事取得を落とさない
         print(f"  [警告] 除外ログの書き込み失敗: {e}", file=sys.stderr)
+
+
+_TEASER_QUOTE = re.compile(r"「([^」]{2,}?)\s*(?:…+|‥+|\.{3,})」")
+
+
+def teaser_quote_missing(title: str, body: str) -> str:
+    """タイトルの「〜…」型の思わせぶりなセリフの続きが本文に無ければ、そのセリフを返す。
+
+    例:「思ったイメージと違ったところは…」— 本文が有料部分等で取れていないと、
+    動画・サムネイルで続きを期待させたまま答えを言わずに終わってしまう
+    （2026年10月 レガレイラ記事で発生）。続きが本文にあれば "" を返す。
+    """
+    flat = re.sub(r"\s+", "", body)
+    for m in _TEASER_QUOTE.finditer(title):
+        core = re.sub(r"\s+", "", m.group(1))
+        start = 0
+        while (i := flat.find(core, start)) >= 0:
+            nxt = flat[i + len(core):i + len(core) + 1]
+            if nxt and nxt not in "…‥.」":
+                break
+            start = i + 1
+        else:
+            return m.group(1)
+    return ""
 
 
 def is_keiba_related(entry: dict) -> bool:
@@ -1364,7 +1388,14 @@ def fetch_news() -> list[dict]:
             print(f"  取得(RSS): {fb['title'][:60]} [{fb['published_date'][:19]}]")
         news_items.extend(fallback_items[:need])
 
-    return news_items
+    kept = []
+    for item in news_items:
+        teaser = teaser_quote_missing(item["title"], item["summary"])
+        if teaser:
+            record_exclusion(item, "teaser_quote", teaser)
+            continue
+        kept.append(item)
+    return kept
 
 
 def main() -> None:

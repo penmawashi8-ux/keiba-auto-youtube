@@ -29,6 +29,7 @@ REASON_LABELS = {
     "deny_keyword": "対象外ジャンル/キャンペーン",
     "generic_title": "定型タイトル",
     "not_result": "予想・登録記事（結果ではない）",
+    "teaser_quote": "「〜…」セリフの続きが本文に無い",
 }
 
 
