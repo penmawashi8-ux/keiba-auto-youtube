@@ -1,51 +1,56 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (46個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【天皇賞・秋・1週前】重賞3勝馬エルトンバローズが好気配　松若風馬騎手「1週前の状態としては順調ですね」 ---
-[0] Gemini入力本文 398文字: '◆第174回天皇賞・秋・G1(11月1日、東京競馬場・芝2000メートル)1週前追い切り＝10月22日、栗東トレセン\n\t\t\t\t\u3000重賞3勝の実績を持つエルトンバローズ(牡6歳、栗東・杉山晴紀厩舎、父ディープブリランテ)は、栗東・CWコースでド'
+--- 記事[0]: 【アルテミスS出走馬・騎手確定】リスグロワール＆坂井瑠星騎手、プルヴィナル＆C.ルメール騎手など13頭 ---
+[0] Gemini入力本文 342文字: '10月24日に東京競馬場で行われる、第15回アルテミスステークス(2歳・牝・GIII・芝1600m)の出走馬・騎手が確定した。\n\u3000リスグラシューの娘リスグロワール(牝2、栗東・矢作芳人厩舎)は坂井瑠星騎手、中山の新馬戦を制したプルヴィナル('
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[1] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[1]: 【菊花賞】ゴーイントゥスカイが余力十分に好仕上げ　上原佑調教師「楽に走れていて良かった」 ---
-[1] Gemini入力本文 397文字: '◆第87回菊花賞・G1(10月25日、京都競馬場・芝3000メートル)追い切り＝10月22日、美浦トレセン\n\t\t\t\t\u3000セントライト記念6着からラスト1冠を目指すゴーイントゥスカイ(牡3歳、美浦・上原佑紀厩舎、父コントレイル)は、Wコースで荻'
+--- 記事[1]: 【浦和3R・2歳新馬】3冠かかるロブチェンと父が同じテンマデノボレが圧巻の大差V　中島良美騎手「追ってからの反応がはやい ---
+[1] Gemini入力本文 346文字: '10月20日の浦和3Rで2歳新馬戦(ダート1400メートル＝5頭立て)が行われ、3番人気のテンマデノボレ(牡2歳、浦和・平山真希厩舎、父ワールドプレミア)がデビュー戦を勝利で飾った。勝ちタイムは1分30秒1(良)。\n\t\t\t\t\u3000道中はリズム重'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
+
+--- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+
+--- 記事[2]: 【阪神アーバン競馬】ジュウリョクピエロの新馬戦2着馬が園田7Rで大楽勝　兵庫に移籍初戦のロードステラート ---
+[2] Gemini入力本文 355文字: '◆園田7R・C2三組3歳上(10月22日、園田競馬場・ダート1400メートル、良)\n\t\t\t\t\u3000兵庫に転入初戦のロードステラート(牡3歳、園田・田中一巧厩舎、父キタサンブラック)が最後に流す余裕を見せ、7馬身差をつけての大楽勝。吉村智洋騎手と'
+[2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[1] 使用: key=***zGG0 model=gemini-flash-latest
-[0] 使用: key=***zGG0 model=gemini-flash-latest
   HTTP 200
-[0]  [Gemini生出力 204文字]: '本日の競馬ニュースです。11月1日に東京競馬場芝2000メートルで行われる第174回天皇賞・秋に向け、重賞3勝馬エルトンバローズが10月22日、栗東トレセンで1週前追い切りを行いました。栗東のCWコースでドンテスタマスター、ロードスタニングと3頭併せを実施し、軽快なフットワークで6ハロン81秒3、ラスト11秒2をマークしました。騎乗した松若風馬騎手は、1週前の状態としては順調ですねと好気配を伝えています。'
+[0]  [Gemini生出力 221文字]: '今週の競馬注目情報をお伝えします。10月24日に東京競馬場で行われる第15回アルテミスステークス、2歳牝馬のGIII、芝1600mの出走馬と騎手が確定しました。リスグラシューの娘であるリスグロワールは坂井瑠星騎手、中山の新馬戦を制したプルヴィナルはC.ルメール騎手とのコンビです。その他、カナデルペガサスには今村聖奈騎手、サトノスプレマシーには田辺裕信騎手、シティオブドリームには横山典弘騎手、ジーティーキャリーには西村淳也騎手が騎乗します。'
 [0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (204文字)
-[0]  プレビュー: 本日の競馬ニュースです。11月1日に東京競馬場芝2000メートルで行われる第174回天皇賞・秋に向け、重賞3勝馬エルトンバローズが10月22日、栗東トレセンで1...
+[0]  → output/script_0.txt 保存 (221文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。10月24日に東京競馬場で行われる第15回アルテミスステークス、2歳牝馬のGIII、芝1600mの出走馬と騎手が確定しました。...
   HTTP 200
-[1]  [Gemini生出力 228文字]: 'レース関連の最新情報です。10月25日に京都競馬場・芝3000メートルで行われる第87回菊花賞に向けて、セントライト記念6着からラスト1冠を目指すゴーイントゥスカイが、10月22日に美浦トレセンのWコースで追い切りを行いました。荻野極騎手が騎乗して3頭隊列の2番手を追走し、直線では先行したフォルテフィオーレと馬体を併せ、6ハロン84秒9、11秒9で併入しました。レースでは武豊騎手が騎乗する予定で、上原佑調教師は「楽に走れていて良かった」と話しています。'
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (228文字)
-[1]  プレビュー: レース関連の最新情報です。10月25日に京都競馬場・芝3000メートルで行われる第87回菊花賞に向けて、セントライト記念6着からラスト1冠を目指すゴーイントゥス...
+[2]  [Gemini生出力 212文字]: '競馬速報です。\n10月22日、園田競馬場で行われた園田7R・C2三組3歳上、ダート1400メートル戦で、兵庫転入初戦のロードステラートが大楽勝しました。ロードステラートは吉村智洋騎手とのコンビで、単勝、複勝ともに元返しの100円という圧倒的な1番人気に応え、最後流す余裕を見せ、7馬身差をつけて勝利しました。勝ちタイムは1分31秒7です。JRA所属時には14戦で2着2回、3着4回と惜しくも勝利に届かず、兵庫に転入しました。'
+[2]  [重複除去] 212文字 → 211文字
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (211文字)
+[2]  プレビュー: 競馬速報です。10月22日、園田競馬場で行われた園田7R・C2三組3歳上、ダート1400メートル戦で、兵庫転入初戦のロードステラートが大楽勝しました。ロードステ...
+  HTTP 200
+[1]  [Gemini生出力 234文字]: '注目の競馬情報をお届けします。10月20日の浦和3Rで2歳新馬戦が行われ、3番人気のテンマデノボレがデビュー戦を勝利で飾りました。ダート1400メートル、5頭立てで行われたこのレースで、テンマデノボレは勝ちタイム1分30秒1（良）を記録しています。道中はリズム重視で運び、4コーナー先頭の積極策から後続を突き放し、圧巻の大差勝ちを収めました。中島良美騎手は「追ってからの反応がはやい」とコメントし、能力試験で砂を嫌がっていたものの、本番では問題なかったと語っています。'
+[1]  [redirectフィルター] 234文字 → 219文字
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (219文字)
+[1]  プレビュー: 10月20日の浦和3Rで2歳新馬戦が行われ、3番人気のテンマデノボレがデビュー戦を勝利で飾りました。ダート1400メートル、5頭立てで行われたこのレースで、テン...
 
-2 件の脚本を生成しました。
+3 件の脚本を生成しました。
