@@ -1,0 +1,46 @@
+{
+ "prefix": "kikka2026",
+ "sire": "",
+ "horses": [],
+ "photos_intro": [
+  "Lovcen after 93rd Tokyo Yushun 03.jpg",
+  "Going to Sky 93rd Tokyo Yushun.jpg",
+  "Audacia 93rd Tokyo Yushun.jpg",
+  "Congestus 93rd Tokyo Yushun.jpg"
+ ],
+ "thumb_design": {
+  "hero": {
+   "file": "Lovcen after 93rd Tokyo Yushun 03.jpg",
+   "x": 0.35,
+   "y": 0.5
+  },
+  "hero_name": "8 ロブチェン（二冠馬）",
+  "subs": [
+   {
+    "file": "Going to Sky 93rd Tokyo Yushun.jpg",
+    "x": 0.3,
+    "y": 0.5,
+    "name": "9 ゴーイントゥスカイ"
+   },
+   {
+    "file": "Audacia 93rd Tokyo Yushun.jpg",
+    "x": 0.25,
+    "y": 0.5,
+    "name": "3 アウダーシア"
+   },
+   {
+    "file": "Congestus 93rd Tokyo Yushun.jpg",
+    "x": 0.25,
+    "y": 0.5,
+    "name": "2 コンジェスタス"
+   }
+  ],
+  "tag": "データで1万回シミュレーション",
+  "lines": [
+   "ロブチェン",
+   "三冠なるか？",
+   "菊花賞2026 勝率1位"
+  ],
+  "badge": "23.9%"
+ }
+}
