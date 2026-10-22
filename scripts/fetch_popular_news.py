@@ -34,6 +34,7 @@ from fetch_news import (  # noqa: E402
     load_posted_ids,
     parse_feed,
     record_exclusion,
+    teaser_quote_missing,
 )
 
 NEWS_JSON = "news.json"
@@ -360,6 +361,10 @@ def build_news_item(
     if not summary:
         print(f"  [警告] 本文取得失敗。タイトルのみで続行: {title[:50]}", file=sys.stderr)
         summary = title
+    teaser = teaser_quote_missing(title, summary)
+    if teaser:
+        record_exclusion({"id": entry_id, "title": title, "url": url}, "teaser_quote", teaser)
+        return None
     print(f"  取得: {title[:60]} [views={views:,}] [{pub_str[:19]}]")
     return {
         "id": entry_id,
