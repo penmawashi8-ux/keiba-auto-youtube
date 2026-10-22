@@ -1,6 +1,6 @@
-date: 2026-10-21T11:04:41.076747Z
+date: 2026-10-22T11:09:05.277219Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2h1ZpIf-FZw views=31253 title=サウジアラビアRC勝ちアゴルディーノなど33頭が中舘英二厩舎から転厩【3.1万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=GrLADKxaSqc views=50153 title=コスタノヴァが引退、種牡馬入り　２５、２６年フェブラリーＳ連覇【5.0万回閲覧・話題の競馬ニュース】
