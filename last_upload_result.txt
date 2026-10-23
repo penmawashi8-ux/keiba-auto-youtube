@@ -1,10 +1,8 @@
-date: 2026-10-23T01:08:47.333953Z
+date: 2026-10-23T04:29:38.657706Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 1
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t0JBGDs87xY title=【阪神アーバン競馬・人気ジョッキーは語る】タガノウィリアム(園田10R)に力が入
-OK project=1 video_id=4ILTqESn1wU title=【浦和11R・紅葉特別】アルヴァレス　連勝伸ばす
-OK project=1 video_id=cYmz0y7bPaA title=【菊花賞】ロブチェン3冠へ「いい枠を引けました」杉山晴調教師　内に馬群が密集して
+OK project=1 video_id=wcNArqpCPJ4 title=27年度JRA競馬学校騎手課程の合格者が発表　ボトシュ・アレクサンドラ・歌音さん
