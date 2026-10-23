@@ -1,8 +1,9 @@
-date: 2026-10-23T04:29:38.657706Z
+date: 2026-10-23T07:06:24.127758Z
 projects_loaded: 2
-uploaded: 1
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wcNArqpCPJ4 title=27年度JRA競馬学校騎手課程の合格者が発表　ボトシュ・アレクサンドラ・歌音さん
+OK project=1 video_id=A99ruRddLR0 title=【浦和競馬】3Rがレース取りやめ　2Rの落馬事故の影響で
+OK project=1 video_id=zQ53oxQ8U9c title=【地方競馬】浦和競馬３Ｒが取り止め「２Ｒでの競走中止馬と騎手の収容に時間を要した
