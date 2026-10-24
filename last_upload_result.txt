@@ -1,9 +1,9 @@
-date: 2026-10-24T07:06:51.116927Z
+date: 2026-10-24T10:12:26.013677Z
 projects_loaded: 2
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6aoVaM7V2J8 title=【JRA・WIN5】本日のWIN5は的中451票、配当63万6240円
-OK project=1 video_id=8f5TX5b2Kio title=【アルテミスS】ルメール騎手が大まくり!　血統馬プルヴィナルが無傷2連勝で重賞初
+OK project=1 video_id=3DnUR1Pv-jA title=【稲光特別レース後コメント】アカウフリューゲル富田暁騎手ら
+OK project=1 video_id=mICgvCsvQQk title=【菊花賞・土曜気配】初めての長距離輸送をクリアしたアウダーシア　陣営「充実してリ
