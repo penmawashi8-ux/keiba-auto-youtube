@@ -1,3 +1,3 @@
-date: 2026-10-23T17:39:14.210054Z
+date: 2026-10-24T16:25:02.509918Z
 type: daily_top_landscape
 result: no_candidates
