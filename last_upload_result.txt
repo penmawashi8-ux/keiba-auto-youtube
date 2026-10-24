@@ -1,9 +1,10 @@
-date: 2026-10-23T07:06:24.127758Z
+date: 2026-10-24T01:07:19.702027Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A99ruRddLR0 title=【浦和競馬】3Rがレース取りやめ　2Rの落馬事故の影響で
-OK project=1 video_id=zQ53oxQ8U9c title=【地方競馬】浦和競馬３Ｒが取り止め「２Ｒでの競走中止馬と騎手の収容に時間を要した
+OK project=1 video_id=9yCOnX376Es title=粗品、回収率26・3%で恒例の競馬予想“引退”もファン察知「そんな季節か」「秋の
+OK project=1 video_id=qTQJwBB1h44 title=【阪神アーバン競馬】兵庫ゴールドCの売得金は3億1072万3200円超で前年比1
+OK project=1 video_id=1I3UKWoxLEk title=凱旋門賞2勝などG1・11勝の名牝エネイブルの子エントラストが英国でデビュー戦を
