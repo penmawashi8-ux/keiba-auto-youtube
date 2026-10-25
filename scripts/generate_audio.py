@@ -74,12 +74,22 @@ def _get_kokoro_pipeline() -> "KPipeline":
     return _kokoro_pipeline
 
 
-def generate_audio_kokoro(text: str, audio_path: str, voice: str, speed: float) -> None:
-    """Kokoro TTS で音声を生成して MP3 に変換する。"""
+def generate_audio_kokoro(sentences: list[str], audio_path: str, voice: str, speed: float) -> list[float]:
+    """Kokoro TTS で文ごとに音声を生成し、連結して MP3 に変換する。
+
+    Kokoro はタイミングイベントを返さないため、文単位で生成して各文の
+    実際の長さ（秒）を返す。字幕・字幕クリップの切り替えはこの実測値に合わせる
+    （以前は文字数按分の推定で、文が進むほど音声と字幕がズレていた）。
+    """
     pipeline = _get_kokoro_pipeline()
     samples = []
-    for _, _, audio in pipeline(text, voice=voice, speed=speed):
-        samples.append(audio)
+    durations: list[float] = []
+    for sentence in sentences:
+        n = 0
+        for _, _, audio in pipeline(sentence, voice=voice, speed=speed):
+            samples.append(audio)
+            n += len(audio)
+        durations.append(n / 24000)
     if not samples:
         raise RuntimeError("Kokoro から音声データが得られませんでした")
     audio_data = np.concatenate(samples)
@@ -92,6 +102,7 @@ def generate_audio_kokoro(text: str, audio_path: str, voice: str, speed: float) 
     Path(wav_path).unlink(missing_ok=True)
     if result.returncode != 0:
         raise RuntimeError(f"ffmpeg MP3変換失敗: {result.stderr[-200:]}")
+    return durations
 
 
 def pick_tts_params() -> tuple[str, str, float, float]:
@@ -282,32 +293,85 @@ def _split_long_line(part: str, max_chars: int) -> list[str]:
     return chunks
 
 
-def _estimate_subtitle_segments(text: str, total_duration: float, max_chars: int = 26) -> list[dict]:
-    """テキストと音声長から字幕セグメントを近似生成する。
+def split_sentences(text: str) -> list[str]:
+    """generate_video.py の字幕クリップと同じ単位（。と改行）で文に分ける。"""
+    return [s.strip() for s in re.split(r"[。｡\n]+", text) if s.strip()]
 
-    句点（。！？\n）で文に分け、長い文は読点・スペース優先で分割する
-    （機械的な文字数ぶつ切りで語や数字が泣き別れになるのを防ぐ）。
+
+def _sentence_starts_from_words(narr_sents: list[str], words: list[dict]) -> list[float] | None:
+    """edge-tts の WordBoundary を各文に割り当て、文の開始秒を返す。
+
+    narr_sents を連結したテキスト上で各単語の位置を前から探し、どの文に
+    属するかを決める。開始が特定できない文があれば None（呼び出し側で推定）。
     """
-    parts = [p.strip() for p in re.split(r"(?<=[。！？\n])", text) if p.strip()]
-    if not parts:
-        return []
+    narration = "".join(narr_sents)
+    sent_begin = []
+    pos = 0
+    for s in narr_sents:
+        sent_begin.append(pos)
+        pos += len(s)
+    starts: list[float | None] = [None] * len(narr_sents)
+    starts[0] = 0.0
+    cursor = 0
+    for w in words:
+        text = w["text"].strip()
+        if not text:
+            continue
+        p = narration.find(text, cursor)
+        if p < 0:
+            continue
+        cursor = p + len(text)
+        si = max(i for i, b in enumerate(sent_begin) if b <= p)
+        if starts[si] is None:
+            starts[si] = w["offset"] / 10_000_000
+    if any(s is None for s in starts):
+        return None
+    return starts  # type: ignore[return-value]
 
-    chunks: list[str] = []
-    for part in parts:
-        chunks.extend(_split_long_line(part, max_chars))
 
-    total_chars = max(sum(len(c) for c in chunks), 1)
+def _estimate_sentence_starts(narr_sents: list[str], total_duration: float) -> list[float]:
+    """読み仮名置換後の文字数で文の開始秒を按分する（タイミング情報が無い場合の保険）。"""
+    total = max(sum(len(s) for s in narr_sents), 1)
+    starts, t = [], 0.0
+    for s in narr_sents:
+        starts.append(t)
+        t += total_duration * len(s) / total
+    return starts
+
+
+def save_sentence_timings(idx: str, sentences: list[str], starts: list[float],
+                          total_duration: float, has_title: bool) -> list[dict]:
+    """文ごとの [start, end) を output/timings_{idx}.json に保存する。
+
+    generate_video.py はこれを使って字幕クリップの長さを音声に一致させる。
+    """
+    timings = []
+    for i, (s, st) in enumerate(zip(sentences, starts)):
+        end = starts[i + 1] if i + 1 < len(starts) else total_duration
+        timings.append({"text": s, "start": round(st, 3), "end": round(end, 3)})
+    out = Path(OUTPUT_DIR) / f"timings_{idx}.json"
+    out.write_text(json.dumps({"has_title": has_title, "duration": round(total_duration, 3),
+                               "sentences": timings}, ensure_ascii=False, indent=2),
+                   encoding="utf-8")
+    print(f"  文タイミング保存: {out} ({len(timings)}文)")
+    return timings
+
+
+def _segments_from_sentence_timings(timings: list[dict], max_chars: int = 26) -> list[dict]:
+    """文タイミングから字幕セグメントを作る。長い文は分割し、文内だけ文字数で按分する。"""
     segments: list[dict] = []
-    current_t = 0.0
-    for chunk in chunks:
-        chunk_dur = (len(chunk) / total_chars) * total_duration
-        segments.append({
-            "start": int(current_t * 10_000_000),
-            "end": int((current_t + chunk_dur) * 10_000_000),
-            "text": chunk,
-        })
-        current_t += chunk_dur
-
+    for t in timings:
+        chunks = _split_long_line(t["text"], max_chars)
+        total = max(sum(len(c) for c in chunks), 1)
+        cur = t["start"]
+        for c in chunks:
+            dur = (t["end"] - t["start"]) * len(c) / total
+            segments.append({
+                "start": int(cur * 10_000_000),
+                "end": int((cur + dur) * 10_000_000),
+                "text": c,
+            })
+            cur += dur
     return segments
 
 
@@ -515,13 +579,16 @@ def main() -> None:
 
         idx_int = int(idx)
         title = news_items[idx_int].get("title", "") if idx_int < len(news_items) else ""
-        # subtitle_text: 原文テキスト（字幕表示用 — 人名は漢字のまま）
-        subtitle_text = (title + "。" + script) if title else script
-        # narration_text: 読み仮名置換済み（TTS用）。
+        # sentences: 原文テキストの文（字幕表示用 — 人名は漢字のまま）。先頭はタイトル読み上げ
+        sentences = ([title] if title else []) + split_sentences(script)
+        # narr_sents: 読み仮名置換済みの文（TTS用）。
         # 適用された置換を記録し、字幕側で元の漢字表記に復元する
         reading_track: list[tuple[str, str]] = []
-        narration_text = normalize_racing_terms(subtitle_text, track=reading_track)
-        narration_text = apply_readings(narration_text, track=reading_track)
+        narr_sents = [
+            apply_readings(normalize_racing_terms(s + "。", track=reading_track), track=reading_track)
+            for s in sentences
+        ]
+        narration_text = "".join(narr_sents)
         if title:
             print(f"  [{idx}] タイトル読み上げ追加: 「{title[:40]}」")
 
@@ -533,11 +600,12 @@ def main() -> None:
         engine = "Kokoro" if (_KOKORO_AVAILABLE and is_kokoro_voice) else "edge-tts"
         print(f"\n--- 音声生成 [{idx}] ({len(narration_text)}文字) engine={engine} voice={voice} ---")
         words: list[dict] = []
+        kokoro_durs: list[float] = []
         for attempt in range(1, 4):
             try:
                 if _KOKORO_AVAILABLE and is_kokoro_voice:
                     speed = 1.0 + (int(rate.replace("%", "").replace("+", "")) / 100)
-                    generate_audio_kokoro(narration_text, audio_path, voice=voice, speed=speed)
+                    kokoro_durs = generate_audio_kokoro(narr_sents, audio_path, voice=voice, speed=speed)
                 else:
                     words = asyncio.run(_edge_tts_with_words(
                         narration_text, audio_path, voice=voice, rate=rate,
@@ -558,8 +626,27 @@ def main() -> None:
                     Path(audio_path).unlink(missing_ok=True)
                     raise RuntimeError(f"音声生成を3回試みましたが失敗しました。idx={idx}")
 
+        raw_dur = _audio_duration_s(audio_path)
         apply_audio_variation(audio_path, pitch_factor, volume_db)
         aud_dur = _audio_duration_s(audio_path)
+        # 文ごとの開始秒（音声バリエーション適用前の時間軸）
+        starts = None
+        if kokoro_durs:
+            starts, t = [], 0.0
+            for d in kokoro_durs:
+                starts.append(t)
+                t += d
+        elif words:
+            starts = _sentence_starts_from_words(narr_sents, words)
+            if starts is None:
+                print(f"  [{idx}] [警告] 単語境界を文に割り当てられず。文タイミングは推定", file=sys.stderr)
+        if starts is None:
+            starts = _estimate_sentence_starts(narr_sents, raw_dur)
+        # バリエーション適用で長さが僅かに変わる分を補正
+        scale = aud_dur / raw_dur if raw_dur > 0 else 1.0
+        timings = save_sentence_timings(
+            idx, sentences, [s * scale for s in starts], aud_dur, has_title=bool(title),
+        )
         if words:
             # WordBoundary イベントから正確なタイミングで字幕を生成
             segs = words_to_segments(words, max_chars=26)
@@ -576,8 +663,8 @@ def main() -> None:
             # POGメタが存在する場合、WordBoundaryからチャプター開始時刻を計算して保存
             _save_chapter_timings(idx, words)
         else:
-            # Kokoro TTS はタイミングイベントなし → 推定で補完
-            segs = _estimate_subtitle_segments(subtitle_text, aud_dur)
+            # Kokoro TTS は単語タイミングが無いので、文ごとの実測タイミングから作る
+            segs = _segments_from_sentence_timings(timings)
         write_ass(segs, ass_path, font_name)
         print(f"  字幕: {ass_path} ({len(segs)} セグメント)")
         return idx
