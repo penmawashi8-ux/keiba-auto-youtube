@@ -998,6 +998,27 @@ def make_clip(
 # 1本の動画を生成
 # ---------------------------------------------------------------------------
 
+def load_sentence_timings(audio_path: str, n_sentences: int, has_title: bool) -> list[dict] | None:
+    """generate_audio.py が保存した文タイミング（output/timings_N.json）を読む。
+
+    文の数やタイトル有無が字幕クリップと一致しない場合は None（文字数按分に戻す）。
+    """
+    idx = Path(audio_path).stem.split("_")[-1]
+    path = Path(audio_path).parent / f"timings_{idx}.json"
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    timed = data.get("sentences", [])
+    if data.get("has_title") != has_title or len(timed) != n_sentences + (1 if has_title else 0):
+        print(f"  [警告] {path} の文数が字幕と不一致 ({len(timed)} vs {n_sentences}"
+              f"{'+タイトル' if has_title else ''})。文字数按分にフォールバック", file=sys.stderr)
+        return None
+    return timed
+
+
 def build_video(
     script_path: Path,
     audio_path: str,
@@ -1052,11 +1073,29 @@ def build_video(
     script_chars = sum(len(s) for s in sentences)
     total_chars = title_chars + script_chars
 
+    timed = load_sentence_timings(audio_path, len(sentences), bool(title))
     durations: list[float] = []
-    for s in sentences:
-        d = audio_duration * len(s) / total_chars if total_chars > 0 else audio_duration / len(sentences)
-        d = max(MIN_CUT_DURATION, d)
-        durations.append(d)
+    if timed:
+        # generate_audio.py が実測した文ごとの長さに合わせる（音声と字幕を一致させる）。
+        # 最低秒数で引き延ばすと以降の字幕が音声より遅れていくため、ここでは掛けない
+        # 切り替え時刻をフレーム境界に丸めてから差分を取り、クリップごとの丸め誤差の蓄積を防ぐ
+        frame = lambda t: round(t * FPS) / FPS  # noqa: E731
+        thumb_dur = frame(timed[0]["end"]) if title else 0.0
+        body = timed[1:] if title else timed
+        prev = thumb_dur
+        for t in body:
+            end = max(frame(t["end"]), prev + 0.1)
+            durations.append(end - prev)
+            prev = end
+        print("  字幕タイミング: 音声の実測値を使用")
+    else:
+        for s in sentences:
+            d = audio_duration * len(s) / total_chars if total_chars > 0 else audio_duration / len(sentences)
+            d = max(MIN_CUT_DURATION, d)
+            durations.append(d)
+        thumb_dur = (audio_duration * title_chars / total_chars) if (title and total_chars > 0) else (THUMBNAIL_DURATION if title else 0.0)
+        thumb_dur = max(THUMBNAIL_DURATION, thumb_dur) if title else 0.0
+        print("  字幕タイミング: 文字数按分（timings_*.json なし）")
 
     print(f"  セリフ数: {len(sentences)}")
     for i, (s, d) in enumerate(zip(sentences, durations)):
@@ -1068,8 +1107,7 @@ def build_video(
 
         # --- サムネイルフレーム（タイトル読み上げ尺） ---
         if title:
-            thumb_duration = (audio_duration * title_chars / total_chars) if total_chars > 0 else THUMBNAIL_DURATION
-            thumb_duration = max(THUMBNAIL_DURATION, thumb_duration)
+            thumb_duration = thumb_dur
             thumb_bg = assets_images[0] if assets_images else None
             clip_paths.append(
                 make_clip(
@@ -1118,8 +1156,6 @@ def build_video(
         bgm_files = sorted(glob.glob(f"{BGM_DIR}/*.mp3") + glob.glob(f"{BGM_DIR}/*.m4a"))
         bgm_path = random.choice(bgm_files) if bgm_files else None
 
-        thumb_dur = (audio_duration * title_chars / total_chars) if (title and total_chars > 0) else (THUMBNAIL_DURATION if title else 0.0)
-        thumb_dur = max(THUMBNAIL_DURATION, thumb_dur) if title else 0.0
         total_duration = thumb_dur + sum(durations) + ENDING_DURATION
 
         # 名馬列伝シリーズはドラマチックBGMを少し大きめにミックス
