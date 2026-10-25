@@ -1,9 +1,10 @@
-date: 2026-10-25T07:09:08.858078Z
+date: 2026-10-25T10:07:42.938080Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CBfj4hbE99Y title=【柏崎特別レース後コメント】テルヴィセクス亀田温心騎手ら
-OK project=1 video_id=gm9WGeoUVnc title=【JRA・WIN5】本日のWIN5は的中67票、配当852万3370円
+OK project=1 video_id=TUZo0Iw4rmY title=「何者?!」「そんな強いんか」ハイペース押し切った短距離路線の新星にファン衝撃　
+OK project=1 video_id=BT9mQHuHn7Q title=【菊花賞】10着ジャスティンシカゴ　原「自分のリズムを取れる競馬ではなかった」
+OK project=1 video_id=muzuSPN-xJA title=【菊花賞】「信じられません」武豊騎手でVのゴーイントゥスカイを生産した千代田牧場
