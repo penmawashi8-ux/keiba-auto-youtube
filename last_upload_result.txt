@@ -1,9 +1,10 @@
-date: 2026-10-25T01:07:54.267510Z
+date: 2026-10-25T04:08:15.804118Z
 projects_loaded: 2
-uploaded: 2
+uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=NrNBWLHed7c title=【菊花賞予想】パターン見極めれば候補馬浮上する？ 過去データから探るGI菊花賞
-OK project=1 video_id=e5zu1VAOnBY title=【25日の注目・東京2R】種牡馬引退のウインブライトに白星を　父を知る松岡正海の
+OK project=1 video_id=BoLZiWhRsEM title=【東京6R新馬戦結果】サリオス産駒ミストヴェールが人気に応えてV
+OK project=1 video_id=e0VAwfu3TlY title=【BCターフ】ディープモンスターがダートコースで追い切り　伸びやかな動きに陣営「
+OK project=1 video_id=MtiRyF5A1fU title=【京都5R新馬戦結果】コントレイル産駒の3億円ホース、ダノンカンタービレがデビュ
