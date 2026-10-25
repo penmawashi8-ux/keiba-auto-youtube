@@ -1,9 +1,9 @@
-date: 2026-10-24T10:12:26.013677Z
+date: 2026-10-25T01:07:54.267510Z
 projects_loaded: 2
 uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3DnUR1Pv-jA title=【稲光特別レース後コメント】アカウフリューゲル富田暁騎手ら
-OK project=1 video_id=mICgvCsvQQk title=【菊花賞・土曜気配】初めての長距離輸送をクリアしたアウダーシア　陣営「充実してリ
+OK project=1 video_id=NrNBWLHed7c title=【菊花賞予想】パターン見極めれば候補馬浮上する？ 過去データから探るGI菊花賞
+OK project=1 video_id=e5zu1VAOnBY title=【25日の注目・東京2R】種牡馬引退のウインブライトに白星を　父を知る松岡正海の
