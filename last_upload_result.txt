@@ -1,10 +1,10 @@
-date: 2026-10-25T10:07:42.938080Z
+date: 2026-10-26T01:07:51.859509Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TUZo0Iw4rmY title=「何者?!」「そんな強いんか」ハイペース押し切った短距離路線の新星にファン衝撃　
-OK project=1 video_id=BT9mQHuHn7Q title=【菊花賞】10着ジャスティンシカゴ　原「自分のリズムを取れる競馬ではなかった」
-OK project=1 video_id=muzuSPN-xJA title=【菊花賞】「信じられません」武豊騎手でVのゴーイントゥスカイを生産した千代田牧場
+OK project=1 video_id=Ox__ITj2JlE title=史上2頭目のBCクラシック連覇へ フォーエバーヤングが不動の主役だ
+OK project=1 video_id=EWPWraHoc0I title=【天皇賞(秋)】川田将雅騎手が天皇賞初制覇なるか ネブラディスクで参戦だ
+OK project=1 video_id=lPn4_6e8Enc title=【菊花賞】ゴーイントゥスカイで武豊騎手単独最多6勝目!ロブチェン3冠阻止
