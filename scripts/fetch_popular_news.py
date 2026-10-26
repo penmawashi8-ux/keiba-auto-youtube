@@ -26,11 +26,13 @@ from urllib.parse import urlparse
 sys.path.insert(0, str(Path(__file__).parent))
 from fetch_news import (  # noqa: E402
     RSS_FEEDS,
+    extract_netkeiba_body,
     extract_og_image,
     fix_distance_typo,
     http_get,
     http_get_article,
     is_keiba_related,
+    lead_already_in,
     load_posted_ids,
     parse_feed,
     record_exclusion,
@@ -190,42 +192,9 @@ def _extract_published(html: str) -> datetime | None:
     return None
 
 
-def _extract_netkeiba_body(html: str) -> str:
-    """netkeiba の記事本文（NewsArticle_Body）を改行を保ったまま取り出す。
-
-    本文は <div class="NewsArticle_Body"> 直下に <br> 区切りの裸テキストで置かれ、
-    先頭に写真キャプションの div が入る。汎用の「<div ...>(.*?)</div>」では
-    キャプションの閉じタグで止まり本文を丸ごと落とすため、専用に切り出す。
-    想定馬・騎手記事の「馬名 騎手名」一覧も1行1頭のまま残る。
-    """
-    m = re.search(r"<!--\s*ニュース記事\s*-->(.*?)<!--\s*ニュース記事\s*-->", html, re.DOTALL)
-    if not m:
-        m = re.search(
-            r'<div[^>]+class=["\'][^"\']*NewsArticle_Body[^"\']*["\'][^>]*>(.*?)<!--\s*/\.NewsArticle_Body\s*-->',
-            html, re.DOTALL | re.IGNORECASE,
-        )
-    if not m:
-        return ""
-    chunk = m.group(1)
-    chunk = re.sub(r'<div[^>]+class=["\']ArticleImage["\'].*?<!--\s*/\.ArticleImage\s*-->', " ", chunk,
-                   flags=re.DOTALL | re.IGNORECASE)
-    chunk = re.sub(r"<script[^>]*>.*?</script>", " ", chunk, flags=re.DOTALL | re.IGNORECASE)
-    chunk = re.sub(r"<br\s*/?>|</p>|</div>", "\n", chunk, flags=re.IGNORECASE)
-    text = _html_lib.unescape(re.sub(r"<[^>]+>", "", chunk))
-    lines = []
-    for line in text.split("\n"):
-        line = re.sub(r"[ \t\u3000]+", " ", line).strip()
-        if not line:
-            continue
-        # 想定馬一覧で騎手が「○○」の行は騎手未定（読み上げで記号にならないよう言葉にする）
-        line = re.sub(r"\s*○○$", " 騎手未定", line)
-        lines.append(line)
-    return "\n".join(lines)
-
-
 def _extract_body(html: str) -> str:
     """記事HTMLから本文テキストを抽出する（netkeiba向け・汎用フォールバック付き）。"""
-    nk_body = _extract_netkeiba_body(html)
+    nk_body = extract_netkeiba_body(html)
     if len(nk_body) >= 50:
         return _cut_footer(nk_body)
 
@@ -271,16 +240,6 @@ def _extract_body(html: str) -> str:
 
     text = re.sub(r"\s+", " ", _html_lib.unescape(body)).strip()
     return _cut_footer(text)
-
-
-def _lead_already_in(lead: str, body: str) -> bool:
-    """リード文（og:description / RSS要約）が本文に既に含まれているか。
-
-    どちらも末尾が「…」「...」で切られているため、完全一致ではなく先頭部分で比べる。
-    """
-    core = re.split(r"…|\.\.\.", lead, maxsplit=1)[0]
-    core = re.sub(r"\s+", "", core)[:40]
-    return bool(core) and core in re.sub(r"\s+", "", body)
 
 
 def _cut_footer(text: str) -> str:
@@ -349,9 +308,9 @@ def build_news_item(
         # og:description は記事のリード文。本文抽出がサイドバー等のノイズを
         # 拾った場合の保険として先頭に付与する（既存 fetch_news.py と同じ方針）
         og_desc = _extract_og_meta(html, "description")
-        if og_desc and not _lead_already_in(og_desc, body):
+        if og_desc and not lead_already_in(og_desc, body):
             body = (og_desc + " " + body).strip()
-        if rss_summary and not _lead_already_in(rss_summary, body):
+        if rss_summary and not lead_already_in(rss_summary, body):
             body = (rss_summary + " " + body).strip()
         # og:description にもサイト定型文が含まれるため、結合後にもう一度カット
         summary = _cut_footer(body)[:2000]

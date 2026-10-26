@@ -993,6 +993,53 @@ def scrape_jra_news() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# 本文抽出ヘルパー（fetch_popular_news.py と共用）
+# ---------------------------------------------------------------------------
+
+def extract_netkeiba_body(html: str) -> str:
+    """netkeiba の記事本文（NewsArticle_Body）を改行を保ったまま取り出す。
+
+    本文は <div class="NewsArticle_Body"> 直下に <br> 区切りの裸テキストで置かれ、
+    先頭に写真キャプションの div が入る。汎用の「<div ...>(.*?)</div>」では
+    キャプションの閉じタグで止まり本文を丸ごと落とすため、専用に切り出す。
+    想定馬・騎手記事の「馬名 騎手名」一覧も1行1頭のまま残る。
+    """
+    m = re.search(r"<!--\s*ニュース記事\s*-->(.*?)<!--\s*ニュース記事\s*-->", html, re.DOTALL)
+    if not m:
+        m = re.search(
+            r'<div[^>]+class=["\'][^"\']*NewsArticle_Body[^"\']*["\'][^>]*>(.*?)<!--\s*/\.NewsArticle_Body\s*-->',
+            html, re.DOTALL | re.IGNORECASE,
+        )
+    if not m:
+        return ""
+    chunk = m.group(1)
+    chunk = re.sub(r'<div[^>]+class=["\']ArticleImage["\'].*?<!--\s*/\.ArticleImage\s*-->', " ", chunk,
+                   flags=re.DOTALL | re.IGNORECASE)
+    chunk = re.sub(r"<script[^>]*>.*?</script>", " ", chunk, flags=re.DOTALL | re.IGNORECASE)
+    chunk = re.sub(r"<br\s*/?>|</p>|</div>", "\n", chunk, flags=re.IGNORECASE)
+    text = _html_lib.unescape(re.sub(r"<[^>]+>", "", chunk))
+    lines = []
+    for line in text.split("\n"):
+        line = re.sub(r"[ \t\u3000]+", " ", line).strip()
+        if not line:
+            continue
+        # 想定馬一覧で騎手が「○○」の行は騎手未定（読み上げで記号にならないよう言葉にする）
+        line = re.sub(r"\s*○○$", " 騎手未定", line)
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def lead_already_in(lead: str, body: str) -> bool:
+    """リード文（og:description / RSS要約）が本文に既に含まれているか。
+
+    どちらも末尾が「…」「...」で切られているため、完全一致ではなく先頭部分で比べる。
+    """
+    core = re.split(r"…|\.\.\.", lead, maxsplit=1)[0]
+    core = re.sub(r"\s+", "", core)[:40]
+    return bool(core) and core in re.sub(r"\s+", "", body)
+
+
+# ---------------------------------------------------------------------------
 # OG画像抽出
 # ---------------------------------------------------------------------------
 
@@ -1274,6 +1321,14 @@ def fetch_news() -> list[dict]:
                             break
                     except (json.JSONDecodeError, ValueError):
                         continue
+            # netkeiba の記事本文（<!-- ニュース記事 --> 区間）。汎用抽出では
+            # <p>タグのリード文しか拾えず、全文がHTMLにあるのに冒頭抜粋だけで
+            # 台本を作っていた（見出しの中身が動画に無い原因・2026年10月）
+            if len(body.strip()) < 100:
+                nk_body = extract_netkeiba_body(html)
+                if len(nk_body) >= 100:
+                    body = nk_body
+                    _method = "netkeiba本文"
             # <script> / <style> タグとその中身を除去（JSコードの混入を防ぐ）
             html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE)
             html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.IGNORECASE)
@@ -1354,10 +1409,10 @@ def fetch_news() -> list[dict]:
                     _footer_idx = _fi
             if _footer_idx < len(full_body_raw):
                 full_body_raw = full_body_raw[:_footer_idx].strip()
-            if og_desc and og_desc not in full_body_raw:
+            if og_desc and not lead_already_in(og_desc, full_body_raw):
                 full_body_raw = (og_desc + " " + full_body_raw).strip()
             # RSSサマリーは記事の核心部分を含むことが多いため、HTML本文の先頭に付与
-            if rss_summary and rss_summary not in full_body_raw:
+            if rss_summary and not lead_already_in(rss_summary, full_body_raw):
                 full_body_raw = (rss_summary + " " + full_body_raw).strip()
             full_body = full_body_raw[:2000]
             if len(full_body) > len(summary):

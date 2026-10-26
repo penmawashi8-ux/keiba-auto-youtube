@@ -7,6 +7,7 @@ on:
       - claude/horizontal-video-auto-post-image-tfzer9
     paths:
       - .github/workflows/debug_netkeiba_body.yml
+      - scripts/fetch_news.py
 
 jobs:
   debug:
@@ -20,24 +21,14 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests
-      - name: Inspect article HTML
+      - name: Run fetch_news and show body lengths
         run: |
+          python scripts/fetch_news.py > /tmp/fetch.log 2>&1 || true
+          grep -E "抽出方法|取得:|除外:teaser" /tmp/fetch.log | head -60
           python - <<'PYEOF'
-          import re, sys
-          sys.path.insert(0, "scripts")
-          from fetch_news import http_get_article
-          for no in ["346756", "346738"]:
-              url = f"https://news.netkeiba.com/?pid=news_view&no={no}"
-              raw, final = http_get_article(url)
-              html = raw.decode("utf-8", "replace") if raw else ""
-              print("=" * 80, "\n", url, "->", final, len(html))
-              for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.{0,80}?)</a>', html, re.S):
-                  h, t = m.group(1), re.sub(r"<[^>]+>|\s+", " ", m.group(2)).strip()
-                  if "netkeiba" not in h and h.startswith("http"):
-                      print("EXT:", h[:150], "|", t[:50])
-                  elif re.search(r"続き|全文|元記事|読む|source|Source", t + h):
-                      print("CAND:", h[:150], "|", t[:50])
-              i = html.find("NewsArticle_Body")
-              print("---- body region ----")
-              print(re.sub(r"\s+", " ", html[i:i+6000]) if i >= 0 else "NewsArticle_Body not found")
+          import json
+          for it in json.load(open("news.json")):
+              print("-" * 60)
+              print(it["title"][:70])
+              print(f"summary({len(it['summary'])}字):", it["summary"][:120], "...", it["summary"][-200:])
           PYEOF
