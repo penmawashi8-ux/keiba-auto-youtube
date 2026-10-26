@@ -1,10 +1,10 @@
-date: 2026-10-26T07:17:29.647636Z
+date: 2026-10-26T10:11:25.138339Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ql9p2QFyLj0 title=「レジェンド達に何させてるの」「菊花賞との温度差が...」偉業達成の翌日に武豊騎
-OK project=1 video_id=d9WAsdu4fc8 title=【菊花賞】「あーくそっ!」　武豊カメラから聞こえた悔しそうな声は誰?ネット反響「
-OK project=1 video_id=Z0sgdlWEKX4 title=【ファンタジーS想定騎手】イモージェンはC.デムーロ騎手、フェリチタは松山弘平騎
+OK project=1 video_id=7aKeUGhV8N8 title=【AI予想・天皇賞(秋)】前走好走馬に良績が集中！ 本命候補は東京での実績あり
+OK project=1 video_id=X44D1EOHTK4 title=イクイノックスの全妹エクアトーレが土曜東京でデビュー/関東馬メイクデビュー情報
+OK project=1 video_id=4rcC9aWUfHU title=【天皇賞・秋】札幌記念レコードVから挑むシェイクユアハート　陣営「馬のバランスが
