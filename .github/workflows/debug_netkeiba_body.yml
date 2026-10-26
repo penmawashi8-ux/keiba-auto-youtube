@@ -1,0 +1,43 @@
+name: Debug netkeiba body (temporary)
+
+# netkeiba記事の本文が抜粋しか取れない原因調査用（一時的・本番無影響）
+on:
+  push:
+    branches:
+      - claude/horizontal-video-auto-post-image-tfzer9
+    paths:
+      - .github/workflows/debug_netkeiba_body.yml
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Inspect article HTML
+        run: |
+          python - <<'PYEOF'
+          import re, sys
+          sys.path.insert(0, "scripts")
+          from fetch_news import http_get_article
+          for no in ["346756", "346738"]:
+              url = f"https://news.netkeiba.com/?pid=news_view&no={no}"
+              raw, final = http_get_article(url)
+              html = raw.decode("utf-8", "replace") if raw else ""
+              print("=" * 80, "\n", url, "->", final, len(html))
+              for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.{0,80}?)</a>', html, re.S):
+                  h, t = m.group(1), re.sub(r"<[^>]+>|\s+", " ", m.group(2)).strip()
+                  if "netkeiba" not in h and h.startswith("http"):
+                      print("EXT:", h[:150], "|", t[:50])
+                  elif re.search(r"続き|全文|元記事|読む|source|Source", t + h):
+                      print("CAND:", h[:150], "|", t[:50])
+              i = html.find("NewsArticle_Body")
+              print("---- body region ----")
+              print(re.sub(r"\s+", " ", html[i:i+6000]) if i >= 0 else "NewsArticle_Body not found")
+          PYEOF
