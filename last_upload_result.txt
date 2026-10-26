@@ -1,10 +1,10 @@
-date: 2026-10-26T01:07:51.859509Z
+date: 2026-10-26T04:24:53.424799Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Ox__ITj2JlE title=史上2頭目のBCクラシック連覇へ フォーエバーヤングが不動の主役だ
-OK project=1 video_id=EWPWraHoc0I title=【天皇賞(秋)】川田将雅騎手が天皇賞初制覇なるか ネブラディスクで参戦だ
-OK project=1 video_id=lPn4_6e8Enc title=【菊花賞】ゴーイントゥスカイで武豊騎手単独最多6勝目!ロブチェン3冠阻止
+OK project=1 video_id=7P5yZ5kDKY8 title=【天皇賞・秋・ヤマタケの特注馬】エイシンフラッシュ来場の日だからこそ怖い鞍上と初
+OK project=1 video_id=hQKDMpiqMMM title=戸崎圭太騎手が天皇賞初制覇なるか ダノンデサイルで参戦だ
+OK project=1 video_id=LNRLg519Lec title=1位はイクイノックスの世界レコード 天皇賞(秋)の勝ち時計ランキング
