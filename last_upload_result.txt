@@ -1,10 +1,10 @@
-date: 2026-10-26T04:24:53.424799Z
+date: 2026-10-26T07:17:29.647636Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7P5yZ5kDKY8 title=【天皇賞・秋・ヤマタケの特注馬】エイシンフラッシュ来場の日だからこそ怖い鞍上と初
-OK project=1 video_id=hQKDMpiqMMM title=戸崎圭太騎手が天皇賞初制覇なるか ダノンデサイルで参戦だ
-OK project=1 video_id=LNRLg519Lec title=1位はイクイノックスの世界レコード 天皇賞(秋)の勝ち時計ランキング
+OK project=1 video_id=Ql9p2QFyLj0 title=「レジェンド達に何させてるの」「菊花賞との温度差が...」偉業達成の翌日に武豊騎
+OK project=1 video_id=d9WAsdu4fc8 title=【菊花賞】「あーくそっ!」　武豊カメラから聞こえた悔しそうな声は誰?ネット反響「
+OK project=1 video_id=Z0sgdlWEKX4 title=【ファンタジーS想定騎手】イモージェンはC.デムーロ騎手、フェリチタは松山弘平騎
