@@ -1,10 +1,10 @@
-date: 2026-10-27T07:09:31.160762Z
+date: 2026-10-27T10:09:04.666523Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=UoDY7CGh_kI title=凱旋門賞１４着のメイショウタバルがジャパンＣ参戦目指す　石橋師「オーナーの希望も
-OK project=1 video_id=zKXNQPYYCcY title=【ブリーダーズC 枠順確定】連覇狙うフォーエバーヤングは昨年と同じ5番枠
-OK project=1 video_id=wGQdAsyt54M title=【笠松競馬】令和8年熊本地震の被災地支援として176万5850円を寄付　11月2
+OK project=1 video_id=smeyZfJaXAs title=古川吉洋騎手が12年ぶりの天皇賞(秋)参戦 シェイクユアハートで29年ぶりのGI
+OK project=1 video_id=h0r3_BaQoq4 title=【ファンタジーS予想オッズ】イモージェンが予想1番人気
+OK project=1 video_id=yg5__yxyNzE title=【天皇賞(秋)予想オッズ】クロワデュノールが予想1番人気
