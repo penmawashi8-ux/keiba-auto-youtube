@@ -1,10 +1,10 @@
-date: 2026-10-27T04:13:24.197524Z
+date: 2026-10-27T07:09:31.160762Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MPBksJn0YSM title=メイショウタバルはジャパンC参戦へ　アドマイヤテラは有馬記念視野
-OK project=1 video_id=Af3OtyhIQP8 title=【BCスプリント】アメリカンステージは6番枠　テーオーエルビスは11番枠から日本
-OK project=1 video_id=qJBhXdtX0Es title=【BCダートマイル】横山和生騎手騎乗のロードフォンスは6番枠に決定　枠順決定
+OK project=1 video_id=UoDY7CGh_kI title=凱旋門賞１４着のメイショウタバルがジャパンＣ参戦目指す　石橋師「オーナーの希望も
+OK project=1 video_id=zKXNQPYYCcY title=【ブリーダーズC 枠順確定】連覇狙うフォーエバーヤングは昨年と同じ5番枠
+OK project=1 video_id=wGQdAsyt54M title=【笠松競馬】令和8年熊本地震の被災地支援として176万5850円を寄付　11月2
