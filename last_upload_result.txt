@@ -1,10 +1,10 @@
-date: 2026-10-26T10:11:25.138339Z
+date: 2026-10-27T01:14:31.649488Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7aKeUGhV8N8 title=【AI予想・天皇賞(秋)】前走好走馬に良績が集中！ 本命候補は東京での実績あり
-OK project=1 video_id=X44D1EOHTK4 title=イクイノックスの全妹エクアトーレが土曜東京でデビュー/関東馬メイクデビュー情報
-OK project=1 video_id=4rcC9aWUfHU title=【天皇賞・秋】札幌記念レコードVから挑むシェイクユアハート　陣営「馬のバランスが
+OK project=1 video_id=xHZlvyqs3Ao title=【BCクラシック】連覇が懸かるフォーエバーヤングは今年も5番枠　8頭立てで確定　
+OK project=1 video_id=qFk707qeU9M title=【天皇賞・秋】海外で成長したマスカレードボールが快挙をかけクロワデュノールに挑む
+OK project=1 video_id=inq_8amQ4MU title=【競走伝】これほどまでに壁は高いのか… 日本調教馬初のBCクラシックは惨敗の歴史
