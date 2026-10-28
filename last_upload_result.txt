@@ -1,10 +1,10 @@
-date: 2026-10-27T10:09:04.666523Z
+date: 2026-10-28T01:18:54.009383Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=smeyZfJaXAs title=古川吉洋騎手が12年ぶりの天皇賞(秋)参戦 シェイクユアハートで29年ぶりのGI
-OK project=1 video_id=h0r3_BaQoq4 title=【ファンタジーS予想オッズ】イモージェンが予想1番人気
-OK project=1 video_id=yg5__yxyNzE title=【天皇賞(秋)予想オッズ】クロワデュノールが予想1番人気
+OK project=1 video_id=xzubVviByy0 title=【阪神アーバン競馬・人気ジョッキーは語る】エクスペリオン(園田5R)に自信を見せ
+OK project=1 video_id=EmZVwKK4alA title=【今週のトク注新馬】イクイノックス全妹が兄と同じルメール騎手で31日デビュー「ど
+OK project=1 video_id=kKT7bf6kgtw title=【天皇賞・秋】28年11か月1日ぶりのG1制覇へ古川吉洋騎手“絆の力”でシェイク
