@@ -1,10 +1,10 @@
-date: 2026-10-28T07:10:07.410117Z
+date: 2026-10-28T10:09:59.064410Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wbux07CCz40 title=【菊花賞】「僕の下手さ…非常に情けない」　僅差2着も川田将雅は反省…4角時点で“
-OK project=1 video_id=gpZQcV8PULA title=【菊花賞】「6着だけど悔しい…」　“伏兵”が最後の直線で止まった理由…池添謙一が
-OK project=1 video_id=GwEMRUl5RG8 title=シグレは武豊とのコンビで出走予定だったファンタジーSを回避　放牧へ
+OK project=1 video_id=CBmhnRD-GGU title=【2026ヤングジョッキーズシリーズ】JRA2年目の田山旺佑騎手がJRA西日本ト
+OK project=1 video_id=9oUFP2BGGFE title=今週末から短期免許で騎乗するアレクシ・プーシャン騎手が来日2年目へ気合　「たくさ
+OK project=1 video_id=PGRxBnERasw title=【天皇賞(秋)】杉原誠人騎手がGI初制覇なるか 伏兵ジュンブロッサムで一発狙う
