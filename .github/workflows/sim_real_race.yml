@@ -1,6 +1,6 @@
 name: Real Race Simulation Video
 
-# 実際のレース（既定: 2026-10-25 菊花賞）のシミュレーション動画を作る。
+# 実際のレース（既定: 2026-11-01 天皇賞(秋)）のシミュレーション動画を作る。
 # 出馬表を取り直す（枠順確定後なら正式な馬番になる）→ 出走馬の成績を最新に → 1万回シミュレーション → 動画。
 # データ（対戦相手の成績など）は先に sim_race_prep.yml で集めておくこと。
 # 結果は research-output ブランチの sim/ に保存する（投稿はしない）。
@@ -9,10 +9,10 @@ on:
     inputs:
       date:
         description: "開催日 YYYYMMDD"
-        default: "20261025"
+        default: "20261101"
       race:
         description: "レース名（netkeiba のレース一覧の表記）"
-        default: "菊花賞"
+        default: "天皇賞"
   push:
     branches:
       - claude/youtube-keiba-video-research-x6jdvw
@@ -25,8 +25,10 @@ on:
       - .github/workflows/sim_real_race.yml
 
 env:
-  RACE_DATE: ${{ github.event.inputs.date || '20261025' }}
-  RACE_NAME: ${{ github.event.inputs.race || '菊花賞' }}
+  RACE_DATE: ${{ github.event.inputs.date || '20261101' }}
+  RACE_NAME: ${{ github.event.inputs.race || '天皇賞' }}
+  # 過去の人気を手がかりに使わない（人気馬をなぞるだけにならないように）
+  SIM_NO_POP: "1"
 
 # 夢の対決・データ集めとは別のグループにする（同じグループだと、待っている実行が後から来た実行に
 # 置き換えられてキャンセルされる）。research-output への保存は save_sim_outputs.sh が再試行する

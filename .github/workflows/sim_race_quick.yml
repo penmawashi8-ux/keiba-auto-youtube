@@ -44,6 +44,7 @@ jobs:
           print(f"RACE_DATE={r['date']}")
           print(f"RACE_NAME={r['race']}")
           print(f"PREFIX={r['prefix']}")
+          print(f"SIM_NO_POP={'1' if r.get('no_pop') else '0'}")
           # 取得の制限時間（分）。急ぎのときは短く、前日までの準備なら長く
           b = r.get("budget", {})
           print(f"B_ENTRANTS={b.get('entrants', 3)}")

@@ -26,6 +26,7 @@ numpy は使わない（プロジェクトルール）。
 """
 
 import math
+import os
 import statistics
 
 import sim_model as sm
@@ -36,6 +37,12 @@ AGE_BINS = [3.0, 3.34, 3.67, 4.0, 4.5, 5.0, 5.5, 6.0, 7.0, 99.0]
 FEATS = ["相手関係(最近重視)", "時計(最近重視)", "2年内ベスト", "前走", "出走数(log)", "休み明け(年)",
          "距離適性", "年齢の伸びしろ", "G1勝数", "重賞勝数(log)", "勝率", "3着内率", "前走のクラス",
          "過去3走の平均人気(log)", "同じ競馬場の適性"]
+# SIM_NO_POP=1 のときは「過去の人気」を手がかりから外す（世間の評価をなぞらず、走りの内容だけで評価する）
+NO_POP = os.environ.get("SIM_NO_POP") == "1"
+POP_FEAT = "過去3走の平均人気(log)"
+ALL_FEATS = FEATS
+if NO_POP:
+    FEATS = [f for f in FEATS if f != POP_FEAT]
 SITUATIONAL = {"休み明け(年)", "前走のクラス"}   # 夢の対決では全馬同じ値にそろえる手がかり
 CLS_RANK = {c: i for i, c in enumerate(sm.CLASSES)}
 EPOCHS = 400
@@ -111,7 +118,7 @@ class Features:
         near = [f for _, f, r in hr if abs(r["distance"] - distance) <= 200]
         same = [f for _, f, r in hr if r["venue"] == venue]
         pops = [x["pop"] for _r, x in allh[-3:] if x.get("pop")]
-        return [
+        out = [
             f_rel,
             self._expw(ht, date) if ht else f_rel,
             max(f for _, f, _ in hr),
@@ -128,6 +135,9 @@ class Features:
             math.log(statistics.mean(pops)) if pops else math.log(8),
             statistics.mean(same) - mean_all if same else 0.0,
         ]
+        if NO_POP:
+            del out[ALL_FEATS.index(POP_FEAT)]
+        return out
 
 
 def race_rows(races: list[dict], feats: Features, years) -> list[list[tuple[dict, list[float]]]]:
