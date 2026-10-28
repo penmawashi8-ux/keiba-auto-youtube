@@ -1,2 +1,2 @@
-{"date": "20261101", "race": "天皇賞", "prefix": "tenno_aki2026",
- "budget": {"entrants": 10, "related": 30, "gate": 20, "gate_runners": 15}}
+{"date": "20261101", "race": "天皇賞", "prefix": "tenno_aki2026", "no_pop": true,
+ "budget": {"entrants": 5, "related": 30, "gate": 20, "gate_runners": 15}}

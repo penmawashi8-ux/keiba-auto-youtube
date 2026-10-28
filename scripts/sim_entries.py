@@ -53,7 +53,10 @@ def fetch_entries(session, race_id: str, date: str) -> dict:
     name = soup.select_one(".RaceName")
     data1 = soup.select_one(".RaceData01")
     info = data1.get_text(" ", strip=True) if data1 else ""
-    course = re.search(r"(芝|ダ)\s*(\d{3,4})m\s*\(([^)]*)\)", info)
+    course = re.search(r"(芝|ダ)\s*(\d{3,4})m\s*[(（]([^)）]*)[)）]", info)
+    if not course:          # 括弧なし・全角などで書式が違うときは、距離だけでも拾う（向きは本文から）
+        course = re.search(r"(芝|ダ)\D{0,3}(\d{3,4})m()", info) or re.search(r"(芝|ダ)\D{0,3}(\d{3,4})m()", soup.get_text(" "))
+        print(f"[注意] コース表記が想定と違う: {info[:80]!r}")
     post = re.search(r"(\d{1,2}:\d{2})発走", info)
     horses = []
     for tr in soup.select("tr.HorseList"):
@@ -101,7 +104,7 @@ def fetch_entries(session, race_id: str, date: str) -> dict:
         "race_name": name.get_text(" ", strip=True) if name else "",
         "venue": VENUE_CODES.get(race_id[4:6], ""),
         "surface": course.group(1) if course else "", "distance": int(course.group(2)) if course else None,
-        "direction": ("右" if "右" in course.group(3) else "左" if "左" in course.group(3) else "") if course else "",
+        "direction": ("右" if "右" in (course.group(3) or info) else "左" if "左" in (course.group(3) or info) else "") if course else "",
         "course": course.group(3) if course else "", "post_time": post.group(1) if post else "",
         "drawn": all(h["umaban"] for h in horses), "horses": horses,
     }
