@@ -1,10 +1,10 @@
-date: 2026-10-28T10:09:59.064410Z
+date: 2026-10-29T01:19:53.914836Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=CBmhnRD-GGU title=【2026ヤングジョッキーズシリーズ】JRA2年目の田山旺佑騎手がJRA西日本ト
-OK project=1 video_id=9oUFP2BGGFE title=今週末から短期免許で騎乗するアレクシ・プーシャン騎手が来日2年目へ気合　「たくさ
-OK project=1 video_id=PGRxBnERasw title=【天皇賞(秋)】杉原誠人騎手がGI初制覇なるか 伏兵ジュンブロッサムで一発狙う
+OK project=1 video_id=fZVotSsEuWk title=【阪神アーバン競馬・人気ジョッキーは語る】ゴッズフェイヴリト(園田11R)に期待
+OK project=1 video_id=jw996hH45Qg title=【天皇賞・秋】安田翔伍調教師「3着はもう見たくはない」G1で4戦連続3着のダノン
+OK project=1 video_id=IuCXQOmC-kE title=弟の名前は「幸四郎」ではなかったかも!?　武豊騎手が少年時代の菊花賞エピソード明
