@@ -1,0 +1,123 @@
+{
+ "prefix": "thumb_tenno_aki2026",
+ "max_photos": 4,
+ "loose": false,
+ "only_chosen": true,
+ "texts": {
+  "title1": "天皇賞(秋)2026をデータで1万回シミュレーション",
+  "title2": "データが選んだ本命は？",
+  "sub1": "東京芝2000m・枠順と脚質も計算",
+  "sub2": "出走馬と対戦相手の全成績から"
+ },
+ "choice": {},
+ "horses": [
+  {
+   "name": "クロワデュノール",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Croix du Nord"
+   ],
+   "queries": [
+    "クロワデュノール",
+    "クロワデュノール 競走馬",
+    "Croix du Nord horse",
+    "Croix du Nord"
+   ],
+   "articles": [
+    "クロワデュノール",
+    "Croix du Nord"
+   ]
+  },
+  {
+   "name": "ダノンデサイル",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Danon Decile"
+   ],
+   "queries": [
+    "ダノンデサイル",
+    "ダノンデサイル 競走馬",
+    "Danon Decile horse",
+    "Danon Decile"
+   ],
+   "articles": [
+    "ダノンデサイル",
+    "Danon Decile"
+   ]
+  },
+  {
+   "name": "マスカレードボール",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Masquerade Ball"
+   ],
+   "queries": [
+    "マスカレードボール",
+    "マスカレードボール 競走馬",
+    "Masquerade Ball horse",
+    "Masquerade Ball"
+   ],
+   "articles": [
+    "マスカレードボール",
+    "Masquerade Ball"
+   ]
+  },
+  {
+   "name": "レガレイラ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Regaleira"
+   ],
+   "queries": [
+    "レガレイラ",
+    "レガレイラ 競走馬",
+    "Regaleira horse",
+    "Regaleira"
+   ],
+   "articles": [
+    "レガレイラ",
+    "Regaleira"
+   ]
+  },
+  {
+   "name": "ジョバンニ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Giovanni"
+   ],
+   "queries": [
+    "ジョバンニ",
+    "ジョバンニ 競走馬",
+    "Giovanni horse",
+    "Giovanni"
+   ],
+   "articles": [
+    "ジョバンニ",
+    "Giovanni"
+   ]
+  },
+  {
+   "name": "シェイクユアハート",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Shake Your Heart"
+   ],
+   "queries": [
+    "シェイクユアハート",
+    "シェイクユアハート 競走馬",
+    "Shake Your Heart horse",
+    "Shake Your Heart"
+   ],
+   "articles": [
+    "シェイクユアハート",
+    "Shake Your Heart"
+   ]
+  }
+ ]
+}
