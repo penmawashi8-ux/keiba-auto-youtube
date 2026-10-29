@@ -1,10 +1,10 @@
-date: 2026-10-29T04:17:22.851663Z
+date: 2026-10-29T07:12:12.307176Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=bZyxU0YlGNA title=【天皇賞・秋】サクラファレルはWコースで軽快な動き　佐々木大輔騎手「道中の力みも
-OK project=1 video_id=c2E6mLrcaHg title=【門別・エーデルワイス賞】地元馬が好成績の一戦 今年の注目馬は？
-OK project=1 video_id=taF-qKEMyCI title=ブリーダーズカップ全レースをnetkeibaTVで無料生中継 坂井英光調教師、武
+OK project=1 video_id=USUA2-_S1E4 title=【ファンタジーS出走馬・騎手確定】ブライトスクリプト＆池添謙一騎手、フェリチタ＆
+OK project=1 video_id=LDAubF783pc title=【天皇賞・秋】札幌記念レコードVのシェイクユアハートは6枠11番　陣営「内めが良
+OK project=1 video_id=_eRqSUfr9vw title=秋華賞Ｖのモンローウォークの次走は来年３月のドバイターフに決定
