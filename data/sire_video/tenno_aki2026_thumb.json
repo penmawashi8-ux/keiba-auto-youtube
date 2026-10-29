@@ -1,0 +1,46 @@
+{
+ "prefix": "tenno_aki2026",
+ "sire": "",
+ "horses": [],
+ "photos_intro": [
+  "Croix du Nord 92nd Tokyo Yushun 01.jpg",
+  "Danon Decile 2024 Japanese Derby.jpg",
+  "Masquerade Ball 172nd Tenno Sho (Autumn).jpg",
+  "レガレイラ 有馬記念優勝時.jpg"
+ ],
+ "thumb_design": {
+  "hero": {
+   "file": "Croix du Nord 92nd Tokyo Yushun 01.jpg",
+   "x": 0.75,
+   "y": 0.5
+  },
+  "hero_name": "1 クロワデュノール",
+  "subs": [
+   {
+    "file": "Danon Decile 2024 Japanese Derby.jpg",
+    "x": 0.2,
+    "y": 0.5,
+    "name": "17 ダノンデサイル"
+   },
+   {
+    "file": "Masquerade Ball 172nd Tenno Sho (Autumn).jpg",
+    "x": 0.3,
+    "y": 0.5,
+    "name": "7 マスカレードボール"
+   },
+   {
+    "file": "レガレイラ 有馬記念優勝時.jpg",
+    "x": 0.3,
+    "y": 0.5,
+    "name": "3 レガレイラ"
+   }
+  ],
+  "tag": "人気を使わないデータで1万回",
+  "lines": [
+   "天皇賞(秋)2026",
+   "データの本命は",
+   "1枠1番 クロワデュノール"
+  ],
+  "badge": "勝率23.7%"
+ }
+}
