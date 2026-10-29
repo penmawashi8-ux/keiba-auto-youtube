@@ -1,10 +1,10 @@
-date: 2026-10-29T07:12:12.307176Z
+date: 2026-10-29T10:11:18.564247Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=USUA2-_S1E4 title=【ファンタジーS出走馬・騎手確定】ブライトスクリプト＆池添謙一騎手、フェリチタ＆
-OK project=1 video_id=LDAubF783pc title=【天皇賞・秋】札幌記念レコードVのシェイクユアハートは6枠11番　陣営「内めが良
-OK project=1 video_id=_eRqSUfr9vw title=秋華賞Ｖのモンローウォークの次走は来年３月のドバイターフに決定
+OK project=1 video_id=3jcE9XqJJbc title=名馬イクイノックスの全妹 エクアトーレがルメール騎手でデビュー
+OK project=1 video_id=WCFjo6Jf30A title=史上2頭目の3歳馬の戴冠 バブルガムフェローの96年天皇賞(秋)から30年
+OK project=1 video_id=BO9FKCxvkIM title=【JRA新馬戦】イクイノックスの全妹エクアトーレなどがデビュー
