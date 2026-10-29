@@ -4,8 +4,8 @@
  "prefix": "tenno_aki2026",
  "speed": 2.0,
  "from": "gate",
- "to": "goal",
- "to_offset": -2.5,
+ "to": "straight",
+ "to_offset": 2.0,
  "end_sec": 4.0,
  "thumb_at": 1.0,
  "top": [
@@ -22,6 +22,5 @@
   "結果と全17頭の勝率は",
   "フル版で公開中",
   "関連動画からどうぞ"
- ],
- "source_commit_note": "本編を作り直した後のショート"
+ ]
 }
