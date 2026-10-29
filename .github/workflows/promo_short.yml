@@ -1,0 +1,59 @@
+name: Promo Short (vertical)
+
+# 本編の横動画から宣伝用の縦ショート（1080×1920・倍速）を作る。data/promo/*.json ごと（今回変わったものだけ）。
+# 本編は research-output ブランチの source から取る。出力は research-output の sim/ に保存する（投稿はしない）。
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/promo/**
+      - scripts/promo_short.py
+      - .github/workflows/promo_short.yml
+
+concurrency:
+  group: promo-short
+  cancel-in-progress: false
+
+jobs:
+  short:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write  # research-output ブランチへの push 用
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk
+
+      - name: Make shorts
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output
+          files=$(git diff --name-only HEAD~1 HEAD -- 'data/promo/*.json' || true)
+          [ -z "$files" ] && files=$(ls data/promo/*.json)
+          echo "$files" > sim/promo_targets.txt
+          for f in $files; do
+            src=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['source'])" "$f")
+            git show "FETCH_HEAD:$src" > sim/promo_source.mp4
+            python -u scripts/promo_short.py "$f" sim/promo_source.mp4
+          done
+
+      - name: Save outputs to research-output branch
+        if: always()
+        run: |
+          for f in $(cat sim/promo_targets.txt); do
+            p=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['prefix'])" "$f")
+            bash .github/scripts/save_sim_outputs.sh "宣伝ショート $p" sim/${p}_short.mp4 sim/${p}_short_thumb.jpg
+          done

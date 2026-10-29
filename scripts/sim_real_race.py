@@ -365,8 +365,7 @@ def main() -> None:
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
     md = [f"# {ent['race_name']} シミュレーション（{date} {venue} {surf}{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
-          f"モデル: {'過去の人気を使わない（走りの内容だけで評価）' if sl.NO_POP else '過去の人気も手がかりに含む'}"
-          f" ／ 検証の正答率 {kit['test']['acc_model']:.1%}（単勝人気 {kit['test']['acc_market']:.1%}）", "",
+          f"検証の正答率 {kit['test']['acc_model']:.1%}（単勝人気 {kit['test']['acc_market']:.1%}）", "",
           f"| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | JRA{surf} |",
           "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     for m in order:
