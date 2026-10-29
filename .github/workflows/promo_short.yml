@@ -46,8 +46,12 @@ jobs:
           echo "$files" > sim/promo_targets.txt
           for f in $files; do
             src=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['source'])" "$f")
+            mk=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['marks'])" "$f")
             git show "FETCH_HEAD:$src" > sim/promo_source.mp4
-            python -u scripts/promo_short.py "$f" sim/promo_source.mp4
+            if ! git show "FETCH_HEAD:$mk" > sim/promo_marks.json 2>/dev/null; then
+              echo "場面の時刻（$mk）がまだないので作らない（本編を作り直してから）"; continue
+            fi
+            python -u scripts/promo_short.py "$f" sim/promo_source.mp4 sim/promo_marks.json
           done
 
       - name: Save outputs to research-output branch

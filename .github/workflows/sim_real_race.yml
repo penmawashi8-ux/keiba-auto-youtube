@@ -99,4 +99,4 @@ jobs:
 
       - name: Save outputs to research-output branch
         if: success()
-        run: bash .github/scripts/save_sim_outputs.sh "レース動画 ${RACE_NAME}" sim/real_report.md sim/real_result.json sim/real_race.mp4 sim/real_frame_*.jpg sim/entries.json sim/horses_cache.json sim/gate_effect.json
+        run: bash .github/scripts/save_sim_outputs.sh "レース動画 ${RACE_NAME}" sim/real_report.md sim/real_result.json sim/real_race.mp4 sim/real_marks.json sim/real_frame_*.jpg sim/entries.json sim/horses_cache.json sim/gate_effect.json

@@ -416,6 +416,9 @@ def main() -> None:
         if f.exists():
             f.replace(SIM_DIR / f"real_frame_{label}.jpg")
     print("実況の読み上げ:", len(marks["voice"]), "本")
+    # 場面の時刻（宣伝ショートでレース部分を切り出すのに使う）
+    (SIM_DIR / "real_marks.json").write_text(json.dumps(
+        {k: v for k, v in marks.items() if isinstance(v, (int, float))}, indent=1), encoding="utf-8")
     fan = 3.5
     sections = [("calm", marks["gate"]), ("race", marks["goal"] - marks["gate"]), ("fanfare", fan),
                 ("result", marks["total"] - marks["goal"] - fan)]
