@@ -1,10 +1,10 @@
-date: 2026-10-29T01:19:53.914836Z
+date: 2026-10-29T04:17:22.851663Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fZVotSsEuWk title=【阪神アーバン競馬・人気ジョッキーは語る】ゴッズフェイヴリト(園田11R)に期待
-OK project=1 video_id=jw996hH45Qg title=【天皇賞・秋】安田翔伍調教師「3着はもう見たくはない」G1で4戦連続3着のダノン
-OK project=1 video_id=IuCXQOmC-kE title=弟の名前は「幸四郎」ではなかったかも!?　武豊騎手が少年時代の菊花賞エピソード明
+OK project=1 video_id=bZyxU0YlGNA title=【天皇賞・秋】サクラファレルはWコースで軽快な動き　佐々木大輔騎手「道中の力みも
+OK project=1 video_id=c2E6mLrcaHg title=【門別・エーデルワイス賞】地元馬が好成績の一戦 今年の注目馬は？
+OK project=1 video_id=taF-qKEMyCI title=ブリーダーズカップ全レースをnetkeibaTVで無料生中継 坂井英光調教師、武
