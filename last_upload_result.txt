@@ -1,10 +1,10 @@
-date: 2026-10-30T01:10:07.566065Z
+date: 2026-10-30T04:22:34.845163Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FaitJ5LzIN4 title=【阪神アーバン競馬・人気ジョッキーは語る】ヴィーリヤ(園田11R)で重賞制覇に燃
-OK project=1 video_id=zOcbg6BI19o title=【園田競馬　30日発走　兵庫クイーンカップ】ヴィーリヤが重賞2勝目を決める!
-OK project=1 video_id=JoFAUSpNBjc title=BCクラシックに出走予定だったマグニチュードが引退へ　フォーエバーヤングにドバイ
+OK project=1 video_id=1rGpH2MOZL4 title=【天皇賞・秋・金曜気配】前走で重賞初Vのジョバンニは落ち着き十分　陣営「精神的な
+OK project=1 video_id=Qv0odnfjCoM title=スティンガーグラスがメルボルンＣ出走回避　１１月９日に帰国予定で年内出走を視野に
+OK project=1 video_id=DQUvvTOb55s title=【天皇賞秋・金曜気配】クロワデュノールは史上初の父子2代での春秋連覇へ最終調整　
