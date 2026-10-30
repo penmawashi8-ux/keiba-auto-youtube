@@ -1,10 +1,10 @@
-date: 2026-10-30T07:15:30.051287Z
+date: 2026-10-30T10:09:11.259695Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fVAG1nM_KyY title=シンエンペラー電撃引退　アロースタッドで種牡馬入り　矢作師「満足いく体調で使えな
-OK project=1 video_id=N8rPVavUl5M title=シンエンペラー引退　アロースタッドで種牡馬入り　矢作師「万全な体調にさせることが
-OK project=1 video_id=SXYqoreREnY title=凱旋門賞馬ソットサスの全弟シンエンペラーが現役引退　今後はアロースタッドで種牡馬
+OK project=1 video_id=HZaWAJJTB6A title=【みやこS想定馬・騎手】ロードクロンヌ、ラムジェットなど17頭
+OK project=1 video_id=Eb3GbAJVd9s title=【アルゼンチン共和国杯想定馬・騎手】ビザンチンドリーム、ファイアンクランツなど2
+OK project=1 video_id=AOAV-qIJvZU title=【京王杯2歳S想定馬・騎手】ブルージェイ、インパルスドライブなど10頭
