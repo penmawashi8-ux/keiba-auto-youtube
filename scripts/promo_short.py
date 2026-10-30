@@ -55,6 +55,9 @@ def stack(lines: list[str], y: int, sizes: list[int], T: Texts, first_gold: bool
     out = []
     for j, line in enumerate(lines):
         size = sizes[min(j, len(sizes) - 1)]
+        # 横幅（左右の余白 60px ずつ）に収まる大きさにする（全角1文字 ≒ size、半角 ≒ size×0.55）
+        width = sum(1.0 if ord(c) > 0x2E7F else 0.55 for c in line)
+        size = min(size, int((W - 120) / max(width, 1)))
         out.append(T(line, y, size, GOLD if (j == 0 and first_gold) else "white"))
         y += size + gap
     return out
