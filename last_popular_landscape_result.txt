@@ -1,6 +1,6 @@
-date: 2026-10-30T11:06:05.235330Z
+date: 2026-10-31T11:06:55.927357Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LuO9wzelz8I views=48015 title=【天皇賞(秋)・調教後馬体重】クロワデュノールは520kg、マスカレードボールは486kg【4.8万回閲覧・話題の競馬ニ
+OK project=1 video_id=2mvW9IcAqxw views=72515 title=【エリザベス女王杯想定馬・騎手】カムニャック、ジュウリョクピエロなど23頭【7.3万回閲覧・話題の競馬ニュース】
