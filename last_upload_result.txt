@@ -1,10 +1,10 @@
-date: 2026-10-31T07:08:41.584752Z
+date: 2026-10-31T10:13:26.601022Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=C8z8dfIVMq4 title=【メイクデビュー京都6Rレース後コメント】サイモンレコルト幸英明騎手ら
-OK project=1 video_id=ysIkTMDkxjw title=【JRA・WIN5】本日のWIN5は的中1031票、配当27万8220円
-OK project=1 video_id=-TfxwdaGtAo title=【ファンタジーS結果】ニクスルーナが差し切り、ジャンダルム産駒のJRA重賞初勝利
+OK project=1 video_id=XI6gZm8XjJo title=残り少ないディープ産駒 ディープモンスターがBCターフの日本馬初制覇に挑む
+OK project=1 video_id=AIygKo9Qk1Q title=【BCクラシック】フォーエバーヤング連覇へ　日本調教馬の過去成績一覧
+OK project=1 video_id=8_GDXppCUsg title=【天皇賞・秋・土曜気配】ダノンデサイルが今秋こそ真価発揮へ　陣営「だいぶ幼さが抜
