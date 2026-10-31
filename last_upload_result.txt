@@ -1,10 +1,10 @@
-date: 2026-10-30T10:09:11.259695Z
+date: 2026-10-31T01:15:08.147272Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HZaWAJJTB6A title=【みやこS想定馬・騎手】ロードクロンヌ、ラムジェットなど17頭
-OK project=1 video_id=Eb3GbAJVd9s title=【アルゼンチン共和国杯想定馬・騎手】ビザンチンドリーム、ファイアンクランツなど2
-OK project=1 video_id=AOAV-qIJvZU title=【京王杯2歳S想定馬・騎手】ブルージェイ、インパルスドライブなど10頭
+OK project=1 video_id=V0bPnac3xrI title=【31日の注目・東京9R】今度はオキザリス賞で“昇進”だ!　話題のイトウカカリチ
+OK project=1 video_id=Es_MXdEGjh4 title=ファンタジーSは2桁人気が大活躍 ノーザンファームも好相性
+OK project=1 video_id=I6S2581--aw title=【31日の注目・京都3R】日本一ギータオーナーの眼前で“初勝利”を　柳田悠岐オー
