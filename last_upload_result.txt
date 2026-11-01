@@ -1,10 +1,10 @@
-date: 2026-10-31T10:13:26.601022Z
+date: 2026-11-01T01:11:50.801217Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=XI6gZm8XjJo title=残り少ないディープ産駒 ディープモンスターがBCターフの日本馬初制覇に挑む
-OK project=1 video_id=AIygKo9Qk1Q title=【BCクラシック】フォーエバーヤング連覇へ　日本調教馬の過去成績一覧
-OK project=1 video_id=8_GDXppCUsg title=【天皇賞・秋・土曜気配】ダノンデサイルが今秋こそ真価発揮へ　陣営「だいぶ幼さが抜
+OK project=1 video_id=HOE61tt5m-Y title=「もう盤石かなぐらいに思って…」福永祐一調教師もフォーエバーヤングの敗戦にショッ
+OK project=1 video_id=z5kqxMqG9FI title=【BCクラシック】昨年の米年度代表馬ソヴリンティ貫禄V　アルバラード「何度も彼に
+OK project=1 video_id=CELHYYWkZN8 title=【BCクラシック】「いつもと違うなという感じはあった」坂井瑠星騎手は無念の表情　
