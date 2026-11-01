@@ -1,10 +1,10 @@
-date: 2026-11-01T01:11:50.801217Z
+date: 2026-11-01T04:13:15.133119Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HOE61tt5m-Y title=「もう盤石かなぐらいに思って…」福永祐一調教師もフォーエバーヤングの敗戦にショッ
-OK project=1 video_id=z5kqxMqG9FI title=【BCクラシック】昨年の米年度代表馬ソヴリンティ貫禄V　アルバラード「何度も彼に
-OK project=1 video_id=CELHYYWkZN8 title=【BCクラシック】「いつもと違うなという感じはあった」坂井瑠星騎手は無念の表情　
+OK project=1 video_id=SDGpg_24QQo title=【京都6R新馬戦結果】ルヴァンスレーヴ産駒ニシノマサムネが初陣飾る
+OK project=1 video_id=YjNwJdqmepM title=【京都5R・2歳新馬】快勝のラスゲアードに北村友一騎手が手応え通りの高評価　「ま
+OK project=1 video_id=RSgt3CMJzqs title=【東京4R・2歳新馬】レッドベルジュール産駒のイデアブチャラティがゴール前鋭伸V
