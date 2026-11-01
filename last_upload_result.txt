@@ -1,10 +1,10 @@
-date: 2026-11-01T07:11:44.671401Z
+date: 2026-11-01T10:10:33.569072Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=BEINMP81_w8 title=【JRA・WIN5】本日のWIN5は的中320票、配当160万2790円
-OK project=1 video_id=02bd6qwuHs4 title=【天皇賞・秋】1番人気クロワデュノールまさかの5着　直線で前が壁に…父キタサンブ
-OK project=1 video_id=fnJEaJFMfd8 title=【天皇賞・秋】“2強散る”!　ダノンデサイルが大外枠はね返し豪快差し切り　戸崎圭
+OK project=1 video_id=8DRYcacgoII title=【本栖湖特別レース後コメント】ノチェセラーダ C.デムーロ騎手ら
+OK project=1 video_id=o6AyUblw8fw title=【天皇賞(秋)レース後コメント】ダノンデサイル戸崎圭太騎手ら
+OK project=1 video_id=ngBz6PIb8wg title=【メイクデビュー京都6Rレース後コメント】ニシノマサムネ高杉吏麒騎手ら
