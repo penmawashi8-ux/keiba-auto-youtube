@@ -1,76 +1,54 @@
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
-[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=***
+  [警告] ファクトチェックAPI失敗: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (46個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
+--- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
 
---- 記事[0]: 【ばんえい菊花賞】ホクセイイワキヤマが1年1か月ぶりの勝利　阿部優哉騎手「ばんえいダービーも取れるよう頑張りたい」 ---
-[0] Gemini入力本文 889文字: '◆ばんえい菊花賞・BG2(11月1日、帯広競馬場・ダート200メートル、馬場水分1・6％) 単勝1番人気のホクセイイワキヤマ(牡3歳、ばんえい・坂本東一厩舎、父マルニセンプー)が、第2障害3番手から鋭い伸び脚差し切った。昨年10月のナナカマ'
+--- 記事[0]: 天皇賞・秋V一夜明け、ダノンデサイルは栗東トレセン自厩舎で静養「いつもの穏やかなデサイルです」安田師 ---
+[0] Gemini入力本文 207文字: '1日の天皇賞・秋を制し、24年日本ダービー、25年ドバイシーマクラシックに続く3度目のG1制覇を飾ったダノンデサイル(牡5＝安田、父エピファネイア)はレース後、東京競馬場から輸送を経て2日午前0時30分に栗東トレセンに帰厩。一夜明けて、この'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「最新情報をお届けします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【高知・土佐秋月賞】単勝1・7倍のカツテナイオイシサが重賞6勝目　代打騎乗の上田将司騎手に「職人」「いぶし銀」の声 ---
-[1] Gemini入力本文 497文字: '◆第15回土佐秋月賞・重賞(11月1日、高知競馬場・ダート1600メートル、重) 11頭立てで行われ、1番人気で単勝1・7倍のカツテナイオイシサ(牡3歳、高知・雑賀正光厩舎、父ヴァンセンヌ)が重賞6勝目を飾った。主戦の岡村卓弥騎手が前日に落'
+--- 記事[1]: 【AR共和国杯想定騎手】ファイアンクランツは岩田望来騎手、ビザンチンドリームは国分優作騎手 ---
+[1] Gemini入力本文 517文字: '11月8日に東京競馬場で行われる、第64回アルゼンチン共和国杯(3歳上・GII・芝2500m)の登録馬・想定騎手は以下の通り。 5月の目黒記念を制したファイアンクランツ(牡4、美浦・堀宣行厩舎)は岩田望来騎手、天皇賞(春)2着などの実績があ'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 【盛岡・プリンセスC】今年も北海道勢のワンツー!サザングルーヴが重賞初勝利　服部茂史騎手「馬が賢かったですね」 ---
-[2] Gemini入力本文 822文字: '◆第42回プリンセスカップ・M1(11月1日、盛岡競馬場・ダート1400メートル、稍重) 2歳牝馬による重賞が9頭立てで行われ、2番人気のサザングルーヴ(牝2歳、北海道・川島洋人厩舎、父スズカコーズウェイ)が、重賞初勝利を飾った。2番手から'
+--- 記事[2]: 【みやこS想定騎手】ムルソーは坂井瑠星騎手、ロードクロンヌは横山和生騎手 ---
+[2] Gemini入力本文 446文字: '11月8日に京都競馬場で行われる、第16回みやこステークス(3歳上・GIII・ダ1800m)の登録馬・想定騎手は以下の通り。 5戦続けて連対しているムルソー(牡5、栗東・池江泰寿厩舎)は坂井瑠星騎手、プロキオンSと平安Sを勝っているロードク'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 503
+  HTTP 429
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 200
+[0]  [Gemini生出力 207文字]: '今日の競馬情報です。\n1日の天皇賞・秋を制し、24年日本ダービー、25年ドバイシーマクラシックに続く3度目のG1制覇を飾ったダノンデサイルはレース後、東京競馬場から輸送を経て2日午前0時30分に栗東トレセンに帰厩しました。一夜明けたこの日は自厩舎で静養しています。安田師は、馬体はしっかり走った消耗はあるものの、ご飯も食べて馬房ではイラつくこともなく、いつもの穏やかなデサイルですと、レース翌日の様子を伝えました。'
+[0]  [重複除去] 207文字 → 206文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (206文字)
+[0]  プレビュー: 今日の競馬情報です。1日の天皇賞・秋を制し、24年日本ダービー、25年ドバイシーマクラシックに続く3度目のG1制覇を飾ったダノンデサイルはレース後、東京競馬場か...
+  HTTP 200
+[2]  [Gemini生出力 275文字]: '今週の競馬注目情報をお伝えします。11月8日に京都競馬場で行われる第16回みやこステークス、3歳以上GIIIダート1800mの登録馬と想定騎手が発表されました。5戦続けて連対しているムルソーには坂井瑠星騎手が騎乗予定です。また、プロキオンステークスと平安ステークスを勝っているロードクロンヌには横山和生騎手が想定されています。この他、サイモンザナドゥには川田将雅騎手、シゲルショウグンには田口貫太騎手、ショウナンバンライには池添謙一騎手、シリウスコルトには田辺裕信騎手などが登録しており、情報は主に先週までの取材によるもので、変更の可能性もあります。'
+[2]  ファクトチェック: SKIPPED(error:HTTPError)
+[2]  → output/script_2.txt 保存 (275文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。11月8日に京都競馬場で行われる第16回みやこステークス、3歳以上GIIIダート1800mの登録馬と想定騎手が発表されました。...
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-  HTTP 429
-[2] 使用: key=***zGG0 model=gemini-flash-latest
-[0] 使用: key=***zGG0 model=gemini-flash-latest
 [1] 使用: key=***zGG0 model=gemini-flash-latest
   HTTP 200
-[1]  [Gemini生出力 226文字]: '最新情報をお届けします。高知競馬場の第15回土佐秋月賞は、1番人気で単勝1・7倍のカツテナイオイシサが重賞6勝目を飾りました。前日に主戦の岡村卓弥騎手が落馬負傷し初コンビとなった上田将司騎手を背に、中団後方から最後の直線で大外から豪快に伸びて1馬身半差をつけ、1分45秒6のタイムで勝利しました。2着は6番人気のザガラ、3着には4番人気のクスダマが入っています。レース後、上田将司騎手に対しては騎手仲間から「職人」「いぶし銀」などの声が飛んでいました。'
-[1]  [redirectフィルター] 226文字 → 214文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (214文字)
-[1]  プレビュー: 高知競馬場の第15回土佐秋月賞は、1番人気で単勝1・7倍のカツテナイオイシサが重賞6勝目を飾りました。前日に主戦の岡村卓弥騎手が落馬負傷し初コンビとなった上田将...
-  HTTP 200
-[0]  [Gemini生出力 242文字]: '今週の競馬注目情報をお伝えします。11月1日に帯広競馬場で行われたばんえい菊花賞は、単勝1番人気のホクセイイワキヤマが、第2障害3番手から鋭い伸び脚で差し切って勝利しました。勝ちタイムは2分16秒9です。ホクセイイワキヤマは昨年10月のナナカマド賞以来1年1か月ぶりの勝利で、2度目の重賞制覇となりました。2着には5番人気のヤマトテンショウ、3着には7番人気のコトブキラベンダーが入りました。当レース初勝利となった阿部優哉騎手は「ばんえいダービーも取れるよう頑張りたい」と語りました。'
-[0]  ファクトチェック: SKIPPED(error:HTTPError)
-[0]  → output/script_0.txt 保存 (242文字)
-[0]  プレビュー: 今週の競馬注目情報をお伝えします。11月1日に帯広競馬場で行われたばんえい菊花賞は、単勝1番人気のホクセイイワキヤマが、第2障害3番手から鋭い伸び脚で差し切って...
-  HTTP 200
-[2]  [Gemini生出力 216文字]: '注目の競馬情報をお届けします。盛岡競馬場で行われた第42回プリンセスカップは、2番人気のサザングルーヴが重賞初勝利を飾りました。レースは2番手追走から最後の直線で逃げた1番人気のラビリンスティアラをかわし、1馬身半差をつけてゴール。勝ちタイムは1分24秒9でした。今年も北海道勢のワンツーとなり、3着には大井のハイラブクイーンが入りました。騎乗した服部茂史騎手は「思った以上に折り合ってくれた。馬が賢かったですね」と振り返りました。'
-[2]  [redirectフィルター] 216文字 → 201文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: 盛岡競馬場で行われた第42回プリンセスカップは、2番人気のサザングルーヴが重賞初勝利を飾りました。レースは2番手追走から最後の直線で逃げた1番人気のラビリンステ...
+[1]  [Gemini生出力 201文字]: '競馬速報です。11月8日に東京競馬場で行われる、第64回アルゼンチン共和国杯の登録馬と想定騎手です。5月の目黒記念を制したファイアンクランツは岩田望来騎手、天皇賞(春)2着などの実績があるビザンチンドリームは国分優作騎手となっています。さらに、ドゥラドーレスはC.ルメール騎手、ショウナンラプンタはT.マーカンド騎手、ホーエリートは戸崎圭太騎手、ウエストナウは横山典弘騎手とのコンビが想定されています。'
+[1]  ファクトチェック: SKIPPED(error:ReadTimeout)
+[1]  → output/script_1.txt 保存 (201文字)
+[1]  プレビュー: 競馬速報です。11月8日に東京競馬場で行われる、第64回アルゼンチン共和国杯の登録馬と想定騎手です。5月の目黒記念を制したファイアンクランツは岩田望来騎手、天皇...
 
 3 件の脚本を生成しました。
