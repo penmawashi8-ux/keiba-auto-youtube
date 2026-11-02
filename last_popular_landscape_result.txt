@@ -1,6 +1,6 @@
-date: 2026-11-01T11:11:02.590980Z
+date: 2026-11-02T11:05:40.758336Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ybB_hxHcTDY views=108448 title=「ピークが来たわ」武豊騎手が京都1〜3Rを1番人気で3連勝【11万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=Bp0dopHXvOA views=55927 title=【天皇賞・秋】「ジャパンCが楽しみになりました」ダノンデサイルの社台ファーム・吉田照哉代表も絶賛【5.6万回閲覧・話題の
