@@ -1,10 +1,10 @@
-date: 2026-11-02T01:12:43.528261Z
+date: 2026-11-02T04:12:01.212896Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qUmabtnthYc title=【ばんえい菊花賞】ホクセイイワキヤマが1年1か月ぶりの勝利　阿部優哉騎手「ばんえ
-OK project=1 video_id=gvifH2CMHVs title=【高知・土佐秋月賞】単勝1・7倍のカツテナイオイシサが重賞6勝目　代打騎乗の上田
-OK project=1 video_id=XctsgXUw6D8 title=【盛岡・プリンセスC】今年も北海道勢のワンツー!サザングルーヴが重賞初勝利　服部
+OK project=1 video_id=nmA07gGxEPc title=天皇賞・秋V一夜明け、ダノンデサイルは栗東トレセン自厩舎で静養「いつもの穏やかな
+OK project=1 video_id=rhqycUybU9Y title=【AR共和国杯想定騎手】ファイアンクランツは岩田望来騎手、ビザンチンドリームは国
+OK project=1 video_id=kBf3rX1RUK8 title=【みやこS想定騎手】ムルソーは坂井瑠星騎手、ロードクロンヌは横山和生騎手
