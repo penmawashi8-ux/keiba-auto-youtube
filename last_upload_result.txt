@@ -1,10 +1,10 @@
-date: 2026-11-03T01:11:05.457708Z
+date: 2026-11-03T04:12:02.854517Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=fV5FB8LoFuI title=【POGマニア】もちの木賞登録馬16頭全頭が前走Vの意外な理由　ブリーダーズCで
-OK project=1 video_id=Dc69VzR3xH8 title=【競走伝】「こだわってみたい」ダートG1・4勝の実力馬は〇〇ハンターだった　快進
-OK project=1 video_id=3dGM0y2ZEaM title=【京王杯2歳S展望】関西馬インパルスドライブの無傷2連勝に期待
+OK project=1 video_id=mcci_aMV4pk title=【競走伝】1年5か月の骨折休養を乗り越えた天皇賞馬の初タイトル　名門厩舎の礎とな
+OK project=1 video_id=kp53Q5L1aH8 title=【アルゼンチン共和国杯】ビザンチンドリームの鞍上は背中を知り尽くした男　坂口調教
+OK project=1 video_id=iXofjZC5hbE title=【アルゼンチン共和国杯】ミラージュナイト混戦断つ　重賞初制覇へ前走オープン初Ｖの
