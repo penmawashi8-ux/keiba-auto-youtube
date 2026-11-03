@@ -1,86 +1,45 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] タイムアウト (attempt 1)。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] 503 サービス一時停止。リトライします。
-[0]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] タイムアウト (attempt 3)。リトライします。
-[1]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
+[2]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (46個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
+--- 記事[0] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[0]: 【JBC2歳優駿】オーリエイトがダートグレード競走初制覇　吉村誠之助騎手も地方交流重賞を初勝利 ---
-[0] Gemini入力本文 359文字: '◆第7回JBC2歳優駿・Jpn3(11月3日、門別競馬場・ダート1800メートル、稍重) 2023年にフォーエバーヤングが制した出世レースが11頭立て(JRA5、北海道6)で行われた。1番人気のオーリエイト(牡2歳、栗東・小栗実厩舎、父ナダ'
+--- 記事[0]: 【AR共和国杯予想オッズ】ファイアンクランツが予想1番人気 ---
+[0] Gemini入力本文 622文字: '11月8日に東京競馬場で行われる、第64回アルゼンチン共和国杯(3歳上・GII・芝2500m)に22頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは3日時点で以下のようになっている。 5月の目黒記念'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
+--- 記事[1] 書き出しパターン: 「競馬速報です。」 ---
 
---- 記事[1]: 【門別・JBC2歳優駿速報】オーリエイトが優勝! ---
-[1] Gemini入力本文 302文字: '3日、門別競馬場で行われた第7回JBC2歳優駿(2歳・JpnIII・ダ1800m・1着賞金3500万円)は、スタート一息も外から上がっていって直線で抜け出した吉村誠之助騎手騎乗の1番人気オーリエイト(牡2、栗東・小栗実厩舎)が、後方から追い'
+--- 記事[1]: 【みやこS予想オッズ】ムルソーが予想1番人気 ---
+[1] Gemini入力本文 562文字: '11月8日に京都競馬場で行われる、第16回みやこステークス(3歳上・GIII・ダ1800m)に19頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは3日時点で以下のようになっている。 5戦続けて連対し'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「競馬速報です。」 ---
+--- 記事[2] 書き出しパターン: 「最新情報をお届けします。」 ---
 
---- 記事[2]: 【金沢競馬　JBCスプリント】2番人気メイショウハチローが豪脚V!吉原エスコートでJpn1連勝!! ---
-[2] Gemini入力本文 317文字: '地方競馬の祭典「JBC競走」が3日、金沢競馬場と門別競馬場で行われた。金沢8RのJpn1「第26回JBCスプリント」(ダート1400メートル)は吉原寛人(43)騎乗の2番人気メイショウハチロー(牡4＝福永)が優勝した。 2着にウィルソンテソ'
+--- 記事[2]: 【京王杯2歳S予想オッズ】ブルージェイが予想1番人気 ---
+[2] Gemini入力本文 412文字: '11月7日に東京競馬場で行われる、第62回京王杯2歳ステークス(2歳・GII・芝1400m)に10頭が登録。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズは3日時点で以下のようになっている。 新馬・クローバー'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-[0] 使用: key=***zGG0 model=gemini-flash-latest
-[1] 使用: key=***zGG0 model=gemini-flash-latest
   HTTP 200
-[2]  [Gemini生出力 220文字]: '競馬速報です。\n地方競馬の祭典「JBC競走」が3日、金沢競馬場と門別競馬場で行われました。金沢8RのJpn1「第26回JBCスプリント」は、吉原寛人騎乗の2番人気メイショウハチローが優勝。2着にウィルソンテソーロ、3着にハッピーマンが入り、レディスクラシックに続き中央勢が上位を独占しました。3連単は1万4230円です。メイショウハチローはゲートで後手を踏んだものの、向正面でポジションを押し上げ、直線で豪快に脚を伸ばして突き抜けています。'
-[2]  [重複除去] 220文字 → 219文字
-[2]  ファクトチェック: SKIPPED(error:HTTPError)
-[2]  → output/script_2.txt 保存 (219文字)
-[2]  プレビュー: 競馬速報です。地方競馬の祭典「JBC競走」が3日、金沢競馬場と門別競馬場で行われました。金沢8RのJpn1「第26回JBCスプリント」は、吉原寛人騎乗の2番人気...
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 503
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 503
-[0] 使用: key=***zGG0 model=gemini-flash-lite-latest
+[2]  [Gemini生出力 315文字]: '最新情報をお届けします。\n11月7日に東京競馬場で行われる、第62回京王杯2歳ステークス(2歳・GII・芝1400m)には10頭が登録しています。netkeibaが独自に開発したAIによる3日時点での予想オッズでは、新馬・クローバー賞を無傷連勝しているブルージェイが単勝2.4倍で1番人気に推されています。もみじSを制したロンドンガーズと、新馬戦を断然人気で勝利したインパルスドライブが共に単勝4.3倍で続いています。その他、フレイコンが7.5倍、ジオパークカツキが8.4倍、グルーヴェンスが17.3倍、ノーセットが21.8倍、アテナブレイブが23.1倍、シルバーノリダーが30.6倍、ニシノトラノスケが91.9倍となっています。'
+[2]  [redirectフィルター] 315文字 → 302文字
   HTTP 200
-[0]  [Gemini生出力 287文字]: '本日の競馬ニュースです。第7回JBC2歳優駿・Jpn3が11月3日に門別競馬場のダート1800メートル、稍重で行われました。11頭立てで行われたレースは、1番人気のオーリエイトが好位追走から最後の直線で抜け出し、2連勝でダートグレード競走初勝利を飾りました。追い込んできたマルカルーカスを頭差しのいでいます。吉村誠之助騎手は地方の交流重賞を初勝利となり、開業4年目の小栗調教師はJRAを含めて重賞初勝利となりました。勝ちタイムは1分55秒7です。直線で伸びてきた3番人気のマルカルーカスが2着となり、2番人気のワンダーマーベルが3着に入り、馬券圏内をJRA勢が独占しました。'
+[0]  [Gemini生出力 240文字]: '今週の競馬注目情報をお伝えします。11月8日に東京競馬場で行われる、第64回アルゼンチン共和国杯、3歳上・GII・芝2500mには22頭が登録しています。競馬ファンの予想などを元にnetkeibaが独自に開発したAIによる予想オッズが3日時点で発表されました。5月の目黒記念を制したファイアンクランツが単勝4.2倍で1番人気に推されています。重賞勝ちはないものの重賞で2着4回のドゥラドーレスが7.1倍で続き、札幌日経賞を勝ったミラージュナイトが8.3倍で3番人気となっています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (302文字)
+[2]  プレビュー: 11月7日に東京競馬場で行われる、第62回京王杯2歳ステークス(2歳・GII・芝1400m)には10頭が登録しています。netkeibaが独自に開発したAIによ...
 [0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (287文字)
-[0]  プレビュー: 本日の競馬ニュースです。第7回JBC2歳優駿・Jpn3が11月3日に門別競馬場のダート1800メートル、稍重で行われました。11頭立てで行われたレースは、1番人...
-[1] 使用: key=***zGG0 model=gemini-flash-lite-latest
+[0]  → output/script_0.txt 保存 (240文字)
+[0]  プレビュー: 今週の競馬注目情報をお伝えします。11月8日に東京競馬場で行われる、第64回アルゼンチン共和国杯、3歳上・GII・芝2500mには22頭が登録しています。競馬フ...
   HTTP 200
-[1]  [Gemini生出力 216文字]: '重要な競馬ニュースをお伝えします。3日、門別競馬場で行われた第7回JBC2歳優駿は、スタート一息も外から上がっていって直線で抜け出した吉村誠之助騎手騎乗の1番人気オーリエイトが、後方から追い上げてきた3番人気マルカルーカスにアタマ差をつけ優勝しました。勝ちタイムは1分55秒7。さらに3馬身差の3着に2番人気ワンダーマーベルが入りました。勝ったオーリエイトは、10馬身差で圧勝した前走の未勝利戦に続く2連勝で重賞初制覇を飾りました。'
+[1]  [Gemini生出力 223文字]: '競馬速報です。11月8日に京都競馬場で行われる第16回みやこステークスには、3歳以上GIIIダート1800mに19頭が登録しています。netkeibaが独自に開発したAIによる予想オッズが3日時点で発表されました。5戦続けて連対しているムルソーが単勝4.1倍で予想1番人気に推されています。プロキオンSと平安Sを勝っているロードクロンヌが単勝6.0倍で2番人気、前走の3勝クラスを圧勝したショウナンバンライが単勝6.7倍で3番人気と続いています。'
 [1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (216文字)
-[1]  プレビュー: 重要な競馬ニュースをお伝えします。3日、門別競馬場で行われた第7回JBC2歳優駿は、スタート一息も外から上がっていって直線で抜け出した吉村誠之助騎手騎乗の1番人...
+[1]  → output/script_1.txt 保存 (223文字)
+[1]  プレビュー: 競馬速報です。11月8日に京都競馬場で行われる第16回みやこステークスには、3歳以上GIIIダート1800mに19頭が登録しています。netkeibaが独自に開...
 
 3 件の脚本を生成しました。
