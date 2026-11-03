@@ -1,10 +1,10 @@
-date: 2026-11-02T04:12:01.212896Z
+date: 2026-11-03T01:11:05.457708Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nmA07gGxEPc title=天皇賞・秋V一夜明け、ダノンデサイルは栗東トレセン自厩舎で静養「いつもの穏やかな
-OK project=1 video_id=rhqycUybU9Y title=【AR共和国杯想定騎手】ファイアンクランツは岩田望来騎手、ビザンチンドリームは国
-OK project=1 video_id=kBf3rX1RUK8 title=【みやこS想定騎手】ムルソーは坂井瑠星騎手、ロードクロンヌは横山和生騎手
+OK project=1 video_id=fV5FB8LoFuI title=【POGマニア】もちの木賞登録馬16頭全頭が前走Vの意外な理由　ブリーダーズCで
+OK project=1 video_id=Dc69VzR3xH8 title=【競走伝】「こだわってみたい」ダートG1・4勝の実力馬は〇〇ハンターだった　快進
+OK project=1 video_id=3dGM0y2ZEaM title=【京王杯2歳S展望】関西馬インパルスドライブの無傷2連勝に期待
