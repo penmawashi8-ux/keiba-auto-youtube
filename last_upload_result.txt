@@ -1,10 +1,10 @@
-date: 2026-11-04T01:11:03.256058Z
+date: 2026-11-04T04:11:21.002171Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=DecAM7d65tk title=【阪神アーバン競馬・人気ジョッキーは語る】スマイルクラーク(園田10R)に自信を
-OK project=1 video_id=heGwrlCBaQo title=【園田競馬　4日発走　楠賞】ベストグリーンには逆らえない
-OK project=1 video_id=cNJQsmtQTks title=【JBC2歳優駿】最内枠で出遅れもオーリエイト頭差封じ重賞初制覇「より大きい舞台
+OK project=1 video_id=oJ1IsAoA-dw title=【マイルCS想定】シックスペンスやスターアニスなど19頭
+OK project=1 video_id=v7GNaXmeHGg title=【JBCスプリント】南部杯に続くJpn1連勝「フェブラリーS目標」メイショウハチ
+OK project=1 video_id=cZNxTiRTUsE title=【JBCレディスC】「希望の広がる結果」川田将雅騎手も絶賛　アンズアメがダート新
