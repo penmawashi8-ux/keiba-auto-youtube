@@ -1,10 +1,10 @@
-date: 2026-11-04T07:10:09.944151Z
+date: 2026-11-04T10:10:41.117496Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=mTZ-4RKTkAE title=「馬にも性格があります」「どれだけ考えて乗るか」岩田康誠騎手が阪神アーバン競馬の
-OK project=1 video_id=E39Sx4Ly-jg title=【注目馬動向】JBCスプリントでJpn1連勝のメイショウハチローはフェブラリーS
-OK project=1 video_id=5C9pL1hwU6w title=【注目馬動向】ファンタジーS勝ちのニクスルーナは阪神JFへ向かわず　ワンダーディ
+OK project=1 video_id=a_pQXQiQqnM title=【地方競馬】ワッショイが無傷２連勝　林幻師は「景気のいい名前だし、人気が出てくれ
+OK project=1 video_id=soWdkdIt6ig title=【アルゼンチン共和国杯】復帰戦を勝利したレッドバンデは前走から大きな上積み　大竹
+OK project=1 video_id=-XPCK1cDqrM title=「とにかく早く...」「絶句」超良血馬に起きたアクシデントにネット悲痛の声　イク
