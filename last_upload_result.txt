@@ -1,10 +1,10 @@
-date: 2026-11-05T01:11:36.188571Z
+date: 2026-11-05T04:09:02.887814Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Q6EneI7Gct4 title=【阪神アーバン競馬・人気ジョッキーは語る】パハロアスール(園田1R)で勝利を意識
-OK project=1 video_id=B9zF-XDANu4 title=【園田競馬　5日発走　おゝ浜のポン酢特別】リネアグローリアが混戦を断つ
-OK project=1 video_id=TDoynxQ4bSE title=【みやこS展望】テスティモーネの重賞初制覇に期待
+OK project=1 video_id=7p7YjtwpleE title=【エリザベス女王杯・1週前】「飛んでいるような感じ」Cデムーロ騎手がクイーンズウ
+OK project=1 video_id=V_KB5T4As_k title=英国の28歳G1ジョッキー、マーカンド騎手に短期騎手免許交付　JRAでは過去69
+OK project=1 video_id=xUeMitIMyIY title=トム・マーカンド騎手に短期騎手免許交付　11月7日から12月29日まで　JRA発
