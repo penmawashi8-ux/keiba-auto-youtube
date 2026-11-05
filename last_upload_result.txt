@@ -1,10 +1,10 @@
-date: 2026-11-05T07:15:32.796195Z
+date: 2026-11-05T10:12:29.053202Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AJbu0CrfgDY title=【京都JS出走馬・騎手確定】ディナースタ＆高田潤騎手、スマイルスルー＆小牧加矢太
-OK project=1 video_id=9-HWoAByq7o title=【京王杯2歳S出走馬・騎手確定】ブルージェイ＆C.ルメール騎手、フレイコン＆T.
-OK project=1 video_id=VZ8zsiG8PbM title=【みやこS出走馬・騎手確定】ムルソー＆松山弘平騎手、ショウナンバンライ＆池添謙一
+OK project=1 video_id=vtG-0pGDoSg title=【JRA新馬戦】セレクトセール3億円のダノンデスティニーなどがデビュー
+OK project=1 video_id=M_MF32exMrM title=【有力馬動向】秋華賞回避の影響は皆無！ ジュウリョクピエロ/馬三郎のつぶやき
+OK project=1 video_id=MODypVMU0QI title=【エリザベス女王杯・1週前】再びG1の頂へ　カムニャックは前走以上の動き　友道調
