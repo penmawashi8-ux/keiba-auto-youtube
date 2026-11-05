@@ -1,10 +1,10 @@
-date: 2026-11-04T10:10:41.117496Z
+date: 2026-11-05T01:11:36.188571Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=a_pQXQiQqnM title=【地方競馬】ワッショイが無傷２連勝　林幻師は「景気のいい名前だし、人気が出てくれ
-OK project=1 video_id=soWdkdIt6ig title=【アルゼンチン共和国杯】復帰戦を勝利したレッドバンデは前走から大きな上積み　大竹
-OK project=1 video_id=-XPCK1cDqrM title=「とにかく早く...」「絶句」超良血馬に起きたアクシデントにネット悲痛の声　イク
+OK project=1 video_id=Q6EneI7Gct4 title=【阪神アーバン競馬・人気ジョッキーは語る】パハロアスール(園田1R)で勝利を意識
+OK project=1 video_id=B9zF-XDANu4 title=【園田競馬　5日発走　おゝ浜のポン酢特別】リネアグローリアが混戦を断つ
+OK project=1 video_id=TDoynxQ4bSE title=【みやこS展望】テスティモーネの重賞初制覇に期待
