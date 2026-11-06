@@ -1,6 +1,6 @@
-date: 2026-11-05T11:08:44.040912Z
+date: 2026-11-06T11:05:40.091532Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=qRgmZgTNO04 views=70058 title=武豊騎手「かなりの力を持っている」とエリザベス女王杯で騎乗依頼受けたオークス3着馬を絶賛　「いまから楽しみ」【7.0万回
+OK project=1 video_id=3dCtEOY4PA0 views=56905 title=【注目馬動向】「前を向いてやるしかない」天皇賞・秋11着のマスカレードボールはジャパンCでリベンジへ　ルークウォームは阪
