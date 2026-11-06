@@ -1,65 +1,103 @@
-  [警告] 503 サービス一時停止。リトライします。
-  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
-  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
   [警告] 503 サービス一時停止。リトライします。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
-[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
   [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
 [0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] ファクトチェックAPI失敗: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-[0]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa
+[2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+[1]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[0]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
+  [警告] 503 サービス一時停止。リトライします。
+[2]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (47個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「レース関連の最新情報です。」 ---
+--- 記事[0] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
 
---- 記事[0]: 武豊騎手と凱旋門賞挑戦のメイショウタバルが帰厩後初の坂路入り　元気いっぱいも石橋調教師「週末から上げていく」 ---
-[0] Gemini入力本文 295文字: '5日に放牧先の滋賀・キャニオンファーム土山から栗東トレセンに帰厩したメイショウタバル(牡5歳、栗東・石橋守厩舎、父ゴールドシップ)が6日、帰厩後初の坂路入り。雄大な後肢を力強く動かし、61秒2―15秒0で元気いっぱいに駆け上がった。石橋調教'
+--- 記事[0]: 「エクリプス賞の有力候補」テーオーエルビスのBCスプリント制覇で父の種付け料が約280万円にアップ ---
+[0] Gemini入力本文 823文字: 'BCスプリントを制したテーオーエルビス(牡4歳、栗東・高柳大輔厩舎、父ヴォラタイル)の歴史的快挙は父の種付け料も動かした。父ヴォラタイル(牡10歳)をけい養する米国ケンタッキー州のスリーチムニーズファームは4日に、同馬の種付け料を1万750'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
 --- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: G1・6勝の名牝ブエナビスタが繁殖牝馬を引退…ノーザンホースパークで新生活を開始「本日からきゅう舎3で会うことができます ---
-[1] Gemini入力本文 493文字: '北海道苫小牧市のノーザンホースパークは6日、現役時代にG1・6勝をマークした名牝ブエナビスタが繁殖牝馬を引退し、同パークで新たに生活を始めたことを公式SNSで報告した。 インスタグラムでは「ブエナビスタがパークの仲間入り！」「このたび、ブエ'
+--- 記事[1]: 【阪神アーバン競馬】67歳7か月23日　川原正一騎手が園田5Rで国内最高齢勝利更新「運がよければ勝てるよ」 ---
+[1] Gemini入力本文 287文字: '兵庫県競馬に所属する川原正一騎手＝兵庫県騎手会・フリー＝が11月6日、園田5R・SONODAブレイクタイム競馬 アルタイル賞(ダート1400m)を3番人気のハンバーグハマー(牝6歳、兵庫・土屋洋之厩舎、父メイショウボーラー)で制し、自身の国'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「注目の競馬情報をお届けします。」 ---
+--- 記事[2] 書き出しパターン: 「今週の競馬注目情報をお伝えします。」 ---
 
---- 記事[2]: 23年に15番人気でファンタジーS勝利　カルチャーデイが引退して繁殖入り ---
-[2] Gemini入力本文 264文字: 'JRAは11月6日、23年ファンタジーS・G3に優勝したカルチャーデイ(牝5歳、栗東・四位洋文厩舎、父ファインニードル)の競走馬登録を5日付で抹消したことを発表した。今後は北海道新ひだか町の松田牧場で繁殖牝馬となる予定。 同馬は23年9月に'
+--- 記事[2]: 「ずっと住みたい」ゴンサルベス騎手が日本での騎乗を終了　来年4月には再来日も視野 ---
+[2] Gemini入力本文 646文字: 'ブラジル出身のフランシスコ・ゴンサルベス騎手(36)が11月5日をもって南関東での騎乗を終えた。同騎手は2016、18〜24年に拠点としているアルゼンチンでリーディングを獲得。25年にはワールドオールスタージョッキーに参戦した。今年は5月2'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 200
-[1]  [Gemini生出力 314文字]: '競馬ファン注目の情報です。現役時代にG1・6勝をマークした名牝ブエナビスタが繁殖牝馬を引退し、北海道苫小牧市のノーザンホースパークで新たに生活を始めました。ノーザンホースパークは公式SNSで「ブエナビスタがパークの仲間入り！本日からきゅう舎3で会うことができます」と報告しています。これまでのユキチャン、アマンテビアンコなどに加え、ブエナビスタのプロフィールカードも登場します。ブエナビスタは09年に桜花賞、オークスの牝馬2冠を達成し、古馬になってからも10年天皇賞・秋、11年ジャパンCを制するなどG1・6勝をマークしました。繁殖牝馬としてはJRAで4勝を挙げたソシアルクラブや、同じく4勝のタンタラスなどを送り出しています。'
-[1]  [redirectフィルター] 314文字 → 251文字
-[1]  ファクトチェック: SKIPPED(error:HTTPError)
-[1]  → output/script_1.txt 保存 (251文字)
-[1]  プレビュー: 競馬ファン注目の情報です。現役時代にG1・6勝をマークした名牝ブエナビスタが繁殖牝馬を引退し、北海道苫小牧市のノーザンホースパークで新たに生活を始めました。これ...
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
+  HTTP 429
+  60秒待機後にリトライ... (attempt 3)
   HTTP 429
   60秒待機後にリトライ... (attempt 3)
   HTTP 503
   60秒待機後にリトライ... (attempt 3)
   HTTP 429
-[2] 使用: key=***zGG0 model=gemini-flash-latest
   HTTP 429
+  HTTP 429
+[1] 使用: key=***zGG0 model=gemini-flash-latest
 [0] 使用: key=***zGG0 model=gemini-flash-latest
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+[2] 使用: key=***zGG0 model=gemini-flash-latest
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  30秒待機後にリトライ... (attempt 2)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  60秒待機後にリトライ... (attempt 3)
+  HTTP 503
+  HTTP 503
+  HTTP 503
+[1] 使用: key=***zGG0 model=gemini-flash-lite-latest
   HTTP 200
-[2]  [Gemini生出力 216文字]: '注目の競馬情報をお届けします。JRAは11月6日、23年ファンタジーS・G3に優勝したカルチャーデイの競走馬登録を5日付で抹消したことを発表しました。今後は北海道新ひだか町の松田牧場で繁殖牝馬となる予定です。同馬は23年9月にデビュー勝ち。2戦目にファンタジーSに挑み、15番人気の低評価を覆してタイトルを手にしました。今年10月のオパールS4着がラストランになりました。通算成績は17戦3勝、総獲得賞金は7338万7000円です。'
-[2]  [redirectフィルター] 216文字 → 201文字
+[1]  [Gemini生出力 247文字]: '競馬ファン注目の情報です。兵庫県競馬に所属する川原正一騎手が11月6日、園田5RのSONODAブレイクタイム競馬 アルタイル賞を3番人気のハンバーグハマーで制し、自身の国内最高齢の勝利記録を更新する67歳7か月23日での勝利となりました。半馬身差で2着のイセベイに騎乗していたのは20歳の南部楓馬騎手で、キャリアの違いを見せつけました。10月28日の園田1R以来の勝利で、これで地方通算5948勝目となります。最年長記録についてはこだわらんよ、今日のように運が良ければ勝てるとニコニコ顔でした。'
+[1]  ファクトチェック: OK
+[1]  → output/script_1.txt 保存 (247文字)
+[1]  プレビュー: 競馬ファン注目の情報です。兵庫県競馬に所属する川原正一騎手が11月6日、園田5RのSONODAブレイクタイム競馬 アルタイル賞を3番人気のハンバーグハマーで制し...
+[0] 使用: key=***zGG0 model=gemini-flash-lite-latest
   HTTP 200
-[0]  [Gemini生出力 209文字]: 'レース関連の最新情報です。5日に栗東トレセンへ帰厩したメイショウタバルが6日、帰厩後初の坂路入りを果たしました。雄大な後肢を力強く動かし、61秒2―15秒0で元気いっぱいに駆け上がっています。前走の凱旋門賞では武豊騎手と挑み14着に敗れましたが、次走は11月29日、東京競馬場・芝2400メートルのジャパンCを目標に調整を進めていきます。石橋調教師は「状態を見ながらだけど、週末から上げていく予定です」と話しています。'
+[0]  [Gemini生出力 502文字]: '注目の競馬情報をお届けします。BCスプリントを制したテーオーエルビスの歴史的快挙は父の種付け料も動かしました。父ヴォラタイルをけい養する米国ケンタッキー州のスリーチムニーズファームは4日に、同馬の種付け料を1万7500ドル、日本円でおよそ280万円に設定したことを発表しました。今年の種付け料は1万ドル、日本円でおよそ160万円でした。ヴォラタイルは現役時代にアルフレッドGヴァンダービルトハンデキャップでG1を制し、6戦5勝で引退し、2021年から種牡馬入りしました。ファームは種付け料の値上げに関して、ブリーダーズカップにおける同馬の産駒の歴史的な活躍を受けてのものと説明しています。また、米国競馬専門メディアのブラッドホースは、テーオーエルビスがBCスプリントを制し、圧倒的に本命視されていたイングリッシュマンを撃破したと報じました。ファームの担当ディレクターを務めるレベッカ・ニコルソン氏は、今回のBC開催に出走した全馬の中で最高の数値となるベイヤー・スピード・フィギュア112を記録したことや、エクリプス賞の最優秀スプリンター部門における有力候補としての地位を確固たるものにしたと語っています。'
+[0]  [redirectフィルター] 502文字 → 487文字
+[0]  ファクトチェック: OK
+[0]  → output/script_0.txt 保存 (487文字)
+[0]  プレビュー: BCスプリントを制したテーオーエルビスの歴史的快挙は父の種付け料も動かしました。父ヴォラタイルをけい養する米国ケンタッキー州のスリーチムニーズファームは4日に、...
+[2] 使用: key=***zGG0 model=gemini-flash-lite-latest
+  HTTP 200
+[2]  [Gemini生出力 324文字]: '今週の競馬注目情報をお伝えします。ブラジル出身のフランシスコ・ゴンサルベス騎手が十一月五日をもって南関東での騎乗を終えました。今年は五月二日から六月二十八日までＪＲＡの短期騎手免許を取得し百四十二戦十三勝を記録し、八月二十四日からは船橋の山下貴之厩舎所属として南関東で騎乗しました。当初は南関東で三十勝したいと目標を掲げていましたが、九月十八日の大井競馬で右足中指第2関節を脱臼し、十日ほど休養したことで二十二勝にとどまりました。十一月六日には主戦場のアルゼンチンに向かい、帰国後にはアルゼンチンの3歳最大のレースとなるナシオナル大賞に参戦します。ずっと住みたいと惚れ込んだ日本に戻るため、来年四月から再びＪＲＡでの短期免許に申し込むとのことです。'
 [2]  ファクトチェック: OK
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: JRAは11月6日、23年ファンタジーS・G3に優勝したカルチャーデイの競走馬登録を5日付で抹消したことを発表しました。今後は北海道新ひだか町の松田牧場で繁殖牝...
-[0]  ファクトチェック: SKIPPED(error:ReadTimeout)
-[0]  → output/script_0.txt 保存 (209文字)
-[0]  プレビュー: レース関連の最新情報です。5日に栗東トレセンへ帰厩したメイショウタバルが6日、帰厩後初の坂路入りを果たしました。雄大な後肢を力強く動かし、61秒2―15秒0で元...
+[2]  → output/script_2.txt 保存 (324文字)
+[2]  プレビュー: 今週の競馬注目情報をお伝えします。ブラジル出身のフランシスコ・ゴンサルベス騎手が十一月五日をもって南関東での騎乗を終えました。今年は五月二日から六月二十八日まで...
 
 3 件の脚本を生成しました。
