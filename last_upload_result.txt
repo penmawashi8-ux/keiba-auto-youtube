@@ -1,10 +1,10 @@
-date: 2026-11-06T07:15:22.870280Z
+date: 2026-11-06T10:11:37.876635Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ODv0acbSPMY title=「エクリプス賞の有力候補」テーオーエルビスのBCスプリント制覇で父の種付け料が約
-OK project=1 video_id=MIgxssVaaC4 title=【阪神アーバン競馬】67歳7か月23日　川原正一騎手が園田5Rで国内最高齢勝利更
-OK project=1 video_id=95qeW8rDWNg title=「ずっと住みたい」ゴンサルベス騎手が日本での騎乗を終了　来年4月には再来日も視野
+OK project=1 video_id=d6c5AQMtnsQ title=【みやこS・金曜気配】満を持しての重賞挑戦!全7戦で連対率100%のビービークロ
+OK project=1 video_id=koH1nEWTOlk title=G1で6勝の名牝ブエナビスタが繁殖引退　20歳で新生活…ノーザンホースパークで会
+OK project=1 video_id=yGXjRONt3s8 title=【京王杯2歳S予想】前走初角1番手の馬に不安あり!? 上位人気馬に立ちはだかる消
