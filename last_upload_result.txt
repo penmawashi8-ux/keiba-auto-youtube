@@ -1,10 +1,10 @@
-date: 2026-11-06T04:11:59.242856Z
+date: 2026-11-06T07:15:22.870280Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nNdRiBG-3DU title=武豊騎手と凱旋門賞挑戦のメイショウタバルが帰厩後初の坂路入り　元気いっぱいも石橋
-OK project=1 video_id=6xlJxQhRl9c title=G1・6勝の名牝ブエナビスタが繁殖牝馬を引退…ノーザンホースパークで新生活を開始
-OK project=1 video_id=Qy6uQogPW5o title=23年に15番人気でファンタジーS勝利　カルチャーデイが引退して繁殖入り
+OK project=1 video_id=ODv0acbSPMY title=「エクリプス賞の有力候補」テーオーエルビスのBCスプリント制覇で父の種付け料が約
+OK project=1 video_id=MIgxssVaaC4 title=【阪神アーバン競馬】67歳7か月23日　川原正一騎手が園田5Rで国内最高齢勝利更
+OK project=1 video_id=95qeW8rDWNg title=「ずっと住みたい」ゴンサルベス騎手が日本での騎乗を終了　来年4月には再来日も視野
