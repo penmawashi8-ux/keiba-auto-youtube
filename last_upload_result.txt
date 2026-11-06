@@ -1,10 +1,10 @@
-date: 2026-11-06T01:10:16.695893Z
+date: 2026-11-06T04:11:59.242856Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=W_CB9k8q7gs title=【阪神アーバン競馬・人気ジョッキーは語る】マテンロウタイム(園田10R)に自信を
-OK project=1 video_id=ZRhYzTMCAV8 title=【京王杯2歳S】開業1年目34歳・手塚貴徳調教師がアテナブレイブで初タイトル狙う
-OK project=1 video_id=RH2WO9fiqGM title=【新馬戦】ロードラムセス　古馬相手に堂々最先着　母は海外名牝・ワンダーガドット　
+OK project=1 video_id=nNdRiBG-3DU title=武豊騎手と凱旋門賞挑戦のメイショウタバルが帰厩後初の坂路入り　元気いっぱいも石橋
+OK project=1 video_id=6xlJxQhRl9c title=G1・6勝の名牝ブエナビスタが繁殖牝馬を引退…ノーザンホースパークで新生活を開始
+OK project=1 video_id=Qy6uQogPW5o title=23年に15番人気でファンタジーS勝利　カルチャーデイが引退して繁殖入り
