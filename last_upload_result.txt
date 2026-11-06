@@ -1,10 +1,10 @@
-date: 2026-11-05T10:12:29.053202Z
+date: 2026-11-06T01:10:16.695893Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vtG-0pGDoSg title=【JRA新馬戦】セレクトセール3億円のダノンデスティニーなどがデビュー
-OK project=1 video_id=M_MF32exMrM title=【有力馬動向】秋華賞回避の影響は皆無！ ジュウリョクピエロ/馬三郎のつぶやき
-OK project=1 video_id=MODypVMU0QI title=【エリザベス女王杯・1週前】再びG1の頂へ　カムニャックは前走以上の動き　友道調
+OK project=1 video_id=W_CB9k8q7gs title=【阪神アーバン競馬・人気ジョッキーは語る】マテンロウタイム(園田10R)に自信を
+OK project=1 video_id=ZRhYzTMCAV8 title=【京王杯2歳S】開業1年目34歳・手塚貴徳調教師がアテナブレイブで初タイトル狙う
+OK project=1 video_id=RH2WO9fiqGM title=【新馬戦】ロードラムセス　古馬相手に堂々最先着　母は海外名牝・ワンダーガドット　
