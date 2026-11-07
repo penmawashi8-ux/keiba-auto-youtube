@@ -256,6 +256,8 @@ def horse_features(r, std, l3std):
         f[pre + "same_jockey"] = int(bool(p.get("jockey") and r["jockey"] and p["jockey"][:2] == r["jockey"][:2]))
         f[pre + "win"] = int(p.get("finish") == 1)
         f[pre + "top3"] = int(bool(p.get("finish") and p["finish"] <= 3))
+        f["_pk" + str(i + 1)] = f'{p["date"]}|{p["place"]}|{p["surface"]}|{p["dist"]}'
+
     # --- 集約（直近3走・5走） ---
     for w in (3, 5):
         ps = past[:w]
@@ -357,9 +359,70 @@ def build(dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all")), wor
         feats = [f for ff in pool.imap(_feat_chunk, chunks) for f in ff]
     df = pd.DataFrame(feats).drop_duplicates(["race_id", "umaban"])
     df["month"] = df["date"].str[:6]
+    df = add_race_level(df, rows)
+    df = add_oikiri(df)
     df["y"] = (df["finish"] == 1).astype(int)
     df["y3"] = (df["finish"] <= 3).astype(int)
     return add_relative(df)
+
+
+def add_race_level(df: pd.DataFrame, rows) -> pd.DataFrame:
+    """各レースの『メンバーの強さ』（出走時点のスピード指数上位5頭の平均）を求め、
+    各馬の近走がどのくらい強いメンバー相手だったかを特徴量にする。"""
+    lvl = df.groupby("race_id")["w5_speed_max"].apply(
+        lambda s: s.dropna().sort_values(ascending=False).head(5).mean())
+    meta = {}
+    for r in rows:
+        race = r["_race"]
+        meta[r["race_id"]] = f'{r["rdate"]}|{race["place"]}|{race["surface"]}|{race["dist"]}'
+    key_lvl = {}
+    for rid, v in lvl.items():
+        k = meta.get(rid)
+        if k and pd.notna(v):
+            key_lvl.setdefault(k, []).append(v)
+    key_lvl = {k: float(np.mean(v)) for k, v in key_lvl.items()}
+    df["race_level_today"] = df["race_id"].map(lvl)
+    cols = []
+    for i in range(1, 6):
+        c = f"p{i}_race_level"
+        df[c] = df[f"_pk{i}"].map(key_lvl) if f"_pk{i}" in df else np.nan
+        cols.append(c)
+    lv = df[cols]
+    df["w3_race_level_mean"] = lv.iloc[:, :3].mean(axis=1)
+    df["w5_race_level_max"] = lv.max(axis=1)
+    df["p1_level_vs_today"] = df["p1_race_level"] - df["race_level_today"]
+    # 強いメンバー相手の着差ほど価値が高い: 着差 − (相手レベル − 今回レベル)×係数
+    for i in range(1, 4):
+        df[f"p{i}_margin_lvladj"] = df[f"p{i}_margin"] - 0.05 * (df[f"p{i}_race_level"] - df["race_level_today"])
+    df["w3_margin_lvladj_mean"] = df[[f"p{i}_margin_lvladj" for i in range(1, 4)]].mean(axis=1)
+    df["w3_margin_lvladj_min"] = df[[f"p{i}_margin_lvladj" for i in range(1, 4)]].min(axis=1)
+    return df.drop(columns=[c for c in df.columns if c.startswith("_pk")])
+
+
+OIKIRI_RANK = {"A": 4, "B": 3, "C": 2, "D": 1}
+
+
+def add_oikiri(df: pd.DataFrame, d=Path("win5_bt_data/oikiri")) -> pd.DataFrame:
+    """調教評価（A〜D）と短評。データがないレースは欠損のまま。"""
+    rank, critic = {}, {}
+    for p in Path(d).glob("*.json.gz"):
+        with gzip.open(p, "rt", encoding="utf-8") as f:
+            data = json.load(f)
+        rid = p.name[:12]
+        for um, cells in data.items():
+            for c, t in cells:
+                if c.startswith("Rank_"):
+                    rank[(rid, int(um))] = OIKIRI_RANK.get(t)
+                elif c == "Training_Critic":
+                    critic[(rid, int(um))] = t
+    keys = list(zip(df["race_id"], df["umaban"].astype(int)))
+    df["oikiri_rank"] = [rank.get(k) for k in keys]
+    df["oikiri_critic"] = [critic.get(k) for k in keys]
+    g = df.groupby("race_id")["oikiri_rank"]
+    df["oikiri_rank__rk"] = g.rank(pct=True)
+    df["oikiri_rank__dv"] = df["oikiri_rank"] - g.transform("mean")
+    df["oikiri_n_A"] = (df["oikiri_rank"] == 4).groupby(df["race_id"]).transform("sum")
+    return df
 
 
 REL_COLS = None
@@ -395,6 +458,7 @@ GROUP_KEYS = {
     "bms_surf": ["bms", "race_surf_d"], "jockey_place": ["jockey", "race_place"],
     "trainer_place": ["trainer", "race_place"], "jockey_trainer": ["jockey", "trainer"],
     "jockey_surf": ["jockey", "race_surf_d"], "trainer_cls": ["trainer", "race_cls"],
+    "oikiri_critic": ["oikiri_critic"], "trainer_oikiri": ["trainer", "oikiri_rank"],
 }
 
 
@@ -435,7 +499,7 @@ def add_group_rates(df: pd.DataFrame, prior: int = 30) -> pd.DataFrame:
     return pd.concat([df, pd.DataFrame(extra, index=df.index)], axis=1)
 
 
-NON_FEATURES = {"race_id", "date", "is_win5", "jockey", "trainer", "sire", "bms", "finish", "pop",
+NON_FEATURES = {"oikiri_critic", "race_id", "date", "is_win5", "jockey", "trainer", "sire", "bms", "finish", "pop",
                 "odds", "res_time", "name", "month", "y", "y3"}
 
 
