@@ -46,7 +46,7 @@ def _fold(args):
         return None
     model = lgb.train(params, lgb.Dataset(tr[cols], label=tr["y"]), num_boost_round=rounds)
     raw = model.predict(te[cols], raw_score=True)
-    out = te[["race_id", "date", "umaban", "finish", "odds", "is_win5"]].copy()
+    out = te[[c for c in ("race_id", "date", "umaban", "finish", "odds", "pop", "name", "is_win5") if c in te]].copy()
     out["p"] = softmax_by_race(te, raw)
     return out, pd.Series(model.feature_importance("gain"), index=cols)
 
