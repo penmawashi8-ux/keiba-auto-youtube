@@ -20,7 +20,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from features import load_all  # noqa: E402
 
-EXCLUDE = {"race_id", "date", "umaban", "finish", "name", "pop", "odds", "jockey", "sex",
+EXCLUDE = {"is_win5", "race_id", "date", "umaban", "finish", "name", "pop", "odds", "jockey", "sex",
            "style", "race_surface", "race_baba", "race_place", "month", "y", "race_heads"}
 
 PARAMS = dict(objective="binary", learning_rate=0.03, num_leaves=15, min_data_in_leaf=40,
@@ -75,11 +75,41 @@ def best_allocation(probs_by_race: list[np.ndarray], budget: int, max_n: int = 8
     return best_ns, best
 
 
+def add_jockey_rate(tr: pd.DataFrame, te: pd.DataFrame, prior: int = 30) -> None:
+    """学習期間のデータだけで騎手の勝率（平滑化）を計算し、学習・評価の両方に付与する。"""
+    base = tr["y"].mean()
+    g = tr.groupby("jockey")["y"].agg(["sum", "count"])
+    rate = (g["sum"] + prior * base) / (g["count"] + prior)
+    # 学習側は自分のレースを含むので軽いリークがあるが、平滑化で影響を抑える
+    tr["jockey_rate"] = tr["jockey"].map(rate).fillna(base)
+    te["jockey_rate"] = te["jockey"].map(rate).fillna(base)
+
+
+def add_jockey_rate_expanding(df: pd.DataFrame, prior: int = 30) -> pd.DataFrame:
+    """各月について「その月より前」の成績だけで騎手勝率・連対率を計算する（リークなし）。"""
+    df = df.copy()
+    df["jockey_rate"] = np.nan
+    df["jockey_top3"] = np.nan
+    df["_top3"] = (df["finish"] <= 3).astype(float)
+    for m in sorted(df["month"].unique()):
+        past = df[(df["month"] < m) & df["finish"].notna()]
+        idx = df["month"] == m
+        if len(past) < 500:
+            continue
+        for col, tgt in (("jockey_rate", "y"), ("jockey_top3", "_top3")):
+            base = past[tgt].mean()
+            g = past.groupby("jockey")[tgt].agg(["sum", "count"])
+            rate = (g["sum"] + prior * base) / (g["count"] + prior)
+            df.loc[idx, col] = df.loc[idx, "jockey"].map(rate).fillna(base)
+    return df.drop(columns=["_top3"])
+
+
 def walk_forward(df: pd.DataFrame, min_train_months: int = 3, params=None, rounds=ROUNDS):
     params = params or PARAMS
     df = df.copy()
     df["month"] = df["date"].str[:6]
     months = sorted(df["month"].unique())
+    df = add_jockey_rate_expanding(df)
     cols = feature_cols(df)
     out = []
     for i, m in enumerate(months):
@@ -91,7 +121,7 @@ def walk_forward(df: pd.DataFrame, min_train_months: int = 3, params=None, round
         dtrain = lgb.Dataset(tr[cols], label=tr["y"])
         model = lgb.train(params, dtrain, num_boost_round=rounds)
         te["score"] = model.predict(te[cols])
-        out.append(te)
+        out.append(te[te["is_win5"] == 1])
     res = pd.concat(out)
     res["p_model"] = normalize(res, "score")
     res["inv_odds"] = 1.0 / res["odds"]

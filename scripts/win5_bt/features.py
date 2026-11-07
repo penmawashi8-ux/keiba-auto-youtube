@@ -10,6 +10,7 @@ import math
 import re
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 ZEN = str.maketrans("０１２３４５６７８９", "0123456789")
@@ -178,6 +179,8 @@ def horse_rows(rec: dict) -> list[dict]:
             **{f"race_{k}": v for k, v in race.items()},
         }
         r.update(past_features(past, race))
+        r["_past"] = past
+        r["_race"] = race
         rr = res.get(umaban, {})
         r["finish"] = rr.get("finish")
         r["name"] = rr.get("name")
@@ -238,7 +241,8 @@ def add_race_relative(df: pd.DataFrame) -> pd.DataFrame:
     df["field_size"] = g["umaban"].transform("count")
     for col in ["kinryo", "adj_margin_mean", "adj_margin_best", "mean_margin", "p1_margin",
                 "near_dist_margin", "same_surf_margin", "mean_last3f", "front_ratio",
-                "n_same_cls_top3", "max_cls_diff"]:
+                "n_same_cls_top3", "max_cls_diff", "sp_last", "sp_best3", "sp_mean3",
+                "sp_best5", "sp_best_surf", "sp_best_near"]:
         df[f"{col}_rank"] = g[col].rank(pct=True, na_option="keep")
         df[f"{col}_dev"] = df[col] - g[col].transform("mean")
     # 展開: 先行馬の数とその中での自分の位置
@@ -251,12 +255,74 @@ def add_race_relative(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def load_all(data_dir: Path = Path("win5_bt_data/races")) -> pd.DataFrame:
+def _key(place, surface, dist, baba):
+    bg = "good" if baba in ("良", None) else ("soft" if baba == "稍" else "heavy")
+    return (place, surface, dist, bg)
+
+
+def standard_times(rows: list[dict]) -> dict:
+    """近走データからコース×距離×馬場ごとの勝ちタイム中央値を求める。"""
+    seen, by = set(), {}
+    for r in rows:
+        for p in r["_past"]:
+            if not p.get("jra") or p.get("time") is None or p.get("margin") is None:
+                continue
+            k = _key(p["place"], p["surface"], p["dist"], p.get("baba"))
+            uid = (p["date"], k, p.get("heads"))
+            win_t = p["time"] - max(p["margin"], 0.0)
+            if (uid, round(win_t, 1)) in seen:
+                continue
+            seen.add((uid, round(win_t, 1)))
+            by.setdefault(k, []).append(win_t)
+    return {k: float(np.median(v)) for k, v in by.items() if len(v) >= 5}
+
+
+def speed_features(past: list[dict], race: dict, std: dict) -> dict:
+    sps = []
+    for p in past:
+        if p.get("time") is None:
+            sps.append(None)
+            continue
+        st = std.get(_key(p["place"], p["surface"], p["dist"], p.get("baba")))
+        if st is None:
+            sps.append(None)
+            continue
+        # 1000mあたりの秒差を10倍した指数（+が速い）。斤量55kg基準で1kg=0.15秒補正
+        sp = (st - p["time"]) * (1000 / p["dist"]) * 10
+        if p.get("kinryo"):
+            sp += (p["kinryo"] - 55) * 0.15 * (1000 / p["dist"]) * 10
+        sps.append(sp)
+    f = {}
+    v3 = [x for x in sps[:3] if x is not None]
+    f["sp_last"] = sps[0] if sps else None
+    f["sp_best3"] = max(v3) if v3 else None
+    f["sp_mean3"] = sum(v3) / len(v3) if v3 else None
+    v5 = [x for x in sps if x is not None]
+    f["sp_best5"] = max(v5) if v5 else None
+    ss = [x for x, p in zip(sps, past) if x is not None and p["surface"] == race["surface"]]
+    f["sp_best_surf"] = max(ss) if ss else None
+    nd = [x for x, p in zip(sps, past) if x is not None and p["surface"] == race["surface"]
+          and race["dist"] and abs(p["dist"] - race["dist"]) <= 200]
+    f["sp_best_near"] = max(nd) if nd else None
+    return f
+
+
+def load_all(data_dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all"))) -> pd.DataFrame:
     rows = []
-    for p in sorted(data_dir.glob("*.json.gz")):
-        with gzip.open(p, "rt", encoding="utf-8") as f:
-            rows.extend(horse_rows(json.load(f)))
+    for data_dir in data_dirs:
+        for p in sorted(Path(data_dir).glob("*.json.gz")):
+            with gzip.open(p, "rt", encoding="utf-8") as f:
+                rec = json.load(f)
+            rr = horse_rows(rec)
+            for r in rr:
+                r["is_win5"] = int(Path(data_dir).name == "races")
+            rows.extend(rr)
+    std = standard_times(rows)
+    for r in rows:
+        r.update(speed_features(r["_past"], r["_race"], std))
+        del r["_past"], r["_race"]
     df = pd.DataFrame(rows)
+    df = df.drop_duplicates(["race_id", "umaban"])
     df = df[df["umaban"].notna()].copy()
     return add_race_relative(df)
 
