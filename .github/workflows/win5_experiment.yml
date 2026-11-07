@@ -1,0 +1,79 @@
+name: WIN5 Model Experiments
+
+# 特徴量選抜＋最終評価の実験を、設定ごとに別ランナーで同時実行する（YouTube投稿なし）。
+on:
+  push:
+    branches:
+      - claude/melbourne-cup-highlights-89j2ds
+    paths:
+      - scripts/win5_bt/experiments.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      names: ${{ steps.p.outputs.names }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - id: p
+        run: echo "names=$(python3 -c 'import json;print(json.dumps(list(json.load(open("scripts/win5_bt/experiments.json")))))')" >> "$GITHUB_OUTPUT"
+
+  features:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy lightgbm
+      - run: python scripts/win5_bt/features_wide.py wide.pkl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wide
+          path: wide.pkl
+          retention-days: 3
+
+  run:
+    needs: [plan, features]
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    strategy:
+      fail-fast: false
+      matrix:
+        name: ${{ fromJson(needs.plan.outputs.names) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy lightgbm
+      - uses: actions/download-artifact@v4
+        with:
+          name: wide
+      - name: Select and evaluate
+        run: |
+          CFG=$(python3 -c 'import json,sys;print(json.dumps(json.load(open("scripts/win5_bt/experiments.json"))[sys.argv[1]]))' "${{ matrix.name }}")
+          python scripts/win5_bt/select_features.py wide.pkl "win5_bt_results/${{ matrix.name }}" "$CFG" | tail -80
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add win5_bt_results
+          git commit -q -m "chore: WIN5 experiment ${{ matrix.name }} [skip ci]" || exit 0
+          for i in 1 2 3 4 5 6; do
+            git pull --rebase -q && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

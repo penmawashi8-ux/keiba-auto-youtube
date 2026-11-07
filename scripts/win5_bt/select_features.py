@@ -5,7 +5,7 @@
 - 重要度の低い特徴を一定割合ずつ削り、DEV成績が最良の集合を採用。
 - 最終評価期間（HOLDOUT_MONTHS）は選抜中は一切見ない。最後に1回だけ評価する。
 
-使い方: python scripts/win5_bt/select_features.py <wide.pkl> <out_dir>
+使い方: python scripts/win5_bt/select_features.py <wide.pkl> <out_dir> ['{"params": {...}, "rounds": 300, "drop": 0.2}']
 """
 import json
 import math
@@ -97,26 +97,31 @@ def win5_eval(res: pd.DataFrame, days: dict, months, col="p", budget=100):
 
 
 def main():
+    global PARAMS, ROUNDS
     df = pd.read_pickle(sys.argv[1])
     out_dir = Path(sys.argv[2])
+    cfg = json.loads(sys.argv[3]) if len(sys.argv) > 3 else {}
+    PARAMS = dict(PARAMS, **cfg.get("params", {}))
+    ROUNDS = cfg.get("rounds", ROUNDS)
+    drop = cfg.get("drop", 0.2)
     out_dir.mkdir(parents=True, exist_ok=True)
     cols = feature_list(df)
     log = []
     print(f"start: {len(cols)} features", flush=True)
-    res, imp = fit_predict(df, cols, DEV_MONTHS, collect_imp=True)
+    res, imp = fit_predict(df, cols, DEV_MONTHS, params=PARAMS, rounds=ROUNDS, collect_imp=True)
     m = metrics(res)
     log.append({"n": len(cols), **m})
     print(f"  n={len(cols)} dev ll={m['ll']:.4f} top1={m['top1']:.3f} top3={m['top3']:.3f}", flush=True)
     best = (m["ll"], cols)
     cur = [c for c in cols if imp[c] > 0]
     while len(cur) >= 15:
-        res, imp = fit_predict(df, cur, DEV_MONTHS, collect_imp=True)
+        res, imp = fit_predict(df, cur, DEV_MONTHS, params=PARAMS, rounds=ROUNDS, collect_imp=True)
         m = metrics(res)
         log.append({"n": len(cur), **m})
         print(f"  n={len(cur)} dev ll={m['ll']:.4f} top1={m['top1']:.3f} top3={m['top3']:.3f}", flush=True)
         if m["ll"] < best[0]:
             best = (m["ll"], list(cur))
-        keep = max(int(len(cur) * 0.8), len(cur) - 60)
+        keep = max(int(len(cur) * (1 - drop)), len(cur) - 60)
         cur = list(imp.sort_values(ascending=False).index[:keep])
         if keep < 15:
             break
@@ -129,7 +134,7 @@ def main():
     days = {json.loads(l)["date"]: json.loads(l) for l in Path("win5_bt_data/win5_days.jsonl").read_text().splitlines()}
     summary = {}
     for name, fc in (("all_features", cols), ("selected", sel)):
-        res, imp = fit_predict(df, fc, HOLDOUT_MONTHS, collect_imp=True)
+        res, imp = fit_predict(df, fc, HOLDOUT_MONTHS, params=PARAMS, rounds=ROUNDS, collect_imp=True)
         res["p_odds"] = (1 / res["odds"]) / (1 / res["odds"]).groupby(res["race_id"]).transform("sum")
         summary[name] = {"all_races": metrics(res), "win5_races": metrics(res[res["is_win5"] == 1]),
                          "win5": win5_eval(res, days, HOLDOUT_MONTHS)[0]}
@@ -139,6 +144,7 @@ def main():
                                         "win5": win5_eval(res, days, HOLDOUT_MONTHS, "p_odds")[0]}
             imp.sort_values(ascending=False).head(40).to_csv(out_dir / "top_importance.csv")
             win5_eval(res, days, HOLDOUT_MONTHS)[1].to_csv(out_dir / "holdout_win5_days.csv", index=False)
+    summary["config"] = cfg
     (out_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1))
     print(json.dumps(summary, ensure_ascii=False, indent=1))
 
