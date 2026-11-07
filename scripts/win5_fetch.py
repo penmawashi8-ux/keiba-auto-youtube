@@ -59,15 +59,36 @@ def parse_past(html: str) -> str:
     return "\n".join(lines)
 
 
+def parse_result(html: str) -> str:
+    soup = BeautifulSoup(html, "html.parser")
+    lines = []
+    title = soup.select_one(".RaceName")
+    if title:
+        lines.append(clean(title))
+    for tr in soup.select("table.RaceTable01 tr"):
+        cells = [clean(td) for td in tr.find_all(["td", "th"])]
+        if cells:
+            lines.append(" | ".join(cells))
+    if len(lines) <= 1:
+        lines.append("(結果テーブルなし。本文先頭を出力)")
+        lines.append(clean(soup.body or soup)[:5000])
+    return "\n".join(lines)
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
-    for rid in sys.argv[1:]:
-        url = f"https://race.netkeiba.com/race/shutuba_past.html?race_id={rid}"
+    for arg in sys.argv[1:]:
+        is_result = arg.startswith("R:")
+        rid = arg[2:] if is_result else arg
+        page = "result" if is_result else "shutuba_past"
+        url = f"https://race.netkeiba.com/race/{page}.html?race_id={rid}"
         try:
-            text = parse_past(fetch(url))
+            html = fetch(url)
+            text = parse_result(html) if is_result else parse_past(html)
         except Exception as e:  # noqa: BLE001
             text = f"ERROR {url}: {e}"
-        (OUT / f"{rid}.txt").write_text(text, encoding="utf-8")
+        name = f"result_{rid}" if is_result else rid
+        (OUT / f"{name}.txt").write_text(text, encoding="utf-8")
         print(f"{rid}: {len(text)} chars")
         time.sleep(2)
 
