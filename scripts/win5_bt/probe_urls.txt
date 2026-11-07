@@ -1,6 +1,5 @@
-k_depth_20250105 https://keibaodds.com/odds?race_kind=jra&race_date=2025-01-05&race_track=%E4%B8%AD%E5%B1%B1&race_no=11&page=1
-k_depth_20250302 https://keibaodds.com/odds?race_kind=jra&race_date=2025-03-02&race_track=%E4%B8%AD%E5%B1%B1&race_no=11&page=1
-k_depth_20250504 https://keibaodds.com/odds?race_kind=jra&race_date=2025-05-04&race_track=%E6%9D%B1%E4%BA%AC&race_no=11&page=1
-k_depth_20250706 https://keibaodds.com/odds?race_kind=jra&race_date=2025-07-06&race_track=%E7%A6%8F%E5%B3%B6&race_no=11&page=1
-k_depth_20250907 https://keibaodds.com/odds?race_kind=jra&race_date=2025-09-07&race_track=%E4%B8%AD%E5%B1%B1&race_no=11&page=1
-k_depth_20251005 https://keibaodds.com/odds?race_kind=jra&race_date=2025-10-05&race_track=%E6%9D%B1%E4%BA%AC&race_no=11&page=1
+nkodds_202605050210 https://race.netkeiba.com/api/api_get_jra_odds.html?race_id=202605050210&type=1&action=init
+nkodds_202608050210 https://race.netkeiba.com/api/api_get_jra_odds.html?race_id=202608050210&type=1&action=init
+nkodds_202603030211 https://race.netkeiba.com/api/api_get_jra_odds.html?race_id=202603030211&type=1&action=init
+nkodds_202605050211 https://race.netkeiba.com/api/api_get_jra_odds.html?race_id=202605050211&type=1&action=init
+nkodds_202608050211 https://race.netkeiba.com/api/api_get_jra_odds.html?race_id=202608050211&type=1&action=init
