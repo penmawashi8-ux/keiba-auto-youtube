@@ -321,19 +321,40 @@ def horse_features(r, std, l3std):
     return f
 
 
-def build(dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all"))) -> pd.DataFrame:
-    recs = load_records(dirs)
-    rows = []
-    for rec in recs:
-        rows.extend(parse_horses(rec))
-    std = standard_times(rows)
-    l3std = l3_standards(rows)
-    feats = []
+_G = {}
+
+
+def _load_and_parse(args):
+    path, is_win5 = args
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        rec = json.load(f)
+    rec["is_win5"] = is_win5
+    return parse_horses(rec)
+
+
+def _feat_chunk(rows):
+    out = []
     for r in rows:
-        f = horse_features(r, std, l3std)
+        f = horse_features(r, _G["std"], _G["l3std"])
         f.update({k: r.get(k) for k in ("race_id", "date", "is_win5", "jockey", "trainer", "sire", "bms",
                                          "finish", "pop", "odds", "res_time", "name")})
-        feats.append(f)
+        out.append(f)
+    return out
+
+
+def build(dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all")), workers=None) -> pd.DataFrame:
+    import multiprocessing as mp
+    workers = workers or mp.cpu_count()
+    jobs = [(p, int(Path(d).name == "races")) for d in dirs for p in sorted(Path(d).glob("*.json.gz"))]
+    ctx = mp.get_context("fork")
+    with ctx.Pool(workers) as pool:
+        rows = [r for rr in pool.imap(_load_and_parse, jobs, chunksize=64) for r in rr]
+    _G["std"] = standard_times(rows)
+    _G["l3std"] = l3_standards(rows)
+    size = max(1, len(rows) // (workers * 8))
+    chunks = [rows[i:i + size] for i in range(0, len(rows), size)]
+    with ctx.Pool(workers) as pool:  # fork後に _G を参照するので standard times は共有される
+        feats = [f for ff in pool.imap(_feat_chunk, chunks) for f in ff]
     df = pd.DataFrame(feats).drop_duplicates(["race_id", "umaban"])
     df["month"] = df["date"].str[:6]
     df["y"] = (df["finish"] == 1).astype(int)

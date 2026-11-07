@@ -24,7 +24,7 @@ DEV_MONTHS = ["202511", "202512", "202601", "202602", "202603", "202604"]
 HOLDOUT_MONTHS = ["202605", "202606", "202607", "202608", "202609", "202610", "202611"]
 PARAMS = dict(objective="binary", learning_rate=0.05, num_leaves=15, min_data_in_leaf=60,
               feature_fraction=0.5, bagging_fraction=0.8, bagging_freq=1, lambda_l2=10.0,
-              verbose=-1, seed=11, num_threads=0)
+              verbose=-1, seed=11, num_threads=0, max_bin=63)
 ROUNDS = 300
 
 
@@ -34,20 +34,33 @@ def softmax_by_race(df: pd.DataFrame, raw: np.ndarray) -> np.ndarray:
     return (e / e.groupby(df["race_id"]).transform("sum")).to_numpy()
 
 
+_DF = {}
+
+
+def _fold(args):
+    m, cols, params, rounds = args
+    df = _DF["df"]
+    tr = df[(df["month"] < m) & df["finish"].notna()]
+    te = df[df["month"] == m]
+    if len(te) == 0:
+        return None
+    model = lgb.train(params, lgb.Dataset(tr[cols], label=tr["y"]), num_boost_round=rounds)
+    raw = model.predict(te[cols], raw_score=True)
+    out = te[["race_id", "date", "umaban", "finish", "odds", "is_win5"]].copy()
+    out["p"] = softmax_by_race(te, raw)
+    return out, pd.Series(model.feature_importance("gain"), index=cols)
+
+
 def fit_predict(df, cols, months, params=PARAMS, rounds=ROUNDS, collect_imp=False):
-    preds, imps = [], []
-    for m in months:
-        tr = df[(df["month"] < m) & df["finish"].notna()]
-        te = df[df["month"] == m]
-        if len(te) == 0:
-            continue
-        model = lgb.train(params, lgb.Dataset(tr[cols], label=tr["y"]), num_boost_round=rounds)
-        raw = model.predict(te[cols], raw_score=True)
-        out = te[["race_id", "date", "umaban", "finish", "odds", "is_win5"]].copy()
-        out["p"] = softmax_by_race(te, raw)
-        preds.append(out)
-        if collect_imp:
-            imps.append(pd.Series(model.feature_importance("gain"), index=cols))
+    """月ごとの学習は互いに独立なのでプロセス並列で回す（各プロセスは1スレッド）。"""
+    import multiprocessing as mp
+    _DF["df"] = df
+    n = min(len(months), mp.cpu_count())
+    p = dict(params, num_threads=max(1, mp.cpu_count() // n))
+    with mp.get_context("fork").Pool(n) as pool:
+        outs = [o for o in pool.map(_fold, [(m, cols, p, rounds) for m in months]) if o is not None]
+    preds = [o[0] for o in outs]
+    imps = [o[1] for o in outs]
     res = pd.concat(preds)
     imp = pd.concat(imps, axis=1).mean(axis=1) if collect_imp else None
     return res, imp

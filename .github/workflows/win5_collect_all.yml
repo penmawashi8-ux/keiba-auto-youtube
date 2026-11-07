@@ -1,7 +1,7 @@
 name: WIN5 Backtest Collect All Races
 
 # 学習用に期間内の全JRAレース（5走表示＋結果）を収集する（YouTube投稿なし）。
-# 4並列。時間切れでも保存済み分はコミットされ、再実行で続きから再開する。
+# 8並列。時間切れでも保存済み分はコミットされ、再実行で続きから再開する。
 on:
   push:
     branches:
@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,7 +30,7 @@ jobs:
           python-version: "3.11"
       - run: pip install requests beautifulsoup4
       - name: Collect
-        run: python scripts/win5_bt/collect.py --all $(grep -v '^#' scripts/win5_bt/collect_all_range.txt) ${{ matrix.shard }} 4 155
+        run: python scripts/win5_bt/collect.py --all $(grep -v '^#' scripts/win5_bt/collect_all_range.txt) ${{ matrix.shard }} 8 155
       - name: Commit
         if: always()
         run: |
