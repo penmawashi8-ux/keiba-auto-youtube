@@ -37,17 +37,15 @@ def main():
         m = lgb.train(params, lgb.Dataset(tr[cols], label=tr["y"]), num_boost_round=cfg.get("rounds", sf.ROUNDS))
         raw += m.predict(te[cols], raw_score=True) / 3
     te["p"] = sf.softmax_by_race(te, raw)
-    # 馬名は5走表示から取る（結果がまだないため）
+    # 馬名は調教ページの馬名欄から取る（5走表示は父名に空白を含むことがあり切り出しが不正確）
+    import gzip
     names = {}
     for rid in rids:
-        import gzip
         rec = json.load(gzip.open(pdir / f"{rid}.json.gz", "rt"))
-        for h in rec["horses"]:
-            waku = [t for c, t in h["cells"] if c.startswith("Waku")]
-            info = next((t for c, t in h["cells"] if "Horse_Info" in c), "")
-            toks = info.split(" (")[0].split()
-            if len(waku) >= 2 and waku[1].isdigit() and len(toks) >= 2:
-                names[(rid, int(waku[1]))] = toks[1]
+        oik = json.load(gzip.open(pdir / f"{rid}.oikiri.json.gz", "rt"))
+        for um, cells in oik.items():
+            info = next((t for c, t in cells if c.startswith("Horse_Info")), "")
+            names[(rid, int(um))] = info.replace(" 前走", "").strip()
         names[(rid, "title")] = rec["meta"]["name"] + "　" + rec["meta"]["data1"].split("/")[1].strip()
     subs = [te[te["race_id"] == r].sort_values("p", ascending=False) for r in rids]
     ns, prob = best_allocation([s["p"].to_numpy() for s in subs], budget)

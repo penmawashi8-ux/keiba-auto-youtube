@@ -28,8 +28,11 @@ PARAMS = dict(objective="binary", learning_rate=0.05, num_leaves=15, min_data_in
 ROUNDS = 300
 
 
-def softmax_by_race(df: pd.DataFrame, raw: np.ndarray) -> np.ndarray:
-    s = pd.Series(raw, index=df.index)
+TEMPERATURE = 1.1  # 選抜用期間(DEV)で決めた確率の温度補正（モデルの自信過剰を抑える）
+
+
+def softmax_by_race(df: pd.DataFrame, raw: np.ndarray, T: float = TEMPERATURE) -> np.ndarray:
+    s = pd.Series(raw, index=df.index) / T
     e = np.exp(s - s.groupby(df["race_id"]).transform("max"))
     return (e / e.groupby(df["race_id"]).transform("sum")).to_numpy()
 
