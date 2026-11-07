@@ -1,12 +1,13 @@
 name: WIN5 Model Experiments
 
 # 特徴量選抜＋最終評価の実験を、設定ごとに別ランナーで同時実行する（YouTube投稿なし）。
+# 設定は experiments.json、起動は experiments_run.txt の更新で行う。
 on:
   push:
     branches:
       - claude/melbourne-cup-highlights-89j2ds
     paths:
-      - scripts/win5_bt/experiments.json
+      - scripts/win5_bt/experiments_run.txt
   workflow_dispatch:
 
 permissions:
