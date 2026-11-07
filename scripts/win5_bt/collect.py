@@ -101,7 +101,60 @@ def parse_result(html: str) -> list:
     return rows
 
 
+def collect_all(start: dt.date, end: dt.date, shard: int, nshard: int, max_min: float) -> None:
+    """学習用: 期間内の全JRAレースを収集（日付単位でシャード分割）。"""
+    t0 = time.time()
+    out = OUT / "races_all"
+    out.mkdir(parents=True, exist_ok=True)
+    done_dates_f = OUT / f"all_done_dates_{shard}.txt"
+    done = set(done_dates_f.read_text().split()) if done_dates_f.exists() else set()
+    d, idx = start, 0
+    while d <= end:
+        ds = d.strftime("%Y%m%d")
+        mine = idx % nshard == shard
+        idx += 1
+        d += dt.timedelta(days=1)
+        if not mine or ds in done:
+            continue
+        if (time.time() - t0) / 60 > max_min:
+            print("time limit reached; stopping (resume on next run)")
+            return
+        try:
+            html = get(f"https://race.netkeiba.com/top/race_list_sub.html?kaisai_date={ds}")
+        except Exception as e:  # noqa: BLE001
+            print(f"{ds}: list error {e}")
+            continue
+        ids = sorted(set(re.findall(r"race_id=(\d{12})", html)))
+        ok = True
+        for rid in ids:
+            path = out / f"{rid}.json.gz"
+            if path.exists() or (RACES / f"{rid}.json.gz").exists():
+                continue
+            if (time.time() - t0) / 60 > max_min:
+                print("time limit reached; stopping (resume on next run)")
+                return
+            try:
+                past = parse_past(get(f"https://race.netkeiba.com/race/shutuba_past.html?race_id={rid}"))
+                res = parse_result(get(f"https://race.netkeiba.com/race/result.html?race_id={rid}"))
+            except Exception as e:  # noqa: BLE001
+                print(f"{rid}: error {e}")
+                ok = False
+                continue
+            rec = {"race_id": rid, "date": ds, **past, "result": res}
+            with gzip.open(path, "wt", encoding="utf-8") as f:
+                json.dump(rec, f, ensure_ascii=False)
+        print(f"{ds}: {len(ids)} races")
+        if ok:
+            with done_dates_f.open("a") as f:
+                f.write(ds + "\n")
+
+
 def main() -> None:
+    if sys.argv[1] == "--all":
+        start = dt.date.fromisoformat(sys.argv[2])
+        end = dt.date.fromisoformat(sys.argv[3])
+        collect_all(start, end, int(sys.argv[4]), int(sys.argv[5]), float(sys.argv[6]))
+        return
     start = dt.date.fromisoformat(sys.argv[1])
     end = dt.date.fromisoformat(sys.argv[2])
     max_min = float(sys.argv[3]) if len(sys.argv) > 3 else 150

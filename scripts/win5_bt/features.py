@@ -97,7 +97,8 @@ def parse_race_meta(meta: dict) -> dict:
     d2 = meta.get("data2", "").translate(ZEN)
     m = re.search(r"(芝|ダ|障)(\d{3,4})m", d1)
     out = {"surface": m.group(1) if m else None, "dist": int(m.group(2)) if m else None}
-    mb = re.search(r"(?:馬場|予報)\s*[:：]?\s*(良|稍|稍重|重|不良|不)", d1)
+    mb = re.search(r"(?:馬場|予報)\s*[:：]?\s*(良|稍|稍重|重|不良|不)", d1) or \
+        re.search(r"/\s*(良|稍重|稍|重|不良)\s*(?:/|$)", d1)
     out["baba"] = (mb.group(1)[0] if mb else None)
     if "新馬" in d2:
         cls = 0

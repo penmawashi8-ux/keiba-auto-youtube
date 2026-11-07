@@ -1,0 +1,45 @@
+name: WIN5 Backtest Collect All Races
+
+# 学習用に期間内の全JRAレース（5走表示＋結果）を収集する（YouTube投稿なし）。
+# 4並列。時間切れでも保存済み分はコミットされ、再実行で続きから再開する。
+on:
+  push:
+    branches:
+      - claude/melbourne-cup-highlights-89j2ds
+    paths:
+      - scripts/win5_bt/collect_all_range.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 175
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests beautifulsoup4
+      - name: Collect
+        run: python scripts/win5_bt/collect.py --all $(grep -v '^#' scripts/win5_bt/collect_all_range.txt) ${{ matrix.shard }} 4 155
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add win5_bt_data
+          git commit -q -m "chore: WIN5 collect-all shard ${{ matrix.shard }} [skip ci]" || exit 0
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q && git push && exit 0
+            sleep $((i * 7))
+          done
+          exit 1
