@@ -1,10 +1,10 @@
-date: 2026-11-07T01:11:21.257415Z
+date: 2026-11-07T04:07:34.865614Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=aYaQtBkREZo title=【7日の注目・神奈川新聞杯】G1・3勝エンブロイダリーの半弟バートラガッツが連勝
-OK project=1 video_id=5zI2ZSbFXyY title=【京都JS予想】暮れの大一番も見据える障害別定重賞 15の障害が待ち受ける難コー
-OK project=1 video_id=VNzwDfNJQPk title=【京王杯2歳S予想】マイルGIの前哨戦だが“別物”か スピードと決め手問われる東
+OK project=1 video_id=_3N2JSNEemc title=【東京6R新馬戦結果】ガンランナー産駒サトノヘラクレスが6馬身差で圧勝
+OK project=1 video_id=qywioy1hcN0 title=【福島5R・2歳新馬】格安360万円の伏兵が快勝デビュー!9番人気のツクバディー
+OK project=1 video_id=lTW_6Gjp24c title=【京都5R新馬戦結果】キタサンブラック産駒テンタシオンが押し切り勝ち
