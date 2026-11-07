@@ -1,10 +1,10 @@
-date: 2026-11-07T04:07:34.865614Z
+date: 2026-11-07T07:11:58.569547Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_3N2JSNEemc title=【東京6R新馬戦結果】ガンランナー産駒サトノヘラクレスが6馬身差で圧勝
-OK project=1 video_id=qywioy1hcN0 title=【福島5R・2歳新馬】格安360万円の伏兵が快勝デビュー!9番人気のツクバディー
-OK project=1 video_id=lTW_6Gjp24c title=【京都5R新馬戦結果】キタサンブラック産駒テンタシオンが押し切り勝ち
+OK project=1 video_id=vVvdgDi0tkQ title=【JRA・WIN5】本日のWIN5は的中1684票、配当17万6190円
+OK project=1 video_id=KEWOO34cPMk title=【京王杯2歳S】鼻差2着で人馬とも涙...単勝2番人気のフレイコン&マーカンド騎
+OK project=1 video_id=LyE5EHC3KtE title=【京王杯2歳S】ロンドンガーズは8着に終わる　前川調教師は中京2歳S以来の重賞2
