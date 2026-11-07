@@ -134,6 +134,7 @@ def parse_result(rows: list) -> dict:
             "name": cells[3],
             "pop": int(cells[9]) if cells[9].isdigit() else None,
             "odds": float(cells[10]) if re.match(r"^\d+(\.\d+)?$", cells[10]) else None,
+            "time": to_sec(cells[7]) if len(cells) > 7 else None,
         }
     return out
 
@@ -184,6 +185,13 @@ def horse_rows(rec: dict) -> list[dict]:
             **{f"race_{k}": v for k, v in race.items()},
         }
         r.update(past_features(past, race))
+        if past:
+            p1 = past[0]
+            r["kinryo_change"] = (r["kinryo"] - p1["kinryo"]) if r["kinryo"] and p1.get("kinryo") else None
+            r["cls_up"] = (race["cls"] - p1["cls"]) if p1.get("cls") is not None else None
+            r["days_since"] = (pd.Timestamp(rdate) - pd.Timestamp(p1["date"])).days
+            r["p1_won"] = int(p1.get("finish") == 1)
+            r["p1_same_course"] = int(p1.get("place") == race["place"] and p1["surface"] == race["surface"])
         r["_past"] = past
         r["_race"] = race
         rr = res.get(umaban, {})
@@ -191,6 +199,7 @@ def horse_rows(rec: dict) -> list[dict]:
         r["name"] = rr.get("name")
         r["pop"] = rr.get("pop")      # 比較用ベースラインのみ（特徴量には使わない）
         r["odds"] = rr.get("odds")    # 同上
+        r["res_time"] = rr.get("time")
         rows.append(r)
     return rows
 
@@ -251,6 +260,7 @@ def add_race_relative(df: pd.DataFrame) -> pd.DataFrame:
         df[f"{col}_rank"] = g[col].rank(pct=True, na_option="keep")
         df[f"{col}_dev"] = df[col] - g[col].transform("mean")
     # 展開: 先行馬の数とその中での自分の位置
+    df["umaban_ratio"] = df["umaban"] / df["field_size"]
     df["n_front"] = g["front_ratio"].transform(lambda s: (s < 0.3).sum())
     df["is_front"] = (df["front_ratio"] < 0.3).astype(float)
     df["sex_f"] = (df["sex"] == "牝").astype(int)
@@ -329,6 +339,8 @@ def load_all(data_dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all
     df = pd.DataFrame(rows)
     df = df.drop_duplicates(["race_id", "umaban"])
     df = df[df["umaban"].notna()].copy()
+    wt = df[df["finish"] == 1].groupby("race_id")["res_time"].min()
+    df["behind"] = (df["res_time"] - df["race_id"].map(wt)).clip(lower=0, upper=3.0)
     return add_race_relative(df)
 
 

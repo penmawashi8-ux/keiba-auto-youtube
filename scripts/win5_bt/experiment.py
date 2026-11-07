@@ -69,6 +69,12 @@ def run(df, variant: str, min_month="202508"):
             ds = lgb.Dataset(tr[cols], label=np.round(rel * 2).astype(int),
                              group=tr.groupby("race_id", sort=False).size().loc[tr["race_id"].unique()].to_numpy())
             p["label_gain"] = list(range(0, 7))
+        elif "reg" in variant:
+            trr = tr[tr["behind"].notna()]
+            # 秒差を1000mあたりに正規化して距離の影響を除く
+            lab = trr["behind"] * 1000 / trr["race_dist"]
+            p.update(objective="huber", alpha=1.0)
+            ds = lgb.Dataset(trr[cols], label=-lab)
         else:
             ds = lgb.Dataset(tr[cols], label=tr["y"])
         model = lgb.train(p, ds, num_boost_round=rounds)
@@ -80,6 +86,9 @@ def run(df, variant: str, min_month="202508"):
     T = 1.0
     if "rank" in variant:
         T = 0.6
+    for tok in variant.split("_"):
+        if tok.startswith("T"):
+            T = float(tok[1:])
     e = np.exp((res["raw"] - res.groupby("race_id")["raw"].transform("max")) / T)
     res["p_model"] = e / e.groupby(res["race_id"]).transform("sum")
     res["p_odds"] = (1 / res["odds"]) / (1 / res["odds"]).groupby(res["race_id"]).transform("sum")

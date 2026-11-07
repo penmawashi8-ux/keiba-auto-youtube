@@ -20,7 +20,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from features import load_all  # noqa: E402
 
-EXCLUDE = {"is_win5", "race_id", "date", "umaban", "finish", "name", "pop", "odds", "jockey", "sex",
+EXCLUDE = {"behind", "res_time", "is_win5", "race_id", "date", "umaban", "finish", "name", "pop", "odds", "jockey", "sex",
            "style", "race_surface", "race_baba", "race_place", "month", "y", "race_heads"}
 
 PARAMS = dict(objective="binary", learning_rate=0.03, num_leaves=15, min_data_in_leaf=40,
