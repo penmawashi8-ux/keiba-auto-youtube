@@ -1,10 +1,10 @@
-date: 2026-11-06T10:11:37.876635Z
+date: 2026-11-07T01:11:21.257415Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=d6c5AQMtnsQ title=【みやこS・金曜気配】満を持しての重賞挑戦!全7戦で連対率100%のビービークロ
-OK project=1 video_id=koH1nEWTOlk title=G1で6勝の名牝ブエナビスタが繁殖引退　20歳で新生活…ノーザンホースパークで会
-OK project=1 video_id=yGXjRONt3s8 title=【京王杯2歳S予想】前走初角1番手の馬に不安あり!? 上位人気馬に立ちはだかる消
+OK project=1 video_id=aYaQtBkREZo title=【7日の注目・神奈川新聞杯】G1・3勝エンブロイダリーの半弟バートラガッツが連勝
+OK project=1 video_id=5zI2ZSbFXyY title=【京都JS予想】暮れの大一番も見据える障害別定重賞 15の障害が待ち受ける難コー
+OK project=1 video_id=VNzwDfNJQPk title=【京王杯2歳S予想】マイルGIの前哨戦だが“別物”か スピードと決め手問われる東
