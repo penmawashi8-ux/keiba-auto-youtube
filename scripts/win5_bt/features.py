@@ -156,6 +156,9 @@ def horse_rows(rec: dict) -> list[dict]:
         jockey = next((t for c, t in cells if c.startswith("Jockey")), "")
         mj = re.match(r"^(牡|牝|セ)(\d+)\S*\s+(\S+)\s+([\d.]+)", jockey)
         style = re.search(r"\s(逃|先|差|追)\s", info)
+        mt = re.search(r"(美浦|栗東)・(\S+)", info)
+        mb = re.search(r"\(([^)]+)\)", info)
+        sire = info.split(" (")[0].split()[0] if info else None
         interval = None
         mi = re.search(r"中(\d+)週", info)
         if mi:
@@ -176,6 +179,8 @@ def horse_rows(rec: dict) -> list[dict]:
             "jockey": mj.group(3) if mj else None, "kinryo": float(mj.group(4)) if mj else None,
             "style": style.group(1) if style else None, "interval_w": interval,
             "rest_months": rest_months,
+            "trainer": mt.group(2) if mt else None, "sire": sire,
+            "bms": mb.group(1) if mb else None,
             **{f"race_{k}": v for k, v in race.items()},
         }
         r.update(past_features(past, race))
