@@ -1,0 +1,35 @@
+name: WIN5 Backtest Probe
+
+# バックテスト用の調査取得（生HTMLを保存するだけ。YouTube投稿なし）
+on:
+  push:
+    branches:
+      - claude/melbourne-cup-highlights-89j2ds
+    paths:
+      - scripts/win5_bt/probe_urls.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - run: python scripts/win5_bt/fetch_raw.py scripts/win5_bt/probe_urls.txt win5_bt_raw/probe
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add win5_bt_raw
+          git commit -m "chore: WIN5 probe fetch [skip ci]" || echo "no changes"
+          git pull --rebase -q
+          git push
