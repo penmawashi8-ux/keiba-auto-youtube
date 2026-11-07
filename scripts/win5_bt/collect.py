@@ -187,7 +187,35 @@ def collect_oikiri(shard: int, nshard: int, max_min: float) -> None:
             json.dump(data, f, ensure_ascii=False)
 
 
+def collect_predict(date: str) -> None:
+    """予想用: 指定日のWIN5対象5レースの5走表示と調教評価を取得（結果はまだない）。"""
+    out = OUT / "predict" / date
+    out.mkdir(parents=True, exist_ok=True)
+    html = get(f"https://race.netkeiba.com/top/win5.html?date={date}")
+    soup = BeautifulSoup(html, "html.parser")
+    ids = []
+    for a in soup.find_all("a", href=True):
+        m = re.search(r"race_id=(\d{12})", a["href"])
+        if m and m.group(1) not in ids:
+            ids.append(m.group(1))
+    ids = ids[:5]
+    (out / "race_ids.json").write_text(json.dumps(ids))
+    print("WIN5 races:", ids)
+    for rid in ids:
+        past = parse_past(get(f"https://race.netkeiba.com/race/shutuba_past.html?race_id={rid}"))
+        oik = parse_oikiri(get(f"https://race.netkeiba.com/race/oikiri.html?race_id={rid}"))
+        rec = {"race_id": rid, "date": date, **past, "result": []}
+        with gzip.open(out / f"{rid}.json.gz", "wt", encoding="utf-8") as f:
+            json.dump(rec, f, ensure_ascii=False)
+        with gzip.open(out / f"{rid}.oikiri.json.gz", "wt", encoding="utf-8") as f:
+            json.dump(oik, f, ensure_ascii=False)
+        print(rid, past["meta"]["name"], len(past["horses"]), "horses", len(oik), "oikiri")
+
+
 def main() -> None:
+    if sys.argv[1] == "--predict":
+        collect_predict(sys.argv[2])
+        return
     if sys.argv[1] == "--oikiri":
         collect_oikiri(int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
         return

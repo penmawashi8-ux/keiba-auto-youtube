@@ -1,0 +1,35 @@
+name: WIN5 Predict Fetch
+
+# 予想用に、指定日のWIN5対象5レースの出馬表（5走表示）と調教評価を取得する（YouTube投稿なし）。
+on:
+  push:
+    branches:
+      - claude/melbourne-cup-highlights-89j2ds
+    paths:
+      - scripts/win5_bt/predict_date.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests beautifulsoup4
+      - run: python scripts/win5_bt/collect.py --predict $(grep -v '^#' scripts/win5_bt/predict_date.txt)
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add win5_bt_data/predict
+          git commit -q -m "chore: WIN5 predict fetch [skip ci]" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push && exit 0; sleep $((i*5)); done
+          exit 1
