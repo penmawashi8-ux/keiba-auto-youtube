@@ -149,7 +149,48 @@ def collect_all(start: dt.date, end: dt.date, shard: int, nshard: int, max_min: 
                 f.write(ds + "\n")
 
 
+def parse_oikiri(html: str) -> dict:
+    soup = BeautifulSoup(html, "html.parser")
+    out = {}
+    for tr in soup.select("tr.HorseList"):
+        tds = tr.find_all("td")
+        um = next((txt(td) for td in tds if "Umaban" in td.get("class", [])), None)
+        if not um or not um.isdigit():
+            continue
+        cells = [[" ".join(td.get("class", [])), txt(td)] for td in tds
+                 if "Horse_Select" not in " ".join(td.get("class", []))]
+        out[um] = cells
+    return out
+
+
+def collect_oikiri(shard: int, nshard: int, max_min: float) -> None:
+    """収集済みレースの調教ページ（評価・短評）を取得する。race_idでシャード分割。"""
+    t0 = time.time()
+    out = OUT / "oikiri"
+    out.mkdir(parents=True, exist_ok=True)
+    rids = sorted({p.name[:12] for d in (RACES, OUT / "races_all") for p in d.glob("*.json.gz")})
+    for rid in rids:
+        if int(rid) % nshard != shard:
+            continue
+        path = out / f"{rid}.json.gz"
+        if path.exists():
+            continue
+        if (time.time() - t0) / 60 > max_min:
+            print("time limit reached; stopping (resume on next run)")
+            return
+        try:
+            data = parse_oikiri(get(f"https://race.netkeiba.com/race/oikiri.html?race_id={rid}"))
+        except Exception as e:  # noqa: BLE001
+            print(f"{rid}: error {e}")
+            continue
+        with gzip.open(path, "wt", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False)
+
+
 def main() -> None:
+    if sys.argv[1] == "--oikiri":
+        collect_oikiri(int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
+        return
     if sys.argv[1] == "--all":
         start = dt.date.fromisoformat(sys.argv[2])
         end = dt.date.fromisoformat(sys.argv[3])
