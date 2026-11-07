@@ -1,0 +1,43 @@
+name: WIN5 Collect Time-Series Odds
+
+# keibaodds.com から収集済みレースの単勝時系列オッズを取得する（YouTube投稿なし）。サイト負荷に配慮して4並列。
+on:
+  push:
+    branches:
+      - claude/melbourne-cup-highlights-89j2ds
+    paths:
+      - scripts/win5_bt/collect_kodds_run.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests beautifulsoup4
+      - run: python scripts/win5_bt/collect.py --kodds ${{ matrix.shard }} 4 110
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add win5_bt_data/kodds
+          git commit -q -m "chore: WIN5 kodds shard ${{ matrix.shard }} [skip ci]" || exit 0
+          for i in 1 2 3 4 5 6; do
+            git pull --rebase -q && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

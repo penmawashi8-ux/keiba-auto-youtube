@@ -212,7 +212,57 @@ def collect_predict(date: str) -> None:
         print(rid, past["meta"]["name"], len(past["horses"]), "horses", len(oik), "oikiri")
 
 
+PLACE_NAME = {"01": "札幌", "02": "函館", "03": "福島", "04": "新潟", "05": "東京",
+              "06": "中山", "07": "中京", "08": "京都", "09": "阪神", "10": "小倉"}
+
+
+def collect_kodds(shard: int, nshard: int, max_min: float, since: str = "20250101") -> None:
+    """keibaodds.com から単勝の時系列オッズ（当日朝〜最終）を取得する。"""
+    t0 = time.time()
+    out = OUT / "kodds"
+    out.mkdir(parents=True, exist_ok=True)
+    items = []
+    for d in (RACES, OUT / "races_all"):
+        for p in d.glob("*.json.gz"):
+            rid = p.name[:12]
+            if int(rid) % nshard != shard or (out / f"{rid}.json.gz").exists():
+                continue
+            with gzip.open(p, "rt", encoding="utf-8") as f:
+                date = json.load(f)["date"]
+            if date >= since:
+                items.append((date, rid))
+    items.sort()
+    sess = requests.Session()
+    sess.headers.update({"User-Agent": UA, "Accept": "application/json, text/plain, */*",
+                         "X-Requested-With": "XMLHttpRequest"})
+    for date, rid in items:
+        if (time.time() - t0) / 60 > max_min:
+            print("time limit reached; stopping (resume on next run)")
+            return
+        params = {"race_kind": "jra", "race_date": f"{date[:4]}-{date[4:6]}-{date[6:]}",
+                  "race_track": PLACE_NAME.get(rid[4:6], ""), "race_no": int(rid[10:12]), "page": 1}
+        try:
+            r = sess.get("https://keibaodds.com/odds", params=params, timeout=30)
+            r.raise_for_status()
+            d = r.json()
+            ri = (d.get("jra_info") or {}).get("race_info") or []
+            rec = {"race_id": rid, "date": date}
+            if ri:
+                oi = ri[0].get("odds_info") or {}
+                rec["name"] = ri[0]["race_info"].get("name")
+                rec["times"] = oi.get("time_odds_times", {}).get("tanpuku")
+                rec["tan"] = oi.get("time_pops", {}).get("tanpuku")
+            with gzip.open(out / f"{rid}.json.gz", "wt", encoding="utf-8") as f:
+                json.dump(rec, f, ensure_ascii=False)
+        except Exception as e:  # noqa: BLE001
+            print(f"{rid}: error {e}")
+        time.sleep(1.5)
+
+
 def main() -> None:
+    if sys.argv[1] == "--kodds":
+        collect_kodds(int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
+        return
     if sys.argv[1] == "--predict":
         collect_predict(sys.argv[2])
         return
