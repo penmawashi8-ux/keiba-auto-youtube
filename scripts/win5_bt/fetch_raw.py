@@ -23,7 +23,7 @@ def main() -> None:
             continue
         name, url = line.split(maxsplit=1)
         try:
-            r = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+            r = requests.get(url, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*", "X-Requested-With": "XMLHttpRequest"}, timeout=30)
             m = re.search(rb'charset=["\']?([\w-]+)', r.content[:3000])
             enc = m.group(1).decode() if m else "utf-8"
             html = r.content.decode(enc, errors="replace")

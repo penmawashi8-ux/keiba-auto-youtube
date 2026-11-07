@@ -1,2 +1,4 @@
-kodds_js_home https://keibaodds.com/packs/controllers/home-cb1a5bbbd20736c1d652.js
-kodds_js_app https://keibaodds.com/packs/application-047a1dc6a981000b5f27.js
+k_api_20251102 https://keibaodds.com/odds?race_kind=jra&race_date=2025-11-02&race_track=%E6%9D%B1%E4%BA%AC&race_no=11&page=1
+k_api_20241103 https://keibaodds.com/odds?race_kind=jra&race_date=2024-11-03&race_track=%E6%9D%B1%E4%BA%AC&race_no=11&page=1
+k_api_20261107 https://keibaodds.com/odds?race_kind=jra&race_date=2026-11-07&race_track=%E6%9D%B1%E4%BA%AC&race_no=11&page=1
+k_api_json_20251102 https://keibaodds.com/odds.json?race_kind=jra&race_date=2025-11-02&race_track=%E6%9D%B1%E4%BA%AC&race_no=11
