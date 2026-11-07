@@ -1,6 +1,4 @@
-nk_win5_20261101 https://race.netkeiba.com/top/win5.html?date=20261101
-nk_win5_top https://race.netkeiba.com/top/win5.html
-nk_sp_win5_20260111 https://race.sp.netkeiba.com/?pid=win5&date=20260111
-nk_racelist_20251102 https://race.netkeiba.com/top/race_list_sub.html?kaisai_date=20251102
-jra_win5_racelist https://www.jra.go.jp/kouza/win5/info/racelist.html
-jbis_win5 https://www.jbis.or.jp/race/win5/
+oikiri_20251102_11 https://race.netkeiba.com/race/oikiri.html?race_id=202505041111
+oikiri_20261107_10 https://race.netkeiba.com/race/oikiri.html?race_id=202605050110
+past_20251102_11 https://race.netkeiba.com/race/shutuba_past.html?race_id=202505041111
+horse_db_sample https://db.netkeiba.com/horse/2022105002/
