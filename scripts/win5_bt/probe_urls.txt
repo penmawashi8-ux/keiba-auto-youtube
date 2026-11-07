@@ -1,4 +1,4 @@
-oikiri_20251102_11 https://race.netkeiba.com/race/oikiri.html?race_id=202505041111
-oikiri_20261107_10 https://race.netkeiba.com/race/oikiri.html?race_id=202605050110
-past_20251102_11 https://race.netkeiba.com/race/shutuba_past.html?race_id=202505041111
-horse_db_sample https://db.netkeiba.com/horse/2022105002/
+keibaodds_top https://keibaodds.com/
+keibaodds_jra https://keibaodds.com/jra
+nk_odds_api_202605050211 https://race.netkeiba.com/api/api_get_jra_odds.html?race_id=202605050211&type=1&action=init
+nk_odds_page_202505041111 https://race.netkeiba.com/odds/index.html?type=b1&race_id=202505041111
