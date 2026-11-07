@@ -345,9 +345,11 @@ def _feat_chunk(rows):
 
 
 def build(dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all")), workers=None) -> pd.DataFrame:
+    dirs = [Path(d) for d in dirs]
     import multiprocessing as mp
     workers = workers or mp.cpu_count()
-    jobs = [(p, int(Path(d).name == "races")) for d in dirs for p in sorted(Path(d).glob("*.json.gz"))]
+    jobs = [(p, int(Path(d).name != "races_all")) for d in dirs for p in sorted(Path(d).glob("*.json.gz"))
+            if ".oikiri." not in p.name]
     ctx = mp.get_context("fork")
     with ctx.Pool(workers) as pool:
         rows = [r for rr in pool.imap(_load_and_parse, jobs, chunksize=64) for r in rr]
@@ -360,7 +362,7 @@ def build(dirs=(Path("win5_bt_data/races"), Path("win5_bt_data/races_all")), wor
     df = pd.DataFrame(feats).drop_duplicates(["race_id", "umaban"])
     df["month"] = df["date"].str[:6]
     df = add_race_level(df, rows)
-    df = add_oikiri(df)
+    df = add_oikiri(df, extra=[d for d in dirs if Path(d).name not in ("races", "races_all")])
     df["y"] = (df["finish"] == 1).astype(int)
     df["y3"] = (df["finish"] <= 3).astype(int)
     return add_relative(df)
@@ -402,10 +404,13 @@ def add_race_level(df: pd.DataFrame, rows) -> pd.DataFrame:
 OIKIRI_RANK = {"A": 4, "B": 3, "C": 2, "D": 1}
 
 
-def add_oikiri(df: pd.DataFrame, d=Path("win5_bt_data/oikiri")) -> pd.DataFrame:
+def add_oikiri(df: pd.DataFrame, d=Path("win5_bt_data/oikiri"), extra=()) -> pd.DataFrame:
     """調教評価（A〜D）と短評。データがないレースは欠損のまま。"""
     rank, critic = {}, {}
-    for p in Path(d).glob("*.json.gz"):
+    files = list(Path(d).glob("*.json.gz"))
+    for e in extra:
+        files += list(Path(e).glob("*.oikiri.json.gz"))
+    for p in files:
         with gzip.open(p, "rt", encoding="utf-8") as f:
             data = json.load(f)
         rid = p.name[:12]
