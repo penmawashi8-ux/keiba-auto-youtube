@@ -1,10 +1,10 @@
-date: 2026-11-07T10:13:29.987975Z
+date: 2026-11-08T01:27:42.959314Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=HudssGqYPiU title=「怖すぎ笑笑」「この感じ久々」川田将雅騎手が京都で騎乗機会5連勝!　「無双状態」
-OK project=1 video_id=AOaLMoM3xBA title=約1年ぶり→出遅れ→圧勝!規格外の強さ見せたミッキーダムールにネット仰天「怪物の
-OK project=1 video_id=UuiHUTqGO78 title=【みやこS・土曜気配】2枠4番のビービークローサーはゲートも確認　野中調教師「い
+OK project=1 video_id=z-WGSJ_cJ1k title=【今井千尋のばんえい日和】重賞クインCでホクセイマリンと久々のコンビ「ハナを走れ
+OK project=1 video_id=5DZOagnupYA title=【AR共和国杯】傾向からレースの姿が見えてくる!? 過去データから探るGII・A
+OK project=1 video_id=kMJUrciShBI title=【8日の注目・京都10R】1分31秒台の持ち時計が優秀すぎる!　オープン入り目指
