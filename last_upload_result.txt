@@ -1,10 +1,10 @@
-date: 2026-11-08T01:27:42.959314Z
+date: 2026-11-08T04:09:33.470008Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=z-WGSJ_cJ1k title=【今井千尋のばんえい日和】重賞クインCでホクセイマリンと久々のコンビ「ハナを走れ
-OK project=1 video_id=5DZOagnupYA title=【AR共和国杯】傾向からレースの姿が見えてくる!? 過去データから探るGII・A
-OK project=1 video_id=kMJUrciShBI title=【8日の注目・京都10R】1分31秒台の持ち時計が優秀すぎる!　オープン入り目指
+OK project=1 video_id=x-6vaH_RuXk title=【福島6R新馬戦結果】ナダル産駒ガニメデサルーンが好位抜け出しで快勝
+OK project=1 video_id=r8rGgm0toG8 title=【東京5R・新馬戦】7番人気タイセイノブレスがデビュー勝ち　岩田康「うまく育って
+OK project=1 video_id=2MOiB1PkzN8 title=【京都5R新馬戦結果】キタサンブラック産駒オネスティが人気に応えてV
