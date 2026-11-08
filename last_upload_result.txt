@@ -1,10 +1,10 @@
-date: 2026-11-08T04:09:33.470008Z
+date: 2026-11-08T07:14:13.147949Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=x-6vaH_RuXk title=【福島6R新馬戦結果】ナダル産駒ガニメデサルーンが好位抜け出しで快勝
-OK project=1 video_id=r8rGgm0toG8 title=【東京5R・新馬戦】7番人気タイセイノブレスがデビュー勝ち　岩田康「うまく育って
-OK project=1 video_id=2MOiB1PkzN8 title=【京都5R新馬戦結果】キタサンブラック産駒オネスティが人気に応えてV
+OK project=1 video_id=yZns-gAuVqw title=【JRA・WIN5】AR共和国杯の大波乱で的中2票！ 配当は2億4681万664
+OK project=1 video_id=M6ocjNio5KM title=フォーエバーヤングは東京大賞典へ!矢作調教師が表明　賞金50億円超のダート王者が
+OK project=1 video_id=5trbjYulK6s title=【アルゼンチン共和国杯】「前の馬が止まらなかった」ルメール騎手のドゥラドーレスは
