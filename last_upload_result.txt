@@ -1,10 +1,10 @@
-date: 2026-11-08T10:09:15.099039Z
+date: 2026-11-09T01:07:40.108375Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Xp2a8XkjE20 title=【高知・黒潮マイルチャンピオンシップ結果】紅一点サノノエスポが押し切り重賞連勝
-OK project=1 video_id=TWHPvTenYXg title=【佐賀・カペラ賞結果】単勝元返しのリケアルンバが無傷4連勝
-OK project=1 video_id=_rumCIPzf_o title=【アルゼンチン共和国杯レース後コメント】ファミリータイム菅原明良騎手ら
+OK project=1 video_id=ADhai3j9z8U title=【デイリー杯2歳S展望】新潟2歳S3着のトップチェッカーは巻き返し可能　ブラッド
+OK project=1 video_id=rdEYRnej3H0 title=【黒潮マイルチャンピオンシップ・高知】サノノエスポが重賞連勝　塚本征吾騎手「感謝
+OK project=1 video_id=pT4hFicYSIE title=【クインカップ・ばんえい十勝】ホクセイヒラリが14秒1差をつけて4歳女王　藤本匠
