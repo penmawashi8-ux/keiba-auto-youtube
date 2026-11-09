@@ -1,10 +1,10 @@
-date: 2026-11-09T07:13:50.066957Z
+date: 2026-11-09T10:24:51.357985Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=94nqhu6S_oI title=【マイルCS】外国馬エルデナリが約32時間の輸送で日本到着
-OK project=1 video_id=t0lsHdR3big title=日本馬に新たな脅威…海外の強豪馬がマイルCS前に来日!“世界最強馬”カランダガン
-OK project=1 video_id=6OAcLxAlZxU title=【地方競馬が熱い・名古屋競馬】細川智史騎手の「#細川ダンス」が話題沸騰!「新ネタ
+OK project=1 video_id=AlfCH3tYN94 title=【エリザベス女王杯】全兄は産駒大ブレイクのエフフォーリア ジョスランがGI初制覇
+OK project=1 video_id=jtamFKr_sgk title=【AI予想・エリザベス女王杯】今年のアイルランドTはハイレベル!? 人工知能が選
+OK project=1 video_id=V5bKij0aXP8 title=【先週のJRA抹消馬】毎日王冠など重賞3勝のセイウンハーデス、23年ファンタジー
