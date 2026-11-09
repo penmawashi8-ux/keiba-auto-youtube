@@ -1,10 +1,10 @@
-date: 2026-11-09T04:09:32.830392Z
+date: 2026-11-09T07:13:50.066957Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ck1CZifzq2g title=【有馬記念】直前に超豪華イベント!公開枠順抽選会に限定400人を招待へ…見上愛&
-OK project=1 video_id=13icU-1W2Cw title=競馬で3連単1200万円超の波乱レースで「めっちゃ勝てた」…美人競馬キャスター吉
-OK project=1 video_id=rPw1q8eyuCY title=【エリザベス女王杯想定騎手】カムニャックは川田将雅騎手、ジュウリョクピエロは今村
+OK project=1 video_id=94nqhu6S_oI title=【マイルCS】外国馬エルデナリが約32時間の輸送で日本到着
+OK project=1 video_id=t0lsHdR3big title=日本馬に新たな脅威…海外の強豪馬がマイルCS前に来日!“世界最強馬”カランダガン
+OK project=1 video_id=6OAcLxAlZxU title=【地方競馬が熱い・名古屋競馬】細川智史騎手の「#細川ダンス」が話題沸騰!「新ネタ
