@@ -1,10 +1,10 @@
-date: 2026-11-09T10:24:51.357985Z
+date: 2026-11-10T01:18:26.643695Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AlfCH3tYN94 title=【エリザベス女王杯】全兄は産駒大ブレイクのエフフォーリア ジョスランがGI初制覇
-OK project=1 video_id=jtamFKr_sgk title=【AI予想・エリザベス女王杯】今年のアイルランドTはハイレベル!? 人工知能が選
-OK project=1 video_id=V5bKij0aXP8 title=【先週のJRA抹消馬】毎日王冠など重賞3勝のセイウンハーデス、23年ファンタジー
+OK project=1 video_id=Dv_-IKUq5Ec title=【エリザベス女王杯】「成績関係なく成長してきてる」今村聖奈騎手の師匠・寺島良調教
+OK project=1 video_id=eDay99DUk90 title=【競走伝】究極の“行った行った”が生んだ3連単154万馬券!2頭の大逃げで4角で
+OK project=1 video_id=3JASPnzzCXs title=【デイリー杯2歳S展望】好走データを全て満たすヒアカムズザサンに注目
