@@ -1,10 +1,10 @@
-date: 2026-11-10T07:20:40.311283Z
+date: 2026-11-10T10:15:44.804053Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=LluxA6ypc5U title=和田竜二師「今でも夢に出てくる」　テイエムオペラオーが敗れた菊花賞の“致命的なミ
-OK project=1 video_id=pKI_bRoyCy8 title=【阪神アーバン競馬】師走の大一番!　園田金盃のファン投票がスタート　12・9園田
-OK project=1 video_id=1YbY4C2N5OM title=テイエムオペラオー“カッコイイ勝ち方”で皐月賞制すも…和田竜二師「よろしくない乗
+OK project=1 video_id=tBp-fC3Bwmk title=【エリザベス女王杯】武幸四郎調教師がGI初制覇へ 伏兵ヴーレヴーで挑む
+OK project=1 video_id=NwPZwTxfICc title=【武蔵野S予想オッズ】ドンインザムードが予想1番人気
+OK project=1 video_id=TMqTbFth48k title=【デイリー杯2歳S予想オッズ】キューティボンドが予想1番人気
