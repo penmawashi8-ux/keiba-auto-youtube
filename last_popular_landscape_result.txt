@@ -1,6 +1,6 @@
-date: 2026-11-09T11:05:09.582836Z
+date: 2026-11-10T11:05:04.722502Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=lSIAD7ZsiS8 views=91961 title=【アルゼンチン共和国杯・全陣営コメント】3連単1206万円超の首差2着は13番人気ホーエリート　戸崎圭太騎手悔やむ「あそ
+OK project=1 video_id=Q0PIaQfRi3Q views=34775 title=実現すれば史上初!ゴリアットが有馬記念出走を視野　出走馬決定方法は?　24年キングジョージ勝ち馬【3.5万回閲覧・話題の
