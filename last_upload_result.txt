@@ -1,10 +1,10 @@
-date: 2026-11-10T01:18:26.643695Z
+date: 2026-11-10T04:15:49.122160Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Dv_-IKUq5Ec title=【エリザベス女王杯】「成績関係なく成長してきてる」今村聖奈騎手の師匠・寺島良調教
-OK project=1 video_id=eDay99DUk90 title=【競走伝】究極の“行った行った”が生んだ3連単154万馬券!2頭の大逃げで4角で
-OK project=1 video_id=3JASPnzzCXs title=【デイリー杯2歳S展望】好走データを全て満たすヒアカムズザサンに注目
+OK project=1 video_id=BVY3Lu9sMRo title=【注目馬動向】みやこSで重賞3勝目のロードクロンヌはチャンピオンズCへ　鞍上は引
+OK project=1 video_id=DEu3U53BwnM title=【注目馬動向】3連単1206万円超の“使者”ファミリータイムは有馬記念へ　菅原明
+OK project=1 video_id=a_agRe3-Db4 title=佐賀競馬　所属騎手の山田義貴容疑者が暴行容疑による逮捕でコメント発表「厳正に対処
