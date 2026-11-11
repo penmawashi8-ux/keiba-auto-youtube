@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   ranking:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # ubuntu-latest(26.04)の ffmpeg 8 は drawtext の改行を☒で描くため固定
     timeout-minutes: 60
     permissions:
       contents: write  # research-output ブランチへの push 用
