@@ -13,7 +13,7 @@ on:
 
 jobs:
   test-fetch-popular-news:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # ubuntu-latest(26.04)の ffmpeg 8 は drawtext の改行を☒で描くため固定
     timeout-minutes: 10
 
     steps:
