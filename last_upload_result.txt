@@ -1,10 +1,10 @@
-date: 2026-11-11T01:11:39.477472Z
+date: 2026-11-11T04:14:50.880006Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7eP-X4FG3eY title=【エリザベス女王杯】武豊騎手にっこり「メチャクチャ乗りやすい。結果で返したい」初
-OK project=1 video_id=OcQhHvEjva4 title=【阪神アーバン競馬・人気ジョッキーは語る】ウルトラタロウ(園田3R)で勝利を意識
-OK project=1 video_id=TOA6FWIfIF0 title=【園田競馬　11日発走　なにわの養鶏養蜂特別】充実のビクトリーブリッジ
+OK project=1 video_id=abDhxH9ONvY title=【注目馬動向】アイビーS2着のコラリオンは東京スポーツ杯2歳Sへ　坂井瑠星騎手が
+OK project=1 video_id=cKjNkZZlptg title=【エリザベス女王杯】「非常に宝物みたいな存在」今村聖奈騎手がジュウリョクピエロへ
+OK project=1 video_id=IYJib4z85tw title=【ジャパンC想定】カランダガンやクロワデュノールなど10頭
