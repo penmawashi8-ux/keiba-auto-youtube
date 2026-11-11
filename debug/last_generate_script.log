@@ -1,110 +1,65 @@
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
   [警告] 503 サービス一時停止。リトライします。
   [警告] 503 サービス一時停止。リトライします。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
+  [警告] 503 サービス一時停止。リトライします。
 [2]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
-[0]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] 429 クォータ超過: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, h
-[1]  [key=***zGG0 / gemini-2.5-flash] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] タイムアウト (attempt 1)。リトライします。
-  [警告] タイムアウト (attempt 1)。リトライします。
-  [警告] タイムアウト (attempt 1)。リトライします。
-  [警告] タイムアウト (attempt 2)。リトライします。
-  [警告] タイムアウト (attempt 2)。リトライします。
-  [警告] タイムアウト (attempt 2)。リトライします。
-  [警告] ファクトチェックAPI失敗: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)
-[2]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
-  [警告] タイムアウト (attempt 3)。リトライします。
-[0]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
-  [警告] タイムアウト (attempt 3)。リトライします。
-[1]  [key=***zGG0 / gemini-flash-latest] クォータ超過。20秒待機後に次へ切り替えます。
-[1]  [ファクトチェックNG] NG: 2027年度種付け料を発表しました（元記事は「来年度」および「2027年度」と「2025年などの未来（または発表時期のズレ）」が混同している可能性。元記事では単に「来年度」と書かれている部分を、脚本では「2027年度」としており、現在の起点からすると年号の解釈にズレが生じています）。
-
-※た
-[1]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
-  [警告] 503 サービス一時停止。リトライします。
-[1]  [key=***zGG0 / gemma-4-31b-it] API失敗: 500 Server Error: Internal Server Error for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-4-31b-it:generateContent?key=***。次へ切り替えます。
-  [警告] タイムアウト (attempt 1)。リトライします。
-[1]  [key=***zGG0 / gemma-4-26b-a4b-it] API失敗: 500 Server Error: Internal Server Error for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-4-26b-a4b-it:generateContent?key=***。次へ切り替えます。
-[1]  [警告] 語尾の連続パターン検出: 「〜ます」が3文以上連続
+  [警告] ファクトチェックAPI失敗: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=***
+[0]  [警告] 語尾の連続パターン検出: 「〜した」が3文以上連続
+[2]  [ファクトチェックNG] (導入フレーズ: チェック対象外)
+[2]  → 元記事にない情報を検出。次のキー/モデルで再生成します。
 === 脚本生成開始 ===
 Gemini APIキー: 3 件ロード
 利用可能モデル (48個): ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts', 'gemma-4-26b-a4b-it', 'gemma-4-31b-it', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', 'gemini-2.5-flash-lite']
 使用候補モデル: ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemma-4-31b-it', 'gemma-4-26b-a4b-it']
 試行組み合わせ数: 15 (キー×モデル)
 
---- 記事[0] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[0] 書き出しパターン: 「本日の競馬ニュースです。」 ---
 
---- 記事[0]: 【注目馬動向】鳴尾記念に向かうガイアメンテは武豊騎手と引き続きコンビ　サンデーサラブレッドクラブ発表 ---
-[0] Gemini入力本文 230文字: '前走のカシオペアSで6着だったガイアメンテ(牡5歳、栗東・須貝尚介厩舎、父ドゥラメンテ)は、次走に予定している鳴尾記念(12月5日、阪神)で引き続き武豊騎手とコンビを組むことが決まった。 また、7月12日の福島で新馬勝ちして、前走のサフラン'
+--- 記事[0]: 大逃げで2025年のアルゼンチン共和国杯を圧巻V　ミステリーウェイが現役引退　今後は乗馬に ---
+[0] Gemini入力本文 248文字: '2025年のアルゼンチン共和国杯・G2の勝ち馬ミステリーウェイ(セン8歳、栗東・小林真也厩舎、父ジャスタウェイ)が現役を引退することになった。社台サラブレッドクラブが11月11日、発表した。乗馬としてけい養する予定という。 同馬は2021年'
 [0] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[1] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[1] 書き出しパターン: 「競馬ファン注目の情報です。」 ---
 
---- 記事[1]: 種付け料が驚異の世界最高額!なんと1回約8000万円…ナイトオブサンダーの来年度種付け料が判明　産駒には"10億円ホース ---
-[1] Gemini入力本文 595文字: '世界的に人気が高いナイトオブサンダー(牡15、父ドバウィ)が、来年の種付け料を45万ユーロ(約8000万円)に設定されたことが分かった。同馬をけい養するダーレーヨーロッパは現地時間9日、供用する種牡馬の2027年度種付け料を発表した。 ナイ'
+--- 記事[1]: 22歳女性騎手が死去…落馬事故で重体だった　豪競馬の若手有望株、遺族は臓器提供の意向示す ---
+[1] Gemini入力本文 490文字: 'オーストラリアで22歳の女性騎手、イジー・ニールさんが落馬事故のため亡くなったと複数の海外メディアが報じた。 英レーシングポストによると、ニールさんは8日に行われたウォーレン競馬場のコットンカップ(1600メートル)で騎乗中に落馬。事故後に'
 [1] 使用: key=***zGG0 model=gemini-2.5-flash
 
---- 記事[2] 書き出しパターン: 「今日の競馬情報です。」 ---
+--- 記事[2] 書き出しパターン: 「重要な競馬ニュースをお伝えします。」 ---
 
---- 記事[2]: 【注目馬動向】キタサンブラックの弟シュガークン　マイルCS登録見送りは故障のため　清水久調教師「また休むことになると思い ---
-[2] Gemini入力本文 210文字: 'G1・7勝を挙げたキタサンブラックの弟で、前走の富士Sを勝ったシュガークン(牡5歳、栗東・清水久詞厩舎、父ドゥラメンテ)は故障のため、優先出走権のあったマイルCS・G1(11月22日、京都競馬場・芝1600メートル)への登録を見送ったことが'
+--- 記事[2]: 【マイルCS・1週前】ワールズエンドは4戦ぶりコンビのCデムーロ騎手と久々のコンタクト「前回より成長しているなと感じた」 ---
+[2] Gemini入力本文 362文字: '◆第43回マイルチャンピオンシップ・G1(11月22日、京都競馬場・芝1600メートル)1週前追い切り＝11月11日、栗東トレセン 安田記念、スプリンターズSと惜敗の2着が続くワールズエンド(牡5歳、栗東・池添学厩舎、父ロードカナロア)は、'
 [2] 使用: key=***zGG0 model=gemini-2.5-flash
-  HTTP 429
-  30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
   HTTP 503
   30秒待機後にリトライ... (attempt 2)
-  HTTP 429
+  HTTP 200
+[1]  [Gemini生出力 431文字]: '競馬ファン注目の情報です。オーストラリアで22歳の女性騎手、イジー・ニールさんが落馬事故のため亡くなったと複数の海外メディアが報じた。英レーシングポストによると、ニールさんは8日に行われたウォーレン競馬場のコットンカップ(1600メートル)で騎乗中に落馬。ヘリコプターで病院へ搬送されたが、ニューサウスウェールズ州ダボの病院で重体となっていた。ニールさんは見習い騎手として将来を期待される存在で、24年2月に初勝利を挙げると、ニューサウスウェールズ州全域で88勝を挙げていた。豪の競馬統括団体であるレーシング・ニューサウスウェールズは、公式Xに遺族の声明を掲載。「最愛のイジーが、最も親しい家族や友人に囲まれて亡くなったことを、深い悲しみと胸の痛みとともにご報告いたします」と伝えた。遺族は臓器提供の意向を示し、「臓器提供を通して、イジーは他の人々に生きるチャンスを与え、この悲痛な喪失の中で、私たち家族にいくらかの慰めをもたらしてくれるでしょう」と述べている。'
+[1]  ファクトチェック: SKIPPED(error:HTTPError)
+[1]  → output/script_1.txt 保存 (431文字)
+[1]  プレビュー: 競馬ファン注目の情報です。オーストラリアで22歳の女性騎手、イジー・ニールさんが落馬事故のため亡くなったと複数の海外メディアが報じた。英レーシングポストによると...
+  HTTP 503
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
+  HTTP 503
   60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  60秒待機後にリトライ... (attempt 3)
-  HTTP 429
-  HTTP 429
-  HTTP 429
+  HTTP 503
+  HTTP 200
+[0]  [Gemini生出力 264文字]: '本日の競馬ニュースです。\n2025年のアルゼンチン共和国杯・G2の勝ち馬ミステリーウェイが現役を引退することになりました。社台サラブレッドクラブが11月11日に発表し、今後は乗馬としてけい養する予定です。ミステリーウェイは2021年1月に栗東・安田隆行厩舎からデビューし、翌年4月に小林真也厩舎に転厩しました。昨秋のアルゼンチン共和国杯では9番人気で大逃げを打ち、7歳にして重賞初制覇という遅咲きの花を咲かせました。しかし、今年は5戦未勝利で、先週のアルゼンチン共和国杯17着がラストランとなりました。通算成績は42戦6勝です。'
+[0]  [重複除去] 264文字 → 263文字
+[0]  ファクトチェック: SKIPPED(error:HTTPError)
+[0]  → output/script_0.txt 保存 (263文字)
+[0]  プレビュー: 本日の競馬ニュースです。2025年のアルゼンチン共和国杯・G2の勝ち馬ミステリーウェイが現役を引退することになりました。社台サラブレッドクラブが11月11日に発...
 [2] 使用: key=***zGG0 model=gemini-flash-latest
-[0] 使用: key=***zGG0 model=gemini-flash-latest
-[1] 使用: key=***zGG0 model=gemini-flash-latest
-  30秒待機後にリトライ... (attempt 2)
-  30秒待機後にリトライ... (attempt 2)
-  30秒待機後にリトライ... (attempt 2)
-  60秒待機後にリトライ... (attempt 3)
-  60秒待機後にリトライ... (attempt 3)
-  60秒待機後にリトライ... (attempt 3)
   HTTP 200
-[2]  [Gemini生出力 201文字]: '今日の競馬情報です。G1・7勝を挙げたキタサンブラックの弟で、前走の富士Sを勝ったシュガークンは、故障のため、優先出走権のあった11月22日の京都競馬場・芝1600メートルで行われるマイルCSへの登録を見送ったことが分かりました。清水久調教師が11月11日、明らかにしました。同馬は富士Sを勝った後、放牧に出ていました。清水久調教師は「脚元を痛めたので、また休むことになると思います」と説明しています。'
-[2]  ファクトチェック: SKIPPED(error:ReadTimeout)
-[2]  → output/script_2.txt 保存 (201文字)
-[2]  プレビュー: 今日の競馬情報です。G1・7勝を挙げたキタサンブラックの弟で、前走の富士Sを勝ったシュガークンは、故障のため、優先出走権のあった11月22日の京都競馬場・芝16...
-[0] 使用: key=***zGG0 model=gemini-flash-lite-latest
-[1] 使用: key=***zGG0 model=gemini-flash-lite-latest
+[2]  [Gemini生出力 211文字]: '重要な競馬ニュースをお伝えします。マイルチャンピオンシップの1週前追い切りで、ワールズエンドは昨年末のリゲルS以来のコンビとなるクリスチャン・デムーロ騎手が騎乗し、CWコースの7ハロン追いで98秒0、11秒4をマークしました。安田記念、スプリンターズSと惜敗の2着が続く同馬に、Cデムーロ騎手は「太めが残っている感じがあったので、今週しっかりやって変わってくると思う」「前回より成長しているなと感じた」と期待を寄せました。'
+[2] 使用: key=***zGG0 model=gemini-flash-lite-latest
   HTTP 200
-[0]  [Gemini生出力 166文字]: '今日の競馬情報です。前走のカシオペアSで6着だったガイアメンテは、次走に予定している鳴尾記念で引き続き武豊騎手とコンビを組むことが決まりました。また、7月12日の福島で新馬勝ちして、前走のサフラン賞で2着だったリサナウトは、阪神JFか、ひいらぎ賞を目標にしていきます。いずれもサンデーサラブレッドクラブが11月11日、発表しました。'
-[0]  ファクトチェック: OK
-[0]  → output/script_0.txt 保存 (166文字)
-[0]  プレビュー: 今日の競馬情報です。前走のカシオペアSで6着だったガイアメンテは、次走に予定している鳴尾記念で引き続き武豊騎手とコンビを組むことが決まりました。また、7月12日...
-  HTTP 200
-[1]  [Gemini生出力 301文字]: '今日の競馬情報です。ナイトオブサンダーが、来年の種付け料を45万ユーロに設定されたことが分かりました。日本円でおよそ8000万円となります。同馬をけい養するダーレーヨーロッパが現地時間9日に、供用する種牡馬の2027年度種付け料を発表しました。ナイトオブサンダー産駒は今年のプリンスオブウェールズS連覇などG1・5勝を挙げるオンブズマンなど多くの活躍馬を送り出しており、日本でもすでに現役引退したソンシが今年の阪急杯をコースレコードで制しています。母マイアストラの1歳牡馬が460万ギニーでおよそ10億1200万円で落札され、ドバイのモハメド殿下率いるゴドルフィンがクールモアとの一騎打ちを制しました。'
-[1] 使用: key=***zGG0 model=gemma-4-31b-it
-  HTTP 503
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 500
-[1] 使用: key=***zGG0 model=gemma-4-26b-a4b-it
-  30秒待機後にリトライ... (attempt 2)
-  HTTP 500
-[1] 使用: key=***189Y model=gemini-2.5-flash
-  HTTP 200
-[1]  [Gemini生出力 350文字]: '今日の競馬情報です。\nナイトオブサンダーの来年の種付け料が、45万ユーロ、日本円で約8000万円に設定されたことが分かりました。ダーレーヨーロッパが来年の種付け料を発表しています。ナイトオブサンダー産駒は、G1を5勝したオンブズマンや、日本で阪急杯をコースレコードで制したソンシなど、多くの活躍馬を送り出しています。同ファームのHPでは、100頭目のステークス勝ち馬を輩出し、今年はG1勝ち馬6頭、ブラックタイプ勝ち馬32頭を輩出したと説明しています。今秋の英国サラブレッドセールでは、ナイトオブサンダー産駒の母マイアストラの1歳牡馬が、10月6日に460万ギニー、約10億1200万円で落札されました。この落札額はヨーロッパのセール記録を更新し、今年世界中で販売された1歳馬の最高額となっています。'
-[1]  [重複除去] 350文字 → 349文字
-[1]  ファクトチェック: OK
-[1]  → output/script_1.txt 保存 (349文字)
-[1]  プレビュー: 今日の競馬情報です。ナイトオブサンダーの来年の種付け料が、45万ユーロ、日本円で約8000万円に設定されたことが分かりました。ダーレーヨーロッパが来年の種付け料...
+[2]  [Gemini生出力 324文字]: '重要な競馬ニュースをお伝えします。11月22日に京都競馬場・芝1600メートルで行われる第43回マイルチャンピオンシップ・G1の1週前追い切りが11月11日、栗東トレセンで行われました。安田記念、スプリンターズSと惜敗の2着が続くワールズエンドは、昨年末のリゲルS以来のコンビとなるクリスチャン・デムーロ騎手が騎乗しました。CWコースの7ハロン追いで、98秒0、6ハロン81秒2、11秒4をマークしています。クリスチャン・デムーロ騎手は太めが残っている感じがあったので、今週しっかりやって変わってくると思うと現状を伝えました。同馬とは3度目のタッグとなり、前回より成長しているなと感じた、この馬でマイルでも勝ったことがあるのでと期待を寄せています。'
+[2]  ファクトチェック: OK
+[2]  → output/script_2.txt 保存 (324文字)
+[2]  プレビュー: 重要な競馬ニュースをお伝えします。11月22日に京都競馬場・芝1600メートルで行われる第43回マイルチャンピオンシップ・G1の1週前追い切りが11月11日、栗...
 
 3 件の脚本を生成しました。
