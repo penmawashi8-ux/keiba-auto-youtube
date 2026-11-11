@@ -1,10 +1,10 @@
-date: 2026-11-11T07:23:18.108829Z
+date: 2026-11-11T10:10:58.593847Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=b_6Ng5FDU-A title=【注目馬動向】鳴尾記念に向かうガイアメンテは武豊騎手と引き続きコンビ　サンデーサ
-OK project=1 video_id=udAW1h63dxM title=種付け料が驚異の世界最高額!なんと1回約8000万円…ナイトオブサンダーの来年度
-OK project=1 video_id=cy2PctuRAAs title=【注目馬動向】キタサンブラックの弟シュガークン　マイルCS登録見送りは故障のため
+OK project=1 video_id=em8xPW38JY0 title=大逃げで2025年のアルゼンチン共和国杯を圧巻V　ミステリーウェイが現役引退　今
+OK project=1 video_id=IMZRtIC8zTo title=22歳女性騎手が死去…落馬事故で重体だった　豪競馬の若手有望株、遺族は臓器提供の
+OK project=1 video_id=pK3S_9fmvfo title=【マイルCS・1週前】ワールズエンドは4戦ぶりコンビのCデムーロ騎手と久々のコン
