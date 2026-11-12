@@ -1,10 +1,10 @@
-date: 2026-11-12T07:14:17.358755Z
+date: 2026-11-12T10:12:50.579902Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=s2tva6WJKfI title=【武蔵野S出走馬・騎手確定】ドンエレクトス＆三浦皇成騎手、ドンインザムード＆荻野
-OK project=1 video_id=NRqRgZyngXs title=【デイリー杯2歳S出走馬・騎手確定】スマートピナクル＆武豊騎手、キューティボンド
-OK project=1 video_id=OKfUNpZ01ZQ title=【エリザベス女王杯】ブリンカー着用のニシノティアモに一筋の光差し込む　津村明秀騎
+OK project=1 video_id=9R3k4_FZu_M title=ノースヒルズ軍団×福永厩舎のコントレイル産駒 ボスコベルがデビュー勝ち狙う
+OK project=1 video_id=jw40xAzWE0g title=【JRA新馬戦】名牝グランアレグリアの仔スプレマレイナなどがデビュー
+OK project=1 video_id=c5-OIOlLufI title=【エリザベス女王杯】ジュウリョクピエロの大幅増はどう見る?調教後馬体重で前走から
