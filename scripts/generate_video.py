@@ -699,6 +699,28 @@ def wrap_text(text: str, max_chars: int = LINE_MAX_CHARS, max_lines: int = 0) ->
     return "\n".join(lines)
 
 
+def split_subtitle_pages(text: str, max_chars: int, max_lines: int) -> list[str]:
+    """wrap_text で max_lines 行に収まらない文を、「、」の切れ目で収まるページに分ける。"""
+    def fits(t: str) -> bool:
+        return len(wrap_text(t, max_chars=max_chars).splitlines()) <= max_lines
+
+    if fits(text):
+        return [text]
+    limit = max_chars * max_lines
+    pages, cur = [], ""
+    for piece in re.split(r"(?<=[、,，])", text):
+        if cur and not fits(cur + piece):
+            pages.append(cur)
+            cur = ""
+        cur += piece
+        while len(cur) > limit:          # 「、」のない長い塊は文字数で切る
+            pages.append(cur[:limit])
+            cur = cur[limit:]
+    if cur:
+        pages.append(cur)
+    return pages
+
+
 # ---------------------------------------------------------------------------
 # クリップ生成（ffmpegのみ）
 # ---------------------------------------------------------------------------
@@ -1096,6 +1118,25 @@ def build_video(
         thumb_dur = (audio_duration * title_chars / total_chars) if (title and total_chars > 0) else (THUMBNAIL_DURATION if title else 0.0)
         thumb_dur = max(THUMBNAIL_DURATION, thumb_dur) if title else 0.0
         print("  字幕タイミング: 文字数按分（timings_*.json なし）")
+
+    # 1枚に収まらない長い文（出走馬の列挙など）は「、」の切れ目で複数ページに分け、尺を文字数で按分する
+    # （収まらないまま描くと、はみ出た分が最終行に連結されて画面の外まで伸びる）
+    _lmc = style["subtitle_line_max_chars"] if style else LINE_MAX_CHARS
+    _max_lines = 4 if style else 7
+    _pages, _page_durs = [], []
+    for s, d in zip(sentences, durations):
+        parts = split_subtitle_pages(s, _lmc, _max_lines)
+        total = sum(len(p) for p in parts)
+        acc, prev = 0, 0.0
+        for p in parts:
+            acc += len(p)
+            end = d if acc == total else round(d * acc / total * FPS) / FPS
+            _pages.append(p)
+            _page_durs.append(end - prev)
+            prev = end
+    if len(_pages) != len(sentences):
+        print(f"  長い文を分割: {len(sentences)}文 → {len(_pages)}ページ")
+    sentences, durations = _pages, _page_durs
 
     print(f"  セリフ数: {len(sentences)}")
     for i, (s, d) in enumerate(zip(sentences, durations)):
