@@ -1,10 +1,10 @@
-date: 2026-11-11T10:10:58.593847Z
+date: 2026-11-12T01:09:24.254125Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=em8xPW38JY0 title=大逃げで2025年のアルゼンチン共和国杯を圧巻V　ミステリーウェイが現役引退　今
-OK project=1 video_id=IMZRtIC8zTo title=22歳女性騎手が死去…落馬事故で重体だった　豪競馬の若手有望株、遺族は臓器提供の
-OK project=1 video_id=pK3S_9fmvfo title=【マイルCS・1週前】ワールズエンドは4戦ぶりコンビのCデムーロ騎手と久々のコン
+OK project=1 video_id=M6cySXMPqLM title=【阪神アーバン競馬・人気ジョッキーは語る】グレイスオブゴッド(園田11R)でメイ
+OK project=1 video_id=cKvrCI9jcMc title=【エリザベス女王杯】C.ルメール騎手が歴代最多タイの4勝目なるか ジョスランで参
+OK project=1 video_id=cccCEvAdMc8 title=【エリザベス女王杯】ジュウリョクピエロが戦闘モードに突入　今村聖奈騎手が騎乗しゴ
