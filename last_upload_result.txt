@@ -1,10 +1,10 @@
-date: 2026-11-12T01:09:24.254125Z
+date: 2026-11-12T04:12:12.046048Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=M6cySXMPqLM title=【阪神アーバン競馬・人気ジョッキーは語る】グレイスオブゴッド(園田11R)でメイ
-OK project=1 video_id=cKvrCI9jcMc title=【エリザベス女王杯】C.ルメール騎手が歴代最多タイの4勝目なるか ジョスランで参
-OK project=1 video_id=cccCEvAdMc8 title=【エリザベス女王杯】ジュウリョクピエロが戦闘モードに突入　今村聖奈騎手が騎乗しゴ
+OK project=1 video_id=jiMbJgSqE1g title=【東京スポーツ杯2歳S・1週前】コラリオンがWコースで上々の動き　坂井瑠星騎手「
+OK project=1 video_id=QHABw1wjAW0 title=名騎手トム・オブライエンさん死去　39歳　がん闘病　英愛で1000勝超
+OK project=1 video_id=HeJqGuJ9k1s title=【注目馬動向】ジーティーサクラは来春の復帰を目指す　吉岡調教師「脚元に不安が出た
