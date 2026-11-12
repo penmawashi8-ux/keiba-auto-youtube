@@ -1,6 +1,6 @@
-date: 2026-11-11T11:04:34.205725Z
+date: 2026-11-12T11:05:06.693286Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t45Arq5F0Lk views=54428 title=英チャンピオンS覇者オンブズマンがジャパンC参戦へ　ラストランの地に東京を選択　英メディア報道【5.4万回閲覧・話題の競
+OK project=1 video_id=KLhOGpIsu1c views=31605 title=菊花賞馬ゴーイントゥスカイは香港Ｃか香港ヴァーズへ　引き続き鞍上は武豊【3.2万回閲覧・話題の競馬ニュース】
