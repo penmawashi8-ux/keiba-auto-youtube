@@ -1,0 +1,76 @@
+name: Upload Simulation Video to YouTube
+
+# research-output 上の完成動画を YouTube に投稿する。data/upload/<名前>.json ごと（そのコミットで変わったものだけ）。
+#   {"prefix", "video": research-output 上のパス, "thumbnail": 同, "title", "description", "tags": "a,b", "privacy"}
+# 二重投稿を防ぐため、投稿済みの印（sim/uploaded_<prefix>.txt）が research-output にあれば何もしない。
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/upload/**
+
+concurrency:
+  group: sim-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+      GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+      GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+      GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install google-api-python-client google-auth google-auth-oauthlib
+
+      - name: Upload
+        run: |
+          mkdir -p up
+          git fetch -q origin research-output
+          for f in $(git diff --name-only HEAD~1 HEAD -- 'data/upload/*.json'); do
+            [ -f "$f" ] || continue
+            g() { python -c "import json,sys; print(json.load(open(sys.argv[1]))[sys.argv[2]])" "$f" "$1"; }
+            p=$(g prefix)
+            if git cat-file -e "FETCH_HEAD:sim/uploaded_$p.txt" 2>/dev/null; then
+              echo "$p は投稿済み: $(git show FETCH_HEAD:sim/uploaded_$p.txt)"; continue
+            fi
+            git show "FETCH_HEAD:$(g video)" > "up/$p.mp4"
+            git show "FETCH_HEAD:$(g thumbnail)" > "up/$p.jpg"
+            g description > "up/$p.txt"
+            python scripts/upload_custom_youtube.py --file "up/$p.mp4" --title "$(g title)" \
+              --description "$(cat up/$p.txt)" --tags "$(g tags)" --thumbnail "up/$p.jpg" \
+              --privacy "$(g privacy)" --url-out "up/uploaded_$p.txt"
+          done
+
+      - name: Save upload record
+        if: always()
+        run: |
+          ls up/uploaded_*.txt >/dev/null 2>&1 || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -B ro FETCH_HEAD
+            mkdir -p sim && cp up/uploaded_*.txt sim/
+            git add sim/uploaded_*.txt && git commit -qm "YouTube 投稿 $(ls up/uploaded_*.txt | xargs -n1 basename | tr '\n' ' ') [skip ci]" \
+              && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
