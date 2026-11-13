@@ -1,10 +1,10 @@
-date: 2026-11-13T04:10:07.445726Z
+date: 2026-11-13T07:16:42.967063Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=wmw6sUv8P4Y title=【ホッカイドウ競馬】落合玄太騎手が3年ぶり3度目　田中淳司調教師は12年連続12
-OK project=1 video_id=Fi3Xxm_cB08 title=【エリザベス女王杯・金曜気配】今村聖奈騎手のジュウリョクピエロは6枠11番　26
-OK project=1 video_id=3zggzBzZaP4 title=21連勝でストップもカーインライジングが首位キープ　日本調教馬ではテーオーエルビ
+OK project=1 video_id=U8rCl09Fz_s title=【浦和競馬】ホッカイドウ競馬の落合玄太騎手が期間限定騎乗　24日から大みそかまで
+OK project=1 video_id=AwSHrbdGgfI title=【ジャパンC】G1・5勝の欧州最強馬オンブズマンが追加登録　昨年覇者カランダガン
+OK project=1 video_id=hU7Q1NUje0M title=ジャパンＣ参戦決定のオンブズマン、カランダガンら外国馬６頭が１９日に来日
