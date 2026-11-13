@@ -1,6 +1,6 @@
-date: 2026-11-12T11:05:06.693286Z
+date: 2026-11-13T11:05:45.553248Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=KLhOGpIsu1c views=31605 title=菊花賞馬ゴーイントゥスカイは香港Ｃか香港ヴァーズへ　引き続き鞍上は武豊【3.2万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=K8aqGVL8iK4 views=47344 title=白毛に茶色の斑点！ドウデュースの娘「ラテちゃん」が一口馬主募集に登場　ダノンベルーガの半弟も　Ｇ１・５勝馬の初年度産駒３
