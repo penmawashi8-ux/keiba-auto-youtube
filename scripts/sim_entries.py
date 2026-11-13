@@ -35,6 +35,8 @@ VENUE_CODES = {"01": "札幌", "02": "函館", "03": "福島", "04": "新潟", "
 
 
 def find_race_id(session, date: str, name: str) -> str:
+    if re.fullmatch(r"\d{12}", name):      # race_id を直接指定（レース一覧で名前が一致しないとき用）
+        return name
     soup = BeautifulSoup(get(session, LIST_URL.format(date=date)), "html.parser")
     found = []
     for a in soup.find_all("a", href=re.compile(r"race_id=\d{12}")):
@@ -43,7 +45,7 @@ def find_race_id(session, date: str, name: str) -> str:
         found.append((rid, text))
         if name in text:
             return rid
-    print("レース一覧のリンク:", found[:40])
+    print("レース一覧のリンク:", [f for f in found if f[1]])
     raise SystemExit(f"{date} のレース一覧に「{name}」が見つかりません")
 
 
