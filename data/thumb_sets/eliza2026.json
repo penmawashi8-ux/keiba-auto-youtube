@@ -1,0 +1,163 @@
+{
+ "prefix": "thumb_eliza2026",
+ "max_photos": 4,
+ "loose": false,
+ "only_chosen": true,
+ "texts": {
+  "title1": "エリザベス女王杯2026をデータで1万回シミュレーション",
+  "title2": "データが選んだ本命は？",
+  "sub1": "京都芝2200m・枠順と脚質も計算",
+  "sub2": "出走馬と対戦相手の全成績から"
+ },
+ "choice": {},
+ "horses": [
+  {
+   "name": "カムニャック",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Come Nyack",
+    "Kam Nyack"
+   ],
+   "queries": [
+    "カムニャック",
+    "カムニャック 競走馬",
+    "Come Nyack horse",
+    "Kam Nyack horse",
+    "Come Nyack",
+    "Kam Nyack"
+   ],
+   "articles": [
+    "カムニャック",
+    "Come Nyack",
+    "Kam Nyack"
+   ]
+  },
+  {
+   "name": "ジュウリョクピエロ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Juryoku Pierrot"
+   ],
+   "queries": [
+    "ジュウリョクピエロ",
+    "ジュウリョクピエロ 競走馬",
+    "Juryoku Pierrot horse",
+    "Juryoku Pierrot"
+   ],
+   "articles": [
+    "ジュウリョクピエロ",
+    "Juryoku Pierrot"
+   ]
+  },
+  {
+   "name": "ジョスラン",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Jocelyn"
+   ],
+   "queries": [
+    "ジョスラン",
+    "ジョスラン 競走馬",
+    "Jocelyn horse",
+    "Jocelyn"
+   ],
+   "articles": [
+    "ジョスラン",
+    "Jocelyn"
+   ]
+  },
+  {
+   "name": "ヴーレヴー",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Voulez-Vous"
+   ],
+   "queries": [
+    "ヴーレヴー",
+    "ヴーレヴー 競走馬",
+    "Voulez-Vous horse",
+    "Voulez-Vous"
+   ],
+   "articles": [
+    "ヴーレヴー",
+    "Voulez-Vous"
+   ]
+  },
+  {
+   "name": "クイーンズウォーク",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Queens Walk"
+   ],
+   "queries": [
+    "クイーンズウォーク",
+    "クイーンズウォーク 競走馬",
+    "Queens Walk horse",
+    "Queens Walk"
+   ],
+   "articles": [
+    "クイーンズウォーク",
+    "Queens Walk"
+   ]
+  },
+  {
+   "name": "チェルヴィニア",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Cervinia"
+   ],
+   "queries": [
+    "チェルヴィニア",
+    "チェルヴィニア 競走馬",
+    "Cervinia horse",
+    "Cervinia"
+   ],
+   "articles": [
+    "チェルヴィニア",
+    "Cervinia"
+   ]
+  },
+  {
+   "name": "ステレンボッシュ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Stellenbosch"
+   ],
+   "queries": [
+    "ステレンボッシュ",
+    "ステレンボッシュ 競走馬",
+    "Stellenbosch horse",
+    "Stellenbosch"
+   ],
+   "articles": [
+    "ステレンボッシュ",
+    "Stellenbosch"
+   ]
+  },
+  {
+   "name": "ラヴァンダ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Lavanda"
+   ],
+   "queries": [
+    "ラヴァンダ",
+    "ラヴァンダ 競走馬",
+    "Lavanda horse",
+    "Lavanda"
+   ],
+   "articles": [
+    "ラヴァンダ",
+    "Lavanda"
+   ]
+  }
+ ]
+}
