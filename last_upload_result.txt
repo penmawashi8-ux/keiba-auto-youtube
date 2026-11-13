@@ -1,10 +1,10 @@
-date: 2026-11-13T01:10:25.963930Z
+date: 2026-11-13T04:10:07.445726Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=GHKK7YXjqDo title=【エリザベス女王杯】今村聖奈騎手騎乗のジュウリョクピエロは6枠11番に決定　武豊
-OK project=1 video_id=l_e44JoPRJ0 title=【阪神アーバン競馬・人気ジョッキーは語る】ミコカスターニャ(園田8R)で勝利を意
-OK project=1 video_id=5k7bnKYN7k0 title=【エリザベス女王杯枠順確定】カムニャックは4枠7番、ジュウリョクピエロは6枠11
+OK project=1 video_id=wmw6sUv8P4Y title=【ホッカイドウ競馬】落合玄太騎手が3年ぶり3度目　田中淳司調教師は12年連続12
+OK project=1 video_id=Fi3Xxm_cB08 title=【エリザベス女王杯・金曜気配】今村聖奈騎手のジュウリョクピエロは6枠11番　26
+OK project=1 video_id=3zggzBzZaP4 title=21連勝でストップもカーインライジングが首位キープ　日本調教馬ではテーオーエルビ
