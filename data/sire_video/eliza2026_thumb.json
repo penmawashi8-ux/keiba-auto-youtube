@@ -1,0 +1,39 @@
+{
+ "prefix": "eliza2026",
+ "sire": "",
+ "horses": [],
+ "photos_intro": [
+  "東京競馬場フローラS カムニャック 20250427.jpg",
+  "Juryoku Pierrot 87th Oaks 01.jpg",
+  "Lavanda-2024-10-13.jpg"
+ ],
+ "thumb_design": {
+  "hero": {
+   "file": "東京競馬場フローラS カムニャック 20250427.jpg",
+   "x": 0.15,
+   "y": 0.5
+  },
+  "hero_name": "7 カムニャック",
+  "subs": [
+   {
+    "file": "Juryoku Pierrot 87th Oaks 01.jpg",
+    "x": 0.4,
+    "y": 0.5,
+    "name": "11 ジュウリョクピエロ"
+   },
+   {
+    "file": "Lavanda-2024-10-13.jpg",
+    "x": 0.3,
+    "y": 0.5,
+    "name": "1 ラヴァンダ"
+   }
+  ],
+  "tag": "データで1万回シミュレーション",
+  "lines": [
+   "エリザベス女王杯2026",
+   "データの本命は",
+   "4枠7番 カムニャック"
+  ],
+  "badge": "勝率13.0%"
+ }
+}
