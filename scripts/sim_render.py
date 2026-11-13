@@ -292,6 +292,8 @@ def make_big_track_png(path: Path, font: str, start_s: float, dist: int) -> None
             continue
         if dist - LAP_M > 600:  # 1周半ほど走るレース（菊花賞など）は、1周目に「残り400m」などの標識を
             continue            # 通って上の「残り○m」表示と食い違うので、地面の標識は描かない
+        if k < dist - LAP_M + 60:  # スタート直後にも前を通る標識（京都2200mの「残り200m」など）は描かない
+            continue
         x, y = big_point(STRAIGHT_M - k, TRACK_W_M + 7)
         label(f"残り{k}m", x, y, 52, "white")
     s = 0.0
