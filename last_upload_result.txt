@@ -1,10 +1,10 @@
-date: 2026-11-14T04:08:32.817701Z
+date: 2026-11-14T07:09:50.990952Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=n8b6wy3ZSFo title=【東京6R新馬戦結果】ポエティックフレア産駒カルメンソリスが抜け出し快勝
-OK project=1 video_id=OofIpBQhThg title=【東京6R・2歳新馬】グランアレグリアの子に遠い白星…一口250万円の2番子スプ
-OK project=1 video_id=tdMNFWcGDfM title=京都5R新馬戦　4.1億円馬のソブリオがV　C・デムーロ「将来性が高い馬」
+OK project=1 video_id=is6KlW6ZtbQ title=【JRA・WIN5】本日のWIN5は的中86票、配当317万7960円
+OK project=1 video_id=mmvEUb0ByLo title=【デイリー杯2歳S】ブラッドバローズが逃げ切って無傷3連勝　3代母はパシフィカス
+OK project=1 video_id=4MUQj-N8884 title=【デイリー杯2歳S結果】ブラッドバローズが無傷の3連勝で重賞制覇！
