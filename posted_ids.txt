@@ -3758,3 +3758,6 @@ https://news.netkeiba.com/?pid=news_view&no=348339
 https://news.netkeiba.com/?pid=news_view&no=348567
 https://news.netkeiba.com/?pid=news_view&no=348674
 https://news.netkeiba.com/?pid=news_view&no=348639
+https://news.netkeiba.com/?pid=news_view&no=348257
+https://news.netkeiba.com/?pid=news_view&no=348337
+https://news.netkeiba.com/?pid=news_view&no=347762
