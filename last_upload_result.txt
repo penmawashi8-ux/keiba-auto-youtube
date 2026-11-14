@@ -1,10 +1,10 @@
-date: 2026-11-14T01:09:16.562121Z
+date: 2026-11-14T04:08:32.817701Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=aQ0aJrlq0Gk title=デイリー杯2歳Sは前走新馬勝ち組が好成績 末脚にも注目
-OK project=1 video_id=w33fvOvKf04 title=半兄は香港ヴァーズ2勝のグローリーヴェイズ バタフライノットがデビュー勝ちなるか
-OK project=1 video_id=S0FVtBotUKI title=武蔵野Sは地方重賞からの転戦組が好相性 中穴も狙い目
+OK project=1 video_id=n8b6wy3ZSFo title=【東京6R新馬戦結果】ポエティックフレア産駒カルメンソリスが抜け出し快勝
+OK project=1 video_id=OofIpBQhThg title=【東京6R・2歳新馬】グランアレグリアの子に遠い白星…一口250万円の2番子スプ
+OK project=1 video_id=tdMNFWcGDfM title=京都5R新馬戦　4.1億円馬のソブリオがV　C・デムーロ「将来性が高い馬」
