@@ -1,10 +1,10 @@
-date: 2026-11-14T07:09:50.990952Z
+date: 2026-11-14T10:11:10.066603Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=is6KlW6ZtbQ title=【JRA・WIN5】本日のWIN5は的中86票、配当317万7960円
-OK project=1 video_id=mmvEUb0ByLo title=【デイリー杯2歳S】ブラッドバローズが逃げ切って無傷3連勝　3代母はパシフィカス
-OK project=1 video_id=4MUQj-N8884 title=【デイリー杯2歳S結果】ブラッドバローズが無傷の3連勝で重賞制覇！
+OK project=1 video_id=bqL-3vhaoo0 title=中内田厩舎のフライトライン産駒 ユーキャンダンスがデビュー勝ちなるか
+OK project=1 video_id=Z04SRXgVdrs title=【エリザベス女王杯】単勝10倍以下が5頭の大混戦!　今村聖奈騎手とG1連勝狙うジ
+OK project=1 video_id=PWQ2XbtxnpQ title=【アンドロメダSレース後コメント】バッデレイト岩田望来騎手ら
