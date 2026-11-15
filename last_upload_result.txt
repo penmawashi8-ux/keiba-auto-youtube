@@ -1,10 +1,10 @@
-date: 2026-11-15T01:18:04.475152Z
+date: 2026-11-15T04:14:34.390238Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=F9onWu6lCoI title=【エリザベス女王杯】狙うならどんなパターン!? 過去データから探るGIエリザベス
-OK project=1 video_id=N2ePV4OnueM title=粗品「他の牝馬とは全く異なる…」　エリザベス女王杯の本命馬公開に競馬ファン「飛ぶ
-OK project=1 video_id=7ODCH-fpVlc title=エリザベス女王杯は1枠が好成績 ステイゴールド系にも注目
+OK project=1 video_id=l1MFitL9N9E title=【福島6R新馬戦結果】イントゥミスチーフ産駒ストライクアローが人気に応えてデビュ
+OK project=1 video_id=kXXUUdrFgTk title=【東京5R・新馬戦】ラディオーサが逃げ切って新馬V　プーシャン「凄くマナーが良く
+OK project=1 video_id=Y7NttXZVzxk title=【東京5R・2歳新馬】ヴァンゴッホ産駒のラディオーサが逃げ切って初戦V　プーシャ
