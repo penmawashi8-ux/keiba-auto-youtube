@@ -1,0 +1,70 @@
+name: Race Peek (entries, odds, careers)
+
+# 1レースの出馬表・単勝オッズ・出走馬の全成績と、同じ日の同じ競馬場の終わったレース結果を取る（予想用）。
+# 対象は data/peek_request.json {"date": YYYYMMDD, "race_id": 12桁}。結果は research-output の sim/peek_<race_id>/。
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/peek_request.json
+
+jobs:
+  peek:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q requests==2.32.3 beautifulsoup4
+      - name: Fetch
+        run: |
+          D=$(python -c "import json;print(json.load(open('data/peek_request.json'))['date'])")
+          R=$(python -c "import json;print(json.load(open('data/peek_request.json'))['race_id'])")
+          echo "R=$R" >> $GITHUB_ENV
+          mkdir -p sim out
+          python scripts/sim_entries.py "$D" "$R"
+          cp sim/entries.json out/entries.json
+          python - "$R" <<'PY'
+          import sys, requests, time, json
+          r = sys.argv[1]
+          s = requests.Session()
+          h = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+          for t in (1, 4):
+              u = f"https://race.netkeiba.com/api/api_get_jra_odds.html?race_id={r}&type={t}&action=update"
+              try:
+                  open(f"out/odds_type{t}.json", "w").write(s.get(u, headers=h, timeout=20).text)
+              except Exception as e:
+                  print("odds", t, e)
+          # 同じ日・同じ競馬場の、このレースより前のレース結果
+          for k in range(1, int(r[-2:])):
+              rid = r[:-2] + f"{k:02d}"
+              try:
+                  b = s.get(f"https://race.netkeiba.com/race/result.html?race_id={rid}", headers=h, timeout=20).content
+                  open(f"out/result_{rid}.html", "wb").write(b)
+              except Exception as e:
+                  print("result", rid, e)
+              time.sleep(1)
+          PY
+          ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
+          echo '{}' > sim/horses_cache.json
+          python scripts/sim_fetch_horses.py 8 $ids || true
+          python -c "
+          import json
+          c=json.load(open('sim/horses_cache.json')); e=json.load(open('sim/entries.json'))
+          json.dump({h['horse_id']:c.get(h['horse_id'],[]) for h in e['horses']}, open('out/careers.json','w'), ensure_ascii=False)"
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -B ro FETCH_HEAD
+            mkdir -p sim/peek_$R && cp out/* sim/peek_$R/
+            git add sim/peek_$R && git commit -qm "レースの下見 $R [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
