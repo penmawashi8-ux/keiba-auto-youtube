@@ -222,13 +222,17 @@ jobs:
               print(f"Debug Issue作成: {data.get('html_url')}")
           PYEOF
 
-      - name: BGMをダウンロード (CC0 public domain only)
+      # ニュースは明るいオリジナルBGM（長調・124BPM）を合成して使う。
+      # 以前の Musopen クラシック（ノクターン等）は曲調が暗かったため置き換え。
+      # リポジトリに残っているクラシック音源（bgm_*.mp3）が選ばれないよう先に消す（ランナー上のみ）。
+      - name: 明るいBGMを生成 (オリジナル合成)
         id: download_bgm
         if: steps.check_scripts.outputs.has_scripts == 'true'
         continue-on-error: true
         run: |
           mkdir -p assets/bgm
-          python scripts/download_bgm.py 2>&1 | tee /tmp/download_bgm.log
+          rm -f assets/bgm/*.mp3 assets/bgm/*.m4a
+          python scripts/make_news_bgm.py assets/bgm 2>&1 | tee /tmp/download_bgm.log
 
       - name: BGMログをIssueに投稿（失敗時のみ）
         if: steps.download_bgm.outcome == 'failure' || steps.download_bgm.outcome == 'success'
