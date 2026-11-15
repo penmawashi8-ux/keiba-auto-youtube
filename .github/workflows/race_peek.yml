@@ -62,8 +62,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          rm -rf sim            # 作業用の sim/ が残っていると research-output へ切り替えられない
           for n in 1 2 3 4 5; do
-            git fetch -q origin research-output && git checkout -q -B ro FETCH_HEAD
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
             mkdir -p sim/peek_$R && cp out/* sim/peek_$R/
             git add sim/peek_$R && git commit -qm "レースの下見 $R [skip ci]" && git push -q origin ro:research-output && break
             sleep $((n*3))
