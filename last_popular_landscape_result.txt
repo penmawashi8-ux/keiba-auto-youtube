@@ -1,6 +1,6 @@
-date: 2026-11-14T11:04:29.944531Z
+date: 2026-11-15T11:05:09.773594Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=AR0qxD4RLeU views=131701 title=【ジャパンC想定馬・騎手】マスカレードボール、オンブズマンなど18頭【13万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=_nU-I424C6Y views=99494 title=【エリザベス女王杯】ラフターラインズV!武豊は22年ぶり歴代最多5勝目「最後の切れ味凄かった」【9.9万回閲覧・話題の競
