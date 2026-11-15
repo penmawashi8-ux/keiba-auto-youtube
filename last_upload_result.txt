@@ -1,10 +1,10 @@
-date: 2026-11-15T04:14:34.390238Z
+date: 2026-11-15T07:11:34.501365Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=l1MFitL9N9E title=【福島6R新馬戦結果】イントゥミスチーフ産駒ストライクアローが人気に応えてデビュ
-OK project=1 video_id=kXXUUdrFgTk title=【東京5R・新馬戦】ラディオーサが逃げ切って新馬V　プーシャン「凄くマナーが良く
-OK project=1 video_id=Y7NttXZVzxk title=【東京5R・2歳新馬】ヴァンゴッホ産駒のラディオーサが逃げ切って初戦V　プーシャ
+OK project=1 video_id=FAmo44vMKMw title=【JRA・WIN5】本日のWIN5は的中42票、配当1109万1670円
+OK project=1 video_id=t2ajd18M_60 title=【エリザベス女王杯】今村聖奈騎手&ジュウリョクピエロは11着大敗…オークス以来の
+OK project=1 video_id=4AMgH25GLGE title=【エリザベス女王杯】武豊騎手が57歳8か月で再びG1最年長勝利更新「まだまだ足り
