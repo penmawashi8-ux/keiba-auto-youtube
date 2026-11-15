@@ -1,10 +1,10 @@
-date: 2026-11-15T07:11:34.501365Z
+date: 2026-11-15T10:09:18.105555Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=FAmo44vMKMw title=【JRA・WIN5】本日のWIN5は的中42票、配当1109万1670円
-OK project=1 video_id=t2ajd18M_60 title=【エリザベス女王杯】今村聖奈騎手&ジュウリョクピエロは11着大敗…オークス以来の
-OK project=1 video_id=4AMgH25GLGE title=【エリザベス女王杯】武豊騎手が57歳8か月で再びG1最年長勝利更新「まだまだ足り
+OK project=1 video_id=VZvCkx2gHfk title=【金沢・北國王冠結果】7番人気エイシンレオが内から抜け出し重賞初制覇
+OK project=1 video_id=toAbauozuDQ title=【水沢・南部駒賞結果】北海道のエイシンフロイデが押し切り重賞初V
+OK project=1 video_id=DsjjYNyu-Ek title=武豊騎手がエリザベス女王杯制覇もまさかの「緊張しました」　 レジェンドが明かした
