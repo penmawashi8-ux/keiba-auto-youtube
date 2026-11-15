@@ -1,0 +1,124 @@
+{
+ "race_id": "202605050405",
+ "date": "2026-11-15",
+ "race_name": "2歳新馬",
+ "venue": "東京",
+ "surface": "芝",
+ "distance": 1600,
+ "direction": "左",
+ "course": "",
+ "post_time": "12:05",
+ "drawn": true,
+ "horses": [
+  {
+   "horse_id": "2024103553",
+   "horse": "ペイヴザウェイ",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "佐々木",
+   "trainer": "蛯名正",
+   "waku": 1,
+   "umaban": 1
+  },
+  {
+   "horse_id": "2024105102",
+   "horse": "チェンジオブペース",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "菅原明",
+   "trainer": "竹内",
+   "waku": 2,
+   "umaban": 2
+  },
+  {
+   "horse_id": "2024106069",
+   "horse": "ヘルズゲート",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "大野",
+   "trainer": "新開",
+   "waku": 3,
+   "umaban": 3
+  },
+  {
+   "horse_id": "2024100917",
+   "horse": "ティルト",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "木幡巧",
+   "trainer": "松山",
+   "waku": 4,
+   "umaban": 4
+  },
+  {
+   "horse_id": "2024106120",
+   "horse": "ラディオーサ",
+   "sex": "牝",
+   "age": 2,
+   "weight": 55.0,
+   "jockey": "プーシャン",
+   "trainer": "勢司",
+   "waku": 5,
+   "umaban": 5
+  },
+  {
+   "horse_id": "2024104823",
+   "horse": "ノーブルターゲット",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "武藤",
+   "trainer": "水野",
+   "waku": 6,
+   "umaban": 6
+  },
+  {
+   "horse_id": "2024101785",
+   "horse": "グランツルッカ",
+   "sex": "牡",
+   "age": 2,
+   "weight": 53.0,
+   "jockey": "▲遠藤",
+   "trainer": "秋本",
+   "waku": 7,
+   "umaban": 7
+  },
+  {
+   "horse_id": "2024106400",
+   "horse": "スターリーグロウ",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "横山武",
+   "trainer": "辻野",
+   "waku": 7,
+   "umaban": 8
+  },
+  {
+   "horse_id": "2024100249",
+   "horse": "コルシカ",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "内田博",
+   "trainer": "加藤和",
+   "waku": 8,
+   "umaban": 9
+  },
+  {
+   "horse_id": "2024102684",
+   "horse": "ロンドンレガシー",
+   "sex": "牡",
+   "age": 2,
+   "weight": 56.0,
+   "jockey": "戸崎圭",
+   "trainer": "高橋一",
+   "waku": 8,
+   "umaban": 10
+  }
+ ]
+}
