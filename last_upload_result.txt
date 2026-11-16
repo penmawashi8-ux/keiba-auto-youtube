@@ -1,10 +1,10 @@
-date: 2026-11-16T01:13:25.270173Z
+date: 2026-11-16T04:18:02.643161Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=M8qUCsiGbUY title=武豊騎手騎乗でエリザベス女王杯Vのラフターラインズは一夜明けて元気な姿　小笠調教
-OK project=1 video_id=6hiV11cHKLA title=【福島記念展望】マリアイリダータが重賞初Vでエリザベス女王杯除外の無念を晴らす　
-OK project=1 video_id=oennDhVU6_I title=衝撃のG1馬12頭!「異次元」「盆と正月とゴールデンウィーク」「豊さん爆逃げして
+OK project=1 video_id=_gO5ydsKhL8 title=【福島記念想定騎手】フォルテアンジェロはT.マーカンド騎手、レイニングはA.プー
+OK project=1 video_id=G46hpStnVuc title=【東スポ杯2歳S想定騎手】ショウナンガレオンは鮫島克駿騎手、ジョドレルバンクはJ
+OK project=1 video_id=tfpxauUCV04 title=【マイルCS想定騎手】エンブロイダリーはC.ルメール騎手、ロデオドライブはJ.モ
