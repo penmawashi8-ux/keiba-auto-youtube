@@ -1,10 +1,10 @@
-date: 2026-11-16T04:18:02.643161Z
+date: 2026-11-16T07:15:32.364364Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_gO5ydsKhL8 title=【福島記念想定騎手】フォルテアンジェロはT.マーカンド騎手、レイニングはA.プー
-OK project=1 video_id=G46hpStnVuc title=【東スポ杯2歳S想定騎手】ショウナンガレオンは鮫島克駿騎手、ジョドレルバンクはJ
-OK project=1 video_id=tfpxauUCV04 title=【マイルCS想定騎手】エンブロイダリーはC.ルメール騎手、ロデオドライブはJ.モ
+OK project=1 video_id=-PSvp9TO9HI title=インゼルサラブレッドクラブでドウデュース初年度産駒3頭の募集開始
+OK project=1 video_id=do6zIWFsN0I title=有馬記念を前に“朗報”!競馬ファン「今年こそ…」「買わずにはいられん」サッポロビ
+OK project=1 video_id=JYQGYwf2UIo title=皆藤愛子がエリザベス女王杯のトリプル的中をインスタで報告　「色々的中　わーい！」
