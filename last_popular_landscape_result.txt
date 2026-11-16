@@ -1,6 +1,6 @@
-date: 2026-11-15T11:05:09.773594Z
+date: 2026-11-16T11:04:54.337448Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_nU-I424C6Y views=99494 title=【エリザベス女王杯】ラフターラインズV!武豊は22年ぶり歴代最多5勝目「最後の切れ味凄かった」【9.9万回閲覧・話題の競
+OK project=1 video_id=k-FT413SITM views=135075 title=【エリザベス女王杯レース後コメント】ラフターラインズ武豊騎手ら【14万回閲覧・話題の競馬ニュース】
