@@ -103,6 +103,26 @@ _DESC_INTRO_TEMPLATES = [
     "競馬の最新ニュースをお届けします。",
     "注目の競馬ニュース・競馬情報をまとめました。",
     "競馬ファン必見のニュース速報です。",
+    "今日の競馬ニュースを1分でチェック！",
+    "気になる競馬ニュースを短くまとめました。",
+    "競馬界の最新ニュースをサクッと解説します。",
+    "今話題の競馬ニュースをお伝えします。",
+    "見逃せない競馬ニュースをピックアップしました。",
+    "競馬ニュースの要点をわかりやすくまとめています。",
+    "競馬の気になるニュースを手短にお届け。",
+    "最新の競馬ニュースを短時間でチェックできます。",
+    "競馬ファンに届けたい今日のニュースです。",
+]
+
+# 説明文の締め（付けない回もある）
+_DESC_OUTRO_TEMPLATES = [
+    "",
+    "",
+    "感想や予想はコメント欄でぜひ教えてください。",
+    "毎日競馬ニュースを更新しています。",
+    "気になった方はチャンネル登録をお願いします。",
+    "みなさんの意見もコメントで聞かせてください！",
+    "続報が入り次第お伝えします。",
 ]
 
 YOUTUBE_SCOPES = [
@@ -110,7 +130,12 @@ YOUTUBE_SCOPES = [
     "https://www.googleapis.com/auth/youtube.force-ssl",  # サムネイルアップロードに必要
 ]
 CATEGORY_ID = "17"  # スポーツ
-TAGS = ["競馬", "競馬ニュース", "ニュース", "競馬 ニュース", "競馬 最新", "JRA", "keiba", "Shorts", "競馬速報"]
+# 必ず付けるタグ（検索対策の核）と、毎回ランダムに一部だけ選ぶタグ
+CORE_TAGS = ["競馬", "競馬ニュース"]
+OPTIONAL_TAGS = [
+    "ニュース", "競馬 ニュース", "競馬 最新", "JRA", "keiba", "Shorts", "競馬速報",
+    "競馬情報", "競馬 速報", "中央競馬", "競馬ファン", "horse racing", "今日の競馬",
+]
 
 # YouTube API クォータ: 1日10,000ユニット / videos.insert = 1,600ユニット
 # GCPプロジェクト切り替えで解決できるAPIクォータ超過
@@ -283,7 +308,9 @@ def is_channel_upload_limit(http_error: HttpError) -> bool:
 
 def build_tags(extra_keywords: list[str] | None = None) -> list[str]:
     """固定タグ + 動的キーワードをYouTubeタグ上限(500文字合計)内で返す。"""
-    tags = list(TAGS)
+    optional = random.sample(OPTIONAL_TAGS, k=random.randint(5, 9))
+    tags = list(CORE_TAGS) + optional
+    random.shuffle(tags)
     if extra_keywords:
         tags.extend(extra_keywords)
     # YouTube はタグの合計文字数が500文字以内
@@ -438,14 +465,23 @@ def extract_seo_keywords(title: str, script: str) -> list[str]:
 
 def build_description(script: str, seo_keywords: list[str] | None = None) -> str:
     intro = random.choice(_DESC_INTRO_TEMPLATES)
-    base_tags = "#競馬 #競馬ニュース #ニュース #JRA #keiba #Shorts #競馬速報"
+    outro = random.choice(_DESC_OUTRO_TEMPLATES)
+    # ハッシュタグも毎回同じ並びにならないよう、核の2つ＋ランダムな数個を順不同で付ける
+    optional = random.sample(
+        ["#ニュース", "#JRA", "#keiba", "#Shorts", "#競馬速報", "#競馬情報", "#中央競馬", "#競馬好きと繋がりたい"],
+        k=random.randint(3, 6),
+    )
+    tag_list = ["#競馬", "#競馬ニュース"] + optional
+    random.shuffle(tag_list)
+    base_tags = " ".join(tag_list)
     if seo_keywords:
         kw_hashtags = " ".join(f"#{k}" for k in seo_keywords[:15])
         hashtags = f"\n\n{base_tags} {kw_hashtags}"
     else:
         hashtags = f"\n\n{base_tags}"
-    max_len = 5000 - len(intro) - 1 - len(hashtags)
-    return intro + "\n" + script[:max_len] + hashtags
+    outro_part = f"\n\n{outro}" if outro else ""
+    max_len = 5000 - len(intro) - 1 - len(hashtags) - len(outro_part)
+    return intro + "\n" + script[:max_len] + outro_part + hashtags
 
 
 def main() -> None:
