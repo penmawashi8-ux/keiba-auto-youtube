@@ -1,10 +1,10 @@
-date: 2026-11-17T04:08:26.902840Z
+date: 2026-11-17T07:12:03.389337Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=p05LIvBX05E title=【注目馬動向】新馬圧勝の4・1億円馬ソブリオ&エリザベス女王杯2着のカムニャック
-OK project=1 video_id=0GxbPN13AKQ title=【注目馬動向】アドマイヤテラの有馬記念参戦が正式決定　友道調教師「去年は外枠が響
-OK project=1 video_id=YU_UhPR0j0s title=元JRA騎手の永野猛蔵氏が地方競馬の騎手免許試験に合格　12月1日付　2年ぶりに
+OK project=1 video_id=n-xXPFm8piI title=福島記念とジャパンCダブル登録のエキサイトバイオはジャパンCへ
+OK project=1 video_id=QyVlWoezmp0 title=元JRA騎手の永野猛蔵氏が地方騎手免許合格「責任ある行動を心がけ」佐賀競馬公式サ
+OK project=1 video_id=t5u8JB08eZ0 title=２４年桜花賞馬ステレンボッシュが引退＆繁殖入り　国枝元調教師と宮田師がねぎらう　
