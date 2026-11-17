@@ -195,8 +195,14 @@ def pattern_params(index: int) -> dict:
     }
 
 
-def synthesize(p: dict) -> tuple[array, array, float]:
-    rng = random.Random(p["seed"])
+# 1曲の構成。同じ8小節をそのまま繰り返すと機械的に聞こえるため、セクションごとに変化をつける
+#   intro: キック無し・メロディ無しの軽い入り / main: 全部入り /
+#   alt: メロディを作り直し＋アルペジオ型を変える
+SECTIONS = ["intro", "main", "alt", "main"]
+
+
+def synthesize(p: dict, section: str = "main") -> tuple[array, array, float]:
+    rng = random.Random(p["seed"] + {"intro": 1, "main": 0, "alt": 2}[section])
     beat = 60.0 / p["bpm"]
     bar = beat * 4
     eighth, sixteenth = beat / 2, beat / 4
@@ -208,6 +214,8 @@ def synthesize(p: dict) -> tuple[array, array, float]:
 
     def add(t, s, gl, gr):
         _add(left, right, n, t, s, gl, gr)
+
+    k_gain = 0.0 if section == "intro" else 1.0
 
     # --- コード ---
     for b, (_, chord) in enumerate(chords):
@@ -235,23 +243,23 @@ def synthesize(p: dict) -> tuple[array, array, float]:
             t = s0 + bt * beat
             style = p["drum"]
             if style == "four_on_floor":
-                add(t, k, 0.30, 0.30)
+                add(t, k, k_gain * 0.30, k_gain * 0.30)
                 add(t + eighth, hat(rng, 0.07, 45), 0.10, 0.08)
             elif style == "pop_backbeat":
                 if bt in (0, 2):
-                    add(t, k, 0.30, 0.30)
+                    add(t, k, k_gain * 0.30, k_gain * 0.30)
                 if bt == 2 and b % 2 == 1:
-                    add(t + eighth, k, 0.20, 0.20)
+                    add(t + eighth, k, k_gain * 0.20, k_gain * 0.20)
                 add(t, hat(rng, 0.04, 90), 0.06, 0.05)
                 add(t + eighth, hat(rng, 0.04, 90), 0.08, 0.06)
             elif style == "bouncy":
                 if bt in (0, 2):
-                    add(t, k, 0.30, 0.30)
-                add(t + 3 * sixteenth, k, 0.14, 0.14)
+                    add(t, k, k_gain * 0.30, k_gain * 0.30)
+                add(t + 3 * sixteenth, k, k_gain * 0.14, k_gain * 0.14)
                 add(t + eighth, hat(rng, 0.06, 55), 0.09, 0.07)
             else:  # light
                 if bt == 0:
-                    add(t, k, 0.24, 0.24)
+                    add(t, k, k_gain * 0.24, k_gain * 0.24)
                 add(t + eighth, hat(rng, 0.03, 120), 0.06, 0.08)
             if bt in (1, 3):
                 add(t, c, 0.15 if p["drum"] != "light" else 0.09, 0.15 if p["drum"] != "light" else 0.09)
@@ -282,7 +290,7 @@ def synthesize(p: dict) -> tuple[array, array, float]:
             add(s0 + t, bass_note(f, length), 0.11, 0.11)
 
     # --- アルペジオ ---
-    arp = ARP_PATTERNS[p["arp"]]
+    arp = ARP_PATTERNS[(p["arp"] + (3 if section == "alt" else 0)) % len(ARP_PATTERNS)]
     cache: dict[int, list[float]] = {}
     for b, (_, chord) in enumerate(chords):
         s0 = b * bar
@@ -299,34 +307,44 @@ def synthesize(p: dict) -> tuple[array, array, float]:
             add(s0 + s * sixteenth, cache[m], gain * (1 - pan), gain * (1 + pan))
 
     # --- メロディ ---
-    for pos, m, length in compose_melody(rng, chords, p["transpose"]):
+    melody_rng = random.Random(p["seed"] + (7 if section == "alt" else 0))
+    melody = [] if section == "intro" else compose_melody(melody_rng, chords, p["transpose"])
+    for pos, m, length in melody:
         dur = min(length * eighth * 0.95, 0.9)
         add(pos * eighth, tone(mfreq(m), dur, p["lead_timbre"]), 0.060, 0.060)
 
-    peak = max(max(abs(v) for v in left), max(abs(v) for v in right)) or 1.0
-    scale = 0.89 / peak
-    for i in range(n):
-        left[i] *= scale
-        right[i] *= scale
     return left, right, loop_sec
 
 
 def make_bgm(out_path: Path, index: int) -> Path:
     p = pattern_params(index)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    left, right, loop_sec = synthesize(p)
-    loops = max(1, math.ceil(TARGET_SEC / loop_sec))
+    rendered = {sec: synthesize(p, sec) for sec in dict.fromkeys(SECTIONS)}
+    loop_sec = rendered["main"][2]
+    order = list(SECTIONS)
+    while loop_sec * len(order) < TARGET_SEC:
+        order += ["alt", "main"]
+    total = loop_sec * len(order)
     with tempfile.TemporaryDirectory(prefix="newsbgm_") as tmp:
         raw = Path(tmp) / "raw.wav"
+        left, right = array("f"), array("f")
+        for sec in order:
+            left.extend(rendered[sec][0])
+            right.extend(rendered[sec][1])
+        # 曲全体で正規化（セクションごとだとイントロだけ大きくなるため）
+        peak = max(max(abs(v) for v in left), max(abs(v) for v in right)) or 1.0
+        scale = 0.89 / peak
+        for i in range(len(left)):
+            left[i] *= scale
+            right[i] *= scale
         write_wav(raw, left, right)
         subprocess.run(
-            ["ffmpeg", "-y", "-loglevel", "error",
-             "-stream_loop", str(loops - 1), "-i", str(raw),
+            ["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw),
              "-af",
              "aecho=0.8:0.4:50|95:0.15|0.08,"
              "highpass=f=35,lowpass=f=12000,"
              "loudnorm=I=-16:TP=-1.5:LRA=7",
-             "-ar", str(SR), "-t", f"{loop_sec * loops:.4f}",
+             "-ar", str(SR), "-t", f"{total:.4f}",
              "-c:a", "libmp3lame", "-b:a", "192k", str(out_path)],
             check=True,
         )
