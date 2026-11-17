@@ -1,10 +1,10 @@
-date: 2026-11-17T07:12:03.389337Z
+date: 2026-11-17T10:07:23.616828Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=n-xXPFm8piI title=福島記念とジャパンCダブル登録のエキサイトバイオはジャパンCへ
-OK project=1 video_id=QyVlWoezmp0 title=元JRA騎手の永野猛蔵氏が地方騎手免許合格「責任ある行動を心がけ」佐賀競馬公式サ
-OK project=1 video_id=t5u8JB08eZ0 title=２４年桜花賞馬ステレンボッシュが引退＆繁殖入り　国枝元調教師と宮田師がねぎらう　
+OK project=1 video_id=ijJgCJUzPIM title=【マイルCS】田口貫太騎手がGI初制覇なるか ニュージーランドT覇者のレザベーシ
+OK project=1 video_id=OZESiIekbbg title=【マイルCS予想オッズ】エンブロイダリーが予想1番人気
+OK project=1 video_id=hec3CDcA6H0 title=【東スポ杯2歳S予想オッズ】ショウナンガレオンが予想1番人気
