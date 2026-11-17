@@ -1203,10 +1203,20 @@ def build_video(
         is_famous = os.environ.get("FAMOUS_HORSE_UPLOAD") == "1"
         bgm_vol = 0.30 if is_famous else BGM_VOLUME
 
+        # ニュースの合成BGMは、毎回同じ入り方・同じ音量にならないよう
+        # 開始位置（0〜20秒）と音量（±15%）を投稿ごとにランダムにずらす（ボット的な画一感の回避）
+        bgm_offset = 0.0
+        if bgm_path and Path(bgm_path).name.startswith("news_bright_"):
+            bgm_offset = round(random.uniform(0.0, 20.0), 2)
+            bgm_vol = round(bgm_vol * random.uniform(0.85, 1.15), 3)
+
         cmd = ["ffmpeg", "-y", "-i", silent_mp4, "-i", audio_path]
         if bgm_path:
-            print(f"  BGM使用: {Path(bgm_path).name} (volume weight={bgm_vol})")
-            cmd += ["-stream_loop", "-1", "-i", bgm_path]
+            print(f"  BGM使用: {Path(bgm_path).name} (volume weight={bgm_vol}, offset={bgm_offset}s)")
+            cmd += ["-stream_loop", "-1"]
+            if bgm_offset:
+                cmd += ["-ss", f"{bgm_offset:.2f}"]
+            cmd += ["-i", bgm_path]
             narr_filter = f"[1:a]apad=whole_dur={total_duration:.3f}[narr]"
             cmd += [
                 "-filter_complex",
