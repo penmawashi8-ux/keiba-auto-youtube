@@ -1,10 +1,9 @@
-date: 2026-11-16T07:15:32.364364Z
+date: 2026-11-17T01:08:07.904005Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=-PSvp9TO9HI title=インゼルサラブレッドクラブでドウデュース初年度産駒3頭の募集開始
-OK project=1 video_id=do6zIWFsN0I title=有馬記念を前に“朗報”!競馬ファン「今年こそ…」「買わずにはいられん」サッポロビ
-OK project=1 video_id=JYQGYwf2UIo title=皆藤愛子がエリザベス女王杯のトリプル的中をインスタで報告　「色々的中　わーい！」
+OK project=1 video_id=2pDpMZ37qmg title=【競走伝】これぞ肉を切らせて骨を断つ 「令和のツインターボ」が我が道を貫いた先に
+OK project=1 video_id=oXdfBP-Rij4 title=【マイルCS】「メチャクチャいい馬」武豊騎手アドマイヤズームで2週連続G1制覇狙
