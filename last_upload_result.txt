@@ -1,10 +1,10 @@
-date: 2026-11-18T07:16:30.934155Z
+date: 2026-11-18T10:12:04.780965Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=6GUqLpFBBrA title=競馬ファンに“朗報”!名馬デザインのプレモル限定缶が登場!馬の“正体”は…?「マ
-OK project=1 video_id=wSdG9snaPqQ title=【福島記念】マリアイリダータ　レコードVの舞台で重賞初勝利狙う
-OK project=1 video_id=FXzX0yP7pG8 title=【東スポ杯2歳S】ジョドレルバンク　武井師「今回は結果が欲しい」
+OK project=1 video_id=gkKUuGzadXg title=【マイルCS】「日本に連れてくる馬は…」グラファール調教師が馬場適性を見極めた仏
+OK project=1 video_id=xuPzg0vpxK4 title=【マイルCS】最後にスパイス利かせてきたエンブロイダリー　「反動が恐らく…」森一
+OK project=1 video_id=a2-bpD6I7UQ title=【ジャパンC・1週前】天皇賞・秋大敗からの巻き返しへ　マスカレードボールは馬具装
