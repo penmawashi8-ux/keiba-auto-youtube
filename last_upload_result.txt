@@ -1,10 +1,10 @@
-date: 2026-11-17T10:07:23.616828Z
+date: 2026-11-18T01:18:56.419353Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=ijJgCJUzPIM title=【マイルCS】田口貫太騎手がGI初制覇なるか ニュージーランドT覇者のレザベーシ
-OK project=1 video_id=OZESiIekbbg title=【マイルCS予想オッズ】エンブロイダリーが予想1番人気
-OK project=1 video_id=hec3CDcA6H0 title=【東スポ杯2歳S予想オッズ】ショウナンガレオンが予想1番人気
+OK project=1 video_id=sMnJ4u4EdLw title=【阪神アーバン競馬・人気ジョッキーは語る】ニッシンゲッポ(園田2R)に好感触の大
+OK project=1 video_id=18ZcXi6wtrg title=ジュウリョクピエロが今村聖奈とのコンビで有馬記念へ　寺島師「コースの加速はいいも
+OK project=1 video_id=ri3DkhDCZaM title=ジュウリョクピエロは有馬記念へ　鞍上は引き続き今村
