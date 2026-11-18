@@ -1,10 +1,10 @@
-date: 2026-11-18T01:18:56.419353Z
+date: 2026-11-18T04:20:01.851293Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=sMnJ4u4EdLw title=【阪神アーバン競馬・人気ジョッキーは語る】ニッシンゲッポ(園田2R)に好感触の大
-OK project=1 video_id=18ZcXi6wtrg title=ジュウリョクピエロが今村聖奈とのコンビで有馬記念へ　寺島師「コースの加速はいいも
-OK project=1 video_id=ri3DkhDCZaM title=ジュウリョクピエロは有馬記念へ　鞍上は引き続き今村
+OK project=1 video_id=Jr-ts7ZM0Vg title=JRAが総額1億円の競馬振興特別助成金を交付　京阪バス、京都京阪バスへ京都競馬場
+OK project=1 video_id=51uqMc3WHt8 title=武豊騎手が「アドマイヤ」で19年ぶりGI制覇なるか マイルCSにアドマイヤズーム
+OK project=1 video_id=5Q3yPlszylo title=55歳のベテラン・岡田祥嗣騎手が引退…福山競馬で約22年間騎乗→41歳でJRA移
