@@ -36,50 +36,58 @@ GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 PIXABAY_API_URL = "https://pixabay.com/api/"
 
-# 過去に背景として使った Pixabay 画像IDの履歴（同じ写真が別の動画で再登場しないようにする）
-# ワークフローでリポジトリにコミットして次回以降に引き継ぐ。古いものから捨てて最大件数を保つ。
-USED_IDS_FILE = Path("data/used_bg_image_ids.txt")
-USED_IDS_MAX = 3000
+# 背景写真の「組み合わせ」の履歴。1枚ずつの再利用は構わないが、
+# 動画ごとの写真セットが過去の動画と似通わないようにする:
+#   - 1本の動画の中で同じ写真を2回使わない
+#   - 過去の動画（および同じ実行内の他の動画）と2枚以上同じ写真を共有しない
+# 1行 = 1本の動画で使った Pixabay 画像ID（カンマ区切り）。ワークフローでコミットして引き継ぐ。
+COMBOS_FILE = Path("data/used_bg_combos.txt")
+COMBOS_MAX = 2000
+MAX_SHARED = 1  # 他の動画と共有してよい写真の枚数
 
-_used_ids_lock = threading.Lock()
-_used_ids: set[str] = set()
-_used_ids_order: list[str] = []
+_combo_lock = threading.Lock()
+_past_combos: list[frozenset[str]] = []
+_video_sets: dict[int, set[str]] = {}
 
 
-def load_used_ids() -> None:
+def load_combos() -> None:
     try:
-        ids = [l.strip() for l in USED_IDS_FILE.read_text(encoding="utf-8").splitlines() if l.strip()]
+        lines = [l.strip() for l in COMBOS_FILE.read_text(encoding="utf-8").splitlines() if l.strip()]
     except FileNotFoundError:
-        ids = []
-    _used_ids_order[:] = ids
-    _used_ids.clear()
-    _used_ids.update(ids)
-    print(f"使用済み背景画像ID: {len(ids)} 件（これらは選ばない）", flush=True)
+        lines = []
+    _past_combos[:] = [frozenset(l.split(",")) for l in lines]
+    _video_sets.clear()
+    print(f"過去の背景写真の組み合わせ: {len(_past_combos)} 本分（2枚以上かぶる組み合わせは避ける）", flush=True)
 
 
-def _claim_id(image_id: str) -> bool:
-    """未使用なら使用済みに登録して True。並列取得でも同じ写真を2回選ばない。"""
-    with _used_ids_lock:
-        if image_id in _used_ids:
+def _claim_id(image_id: str, video: int) -> bool:
+    """この動画にこの写真を加えてよければ登録して True。"""
+    with _combo_lock:
+        mine = _video_sets.setdefault(video, set())
+        if image_id in mine:
             return False
-        _used_ids.add(image_id)
-        _used_ids_order.append(image_id)
+        cand = mine | {image_id}
+        others = _past_combos + [frozenset(v) for k, v in _video_sets.items() if k != video]
+        if any(len(cand & c) > MAX_SHARED for c in others):
+            return False
+        mine.add(image_id)
         return True
 
 
-def _release_id(image_id: str) -> None:
-    """ダウンロードに失敗した画像は使用済みから外す。"""
-    with _used_ids_lock:
-        _used_ids.discard(image_id)
-        if image_id in _used_ids_order:
-            _used_ids_order.remove(image_id)
+def _release_id(image_id: str, video: int) -> None:
+    """ダウンロードに失敗した写真は登録を取り消す。"""
+    with _combo_lock:
+        _video_sets.get(video, set()).discard(image_id)
 
 
-def save_used_ids() -> None:
-    USED_IDS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    ids = _used_ids_order[-USED_IDS_MAX:]
-    USED_IDS_FILE.write_text("\n".join(ids) + "\n", encoding="utf-8")
-    print(f"使用済み背景画像ID を保存: {len(ids)} 件 → {USED_IDS_FILE}", flush=True)
+def save_combos() -> None:
+    new = [",".join(sorted(v)) for _, v in sorted(_video_sets.items()) if len(v) >= 2]
+    if not new:
+        return
+    lines = [",".join(sorted(c)) for c in _past_combos] + new
+    COMBOS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    COMBOS_FILE.write_text("\n".join(lines[-COMBOS_MAX:]) + "\n", encoding="utf-8")
+    print(f"背景写真の組み合わせを保存: +{len(new)} 本 → {COMBOS_FILE}", flush=True)
 HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
 PIXABAY_QUERIES = [
@@ -299,7 +307,7 @@ def save_image_bytes(content: bytes, filepath: str) -> bool:
         Path(tmp_path).unlink(missing_ok=True)
 
 
-def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
+def generate_via_pixabay(api_key: str, query: str, filepath: str, video: int = 0) -> bool:
     """Pixabay API で競馬写真を取得して保存する。"""
     EXCLUDE_TAGS = {"zebra", "donkey", "mule", "pony", "ass", "foal", "colt", "filly", "baby"}
     page = random.randint(1, 5)
@@ -334,17 +342,17 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
         random.shuffle(hits)
         hit = None
         for h in hits:
-            if _claim_id(f"pixabay:{h.get('id')}"):
+            if _claim_id(f"pixabay:{h.get('id')}", video):
                 hit = h
                 break
         if hit is None:
-            print(f"    [Pixabay] 未使用の画像なし（{len(hits)}件すべて使用済み）: {query}", flush=True)
+            print(f"    [Pixabay] 組み合わせ条件を満たす画像なし（{len(hits)}件）: {query}", flush=True)
             return False
         hit_id = f"pixabay:{hit.get('id')}"
         img_url = hit.get("webformatURL") or hit.get("largeImageURL")
         if not img_url:
             print(f"    [Pixabay] 画像URL取得失敗", flush=True)
-            _release_id(hit_id)
+            _release_id(hit_id, video)
             return False
         img_r = requests.get(img_url, timeout=30)
         if img_r.status_code == 200 and len(img_r.content) > 1000:
@@ -354,7 +362,7 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
                 return True
         else:
             print(f"    [Pixabay] 画像DL失敗: status={img_r.status_code}", flush=True)
-        _release_id(hit_id)
+        _release_id(hit_id, video)
     except Exception as e:
         print(f"    例外: {type(e).__name__}: {e}", flush=True)
     return False
@@ -397,7 +405,7 @@ def generate_via_huggingface(hf_tokens: list[str], prompt: str, filepath: str) -
 def main() -> None:
     print("=== AI画像生成開始 ===", flush=True)
     ASSETS_DIR.mkdir(exist_ok=True)
-    load_used_ids()
+    load_combos()
 
     gemini_keys = [
         k for k in [
@@ -440,14 +448,15 @@ def main() -> None:
 
     def generate_one(args):
         i, prompt = args
+        video = (i - 1) // IMAGES_PER_VIDEO
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
         print(f"\n  [{i}/{n_images}] 画像取得中...", flush=True)
 
         if pixabay_key:
-            # 使用済みばかりで取れないこともあるので、検索語を変えて数回試す
+            # 組み合わせ条件で弾かれることもあるので、検索語を変えて数回試す
             for query in random.sample(PIXABAY_QUERIES, 3):
                 print(f"  [{i}] → Pixabay を試行 (query='{query}')", flush=True)
-                if generate_via_pixabay(pixabay_key, query, out_path):
+                if generate_via_pixabay(pixabay_key, query, out_path, video):
                     return i, True
             print(f"  [{i}] → Pixabay失敗。", flush=True)
 
@@ -468,7 +477,7 @@ def main() -> None:
                 failed.append(i)
 
     if pixabay_key:
-        save_used_ids()
+        save_combos()
 
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
     print(f"\n=== 結果: {n_images - len(failed)}/{n_images} 枚生成 ===", flush=True)

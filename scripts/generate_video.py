@@ -1257,9 +1257,10 @@ def main() -> None:
 
     # 背景画像収集: generate_images.py が取得した ai_*.jpg を使う
     # 画像が0枚なら失敗する（フォールバック生成は行わない）
+    # ai_10 が ai_2 より前に来ないよう番号順に並べる（generate_images.py の動画ごとの割り振りと揃える）
     assets_images = sorted(
-        p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg")
-        if Path(p).stat().st_size > 1000
+        (p for p in glob.glob(f"{ASSETS_DIR}/ai_*.jpg") if Path(p).stat().st_size > 1000),
+        key=lambda p: int(m.group()) if (m := re.search(r"\d+", Path(p).stem)) else 0,
     )
     if not assets_images:
         print("  [情報] assets/ai_*.jpg なし。バリエーション背景を自動生成します。")
