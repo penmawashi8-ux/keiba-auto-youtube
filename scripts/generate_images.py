@@ -23,6 +23,7 @@ import os
 import random
 import subprocess
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -34,6 +35,51 @@ ASSETS_DIR = Path("assets")
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 PIXABAY_API_URL = "https://pixabay.com/api/"
+
+# 過去に背景として使った Pixabay 画像IDの履歴（同じ写真が別の動画で再登場しないようにする）
+# ワークフローでリポジトリにコミットして次回以降に引き継ぐ。古いものから捨てて最大件数を保つ。
+USED_IDS_FILE = Path("data/used_bg_image_ids.txt")
+USED_IDS_MAX = 3000
+
+_used_ids_lock = threading.Lock()
+_used_ids: set[str] = set()
+_used_ids_order: list[str] = []
+
+
+def load_used_ids() -> None:
+    try:
+        ids = [l.strip() for l in USED_IDS_FILE.read_text(encoding="utf-8").splitlines() if l.strip()]
+    except FileNotFoundError:
+        ids = []
+    _used_ids_order[:] = ids
+    _used_ids.clear()
+    _used_ids.update(ids)
+    print(f"使用済み背景画像ID: {len(ids)} 件（これらは選ばない）", flush=True)
+
+
+def _claim_id(image_id: str) -> bool:
+    """未使用なら使用済みに登録して True。並列取得でも同じ写真を2回選ばない。"""
+    with _used_ids_lock:
+        if image_id in _used_ids:
+            return False
+        _used_ids.add(image_id)
+        _used_ids_order.append(image_id)
+        return True
+
+
+def _release_id(image_id: str) -> None:
+    """ダウンロードに失敗した画像は使用済みから外す。"""
+    with _used_ids_lock:
+        _used_ids.discard(image_id)
+        if image_id in _used_ids_order:
+            _used_ids_order.remove(image_id)
+
+
+def save_used_ids() -> None:
+    USED_IDS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    ids = _used_ids_order[-USED_IDS_MAX:]
+    USED_IDS_FILE.write_text("\n".join(ids) + "\n", encoding="utf-8")
+    print(f"使用済み背景画像ID を保存: {len(ids)} 件 → {USED_IDS_FILE}", flush=True)
 HF_MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
 PIXABAY_QUERIES = [
@@ -285,19 +331,30 @@ def generate_via_pixabay(api_key: str, query: str, filepath: str) -> bool:
         if not hits:
             print(f"    [Pixabay] フィルター後に該当画像なし: {query}", flush=True)
             return False
-        hit = random.choice(hits)
+        random.shuffle(hits)
+        hit = None
+        for h in hits:
+            if _claim_id(f"pixabay:{h.get('id')}"):
+                hit = h
+                break
+        if hit is None:
+            print(f"    [Pixabay] 未使用の画像なし（{len(hits)}件すべて使用済み）: {query}", flush=True)
+            return False
+        hit_id = f"pixabay:{hit.get('id')}"
         img_url = hit.get("webformatURL") or hit.get("largeImageURL")
         if not img_url:
             print(f"    [Pixabay] 画像URL取得失敗", flush=True)
+            _release_id(hit_id)
             return False
         img_r = requests.get(img_url, timeout=30)
         if img_r.status_code == 200 and len(img_r.content) > 1000:
             if save_image_bytes(img_r.content, filepath):
                 size_kb = len(img_r.content) // 1024
-                print(f"    Pixabay成功: {filepath} ({size_kb}KB)", flush=True)
+                print(f"    Pixabay成功: {filepath} ({size_kb}KB, {hit_id})", flush=True)
                 return True
         else:
             print(f"    [Pixabay] 画像DL失敗: status={img_r.status_code}", flush=True)
+        _release_id(hit_id)
     except Exception as e:
         print(f"    例外: {type(e).__name__}: {e}", flush=True)
     return False
@@ -340,6 +397,7 @@ def generate_via_huggingface(hf_tokens: list[str], prompt: str, filepath: str) -
 def main() -> None:
     print("=== AI画像生成開始 ===", flush=True)
     ASSETS_DIR.mkdir(exist_ok=True)
+    load_used_ids()
 
     gemini_keys = [
         k for k in [
@@ -383,13 +441,14 @@ def main() -> None:
     def generate_one(args):
         i, prompt = args
         out_path = str(ASSETS_DIR / f"ai_{i}.jpg")
-        query = random.choice(PIXABAY_QUERIES)
         print(f"\n  [{i}/{n_images}] 画像取得中...", flush=True)
 
         if pixabay_key:
-            print(f"  [{i}] → Pixabay を試行 (query='{query}')", flush=True)
-            if generate_via_pixabay(pixabay_key, query, out_path):
-                return i, True
+            # 使用済みばかりで取れないこともあるので、検索語を変えて数回試す
+            for query in random.sample(PIXABAY_QUERIES, 3):
+                print(f"  [{i}] → Pixabay を試行 (query='{query}')", flush=True)
+                if generate_via_pixabay(pixabay_key, query, out_path):
+                    return i, True
             print(f"  [{i}] → Pixabay失敗。", flush=True)
 
         if hf_tokens:
@@ -407,6 +466,9 @@ def main() -> None:
             i, ok = future.result()
             if not ok:
                 failed.append(i)
+
+    if pixabay_key:
+        save_used_ids()
 
     ai_files = sorted(ASSETS_DIR.glob("ai_*.jpg"))
     print(f"\n=== 結果: {n_images - len(failed)}/{n_images} 枚生成 ===", flush=True)

@@ -132,6 +132,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add posted_ids.txt last_upload_result.txt output/thumbnail_*.jpg 2>/dev/null || true
+          # 背景写真の使用履歴（同じ写真を別の動画で再利用しないため）
+          git add data/used_bg_image_ids.txt 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "変更なし。コミットをスキップします。"
           else
