@@ -1,10 +1,10 @@
-date: 2026-11-18T04:20:01.851293Z
+date: 2026-11-18T07:16:30.934155Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Jr-ts7ZM0Vg title=JRAが総額1億円の競馬振興特別助成金を交付　京阪バス、京都京阪バスへ京都競馬場
-OK project=1 video_id=51uqMc3WHt8 title=武豊騎手が「アドマイヤ」で19年ぶりGI制覇なるか マイルCSにアドマイヤズーム
-OK project=1 video_id=5Q3yPlszylo title=55歳のベテラン・岡田祥嗣騎手が引退…福山競馬で約22年間騎乗→41歳でJRA移
+OK project=1 video_id=6GUqLpFBBrA title=競馬ファンに“朗報”!名馬デザインのプレモル限定缶が登場!馬の“正体”は…?「マ
+OK project=1 video_id=wSdG9snaPqQ title=【福島記念】マリアイリダータ　レコードVの舞台で重賞初勝利狙う
+OK project=1 video_id=FXzX0yP7pG8 title=【東スポ杯2歳S】ジョドレルバンク　武井師「今回は結果が欲しい」
