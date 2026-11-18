@@ -1,3 +1,5 @@
 # 追記のみの除外ログ。複数のニュース系ワークフローが同時に追記しても
 # git pull --rebase で衝突して落ちないよう、両方の行を残す union マージにする。
 debug/excluded_news.jsonl merge=union
+# 複数ワークフローが同時に追記しても rebase で衝突しないよう、行の和集合でマージする
+data/used_bg_combos.txt merge=union
