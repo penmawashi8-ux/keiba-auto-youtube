@@ -1,10 +1,10 @@
-date: 2026-11-19T04:16:06.917375Z
+date: 2026-11-19T07:12:05.446949Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=MYKTBYD3L4A title=【ジャパンC・1週前】武豊騎手とコンビのメイショウタバルは先週からの上昇示す　石
-OK project=1 video_id=W2b3XcvBbOI title=英国馬オンブズマンが今年の欧州年度代表馬!　昨年選出で連覇狙うカランダガンとジャ
-OK project=1 video_id=WEY6AM3Jd9o title=競馬ファン待望!有馬記念ファン投票が本日スタート…年末のグランプリへ、応援したい
+OK project=1 video_id=OFxt2lp_S_k title=【福島記念出走馬・騎手確定】カラマティアノス＆津村明秀騎手、フォルテアンジェロ＆
+OK project=1 video_id=Th92Lwa4sbM title=重賞2勝のラヴァンダが引退…中京記念レコードVの5歳牝馬、今後は繁殖入り　エリザ
+OK project=1 video_id=SsDT-OprWoc title=【東スポ杯2歳S出走馬・騎手確定】ショウナンガレオン＆鮫島克駿騎手、ジョドレルバ
