@@ -1,10 +1,10 @@
-date: 2026-11-18T10:12:04.780965Z
+date: 2026-11-19T01:30:09.686825Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=gkKUuGzadXg title=【マイルCS】「日本に連れてくる馬は…」グラファール調教師が馬場適性を見極めた仏
-OK project=1 video_id=xuPzg0vpxK4 title=【マイルCS】最後にスパイス利かせてきたエンブロイダリー　「反動が恐らく…」森一
-OK project=1 video_id=a2-bpD6I7UQ title=【ジャパンC・1週前】天皇賞・秋大敗からの巻き返しへ　マスカレードボールは馬具装
+OK project=1 video_id=_boeUxbHK8g title=【阪神アーバン競馬・人気ジョッキーは語る】田野豊三騎手はセブンワンダーズ(園田3
+OK project=1 video_id=SRkl29ENzrk title=【マイルCS】エンブロイダリー“必勝ルーチン”栗東滞在3戦3勝
+OK project=1 video_id=K8BoLUDrFSg title=【ジャパンC・1週前】クロワデュノール上昇、Cデムーロ騎手「だいぶ変わった」
