@@ -1,0 +1,195 @@
+{
+ "prefix": "thumb_milecs2026",
+ "max_photos": 4,
+ "loose": false,
+ "only_chosen": true,
+ "texts": {
+  "title1": "マイルCS2026をデータで1万回シミュレーション",
+  "title2": "データが選んだ本命は？",
+  "sub1": "京都芝1600m・枠順と脚質も計算",
+  "sub2": "出走馬と対戦相手の全成績から"
+ },
+ "choice": {},
+ "horses": [
+  {
+   "name": "エンブロイダリー",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Embroidery"
+   ],
+   "queries": [
+    "エンブロイダリー",
+    "エンブロイダリー 競走馬",
+    "Embroidery horse",
+    "Embroidery"
+   ],
+   "articles": [
+    "エンブロイダリー",
+    "Embroidery"
+   ]
+  },
+  {
+   "name": "ジューンテイク",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "June Take"
+   ],
+   "queries": [
+    "ジューンテイク",
+    "ジューンテイク 競走馬",
+    "June Take horse",
+    "June Take"
+   ],
+   "articles": [
+    "ジューンテイク",
+    "June Take"
+   ]
+  },
+  {
+   "name": "ロデオドライブ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Rodeo Drive"
+   ],
+   "queries": [
+    "ロデオドライブ",
+    "ロデオドライブ 競走馬",
+    "Rodeo Drive horse",
+    "Rodeo Drive"
+   ],
+   "articles": [
+    "ロデオドライブ",
+    "Rodeo Drive"
+   ]
+  },
+  {
+   "name": "ガイアフォース",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Gaia Force"
+   ],
+   "queries": [
+    "ガイアフォース",
+    "ガイアフォース 競走馬",
+    "Gaia Force horse",
+    "Gaia Force"
+   ],
+   "articles": [
+    "ガイアフォース",
+    "Gaia Force"
+   ]
+  },
+  {
+   "name": "シックスペンス",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Sixpence"
+   ],
+   "queries": [
+    "シックスペンス",
+    "シックスペンス 競走馬",
+    "Sixpence horse",
+    "Sixpence"
+   ],
+   "articles": [
+    "シックスペンス",
+    "Sixpence"
+   ]
+  },
+  {
+   "name": "ウォーターリヒト",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Water Licht"
+   ],
+   "queries": [
+    "ウォーターリヒト",
+    "ウォーターリヒト 競走馬",
+    "Water Licht horse",
+    "Water Licht"
+   ],
+   "articles": [
+    "ウォーターリヒト",
+    "Water Licht"
+   ]
+  },
+  {
+   "name": "アドマイヤズーム",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Admire Zoom"
+   ],
+   "queries": [
+    "アドマイヤズーム",
+    "アドマイヤズーム 競走馬",
+    "Admire Zoom horse",
+    "Admire Zoom"
+   ],
+   "articles": [
+    "アドマイヤズーム",
+    "Admire Zoom"
+   ]
+  },
+  {
+   "name": "スターアニス",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Star Anise"
+   ],
+   "queries": [
+    "スターアニス",
+    "スターアニス 競走馬",
+    "Star Anise horse",
+    "Star Anise"
+   ],
+   "articles": [
+    "スターアニス",
+    "Star Anise"
+   ]
+  },
+  {
+   "name": "エルデナリ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Eldenari"
+   ],
+   "queries": [
+    "エルデナリ",
+    "エルデナリ 競走馬",
+    "Eldenari horse",
+    "Eldenari"
+   ],
+   "articles": [
+    "エルデナリ",
+    "Eldenari"
+   ]
+  },
+  {
+   "name": "ワールズエンド",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Worlds End"
+   ],
+   "queries": [
+    "ワールズエンド",
+    "ワールズエンド 競走馬",
+    "Worlds End horse",
+    "Worlds End"
+   ],
+   "articles": [
+    "ワールズエンド",
+    "Worlds End"
+   ]
+  }
+ ]
+}
