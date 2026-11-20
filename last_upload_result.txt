@@ -1,10 +1,10 @@
-date: 2026-11-20T07:13:48.942916Z
+date: 2026-11-20T10:07:11.671125Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=F9aY-u06eJA title=ケンタッキーダービー５着のダノンバーボンが引退して種牡馬に　池添師「種牡馬として
-OK project=1 video_id=RetAGm0qjeU title=【マイルCS・金曜気配】G1連続2着ワールズエンドは6枠12番　池添調教師は笑み
-OK project=1 video_id=oy8EpD8W1xQ title=【マイルCS・金曜気配】決め手上位のココナッツブラウンは4枠7番　上村調教師「C
+OK project=1 video_id=YUIY3Oi10HQ title=半兄はGI・4勝のジャンタルマンタル アンベールフォートが初陣Vなるか
+OK project=1 video_id=i5DNnq4u7rA title=【マイルCS・金曜気配】ガイアフォースは6枠11番から悲願のG1制覇狙う　陣営「
+OK project=1 video_id=FBJTY4BaDKQ title=【京都2歳S想定馬・騎手】ドラゴンバルド、ネーロノワールなど11頭
