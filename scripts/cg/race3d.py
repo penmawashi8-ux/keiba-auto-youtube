@@ -622,9 +622,30 @@ def animate(horses):
                 pass
 
 
+def build_gate():
+    """スタートのゲート（発馬機）。各馬のスタート時の横位置の間に仕切りを立てる"""
+    fr = SPEC["frames"][0]
+    lats = sorted(fr["lat"])
+    s0 = C["start_s"]
+    hd = heading(s0)
+    green = mat("GateGreen", (0.05, 0.3, 0.16), 0.5)
+    white = mat("Rail", (0.92, 0.92, 0.9), 0.4)
+    bounds = [lats[0] - 0.65] + [(a + b) / 2 for a, b in zip(lats, lats[1:])] + [lats[-1] + 0.65]
+    for j, off in enumerate(bounds):
+        p = P(s0, off)
+        box(f"GatePost{j}", (p.x, p.y, 1.35), (3.2, 0.14, 2.7), green, rot_z=hd)
+    a, b = P(s0, bounds[0]), P(s0, bounds[-1])
+    mid = (a + b) / 2
+    span = (b - a).length
+    box("GateBeam", (mid.x, mid.y, 2.85), (0.5, span + 0.6, 0.4), white, rot_z=hd)
+    box("GateBeamF", ((P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).x, (P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).y, 2.85),
+        (0.3, span + 0.6, 0.3), green, rot_z=hd)
+
+
 def main():
     build_world()
     build_course()
+    build_gate()
     horses = build_horses()
     animate(horses)
     sc = bpy.context.scene
