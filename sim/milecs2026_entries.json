@@ -1,0 +1,212 @@
+{
+ "race_id": "202608050611",
+ "date": "2026-11-22",
+ "race_name": "マイルチャンピオンS",
+ "venue": "京都",
+ "surface": "芝",
+ "distance": 1600,
+ "direction": "右",
+ "course": "",
+ "post_time": "15:40",
+ "drawn": true,
+ "horses": [
+  {
+   "horse_id": "2023190001",
+   "horse": "エルデナリ",
+   "sex": "セ",
+   "age": 3,
+   "weight": 57.0,
+   "jockey": "Ｍ．バルザローナ",
+   "trainer": "Ｆ．グラファール",
+   "waku": 1,
+   "umaban": 1
+  },
+  {
+   "horse_id": "2022105185",
+   "horse": "エンブロイダリー",
+   "sex": "牝",
+   "age": 4,
+   "weight": 56.0,
+   "jockey": "Ｃ．ルメール",
+   "trainer": "森 一誠",
+   "waku": 1,
+   "umaban": 2
+  },
+  {
+   "horse_id": "2022105891",
+   "horse": "ドラゴンブースト",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "浜中 俊",
+   "trainer": "藤野 健太",
+   "waku": 2,
+   "umaban": 3
+  },
+  {
+   "horse_id": "2021105724",
+   "horse": "シックスペンス",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ａ．プーシャン",
+   "trainer": "田中 博康",
+   "waku": 2,
+   "umaban": 4
+  },
+  {
+   "horse_id": "2022105396",
+   "horse": "アドマイヤズーム",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "武 豊",
+   "trainer": "友道 康夫",
+   "waku": 3,
+   "umaban": 5
+  },
+  {
+   "horse_id": "2022101765",
+   "horse": "ピコローズ",
+   "sex": "牝",
+   "age": 4,
+   "weight": 56.0,
+   "jockey": "三浦 皇成",
+   "trainer": "伊藤 大士",
+   "waku": 3,
+   "umaban": 6
+  },
+  {
+   "horse_id": "2020101607",
+   "horse": "ココナッツブラウン",
+   "sex": "牝",
+   "age": 6,
+   "weight": 56.0,
+   "jockey": "北村 友一",
+   "trainer": "上村 洋行",
+   "waku": 4,
+   "umaban": 7
+  },
+  {
+   "horse_id": "2023107166",
+   "horse": "ロデオドライブ",
+   "sex": "牡",
+   "age": 3,
+   "weight": 57.0,
+   "jockey": "Ｊ．モレイラ",
+   "trainer": "辻 哲英",
+   "waku": 4,
+   "umaban": 8
+  },
+  {
+   "horse_id": "2021100913",
+   "horse": "ジューンテイク",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "川田 将雅",
+   "trainer": "武 英智",
+   "waku": 5,
+   "umaban": 9
+  },
+  {
+   "horse_id": "2021100953",
+   "horse": "ウォーターリヒト",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "幸 英明",
+   "trainer": "石橋 守",
+   "waku": 5,
+   "umaban": 10
+  },
+  {
+   "horse_id": "2019104476",
+   "horse": "ガイアフォース",
+   "sex": "牡",
+   "age": 7,
+   "weight": 58.0,
+   "jockey": "西村 淳也",
+   "trainer": "杉山 晴紀",
+   "waku": 6,
+   "umaban": 11
+  },
+  {
+   "horse_id": "2021105864",
+   "horse": "ワールズエンド",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ｃ．デムーロ",
+   "trainer": "池添 学",
+   "waku": 6,
+   "umaban": 12
+  },
+  {
+   "horse_id": "2023103268",
+   "horse": "レザベーション",
+   "sex": "牡",
+   "age": 3,
+   "weight": 57.0,
+   "jockey": "田口 貫太",
+   "trainer": "松下 武士",
+   "waku": 7,
+   "umaban": 13
+  },
+  {
+   "horse_id": "2023106920",
+   "horse": "スターアニス",
+   "sex": "牝",
+   "age": 3,
+   "weight": 55.0,
+   "jockey": "松山 弘平",
+   "trainer": "高野 友和",
+   "waku": 7,
+   "umaban": 14
+  },
+  {
+   "horse_id": "2021105565",
+   "horse": "エコロブルーム",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "坂井 瑠星",
+   "trainer": "加藤 征弘",
+   "waku": 7,
+   "umaban": 15
+  },
+  {
+   "horse_id": "2020105018",
+   "horse": "スズハローム",
+   "sex": "牡",
+   "age": 6,
+   "weight": 58.0,
+   "jockey": "藤懸 貴志",
+   "trainer": "牧田 和弥",
+   "waku": 8,
+   "umaban": 16
+  },
+  {
+   "horse_id": "2021110030",
+   "horse": "アンパドゥ",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "岩田 望来",
+   "trainer": "木村 哲也",
+   "waku": 8,
+   "umaban": 17
+  },
+  {
+   "horse_id": "2021110031",
+   "horse": "オフトレイル",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "菅原 明良",
+   "trainer": "吉村 圭司",
+   "waku": 8,
+   "umaban": 18
+  }
+ ]
+}
