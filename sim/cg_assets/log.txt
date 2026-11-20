@@ -1,0 +1,9 @@
+https://opengameart.org/node/64873 200 22073
+  file https://opengameart.org/sites/default/files/Pony%20texture%20maps.xcf 200 2556892
+  file https://opengameart.org/sites/default/files/Pony.blend 200 1801544
+https://opengameart.org/content/rigged-horse 200 42150
+  file https://opengameart.org/sites/default/files/riggedHorse.blend 200 20194164
+https://www.summerengine.com/asset-store/library-horse.md 200 2231
+https://poly.pizza/search/horse 403 5468
+https://quaternius.com/packs/ultimateanimatedanimals.html 200 15482
+https://quaternius.com/packs/animatedanimals.html 404 5904
