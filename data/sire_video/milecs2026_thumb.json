@@ -1,0 +1,46 @@
+{
+ "prefix": "milecs2026",
+ "sire": "",
+ "horses": [],
+ "photos_intro": [
+  "エンブロイダリー号.jpg",
+  "Star Anise 87th Oaks.jpg",
+  "Gaia Force 2025.10.18.jpg",
+  "Admire Zoom-2024-12-15.jpg"
+ ],
+ "thumb_design": {
+  "hero": {
+   "file": "エンブロイダリー号.jpg",
+   "x": 0.85,
+   "y": 0.5
+  },
+  "hero_name": "2 エンブロイダリー",
+  "subs": [
+   {
+    "file": "Star Anise 87th Oaks.jpg",
+    "x": 0.5,
+    "y": 0.5,
+    "name": "14 スターアニス"
+   },
+   {
+    "file": "Gaia Force 2025.10.18.jpg",
+    "x": 0.5,
+    "y": 0.5,
+    "name": "11 ガイアフォース"
+   },
+   {
+    "file": "Admire Zoom-2024-12-15.jpg",
+    "x": 0.6,
+    "y": 0.5,
+    "name": "5 アドマイヤズーム"
+   }
+  ],
+  "tag": "データで1万回シミュレーション",
+  "lines": [
+   "マイルCS2026",
+   "データの本命は",
+   "1枠2番 エンブロイダリー"
+  ],
+  "badge": "勝率13.2%"
+ }
+}
