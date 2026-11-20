@@ -57,10 +57,7 @@ jobs:
         run: |
           mkdir -p sim
           git fetch -q origin research-output || true
-          for f in races_cache.json horses_cache.json; do
-            git show FETCH_HEAD:sim/$f > sim/$f 2>/dev/null \
-              && echo "キャッシュ復元 $f: $(wc -c < sim/$f) bytes" || { rm -f sim/$f; echo "キャッシュなし $f"; }
-          done
+          bash .github/scripts/restore_sim_file.sh races_cache.json horses_cache.json
 
       - name: Fetch entries (出馬表・登録馬)
         run: python scripts/sim_entries.py "$RACE_DATE" "$RACE_NAME"

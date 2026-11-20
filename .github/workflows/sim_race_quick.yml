@@ -57,9 +57,7 @@ jobs:
         run: |
           mkdir -p sim
           git fetch -q origin research-output
-          for f in races_cache.json races.json horses_cache.json gate_cache.json; do
-            git show FETCH_HEAD:sim/$f > sim/$f 2>/dev/null && echo "復元 $f: $(wc -c < sim/$f) bytes" || rm -f sim/$f
-          done
+          bash .github/scripts/restore_sim_file.sh races_cache.json races.json horses_cache.json gate_cache.json
 
       - name: Fetch entries and entrants' careers
         run: |
