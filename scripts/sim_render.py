@@ -573,10 +573,11 @@ def text_page(title: str, rows: list, sec: float, size: int = 24, top: int = 112
             y += int(size * 0.8)
             continue
         cols = row if isinstance(row, list) else [row]
-        rsize = size
+        row_h = 0                          # 行の高さは、その行でいちばん大きい文字に合わせる
         for c in cols:
             c = {"text": c} if isinstance(c, str) else dict(c)
             rsize = c.get("size", size)
+            row_h = max(row_h, rsize)
             x = c.get("x", 60)
             if "badge" in c:               # 馬名の前に枠色の●と馬番を付ける
                 for b in badge(c["badge"], x, rsize, c.get("num")):
@@ -584,7 +585,7 @@ def text_page(title: str, rows: list, sec: float, size: int = 24, top: int = 112
                 x += int(rsize * 1.5)
             items.append({"x": x, "y": y, "size": rsize, "color": c.get("color", "white"),
                           "text": c["text"], "extra": c.get("extra", "")})
-        y += int(rsize * 1.62)
+        y += int(row_h * 1.62)
     return {"sec": sec, "items": items}
 
 

@@ -151,7 +151,7 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         def edge(g, st):
             v = gate["gate"] * g + gate["style"] * st + gate["gate_x_style"] * g * st
             return (1 / (1 + math.exp(-v)) - 0.5) * 100
-        rows += ["", {"text": "・同じくらいの人気の2頭で比べた、「内枠で前に行く馬」より先着しやすいか", "color": "0xFFF59D"},
+        rows += ["", {"text": "・力が同じくらいの2頭で比べた、「内枠で前に行く馬」より先着しやすいか", "color": "0xFFF59D"},
                  f"　内枠で後ろから行く馬 {edge(0, 1):+.1f}ポイント ／ 外枠で前に行く馬 {edge(1, 0):+.1f}ポイント ／ "
                  f"外枠で後ろから行く馬 {edge(1, 1):+.1f}ポイント",
                  "・この差を各馬の枠と脚質に合わせて力に足して計算"
@@ -180,7 +180,7 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
           if os.environ.get("RACE_GOING", "良") != "良" else []),
         "",
         f"・精度：2019〜2025年の重賞で検証 → 2頭のどちらが先着するかの正答率 {te['acc_model']:.1%}",
-        f"　（単勝人気は {te['acc_market']:.1%}。でたらめなら 50%）",
+        "　（でたらめに選ぶと 50%）",
     ], 12.0, size=23))
     pages.append(sr.text_page("注意事項", [
         "・これは実際のレース映像ではありません。公開データから計算したシミュレーションです",
@@ -188,7 +188,8 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         ("・3歳馬はキャリアが短く、データが少ない分だけ結果のぶれが大きくなります"
          if all(h.get("age") == 3 for h in ent["horses"]) else
          "・出走数の少ない馬ほど、データが少ない分だけ結果のぶれが大きくなります"),
-        *([f"・{'、'.join(nodata)}は日本での出走がなく成績データがないため、標準的な力（この顔ぶれの中では低め）として計算しています"]
+        *([f"・{'、'.join(nodata)}は日本での出走がなく成績データがないため、",
+           "　標準的な力（この顔ぶれの中では低め）として計算しています"]
           if (nodata := [m for m, h in horses.items() if not h["history"]]) else []),
         "・調教・当日の状態・馬場の内外の差・騎手の駆け引きは考慮していません",
         "・馬券の購入を勧めるものではありません。楽しみ方のひとつとしてご覧ください",
