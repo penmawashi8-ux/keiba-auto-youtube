@@ -289,8 +289,8 @@ def main() -> None:
     tau_hold = win_t + 1.0 + res_len
     for f in range(int(rate_len * FPS)):
         u = f / (rate_len * FPS)
-        s = -40 + (ST + 40) * u
-        cam = (P(s, -60, 75), P(s + 140, TW / 2, 0), 30)
+        s = 20 + (ST - 120) * u
+        cam = (P(s, -35, 16), P(s + 70, TW + 45, 9), 30)          # 内馬場からスタンドを見る
         add(tau_hold, cam, run=False)
     segment("rates", t0, now())
     plan["overlays"].append({"type": "rates", "t0": round(t0 + 0.4, 3), "t1": round(now() - 0.2, 3),

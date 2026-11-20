@@ -137,9 +137,9 @@ def crowd_mat():
     b = nt.nodes["Principled BSDF"]
     b.inputs["Roughness"].default_value = 1.0
     v = nt.nodes.new("ShaderNodeTexVoronoi")
-    v.inputs["Scale"].default_value = 2.2
-    tc = nt.nodes.new("ShaderNodeTexCoord")
-    nt.links.new(tc.outputs["Object"], v.inputs["Vector"])
+    v.inputs["Scale"].default_value = 1.9            # 1人 ≒ 0.5m
+    geo = nt.nodes.new("ShaderNodeNewGeometry")       # 箱を拡大して置くので、ワールド座標で模様を作る
+    nt.links.new(geo.outputs["Position"], v.inputs["Vector"])
     ramp = nt.nodes.new("ShaderNodeValToRGB")
     els = ramp.color_ramp.elements
     els[0].color = (0.05, 0.05, 0.06, 1)
@@ -270,12 +270,12 @@ def build_world():
     sky.sun_elevation = math.radians(24)
     sky.sun_rotation = math.radians(215)
     sky.altitude = 50
-    sky.air_density = 1.0
-    sky.dust_density = 0.8
+    sky.air_density = 1.5
+    sky.dust_density = 0.5
     sky.ozone_density = 1.5
     sky.sun_disc = False
     nt.links.new(sky.outputs[0], bg.inputs[0])
-    bg.inputs[1].default_value = 0.3
+    bg.inputs[1].default_value = 0.4
 
     sun = bpy.data.lights.new("Sun", "SUN")
     sun.energy = 4.5
@@ -291,7 +291,7 @@ def build_course():
     infield = mat("Infield", (0.05, 0.14, 0.03), 1.0, spec=0.1)
     outer = mat("OuterGrass", (0.06, 0.13, 0.04), 1.0, spec=0.1)
     white = mat("Rail", (0.92, 0.92, 0.9), 0.4)
-    water = mat("Pond", (0.02, 0.07, 0.11), 0.18, spec=0.5)
+    water = mat("Pond", (0.03, 0.12, 0.2), 0.35, spec=0.3)
     concrete = mat("Concrete", (0.62, 0.62, 0.6), 0.8)
     roof = mat("Roof", (0.28, 0.3, 0.33), 0.5)
     glass = mat("Glass", (0.15, 0.2, 0.25), 0.1, spec=0.8)
@@ -329,14 +329,24 @@ def build_course():
     cx = sx * (xs0 + xs1) / 2
     width = xs1 - xs0
     crowd = crowd_mat()
-    for i in range(14):                                 # ひな壇
-        d = 4 + i * 2.6
-        box(f"Tier{i}", (cx, y0 - d, 1.0 + i * 1.3), (width, 2.6, 2.0 + i * 0.0), crowd if i % 1 == 0 else concrete)
-    box("StandBack", (cx, y0 - 46, 14), (width, 6, 28), concrete)
-    box("StandGlass", (cx, y0 - 41, 22), (width, 1, 9), glass)
-    box("Roof", (cx, y0 - 30, 30), (width + 6, 40, 1.2), roof)
-    for i in range(9):
-        box(f"Pillar{i}", (sx * (xs0 + 10 + i * (width - 20) / 8), y0 - 44, 15), (1.2, 1.2, 30), concrete)
+    seat = mat("Seats", (0.16, 0.2, 0.26), 0.7)
+    n_tier, dep, rise = 16, 2.2, 0.85
+    box("StandFront", (cx, y0 - 2.5, 1.0), (width, 1.0, 2.0), concrete)          # 最前列の壁
+    for i in range(n_tier):                                                       # ひな壇（観客）
+        d = 3 + i * dep
+        box(f"Tier{i}", (cx, y0 - d - dep / 2, 1.2 + i * rise), (width, dep, 0.5 + 0.0), crowd if i < 12 else seat)
+    back_y = y0 - 3 - n_tier * dep
+    top = 1.2 + n_tier * rise
+    box("StandWall", (cx, back_y - 1, top / 2), (width, 2, top), concrete)       # ひな壇の後ろの壁
+    for k in range(3):                                                            # 上のガラス張りの階
+        z = top + 0.5 + k * 4.2
+        box(f"Floor{k}", (cx, back_y - 6, z), (width, 14, 0.7), concrete)
+        box(f"Glass{k}", (cx, back_y + 0.6, z + 2.1), (width - 4, 0.3, 3.4), glass)
+    roof_z = top + 0.5 + 3 * 4.2 + 1.2
+    box("Roof", (cx, back_y + 10, roof_z), (width + 8, 34, 1.0), roof)          # ひな壇の上に張り出す屋根
+    box("RoofEdge", (cx, back_y + 27, roof_z - 0.6), (width + 8, 0.6, 1.6), white)
+    for i in range(10):
+        box(f"Pillar{i}", (sx * (xs0 + 8 + i * (width - 16) / 9), back_y - 0.5, roof_z / 2), (1.0, 1.0, roof_z), concrete)
     box("Apron", (cx, y0 + 2, 0.15), (width, 10, 0.3), concrete)
     # 内馬場の大型ビジョン（スタンドの向かい）
     box("VisionFrame", (sx * 20, R - 40, 9), (52, 2, 16), roof)
