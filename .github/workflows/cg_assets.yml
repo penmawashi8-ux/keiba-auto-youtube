@@ -43,12 +43,12 @@ jobs:
         continue-on-error: true
         run: |
           pip install -q gdown
-          gdown --folder "https://drive.google.com/drive/folders/1uJ3N5HfB7jKTseJUNQr3N4YaN0UuEtHk" -O q --remaining-ok 2>&1 | tail -20 || true
-          find q -type f | head -80 | tee out/quaternius_files.txt
+          gdown --folder "https://drive.google.com/drive/folders/1uJ3N5HfB7jKTseJUNQr3N4YaN0UuEtHk" -O q 2>&1 | tail -30 || true
+          mkdir -p q; find q -type f | head -80 | tee out/quaternius_files.txt
           mkdir -p out/quaternius
           find q -type f \( -iname '*horse*' -o -iname '*.txt' -o -iname '*license*' \) -exec cp {} out/quaternius/ \;
           for z in $(find q -iname '*.zip'); do unzip -o -q "$z" -d qz; done
-          [ -d qz ] && find qz -type f | head -200 >> out/quaternius_files.txt && find qz -type f \( -iname '*horse*' -o -iname '*license*' \) -exec cp {} out/quaternius/ \;
+          if [ -d qz ]; then find qz -type f | head -200 >> out/quaternius_files.txt && find qz -type f \( -iname '*horse*' -o -iname '*license*' \) -exec cp {} out/quaternius/ \;; fi
           ls -la out/quaternius
       - name: Save
         if: always()
