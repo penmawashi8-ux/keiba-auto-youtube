@@ -170,6 +170,8 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         ("・3歳馬はキャリアが短く、データが少ない分だけ結果のぶれが大きくなります"
          if all(h.get("age") == 3 for h in ent["horses"]) else
          "・出走数の少ない馬ほど、データが少ない分だけ結果のぶれが大きくなります"),
+        *([f"・{'、'.join(nodata)}は日本での出走がなく、成績データがないため平均的な力として計算しています"]
+          if (nodata := [m for m, h in horses.items() if not h["history"]]) else []),
         "・調教・当日の状態・馬場の内外の差・展開の駆け引きは考慮していません",
         "・馬券の購入を勧めるものではありません。楽しみ方のひとつとしてご覧ください",
     ], 9.0))
