@@ -31,3 +31,6 @@ output_kikka/
 output_tenno/
 output_eliza/
 output_milecs/
+
+# research-output から復元した作業用データ（ローカル実行用）
+/sim/
