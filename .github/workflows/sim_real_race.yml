@@ -26,6 +26,8 @@ on:
       - scripts/sim_render.py
       - scripts/sim_bgm.py
       - .github/workflows/sim_real_race.yml
+      - .github/scripts/save_sim_outputs.sh
+      - .github/scripts/restore_sim_file.sh
 
 env:
   RACE_DATE: ${{ github.event.inputs.date || '20261122' }}
