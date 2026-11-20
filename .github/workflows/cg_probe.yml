@@ -1,0 +1,39 @@
+name: CG probe (Blender)
+
+# Blender で 3D の描画ができるか、1フレームにかかる時間を測る試験。結果は research-output の sim/cg_probe/。
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - scripts/cg/blender_probe.py
+      - .github/workflows/cg_probe.yml
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends blender xvfb libegl1 libgl1-mesa-dri
+          blender --version | head -2
+      - name: Render
+        run: |
+          mkdir -p out
+          xvfb-run -a -s "-screen 0 1920x1080x24" blender -b -P scripts/cg/blender_probe.py -- "$PWD/out" 2>&1 | grep -E "PROBE|engine|version|Error|error" | tee out/log.txt || true
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            mkdir -p sim/cg_probe && cp out/* sim/cg_probe/
+            git add sim/cg_probe && git commit -qm "CG試験 [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
