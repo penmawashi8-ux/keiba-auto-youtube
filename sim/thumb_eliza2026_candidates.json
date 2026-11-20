@@ -485,16 +485,6 @@
    "page": "https://commons.wikimedia.org/wiki/File%3ALavanda-2024-10-13.jpg"
   },
   {
-   "title": "File:Campos de lavanda en puebla 9.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Campos_de_lavanda_en_puebla_9.jpg/1280px-Campos_de_lavanda_en_puebla_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "w": 6144,
-   "h": 8160,
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "author": "Ferfive",
-   "page": "https://commons.wikimedia.org/wiki/File%3ACampos_de_lavanda_en_puebla_9.jpg"
-  },
-  {
    "title": "File:Campos de lavanda en puebla 5.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Campos_de_lavanda_en_puebla_5.jpg/1280px-Campos_de_lavanda_en_puebla_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "w": 6144,
@@ -505,6 +495,26 @@
    "page": "https://commons.wikimedia.org/wiki/File%3ACampos_de_lavanda_en_puebla_5.jpg"
   },
   {
+   "title": "File:Campos de lavanda en puebla 9.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Campos_de_lavanda_en_puebla_9.jpg/1280px-Campos_de_lavanda_en_puebla_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 6144,
+   "h": 8160,
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Ferfive",
+   "page": "https://commons.wikimedia.org/wiki/File%3ACampos_de_lavanda_en_puebla_9.jpg"
+  },
+  {
+   "title": "File:Madrid Pride 2025 - Isla Lavanda - 250706 201311.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Madrid_Pride_2025_-_Isla_Lavanda_-_250706_201311.jpg/1280px-Madrid_Pride_2025_-_Isla_Lavanda_-_250706_201311.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 6000,
+   "h": 4000,
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Barcex",
+   "page": "https://commons.wikimedia.org/wiki/File%3AMadrid_Pride_2025_-_Isla_Lavanda_-_250706_201311.jpg"
+  },
+  {
    "title": "File:Accademia - Lavanda dei piedi di Giovanni Agostino da Lodi.jpg",
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Accademia_-_Lavanda_dei_piedi_di_Giovanni_Agostino_da_Lodi.jpg/1280px-Accademia_-_Lavanda_dei_piedi_di_Giovanni_Agostino_da_Lodi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "w": 4363,
@@ -513,16 +523,6 @@
    "license_url": "",
    "author": "Didier Descouens",
    "page": "https://commons.wikimedia.org/wiki/File%3AAccademia_-_Lavanda_dei_piedi_di_Giovanni_Agostino_da_Lodi.jpg"
-  },
-  {
-   "title": "File:Madrid Pride 2025 - Isla Lavanda - 250706 201102.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Madrid_Pride_2025_-_Isla_Lavanda_-_250706_201102.jpg/1280px-Madrid_Pride_2025_-_Isla_Lavanda_-_250706_201102.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "w": 5801,
-   "h": 3867,
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "author": "Barcex",
-   "page": "https://commons.wikimedia.org/wiki/File%3AMadrid_Pride_2025_-_Isla_Lavanda_-_250706_201102.jpg"
   },
   {
    "title": "File:Madrid Pride 2025 - Isla Lavanda - 250706 200959.jpg",
@@ -545,14 +545,14 @@
    "page": "https://commons.wikimedia.org/wiki/File%3AMadrid_Pride_2025_-_Isla_Lavanda_-_250706_201530.jpg"
   },
   {
-   "title": "File:Moscow, 'Lavanda', July 2025 01.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Moscow%2C_%27Lavanda%27%2C_July_2025_01.jpg/1280px-Moscow%2C_%27Lavanda%27%2C_July_2025_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Moscow, 'Lavanda', July 2025 02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Moscow%2C_%27Lavanda%27%2C_July_2025_02.jpg/1280px-Moscow%2C_%27Lavanda%27%2C_July_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "w": 5184,
    "h": 3456,
    "license": "CC0",
    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
    "author": "Retired electrician",
-   "page": "https://commons.wikimedia.org/wiki/File%3AMoscow%2C_%27Lavanda%27%2C_July_2025_01.jpg"
+   "page": "https://commons.wikimedia.org/wiki/File%3AMoscow%2C_%27Lavanda%27%2C_July_2025_02.jpg"
   }
  ]
 }
