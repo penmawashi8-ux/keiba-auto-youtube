@@ -1,10 +1,10 @@
-date: 2026-11-20T04:13:01.569680Z
+date: 2026-11-20T07:13:48.942916Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=Qfi_e1nlbFg title=【マイルCS・金曜気配】昨年4着のオフトレイルは大外18番枠からスタート　吉村調
-OK project=1 video_id=Ynyr7f2Y1Zo title=「年明けの楽しみが100倍に」「初詣がてら買いたくなる」武豊騎手が新コンビと京都
-OK project=1 video_id=7Ae9Xi5iL94 title=【マイルCS・金曜気配】5枠9番ジューンテイクに武英調教師は「真ん中くらいでいい
+OK project=1 video_id=F9aY-u06eJA title=ケンタッキーダービー５着のダノンバーボンが引退して種牡馬に　池添師「種牡馬として
+OK project=1 video_id=RetAGm0qjeU title=【マイルCS・金曜気配】G1連続2着ワールズエンドは6枠12番　池添調教師は笑み
+OK project=1 video_id=oy8EpD8W1xQ title=【マイルCS・金曜気配】決め手上位のココナッツブラウンは4枠7番　上村調教師「C
