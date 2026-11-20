@@ -17,6 +17,7 @@
 
 import json
 import math
+import random
 import re
 import sys
 import time
@@ -123,6 +124,98 @@ def pairs_of(races: list[dict], typ: dict, mode: str) -> list[tuple[list[float],
     return out
 
 
+FRONT = 0.3      # 普段の序盤の位置がこれより前（0=先頭〜1=最後方）の馬を「逃げ・先行タイプ」と数える
+
+
+def race_rows(r: dict, typ: dict) -> list[tuple[float, float, float, int]]:
+    """そのレースの (−log オッズ, ゲート位置, 普段の脚質, 着順)。普段の脚質がわかる馬だけ"""
+    n = len(r["runners"])
+    rows = []
+    for x in r["runners"]:
+        if not (x.get("pos") and x.get("odds") and x.get("umaban")):
+            continue
+        st = style_of(x, r.get("race_id", ""), n, typ, "typical")
+        if st is not None:
+            rows.append((-math.log(x["odds"]), (x["umaban"] - 1) / (n - 1), st, x["pos"]))
+    return rows
+
+
+def pace_effect(races: list[dict], typ: dict, coef: dict) -> dict | None:
+    """展開と馬場で脚質の有利不利がどう変わるか。
+    ・逃げ・先行タイプの割合（出走馬のうち普段の位置が前の馬）が平均より多い／少ないと、脚質の効果がどれだけ動くか
+    ・重・不良（稍重を含む）のとき、脚質の効果がどれだけ動くか
+    ・レースごとの脚質の効果のばらつき（その日の流れで前が残るか後ろが届くかが変わる大きさ）"""
+    info = []
+    for r in races:
+        rows = race_rows(r, typ)
+        if len(rows) >= 6:
+            info.append((r, rows, sum(st < FRONT for _, _, st, _ in rows) / len(rows), r.get("going", "良") != "良"))
+    if len(info) < 30:
+        return None
+    fs_mean = sum(f for _, _, f, _ in info) / len(info)
+    pairs = []
+    for r, rows, fs, wet in info:
+        for i in range(len(rows)):
+            for j in range(i + 1, len(rows)):
+                a, b = rows[i], rows[j]
+                d = [a[0] - b[0], a[1] - b[1], a[2] - b[2], a[1] * a[2] - b[1] * b[2]]
+                pairs.append((d + [d[2] * (fs - fs_mean), d[2] * wet], int(a[3] < b[3])))
+    w, se = fit(pairs)
+    # レースごとの脚質の効果のばらつき（その日の流れで前が残るか後ろが届くか）。
+    # 各レースで「脚質の効果が全体の値からどれだけずれていたか」を1ステップの推定で測り、その2乗の平均を、
+    # ばらつき tau を仮定して同じレースを模擬的に走らせたときの値と比べて tau を決める
+    # （同じレースの2頭比較は独立ではないので、推定の誤差を式で引くと過大になるため）
+    def stat(rows, pos):
+        b_obs = 0.0
+        num = den = 0.0
+        for rr, rw, fs, wet in rows:
+            b = w[2] + w[4] * (fs - fs_mean) + w[5] * wet
+            g = h = 0.0
+            for i in range(len(rw)):
+                for j in range(i + 1, len(rw)):
+                    a, c = rw[i], rw[j]
+                    ds = a[2] - c[2]
+                    z = w[0] * (a[0] - c[0]) + w[1] * (a[1] - c[1]) + w[3] * (a[1] * a[2] - c[1] * c[2]) + b * ds
+                    p = 1 / (1 + math.exp(-max(min(z, 30), -30)))
+                    g += (int(pos[id(rw)][i] < pos[id(rw)][j]) - p) * ds
+                    h += p * (1 - p) * ds * ds
+            if h > 1e-6:
+                num += g * g / h
+                den += 1
+        return num / den
+
+    obs = stat(info, {id(rw): [x[3] for x in rw] for _, rw, _, _ in info})
+    rnd = random.Random(1)
+
+    def simulate(tau):
+        pos = {}
+        for _, rw, fs, wet in info:
+            b = w[2] + w[4] * (fs - fs_mean) + w[5] * wet + tau * rnd.gauss(0, 1)
+            perf = [w[0] * a[0] + w[1] * a[1] + b * a[2] + w[3] * a[1] * a[2]
+                    - math.log(-math.log(rnd.random() or 1e-12)) for a in rw]
+            order = sorted(range(len(rw)), key=lambda i: -perf[i])
+            rank = [0] * len(rw)
+            for k, i in enumerate(order, 1):
+                rank[i] = k
+            pos[id(rw)] = rank
+        return stat(info, pos)
+
+    grid = [0.0, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0]
+    sims = [sum(simulate(t) for _ in range(6)) / 6 for t in grid]
+    tau = grid[-1]
+    for (t0, s0), (t1, s1) in zip(zip(grid, sims), zip(grid[1:], sims[1:])):
+        if s0 <= obs <= s1 or (s0 >= obs and t0 == 0.0):
+            tau = t0 if s1 == s0 or obs <= s0 else t0 + (t1 - t0) * (obs - s0) / (s1 - s0)
+            break
+    print(f"  展開のばらつきの推定: 実際 {obs:.3f} ／ 模擬 " + " ".join(f"tau{t}:{v:.3f}" for t, v in zip(grid, sims)))
+    var_between = tau * tau
+    return {"n_races": len(info), "front_share_mean": fs_mean, "front_threshold": FRONT,
+            "style_x_front_share": w[4], "style_x_front_share_se": se[4],
+            "style_x_wet": w[5], "style_x_wet_se": se[5],
+            "n_wet": sum(1 for *_, wet in info if wet),
+            "style_sd_between_races": math.sqrt(max(var_between, 0.0))}
+
+
 def cross_table(races: list[dict], typ: dict) -> list[dict]:
     """枠（内・中・外）× 普段の脚質（前・中団・後方）ごとの勝率・3着内率"""
     cells = {}
@@ -209,12 +302,18 @@ def main() -> None:
            "gate": c["ゲート"], "style": c["脚質"], "gate_x_style": c["ゲート×脚質"],
            "by_waku": [{"waku": w, "runs": b[0], "win": b[1] / b[0] if b[0] else 0, "top3": b[2] / b[0] if b[0] else 0}
                        for w, b in by.items()],
-           "cross": cross_table(races, typ)}
+           "cross": cross_table(races, typ),
+           "pace": pace_effect(races, typ, c)}
     (SIM_DIR / "gate_effect.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     for g in (0.0, 1.0):
         for st in (0.0, 0.5, 1.0):
             print(f"  ゲート{'最内' if g == 0 else '大外'}・脚質{st:.1f}: "
                   f"{c['ゲート'] * g + c['脚質'] * st + c['ゲート×脚質'] * g * st:+.3f}")
+    if out["pace"]:
+        pe = out["pace"]
+        print(f"  展開: 先行タイプの割合 平均{pe['front_share_mean']:.0%} / 脚質×先行割合 {pe['style_x_front_share']:+.3f}"
+              f"（±{pe['style_x_front_share_se']:.3f}） / 脚質×道悪 {pe['style_x_wet']:+.3f}（±{pe['style_x_wet_se']:.3f}、"
+              f"{pe['n_wet']}レース） / レースごとのばらつき {pe['style_sd_between_races']:.3f}")
     for b in out["cross"]:
         print(f"  {b['gate']}枠×{b['style']}: {b['runs']}走 勝率 {b['win']:.1%} 3着内率 {b['top3']:.1%}")
 

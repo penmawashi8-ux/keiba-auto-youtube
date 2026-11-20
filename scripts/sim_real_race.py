@@ -13,6 +13,7 @@
 
 import json
 import math
+import os
 import random
 import statistics
 import sys
@@ -29,15 +30,20 @@ SIM_DIR = Path("sim")
 N_RUNS = 10000
 
 
-def monte_carlo(horses: dict, seed: int = 20261018, upsets: dict | None = None) -> dict:
+def monte_carlo(horses: dict, seed: int = 20261018, upsets: dict | None = None, pace_sd: float = 0.0) -> dict:
     """着順の回数を数える。upsets を渡すと「荒れたレース」の記録も入れる:
-    評価（スコア）10位以下の馬が勝った回数と、1〜3着の評価順位の合計が最も大きかった回"""
+    評価（スコア）10位以下の馬が勝った回数と、1〜3着の評価順位の合計が最も大きかった回。
+    pace_sd: 展開のぶれ。1回ごとに「前が残る流れ／後ろが届く流れ」をランダムに決め、
+    脚質（0前〜1後方）に比例して力を上下させる大きさ（過去のレースのばらつきから測ったもの）"""
     rnd = random.Random(seed)
     names = list(horses)
     counts = {n: [0] * len(names) for n in names}
     rank = {n: r for r, n in enumerate(sorted(names, key=lambda m: -horses[m]["score"]), 1)}
+    st_mean = statistics.mean(horses[n]["style"] for n in names)
     for _ in range(N_RUNS):
-        perf = {n: horses[n]["score"] - math.log(-math.log(rnd.random() or 1e-12)) for n in names}
+        flow = rnd.gauss(0, pace_sd) if pace_sd else 0.0
+        perf = {n: horses[n]["score"] + flow * (horses[n]["style"] - st_mean)
+                - math.log(-math.log(rnd.random() or 1e-12)) for n in names}
         order = sorted(names, key=lambda n: -perf[n])
         for i, n in enumerate(order):
             counts[n][i] += 1
@@ -110,7 +116,7 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         (f"・スタート：正面スタンド前（ゴールの約{ent['distance'] - lap:.0f}m手前）→ ゴール前を通過して1周"
          if ent["distance"] > lap else
          f"・スタート：{sr.start_place(ent['distance'])} → 3〜4コーナーを回って最後の直線へ（1周はしない）"),
-        "・馬場状態：良を想定",
+        f"・馬場状態：{os.environ.get('RACE_GOING', '良')}を想定",
         f"・頭数：{n}頭（{'実際の枠順。内外の有利不利も計算に入れる' if gate else '内外の有利不利は計算に入れていない'}）",
         "・斤量：全馬 " + "・".join(sorted({f'{h["weight"]:g}kg' for h in horses.values() if h['weight']})) + "（定量）",
         "・各馬の力：レース当日時点のデータ（直近のレースほど重く見る）",
@@ -151,6 +157,13 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
                  "・この差を各馬の枠と脚質に合わせて力に足して計算"
                  + (f"（過去のレース数が少ないため、測った差を{gate['shrink']:.0%}に弱めて使用）"
                     if gate.get("shrink", 1) < 0.85 else "")]
+        pe = gate.get("pace")
+        if pe and "fronts" in pe:
+            lead = "多い" if pe["front_share"] > pe["front_share_mean"] + 0.05 else (
+                "少ない" if pe["front_share"] < pe["front_share_mean"] - 0.05 else "平均的")
+            rows += [{"text": "・展開：逃げ・先行タイプは" + f"{len(pe['fronts'])}頭（{lead}）"
+                      + "。1回ごとに「前が残る流れ／後ろが届く流れ」をランダムに決める", "color": "0xFFF59D"},
+                     "　流れの振れ幅は、このコースの過去のレースで前と後ろの成績がどれだけ入れ替わったかから測定"]
         pages.append(sr.text_page("前提条件② 枠順と脚質の影響", rows, 12.0, size=22, top=100))
     pages.append(sr.text_page(f"前提条件{'③' if gate else '②'} データと計算方法", [
         "・データ：netkeibaで公開されている成績（2003〜2026年）",
@@ -161,7 +174,10 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         "　　強い馬に勝てば高得点、弱い相手に負ければ低得点（一緒に走った馬の実力と着差から計算）",
         "　② 条件の差をならす：年ごとの馬場の速さ・ペースの向き不向き・背負った重さ・年齢",
         "　③ 過去のレースで「2頭のうちどちらが先にゴールするか」を当てる式を作る",
-        "　④ 各馬の今の力で、調子を毎回ランダムに変えて1万回走らせる",
+        "　④ 各馬の今の力で、調子と展開を毎回ランダムに変えて1万回走らせる",
+        "　　出走数の少ない馬は、たまたまの好走・凡走に引っぱられないよう出走馬の平均に寄せる",
+        *([f"　　馬場が{os.environ.get('RACE_GOING')}の想定なので、各馬の道悪（稍重〜不良）での走りも反映"]
+          if os.environ.get("RACE_GOING", "良") != "良" else []),
         "",
         f"・精度：2019〜2025年の重賞で検証 → 2頭のどちらが先着するかの正答率 {te['acc_model']:.1%}",
         f"　（単勝人気は {te['acc_market']:.1%}。でたらめなら 50%）",
@@ -172,9 +188,9 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
         ("・3歳馬はキャリアが短く、データが少ない分だけ結果のぶれが大きくなります"
          if all(h.get("age") == 3 for h in ent["horses"]) else
          "・出走数の少ない馬ほど、データが少ない分だけ結果のぶれが大きくなります"),
-        *([f"・{'、'.join(nodata)}は日本での出走がなく、成績データがないため平均的な力として計算しています"]
+        *([f"・{'、'.join(nodata)}は日本での出走がなく成績データがないため、標準的な力（この顔ぶれの中では低め）として計算しています"]
           if (nodata := [m for m, h in horses.items() if not h["history"]]) else []),
-        "・調教・当日の状態・馬場の内外の差・展開の駆け引きは考慮していません",
+        "・調教・当日の状態・馬場の内外の差・騎手の駆け引きは考慮していません",
         "・馬券の購入を勧めるものではありません。楽しみ方のひとつとしてご覧ください",
     ], 9.0))
     return pages
@@ -330,6 +346,29 @@ def main() -> None:
         if h["score"] is None:
             print(f"[注意] {h['name']}: 2年以内のJRA{surf}の成績が無いので下位1割のスコアで計算")
             h["score"] = fill
+    # 成績の少ない馬は、少ない走数のたまたまの好走・凡走で評価がぶれやすいので、走数に応じて出走馬の平均に寄せる
+    # （10走以上はそのまま、4走で80%、3走で72%、2走で60%）
+    mu = statistics.mean(h["score"] for h in horses.values())
+    for h in horses.values():
+        nh = len(h["history"])
+        h["shrink"] = min(1.0, (nh / (nh + 2)) / (10 / 12)) if nh else 1.0
+        h["score"] = mu + (h["score"] - mu) * h["shrink"]
+    # 馬場状態（RACE_GOING。良・稍重・重・不良）。良以外なら、各馬の道悪（稍重〜不良）での走りと
+    # 良での走りの差を、道悪の走数に応じて弱めてスコアに足す
+    going = os.environ.get("RACE_GOING", "良")
+    wet = going != "良"
+    sec_per_score = kit["train"]["sec_per_score"]
+    for h in horses.values():
+        h["wet_adj"] = 0.0
+        if not wet:
+            continue
+        recent = [x for x in h["history"] if x[0] >= f"{int(date[:4]) - 3}{date[4:]}"]
+        wf = [x[1] for x in recent if x[2].get("going", "良") != "良"]
+        df = [x[1] for x in recent if x[2].get("going", "良") == "良"]
+        if wf and df:
+            diff = (statistics.mean(wf) - statistics.mean(df)) * len(wf) / (len(wf) + 3)
+            h["wet_adj"] = max(-0.5, min(0.5, diff / sec_per_score))
+            h["score"] += h["wet_adj"]
     # 枠順の有利不利（sim_gate_effect.py が同じコースの過去レースから測ったもの）。枠順確定後だけ使う
     gate = None
     if drawn and (SIM_DIR / "gate_effect.json").exists():
@@ -344,7 +383,18 @@ def main() -> None:
         for k2 in ("gate", "style", "gate_x_style"):
             gate[k2] *= gate["shrink"]
         print(f"枠・脚質の効果: {gate['n_races']}レース → {gate['shrink']:.0%} に弱めて使用")
-    counts_plain = monte_carlo(horses)
+        pe = gate.get("pace")
+        if pe:
+            # 今回の出走馬のうち逃げ・先行タイプの割合が過去の平均より多ければ、ペースが速くなりやすく前の馬に厳しい
+            fronts = [h["name"] for h in horses.values() if h["history"] and h["style"] < pe["front_threshold"]]
+            pe["fronts"] = fronts
+            pe["front_share"] = len(fronts) / n
+            shift = pe["style_x_front_share"] * (pe["front_share"] - pe["front_share_mean"]) + pe["style_x_wet"] * wet
+            gate["style"] += shift * gate["shrink"]
+            gate["pace_sd"] = pe["style_sd_between_races"] * gate["shrink"]
+            print(f"展開: 先行タイプ {len(fronts)}頭（{pe['front_share']:.0%}、過去平均 {pe['front_share_mean']:.0%}）"
+                  f" 馬場 {going} → 脚質の効果 {shift * gate['shrink']:+.3f} / 展開のぶれ {gate['pace_sd']:.2f}")
+    counts_plain = monte_carlo(horses, pace_sd=gate.get("pace_sd", 0.0) if gate else 0.0)
     # 枠と脚質の組み合わせ: ゲート×g + 脚質×s + ゲート×脚質×g×s（g: 0最内〜1大外、s: 0前〜1後方）
     for h in horses.values():
         g = (h["num"] - 1) / max(n - 1, 1)
@@ -355,7 +405,7 @@ def main() -> None:
         h["gate_adj"] -= mean_adj                               # 出走馬の平均との差だけを足す
         h["score"] += h["gate_adj"]
     upsets = {}
-    counts = monte_carlo(horses, upsets=upsets)
+    counts = monte_carlo(horses, upsets=upsets, pace_sd=gate.get("pace_sd", 0.0) if gate else 0.0)
 
     key = f"c:{venue}{dist}"
     base = kit["model"].coef.get(key) if surf == "芝" else None
@@ -370,15 +420,15 @@ def main() -> None:
                                 key=lambda t: t[1])
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
-    md = [f"# {ent['race_name']} シミュレーション（{date} {venue} {surf}{dist}m・{'枠順確定' if drawn else '馬番は仮'}）", "",
+    md = [f"# {ent['race_name']} シミュレーション（{date} {venue} {surf}{dist}m・{going}・{'枠順確定' if drawn else '馬番は仮'}）", "",
           f"検証の正答率 {kit['test']['acc_model']:.1%}（単勝人気 {kit['test']['acc_market']:.1%}）", "",
-          f"| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | JRA{surf} |",
-          "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
+          f"| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | 平均への寄せ | 道悪補正 | JRA{surf} |",
+          "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     for m in order:
         rc, h = counts[m], horses[m]
         md.append(f"| {h['num']} | {m} | {h['jockey']} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | "
                   f"{sum(rc[:3]) / N_RUNS:.1%} | {h['score']:+.2f} | {h['gate_adj']:+.2f} | {counts_plain[m][0] / N_RUNS:.1%} | "
-                  f"{h['style']:.2f} | {len(h['history'])} | {h['stats']['starts']}戦{h['stats']['wins']}勝 |")
+                  f"{h['style']:.2f} | {len(h['history'])} | {h['shrink']:.0%} | {h['wet_adj']:+.2f} | {h['stats']['starts']}戦{h['stats']['wins']}勝 |")
     if gate:
         md += ["", f"枠・脚質の効果（{gate['n_races']}レース・{gate['from_year']}年〜、人気をそろえた2頭比較）:"]
         for mode, mm in gate["models"].items():
@@ -387,6 +437,11 @@ def main() -> None:
                                                          for k2, v in mm["coef"].items()))
         md += ["", "| 枠 | 脚質 | 走数 | 勝率 | 3着内率 |", "|---|---|---:|---:|---:|"]
         md += [f"| {c['gate']} | {c['style']} | {c['runs']} | {c['win']:.1%} | {c['top3']:.1%} |" for c in gate["cross"]]
+    if gate and gate.get("pace") and "fronts" in gate["pace"]:
+        pe = gate["pace"]
+        md += ["", f"展開: 先行タイプ {len(pe['fronts'])}頭（{'、'.join(pe['fronts'])}）／割合 {pe['front_share']:.0%}"
+                   f"（過去平均 {pe['front_share_mean']:.0%}）／脚質×先行割合 {pe['style_x_front_share']:+.3f}"
+                   f"／脚質×道悪 {pe['style_x_wet']:+.3f}／展開のぶれ {gate.get('pace_sd', 0):.2f}"]
     if shown:
         md += ["", "代表レース: " + " / ".join(f"{horses[m]['num']} {m} {sd.fmt_time(t)}" for m, t in shown)]
     md += ["", f"勝率10位以下の馬が勝った回数: {upsets.get('low_winner', 0):,}回 / {N_RUNS:,}回"]
@@ -397,6 +452,9 @@ def main() -> None:
         "top3": {m: sum(counts[m][:3]) / N_RUNS for m in order},
         "win_rate_without_gate": {m: counts_plain[m][0] / N_RUNS for m in order},
         "gate": gate,
+        "going": going,
+        "shrink": {m: horses[m]["shrink"] for m in order},
+        "wet_adj": {m: horses[m]["wet_adj"] for m in order},
         "shown": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n".join(md))
     if no_video:

@@ -13,6 +13,9 @@ on:
       race:
         description: "レース名（netkeiba のレース一覧の表記）か race_id（12桁）"
         default: "202608050611"
+      going:
+        description: "想定する馬場状態（良・稍重・重・不良）"
+        default: "良"
   push:
     branches:
       - claude/youtube-keiba-video-research-x6jdvw
@@ -27,6 +30,7 @@ on:
 env:
   RACE_DATE: ${{ github.event.inputs.date || '20261122' }}
   RACE_NAME: ${{ github.event.inputs.race || '202608050611' }}
+  RACE_GOING: ${{ github.event.inputs.going || '良' }}
   # 過去の人気を手がかりに使わない（人気馬をなぞるだけにならないように）
   SIM_NO_POP: "1"
 
