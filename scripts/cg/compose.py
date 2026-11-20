@@ -139,8 +139,8 @@ def draw(card: Card, items: list[dict], plan: dict, t: float):
                 y = y0 + 66 + j * 62
                 card.num(r["num"], r["waku"], x0 + 22, y, 24)
                 card.text(r["name"], x0 + 66, y + 2, 26, WHITE)
-                bw = 100 * r["win"] / top
-                card.rect(x0 + 312, y + 10, bw, 14, "0xE8C547" if j == 0 else "0x9AA7B2")
+                bw = 80 * r["win"] / top
+                card.rect(x0 + 300, y + 10, bw, 14, "0xE8C547" if j == 0 else "0x9AA7B2")
                 card.text(f"{r['win'] * 100:.1f}%", x0 + w - 22, y + 2, 26, WHITE, anchor="r")
         elif ty == "focus":
             x0, y0 = 40, H - 220

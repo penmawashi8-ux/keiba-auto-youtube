@@ -41,7 +41,9 @@ def lerp(a, b, u):
 
 def speech(text: str) -> str:
     """読み上げ用: かっこ書きを外す"""
-    return re.sub(r"（[^）]*）", "", text)
+    text = re.sub(r"（[^）]*）", "", text)
+    text = re.sub(r"(\d)m", r"\1メートル", text)          # 1600m → 1600メートル
+    return text.replace("%", "パーセント")
 
 
 def main() -> None:
