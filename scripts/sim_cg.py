@@ -308,13 +308,28 @@ def main() -> None:
         narr = f"勝率{k + 1}位、{h['name']}。{body}。"
         dur = say(narr, t0 + 0.3)
         flen = max(6.5, dur + 1.0)
-        tau = 14.0 + k * 9.0
+        # カメラとその馬の間に他の馬が入らない時間帯と向き（外から／内から）を探す
+        span = flen * 0.8
+
+        def blockers(tt, sgn):
+            nb = 0
+            for q in range(6):
+                d, la = at(tt + span * q / 5)
+                for j in range(n):
+                    if j != i and abs(d[j] - d[i]) < 7.5 and 0 < (la[j] - la[i]) * sgn < 12:
+                        nb += 1
+            return nb
+
+        cands = [(blockers(8.0 + 0.5 * q, sgn), -abs(8.0 + 0.5 * q - (20 + 8 * k)), 8.0 + 0.5 * q, sgn)
+                 for q in range(int((win_t - 16) / 0.5)) for sgn in (1, -1)]
+        nb, _, tau, sgn = min(cands, key=lambda c: (c[0], -c[1]))
+        print(f"  紹介 {h['name']}: 時刻 {tau:.1f}秒 {'外' if sgn > 0 else '内'}から（間の馬 {nb}）")
         for f in range(int(flen * FPS)):
             d, la = at(tau)
             s_h = start_s + d[i]
             u = f / (flen * FPS)
-            side = la[i] + 9.5
-            cam = (P(s_h + 5.0 - 2.5 * u, side, 2.0), P(s_h + 0.4, la[i], 1.35), 46)
+            side = la[i] + 9.0 * sgn
+            cam = (P(s_h + 5.0 - 2.5 * u, side, 2.3), P(s_h + 0.4, la[i], 1.35), 46)
             add(tau, cam)
             tau += 0.8 / FPS
         segment(f"focus{k + 1}", t0, now())
