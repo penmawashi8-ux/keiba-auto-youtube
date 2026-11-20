@@ -1,0 +1,164 @@
+name: CG Race Simulation Video
+
+# 3D CG（Blender）のシミュレーション動画。
+#   prep    … 保存済みのデータで1万回シミュレーション → 代表レースの隊列・カメラ・ナレーション（edge-tts）
+#   render  … フレームを20分割して並列に描画
+#   compose … テロップ・音声を重ねて mp4 に。research-output の sim/<prefix>_cg.mp4 に保存
+# 設定は data/cg/request.json（prefix, going, chunks, preview）。preview: true なら1/6のフレーム数で試し描き
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/cg/request.json
+      - .github/workflows/sim_cg_race.yml
+
+concurrency:
+  group: sim-cg-race
+  cancel-in-progress: true
+
+jobs:
+  prep:
+    runs-on: ubuntu-24.04  # ubuntu-latest(26.04)の ffmpeg 8 は drawtext の改行を☒で描くため固定
+    timeout-minutes: 30
+    outputs:
+      prefix: ${{ steps.req.outputs.prefix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
+      - id: req
+        run: |
+          python -c "import json; r=json.load(open('data/cg/request.json')); print('prefix='+r['prefix']); print('going='+r.get('going','良'))" >> "$GITHUB_OUTPUT"
+          cat data/cg/request.json
+      - name: Restore data from research-output
+        run: |
+          git fetch -q origin research-output
+          bash .github/scripts/restore_sim_file.sh races_cache.json races.json horses_cache.json gate_cache.json entries.json gate_effect.json
+      - name: Simulate (same as the 2D video) and write the CG script
+        env:
+          SIM_NO_POP: "1"
+          RACE_GOING: ${{ steps.req.outputs.going }}
+        run: |
+          python scripts/sim_real_race.py --no-video --cg-export --prefix "${{ steps.req.outputs.prefix }}"
+          python scripts/sim_cg.py "${{ steps.req.outputs.prefix }}" cgwork
+          python - <<'PY'
+          import json
+          r = json.load(open("data/cg/request.json"))
+          if r.get("preview"):
+              s = json.load(open("cgwork/spec.json"))
+              s["preview_step"] = 6
+              json.dump(s, open("cgwork/spec.json", "w"), ensure_ascii=False)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cgwork
+          path: cgwork
+          retention-days: 3
+
+  render:
+    needs: prep
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: true
+      matrix:
+        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends blender xvfb libegl1 libgl1-mesa-dri
+      - uses: actions/download-artifact@v4
+        with:
+          name: cgwork
+          path: cgwork
+      - name: Render frames
+        run: |
+          read F0 F1 PICK < <(python3 - <<'PY'
+          import json
+          s = json.load(open("cgwork/spec.json"))
+          n, step = len(s["frames"]), s.get("preview_step", 1)
+          fr = list(range(0, n, step))
+          k, N = ${{ matrix.chunk }}, 20
+          part = fr[len(fr) * k // N: len(fr) * (k + 1) // N]
+          print(part[0] if part else -1, part[-1] if part else -1, ",".join(map(str, part)) if part else "-")
+          PY
+          )
+          echo "chunk ${{ matrix.chunk }}: $F0..$F1"
+          mkdir -p frames
+          if [ "$PICK" != "-" ]; then
+            xvfb-run -a -s "-screen 0 1280x720x24" blender -b -P scripts/cg/race3d.py -- cgwork/spec.json frames "$PICK" 2>&1 \
+              | grep -E "^Saved|Error|Traceback|line [0-9]+" | tail -n 30
+          fi
+          ls frames | wc -l
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frames-${{ matrix.chunk }}
+          path: frames
+          retention-days: 2
+
+  compose:
+    needs: [prep, render]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          mkdir -p fonts
+          curl -sfL -o fonts/BIZUDPGothic-Bold.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/bizudpgothic/BIZUDPGothic-Bold.ttf
+      - uses: actions/download-artifact@v4
+        with:
+          name: cgwork
+          path: cgwork
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: frames-*
+          path: frames
+          merge-multiple: true
+      - name: Compose
+        run: |
+          ls frames | wc -l
+          python3 - <<'PY'
+          # 試し描き（間引き）のときは、描いたフレームを番号順に詰め直し、台本の時刻も合わせる
+          import json, os
+          from pathlib import Path
+          s = json.load(open("cgwork/spec.json"))
+          step = s.get("preview_step", 1)
+          if step > 1:
+              fr = sorted(Path("frames").glob("f*.jpg"))
+              for j, p in enumerate(fr):
+                  p.rename(p.with_name(f"g{j:05d}.jpg"))
+              for p in sorted(Path("frames").glob("g*.jpg")):
+                  p.rename(p.with_name("f" + p.name[1:]))
+              plan = json.load(open("cgwork/plan.json"))
+              plan["fps"] = plan["fps"] / step
+              json.dump(plan, open("cgwork/plan.json", "w"), ensure_ascii=False)
+          PY
+          python scripts/cg/compose.py frames cgwork "out.mp4" fonts/BIZUDPGothic-Bold.ttf
+          ffprobe -v error -show_entries format=duration -of csv=p=0 out.mp4
+      - name: Save to research-output
+        run: |
+          P="${{ needs.prep.outputs.prefix }}"
+          mkdir -p save
+          cp out.mp4 "save/${P}_cg.mp4"
+          cp cgwork/plan.json "save/${P}_cg_plan.json"
+          for t in 5 20 40 60 80 100 115 125; do
+            ffmpeg -v error -y -ss $t -i out.mp4 -vframes 1 -q:v 3 "save/${P}_cg_frame_${t}.jpg" || true
+          done
+          bash .github/scripts/save_sim_outputs.sh "CG動画 ${P}" save/*

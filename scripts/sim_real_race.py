@@ -197,6 +197,26 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
     return pages
 
 
+def strengths(horses: dict, m: str) -> tuple[list, list]:
+    """出走馬の中で上位（強み）・下位（弱み）の成績項目。(項目, 内容, 「N頭中k位」) のリスト"""
+    names = list(horses)
+    items = {o: sd.stat_items(horses[o]["stats"]) for o in names}
+    strong, weak = [], []
+    for j, (label, val, text) in enumerate(items[m]):
+        vals = [items[o][j][1] for o in names if items[o][j][1] is not None]
+        if val is None or len(vals) < 6:          # データが少なすぎる項目（1勝だけ等）は比べない
+            continue
+        better = sum(v > val + 1e-9 for v in vals)
+        ties = sum(abs(v - val) < 1e-9 for v in vals)
+        if ties > 3 or (j == 0 and val == 0):      # 多くの馬が同じ値（G1未勝利など）の項目は強み・弱みにしない
+            continue
+        if better <= 1:
+            strong.append((label, text, f"{len(vals)}頭中{better + 1}位"))
+        elif better >= len(vals) - 3:
+            weak.append((label, text, f"{len(vals)}頭中{better + 1}位"))
+    return strong, weak
+
+
 def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn: bool,
                 upsets: dict | None = None) -> list[dict]:
     names = list(horses)
@@ -255,22 +275,9 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
         pages.append(sr.text_page("1万回の中には大荒れも", rows, 9.0, size=26, top=110))
 
     # 注目馬（勝率上位5頭）を1頭1画面で。強み・弱みは出走馬の中での順位
-    items = {m: sd.stat_items(horses[m]["stats"]) for m in names}
     for rank, m in enumerate(order[:5], 1):
         h = horses[m]
-        strong, weak = [], []
-        for j, (label, val, text) in enumerate(items[m]):
-            vals = [items[o][j][1] for o in names if items[o][j][1] is not None]
-            if val is None or len(vals) < 6:          # データが少なすぎる項目（1勝だけ等）は比べない
-                continue
-            better = sum(v > val + 1e-9 for v in vals)
-            ties = sum(abs(v - val) < 1e-9 for v in vals)
-            if ties > 3 or (j == 0 and val == 0):      # 多くの馬が同じ値（G1未勝利など）の項目は強み・弱みにしない
-                continue
-            if better <= 1:
-                strong.append((label, text, f"{len(vals)}頭中{better + 1}位"))
-            elif better >= len(vals) - 3:
-                weak.append((label, text, f"{len(vals)}頭中{better + 1}位"))
+        strong, weak = strengths(horses, m)
         best = max(h["history"], key=lambda x: x[1]) if h["history"] else None
         rows = [[badge_col(h, 60, 40), {"text": f"勝率 {counts[m][0] / N_RUNS:.1%}（{rank}位）", "x": 720, "size": 32,
                                          "color": "0xFFF59D"}],
@@ -304,6 +311,31 @@ def after_pages(horses: dict, counts: dict, race: list[tuple[str, float]], drawn
 
 
 # ---------------------------------------------------------------------------
+def export_cg(ent: dict, horses: dict, counts: dict, shown: list, upsets: dict, gate: dict | None,
+              going: str, prefix: str) -> None:
+    """3D CG の動画（scripts/sim_cg.py）に渡すデータ"""
+    names = list(horses)
+    order = sorted(names, key=lambda m: -counts[m][0])
+    out = {"race": {k: v for k, v in ent.items() if k != "horses"}, "going": going, "n_runs": N_RUNS,
+           "pace": (gate or {}).get("pace"), "horses": []}
+    for m in names:
+        h = horses[m]
+        strong, weak = strengths(horses, m)
+        best = max(h["history"], key=lambda x: x[1]) if h["history"] else None
+        out["horses"].append({
+            "name": m, "num": h["num"], "waku": h["waku"], "jockey": h["jockey"], "style": h["style"],
+            "style_name": sd.style_name(h["style"]), "starts": h["stats"]["starts"], "wins": h["stats"]["wins"],
+            "win": counts[m][0] / N_RUNS, "top2": sum(counts[m][:2]) / N_RUNS, "top3": sum(counts[m][:3]) / N_RUNS,
+            "rank": order.index(m) + 1, "n_history": len(h["history"]),
+            "best": {"ym": sd.ym(best[0]), "race": best[2]["race_name"], "pos": best[3]["pos"]} if best else None,
+            "strong": strong[:3], "weak": weak[:2]})
+    out["shown"] = shown
+    out["upsets"] = {"low_winner": upsets.get("low_winner", 0), "low_top3": upsets.get("low_top3", 0),
+                     "race": upsets.get("race", [])[:3]}
+    (SIM_DIR / f"{prefix}_cg_input.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"CG用データ: sim/{prefix}_cg_input.json")
+
+
 def main() -> None:
     # --no-video: 勝率などのデータだけ作る。--prefix 名前: 出力ファイル名の頭（別のレースの結果を上書きしない）
     no_video = "--no-video" in sys.argv
@@ -458,6 +490,9 @@ def main() -> None:
         "wet_adj": {m: horses[m]["wet_adj"] for m in order},
         "shown": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n".join(md))
+    if "--cg-export" in sys.argv:
+        export_cg(ent, horses, counts, shown, upsets, gate, going, prefix)
+        return
     if no_video:
         return
 
