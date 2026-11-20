@@ -581,6 +581,7 @@ def animate(horses):
     sc.camera = cam
     cam_data.clip_end = 12000
     cam_data.sensor_width = 36
+    build_tags(cam)
     ground_z = SPEC.get("horse_ground", 0.0)
     cyc = SPEC.get("gallop_frames", 18.0)
     stride = SPEC.get("gallop_stride", GALLOP_STRIDE)
@@ -591,7 +592,13 @@ def animate(horses):
             s, lat = fr["s"][i], fr["lat"][i]
             p = P(s, lat, ground_z)
             ob.location = p
-            ob.rotation_euler = (0, 0, heading(s, lat) + SPEC.get("model_yaw", 0.0))
+            hd = heading(s, lat)
+            fa, fb = frames[max(f - 1, 0)], frames[min(f + 1, len(frames) - 1)]
+            if (fb is not fa and abs(fb["tau"] - fa["tau"]) < 0.6 and fb["s"][i] - fa["s"][i] > 0.05
+                    and fa["run"][i] and fb["run"][i]):
+                a, b = P(fa["s"][i], fa["lat"][i]), P(fb["s"][i], fb["lat"][i])
+                hd = math.atan2(b.y - a.y, b.x - a.x)        # 斜めに進むときは体もその向きに
+            ob.rotation_euler = (0, 0, hd + SPEC.get("model_yaw", 0.0))
             ob.keyframe_insert("location", frame=f + 1)
             ob.keyframe_insert("rotation_euler", frame=f + 1)
             if ob.animation_data and len(ob.animation_data.nla_tracks) >= 2:
@@ -604,6 +611,15 @@ def animate(horses):
                 for stp, prop in ((gal, "influence"), (gal, "strip_time"), (idle, "strip_time")):
                     stp.keyframe_insert(prop, frame=f + 1)
         c = fr["cam"]
+        for i, tg in enumerate(TAGS):
+            hp = P(fr["s"][i], fr["lat"][i], 0.0)
+            dist_c = (Vector(c["loc"]) - Vector((hp.x, hp.y, 2.6))).length
+            k = 1.15 * dist_c / max(c.get("lens", 50), 1) if fr.get("tags") else 0.0
+            lane = (fr["lat"][i] - 1.4) / 1.235          # 横に並んだ馬の名札は上下にずらす（列が変わると滑らかに）
+            tg.location = (hp.x, hp.y, 2.55 + 0.62 * k * (0.5 - 0.5 * math.cos(math.pi * lane)))
+            tg.scale = (k, k, k)
+            tg.keyframe_insert("location", frame=f + 1)
+            tg.keyframe_insert("scale", frame=f + 1)
         cam.location = Vector(c["loc"])
         tgt = Vector(c["look"])
         cam.rotation_euler = (tgt - cam.location).to_track_quat("-Z", "Y").to_euler()
@@ -611,7 +627,7 @@ def animate(horses):
         cam.keyframe_insert("location", frame=f + 1)
         cam.keyframe_insert("rotation_euler", frame=f + 1)
         cam_data.keyframe_insert("lens", frame=f + 1)
-    for ob in [cam, cam_data] + horses:
+    for ob in [cam, cam_data] + horses + TAGS:
         ad = ob.animation_data
         if ad and ad.action:
             for fc in ad.action.fcurves:
@@ -640,6 +656,92 @@ def build_gate():
     box("GateBeam", (mid.x, mid.y, 2.85), (0.5, span + 0.6, 0.4), white, rot_z=hd)
     box("GateBeamF", ((P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).x, (P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).y, 2.85),
         (0.3, span + 0.6, 0.3), green, rot_z=hd)
+
+
+TAGS, TAG_ROW = [], []
+WAKU_RGB = [(0.95, 0.95, 0.95), (0.05, 0.05, 0.05), (0.85, 0.08, 0.08), (0.1, 0.35, 0.85), (0.98, 0.84, 0.1),
+            (0.1, 0.6, 0.2), (1.0, 0.5, 0.08), (1.0, 0.6, 0.72)]
+
+
+def emit_mat(name, color, alpha=1.0):
+    """照明の影響を受けない色（名札用）"""
+    m = bpy.data.materials.get(name)
+    if m:
+        return m
+    m = bpy.data.materials.new(name)
+    m.use_nodes = True
+    nt = m.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs[0].default_value = (*color, 1)
+    em.inputs[1].default_value = 1.0
+    if alpha < 1:
+        tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+        mix = nt.nodes.new("ShaderNodeMixShader")
+        mix.inputs[0].default_value = alpha
+        nt.links.new(tr.outputs[0], mix.inputs[1])
+        nt.links.new(em.outputs[0], mix.inputs[2])
+        nt.links.new(mix.outputs[0], out.inputs[0])
+        m.blend_method = "BLEND"
+    else:
+        nt.links.new(em.outputs[0], out.inputs[0])
+    m.shadow_method = "NONE"
+    return m
+
+
+def build_tags(cam):
+    """各馬の上に浮かぶ名札（枠色の四角に馬番＋馬名）。いつも画面に正対し、同じくらいの大きさに見える"""
+    font = None
+    fp = SPEC.get("label_font")
+    if fp:
+        try:
+            font = bpy.data.fonts.load(fp)
+        except Exception:      # noqa: BLE001
+            font = None
+    first = SPEC["frames"][0]
+    order = sorted(range(len(SPEC["horses"])), key=lambda i: first["lat"][i])
+    for i, h in enumerate(SPEC["horses"]):
+        root = link(bpy.data.objects.new(f"Tag{i}", None))
+        con = root.constraints.new("COPY_ROTATION")
+        con.target = cam
+        name = h["name"]
+        nw = 0.36 * len(name) + 0.3
+        sq = 0.5
+        total = sq + nw
+        x0 = -total / 2
+
+        def plane(nm, w, hgt, x, m, z=0.0):
+            bpy.ops.mesh.primitive_plane_add(size=1, location=(0, 0, 0))
+            o = bpy.context.active_object
+            o.name = nm
+            o.scale = (w, hgt, 1)
+            o.location = (x + w / 2, hgt / 2, z)
+            o.data.materials.append(m)
+            o.parent = root
+            return o
+        w = h["waku"] - 1
+        plane(f"TagSq{i}", sq, sq, x0, emit_mat(f"Waku{w}", WAKU_RGB[w]))
+        plane(f"TagBg{i}", nw, sq, x0 + sq, emit_mat("TagBg", (0.03, 0.04, 0.05), 0.82))
+        for txt, x, col, align in ((str(h["num"]), x0 + sq / 2, (0.02, 0.02, 0.02) if w in (0, 4, 6, 7) else (1, 1, 1),
+                                    "CENTER"), (name, x0 + sq + 0.14, (1, 1, 1), "LEFT")):
+            cu = bpy.data.curves.new(f"TagT{i}{align}", "FONT")
+            cu.body = txt
+            if font:
+                cu.font = font
+            cu.size = 0.36
+            cu.align_x = align
+            cu.align_y = "CENTER"
+            o = link(bpy.data.objects.new(f"TagT{i}{align}", cu))
+            o.data.materials.append(emit_mat(f"TagInk{col}", col))
+            o.location = (x, sq / 2, 0.01)
+            o.parent = root
+        if w == 0:                                     # 白い枠は縁取り
+            plane(f"TagSqEdge{i}", sq + 0.06, sq + 0.06, x0 - 0.03, emit_mat("TagEdge", (0.5, 0.5, 0.5)), z=-0.005)
+            bpy.context.active_object.location.y -= 0.03
+        root.scale = (0, 0, 0)
+        TAGS.append(root)
+        TAG_ROW.append(order.index(i))
 
 
 def main():

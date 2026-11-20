@@ -46,6 +46,128 @@ def speech(text: str) -> str:
     return text.replace("%", "パーセント")
 
 
+def formation3d(finish: list[float], styles: list[float], dist: int, taus: list[float], track_w: float):
+    """3D 用の隊列。実際のレースに近い動きにする（2D の sim_render.formation より詰まった馬群）。
+
+    縦: 道中は脚質の順に、前の馬から 1/3〜1馬身ずつ後ろ（馬群の長さは最大 約14馬身）。逃げ馬は少し離す。
+        スタートは止まった状態から加速し、残り3〜4割から着順どおりの差に移っていく。
+    横: 内ラチ沿いに 1.4m 間隔の「列」で並ぶ。列は数か所（隊列が決まるころ・3〜4コーナー・直線入口・ゴール前）
+        でだけ決め直し、その間はゆっくり移る（すぐ横に動かないので、ふらつかない）。直線では差し・追込が外へ。
+    """
+    import random
+    n = len(finish)
+    win_t = min(finish)
+    acc_t = 1.6                                         # 加速の時定数[秒]
+    base = lambda t: t - acc_t * (1 - math.exp(-t / acc_t))      # noqa: E731
+    v = dist / base(win_t)
+    gate_w = max(min(3.6, (track_w - 4.0) / max(n - 1, 1)), 1.2)
+    gate_lat = [1.4 + i * gate_w for i in range(n)]
+    rng = random.Random(11)
+    order = sorted(range(n), key=lambda i: styles[i] + 0.04 * i / max(n - 1, 1))
+    gap, acc = [0.0] * n, 0.0
+    for r, i in enumerate(order[1:], 1):
+        g = 0.8 + rng.random() * 1.6
+        if r == 1:
+            g += 2.0 + max(styles[i] - styles[order[0]], 0.0) * 6
+        acc += g
+        gap[i] = acc
+    if acc > 34.0:
+        gap = [g * 34.0 / acc for g in gap]
+
+    def D_at(tau):
+        u = tau / win_t
+        out = []
+        for i in range(n):
+            if tau >= win_t:
+                d = tau - finish[i]
+                out.append(dist + v * d * (0.8 if d > 0 else 1.0))
+                continue
+            ramp = _smooth(u / 0.14)
+            u0 = 0.64 + 0.14 * (1 - styles[i])
+            late = _smooth((u - u0) / (1 - u0))
+            out.append(max(v * base(tau) - gap[i] * ramp * (1 - late) - (finish[i] - win_t) * v * late, 0.0))
+        return out
+
+    D = [[0.0] * len(taus) for _ in range(n)]
+    for k, tau in enumerate(taus):
+        for i, d in enumerate(D_at(tau)):
+            D[i][k] = d
+
+    def lead_time(m):
+        lo, hi = 0.0, win_t
+        for _ in range(40):
+            mid = (lo + hi) / 2
+            if max(D_at(mid)) < m:
+                lo = mid
+            else:
+                hi = mid
+        return hi
+
+    W, R0 = gate_w, 1.4                               # 列の間隔はゲートの間隔と同じ（約1.2〜1.4m）
+    ST = sr.STRAIGHT_M
+    t1 = lead_time(min(320, dist * 0.2))
+    t3 = lead_time(dist - ST + 30)
+    pre = [int(round(2 * i / max(n - 1, 1))) for i in range(n)]          # 外枠の馬はしばらく外め
+    closer = [(2 + int(styles[i] * 4)) if styles[i] > 0.45 else 0 for i in range(n)]
+    # 3秒ごとに列を決め直す。動くのは隣の列までで、前後3m以内（前後の区間を通して）に馬がいない列だけ
+    kt = [0.0] + [3.0 * q for q in range(1, int((win_t + 6) / 3.0) + 1)]
+    cur = [max(0, round((gate_lat[i] - R0) / W)) for i in range(n)]
+    lanes_at = [None]
+    for q in range(1, len(kt)):
+        tk = kt[q]
+        win = [kt[q - 1] + (min(kt[q + 1] if q + 1 < len(kt) else tk + 3, win_t + 6) - kt[q - 1]) * r / 8
+               for r in range(9)]
+        dw = [D_at(t) for t in win]
+        near = lambda i, j: min(abs(d[i] - d[j]) for d in dw) < 3.0        # noqa: E731
+        d_now = D_at(tk)
+        pref = [pre[i] if tk < t1 else (closer[i] if tk >= t3 else 0) for i in range(n)]
+        new, placed = cur[:], []
+        for i in sorted(range(n), key=lambda i: -d_now[i]):
+            c = cur[i]
+            if tk > win_t + 1:
+                opts = [c]
+            elif c > pref[i] and tk < t1 + 6 and c - pref[i] >= 2:
+                opts = [c - 2, c - 1, c, c + 1]           # スタート直後は外枠の馬が内へ寄っていく
+            elif c > pref[i]:
+                opts = [c - 1, c, c + 1]
+            elif c < pref[i]:
+                opts = [c + 1, c, c - 1]
+            else:
+                opts = [c, c + 1, c - 1]
+            opts = [o for o in opts if o >= 0] + list(range(c + 2, c + 16))
+
+            def free(L):
+                if L != c and any(cur[j] == L and near(i, j) for j in range(n) if j != i and j not in placed):
+                    return False                      # まだ決めていない（後ろの）馬が今いる列には入らない
+                for j in placed:
+                    if near(i, j) and (new[j] == L or (cur[j] == L and new[j] == c) or
+                                       (min(cur[j], new[j]) < max(c, L) and max(cur[j], new[j]) > min(c, L)
+                                        and (cur[j] - c) * (new[j] - L) < 0)):
+                        return False
+                return True
+
+            new[i] = next((o for o in opts if free(o)), None)
+            if new[i] is None:
+                new[i] = c
+            placed.append(i)
+        cur = new
+        lanes_at.append(cur[:])
+    LAT = [[0.0] * len(taus) for _ in range(n)]
+    for k, tau in enumerate(taus):
+        q = min(int(tau // 3.0), len(kt) - 2)
+        w = _smooth((tau - kt[q]) / (kt[q + 1] - kt[q]))
+        for i in range(n):
+            a_ = gate_lat[i] if q == 0 else R0 + W * lanes_at[q][i]
+            b_ = R0 + W * lanes_at[q + 1][i]
+            LAT[i][k] = min(a_ + (b_ - a_) * w, track_w - 1.0)
+    return D, LAT
+
+
+def _smooth(v: float) -> float:
+    v = min(max(v, 0.0), 1.0)
+    return v * v * (3 - 2 * v)
+
+
 def main() -> None:
     prefix, out = sys.argv[1], Path(sys.argv[2])
     out.mkdir(parents=True, exist_ok=True)
@@ -66,7 +188,7 @@ def main() -> None:
     # ---- 隊列（0.05秒ごと）。補間して任意の時刻の位置を出す
     step = 0.05
     taus = [k * step for k in range(int((t_end + 12) / step) + 1)]
-    D, LAT = sr.formation(finish, styles, dist, taus)
+    D, LAT = formation3d(finish, styles, dist, taus, TW)
 
     def at(tau: float):
         x = min(max(tau / step, 0.0), len(taus) - 1.001)
@@ -178,14 +300,14 @@ def main() -> None:
             cam = (start_cam, P(sc, 7, 1.1), 62 + lead * 0.25)
             shot = "start"
         elif not in_straight and (s_on_lap > LAP - math.pi * sr.CURVE_R_M - 40 or lead > dist - ST - 260):
-            cam = (P(sc - 55, TW + 46, 42), P(sc + 18, 8, 0), 34)     # 3〜4コーナー: 上空から
+            cam = (P(sc - 20, 15, 13), P(sc + 6, 3, 0.5), 34)        # 3〜4コーナー: 斜め後ろの上から
             shot = "heli"
         elif not in_straight:
-            cam = (P(sc + 6, TW + 34, 13), P(sc, 9, 1.0), 52)         # 向こう正面: 外から並走
+            cam = (P(sc + 3, 19, 6.5), P(sc, 3, 1.0), 40)            # 向こう正面: 外から並走（カメラ車）
             shot = "side"
         elif rem > 230:
             ll = sum(la[i] for i in order[:4]) / 4
-            cam = (P(lead_s + 42, ll, 3.4), P(lead_s - 5, ll, 1.3), 70)   # 直線: 先頭の前から（移動車）
+            cam = (P(lead_s + 30, ll + 1.5, 3.0), P(lead_s - 6, ll, 1.3), 58)   # 直線: 先頭の前から（移動車）
             shot = "headon"
         else:
             cam = (P(lead_s - 4, TW + 26, 9), P(lead_s - 5, 7, 1.1), 62)   # ゴール前: スタンド側から並走
@@ -193,8 +315,26 @@ def main() -> None:
         if not shot_log or shot_log[-1][0] != shot:
             shot_log.append((shot, now()))
         add(tau, cam)
+        frames[-1]["shot"] = shot
+        frames[-1]["tags"] = 1
         tau += sp / FPS
     race_t1 = now()
+    # 同じショットの中ではカメラをならす（先頭が入れ替わるたびにカメラが揺れないように）
+    k0 = int(round(race_t0 * FPS))
+    k = k0
+    while k < len(frames):
+        k1 = k
+        while k1 + 1 < len(frames) and frames[k1 + 1].get("shot") == frames[k].get("shot"):
+            k1 += 1
+        if frames[k].get("shot") in ("side", "heli", "finish", "headon"):
+            src = [dict(frames[q]["cam"]) for q in range(k, k1 + 1)]
+            h = 18
+            for q in range(len(src)):
+                lo, hi = max(0, q - h), min(len(src), q + h + 1)
+                for key in ("loc", "look"):
+                    frames[k + q]["cam"][key] = [round(sum(src[r][key][a] for r in range(lo, hi)) / (hi - lo), 3)
+                                                 for a in range(3)]
+        k = k1 + 1
     segment("race", race_t0, race_t1, shots=[(s, round(t, 3)) for s, t in shot_log])
     plan["overlays"].append({"type": "race_tag", "t0": round(race_t0, 3), "t1": round(race_t1, 3)})
 
@@ -257,6 +397,7 @@ def main() -> None:
         ls = start_s + max(dd)
         cam = (P(ls - 1, TW + 10, 1.5), P(ls - 3, 6, 1.2), 42)
         add(tau, cam)
+        frames[-1]["tags"] = 1
         tau += 0.3 / FPS
     segment("replay", t0, now())
     plan["overlays"].append({"type": "replay", "t0": round(t0, 3), "t1": round(now(), 3)})
@@ -360,6 +501,7 @@ def main() -> None:
         "horse_model": "data/cg/horse_quaternius.blend",
         "horse_scale": 0.5, "model_yaw": math.pi / 2, "gallop_frames": 18, "gallop_stride": 7.2,
         "rider_bone": "Torso2", "rider_pos": [0.0, -0.25, 3.0],
+        "label_font": "data/cg/BIZUDPGothic-Bold.ttf",
         "fps": FPS, "res": [1280, 720], "samples": 12,
         "frames": frames,
     }
