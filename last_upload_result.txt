@@ -1,10 +1,10 @@
-date: 2026-11-19T07:12:05.446949Z
+date: 2026-11-20T01:08:19.248440Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OFxt2lp_S_k title=【福島記念出走馬・騎手確定】カラマティアノス＆津村明秀騎手、フォルテアンジェロ＆
-OK project=1 video_id=Th92Lwa4sbM title=重賞2勝のラヴァンダが引退…中京記念レコードVの5歳牝馬、今後は繁殖入り　エリザ
-OK project=1 video_id=SsDT-OprWoc title=【東スポ杯2歳S出走馬・騎手確定】ショウナンガレオン＆鮫島克駿騎手、ジョドレルバ
+OK project=1 video_id=7kQMmT9pGM4 title=【マイルCS・枠順確定】G1連勝狙う武豊騎手のアドマイヤズームは3枠5番　G1・
+OK project=1 video_id=fdH1Cyd8ybc title=【阪神アーバン競馬・人気ジョッキーは語る】大山真吾騎手はカイリ(園田3R)で勝利
+OK project=1 video_id=Hs9Uf3AzpBY title=【マイルCS枠順確定】エンブロイダリーは1枠2番、スターアニスは7枠14番
