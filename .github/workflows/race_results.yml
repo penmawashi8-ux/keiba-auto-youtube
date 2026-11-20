@@ -1,0 +1,37 @@
+name: Race Results (result pages)
+
+# 指定したレースの結果ページ（着順・通過順・上がり・オッズ・ラップ）をそのまま保存する（予測の答え合わせ用）。
+# 対象は data/results_request.json {"race_ids": [12桁, ...]}。結果は research-output の sim/results/<race_id>.html。
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/results_request.json
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: |
+          mkdir -p out
+          for r in $(python3 -c "import json;print(' '.join(json.load(open('data/results_request.json'))['race_ids']))"); do
+            curl -sSfL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -o "out/$r.html" "https://race.netkeiba.com/race/result.html?race_id=$r" || echo "失敗 $r"
+            sleep 2
+          done
+          ls -la out
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            mkdir -p sim/results && cp out/*.html sim/results/
+            git add sim/results && git commit -qm "レース結果 [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
