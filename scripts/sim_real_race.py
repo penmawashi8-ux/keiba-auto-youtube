@@ -107,7 +107,9 @@ def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -
     pages.append(sr.text_page("前提条件① レースの条件", [
         f"・競馬場：{course['name']} 芝{ent['distance']}m（{sr.TURN_FULL}・{course['note']}）",
         f"・コース：1周 約{lap:,.0f}m、最後の直線 {course['straight']}m",
-        f"・スタート：正面スタンド前（ゴールの約{ent['distance'] - lap:.0f}m手前）→ ゴール前を通過して1周",
+        (f"・スタート：正面スタンド前（ゴールの約{ent['distance'] - lap:.0f}m手前）→ ゴール前を通過して1周"
+         if ent["distance"] > lap else
+         f"・スタート：{sr.start_place(ent['distance'])} → 3〜4コーナーを回って最後の直線へ（1周はしない）"),
         "・馬場状態：良を想定",
         f"・頭数：{n}頭（{'実際の枠順。内外の有利不利も計算に入れる' if gate else '内外の有利不利は計算に入れていない'}）",
         "・斤量：全馬 " + "・".join(sorted({f'{h["weight"]:g}kg' for h in horses.values() if h['weight']})) + "（定量）",

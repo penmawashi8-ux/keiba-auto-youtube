@@ -121,6 +121,19 @@ def _course_point_left(s: float, off: float) -> tuple[float, float]:
     return CX - A + (R + off) * math.cos(th), CY + (R + off) * math.sin(th)
 
 
+def start_place(dist: int) -> str:
+    """スタート地点の呼び名（1周より短いレース用。直線の始まりからの距離で、コースのどの部分かを言う）"""
+    s = (STRAIGHT_M - (dist - LAP_M)) % LAP_M
+    curve = math.pi * CURVE_R_M
+    if s < STRAIGHT_M:
+        return "正面スタンド前"
+    if s < STRAIGHT_M + curve:
+        return "1コーナー付近" if s < STRAIGHT_M + curve / 2 else "2コーナー付近（向こう正面の入口）"
+    if s < 2 * STRAIGHT_M + curve:
+        return "向こう正面"
+    return "3コーナー付近"
+
+
 def _smooth(v: float) -> float:
     v = min(max(v, 0.0), 1.0)
     return v * v * (3 - 2 * v)
@@ -659,8 +672,8 @@ def render(out: Path, work: Path, font: str, names: list[str], styles: list[floa
     fx, fy = course_point(STRAIGHT_M)
     rd.dt(f"{COURSE['name']} 芝{dist}m", 32, "white", "40", "24", g0, g1)
     laps = dist / LAP_M
-    lap_txt = "約1周半" if laps > 1.3 else "1周"
-    rd.dt(f"{TURN_FULL}に{lap_txt}してゴール", 24, "0xFFEB3B", f"{CX}-text_w/2", f"{CY}-30", g0, g1)
+    lap_txt = "約1周半" if laps > 1.3 else "1周" if laps >= 1 else "1周せず"   # 1周より短い（京都1600m外など）
+    rd.dt(f"{TURN_FULL}に{lap_txt}してゴール" if laps >= 1 else f"{TURN_FULL}・3〜4コーナーを回ってゴール", 24, "0xFFEB3B", f"{CX}-text_w/2", f"{CY}-30", g0, g1)
     bottom, top, rside, lside = ("←　←　←", "→　→　→", "↓", "↑") if RIGHT else ("→　→　→", "←　←　←", "↑", "↓")
     for txt, x, y in ((bottom, CX - 60, CY + R - TRACK_HALF - 40), (top, CX - 60, CY - R + TRACK_HALF + 12),
                       (rside, CX + A + R - TRACK_HALF - 34, CY - 14), (lside, CX - A - R + TRACK_HALF + 14, CY - 14)):
