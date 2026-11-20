@@ -1,10 +1,10 @@
-date: 2026-11-20T01:08:19.248440Z
+date: 2026-11-20T04:13:01.569680Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=7kQMmT9pGM4 title=【マイルCS・枠順確定】G1連勝狙う武豊騎手のアドマイヤズームは3枠5番　G1・
-OK project=1 video_id=fdH1Cyd8ybc title=【阪神アーバン競馬・人気ジョッキーは語る】大山真吾騎手はカイリ(園田3R)で勝利
-OK project=1 video_id=Hs9Uf3AzpBY title=【マイルCS枠順確定】エンブロイダリーは1枠2番、スターアニスは7枠14番
+OK project=1 video_id=Qfi_e1nlbFg title=【マイルCS・金曜気配】昨年4着のオフトレイルは大外18番枠からスタート　吉村調
+OK project=1 video_id=Ynyr7f2Y1Zo title=「年明けの楽しみが100倍に」「初詣がてら買いたくなる」武豊騎手が新コンビと京都
+OK project=1 video_id=7Ae9Xi5iL94 title=【マイルCS・金曜気配】5枠9番ジューンテイクに武英調教師は「真ん中くらいでいい
