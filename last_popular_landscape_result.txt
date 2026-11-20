@@ -1,6 +1,6 @@
-date: 2026-11-19T11:06:04.125660Z
+date: 2026-11-20T11:07:15.957913Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=vsQmS9Q0WRw views=34370 title=【ジャパンC・1週前】ダノンデサイルはCWコースでラスト1ハロン11秒5　安田調教師「精神状態は求めていた通り」【3.4
+OK project=1 video_id=2KgKQIDF7Hc views=32403 title=【マイルCS・調教後馬体重】エンブロイダリーは506kg、ロデオドライブは486kg【3.2万回閲覧・話題の競馬ニュース
