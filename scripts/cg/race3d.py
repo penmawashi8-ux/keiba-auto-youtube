@@ -722,7 +722,7 @@ def build_tags(cam):
             return o
         w = h["waku"] - 1
         plane(f"TagSq{i}", sq, sq, x0, emit_mat(f"Waku{w}", WAKU_RGB[w]))
-        plane(f"TagBg{i}", nw, sq, x0 + sq, emit_mat("TagBg", (0.03, 0.04, 0.05), 0.82))
+        plane(f"TagBg{i}", nw, sq, x0 + sq, emit_mat("TagBg", (0.04, 0.05, 0.06)))
         for txt, x, col, align in ((str(h["num"]), x0 + sq / 2, (0.02, 0.02, 0.02) if w in (0, 4, 6, 7) else (1, 1, 1),
                                     "CENTER"), (name, x0 + sq + 0.14, (1, 1, 1), "LEFT")):
             cu = bpy.data.curves.new(f"TagT{i}{align}", "FONT")
