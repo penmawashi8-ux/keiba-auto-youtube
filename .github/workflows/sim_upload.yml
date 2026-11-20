@@ -54,7 +54,8 @@ jobs:
               echo "$p は投稿済み: $(git show FETCH_HEAD:sim/uploaded_$p.txt)"; continue
             fi
             git show "FETCH_HEAD:$(g video)" > "up/$p.mp4"
-            git show "FETCH_HEAD:$(g thumbnail)" > "up/$p.jpg"
+            if [ -f "$(g thumbnail)" ]; then cp "$(g thumbnail)" "up/$p.jpg"      # リポジトリ内のサムネイル
+            else git show "FETCH_HEAD:$(g thumbnail)" > "up/$p.jpg"; fi
             g description > "up/$p.txt"
             python scripts/upload_custom_youtube.py --file "up/$p.mp4" --title "$(g title)" \
               --description "$(cat up/$p.txt)" --tags "$(g tags)" --thumbnail "up/$p.jpg" \
