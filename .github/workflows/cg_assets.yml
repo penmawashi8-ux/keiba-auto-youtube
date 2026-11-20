@@ -1,0 +1,53 @@
+name: CG assets fetch
+
+# 3D CG 用の素材（ライセンスの確認用ページと、CC0 のモデルファイル）を取得して research-output の sim/cg_assets/ に保存する。
+# data/cg/asset_urls.txt のURLを取得し、ページ内の .blend/.glb/.gltf/.fbx/.zip へのリンクも一緒に落とす。
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/cg/asset_urls.txt
+      - .github/workflows/cg_assets.yml
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: |
+          mkdir -p out
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
+          i=0
+          grep -v '^#' data/cg/asset_urls.txt | grep . | while read -r u; do
+            i=$((i+1))
+            f="out/page_$(printf %02d $i).html"
+            curl -sL -A "$UA" -m 60 "$u" -o "$f" -w "$u %{http_code} %{size_download}\n" | tee -a out/log.txt
+            case "$u" in
+              *.blend|*.glb|*.gltf|*.fbx|*.zip) continue;;
+            esac
+            base=$(echo "$u" | sed -E 's#^(https?://[^/]+).*#\1#')
+            grep -oE '(href|src)="[^"]+\.(blend|glb|gltf|fbx|zip|xcf|png)"' "$f" | sed -E 's/^(href|src)="//; s/"$//' | sort -u | while read -r l; do
+              case "$l" in http*) full="$l";; //*) full="https:$l";; /*) full="$base$l";; *) full="$base/$l";; esac
+              case "$full" in *.png) continue;; esac
+              n=$(basename "$full")
+              curl -sL -A "$UA" -m 120 "$full" -o "out/$n" -w "  file $full %{http_code} %{size_download}\n" | tee -a out/log.txt
+            done
+          done
+          ls -la out
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          find out -size +90M -delete
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            mkdir -p sim/cg_assets && cp -r out/* sim/cg_assets/
+            git add -f sim/cg_assets && git commit -qm "CG素材 (run ${GITHUB_RUN_ID}) [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done

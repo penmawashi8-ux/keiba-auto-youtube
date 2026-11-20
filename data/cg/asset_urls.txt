@@ -1,0 +1,7 @@
+# 取得したいページ・ファイル（1行1URL）。cg_assets.yml が research-output の sim/cg_assets/ に保存する
+https://opengameart.org/node/64873
+https://opengameart.org/content/rigged-horse
+https://www.summerengine.com/asset-store/library-horse.md
+https://poly.pizza/search/horse
+https://quaternius.com/packs/ultimateanimatedanimals.html
+https://quaternius.com/packs/animatedanimals.html
