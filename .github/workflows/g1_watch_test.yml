@@ -1,0 +1,21 @@
+name: G1 watch test
+
+# g1_watch.py の動作確認（検知するだけで、印も付けず動画も作らない）
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - .github/workflows/g1_watch_test.yml
+
+jobs:
+  watch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests==2.32.3 beautifulsoup4
+      - run: python scripts/g1_watch.py
