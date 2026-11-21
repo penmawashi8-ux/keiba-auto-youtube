@@ -31,6 +31,7 @@ jobs:
     outputs:
       prefix: ${{ steps.req.outputs.prefix }}
       suffix: ${{ steps.req.outputs.suffix }}
+      skip: ${{ steps.req.outputs.skip }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,9 +61,11 @@ jobs:
           print("short=" + ("--short" if r.get("short") else ""))
           print("suffix=" + ("_cg_short" if r.get("short") else "_cg"))
           print("preview=" + ("1" if r.get("preview") else ""))
+          print("skip=" + ("1" if r.get("skip") else ""))          # 何もしない（走っている描画を止めたいとき用）
           PY
           cat "$GITHUB_OUTPUT"
       - name: Restore data from research-output
+        if: steps.req.outputs.skip != '1'
         run: |
           git fetch -q origin research-output
           P="${{ steps.req.outputs.prefix }}"
@@ -71,6 +74,7 @@ jobs:
           [ -f "sim/${P}_entries.json" ] && cp "sim/${P}_entries.json" sim/entries.json || true
           [ -f "sim/${P}_gate_effect.json" ] && cp "sim/${P}_gate_effect.json" sim/gate_effect.json || true
       - name: Simulate (same as the 2D video) and write the CG script
+        if: steps.req.outputs.skip != '1'
         env:
           SIM_NO_POP: "1"
           RACE_GOING: ${{ steps.req.outputs.going }}
@@ -85,6 +89,7 @@ jobs:
               json.dump(s, open("cgwork/spec.json", "w"), ensure_ascii=False)
           PY
       - uses: actions/upload-artifact@v4
+        if: steps.req.outputs.skip != '1'
         with:
           name: cgwork${{ steps.req.outputs.suffix }}
           path: cgwork
@@ -92,6 +97,7 @@ jobs:
 
   render:
     needs: prep
+    if: needs.prep.outputs.skip != '1'
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     strategy:
@@ -138,6 +144,7 @@ jobs:
 
   compose:
     needs: [prep, render]
+    if: needs.prep.outputs.skip != '1'
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     permissions:
