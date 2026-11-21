@@ -1,10 +1,10 @@
-date: 2026-11-21T07:16:25.014431Z
+date: 2026-11-21T10:09:33.442581Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SlwsiT2rWKc title=【メイクデビュー京都5Rレース後コメント】アウダチェ C.ルメール騎手
-OK project=1 video_id=Q_N9OcxMb0E title=【JRA・WIN5】本日のWIN5は的中2512票、配当9万1590円
-OK project=1 video_id=Zdl3wj1ic0k title=【シトリンS結果】メルカントゥールが押し切りオープン初勝利
+OK project=1 video_id=nAL209zZSKs title=【シトリンSレース後コメント】メルカントゥール C.デムーロ騎手ら
+OK project=1 video_id=g7IUY2A-qNo title=【マイルCS・土曜気配】京都巧者ジューンテイクが怖い　久々のマイル戦も朝日杯FS
+OK project=1 video_id=15FzenP8Bm4 title=【仁淀川特別・高知】単勝1.7倍のメイショウミカワが準重賞初勝利　岡遼太郎騎手「
