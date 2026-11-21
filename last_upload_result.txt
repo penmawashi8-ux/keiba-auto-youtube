@@ -1,10 +1,10 @@
-date: 2026-11-20T10:07:11.671125Z
+date: 2026-11-21T01:10:16.940681Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=YUIY3Oi10HQ title=半兄はGI・4勝のジャンタルマンタル アンベールフォートが初陣Vなるか
-OK project=1 video_id=i5DNnq4u7rA title=【マイルCS・金曜気配】ガイアフォースは6枠11番から悲願のG1制覇狙う　陣営「
-OK project=1 video_id=FBJTY4BaDKQ title=【京都2歳S想定馬・騎手】ドラゴンバルド、ネーロノワールなど11頭
+OK project=1 video_id=A-PF0EToZ_4 title=早すぎる…21年のJBCスプリント覇者レッドルゼルがせん痛のため10歳で急死　ド
+OK project=1 video_id=3r40vMYlncM title=種牡馬レッドルゼルが10歳で急死…疝痛のため　21年JBCスプリント勝ち　イース
+OK project=1 video_id=pTHBWibzC70 title=【21日の注目・京都12R】名古屋の沖田明子調教師がステイクラッシーでJRA初挑
