@@ -1,10 +1,10 @@
-date: 2026-11-21T01:10:16.940681Z
+date: 2026-11-21T04:08:48.201058Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=A-PF0EToZ_4 title=早すぎる…21年のJBCスプリント覇者レッドルゼルがせん痛のため10歳で急死　ド
-OK project=1 video_id=3r40vMYlncM title=種牡馬レッドルゼルが10歳で急死…疝痛のため　21年JBCスプリント勝ち　イース
-OK project=1 video_id=pTHBWibzC70 title=【21日の注目・京都12R】名古屋の沖田明子調教師がステイクラッシーでJRA初挑
+OK project=1 video_id=qn21lsbj8-g title=【京都5R新馬戦結果】アウダチェが断然人気に応えて快勝 キタサンブラック産駒の2
+OK project=1 video_id=ElEgHjOhg34 title=モレイラ騎手が今年の来日初勝利「来てすぐに勝利をゲットすることができてうれしい」
+OK project=1 video_id=n8-NaNuhLCc title=G1馬の初子が突然の募集停止…ファン心痛「悲しい」「ずっと待ってる」　母は香港ヴ
