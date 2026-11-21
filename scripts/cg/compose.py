@@ -175,17 +175,17 @@ def draw(card: Card, items: list[dict], plan: dict, t: float):
             card.rect(32, 28, 210, 44, "0xB71C1C@0.88")
             card.text("リプレイ　ゴール前", 137, 50, 22, WHITE, anchor="c")
         elif ty == "result":
-            x0, y0 = W - 32 - 470, 150
-            card.rect(x0, y0, 470, 54 + 58 * len(it["top"]), PLATE)
-            card.rect(x0, y0, 470, 4, ACCENT)
+            x0, y0 = W - 32 - 560, 150
+            card.rect(x0, y0, 560, 54 + 58 * len(it["top"]), PLATE)
+            card.rect(x0, y0, 560, 4, ACCENT)
             card.text("着順", x0 + 22, y0 + 16, 22, SUB)
             for j, r in enumerate(it["top"]):
                 y = y0 + 54 + j * 58
                 card.text(f"{j + 1}着", x0 + 22, y + 10, 26, WHITE)
                 card.num(r["num"], r["waku"], x0 + 92, y + 6, 26)
                 card.text(r["name"], x0 + 144, y + 8, 28, WHITE)
-                card.text(r["time"], x0 + 448, y + 12, 22, SUB, anchor="r")
-                card.texts[-1] = (r["time"], x0 + 448, y + 12, 22, SUB, "r", False)
+                card.text(r["time"], x0 + 538, y + 12, 22, SUB, anchor="r")
+                card.texts[-1] = (r["time"], x0 + 538, y + 12, 22, SUB, "r", False)
         elif ty == "rates":
             rows = it["rows"]
             x0, y0, w = W - 32 - 520, 110, 520

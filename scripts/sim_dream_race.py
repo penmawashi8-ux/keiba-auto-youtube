@@ -141,14 +141,16 @@ def career_stats(horse_id: str, careers: dict, graded: list[dict], venue: str = 
             "lose_margin": statistics.mean(lose_m) if lose_m else 0.0,
             "fast_rate": fast / runs if runs else 0.0, "fast_runs": runs,
             "mid": (len(mid), sum(r["pos"] == 1 for r in mid)),
-            "tokyo": (len(tokyo), sum(r["pos"] == 1 for r in tokyo)), "venue": venue, "dist": dist, "fast_scope": fast_scope}
+            "tokyo": (len(tokyo), sum(r["pos"] == 1 for r in tokyo)), "venue": venue, "dist": dist, "fast_scope": fast_scope,
+            "surface": surface}
 
 
 def stat_items(s: dict) -> list[tuple[str, float | None, str]]:
     """(項目名, 比べる値（大きいほど良い。データが少なすぎて比べない項目は None）, 表示する文)"""
     top3 = s["top3"] / s["starts"] if s["starts"] else 0.0
     losses = s["starts"] - s["wins"]
-    items = [("G1の実績", s["g1_wins"] if s["g1_starts"] else None, f"JRAの芝G1で{s['g1_starts']}戦{s['g1_wins']}勝"),
+    sw = "ダート" if s.get("surface") == "ダ" else "芝"
+    items = [("G1の実績", s["g1_wins"] if s["g1_starts"] else None, f"JRAの{sw}G1で{s['g1_starts']}戦{s['g1_wins']}勝"),
              ("勝ったときの着差", s["win_margin"] if s["wins"] >= 2 else None,
               f"勝ったレース（{s['wins']}勝）で2着につけた差は平均{lengths(s['win_margin'])}"),
              ("負けたときの着差", -s["lose_margin"] if losses >= 2 else None,
@@ -159,7 +161,7 @@ def stat_items(s: dict) -> list[tuple[str, float | None, str]]:
     venue, dist = s.get("venue", "東京"), s.get("dist", 2400)
     for key, label in (("mid", f"{dist}m前後の実績"), ("tokyo", f"{venue}コースの実績")):
         n, w = s[key]
-        where = f"{dist - 200}〜{dist + 200}m" if key == "mid" else f"{venue}の芝"
+        where = f"{dist - 200}〜{dist + 200}m" if key == "mid" else f"{venue}の{sw}"
         items.append((label, (w + 0.5) / (n + 1.5) if n else None,
                       f"{where}で{n}戦{w}勝" if n else f"{where}は走ったことがない"))
     return items
