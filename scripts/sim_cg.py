@@ -22,6 +22,7 @@ import sim_render as sr          # noqa: E402
 import sim_dream_race as sd      # noqa: E402
 
 FPS = 24
+SHORT, SP_HI, SP_LO = False, 1.6, 1.0
 SIM = Path(__file__).resolve().parent.parent / "sim"
 SILKS = [(0.75, 0.08, 0.08), (0.08, 0.16, 0.55), (0.95, 0.75, 0.05), (0.05, 0.4, 0.18), (0.92, 0.92, 0.92),
          (0.45, 0.08, 0.45), (0.95, 0.4, 0.05), (0.05, 0.05, 0.05), (0.1, 0.55, 0.75), (0.85, 0.45, 0.6),
@@ -170,6 +171,9 @@ def _smooth(v: float) -> float:
 
 def main() -> None:
     prefix, out = sys.argv[1], Path(sys.argv[2])
+    global SHORT, SP_HI, SP_LO
+    SHORT = "--short" in sys.argv                     # 縦長の宣伝ショート（レースだけ・本編へ誘導）
+    SP_HI, SP_LO = (2.4, 1.15) if SHORT else (1.6, 1.0)
     out.mkdir(parents=True, exist_ok=True)
     inp = json.loads((SIM / f"{prefix}_cg_input.json").read_text(encoding="utf-8"))
     race = inp["race"]
@@ -251,33 +255,46 @@ def main() -> None:
     by_rank = sorted(hs, key=lambda h: h["rank"])
     fav = by_rank[0]
 
-    # ---- オープニング: コース全景 → スタート地点
-    t0 = now()
-    narr = (f"{race['race_name']}。{venue}の芝{dist}メートルを、出走{n}頭の過去の成績から"
-            f"1万回シミュレーションしました。まずは、その中の代表的な1回です。")
-    dur = say(narr, t0 + 0.6)
-    intro_len = max(9.0, dur + 1.6)
-    gx = P(start_s, TW / 2)
-    for f in range(int(intro_len * FPS)):
-        u = f / (intro_len * FPS)
-        a = ease(u / 0.55)
-        b = ease((u - 0.55) / 0.45)
-        cam_a = [0.0, -(sr.CURVE_R_M + TW + 380), 170.0]
-        look_a = [0.0, 0.0, 0.0]
-        cam_b = P(start_s - 120, TW + 70, 55)
-        cam_c = P(start_s + 40, TW + 22, 7)
-        look_c = P(start_s, TW / 2, 1.2)
-        if u < 0.55:
-            cam = lerp(cam_a, cam_b, a)
-            look = lerp(look_a, gx, a)
-            lens = 24 + 8 * a
-        else:
-            cam = lerp(cam_b, cam_c, b)
-            look = lerp(gx, look_c, b)
-            lens = 32 + 8 * b
-        add(0.0, (cam, look, lens), run=False)
-    segment("intro", t0, now())
-    plan["overlays"].append({"type": "title", "t0": round(t0 + 0.8, 3), "t1": round(now() - 0.4, 3)})
+    if not SHORT:
+        # ---- オープニング: コース全景 → スタート地点
+        t0 = now()
+        narr = (f"{race['race_name']}。{venue}の芝{dist}メートルを、出走{n}頭の過去の成績から"
+                f"1万回シミュレーションしました。まずは、その中の代表的な1回です。")
+        dur = say(narr, t0 + 0.6)
+        intro_len = max(9.0, dur + 1.6)
+        gx = P(start_s, TW / 2)
+        for f in range(int(intro_len * FPS)):
+            u = f / (intro_len * FPS)
+            a = ease(u / 0.55)
+            b = ease((u - 0.55) / 0.45)
+            cam_a = [0.0, -(sr.CURVE_R_M + TW + 380), 170.0]
+            look_a = [0.0, 0.0, 0.0]
+            cam_b = P(start_s - 120, TW + 70, 55)
+            cam_c = P(start_s + 40, TW + 22, 7)
+            look_c = P(start_s, TW / 2, 1.2)
+            if u < 0.55:
+                cam = lerp(cam_a, cam_b, a)
+                look = lerp(look_a, gx, a)
+                lens = 24 + 8 * a
+            else:
+                cam = lerp(cam_b, cam_c, b)
+                look = lerp(gx, look_c, b)
+                lens = 32 + 8 * b
+            add(0.0, (cam, look, lens), run=False)
+        segment("intro", t0, now())
+        plan["overlays"].append({"type": "title", "t0": round(t0 + 0.8, 3), "t1": round(now() - 0.4, 3)})
+
+    else:
+        # ---- ショート: ゲート前から（つかみ）
+        t0 = now()
+        dur = say(f"{race['race_name']}を1万回シミュレーション。その代表的な1回がこちら！", t0 + 0.2)
+        hook_len = max(3.5, dur + 0.5)
+        for f in range(int(hook_len * FPS)):
+            u = ease(f / (hook_len * FPS))
+            cam = lerp(P(start_s + 60, TW + 14, 9), P(start_s + 40, TW + 6, 4), u)
+            add(0.0, (cam, P(start_s, TW / 2, 1.2), 34 + 10 * u), run=False)
+        segment("intro", t0, now())
+        plan["overlays"].append({"type": "short_title", "t0": round(t0, 3), "t1": round(now(), 3)})
 
     # ---- レース（再生速度: 道中1.6倍 → 直線の後半から等倍）
     race_t0 = now()
@@ -289,7 +306,7 @@ def main() -> None:
         d, la = at(tau)
         lead = lead_len(d)
         rem = dist - lead
-        sp = 1.6 if rem > 520 else 1.0 + 0.6 * ease((rem - 340) / 180)
+        sp = SP_HI if rem > 520 else SP_LO + (SP_HI - SP_LO) * ease((rem - 340) / 180)
         order = sorted(range(n), key=lambda i: -d[i])
         mid = d[order[min(5, n - 1)]]
         sc = start_s + (lead + mid) / 2
@@ -386,111 +403,128 @@ def main() -> None:
     if plan["remaining"]:
         plan["remaining"][-1]["t1"] = round(race_t1, 3)
 
-    # ---- ゴール前のリプレイ（スロー）: ゴール板の真横から
-    t0 = now()
-    fs = start_s + dist
-    a_tau, b_tau = win_t - 2.6, win_t + 0.7
-    tau = a_tau
-    while tau < b_tau:
-        u = (tau - a_tau) / (b_tau - a_tau)
-        dd, _ = at(tau)
-        ls = start_s + max(dd)
-        cam = (P(ls - 1, TW + 10, 1.5), P(ls - 3, 6, 1.2), 42)
-        add(tau, cam)
-        frames[-1]["tags"] = 1
-        tau += 0.3 / FPS
-    segment("replay", t0, now())
-    plan["overlays"].append({"type": "replay", "t0": round(t0, 3), "t1": round(now(), 3)})
-
-    # ---- 着順（ゴール後の流し）
-    top = sorted(range(n), key=lambda i: finish[i])[:3]
-    t0 = now()
-    res_txt = "、".join(f"{k + 1}着は{hs[i]['num']}番{names[i]}" for k, i in enumerate(top))
-    dur = say(f"ゴール。{res_txt}。", t0 + 0.4)
-    res_len = max(6.5, dur + 1.2)
-    tau = win_t + 1.0
-    for f in range(int(res_len * FPS)):
-        d, la = at(tau)
-        c = start_s + sum(sorted(d, reverse=True)[:3]) / 3
-        u = f / (res_len * FPS)
-        cam = (P(c - 30 + 10 * u, TW + 40, 22 - 6 * u), P(c, 8, 0.8), 40)
-        add(tau, cam)
-        tau += 1.0 / FPS
-    segment("result", t0, now())
-    plan["overlays"].append({"type": "result", "t0": round(t0 + 0.6, 3), "t1": round(now() - 0.2, 3),
-                             "top": [{"num": hs[i]["num"], "waku": hs[i]["waku"], "name": names[i],
-                                      "time": sd.fmt_time(finish[i])} for i in top]})
-
-    # ---- 1万回の勝率（スタンド前の直線を上空から流しながら）
-    t0 = now()
-    p1 = fav["win"]
-    narr = (f"では、1万回走らせた結果です。勝率1位は{fav['num']}番{fav['name']}で{p1 * 100:.1f}%。"
-            f"2位は{by_rank[1]['name']}、{by_rank[1]['win'] * 100:.1f}%。3位は{by_rank[2]['name']}、"
-            f"{by_rank[2]['win'] * 100:.1f}%。1位の馬でも勝つのは{round(1 / max(p1, 1e-9))}回に1回ほどです。")
-    dur = say(narr, t0 + 0.4)
-    rate_len = max(10.0, dur + 1.4)
-    tau_hold = win_t + 1.0 + res_len
-    for f in range(int(rate_len * FPS)):
-        u = f / (rate_len * FPS)
-        s = 20 + (ST - 120) * u
-        cam = (P(s, -35, 16), P(s + 70, TW + 45, 9), 30)          # 内馬場からスタンドを見る
-        add(tau_hold, cam, run=False)
-    segment("rates", t0, now())
-    plan["overlays"].append({"type": "rates", "t0": round(t0 + 0.4, 3), "t1": round(now() - 0.2, 3),
-                             "rows": [{"num": h["num"], "waku": h["waku"], "name": h["name"],
-                                       "win": round(h["win"], 4)} for h in by_rank[:5]]})
-
-    # ---- 勝率上位3頭の紹介（道中を走る姿のアップ）
-    for k, h in enumerate(by_rank[:3]):
-        i = names.index(h["name"])
+    if not SHORT:
+        # ---- ゴール前のリプレイ（スロー）: ゴール板の真横から
         t0 = now()
-        pts = [s[1] for s in h["strong"][:2]]
-        body = "。".join(pts) if pts else "目立った弱点がなく、バランスのとれた成績"
-        narr = f"勝率{k + 1}位、{h['name']}。{body}。"
-        dur = say(narr, t0 + 0.3)
-        flen = max(6.5, dur + 1.0)
-        # カメラとその馬の間に他の馬が入らない時間帯と向き（外から／内から）を探す
-        span = flen * 0.8
-
-        def blockers(tt, sgn):
-            nb = 0
-            for q in range(6):
-                d, la = at(tt + span * q / 5)
-                for j in range(n):
-                    if j != i and abs(d[j] - d[i]) < 7.5 and 0 < (la[j] - la[i]) * sgn < 12:
-                        nb += 1
-            return nb
-
-        cands = [(blockers(8.0 + 0.5 * q, sgn), -abs(8.0 + 0.5 * q - (20 + 8 * k)), 8.0 + 0.5 * q, sgn)
-                 for q in range(int((win_t - 16) / 0.5)) for sgn in (1, -1)]
-        nb, _, tau, sgn = min(cands, key=lambda c: (c[0], -c[1]))
-        print(f"  紹介 {h['name']}: 時刻 {tau:.1f}秒 {'外' if sgn > 0 else '内'}から（間の馬 {nb}）")
-        for f in range(int(flen * FPS)):
-            d, la = at(tau)
-            s_h = start_s + d[i]
-            u = f / (flen * FPS)
-            side = la[i] + 9.0 * sgn
-            cam = (P(s_h + 5.0 - 2.5 * u, side, 2.3), P(s_h + 0.4, la[i], 1.35), 46)
+        fs = start_s + dist
+        a_tau, b_tau = win_t - 2.6, win_t + 0.7
+        tau = a_tau
+        while tau < b_tau:
+            u = (tau - a_tau) / (b_tau - a_tau)
+            dd, _ = at(tau)
+            ls = start_s + max(dd)
+            cam = (P(ls - 1, TW + 10, 1.5), P(ls - 3, 6, 1.2), 42)
             add(tau, cam)
-            tau += 0.8 / FPS
-        segment(f"focus{k + 1}", t0, now())
-        plan["overlays"].append({"type": "focus", "t0": round(t0 + 0.3, 3), "t1": round(now() - 0.2, 3),
-                                 "rank": k + 1, "num": h["num"], "waku": h["waku"], "name": h["name"],
-                                 "jockey": h["jockey"], "win": round(h["win"], 4), "style": h["style_name"],
-                                 "record": f"JRA芝 {h['starts']}戦{h['wins']}勝",
-                                 "points": [f"{s[0]}：{s[1]}" for s in h["strong"][:2]]})
+            frames[-1]["tags"] = 1
+            tau += 0.3 / FPS
+        segment("replay", t0, now())
+        plan["overlays"].append({"type": "replay", "t0": round(t0, 3), "t1": round(now(), 3)})
 
-    # ---- エンディング（スタンドとゴール板を上空へ引いていく）
-    t0 = now()
-    dur = say("データはあくまで目安です。あなたの予想は、コメントで教えてください。", t0 + 0.3)
-    end_len = max(6.0, dur + 1.5)
-    for f in range(int(end_len * FPS)):
-        u = ease(f / (end_len * FPS))
-        cam = lerp(P(ST - 10, TW + 30, 6), P(ST - 140, TW + 260, 140), u)
-        add(tau_hold, (cam, P(ST, TW / 2, 2 + 30 * u), 35 - 10 * u), run=False)
-    segment("outro", t0, now())
-    plan["overlays"].append({"type": "outro", "t0": round(t0 + 0.4, 3), "t1": round(now(), 3)})
+        # ---- 着順（ゴール後の流し）
+        top = sorted(range(n), key=lambda i: finish[i])[:3]
+        t0 = now()
+        res_txt = "、".join(f"{k + 1}着は{hs[i]['num']}番{names[i]}" for k, i in enumerate(top))
+        dur = say(f"ゴール。{res_txt}。", t0 + 0.4)
+        res_len = max(6.5, dur + 1.2)
+        tau = win_t + 1.0
+        for f in range(int(res_len * FPS)):
+            d, la = at(tau)
+            c = start_s + sum(sorted(d, reverse=True)[:3]) / 3
+            u = f / (res_len * FPS)
+            cam = (P(c - 30 + 10 * u, TW + 40, 22 - 6 * u), P(c, 8, 0.8), 40)
+            add(tau, cam)
+            tau += 1.0 / FPS
+        segment("result", t0, now())
+        plan["overlays"].append({"type": "result", "t0": round(t0 + 0.6, 3), "t1": round(now() - 0.2, 3),
+                                 "top": [{"num": hs[i]["num"], "waku": hs[i]["waku"], "name": names[i],
+                                          "time": sd.fmt_time(finish[i])} for i in top]})
+
+        # ---- 1万回の勝率（スタンド前の直線を上空から流しながら）
+        t0 = now()
+        p1 = fav["win"]
+        narr = (f"では、1万回走らせた結果です。勝率1位は{fav['num']}番{fav['name']}で{p1 * 100:.1f}%。"
+                f"2位は{by_rank[1]['name']}、{by_rank[1]['win'] * 100:.1f}%。3位は{by_rank[2]['name']}、"
+                f"{by_rank[2]['win'] * 100:.1f}%。1位の馬でも勝つのは{round(1 / max(p1, 1e-9))}回に1回ほどです。")
+        dur = say(narr, t0 + 0.4)
+        rate_len = max(10.0, dur + 1.4)
+        tau_hold = win_t + 1.0 + res_len
+        for f in range(int(rate_len * FPS)):
+            u = f / (rate_len * FPS)
+            s = 20 + (ST - 120) * u
+            cam = (P(s, -35, 16), P(s + 70, TW + 45, 9), 30)          # 内馬場からスタンドを見る
+            add(tau_hold, cam, run=False)
+        segment("rates", t0, now())
+        plan["overlays"].append({"type": "rates", "t0": round(t0 + 0.4, 3), "t1": round(now() - 0.2, 3),
+                                 "rows": [{"num": h["num"], "waku": h["waku"], "name": h["name"],
+                                           "win": round(h["win"], 4)} for h in by_rank[:5]]})
+
+        # ---- 勝率上位3頭の紹介（道中を走る姿のアップ）
+        for k, h in enumerate(by_rank[:3]):
+            i = names.index(h["name"])
+            t0 = now()
+            pts = [s[1] for s in h["strong"][:2]]
+            body = "。".join(pts) if pts else "目立った弱点がなく、バランスのとれた成績"
+            narr = f"勝率{k + 1}位、{h['name']}。{body}。"
+            dur = say(narr, t0 + 0.3)
+            flen = max(6.5, dur + 1.0)
+            # カメラとその馬の間に他の馬が入らない時間帯と向き（外から／内から）を探す
+            span = flen * 0.8
+
+            def blockers(tt, sgn):
+                nb = 0
+                for q in range(6):
+                    d, la = at(tt + span * q / 5)
+                    for j in range(n):
+                        if j != i and abs(d[j] - d[i]) < 7.5 and 0 < (la[j] - la[i]) * sgn < 12:
+                            nb += 1
+                return nb
+
+            cands = [(blockers(8.0 + 0.5 * q, sgn), -abs(8.0 + 0.5 * q - (20 + 8 * k)), 8.0 + 0.5 * q, sgn)
+                     for q in range(int((win_t - 16) / 0.5)) for sgn in (1, -1)]
+            nb, _, tau, sgn = min(cands, key=lambda c: (c[0], -c[1]))
+            print(f"  紹介 {h['name']}: 時刻 {tau:.1f}秒 {'外' if sgn > 0 else '内'}から（間の馬 {nb}）")
+            for f in range(int(flen * FPS)):
+                d, la = at(tau)
+                s_h = start_s + d[i]
+                u = f / (flen * FPS)
+                side = la[i] + 9.0 * sgn
+                cam = (P(s_h + 5.0 - 2.5 * u, side, 2.3), P(s_h + 0.4, la[i], 1.35), 46)
+                add(tau, cam)
+                tau += 0.8 / FPS
+            segment(f"focus{k + 1}", t0, now())
+            plan["overlays"].append({"type": "focus", "t0": round(t0 + 0.3, 3), "t1": round(now() - 0.2, 3),
+                                     "rank": k + 1, "num": h["num"], "waku": h["waku"], "name": h["name"],
+                                     "jockey": h["jockey"], "win": round(h["win"], 4), "style": h["style_name"],
+                                     "record": f"JRA芝 {h['starts']}戦{h['wins']}勝",
+                                     "points": [f"{s[0]}：{s[1]}" for s in h["strong"][:2]]})
+
+        # ---- エンディング（スタンドとゴール板を上空へ引いていく）
+        t0 = now()
+        dur = say("データはあくまで目安です。あなたの予想は、コメントで教えてください。", t0 + 0.3)
+        end_len = max(6.0, dur + 1.5)
+        for f in range(int(end_len * FPS)):
+            u = ease(f / (end_len * FPS))
+            cam = lerp(P(ST - 10, TW + 30, 6), P(ST - 140, TW + 260, 140), u)
+            add(tau_hold, (cam, P(ST, TW / 2, 2 + 30 * u), 35 - 10 * u), run=False)
+        segment("outro", t0, now())
+        plan["overlays"].append({"type": "outro", "t0": round(t0 + 0.4, 3), "t1": round(now(), 3)})
+    else:
+        # ---- ショート: 締め（本編への誘導）
+        t0 = now()
+        dur = say("1万回走らせた勝率1位の馬は？答えは本編でチェック！", t0 + 0.3)
+        end_len = max(4.5, dur + 1.0)
+        tau = win_t + 1.0
+        for f in range(int(end_len * FPS)):
+            d, la = at(tau)
+            c = start_s + sum(sorted(d, reverse=True)[:3]) / 3
+            cam = (P(c - 18, TW + 16, 10), P(c, 6, 1.0), 40)
+            add(tau, cam)
+            tau += 0.7 / FPS
+        segment("result", t0, now())
+        plan["overlays"].append({"type": "end_card", "t0": round(t0 + 0.2, 3), "t1": round(now(), 3)})
+
     plan["total"] = round(now(), 3)
+    plan["res"] = [1080, 1920] if SHORT else [1280, 720]
     plan["n_frames"] = len(frames)
 
     spec = {
@@ -502,7 +536,9 @@ def main() -> None:
         "horse_scale": 0.5, "model_yaw": math.pi / 2, "gallop_frames": 18, "gallop_stride": 7.2,
         "rider_bone": "Torso2", "rider_pos": [0.0, -0.25, 3.0],
         "label_font": "data/cg/BIZUDPGothic-Bold.ttf",
-        "fps": FPS, "res": [1280, 720], "samples": 12,
+        "fps": FPS, "res": [1080, 1920] if SHORT else [1280, 720], "samples": 12,
+        "sensor_fit": "HORIZONTAL" if SHORT else "AUTO", "lens_mult": 1.7 if SHORT else 1.0,
+        "tag_scale": 1.6 if SHORT else 1.0,
         "frames": frames,
     }
     (out / "spec.json").write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")

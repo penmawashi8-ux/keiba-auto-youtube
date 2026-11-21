@@ -73,7 +73,60 @@ def text_w(s: str, size: int) -> float:
     return sum(size * (0.55 if ord(ch) < 0x2E80 else 1.0) for ch in s)
 
 
+def draw_vertical(card: Card, items: list[dict], plan: dict):
+    """縦長ショート用。上下はショートの画面部品（タイトル・ボタン）に隠れるので避ける"""
+    race = plan["race"]
+    hs = {h["num"]: h for h in plan["horses"]}
+    full = {"マイルCS": "マイルチャンピオンシップ"}.get(race["race_name"], race["race_name"])
+    for it in items:
+        ty = it["type"]
+        if ty == "short_title":
+            card.rect(60, 250, 960, 300, PLATE)
+            card.rect(60, 250, 960, 8, ACCENT)
+            card.text("1万回シミュレーション", W / 2, 320, 54, "0xE8C547", anchor="c")
+            card.text(full, W / 2, 410, 62, WHITE, anchor="c")
+            card.text(f"{race['venue']} 芝{race['distance']}m　代表的な1回", W / 2, 490, 38, SUB, anchor="c")
+        elif ty == "race_tag":
+            label = f"{race['venue']}11R　{race['race_name']}"
+            w = text_w(label, 36) + 50
+            card.rect(40, 230, w, 64, PLATE)
+            card.rect(40, 230, 7, 64, ACCENT)
+            card.text(label, 64, 262, 36, WHITE, anchor="l")
+            card.texts[-1] = (label, 64, 243, 36, WHITE, "l", False)
+        elif ty == "remaining":
+            m = it["m"]
+            label = "ゴール" if m == 0 else f"残り {m}m"
+            w = text_w(label, 40) + 44
+            card.rect(W - 40 - w, 230, w, 64, PLATE)
+            card.text(label, W - 40 - w / 2, 262, 40, WHITE, anchor="c")
+        elif ty == "order":
+            order = it["order"]
+            k, gap, per = 44, 8, 9
+            for row in range(2):                           # 18頭を2段（先頭9頭／後ろ9頭）に
+                part = order[row * per:(row + 1) * per]
+                if not part:
+                    continue
+                total = len(part) * (k + gap) - gap + 40
+                x0 = (W - total) / 2
+                y = 1450 + row * 70
+                card.rect(x0, y - 10, total, k + 20, PLATE)
+                x = x0 + 20
+                for num in part:
+                    card.num(num, hs[num]["waku"], x, y, 35)
+                    x += k + gap
+            card.text("隊列（左上が先頭）", W / 2, 1415, 30, SUB, anchor="c")
+        elif ty == "end_card":
+            card.rect(60, 420, 960, 470, PLATE)
+            card.rect(60, 420, 960, 8, ACCENT)
+            card.text("1万回走らせた", W / 2, 500, 50, WHITE, anchor="c")
+            card.text("勝率1位は？", W / 2, 610, 96, "0xE8C547", anchor="c")
+            card.text("本編で公開中", W / 2, 740, 64, WHITE, anchor="c")
+            card.text("↓ 関連動画から", W / 2, 830, 40, SUB, anchor="c")
+
+
 def draw(card: Card, items: list[dict], plan: dict, t: float):
+    if H > W:
+        return draw_vertical(card, items, plan)
     race = plan["race"]
     hs = {h["num"]: h for h in plan["horses"]}
     for it in items:
@@ -209,9 +262,10 @@ def build_audio(plan: dict, voice_dir: Path, tmp: Path) -> Path:
                 ("result", max(total - race["t1"] - 3.0, 1.0))]
     bgm = sb.make_bgm(sections, tmp / "bgm.m4a")
     goal_t = next((t for s, t in race.get("shots", []) if s == "finish"), race["t1"] - 3.0) + 4.0
-    env = sr.piecewise([(0.0, 0.12), (race["t0"] - 0.5, 0.12), (race["t0"] + 0.2, 0.5), (race["t0"] + 3, 0.22),
+    pts = sorted({t: v for t, v in [(0.0, 0.12), (race["t0"] - 0.5, 0.12), (race["t0"] + 0.2, 0.5), (race["t0"] + 3, 0.22),
                         (goal_t - 8, 0.3), (goal_t - 1, 0.95), (race["t1"], 1.0), (race["t1"] + 4, 0.3),
-                        (seg["result"]["t1"], 0.12), (total, 0.08)])
+                        (seg["result"]["t1"], 0.12), (total, 0.08)]}.items())
+    env = sr.piecewise([(t, v) for t, v in pts if t <= total + 0.01])
     inputs = ["-i", str(bgm)]
     chains = [f"anoisesrc=color=pink:sample_rate=44100:amplitude=0.6:duration={total:.2f},"
               f"bandpass=f=1100:width_type=h:w=1800,lowpass=f=5000,volume=volume='{env}':eval=frame,"
@@ -244,6 +298,8 @@ def main():
     frames, pdir, out = Path(sys.argv[1]), Path(sys.argv[2]), Path(sys.argv[3])
     font = sys.argv[4] if len(sys.argv) > 4 else "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"
     plan = json.loads((pdir / "plan.json").read_text(encoding="utf-8"))
+    global W, H
+    W, H = plan.get("res", [1280, 720])
     with tempfile.TemporaryDirectory(prefix="cgcomp_") as tmp:
         tmp = Path(tmp)
         ov = build_overlay(plan, tmp, font)

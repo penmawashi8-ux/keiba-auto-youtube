@@ -581,6 +581,8 @@ def animate(horses):
     sc.camera = cam
     cam_data.clip_end = 12000
     cam_data.sensor_width = 36
+    cam_data.sensor_fit = SPEC.get("sensor_fit", "AUTO")     # 縦長は横幅を基準にする
+    lens_mult = SPEC.get("lens_mult", 1.0)
     build_tags(cam)
     ground_z = SPEC.get("horse_ground", 0.0)
     cyc = SPEC.get("gallop_frames", 18.0)
@@ -614,7 +616,8 @@ def animate(horses):
         for i, tg in enumerate(TAGS):
             hp = P(fr["s"][i], fr["lat"][i], 0.0)
             dist_c = (Vector(c["loc"]) - Vector((hp.x, hp.y, 2.6))).length
-            k = 1.15 * dist_c / max(c.get("lens", 50), 1) if fr.get("tags") else 0.0
+            k = (1.15 * SPEC.get("tag_scale", 1.0) * dist_c / max(c.get("lens", 50) * lens_mult, 1)
+                 if fr.get("tags") else 0.0)
             lane = (fr["lat"][i] - 1.4) / 1.235          # 横に並んだ馬の名札は上下にずらす（列が変わると滑らかに）
             tg.location = (hp.x, hp.y, 2.55 + 0.62 * k * (0.5 - 0.5 * math.cos(math.pi * lane)))
             tg.scale = (k, k, k)
@@ -623,7 +626,7 @@ def animate(horses):
         cam.location = Vector(c["loc"])
         tgt = Vector(c["look"])
         cam.rotation_euler = (tgt - cam.location).to_track_quat("-Z", "Y").to_euler()
-        cam_data.lens = c.get("lens", 50)
+        cam_data.lens = c.get("lens", 50) * lens_mult
         cam.keyframe_insert("location", frame=f + 1)
         cam.keyframe_insert("rotation_euler", frame=f + 1)
         cam_data.keyframe_insert("lens", frame=f + 1)

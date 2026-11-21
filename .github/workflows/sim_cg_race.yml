@@ -23,6 +23,7 @@ jobs:
     timeout-minutes: 30
     outputs:
       prefix: ${{ steps.req.outputs.prefix }}
+      suffix: ${{ steps.req.outputs.suffix }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -35,7 +36,7 @@ jobs:
           pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
       - id: req
         run: |
-          python -c "import json; r=json.load(open('data/cg/request.json')); print('prefix='+r['prefix']); print('going='+r.get('going','良'))" >> "$GITHUB_OUTPUT"
+          python -c "import json; r=json.load(open('data/cg/request.json')); print('prefix='+r['prefix']); print('going='+r.get('going','良')); print('short='+('--short' if r.get('short') else '')); print('suffix='+('_cg_short' if r.get('short') else '_cg'))" >> "$GITHUB_OUTPUT"
           cat data/cg/request.json
       - name: Restore data from research-output
         run: |
@@ -47,7 +48,7 @@ jobs:
           RACE_GOING: ${{ steps.req.outputs.going }}
         run: |
           python scripts/sim_real_race.py --no-video --cg-export --prefix "${{ steps.req.outputs.prefix }}"
-          python scripts/sim_cg.py "${{ steps.req.outputs.prefix }}" cgwork
+          python scripts/sim_cg.py "${{ steps.req.outputs.prefix }}" cgwork ${{ steps.req.outputs.short }}
           python - <<'PY'
           import json
           r = json.load(open("data/cg/request.json"))
@@ -96,7 +97,7 @@ jobs:
           echo "chunk ${{ matrix.chunk }}: $F0..$F1"
           mkdir -p frames
           if [ "$PICK" != "-" ]; then
-            xvfb-run -a -s "-screen 0 1280x720x24" blender -b -P scripts/cg/race3d.py -- cgwork/spec.json frames "$PICK" 2>&1 \
+            xvfb-run -a -s "-screen 0 1920x1920x24" blender -b -P scripts/cg/race3d.py -- cgwork/spec.json frames "$PICK" 2>&1 \
               | grep -E "^Saved|Error|Traceback|line [0-9]+" | tail -n 30
           fi
           ls frames | wc -l
@@ -155,11 +156,12 @@ jobs:
           ffprobe -v error -show_entries format=duration -of csv=p=0 out.mp4
       - name: Save to research-output
         run: |
-          P="${{ needs.prep.outputs.prefix }}"
+          P="${{ needs.prep.outputs.prefix }}${{ needs.prep.outputs.suffix }}"
           mkdir -p save
-          cp out.mp4 "save/${P}_cg.mp4"
-          cp cgwork/plan.json "save/${P}_cg_plan.json"
+          cp out.mp4 "save/${P}.mp4"
+          cp cgwork/plan.json "save/${P}_plan.json"
+          ffmpeg -v error -y -ss 0.5 -i out.mp4 -vframes 1 -q:v 2 "save/${P}_thumb.jpg"   # 縮小しない（縦長はそのまま）
           for t in 5 20 40 60 80 100 115 125; do
-            ffmpeg -v error -y -ss $t -i out.mp4 -vframes 1 -q:v 3 "save/${P}_cg_frame_${t}.jpg" || true
+            ffmpeg -v error -y -ss $t -i out.mp4 -vframes 1 -q:v 3 "save/${P}_frame_${t}.jpg" || true
           done
           bash .github/scripts/save_sim_outputs.sh "CG動画 ${P}" save/*
