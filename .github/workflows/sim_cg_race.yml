@@ -4,7 +4,8 @@ name: CG Race Simulation Video
 #   prep    … 保存済みのデータで1万回シミュレーション → 代表レースの隊列・カメラ・ナレーション（edge-tts）
 #   render  … フレームを20分割して並列に描画
 #   compose … テロップ・音声を重ねて mp4 に。research-output の sim/<prefix>_cg.mp4 に保存
-# 設定は data/cg/request.json（prefix, going, chunks, preview）。preview: true なら1/6のフレーム数で試し描き
+# 設定は data/cg/request.json（prefix, going, short, preview）。preview: true なら1/6のフレーム数で試し描き
+# G1 の自動投稿（g1_auto.yml）からは workflow_call で呼ぶ（入力で prefix・short などを渡す）
 on:
   push:
     branches:
@@ -12,10 +13,16 @@ on:
     paths:
       - data/cg/request.json
       - .github/workflows/sim_cg_race.yml
+  workflow_call:
+    inputs:
+      prefix: {type: string, required: true}
+      going: {type: string, default: "良"}
+      short: {type: boolean, default: false}
+      ref: {type: string, default: ""}
 
 concurrency:
-  group: sim-cg-race
-  cancel-in-progress: true
+  group: sim-cg-${{ github.event_name }}-${{ inputs.prefix || 'req' }}-${{ inputs.short && 'short' || 'long' }}
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   prep:
@@ -26,6 +33,8 @@ jobs:
       suffix: ${{ steps.req.outputs.suffix }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -35,13 +44,32 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg
           pip install requests==2.32.3 beautifulsoup4 edge-tts certifi
       - id: req
+        env:
+          IN_PREFIX: ${{ inputs.prefix }}
+          IN_GOING: ${{ inputs.going }}
+          IN_SHORT: ${{ inputs.short }}
         run: |
-          python -c "import json; r=json.load(open('data/cg/request.json')); print('prefix='+r['prefix']); print('going='+r.get('going','良')); print('short='+('--short' if r.get('short') else '')); print('suffix='+('_cg_short' if r.get('short') else '_cg'))" >> "$GITHUB_OUTPUT"
-          cat data/cg/request.json
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          r = json.load(open("data/cg/request.json"))
+          if os.environ.get("IN_PREFIX"):                  # workflow_call の入力を優先
+              r = {"prefix": os.environ["IN_PREFIX"], "going": os.environ.get("IN_GOING") or "良",
+                   "short": os.environ.get("IN_SHORT") == "true"}
+          print("prefix=" + r["prefix"])
+          print("going=" + r.get("going", "良"))
+          print("short=" + ("--short" if r.get("short") else ""))
+          print("suffix=" + ("_cg_short" if r.get("short") else "_cg"))
+          print("preview=" + ("1" if r.get("preview") else ""))
+          PY
+          cat "$GITHUB_OUTPUT"
       - name: Restore data from research-output
         run: |
           git fetch -q origin research-output
-          bash .github/scripts/restore_sim_file.sh races_cache.json races.json horses_cache.json gate_cache.json entries.json gate_effect.json
+          P="${{ steps.req.outputs.prefix }}"
+          bash .github/scripts/restore_sim_file.sh races_cache.json races.json horses_cache.json gate_cache.json entries.json gate_effect.json "${P}_entries.json" "${P}_gate_effect.json"
+          # データ集め（g1_auto.yml・sim_race_quick.yml）が prefix 付きで保存したものがあれば、そちらを使う
+          [ -f "sim/${P}_entries.json" ] && cp "sim/${P}_entries.json" sim/entries.json || true
+          [ -f "sim/${P}_gate_effect.json" ] && cp "sim/${P}_gate_effect.json" sim/gate_effect.json || true
       - name: Simulate (same as the 2D video) and write the CG script
         env:
           SIM_NO_POP: "1"
@@ -49,17 +77,16 @@ jobs:
         run: |
           python scripts/sim_real_race.py --no-video --cg-export --prefix "${{ steps.req.outputs.prefix }}"
           python scripts/sim_cg.py "${{ steps.req.outputs.prefix }}" cgwork ${{ steps.req.outputs.short }}
-          python - <<'PY'
-          import json
-          r = json.load(open("data/cg/request.json"))
-          if r.get("preview"):
+          PREVIEW="${{ steps.req.outputs.preview }}" python - <<'PY'
+          import json, os
+          if os.environ.get("PREVIEW"):
               s = json.load(open("cgwork/spec.json"))
               s["preview_step"] = 6
               json.dump(s, open("cgwork/spec.json", "w"), ensure_ascii=False)
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: cgwork
+          name: cgwork${{ steps.req.outputs.suffix }}
           path: cgwork
           retention-days: 3
 
@@ -73,6 +100,8 @@ jobs:
         chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
       - name: Install Blender
         run: |
           sudo apt-get update -qq
@@ -80,7 +109,7 @@ jobs:
           curl -sfL -o data/cg/BIZUDPGothic-Bold.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/bizudpgothic/BIZUDPGothic-Bold.ttf
       - uses: actions/download-artifact@v4
         with:
-          name: cgwork
+          name: cgwork${{ needs.prep.outputs.suffix }}
           path: cgwork
       - name: Render frames
         run: |
@@ -103,7 +132,7 @@ jobs:
           ls frames | wc -l
       - uses: actions/upload-artifact@v4
         with:
-          name: frames-${{ matrix.chunk }}
+          name: frames${{ needs.prep.outputs.suffix }}-${{ matrix.chunk }}
           path: frames
           retention-days: 2
 
@@ -115,6 +144,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -124,13 +155,14 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg
           mkdir -p fonts
           curl -sfL -o fonts/BIZUDPGothic-Bold.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/bizudpgothic/BIZUDPGothic-Bold.ttf
+          curl -sfL -o fonts/DelaGothicOne-Regular.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/delagothicone/DelaGothicOne-Regular.ttf
       - uses: actions/download-artifact@v4
         with:
-          name: cgwork
+          name: cgwork${{ needs.prep.outputs.suffix }}
           path: cgwork
       - uses: actions/download-artifact@v4
         with:
-          pattern: frames-*
+          pattern: frames${{ needs.prep.outputs.suffix }}-*
           path: frames
           merge-multiple: true
       - name: Compose
@@ -160,7 +192,12 @@ jobs:
           mkdir -p save
           cp out.mp4 "save/${P}.mp4"
           cp cgwork/plan.json "save/${P}_plan.json"
-          ffmpeg -v error -y -ss 0.5 -i out.mp4 -vframes 1 -q:v 2 "save/${P}_thumb.jpg"   # 縮小しない（縦長はそのまま）
+          if [ "${{ needs.prep.outputs.suffix }}" = "_cg" ]; then
+            # 本編: テロップのない CG のコマに、レース名を大きく入れる
+            python scripts/cg/thumb.py frames cgwork/plan.json "save/${P}_thumb.jpg" fonts/DelaGothicOne-Regular.ttf
+          else
+            ffmpeg -v error -y -ss 0.5 -i out.mp4 -vframes 1 -q:v 2 "save/${P}_thumb.jpg"   # 縮小しない（縦長はそのまま）
+          fi
           for t in 5 20 40 60 80 100 115 125; do
             ffmpeg -v error -y -ss $t -i out.mp4 -vframes 1 -q:v 3 "save/${P}_frame_${t}.jpg" || true
           done

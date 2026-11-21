@@ -1,0 +1,187 @@
+name: G1 auto CG videos
+
+# JRA の G1 の枠順が確定したら、3D CG のシミュレーション動画（本編＋宣伝ショート）を作って YouTube に投稿する。
+#   detect  … 今週末の芝の G1 で、枠順確定・未作成のものを探す（scripts/g1_watch.py）。見つけたら印を付ける
+#   data    … 出馬表・各馬と対戦相手の成績・コースの枠×脚質の効果を集める（sim_race_quick.yml と同じ手順）
+#   long / short … sim_cg_race.yml を呼んで、本編と縦長ショートを並列に描く
+#   upload  … 本編 → ショート（説明文に本編のURL）の順に投稿（scripts/auto_upload.py）
+# 枠順は木曜の午後に出るので、木・金に1時間ごとに見る。スクリプト類は作業ブランチ（WORK_REF）のものを使う。
+on:
+  schedule:
+    - cron: "23 4-12 * * 4"    # 木曜 13:23〜21:23（日本時間）
+    - cron: "23 0-12 * * 5"    # 金曜 9:23〜21:23（木曜に間に合わなかったとき）
+  workflow_dispatch:
+    inputs:
+      race_id:
+        description: "対象の race_id（空なら自動で探す。指定すると作成済みでも作り直す）"
+        default: ""
+      date:
+        description: "開催日 YYYYMMDD（race_id を指定したとき）"
+        default: ""
+      privacy:
+        description: "公開設定（public / unlisted / private）"
+        default: "public"
+
+concurrency:
+  group: g1-auto
+  cancel-in-progress: false
+
+env:
+  WORK_REF: claude/youtube-keiba-video-research-x6jdvw
+
+jobs:
+  detect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    outputs:
+      found: ${{ steps.w.outputs.found }}
+      race_id: ${{ steps.w.outputs.race_id }}
+      date: ${{ steps.w.outputs.date }}
+      prefix: ${{ steps.w.outputs.prefix }}
+      name: ${{ steps.w.outputs.name }}
+      ref: ${{ env.WORK_REF }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.WORK_REF }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests==2.32.3 beautifulsoup4
+      - id: w
+        run: python scripts/g1_watch.py "${{ github.event.inputs.race_id }}" "${{ github.event.inputs.date }}"
+      - name: Mark as started
+        if: steps.w.outputs.found == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p mark
+          echo "{\"race_id\": \"${{ steps.w.outputs.race_id }}\", \"name\": \"${{ steps.w.outputs.name }}\", \"run\": \"${GITHUB_RUN_ID}\"}" > "mark/auto_${{ steps.w.outputs.race_id }}.json"
+          bash .github/scripts/save_sim_outputs.sh "G1自動 開始 ${{ steps.w.outputs.name }}" mark/*
+
+  data:
+    needs: detect
+    if: needs.detect.outputs.found == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    permissions:
+      contents: write
+    env:
+      RACE_DATE: ${{ needs.detect.outputs.date }}
+      RACE_NAME: ${{ needs.detect.outputs.race_id }}
+      PREFIX: ${{ needs.detect.outputs.prefix }}
+      SIM_NO_POP: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.WORK_REF }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests==2.32.3 beautifulsoup4
+      - name: Restore data from research-output
+        run: |
+          mkdir -p sim
+          git fetch -q origin research-output
+          bash .github/scripts/restore_sim_file.sh races_cache.json races.json horses_cache.json gate_cache.json
+      - name: Entries and entrants' careers
+        run: |
+          python scripts/sim_entries.py "$RACE_DATE" "$RACE_NAME"
+          ids=$(python -c "import json; print(' '.join(h['horse_id'] for h in json.load(open('sim/entries.json'))['horses']))")
+          python scripts/sim_fetch_horses.py 10 --refresh $ids
+      - name: Opponents' careers and course history in parallel (time-boxed)
+        run: |
+          python scripts/sim_gate_effect.py 20 > gate_log.txt 2>&1 &
+          gate_pid=$!
+          python scripts/sim_fetch_related.py
+          python scripts/sim_fetch_horses.py 30 $(cat sim/related_ids.txt) --refresh $(cat sim/related_refresh.txt)
+          wait $gate_pid || echo "枠の効果は測れなかった（補正なしで計算）"
+          cat gate_log.txt
+      - name: Gate x style effect for this course (time-boxed)
+        run: |
+          if [ -f sim/gate_cache.json ]; then
+            python - <<'PY' > sim/gate_runner_ids.txt
+          import json
+          cache = json.load(open("sim/gate_cache.json"))
+          have = set(json.load(open("sim/horses_cache.json")))
+          ids = {x["horse_id"] for r in cache.values() for x in r["runners"] if x.get("horse_id")} - have
+          print("\n".join(sorted(ids, reverse=True)))
+          PY
+            python scripts/sim_fetch_horses.py 25 $(cat sim/gate_runner_ids.txt)
+            python scripts/sim_gate_effect.py 1 || true
+          fi
+      - name: Check that the simulation runs
+        run: python scripts/sim_real_race.py --no-video --prefix "$PREFIX"
+      - name: Save fetched data
+        run: |
+          cp sim/entries.json "sim/${PREFIX}_entries.json"
+          [ -f sim/gate_effect.json ] && cp sim/gate_effect.json "sim/${PREFIX}_gate_effect.json" || true
+          bash .github/scripts/save_sim_outputs.sh "G1自動 データ ${{ needs.detect.outputs.name }}" sim/races_cache.json sim/horses_cache.json sim/gate_cache.json "sim/${PREFIX}_entries.json" "sim/${PREFIX}_gate_effect.json" "sim/${PREFIX}_report.md" "sim/${PREFIX}_result.json"
+
+  long:
+    needs: [detect, data]
+    uses: penmawashi8-ux/keiba-auto-youtube/.github/workflows/sim_cg_race.yml@claude/youtube-keiba-video-research-x6jdvw
+    with:
+      prefix: ${{ needs.detect.outputs.prefix }}
+      short: false
+      ref: ${{ needs.detect.outputs.ref }}
+    secrets: inherit
+    permissions:
+      contents: write
+
+  short:
+    needs: [detect, data]
+    uses: penmawashi8-ux/keiba-auto-youtube/.github/workflows/sim_cg_race.yml@claude/youtube-keiba-video-research-x6jdvw
+    with:
+      prefix: ${{ needs.detect.outputs.prefix }}
+      short: true
+      ref: ${{ needs.detect.outputs.ref }}
+    secrets: inherit
+    permissions:
+      contents: write
+
+  upload:
+    needs: [detect, long, short]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    env:
+      PREFIX: ${{ needs.detect.outputs.prefix }}
+      GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+      GOOGLE_CLIENT_ID_3:     ${{ secrets.GOOGLE_CLIENT_ID3 }}
+      GOOGLE_CLIENT_SECRET_3: ${{ secrets.GOOGLE_CLIENT_SECRET3 }}
+      GOOGLE_REFRESH_TOKEN_3: ${{ secrets.GOOGLE_REFRESH_TOKEN3 }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.WORK_REF }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install google-api-python-client google-auth google-auth-oauthlib
+      - name: Fetch videos
+        run: |
+          git fetch -q origin research-output
+          mkdir -p up
+          for f in "${PREFIX}_cg.mp4" "${PREFIX}_cg_plan.json" "${PREFIX}_cg_thumb.jpg" \
+                   "${PREFIX}_cg_short.mp4" "${PREFIX}_cg_short_thumb.jpg" "uploaded_${PREFIX}cg.txt" "uploaded_${PREFIX}short.txt"; do
+            git show "FETCH_HEAD:sim/$f" > "up/$f" 2>/dev/null || rm -f "up/$f"
+          done
+          ls -la up
+      - name: Upload
+        run: python scripts/auto_upload.py "$PREFIX" up "${{ github.event.inputs.privacy || 'public' }}"
+      - name: Save upload record
+        if: always()
+        run: |
+          ls up/uploaded_*.txt >/dev/null 2>&1 || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          bash .github/scripts/save_sim_outputs.sh "G1自動 投稿 ${{ needs.detect.outputs.name }}" up/uploaded_*.txt

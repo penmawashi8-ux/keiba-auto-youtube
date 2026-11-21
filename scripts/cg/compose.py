@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import sim_render as sr      # noqa: E402  枠の色
 import sim_bgm as sb         # noqa: E402
+import race_names as rn      # noqa: E402
 
 W, H = 1280, 720
 PLATE = "0x0B0F14@0.74"
@@ -77,7 +78,7 @@ def draw_vertical(card: Card, items: list[dict], plan: dict):
     """縦長ショート用。上下はショートの画面部品（タイトル・ボタン）に隠れるので避ける"""
     race = plan["race"]
     hs = {h["num"]: h for h in plan["horses"]}
-    full = {"マイルCS": "マイルチャンピオンシップ"}.get(race["race_name"], race["race_name"])
+    full = rn.full_name(race["race_name"])
     for it in items:
         ty = it["type"]
         if ty == "short_title":
@@ -87,7 +88,7 @@ def draw_vertical(card: Card, items: list[dict], plan: dict):
             card.text(full, W / 2, 410, 62, WHITE, anchor="c")
             card.text(f"{race['venue']} 芝{race['distance']}m　代表的な1回", W / 2, 490, 38, SUB, anchor="c")
         elif ty == "race_tag":
-            label = f"{race['venue']}11R　{race['race_name']}"
+            label = f"{race['venue']}{int(race['race_id'][-2:])}R　{rn.short_name(race['race_name'])}"
             w = text_w(label, 36) + 50
             card.rect(40, 230, w, 64, PLATE)
             card.rect(40, 230, 7, 64, ACCENT)
@@ -133,13 +134,13 @@ def draw(card: Card, items: list[dict], plan: dict, t: float):
         ty = it["type"]
         if ty == "title":
             card.rect(56, 506, 6, 128, ACCENT)
-            full = {"マイルCS": "マイルチャンピオンシップ"}.get(race["race_name"], race["race_name"])
+            full = rn.full_name(race["race_name"])
             card.text(full, 80, 500, 58, WHITE, shadow=True)
             card.text(f"{race['date'][:4]}年{int(race['date'][5:7])}月{int(race['date'][8:10])}日　"
                       f"{race['venue']}　芝{race['distance']}m", 82, 576, 26, WHITE, shadow=True)
             card.text("データで1万回シミュレーション", 82, 612, 22, SUB, shadow=True)
         elif ty == "race_tag":
-            label = f"{race['venue']}11R　{race['race_name']}"
+            label = f"{race['venue']}{int(race['race_id'][-2:])}R　{rn.short_name(race['race_name'])}"
             w = text_w(label, 24) + 40
             card.rect(32, 28, w, 44, PLATE)
             card.rect(32, 28, 5, 44, ACCENT)

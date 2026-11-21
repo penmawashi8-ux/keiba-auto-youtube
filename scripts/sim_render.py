@@ -43,9 +43,14 @@ COURSES = {
     "東京": {"name": "東京競馬場", "lap": 2083.1, "straight": 525.9, "right": False, "note": "Aコース"},
     "京都": {"name": "京都競馬場", "lap": 1782.8, "straight": 328.4, "right": True, "note": "内回り Aコース"},
     "京都外": {"name": "京都競馬場", "lap": 1894.3, "straight": 403.7, "right": True, "note": "外回り Aコース"},
+    "中山": {"name": "中山競馬場", "lap": 1667.1, "straight": 310.0, "right": True, "note": "内回り Aコース"},
+    "中山外": {"name": "中山競馬場", "lap": 1839.7, "straight": 310.0, "right": True, "note": "外回り Aコース"},
+    "阪神": {"name": "阪神競馬場", "lap": 1689.0, "straight": 356.5, "right": True, "note": "内回り Aコース"},
+    "阪神外": {"name": "阪神競馬場", "lap": 2089.0, "straight": 473.6, "right": True, "note": "外回り Aコース"},
+    "中京": {"name": "中京競馬場", "lap": 1705.9, "straight": 412.5, "right": False, "note": "Aコース"},
 }
 # 外回りを使う距離（京都の芝。1600m は内・外の両方があるが、重賞は外回り）
-OUTER = {"京都": {1600, 1800, 2200, 2400, 3000, 3200}}
+OUTER = {"京都": {1600, 1800, 2200, 2400, 3000, 3200}, "中山": {1200, 1600, 2200}, "阪神": {1600, 1800, 2400, 2600}}
 
 
 def course_key(venue: str, dist: int) -> str:

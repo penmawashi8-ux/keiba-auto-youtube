@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import sim_render as sr          # noqa: E402
 import sim_dream_race as sd      # noqa: E402
+import race_names as rn           # noqa: E402
 
 FPS = 24
 SHORT, SP_HI, SP_LO = False, 1.6, 1.0
@@ -258,7 +259,7 @@ def main() -> None:
     if not SHORT:
         # ---- オープニング: コース全景 → スタート地点
         t0 = now()
-        narr = (f"{race['race_name']}。{venue}の芝{dist}メートルを、出走{n}頭の過去の成績から"
+        narr = (f"{rn.spoken(race['race_name'])}。{venue}の芝{dist}メートルを、出走{n}頭の過去の成績から"
                 f"1万回シミュレーションしました。まずは、その中の代表的な1回です。")
         dur = say(narr, t0 + 0.6)
         intro_len = max(9.0, dur + 1.6)
@@ -287,7 +288,7 @@ def main() -> None:
     else:
         # ---- ショート: ゲート前から（つかみ）
         t0 = now()
-        dur = say(f"{race['race_name']}を1万回シミュレーション。その代表的な1回がこちら！", t0 + 0.2)
+        dur = say(f"{rn.spoken(race['race_name'])}を1万回シミュレーション。その代表的な1回がこちら！", t0 + 0.2)
         hook_len = max(3.5, dur + 0.5)
         for f in range(int(hook_len * FPS)):
             u = ease(f / (hook_len * FPS))
