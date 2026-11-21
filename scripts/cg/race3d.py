@@ -33,6 +33,8 @@ else:
 C = SPEC["course"]
 LAP, ST, RIGHT, TW = C["lap"], C["straight"], C["right"], C.get("track_w", 25.0)
 R = (LAP - 2 * ST) / (2 * math.pi)
+DIRT = C.get("surface") == "ダ"
+OUTER_EXTRA = 29.0 if DIRT else 0.0          # ダート戦は外側に芝コースがあるぶん、スタンドが遠い
 FINISH_S = ST                     # ゴールは直線の終わり
 rnd = random.Random(7)
 
@@ -126,6 +128,27 @@ def turf_mat():
     nt.links.new(mix.outputs[2], mix2.inputs[6])
     nt.links.new(noise.outputs["Color"], mix2.inputs[7])
     nt.links.new(mix2.outputs[2], b.inputs["Base Color"])
+    return m
+
+
+def dirt_mat():
+    """ダート: 明るい砂色に細かいムラ"""
+    m = bpy.data.materials.new("DirtTrack")
+    m.use_nodes = True
+    nt = m.node_tree
+    b = nt.nodes["Principled BSDF"]
+    b.inputs["Roughness"].default_value = 1.0
+    b.inputs["Specular IOR Level"].default_value = 0.05
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 0.6
+    noise.inputs["Detail"].default_value = 8
+    geo = nt.nodes.new("ShaderNodeNewGeometry")
+    nt.links.new(geo.outputs["Position"], noise.inputs["Vector"])
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    ramp.color_ramp.elements[0].color = (0.17, 0.10, 0.05, 1)
+    ramp.color_ramp.elements[1].color = (0.27, 0.17, 0.09, 1)
+    nt.links.new(noise.outputs["Fac"], ramp.inputs[0])
+    nt.links.new(ramp.outputs[0], b.inputs["Base Color"])
     return m
 
 
@@ -296,16 +319,24 @@ def build_course():
     roof = mat("Roof", (0.28, 0.3, 0.33), 0.5)
     glass = mat("Glass", (0.15, 0.2, 0.25), 0.1, spec=0.8)
 
-    ribbon("Turf", 0.0, TW, 0.0, 0.0, turf, uv_scale=1.0)
-    ribbon("Dirt", -26.0, -3.0, 0.0, 0.0, dirt)
-    ribbon("TurfEdgeIn", -3.0, 0.0, 0.0, 0.0, infield)
+    rails = [("InnerRail", -0.6), ("OuterRail", TW + 0.6)]
+    if DIRT:                                           # ダート戦: 走るのは内側のダート。芝コースはその外側
+        ribbon("Dirt", 0.0, TW, 0.0, 0.0, dirt_mat())
+        ribbon("TurfEdgeIn", -3.0, 0.0, 0.0, 0.0, infield)
+        ribbon("Turf", TW + 3.0, TW + 3.0 + 25.0, 0.0, 0.0, turf, uv_scale=1.0)
+        ribbon("TurfGap", TW, TW + 3.0, -0.005, -0.005, infield)
+        rails.append(("TurfOuterRail", TW + 28.6))
+    else:
+        ribbon("Turf", 0.0, TW, 0.0, 0.0, turf, uv_scale=1.0)
+        ribbon("Dirt", -26.0, -3.0, 0.0, 0.0, dirt)
+        ribbon("TurfEdgeIn", -3.0, 0.0, 0.0, 0.0, infield)
     # 内馬場・外側の地面
     disk("InfieldGround", 0, 0, ST / 2 + R + 60, R + 30, -0.03, infield)
     g = disk("Ground", 0, 0, 6000, 6000, -0.06, outer)
     # 内馬場の池（京都名物）
     disk("Pond", (-1 if RIGHT else 1) * 60, 10, 120, R - 75, 0.01, water)
     # ラチ（内・外）。上の横木＋支柱
-    for nm, off in [("InnerRail", -0.6), ("OuterRail", TW + 0.6)]:
+    for nm, off in rails:
         ribbon(nm + "Top", off, off, 0.92, 1.06, white, step=1.5)
         ribbon(nm + "Top2", off - 0.08, off + 0.08, 1.06, 1.06, white, step=1.5)
         posts(nm + "Posts", off, 3.0, 1.0, 0.05, white)
@@ -324,7 +355,7 @@ def build_course():
         box(f"Furlong{k}", (p.x, p.y, 1.6), (0.18, 0.18, 3.2), red if k % 2 else white)
     # スタンド（ホームストレッチの外側）
     sx = (-1 if RIGHT else 1)
-    y0 = -(R + TW + 18)
+    y0 = -(R + TW + 18 + OUTER_EXTRA)
     xs0, xs1 = -ST / 2 - 40, ST / 2 + 60
     cx = sx * (xs0 + xs1) / 2
     width = xs1 - xs0
@@ -612,6 +643,10 @@ def animate(horses):
                 idle.strip_time = (f * 0.5 + i * 7) % max(idle.action_frame_end - 1, 1)
                 for stp, prop in ((gal, "influence"), (gal, "strip_time"), (idle, "strip_time")):
                     stp.keyframe_insert(prop, frame=f + 1)
+        gone = fr["tau"] > 4.0 and any(fr.get("run", [1]))      # スタート後しばらくでゲートは片付ける
+        for g in GATE:
+            g.hide_render = gone
+            g.keyframe_insert("hide_render", frame=f + 1)
         c = fr["cam"]
         for i, tg in enumerate(TAGS):
             hp = P(fr["s"][i], fr["lat"][i], 0.0)
@@ -641,6 +676,9 @@ def animate(horses):
                 pass
 
 
+GATE = []
+
+
 def build_gate():
     """スタートのゲート（発馬機）。各馬のスタート時の横位置の間に仕切りを立てる"""
     fr = SPEC["frames"][0]
@@ -652,13 +690,13 @@ def build_gate():
     bounds = [lats[0] - 0.65] + [(a + b) / 2 for a, b in zip(lats, lats[1:])] + [lats[-1] + 0.65]
     for j, off in enumerate(bounds):
         p = P(s0, off)
-        box(f"GatePost{j}", (p.x, p.y, 1.35), (3.2, 0.14, 2.7), green, rot_z=hd)
+        GATE.append(box(f"GatePost{j}", (p.x, p.y, 1.35), (3.2, 0.14, 2.7), green, rot_z=hd))
     a, b = P(s0, bounds[0]), P(s0, bounds[-1])
     mid = (a + b) / 2
     span = (b - a).length
-    box("GateBeam", (mid.x, mid.y, 2.85), (0.5, span + 0.6, 0.4), white, rot_z=hd)
-    box("GateBeamF", ((P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).x, (P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).y, 2.85),
-        (0.3, span + 0.6, 0.3), green, rot_z=hd)
+    GATE.append(box("GateBeam", (mid.x, mid.y, 2.85), (0.5, span + 0.6, 0.4), white, rot_z=hd))
+    GATE.append(box("GateBeamF", ((P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).x, (P(s0 + 1.5, (bounds[0] + bounds[-1]) / 2)).y, 2.85),
+        (0.3, span + 0.6, 0.3), green, rot_z=hd))
 
 
 TAGS, TAG_ROW = [], []

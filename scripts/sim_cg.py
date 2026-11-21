@@ -179,7 +179,9 @@ def main() -> None:
     inp = json.loads((SIM / f"{prefix}_cg_input.json").read_text(encoding="utf-8"))
     race = inp["race"]
     dist, venue = race["distance"], race["venue"]
-    sr.set_course(sr.course_key(venue, dist))
+    surf = race.get("surface", "芝")
+    surf_word = "ダート" if surf == "ダ" else "芝"
+    sr.set_course(sr.course_key(venue, dist, surf))
     LAP, ST, TW = sr.LAP_M, sr.STRAIGHT_M, sr.TRACK_W_M
     start_s = ST - (dist - LAP)
     hs = sorted(inp["horses"], key=lambda h: h["num"])
@@ -259,7 +261,7 @@ def main() -> None:
     if not SHORT:
         # ---- オープニング: コース全景 → スタート地点
         t0 = now()
-        narr = (f"{rn.spoken(race['race_name'])}。{venue}の芝{dist}メートルを、出走{n}頭の過去の成績から"
+        narr = (f"{rn.spoken(race['race_name'])}。{venue}の{surf_word}{dist}メートルを、出走{n}頭の過去の成績から"
                 f"1万回シミュレーションしました。まずは、その中の代表的な1回です。")
         dur = say(narr, t0 + 0.6)
         intro_len = max(9.0, dur + 1.6)
@@ -496,7 +498,7 @@ def main() -> None:
             plan["overlays"].append({"type": "focus", "t0": round(t0 + 0.3, 3), "t1": round(now() - 0.2, 3),
                                      "rank": k + 1, "num": h["num"], "waku": h["waku"], "name": h["name"],
                                      "jockey": h["jockey"], "win": round(h["win"], 4), "style": h["style_name"],
-                                     "record": f"JRA芝 {h['starts']}戦{h['wins']}勝",
+                                     "record": f"JRA{surf_word} {h['starts']}戦{h['wins']}勝",
                                      "points": [f"{s[0]}：{s[1]}" for s in h["strong"][:2]]})
 
         # ---- エンディング（スタンドとゴール板を上空へ引いていく）
@@ -530,7 +532,7 @@ def main() -> None:
 
     spec = {
         "course": {"lap": LAP, "straight": ST, "right": sr.RIGHT, "track_w": TW, "dist": dist, "start_s": start_s,
-                   "name": venue},
+                   "name": venue, "surface": surf},
         "horses": [{"num": h["num"], "waku": h["waku"], "name": h["name"], "coat": (h["num"] * 5 + 3) % 6,
                     "silk": SILKS[(h["num"] * 7) % len(SILKS)], "cap": CAP[h["waku"] - 1]} for h in hs],
         "horse_model": "data/cg/horse_quaternius.blend",

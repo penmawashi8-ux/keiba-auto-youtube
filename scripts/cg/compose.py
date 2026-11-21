@@ -69,6 +69,10 @@ class Card:
         subprocess.run(args, check=True)
 
 
+def surf_word(race: dict) -> str:
+    return "ダート" if race.get("surface") == "ダ" else "芝"
+
+
 def text_w(s: str, size: int) -> float:
     """おおよその文字幅（全角1・半角0.55）"""
     return sum(size * (0.55 if ord(ch) < 0x2E80 else 1.0) for ch in s)
@@ -86,7 +90,7 @@ def draw_vertical(card: Card, items: list[dict], plan: dict):
             card.rect(60, 250, 960, 8, ACCENT)
             card.text("1万回シミュレーション", W / 2, 320, 54, "0xE8C547", anchor="c")
             card.text(full, W / 2, 410, 62, WHITE, anchor="c")
-            card.text(f"{race['venue']} 芝{race['distance']}m　代表的な1回", W / 2, 490, 38, SUB, anchor="c")
+            card.text(f"{race['venue']} {surf_word(race)}{race['distance']}m　代表的な1回", W / 2, 490, 38, SUB, anchor="c")
         elif ty == "race_tag":
             label = f"{race['venue']}{int(race['race_id'][-2:])}R　{rn.short_name(race['race_name'])}"
             w = text_w(label, 36) + 50
@@ -137,7 +141,7 @@ def draw(card: Card, items: list[dict], plan: dict, t: float):
             full = rn.full_name(race["race_name"])
             card.text(full, 80, 500, 58, WHITE, shadow=True)
             card.text(f"{race['date'][:4]}年{int(race['date'][5:7])}月{int(race['date'][8:10])}日　"
-                      f"{race['venue']}　芝{race['distance']}m", 82, 576, 26, WHITE, shadow=True)
+                      f"{race['venue']}　{surf_word(race)}{race['distance']}m", 82, 576, 26, WHITE, shadow=True)
             card.text("データで1万回シミュレーション", 82, 612, 22, SUB, shadow=True)
         elif ty == "race_tag":
             label = f"{race['venue']}{int(race['race_id'][-2:])}R　{rn.short_name(race['race_name'])}"

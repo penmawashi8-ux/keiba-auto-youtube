@@ -48,13 +48,21 @@ COURSES = {
     "阪神": {"name": "阪神競馬場", "lap": 1689.0, "straight": 356.5, "right": True, "note": "内回り Aコース"},
     "阪神外": {"name": "阪神競馬場", "lap": 2089.0, "straight": 473.6, "right": True, "note": "外回り Aコース"},
     "中京": {"name": "中京競馬場", "lap": 1705.9, "straight": 412.5, "right": False, "note": "Aコース"},
+    # ダート（芝コースの内側）
+    "東京ダ": {"name": "東京競馬場", "lap": 1899.0, "straight": 501.6, "right": False, "note": "ダート", "surface": "ダ"},
+    "中京ダ": {"name": "中京競馬場", "lap": 1530.0, "straight": 410.7, "right": False, "note": "ダート", "surface": "ダ"},
+    "京都ダ": {"name": "京都競馬場", "lap": 1607.6, "straight": 329.1, "right": True, "note": "ダート", "surface": "ダ"},
+    "阪神ダ": {"name": "阪神競馬場", "lap": 1517.6, "straight": 352.7, "right": True, "note": "ダート", "surface": "ダ"},
+    "中山ダ": {"name": "中山競馬場", "lap": 1493.0, "straight": 308.0, "right": True, "note": "ダート", "surface": "ダ"},
 }
 # 外回りを使う距離（京都の芝。1600m は内・外の両方があるが、重賞は外回り）
 OUTER = {"京都": {1600, 1800, 2200, 2400, 3000, 3200}, "中山": {1200, 1600, 2200}, "阪神": {1600, 1800, 2400, 2600}}
 
 
-def course_key(venue: str, dist: int) -> str:
-    """COURSES のキー（京都の外回りは「京都外」）"""
+def course_key(venue: str, dist: int, surface: str = "芝") -> str:
+    """COURSES のキー（京都の外回りは「京都外」、ダートは「東京ダ」）"""
+    if surface == "ダ":
+        return venue + "ダ"
     return venue + "外" if dist in OUTER.get(venue, set()) and venue + "外" in COURSES else venue
 
 

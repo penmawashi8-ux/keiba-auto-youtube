@@ -33,6 +33,7 @@ def main():
     m, dd = int(race["date"][5:7]), int(race["date"][8:10])
     rnum = int(race["race_id"][-2:])
     hs = sorted(plan["horses"], key=lambda h: h["rank"])
+    sw = "ダート" if race.get("surface") == "ダ" else "芝"
     rates = "\n".join(f"{h['rank']}位 {h['num']}番 {h['name']} {h['win'] * 100:.1f}%" for h in hs[:5])
     fav = hs[0]
     hashtag = "#" + short.replace("（", "").replace("）", "").replace("(", "").replace(")", "")
@@ -45,7 +46,7 @@ def main():
         print("本編は投稿済み:", long_url)
     else:
         title = f"【{short} {year}】1万回シミュレーションした結果｜3D CGでレース再現"
-        desc = f"""{m}月{dd}日 {race['venue']}{rnum}R {full}（GI・{race['surface']}{race['distance']}m）。
+        desc = f"""{m}月{dd}日 {race['venue']}{rnum}R {full}（GI・{sw}{race['distance']}m）。
 確定した枠順で、出走{len(hs)}頭を過去の成績から1万回走らせ、その代表的な1回を3D CGで再現しました。
 
 ■ 1万回走らせた勝率
@@ -76,7 +77,7 @@ BGM：オリジナル
         print("ショートは投稿済み:", short_file.read_text().strip())
         return
     title = f"【{short} {year}】1万回シミュレーションした結果を3D CGで再現 #Shorts"
-    desc = f"""{full}（{race['venue']} {race['surface']}{race['distance']}m）を、出走{len(hs)}頭の過去の成績から1万回シミュレーション。その代表的な1回を3D CGで再現しました。
+    desc = f"""{full}（{race['venue']} {sw}{race['distance']}m）を、出走{len(hs)}頭の過去の成績から1万回シミュレーション。その代表的な1回を3D CGで再現しました。
 
 ▶ 1万回走らせた勝率・上位3頭の紹介は本編で
 {long_url}

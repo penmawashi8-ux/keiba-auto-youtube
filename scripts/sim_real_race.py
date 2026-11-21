@@ -97,7 +97,7 @@ def badge_col(h: dict, x: int, size: int | None = None) -> dict:
 def before_pages(ent: dict, horses: dict, kit: dict, gate: dict | None = None) -> list[dict]:
     n = len(horses)
     drawn = ent["drawn"]
-    course = sr.COURSES[sr.course_key(ent["venue"], ent["distance"])]
+    course = sr.COURSES[sr.course_key(ent["venue"], ent["distance"], ent.get("surface", "芝"))]
     te = kit["test"]
     lap = course["lap"]
     title = [{"text": f"{ent['race_name']} {ent['date'][:4]}", "x": "(w-text_w)/2", "y": 190, "size": 72,
@@ -358,7 +358,7 @@ def main() -> None:
         kit = {**kit, **sl.build_features(sm.load_races(surface="ダ"))}
     date, dist, venue = ent["date"], ent["distance"], ent["venue"]
     if not no_video:
-        sr.set_course(sr.course_key(venue, dist))
+        sr.set_course(sr.course_key(venue, dist, surf))
     n = len(ent["horses"])
     drawn = ent["drawn"]
 
@@ -441,7 +441,7 @@ def main() -> None:
     counts = monte_carlo(horses, upsets=upsets, pace_sd=gate.get("pace_sd", 0.0) if gate else 0.0)
 
     key = f"c:{venue}{dist}"
-    base = kit["model"].coef.get(key) if surf == "芝" else None
+    base = kit["model"].coef.get(key)            # ダートは build_features でダートのモデルに置き換わっている
     if base is None and not no_video:
         sys.exit(f"基準タイムのモデルに {key} がありません")
     k = kit["train"]["sec_per_score"]

@@ -3,7 +3,7 @@
 使い方: python scripts/g1_watch.py [race_id 日付YYYYMMDD]   （引数があればそのレースを対象にする）
 出力: GITHUB_OUTPUT に found / race_id / date / prefix / name（見つからなければ found=false）
 
-対象: 芝の G1 で、描けるコース（sim_render.COURSES）のもの。ダートの G1 は動画に未対応なので飛ばす。
+対象: 芝・ダートの G1 で、描けるコース（sim_render.COURSES）のもの。
 処理済みの印: research-output の sim/auto_<race_id>.json（あれば飛ばす）。
 """
 import datetime as dt
@@ -46,10 +46,10 @@ def check(session, race_id: str, date: str, force: bool = False) -> dict | None:
     print(f"  {date} {race_id} {name} {ent['venue']} {ent['surface']}{ent['distance']} 枠順{'確定' if ent['drawn'] else '未確定'}")
     if not ent["drawn"]:
         return None
-    if ent["surface"] != "芝":
-        print("  → ダートは動画に未対応")
+    if ent["surface"] not in ("芝", "ダ"):
+        print("  → 馬場がわからない")
         return None
-    if sr.course_key(ent["venue"], ent["distance"]) not in sr.COURSES:
+    if sr.course_key(ent["venue"], ent["distance"], ent["surface"]) not in sr.COURSES:
         print("  → このコースはまだ描けない")
         return None
     if not force and done(race_id):
