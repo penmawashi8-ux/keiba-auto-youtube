@@ -1,0 +1,63 @@
+name: TTS probe
+
+# 読み上げの確認: data/tts_probe/phrases.txt の各行を、ニュース（Keita）と名馬列伝（Nanami）の声で音声にし、
+# Whisper の文字起こしと一緒に research-output の sim/tts_probe/ に保存する
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/tts_probe/**
+      - .github/workflows/tts_probe.yml
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install -q edge-tts faster-whisper
+      - name: Synthesize and transcribe
+        run: |
+          mkdir -p out
+          python - <<'PY'
+          import asyncio, edge_tts
+          from faster_whisper import WhisperModel
+          lines = [l.strip() for l in open("data/tts_probe/phrases.txt", encoding="utf-8") if l.strip()]
+          voices = {"keita": ("ja-JP-KeitaNeural", "+10%"), "nanami": ("ja-JP-NanamiNeural", "+0%")}
+          model = WhisperModel("small", device="cpu", compute_type="int8")
+          log = []
+          for vk, (voice, rate) in voices.items():
+              for i, t in enumerate(lines, 1):
+                  out = f"out/{vk}_{i}.mp3"
+                  asyncio.run(edge_tts.Communicate(t, voice, rate=rate).save(out))
+                  segs, _ = model.transcribe(out, language="ja")
+                  heard = "".join(s.text for s in segs)
+                  log.append(f"{vk} {i}: 原稿「{t}」 → 聞き取り「{heard}」")
+          open("out/result.txt", "w", encoding="utf-8").write("\n".join(log) + "\n")
+          print("\n".join(log))
+          PY
+          # 1つにつなげたもの（行ごとに1秒あける）
+          for v in keita nanami; do
+            ls out/${v}_*.mp3 | sort | while read f; do echo "file '$PWD/$f'"; echo "file '$PWD/out/gap.mp3'"; done > out/list_$v.txt
+          done
+          ffmpeg -v error -f lavfi -i anullsrc=r=24000:cl=mono -t 1 -q:a 9 out/gap.mp3
+          for v in keita nanami; do ffmpeg -v error -f concat -safe 0 -i out/list_$v.txt -c:a libmp3lame -q:a 4 out/all_$v.mp3; done
+          rm -f out/list_*.txt
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            mkdir -p sim/tts_probe && cp out/* sim/tts_probe/
+            git add -f sim/tts_probe && git commit -qm "読み上げの確認 (run ${GITHUB_RUN_ID}) [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
