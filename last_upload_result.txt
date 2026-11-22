@@ -1,10 +1,10 @@
-date: 2026-11-22T01:09:34.758334Z
+date: 2026-11-22T04:15:35.775861Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=elpi_OlYyw4 title=「馬主のお嬢様かと・・・」福島競馬場降臨の美女２人２ショットに騒然「２人とも美人
-OK project=1 video_id=YJo8DYQko4I title=【マイルCS予想】重視すべきは「ローテ」か「着順」か？ 過去データから探るGIマ
-OK project=1 video_id=-k85RZ5q1hs title=先週的中の粗品「人気するなら軽視したい」マイルCS上位人気2頭に言及　自信の本命
+OK project=1 video_id=8F261b6SLEs title=【東京6R新馬戦結果】シャドウアリアが人気に応えてデビュー勝ち デクラレーション
+OK project=1 video_id=BMlBpsY_JYo title=京都競馬場で竜星涼がトークショー「夢の３連単です」と高配当狙いの予想でわかせる
+OK project=1 video_id=Dr_pKLPzMcw title=【京都5R新馬戦結果】キタサンブラック産駒アルデオリエンスが逃げ切り勝ち
