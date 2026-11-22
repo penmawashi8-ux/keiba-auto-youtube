@@ -1,10 +1,10 @@
-date: 2026-11-21T10:09:33.442581Z
+date: 2026-11-22T01:09:34.758334Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=nAL209zZSKs title=【シトリンSレース後コメント】メルカントゥール C.デムーロ騎手ら
-OK project=1 video_id=g7IUY2A-qNo title=【マイルCS・土曜気配】京都巧者ジューンテイクが怖い　久々のマイル戦も朝日杯FS
-OK project=1 video_id=15FzenP8Bm4 title=【仁淀川特別・高知】単勝1.7倍のメイショウミカワが準重賞初勝利　岡遼太郎騎手「
+OK project=1 video_id=elpi_OlYyw4 title=「馬主のお嬢様かと・・・」福島競馬場降臨の美女２人２ショットに騒然「２人とも美人
+OK project=1 video_id=YJo8DYQko4I title=【マイルCS予想】重視すべきは「ローテ」か「着順」か？ 過去データから探るGIマ
+OK project=1 video_id=-k85RZ5q1hs title=先週的中の粗品「人気するなら軽視したい」マイルCS上位人気2頭に言及　自信の本命
