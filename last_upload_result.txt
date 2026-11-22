@@ -1,10 +1,10 @@
-date: 2026-11-22T04:15:35.775861Z
+date: 2026-11-22T07:08:17.129367Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=8F261b6SLEs title=【東京6R新馬戦結果】シャドウアリアが人気に応えてデビュー勝ち デクラレーション
-OK project=1 video_id=BMlBpsY_JYo title=京都競馬場で竜星涼がトークショー「夢の３連単です」と高配当狙いの予想でわかせる
-OK project=1 video_id=Dr_pKLPzMcw title=【京都5R新馬戦結果】キタサンブラック産駒アルデオリエンスが逃げ切り勝ち
+OK project=1 video_id=lnys-2pnENA title=【マイルCS】エンブロイダリーは2着　中188日の休み明け克服&G1・4勝目なら
+OK project=1 video_id=UBhyC-_jMdo title=【マイルCS】仏の刺客エルデナリが外国馬初の歴史的V!　昨年JC覇者カランダガン
+OK project=1 video_id=xB2PaObAJLY title=【マイルCS】フランスからの刺客4番人気エルデナリがイン強襲V!外国馬初制覇!!
