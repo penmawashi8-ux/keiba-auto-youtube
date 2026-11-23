@@ -1,6 +1,6 @@
-date: 2026-11-22T11:05:10.288347Z
+date: 2026-11-23T11:11:12.975435Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=TXt_BKgg_I4 views=47110 title=【マイルCS結果】フランスの3歳馬エルデナリがV！ 外国調教馬初のマイルCS制覇！【4.7万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=pHr-63PX524 views=58681 title=【マイルCSレース後コメント】エルデナリ M.バルザローナ騎手ら【5.9万回閲覧・話題の競馬ニュース】
