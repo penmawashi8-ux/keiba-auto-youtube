@@ -1,10 +1,10 @@
-date: 2026-11-23T01:13:24.651162Z
+date: 2026-11-23T04:07:20.078997Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=2RI__aZcEsw title=「９頭身」「画面で見る１０倍男前だった」京都競馬場降臨、「ＶＩＶＡＮＴ」出演の３
-OK project=1 video_id=yZuz6eMo9CM title=東スポ杯2歳Sはハーツクライ系が好相性 馬体重にも注目
-OK project=1 video_id=PnoZWF7TUo0 title=【23日の注目・東京5R】半兄ジャンタルマンタルがG12勝の東京マイルでデビュー
+OK project=1 video_id=2VwMa_VoG5U title=【東京5R新馬戦結果】エピファネイア産駒ウィンザーグレースが直線一気でV
+OK project=1 video_id=02z-B3TQM24 title=【東京3R・2歳未勝利】驚きの豪脚で初V!　伏兵タッカーヴィーナスが圧倒的1番人
+OK project=1 video_id=SDHcL4Vb2Ts title=【福島5R新馬戦結果】ルーラーシップ産駒マージナルゲインが差し切り勝ち
