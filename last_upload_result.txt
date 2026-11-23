@@ -1,10 +1,10 @@
-date: 2026-11-23T07:25:12.344845Z
+date: 2026-11-23T10:08:28.842197Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=dJGp1Y1S3vQ title=【東京スポーツ杯2歳S】3冠牝馬リバティアイランドの半弟は10着　3・1億円馬ダ
-OK project=1 video_id=mpByYV8sgFM title=【メイクデビュー東京6Rレース後コメント】ヴォラーレジャン松山弘平騎手ら
-OK project=1 video_id=Vm4QfBsQANM title=武豊騎手が“国内重賞500勝”を達成 東スポ杯2歳Sを制す
+OK project=1 video_id=62XKSld3mzI title=【金沢・MRO金賞結果】ニャンタロウが3連勝で重賞初制覇
+OK project=1 video_id=BPwYtxo7fCw title=第3回福島競馬リーディングジョッキーは小林美駒騎手！
+OK project=1 video_id=Of2LQbUDk6U title=【水沢・トウケイニセイ記念結果】ヒロシクンが逃げ切り連覇達成
