@@ -1,0 +1,32 @@
+{
+ "items": [
+  {
+   "key": "ombudsman",
+   "must": ["ombudsman", "オンブズマン"],
+   "flickr": ["Ombudsman horse", "Ombudsman racehorse", "Ombudsman Ascot", "Ombudsman Buick",
+              "Ombudsman Gosden", "Ombudsman York", "Ombudsman Godolphin", "Ombudsman Meydan",
+              "Ombudsman Dubai Turf", "Ombudsman Sandown", "Ombudsman Newmarket", "オンブズマン 競馬",
+              "Prince of Wales Stakes 2025", "Prince of Wales Stakes 2026", "Juddmonte International 2025",
+              "Champion Stakes 2026", "Dubai Turf 2026"],
+   "words": ["Ombudsman horse", "Ombudsman racehorse", "Ombudsman Ascot"]
+  },
+  {
+   "key": "ethicaldiamond",
+   "must": ["ethical diamond", "エシカルダイヤモンド"],
+   "flickr": ["Ethical Diamond", "Ethical Diamond horse", "Ethical Diamond Mullins",
+              "Ethical Diamond hurdle", "Ethical Diamond Galway", "Ethical Diamond Leopardstown",
+              "Ethical Diamond Del Mar", "Ethical Diamond Breeders Cup", "エシカルダイヤモンド",
+              "Breeders Cup Turf 2025", "Breeders Cup 2025 Del Mar", "Kentucky Downs 2026"],
+   "words": ["Ethical Diamond horse", "Ethical Diamond"]
+  },
+  {
+   "key": "teao",
+   "must": ["teao", "テアオ"],
+   "flickr": ["Teao", "Teao caballo", "Teao horse", "Teao Derby", "Teao Valparaiso",
+              "Teao hipica", "Teao Monterrico", "テアオ",
+              "El Derby 2026 Viña del Mar", "Valparaiso Sporting Derby 2026",
+              "Gran Premio Latinoamericano 2026", "Monterrico 2026", "Club Hipico Gran Criterium 2025"],
+   "words": ["Teao caballo", "Teao horse"]
+  }
+ ]
+}
