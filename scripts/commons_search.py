@@ -47,8 +47,47 @@ def info(titles):
         artist = re.sub(r"<[^>]+>", "", md.get("Artist", {}).get("value", "")).strip()
         out.append({"title": p["title"], "license": lic, "author": artist, "mime": ii.get("mime"),
                     "w": ii.get("width"), "h": ii.get("height"), "thumb": ii.get("thumburl"),
-                    "page": ii.get("descriptionurl"), "desc": re.sub(r"<[^>]+>", "", md.get("ImageDescription", {}).get("value", ""))[:200]})
+                    "page": ii.get("descriptionurl"),
+                    "desc": (re.sub(r"<[^>]+>", "", md.get("ImageDescription", {}).get("value", ""))[:600] + " | "
+                             + md.get("Categories", {}).get("value", "")[:600])})
     return out
+
+
+def category_files(cat, n=50):
+    d = call({"action": "query", "list": "categorymembers", "cmtitle": cat, "cmtype": "file", "cmlimit": n})
+    return [x["title"] for x in d.get("query", {}).get("categorymembers", [])]
+
+
+def category_search(q):
+    d = call({"action": "query", "list": "search", "srsearch": q, "srnamespace": 14, "srlimit": 10})
+    return [x["title"] for x in d.get("query", {}).get("search", [])]
+
+
+def wiki_page_images(lang, title):
+    """各言語版ウィキペディアの記事に使われている画像（Commons のもの）"""
+    try:
+        r = requests.get(f"https://{lang}.wikipedia.org/w/api.php", params={
+            "action": "query", "format": "json", "titles": title, "prop": "images|pageprops", "imlimit": 50,
+            "redirects": 1}, headers=UA, timeout=30)
+        pages = r.json().get("query", {}).get("pages", {})
+    except Exception as e:      # noqa: BLE001
+        print("  wiki 失敗", lang, title, e)
+        return [], None
+    files, qid = [], None
+    for pg in pages.values():
+        qid = qid or pg.get("pageprops", {}).get("wikibase_item")
+        files += [x["title"].replace("ファイル:", "File:").replace("Archivo:", "File:").replace("Fichier:", "File:")
+                  .replace("Datei:", "File:") for x in pg.get("images", [])]
+    return files, qid
+
+
+def wikidata_image(qid):
+    try:
+        r = requests.get("https://www.wikidata.org/w/api.php", params={"action": "wbgetclaims", "format": "json",
+                                                                       "entity": qid, "property": "P18"}, headers=UA, timeout=30)
+        return ["File:" + c["mainsnak"]["datavalue"]["value"] for c in r.json().get("claims", {}).get("P18", [])]
+    except Exception:      # noqa: BLE001
+        return []
 
 
 def openverse(q, n=20):
@@ -85,6 +124,21 @@ def main():
                 if t not in titles:
                     titles.append(t)
             time.sleep(0.5)
+        for cq in it.get("categories", []):              # 名前の付いたカテゴリ（Category:Ombudsman (horse) など）
+            cats = [cq] if cq.startswith("Category:") else category_search(cq)
+            for c in cats[:5]:
+                for t in category_files(c):
+                    if t not in titles:
+                        titles.append(t)
+            time.sleep(0.5)
+        for lang, title in it.get("wiki", []):            # 各言語版の記事と、Wikidata の画像
+            files, qid = wiki_page_images(lang, title)
+            if qid:
+                files += wikidata_image(qid)
+            for t in files:
+                if t not in titles and not t.lower().endswith((".svg", ".png")) or (t.lower().endswith(".png") and t not in titles):
+                    titles.append(t)
+            time.sleep(0.5)
         cands = []
         for i in range(0, len(titles), 10):
             cands += info(titles[i:i + 10])
@@ -100,7 +154,8 @@ def main():
                                            for w in need)]
         report[it["key"]] = []
         files = []
-        for n, c in enumerate(good[:12]):
+        print(f"  {it['key']}: 調べた画像 {len(titles)}件")
+        for n, c in enumerate(good[:16]):
             p = out / f"{it['key']}_{n}.jpg"
             try:
                 b = requests.get(c["thumb"], headers=UA, timeout=60).content
