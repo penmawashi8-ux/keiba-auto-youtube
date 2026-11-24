@@ -1,54 +1,5 @@
 {
- "ombudsman": [
-  {
-   "title": "File:Natalia Popova (ombudsman).jpg",
-   "license": "CC BY-SA 4.0",
-   "author": "User:Innopractice-photo",
-   "mime": "image/jpeg",
-   "w": 4110,
-   "h": 2518,
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Natalia_Popova_%28ombudsman%29.jpg/1920px-Natalia_Popova_%28ombudsman%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Natalia_Popova_(ombudsman).jpg",
-   "desc": "Наталья Валерьевна Попова, омбудсмен в сфере защиты прав высокотехнологичных компаний-лидеров. | Natalia Popova (ombudsman)|Images with extracted images",
-   "file": "ombudsman_2.jpg"
-  },
-  {
-   "title": "File:Natalia Popova (ombudsman).png",
-   "license": "CC BY-SA 4.0",
-   "author": "User:Innopractice-photo",
-   "mime": "image/png",
-   "w": 4110,
-   "h": 2518,
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Natalia_Popova_%28ombudsman%29.png/1920px-Natalia_Popova_%28ombudsman%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Natalia_Popova_(ombudsman).png",
-   "desc": "Наталья Валерьевна Попова, омбудсмен в сфере защиты прав высокотехнологичных компаний-лидеров. | Natalia Popova (ombudsman)",
-   "file": "ombudsman_3.jpg"
-  },
-  {
-   "title": "File:Natalia Popova (ombudsman) 2.jpg",
-   "license": "CC BY-SA 4.0",
-   "author": "Innopractice-photo",
-   "mime": "image/jpeg",
-   "w": 4110,
-   "h": 2518,
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Natalia_Popova_%28ombudsman%29_2.jpg/1920px-Natalia_Popova_%28ombudsman%29_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Natalia_Popova_(ombudsman)_2.jpg",
-   "desc": "Наталья Валерьевна Попова, омбудсмен в сфере защиты прав высокотехнологичных компаний-лидеров. | Natalia Popova (ombudsman)|Self-published work",
-   "file": "ombudsman_4.jpg"
-  },
-  {
-   "title": "File:Natalia Popova (ombudsman) 3.jpg",
-   "license": "CC BY-SA 4.0",
-   "author": "Innopractice-photo",
-   "mime": "image/jpeg",
-   "w": 3892,
-   "h": 2384,
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Natalia_Popova_%28ombudsman%29_3.jpg/1920px-Natalia_Popova_%28ombudsman%29_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Natalia_Popova_(ombudsman)_3.jpg",
-   "desc": "Наталья Валерьевна Попова, омбудсмен в сфере защиты прав высокотехнологичных компаний-лидеров. | Natalia Popova (ombudsman)|Self-published work",
-   "file": "ombudsman_5.jpg"
-  }
- ],
+ "ombudsman": [],
  "ethicaldiamond": [],
  "teao": []
 }
