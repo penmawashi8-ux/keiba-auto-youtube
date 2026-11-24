@@ -72,6 +72,34 @@ def overlay_clip(bg: Path, cards: list[tuple[Path, float, float]], out: Path, se
                 "-preset", "veryfast", "-crf", "18", str(out)])
 
 
+def wrap_ja(text: str, width: int) -> list[str]:
+    """日本語の折り返し。句読点の後ろ・「。」で優先して区切り、数字や英字の途中では切らない"""
+    out, cur = [], ""
+    i = 0
+    while i < len(text):
+        ch = text[i]
+        cur += ch
+        if ch in "。" :
+            out.append(cur)
+            cur = ""
+        elif len(cur) >= width:
+            cut = max(cur.rfind("、"), cur.rfind("）"), cur.rfind("。"))
+            if cut >= width * 0.5:
+                out.append(cur[:cut + 1])
+                cur = cur[cut + 1:]
+            else:
+                j = len(cur)
+                while j > width * 0.6 and (cur[j - 1].isascii() and cur[j - 1].isalnum()
+                                           or cur[j - 1] in "倍%％万億"):
+                    j -= 1                         # 「26倍」「ロンジン」の途中では切らない
+                out.append(cur[:j])
+                cur = cur[j:]
+        i += 1
+    if cur:
+        out.append(cur)
+    return [x for x in out if x]
+
+
 def card(tmp: Path, name: str, font: str, draw) -> Path:
     c = cp.Card(tmp, font)
     draw(c)
@@ -178,6 +206,24 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
                     for j, wv in enumerate(h["wins"]):
                         c.text(wv, x0 + 30, y0 + 86 + j * 60, 32 if len(wv) <= 24 else 28, cp.WHITE)
 
+            def trivia(c):
+                name_plate(c)
+                lines = h.get("trivia_lines") or wrap_ja(h.get("trivia", ""), 17 if vertical else 22)
+                if vertical:
+                    x0, y0, w = 50, 1440, 980
+                    c.rect(x0, y0, w, 100 + 62 * len(lines), cp.PLATE)
+                    c.rect(x0, y0, w, 6, "0xD7141A")
+                    c.text("ここに注目", x0 + 30, y0 + 24, 36, "0xFF6B6B")
+                    for j, ln in enumerate(lines):
+                        c.text(ln, x0 + 30, y0 + 84 + j * 62, 44, cp.WHITE)
+                else:
+                    x0, y0, w = 1100, 120, 760
+                    c.rect(x0, y0, w, 100 + 62 * len(lines), cp.PLATE)
+                    c.rect(x0, y0, w, 6, "0xD7141A")
+                    c.text("ここに注目", x0 + 30, y0 + 26, 34, "0xFF6B6B")
+                    for j, ln in enumerate(lines):
+                        c.text(ln, x0 + 30, y0 + 86 + j * 62, 32, cp.WHITE)
+
             def full(c):
                 wins(c)
                 line = f"騎手 {h['jockey']}　調教師 {h['trainer']}"
@@ -194,9 +240,13 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
                     c.text(f"「{h['comment']}」", 1100 - 20, 1040 - 4, 24, cp.WHITE, anchor="r", shadow=True)
             a = card(tmp, f"{k}_a", font, name_plate)
             b = card(tmp, f"{k}_b", font, wins)
+            tv = card(tmp, f"{k}_t", font, trivia)
             f = card(tmp, f"{k}_c", font, full)
-            t1, t2 = sec * 0.22, sec * 0.58
-            return [(a, 0.3, t1 + 0.3), (b, t1, t2 + 0.3), (f, t2, sec)]
+            if vertical:                       # ショートは短いので: 名前 → 成績 → ここに注目
+                t1, t2 = sec * 0.18, sec * 0.5
+                return [(a, 0.3, t1 + 0.3), (b, t1, t2 + 0.3), (tv, t2, sec)]
+            t1, t2, t3 = sec * 0.16, sec * 0.42, sec * 0.72
+            return [(a, 0.3, t1 + 0.3), (b, t1, t2 + 0.3), (tv, t2, t3 + 0.3), (f, t3, sec)]
         add_seg(k, src, text, horse_cards, pan=("right" if idx % 2 else "left") if not vertical else "up",
                 dark=0.0 if photo.exists() else 0.25)
 
