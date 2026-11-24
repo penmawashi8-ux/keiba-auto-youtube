@@ -17,7 +17,7 @@
   "Thoroughbred Daily News「Goliath Breezes Through His Japan Cup Prep」ほか（2024年ジャパンカップ6着）",
   "OSAF「Results, 42nd Gran Premio Latinoamericano (G1), 2026」"
  ],
- "intro": "11月29日のジャパンカップ。今年は海外から6頭が参戦します。去年の覇者カランダガンをはじめ、世界のG1馬がそろいました。1頭ずつ紹介します。",
+ "intro": "世界1位の去年の覇者が、外国馬初の連覇を狙います。11月29日のジャパンカップ、今年は海外から6頭。G1馬がずらりとそろいました。1頭ずつ紹介します。",
  "outro": "以上、ジャパンカップに出走予定の外国馬6頭でした。あなたが注目する馬はどれですか？コメントで教えてください。",
  "horses": [
   {
@@ -81,7 +81,8 @@
    ],
    "photo": "data/foreign/images/cg_ombudsman.jpg",
    "photo_is_horse": false,
-   "photo_kind": "cg"
+   "photo_kind": "cg",
+   "photo_note": "画像：イメージ（CG・勝負服はゴドルフィン）"
   },
   {
    "key": "minniehauk",

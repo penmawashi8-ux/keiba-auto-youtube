@@ -185,7 +185,7 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
 
             def name_plate(c):
                 if not own:                    # その馬の写真ではないことをはっきり書く
-                    note = ("画像：イメージ（CG）" if kind == "cg" else
+                    note = (h.get("photo_note") or "画像：イメージ（CG）" if kind == "cg" else
                             "画像：東京競馬場（CG）" if src == cg_bg else "写真：東京競馬場（イメージ）")
                     c.text(note, W - 24, (1100 if vertical else 50), 24, "0xFFFFFF@0.85", anchor="r", shadow=True)
                 if vertical:
