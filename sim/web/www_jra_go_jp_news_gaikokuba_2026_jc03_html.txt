@@ -1,4 +1,4 @@
-URL: https://www.jra.go.jp/news/gaikokuba/2026/jc01.html
+URL: https://www.jra.go.jp/news/gaikokuba/2026/jc03.html
 STATUS: 200
 
 ジャパンカップ（GⅠ）出走予定　外国馬プロフィール　JRA
@@ -286,34 +286,36 @@ MINNIE HAUK
 牝4歳
 A.オブライエン
 アイルランド
-エシカルダイヤモンド　プロフィール
-エシカルダイヤモンド（ETHICAL DIAMOND）　（調教国：アイルランド）
-せん6歳・黒鹿毛（2020年3月27日生まれ　アイルランド産）
+カランダガン　プロフィール
+カランダガン（CALANDAGAN）　（調教国：フランス）
+せん5歳・鹿毛（2021年1月27日生まれ　アイルランド産）
 戦績
-通算20戦6勝
+通算19戦10勝
 父
-Awtaad
+Gleneagles
 母
-Pearl Diamond（母の父：Areion）
+Calayana（母の父：Sinndar）
 馬主
-H.O.S.シンジケート
+アガ・カーン・スタッズSCEA
 調教師
-ウィリアム・マリンズ
+フランシスアンリ・グラファール
 騎手
-坂井　瑠星
-エシカルダイヤモンドおよび関係者プロフィールの詳細（PDF 659KB）
-エシカルダイヤモンド　成績
-全20戦6勝、2着2回、3着1回
+ミカエル・バルザローナ
+カランダガンおよび関係者プロフィールの詳細（PDF 710KB）
+カランダガン　成績
+全19戦10勝、2着7回、3着1回
 総獲得賞金
-約6億2,690万円
-全成績（PDF 158KB）
+約21億3,030万円
+全成績（PDF 344KB）
 「留意事項」
 ・
-障＝障害競走、＊印は障害格付け
+L=Listed Race
 ・
-アメリカ並びにカナダでの成績はEquinelineに準拠。ただし、タイムおよび重量についてはJRA公式基準に準拠
+全＝全天候馬場。無表記は芝
 ・
-イギリス並びにアイルランドでの成績はRacing Postに準拠。ただし、タイム（一部レース）および重量についてはJRA公式基準に準拠
+イギリスでの成績はRacing Postに準拠。ただし、タイム（一部レース）および重量についてはJRA公式基準に準拠
+・
+フランスでの成績はFrance Galop公式発表に準拠。
 ・
 アラブ首長国連邦での成績はEmirates Racing Authority公式発表に準拠。
 ・
@@ -495,15 +497,15 @@ https://www.jra.go.jp/news/
 https://www.jra.go.jp/news/gaikokuba/2026.html
 https://www.jra.go.jp/news/gaikokuba/2026/jc.html
 https://www.jra.go.jp/news/gaikokuba/2026/jc01.html
-https://www.jra.go.jp/news/gaikokuba/2026/jc01.html#contents
-https://www.jra.go.jp/news/gaikokuba/2026/jc01.html#s
 https://www.jra.go.jp/news/gaikokuba/2026/jc02.html
 https://www.jra.go.jp/news/gaikokuba/2026/jc03.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc03.html#contents
+https://www.jra.go.jp/news/gaikokuba/2026/jc03.html#s
 https://www.jra.go.jp/news/gaikokuba/2026/jc04.html
 https://www.jra.go.jp/news/gaikokuba/2026/jc05.html
 https://www.jra.go.jp/news/gaikokuba/2026/jc06.html
-https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc01.pdf
-https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc01_s.pdf
+https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc03.pdf
+https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc03_s.pdf
 https://www.jra.go.jp/news/kaigai/
 https://www.jra.go.jp/news/kaigai/index.html
 https://www.jra.go.jp/news/other/2024052402.html

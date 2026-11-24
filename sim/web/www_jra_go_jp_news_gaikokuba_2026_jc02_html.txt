@@ -1,7 +1,7 @@
-URL: https://www.jra.go.jp/news/202610/101503.html
+URL: https://www.jra.go.jp/news/gaikokuba/2026/jc02.html
 STATUS: 200
 
-ジャパンカップ（GⅠ）海外からの予備登録馬　JRA
+ジャパンカップ（GⅠ）出走予定　外国馬プロフィール　JRA
 本文へ移動する
 ニュース
 企業情報
@@ -239,266 +239,87 @@ Club JRA-Net
 お問い合わせ/FAQ
 ホーム
 >
-JRAニュース
+競馬メニュー
 >
-2026年10月
+海外の競馬・国際レース
 >
-ジャパンカップ（GⅠ）海外からの予備登録馬
-JRAニュース
-2026年10月15日
-レース・馬・騎手など
-ジャパンカップ（GⅠ）海外からの予備登録馬
-ジャパンカップ（GⅠ）に外国馬の予備登録がありましたのでお知らせいたします。
-ジャパンカップ（GⅠ）　22頭
+外国馬情報　2026年
+>
+ジャパンカップ（GⅠ）外国馬情報
+>
+ジャパンカップ（GⅠ）出走予定　外国馬プロフィール
+ジャパンカップ（GⅠ）出走予定　外国馬プロフィール
 表はスクロールすることができます
-イギリス　4頭
-馬名／英字表記（生産国）
-性齢
+ジャパンカップ（GⅠ）出走予定　外国馬プロフィール
+馬名
+英字表記
+年齢
 調教師
-主なタイトル・戦績〔通算戦績〕
-アルマカム
-ALMAQAM（GB）
-牡5
-E.ウォーカー
-E.Walker
-26【イギリス】インターナショナルステークス（G1）2着
-26【アイルランド】タタソールズゴールドカップ（G1）1着
-25【イギリス】英チャンピオンステークス（G1）3着
-〔15戦4勝〕
-カルパナ
-KALPANA（IRE）
-牝5
-A.ボールディング
-A.Balding
-26【イギリス】ヨークシャーオークス（G1）1着
-26【イギリス】キングジョージⅥ世＆クイーンエリザベスステークス（G1）1着
-25【イギリス】英チャンピオンズフィリーズ＆メアズステークス（G1）1着
-24【イギリス】英チャンピオンズフィリーズ＆メアズステークス（G1）1着
-〔19戦9勝〕
-シュルヴィー
-SURVIE（IRE）
-牝5
-G.ボーウィー
-G.Boughey
-26【アメリカ】クリストフ・クレメントターフステークス（G1）1着
-26【アメリカ】グレンズフォールズステークス（G2）1着
-24【フランス】マルレ賞（G2）1着
-〔21戦6勝〕
-ワインダークシー
-WINE DARK SEA（GB）
-せん4
-H.チャールトン
-H.Charlton
-26【イギリス】ジェフリーフリアステークス（G3）1着
-〔10戦4勝〕
-表はスクロールすることができます
-アイルランド　9頭
-馬名／英字表記（生産国）
-性齢
-調教師
-主なタイトル・戦績〔通算戦績〕
-ベンヴェヌートチェッリーニ
-BENVENUTO CELLINI（IRE）
-牡3
-A.オブライエン
-A.O’Brien
-26【イギリス】キングジョージⅥ世＆クイーンエリザベスステークス（G1）3着
-26【アイルランド】愛ダービー（G1）1着
-25【アイルランド】ゴールデンフリースステークス（G2）1着
-〔9戦4勝〕
-ダイヤモンドネックレス
-DIAMOND NECKLACE（IRE）
-牝3
-A.オブライエン
-A.O'Brien
-26【イギリス】ナッソーステークス（G1）1着
-26【フランス】仏オークス（G1）1着
-26【フランス】仏1000ギニー（G1）1着
-25【フランス】マルセルブーサック賞（G1）1着
-〔8戦6勝〕
+調教国
 エシカルダイヤモンド
-ETHICAL DIAMOND（IRE）
-せん6
+ETHICAL DIAMOND
+せん6歳
 W.マリンズ
-W.Mullins
-26【アメリカ】ケンタッキーターフカップステークス（G2）2着
-26【アイルランド】バリーローンステークス（G3）1着
-25【アメリカ】ブリーダーズカップターフ（G1）1着
-〔12戦5勝〕
-注記：
-障害7戦1勝
-ホタツェル
-HOTAZHELL（GB）
-牡4
-Mrs.J.ハリントン
-Mrs.J.Harrington
-26【アイルランド】アイリッシュチャンピオンステークス（G1）1着
-26【ドイツ】バイエルンツホトレネン（G1）1着
-24【イギリス】フューチュリティトロフィーステークス（G1）1着
-〔15戦6勝〕
-ヤンブリューゲル
-JAN BRUGHEL（IRE）
-牡5
-A.オブライエン
-A.O'Brien
-26【イギリス】コロネーションカップ（G1）2着
-25【イギリス】コロネーションカップ（G1）1着
-24【イギリス】英セントレジャー（G1）1着
-〔11戦6勝〕
-ジョハナウォルシュ
-JOHANNA WALSH（IRE）
-牝3
-J.オブライエン
-J.O'Brien
-26【アイルランド】愛オークス（G1）1着
-26【イギリス】リブルスデールステークス（G2）2着
-〔6戦2勝〕
-ランボーン
-LAMBOURN（IRE）
-牡4
-A.オブライエン
-A.O'Brien
-26【イギリス】ハクスリーステークス（G2）1着
-25【アイルランド】愛ダービー（G1）1着
-25【イギリス】英ダービー（G1）1着
-〔15戦6勝〕
-ミニーホーク
-MINNIE HAUK（IRE）
-牝4
-A.オブライエン
-A.O'Brien
-25【イギリス】ヨークシャーオークス（G1）1着
-25【アイルランド】愛オークス（G1）1着
-25【イギリス】英オークス（G1）1着
-〔14戦6勝〕
-パーヴュー
-PURVIEW（GB）
-牡4
-D.ウェルド
-D.Weld
-26【カナダ】カナディアンインターナショナルステークス（G1）3着
-26【アイルランド】愛インターナショナルステークス（G3）1着
-〔9戦4勝〕
-表はスクロールすることができます
-フランス　2頭
-馬名／英字表記（生産国）
-性齢
-調教師
-主なタイトル・戦績〔通算戦績〕
+アイルランド
+オンブズマン
+OMBUDSMAN
+牡5歳
+J＆T.ゴスデン
+イギリス
 カランダガン
-CALANDAGAN（IRE）
-せん5
+CALANDAGAN
+せん5歳
 F.グラファール
-F.Graffard
-26【フランス】サンクルー大賞（G1）1着
-26【UAE】ドバイシーマクラシック（G1）1着
-25【日本】ジャパンカップ（GⅠ）1着
-25【イギリス】英チャンピオンステークス（G1）1着
-25【イギリス】キングジョージⅥ世＆クイーンエリザベスステークス（G1）1着
-25【フランス】サンクルー大賞（G1）1着
-〔18戦10勝〕
+フランス
 ゴリアット
-GOLIATH（GER）
-せん6
+GOLIATH
+せん6歳
 F.グラファール
-F.Graffard
-26【ドイツ】オイロパ賞（G1）1着
-25【ドイツ】バーデン大賞（G1）1着
-24【イギリス】キングジョージⅥ世＆クイーンエリザベスステークス（G1）1着
-〔23戦10勝〕
-表はスクロールすることができます
-アメリカ　3頭
-馬名／英字表記（生産国）
-性齢
-調教師
-主なタイトル・戦績〔通算戦績〕
-アティトラン
-ATITLAN（USA）
-牡5
-R.マンデラ
-R.Mandella
-26【アメリカ】ジョンヘンリーターフチャンピオンシップ（G2）1着
-26【アメリカ】デルマーハンデキャップ（G2）2着
-25【アメリカ】チャールズウィッティンガムステークス（G2）1着
-〔15戦5勝〕
-ファーブリッジ
-FAR BRIDGE（USA）
-牡6
-M.クレメント
-M.Clement
-26【アメリカ】ジョーハーシュターフクラシック（G1）2着
-24【アメリカ】ジョーハーシュターフクラシック（G1）1着
-24【アメリカ】ソードダンサーステークス（G1）1着
-23【アメリカ】ベルモントダービー招待（G1）1着
-〔22戦10勝〕
+フランス
 テアオ
-TEAO（CHI）
-牡4
+TEAO
+牡4歳
 J.サドラー
-J.Sadler
-26【ペルー】ラテンアメリカ大賞（G1）1着
-26【チリ】チリダービー（G1）1着
-25【チリ】グランクリテリウム（G1）1着
-25【チリ】チリ2000ギニー（G1）1着
-〔12戦6勝〕
-表はスクロールすることができます
-オーストラリア　4頭
-馬名／英字表記（生産国）
-性齢
+アメリカ
+ミニーホーク
+MINNIE HAUK
+牝4歳
+A.オブライエン
+アイルランド
+オンブズマン　プロフィール
+オンブズマン（OMBUDSMAN）　（調教国：イギリス）
+牡5歳・鹿毛（2021年4月12日生まれ　アイルランド産）
+戦績
+通算14戦10勝
+父
+Night of Thunder
+母
+Syndicate（母の父：Dansili）
+馬主
+ゴドルフィン
 調教師
-主なタイトル・戦績〔通算戦績〕
-アエリアナ
-AELIANA（NZ）
-牝5
-C.ウォーラー
-C.Waller
-26【オーストラリア】タンクレッドステークス（G1）1着
-26【オーストラリア】ランヴェットステークス（G1）1着
-25【オーストラリア】ATCオーストラリアンダービー（G1）1着
-〔21戦6勝〕
-バードマン
-BIRDMAN（IRE）
-せん5
-C.ウォーラー
-C.Waller
-26【オーストラリア】アンダーウッドステークス（G1）1着
-26【オーストラリア】ドゥームベンカップ（G1）1着
-26【オーストラリア】ピーターヤングステークス（G2）1着
-〔25戦7勝〕
-サーデリウス
-SIR DELIUS（GB）
-牡5
-G.ウォーターハウス & A.ボット
-G.Waterhouse & A.Bott
-26【オーストラリア】クイーンエリザベスステークス（G1）1着
-25【オーストラリア】ターンブルステークス（G1）1着
-25【オーストラリア】アンダーウッドステークス（G1）1着
-〔15戦7勝〕
-トレジャーザモーメント
-TREASURETHE MOMENT（AUS）
-牝5
-M.ローリー
-M.Laurie
-25【オーストラリア】メムジーステークス（G1）1着
-25【オーストラリア】ATCオーストラリアンオークス（G1）1着
-25【オーストラリア】ヴァイナリースタッドステークス（G1）1着
-24【オーストラリア】VRCオークス（G1）1着
-〔23戦11勝〕
-関連ニュース
-11月24日（火曜）
-ジャパンカップ（GⅠ）外国馬情報　調教状況・関係者コメント（11月24日（火曜））
-11月23日（祝日・月曜）
-ジャパンカップ（GⅠ）外国馬情報　調教状況・関係者コメント（11月23日（祝日・月曜））
-11月22日（日曜）
-ジャパンカップ（GⅠ）外国馬情報　調教状況・関係者コメント（11月22日（日曜））
-11月21日（土曜）
-ジャパンカップ（GⅠ）外国馬情報　調教状況・関係者コメント（11月21日（土曜））
-11月20日（金曜）
-ジャパンカップ（GⅠ）外国馬情報　調教状況・関係者コメント（11月20日（金曜））
-11月13日（金曜）
-ジャパンカップ（GⅠ）外国馬情報　予備登録馬の追加、招待受諾馬および来日スケジュール
-10月15日（木曜）
-ジャパンカップ（GⅠ）海外からの予備登録馬
+J＆T.ゴスデン
+騎手
+ウィリアム・ビュイック
+オンブズマンおよび関係者プロフィールの詳細（PDF 700KB）
+オンブズマン　成績
+全14戦10勝、2着3回
+総獲得賞金
+約11億6,910万円
+全成績（PDF 161KB）
+「留意事項」
+・
+L=Listed Race
+・
+全て芝コースでの成績。
+・
+イギリスでの成績はRacing Postに準拠。ただし、重量についてはJRA公式基準に準拠
+・
+フランスでの成績はFrance Galop公式発表に準拠。
+・
+アラブ首長国連邦での成績はEmirates Racing Authority公式発表に準拠。
+・
+100分の1の単位があるタイムの場合でも、切り捨てています。
 表示モード：
 ＰＣ
 ｜
@@ -527,7 +348,6 @@ JRA（PCサイト）
 Copyright © Japan Racing Association All rights reserved.
 
 --- LINKS ---
-http://www.facebook.com/share.php?u=https://jra.jp/news/202610/101503.html
 http://www.miki-hlp.or.jp
 https://gatej.jp/
 https://japanracing.jp/en/
@@ -540,10 +360,8 @@ https://jra-tickets.jp/contents/landing/index.html
 https://my.jra-tickets.jp/entry/regMail/
 https://n.ipat.jra.go.jp/
 https://qrcode.jra.go.jp/
-https://social-plugins.line.me/lineit/share?url=https://jra.jp/news/202610/101503.html
 https://sp.jra.jp/app/index.html
 https://turfy.jp/
-https://twitter.com/intent/tweet?url=https://jra.jp/news/202610/101503.html
 https://umajo.jra.jp
 https://umaportsp.jra.jp
 https://www.bajibunka.or.jp/keiba/index.php
@@ -630,6 +448,7 @@ https://www.jra.go.jp/keiba/
 https://www.jra.go.jp/keiba/5dai/
 https://www.jra.go.jp/keiba/baba/
 https://www.jra.go.jp/keiba/calendar/
+https://www.jra.go.jp/keiba/index.html
 https://www.jra.go.jp/keiba/overseas/
 https://www.jra.go.jp/keiba/program/
 https://www.jra.go.jp/keiba/rpdf/
@@ -675,17 +494,20 @@ https://www.jra.go.jp/link/
 https://www.jra.go.jp/link/eizo.html
 https://www.jra.go.jp/link/nar.html
 https://www.jra.go.jp/news/
-https://www.jra.go.jp/news/202610/101503.html
-https://www.jra.go.jp/news/202610/101503.html#contents
-https://www.jra.go.jp/news/202610/index.html
-https://www.jra.go.jp/news/202611/111306.html
-https://www.jra.go.jp/news/202611/112003.html
-https://www.jra.go.jp/news/202611/112107.html
-https://www.jra.go.jp/news/202611/112204.html
-https://www.jra.go.jp/news/202611/112306.html
-https://www.jra.go.jp/news/202611/112402.html
-https://www.jra.go.jp/news/index.html
+https://www.jra.go.jp/news/gaikokuba/2026.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc01.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc02.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc02.html#contents
+https://www.jra.go.jp/news/gaikokuba/2026/jc02.html#s
+https://www.jra.go.jp/news/gaikokuba/2026/jc03.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc04.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc05.html
+https://www.jra.go.jp/news/gaikokuba/2026/jc06.html
+https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc02.pdf
+https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc02_s.pdf
 https://www.jra.go.jp/news/kaigai/
+https://www.jra.go.jp/news/kaigai/index.html
 https://www.jra.go.jp/news/other/2024052402.html
 https://www.jra.go.jp/news/other/harassment.html
 https://www.jra.go.jp/news/other/odekake.html
