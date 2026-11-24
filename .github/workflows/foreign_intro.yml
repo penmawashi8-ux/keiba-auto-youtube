@@ -1,0 +1,54 @@
+name: Foreign horses intro videos
+
+# 海外から参戦する馬の紹介動画（横のまとめ版＋縦ショート）。data/foreign/<名前>.json ごと。
+# 写真は research-output の sim/photos/<名前>/（photo_search.yml で集めた自由ライセンスの写真）を使う。
+# 出力は research-output の sim/foreign_<名前>/（投稿はしない）
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/foreign/**
+      - scripts/foreign_intro.py
+      - .github/workflows/foreign_intro.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04  # ubuntu-latest(26.04)の ffmpeg 8 は drawtext の改行を☒で描くため固定
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install -q edge-tts certifi
+          mkdir -p fonts
+          curl -sfL -o fonts/BIZUDPGothic-Bold.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/bizudpgothic/BIZUDPGothic-Bold.ttf
+          curl -sfL -o fonts/DelaGothicOne-Regular.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/delagothicone/DelaGothicOne-Regular.ttf
+      - name: Build
+        run: |
+          git fetch -q origin research-output
+          for f in data/foreign/*.json; do
+            n=$(basename "$f" .json)
+            mkdir -p "photos/$n"
+            git archive FETCH_HEAD "sim/photos/$n" 2>/dev/null | tar -x -C photos/ 2>/dev/null || true
+            [ -d "photos/sim/photos/$n" ] && cp photos/sim/photos/$n/*.jpg "photos/$n/" || true
+            python scripts/foreign_intro.py "$f" "photos/$n" data/foreign/cg_tokyo_stand.jpg "out/foreign_$n" \
+              fonts/BIZUDPGothic-Bold.ttf fonts/DelaGothicOne-Regular.ttf
+            rm -rf "out/foreign_$n"/work_* "out/foreign_$n/voice"
+          done
+          ls -la out/*
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            mkdir -p sim && cp -r out/* sim/
+            git add -f sim/foreign_* && git commit -qm "外国馬紹介動画 (run ${GITHUB_RUN_ID}) [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done

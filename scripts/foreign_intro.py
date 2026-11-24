@@ -156,21 +156,25 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
         intro_text = f"{race['name']}に海外から参戦する馬を紹介します。今回は{names}です。"
     else:
         intro_text = data["intro"]
-    add_seg("intro", cg_bg, intro_text, intro_cards, pan="right", dark=0.0, extra=1.0)
+    pick = lambda f: cg_bg if (not f or f == "cg" or not (photos / f).exists()) else photos / f   # noqa: E731
+    add_seg("intro", pick(data.get("intro_photo")), intro_text, intro_cards, pan="right", dark=0.1, extra=1.0)
 
     # ---- 1頭ずつ
     for idx, k in enumerate(keys, 1):
         h = horses[k]
-        photo = photos / f"{k}.jpg"
-        src = photo if photo.exists() else cg_bg
+        src = pick(h.get("photo", f"{k}.jpg"))
+        own = h.get("photo_is_horse", False) and src != cg_bg
         text = h["short"] if vertical else h["narration"]
         n_all = len(data["horses"])
         pos = [x["key"] for x in data["horses"]].index(k) + 1
 
-        def horse_cards(sec, h=h, pos=pos, n_all=n_all, idx=idx):
+        def horse_cards(sec, h=h, pos=pos, n_all=n_all, idx=idx, own=own, src=src):
             col = COUNTRY.get(h["country"], "0x555555")
 
             def name_plate(c):
+                if not own:                    # その馬の写真ではないことをはっきり書く
+                    note = "画像：東京競馬場（CG）" if src == cg_bg else "写真：東京競馬場（イメージ）"
+                    c.text(note, W - 24, (1100 if vertical else 50), 24, "0xFFFFFF@0.85", anchor="r", shadow=True)
                 if vertical:
                     x0, y0, w = 50, 1160, 980
                     c.rect(x0, y0, w, 250, cp.PLATE)
@@ -248,7 +252,7 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
             t1, t2, t3 = sec * 0.16, sec * 0.42, sec * 0.72
             return [(a, 0.3, t1 + 0.3), (b, t1, t2 + 0.3), (tv, t2, t3 + 0.3), (f, t3, sec)]
         add_seg(k, src, text, horse_cards, pan=("right" if idx % 2 else "left") if not vertical else "up",
-                dark=0.0 if photo.exists() else 0.25)
+                dark=0.0 if own else 0.2)
 
     # ---- 締め
     def outro_cards(sec):
@@ -273,7 +277,7 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
                        cp.WHITE, anchor="c", shadow=True)
         return [(card(tmp, "outro", font, d), 0.3, sec)]
     outro_text = ("全頭の詳しい紹介は本編でどうぞ。" if vertical else data["outro"])
-    add_seg("outro", cg_bg, outro_text, outro_cards, pan="left", dark=0.1, extra=1.5)
+    add_seg("outro", pick(data.get("outro_photo")), outro_text, outro_cards, pan="left", dark=0.1, extra=1.5)
 
     # ---- つなぐ・音
     lst = tmp / "segs.txt"
@@ -303,10 +307,10 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
 def thumb(data, photos: Path, cg_bg: Path, out: Path, font_heavy: str):
     """まとめ版のサムネイル: 写真4枚を並べ、レース名と「外国馬6頭」を大きく"""
     race = data["race"]
-    keys = [h["key"] for h in data["horses"] if (photos / f"{h['key']}.jpg").exists()][:4]
+    keys = [h["photo"] for h in data["horses"] if h.get("photo_is_horse") and (photos / h["photo"]).exists()][:4]
     tmp = out / "work_thumb"
     tmp.mkdir(parents=True, exist_ok=True)
-    srcs = [photos / f"{k}.jpg" for k in keys] or [cg_bg]
+    srcs = [photos / k for k in keys] or [cg_bg]
     args = ["ffmpeg", "-v", "error", "-y"]
     for p in srcs:
         args += ["-i", str(p)]
