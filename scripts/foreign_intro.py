@@ -281,7 +281,7 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
 
     # ---- つなぐ・音
     lst = tmp / "segs.txt"
-    lst.write_text("".join(f"file '{p}'\n" for p in segs), encoding="utf-8")
+    lst.write_text("".join(f"file '{p.resolve()}'\n" for p in segs), encoding="utf-8")   # 一覧の相対パスは一覧の場所から解釈される
     silent = tmp / "video.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)])
     total = dur_of(silent)
