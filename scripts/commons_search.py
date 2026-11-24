@@ -15,21 +15,32 @@ from pathlib import Path
 import requests
 
 API = "https://commons.wikimedia.org/w/api.php"
-UA = {"User-Agent": "keiba-research-bot/1.0 (photo license check)"}
+UA = {"User-Agent": "KeibaPhotoSearch/1.0 (free-license photo lookup; python-requests)"}
 OK = re.compile(r"^(CC0|Public domain|PD|CC BY(-SA)? [0-9.]+|CC BY(-SA)?)", re.I)
 
 
+def call(params):
+    """API を呼ぶ（混んでいて JSON 以外が返ったら待って再試行）"""
+    for k in range(5):
+        r = requests.post(API, data={**params, "format": "json", "maxlag": 5}, headers=UA, timeout=60)
+        try:
+            return r.json()
+        except ValueError:
+            print("  再試行", r.status_code, r.text[:120].replace("\n", " "))
+            time.sleep(5 * (k + 1))
+    return {}
+
+
 def search(q, n=12):
-    r = requests.get(API, params={"action": "query", "format": "json", "list": "search", "srsearch": q,
-                                  "srnamespace": 6, "srlimit": n}, headers=UA, timeout=30)
-    return [x["title"] for x in r.json().get("query", {}).get("search", [])]
+    d = call({"action": "query", "list": "search", "srsearch": q, "srnamespace": 6, "srlimit": n})
+    return [x["title"] for x in d.get("query", {}).get("search", [])]
 
 
 def info(titles):
-    r = requests.get(API, params={"action": "query", "format": "json", "titles": "|".join(titles), "prop": "imageinfo",
-                                  "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 1600}, headers=UA, timeout=30)
+    d = call({"action": "query", "titles": "|".join(titles), "prop": "imageinfo",
+              "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 1600})
     out = []
-    for p in r.json().get("query", {}).get("pages", {}).values():
+    for p in d.get("query", {}).get("pages", {}).values():
         ii = (p.get("imageinfo") or [{}])[0]
         md = ii.get("extmetadata", {})
         lic = md.get("LicenseShortName", {}).get("value", "")
@@ -53,8 +64,9 @@ def main():
                     titles.append(t)
             time.sleep(0.5)
         cands = []
-        for i in range(0, len(titles), 20):
-            cands += info(titles[i:i + 20])
+        for i in range(0, len(titles), 10):
+            cands += info(titles[i:i + 10])
+            time.sleep(1)
         good = [c for c in cands if c["mime"] in ("image/jpeg", "image/png") and OK.match(c["license"] or "")
                 and "NC" not in c["license"] and "ND" not in c["license"]]
         report[it["key"]] = []
