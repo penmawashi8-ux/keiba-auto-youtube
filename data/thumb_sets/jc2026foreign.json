@@ -1,0 +1,112 @@
+{
+ "prefix": "thumb_jc2026foreign",
+ "max_photos": 6,
+ "loose": true,
+ "only_chosen": false,
+ "texts": {
+  "title1": "ジャパンカップ2026 外国馬紹介",
+  "title2": "",
+  "sub1": "",
+  "sub2": ""
+ },
+ "choice": {},
+ "horses": [
+  {
+   "name": "カランダガン",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Calandagan"
+   ],
+   "queries": [
+    "Calandagan horse",
+    "Calandagan racehorse",
+    "Calandagan Japan Cup",
+    "Calandagan"
+   ],
+   "articles": [
+    "Calandagan"
+   ]
+  },
+  {
+   "name": "オンブズマン",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Ombudsman"
+   ],
+   "queries": [
+    "Ombudsman racehorse",
+    "Ombudsman horse 2025",
+    "Ombudsman Prince of Wales's Stakes"
+   ],
+   "articles": [
+    "Ombudsman (horse)"
+   ]
+  },
+  {
+   "name": "ミニーホーク",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Minnie Hauk"
+   ],
+   "queries": [
+    "Minnie Hauk horse",
+    "Minnie Hauk racehorse",
+    "Minnie Hauk Oaks"
+   ],
+   "articles": [
+    "Minnie Hauk (horse)",
+    "Minnie Hauk"
+   ]
+  },
+  {
+   "name": "エシカルダイヤモンド",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Ethical Diamond"
+   ],
+   "queries": [
+    "Ethical Diamond horse",
+    "Ethical Diamond racehorse"
+   ],
+   "articles": [
+    "Ethical Diamond"
+   ]
+  },
+  {
+   "name": "ゴリアット",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Goliath"
+   ],
+   "queries": [
+    "Goliath racehorse",
+    "Goliath horse King George",
+    "Goliath Adrian Murray"
+   ],
+   "articles": [
+    "Goliath (horse)"
+   ]
+  },
+  {
+   "name": "テアオ",
+   "num": 0,
+   "waku": 1,
+   "en": [
+    "Teao"
+   ],
+   "queries": [
+    "Teao horse",
+    "Teao racehorse"
+   ],
+   "articles": [
+    "Teao (horse)",
+    "Teao"
+   ]
+  }
+ ]
+}

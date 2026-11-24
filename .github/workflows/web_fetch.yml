@@ -1,0 +1,61 @@
+name: Web fetch
+
+# 調べもの用: data/web_fetch/urls.txt のページを取得し、本文のテキストと、ページ内のリンク（同じサイトの詳細ページ）を
+# research-output の sim/web/ に保存する（この作業環境から見られないサイトがあるため）
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/web_fetch/**
+      - .github/workflows/web_fetch.yml
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q requests beautifulsoup4
+      - name: Fetch
+        run: |
+          mkdir -p out
+          python - <<'PY'
+          import re, requests, hashlib
+          from bs4 import BeautifulSoup
+          from urllib.parse import urljoin
+          UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
+          urls = [u.strip() for u in open("data/web_fetch/urls.txt") if u.strip() and not u.startswith("#")]
+          log = []
+          for u in urls:
+              name = re.sub(r"[^A-Za-z0-9]+", "_", u.split("://", 1)[1])[:90]
+              try:
+                  r = requests.get(u, headers=UA, timeout=30)
+                  r.encoding = r.apparent_encoding if r.encoding in (None, "ISO-8859-1") else r.encoding
+                  soup = BeautifulSoup(r.text, "html.parser")
+                  for t in soup(["script", "style", "noscript"]):
+                      t.decompose()
+                  text = re.sub(r"\n\s*\n+", "\n", soup.get_text("\n", strip=True))
+                  links = sorted({urljoin(u, a["href"]) for a in soup.find_all("a", href=True)})
+                  open(f"out/{name}.txt", "w", encoding="utf-8").write(f"URL: {u}\nSTATUS: {r.status_code}\n\n{text}\n\n--- LINKS ---\n" + "\n".join(links))
+                  log.append(f"{r.status_code} {len(text)} {u}")
+              except Exception as e:
+                  log.append(f"ERR {e} {u}")
+          open("out/_log.txt", "w").write("\n".join(log) + "\n")
+          print("\n".join(log))
+          PY
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            rm -rf sim/web && mkdir -p sim/web && cp out/* sim/web/
+            git add -A -f sim/web && git commit -qm "Web取得 (run ${GITHUB_RUN_ID}) [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
