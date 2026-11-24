@@ -1,8 +1,3 @@
-200 3419 https://www.jra.go.jp/news/gaikokuba/2026/jc01.html
-200 pdf 161436 https://jra.jp/news/gaikokuba/2026/pdf/jc01_s.pdf
-200 pdf 164947 https://jra.jp/news/gaikokuba/2026/pdf/jc02_s.pdf
-200 pdf 351765 https://jra.jp/news/gaikokuba/2026/pdf/jc03_s.pdf
-200 pdf 189232 https://jra.jp/news/gaikokuba/2026/pdf/jc04_s.pdf
-200 pdf 164589 https://jra.jp/news/gaikokuba/2026/pdf/jc05_s.pdf
-200 pdf 131515 https://jra.jp/news/gaikokuba/2026/pdf/jc06_s.pdf
-202 0 https://www.horseracingnation.com/horse/Ethical_Diamond
+200 pdf 674685 https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc01.pdf
+200 pdf 716378 https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc02.pdf
+200 pdf 688246 https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc05.pdf
