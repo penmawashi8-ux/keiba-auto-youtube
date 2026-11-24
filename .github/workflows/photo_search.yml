@@ -1,0 +1,41 @@
+name: Photo search (Wikimedia Commons)
+
+# data/photo_search/*.json の馬（など）の自由ライセンス写真を探し、research-output の sim/photos/<名前>/ に保存する
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/photo_search/**
+      - scripts/commons_search.py
+      - .github/workflows/photo_search.yml
+
+jobs:
+  search:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+          pip install -q requests
+      - run: |
+          for f in data/photo_search/*.json; do
+            n=$(basename "$f" .json)
+            python scripts/commons_search.py "$f" "out/$n"
+          done
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            mkdir -p sim/photos && cp -r out/* sim/photos/
+            git add -f sim/photos && git commit -qm "写真候補 (run ${GITHUB_RUN_ID}) [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
