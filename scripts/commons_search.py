@@ -21,13 +21,20 @@ OK = re.compile(r"^(CC0|Public domain|PD|CC BY(-SA)? [0-9.]+|CC BY(-SA)?)", re.I
 
 def call(params):
     """API を呼ぶ（混んでいて JSON 以外が返ったら待って再試行）"""
-    for k in range(5):
+    for k in range(7):
+        time.sleep(2.0)                                   # 間隔をあける（429 対策）
         r = requests.post(API, data={**params, "format": "json", "maxlag": 5}, headers=UA, timeout=60)
+        if r.status_code == 429:
+            wait = int(r.headers.get("Retry-After") or 0) or 30 * (k + 1)
+            print(f"  混雑のため {wait}秒待つ")
+            time.sleep(wait)
+            continue
         try:
             return r.json()
         except ValueError:
             print("  再試行", r.status_code, r.text[:120].replace("\n", " "))
-            time.sleep(5 * (k + 1))
+            time.sleep(10 * (k + 1))
+    print("  あきらめた:", params.get("srsearch") or params.get("titles", "")[:60])
     return {}
 
 
@@ -65,14 +72,21 @@ def category_search(q):
 
 def wiki_page_images(lang, title):
     """各言語版ウィキペディアの記事に使われている画像（Commons のもの）"""
-    try:
-        r = requests.get(f"https://{lang}.wikipedia.org/w/api.php", params={
-            "action": "query", "format": "json", "titles": title, "prop": "images|pageprops", "imlimit": 50,
-            "redirects": 1}, headers=UA, timeout=30)
-        pages = r.json().get("query", {}).get("pages", {})
-    except Exception as e:      # noqa: BLE001
-        print("  wiki 失敗", lang, title, e)
-        return [], None
+    pages = {}
+    for k in range(5):
+        time.sleep(2.0)
+        try:
+            r = requests.get(f"https://{lang}.wikipedia.org/w/api.php", params={
+                "action": "query", "format": "json", "titles": title, "prop": "images|pageprops", "imlimit": 50,
+                "redirects": 1}, headers=UA, timeout=30)
+            if r.status_code == 429:
+                time.sleep(30 * (k + 1))
+                continue
+            pages = r.json().get("query", {}).get("pages", {})
+            break
+        except Exception as e:      # noqa: BLE001
+            print("  wiki 失敗", lang, title, e)
+            time.sleep(10)
     files, qid = [], None
     for pg in pages.values():
         qid = qid or pg.get("pageprops", {}).get("wikibase_item")
@@ -148,10 +162,15 @@ def main():
             time.sleep(1)
         good = [c for c in cands if c["mime"] in ("image/jpeg", "image/png") and OK.match(c["license"] or "")
                 and "NC" not in c["license"] and "ND" not in c["license"]]
+        (out / f"titles_{it['key']}.txt").write_text("\n".join(titles), encoding="utf-8")   # 目で確かめる用
         need = [w.lower() for w in it.get("must", [])]          # 題名・説明にこの語がある画像だけ（同名の別物を除く）
+        also = [w.lower() for w in it.get("also", [])]          # さらに、このどれかがある画像だけ（競馬の写真に絞る）
+        def text_of(c):
+            return (c["title"] + " " + c["desc"] + " " + (c.get("page") or "")).lower()
         if need:
-            good = [c for c in good if any(w in (c["title"] + " " + c["desc"] + " " + (c.get("page") or "")).lower()
-                                           for w in need)]
+            good = [c for c in good if any(w in text_of(c) for w in need)]
+        if also:
+            good = [c for c in good if any(w in text_of(c) for w in also)]
         report[it["key"]] = []
         files = []
         print(f"  {it['key']}: 調べた画像 {len(titles)}件")

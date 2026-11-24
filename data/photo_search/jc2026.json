@@ -1,26 +1,239 @@
-{"items": [
- {"key": "ombudsman", "must": ["ombudsman"],
-  "wiki": [["en", "Ombudsman (horse)"], ["ja", "オンブズマン (競走馬)"], ["fr", "Ombudsman (cheval)"], ["de", "Ombudsman (Pferd)"]],
-  "categories": ["Ombudsman horse", "Category:Ombudsman (horse)"],
-  "queries": ["Ombudsman racehorse", "Ombudsman Gosden", "Ombudsman Buick", "Ombudsman Ascot", "Ombudsman York",
-              "Prince of Wales's Stakes 2025", "Prince of Wales's Stakes 2026", "Juddmonte International 2025", "International Stakes 2025 York",
-              "Champion Stakes 2026 Ascot", "Dubai Turf 2026", "Eclipse Stakes 2025 Sandown", "Godolphin Ombudsman"],
-  "openverse": ["Ombudsman horse", "Ombudsman racehorse", "Ombudsman Ascot", "Ombudsman Buick", "Ombudsman Godolphin",
-                "Ombudsman Gosden", "Ombudsman York", "Ombudsman Sandown"]},
- {"key": "ethicaldiamond", "must": ["ethical diamond"],
-  "wiki": [["en", "Ethical Diamond"], ["en", "Ethical Diamond (horse)"], ["ja", "エシカルダイヤモンド"], ["fr", "Ethical Diamond"]],
-  "categories": ["Ethical Diamond", "Category:Ethical Diamond (horse)"],
-  "queries": ["Ethical Diamond", "Ethical Diamond horse", "Ethical Diamond Mullins", "Ethical Diamond McMonagle",
-              "Breeders' Cup Turf 2025", "2025 Breeders' Cup Del Mar turf", "Ballyroan Stakes", "Kentucky Turf Cup 2026",
-              "Leopardstown 2026 Ethical Diamond", "Galway Ethical Diamond", "Willie Mullins flat"],
-  "openverse": ["Ethical Diamond horse", "Ethical Diamond Breeders Cup", "Ethical Diamond Del Mar", "Ethical Diamond Mullins",
-                "Ethical Diamond Leopardstown", "Ethical Diamond hurdle", "Ethical Diamond Galway"]},
- {"key": "teao", "must": ["teao"],
-  "wiki": [["es", "Teao (caballo)"], ["es", "Teao"], ["en", "Teao (horse)"], ["ja", "テアオ"]],
-  "categories": ["Teao caballo", "Category:Teao (horse)"],
-  "queries": ["Teao caballo", "Teao Valparaíso", "Teao Club Hípico", "Teao Hipódromo Chile", "Teao El Derby 2026",
-              "El Derby 2026 Valparaíso Sporting", "Gran Premio Latinoamericano 2026", "Hipódromo de Monterrico 2026",
-              "Dos Mil Guineas 2025 Chile", "Gran Criterium 2025 Club Hípico", "Teao Luis Torres", "Teao Orellana"],
-  "openverse": ["Teao caballo", "Teao horse", "Teao hipica", "Teao Latinoamericano", "Teao Derby", "Teao Valparaiso",
-                "Teao Luis Torres"]}
-]}
+{
+ "items": [
+  {
+   "key": "ombudsman",
+   "must": [
+    "ombudsman"
+   ],
+   "wiki": [
+    [
+     "en",
+     "Ombudsman (horse)"
+    ],
+    [
+     "ja",
+     "オンブズマン (競走馬)"
+    ],
+    [
+     "fr",
+     "Ombudsman (cheval)"
+    ],
+    [
+     "de",
+     "Ombudsman (Pferd)"
+    ]
+   ],
+   "categories": [
+    "Ombudsman horse",
+    "Category:Ombudsman (horse)"
+   ],
+   "queries": [
+    "Ombudsman racehorse",
+    "Ombudsman Gosden",
+    "Ombudsman Buick",
+    "Ombudsman Ascot",
+    "Ombudsman York",
+    "Prince of Wales's Stakes 2025",
+    "Prince of Wales's Stakes 2026",
+    "Juddmonte International 2025",
+    "International Stakes 2025 York",
+    "Champion Stakes 2026 Ascot",
+    "Dubai Turf 2026",
+    "Eclipse Stakes 2025 Sandown",
+    "Godolphin Ombudsman"
+   ],
+   "openverse": [
+    "Ombudsman horse",
+    "Ombudsman racehorse",
+    "Ombudsman Ascot",
+    "Ombudsman Buick",
+    "Ombudsman Godolphin",
+    "Ombudsman Gosden",
+    "Ombudsman York",
+    "Ombudsman Sandown"
+   ],
+   "also": [
+    "horse",
+    "racehorse",
+    "race",
+    "stakes",
+    "cup",
+    "turf",
+    "ascot",
+    "york",
+    "godolphin",
+    "gosden",
+    "buick",
+    "mullins",
+    "derby",
+    "caballo",
+    "hípic",
+    "hipic",
+    "sporting",
+    "jockey",
+    "racecourse",
+    "hipódromo",
+    "hipodromo",
+    "pferd",
+    "cheval",
+    "競走馬",
+    "競馬"
+   ]
+  },
+  {
+   "key": "ethicaldiamond",
+   "must": [
+    "ethical diamond"
+   ],
+   "wiki": [
+    [
+     "en",
+     "Ethical Diamond"
+    ],
+    [
+     "en",
+     "Ethical Diamond (horse)"
+    ],
+    [
+     "ja",
+     "エシカルダイヤモンド"
+    ],
+    [
+     "fr",
+     "Ethical Diamond"
+    ]
+   ],
+   "categories": [
+    "Ethical Diamond",
+    "Category:Ethical Diamond (horse)"
+   ],
+   "queries": [
+    "Ethical Diamond",
+    "Ethical Diamond horse",
+    "Ethical Diamond Mullins",
+    "Ethical Diamond McMonagle",
+    "Breeders' Cup Turf 2025",
+    "2025 Breeders' Cup Del Mar turf",
+    "Ballyroan Stakes",
+    "Kentucky Turf Cup 2026",
+    "Leopardstown 2026 Ethical Diamond",
+    "Galway Ethical Diamond",
+    "Willie Mullins flat"
+   ],
+   "openverse": [
+    "Ethical Diamond horse",
+    "Ethical Diamond Breeders Cup",
+    "Ethical Diamond Del Mar",
+    "Ethical Diamond Mullins",
+    "Ethical Diamond Leopardstown",
+    "Ethical Diamond hurdle",
+    "Ethical Diamond Galway"
+   ],
+   "also": [
+    "horse",
+    "racehorse",
+    "race",
+    "stakes",
+    "cup",
+    "turf",
+    "ascot",
+    "york",
+    "godolphin",
+    "gosden",
+    "buick",
+    "mullins",
+    "derby",
+    "caballo",
+    "hípic",
+    "hipic",
+    "sporting",
+    "jockey",
+    "racecourse",
+    "hipódromo",
+    "hipodromo",
+    "pferd",
+    "cheval",
+    "競走馬",
+    "競馬"
+   ]
+  },
+  {
+   "key": "teao",
+   "must": [
+    "teao"
+   ],
+   "wiki": [
+    [
+     "es",
+     "Teao (caballo)"
+    ],
+    [
+     "es",
+     "Teao"
+    ],
+    [
+     "en",
+     "Teao (horse)"
+    ],
+    [
+     "ja",
+     "テアオ"
+    ]
+   ],
+   "categories": [
+    "Teao caballo",
+    "Category:Teao (horse)"
+   ],
+   "queries": [
+    "Teao caballo",
+    "Teao Valparaíso",
+    "Teao Club Hípico",
+    "Teao Hipódromo Chile",
+    "Teao El Derby 2026",
+    "El Derby 2026 Valparaíso Sporting",
+    "Gran Premio Latinoamericano 2026",
+    "Hipódromo de Monterrico 2026",
+    "Dos Mil Guineas 2025 Chile",
+    "Gran Criterium 2025 Club Hípico",
+    "Teao Luis Torres",
+    "Teao Orellana"
+   ],
+   "openverse": [
+    "Teao caballo",
+    "Teao horse",
+    "Teao hipica",
+    "Teao Latinoamericano",
+    "Teao Derby",
+    "Teao Valparaiso",
+    "Teao Luis Torres"
+   ],
+   "also": [
+    "horse",
+    "racehorse",
+    "race",
+    "stakes",
+    "cup",
+    "turf",
+    "ascot",
+    "york",
+    "godolphin",
+    "gosden",
+    "buick",
+    "mullins",
+    "derby",
+    "caballo",
+    "hípic",
+    "hipic",
+    "sporting",
+    "jockey",
+    "racecourse",
+    "hipódromo",
+    "hipodromo",
+    "pferd",
+    "cheval",
+    "競走馬",
+    "競馬"
+   ]
+  }
+ ]
+}
