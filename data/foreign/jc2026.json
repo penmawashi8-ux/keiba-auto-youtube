@@ -48,7 +48,8 @@
     "去年、世界ランキング1位に"
    ],
    "photo": "calandagan_0.jpg",
-   "photo_is_horse": true
+   "photo_is_horse": true,
+   "photo_kind": "own"
   },
   {
    "key": "ombudsman",
@@ -78,8 +79,9 @@
     "去年の英インターナショナルSで",
     "ダノンデサイルにも先着"
    ],
-   "photo": "tokyo_6.jpg",
-   "photo_is_horse": false
+   "photo": "data/foreign/images/cg_ombudsman.jpg",
+   "photo_is_horse": false,
+   "photo_kind": "cg"
   },
   {
    "key": "minniehauk",
@@ -108,8 +110,15 @@
     "追加登録料12万ユーロを払って出走",
     "アタマ差の2着"
    ],
-   "photo": "tokyo_7.jpg",
-   "photo_is_horse": false
+   "photo": "minniehauk_6.jpg",
+   "photo_is_horse": true,
+   "photo_kind": "own",
+   "photo_crop": [
+    0.5,
+    0.4,
+    0.4,
+    0.3
+   ]
   },
   {
    "key": "goliath",
@@ -137,7 +146,8 @@
     "その年のジャパンカップは6着"
    ],
    "photo": "goliath_8.jpg",
-   "photo_is_horse": true
+   "photo_is_horse": true,
+   "photo_kind": "own"
   },
   {
    "key": "ethicaldiamond",
@@ -165,8 +175,9 @@
     "手術歴で出られず、代わりの",
     "BCターフを単勝約28倍で勝利"
    ],
-   "photo": "tokyo_0.jpg",
-   "photo_is_horse": false
+   "photo": "data/foreign/images/cg_ethicaldiamond.jpg",
+   "photo_is_horse": false,
+   "photo_kind": "cg"
   },
   {
    "key": "teao",
@@ -194,8 +205,9 @@
     "チリの馬としてこのレース",
     "11勝目の快挙"
    ],
-   "photo": "cg",
-   "photo_is_horse": false
+   "photo": "data/foreign/images/cg_teao.jpg",
+   "photo_is_horse": false,
+   "photo_kind": "cg"
   }
  ],
  "shorts": [
@@ -218,8 +230,6 @@
   "\"Calandagan right after 45th Japan Cup 01.jpg\" by nakashi, CC BY-SA 4.0 https://commons.wikimedia.org/wiki/File:Calandagan_right_after_45th_Japan_Cup_01.jpg",
   "\"Starting off 45th Japan Cup.jpg\" by nakashi, CC BY-SA 4.0 https://commons.wikimedia.org/wiki/File:Starting_off_45th_Japan_Cup.jpg",
   "\"Goliath 2024 Japan Cup.jpg\" by nakashi, CC BY-SA 2.0 https://commons.wikimedia.org/wiki/File:Goliath_2024_Japan_Cup.jpg",
-  "\"Tokyo racecourse - Japan Cup Day (37934068584).jpg\" by nakashi, CC BY-SA 2.0 https://commons.wikimedia.org/wiki/File:Tokyo_racecourse_-_Japan_Cup_Day_(37934068584).jpg",
-  "\"Tokyo racecourse - japan cup day (37933695024).jpg\" by nakashi, CC BY-SA 2.0 https://commons.wikimedia.org/wiki/File:Tokyo_racecourse_-_japan_cup_day_(37933695024).jpg",
-  "\"Tokyo racecourse - japan cup day (37940089404).jpg\" by nakashi, CC BY-SA 2.0 https://commons.wikimedia.org/wiki/File:Tokyo_racecourse_-_japan_cup_day_(37940089404).jpg"
+  "\"Minnie Hauk after winning the 2025 Yorkshire Oaks.jpg\" by HallCastleKing, CC0 https://commons.wikimedia.org/wiki/File:Minnie_Hauk_after_winning_the_2025_Yorkshire_Oaks.jpg"
  ]
 }

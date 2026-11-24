@@ -156,24 +156,37 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
         intro_text = f"{race['name']}に海外から参戦する馬を紹介します。今回は{names}です。"
     else:
         intro_text = data["intro"]
-    pick = lambda f: cg_bg if (not f or f == "cg" or not (photos / f).exists()) else photos / f   # noqa: E731
+    def pick(f):
+        if not f or f == "cg":
+            return cg_bg
+        if Path(f).exists():                   # リポジトリ内の画像（CG の馬など）
+            return Path(f)
+        return photos / f if (photos / f).exists() else cg_bg
     add_seg("intro", pick(data.get("intro_photo")), intro_text, intro_cards, pan="right", dark=0.1, extra=1.0)
 
     # ---- 1頭ずつ
     for idx, k in enumerate(keys, 1):
         h = horses[k]
         src = pick(h.get("photo", f"{k}.jpg"))
+        if h.get("photo_crop") and src != cg_bg:   # 写真の一部（馬のいるところ）を切り出す
+            x, y, cw, ch = h["photo_crop"]
+            cropped = tmp / f"crop_{k}.jpg"
+            run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-vf",
+                 f"crop=iw*{cw}:ih*{ch}:iw*{x}:ih*{y}", "-q:v", "2", str(cropped)])
+            src = cropped
         own = h.get("photo_is_horse", False) and src != cg_bg
+        kind = h.get("photo_kind", "own" if own else "place")
         text = h["short"] if vertical else h["narration"]
         n_all = len(data["horses"])
         pos = [x["key"] for x in data["horses"]].index(k) + 1
 
-        def horse_cards(sec, h=h, pos=pos, n_all=n_all, idx=idx, own=own, src=src):
+        def horse_cards(sec, h=h, pos=pos, n_all=n_all, idx=idx, own=own, src=src, kind=kind):
             col = COUNTRY.get(h["country"], "0x555555")
 
             def name_plate(c):
                 if not own:                    # その馬の写真ではないことをはっきり書く
-                    note = "画像：東京競馬場（CG）" if src == cg_bg else "写真：東京競馬場（イメージ）"
+                    note = ("画像：イメージ（CG）" if kind == "cg" else
+                            "画像：東京競馬場（CG）" if src == cg_bg else "写真：東京競馬場（イメージ）")
                     c.text(note, W - 24, (1100 if vertical else 50), 24, "0xFFFFFF@0.85", anchor="r", shadow=True)
                 if vertical:
                     x0, y0, w = 50, 1160, 980
@@ -252,7 +265,7 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
             t1, t2, t3 = sec * 0.16, sec * 0.42, sec * 0.72
             return [(a, 0.3, t1 + 0.3), (b, t1, t2 + 0.3), (tv, t2, t3 + 0.3), (f, t3, sec)]
         add_seg(k, src, text, horse_cards, pan=("right" if idx % 2 else "left") if not vertical else "up",
-                dark=0.0 if own else 0.2)
+                dark=0.0 if own or kind == "cg" else 0.2)
 
     # ---- 締め
     def outro_cards(sec):
