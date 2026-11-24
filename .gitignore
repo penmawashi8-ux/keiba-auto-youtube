@@ -34,3 +34,4 @@ output_milecs/
 
 # research-output から復元した作業用データ（ローカル実行用）
 /sim/
+output_jc/
