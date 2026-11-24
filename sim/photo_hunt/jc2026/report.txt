@@ -1,0 +1,92 @@
+== ombudsman
+  [Flickr]
+   「Ombudsman horse」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman racehorse」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Ascot」 全ライセンス 6件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Buick」 全ライセンス 15件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Gosden」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman York」 全ライセンス 24件 / 商用改変OK 3件 (HTTP 200/200)
+   「Ombudsman Godolphin」 全ライセンス 15件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Meydan」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Dubai Turf」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Sandown」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Newmarket」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「オンブズマン 競馬」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Prince of Wales Stakes 2025」 全ライセンス 6件 / 商用改変OK 0件 (HTTP 200/200)
+   「Prince of Wales Stakes 2026」 全ライセンス 4件 / 商用改変OK 0件 (HTTP 200/200)
+   「Juddmonte International 2025」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Champion Stakes 2026」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Dubai Turf 2026」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
+   → Flickr 名前入り・使用可: 0件（調べた写真 108件）
+  [Geograph]
+   www.geograph.org.uk「Ombudsman horse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.org.uk「Ombudsman racehorse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.org.uk「Ombudsman Ascot」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Ombudsman horse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Ombudsman racehorse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Ombudsman Ascot」 HTTP 403 結果0件 名前入り0件
+  [Unsplash / Pexels / Pixabay]
+   Unsplash「Ombudsman horse」 HTTP 403
+   Pexels「Ombudsman horse」 HTTP 403 写真0件 名前の記載あり
+   Pixabay「Ombudsman horse」 HTTP 403 写真0件 名前の記載あり
+   Unsplash「Ombudsman racehorse」 HTTP 403
+   Pexels「Ombudsman racehorse」 HTTP 403 写真0件 名前の記載あり
+   Pixabay「Ombudsman racehorse」 HTTP 403 写真0件 名前の記載あり
+   Unsplash「Ombudsman Ascot」 HTTP 403
+   Pexels「Ombudsman Ascot」 HTTP 403 写真0件 名前の記載あり
+   Pixabay「Ombudsman Ascot」 HTTP 403 写真0件 名前の記載あり
+== ethicaldiamond
+  [Flickr]
+   「Ethical Diamond」 全ライセンス 14件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond horse」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond Mullins」 全ライセンス 7件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond hurdle」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond Galway」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond Leopardstown」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond Del Mar」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond Breeders Cup」 全ライセンス 2件 / 商用改変OK 0件 (HTTP 200/200)
+   「エシカルダイヤモンド」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Breeders Cup Turf 2025」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Breeders Cup 2025 Del Mar」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
+   「Kentucky Downs 2026」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   → Flickr 名前入り・使用可: 0件（調べた写真 90件）
+  [Geograph]
+   www.geograph.org.uk「Ethical Diamond horse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.org.uk「Ethical Diamond」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Ethical Diamond horse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Ethical Diamond」 HTTP 403 結果0件 名前入り0件
+  [Unsplash / Pexels / Pixabay]
+   Unsplash「Ethical Diamond horse」 HTTP 403
+   Pexels「Ethical Diamond horse」 HTTP 403 写真0件 名前の記載なし
+   Pixabay「Ethical Diamond horse」 HTTP 403 写真0件 名前の記載なし
+   Unsplash「Ethical Diamond」 HTTP 403
+   Pexels「Ethical Diamond」 HTTP 403 写真0件 名前の記載なし
+   Pixabay「Ethical Diamond」 HTTP 403 写真0件 名前の記載なし
+== teao
+  [Flickr]
+   「Teao」 全ライセンス 25件 / 商用改変OK 2件 (HTTP 200/200)
+   「Teao caballo」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Teao horse」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Teao Derby」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Teao Valparaiso」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Teao hipica」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Teao Monterrico」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「テアオ」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「El Derby 2026 Viña del Mar」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
+   「Valparaiso Sporting Derby 2026」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
+   「Gran Premio Latinoamericano 2026」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Monterrico 2026」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Club Hipico Gran Criterium 2025」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   → Flickr 名前入り・使用可: 0件（調べた写真 79件）
+  [Geograph]
+   www.geograph.org.uk「Teao caballo」 HTTP 403 結果0件 名前入り0件
+   www.geograph.org.uk「Teao horse」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Teao caballo」 HTTP 403 結果0件 名前入り0件
+   www.geograph.ie「Teao horse」 HTTP 403 結果0件 名前入り0件
+  [Unsplash / Pexels / Pixabay]
+   Unsplash「Teao caballo」 HTTP 403
+   Pexels「Teao caballo」 HTTP 403 写真0件 名前の記載あり
+   Pixabay「Teao caballo」 HTTP 403 写真0件 名前の記載あり
+   Unsplash「Teao horse」 HTTP 403
+   Pexels「Teao horse」 HTTP 403 写真0件 名前の記載あり
+   Pixabay「Teao horse」 HTTP 403 写真0件 名前の記載あり
