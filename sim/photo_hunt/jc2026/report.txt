@@ -1,10 +1,10 @@
 == ombudsman
   [Flickr]
-   「Ombudsman horse」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman horse」 全ライセンス 25件 / 商用改変OK 1件 (HTTP 200/200)
    「Ombudsman racehorse」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
-   「Ombudsman Ascot」 全ライセンス 6件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Ascot」 全ライセンス 5件 / 商用改変OK 0件 (HTTP 200/200)
    「Ombudsman Buick」 全ライセンス 15件 / 商用改変OK 0件 (HTTP 200/200)
-   「Ombudsman Gosden」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ombudsman Gosden」 全ライセンス 14件 / 商用改変OK 0件 (HTTP 200/200)
    「Ombudsman York」 全ライセンス 24件 / 商用改変OK 3件 (HTTP 200/200)
    「Ombudsman Godolphin」 全ライセンス 15件 / 商用改変OK 0件 (HTTP 200/200)
    「Ombudsman Meydan」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
@@ -17,8 +17,30 @@
    「Juddmonte International 2025」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
    「Champion Stakes 2026」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
    「Dubai Turf 2026」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
-   → Flickr 名前入り・使用可: 0件（調べた写真 108件）
+    ★ CC BY-SA             | ICANNpets Herb Waye Ombudsman horses | icannphotos | https://www.flickr.com/photo.gne?id=51251582133
+    ・ CC BY                | Bill de Blasio, painted portrait DDC_8732 | thierry ehrmann | https://www.flickr.com/photo.gne?id=9918512703
+    ・ CC BY                | Bill de Blasio, painted portrait DDC_8731 | thierry ehrmann | https://www.flickr.com/photo.gne?id=9918419304
+    ・ CC BY                | Carolus Libertus | Hans Kylberg | https://www.flickr.com/photo.gne?id=294423728
+    ・ All rights reserved  | Still a furlong to go | Steve Barowik | https://www.flickr.com/photo.gne?id=54910280100
+    ・ All rights reserved  | Ombudsman, just the pacemeker to catch now! | Steve Barowik | https://www.flickr.com/photo.gne?id=54910220489
+    ・ All rights reserved  | See The Fire & Oisin Muirphy | Steve Barowik | https://www.flickr.com/photo.gne?id=54904205450
+    ・ All rights reserved  | Ombudsman hits top gear | Steve Barowik | https://www.flickr.com/photo.gne?id=54909966731
+    ・ All rights reserved  | Ombudsman | Peter Cuba | https://www.flickr.com/photo.gne?id=6082460093
+    ・ All rights reserved  | Cathedrale Notre-Dame, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18810253128
+    ・ All rights reserved  | Still in the lead but the chasers are coming | Steve Barowik | https://www.flickr.com/photo.gne?id=54906174193
+    ・ All rights reserved  | Cathedrale Notre-Dame, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18992645912
+    ・ All rights reserved  | Strasbourg dans la nuit, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18827154660
+    ・ All rights reserved  | Strasbourg dans la nuit, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18827140570
+    ・ All rights reserved  | Omdbudsman with some cracking horses behind! | Steve Barowik | https://www.flickr.com/photo.gne?id=54908277205
+    ・ All rights reserved  | Japanese star Danon Decile & Keita Tosaki | Steve Barowik | https://www.flickr.com/photo.gne?id=54901820806
+    ・ All rights reserved  | Palais Rohan, Strasbourg dans la nuit, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18394107013
+    ・ All rights reserved  | Strasbourg dans la nuit, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18392617283
+    ・ All rights reserved  | Strasbourg dans la nuit, Strasbourg, Alsace, France | Paul | https://www.flickr.com/photo.gne?id=18988590146
+   → Flickr 名前入り・使用可: 1件（調べた写真 108件）
   [Geograph]
+   Geograph API「Ombudsman horse」 HTTP 200 結果0件 名前入り0件
+   Geograph API「Ombudsman racehorse」 HTTP 200 結果0件 名前入り0件
+   Geograph API「Ombudsman Ascot」 HTTP 200 結果0件 名前入り0件
    www.geograph.org.uk「Ombudsman horse」 HTTP 403 結果0件 名前入り0件
    www.geograph.org.uk「Ombudsman racehorse」 HTTP 403 結果0件 名前入り0件
    www.geograph.org.uk「Ombudsman Ascot」 HTTP 403 結果0件 名前入り0件
@@ -37,7 +59,7 @@
    Pixabay「Ombudsman Ascot」 HTTP 403 写真0件 名前の記載あり
 == ethicaldiamond
   [Flickr]
-   「Ethical Diamond」 全ライセンス 14件 / 商用改変OK 0件 (HTTP 200/200)
+   「Ethical Diamond」 全ライセンス 13件 / 商用改変OK 0件 (HTTP 200/200)
    「Ethical Diamond horse」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
    「Ethical Diamond Mullins」 全ライセンス 7件 / 商用改変OK 0件 (HTTP 200/200)
    「Ethical Diamond hurdle」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
@@ -49,8 +71,25 @@
    「Breeders Cup Turf 2025」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
    「Breeders Cup 2025 Del Mar」 全ライセンス 1件 / 商用改変OK 0件 (HTTP 200/200)
    「Kentucky Downs 2026」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
-   → Flickr 名前入り・使用可: 0件（調べた写真 90件）
+    ・ All rights reserved  | help burma now! | gary isaacs'  photos | https://www.flickr.com/photo.gne?id=1454510287
+    ・ All rights reserved  | Vintage Rose Cut Diamond Engagement Ring | Flickr Administrator | https://www.flickr.com/photo.gne?id=4817847108
+    ・ 14                   | Father Sky, Mother Earth  - Museum of Indian Arts & Culture - Museum H | Al_HikesAZ | https://www.flickr.com/photo.gne?id=55553070059
+    ・ All rights reserved  | Half a million views today... | CHILDREN AT RISK FOUNDATION - Brazil | https://www.flickr.com/photo.gne?id=340878271
+    ・ All rights reserved  | Ethical Diamonds | Chirs Palmer | https://www.flickr.com/photo.gne?id=51230114497
+    ・ All rights reserved  | Flag of Tibet ( བོད་ཡུལ། ) | Hugo Carriço | https://www.flickr.com/photo.gne?id=4245540357
+    ・ All rights reserved  | Diamond | theappraiserlady | https://www.flickr.com/photo.gne?id=8594779664
+    ・ All rights reserved  | Ethical Diamond | kimpossible pics | https://www.flickr.com/photo.gne?id=54901169653
+    ・ All rights reserved  | And that's about how they will finish | Steve Barowik | https://www.flickr.com/photo.gne?id=54963749539
+    ・ All rights reserved  | THE TREK | Elie Wolf | https://www.flickr.com/photo.gne?id=50125539862
+    ・ All rights reserved  | The same connections winning two Ebor's in two years! | Steve Barowik | https://www.flickr.com/photo.gne?id=54961859650
+    ・ All rights reserved  | Gordon Dam, Gordon River Road, Tasmania | Black Diamond Images | https://www.flickr.com/photo.gne?id=53585108821
+    ・ All rights reserved  | Ethical Diamond (pink cap) prepares for The Breeders Cup by winnin The | Steve Barowik | https://www.flickr.com/photo.gne?id=54963674053
+    ・ All rights reserved  | Europe's richest Handicap, The Ebor | Steve Barowik | https://www.flickr.com/photo.gne?id=54960669287
+    ・ All rights reserved  | St Paul's Cathedral, City of London | Jelltex | https://www.flickr.com/photo.gne?id=16475236454
+   → Flickr 名前入り・使用可: 0件（調べた写真 87件）
   [Geograph]
+   Geograph API「Ethical Diamond horse」 HTTP 200 結果0件 名前入り0件
+   Geograph API「Ethical Diamond」 HTTP 200 結果1件 名前入り0件
    www.geograph.org.uk「Ethical Diamond horse」 HTTP 403 結果0件 名前入り0件
    www.geograph.org.uk「Ethical Diamond」 HTTP 403 結果0件 名前入り0件
    www.geograph.ie「Ethical Diamond horse」 HTTP 403 結果0件 名前入り0件
@@ -64,7 +103,7 @@
    Pixabay「Ethical Diamond」 HTTP 403 写真0件 名前の記載なし
 == teao
   [Flickr]
-   「Teao」 全ライセンス 25件 / 商用改変OK 2件 (HTTP 200/200)
+   「Teao」 全ライセンス 25件 / 商用改変OK 3件 (HTTP 200/200)
    「Teao caballo」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
    「Teao horse」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
    「Teao Derby」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
@@ -77,8 +116,28 @@
    「Gran Premio Latinoamericano 2026」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
    「Monterrico 2026」 全ライセンス 25件 / 商用改変OK 0件 (HTTP 200/200)
    「Club Hipico Gran Criterium 2025」 全ライセンス 0件 / 商用改変OK 0件 (HTTP 200/200)
-   → Flickr 名前入り・使用可: 0件（調べた写真 79件）
+    ★ CC BY                | The char kwey teow was a disaster though- it was just noodle soup | shankar s. | https://www.flickr.com/photo.gne?id=53281775594
+    ★ Public Domain Mark   | March 09, 2013 Lead vocalist Teao collaborating with local musicians i | US Embassy New Zealand | https://www.flickr.com/photo.gne?id=8619263343
+    ★ Public Domain Mark   | March 09, 2013 Lead vocalist of Audiopharmacy Teao signs autographs fo | US Embassy New Zealand | https://www.flickr.com/photo.gne?id=8620287290
+    ・ All rights reserved  | fakta-teao | tea_o | https://www.flickr.com/photo.gne?id=3796899597
+    ・ All rights reserved  | teao | tickz_bristol | https://www.flickr.com/photo.gne?id=2785366926
+    ・ All rights reserved  | TeaO | 夏日梦 | https://www.flickr.com/photo.gne?id=6129410719
+    ・ All rights reserved  | Teao | BombTrains | https://www.flickr.com/photo.gne?id=14067815231
+    ・ All rights reserved  | teao | G K Chathuranga Perera | https://www.flickr.com/photo.gne?id=9393305049
+    ・ All rights reserved  | TEAO | rimer ombd | https://www.flickr.com/photo.gne?id=3958939232
+    ・ All rights reserved  | TEAO | Sarah Murphy | https://www.flickr.com/photo.gne?id=5197545786
+    ・ All rights reserved  | Teao | Sarah Connolly | https://www.flickr.com/photo.gne?id=3092734721
+    ・ All rights reserved  | #teaO | TeaO & Crepes | https://www.flickr.com/photo.gne?id=7601974130
+    ・ All rights reserved  | Sesión 5°, Especial.11910 | Cámara de Diputadas y Diputados de Chile | https://www.flickr.com/photo.gne?id=55167083564
+    ・ All rights reserved  | teao | CkAARENZiiyytHAA | https://www.flickr.com/photo.gne?id=4877954199
+    ・ All rights reserved  | Teao | Pooja Pant | https://www.flickr.com/photo.gne?id=3737915577
+    ・ All rights reserved  | teao | Josie Gardiner | https://www.flickr.com/photo.gne?id=40229537582
+    ・ CC BY-NC-ND          | Sesión 134°, Sala.3943 | Cámara de Diputadas y Diputados de Chile | https://www.flickr.com/photo.gne?id=54295361553
+    ・ All rights reserved  | teao | Josie Gardiner | https://www.flickr.com/photo.gne?id=8093616049
+   → Flickr 名前入り・使用可: 3件（調べた写真 80件）
   [Geograph]
+   Geograph API「Teao caballo」 HTTP 200 結果0件 名前入り0件
+   Geograph API「Teao horse」 HTTP 200 結果0件 名前入り0件
    www.geograph.org.uk「Teao caballo」 HTTP 403 結果0件 名前入り0件
    www.geograph.org.uk「Teao horse」 HTTP 403 結果0件 名前入り0件
    www.geograph.ie「Teao caballo」 HTTP 403 結果0件 名前入り0件

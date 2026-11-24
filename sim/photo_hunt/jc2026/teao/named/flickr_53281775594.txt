@@ -1,0 +1,10 @@
+{
+ "title": "The char kwey teow was a disaster though- it was just noodle soup",
+ "desc": "My so called plate of char kwey teao- fried noodles, let's say the Malay version of pad thai at KLIA-2. This char kwey teow was a disaster though- it was just noodle soup. I'd sworn to eat char kwey teow n Malaysia but sadly with a misbehaving stomach and the steamy hot weather, and consequent loss of appetite, I was inclined to go out looking for it. Sadly this phenomenon held true all through my travels around KL, Ipoh and Melacca. I was happy I finally managed to catch it when flying out of KL and heading to Singapore. Sadly, what the lady gave me was noodle soup- language was a bit barrier and the almost only Malay speaking girl at the counter had no idea what I was on about, when I protested. Char kway teow is a stir-fried rice noodle dish from Maritime Southeast Asia of southern Chinese origin. In Hokkien and Teochew, char means 'stir-fried' and kway teow refers to flat rice noodles. This is considered one of the most popular street foods in Malaysia. (Kuala Lumpur, Malaysia, Sept. 2023)",
+ "img": "https://live.staticflickr.com/65535/53281775594_954f1becf4_b.jpg",
+ "lic": 4,
+ "lic_s": "CC BY",
+ "author": "shankar s.",
+ "tags": "",
+ "page": "https://www.flickr.com/photo.gne?id=53281775594"
+}

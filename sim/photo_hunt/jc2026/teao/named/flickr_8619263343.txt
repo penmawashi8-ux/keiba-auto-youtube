@@ -1,0 +1,10 @@
+{
+ "title": "March 09, 2013 Lead vocalist Teao collaborating with local musicians in Apia",
+ "desc": "",
+ "img": "https://live.staticflickr.com/8240/8619263343_56ee3dc2b7_b.jpg",
+ "lic": 10,
+ "lic_s": "Public Domain Mark",
+ "author": "US Embassy New Zealand",
+ "tags": "",
+ "page": "https://www.flickr.com/photo.gne?id=8619263343"
+}

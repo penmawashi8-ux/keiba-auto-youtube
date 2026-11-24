@@ -1,0 +1,10 @@
+{
+ "title": "Carolus Libertus",
+ "desc": "Original background picture: www.flickr.com/photos/deadling/274006481/   - Thanks!",
+ "img": "https://live.staticflickr.com/113/294423728_a3a0afbff1_b.jpg",
+ "lic": 4,
+ "lic_s": "CC BY",
+ "author": "Hans Kylberg",
+ "tags": "",
+ "page": "https://www.flickr.com/photo.gne?id=294423728"
+}
