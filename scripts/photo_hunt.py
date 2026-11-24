@@ -35,9 +35,9 @@ def log(s):
 
 
 def get(url, **kw):
-    for i in range(3):
+    for i in range(2):
         try:
-            r = S.get(url, timeout=30, **kw)
+            r = S.get(url, timeout=15, **kw)
             if r.status_code == 429:
                 time.sleep(10 * (i + 1))
                 continue
@@ -118,6 +118,7 @@ def flickr_photo(owner, pid):
 
 def do_flickr(item, out):
     seen = {}
+    ok_set = set()
     log(f"  [Flickr]")
     for q in item["flickr"]:
         st_all, all_ids = flickr_search(q)
@@ -127,22 +128,29 @@ def do_flickr(item, out):
             seen.setdefault(p, (o, q))
         for o, p in ok_ids[:40]:
             seen[p] = (o, q)
+            ok_set.add(p)
         time.sleep(1)
     hits = 0
-    for pid, (owner, q) in list(seen.items())[:220]:
+    fails = 0
+    # 使えるライセンスの写真は全部、全ライセンスの写真は馬名だけの検索から少しだけ確認する
+    check = [(p, oq) for p, oq in seen.items() if p in ok_set]
+    check += [(p, oq) for p, oq in seen.items() if (p, oq) not in check][:15]
+    for pid, (owner, q) in check:
+        if fails >= 4:
+            log("    ! Flickr が応答しなくなったため打ち切り")
+            break
         info = flickr_photo(owner, pid)
-        time.sleep(0.5)
+        time.sleep(2)
         if not info:
+            fails += 1
             continue
+        fails = 0
         text = " ".join([info["title"], info["desc"], info["tags"]])
         rel = relevant(text, item["must"])
         ok = info["lic"] in FLICKR_OK if info["lic"] is not None else info["lic_s"] in (
             "CC BY", "CC BY-SA", "CC ZERO", "CC MARK")
-        if not info["title"]:
-            log(f"    ! 写真ページ {pid} タイトル取れず ({len(info['tags'])})")
-        if rel or ok:
-            log(f"    {'★' if rel and ok else '・'} {info['lic_s']:<20} 名前{'あり' if rel else 'なし'} | "
-                f"{info['title'][:70]} | {info['author']} | {info['page']}")
+        log(f"    {'★' if rel and ok else '・'} {info['lic_s']:<20} | "
+            f"{info['title'][:70]} | {info['author']} | {info['page']}")
         if ok and info["img"]:
             sub = out / item["key"] / ("named" if rel else "event")
             sub.mkdir(parents=True, exist_ok=True)
