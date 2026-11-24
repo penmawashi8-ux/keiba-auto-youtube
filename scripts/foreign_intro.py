@@ -129,7 +129,7 @@ def build(data: dict, photos: Path, cg_bg: Path, out: Path, font: str, vertical:
         segv = tmp / f"seg{len(segs)}.mp4"
         overlay_clip(bgv, cards, segv, sec)
         if clip:
-            voices.append((t + 0.4, clip))
+            voices.append((t + 0.4, (clip, d)))            # (開始時刻, (音声ファイル, 長さ))
         segs.append(segv)
         t += sec
 
