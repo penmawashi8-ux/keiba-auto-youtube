@@ -404,7 +404,39 @@ SPEECH_READINGS = {"最後方": "さいこうほう", "脚をためる": "あし
                    "叩き合い": "たたきあい", "後続": "こうぞく", "先頭": "せんとう", "3コーナー": "さんコーナー",
                    "4コーナー": "よんコーナー", "ハナを切った": "ハナをきった",
                    "JRA": "ジェイアールエー", "ＪＲＡ": "ジェイアールエー",
-                   "WIN5": "ウインファイブ", "ＷＩＮ５": "ウインファイブ", "Win5": "ウインファイブ"}
+                   "WIN5": "ウインファイブ", "ＷＩＮ５": "ウインファイブ", "Win5": "ウインファイブ",
+                   "鞍上": "あんじょう", "せん馬": "せんば", "騸馬": "せんば", "牡馬": "ぼば", "牝馬": "ひんば",
+                   "芦毛": "あしげ", "鹿毛": "かげ", "厩務員": "きゅうむいん", "厩舎": "きゅうしゃ",
+                   "愛オークス": "あいオークス", "英オークス": "えいオークス", "英チャンピオン": "えいチャンピオン",
+                   "英インターナショナル": "えいインターナショナル", "単勝": "たんしょう", "去勢": "きょせい"}
+
+
+_ONES = ["", "いち", "に", "さん", "よん", "ご", "ろく", "なな", "はち", "きゅう"]
+
+
+def _count_reading(n: int, unit: str) -> str:
+    """「10勝」「8戦」などの読み（促音になる数に注意: いっ・はっ・じゅっ）"""
+    if n == 0 or n >= 100:
+        return f"{n}{unit}"
+    tens, ones = divmod(n, 10)
+    head = ("" if tens == 0 else ("じゅう" if tens == 1 else _ONES[tens] + "じゅう"))
+    if ones == 0:
+        body = head[:-1] + "っ" if head.endswith("う") and unit in ("勝", "戦") else head
+        # 10 → じゅっ、20 → にじゅっ
+        return body + {"勝": "しょう", "戦": "せん"}[unit]
+    sokuon = {1: "いっ", 8: "はっ"}
+    o = sokuon.get(ones, _ONES[ones]) if unit in ("勝", "戦") else _ONES[ones]
+    return head + o + {"勝": "しょう", "戦": "せん"}[unit]
+
+
+def speech_text(text: str) -> str:
+    """読み上げ用に、読み間違えやすい言葉・数をひらがなにする"""
+    import re
+    for k, v in SPEECH_READINGS.items():
+        text = text.replace(k, v)
+    # 「19戦10勝」「4戦3勝」「G1を5勝」: 数＋戦・勝 をかなに（TTS が「じゅうかち」などと読むため）
+    text = re.sub(r"(\d{1,2})(勝|戦)", lambda m: _count_reading(int(m.group(1)), m.group(2)), text)
+    return text
 
 
 def make_tts(work: Path):
@@ -438,8 +470,7 @@ def make_tts(work: Path):
     def speak(text: str):
         if not state["ok"]:
             return None
-        for k, v in SPEECH_READINGS.items():      # 読み間違えやすい言葉はひらがなで渡す
-            text = text.replace(k, v)
+        text = speech_text(text)
         out = work / f"voice_{hashlib.md5(text.encode()).hexdigest()[:10]}.mp3"
         try:
             if not out.exists():

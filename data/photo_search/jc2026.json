@@ -1,9 +1,10 @@
 {"items": [
- {"key": "calandagan", "queries": ["Calandagan", "Calandagan horse", "Calandagan Japan Cup 2025", "カランダガン"]},
- {"key": "ombudsman", "queries": ["Ombudsman racehorse", "Ombudsman Buick", "Ombudsman Prince of Wales's Stakes", "Ombudsman horse"]},
- {"key": "minniehauk", "queries": ["Minnie Hauk", "Minnie Hauk Oaks", "Minnie Hauk Ryan Moore"]},
- {"key": "goliath", "queries": ["Goliath King George 2024", "Goliath racehorse", "Goliath Japan Cup 2024", "ゴリアット 競走馬"]},
- {"key": "ethicaldiamond", "queries": ["Ethical Diamond", "Ethical Diamond Breeders Cup"]},
- {"key": "teao", "queries": ["Teao caballo", "Teao horse", "Teao Gran Premio Latinoamericano"]},
- {"key": "tokyo", "queries": ["Tokyo Racecourse Japan Cup", "東京競馬場 ジャパンカップ", "Tokyo Racecourse grandstand"]}
+ {"key": "ombudsman", "must": ["ombudsman"], "queries": ["Ombudsman racehorse", "Ombudsman Gosden", "Ombudsman Ascot", "Ombudsman Royal Ascot 2025", "Ombudsman York International"],
+  "openverse": ["Ombudsman horse", "Ombudsman racehorse", "Ombudsman Ascot", "Ombudsman Buick", "Ombudsman Godolphin"]},
+ {"key": "minniehauk", "must": ["minnie hauk"], "queries": ["Minnie Hauk racehorse", "Minnie Hauk Epsom", "Minnie Hauk Oaks 2025", "Minnie Hauk Arc"],
+  "openverse": ["Minnie Hauk horse", "Minnie Hauk Oaks", "Minnie Hauk Epsom", "Minnie Hauk Ryan Moore", "Minnie Hauk Arc"]},
+ {"key": "ethicaldiamond", "must": ["ethical diamond"], "queries": ["Ethical Diamond horse", "Ethical Diamond Breeders' Cup Turf", "Ethical Diamond Mullins"],
+  "openverse": ["Ethical Diamond horse", "Ethical Diamond Breeders Cup", "Ethical Diamond Del Mar", "Ethical Diamond Mullins"]},
+ {"key": "teao", "must": ["teao"], "queries": ["Teao caballo", "Teao Valparaíso", "Teao Club Hípico"],
+  "openverse": ["Teao caballo", "Teao horse", "Teao hipica", "Teao Latinoamericano"]}
 ]}

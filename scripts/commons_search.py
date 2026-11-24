@@ -51,6 +51,28 @@ def info(titles):
     return out
 
 
+def openverse(q, n=20):
+    """Openverse（Flickr などの CC 画像をまとめて検索）。商用利用・改変ができるものだけ"""
+    try:
+        r = requests.get("https://api.openverse.org/v1/images/", params={
+            "q": q, "license_type": "commercial,modification", "page_size": n}, headers=UA, timeout=60)
+        res = r.json().get("results", [])
+    except Exception as e:      # noqa: BLE001
+        print("  openverse 失敗", q, e)
+        return []
+    out = []
+    for x in res:
+        lic = (x.get("license") or "").lower()
+        if lic not in ("by", "by-sa", "cc0", "pdm"):
+            continue
+        name = {"by": "CC BY", "by-sa": "CC BY-SA", "cc0": "CC0", "pdm": "Public domain"}[lic]
+        out.append({"title": x.get("title") or "", "license": f"{name} {x.get('license_version') or ''}".strip(),
+                    "author": x.get("creator") or "", "mime": "image/jpeg", "w": x.get("width"), "h": x.get("height"),
+                    "thumb": x.get("url"), "page": x.get("foreign_landing_url"), "desc": x.get("source") or "",
+                    "via": "openverse"})
+    return out
+
+
 def main():
     cfg = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     out = Path(sys.argv[2])
@@ -67,11 +89,18 @@ def main():
         for i in range(0, len(titles), 10):
             cands += info(titles[i:i + 10])
             time.sleep(1)
+        for q in it.get("openverse", []):
+            cands += openverse(q)
+            time.sleep(1)
         good = [c for c in cands if c["mime"] in ("image/jpeg", "image/png") and OK.match(c["license"] or "")
                 and "NC" not in c["license"] and "ND" not in c["license"]]
+        need = [w.lower() for w in it.get("must", [])]          # 題名・説明にこの語がある画像だけ（同名の別物を除く）
+        if need:
+            good = [c for c in good if any(w in (c["title"] + " " + c["desc"] + " " + (c.get("page") or "")).lower()
+                                           for w in need)]
         report[it["key"]] = []
         files = []
-        for n, c in enumerate(good[:10]):
+        for n, c in enumerate(good[:12]):
             p = out / f"{it['key']}_{n}.jpg"
             try:
                 b = requests.get(c["thumb"], headers=UA, timeout=60).content
