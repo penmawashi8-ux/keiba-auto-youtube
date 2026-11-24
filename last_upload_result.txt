@@ -1,10 +1,10 @@
-date: 2026-11-23T10:08:28.842197Z
+date: 2026-11-24T04:30:34.342969Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=62XKSld3mzI title=【金沢・MRO金賞結果】ニャンタロウが3連勝で重賞初制覇
-OK project=1 video_id=BPwYtxo7fCw title=第3回福島競馬リーディングジョッキーは小林美駒騎手！
-OK project=1 video_id=Of2LQbUDk6U title=【水沢・トウケイニセイ記念結果】ヒロシクンが逃げ切り連覇達成
+OK project=1 video_id=L6LKWsCHbLk title=【京都2歳S想定騎手】ドラゴンバルドはJ.モレイラ騎手、ネーロノワールは川田将雅
+OK project=1 video_id=UYf3gEgf7rY title=【京阪杯想定騎手】リリージョワは浜中俊騎手、レイピアは佐々木大輔騎手
+OK project=1 video_id=OmOLvdLceSI title=【ジャパンC想定騎手】カランダガンはM.バルザローナ騎手、ダノンデサイルは戸崎圭
