@@ -61,6 +61,9 @@ def flickr_search(q, lic=None):
     r = get(url)
     if r is None:
         return None, []
+    if not lic and not Path("out/debug/flickr_search.html").exists():
+        Path("out/debug").mkdir(parents=True, exist_ok=True)
+        Path("out/debug/flickr_search.html").write_text(r.text, encoding="utf-8")
     ids = []
     for owner, pid in re.findall(r'/photos/([^/"\\]+)/(\d{6,})', r.text):
         if owner not in ("tags", "search") and (owner, pid) not in ids:
@@ -72,12 +75,23 @@ def flickr_search(q, lic=None):
     return r.status_code, ids
 
 
+DUMPED = []
+
+
 def flickr_photo(owner, pid):
-    url = f"https://www.flickr.com/photos/{owner or 'x'}/{pid}/"
+    url = (f"https://www.flickr.com/photos/{owner}/{pid}/" if owner
+           else f"https://www.flickr.com/photo.gne?id={pid}")
     r = get(url)
+    if r is not None and r.status_code != 200 and owner:
+        r = get(f"https://www.flickr.com/photo.gne?id={pid}")
     if r is None or r.status_code != 200:
+        log(f"    ! 写真ページ {pid} HTTP {getattr(r, 'status_code', None)}")
         return None
     t = r.text
+    if len(DUMPED) < 2:  # 解析確認用に生HTMLを少し残す
+        DUMPED.append(pid)
+        Path("out/debug").mkdir(parents=True, exist_ok=True)
+        Path(f"out/debug/flickr_{pid}.html").write_text(t, encoding="utf-8")
     m = re.search(r'<meta property="og:title" content="([^"]*)"', t)
     title = html.unescape(m.group(1)) if m else ""
     m = re.search(r'<meta property="og:description" content="([^"]*)"', t)
@@ -124,6 +138,8 @@ def do_flickr(item, out):
         rel = relevant(text, item["must"])
         ok = info["lic"] in FLICKR_OK if info["lic"] is not None else info["lic_s"] in (
             "CC BY", "CC BY-SA", "CC ZERO", "CC MARK")
+        if not info["title"]:
+            log(f"    ! 写真ページ {pid} タイトル取れず ({len(info['tags'])})")
         if rel or ok:
             log(f"    {'★' if rel and ok else '・'} {info['lic_s']:<20} 名前{'あり' if rel else 'なし'} | "
                 f"{info['title'][:70]} | {info['author']} | {info['page']}")
@@ -141,6 +157,20 @@ def do_flickr(item, out):
 # ---------------- Geograph（英国・アイルランド、全て CC BY-SA 2.0） ----------------
 def do_geograph(item, out):
     log("  [Geograph]")
+    for q in item["words"]:
+        r = get("https://api.geograph.org.uk/syndicator.php?format=JSON&perpage=50&q="
+                + urllib.parse.quote(q))
+        if r is None:
+            continue
+        try:
+            items = r.json().get("items", [])
+        except ValueError:
+            items = []
+        rel = [x for x in items if relevant(str(x.get("title", "")) + " " + str(x.get("description", "")),
+                                            item["must"])]
+        log(f"   Geograph API「{q}」 HTTP {r.status_code} 結果{len(items)}件 名前入り{len(rel)}件")
+        for x in rel[:10]:
+            log(f"    ★ CC BY-SA 2.0 | {x.get('title')} | {x.get('link')}")
     for host in ("www.geograph.org.uk", "www.geograph.ie"):
         for q in item["words"]:
             r = get(f"https://{host}/of/" + urllib.parse.quote(q.replace(" ", "+"), safe="+"))
