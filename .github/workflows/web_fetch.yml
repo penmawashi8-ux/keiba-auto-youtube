@@ -36,6 +36,10 @@ jobs:
               name = re.sub(r"[^A-Za-z0-9]+", "_", u.split("://", 1)[1])[:90]
               try:
                   r = requests.get(u, headers=UA, timeout=30)
+                  if u.lower().endswith(".pdf") or "pdf" in r.headers.get("content-type", ""):
+                      open(f"out/{name}.pdf", "wb").write(r.content)
+                      log.append(f"{r.status_code} pdf {len(r.content)} {u}")
+                      continue
                   r.encoding = r.apparent_encoding if r.encoding in (None, "ISO-8859-1") else r.encoding
                   soup = BeautifulSoup(r.text, "html.parser")
                   for t in soup(["script", "style", "noscript"]):
@@ -49,6 +53,10 @@ jobs:
           open("out/_log.txt", "w").write("\n".join(log) + "\n")
           print("\n".join(log))
           PY
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          for f in out/*.pdf; do [ -f "$f" ] && pdftotext -layout "$f" "${f%.pdf}.txt" || true; done
+          # PDF 内の画像（勝負服など）も取り出す
+          for f in out/*.pdf; do [ -f "$f" ] && pdfimages -png "$f" "${f%.pdf}_img" || true; done
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
