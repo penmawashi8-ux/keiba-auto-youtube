@@ -1,0 +1,557 @@
+URL: https://developers.google.com/youtube/v3/docs/thumbnails/set
+STATUS: 200
+
+Thumbnails: set  |  YouTube Data API  |  Google for Developers
+Skip to main content
+YouTube
+Home
+Data API
+APIs & services
+Overview
+All APIs and services
+Authentication
+Players and widgets
+IFrame Player API
+iOS Helper Library
+Player Parameters
+YouTube Subscribe Buttons
+YouTube Playables
+Data and reporting APIs
+YouTube Data API
+YouTube Analytics & Reporting APIs
+YouTube Live Streaming API
+YouTube Content ID API
+YouTube Video Third-Party Trainability API
+Devices and integrations
+Cobalt
+Resources
+Overview
+All developer resources
+Tools and samples
+Google APIs Explorer
+Google Cloud console
+Quota Calculator
+YouTube Player Demo
+Configure a Subscribe Button
+Code samples
+Client libraries
+Support and updates
+Issue Tracker
+File a bug
+YouTube Blog
+YouTube Researcher Program
+Terms and policies
+YouTube API Services Terms of Service
+Developer Policies
+Complying with the YouTube Developer Policies
+Required Minimum Functionality
+Branding Guidelines
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+YouTube Studio
+Sign in
+Data API
+Guides
+Reference
+Samples
+YouTube
+Home
+Data API
+Guides
+Reference
+Samples
+APIs & services
+More
+Resources
+More
+YouTube Studio
+Overview
+Activities
+Overview
+list
+Captions
+Overview
+list
+insert
+update
+download
+delete
+ChannelBanners
+Overview
+insert
+Channels
+Overview
+list
+update
+ChannelSections
+Overview
+list
+insert
+update
+delete
+Comments
+Overview
+list
+insert
+update
+setModerationStatus
+delete
+CommentThreads
+Overview
+list
+insert
+i18nLanguages
+Overview
+list
+i18nRegions
+Overview
+list
+Members
+Overview
+list
+MembershipsLevels
+Overview
+list
+PlaylistImages
+Overview
+list
+insert
+update
+delete
+PlaylistItems
+Overview
+list
+insert
+update
+delete
+Playlists
+Overview
+list
+insert
+update
+delete
+Posts
+Overview
+list
+insert
+update
+delete
+imageUpload
+Search
+Overview
+list
+Subscriptions
+Overview
+list
+insert
+delete
+Thumbnails
+Overview
+set
+VideoAbuseReportReasons
+Overview
+list
+VideoCategories
+Overview
+list
+Videos
+Overview
+list
+insert
+update
+rate
+getRating
+reportAbuse
+delete
+batchGetStats
+Watermarks
+Overview
+set
+unset
+Standard Query Parameters
+YouTube Data API Errors
+Overview
+Global Domain Errors
+Revision History
+Overview
+All APIs and services
+Authentication
+Players and widgets
+IFrame Player API
+iOS Helper Library
+Player Parameters
+YouTube Subscribe Buttons
+YouTube Playables
+Data and reporting APIs
+YouTube Data API
+YouTube Analytics & Reporting APIs
+YouTube Live Streaming API
+YouTube Content ID API
+YouTube Video Third-Party Trainability API
+Devices and integrations
+Cobalt
+Overview
+All developer resources
+Tools and samples
+Google APIs Explorer
+Google Cloud console
+Quota Calculator
+YouTube Player Demo
+Configure a Subscribe Button
+Code samples
+Client libraries
+Support and updates
+Issue Tracker
+File a bug
+YouTube Blog
+YouTube Researcher Program
+Terms and policies
+YouTube API Services Terms of Service
+Developer Policies
+Complying with the YouTube Developer Policies
+Required Minimum Functionality
+Branding Guidelines
+Home
+Products
+YouTube
+Data API
+Reference
+Thumbnails: set
+Stay organized with collections
+Save and categorize content based on your preferences.
+Uploads a custom video thumbnail to YouTube and sets it for a video, including YouTube Shorts.
+Note:
+When setting a custom thumbnail for a YouTube Short, call this method only after the video has finished processing (when
+processingDetails.processingStatus
+is
+succeeded
+). If called before video processing is complete, the custom thumbnail might not be applied to the Short.
+This method supports media upload.  Uploaded files must conform to these constraints:
+Maximum file size:
+50MB
+Accepted Media MIME types:
+image/jpeg
+,
+image/png
+,
+application/octet-stream
+Quota impact:
+A call to this method has a
+quota cost
+of approximately 50 units.
+Common use cases
+Request
+HTTP request
+POST https://www.googleapis.com/upload/youtube/v3/thumbnails/set
+Authorization
+This request requires authorization with at least one of the following scopes (
+read more about authentication and authorization
+).
+Scope
+https://www.googleapis.com/auth/youtubepartner
+https://www.googleapis.com/auth/youtube.upload
+https://www.googleapis.com/auth/youtube
+https://www.googleapis.com/auth/youtube.force-ssl
+Parameters
+The following table lists the parameters that this query supports. All of the parameters listed are query parameters.
+Parameters
+Required parameters
+videoId
+string
+The
+videoId
+parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
+Optional parameters
+onBehalfOfContentOwner
+string
+Note:
+This parameter is intended exclusively for YouTube content partners.
+The
+onBehalfOfContentOwner
+parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
+Request body
+The body of the request contains the thumbnail image that you are uploading. The request body does not contain a
+thumbnail
+resource.
+Response
+If successful, this method returns a response body with the following structure:
+{
+"kind"
+:
+"youtube#thumbnailSetResponse"
+,
+"etag"
+:
+etag
+,
+"items"
+:
+[
+thumbnail
+resource
+]
+}
+Properties
+The following table defines the properties that appear in this resource:
+Properties
+kind
+string
+Identifies the API resource's type. The value will be
+youtube#thumbnailSetResponse
+.
+etag
+etag
+The Etag of this resource.
+items[]
+list
+A list of thumbnails.
+Errors
+The following table identifies error messages that the API could return in response to a call to this method. Please see the
+error message
+documentation for more detail.
+Error type
+Error detail
+Description
+badRequest (400)
+invalidImage
+The provided image content is invalid.
+badRequest (400)
+mediaBodyRequired
+The request does not include the image content.
+forbidden (403)
+forbidden
+The thumbnail can't be set for the specified video. The request might not be properly authorized.
+forbidden (403)
+forbidden
+The authenticated user doesn't have permissions to upload and set custom video thumbnails.
+notFound (404)
+videoNotFound
+The video that you are trying to insert a thumbnail image for cannot be found. Check the value of the request's
+videoId
+parameter to ensure that it is correct.
+tooManyRequests (429)
+uploadRateLimitExceeded
+The channel has uploaded too many thumbnails recently. Please try the request again later.
+Try it!
+Use the
+APIs Explorer
+to call this API and see the API request and response.
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-11-12 UTC.
+Blog
+The latest news on the YouTube blog
+Issue Tracker
+Something wrong? Send us a bug report!
+YouTube Researcher Program
+For researchers interested in using data from YouTube's global API
+Tools
+Google APIs Explorer
+YouTube Player Demo
+Configure a Subscribe Button
+Issue Tracker
+File a bug
+Request a feature
+See open issues
+Product Info
+Terms of Service
+Developer Policies
+Required Minimum Functionality
+Branding Guidelines
+Android
+Chrome
+Firebase
+Google Cloud Platform
+Google AI
+All products
+Terms
+Privacy
+Manage cookies
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+
+--- LINKS ---
+https://ai.google.dev/
+https://blog.youtube
+https://cloud.google.com
+https://cloud.google.com/apis/docs/system-parameters
+https://console.cloud.google.com/apis/library?filter=category:youtube
+https://creativecommons.org/licenses/by/4.0/
+https://developer.android.com
+https://developer.chrome.com/home
+https://developers.google.com/
+https://developers.google.com/apis-explorer/#p/
+https://developers.google.com/products
+https://developers.google.com/site-policies
+https://developers.google.com/terms/site-terms
+https://developers.google.com/youtube
+https://developers.google.com/youtube/analytics
+https://developers.google.com/youtube/apis
+https://developers.google.com/youtube/cobalt
+https://developers.google.com/youtube/code_samples
+https://developers.google.com/youtube/data
+https://developers.google.com/youtube/data/code_samples
+https://developers.google.com/youtube/data/determine_quota_cost
+https://developers.google.com/youtube/data/getting-started
+https://developers.google.com/youtube/data/getting-started#quota
+https://developers.google.com/youtube/data/guides/authentication
+https://developers.google.com/youtube/data/guides/ios_youtube_helper
+https://developers.google.com/youtube/data/libraries
+https://developers.google.com/youtube/data/live
+https://developers.google.com/youtube/data/reference/rest
+https://developers.google.com/youtube/data/reference/rest/v3/activities
+https://developers.google.com/youtube/data/reference/rest/v3/activities/list
+https://developers.google.com/youtube/data/reference/rest/v3/captions
+https://developers.google.com/youtube/data/reference/rest/v3/captions/delete
+https://developers.google.com/youtube/data/reference/rest/v3/captions/download
+https://developers.google.com/youtube/data/reference/rest/v3/captions/insert
+https://developers.google.com/youtube/data/reference/rest/v3/captions/list
+https://developers.google.com/youtube/data/reference/rest/v3/captions/update
+https://developers.google.com/youtube/data/reference/rest/v3/channelBanners
+https://developers.google.com/youtube/data/reference/rest/v3/channelBanners/insert
+https://developers.google.com/youtube/data/reference/rest/v3/channelSections
+https://developers.google.com/youtube/data/reference/rest/v3/channelSections/delete
+https://developers.google.com/youtube/data/reference/rest/v3/channelSections/insert
+https://developers.google.com/youtube/data/reference/rest/v3/channelSections/list
+https://developers.google.com/youtube/data/reference/rest/v3/channelSections/update
+https://developers.google.com/youtube/data/reference/rest/v3/channels
+https://developers.google.com/youtube/data/reference/rest/v3/channels/list
+https://developers.google.com/youtube/data/reference/rest/v3/channels/update
+https://developers.google.com/youtube/data/reference/rest/v3/commentThreads
+https://developers.google.com/youtube/data/reference/rest/v3/commentThreads/insert
+https://developers.google.com/youtube/data/reference/rest/v3/commentThreads/list
+https://developers.google.com/youtube/data/reference/rest/v3/comments
+https://developers.google.com/youtube/data/reference/rest/v3/comments/delete
+https://developers.google.com/youtube/data/reference/rest/v3/comments/insert
+https://developers.google.com/youtube/data/reference/rest/v3/comments/list
+https://developers.google.com/youtube/data/reference/rest/v3/comments/setModerationStatus
+https://developers.google.com/youtube/data/reference/rest/v3/comments/update
+https://developers.google.com/youtube/data/reference/rest/v3/core_errors
+https://developers.google.com/youtube/data/reference/rest/v3/errors
+https://developers.google.com/youtube/data/reference/rest/v3/i18nLanguages
+https://developers.google.com/youtube/data/reference/rest/v3/i18nLanguages/list
+https://developers.google.com/youtube/data/reference/rest/v3/i18nRegions
+https://developers.google.com/youtube/data/reference/rest/v3/i18nRegions/list
+https://developers.google.com/youtube/data/reference/rest/v3/members
+https://developers.google.com/youtube/data/reference/rest/v3/members/list
+https://developers.google.com/youtube/data/reference/rest/v3/membershipsLevels
+https://developers.google.com/youtube/data/reference/rest/v3/membershipsLevels/list
+https://developers.google.com/youtube/data/reference/rest/v3/playlistImages
+https://developers.google.com/youtube/data/reference/rest/v3/playlistImages/delete
+https://developers.google.com/youtube/data/reference/rest/v3/playlistImages/insert
+https://developers.google.com/youtube/data/reference/rest/v3/playlistImages/list
+https://developers.google.com/youtube/data/reference/rest/v3/playlistImages/update
+https://developers.google.com/youtube/data/reference/rest/v3/playlistItems
+https://developers.google.com/youtube/data/reference/rest/v3/playlistItems/delete
+https://developers.google.com/youtube/data/reference/rest/v3/playlistItems/insert
+https://developers.google.com/youtube/data/reference/rest/v3/playlistItems/list
+https://developers.google.com/youtube/data/reference/rest/v3/playlistItems/update
+https://developers.google.com/youtube/data/reference/rest/v3/playlists
+https://developers.google.com/youtube/data/reference/rest/v3/playlists/delete
+https://developers.google.com/youtube/data/reference/rest/v3/playlists/insert
+https://developers.google.com/youtube/data/reference/rest/v3/playlists/list
+https://developers.google.com/youtube/data/reference/rest/v3/playlists/update
+https://developers.google.com/youtube/data/reference/rest/v3/posts
+https://developers.google.com/youtube/data/reference/rest/v3/posts/delete
+https://developers.google.com/youtube/data/reference/rest/v3/posts/imageUpload
+https://developers.google.com/youtube/data/reference/rest/v3/posts/insert
+https://developers.google.com/youtube/data/reference/rest/v3/posts/list
+https://developers.google.com/youtube/data/reference/rest/v3/posts/update
+https://developers.google.com/youtube/data/reference/rest/v3/search
+https://developers.google.com/youtube/data/reference/rest/v3/search/list
+https://developers.google.com/youtube/data/reference/rest/v3/subscriptions
+https://developers.google.com/youtube/data/reference/rest/v3/subscriptions/delete
+https://developers.google.com/youtube/data/reference/rest/v3/subscriptions/insert
+https://developers.google.com/youtube/data/reference/rest/v3/subscriptions/list
+https://developers.google.com/youtube/data/reference/rest/v3/thumbnails
+https://developers.google.com/youtube/data/reference/rest/v3/thumbnails#resource
+https://developers.google.com/youtube/data/reference/rest/v3/thumbnails#resource-representation
+https://developers.google.com/youtube/data/reference/rest/v3/thumbnails/set
+https://developers.google.com/youtube/data/reference/rest/v3/videoAbuseReportReasons
+https://developers.google.com/youtube/data/reference/rest/v3/videoAbuseReportReasons/list
+https://developers.google.com/youtube/data/reference/rest/v3/videoCategories
+https://developers.google.com/youtube/data/reference/rest/v3/videoCategories/list
+https://developers.google.com/youtube/data/reference/rest/v3/videos
+https://developers.google.com/youtube/data/reference/rest/v3/videos#processingDetails.processingStatus
+https://developers.google.com/youtube/data/reference/rest/v3/videos/batchGetStats
+https://developers.google.com/youtube/data/reference/rest/v3/videos/delete
+https://developers.google.com/youtube/data/reference/rest/v3/videos/getRating
+https://developers.google.com/youtube/data/reference/rest/v3/videos/insert
+https://developers.google.com/youtube/data/reference/rest/v3/videos/list
+https://developers.google.com/youtube/data/reference/rest/v3/videos/rate
+https://developers.google.com/youtube/data/reference/rest/v3/videos/reportAbuse
+https://developers.google.com/youtube/data/reference/rest/v3/videos/update
+https://developers.google.com/youtube/data/reference/rest/v3/watermarks
+https://developers.google.com/youtube/data/reference/rest/v3/watermarks/set
+https://developers.google.com/youtube/data/reference/rest/v3/watermarks/unset
+https://developers.google.com/youtube/data/revision_history
+https://developers.google.com/youtube/data/video-trainability
+https://developers.google.com/youtube/documentation/authentication
+https://developers.google.com/youtube/gaming/playables
+https://developers.google.com/youtube/iframe_api_reference
+https://developers.google.com/youtube/partner
+https://developers.google.com/youtube/player_parameters
+https://developers.google.com/youtube/resources
+https://developers.google.com/youtube/subscribe
+https://developers.google.com/youtube/terms/api-services-terms-of-service
+https://developers.google.com/youtube/terms/branding-guidelines
+https://developers.google.com/youtube/terms/developer-policies
+https://developers.google.com/youtube/terms/developer-policies-guide
+https://developers.google.com/youtube/terms/required-minimum-functionality
+https://developers.google.com/youtube/v3/docs/thumbnails/set
+https://developers.google.com/youtube/v3/docs/thumbnails/set#main-content
+https://developers.google.com/youtube/youtube_player_demo
+https://developers.google.com/youtube/youtube_subscribe_button
+https://firebase.google.com
+https://issuetracker.google.com/issues/new?component=186600&template=874803
+https://issuetracker.google.com/issues?q=componentid:186600
+https://policies.google.com/privacy
+https://research.youtube/
+https://studio.youtube.com
+https://www.apache.org/licenses/LICENSE-2.0
