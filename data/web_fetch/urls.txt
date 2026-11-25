@@ -1,3 +1,3 @@
-https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc01.pdf
-https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc02.pdf
-https://www.jra.go.jp/news/gaikokuba/2026/pdf/jc05.pdf
+https://developers.google.com/youtube/data/revision_history
+https://developers.google.com/youtube/v3/docs/thumbnails/set
+https://developers.google.com/youtube/v3/docs/thumbnails
