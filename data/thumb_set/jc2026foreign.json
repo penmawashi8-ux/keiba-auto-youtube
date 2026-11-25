@@ -1,7 +1,17 @@
 {
  "items": [
-  {"video": "https://youtu.be/46vXovg_wCM", "thumbnail": "data/upload/jc2026foreign_short1_thumb.jpg"},
-  {"video": "https://youtu.be/20w5WdFg_9c", "thumbnail": "data/upload/jc2026foreign_short2_thumb.jpg"},
-  {"video": "https://youtu.be/Bhh10KvvHKA", "thumbnail": "data/upload/jc2026foreign_short3_thumb.jpg"}
- ]
+  {
+   "video": "https://youtu.be/46vXovg_wCM",
+   "thumbnail": "data/upload/jc2026foreign_short1_thumb.jpg"
+  },
+  {
+   "video": "https://youtu.be/20w5WdFg_9c",
+   "thumbnail": "data/upload/jc2026foreign_short2_thumb.jpg"
+  },
+  {
+   "video": "https://youtu.be/Bhh10KvvHKA",
+   "thumbnail": "data/upload/jc2026foreign_short3_thumb.jpg"
+  }
+ ],
+ "check_only": true
 }

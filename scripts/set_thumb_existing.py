@@ -22,6 +22,10 @@ def main():
     ng = 0
     for it in cfg["items"]:
         vid = it["video"].rstrip("/").split("/")[-1].split("=")[-1]
+        if cfg.get("check_only"):                     # 付け直さず、今のサムネイルの状態だけ見る
+            th = youtube.videos().list(part="snippet", id=vid).execute()["items"][0]["snippet"]["thumbnails"]
+            print(f"{vid}: {', '.join(sorted(th))}" + (f"  9:16 → {th['shortsAspectRatio']}" if "shortsAspectRatio" in th else "  （9:16 なし）"))
+            continue
         media = MediaIoBaseUpload(io.BytesIO(Path(it["thumbnail"]).read_bytes()), mimetype="image/jpeg", resumable=False)
         try:
             yt_thumb.set_when_ready(youtube, vid, media)
