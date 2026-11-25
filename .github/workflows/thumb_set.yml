@@ -26,6 +26,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -q google-api-python-client google-auth google-auth-oauthlib
+      - run: |
+          pip install -q google-api-python-client google-auth google-auth-oauthlib yt-dlp
+          sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg
       - run: |
           for f in data/thumb_set/*.json; do python scripts/set_thumb_existing.py "$f"; done
+      - name: 抜き出したサムネイルを残す（確認用）
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: thumbs-${{ github.run_id }}
+          path: out_thumb/*.jpg
+          if-no-files-found: ignore

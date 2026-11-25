@@ -5,6 +5,7 @@
 """
 import io
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -14,6 +15,26 @@ from googleapiclient.http import MediaIoBaseUpload  # noqa: E402
 
 import yt_thumb  # noqa: E402
 from upload_custom_youtube import load_all_credentials  # noqa: E402
+
+
+def frame_from_youtube(vid: str, at: float) -> str | None:
+    """yt-dlp で動画を取得し、at 秒のフレームを元の縦横比のまま抜き出す（-s でのリサイズはしない）"""
+    out = Path("out_thumb")
+    out.mkdir(exist_ok=True)
+    mp4 = out / f"{vid}.mp4"
+    r = subprocess.run(["yt-dlp", "-q", "-f", "bv*[ext=mp4]/b[ext=mp4]/bv*/b", "-o", str(mp4),
+                        f"https://www.youtube.com/shorts/{vid}"], capture_output=True, text=True)
+    if r.returncode != 0 or not mp4.exists():
+        print(f"NG {vid}: 動画を取得できず {r.stderr[-300:]}", file=sys.stderr)
+        return None
+    jpg = out / f"{vid}.jpg"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(at), "-i", str(mp4), "-vframes", "1", "-q:v", "2",
+                    str(jpg)], check=False)
+    if not jpg.exists():
+        print(f"NG {vid}: フレームを抜けず", file=sys.stderr)
+        return None
+    print(f"  フレーム抽出: {jpg}")
+    return str(jpg)
 
 
 def main():
@@ -26,10 +47,16 @@ def main():
             th = youtube.videos().list(part="snippet", id=vid).execute()["items"][0]["snippet"]["thumbnails"]
             print(f"{vid}: {', '.join(sorted(th))}" + (f"  9:16 → {th['shortsAspectRatio']}" if "shortsAspectRatio" in th else "  （9:16 なし）"))
             continue
-        media = MediaIoBaseUpload(io.BytesIO(Path(it["thumbnail"]).read_bytes()), mimetype="image/jpeg", resumable=False)
+        thumb = it.get("thumbnail")
+        if not thumb:                                 # 画像が残っていない動画: 投稿済みの動画を落としてフレームを抜く
+            thumb = frame_from_youtube(vid, float(it.get("frame_at", 0.5)))
+            if not thumb:
+                ng += 1
+                continue
+        media = MediaIoBaseUpload(io.BytesIO(Path(thumb).read_bytes()), mimetype="image/jpeg", resumable=False)
         try:
             yt_thumb.set_when_ready(youtube, vid, media)
-            print(f"OK {vid} <- {it['thumbnail']}")
+            print(f"OK {vid} <- {thumb}")
         except Exception as e:  # noqa: BLE001
             ng += 1
             print(f"NG {vid}: {e}", file=sys.stderr)
