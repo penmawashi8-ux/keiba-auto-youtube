@@ -1,10 +1,10 @@
-date: 2026-11-24T04:30:34.342969Z
+date: 2026-11-25T01:16:19.371498Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=L6LKWsCHbLk title=【京都2歳S想定騎手】ドラゴンバルドはJ.モレイラ騎手、ネーロノワールは川田将雅
-OK project=1 video_id=UYf3gEgf7rY title=【京阪杯想定騎手】リリージョワは浜中俊騎手、レイピアは佐々木大輔騎手
-OK project=1 video_id=OmOLvdLceSI title=【ジャパンC想定騎手】カランダガンはM.バルザローナ騎手、ダノンデサイルは戸崎圭
+OK project=1 video_id=su3Mbk7DDic title=【阪神アーバン競馬・人気ジョッキーは語る】杉浦健太騎手はヴィーリヤ(11R)に自
+OK project=1 video_id=0JKQ6SpXemQ title=【POGマニア】父キズナをほうふつとさせる追い込みで重賞初V　オンユアマークスが
+OK project=1 video_id=kkswLefUSq8 title=【ジャパンC】戸崎圭太騎手「騎手人生を変えてくれた」ダノンデサイルでいざG1連勝
