@@ -7,6 +7,8 @@ assets/quiz_thumbnail.jpg が存在すればサムネイルも設定する。
 import json
 import os
 import sys
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parent))
+import yt_thumb  # noqa: E402  ショートは処理完了後にサムネを設定する
 from pathlib import Path
 
 import google.auth.transport.requests
@@ -137,7 +139,7 @@ def upload_thumbnail(youtube, video_id: str) -> None:
         return
     media = MediaFileUpload(str(THUMBNAIL_PATH), mimetype="image/jpeg")
     try:
-        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        yt_thumb.set_when_ready(youtube, video_id, media)
         print(f"  サムネイル設定完了: {THUMBNAIL_PATH}")
     except HttpError as e:
         print(f"  WARNING: サムネイル設定失敗: {e}")

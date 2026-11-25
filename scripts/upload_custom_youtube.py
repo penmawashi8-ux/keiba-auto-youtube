@@ -18,6 +18,8 @@ import io
 import json
 import os
 import sys
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parent))
+import yt_thumb  # noqa: E402  ショートは処理完了後にサムネを設定する
 from pathlib import Path
 
 import google.auth.transport.requests
@@ -137,7 +139,7 @@ def upload_thumbnail(youtube, video_id, thumb_path):
     media = MediaIoBaseUpload(io.BytesIO(Path(thumb_path).read_bytes()),
                               mimetype="image/jpeg", resumable=False)
     try:
-        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        yt_thumb.set_when_ready(youtube, video_id, media)
         print(f"  サムネイル設定完了: {video_id}")
     except HttpError as e:
         print(f"  [警告] サムネイル設定失敗 HTTP {e.resp.status}: {e.content[:200]}",

@@ -9,6 +9,8 @@ import re
 import string
 import subprocess
 import sys
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parent))
+import yt_thumb  # noqa: E402  ショートは処理完了後にサムネを設定する
 from pathlib import Path
 
 import google.auth.transport.requests
@@ -208,7 +210,7 @@ def upload_thumbnail(youtube, video_id: str, thumb_path: str) -> None:
         resumable=False,
     )
     try:
-        youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+        yt_thumb.set_when_ready(youtube, video_id, media)
         print(f"  サムネイルアップロード完了: {video_id}")
     except HttpError as e:
         try:

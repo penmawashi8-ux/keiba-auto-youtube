@@ -1,0 +1,31 @@
+name: Set thumbnails on uploaded videos
+
+# data/thumb_set/<名前>.json の動画（投稿済み）にサムネイルを付け直す。ショートにも対応（処理完了後に設定）。
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/thumb_set/**
+      - scripts/set_thumb_existing.py
+      - scripts/yt_thumb.py
+
+jobs:
+  set:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GOOGLE_CLIENT_ID:       ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET:   ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN:   ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      GOOGLE_CLIENT_ID_2:     ${{ secrets.GOOGLE_CLIENT_ID2 }}
+      GOOGLE_CLIENT_SECRET_2: ${{ secrets.GOOGLE_CLIENT_SECRET2 }}
+      GOOGLE_REFRESH_TOKEN_2: ${{ secrets.GOOGLE_REFRESH_TOKEN_2 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q google-api-python-client google-auth google-auth-oauthlib
+      - run: |
+          for f in data/thumb_set/*.json; do python scripts/set_thumb_existing.py "$f"; done
