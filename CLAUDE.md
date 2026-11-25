@@ -41,6 +41,12 @@
 以前は HTTP 200 を返すだけで無視されていたが、YouTube側の仕様変更により
 コード変更なしでカスタムサムネイルが反映されるようになった。
 
+**2026年11月: 公式の注意書きで「ショートは動画の処理完了（processingDetails.processingStatus = succeeded）後に
+thumbnails().set() を呼ぶこと。処理中に呼ぶと反映されないことがある」と明記された。**
+アップロード直後に set すると HTTP 200 でも反映されない。`scripts/yt_thumb.py` の `set_when_ready()` を使う
+（処理完了を待ってから設定し、snippet.thumbnails に `shortsAspectRatio`（9:16）が付けば反映済み）。
+投稿済みの動画に付け直すときは `data/thumb_set/*.json` → `.github/workflows/thumb_set.yml`。
+
 **重要: サムネイル画像は動画と同じ縦解像度（1080×1920）のまま送ること。**
 ffmpegのフレーム抽出時に `-s 1280x720` などで横長にリサイズすると、
 潰れた横長画像がそのままShortsのサムネイルとして表示されてしまう（2026年6月に発生・修正済み）。
