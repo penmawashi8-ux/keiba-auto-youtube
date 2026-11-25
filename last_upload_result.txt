@@ -1,10 +1,10 @@
-date: 2026-11-25T07:10:33.286857Z
+date: 2026-11-25T10:08:06.038446Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=t72QQT4wAqg title=香港ジョッキークラブが香港国際競走の選出馬発表、香港マイルの日本馬はオフトレイル
-OK project=1 video_id=fTJXmGLW1RQ title=【チャンピオンズC】ペリエールは武豊と新コンビ結成で参戦
-OK project=1 video_id=dZ_TPoVnd6Q title=JRAがまさかの発表!ジャパンC参戦“世界最強馬”カランダガンの激レアぬいぐるみ
+OK project=1 video_id=SDUTfewchqI title=浦和記念Vのイッテラッシャイは東京大賞典を視野　堀江貴文オーナー「藤田晋オーナー
+OK project=1 video_id=7PTmINcmk5U title=13歳の大物種牡馬ザラックが事故で急死…欧州競馬界に「計り知れない損失」　母は無
+OK project=1 video_id=pAp-Z7ZGh2E title=【ジャパンC】タガノデュードは前走からさらに良化　宮調教師「思った通りに良くなっ
