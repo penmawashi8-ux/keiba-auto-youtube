@@ -1,10 +1,10 @@
-date: 2026-11-25T01:16:19.371498Z
+date: 2026-11-25T04:09:03.151675Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=su3Mbk7DDic title=【阪神アーバン競馬・人気ジョッキーは語る】杉浦健太騎手はヴィーリヤ(11R)に自
-OK project=1 video_id=0JKQ6SpXemQ title=【POGマニア】父キズナをほうふつとさせる追い込みで重賞初V　オンユアマークスが
-OK project=1 video_id=kkswLefUSq8 title=【ジャパンC】戸崎圭太騎手「騎手人生を変えてくれた」ダノンデサイルでいざG1連勝
+OK project=1 video_id=aEvBhRXNUZA title=【ジャパンC】秋の盾制したダノンデサイルはCWコースで81秒6　安田調教師「気分
+OK project=1 video_id=4h2MMIzEeUA title=【ジャパンC】「一度も…」武豊騎手と挑むメイショウタバルCWで好時計　「彼に託し
+OK project=1 video_id=EEcFLtA2h6w title=あるキーワードがSNSで話題沸騰!G1馬12頭の豪華レース、ジャパンCの必勝法!
