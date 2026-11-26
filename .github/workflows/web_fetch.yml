@@ -41,6 +41,7 @@ jobs:
                       log.append(f"{r.status_code} pdf {len(r.content)} {u}")
                       continue
                   r.encoding = r.apparent_encoding if r.encoding in (None, "ISO-8859-1") else r.encoding
+                  open(f"out/{name}.html", "w", encoding="utf-8").write(r.text)   # 生のHTMLも残す（JS で読み込むページの調査用）
                   soup = BeautifulSoup(r.text, "html.parser")
                   for t in soup(["script", "style", "noscript"]):
                       t.decompose()
