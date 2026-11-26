@@ -3898,3 +3898,6 @@ https://news.netkeiba.com/?pid=news_view&no=349935
 https://news.netkeiba.com/?pid=news_view&no=349932
 https://news.netkeiba.com/?pid=news_view&no=349933
 https://news.netkeiba.com/?pid=news_view&no=349839
+https://news.netkeiba.com/?pid=news_view&no=350000
+https://news.netkeiba.com/?pid=news_view&no=349999
+https://news.netkeiba.com/?pid=news_view&no=349996

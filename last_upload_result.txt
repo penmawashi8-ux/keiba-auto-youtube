@@ -1,10 +1,10 @@
-date: 2026-11-25T10:08:06.038446Z
+date: 2026-11-26T01:21:10.942736Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=SDUTfewchqI title=浦和記念Vのイッテラッシャイは東京大賞典を視野　堀江貴文オーナー「藤田晋オーナー
-OK project=1 video_id=7PTmINcmk5U title=13歳の大物種牡馬ザラックが事故で急死…欧州競馬界に「計り知れない損失」　母は無
-OK project=1 video_id=pAp-Z7ZGh2E title=【ジャパンC】タガノデュードは前走からさらに良化　宮調教師「思った通りに良くなっ
+OK project=1 video_id=fq_ah3ljjOM title=騎手・荻野極に第1子男児誕生　妻の成瀬琴が報告…5時間50分のスピード安産「さっ
+OK project=1 video_id=dBWv5bHw6P4 title=【阪神アーバン競馬・人気ジョッキーは語る】笹田知宏騎手はモズタイシソウシ(園田8
+OK project=1 video_id=cwyVbSdfFMM title=【ジャパンC】Cデムーロの発案でクロワデュノールに気合の追い切り「変化は前回より
