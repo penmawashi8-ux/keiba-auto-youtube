@@ -1,4 +1,2 @@
-200 105 https://racing.hkjc.com/racing/english/international-racing/world-rankings/world50-ranking.aspx
-200 0 https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp
-200 575 https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=150
 200 575 https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=160
+200 105 https://racing.hkjc.com/racing/english/international-racing/world-rankings/world50-ranking.aspx
