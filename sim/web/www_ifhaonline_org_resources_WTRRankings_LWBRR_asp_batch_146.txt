@@ -1,0 +1,379 @@
+URL: https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=146
+STATUS: 200
+
+The LONGINES World's Best Racehorse Rankings
+-
+Ranking
+Rating
+Cat
+Surface
+Horse
+YOF
+Sex
+Owner
+Trainer
+Trained
+1
+135
+S
+T
+Ka Ying Rising (NZ)
+2020
+G
+Ka Ying Syndicate
+David Hayes
+HK
+2
+131
+I
+T
+Ombudsman (IRE)
+2021
+H
+Godolphin
+John & Thady Gosden
+GB
+3
+127
+M
+T
+Bow Echo (IRE)
+2023
+C
+Exors of the Late Sheikh Mohammed Obaid
+George Boughey
+GB
+4
+126
+I
+T
+Daryz (FR)
+2022
+C
+Aga Khan Studs SCEA
+Francis Henri Graffard
+FR
+4
+126
+I
+T
+Item (GB)
+2023
+C
+Juddmonte
+Andrew Balding
+GB
+4
+126
+I
+T
+Romantic Warrior (IRE)
+2018
+G
+Peter Lau Pak Fai
+Danny Shum
+HK
+7
+125
+I
+T
+Almaqam (GB)
+2021
+H
+Sheikh Ahmed Al Maktoum
+Ed Walker
+GB
+7
+125
+M
+T
+Gstaad (GB)
+2023
+C
+D. Smith, Mrs J. Magnier & M. Tabor
+Aidan O'Brien
+IRE
+7
+125
+M
+T
+Notable Speech (GB)
+2021
+H
+Godolphin
+Charlie Appleby
+GB
+7
+125
+M
+D
+Nysos (USA)
+2021
+H
+Baoma Corporation
+Bob Baffert
+USA
+7
+125
+E
+T
+Scandinavia (USA)
+2022
+C
+M. Tabor, D. Smith & Mrs J. Magnier
+Aidan O'Brien
+IRE
+7
+125
+M
+D
+Sovereignty (USA)
+2022
+C
+Godolphin Racing LLC
+William Mott
+USA
+13
+124
+L
+T
+Calandagan (IRE)
+2021
+G
+Aga Khan Studs SCEA
+Francis Henri Graffard
+FR
+13
+124
+I
+T
+Constitution River (FR)
+2023
+C
+M. Tabor, D. Smith, Mrs J. Magnier & Westerberg
+Aidan O'Brien
+IRE
+13
+124
+M
+T
+Erdenali (FR)
+2023
+G
+Aga Khan Studs SCEA
+Francis Henri Graffard
+FR
+13
+124
+L
+T
+Kalpana (GB)
+2021
+M
+Juddmonte
+Andrew Balding
+GB
+13
+124
+M
+D
+Magnitude (USA)
+2022
+C
+Winchell Thoroughbreds LLC
+Steven Asmussen
+USA
+13
+124
+L
+T
+Maltese Cross (FR)
+2023
+C
+George Waud
+William Haggas
+GB
+13
+124
+M
+D
+White Abarrio (USA)
+2019
+H
+C2 Racing Stable LLC, Gary Barber & La Milagrosa Stable LLC
+Saffie Joseph Jr
+USA
+20
+123
+S
+T
+Almeraq (GB)
+2022
+C
+Shadwell Estate Company Ltd
+William Haggas
+GB
+20
+123
+L
+T
+Benvenuto Cellini (IRE)
+2023
+C
+P. Brant, Mrs J. Magnier, M. Tabor, D. Smith & Westerberg
+Aidan O'Brien
+IRE
+20
+123
+M
+D
+Forever Young (JPN)
+2021
+H
+Susumu Fujita
+Yoshito Yahagi
+JPN
+20
+123
+L
+T
+Meisho Tabaru (JPN)
+2021
+H
+Yoshitaka Matsumoto
+Mamoru Ishibashi
+JPN
+20
+123
+M
+T
+Opera Ballo (IRE)
+2022
+C
+Godolphin
+Charlie Appleby
+GB
+25
+122
+L
+T
+Bay City Roller (IRE)
+2022
+C
+Victorious Forever
+George Scott
+GB
+25
+122
+I-L
+T
+Croix du Nord (JPN)
+2022
+C
+Sunday Racing Co Ltd
+Takashi Saito
+JPN
+25
+122
+S
+D
+Englishman (USA)
+2023
+C
+C R K Stable LLC
+Cherie DeVaux
+USA
+25
+122
+I
+D
+Knightsbrige (USA)
+2021
+H
+Godolphin Racing LLC
+William Mott
+USA
+25
+122
+I
+T
+Masquerade Ball (JPN)
+2022
+C
+Shadai Race Horse Co Ltd
+Takahisa Tezuka
+JPN
+25
+122
+I
+T
+Royal Champion (IRE)
+2018
+G
+Exors of the Late Sheikh Mohammed Obaid
+Karl Burke
+GB
+25
+122
+E
+T
+Trawlerman (IRE)
+2018
+G
+Godolphin
+John & Thady Gosden
+GB
+Distance Categories
+S
+5f  - 6.5f
+:  1000m - 1300m
+S (CAN/USA)
+5f  - 7.99f
+:  1000m - 1599m
+M
+6.51f  - 9.49f
+:  1301m - 1899m
+M (CAN/USA)
+8f - 9.49f
+: 1600m - 1899m
+I
+9.5f - 10.5f
+:  1900m - 2100m
+L
+10.51f  - 13.5f
+:  2101m - 2700m
+E
+13.51f+
+:  2701m+
+Surface Indicators
+T
+Turf
+D
+Dirt
+A
+Artificial
+A/T
+Artificial & Turf
+D/T
+Dirt & Turf
+A/D
+Artificial & Dirt
+A/D/T
+Artificial, Dirt  & Turf
+Gender
+C
+Colt
+H
+Horse
+F
+Filly
+M
+Mare
+G
+Gelding
+R
+Ridgling
+Rankings Disclaimer
+
+--- LINKS ---
+https://www.ifhaonline.org/Default.asp?section=Resources&area=89

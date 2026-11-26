@@ -1,0 +1,360 @@
+URL: https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=142
+STATUS: 200
+
+The LONGINES World's Best Racehorse Rankings
+for 3yos and upwards which raced between
+1st January 2026 - 7th June 2026
+Ranking
+Rating
+Cat
+Surface
+Horse
+YOF
+Sex
+Owner
+Trainer
+Trained
+1
+130
+S
+T
+Ka Ying Rising (NZ)
+2020
+G
+Ka Ying Syndicate
+David Hayes
+HK
+2
+126
+M
+T
+Bow Echo (IRE)
+2023
+C
+Exors of the Late Sheikh Mohammed Obaid
+George Boughey
+GB
+2
+126
+I
+T
+Daryz (FR)
+2022
+C
+Aga Khan Studs SCEA
+Francis Henri Graffard
+FR
+2
+126
+I
+T
+Romantic Warrior (IRE)
+2018
+G
+Peter Lau Pak Fai
+Danny Shum
+HK
+5
+125
+M
+T
+Notable Speech (GB)
+2021
+H
+Godolphin
+Charlie Appleby
+GB
+5
+125
+M
+D
+Nysos (USA)
+2021
+H
+Baoma Corporation
+Bob Baffert
+USA
+5
+125
+I
+T
+Ombudsman (IRE)
+2021
+H
+Godolphin
+John & Thady Gosden
+GB
+8
+124
+M
+T
+Opera Ballo (IRE)
+2022
+C
+Godolphin
+Charlie Appleby
+GB
+8
+124
+M
+D
+White Abarrio (USA)
+2019
+H
+C2 Racing Stable LLC, Gary Barber & La Milagrosa Stable LLC
+Saffie Joseph Jr
+USA
+10
+123
+M
+D
+Forever Young (JPN)
+2021
+H
+Susumu Fujita
+Yoshito Yahagi
+JPN
+11
+122
+I
+T
+Almaqam (GB)
+2021
+H
+Sheikh Ahmed Al Maktoum
+Ed Walker
+GB
+11
+122
+L
+T
+Bay City Roller (IRE)
+2022
+C
+Victorious Forever
+George Scott
+GB
+11
+122
+I
+T
+Croix du Nord (JPN)
+2022
+C
+Sunday Racing Co Ltd
+Takashi Saito
+JPN
+11
+122
+I
+D
+Magnitude (USA)
+2022
+C
+Winchell Thoroughbreds LLC
+Steven Asmussen
+USA
+11
+122
+I
+T
+Masquerade Ball (JPN)
+2022
+C
+Shadai Race Horse Co Ltd
+Takahisa Tezuka
+JPN
+11
+122
+I
+T
+Royal Champion (IRE)
+2018
+G
+Exors of the Late Sheikh Mohammed Obaid
+Karl Burke
+GB
+11
+122
+M
+D
+Sovereignty (USA)
+2022
+C
+Godolphin Racing LLC
+William Mott
+USA
+18
+121
+L
+T
+Calandagan (IRE)
+2021
+G
+Aga Khan Studs SCEA
+Francis Henri Graffard
+FR
+18
+121
+I
+T
+Sosie (IRE)
+2021
+H
+Wertheimer & Frere
+André Fabre
+FR
+20
+120
+M
+T
+Autumn Glow (AUS)
+2021
+F
+Arrowfield Pastoral Pty Ltd Syndicate & Hermitage Syndicate
+Chris Waller
+AUS
+20
+120
+L
+T
+Deep Monster (JPN)
+2018
+H
+DMM Dream Club Co Ltd
+Yasutoshi Ikee
+JPN
+20
+120
+S
+D
+Englishman (USA)
+2023
+C
+C R K Stable LLC
+Cherie DeVaux
+USA
+20
+120
+I
+D
+Golden Tempo (USA)
+2023
+C
+Phipps Stable & St Elias Stable
+Cherie DeVaux
+USA
+20
+120
+M
+T
+Gstaad (GB)
+2023
+C
+D. Smith, Mrs J. Magnier & M. Tabor
+Aidan O'Brien
+IRE
+20
+120
+L
+T
+Kalpana (GB)
+2021
+M
+Juddmonte
+Andrew Balding
+GB
+20
+120
+I
+T
+Meisho Tabaru (JPN)
+2021
+H
+Yoshitaka Matsumoto
+Mamoru Ishibashi
+JPN
+20
+120
+M
+T
+More Thunder (IRE)
+2021
+H
+Saeed Suhail
+William Haggas
+GB
+20
+120
+I
+T
+Teao (CHI)
+2022
+C
+Stud El Tata
+Julio Orellana
+CHI
+20
+120
+S
+D
+T O Elvis (USA)
+2022
+C
+Tomoya Ozasa
+Daisuke Takayanagi
+JPN
+Distance Categories
+S
+5f  - 6.5f
+:  1000m - 1300m
+S (CAN/USA)
+5f  - 7.99f
+:  1000m - 1599m
+M
+6.51f  - 9.49f
+:  1301m - 1899m
+M (CAN/USA)
+8f - 9.49f
+: 1600m - 1899m
+I
+9.5f - 10.5f
+:  1900m - 2100m
+L
+10.51f  - 13.5f
+:  2101m - 2700m
+E
+13.51f+
+:  2701m+
+Surface Indicators
+T
+Turf
+D
+Dirt
+A
+Artificial
+A/T
+Artificial & Turf
+D/T
+Dirt & Turf
+A/D
+Artificial & Dirt
+A/D/T
+Artificial, Dirt  & Turf
+Gender
+C
+Colt
+H
+Horse
+F
+Filly
+M
+Mare
+G
+Gelding
+R
+Ridgling
+Rankings Disclaimer
+
+--- LINKS ---
+https://www.ifhaonline.org/Default.asp?section=Resources&area=89

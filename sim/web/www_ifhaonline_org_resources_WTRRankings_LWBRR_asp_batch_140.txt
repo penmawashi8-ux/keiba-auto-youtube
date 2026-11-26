@@ -1,0 +1,300 @@
+URL: https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=140
+STATUS: 200
+
+The LONGINES World's Best Racehorse Rankings
+for 3yos and upwards which raced between
+1st January 2026 - 5th April 2026
+Ranking
+Rating
+Cat
+Surface
+Horse
+YOF
+Sex
+Owner
+Trainer
+Trained
+1
+128
+S-M
+T
+Ka Ying Rising (NZ)
+2020
+G
+Ka Ying Syndicate
+David Hayes
+HK
+2
+124
+M-I
+T
+Romantic Warrior (IRE)
+2018
+G
+Peter Lau Pak Fai
+Danny Shum
+HK
+3
+123
+M
+D
+Forever Young (JPN)
+2021
+H
+Susumu Fujita
+Yoshito Yahagi
+JPN
+4
+122
+I
+T
+Croix du Nord (JPN)
+2022
+C
+Sunday Racing Co Ltd
+Takashi Saito
+JPN
+4
+122
+I
+D
+Magnitude (USA)
+2022
+C
+Winchell Thoroughbreds LLC
+Steven Asmussen
+USA
+4
+122
+I
+T
+Royal Champion (IRE)
+2018
+G
+Exors of the Late Sheikh Mohammed Obaid
+Karl Burke
+GB
+7
+121
+L
+T
+Calandagan (IRE)
+2021
+G
+Aga Khan Studs SCEA
+Francis Henri Graffard
+FR
+7
+121
+M
+D
+Nysos (USA)
+2021
+H
+Baoma Corporation
+Bob Baffert
+USA
+9
+120
+M
+T
+Autumn Glow (AUS)
+2021
+F
+Arrowfield Pastoral Pty Ltd Syndicate & Hermitage Syndicate
+Chris Waller
+AUS
+9
+120
+L
+T
+Deep Monster (JPN)
+2018
+H
+DMM Dream Club Co Ltd
+Yasutoshi Ikee
+JPN
+9
+120
+I
+T
+Meisho Tabaru (JPN)
+2021
+H
+Yoshitaka Matsumoto
+Mamoru Ishibashi
+JPN
+9
+120
+M
+T
+Ombudsman (IRE)
+2021
+H
+Godolphin
+John & Thady Gosden
+GB
+13
+119
+M
+D
+Costa Nova (JPN)
+2020
+H
+Katsumi Yoshida
+Tetsuya Kimura
+JPN
+13
+119
+L
+T
+Goliath (GER)
+2020
+G
+Resolute Bloodstock & Philip Baron Von Ullmann
+Francis Henri Graffard
+FR
+13
+119
+M
+D
+Knightsbridge (USA)
+2021
+H
+Godolphin LLC
+William Mott
+USA
+13
+119
+M
+T
+Opera Ballo (IRE)
+2022
+C
+Godolphin
+Charlie Appleby
+UAE
+13
+119
+S
+T
+Satono Reve (JPN)
+2019
+H
+Hajime Satomi
+Noriyuki Hori
+JPN
+18
+118
+I
+T
+Danon Decile (JPN)
+2021
+H
+Danox Co Ltd
+Shogo Yasuda
+JPN
+18
+118
+L
+T
+Dubai Honour (IRE)
+2018
+G
+Exors of the Late Mohamed Obaida
+William Haggas
+GB
+18
+118
+M
+T
+Lucky Sweynesse (NZ)
+2018
+G
+Cheng Ming Leung, Cheng Yu Tung, Cheng Mei Mei & Cheng Yu Wai
+Manfred Man
+HK
+18
+118
+M
+D
+Skippylongstocking (USA)
+2019
+H
+Daniel Alonso
+Saffie Joseph Jr
+USA
+18
+118
+S
+T
+Tentyris (AUS)
+2022
+C
+Godolphin
+Anthony & Sam Freedman
+AUS
+18
+118
+M
+D
+Wilson Tesoro (JPN)
+2019
+H
+Ryotokuji Kenji Holdings Co Ltd
+Noboru Takagi
+JPN
+Distance Categories
+S
+5f  - 6.5f
+:  1000m - 1300m
+S (CAN/USA)
+5f  - 7.99f
+:  1000m - 1599m
+M
+6.51f  - 9.49f
+:  1301m - 1899m
+M (CAN/USA)
+8f - 9.49f
+: 1600m - 1899m
+I
+9.5f - 10.5f
+:  1900m - 2100m
+L
+10.51f  - 13.5f
+:  2101m - 2700m
+E
+13.51f+
+:  2701m+
+Surface Indicators
+T
+Turf
+D
+Dirt
+A
+Artificial
+A/T
+Artificial & Turf
+D/T
+Dirt & Turf
+A/D
+Artificial & Dirt
+A/D/T
+Artificial, Dirt  & Turf
+Gender
+C
+Colt
+H
+Horse
+F
+Filly
+M
+Mare
+G
+Gelding
+R
+Ridgling
+Rankings Disclaimer
+
+--- LINKS ---
+https://www.ifhaonline.org/Default.asp?section=Resources&area=89
