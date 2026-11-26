@@ -1,1 +1,1 @@
-200 4286 https://www.jra.go.jp/datafile/ranking/g1/2026/jc.html
+200 3862 https://www.jra.go.jp/datafile/ranking/g1/2026.html
