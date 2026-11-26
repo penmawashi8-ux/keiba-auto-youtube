@@ -1,3 +1,4 @@
-200 173546 https://developers.google.com/youtube/data/revision_history
-200 7966 https://developers.google.com/youtube/v3/docs/thumbnails/set
-200 9042 https://developers.google.com/youtube/v3/docs/thumbnails
+200 105 https://racing.hkjc.com/racing/english/international-racing/world-rankings/world50-ranking.aspx
+200 0 https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp
+200 575 https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=150
+200 575 https://www.ifhaonline.org/resources/WTRRankings/LWBRR.asp?batch=160
