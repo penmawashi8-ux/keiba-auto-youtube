@@ -467,6 +467,9 @@ def main() -> None:
             t0 = now()
             pts = [s[1] for s in h["strong"][:2]]
             body = "。".join(pts) if pts else "目立った弱点がなく、バランスのとれた成績"
+            if h.get("intl"):                  # JRA の成績が少ない外国馬: 国際レーティングで紹介する
+                body = (f"国際レーティング{h['rating']}は、出走馬の中で{h['rating_rank']}位"
+                        + (f"。日本では{h['starts']}戦{h['wins']}勝" if h["starts"] else "。日本では初めてのレース"))
             narr = f"勝率{k + 1}位、{h['name']}。{body}。"
             dur = say(narr, t0 + 0.3)
             flen = max(6.5, dur + 1.0)
@@ -498,8 +501,11 @@ def main() -> None:
             plan["overlays"].append({"type": "focus", "t0": round(t0 + 0.3, 3), "t1": round(now() - 0.2, 3),
                                      "rank": k + 1, "num": h["num"], "waku": h["waku"], "name": h["name"],
                                      "jockey": h["jockey"], "win": round(h["win"], 4), "style": h["style_name"],
-                                     "record": f"JRA{surf_word} {h['starts']}戦{h['wins']}勝",
-                                     "points": [f"{s[0]}：{s[1]}" for s in h["strong"][:2]]})
+                                     "record": (f"国際レーティング {h['rating']}" + (f" ／ JRA{surf_word} {h['starts']}戦{h['wins']}勝"
+                                                                                   if h["starts"] else "（JRA初出走）"))
+                                               if h.get("intl") else f"JRA{surf_word} {h['starts']}戦{h['wins']}勝",
+                                     "points": ([f"国際レーティング：{h['rating']}（{h['rating_n']}頭中{h['rating_rank']}位）"]
+                                                if h.get("intl") else [f"{s[0]}：{s[1]}" for s in h["strong"][:2]])})
 
         # ---- エンディング（スタンドとゴール板を上空へ引いていく）
         t0 = now()

@@ -316,6 +316,7 @@ def export_cg(ent: dict, horses: dict, counts: dict, shown: list, upsets: dict, 
     """3D CG の動画（scripts/sim_cg.py）に渡すデータ"""
     names = list(horses)
     order = sorted(names, key=lambda m: -counts[m][0])
+    rated = sorted((horses[m]["rating"] for m in names if horses[m].get("rating")), reverse=True)
     out = {"race": {k: v for k, v in ent.items() if k != "horses"}, "going": going, "n_runs": N_RUNS,
            "pace": (gate or {}).get("pace"), "horses": []}
     for m in names:
@@ -328,7 +329,10 @@ def export_cg(ent: dict, horses: dict, counts: dict, shown: list, upsets: dict, 
             "win": counts[m][0] / N_RUNS, "top2": sum(counts[m][:2]) / N_RUNS, "top3": sum(counts[m][:3]) / N_RUNS,
             "rank": order.index(m) + 1, "n_history": len(h["history"]),
             "best": {"ym": sd.ym(best[0]), "race": best[2]["race_name"], "pos": best[3]["pos"]} if best else None,
-            "strong": strong[:3], "weak": weak[:2]})
+            "strong": strong[:3], "weak": weak[:2],
+            # 国際レーティング（JRA の成績が少ない外国馬は、主にこれで力を見積もっている）
+            "rating": h.get("rating"), "rating_rank": rated.index(h["rating"]) + 1 if h.get("rating") else None,
+            "rating_n": len(rated), "intl": h.get("rating_w", 0) >= 0.5})
     out["shown"] = shown
     out["upsets"] = {"low_winner": upsets.get("low_winner", 0), "low_top3": upsets.get("low_top3", 0),
                      "race": upsets.get("race", [])[:3]}
@@ -373,17 +377,52 @@ def main() -> None:
                               "feats": f, "score": kit["pm"].score(f) if f else None, "history": hist,
                               "style": statistics.mean(styles) if styles else 0.5, "jockey": h["jockey"],
                               "weight": h["weight"], "stats": sd.career_stats(hid, careers, graded, venue, dist, date, "出走したレース", surf)}
+    # 国際レーティング（JRA の G1 プレレーティング。外国馬も同じ物差し）。
+    # 外国馬は JRA の成績が無い／少ないので、JRA のデータだけでは力を測れない。
+    # 同じレースに出る「JRAの成績が十分ある馬」で レーティング → スコア の換算式を作り、
+    # JRA の走数が少ない馬ほどレーティングからのスコアを重く使う
+    ratings = {}
+    if os.environ.get("SIM_NO_RATINGS") != "1":
+        import sim_ratings
+        ratings = sim_ratings.load(ent["race_name"], int(date[:4]))
+    rating_map = None
+    if ratings:
+        pts = [(ratings[h["name"]], h["score"]) for h in horses.values()
+               if h["name"] in ratings and h["score"] is not None and len(h["history"]) >= 5]
+        if len(pts) >= 4:
+            mx = statistics.mean(p[0] for p in pts)
+            my = statistics.mean(p[1] for p in pts)
+            sxx = sum((p[0] - mx) ** 2 for p in pts)
+            b = sum((p[0] - mx) * (p[1] - my) for p in pts) / sxx if sxx else 0.0
+            if b > 0:
+                rating_map = (mx, my, b)
+                print(f"レーティング → スコア: 1ポンドあたり {b:+.3f}（{len(pts)}頭から）")
+        if not rating_map:
+            print("[情報] レーティングとJRAの成績がそろう馬が少ないので、レーティングは使わない")
+    for h in horses.values():
+        h["rating"] = ratings.get(h["name"])
+        h["rating_w"] = 0.0
+        if rating_map and h["rating"] is not None:
+            mx, my, b = rating_map
+            rs = my + b * (h["rating"] - mx)
+            nh = len(h["history"]) if h["score"] is not None else 0
+            w = 2 / (nh + 2)                       # JRAの走数0なら100%、1走で67%、4走で33%、10走で17%
+            h["rating_w"] = w
+            h["score"] = rs if h["score"] is None else w * rs + (1 - w) * h["score"]
+            if w >= 0.5:
+                print(f"  {h['name']}: レーティング {h['rating']} → スコア {rs:+.2f}（JRA{surf} {nh}走、レーティングの重み {w:.0%}）")
     scored = sorted(h["score"] for h in horses.values() if h["score"] is not None)
     fill = scored[max(0, len(scored) // 10 - 1)]
     for h in horses.values():
         if h["score"] is None:
-            print(f"[注意] {h['name']}: 2年以内のJRA{surf}の成績が無いので下位1割のスコアで計算")
+            print(f"[注意] {h['name']}: 2年以内のJRA{surf}の成績もレーティングも無いので下位1割のスコアで計算")
             h["score"] = fill
     # 成績の少ない馬は、少ない走数のたまたまの好走・凡走で評価がぶれやすいので、走数に応じて出走馬の平均に寄せる
     # （10走以上はそのまま、4走で80%、3走で72%、2走で60%）
+    # レーティングがある馬は、レーティングを4走ぶんの情報として数える（JRAの成績が無い外国馬でも80%）
     mu = statistics.mean(h["score"] for h in horses.values())
     for h in horses.values():
-        nh = len(h["history"])
+        nh = len(h["history"]) + (4 if h["rating_w"] > 0 else 0)
         h["shrink"] = min(1.0, (nh / (nh + 2)) / (10 / 12)) if nh else 1.0
         h["score"] = mu + (h["score"] - mu) * h["shrink"]
     # 馬場状態（RACE_GOING。良・稍重・重・不良）。良以外なら、各馬の道悪（稍重〜不良）での走りと
@@ -455,13 +494,14 @@ def main() -> None:
     order = sorted(names, key=lambda m: -counts[m][0])
     md = [f"# {ent['race_name']} シミュレーション（{date} {venue} {surf}{dist}m・{going}・{'枠順確定' if drawn else '馬番は仮'}）", "",
           f"検証の正答率 {kit['test']['acc_model']:.1%}（単勝人気 {kit['test']['acc_market']:.1%}）", "",
-          f"| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | 平均への寄せ | 道悪補正 | JRA{surf} |",
-          "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
+          f"| 馬番 | 馬 | 騎手 | 勝率 | 2着内 | 3着内 | スコア | うち枠・脚質の補正 | 補正なしの勝率 | 脚質 | 計算に使えた走数 | レーティング（重み） | 平均への寄せ | 道悪補正 | JRA{surf} |",
+          "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     for m in order:
         rc, h = counts[m], horses[m]
         md.append(f"| {h['num']} | {m} | {h['jockey']} | {rc[0] / N_RUNS:.1%} | {sum(rc[:2]) / N_RUNS:.1%} | "
                   f"{sum(rc[:3]) / N_RUNS:.1%} | {h['score']:+.2f} | {h['gate_adj']:+.2f} | {counts_plain[m][0] / N_RUNS:.1%} | "
-                  f"{h['style']:.2f} | {len(h['history'])} | {h['shrink']:.0%} | {h['wet_adj']:+.2f} | {h['stats']['starts']}戦{h['stats']['wins']}勝 |")
+                  f"{h['style']:.2f} | {len(h['history'])} | "
+                  + (f"{h['rating']}（{h['rating_w']:.0%}）" if h.get('rating') else "−") + f" | {h['shrink']:.0%} | {h['wet_adj']:+.2f} | {h['stats']['starts']}戦{h['stats']['wins']}勝 |")
     if gate:
         md += ["", f"枠・脚質の効果（{gate['n_races']}レース・{gate['from_year']}年〜、人気をそろえた2頭比較）:"]
         for mode, mm in gate["models"].items():
