@@ -1,10 +1,10 @@
-date: 2026-11-26T04:12:07.490574Z
+date: 2026-11-26T07:17:33.732248Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=_Qov1f1CnT4 title=【京都2歳S】福永厩舎期待の良血馬ドラゴンバルドが今度こそ　陣営「来年が楽しみに
-OK project=1 video_id=Zu7mIBLvm8I title=【チャンピオンズC・1週間】ミッキーファイトの充実に田中博調教師も高評価　「たく
-OK project=1 video_id=3WAUzf0NZHo title=【京阪杯展望】レイピアが前走の大敗から巻き返す
+OK project=1 video_id=3a6WINcpS90 title=【ジャパンC】ヘデントールは良績残す最内の1番枠　木村調教師ゲートについて「週末
+OK project=1 video_id=EU68lHyv91g title=【京都2歳S出走馬・騎手確定】ネーロノワール＆川田将雅騎手、ドラゴンバルド＆J.
+OK project=1 video_id=91k_qg02hH4 title=【京阪杯出走馬・騎手確定】リリージョワ＆浜中俊騎手、レイピア＆佐々木大輔騎手など
