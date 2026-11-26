@@ -1,10 +1,9 @@
-date: 2026-11-26T07:17:33.732248Z
+date: 2026-11-26T10:13:05.684521Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=3a6WINcpS90 title=【ジャパンC】ヘデントールは良績残す最内の1番枠　木村調教師ゲートについて「週末
-OK project=1 video_id=EU68lHyv91g title=【京都2歳S出走馬・騎手確定】ネーロノワール＆川田将雅騎手、ドラゴンバルド＆J.
-OK project=1 video_id=91k_qg02hH4 title=【京阪杯出走馬・騎手確定】リリージョワ＆浜中俊騎手、レイピア＆佐々木大輔騎手など
+OK project=1 video_id=Z9PWFANYPHo title=【JRA新馬戦】コントレイルの半妹リリークラウド、アーモンドアイの仔レジューノワ
+OK project=1 video_id=X5HEWs__URU title=【ジャパンC】テアオが天国の祖父シーキングザダイヤへささげる勝利を　オーナー「リ
