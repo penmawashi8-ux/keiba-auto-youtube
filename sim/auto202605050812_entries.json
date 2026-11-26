@@ -1,0 +1,212 @@
+{
+ "race_id": "202605050812",
+ "date": "2026-11-29",
+ "race_name": "ジャパンC",
+ "venue": "東京",
+ "surface": "芝",
+ "distance": 2400,
+ "direction": "左",
+ "course": "",
+ "post_time": "15:40",
+ "drawn": true,
+ "horses": [
+  {
+   "horse_id": "2021105521",
+   "horse": "ヘデントール",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ｔ．マーカンド",
+   "trainer": "木村哲也",
+   "waku": 1,
+   "umaban": 1
+  },
+  {
+   "horse_id": "2021106787",
+   "horse": "コスモキュランダ",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "丹内祐次",
+   "trainer": "加藤士津八",
+   "waku": 1,
+   "umaban": 2
+  },
+  {
+   "horse_id": "2021103272",
+   "horse": "メイショウタバル",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "武豊",
+   "trainer": "石橋守",
+   "waku": 2,
+   "umaban": 3
+  },
+  {
+   "horse_id": "2022105102",
+   "horse": "クロワデュノール",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "Ｃ．デムーロ",
+   "trainer": "斉藤崇史",
+   "waku": 2,
+   "umaban": 4
+  },
+  {
+   "horse_id": "2020103101",
+   "horse": "シェイクユアハート",
+   "sex": "牡",
+   "age": 6,
+   "weight": 58.0,
+   "jockey": "古川吉洋",
+   "trainer": "宮徹",
+   "waku": 3,
+   "umaban": 5
+  },
+  {
+   "horse_id": "2022105519",
+   "horse": "マスカレードボール",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "Ｃ．ルメール",
+   "trainer": "手塚貴久",
+   "waku": 3,
+   "umaban": 6
+  },
+  {
+   "horse_id": "2022104720",
+   "horse": "ファイアンクランツ",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "Ｊ．モレイラ",
+   "trainer": "堀宣行",
+   "waku": 4,
+   "umaban": 7
+  },
+  {
+   "horse_id": "2021190002",
+   "horse": "オンブズマン",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ｗ．ビュイック",
+   "trainer": "Ｊ＆Ｔゴスデン",
+   "waku": 4,
+   "umaban": 8
+  },
+  {
+   "horse_id": "2021190001",
+   "horse": "カランダガン",
+   "sex": "セ",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ｍ．バルザローナ",
+   "trainer": "Ｆ．グラファール",
+   "waku": 5,
+   "umaban": 9
+  },
+  {
+   "horse_id": "2022190002",
+   "horse": "ミニーホーク",
+   "sex": "牝",
+   "age": 4,
+   "weight": 56.0,
+   "jockey": "Ｒ．ムーア",
+   "trainer": "Ａ．オブライエン",
+   "waku": 5,
+   "umaban": 10
+  },
+  {
+   "horse_id": "2020103060",
+   "horse": "ヴェルテンベルク",
+   "sex": "牡",
+   "age": 6,
+   "weight": 58.0,
+   "jockey": "横山典弘",
+   "trainer": "宮本博",
+   "waku": 6,
+   "umaban": 11
+  },
+  {
+   "horse_id": "2022190003",
+   "horse": "テアオ",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "Ｌ．トーレス",
+   "trainer": "Ｊ．サドラー",
+   "waku": 6,
+   "umaban": 12
+  },
+  {
+   "horse_id": "2021105436",
+   "horse": "アーバンシック",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ａ．プーシャン",
+   "trainer": "武井亮",
+   "waku": 7,
+   "umaban": 13
+  },
+  {
+   "horse_id": "2021106548",
+   "horse": "タガノデュード",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "Ｍ．デムーロ",
+   "trainer": "宮徹",
+   "waku": 7,
+   "umaban": 14
+  },
+  {
+   "horse_id": "2022104614",
+   "horse": "エキサイトバイオ",
+   "sex": "牡",
+   "age": 4,
+   "weight": 58.0,
+   "jockey": "荻野極",
+   "trainer": "今野貞一",
+   "waku": 7,
+   "umaban": 15
+  },
+  {
+   "horse_id": "2021105143",
+   "horse": "ダノンデサイル",
+   "sex": "牡",
+   "age": 5,
+   "weight": 58.0,
+   "jockey": "戸崎圭太",
+   "trainer": "安田翔伍",
+   "waku": 8,
+   "umaban": 16
+  },
+  {
+   "horse_id": "2020190005",
+   "horse": "ゴリアット",
+   "sex": "セ",
+   "age": 6,
+   "weight": 58.0,
+   "jockey": "Ｃ．スミヨン",
+   "trainer": "Ｆ．グラファール",
+   "waku": 8,
+   "umaban": 17
+  },
+  {
+   "horse_id": "2020190008",
+   "horse": "エシカルダイヤモンド",
+   "sex": "セ",
+   "age": 6,
+   "weight": 58.0,
+   "jockey": "坂井瑠星",
+   "trainer": "Ｗ．マリンズ",
+   "waku": 8,
+   "umaban": 18
+  }
+ ]
+}
