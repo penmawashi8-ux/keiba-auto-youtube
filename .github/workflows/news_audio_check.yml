@@ -36,6 +36,12 @@ jobs:
           (cd mainsc && python3 make_news_bgm.py ../bgm --pattern 7)
           d=$(dirname $(find art -name 'audio_*.mp3' | head -1))
           python3 scripts/news_audio_check.py "$d" bgm/news_bright_007.mp3 out
+          # 同じ記事を Keita（edge-tts、ピッチ変更なし）で読んだ版
+          pip install -q edge-tts
+          mkdir -p keita; python3 -m edge_tts --voice ja-JP-KeitaNeural --rate=+20% -f "$d/script_0.txt" --write-media keita/audio_0.mp3
+          python3 scripts/news_audio_check.py keita bgm/news_bright_007.mp3 out_keita
+          cp out_keita/audio_0_new.m4a out/keita_audio_0_new.m4a
+          cp out_keita/report.json out/keita_report.json
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
