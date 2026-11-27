@@ -16,8 +16,7 @@
 - ASS字幕の色は `&HAABBGGRR` 形式（ABGRの順）
 
 ### TTS (edge-tts) ボイス
-- ニュースシリーズ: `ja-JP-KeitaNeural`（男性）
-- 名馬列伝シリーズ: `ja-JP-NanamiNeural`（女性）
+- 声は `ja-JP-KeitaNeural`（男性）に統一（`scripts/generate_audio.py` の既定値）。Kokoro や声の高さのランダム変更は使わない
 - `ja-JP-NaokiNeural` は存在しないため使用禁止
 
 ### TTS の読み辞書（人名の誤読対策）
