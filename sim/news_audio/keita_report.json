@@ -1,0 +1,10 @@
+[
+ {
+  "voice": "audio_0.mp3",
+  "voice_lufs": -20.1,
+  "bgm_lufs": -15.5,
+  "now_lufs": -21.6,
+  "new_lufs": -14.5,
+  "now_voice_minus_bgm_db": 9.4
+ }
+]
