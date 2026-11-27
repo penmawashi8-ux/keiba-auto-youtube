@@ -3910,3 +3910,6 @@ https://news.netkeiba.com/?pid=news_view&no=350032
 https://news.netkeiba.com/?pid=news_view&no=350055
 https://news.netkeiba.com/?pid=news_view&no=350065
 https://news.netkeiba.com/?pid=news_view&no=349921
+https://news.netkeiba.com/?pid=news_view&no=350141
+https://news.netkeiba.com/?pid=news_view&no=350138
+https://news.netkeiba.com/?pid=news_view&no=350139
