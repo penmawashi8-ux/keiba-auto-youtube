@@ -60,6 +60,7 @@ def normalize_racing_terms(text: str, track: list | None = None) -> str:
 
 # edge-tts フォールバック用ボイスプール（確認済み有効ボイスのみ）
 _EDGE_VOICE_POOL = ["ja-JP-KeitaNeural", "ja-JP-NanamiNeural"]
+DEFAULT_VOICE = "ja-JP-KeitaNeural"
 
 # Kokoro 日本語ボイスプール
 # hexgrad/Kokoro-82M に実在する日本語ボイスのみ（jf_beta / jm_alpha は存在せず 404 になる）
@@ -108,13 +109,9 @@ def generate_audio_kokoro(sentences: list[str], audio_path: str, voice: str, spe
 def pick_tts_params() -> tuple[str, str, float, float]:
     """ランダムなTTSパラメータを返す (voice, rate_str, pitch_factor, volume_db)。
     TTS_VOICE / TTS_RATE 環境変数が設定されている場合はそちらを優先する。"""
-    forced_voice = os.environ.get("TTS_VOICE", "")
-    if forced_voice:
-        voice = forced_voice
-    elif _KOKORO_AVAILABLE:
-        voice = random.choice(_KOKORO_VOICE_POOL)
-    else:
-        voice = random.choice(_EDGE_VOICE_POOL)
+    # 声は ja-JP-KeitaNeural に固定する（CLAUDE.md: ニュースシリーズは Keita）。
+    # 以前は Kokoro の5種類からランダムに選んでいたが、日本語の抑揚が不自然で聞き取りにくいと指摘があったため使わない
+    voice = os.environ.get("TTS_VOICE", "") or DEFAULT_VOICE
 
     forced_rate = os.environ.get("TTS_RATE", "")
     if forced_rate:
@@ -123,9 +120,8 @@ def pick_tts_params() -> tuple[str, str, float, float]:
         rate_pct = random.randint(20, 30)
         rate_str = f"{rate_pct:+d}%"
 
-    # ピッチ: ±2.0 半音 → 係数変換
-    pitch_semitones = random.uniform(-2.0, 2.0)
-    pitch_factor = 2 ** (pitch_semitones / 12)
+    # ピッチ: 変えない（以前は ±2 半音ずらしていたが、声がこもる・機械っぽくなるため廃止）
+    pitch_factor = 1.0
 
     # 音量: ±1.5 dB
     volume_db = random.uniform(-1.5, 1.5)
