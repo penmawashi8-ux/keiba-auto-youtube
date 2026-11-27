@@ -30,8 +30,10 @@ jobs:
           path: art
       - run: |
           ls -la art art/* | head -30
-          git fetch -q origin main && git show origin/main:scripts/make_news_bgm.py > /tmp/make_news_bgm.py
-          python3 /tmp/make_news_bgm.py bgm --pattern 7
+          git fetch -q origin main && mkdir -p mainsc
+          for f in make_news_bgm.py make_prediction_bgm.py; do git show origin/main:scripts/$f > mainsc/$f; done
+          pip install -q numpy 2>/dev/null || true
+          (cd mainsc && python3 make_news_bgm.py ../bgm --pattern 7)
           d=$(dirname $(find art -name 'audio_*.mp3' | head -1))
           python3 scripts/news_audio_check.py "$d" bgm/news_bright_007.mp3 out
       - name: Save
