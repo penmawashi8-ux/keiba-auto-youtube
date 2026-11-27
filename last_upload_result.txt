@@ -1,10 +1,10 @@
-date: 2026-11-27T04:15:54.788661Z
+date: 2026-11-27T07:16:03.433497Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=grGp-YskNHI title=フォーエバーヤングの半妹ブラウンラチェットが4歳で引退…繁殖入りへ　デビュー2連
-OK project=1 video_id=iAZ5e7I0aMA title=【注目馬動向・2歳】ロンドンガーズは斎藤新騎手とのコンビで朝日杯FSに参戦　シャ
-OK project=1 video_id=k_2XtaETIyk title=【ジャパンC・金曜気配】クロワデュノール異例のラスト11秒8! 　大阪杯Vの“当
+OK project=1 video_id=XjGza7pdu0U title=24年日経賞、目黒記念を制した7歳馬シュトルーヴェが引退…新潟競馬場で乗馬に
+OK project=1 video_id=d7qE03xjR_I title=古川奈穂騎手が斜行による被害馬の事故死を謝罪　「深くおわび申し上げます。重く受け
+OK project=1 video_id=a-Ci7nySSk8 title=【阪神アーバン競馬・転入馬情報】ハッピーマンが兵庫へ移籍　昨年の兵庫GTなど園田
