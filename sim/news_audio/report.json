@@ -1,0 +1,26 @@
+[
+ {
+  "voice": "audio_0.mp3",
+  "voice_lufs": -24.6,
+  "bgm_lufs": -15.5,
+  "now_lufs": -25.8,
+  "new_lufs": -14.3,
+  "now_voice_minus_bgm_db": 4.9
+ },
+ {
+  "voice": "audio_1.mp3",
+  "voice_lufs": -24.1,
+  "bgm_lufs": -15.5,
+  "now_lufs": -25.2,
+  "new_lufs": -14.2,
+  "now_voice_minus_bgm_db": 5.4
+ },
+ {
+  "voice": "audio_2.mp3",
+  "voice_lufs": -24.6,
+  "bgm_lufs": -15.5,
+  "now_lufs": -25.6,
+  "new_lufs": -14.2,
+  "now_voice_minus_bgm_db": 4.9
+ }
+]
