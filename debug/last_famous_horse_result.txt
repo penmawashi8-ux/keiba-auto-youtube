@@ -1,0 +1,5 @@
+video_id=NJF2K6Hmeyk
+horse_key=silport
+horse_name=シルポート
+title=【名馬列伝】シルポート〜派手に逃げて、静かに去った馬〜 #Shorts
+url=https://www.youtube.com/watch?v=NJF2K6Hmeyk
