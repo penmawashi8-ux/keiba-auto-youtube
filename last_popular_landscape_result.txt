@@ -1,6 +1,6 @@
-date: 2026-11-26T11:05:49.384309Z
+date: 2026-11-27T11:05:36.882233Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=OWsC_Pi5kxg views=48172 title=【浦和記念結果】イッテラッシャイが3馬身差逃げ切りV！重賞2勝目を挙げる【4.8万回閲覧・話題の競馬ニュース】
+OK project=1 video_id=X9EWLnUClqQ views=64864 title=【有馬記念】ファン投票第1回中間発表、ダノンデサイルが27万7171票で1位　2位ロブチェン【6.5万回閲覧・話題の競馬
