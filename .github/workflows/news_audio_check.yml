@@ -1,0 +1,46 @@
+name: News audio check
+
+# ニュースのショートの声の聞こえやすさを調べる（今の混ぜ方と改善案の聞き比べ）。結果は research-output の sim/news_audio/
+on:
+  push:
+    branches:
+      - claude/youtube-keiba-video-research-x6jdvw
+    paths:
+      - data/news_audio_check/**
+      - scripts/news_audio_check.py
+      - .github/workflows/news_audio_check.yml
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg
+      - id: r
+        run: echo "run=$(python3 -c "import json;print(json.load(open('data/news_audio_check/run.json'))['news_run_id'])")" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        with:
+          name: news-videos-${{ steps.r.outputs.run }}
+          run-id: ${{ steps.r.outputs.run }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: art
+      - run: |
+          ls -la art art/* | head -30
+          git fetch -q origin main && git show origin/main:scripts/make_news_bgm.py > /tmp/make_news_bgm.py
+          python3 /tmp/make_news_bgm.py bgm --pattern 7
+          d=$(dirname $(find art -name 'audio_*.mp3' | head -1))
+          python3 scripts/news_audio_check.py "$d" bgm/news_bright_007.mp3 out
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for n in 1 2 3 4 5; do
+            git fetch -q origin research-output && git checkout -q -f -B ro FETCH_HEAD
+            rm -rf sim/news_audio && mkdir -p sim/news_audio && cp out/* sim/news_audio/
+            git add -A -f sim/news_audio && git commit -qm "ニュース音声の聞き比べ (run ${GITHUB_RUN_ID}) [skip ci]" && git push -q origin ro:research-output && break
+            sleep $((n*3))
+          done
