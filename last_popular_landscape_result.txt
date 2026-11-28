@@ -1,6 +1,6 @@
-date: 2026-11-27T11:05:36.882233Z
+date: 2026-11-28T11:04:53.109833Z
 type: popular_news_landscape
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=X9EWLnUClqQ views=64864 title=【有馬記念】ファン投票第1回中間発表、ダノンデサイルが27万7171票で1位　2位ロブチェン【6.5万回閲覧・話題の競馬
+OK project=1 video_id=EdWDo-vyZ1I views=44900 title=【阪神JF想定馬・騎手】フェリチタ、ジーティーマイカなど23頭【4.5万回閲覧・話題の競馬ニュース】
