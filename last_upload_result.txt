@@ -1,10 +1,9 @@
-date: 2026-11-28T07:09:31.513738Z
+date: 2026-11-28T10:08:33.575411Z
 projects_loaded: 2
-uploaded: 3
+uploaded: 2
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=PR5KcA54fKA title=【セレブレイション賞レース後コメント】ウィロークリーク C.ルメール騎手ら
-OK project=1 video_id=DBgrJwN4FHY title=【京都2歳S】武豊騎手騎乗のエトワールハマーは直線伸びず8着　幸四郎調教師との兄
-OK project=1 video_id=dJcRv3s96z4 title=【JRA・WIN5】本日のWIN5は的中190票、配当153万3790円
+OK project=1 video_id=uWpAPqZ845E title=【ジャパンC・土曜気配】ゴリアット陣営は17番枠に「複雑なところ…」　決戦前日の
+OK project=1 video_id=rxWPhoZXNLE title=【ジャパンC・土曜気配】オンブズマンの4枠8番にTゴスデン調教師は“吉兆”の予感
