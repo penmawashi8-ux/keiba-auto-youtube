@@ -1,10 +1,10 @@
-date: 2026-11-27T10:10:33.364366Z
+date: 2026-11-28T01:09:41.069929Z
 projects_loaded: 2
 uploaded: 3
 quota_exceeded: False
 p1: GOOGLE_CLIENT_ID=OK GOOGLE_CLIENT_SECRET=OK GOOGLE_REFRESH_TOKEN=OK => LOADED
 p2: GOOGLE_CLIENT_ID_2=OK GOOGLE_CLIENT_SECRET_2=OK GOOGLE_REFRESH_TOKEN_2=OK => LOADED
 p3: GOOGLE_CLIENT_ID_3=OK GOOGLE_CLIENT_SECRET_3=OK GOOGLE_REFRESH_TOKEN_3=OK => FAILED
-OK project=1 video_id=hT0NRJEiLhI title=「チリの武豊らしくて…」「母父シーキングザダイヤでこみ上げる」日本と縁深い南米最
-OK project=1 video_id=58tl_d2AQgs title=【ジャパンC・金曜気配】マスカレードボールは坂路で力強い脚取り　手塚久調教師は「
-OK project=1 video_id=DpmOxSH5y5s title=【鳴尾記念想定馬・騎手】ゾロアストロ、サトノシャイニングなど18頭
+OK project=1 video_id=miaFlybV2Hc title=高田潤騎手の実写&イラストグッズが12月7日までオンライン限定発売「つの丸先生に
+OK project=1 video_id=WNy_36s7tuI title=【京都2歳S】ネーロノワールが感冒のため出走取消　キタサンブラック産駒の大物候補
+OK project=1 video_id=FXzYTA3DflA title=【京都2歳S】ネーロノワールが出走取消　感冒のため
